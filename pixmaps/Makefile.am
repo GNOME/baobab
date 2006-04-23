@@ -12,7 +12,7 @@ install-data-hook:
 		echo "***   $(gtk_update_icon_cache)"; \
 	fi
 
-imagesdir = $(pkgdatadir)/pixmaps
+imagesdir = $(datadir)/baobab/pixmaps
 images_DATA =			\
 	alfa_sort.png		\
 	green.png		\

@@ -1,4 +1,5 @@
-gladedir         = $(datadir)/baobab
+# FIXME - this is an evil hack, but glade doesn't find the pixmaps otherwise
+gladedir         = $(datadir)/baobab/pixmaps
 glade_DATA       = baobab.glade
 
 baobabappdir	   = $(datadir)/applications
