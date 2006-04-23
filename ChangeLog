@@ -1,0 +1,1300 @@
+2006-04-23  Emmanuele Bassi  <ebassi@cvs.gnome.org>
+
+	* *: Initial import inside gnome-utils.
+
+2006-04-22  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab-utils.c: fixed bug on deleting files
+
+2006-04-21  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.ac:
+
+        Bumped post-release version
+
+2006-04-21  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* NEWS:
+	* configure.ac:
+   
+        Released v.2.4.1
+
+2006-04-21  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* po/it.po:
+	* src/baobab-treeview.c: 
+	* src/baobab-utils.c: 
+	* src/baobab-utils.h:
+	* src/baobab.c: 
+	* src/callbacks.c: 
+	* src/callbacks.h:
+
+	Added treemap item in View Menu
+
+2006-04-21  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/Makefile.am:
+	* src/baobab-scan.c: moved hardlinks.c here
+	* src/baobab-scan.h: move hardlinks.h here
+
+2006-04-21  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+	* src/Makefile.am:
+	* src/baobab-prefs.c: renamed from props.c
+	* src/baobab-prefs.h: renamed from props.h
+	* src/baobab.c:
+	* src/callbacks.c:
+
+2006-04-21  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.c:
+	* src/callbacks.c:
+	* src/baobab-utils.c:
+
+	factor out a set_busy method and cache the animation pixbufs.
+
+2006-04-21  Paolo Borelli  <pborelli@katamail.com>
+
+	* pixmaps/Makefile.am:
+	* baobab.glade:
+	* src/baobab.c:
+	* src/callbacks.c:
+	* src/baobab-utils.c:
+
+	Make app icon themable
+
+2006-04-20  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/callbacks.c:
+	* src/tv.c: move tv callbacks here.
+	* src/baobab_globals.[ch]: remove
+	* src/baobab-utils.[ch]: renamed from bb_util
+	* src/baobab-scan.[ch]: renamed from bbthread
+	* src/baobab-treeview.[ch]: renamed from tv
+	* src/baobab-graphwin.[ch]: renamed from bb_graphwin
+
+2006-04-20  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* MAINTAINERS:
+	* src/callbacks.c: (on_about1_activate):
+
+	Updated maintainers
+
+2006-04-20  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.c: plug some more leaks and simplify string
+	handling.
+
+2006-04-20  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_util.c: (dialog_search): fixed bug on logic
+
+2006-04-20  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/bb_util.c: rework find dialog logic
+
+2006-04-20  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/baobab.c: (baobab_toolbar_style), (baobab_init):
+	* src/baobab.h:
+	* src/bb_util.c: (check_menu_sens):
+
+        Set toolbar style to system global
+
+2006-04-20  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.c: do not leak pixbuf.
+
+2006-04-19  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.[ch]:
+	* src/callbacks.c:
+	* src/props.c:
+
+	store toolbar and statusbar visibility in gconf.
+
+2006-04-19  Paolo Borelli  <pborelli@katamail.com>
+
+	* configure.ac:
+	* data/Makefile.am:
+
+	Fix gconf schemas install.
+
+2006-04-19  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* INSTALL:
+	* data/.cvsignore:
+	* data/Makefile.am:
+	* data/baobab.schemas.in:
+	* po/POTFILES.in:
+	* po/it.po:
+	* src/props.c: (create_props_model):
+
+       Introducing schemas file
+
+2006-04-19  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/props.c: (create_tree_props), (check_toggled),
+	(fill_props_model):
+	* src/props.h:
+
+2006-04-19  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/bb_util.c: (check_menu_sens):
+	* src/callbacks.c: (on_pref_menu), (on_view_tb_activate),
+	(on_view_sb_activate):
+	* src/callbacks.h:
+
+        Relocated toolbar buttons
+        Introduced a View menu
+
+2006-04-12  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab-tree-map.c:
+	* src/baobab-tree-map.h:
+	Added GPL boilerplate
+
+2006-04-12  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/bb_util.[ch]: pass a const string to set_statusbar
+	* src/callbacks.c: escape the string caller side.
+
+2006-04-12  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.desktop.in.in:
+	* po/it.po:
+	* src/callbacks.c: (on_about1_activate):
+
+2006-04-12  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/bb_util.c: fix ICC warnings.
+	* src/baobab-remote-connect-dialog.c: ditto.
+
+2006-04-12  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* po/it.po: updated italian translation
+
+2006-04-12  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/bb_util.c (dir_select), (baobab_check_dir):
+	Terminology changes: folder vs directory
+
+2006-04-12  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/bb_util.c: do not leak the animation and check a 
+	GnomeVfsResult.
+
+2006-04-12  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/*.[ch]: run the code through indent and add GPL
+	boilerplate.
+
+2006-04-11  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.[ch]: move scan_is_local here. Factor out an
+	is_excluded_dir() function.
+	* src/bb_util.[ch]: use is_excluded_dir() and other cleanups.
+	* src/bb_thread.[ch]: use is_excluded_dir() and other cleanups.
+	Fix leaks on error paths.
+	* src/props.c: fix sign comparison warning.
+
+2006-04-11  Paolo Borelli  <pborelli@katamail.com>
+
+	* configure.ac: rename from configure.in, bump version.
+
+2006-04-11  Paolo Borelli  <pborelli@katamail.com>
+
+	* Makefile.am
+	* src/Makefile.am
+	* src/baobab.[ch]:
+
+	define the glade file location and pixmap dir at compile time
+	instead of constructing the path. Also misc indentation
+	cleanups.
+
+	* src/bb_utils.c:
+	* src/callbacks.c:
+	* src/props.c:
+
+	adapt to above changes.
+
+	* .cvsignore: updates
+
+2006-02-28  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* .cvsignore:
+	* po/.cvsignore:
+
+2006-02-23  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+
+	Removed bug on distclean
+
+2006-02-23  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* configure.in:
+
+        Released v.2.3.2
+
+2006-02-23  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* autogen.sh:
+	* config.h.in:
+	* configure.in:
+	* install-sh:
+	* intltool-extract.in:
+	* intltool-merge.in:
+	* intltool-update.in:
+	* missing:
+	* mkinstalldirs:
+	* src/callbacks.c: (on_about1_activate):
+	* src/props.c: (set_gconf_list):
+
+        Moved to automake1.8
+
+2006-02-01  Ilkka Tuohela  <hile@iki.fi>
+
+	* configure.in: Added "fi" to ALL_LINGUAS
+
+2006-01-11  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+	Bumped post-release version
+
+2006-01-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* configure.in:
+
+	Released v. 2.3.1
+
+2006-01-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (baobab_init):
+	* src/bb_util.c: (baobab_get_filesystem):
+	* src/callbacks.c: (volume_changed), (on_propstb_clicked):
+	* src/props.c: (fill_props_model):
+	* src/tv.c: (create_directorytreeview):
+
+	Do not popup preference window upon (un)mounting partitions
+
+2006-01-03  Stanislav Brabec  <sbrabec@suse.cz>
+
+	* configure.in: Added vi to ALL_LINGUAS.
+
+2005-12-31  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/callbacks.c: (on_sort_alfa_activate),
+	(on_by_sort_size_activate):
+	* src/tv.c: (create_model), (create_search_model):
+
+        Trees sorted by size by default
+
+2005-12-26  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+	Bumped post-release version
+
+2005-12-26  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* configure.in:
+
+	Released v.2.3.0
+
+2005-12-20  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.desktop.in.in:
+
+        Moved menu in Applications->Accessories
+
+2005-12-18  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_util.c: (baobab_check_dir):
+	* src/bbthread.c: (getDir):
+
+	Scanning can now start from a sym-link too.
+
+2005-12-14  Stanislav Brabec  <utx@penguin.cz>
+
+	* configure.in: Added cs to ALL_LINGUAS.
+
+2005-12-13  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+
+2005-12-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+        Bumped post-release version
+
+2005-12-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* configure.in:
+	* src/bbthread.c: (loopsearch):
+
+        Release v.2.2.2
+
+2005-12-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+	* src/bbthread.c: (loopdir):
+
+        Fixed buf on allocated size
+
+2005-12-06  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+
+2005-12-06  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+        Release v.2.2.1
+
+2005-12-06  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+2005-12-06  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bbthread.c: (bb_scan_is_local):
+	* src/props.c: (check_toggled):
+        
+        Fixes bug #323331
+
+2005-11-28  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+        Bumped new cvs version
+
+2005-11-28  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* configure.in:
+	* data/baobab.1:
+
+	Released v.2.2.0
+
+2005-11-28  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* po/fr.po:
+
+2005-11-28  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* po/fr.po:
+
+2005-11-20  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (start_proc_on_dir):
+	* src/bbthread.c: (bb_scan_is_local):
+	* src/callbacks.c: (on_notebook1_switch_page):
+
+2005-11-19  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab-remote-connect-dialog.c: (remote_connect):
+	* src/baobab.c: (start_proc_on_dir):
+	* src/bb_util.c: (baobab_check_dir), (open_file_with_application):
+	* src/bbthread.c: (loopdir), (getDir), (bb_scan_is_local):
+	* src/callbacks.c: (on_tb_scan_remote_clicked):
+       
+        Removed bug on GnomeVFSFileInfo use. 
+
+2005-11-18  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* data/baobab.1:
+	* po/POTFILES.in:
+	* po/it.po:
+	* src/Makefile.am:
+	* src/baobab-remote-connect-dialog.c:
+	(baobab_remote_connect_dialog_finalize), (remote_connect),
+	(response_callback), (baobab_remote_connect_dialog_class_init),
+	(setup_for_type), (combo_changed_callback), (port_insert_text),
+	(baobab_remote_connect_dialog_init),
+	(baobab_remote_connect_dialog_new):
+	* src/baobab-remote-connect-dialog.h:
+	* src/baobab.c: (start_proc_on_dir), (start_search),
+	(prefill_model), (fill_model), (baobab_init):
+	* src/baobab.h:
+	* src/bb_util.c: (check_menu_sens):
+	* src/bbthread.c: (loopdir), (getDir), (bb_scan_is_local):
+	* src/bbthread.h:
+	* src/callbacks.c: (on_tbscanall_clicked),
+	(on_tb_scan_remote_clicked), (on_menu_scan_rem_activate),
+	(graph_map_cb), (on_ck_allocated_toggled):
+	* src/callbacks.h:
+
+	Now baobab can also scan remote folders, with SSH-FTP-WEBDAV-SMB
+        protocols. 
+
+2005-11-17  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (fill_model), (main):
+	* src/bbthread.c: (loopsearch), (loopdir):
+
+2005-11-17  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c:
+	* src/bb_graphwin.c: (quit_canvas), (tm_popupmenu):
+	* src/bb_util.c: (get_trash_path), (trash_file):
+	* src/bb_util.h:
+
+	Fixed bug in trash file
+
+2005-11-17  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/baobab.c: (start_search), (fill_search_model),
+	(prepare_firstcol), (get_file_filter):
+	* src/baobab.h:
+	* src/bb_util.c: (open_file_with_application):
+	* src/bbthread.c: (loopsearch), (searchDir):
+	* src/callbacks.c: (on_tv_cur_changed),
+	(on_btn_select_search_clicked), (open_file_cb):
+
+        Using GnomeVFSURI in file-search functions
+
+2005-11-17  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (start_proc_on_dir), (main):
+	* src/baobab.h:
+	* src/bb_util.c: (dir_select), (on_toggled), (show_bars),
+	(message), (messageyesno), (baobab_check_dir), (contents_changed):
+	* src/bbthread.c: (loopdir), (getDir):
+	* src/bbthread.h:
+	* src/callbacks.c: (on_menuallfs_activate), (on_tbscanall_clicked):
+
+        Introducing GnomeVFSURI
+
+2005-11-16  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (start_proc_on_dir), (main):
+	* src/baobab.h:
+	* src/bb_util.c: (dir_select), (contents_changed):
+	* src/bbthread.c: (getDir):
+	* src/bbthread.h:
+	* src/callbacks.c: (on_menuallfs_activate), (on_tbscanall_clicked):
+
+2005-11-16  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bbthread.c: (loopdir):
+
+        Escaped folder names  starting with '#'
+
+2005-11-16  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+	* src/baobab.c: (list_find), (baobab_init):
+	* src/bbthread.c: (loopdir), (getDir):
+	* src/hardlinks.c: (baobab_hardlinks_array_create),
+	(baobab_hardlinks_array_has), (baobab_hardlinks_array_add):
+	* src/hardlinks.h:
+	* src/props.c:
+
+        Switched to GnomeVFS in loopdir() and hardlinks.ch
+
+2005-11-14  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/baobab.c: (fill_model):
+
+2005-11-14  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+        Bumped post-release version
+
+2005-11-14  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* baobab.glade: replace "KB" with "kB" (K is Kelvin,
+	k is kilo), fixes bug #321402
+
+2005-11-14  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* src/bb_graphwin.c: (graph_save_cb):
+        
+        Released v.2.0.1
+
+2005-11-14  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* configure.in: added pt_BR to ALL_LINGUAS.
+
+2005-11-13  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+        Bumped post-release version
+
+2005-11-13  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+
+        Released v. 2.0.0
+
+2005-11-13  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* po/POTFILES.in:
+	* src/Makefile.am:
+	* src/baobab-tree-map.c:
+	* src/baobab-tree-map.h:
+	* src/baobab-treemap.c:
+	* src/baobab-treemap.h:
+	* src/bb_graphwin.c: (create_bb_treemap), (zoom_in_cb),
+	(zoom_out_cb), (zoom_100_cb), (tm_popupmenu), (graph_save_cb),
+	(tm_spin_changed), (tm_refresh):
+	* src/callbacks.c: (graph_map_cb):
+
+        Changed treemap namespace in baobab-tree-map
+
+2005-11-11  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* AUTHORS:
+	* po/POTFILES.in:
+	* po/it.po:
+	* src/Makefile.am:
+	* src/baobab-treemap.c:
+	* src/baobab-treemap.h:
+	* src/bb_graphwin.c: (create_bb_treemap), (quit_canvas),
+	(zoom_in_cb), (zoom_out_cb), (zoom_100_cb), (tm_popupmenu),
+	(graph_save_cb), (open_folder_cb), (open_file_with_application),
+	(tm_spin_changed), (tm_refresh):
+	* src/bb_graphwin.h:
+	* src/bb_treemap.c:
+	* src/bb_treemap.h:
+	* src/callbacks.c: (on_about1_activate), (graph_map_cb):
+ 
+         GObjectified treemap into a general purpose treemap view
+
+2005-11-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (prefill_model):
+
+	Fixed main memory leak in baobab.c
+
+2005-11-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap), (bb_draw_treemap),
+	(quit_canvas), (graph_save_cb), (tm_refresh):
+
+	Fixed memory leaks
+
+2005-11-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* po/it.po:
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect),
+	(bb_draw_treemap), (tm_refresh), (bb_clear_canvas),
+	(bb_treemap_get_total_elements):
+
+	Added function to display total folders number in tremap
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+	* po/ChangeLog:
+	* po/ru.po:
+
+	Added russian translation
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap):
+	* src/bb_treemap.h:
+	* src/bb_util.c: (popupmenu_list):
+	* src/callbacks.c: (graph_map_cb):
+	* src/callbacks.h:
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap):
+	* src/bb_treemap.h:
+	* src/callbacks.c: (graph_map_cb):
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect),
+	(loop_treemap), (open_file_with_application):
+	* src/bb_treemap.h:
+	* src/callbacks.c: (on_menuallfs_activate),
+	(on_menuscandir_activate), (on_esci1_activate), (graph_map_cb):
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* po/it.po:
+	* src/bb_treemap.c: (create_bb_treemap), (bb_draw_treemap),
+	(loop_treemap), (tm_spin_changed), (tm_refresh), (bb_clear_canvas):
+
+        Added bb_clear_canvas. Replaced ALL with Unlimited in depth level
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/bb_treemap.c: (create_bb_treemap), (zoom_in_cb),
+	(zoom_out_cb), (zoom_100_cb), (bb_draw_treemap), (loop_treemap),
+	(item_event), (quit_canvas), (graph_save_cb),
+	(open_file_with_application), (tm_spin_changed), (tm_refresh):
+	* src/bb_treemap.h:
+	* src/callbacks.c: (graph_map_cb):
+
+       Added spin button to change treemap's depth
+
+2005-11-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap):
+
+	Closes:#321014
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/baobab.c: (first_row):
+	* src/bb_util.c: (popupmenu_list), (popupmenu_list_search),
+	(dialog_search):
+	* src/callbacks.c: (on_tv_button_press):
+	* src/tv.c: (create_search_model):
+
+        Fixed program crash on search dialog
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/Makefile.am:
+
+       exporting functions for libglade
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* data/baobab.1:
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* .cvsignore:
+	* Makefile.am:
+	* baobab.prj:
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* .cvsignore:
+	* baobab.gladep:
+
+        Removed gladep file
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* baobab.glade:
+	* baobab.gladep:
+	* configure.in:
+	* data/Makefile.am:
+	* pixmaps/Makefile.am:
+	* pixmaps/shot.png:
+	* po/POTFILES.in:
+	* po/de.po:
+	* po/en_CA.po:
+	* po/es.po:
+	* po/eu.po:
+	* po/fr.po:
+	* po/it.po:
+	* po/ja.po:
+	* po/pl.po:
+	* po/sv.po:
+	* po/zh_CN.po:
+	* src/Makefile.am:
+	* src/baobab.c: (baobab_init), (baobab_close), (main):
+	* src/baobab.h:
+	* src/bb_support.c:
+	* src/bb_support.h:
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect), (zoom_in_cb),
+	(zoom_out_cb), (zoom_100_cb), (baobab_get_pixels_per_unit),
+	(bb_draw_treemap), (loop_treemap), (setup_widget_item),
+	(item_event), (popupmenu_canvas), (quit_canvas), (graph_save_cb),
+	(open_folder_cb), (open_file_with_application):
+	* src/bb_treemap.h:
+	* src/bb_util.c: (find_pixmap_file), (set_statusbar),
+	(change_icon), (set_bar), (check_menu_sens), (popupmenu_list),
+	(dialog_search), (save_search_opt), (set_search_opt),
+	(switch_view), (get_NB_page), (show_label), (contents_changed),
+	(baobab_load_pixbuf), (baobab_get_icon):
+	* src/bb_util.h:
+	* src/bbthread.c:
+	* src/callbacks.c: (on_radio_allfs_clicked),
+	(on_radio_dir_clicked), (on_btn_select_search_clicked),
+	(on_notebook1_switch_page), (graph_map_cb), (contents_changed_cb),
+	(on_pref_menu):
+	* src/callbacks.h:
+	* src/interface.c:
+	* src/interface.h:
+	* src/props.c: (create_props), (create_tree_props):
+	* src/tv.c: (create_directorytreeview), (create_tree_filesearch),
+	(create_search_model):
+
+        Merged treemap branch
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (setup_widget_item), (popupmenu_canvas),
+	(quit_canvas), (open_folder_cb):
+
+        More cleaning and removing memory leaks
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap):
+
+        Code cleanup
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* po/POTFILES.in:
+	* po/it.po:
+	* src/Makefile.am:
+	* src/baobab.c: (main):
+	* src/bb_support.c:
+	* src/bb_support.h:
+	* src/bb_treemap.c:
+	* src/bb_util.c: (find_pixmap_file), (set_bar), (popupmenu_list),
+	(contents_changed), (baobab_load_pixbuf), (baobab_get_icon):
+	* src/bb_util.h:
+	* src/bbthread.c:
+	* src/callbacks.c:
+	* src/props.c:
+	* src/tv.c:
+
+        Dropped bb_support.c/h
+
+2005-11-08  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (main):
+	* src/bb_treemap.c: (create_bb_treemap):
+     
+        set default icon
+		
+2005-11-07  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (baobab_close):
+	* src/baobab.h:
+	* src/bb_util.c: (popupmenu_list), (popupmenu_list_search):
+	* src/callbacks.c: (open_file_cb), (trash_file_cb), (trash_dir_cb),
+	(list_all_cb):
+	* src/callbacks.h:
+	* src/tv.c: (create_search_model):
+
+	Reworked these callbacks.
+	Store the selected_path in baobab_application.
+
+
+2005-11-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (popupmenu_canvas), (graph_save_cb),
+	(open_folder_cb), (open_file_with_application):
+
+2005-11-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* po/it.po:
+	* src/bb_treemap.c: (create_bb_treemap), (bb_draw_treemap),
+	(loop_treemap), (graph_save_cb):
+	* src/bb_treemap.h:
+	* src/callbacks.c: (graph_map_cb):
+
+2005-11-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect), (zoom_in_cb),
+	(zoom_out_cb), (zoom_100_cb), (baobab_get_pixels_per_unit),
+	(bb_draw_treemap), (loop_treemap), (setup_widget_item),
+	(item_event), (popupmenu_canvas), (quit_canvas), (graph_save_cb):
+	* src/bb_treemap.h:
+
+       Multi-window treemap mode. Removed s-handlers from glade
+
+2005-11-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_util.c: (dialog_search):
+	* src/props.c: (create_props):
+
+        Unreferenced glade objects
+
+2005-11-07  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* pixmaps/Makefile.am:
+	* pixmaps/shot.png:
+	* src/baobab.h:
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect), (zoom_in_cb),
+	(zoom_out_cb), (zoom_100_cb), (baobab_get_pixels_per_unit),
+	(bb_draw_treemap), (loop_treemap), (popupmenu_canvas),
+	(quit_canvas), (graph_save_cb):
+	* src/bb_treemap.h:
+	* src/callbacks.c: (contents_changed_cb),
+	(on_ck_allocated_toggled):
+
+2005-11-06  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect),
+	(bb_draw_treemap), (loop_treemap), (setup_widget_item),
+	(item_event), (popupmenu_canvas):
+
+        Treemap starts working
+
+2005-11-06  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect), (zoom_in_cb),
+	(zoom_out_cb), (zoom_100_cb), (loop_treemap):
+	* src/bb_treemap.h:
+	* src/callbacks.c: (on_graph_close_btn_clicked):
+
+        Using rendering RGB buffer for treemap
+
+2005-11-05  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap), (bb_draw_treemap),
+	(loop_treemap):
+
+2005-11-05  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect),
+	(bb_draw_treemap), (loop_treemap):
+
+2005-11-04  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* configure.in:
+	* po/POTFILES.in:
+	* po/it.po:
+	* src/Makefile.am:
+	* src/baobab.h:
+	* src/bb_treemap.c: (create_bb_treemap), (draw_rect), (zoom_in),
+	(zoom_out), (zoom_100), (baobab_get_pixels_per_unit),
+	(bb_draw_treemap):
+	* src/bb_treemap.h:
+	* src/bb_util.c: (popupmenu_list):
+	* src/callbacks.c: (graph_map_cb), (on_ck_allocated_toggled),
+	(on_graph_close_btn_clicked), (on_graph_zoom_in_clicked),
+	(on_graph_zoom_out_clicked), (on_graph_zoom_100_clicked):
+	* src/callbacks.h:
+
+        Started coding treemap
+
+2005-11-04  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* baobab.glade:
+	* po/POTFILES.in:
+	* po/de.po:
+	* po/en_CA.po:
+	* po/es.po:
+	* po/eu.po:
+	* po/fr.po:
+	* po/it.po:
+	* po/ja.po:
+	* po/pl.po:
+	* po/sv.po:
+	* po/zh_CN.po:
+	* src/Makefile.am:
+	* src/baobab.c: (baobab_init), (baobab_close), (main):
+	* src/baobab.h:
+	* src/bb_support.c:
+	* src/bb_support.h:
+	* src/bb_util.c: (set_statusbar), (change_icon), (check_menu_sens),
+	(dialog_search), (save_search_opt), (set_search_opt),
+	(switch_view), (get_NB_page), (show_label):
+	* src/bbthread.c:
+	* src/callbacks.c: (on_radio_allfs_clicked),
+	(on_radio_dir_clicked), (on_btn_select_search_clicked),
+	(on_notebook1_switch_page), (on_pref_menu):
+	* src/callbacks.h:
+	* src/interface.c:
+	* src/interface.h:
+	* src/props.c: (create_props), (create_tree_props):
+	* src/tv.c: (create_directorytreeview), (create_tree_filesearch):
+
+        Dropped interface.ch - Using dynamic GladeXML
+
+2005-11-03  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* baobab.glade:
+	* baobab.gladep:
+	* configure.in:
+	* data/Makefile.am:
+	* data/baobab.glade:
+	* data/baobab.gladep:
+	* pixmaps/Makefile.am:
+	* src/baobab.c: (baobab_init), (main):
+	* src/baobab.h:
+
+2005-11-03  Fabio Marzocca,,,  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* baobab.glade:
+	* baobab.gladep:
+	* data/Makefile.am:
+	* data/baobab.glade:
+	* data/baobab.gladep:
+
+        Moved glade files in data dir
+
+2005-11-03  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/interface.c: (create_graph_win):
+
+2005-11-03  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.glade:
+	* src/interface.c: (create__about), (create_dialog_scan_props),
+	(create_graph_win):
+	* src/interface.h:
+
+        Updated glade with new window for graphic map
+
+2005-11-03  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* configure.in:
+
+        Bumped new version 2.0.0
+
+>>>>>>> 1.38.2.20
+2005-11-01  Fabio Marzocca,,,  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* baobab.png:
+	* configure.in:
+	* pixmaps/.cvsignore:
+	* pixmaps/Makefile.am:
+	* pixmaps/baobab.png:
+
+        Fixed pixmap dir
+
+2005-11-01  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* Makefile.am:
+	* src/baobab.h:
+       
+        Relocated pixmap dir
+    
+2005-11-01  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/baobab.c: (main):
+	* src/bb_support.c: (find_pixmap_file),
+	(glade_set_atk_action_description), (baobab_get_icon):
+	* src/bb_support.h:
+	* src/callbacks.c: (on_about1_activate):
+
+	Fixed icon and pictures lookup.
+	Added baobab_get_icon() to get application icon.
+	Bumped version.
+
+2005-11-01  Benoît Dejean  <benoit@placenet.org>
+
+	* Makefile.am:
+	* pixmaps/baobab.png:
+	* baobab.png:
+
+	Moved the icon and fixed install rule.
+
+	* data/Makefile.am:
+	* data/baobab.desktop:
+
+	Dropped that desktop file.
+
+2005-10-31  Benoît Dejean  <benoit@placenet.org>
+
+	* .cvsignore:
+	* Makefile.am:
+	* intltool-extract.in:
+	* intltool-merge.in:
+	* intltool-update.in:
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Fixed distcheck.
+
+	* src/interface.c:
+	* src/support.c:
+	* src/support.h:
+
+	Dropped support.[ch].
+
+2005-10-31  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* NEWS:
+	* configure.in:
+        
+        Released 1.3.0
+
+2005-10-25  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/hardlinks.c: (baobab_hardlinks_array_free):
+         
+	Removed debugging code
+
+2005-10-25  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* baobab.pws:
+	* po/it.po:
+
+>>>>>>> 1.60
+2005-10-19  Fabio Marzocca,,,  <thesaltydog@gmail.com>
+
+	* README:
+	* baobab.prj:
+	* src/callbacks.c: (on_about1_activate):
+
+        Changed website url address.
+
+2005-10-19  Adam Weinberger  <adamw@gnome.org>
+
+	* configure.in: Added en_CA to ALL_LINGUAS.
+
+2005-10-19  Benoît Dejean  <benoit@placenet.org>
+
+	* src/Makefile.am:
+	* src/baobab.h:
+	* src/baobab_globals.c:
+	* src/baobab_globals.h:
+	* src/bb_util.c: (baobab_get_filesystem), (set_label_scan):
+	* src/bb_util.h:
+
+	Move globals definition outside of baobab.h.
+	Also fixes baobab.h include guard.
+
+2005-10-16  Benoît Dejean  <benoit@placenet.org>
+
+	* Makefile.am:
+	* configure.in:
+	* scripts/.cvsignore:
+	* scripts/Makefile.am:
+	* scripts/naut-script.sh:
+	* src/baobab.c: (main):
+	* src/bb_util.c: (baobab_check_dir):
+	* src/bb_util.h:
+
+	Dropped the nautilus script. It's useless as nautilus can do
+	it with "Open with".
+
+2005-10-16  Takeshi AIHANA <aihana@gnome.gr.jp>
+
+	* configure.in: Added 'ja' (Japanese) to ALL_LINGUAS.
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/bb_util.c: (show_label):
+
+	Cleaned and fixed logic.
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (fill_model): ngettext love.
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/Makefile.am:
+	* src/baobab.c: (main):
+
+	Fixed program init. Marked static baobab_{init,close}().
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/*.[ch]: Made gcc-2.95 happy.
+	GNOME C is C89.
+
+
+2005-10-14  Fabio Marzocca,,,  <thesaltydog@gmail.com>
+
+	* src/bb_util.c: (baobab_check_dir):
+
+        dropped deadcode functions.
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* TODO:
+
+	New item.
+
+	* src/Makefile.am:
+	* src/bbthread.c: (loopdir), (getDir), (searchDir):
+	* src/hardlinks.c: (baobab_hardlinks_array_create),
+	(baobab_hardlinks_array_has), (baobab_hardlinks_array_add),
+	(baobab_hardlinks_array_free):
+	* src/hardlinks.h:
+
+	Moved the hardlink detection code to hardlinks.[ch].
+	No more global.
+	Fixed lookup (inode number is unique per filesystem,
+	not globally).
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (fill_model):
+
+	Yet another leak.
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (prefill_model):
+
+	Fixed one more leak.
+
+2005-10-14  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (check_UTF):
+	
+	Fixed logic to plug 2 leaks.
+	
+	* src/bb_util.c: (set_statusbar):
+
+	Fixed 1 leak.
+
+2005-10-12  Funda Wang  <fundawang@linux.net.cn>
+
+	* configure.in: Added Simplified Chinese translation.
+
+2005-10-11  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* MAINTAINERS: file added
+
+
+2005-10-11  Benoît Dejean  <benoit@placenet.org>
+
+	* scripts/naut-script.sh:
+	
+	Added exec statement.
+
+2005-10-11  Benoît Dejean  <benoit@placenet.org>
+
+	* Makefile.am:
+	* baobab.desktop.in.in:
+	* configure.in:
+
+	Added desktop file.
+
+2005-10-11  Benoît Dejean  <benoit@placenet.org>
+
+	* src/bbthread.c:
+	* src/props.c:
+
+	Added missing <config.h>.
+
+2005-10-11  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (start_proc_on_dir):
+	* src/bb_util.c: (baobab_check_dir):
+	* src/bb_util.h:
+
+	check_dir -> baobab_check_dir.
+	Fixed prototype. Cleaned. Fixed string surgery.
+
+2005-10-11  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (main):
+	* src/baobab.h:
+	* src/bb_util.c: (baobab_get_filesystem), (contents_changed):
+	* src/bb_util.h:
+	* src/props.c: (props_notify), (fill_props_model):
+
+	Changed getFileSystem prototype and renamed to
+	baobab_get_filesystem. Cleaned it.
+	Fixed glibtop usage (free -> g_free).
+
+2005-10-11  Benoît Dejean  <benoit@placenet.org>
+
+	* src/baobab.c: (baobab_close), (main):
+
+	Added missing libgtop init/shutdown.
+
+2005-10-10  Benoît Dejean  <benoit@placenet.org>
+
+	* AUTHORS:
+	* src/callbacks.c: (on_about1_activate):
+	* src/interface.c:
+	* src/interface.h (create__about): Removed that function.
+	
+	Reworked and simplified the about dialog. Moved some people to AUTHORS.
+
+2005-10-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* .cvsignore:
+	* AUTHORS:
+	* baobab.pws:
+
+        removed baobab.pws and added to cvsignore
+        added Benoit Dejean to AUTHORS
+
+2005-10-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* AUTHORS:
+	* baobab.pws:
+
+2005-10-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+    * .cvsignore: added .tm_project.cache baobab.prj.bak
+	
+2005-10-10  Benoît Dejean  <benoit@placenet.org>
+
+	* .tm_project.cache: Dropped.
+
+2005-10-10  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/Makefile.am:
+	
+	Cleaned a bit. Stricter CFLAGS.
+	
+	* src/baobab.h:
+	* src/bb_util.c:
+	
+	Remove duplicate _DIR_*.
+	Fixed some warnings.
+
+2005-10-10  Benoît Dejean  <benoit@placenet.org>
+
+	* .cvsignore:
+	* Makefile.in:
+	* aclocal.m4:
+	* autom4te.cache/output.0:
+	* autom4te.cache/requests:
+	* autom4te.cache/traces.0:
+	* configure:
+	* data/.cvsignore:
+	* data/Makefile.in:
+	* po/.cvsignore:
+	* po/Makefile.in.in:
+	* scripts/.cvsignore:
+	* scripts/Makefile.in:
+	* src/.cvsignore:
+	* src/Makefile.in:
+	
+	Removed autogenerated files and added .cvsignore files.
+
+2005-10-10  Fabio Marzocca  <thesaltydog@gmail.com>
+
+    * po/.cvsignore:
+	* po/*.gmo:
+	* src/.cvsignore:
+	* src/baobab
+	
+	Added missing files to .cvsignore
