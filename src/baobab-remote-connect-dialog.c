@@ -617,7 +617,7 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 	
 	dialog->details = g_new0 (BaobabRemoteConnectDialogDetails, 1);
 
-	gtk_window_set_title (GTK_WINDOW (dialog), _("Connect to a remote folder"));
+	gtk_window_set_title (GTK_WINDOW (dialog), _("Connect to a Remote Folder"));
 	gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
 	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 	gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 2);

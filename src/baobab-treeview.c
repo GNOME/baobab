@@ -80,7 +80,7 @@ create_search_model (void)
 	gtk_list_store_append (mdl, &iter);
 	gtk_list_store_set (mdl, &iter,
 			    COL1_STRING,
-			    _("<i>Use Menu->Actions->Search for a file, "
+			    _("<i>Use the Edit->Find menu item "
 			      "or the search toolbar button.</i>"),
 			    COL_FULLPATH, "", -1);
 

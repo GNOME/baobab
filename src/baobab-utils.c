@@ -97,7 +97,7 @@ dir_select (gboolean SEARCH, GtkWidget *parent)
 	GtkWidget *dialog;
 	GtkWidget *toggle;
 
-	dialog = gtk_file_chooser_dialog_new (_("Select a folder"),
+	dialog = gtk_file_chooser_dialog_new (_("Select a Folder"),
 					      GTK_WINDOW (parent),
 					      GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
 					      GTK_STOCK_CANCEL,
