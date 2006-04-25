@@ -155,6 +155,8 @@ on_tv_button_press (GtkWidget *widget,
 
 	GtkTreePath *path;
 	GtkTreeIter iter;
+	gchar * trash_path, *dir_path;
+	gboolean is_trash=FALSE;;
 
 	gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),
 					       event->x, event->y,
@@ -163,22 +165,30 @@ on_tv_button_press (GtkWidget *widget,
 		return TRUE;		
 
 	/* check if a valid and scanned folder has been selected */
+	if (baobab.selected_path) {
+		g_free (baobab.selected_path);
+		baobab.selected_path = NULL;
+	}
+
 	if (get_NB_page () == VIEW_TREE) {
-		if (baobab.selected_path) {
-			g_free (baobab.selected_path);
-			baobab.selected_path = NULL;
-		}
 
 		gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &iter,
 					 path);
 		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 				    COL_H_FULLPATH, &baobab.selected_path, -1);
 
-		if (strcmp (baobab.selected_path, "") == 0) {
-			set_glade_widget_sens("menu_treemap",FALSE);
-			gtk_tree_path_free (path);
-			return FALSE;
-		}
+	}
+	else {
+		gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model_search),
+				 &iter, path);
+		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model_search), &iter,
+			    COL_FULLPATH, &baobab.selected_path, -1);
+	}
+	
+	if (strcmp (baobab.selected_path, "") == 0) {
+		set_glade_widget_sens("menu_treemap",FALSE);
+		gtk_tree_path_free (path);
+		return FALSE;
 	}
 	
 	if (get_NB_page () == VIEW_SEARCH)
@@ -189,12 +199,17 @@ on_tv_button_press (GtkWidget *widget,
 
 	/* right-click */
 	if (event->button == 3) {
-
+		trash_path = get_trash_path(baobab.selected_path);
+		dir_path = g_path_get_dirname(baobab.selected_path);
+		if (strcmp(trash_path, dir_path)==0)
+			is_trash = TRUE;
 		if (get_NB_page () == VIEW_TREE)
-			popupmenu_list (path, event);
+			popupmenu_list (path, event, is_trash);
 		if (get_NB_page () == VIEW_SEARCH)
-			popupmenu_list_search (path, event);
+			popupmenu_list_search (path, event, is_trash);
 
+		g_free(trash_path);
+		g_free(dir_path);
 		return FALSE;
 	}
 

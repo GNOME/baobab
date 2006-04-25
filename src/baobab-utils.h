@@ -39,8 +39,8 @@ gboolean show_bars (GtkTreeModel *model,
 void message (gchar *, GtkWidget *);
 gint messageyesno (gchar *messaggio, GtkWidget *parent);
 gboolean baobab_check_dir (const gchar *);
-void popupmenu_list (GtkTreePath *path, GdkEventButton *event);
-void popupmenu_list_search (GtkTreePath *path, GdkEventButton *event);
+void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash);
+void popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_trash);
 void open_nautilus (GtkMenuItem *, gpointer );
 void dialog_search (void);
 void switch_view (gint);

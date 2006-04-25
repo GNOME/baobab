@@ -364,9 +364,9 @@ baobab_check_dir (const gchar *dirname)
 }
 
 void
-popupmenu_list (GtkTreePath *path, GdkEventButton *event)
+popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 {
-	GtkWidget *pmenu, *open, *trash, *sep, *allfiles, *graph_map;
+	GtkWidget *pmenu, *open, *trash, *sep, *allfiles, *graph_map, *remove;
 	gchar *path_to_string;
 	GtkWidget *image;
 
@@ -375,7 +375,12 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event)
 
 	pmenu = gtk_menu_new ();
 	open = gtk_image_menu_item_new_from_stock ("gtk-open", NULL);
-	trash = gtk_image_menu_item_new_from_stock ("gtk-delete", NULL);
+	remove = gtk_image_menu_item_new_with_label(_("Remove from Trash"));
+	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (remove), image);
+	trash = gtk_image_menu_item_new_with_label(_("Move to Trash"));
+	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
 	graph_map = gtk_image_menu_item_new_with_label (_("Folder graphical map"));
 	image = gtk_image_new_from_stock ("gtk-select-color", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (graph_map), image);
@@ -388,6 +393,8 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event)
 			  G_CALLBACK (open_file_cb), NULL);
 	g_signal_connect (trash, "activate",
 			  G_CALLBACK (trash_dir_cb), NULL);
+	g_signal_connect (remove, "activate",
+			  G_CALLBACK (trash_dir_cb), NULL);
 	g_signal_connect (allfiles, "activate",
 			  G_CALLBACK (list_all_cb), NULL);
 	g_signal_connect (graph_map, "activate",
@@ -396,48 +403,55 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event)
 	gtk_container_add (GTK_CONTAINER (pmenu), open);
 	gtk_container_add (GTK_CONTAINER (pmenu), allfiles);
 	gtk_container_add (GTK_CONTAINER (pmenu), graph_map);
-	gtk_container_add (GTK_CONTAINER (pmenu), sep);
-	gtk_container_add (GTK_CONTAINER (pmenu), trash);
+	
+	if (baobab.is_local) {
+		gtk_container_add (GTK_CONTAINER (pmenu), sep);
+		if (is_trash)
+			gtk_container_add (GTK_CONTAINER (pmenu), remove);
+		else
+			gtk_container_add (GTK_CONTAINER (pmenu), trash);		
+	}
+	
 	gtk_widget_show_all (pmenu);
 	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
 			event->button, event->time);
 }
 
 void
-popupmenu_list_search (GtkTreePath *path, GdkEventButton *event)
+popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 {
-	GtkWidget *pmenu, *trash, *open, *sep;
-	GtkTreeIter iter;
+	GtkWidget *pmenu, *trash, *open, *sep, *remove;
+	GtkWidget *image;
 
-	if (baobab.selected_path) {
-		g_free (baobab.selected_path);
-		baobab.selected_path = NULL;
-	}
-
-	gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model_search),
-				 &iter, path);
-	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model_search), &iter,
-			    COL_FULLPATH, &baobab.selected_path, -1);
-
-	if (strcmp (baobab.selected_path, "") == 0)
-		return;
 
 	pmenu = gtk_menu_new ();
 	open = gtk_image_menu_item_new_from_stock ("gtk-open", NULL);
-	trash = gtk_image_menu_item_new_from_stock ("gtk-delete", NULL);
+	remove = gtk_image_menu_item_new_with_label(_("Remove from Trash"));
+	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (remove), image);
+	trash = gtk_image_menu_item_new_with_label(_("Move to Trash"));
+	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
 	sep = gtk_separator_menu_item_new ();
 
 	g_signal_connect (open, "activate",
 			  G_CALLBACK (open_file_cb), NULL);
 	g_signal_connect (trash, "activate",
 			  G_CALLBACK (trash_file_cb), NULL);
+	g_signal_connect (remove, "activate",
+			  G_CALLBACK (trash_file_cb), NULL);
 
 	gtk_container_add (GTK_CONTAINER (pmenu), open);
-	gtk_widget_show (open);
-	gtk_container_add (GTK_CONTAINER (pmenu), sep);
-	gtk_widget_show (sep);
-	gtk_container_add (GTK_CONTAINER (pmenu), trash);
-	gtk_widget_show (trash);
+	
+	if (baobab.is_local) {
+		gtk_container_add (GTK_CONTAINER (pmenu), sep);
+		if (is_trash)
+			gtk_container_add (GTK_CONTAINER (pmenu), remove);
+		else
+			gtk_container_add (GTK_CONTAINER (pmenu), trash);		
+	}
+	
+	gtk_widget_show_all (pmenu);
 	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
 			event->button, event->time);
 }
