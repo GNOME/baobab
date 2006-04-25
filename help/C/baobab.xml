@@ -121,8 +121,37 @@
   <sect1 id="baobab-usage"> 
     <title>Usage</title>
 
-    <para>FIXME</para>
- 
+    <para><application>&app;</application> can be started in three ways:</para>
+	 <itemizedlist>
+    <listitem><para>from Gnome menu <menuchoice><guimenu>Applications</guimenu><guimenuitem>Accessories</guimenuitem></menuchoice>;</para>
+    		</listitem>
+    <listitem><para>from a terminal window;</para>
+    		</listitem>
+    <listitem><para>from Nautilus "Open with..." ;</para>
+    		</listitem>
+    </itemizedlist> 
+
+	<para>If launched from Gnome menu, <application>&app;</application> starts and remains in a stand-by state, waiting for user action. 
+	The user can then:</para>
+	<itemizedlist>
+    <listitem><para>start a full filesystem scan;</para>
+    		</listitem>
+    <listitem><para>select a specific local directory branch to scan</para>
+    		</listitem>
+    <listitem><para>select a remote server and folder to scan</para>
+    		</listitem>
+    <listitem><para>search for a file</para>
+    		</listitem>
+    <listitem><para>set preferences</para>
+    		</listitem>
+	</itemizedlist>
+	
+<para><guilabel>NOTE:</guilabel> If you run a full filesystem scan, <application>&app;</application> window will start drawing the tree as soon as the thread starts scanning the filesystem. If any large partition is mounted on the filesystem, that will be scanned too.
+
+</para>
+<para>If you want to start <application>&app;</application> from a terminal window, just type:</para> 
+  
+<para><command>baobab <i>&lt;full_path_to_a_directory&gt;</i></command></para>  
   </sect1>
 
 </article>
