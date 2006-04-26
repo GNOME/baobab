@@ -112,17 +112,21 @@
   <sect1 id="baobab-introduction"> 
     <title>Introduction</title> 
 
-      <para>FIXME</para>
+      <para><application>&app;</application> is is a graphical, menu-driven
+      application to analyse disk usage in any Gnome environment. <application>&app;</application> can easily scan 
+       either the whole filesystem tree, or a specific user-requested directory 
+       branch (local or remote). </para>
+       <para>It also auto-detects in real-time any changes 
+       made to your home directory as far as any mounted/unmounted device. 
+       <application>&app;</application> also provides a full graphical treemap 
+       window for each selected folder.</para>
 
   </sect1>
 
-<!-- ================ Usage ================================ -->
+<!-- ================ Getting Started ================================ -->
+	<sect1 id="baobab-getting-started">
+	<title>Getting Started</title>
 
-  <sect1 id="baobab-usage"> 
-    <title>Usage</title>
-
-	<sect2 id="baobab-open">
-    	<title>To Start the Application</title>
     <para><application>&app;</application> can be started in three ways:</para>
 	 <itemizedlist>
     <listitem><para>from Gnome menu <menuchoice><guimenu>Applications</guimenu><guimenuitem>Accessories</guimenuitem></menuchoice>;</para>
@@ -133,8 +137,31 @@
     		</listitem>
     </itemizedlist> 
 
-	<para>If launched from Gnome menu, <application>&app;</application> starts and remains in a stand-by state, waiting for user action. 
-	The user can then:</para>
+
+<para>If you want to start <application>&app;</application> from a terminal window, just type:</para> 
+  
+<para><command>baobab &lt;full_path_to_a_directory&gt;</command>, then press <keycap>Return</keycap>.</para>  
+<para></para> 
+	<para>If launched from Gnome menu, <application>&app;</application> starts and remains in a stand-by state, waiting for user action.</para> 
+    <para>When you start <application>&app;</application> from the Gnome Menu, the following window is displayed.</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="baobab-fig"> 
+	<title>&app; Window</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject>
+	    <imagedata fileref="figures/baobab_window.png" format="PNG"/> 
+	    </imageobject>
+	    <textobject> 
+	      <phrase>Shows &app; main window. Contains menubar, display area, scrollbars, and statusbar. </phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+
+<para>The user can then:</para>
 	<itemizedlist>
     <listitem><para>start a full filesystem scan;</para>
     		</listitem>
@@ -148,13 +175,60 @@
     		</listitem>
 	</itemizedlist>
 	
-<para><guilabel>NOTE:</guilabel> If you run a full filesystem scan, <application>&app;</application> window will start drawing the tree as soon as the thread starts scanning the filesystem. If any large partition is mounted on the filesystem, that will be scanned too.
+	<note><para>If you run a full filesystem scan, 
+	<application>&app;</application> window will start drawing the tree as soon 
+	as the thread starts scanning the filesystem. If any large partition is mounted 
+	on the filesystem, that will be scanned too.</para></note>
 
-</para>
-<para>If you want to start <application>&app;</application> from a terminal window, just type:</para> 
-  
-<para><command>baobab <i>&lt;full_path_to_a_directory&gt;</i></command></para>  
-</sect2>  
+</sect1>
+
+<!-- ================ Usage ================================ -->
+
+  <sect1 id="baobab-usage"> 
+  <title>Usage</title>
+
+    <para>FIXME</para>
   </sect1>
 
+<!-- ================ Treemaps ================================ -->
+
+  <sect1 id="baobab-treemaps"> 
+  <title>Treemaps</title>
+
+    <para><guilabel>Treemap</guilabel> concepts have been developed by Ben Shneiderman in the '90s.
+    Read his <ulink type="http" url="http://www.cs.umd.edu/hcil/treemap-history/index.shtml">vision on treemaps</ulink>.</para>
+    
+       <!-- ==== Figure ==== -->
+      <figure id="baobab-fig"> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject>
+	    <imagedata fileref="figures/baobab_treemaps.png" format="PNG"/> 
+	    </imageobject>
+	    <textobject> 
+	      <phrase>Treemap's theory. Shows 2 treemap diagrams </phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+  
+    
+    <para>Figure shows an example of treemap's theory. Each node 
+    (as shown in the tree diagram) has a name (a letter) and an associated size 
+    (a number). The size of leaves may represent for instance the size of individual 
+    files, the size of non-leaf nodes is the sum of the sizes of its children.</para> 
+    
+    <para>The treemap is constructed via recursive subdivision of the initial rectangle. 
+    The size of each sub-rectangle corresponds to the size of the node. 
+    The direction of subdivision alternates per level: first horizontally, 
+    next vertically, etcetera. As a result, the initial rectangle is partitioned 
+    into smaller rectangles, such that the size of each rectangle reflects the size 
+    of the leaf. The structure of the tree is also reflected in the treemap, 
+    as a result of its construction. Color and annotation can
+	be used to give extra information about the leaves.</para>
+
+	<note><para>Treemaps are very effective when size is the most important feature to be 
+	displayed.</para></note>
+  </sect1>
 </article>
