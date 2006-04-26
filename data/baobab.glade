@@ -51,7 +51,7 @@
 		      <signal name="activate" handler="on_menuallfs_activate" last_modification_time="Tue, 05 Jul 2005 08:47:26 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image341">
+			<widget class="GtkImage" id="image356">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-harddisk</property>
 			  <property name="icon_size">1</property>
@@ -72,7 +72,7 @@
 		      <signal name="activate" handler="on_menuscandir_activate" last_modification_time="Tue, 05 Jul 2005 08:47:26 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image342">
+			<widget class="GtkImage" id="image357">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-directory</property>
 			  <property name="icon_size">1</property>
@@ -93,7 +93,7 @@
 		      <signal name="activate" handler="on_menu_scan_rem_activate" last_modification_time="Fri, 18 Nov 2005 18:20:25 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image343">
+			<widget class="GtkImage" id="image358">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-network</property>
 			  <property name="icon_size">1</property>
@@ -143,7 +143,7 @@
 		      <accelerator key="F" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image344">
+			<widget class="GtkImage" id="image359">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-find</property>
 			  <property name="icon_size">1</property>
@@ -224,7 +224,7 @@
 			      <property name="visible">True</property>
 			      <property name="label" translatable="yes">_Name</property>
 			      <property name="use_underline">True</property>
-			      <property name="active">True</property>
+			      <property name="active">False</property>
 			      <signal name="activate" handler="on_sort_alfa_activate" last_modification_time="Fri, 08 Jul 2005 20:16:01 GMT"/>
 			    </widget>
 			  </child>
@@ -234,7 +234,7 @@
 			      <property name="visible">True</property>
 			      <property name="label" translatable="yes">_Size</property>
 			      <property name="use_underline">True</property>
-			      <property name="active">True</property>
+			      <property name="active">False</property>
 			      <property name="group">menu_sort_alfa</property>
 			      <signal name="activate" handler="on_by_sort_size_activate" last_modification_time="Fri, 08 Jul 2005 20:16:01 GMT"/>
 			    </widget>
@@ -245,7 +245,7 @@
 			      <property name="visible">True</property>
 			      <property name="label" translatable="yes">_Type</property>
 			      <property name="use_underline">True</property>
-			      <property name="active">True</property>
+			      <property name="active">False</property>
 			      <property name="group">menu_sort_alfa</property>
 			      <signal name="activate" handler="on_by_type1_activate" last_modification_time="Thu, 04 Aug 2005 13:23:50 GMT"/>
 			    </widget>
@@ -293,6 +293,28 @@
 
 	      <child>
 		<widget class="GtkMenu" id="help1_menu">
+
+		  <child>
+		    <widget class="GtkImageMenuItem" id="helpcontents">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">_Contents</property>
+		      <property name="use_underline">True</property>
+		      <signal name="activate" handler="on_helpcontents_activate" last_modification_time="Wed, 26 Apr 2006 07:44:52 GMT"/>
+		      <accelerator key="F1" modifiers="0" signal="activate"/>
+
+		      <child internal-child="image">
+			<widget class="GtkImage" id="image360">
+			  <property name="visible">True</property>
+			  <property name="stock">gtk-help</property>
+			  <property name="icon_size">1</property>
+			  <property name="xalign">0.5</property>
+			  <property name="yalign">0.5</property>
+			  <property name="xpad">0</property>
+			  <property name="ypad">0</property>
+			</widget>
+		      </child>
+		    </widget>
+		  </child>
 
 		  <child>
 		    <widget class="GtkImageMenuItem" id="about">

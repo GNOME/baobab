@@ -484,7 +484,6 @@ on_view_sb_activate (GtkCheckMenuItem *checkmenuitem,
 void
 on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-
 	GtkTreeIter iter;
 	GtkTreePath *path;
 	gchar *path_to_string;
@@ -502,5 +501,10 @@ on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data)
 
 	gtk_tree_path_free(path);
 	graph_map_cb(NULL, path_to_string);
+}
 
+void
+on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
+{
+	baobab_help_display (GTK_WINDOW (baobab.window), "baobab.xml", NULL);
 }

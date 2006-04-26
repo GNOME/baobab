@@ -75,5 +75,6 @@ void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_view_tb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
 void on_view_sb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
 void on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data);
+void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
 
 #endif /* __BAOBAB_CALLBACKS_H__ */

@@ -36,6 +36,7 @@
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
+#include <libgnome/gnome-help.h>
 
 #include "baobab.h"
 #include "baobab-treeview.h"
@@ -915,4 +916,39 @@ baobab_load_pixbuf (const gchar *filename)
 	g_free (pathname);
 
 	return pixbuf;
+}
+
+gboolean
+baobab_help_display (GtkWindow   *parent,
+		     const gchar *file_name,
+		     const gchar *link_id)
+{
+	GError *error = NULL;
+	gboolean ret;
+
+	ret = gnome_help_display (file_name,
+				  link_id,
+				  &error);
+
+	if (error != NULL) {
+		GtkWidget *dialog;
+
+		dialog = gtk_message_dialog_new (parent,
+						 GTK_DIALOG_DESTROY_WITH_PARENT,
+						 GTK_MESSAGE_ERROR,
+						 GTK_BUTTONS_CLOSE, 
+						 _("There was an error displaying help."));
+
+		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+							  error->message);
+
+		g_signal_connect (G_OBJECT (dialog), "response",
+				  G_CALLBACK (gtk_widget_destroy), NULL);
+
+		gtk_widget_show (dialog);
+
+		g_error_free (error);
+	}
+
+	return ret;
 }
