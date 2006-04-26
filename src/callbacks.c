@@ -337,7 +337,8 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 				    5, &filesize, -1);
 		gtk_tree_store_remove (GTK_TREE_STORE (baobab.model),
 				       &iter);
-		contents_changed ();
+		if (baobab.bbEnableHomeMonitor)
+			contents_changed ();
 	}
 }
 
