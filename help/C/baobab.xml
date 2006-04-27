@@ -190,6 +190,45 @@
     <para>FIXME</para>
   </sect1>
 
+
+<!-- ============= Preferences =============================== -->
+  <sect1 id="baobab-preferences">
+    <title>Preferences</title>
+    
+    <para>To change the <application>&app;</application> application
+    preferences, choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></menuchoice>.</para>
+ 
+   <!-- ==== Figure ==== -->
+      <figure id="baobab-preferences-fig"> 
+      	<title>&app; Preferences Window</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject>
+	    <imagedata fileref="figures/baobab_prefs.png" format="PNG"/> 
+	    </imageobject>
+	    <textobject> 
+	      <phrase>Preferences window </phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+  
+  <sect2 id="baobab-scan-preferences">
+      <title>Select devices to be scanned</title>
+  <para>In the first part of the Preferences window, all detected mounted devices 
+  are listed. Click on the checkbox to include/exclude the partition into the 
+  filesystem scanning operations.  </para>
+  <note><para>The device mounted on "/" cannot be excluded from the scan.</para></note>
+  </sect2>
+ 
+   <sect2 id="baobab-monitor-preferences">
+      <title>Enable monitoring of home</title>
+      <para>If this option is checked, <application>&app;</application> will 
+      constantly monitor any external changes to home directory and warn 
+      the user if a file is added/removed.</para>  
+   </sect2>  
+	</sect1>
 <!-- ================ Treemaps ================================ -->
 
   <sect1 id="baobab-treemaps"> 
