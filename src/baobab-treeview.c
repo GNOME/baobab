@@ -201,14 +201,15 @@ on_tv_button_press (GtkWidget *widget,
 	if (event->button == 3) {
 		trash_path = get_trash_path(baobab.selected_path);
 		dir_path = g_path_get_dirname(baobab.selected_path);
-		if (strcmp(trash_path, dir_path)==0)
-			is_trash = TRUE;
+		if (trash_path)
+			if (strcmp(trash_path, dir_path)==0)
+				is_trash = TRUE;
 		if (get_NB_page () == VIEW_TREE)
 			popupmenu_list (path, event, is_trash);
 		if (get_NB_page () == VIEW_SEARCH)
 			popupmenu_list_search (path, event, is_trash);
 
-		g_free(trash_path);
+		if (trash_path) g_free(trash_path);
 		g_free(dir_path);
 		return FALSE;
 	}
