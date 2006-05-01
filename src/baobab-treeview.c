@@ -209,7 +209,7 @@ on_tv_button_press (GtkWidget *widget,
 		if (get_NB_page () == VIEW_SEARCH)
 			popupmenu_list_search (path, event, is_trash);
 
-		if (trash_path) g_free(trash_path);
+		g_free(trash_path);
 		g_free(dir_path);
 		return FALSE;
 	}
