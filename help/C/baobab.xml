@@ -187,7 +187,87 @@
   <sect1 id="baobab-usage"> 
   <title>Usage</title>
 
-    <para>FIXME</para>
+	<sect2 id="baobab-fullscan">
+      <title>Full filesystem scan</title>
+    <para>To start a full filesystem scan select <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Filesystem</guimenuitem></menuchoice> 
+    from the menu, or press on the <guibutton>Filesystem</guibutton> toolbar button.</para>
+
+	<para>When the scanning process ends up, you will get the full tree of your filesystem,
+	like the one in the next Figure.</para>    
+
+    <!-- ==== Figure ==== -->
+      <figure id="baobab-fullscan-fig"> 
+	<title>&app; Full filesystem scan</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject>
+	    <imagedata fileref="figures/baobab_fullscan.png" format="PNG"/> 
+	    </imageobject>
+	    <textobject> 
+	      <phrase>Shows &app; full filesystem scan window. Contains menubar, display area, scrollbars, and statusbar. </phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    
+    	<note><para>When you run a full filesystem scan, 
+	<application>&app;</application> window will start drawing the tree as soon 
+	as the thread starts scanning the filesystem. If any large partition is mounted 
+	on the filesystem, that will be scanned too.</para></note>
+    
+    <para><application>&app;</application> will display sizes in the 
+    directory tree as allocated space. This means that the displayed sizes refer 
+    to the actual disk usage and not to the apparent directory size. 
+    If you want to view the apparent file size, click on the toolbar's checkbox named 
+    <guibutton>Allocated space</guibutton>.</para>
+    
+    <warning><application>&app;</application> will not count the /proc dir, nor any file size that is 
+    not related to a "plain" file, so symlinks, character blocks, device blocks 
+    will not be part of the directory size.</warning>
+   
+    <para>Hard-links are managed in a different way: this first hardlink is 
+    counted as a normal file, while the subsequent links to the same inode device 
+    are not counted in the total, but highlighted in the right-hand column of the 
+    window.</para>
+        </sect2>
+	
+	<sect2 id="baobab-folderscan">
+      <title>Single folder scan</title>
+
+    <para>To start a single folder scan select 
+    <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Selected Folder</guimenuitem></menuchoice> 
+    from the menu, or press on the <guibutton>Folder</guibutton> toolbar button.</para>
+
+	</sect2>
+
+	<sect2 id="baobab-remotescan">
+      <title>Remote scan</title>
+      
+      <para>If you need to scan a remote server-folder, just click on the toolbar 
+      icon <guibutton>Network</guibutton> or select <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Remote Folder</guimenuitem></menuchoice>
+      from the menu and you will get the following dialog box. <application>&app;</application> 
+      can connect to a server through ssh, ftp, smb, http and https.</para>
+ 
+     <!-- ==== Figure ==== -->
+      <figure id="baobab-remote-fig"> 
+		<title>&app; Remote folder scan</title> 
+		<screenshot> 
+	 	 <mediaobject> 
+	  	  <imageobject>
+	   	 <imagedata fileref="figures/baobab_remote.png" format="PNG"/> 
+	   	 </imageobject>
+	   	 <textobject> 
+	    	  <phrase>Shows &app; remote folder dialog window. </phrase> 
+	   	 </textobject> 
+	 	 </mediaobject> 
+		</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+   
+	</sect2> 
+
+<para>...to be continued...</para>
   </sect1>
 
 
