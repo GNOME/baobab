@@ -421,8 +421,15 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 void
 popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 {
-	GtkWidget *pmenu, *trash, *open, *sep, *remove;
+	GtkWidget *pmenu, *trash, *open, *sep, *remove, *scan;
 	GtkWidget *image;
+	GtkTreeIter iter;
+	gchar *file_type;
+
+	gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model_search),
+				 &iter, path);
+	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model_search), &iter,
+			    COL_FILETYPE, &file_type, -1);
 
 
 	pmenu = gtk_menu_new ();
@@ -433,6 +440,9 @@ popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_tra
 	trash = gtk_image_menu_item_new_with_label(_("Move to Trash"));
 	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
+	scan = gtk_image_menu_item_new_with_label(_("Scan Folder"));
+	image = gtk_image_new_from_icon_name("baobab", GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM (scan), image);
 	sep = gtk_separator_menu_item_new ();
 
 	g_signal_connect (open, "activate",
@@ -441,9 +451,15 @@ popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_tra
 			  G_CALLBACK (trash_file_cb), NULL);
 	g_signal_connect (remove, "activate",
 			  G_CALLBACK (trash_file_cb), NULL);
+	g_signal_connect (scan, "activate",
+			  G_CALLBACK (scan_folder_cb), NULL);
+
 
 	gtk_container_add (GTK_CONTAINER (pmenu), open);
 	
+	if (strcmp(file_type,"x-directory/normal")==0)
+		gtk_container_add (GTK_CONTAINER (pmenu), scan);
+		
 	if (baobab.is_local) {
 		gtk_container_add (GTK_CONTAINER (pmenu), sep);
 		if (is_trash)
@@ -452,6 +468,7 @@ popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_tra
 			gtk_container_add (GTK_CONTAINER (pmenu), trash);		
 	}
 	
+	g_free(file_type);
 	gtk_widget_show_all (pmenu);
 	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
 			event->button, event->time);

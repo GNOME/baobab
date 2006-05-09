@@ -1,3 +1,12 @@
+2006-05-09  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab-utils.c: (popupmenu_list_search):
+	* src/callbacks.c: (scan_folder_cb):
+	* src/callbacks.h:
+
+	Added new menu item in list/search window popupmenu to start
+        scanning a folder directly from the list/search window
+
 2006-05-01  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/baobab-treeview.c: (on_tv_button_press):
@@ -34,7 +43,8 @@
 	* src/baobab-utils.c: (popupmenu_list), (popupmenu_list_search):
 	* src/baobab-utils.h:
 
-	Fixed: #339521
+	Fixed: #339521: reworked logic to "delete" or "move to trash" a 
+        file/folder
 
 2006-04-25  Fabio Marzocca  <thesaltydog@gmail.com>
 

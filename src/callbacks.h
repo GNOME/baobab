@@ -53,6 +53,7 @@ void on_esci1_activate (GtkObject *object, gpointer user_data);
 gboolean on_delete_activate (GtkWidget *widget, GdkEvent *event, gpointer user_data);
 void open_file_cb (GtkMenuItem *pmenu, gpointer dummy);
 void trash_file_cb (GtkMenuItem *pmenu, gpointer dummy);
+void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
 void graph_map_cb (GtkMenuItem *pmenu, gchar * path_to_string);
 void trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy);
 void list_all_cb (GtkMenuItem *pmenu, gpointer dummy);

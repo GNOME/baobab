@@ -509,3 +509,21 @@ on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
 	baobab_help_display (GTK_WINDOW (baobab.window), "baobab.xml", NULL);
 }
+
+void 
+scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
+{
+	g_assert (!dummy);
+	g_assert (baobab.selected_path);
+
+	GnomeVFSURI *vfs_uri;
+
+	vfs_uri = gnome_vfs_uri_new (baobab.selected_path);
+
+	if (!gnome_vfs_uri_exists (vfs_uri)) {
+		message (_("The folder does not exist."), baobab.window);
+	}
+	gnome_vfs_uri_unref (vfs_uri);
+	
+	start_proc_on_dir (baobab.selected_path);
+}
