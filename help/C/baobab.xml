@@ -185,11 +185,11 @@
 <!-- ================ Usage ================================ -->
 
   <sect1 id="baobab-usage"> 
-  <title>Usage</title>
+    <title>Usage</title>
 
-	<sect2 id="baobab-fullscan">
+    <sect2 id="baobab-fullscan">
       <title>Full filesystem scan</title>
-    <para>To start a full filesystem scan select <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Filesystem</guimenuitem></menuchoice> 
+        <para>To start a full filesystem scan select <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Filesystem</guimenuitem></menuchoice> 
     from the menu, or press on the <guibutton>Filesystem</guibutton> toolbar button.</para>
 
 	<para>When the scanning process ends up, you will get the full tree of your filesystem,
@@ -222,9 +222,9 @@
     If you want to view the apparent file size, click on the toolbar's checkbox named 
     <guibutton>Allocated space</guibutton>.</para>
     
-    <warning><application>&app;</application> will not count the /proc dir, nor any file size that is 
-    not related to a "plain" file, so symlinks, character blocks, device blocks 
-    will not be part of the directory size.</warning>
+    <warning><para><application>&app;</application> will not count the /proc dir, nor
+    any file size that is not related to a "plain" file, so symlinks, character blocks,
+    device blocks will not be part of the directory size.</para></warning>
    
     <para>Hard-links are managed in a different way: this first hardlink is 
     counted as a normal file, while the subsequent links to the same inode device 
@@ -251,7 +251,7 @@
  
      <!-- ==== Figure ==== -->
       <figure id="baobab-remote-fig"> 
-		<title>&app; Remote folder scan</title> 
+        <title>&app; Remote folder scan</title> 
 		<screenshot> 
 	 	 <mediaobject> 
 	  	  <imageobject>
@@ -267,7 +267,6 @@
    
 	</sect2> 
 
-<para>...to be continued...</para>
   </sect1>
 
 
@@ -319,6 +318,7 @@
     
        <!-- ==== Figure ==== -->
       <figure id="baobab-treemap-fig"> 
+        <title>&app; Treemap Window</title>
 	<screenshot> 
 	  <mediaobject> 
 	    <imageobject>
