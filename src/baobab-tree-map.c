@@ -1,11 +1,8 @@
 /*
- **************************************************************************
- *            baobab-tree-map.c
+ * baobab-tree-map.c
+ * This file is part of baobab
  *
- *  Copyright  2005-2006  Fabio Marzocca <thesaltydog@gmail.com>
- *  
- *
- *  Draw a graphical treemap from a hierarchical data structure
+ * Copyright (C) 2005-2006 Fabio Marzocca  <thesaltydog@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +18,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, 
  * Boston, MA  02110-1301  USA
- ***************************************************************************
  */
 
 #ifdef HAVE_CONFIG_H
@@ -121,6 +117,8 @@ draw_rect (BaobabTreeMap *tm,
 	   guint                color,
 	   gchar               *tip)
 {
+	GtkWidget *widget;
+
 	gnome_canvas_item_new (tm->priv->group,
                                gnome_canvas_rect_get_type(),
 			       "x1", R->x1,
@@ -135,11 +133,11 @@ draw_rect (BaobabTreeMap *tm,
 	tm->priv->total_elements++;
 
 	/* setup the event box for tooltips */
-	if ((R->x2-R->x1)< 1.5 || (R->y2-R->y1)< 1.5)
+	if ((R->x2 - R->x1) < 1.5 || (R->y2 - R->y1) < 1.5)
 		return;
 
-	GtkWidget * widget = gtk_event_box_new ();
-	gtk_event_box_set_visible_window ((GtkEventBox*)widget, FALSE);
+	widget = gtk_event_box_new ();
+	gtk_event_box_set_visible_window (GTK_EVENT_BOX (widget), FALSE);
 	gtk_tooltips_set_tip (tm->priv->tooltips, widget, tip, NULL);
 
     	setup_widget_item(tm,gnome_canvas_item_new (tm->priv->group,
@@ -148,7 +146,7 @@ draw_rect (BaobabTreeMap *tm,
                            "y", R->y1,
                            "width", R->x2-R->x1,
                            "height", R->y2-R->y1,
-                           "widget", widget,									 
+                           "widget", widget,						 
                            NULL));
 
 	gtk_widget_show(widget);
@@ -220,18 +218,14 @@ loop_treemap (BaobabTreeMap *tm,
 	} while (gtk_tree_model_iter_next(tm->priv->model,&cur_iter));		
 }
 
-
-
 static void
 baobab_tree_map_init (BaobabTreeMap *treemap)
 {
-
 	treemap->priv = BAOBAB_TREE_MAP_GET_PRIVATE (treemap);
 
 	treemap->priv->tooltips = gtk_tooltips_new ();
 	g_object_ref (treemap->priv->tooltips);
 	gtk_object_sink (GTK_OBJECT(treemap->priv->tooltips));
-
 }
 
 /**************  Start of public functions *****************************/
@@ -284,7 +278,6 @@ baobab_tree_map_refresh(BaobabTreeMap *tm, gint new_depth)
 				tm->priv->COL_SIZE,
 				new_depth);
 }
-
 
 gint
 baobab_tree_map_get_total_elements (BaobabTreeMap *tm)
@@ -343,7 +336,6 @@ baobab_tree_map_get_selected_item_name(BaobabTreeMap *tm)
 {
 	return (const gchar *)tm->priv->item_name;
 }
-
 
 BaobabTreeMap *
 baobab_tree_map_new (void)

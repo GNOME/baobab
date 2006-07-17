@@ -265,16 +265,17 @@ on_delete_activate (GtkWidget *widget,
 void
 open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
+	GnomeVFSURI *vfs_uri;
+
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
-
-	GnomeVFSURI *vfs_uri;
 
 	vfs_uri = gnome_vfs_uri_new (baobab.selected_path);
 
 	if (!gnome_vfs_uri_exists (vfs_uri)) {
 		message (_("The document does not exist."), baobab.window);
 	}
+
 	gnome_vfs_uri_unref (vfs_uri);
 	open_file_with_application (baobab.selected_path);
 }
@@ -513,16 +514,17 @@ on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
 void 
 scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
+	GnomeVFSURI *vfs_uri;
+
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
-
-	GnomeVFSURI *vfs_uri;
 
 	vfs_uri = gnome_vfs_uri_new (baobab.selected_path);
 
 	if (!gnome_vfs_uri_exists (vfs_uri)) {
 		message (_("The folder does not exist."), baobab.window);
 	}
+
 	gnome_vfs_uri_unref (vfs_uri);
 	
 	start_proc_on_dir (baobab.selected_path);

@@ -144,6 +144,11 @@ on_tv_button_press (GtkWidget *widget,
 		    GdkEventButton *event,
 		    gpointer data)
 {
+	GtkTreePath *path;
+	GtkTreeIter iter;
+	gchar *trash_path, *dir_path;
+	gboolean is_trash = FALSE;
+
 	if (get_NB_page () == VIEW_TREE) {
 		if (baobab.CONTENTS_CHANGED_DELAYED) {
 			baobab.CONTENTS_CHANGED_DELAYED = FALSE;
@@ -153,15 +158,10 @@ on_tv_button_press (GtkWidget *widget,
 		}
 	}
 
-	GtkTreePath *path;
-	GtkTreeIter iter;
-	gchar * trash_path, *dir_path;
-	gboolean is_trash=FALSE;;
-
 	gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),
 					       event->x, event->y,
 					       &path, NULL, NULL, NULL);
-	if (!path) 
+	if (!path)
 		return TRUE;		
 
 	/* check if a valid and scanned folder has been selected */
@@ -171,7 +171,6 @@ on_tv_button_press (GtkWidget *widget,
 	}
 
 	if (get_NB_page () == VIEW_TREE) {
-
 		gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &iter,
 					 path);
 		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
@@ -195,7 +194,6 @@ on_tv_button_press (GtkWidget *widget,
 		set_glade_widget_sens("menu_treemap",FALSE);
 	else
 		set_glade_widget_sens("menu_treemap",TRUE);
-
 
 	/* right-click */
 	if (event->button == 3) {
