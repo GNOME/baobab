@@ -841,6 +841,11 @@ main (int argc, char *argv[])
 	baobab_init ();
 
 	baobab_get_filesystem (&g_fs);
+	if (g_fs.total == 0) {
+		g_print("No mount points detected! Aborting...\n");
+		goto closing;
+		}
+	
 	set_label_scan (&g_fs);
 
 	baobab.window = glade_xml_get_widget (baobab.main_xml, "baobab_window");
@@ -884,6 +889,7 @@ main (int argc, char *argv[])
 
 	gtk_main ();
 
+ closing:
 	baobab_shutdown ();
 
 	glibtop_close ();
