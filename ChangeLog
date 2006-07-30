@@ -1,5 +1,11 @@
 2006-07-30  Fabio Marzocca  <thesaltydog@gmail.com>
 
+	* src/baobab.c: (is_excluded_dir), (baobab_init):
+	Avoid exclusion of root dir from scanning and
+	from manual gconf entry (#348960)
+	
+2006-07-30  Fabio Marzocca  <thesaltydog@gmail.com>
+
 	* src/baobab.c: (main):
 	Trapping div by zero error when no mountpoints
 	are detected.

@@ -637,6 +637,7 @@ list_find (gconstpointer a, gconstpointer b)
 gboolean
 is_excluded_dir (const gchar *dir)
 {
+		
 	return (baobab.bbExcludedDirs &&
 		(g_slist_find_custom (baobab.bbExcludedDirs, dir, list_find) != NULL));
 }
@@ -738,6 +739,15 @@ baobab_init (void)
 				 NULL, NULL, NULL);				 
 	baobab.bbExcludedDirs = gconf_client_get_list (baobab.gconf_client, PROPS_SCAN_KEY,
 						       GCONF_VALUE_STRING, NULL);
+	if (is_excluded_dir("/")) {
+		baobab.bbExcludedDirs = g_slist_delete_link (baobab.bbExcludedDirs, 
+						g_slist_find_custom(baobab.bbExcludedDirs, 
+							"/", list_find));
+		gconf_client_set_list (baobab.gconf_client, PROPS_SCAN_KEY,
+						GCONF_VALUE_STRING, 
+						baobab.bbExcludedDirs, NULL);
+	}
+	
 	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
 							    PROPS_ENABLE_HOME_MONITOR,
 							    NULL);
