@@ -472,6 +472,7 @@ first_row (void)
 
 	gtk_tree_store_append (baobab.model, &firstiter, NULL);
 	size = gnome_vfs_format_file_size_for_display (g_fs.used);
+	g_assert(g_fs.total != 0);
 	perc = ((gfloat) g_fs.used * 100) / (gfloat) g_fs.total;
 	g_sprintf (textperc, " %.1f %%", perc);
 	bar = set_bar ((g_fs.used * 100) / g_fs.total);
@@ -739,6 +740,8 @@ baobab_init (void)
 				 NULL, NULL, NULL);				 
 	baobab.bbExcludedDirs = gconf_client_get_list (baobab.gconf_client, PROPS_SCAN_KEY,
 						       GCONF_VALUE_STRING, NULL);
+	
+	/*	Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
 	if (is_excluded_dir("/")) {
 		baobab.bbExcludedDirs = g_slist_delete_link (baobab.bbExcludedDirs, 
 						g_slist_find_custom(baobab.bbExcludedDirs, 
