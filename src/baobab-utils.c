@@ -62,7 +62,7 @@ baobab_get_filesystem (baobab_fs *fs)
 	for (i = 0; i < mountlist.number; ++i) {
 		glibtop_fsusage fsusage;
 
-		if (is_excluded_dir (mountentries[i].mountdir))
+		if (ris_excluded_dir (mountentries[i].mountdir))
 			continue;
 
 		glibtop_get_fsusage (&fsusage, mountentries[i].mountdir);
@@ -251,19 +251,16 @@ show_bars (GtkTreeModel *mdl,
 		gtk_tree_model_get (mdl, &parent, COL_H_ELEMENTS,
 				    &readelements, -1);
 		if (readelements == -1)
-			return TRUE;
+			return FALSE;
 
 		gtk_tree_model_get (mdl, iter, COL_H_ELEMENTS,
 				    &readelements, -1);
 		if (readelements == -1)
-			return TRUE;
-
-		gtk_tree_model_get (mdl, &parent, size_col, &refsize, -1);
-		if (refsize == 0)
 			return FALSE;
 
-		gtk_tree_model_get (mdl, iter, size_col, &size, -1);
-		perc = ((gfloat) size * 100) / (gfloat) refsize;
+		gtk_tree_model_get (mdl, &parent, size_col, &refsize, -1);
+                gtk_tree_model_get (mdl, iter, size_col, &size, -1);
+                perc = (refsize != 0) ? ((gfloat) size * 100) / (gfloat) refsize : 0.0;
 		g_sprintf (textperc, " %.1f %%", perc);
 		sizecstr = gnome_vfs_format_file_size_for_display (size);
 		bar = set_bar (perc);
