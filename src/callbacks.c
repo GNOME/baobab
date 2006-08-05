@@ -49,7 +49,7 @@ on_menuallfs_activate (GtkMenuItem *menuitem, gpointer user_data)
 void
 on_menuscandir_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	dir_select (FALSE, baobab.window);
+	dir_select (baobab.window);
 }
 
 void
@@ -88,41 +88,26 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 void
 on_tbscandir_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	dir_select (FALSE, baobab.window);
+	dir_select (baobab.window);
 }
 
 void
 on_sort_alfa_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	if (get_NB_page () == VIEW_TREE) {
-		gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *)
+	gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *)
 						      baobab.model,
 						      COL_DIR_NAME,
 						      GTK_SORT_ASCENDING);
-	}
-	if (get_NB_page () == VIEW_SEARCH) {
-		gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *)
-						      baobab.model_search,
-						      COL_FULLPATH,
-						      GTK_SORT_ASCENDING);
-	}
+	
 }
 
 void
 on_by_sort_size_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	if (get_NB_page () == VIEW_TREE) {
-		gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *)
+	gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *)
 						      baobab.model,
 						      COL_H_SIZE,
 						      GTK_SORT_DESCENDING);
-	}
-	if (get_NB_page () == VIEW_SEARCH) {
-		gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *)
-						      baobab.model_search,
-						      COL_SIZE,
-						      GTK_SORT_DESCENDING);
-	}
 }
 
 void
@@ -176,83 +161,7 @@ on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data)
 	on_tb_scan_remote_clicked (NULL, NULL);
 }
 
-void
-on_tb_search_clicked (GtkToolButton *toolbutton, gpointer user_data)
-{
-	dialog_search ();
-}
 
-void
-on_radio_allfs_clicked (GtkButton *button, gpointer user_data)
-{
-	GladeXML *dlg_xml = glade_get_widget_tree ((GtkWidget *) button);
-	gtk_widget_set_sensitive (glade_xml_get_widget (dlg_xml, "entry2"),
-				  FALSE);
-	gtk_widget_set_sensitive (glade_xml_get_widget
-				  (dlg_xml, "btn_select_search"), FALSE);
-}
-
-void
-on_radio_dir_clicked (GtkButton *button, gpointer user_data)
-{
-	GladeXML *dlg_xml = glade_get_widget_tree ((GtkWidget *) button);
-	gtk_widget_set_sensitive (glade_xml_get_widget (dlg_xml, "entry2"),
-				  TRUE);
-	gtk_widget_set_sensitive (glade_xml_get_widget
-				  (dlg_xml, "btn_select_search"), TRUE);
-}
-
-void
-on_btn_select_search_clicked (GtkButton *button, gpointer user_data)
-{
-	GtkWidget *dlg = gtk_widget_get_toplevel ((GtkWidget *) button);
-	GladeXML *dlg_xml = glade_get_widget_tree ((GtkWidget *) button);
-	GtkWidget *entry_dir = glade_xml_get_widget (dlg_xml, "entry2");
-	gchar *dirname = dir_select (TRUE, dlg);
-	if (dirname) {
-		gchar *string_to_display =
-		    gnome_vfs_format_uri_for_display (dirname);
-		gtk_entry_set_text (GTK_ENTRY (entry_dir),
-				    string_to_display);
-		g_free (dirname);
-		g_free (string_to_display);
-	}
-}
-
-void
-on_search_for_a_file_activate (GtkMenuItem *menuitem, gpointer user_data)
-{
-	dialog_search ();
-}
-
-void
-on_notebook1_switch_page (GtkNotebook *notebook,
-			  GtkNotebookPage *page,
-			  guint page_num, gpointer user_data)
-{
-	if (page_num == VIEW_SEARCH) {
-		set_glade_widget_sens("by_type1",TRUE);
-		set_glade_widget_sens("by_date1",TRUE);
-		set_glade_widget_sens("ck_allocated",FALSE);
-		set_glade_widget_sens("menu_treemap",FALSE);
-	}
-
-	if (page_num == VIEW_TREE) {
-		set_glade_widget_sens("by_type1",FALSE);
-		set_glade_widget_sens("by_date1",FALSE);
-		if (baobab.is_local)
-			set_glade_widget_sens("ck_allocated",TRUE);
-		if (baobab.CONTENTS_CHANGED_DELAYED) {
-			baobab.CONTENTS_CHANGED_DELAYED = FALSE;
-			if (baobab.STOP_SCANNING) {
-				contents_changed ();
-
-			}
-		}
-	}
-
-	show_label (page_num);
-}
 
 gboolean
 on_delete_activate (GtkWidget *widget,
@@ -280,32 +189,6 @@ open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 	open_file_with_application (baobab.selected_path);
 }
 
-void
-trash_file_cb (GtkMenuItem *pmenu, gpointer dummy)
-{
-	g_assert (!dummy);
-	g_assert (baobab.selected_path);
-
-	if (trash_file (baobab.selected_path)) {
-		GtkTreeIter iter;
-		guint64 filesize;
-		GtkTreeSelection *selection;
-
-		selection =
-		    gtk_tree_view_get_selection ((GtkTreeView *) baobab.
-						 tree_search);
-		gtk_tree_selection_get_selected (selection, NULL, &iter);
-		gtk_tree_model_get ((GtkTreeModel *) baobab.model_search,
-				    &iter, COL_SIZE, &filesize, -1);
-		gtk_list_store_remove (GTK_LIST_STORE
-				       (baobab.model_search), &iter);
-		set_label_search (baobab.number_found_files - 1,
-				  baobab.size_found_files - filesize);
-		show_label (VIEW_SEARCH);
-		if (baobab.bbEnableHomeMonitor)
-			baobab.CONTENTS_CHANGED_DELAYED = TRUE;
-	}
-}
 
 void
 graph_map_cb (GtkMenuItem *pmenu, gchar *path_to_string)
@@ -343,17 +226,6 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 	}
 }
 
-void
-list_all_cb (GtkMenuItem *pmenu, gpointer dummy)
-{
-	g_assert (!dummy);
-	g_assert (baobab.selected_path);
-
-	bbSearchOpt.mod_date = NONE;
-	bbSearchOpt.size_limit = NONE;
-	bbSearchOpt.dont_recurse_dir = TRUE;
-	start_search ("*", baobab.selected_path);
-}
 
 void
 volume_changed (GnomeVFSVolumeMonitor *volume_monitor,
@@ -362,8 +234,7 @@ volume_changed (GnomeVFSVolumeMonitor *volume_monitor,
 	/* filesystem has changed (mounted or unmounted device) */
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
-	if (get_NB_page () == VIEW_TREE)
-		show_label (VIEW_TREE);
+	show_label (VIEW_TREE);
 }
 
 void
@@ -399,26 +270,6 @@ void
 on_pref_menu (GtkMenuItem *menuitem, gpointer user_data)
 {
 	create_props ();
-}
-
-void
-on_by_type1_activate (GtkMenuItem *menuitem, gpointer user_data)
-{
-	if (get_NB_page () == VIEW_SEARCH) {
-		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (baobab.model_search),
-						      COL_FILETYPE,
-						      GTK_SORT_ASCENDING);
-	}
-}
-
-void
-on_by_date1_activate (GtkMenuItem *menuitem, gpointer user_data)
-{
-	if (get_NB_page () == VIEW_SEARCH) {
-		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (baobab.model_search),
-						      COL_LASTACCESS,
-						      GTK_SORT_DESCENDING);
-	}
 }
 
 void

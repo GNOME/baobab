@@ -71,8 +71,7 @@ props_notify (GConfClient *client,
 
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
-	if (get_NB_page () == VIEW_TREE)
-		show_label (VIEW_TREE);
+	show_label (VIEW_TREE);
 	gtk_tree_store_clear (baobab.model);
 	first_row ();
 }

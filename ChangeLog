@@ -1,3 +1,25 @@
+2006-08-05  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* data/baobab.glade:
+	* src/baobab-prefs.c: (props_notify):
+	* src/baobab-scan.c:
+	* src/baobab-scan.h:
+	* src/baobab-treeview.c: (on_tv_cur_changed), (on_tv_button_press),
+	(create_directory_treeview):
+	* src/baobab-treeview.h:
+	* src/baobab-utils.c: (dir_select), (check_menu_sens), (stop_scan),
+	(popupmenu_list), (show_label):
+	* src/baobab-utils.h:
+	* src/baobab.c: (start_proc_on_dir), (baobab_init),
+	(baobab_shutdown), (main):
+	* src/baobab.h:
+	* src/callbacks.c: (on_menuscandir_activate),
+	(on_tbscandir_clicked), (on_sort_alfa_activate),
+	(on_by_sort_size_activate), (volume_changed), (on_pref_menu):
+	* src/callbacks.h:
+
+	Removed file-seach feature (we have gsearchtool!)
+
 2006-08-04  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/baobab-utils.c: (baobab_get_filesystem):

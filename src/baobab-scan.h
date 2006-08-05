@@ -28,7 +28,6 @@
 #include <sys/types.h>
 
 void getDir (const gchar *);
-void searchDir (const gchar *, const gchar *);
 
 /* hardlinks handling */
 
