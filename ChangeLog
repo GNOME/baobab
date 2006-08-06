@@ -1,37 +1,36 @@
-2006-08-05  Fabio Marzocca  <thesaltydog@gmail.com>
+2006-08-06  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* data/baobab.glade:
 	* src/baobab-prefs.c: (props_notify):
-	* src/baobab-scan.c:
+	* src/baobab-scan.c: (loopsearch), (searchDir):
 	* src/baobab-scan.h:
-	* src/baobab-treeview.c: (on_tv_cur_changed), (on_tv_button_press),
-	(create_directory_treeview):
+	* src/baobab-treeview.c: (create_search_model),
+	(on_tv_cur_changed), (on_tv_button_press),
+	(create_directory_treeview), (create_filesearch_treeview):
 	* src/baobab-treeview.h:
 	* src/baobab-utils.c: (dir_select), (check_menu_sens), (stop_scan),
-	(popupmenu_list), (show_label):
+	(show_bars), (popupmenu_list), (popupmenu_list_search),
+	(begin_search), (search_dialog_response), (dialog_search),
+	(save_search_opt), (set_search_opt), (switch_view), (get_NB_page),
+	(show_label), (set_label_search):
 	* src/baobab-utils.h:
-	* src/baobab.c: (start_proc_on_dir), (baobab_init),
+	* src/baobab.c: (start_proc_on_dir), (start_search),
+	(prepare_firstcol), (fill_search_model),
+	(initialize_search_variables), (filter_adv_search), (baobab_init),
 	(baobab_shutdown), (main):
 	* src/baobab.h:
 	* src/callbacks.c: (on_menuscandir_activate),
 	(on_tbscandir_clicked), (on_sort_alfa_activate),
-	(on_by_sort_size_activate), (volume_changed), (on_pref_menu):
+	(on_by_sort_size_activate), (on_tb_search_clicked),
+	(on_radio_allfs_clicked), (on_radio_dir_clicked),
+	(on_btn_select_search_clicked), (on_search_for_a_file_activate),
+	(on_notebook1_switch_page), (trash_file_cb), (list_all_cb),
+	(volume_changed), (on_pref_menu), (on_by_type1_activate),
+	(on_by_date1_activate):
 	* src/callbacks.h:
 
-	Removed file-seach feature (we have gsearchtool!)
+	back out last commit, it should go on a branch
 
-2006-08-04  Fabio Marzocca  <thesaltydog@gmail.com>
-
-	* src/baobab-utils.c: (baobab_get_filesystem):
-	Fixed typo
-
-2006-08-04  Fabio Marzocca  <thesaltydog@gmail.com>
-
-	* src/baobab-utils.c: (baobab_get_filesystem), (show_bars):
-
-	Adding percentage bar to folders belonging to 
-	not fully-scanned branches (patch by Alejandro Garcia Castro)
- 
 2006-07-30  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/baobab.c: (first_row), (baobab_init):
