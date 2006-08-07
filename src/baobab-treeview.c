@@ -62,6 +62,11 @@ create_search_model (void)
 {
 	GtkListStore *mdl;
 	GtkTreeIter iter;
+	gchar *escaped;
+	const gchar *message = N_("Use the Edit->Find menu item "
+				  "or the search toolbar button.");
+
+	escaped = g_markup_printf_escaped ("<i>%s</i>", _(message));
 
 	mdl = gtk_list_store_new (NUM_COLUMNS,
 				  GDK_TYPE_PIXBUF,	/* icon */
@@ -79,9 +84,7 @@ create_search_model (void)
 			    COL1_STRING, " ", COL_FULLPATH, "", -1);
 	gtk_list_store_append (mdl, &iter);
 	gtk_list_store_set (mdl, &iter,
-			    COL1_STRING,
-			    _("<i>Use the Edit->Find menu item "
-			      "or the search toolbar button.</i>"),
+			    COL1_STRING, escaped,
 			    COL_FULLPATH, "", -1);
 
 	/* Defaults to sort-by-size */
