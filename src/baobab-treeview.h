@@ -43,9 +43,21 @@ enum
 	NUM_TREE_COLUMNS
 };
 
-
+/* search model columns */
+enum
+{
+	COL0_ICON,
+	COL1_STRING,
+	COL2_STRING,
+	COL_FULLPATH,
+	COL_LASTACCESS,
+	COL_SIZE,
+	COL_FILETYPE,
+	COL_OWNER,	
+	NUM_COLUMNS
+};
 
 GtkWidget *create_directory_treeview (void);
-
+GtkWidget *create_filesearch_treeview (void);
 
 #endif /* __BAOBAB_TV_H__ */

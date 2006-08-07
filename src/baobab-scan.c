@@ -129,6 +129,74 @@ baobab_hardlinks_array_free (baobab_hardlinks_array *a)
 	g_free (a);
 }
 
+static void
+loopsearch (GnomeVFSURI *vfs_uri_dir, const gchar *search)
+{
+	GList *file_list, *l;
+	gchar *dir;
+	struct BaobabSearchRet bbret;
+	GnomeVFSResult result;
+	GnomeVFSURI *new_uri;
+
+	dir = gnome_vfs_uri_to_string (vfs_uri_dir, GNOME_VFS_URI_HIDE_NONE);
+
+	if (is_excluded_dir (dir))
+		return;
+
+	/* get the GnomeVFSFileInfo stuct for every directory entry */
+	result = gnome_vfs_directory_list_load (&file_list, dir, GNOME_VFS_FILE_INFO_GET_MIME_TYPE);
+	g_free (dir);
+
+	while (gtk_events_pending ())
+		gtk_main_iteration ();
+
+	if (result == GNOME_VFS_OK) {
+		for (l = file_list; l != NULL; l = l->next) {
+			GnomeVFSFileInfo *info = l->data;
+
+			if (baobab.STOP_SCANNING) {
+				gnome_vfs_file_info_list_free (file_list);
+				return;
+			}
+
+			if ((info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_TYPE) == 0)
+				continue;
+
+			if (strcmp (info->name, ".") == 0 ||
+			    strcmp (info->name, "..") == 0)
+				continue;
+
+			new_uri = gnome_vfs_uri_append_file_name (vfs_uri_dir, info->name);
+			dir = gnome_vfs_uri_to_string (new_uri, GNOME_VFS_URI_HIDE_NONE);
+
+			if (fnmatch (search, info->name, FNM_PATHNAME | FNM_PERIOD) == 0) {
+				gchar *string_to_display;
+
+				string_to_display = gnome_vfs_format_uri_for_display (dir);
+				bbret.fullpath = string_to_display;
+				bbret.size = info->size;
+				bbret.lastacc = info->mtime;
+				bbret.owner = info->uid;
+				bbret.alloc_size = info->block_count * 512;
+				bbret.mime_type = info->mime_type;
+				fill_search_model (&bbret);
+				g_free (string_to_display);
+			}
+
+			/* is a directory? */
+			if (info->type == GNOME_VFS_FILE_TYPE_DIRECTORY &&
+			    !bbSearchOpt.dont_recurse_dir) {
+				if (strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/proc") != 0)
+					loopsearch (new_uri, search);
+			}
+
+			gnome_vfs_uri_unref (new_uri);
+			g_free (dir);
+		}
+
+		gnome_vfs_file_info_list_free (file_list);
+	}
+}
 
 static struct allsizes
 loopdir (GnomeVFSURI *vfs_uri_dir,
@@ -283,4 +351,13 @@ getDir (const gchar *uri_dir)
 	gnome_vfs_uri_unref (vfs_uri);
 }
 
+void
+searchDir (const gchar *uri_dir, const gchar *search)
+{
+	GnomeVFSURI *vfs_uri;
 
+	vfs_uri = gnome_vfs_uri_new (uri_dir);
+	loopsearch (vfs_uri, search);
+
+	gnome_vfs_uri_unref (vfs_uri);
+}

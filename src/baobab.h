@@ -53,14 +53,20 @@ struct _baobab_application {
 	GladeXML *main_xml;
   	GtkWidget *window;
   	GtkWidget *tree_view;
+	GtkWidget *tree_search;
 	GtkTreeStore *model;
+	GtkListStore *model_search;
+	GtkTreeStore *search_model;
 	gboolean STOP_SCANNING;
 	GdkPixbuf *green_bar,*yellow_bar,*red_bar;
 	gboolean CONTENTS_CHANGED_DELAYED;
 	GSList *bbExcludedDirs;
 	gboolean bbEnableHomeMonitor;
 	gchar *label_scan;
+	gchar *label_search;
 	GString *last_scan_command;
+	gint number_found_files;
+ 	guint64 size_found_files;
 	gboolean show_allocated;
 	gboolean is_local;
 
@@ -84,14 +90,44 @@ struct chan_data {
 	gchar *dir;
 };
 	
+struct BaobabSearchRet {
+	guint64 size;
+	guint64 alloc_size;
+	gchar *fullpath;
+	time_t lastacc;
+	uid_t owner;
+	gchar *mime_type;
+};
+	
+/* Advanced search options enums */
+enum {
+	NONE = 1,
+	LAST_WEEK = 2,
+	LAST_MONTH = 3,
+	SIZE_SMALL = 2,
+	SIZE_MEDIUM = 3
+};
+
+struct BaobabSearchOpt {
+	GString *filename;
+	GString *dir;
+	gint mod_date;
+	gint size_limit;
+	gboolean dont_recurse_dir;
+	gboolean exact;
+	gboolean search_whole;
+};
 
 /* globals */
 baobab_application baobab;
 baobab_fs g_fs;
+struct BaobabSearchOpt bbSearchOpt;
 
 void set_busy (gboolean busy);
 void start_proc_on_dir (const gchar *);
 void fill_model (struct chan_data *);
+void start_search (const gchar *, const gchar *);
+void fill_search_model (struct BaobabSearchRet *);
 void first_row (void);
 gint list_find (gconstpointer a, gconstpointer b);
 gboolean is_excluded_dir (const gchar *);

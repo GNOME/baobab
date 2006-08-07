@@ -27,7 +27,7 @@
 
 void baobab_get_filesystem (baobab_fs *fs);
 void set_statusbar (const gchar *);
-gchar* dir_select (GtkWidget *);
+gchar* dir_select (gboolean, GtkWidget *);
 void on_toggled (GtkToggleButton *, gpointer);
 GdkPixbuf *set_bar (gfloat );
 void check_menu_sens (gboolean);
@@ -40,9 +40,14 @@ void message (gchar *, GtkWidget *);
 gint messageyesno (gchar *messaggio, GtkWidget *parent);
 gboolean baobab_check_dir (const gchar *);
 void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash);
+void popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_trash);
 void open_nautilus (GtkMenuItem *, gpointer );
+void dialog_search (void);
+void switch_view (gint);
+gint get_NB_page (void);
 void set_label_scan (baobab_fs *);
 void show_label (gint view);
+void set_label_search (gint ,guint64 );
 void open_file_with_application (gchar *file);
 gchar * get_trash_path (const gchar *file);
 gboolean trash_file (const gchar *filename);
