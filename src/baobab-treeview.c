@@ -87,6 +87,8 @@ create_search_model (void)
 			    COL1_STRING, escaped,
 			    COL_FULLPATH, "", -1);
 
+	g_free (escaped);
+
 	/* Defaults to sort-by-size */
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (mdl),
 					      COL_SIZE,
