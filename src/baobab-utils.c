@@ -248,24 +248,29 @@ show_bars (GtkTreeModel *mdl,
 		size_col = (gint) COL_H_SIZE;
 
 	if (gtk_tree_model_iter_parent (mdl, &parent, iter)) {
-		gtk_tree_model_get (mdl, &parent, COL_H_ELEMENTS,
-				    &readelements, -1);
-		if (readelements == -1)
-			return TRUE;
-
 		gtk_tree_model_get (mdl, iter, COL_H_ELEMENTS,
 				    &readelements, -1);
 		if (readelements == -1)
-			return TRUE;
-
-		gtk_tree_model_get (mdl, &parent, size_col, &refsize, -1);
-		if (refsize == 0)
 			return FALSE;
 
-		gtk_tree_model_get (mdl, iter, size_col, &size, -1);
-		perc = ((gfloat) size * 100) / (gfloat) refsize;
+ 		gtk_tree_model_get (mdl, &parent, COL_H_ELEMENTS,
+ 				    &readelements, -1);
+                
+                gtk_tree_model_get (mdl, iter, size_col, &size, -1);
+                sizecstr = gnome_vfs_format_file_size_for_display (size);
+
+ 		if (readelements == -1)
+                  {
+                    gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
+                                        COL_DIR_SIZE, sizecstr, -1);
+                    
+                    g_free (sizecstr);
+                    return FALSE;
+                  }
+
+		gtk_tree_model_get (mdl, &parent, size_col, &refsize, -1);
+                perc = (refsize != 0) ? ((gfloat) size * 100) / (gfloat) refsize : 0.0;
 		g_sprintf (textperc, " %.1f %%", perc);
-		sizecstr = gnome_vfs_format_file_size_for_display (size);
 		bar = set_bar (perc);
 
 		gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
