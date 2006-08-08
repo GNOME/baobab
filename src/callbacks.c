@@ -274,6 +274,8 @@ open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 
 	if (!gnome_vfs_uri_exists (vfs_uri)) {
 		message (_("The document does not exist."), baobab.window);
+		gnome_vfs_uri_unref (vfs_uri);
+		return;
 	}
 
 	gnome_vfs_uri_unref (vfs_uri);
