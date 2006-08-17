@@ -145,27 +145,70 @@ on_toggled (GtkToggleButton *togglebutton, gpointer dialog)
 					  (GTK_FILE_CHOOSER (dialog)));
 }
 
+static GdkPixbuf *
+baobab_load_pixbuf (const gchar *filename)
+{
+	gchar *pathname = NULL;
+	GdkPixbuf *pixbuf;
+	GError *error = NULL;
+
+	g_assert (filename != NULL && filename[0] != '\0');
+
+	pathname = g_build_filename (BAOBAB_PIX_DIR, filename, NULL);
+
+	if (pathname == NULL) {
+		g_warning (_("Couldn't find pixmap file: %s"), filename);
+		return NULL;
+	}
+
+	pixbuf = gdk_pixbuf_new_from_file (pathname, &error);
+	if (pixbuf == NULL) {
+		fprintf (stderr, "Failed to load pixbuf file: %s: %s\n",
+			 pathname, error->message);
+		g_error_free (error);
+	}
+	g_free (pathname);
+
+	return pixbuf;
+}
+
 GdkPixbuf *
 set_bar (gfloat perc)
 {
-	GdkPixbuf *srcpxb = NULL, *destpxb;
-	gint height, width;
+	static GdkPixbuf *white_bar;
+	static GdkPixbuf *green_bar;
+	static GdkPixbuf *yellow_bar;
+	static GdkPixbuf *red_bar;
+	static gint height, width;
+
+	GdkPixbuf *srcpxb, *destpxb;
+	gint perc_width;
+
+	if (white_bar == NULL) {
+		/* init pixbufs */
+		white_bar = baobab_load_pixbuf ("white.png");
+		green_bar = baobab_load_pixbuf ("green.png");
+		yellow_bar = baobab_load_pixbuf ("yellow.png");
+		red_bar = baobab_load_pixbuf ("red.png");
+		height = gdk_pixbuf_get_height (white_bar);
+		width = gdk_pixbuf_get_width (white_bar) - 1;
+	}
 
 	if (perc <= 33.0f)
-		srcpxb = baobab.green_bar;
+		srcpxb = green_bar;
 	else if (perc > 33.0f && perc <= 60.0f)
-		srcpxb = baobab.yellow_bar;
+		srcpxb = yellow_bar;
 	else if (perc > 60.0f)
-		srcpxb = baobab.red_bar;
+		srcpxb = red_bar;
 
-	destpxb = baobab_load_pixbuf ("white.png");
-	height = gdk_pixbuf_get_height (destpxb);
-	width = gdk_pixbuf_get_width (destpxb) - 1;
-	width = (gint) (gfloat) ((width * perc) / 100.0f);	/* if bar width ==50 --> $width = $perc/2 */
+	destpxb = gdk_pixbuf_copy (white_bar);
+
+	/* if bar width == 50 --> $width = $perc/2 */
+	perc_width = (gint) (gfloat) ((width * perc) / 100.0f);
 
 	gdk_pixbuf_copy_area (srcpxb,
 			      1, 1,
-			      width - 2, height - 2,
+			      perc_width - 2, height - 2,
 			      destpxb,
 			      1, 1);
 
@@ -910,34 +953,6 @@ contents_changed (void)
 
 		start_proc_on_dir (baobab.last_scan_command->str);
 	}
-}
-
-GdkPixbuf *
-baobab_load_pixbuf (const gchar *filename)
-{
-	gchar *pathname = NULL;
-	GdkPixbuf *pixbuf;
-	GError *error = NULL;
-
-	if (!filename || !filename[0])
-		return NULL;
-
-	pathname = g_build_filename (BAOBAB_PIX_DIR, filename, NULL);
-
-	if (!pathname) {
-		g_warning (_("Couldn't find pixmap file: %s"), filename);
-		return NULL;
-	}
-
-	pixbuf = gdk_pixbuf_new_from_file (pathname, &error);
-	if (!pixbuf) {
-		fprintf (stderr, "Failed to load pixbuf file: %s: %s\n",
-			 pathname, error->message);
-		g_error_free (error);
-	}
-	g_free (pathname);
-
-	return pixbuf;
 }
 
 gboolean

@@ -52,7 +52,6 @@ void open_file_with_application (gchar *file);
 gchar * get_trash_path (const gchar *file);
 gboolean trash_file (const gchar *filename);
 void contents_changed (void);
-GdkPixbuf * baobab_load_pixbuf (const gchar *filename);
 void set_glade_widget_sens (const gchar *name, gboolean sens);
 gboolean baobab_help_display (GtkWindow *parent, const gchar *file_name, const gchar *link_id);
 

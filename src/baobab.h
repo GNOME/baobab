@@ -58,7 +58,6 @@ struct _baobab_application {
 	GtkListStore *model_search;
 	GtkTreeStore *search_model;
 	gboolean STOP_SCANNING;
-	GdkPixbuf *green_bar,*yellow_bar,*red_bar;
 	gboolean CONTENTS_CHANGED_DELAYED;
 	GSList *bbExcludedDirs;
 	gboolean bbEnableHomeMonitor;

@@ -865,11 +865,6 @@ main (int argc, char *argv[])
 	gtk_window_set_position (GTK_WINDOW (baobab.window),
 				 GTK_WIN_POS_CENTER);
 
-	/* set global pixbufs */
-	baobab.yellow_bar = baobab_load_pixbuf ("yellow.png");
-	baobab.red_bar = baobab_load_pixbuf ("red.png");
-	baobab.green_bar = baobab_load_pixbuf ("green.png");
-
 	baobab.tree_view = create_directory_treeview ();
 	baobab.tree_search = create_filesearch_treeview ();
 	set_label_search (0, 0);
