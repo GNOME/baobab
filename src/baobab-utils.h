@@ -47,12 +47,13 @@ void switch_view (gint);
 gint get_NB_page (void);
 void set_label_scan (baobab_fs *);
 void show_label (gint view);
-void set_label_search (gint ,guint64 );
+void set_label_search (gint , guint64 );
 void open_file_with_application (gchar *file);
 gchar * get_trash_path (const gchar *file);
 gboolean trash_file (const gchar *filename);
 void contents_changed (void);
 void set_glade_widget_sens (const gchar *name, gboolean sens);
+gchar *baobab_gconf_get_string_with_default (GConfClient *client, const gchar *key, const gchar *def);
 gboolean baobab_help_display (GtkWindow *parent, const gchar *file_name, const gchar *link_id);
 
 #endif /* __BAOBAB_UTILS_H__ */

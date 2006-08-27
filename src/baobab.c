@@ -63,10 +63,6 @@ static GdkPixbuf *done_image = NULL;
 
 static gboolean filter_adv_search (struct BaobabSearchRet *);
 static void initialize_search_variables (void);
-static void baobab_toolbar_style (GConfClient *client,
-	      			  guint cnxn_id,
-	      			  GConfEntry *entry,
-	      			  gpointer user_data);
 	      			  
 static gboolean
 scan_is_local (const gchar *uri_dir)
@@ -689,9 +685,9 @@ baobab_toolbar_style (GConfClient *client,
 	gchar *toolbar_setting;
 
 	toolbar = glade_xml_get_widget(baobab.main_xml, "toolbar1");
-	toolbar_setting = gconf_client_get_string (baobab.gconf_client,
-						   SYSTEM_TOOLBAR_STYLE,
-						   NULL);
+	toolbar_setting = baobab_gconf_get_string_with_default (baobab.gconf_client,
+								SYSTEM_TOOLBAR_STYLE,
+								"both");
 
 	if (!strcmp(toolbar_setting, "icons")) {
 		gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_ICONS);
