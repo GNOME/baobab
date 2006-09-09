@@ -71,10 +71,29 @@ props_notify (GConfClient *client,
 
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
-	if (get_NB_page () == VIEW_TREE)
-		show_label (VIEW_TREE);
+	show_label ();
 	gtk_tree_store_clear (baobab.model);
 	first_row ();
+}
+
+static void
+filechooser_response_cb (GtkDialog *dialog,
+                         gint       response_id,
+                         gpointer   user_data)
+{
+	switch (response_id) {
+		case GTK_RESPONSE_HELP:
+			baobab_help_display (GTK_WINDOW (baobab.window), 
+			                     "baobab.xml", NULL);
+			break;
+		case GTK_RESPONSE_CLOSE:
+			if (props_changed) { 
+				save_gconf (); 
+			}
+		default:
+			gtk_widget_destroy (GTK_WIDGET (dialog));
+			break;
+	}
 }
 
 void
@@ -106,13 +125,12 @@ create_props (void)
 				"toggled", G_CALLBACK (enable_home_cb),
 				NULL);
 
-	if (gtk_dialog_run (GTK_DIALOG (dlg)) == GTK_RESPONSE_CLOSE) {
-		if (props_changed)
-			save_gconf ();
-	}
+	g_signal_connect (dlg, "response",
+		    	  G_CALLBACK (filechooser_response_cb),
+		    	  NULL);
 
+  	gtk_widget_show_all (dlg);
 	g_object_unref (dlg_xml);
-	gtk_widget_destroy (dlg);
 }
 
 GtkListStore *

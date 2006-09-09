@@ -37,6 +37,7 @@
 
 #include "baobab.h"
 #include "baobab-scan.h"
+#include "baobab-spinner.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
 #include "callbacks.h"
@@ -58,11 +59,12 @@ static GQueue *iterstack = NULL;
 #define BUSY_IMAGE_PATH		BAOBAB_PIX_DIR "busy.gif"
 #define DONE_IMAGE_PATH		BAOBAB_PIX_DIR "done.png"
 
-static GdkPixbufAnimation *busy_image = NULL;
-static GdkPixbuf *done_image = NULL;
+static GtkWidget *spinner = NULL;
 
-static gboolean filter_adv_search (struct BaobabSearchRet *);
-static void initialize_search_variables (void);
+static void baobab_toolbar_style (GConfClient *client,
+	      			  guint cnxn_id,
+	      			  GConfEntry *entry,
+	      			  gpointer user_data);
 	      			  
 static gboolean
 scan_is_local (const gchar *uri_dir)
@@ -86,34 +88,11 @@ scan_is_local (const gchar *uri_dir)
 void
 set_busy (gboolean busy)
 {
-	GtkWidget *image;
-	GError *err = NULL;
-
-	image = glade_xml_get_widget (baobab.main_xml, "busyimage");
-
-	if (busy) {
-		if (busy_image == NULL) {
-			busy_image = gdk_pixbuf_animation_new_from_file (BUSY_IMAGE_PATH, &err);
-			if (err != NULL) {
-				g_warning ("Could not load \"busy\" animation (%s)\n",  err->message);
-				g_error_free (err);
-				return;
-			}
-		}
-
-		gtk_image_set_from_animation (GTK_IMAGE (image), busy_image);
+	if (busy == TRUE) {
+		baobab_spinner_start (BAOBAB_SPINNER (spinner));
 	}
 	else {
-		if (done_image == NULL) {
-			done_image = gdk_pixbuf_new_from_file (DONE_IMAGE_PATH, &err);
-			if (err != NULL) {
-				g_warning ("Could not load \"done\" image (%s)\n",  err->message);
-				g_error_free (err);
-				return;
-			}
-		}
-
-		gtk_image_set_from_pixbuf (GTK_IMAGE (image), done_image);
+		baobab_spinner_stop (BAOBAB_SPINNER (spinner));
 	}
 }
 
@@ -125,8 +104,6 @@ start_proc_on_dir (const gchar *dir)
 {
 	GdkCursor *cursor = NULL;
 	GtkWidget *ck_allocated;
-
-	switch_view (VIEW_TREE);
 
 	if (!baobab_check_dir (dir))
 		return;
@@ -182,211 +159,6 @@ start_proc_on_dir (const gchar *dir)
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 }
 
-void
-start_search (const gchar *searchname, const gchar *dir)
-{
-	GdkCursor *cursor = NULL;
-
-	switch_view (VIEW_SEARCH);
-	initialize_search_variables ();
-	baobab.STOP_SCANNING = FALSE;
-	set_busy (TRUE);
-	check_menu_sens (TRUE);
-
-	/* change the cursor */
-	if (baobab.window->window) {
-		cursor = gdk_cursor_new (GDK_WATCH);
-		gdk_window_set_cursor (baobab.window->window, cursor);
-	}
-
-	gtk_list_store_clear (baobab.model_search);
-
-	if (dir == NULL)
-		searchDir ("file:///", searchname);
-	else
-		searchDir (dir, searchname);
-
-	/* cursor clean up */
-	if (baobab.window->window) {
-		gdk_window_set_cursor (baobab.window->window, NULL);
-		if (cursor)
-			gdk_cursor_unref (cursor);
-	}
-
-	set_busy (FALSE);
-	check_menu_sens (FALSE);
-	set_statusbar (_("Ready"));
-
-	set_label_search (baobab.number_found_files,
-			  baobab.size_found_files);
-	if (get_NB_page () == VIEW_SEARCH)
-		show_label (VIEW_SEARCH);
-	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_search));
-	baobab.STOP_SCANNING = TRUE;
-	bbSearchOpt.dont_recurse_dir = FALSE;
-}
-
-static gchar *
-get_last_mod (time_t timeacc)
-{
-	gchar snum[21];
-	struct tm *lt;
-	size_t len;
-
-	lt = localtime (&timeacc);
-	len = strftime (snum, sizeof (snum), "%Y-%m-%d %R:%S", lt);
-
-	return g_strndup (snum, len);
-}
-
-static gchar *
-get_owner (uid_t own_id)
-{
-	struct passwd *pw;
-
-	pw = getpwuid (own_id);
-
-	return g_strdup (pw != NULL ? pw->pw_name : _("Unknown"));
-}
-
-static void
-prepare_firstcol (GString *text, struct BaobabSearchRet *bbret)
-{
-	gchar *basename, *path, *last_mod, *owner, *size, *alloc_size;
-
-	check_UTF (text);
-	basename = g_path_get_basename (text->str);
-	path = strdup (text->str);
-
-	last_mod = get_last_mod (bbret->lastacc);
-	owner = get_owner (bbret->owner);
-
-	size = gnome_vfs_format_file_size_for_display (bbret->size);
-	alloc_size = gnome_vfs_format_file_size_for_display (bbret->alloc_size);
-
-	g_string_printf (text,
-			 "<big><b>%s</b></big>\n"
-			 "<small>%s %s</small>\n"
-		         "<small>%s %s    %s %s</small>\n"
-			 "<small>%s (%s %s) - %s</small>",
-			 basename,
-			 _("Full path:"), path,
-			 _("Last Modification:"), last_mod,
-			 _("Owner:"), owner,
-			 size, _("Allocated bytes:"), alloc_size,
-			 gnome_vfs_mime_get_description (bbret->mime_type));
-
-	g_free (basename);
-	g_free (path);
-	g_free (last_mod);
-	g_free (owner);
-	g_free (size);
-	g_free (alloc_size);
-}
-
-/*
- * fill the search model
- */
-void
-fill_search_model (struct BaobabSearchRet *bbret)
-{
-	GtkTreeIter iter;
-	GString *testo1;
-	GdkPixbuf *picon;
-	char *gicon;
-
-	if (!filter_adv_search (bbret))
-		return;
-
-	gicon =
-	    gnome_icon_lookup_sync (gtk_icon_theme_get_default (), NULL,
-				    bbret->fullpath, NULL,
-				    GNOME_ICON_LOOKUP_FLAGS_NONE, NULL);
-	picon =
-	    gtk_icon_theme_load_icon (gtk_icon_theme_get_default (), gicon,
-				      36, GTK_ICON_LOOKUP_USE_BUILTIN,
-				      NULL);
-
-	testo1 = g_string_new (bbret->fullpath);
-	prepare_firstcol (testo1, bbret);
-
-	gtk_list_store_append (baobab.model_search, &iter);
-	gtk_list_store_set (baobab.model_search, &iter,
-			    COL0_ICON, picon, COL1_STRING, testo1->str,
-			    /* COL2_STRING,testo2->str, */
-			    COL_FULLPATH, bbret->fullpath,
-			    COL_FILETYPE, bbret->mime_type,
-			    COL_SIZE, bbret->size,
-			    COL_LASTACCESS, bbret->lastacc,
-			    COL_OWNER, bbret->owner, -1);
-
-	baobab.number_found_files++;
-	baobab.size_found_files += bbret->size;
-	g_object_unref (picon);
-	g_string_free (testo1, TRUE);
-}
-
-void
-initialize_search_variables (void)
-{
-	baobab.number_found_files = 0;
-	baobab.size_found_files = 0;
-}
-
-static gboolean
-filter_adv_search (struct BaobabSearchRet *bbret)
-{
-	gboolean flag = TRUE;
-	GDate *filedate, *today;
-	gint days;
-	gint maxinterval = 100;
-
-	if ((bbSearchOpt.mod_date == NONE) &&
-	     bbSearchOpt.size_limit == NONE) {
-		return TRUE;
-	}
-
-	switch (bbSearchOpt.mod_date) {
-
-	case LAST_WEEK:
-	case LAST_MONTH:
-		filedate = g_date_new ();
-		today = g_date_new ();
-		g_date_set_time (filedate, (GTime) bbret->lastacc);
-		g_date_set_time (today, time (NULL));
-		days = g_date_days_between (filedate, today);
-		if (bbSearchOpt.mod_date == LAST_WEEK) {
-			maxinterval = 7;
-		}
-		if (bbSearchOpt.mod_date == LAST_MONTH) {
-			maxinterval = 30;
-		}
-		if (days > maxinterval) {
-			flag = FALSE;
-		}
-
-		g_date_free (today);
-		g_date_free (filedate);
-		break;
-	}
-
-	switch (bbSearchOpt.size_limit) {
-
-	case SIZE_SMALL:
-		if (bbret->size >= (guint64) 102400)
-			flag = FALSE;
-		break;
-
-	case SIZE_MEDIUM:
-		if (bbret->size >= (guint64) 1048576)
-			flag = FALSE;
-
-		break;
-	}
-
-	return flag;
-}
-
 /*
  * pre-fills model during scanning
  */
@@ -397,6 +169,8 @@ prefill_model (struct chan_data *data)
 	char *basename;
 	GtkTreeIter iter, iterparent;
 	GtkTreePath *path;
+	GdkPixbuf *bar;
+	gchar *str;
 
 	cdir = g_string_new ("");
 
@@ -443,16 +217,21 @@ prefill_model (struct chan_data *data)
 	/* check UTF-8 and locale */
 	check_UTF (cdir);
 
-	g_string_append (cdir, " &lt;== ");
-	g_string_append (cdir, _("scanning..."));
+	bar = set_bar (0.0f);
+	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning..."));
+	
+	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
 	gtk_tree_store_set (baobab.model, &iter, COL_DIR_NAME, cdir->str,
-			    COL_H_FULLPATH, "", COL_H_ELEMENTS, -1, -1);
+			    COL_H_FULLPATH, "", COL_H_ELEMENTS, -1, 
+			    COL_DIR_SIZE, str, COL_BAR, bar,
+			    COL_PERC, " -.- %", COL_ELEMENTS, str, -1);
 
 	while (gtk_events_pending ()) {
 		gtk_main_iteration ();
 	}
 
 	g_string_free (cdir, TRUE);
+	g_free(str);
 }
 
 /*
@@ -466,6 +245,7 @@ first_row (void)
 	gchar textperc[10];
 	GdkPixbuf *bar;
 
+	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, NULL);
 	size = gnome_vfs_format_file_size_for_display (g_fs.used);
 	g_assert(g_fs.total != 0);
@@ -504,6 +284,7 @@ fill_model (struct chan_data *data)
 	GString *hardlinks;
 	GString *basename;
 	GString *elementi;
+	GdkPixbuf *bar;
 	char *size;
 	char *alloc_size;
 	char *basename_cstr;
@@ -519,8 +300,6 @@ fill_model (struct chan_data *data)
 	g_free (basename_cstr);
 
 	check_UTF (basename);
-	g_string_prepend (basename, "<b>");
-	g_string_append (basename, "</b>");
 
 	iter = pop_iter_from_stack ();
 
@@ -537,21 +316,25 @@ fill_model (struct chan_data *data)
 
 	elementi = g_string_new ("");
 	g_string_printf (elementi,
-			 ngettext ("% 5d object", "% 5d objects",
+			 ngettext ("% 5d item", "% 5d items",
 				   data->elements), data->elements);
 
 	size = gnome_vfs_format_file_size_for_display (data->size);
 	alloc_size = gnome_vfs_format_file_size_for_display (data->alloc_size);
+	bar = set_bar (0.0f);
 
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, basename->str, COL_H_FULLPATH,
-			    data->dir, COL_H_PERC, 0.0, COL_DIR_SIZE,
+			    data->dir, COL_BAR, bar, COL_H_PERC, 0.0, 
+			    COL_PERC, "-.- %", COL_DIR_SIZE,
 			    baobab.show_allocated ? alloc_size : size,
 			    COL_H_SIZE, data->size, COL_ELEMENTS,
 			    elementi->str, COL_H_ELEMENTS, data->elements,
 			    COL_HARDLINK, hardlinks->str, COL_H_HARDLINK,
 			    data->tempHLsize, COL_H_ALLOCSIZE,
 			    data->alloc_size, -1);
+
+	g_object_unref (bar);
 
 	while (gtk_events_pending ()) {
 		gtk_main_iteration ();
@@ -719,7 +502,6 @@ baobab_init (void)
 
 	/* Misc */
 	baobab.label_scan = NULL;
-	baobab.label_search = NULL;
 	baobab.last_scan_command = g_string_new ("/");
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 	baobab.STOP_SCANNING = TRUE;
@@ -763,15 +545,6 @@ baobab_init (void)
 
 	/* set the toolbar style */
 	baobab_toolbar_style(NULL, 0, NULL, NULL);
-	
-	/* initialize bbSearchOpt variables */
-	bbSearchOpt.filename = g_string_new ("");
-	bbSearchOpt.dir = g_string_new (g_get_home_dir ());
-	bbSearchOpt.mod_date = NONE;
-	bbSearchOpt.size_limit = NONE;
-	bbSearchOpt.exact = TRUE;
-	bbSearchOpt.search_whole = FALSE;
-	bbSearchOpt.dont_recurse_dir = FALSE;
 
 	/* start VFS monitoring */
 	handle_home = NULL;
@@ -788,9 +561,9 @@ baobab_init (void)
 					contents_changed_cb, NULL);
 
 	if (result != GNOME_VFS_OK) {
-		message (_("Cannot initialize GNOME VFS monitoring\n"
-			   "Some real-time auto-detect function will not be available!"),
-			 NULL);
+		message (_("Could not initialize GNOME VFS monitoring"),
+			 _("Changes to your home folder will not be monitored."),
+			 GTK_MESSAGE_WARNING, NULL);
 		g_print ("homedir:%s\n",
 			 gnome_vfs_result_to_string (result));
 	}
@@ -800,10 +573,7 @@ static void
 baobab_shutdown (void)
 {
 	g_free (baobab.label_scan);
-	g_free (baobab.label_search);
 	g_string_free (baobab.last_scan_command, TRUE);
-	g_string_free (bbSearchOpt.filename, TRUE);
-	g_string_free (bbSearchOpt.dir, TRUE);
 
 	if (handle_mtab)
 		gnome_vfs_monitor_cancel (handle_mtab);
@@ -817,17 +587,15 @@ baobab_shutdown (void)
 
 	if (baobab.gconf_client)
 		g_object_unref (baobab.gconf_client);
-
-	if (done_image)
-		g_object_unref (done_image);
-	if (busy_image)
-		g_object_unref (busy_image);
 }
 
 int
 main (int argc, char *argv[])
 {
 	GnomeProgram *program;
+	GtkToolItem *item;
+	GtkToolItem *separator;
+	GtkWidget *toolbar;
 
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -856,22 +624,31 @@ main (int argc, char *argv[])
 		}
 	
 	set_label_scan (&g_fs);
+	show_label ();
 
 	baobab.window = glade_xml_get_widget (baobab.main_xml, "baobab_window");
 	gtk_window_set_position (GTK_WINDOW (baobab.window),
 				 GTK_WIN_POS_CENTER);
 
 	baobab.tree_view = create_directory_treeview ();
-	baobab.tree_search = create_filesearch_treeview ();
-	set_label_search (0, 0);
 
-	switch_view (VIEW_SEARCH);
-	switch_view (VIEW_TREE);
-	show_label (VIEW_TREE);
-	set_busy (FALSE);
+	toolbar = glade_xml_get_widget(baobab.main_xml, "toolbar1");
+	
+	separator = gtk_separator_tool_item_new ();
+	gtk_separator_tool_item_set_draw (GTK_SEPARATOR_TOOL_ITEM (separator), FALSE);
+	gtk_tool_item_set_expand (GTK_TOOL_ITEM (separator), TRUE);	
+	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (separator));
+	gtk_widget_show (GTK_WIDGET (separator));
+
+	spinner = baobab_spinner_new ();
+	item = gtk_tool_item_new ();		
+	gtk_container_add (GTK_CONTAINER (item), spinner);
+  	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
+	gtk_widget_show (GTK_WIDGET (spinner));
+	gtk_widget_show (GTK_WIDGET (item));
 
 	/* set allocated space checkbox */
-	gtk_toggle_button_set_active ((GtkToggleButton *)
+	gtk_check_menu_item_set_active ((GtkCheckMenuItem *)
 				      glade_xml_get_widget (baobab.
 							    main_xml,
 							    "ck_allocated"),

@@ -40,7 +40,8 @@
 
 struct _BaobabRemoteConnectDialogDetails {
 	
-	GtkWidget *table;
+	GtkWidget *required_table;
+	GtkWidget *optional_table;
 	
 	GtkWidget *type_combo;
 	GtkWidget *uri_entry;
@@ -122,7 +123,7 @@ remote_connect (BaobabRemoteConnectDialog *dialog)
 		if (vfs_uri == NULL) {
 			GtkWidget *dlg;
 
-			error_message = g_strdup_printf (_("\"%s\" is not a valid location."), uri);
+			error_message = g_strdup_printf (_("\"%s\" is not a valid location"), uri);
 			
 			dlg = gtk_message_dialog_new (GTK_WINDOW (dialog),
 						      GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -157,7 +158,7 @@ remote_connect (BaobabRemoteConnectDialog *dialog)
 						      GTK_DIALOG_DESTROY_WITH_PARENT,
 						      GTK_MESSAGE_ERROR,
 						      GTK_BUTTONS_OK,
-						      _("You must enter a name for the server."));
+						      _("You must enter a name for the server"));
 
 			gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dlg),
 					_("Please enter a name and try again."));
@@ -352,49 +353,50 @@ setup_for_type (BaobabRemoteConnectDialog *dialog)
 {
 	int type, i;
 	gboolean show_share, show_port, show_user, show_domain;
-	GtkWidget *label, *table;
+	GtkWidget *align, *label, *table;
+	gchar *str;
 
 	type = gtk_combo_box_get_active (GTK_COMBO_BOX (dialog->details->type_combo));
 
 	if (dialog->details->uri_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->required_table),
 				      dialog->details->uri_entry);
 	}
 	if (dialog->details->server_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->required_table),
 				      dialog->details->server_entry);
 	}
 	if (dialog->details->share_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->optional_table),
 				      dialog->details->share_entry);
 	}
 	if (dialog->details->port_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->optional_table),
 				      dialog->details->port_entry);
 	}
 	if (dialog->details->folder_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->optional_table),
 				      dialog->details->folder_entry);
 	}
 	if (dialog->details->user_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->optional_table),
 				      dialog->details->user_entry);
 	}
 	if (dialog->details->domain_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->optional_table),
 				      dialog->details->domain_entry);
 	}
 	if (dialog->details->name_entry->parent != NULL) {
-		gtk_container_remove (GTK_CONTAINER (dialog->details->table),
+		gtk_container_remove (GTK_CONTAINER (dialog->details->optional_table),
 				      dialog->details->name_entry);
 	}
 	/* Destroy all labels */
-	gtk_container_foreach (GTK_CONTAINER (dialog->details->table),
+	gtk_container_foreach (GTK_CONTAINER (dialog->details->required_table),
 			       (GtkCallback) gtk_widget_destroy, NULL);
 
 	
 	i = 1;
-	table = dialog->details->table;
+	table = dialog->details->required_table;
 	
 	if (type == TYPE_URI) {
 		label = gtk_label_new_with_mnemonic (_("_Location (URI):"));
@@ -444,7 +446,7 @@ setup_for_type (BaobabRemoteConnectDialog *dialog)
 		break;
 	}
 
-	label = gtk_label_new_with_mnemonic (_("_Server:"));
+	label = gtk_label_new_with_mnemonic (_("S_erver:"));
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 	gtk_widget_show (label);
 	gtk_table_attach (GTK_TABLE (table), label,
@@ -463,19 +465,46 @@ setup_for_type (BaobabRemoteConnectDialog *dialog)
 
 	i++;
 
-	label = gtk_label_new (_("Optional information:"));
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_widget_show (label);
-	gtk_table_attach (GTK_TABLE (table), label,
+	align = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
+	gtk_alignment_set_padding (GTK_ALIGNMENT (align), 12, 0, 0, 0);
+	gtk_table_attach (GTK_TABLE (table), align,
 			  0, 2,
 			  i, i+1,
 			  GTK_FILL, GTK_FILL,
 			  0, 0);
-
+	gtk_widget_show (align);
+	
 	i++;
 	
+	str = g_strdup_printf ("<b>%s</b>", _("Optional Information"));
+	label = gtk_label_new (str);
+	g_free (str);
+	
+	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+	gtk_widget_show (label);
+	gtk_container_add (GTK_CONTAINER (align), label);
+	
+	align = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
+	gtk_alignment_set_padding (GTK_ALIGNMENT (align), 0, 0, 12, 0);
+	gtk_table_attach (GTK_TABLE (table), align,
+			  0, 2,
+			  i, i+1,
+			  GTK_FILL, GTK_FILL,
+			  0, 0);
+	gtk_widget_show (align);
+	
+	
+	dialog->details->optional_table = table = gtk_table_new (1, 2, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 12);
+	gtk_widget_show (table);
+	gtk_container_add (GTK_CONTAINER (align), table);
+		
+	i = 0;
+		
 	if (show_share) {
-		label = gtk_label_new_with_mnemonic (_("_Share:"));
+		label = gtk_label_new_with_mnemonic (_("Sh_are:"));
 		gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 		gtk_widget_show (label);
 		gtk_table_attach (GTK_TABLE (table), label,
@@ -536,7 +565,7 @@ setup_for_type (BaobabRemoteConnectDialog *dialog)
 	i++;
 
 	if (show_user) {
-		label = gtk_label_new_with_mnemonic (_("_User Name:"));
+		label = gtk_label_new_with_mnemonic (_("_User name:"));
 		gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 		gtk_widget_show (label);
 		gtk_table_attach (GTK_TABLE (table), label,
@@ -557,7 +586,7 @@ setup_for_type (BaobabRemoteConnectDialog *dialog)
 	}
 
 	if (show_domain) {
-		label = gtk_label_new_with_mnemonic (_("_Domain Name:"));
+		label = gtk_label_new_with_mnemonic (_("_Domain name:"));
 		gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 		gtk_widget_show (label);
 		gtk_table_attach (GTK_TABLE (table), label,
@@ -609,15 +638,17 @@ port_insert_text (GtkEditable *editable,
 static void
 baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 {
+	GtkWidget *align;
 	GtkWidget *label;
 	GtkWidget *table;
 	GtkWidget *combo;
 	GtkWidget *hbox;
 	GtkWidget *vbox;
+	gchar *str;
 	
 	dialog->details = g_new0 (BaobabRemoteConnectDialogDetails, 1);
 
-	gtk_window_set_title (GTK_WINDOW (dialog), _("Connect to a Remote Folder"));
+	gtk_window_set_title (GTK_WINDOW (dialog), _("Scan Remote Folder"));
 	gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
 	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 	gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 2);
@@ -634,7 +665,11 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 			    hbox, FALSE, TRUE, 0);
 	gtk_widget_show (hbox);
 	
-	label = gtk_label_new_with_mnemonic (_("Service _type:"));
+	str = g_strdup_printf ("<b>%s</b>", _("Service _type:"));
+	label = gtk_label_new_with_mnemonic (str);
+	g_free (str);
+	
+	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 	gtk_widget_show (label);
 	gtk_box_pack_start (GTK_BOX (hbox),
@@ -671,18 +706,18 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 			    hbox, FALSE, TRUE, 0);
 	gtk_widget_show (hbox);
 
-	label = gtk_label_new_with_mnemonic ("    ");
-	gtk_widget_show (label);
+	align = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
+	gtk_alignment_set_padding (GTK_ALIGNMENT (align), 0, 0, 12, 0);
 	gtk_box_pack_start (GTK_BOX (hbox),
-			    label, FALSE, FALSE, 0);
+			    align, TRUE, TRUE, 0);
+	gtk_widget_show (align);
 	
 	
-	dialog->details->table = table = gtk_table_new (5, 2, FALSE);
+	dialog->details->required_table = table = gtk_table_new (1, 2, FALSE);
 	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
 	gtk_table_set_col_spacings (GTK_TABLE (table), 12);
 	gtk_widget_show (table);
-	gtk_box_pack_start (GTK_BOX (hbox),
-			    table, TRUE, TRUE, 0);
+	gtk_container_add (GTK_CONTAINER (align), table);
 
 	//dialog->details->uri_entry = nautilus_location_entry_new ();
 	dialog->details->uri_entry = gtk_entry_new();
@@ -711,7 +746,7 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 			       GTK_STOCK_CANCEL,
 			       GTK_RESPONSE_CANCEL);
 	gtk_dialog_add_button (GTK_DIALOG (dialog),
-			       _("C_onnect"),
+			       _("_Scan"),
 			       RESPONSE_CONNECT);
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog),
 					 RESPONSE_CONNECT);

@@ -43,11 +43,6 @@
 #include "baobab-utils.h"
 #include "callbacks.h"
 
-static int radio_group_get_active (GtkRadioButton *);
-static void radio_group_set_active (GtkRadioButton *rb, int btn);
-static void set_search_opt (GladeXML *dlg_xml);
-static void save_search_opt (GladeXML *dlg_xml);
-
 void
 baobab_get_filesystem (baobab_fs *fs)
 {
@@ -89,52 +84,66 @@ set_statusbar (const gchar *text)
 		gtk_main_iteration ();
 }
 
+void
+filechooser_cb (GtkWidget * chooser,
+                 gint response,
+                 gpointer data)
+{
+	if (response != GTK_RESPONSE_OK) {
+		gtk_widget_hide (chooser);
+	}
+	else {
+		char *filename;
+
+		filename = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
+		gtk_widget_hide (chooser);
+		start_proc_on_dir (filename);
+		g_free (filename);
+	}
+	
+}
+
+
 /*
  * GtkFileChooser to select a directory to scan
  */
 gchar *
 dir_select (gboolean SEARCH, GtkWidget *parent)
 {
-	GtkWidget *dialog;
+	static GtkWidget *file_chooser = NULL;
 	GtkWidget *toggle;
 
-	dialog = gtk_file_chooser_dialog_new (_("Select a Folder"),
+	if (file_chooser == NULL) {
+		file_chooser = gtk_file_chooser_dialog_new (_("Select Folder"),
 					      GTK_WINDOW (parent),
 					      GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
 					      GTK_STOCK_CANCEL,
 					      GTK_RESPONSE_CANCEL,
 					      GTK_STOCK_OPEN,
-					      GTK_RESPONSE_ACCEPT, NULL);
+					      GTK_RESPONSE_OK, NULL);
 
-	gtk_file_chooser_set_show_hidden (GTK_FILE_CHOOSER (dialog), TRUE);
-	gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog),
+		gtk_file_chooser_set_show_hidden (GTK_FILE_CHOOSER (file_chooser), FALSE);
+		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (file_chooser),
 					     g_get_home_dir ());
-	/* add extra widget */
-	toggle = gtk_check_button_new_with_label (_("Show hidden folders"));
-	gtk_widget_show (toggle);
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), TRUE);
-	g_signal_connect ((gpointer) toggle, "toggled",
-			  G_CALLBACK (on_toggled), dialog);
-	gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (dialog),
-					   toggle);
+		/* add extra widget */
+		toggle = gtk_check_button_new_with_mnemonic (_("_Show hidden folders"));
+		gtk_widget_show (toggle);
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), FALSE);
+		g_signal_connect ((gpointer) toggle, "toggled",
+				  G_CALLBACK (on_toggled), file_chooser);
+		gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (file_chooser),
+						   toggle);
 
+		g_signal_connect (G_OBJECT (file_chooser), "response",
+				  G_CALLBACK (filechooser_cb), NULL);
 
-	if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT) {
-		char *filename;
-
-		filename = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (dialog));
-		gtk_widget_destroy (dialog);
-		if (!SEARCH) {
-			start_proc_on_dir (filename);
-			g_free (filename);
-			return NULL;
-		} else {
-			return (filename);
-		}
-	} else {
-		gtk_widget_destroy (dialog);
-		return NULL;
+		gtk_window_set_modal (GTK_WINDOW (file_chooser), TRUE);
+		gtk_window_set_position (GTK_WINDOW (file_chooser), GTK_WIN_POS_CENTER_ON_PARENT);
 	}
+	
+	gtk_widget_show (GTK_WIDGET (file_chooser));
+
+	return NULL;
 }
 
 void
@@ -181,7 +190,8 @@ set_bar (gfloat perc)
 	static GdkPixbuf *red_bar;
 	static gint height, width;
 
-	GdkPixbuf *srcpxb, *destpxb;
+	GdkPixbuf *srcpxb = NULL;
+	GdkPixbuf *destpxb;
 	gint perc_width;
 
 	if (white_bar == NULL) {
@@ -235,36 +245,34 @@ check_menu_sens (gboolean scanning)
 
 		set_statusbar (_("Scanning..."));
 		set_glade_widget_sens ("menu_treemap", FALSE);
+		set_glade_widget_sens ("expand_all", TRUE);
+		set_glade_widget_sens ("collapse_all", TRUE);		
 	}
 
 	set_glade_widget_sens ("tbstop", scanning);
+	set_glade_widget_sens ("menustop", scanning);
+	set_glade_widget_sens ("tbscanhome", !scanning);
 	set_glade_widget_sens ("tbscanall", !scanning);
 	set_glade_widget_sens ("tbscandir", !scanning);
+	set_glade_widget_sens ("menuscanhome", !scanning);
 	set_glade_widget_sens ("menuallfs", !scanning);
 	set_glade_widget_sens ("menuscandir", !scanning);
-	set_glade_widget_sens ("tb_search", !scanning);
 	set_glade_widget_sens ("preferenze1", !scanning);
 	set_glade_widget_sens ("menu_scan_rem", !scanning);
 	set_glade_widget_sens ("tb_scan_remote", !scanning);
-	set_glade_widget_sens ("search_for_a_file", !scanning);
 	set_glade_widget_sens ("ck_allocated",
 			       !scanning &&
-			       (get_NB_page () == VIEW_TREE) &&
 			       baobab.is_local);
 
-	if (get_NB_page () == VIEW_SEARCH) 
-		set_glade_widget_sens ("label1", !scanning);
 }
 
 void
 stop_scan (void)
 {
-	if (get_NB_page () == VIEW_TREE) {
-		set_statusbar (_("Calculating percentage bars..."));
-		gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
-					show_bars, NULL);
-		gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
-	}
+	set_statusbar (_("Calculating percentage bars..."));
+	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
+				show_bars, NULL);
+	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
 
 	set_busy (FALSE);
 	check_menu_sens (FALSE);
@@ -294,7 +302,12 @@ show_bars (GtkTreeModel *mdl,
 		gtk_tree_model_get (mdl, iter, COL_H_ELEMENTS,
 				    &readelements, -1);
 		if (readelements == -1)
+		  {
+		  	gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
+				    COL_DIR_SIZE, "--",
+				    COL_ELEMENTS, "--", -1);				    
 			return FALSE;
+		  }
 
  		gtk_tree_model_get (mdl, &parent, COL_H_ELEMENTS,
  				    &readelements, -1);
@@ -342,38 +355,51 @@ show_bars (GtkTreeModel *mdl,
 			g_object_unref (bar);
 			g_free (sizecstr);
 		}
+		else {
+			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
+		  		 	    COL_DIR_SIZE, "--",
+					    COL_ELEMENTS, "--", -1);
+		}
 	}
 
 	return FALSE;
 }
 
 void
-message (gchar *messaggio, GtkWidget *parent)
+message (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, GtkWidget *parent)
 {
 	GtkWidget *dialog;
 	dialog = gtk_message_dialog_new (GTK_WINDOW (parent),
 					 GTK_DIALOG_DESTROY_WITH_PARENT,
-					 GTK_MESSAGE_INFO,
-					 GTK_BUTTONS_OK, "%s", messaggio);
-	gtk_message_dialog_set_markup ((GtkMessageDialog *) dialog,
-				       messaggio);
+					 type,
+					 GTK_BUTTONS_OK, "%s", primary_msg);
+	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	                                          secondary_msg);
 	gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 }
 
 gint
-messageyesno (gchar *message, GtkWidget *parent)
+messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gchar *ok_button, GtkWidget *parent)
 {
 	GtkWidget *dialog;
+	GtkWidget *button;
 	gint response;
 
 	dialog = gtk_message_dialog_new (GTK_WINDOW (parent),
 					 GTK_DIALOG_DESTROY_WITH_PARENT,
-					 GTK_MESSAGE_QUESTION,
-					 GTK_BUTTONS_YES_NO,
-					 "%s", message);
-	gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog),
-				       message);
+					 type,
+					 GTK_BUTTONS_CANCEL,
+					 "%s", primary_msg);
+	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	                                          secondary_msg);
+						  
+	button = gtk_button_new_with_mnemonic (ok_button);
+	GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);
+	gtk_widget_show (button);
+	
+	gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, GTK_RESPONSE_OK);
+	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 	response = gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 
@@ -394,15 +420,16 @@ baobab_check_dir (const gchar *dirname)
 					  GNOME_VFS_FILE_INFO_FOLLOW_LINKS);
 
 	if (result != GNOME_VFS_OK)
-		error_msg = g_strdup_printf (_("%s is not a valid folder"),
+		error_msg = g_strdup_printf (_("\"%s\" is not a valid folder"),
 					     dirname);
 
 	if (info->type != GNOME_VFS_FILE_TYPE_DIRECTORY)
-		error_msg = g_strdup_printf (_("%s is not a valid folder"),
+		error_msg = g_strdup_printf (_("\"%s\" is not a valid folder"),
 					     dirname);
 
 	if (error_msg) {
-		message (error_msg, baobab.window);
+		message (error_msg, _("Could not analyze disk usage."), 
+		         GTK_MESSAGE_ERROR, baobab.window);
 		g_free (error_msg);
 		ret = FALSE;
 	}
@@ -415,7 +442,7 @@ baobab_check_dir (const gchar *dirname)
 void
 popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 {
-	GtkWidget *pmenu, *open, *trash, *sep, *allfiles, *graph_map, *remove;
+	GtkWidget *pmenu, *open, *trash, *sep, *graph_map, *remove;
 	gchar *path_to_string;
 	GtkWidget *image;
 
@@ -423,20 +450,20 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 	path_to_string = gtk_tree_path_to_string (path);
 
 	pmenu = gtk_menu_new ();
-	open = gtk_image_menu_item_new_from_stock ("gtk-open", NULL);
-	remove = gtk_image_menu_item_new_with_label(_("Remove from Trash"));
+	image = gtk_image_new_from_stock ("gtk-open", GTK_ICON_SIZE_MENU);
+	open = gtk_image_menu_item_new_with_mnemonic(_("_Open Folder"));
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (open), image);
 	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
+	remove = gtk_image_menu_item_new_with_mnemonic(_("_Remove from Trash"));
+	image = gtk_image_new_from_stock ("gtk-undelete", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (remove), image);
-	trash = gtk_image_menu_item_new_with_label(_("Move to Trash"));
+	trash = gtk_image_menu_item_new_with_mnemonic(_("Mo_ve to Trash"));
 	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
-	graph_map = gtk_image_menu_item_new_with_label (_("Folder graphical map"));
+	graph_map = gtk_image_menu_item_new_with_mnemonic (_("_Graphical Usage Map"));
 	image = gtk_image_new_from_stock ("gtk-select-color", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (graph_map), image);
 	sep = gtk_separator_menu_item_new ();
-	allfiles = gtk_image_menu_item_new_with_label (_("List all files in folder"));
-	image = gtk_image_new_from_pixbuf (baobab_load_pixbuf ("searchall.png"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (allfiles), image);
 
 	g_signal_connect (open, "activate",
 			  G_CALLBACK (open_file_cb), NULL);
@@ -444,13 +471,10 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 			  G_CALLBACK (trash_dir_cb), NULL);
 	g_signal_connect (remove, "activate",
 			  G_CALLBACK (trash_dir_cb), NULL);
-	g_signal_connect (allfiles, "activate",
-			  G_CALLBACK (list_all_cb), NULL);
 	g_signal_connect (graph_map, "activate",
 			  G_CALLBACK (graph_map_cb), path_to_string);
 
 	gtk_container_add (GTK_CONTAINER (pmenu), open);
-	gtk_container_add (GTK_CONTAINER (pmenu), allfiles);
 	gtk_container_add (GTK_CONTAINER (pmenu), graph_map);
 	
 	if (baobab.is_local) {
@@ -464,257 +488,6 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 	gtk_widget_show_all (pmenu);
 	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
 			event->button, event->time);
-}
-
-void
-popupmenu_list_search (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
-{
-	GtkWidget *pmenu, *trash, *open, *sep, *remove, *scan;
-	GtkWidget *image;
-	GtkTreeIter iter;
-	gchar *file_type;
-
-	gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model_search),
-				 &iter, path);
-	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model_search), &iter,
-			    COL_FILETYPE, &file_type, -1);
-
-
-	pmenu = gtk_menu_new ();
-	open = gtk_image_menu_item_new_from_stock ("gtk-open", NULL);
-	remove = gtk_image_menu_item_new_with_label(_("Remove from Trash"));
-	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (remove), image);
-	trash = gtk_image_menu_item_new_with_label(_("Move to Trash"));
-	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
-	scan = gtk_image_menu_item_new_with_label(_("Scan Folder"));
-	image = gtk_image_new_from_icon_name("baobab", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM (scan), image);
-	sep = gtk_separator_menu_item_new ();
-
-	g_signal_connect (open, "activate",
-			  G_CALLBACK (open_file_cb), NULL);
-	g_signal_connect (trash, "activate",
-			  G_CALLBACK (trash_file_cb), NULL);
-	g_signal_connect (remove, "activate",
-			  G_CALLBACK (trash_file_cb), NULL);
-	g_signal_connect (scan, "activate",
-			  G_CALLBACK (scan_folder_cb), NULL);
-
-
-	gtk_container_add (GTK_CONTAINER (pmenu), open);
-	
-	if (strcmp(file_type,"x-directory/normal")==0)
-		gtk_container_add (GTK_CONTAINER (pmenu), scan);
-		
-	if (baobab.is_local) {
-		gtk_container_add (GTK_CONTAINER (pmenu), sep);
-		if (is_trash)
-			gtk_container_add (GTK_CONTAINER (pmenu), remove);
-		else
-			gtk_container_add (GTK_CONTAINER (pmenu), trash);		
-	}
-	
-	g_free(file_type);
-	gtk_widget_show_all (pmenu);
-	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
-			event->button, event->time);
-}
-
-/* search dialog */
-
-static gboolean
-begin_search (gpointer data)
-{
-	GString *search;
-
-	search = g_string_new (bbSearchOpt.filename->str);
-
-	if (!bbSearchOpt.exact) {
-		g_string_prepend (search, "*");
-		g_string_append (search, "*");
-	}
-	if (bbSearchOpt.search_whole) {
-		start_search (search->str, NULL);
-	}
-	else {
-		start_search (search->str,
-			      bbSearchOpt.dir->str);
-	}
-
-	g_string_free (search, TRUE);
-
-	return FALSE;
-}
-
-static void
-search_dialog_response (GtkDialog *dialog,
-			gint       response_id,
-			gpointer   data)
-{
-	GladeXML *dlg_xml = data;
-
-	if (response_id == GTK_RESPONSE_OK)
-	{
-		save_search_opt (dlg_xml);
-
-		if (strcmp (bbSearchOpt.filename->str, "") == 0) {
-			message (_("Please provide a file name to search for!"),
-				 GTK_WIDGET (dialog));
-
-			/* do not destroy */
-			return;
-		}
-
-		/* start the search in an idle after the dialog close */
-		g_idle_add (begin_search, NULL);
-	}
-
-	gtk_widget_destroy (GTK_WIDGET (dialog));
-	g_object_unref (dlg_xml);
-}
-
-void
-dialog_search (void)
-{
-	static GtkWidget *search_dialog = NULL;
-	GladeXML *dlg_xml;
-	GtkWidget *rb_allfs, *btn_select, *radio_dir;
-
-	if (search_dialog != NULL) {
-		gtk_window_present (GTK_WINDOW (search_dialog));
-		return;
-	}
-
-	/* Glade stuff */
-	dlg_xml = glade_xml_new (BAOBAB_GLADE_FILE, "dlg_search", NULL);
-
-	search_dialog = glade_xml_get_widget (dlg_xml, "dlg_search");
-
-	rb_allfs = glade_xml_get_widget (dlg_xml, "radio_allfs");
-	btn_select = glade_xml_get_widget (dlg_xml, "btn_select_search");
-	radio_dir = glade_xml_get_widget (dlg_xml, "radio_dir");
-	
-
-	gtk_window_set_transient_for (GTK_WINDOW (search_dialog),
-				      GTK_WINDOW (baobab.window));
-	set_search_opt (dlg_xml);
-
-	/* connect signals */
-	g_signal_connect (rb_allfs, "clicked",
-			  G_CALLBACK (on_radio_allfs_clicked), NULL);
-	g_signal_connect (radio_dir, "clicked",
-			  G_CALLBACK (on_radio_dir_clicked), NULL);
-	g_signal_connect (btn_select, "clicked",
-			  G_CALLBACK (on_btn_select_search_clicked), NULL);
-	g_signal_connect (search_dialog, "response",
-			  G_CALLBACK (search_dialog_response), dlg_xml);
-	g_signal_connect (search_dialog, "destroy",
-			  G_CALLBACK (gtk_widget_destroyed), &search_dialog);
-}
-
-void
-save_search_opt (GladeXML *dlg_xml)
-{
-	GtkEntry *entry_searchname;
-	GtkWidget *rb_exact;
-	GtkEntry *entry_sel_dir;
-	GtkWidget *rb_allfs;
-
-	entry_searchname = (GtkEntry *) glade_xml_get_widget (dlg_xml, "entry1");
-	g_string_assign (bbSearchOpt.filename,
-			 gtk_entry_get_text (GTK_ENTRY
-					     (entry_searchname)));
-	rb_exact = glade_xml_get_widget (dlg_xml, "radio_exact");
-	bbSearchOpt.exact = gtk_toggle_button_get_active ((GtkToggleButton *) rb_exact);
-	entry_sel_dir = (GtkEntry *) glade_xml_get_widget (dlg_xml, "entry2");
-	g_string_assign (bbSearchOpt.dir,
-			 gtk_entry_get_text (GTK_ENTRY (entry_sel_dir)));
-	rb_allfs = glade_xml_get_widget (dlg_xml, "radio_allfs");
-	bbSearchOpt.search_whole = gtk_toggle_button_get_active ((GtkToggleButton *) rb_allfs);
-	bbSearchOpt.mod_date = radio_group_get_active ((GtkRadioButton *) glade_xml_get_widget (dlg_xml, "radio_mod_unk"));
-	bbSearchOpt.size_limit = radio_group_get_active ((GtkRadioButton *) glade_xml_get_widget (dlg_xml, "radio_size_unk"));
-}
-
-void
-set_search_opt (GladeXML *dlg_xml)
-{
-	GtkEntry *entry_searchname;
-	GtkWidget *rb_exact;
-	GtkEntry *entry_sel_dir;
-	GtkWidget *rb_allfs;
-	GtkWidget *expander;
-
-	entry_searchname = (GtkEntry *) glade_xml_get_widget (dlg_xml, "entry1");
-	gtk_entry_set_text (entry_searchname, bbSearchOpt.filename->str);
-	rb_exact = glade_xml_get_widget (dlg_xml, "radio_exact");
-	gtk_toggle_button_set_active ((GtkToggleButton *) rb_exact,
-				      bbSearchOpt.exact);
-	entry_sel_dir = (GtkEntry *) glade_xml_get_widget (dlg_xml, "entry2");
-	gtk_entry_set_text (entry_sel_dir, bbSearchOpt.dir->str);
-	rb_allfs = glade_xml_get_widget (dlg_xml, "radio_allfs");
-	gtk_toggle_button_set_active ((GtkToggleButton *) rb_allfs,
-				      bbSearchOpt.search_whole);
-
-	radio_group_set_active ((GtkRadioButton *) glade_xml_get_widget (dlg_xml, "radio_mod_unk"), bbSearchOpt.mod_date);
-	radio_group_set_active ((GtkRadioButton *) glade_xml_get_widget (dlg_xml, "radio_size_unk"), bbSearchOpt.size_limit);
-	expander = glade_xml_get_widget (dlg_xml, "expander1");
-	gtk_expander_set_expanded ((GtkExpander *) expander,
-				   (bbSearchOpt.mod_date != NONE ||
-				    bbSearchOpt.size_limit != NONE));
-}
-
-void
-switch_view (gint view)
-{
-	GtkWidget *nb;
-	nb = glade_xml_get_widget (baobab.main_xml, "notebook1");
-	gtk_notebook_set_current_page (GTK_NOTEBOOK (nb), view);
-}
-
-gint
-get_NB_page (void)
-{
-	GtkWidget *nb;
-
-	nb = glade_xml_get_widget (baobab.main_xml, "notebook1");
-	return gtk_notebook_get_current_page (GTK_NOTEBOOK (nb));
-}
-
-int
-radio_group_get_active (GtkRadioButton *rb)
-{
-	GSList *list, *l;
-	int i;
-
-	list = gtk_radio_button_get_group (rb);
-
-	for (l = list, i = 0; l; l = l->next, i++) {
-		if (gtk_toggle_button_get_active
-		    (GTK_TOGGLE_BUTTON (l->data)))
-			break;
-	}
-
-	return g_slist_length (list) - i;
-}
-
-void
-radio_group_set_active (GtkRadioButton *rb, int btn)
-{
-	GSList *list, *l;
-	int i;
-
-	list = gtk_radio_button_get_group (rb);
-	btn = g_slist_length (list) - btn;
-
-	for (l = list, i = 0; l; l = l->next, i++) {
-		if (i == btn) {
-			gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
-						      (l->data), TRUE);
-			break;
-		}
-	}
 }
 
 void
@@ -739,9 +512,9 @@ set_label_scan (baobab_fs *fs)
 	avail = g_string_new (size);
 	g_free (size);
 
-	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b> (%s %s %s %s )</small>",
-					   _("Total filesystem capacity:"), total->str, _("used:"),
-					   used->str, _("available:"), avail->str);
+	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b>  (%s %s, %s %s)</small>",
+					   _("Total filesystem capacity:"), total->str, _("Used:"),
+					   used->str, _("Free:"), avail->str);
 	baobab.label_scan = strdup (markup);
 
 	g_string_free (total, TRUE);
@@ -751,40 +524,15 @@ set_label_scan (baobab_fs *fs)
 }
 
 void
-show_label (gint view)
+show_label (void)
 {
 	GtkWidget *label;
 
 	label = glade_xml_get_widget (baobab.main_xml, "label1");
 
-	if (view == VIEW_TREE) {
-		gtk_label_set_markup (GTK_LABEL (label),
-				      baobab.label_scan);
-	}
-	else if (view == VIEW_SEARCH) {
-		gtk_label_set_markup (GTK_LABEL (label),
-				      baobab.label_search);
-	}
-	else {
-		g_assert_not_reached ();
-	}
-}
+	gtk_label_set_markup (GTK_LABEL (label),
+			      baobab.label_scan);
 
-void
-set_label_search (gint numfiles, guint64 totalsize)
-{
-	gchar *markup, *size;
-
-	if (baobab.label_search)
-		g_free (baobab.label_search);
-
-	size = gnome_vfs_format_file_size_for_display (totalsize);
-	markup = g_markup_printf_escaped ("<small>%s <b>%d</b> %s %s <b>%s</b></small>", _("Found:"),
-					  numfiles, (numfiles == 1 ? _("file") : _("files")),
-					  _("for total:"), size);
-	baobab.label_search = strdup (markup);
-	g_free (markup);
-	g_free (size);
 }
 
 void
@@ -792,6 +540,7 @@ open_file_with_application (gchar *file)
 {
 	GnomeVFSMimeApplication *application;
 	gchar *mime;
+	gchar *primary;
 	GnomeVFSFileInfo *info;
 	GnomeVFSURI *vfs_uri;
 
@@ -811,9 +560,14 @@ open_file_with_application (gchar *file)
 			g_spawn_command_line_async (file, NULL);
 		}
 		else {
-			message (_("There is no installed viewer capable "
-				   "of displaying the document."),
+			primary = g_strdup_printf (_("Could not open folder \"%s\""), 
+			                           g_path_get_basename (file));
+			message (primary, 
+			         _("There is no installed viewer capable "
+				   "of displaying the folder."),
+				 GTK_MESSAGE_ERROR,
 				 baobab.window);
+			g_free (primary);
 		}
 	}
 	else {
@@ -867,20 +621,26 @@ trash_file (const gchar *filename)
 	gchar *trash_path = NULL;
 	gchar *basename = NULL;
 	gchar *destination = NULL;
+	gchar *str = NULL;
 	GnomeVFSResult result;
 	gboolean ret = FALSE;
 
 	trash_path = get_trash_path (filename);
 
 	if (trash_path == NULL) {
-		message (_("Cannot find the Trash on this system!"),
-			 baobab.window);
+		str = g_strdup_printf (_("The folder \"%s\" was not moved to the trash."),
+		                       g_path_get_basename (filename));
+		message (_("Could not find a Trash folder on this system"), 
+		         str, GTK_MESSAGE_ERROR, baobab.window);
+		g_free (str);
 		goto out;
 	}
 
 	if ((!g_file_test (filename, G_FILE_TEST_EXISTS)) &&
 	    (!g_file_test (filename, G_FILE_TEST_IS_SYMLINK))) {
-		message (_("The document does not exist."), baobab.window);
+	    	str = g_strdup_printf (_("Could not move \"%s\" to the Trash"), g_path_get_basename (filename));
+		message (str, _("The folder does not exist."), GTK_MESSAGE_ERROR, baobab.window);
+		g_free (str);
 		goto out;
 	}
 
@@ -892,10 +652,11 @@ trash_file (const gchar *filename)
 	if (result != GNOME_VFS_OK) {
 		gchar *mess;
 
-		mess = g_strdup_printf (_("Moving <b>%s</b> to trash failed: %s."),
-					  g_path_get_basename (filename),
+		str = g_strdup_printf (_("Could not move \"%s\" to the Trash"), g_path_get_basename (filename));
+		mess = g_strdup_printf (_("Details: %s"),
 					  gnome_vfs_result_to_string (result));
-		message (mess, baobab.window);
+		message (str, mess, GTK_MESSAGE_ERROR, baobab.window);
+		g_free (str);
 		g_free (mess);
 		goto out;
 	}
@@ -906,23 +667,28 @@ trash_file (const gchar *filename)
 		gchar *mess;
 		gint response;
 
-		mess = g_strdup_printf (_("Do you want to delete <b>%s</b> permanently?"),
+		mess = g_strdup_printf (_("Delete the folder \"%s\" permanently?"),
 					  g_path_get_basename (filename));
-		response = messageyesno (mess, baobab.window);
+		response = messageyesno (mess, 
+		                         _("Could not move the folder to the trash."), GTK_MESSAGE_WARNING,
+					 _("_Delete Folder"), 
+					 baobab.window);
 		g_free (mess);
 
-		if (response == GTK_RESPONSE_YES) {
+		if (response == GTK_RESPONSE_OK) {
 			if (!g_file_test (filename, G_FILE_TEST_IS_DIR))
 				result = gnome_vfs_unlink (filename);
 			else
 				result = gnome_vfs_remove_directory (filename);
 
 			if (result != GNOME_VFS_OK) {
-				mess = g_strdup_printf (_("Deleting <b>%s</b> failed: %s."),
+				mess = g_strdup_printf (_("Deleting \"%s\" failed: %s."),
 							  g_path_get_basename (filename),
 							  gnome_vfs_result_to_string (result));
-				message (mess, baobab.window);
+				str = g_strdup_printf (_("Could not delete the folder \"%s\""), g_path_get_basename (filename));							  
+				message (str, mess, GTK_MESSAGE_ERROR, baobab.window);
 				g_free (mess);
+				g_free (str);
 				ret = FALSE;
 				goto out;
 			}
@@ -945,11 +711,11 @@ contents_changed (void)
 {
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
-	show_label (VIEW_TREE);
+	show_label ();
 
-	if (messageyesno (_("The content of your home directory has changed.\n"
-			    "Do you want to rescan the last tree to update the folder branch details?"),
-			  baobab.window) == GTK_RESPONSE_YES) {
+	if (messageyesno (_("Rescan your home folder?"), 
+			  _("The content of your home folder has changed. Select rescan to update the disk usage details."),
+			  GTK_MESSAGE_QUESTION, _("_Rescan"), baobab.window) == GTK_RESPONSE_OK) {
 
 		start_proc_on_dir (baobab.last_scan_command->str);
 	}

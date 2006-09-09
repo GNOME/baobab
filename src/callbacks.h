@@ -30,29 +30,20 @@
 
 
 void on_about_activate (GtkMenuItem *menuitem, gpointer user_data);
+void on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_menuallfs_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_menuscandir_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_tbscandir_clicked (GtkToolButton *toolbutton, gpointer user_data);
-void on_sort_alfa_activate (GtkMenuItem *menuitem, gpointer user_data);
-void on_by_sort_size_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_tbstop_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_tbsortalfa_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_tbsortnum_clicked (GtkToolButton *toolbutton, gpointer user_data);
+void on_tbscanhome_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_tbscanall_clicked (GtkToolButton *toolbutton, gpointer user_data);
-void on_tb_search_clicked (GtkToolButton *toolbutton, gpointer user_data);
-void on_btn_oksearch_clicked (GtkButton *button, gpointer user_data);
 void on_radio_allfs_clicked (GtkButton *button, gpointer user_data);
 void on_radio_dir_clicked (GtkButton *button, gpointer user_data);
-void on_btn_select_search_clicked (GtkButton *button, gpointer user_data);
-void on_search_for_a_file_activate (GtkMenuItem *menuitem, gpointer user_data);
-void on_notebook1_switch_page (GtkNotebook *notebook,
-			       GtkNotebookPage *page,
-			       guint page_num,
-			       gpointer user_data);
 void on_esci1_activate (GtkObject *object, gpointer user_data);
 gboolean on_delete_activate (GtkWidget *widget, GdkEvent *event, gpointer user_data);
 void open_file_cb (GtkMenuItem *pmenu, gpointer dummy);
-void trash_file_cb (GtkMenuItem *pmenu, gpointer dummy);
 void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
 void graph_map_cb (GtkMenuItem *pmenu, gchar * path_to_string);
 void trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy);
@@ -63,10 +54,7 @@ void contents_changed_cb (GnomeVFSMonitorHandle *handle,
 			  GnomeVFSMonitorEventType event_type,
 			  gpointer user_data);
 void on_pref_menu (GtkMenuItem *menuitem, gpointer user_data);
-void on_by_type1_activate (GtkMenuItem *menuitem, gpointer user_data);
-void on_by_date1_activate (GtkMenuItem *menuitem, gpointer user_data);
 void volume_changed (GnomeVFSVolumeMonitor *volume_monitor, GnomeVFSVolume *volume);
-void on_ck_allocated_toggled (GtkToggleButton *togglebutton, gpointer user_data);
 void on_graph_close_btn_clicked (GtkButton * button, gpointer user_data);
 void on_graph_zoom_in_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_graph_zoom_out_clicked (GtkToolButton *toolbutton, gpointer user_data);
@@ -75,6 +63,7 @@ void on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_view_tb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
 void on_view_sb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
+void on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
 

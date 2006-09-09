@@ -143,6 +143,7 @@ graph_save_cb (GtkWidget *widget, BaobabTreemapWindow *tm)
 	GtkWidget *fs_dlg;
 	GtkWidget *vbox;
 	GtkWidget *hbox;
+	GtkWidget *label;
 	GtkWidget *opt_menu;
 	gchar *sel_type;
 
@@ -159,12 +160,12 @@ graph_save_cb (GtkWidget *widget, BaobabTreemapWindow *tm)
 		return;
 	}
 
-	fs_dlg = gtk_file_chooser_dialog_new (_("Save the screenshot"),
+	fs_dlg = gtk_file_chooser_dialog_new (_("Save Snapshot"),
 					      GTK_WINDOW (tm->win_graph),
 					      GTK_FILE_CHOOSER_ACTION_SAVE,
 					      GTK_STOCK_CANCEL,
 					      GTK_RESPONSE_CANCEL,
-					      GTK_STOCK_SAVE_AS,
+					      GTK_STOCK_SAVE,
 					      GTK_RESPONSE_ACCEPT, NULL);
 
 	gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fs_dlg),
@@ -179,11 +180,12 @@ graph_save_cb (GtkWidget *widget, BaobabTreemapWindow *tm)
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 0);
 	gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (fs_dlg), vbox);
 
-	hbox = gtk_hbox_new (FALSE, 0);
+	hbox = gtk_hbox_new (FALSE, 12);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 6);
 
+	label = gtk_label_new_with_mnemonic (_("_Image type:"));
 	gtk_box_pack_start (GTK_BOX (hbox),
-			    gtk_label_new (_("Image type:")),
+			    label,
 			    FALSE, FALSE, 0);
 
 	opt_menu = gtk_combo_box_new_text ();
@@ -191,8 +193,9 @@ graph_save_cb (GtkWidget *widget, BaobabTreemapWindow *tm)
 	gtk_combo_box_append_text (GTK_COMBO_BOX (opt_menu), "png");
 	gtk_combo_box_append_text (GTK_COMBO_BOX (opt_menu), "bmp");
 	gtk_combo_box_set_active (GTK_COMBO_BOX (opt_menu), 0);
-	gtk_box_pack_start (GTK_BOX (hbox), opt_menu, FALSE, FALSE, 12);
+	gtk_box_pack_start (GTK_BOX (hbox), opt_menu, TRUE, TRUE, 0);
 
+	gtk_label_set_mnemonic_widget (GTK_LABEL (label), opt_menu);
 	gtk_widget_show_all (vbox);
 
 	if (gtk_dialog_run (GTK_DIALOG (fs_dlg)) == GTK_RESPONSE_ACCEPT) {
@@ -301,7 +304,7 @@ baobab_graphwin_create (GtkTreeModel *mdl,
 	g_object_unref (graph_xml);
 
 	/* Main treemap window */
-	title = g_strdup_printf ("%s %s", _("Graphical map for folder:"), dir);
+	title = g_strdup_printf ("%s - %s", dir, _("Graphical Usage Map"));
 	gtk_window_set_title (GTK_WINDOW (bb_tm->win_graph), title);
 	g_free (title);
 

@@ -57,46 +57,6 @@ create_model (void)
 	return mdl;
 }
 
-static GtkListStore *
-create_search_model (void)
-{
-	GtkListStore *mdl;
-	GtkTreeIter iter;
-	gchar *escaped;
-	const gchar *message = N_("Use the Edit->Find menu item "
-				  "or the search toolbar button.");
-
-	escaped = g_markup_printf_escaped ("<i>%s</i>", _(message));
-
-	mdl = gtk_list_store_new (NUM_COLUMNS,
-				  GDK_TYPE_PIXBUF,	/* icon */
-				  G_TYPE_STRING,
-				  G_TYPE_STRING,
-				  G_TYPE_STRING,	/* fullpath */
-				  G_TYPE_LONG,		/* last access */
-				  G_TYPE_DOUBLE,	/* size */
-				  G_TYPE_STRING,	/* filetype */
-				  G_TYPE_UINT		/* owner id (gushort) */
-				  );
-
-	gtk_list_store_append (mdl, &iter);
-	gtk_list_store_set (mdl, &iter,
-			    COL1_STRING, " ", COL_FULLPATH, "", -1);
-	gtk_list_store_append (mdl, &iter);
-	gtk_list_store_set (mdl, &iter,
-			    COL1_STRING, escaped,
-			    COL_FULLPATH, "", -1);
-
-	g_free (escaped);
-
-	/* Defaults to sort-by-size */
-	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (mdl),
-					      COL_SIZE,
-					      GTK_SORT_DESCENDING);
-
-	return mdl;
-}
-
 static void
 on_tv_row_expanded (GtkTreeView *treeview,
 		    GtkTreeIter *arg1,
@@ -115,19 +75,11 @@ on_tv_cur_changed (GtkTreeView *treeview, gpointer data)
 
 	gtk_tree_selection_get_selected (gtk_tree_view_get_selection (treeview), NULL, &iter);
 
-	if (get_NB_page () == VIEW_TREE) {
-		if (gtk_tree_store_iter_is_valid (baobab.model, &iter)) {
+	if (gtk_tree_store_iter_is_valid (baobab.model, &iter)) {
 			gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 				    COL_H_FULLPATH, &text, -1);
-		}
 	}
-	else if (get_NB_page () == VIEW_SEARCH) {
-		if (gtk_list_store_iter_is_valid (baobab.model_search, &iter)) {
-			gtk_tree_model_get (GTK_TREE_MODEL (baobab.model_search),
-					    &iter, COL_FULLPATH, &text, -1);
-		}
-	}
-
+	
 	set_glade_widget_sens("menu_treemap",FALSE);
 	if (text) {
 		gchar *msg;
@@ -136,7 +88,7 @@ on_tv_cur_changed (GtkTreeView *treeview, gpointer data)
 		msg = g_filename_display_name (text);
 
 		set_statusbar (msg);
-		if (get_NB_page () == VIEW_TREE && strcmp (text, "") != 0 )
+		if (strcmp (text, "") != 0 )
 			set_glade_widget_sens("menu_treemap",TRUE);
 
 		g_free (msg);
@@ -154,13 +106,11 @@ on_tv_button_press (GtkWidget *widget,
 	gchar *trash_path, *dir_path;
 	gboolean is_trash = FALSE;
 
-	if (get_NB_page () == VIEW_TREE) {
-		if (baobab.CONTENTS_CHANGED_DELAYED) {
+	if (baobab.CONTENTS_CHANGED_DELAYED) {
 			baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 			if (baobab.STOP_SCANNING) {
 				contents_changed ();
 			}
-		}
 	}
 
 	gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),
@@ -175,30 +125,17 @@ on_tv_button_press (GtkWidget *widget,
 		baobab.selected_path = NULL;
 	}
 
-	if (get_NB_page () == VIEW_TREE) {
-		gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &iter,
-					 path);
-		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
-				    COL_H_FULLPATH, &baobab.selected_path, -1);
+	gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &iter,
+				 path);
+	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
+			    COL_H_FULLPATH, &baobab.selected_path, -1);
 
-	}
-	else {
-		gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model_search),
-				 &iter, path);
-		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model_search), &iter,
-			    COL_FULLPATH, &baobab.selected_path, -1);
-	}
 	
 	if (strcmp (baobab.selected_path, "") == 0) {
 		set_glade_widget_sens("menu_treemap",FALSE);
 		gtk_tree_path_free (path);
 		return FALSE;
 	}
-	
-	if (get_NB_page () == VIEW_SEARCH)
-		set_glade_widget_sens("menu_treemap",FALSE);
-	else
-		set_glade_widget_sens("menu_treemap",TRUE);
 
 	/* right-click */
 	if (event->button == 3) {
@@ -207,10 +144,8 @@ on_tv_button_press (GtkWidget *widget,
 		if (trash_path)
 			if (strcmp(trash_path, dir_path)==0)
 				is_trash = TRUE;
-		if (get_NB_page () == VIEW_TREE)
-			popupmenu_list (path, event, is_trash);
-		if (get_NB_page () == VIEW_SEARCH)
-			popupmenu_list_search (path, event, is_trash);
+		popupmenu_list (path, event, is_trash);
+
 
 		g_free(trash_path);
 		g_free(dir_path);
@@ -220,6 +155,37 @@ on_tv_button_press (GtkWidget *widget,
 	gtk_tree_path_free (path);
 
 	return FALSE;
+}
+
+static gboolean
+baobab_treeview_equal_func (GtkTreeModel *model,
+                            gint column,
+                            const gchar *key,
+                            GtkTreeIter *iter,
+                            gpointer data)
+{
+	gboolean results = TRUE;
+	gchar *name;
+
+	gtk_tree_model_get (model, iter, 1, &name, -1);
+
+	if (name != NULL) {
+		gchar * casefold_key;
+		gchar * casefold_name;
+
+		casefold_key = g_utf8_casefold (key, -1);
+		casefold_name = g_utf8_casefold (name, -1);
+
+		if ((casefold_key != NULL) &&
+		    (casefold_name != NULL) &&
+		    (strstr (casefold_name, casefold_key) != NULL)) {
+			results = FALSE;
+		}
+		g_free (casefold_key);
+		g_free (casefold_name);
+		g_free (name);
+	}
+	return results;
 }
 
 GtkWidget *
@@ -243,12 +209,33 @@ create_directory_treeview (void)
 	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "markup",
 							COL_DIR_NAME, "text",
 							COL_DIR_NAME, NULL);
+	gtk_tree_view_column_set_sort_column_id (col, COL_DIR_NAME);
+	gtk_tree_view_column_set_reorderable (col, TRUE);
+	gtk_tree_view_column_set_title (col, _("Folder"));
+	gtk_tree_view_column_set_sizing (col, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_resizable (col, TRUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
+	
+	/* percentage bar & text column */
+	col = gtk_tree_view_column_new ();
 
-	/* percentage bar column */
 	cell = gtk_cell_renderer_pixbuf_new ();
-	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "pixbuf",
-							COL_BAR, NULL);
+	gtk_tree_view_column_pack_start (col, cell, FALSE);
+	gtk_tree_view_column_set_attributes (col, cell, "pixbuf",
+	                                     COL_BAR, NULL);
+
+	cell = gtk_cell_renderer_text_new ();
+	gtk_tree_view_column_pack_start (col, cell, TRUE);
+	gtk_tree_view_column_set_attributes (col, cell, "markup",
+	                                     COL_PERC, "text",
+	                                     COL_PERC, NULL);
+
+	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
+	gtk_tree_view_column_set_sort_column_id (col, COL_H_PERC);
+	gtk_tree_view_column_set_reorderable (col, TRUE);
+	gtk_tree_view_column_set_title (col, _("Usage"));
+	gtk_tree_view_column_set_sizing (col, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_resizable (col, TRUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
 	/* directory size column */
@@ -257,14 +244,11 @@ create_directory_treeview (void)
 							COL_DIR_SIZE, "text",
 							COL_DIR_SIZE, NULL);
 	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
-
-	/* percentage column */
-	cell = gtk_cell_renderer_text_new ();
-	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "markup",
-							COL_PERC, "text",
-							COL_PERC, NULL);
-	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
+	gtk_tree_view_column_set_sort_column_id (col, COL_H_SIZE);
+	gtk_tree_view_column_set_reorderable (col, TRUE);
+	gtk_tree_view_column_set_title (col, _("Size"));
+	gtk_tree_view_column_set_sizing (col, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_resizable (col, TRUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
 	/* objects column */
@@ -273,6 +257,11 @@ create_directory_treeview (void)
 							COL_ELEMENTS, "text",
 							COL_ELEMENTS, NULL);
 	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
+	gtk_tree_view_column_set_sort_column_id (col, COL_H_ELEMENTS);
+	gtk_tree_view_column_set_reorderable (col, TRUE);
+	gtk_tree_view_column_set_title (col, _("Contents"));
+	gtk_tree_view_column_set_sizing (col, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_resizable (col, TRUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
 	/* hardlink column */
@@ -286,58 +275,18 @@ create_directory_treeview (void)
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (tvw), FALSE);
 	scrolled = glade_xml_get_widget (baobab.main_xml, "scrolledwindow1");
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-					GTK_POLICY_NEVER,
+					GTK_POLICY_AUTOMATIC,
 					GTK_POLICY_AUTOMATIC);
+
+	gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (tvw),
+	                                     baobab_treeview_equal_func, 
+	                                     NULL, NULL);
 
 	baobab.model = create_model ();
 
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tvw),
 				 GTK_TREE_MODEL (baobab.model));
 	g_object_unref (baobab.model);
-
-	return tvw;
-}
-
-GtkWidget *
-create_filesearch_treeview (void)
-{
-	GtkWidget *tvw;
-	GtkCellRenderer *cell;
-	GtkTreeViewColumn *col;
-
-	tvw = glade_xml_get_widget (baobab.main_xml, "tree_search");
-
-	g_signal_connect (tvw, "cursor-changed",
-			  G_CALLBACK (on_tv_cur_changed), NULL);
-	g_signal_connect (tvw, "button-press-event",
-			  G_CALLBACK (on_tv_button_press), NULL);
-
-	/* icons column */
-	cell = gtk_cell_renderer_pixbuf_new ();
-	g_object_set (cell, "stock-size", GTK_ICON_SIZE_LARGE_TOOLBAR,
-		      NULL);
-	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "pixbuf",
-							COL0_ICON, NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
-
-	/* First text column */
-	cell = gtk_cell_renderer_text_new ();
-	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "markup",
-							COL1_STRING, "text",
-							COL1_STRING, NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
-
-	/* second text column */
-	cell = gtk_cell_renderer_text_new ();
-	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "markup",
-							COL2_STRING, "text",
-							COL2_STRING, NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
-
-	baobab.model_search = create_search_model ();
-	gtk_tree_view_set_model (GTK_TREE_VIEW (tvw),
-				 GTK_TREE_MODEL (baobab.model_search));
-	g_object_unref (baobab.model_search);
 
 	return tvw;
 }

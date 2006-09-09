@@ -27,6 +27,8 @@ baobab_SOURCES = \
 	baobab-treeview.h \
 	baobab-utils.c \
 	baobab-utils.h \
+	baobab-spinner.c \
+	baobab-spinner.h \
 	callbacks.c \
 	callbacks.h \
 	baobab-prefs.c \
