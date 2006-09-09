@@ -177,7 +177,7 @@ create_tree_props (GladeXML *dlg_xml)
 
 	/* second text column */
 	cell = gtk_cell_renderer_text_new ();
-	col = gtk_tree_view_column_new_with_attributes (_("Mount point"),
+	col = gtk_tree_view_column_new_with_attributes (_("Mount Point"),
 							cell, "markup",
 							COL_MOUNT, "text",
 							COL_MOUNT, NULL);
@@ -185,7 +185,7 @@ create_tree_props (GladeXML *dlg_xml)
 
 	/* third text column */
 	cell = gtk_cell_renderer_text_new ();
-	col = gtk_tree_view_column_new_with_attributes (_("Filesystem type"),
+	col = gtk_tree_view_column_new_with_attributes (_("Filesystem Type"),
 							cell, "markup",
 							COL_TYPE, "text",
 							COL_TYPE, NULL);
