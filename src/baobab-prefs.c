@@ -141,7 +141,8 @@ create_props_model (void)
 	mdl = gtk_list_store_new (TOT_COLUMNS,
 				  G_TYPE_BOOLEAN,	/* checkbox */
 				  G_TYPE_STRING,	/* device */
-				  G_TYPE_STRING		/* mount point */
+				  G_TYPE_STRING,	/* mount point */
+				  G_TYPE_STRING		/* fs type */
 				  );
 
 	return mdl;
@@ -181,6 +182,15 @@ create_tree_props (GladeXML *dlg_xml)
 							COL_MOUNT, "text",
 							COL_MOUNT, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
+
+	/* third text column */
+	cell = gtk_cell_renderer_text_new ();
+	col = gtk_tree_view_column_new_with_attributes (_("Filesystem type"),
+							cell, "markup",
+							COL_TYPE, "text",
+							COL_TYPE, NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
+
 
 	model_props = create_props_model ();
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tvw),
@@ -238,7 +248,8 @@ fill_props_model (GtkWidget *dlg)
 					    COL_CHECK, TRUE,
 					    COL_DEVICE,
 					    mountentry->devname, COL_MOUNT,
-					    mountentry->mountdir,
+					    mountentry->mountdir, COL_TYPE,
+					    mountentry->type,
 					    -1);
 	}
 
