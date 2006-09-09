@@ -1,3 +1,78 @@
+2006-08-27  Dennis Cranston  <dennis_cranston@yahoo.com>
+
+	BUGZILLA: #349187, #350457, #351185, #351534, #351538, #351540, 
+	#351544, #351545, #351546, #352147 and #351532. 
+
+	* data/baobab.glade: Remove search dialog and tab.  More HIG 
+	related fixes for the graphical usage map window. Add a scan home 
+	directory item to menu and toolbar.  Add expand all and collapse 
+	items all items to edit menu.  In the preference dialog, add a 
+	help button and rephrase a some strings.  Add a stop menu item to 
+	the view menu.
+	* data/baobab.dekstop.in.in: Change tooltip to match style used
+	in GNOME.
+	* data/baobab.schemas.in:  Don't show the statusbar by default.
+	* src/Makefile.am: Add baobab-spinner.[ch]
+	* src/baobab-spinner.[ch]: New files for spinner widget.
+	* src/baobab-graphwin.c: (graph_save_cb): HIG fixes for the save
+	snapshot dialog, (baobab_graphwin_create):  HIG fixes for window
+	title.
+	* src/baobab-prefs.c: (props_notify): remove, (response_cb): Add
+	filechooser callback to handle the close and help responses,
+	(create_props):  Connect to the response signal.
+	* src/baobab-remote-connect-dialog.c: (remote_connect): HIG fixes,
+	(setup_for_type): Get entries from required or optional table,
+	(baobab_remote_connect_dialog_init): HIG fixes for remote scan
+	dialog, separate entries into required and optional categories.
+	* src/baobab-scan.c: (loopsearch): Remove, (searchDir): Remove.
+	* src/baobab-utils.h: Remove search functions and adjust arguments.	
+	* src/callbacks.h:  Remove sort and search callbacks.  Add home
+	folder scan callbacks.  Add allocated space menu item callback.
+	* src/baobab-treeview.c: (on_tv_cur_changed): Remove notebook tab
+	logic, (on_tv_button_press): Remove notebook tab logic,
+	, (create_directory_treeview): Add column headers and setup the 
+	appropriate column ids for sorting. Merge the percentage and 
+	percentage bar columns into a single column.  Show horizontal
+	and vertical scrollbars as needed. (baobab_treeview_equal_func): 
+	Make gtk treeview "typeahead find" work, add column headers and 
+	sort.
+	* src/baobab-utils.c: (filechooser_cb): New function to handle 
+	filechooser response, (dir_select):  Create the filechooser widget 
+	once, don't show hidden folders by default. (set_bar): Fix compiler 
+	warning, (check_menu_sens): toggle sensivity of expand, collapse 
+	and stop menu items , (stop_scan): Remove notebook logic, 
+	(show_bars):  Remove scanning message when scan is stopped,
+	(message): Add primary and secondary text, (messageyesno): HIG 
+	fixes, do not use yes and no buttons, instead use cancel and action
+	label button, and support primary and secondary text,
+	(baobab_check_dir): String fixes, (popupmenu_list): HIG fixes to 
+	popup menu, and remove a redundant menu item, (set_label_scan): 
+	Cleanup a string, (open_file_with_application), (trash_file), 
+	(contents_changed): HIG fixes for dialogs.
+	* src/baobab.h: Remove search logic.
+	* src/baobab.c: (set_busy): Start or stop the spinner 
+	animation, (start_proc_on_dir): Remove notebook tab logic,
+	(prefill_model) Show treeview column
+	headers, (first_row): Hide treeview column headers,
+	(fill_model): Replace "object" with "item" to match nautilus' 
+	terminology, add an initial bar and percentage, move scanning text
+	to size and contents columns, this helps prevent resizing of the
+	folder column, (baobab_init): Remove search logic, 
+	(baobab_shutdown): remove search logic, (main): Add a "spring" 
+	separator and the spinner widget to toolbar, set initial state 
+	of the "Allocated Space" menu item.
+	* src/callbacks.c: (on_menuhomedir_activate): Add callback for
+	home directory scan menu item, (on_about_activate): Fix spelling,
+	(on_menu_expand_activate):  Add callback to expand treeview, 
+	(on_menu_collapse_activate): Add callback to collapse treeview,
+	(on_tbscanhome_clicked): Add callback for home directory scan
+	toolbar button, (on_menu_stop_activate): Add callback for stop
+	menu item, (open_file_cb), update message() arguments, 
+	(volume_changed): Remove notebook tab logic, 
+	(on_ck_allocated_activate): Remove the sort callbacks, and add 
+	activate callback for "Allocated Space" menu item, 
+	(scan_folder_cb): update message() arguments.
+
 2006-08-27  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab.c:
