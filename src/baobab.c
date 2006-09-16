@@ -219,19 +219,20 @@ prefill_model (struct chan_data *data)
 
 	bar = set_bar (0.0f);
 	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning..."));
-	
+
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
 	gtk_tree_store_set (baobab.model, &iter, COL_DIR_NAME, cdir->str,
 			    COL_H_FULLPATH, "", COL_H_ELEMENTS, -1, 
 			    COL_DIR_SIZE, str, COL_BAR, bar,
 			    COL_PERC, " -.- %", COL_ELEMENTS, str, -1);
 
+	g_object_unref (bar);
+	g_string_free (cdir, TRUE);
+	g_free(str);
+
 	while (gtk_events_pending ()) {
 		gtk_main_iteration ();
 	}
-
-	g_string_free (cdir, TRUE);
-	g_free(str);
 }
 
 /*
