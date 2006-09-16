@@ -114,8 +114,8 @@ on_tv_button_press (GtkWidget *widget,
 	}
 
 	gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),
-					       event->x, event->y,
-					       &path, NULL, NULL, NULL);
+				       event->x, event->y,
+				       &path, NULL, NULL, NULL);
 	if (!path)
 		return TRUE;		
 
@@ -129,7 +129,6 @@ on_tv_button_press (GtkWidget *widget,
 				 path);
 	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 			    COL_H_FULLPATH, &baobab.selected_path, -1);
-
 	
 	if (strcmp (baobab.selected_path, "") == 0) {
 		set_glade_widget_sens("menu_treemap",FALSE);
@@ -146,7 +145,7 @@ on_tv_button_press (GtkWidget *widget,
 				is_trash = TRUE;
 		popupmenu_list (path, event, is_trash);
 
-
+		gtk_tree_path_free (path);
 		g_free(trash_path);
 		g_free(dir_path);
 		return FALSE;

@@ -450,27 +450,19 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 	path_to_string = gtk_tree_path_to_string (path);
 
 	pmenu = gtk_menu_new ();
+
 	image = gtk_image_new_from_stock ("gtk-open", GTK_ICON_SIZE_MENU);
 	open = gtk_image_menu_item_new_with_mnemonic(_("_Open Folder"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (open), image);
-	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
-	remove = gtk_image_menu_item_new_with_mnemonic(_("_Remove from Trash"));
-	image = gtk_image_new_from_stock ("gtk-undelete", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (remove), image);
-	trash = gtk_image_menu_item_new_with_mnemonic(_("Mo_ve to Trash"));
-	image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
+
 	graph_map = gtk_image_menu_item_new_with_mnemonic (_("_Graphical Usage Map"));
 	image = gtk_image_new_from_stock ("gtk-select-color", GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (graph_map), image);
+
 	sep = gtk_separator_menu_item_new ();
 
 	g_signal_connect (open, "activate",
 			  G_CALLBACK (open_file_cb), NULL);
-	g_signal_connect (trash, "activate",
-			  G_CALLBACK (trash_dir_cb), NULL);
-	g_signal_connect (remove, "activate",
-			  G_CALLBACK (trash_dir_cb), NULL);
 	g_signal_connect (graph_map, "activate",
 			  G_CALLBACK (graph_map_cb), path_to_string);
 
@@ -479,12 +471,29 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 	
 	if (baobab.is_local) {
 		gtk_container_add (GTK_CONTAINER (pmenu), sep);
-		if (is_trash)
+
+		if (is_trash) {
+			remove = gtk_image_menu_item_new_with_mnemonic(_("_Remove from Trash"));
+			image = gtk_image_new_from_stock ("gtk-undelete", GTK_ICON_SIZE_MENU);
+			gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (remove), image);
+
+			g_signal_connect (remove, "activate",
+					  G_CALLBACK (trash_dir_cb), NULL);
+
 			gtk_container_add (GTK_CONTAINER (pmenu), remove);
-		else
-			gtk_container_add (GTK_CONTAINER (pmenu), trash);		
+		}
+		else {
+			trash = gtk_image_menu_item_new_with_mnemonic(_("Mo_ve to Trash"));
+			image = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_MENU);
+			gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (trash), image);
+
+			g_signal_connect (trash, "activate",
+					  G_CALLBACK (trash_dir_cb), NULL);
+
+			gtk_container_add (GTK_CONTAINER (pmenu), trash);
+		}
 	}
-	
+
 	gtk_widget_show_all (pmenu);
 	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
 			event->button, event->time);
