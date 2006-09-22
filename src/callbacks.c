@@ -85,8 +85,7 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 			       "copyright", copyright,
 			       "logo-icon-name", "baobab",
 			       "license", "GPL",
-			       "authors", authors, "website",
-			       "http://www.gnome.org/projects/baobab",
+			       "authors", authors, 
 			       "translator-credits",
 			       _("translator-credits"), NULL);
 }
