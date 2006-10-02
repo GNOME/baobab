@@ -90,9 +90,12 @@ set_busy (gboolean busy)
 {
 	if (busy == TRUE) {
 		baobab_spinner_start (BAOBAB_SPINNER (spinner));
+ 		baobab_ringschart_freeze_updates (baobab.ringschart);
+		baobab_ringschart_set_init_depth (baobab.ringschart, 0);
 	}
 	else {
 		baobab_spinner_stop (BAOBAB_SPINNER (spinner));
+ 		baobab_ringschart_thaw_updates (baobab.ringschart);
 	}
 }
 
@@ -590,6 +593,43 @@ baobab_shutdown (void)
 		g_object_unref (baobab.gconf_client);
 }
 
+static void
+initialize_ringschart (void)
+{
+        GtkWidget *hpaned_main;
+        GtkWidget *ringschart_frame;
+
+        baobab.ringschart = GTK_WIDGET (baobab_ringschart_new ());
+        baobab_ringschart_set_model_with_columns (baobab.ringschart,
+                                                  GTK_TREE_MODEL (baobab.model),
+                                                  COL_DIR_NAME,
+                                                  COL_DIR_SIZE,
+                                                  COL_H_FULLPATH,
+                                                  COL_H_PERC,
+                                                  COL_H_ELEMENTS,
+                                                  NULL);
+        baobab_ringschart_set_init_depth (baobab.ringschart, 1);
+
+        g_signal_connect (baobab.ringschart, "sector_activated",
+                          G_CALLBACK (on_rchart_sector_activated), NULL);
+
+        ringschart_frame = gtk_frame_new (NULL);
+        gtk_frame_set_label_align (GTK_FRAME (ringschart_frame), 0.0, 0.0);
+        gtk_frame_set_shadow_type (GTK_FRAME (ringschart_frame), GTK_SHADOW_IN);
+
+        gtk_container_add (GTK_CONTAINER (ringschart_frame),
+                           baobab.ringschart);
+
+        hpaned_main = glade_xml_get_widget (baobab.main_xml, "hpaned_main");
+        gtk_paned_pack2 (GTK_PANED (hpaned_main),
+                         ringschart_frame, TRUE, TRUE);
+        gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
+
+        baobab_ringschart_draw_center (baobab.ringschart, TRUE);
+
+        gtk_widget_show_all (ringschart_frame);
+}
+
 int
 main (int argc, char *argv[])
 {
@@ -660,6 +700,9 @@ main (int argc, char *argv[])
 
 	first_row ();
 	set_statusbar (_("Ready"));
+
+	/* The ringschart */
+	initialize_ringschart ();
 
 	/* commandline */
 	if (argc > 1) {

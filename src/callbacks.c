@@ -378,3 +378,34 @@ scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
 	
 	start_proc_on_dir (baobab.selected_path);
 }
+
+void
+on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data)
+{
+	GtkTreeIter iter;
+        
+	if (gtk_tree_selection_get_selected (selection, NULL, &iter)) {
+		GtkTreePath *path;
+                
+		path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), &iter);
+                
+		baobab_ringschart_set_root (baobab.ringschart, path);
+		
+		gtk_tree_path_free (path);
+	}
+}
+
+void
+on_rchart_sector_activated (BaobabRingschart *rchart, GtkTreeIter *iter)
+{
+	GtkTreePath *path;
+
+	path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), iter);
+
+	if (!gtk_tree_view_row_expanded (GTK_TREE_VIEW (baobab.tree_view), path))
+                gtk_tree_view_expand_to_path (GTK_TREE_VIEW (baobab.tree_view), path);
+
+	gtk_tree_view_set_cursor (GTK_TREE_VIEW (baobab.tree_view),
+				  path, NULL, FALSE);
+	gtk_tree_path_free (path);
+}

@@ -50,6 +50,7 @@ struct _baobab_application {
 	GladeXML *main_xml;
   	GtkWidget *window;
   	GtkWidget *tree_view;
+  	GtkWidget *ringschart;
 	GtkTreeStore *model;
 	gboolean STOP_SCANNING;
 	gboolean CONTENTS_CHANGED_DELAYED;

@@ -27,7 +27,7 @@
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-mime.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
-
+#include "baobab-ringschart.h"
 
 void on_about_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data);
@@ -66,5 +66,7 @@ void on_view_sb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
+void on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data);
+void on_rchart_sector_activated (BaobabRingschart *rchart, GtkTreeIter *iter);
 
 #endif /* __BAOBAB_CALLBACKS_H__ */

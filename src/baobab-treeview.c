@@ -204,6 +204,8 @@ create_directory_treeview (void)
 			  G_CALLBACK (on_tv_button_press), NULL);
 
 	/* dir name column */
+	g_signal_connect (gtk_tree_view_get_selection (GTK_TREE_VIEW (tvw)), "changed",
+			  G_CALLBACK (on_tv_selection_changed), NULL);
 	cell = gtk_cell_renderer_text_new ();
 	col = gtk_tree_view_column_new_with_attributes (NULL, cell, "markup",
 							COL_DIR_NAME, "text",

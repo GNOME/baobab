@@ -1,3 +1,36 @@
+2006-10-02  Alejandro G. Castro  <acastro@igalia.com>
+
+	* data/baobab.glade: Added the GtkPaned and the GtkScrolledWindow
+	to the new main window in order to integrate the ringschart
+	widget.
+	* src/baobab-ringschart.[ch]: New widget representing a ringschart
+	that is used in the main window to represent the size of
+	directories. 
+	* src/Makefile.am: Added the new widget to the sources list.
+	* src/baobab-treeview.c: 
+	(create_directory_treeview): Selection changed signal connected to
+	a new callback that synchronizes the status of the treeview with
+	the ringschart.
+	* src/baobab.c: 
+	(set_busy): Added the control of the ringschart widget when the
+	scanning process starts and finishes, we can't draw the ringschart
+	when the treemodel is being scanned.
+	(initialize_ringschart): Added this function, it creates and
+	initializes the ringschart.
+	(main): Called the initialize_ringschart function.
+	* src/baobab.h: Added the new attribute to the application
+	structure. 
+	* src/callbacks.c: 
+	(on_tv_selection_changed): 
+	(on_rchart_sector_activated): this two callbacks synchronize the
+	treeview and the ringschart of the main window, when the user
+	clicks in a row in the treeview that sector is selected in the
+	ringschart.
+	* src/callbacks.h: Added the include for the ringschart widget, we
+	have also added the interfaces for the two new callbacks.
+	
+	This patch adds the ringschart view to the main window.
+
 2006-09-22  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/callbacks.c: (on_about_activate):
