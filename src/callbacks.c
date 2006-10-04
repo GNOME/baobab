@@ -72,6 +72,7 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 		"Fabio Marzocca <thesaltydog@gmail.com>",
 		"Paolo Borelli <pborelli@katamail.com>",
 		"Benoît Dejean <benoit@placenet.org>",
+		"Igalia (rings-chart widget) <www.igalia.com>",
 		NULL
 	};
 
