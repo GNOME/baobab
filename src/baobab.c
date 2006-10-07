@@ -248,6 +248,7 @@ first_row (void)
 	gfloat perc;
 	gchar textperc[10];
 	GdkPixbuf *bar;
+	char *label;
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, NULL);
@@ -257,9 +258,10 @@ first_row (void)
 	g_sprintf (textperc, " %.1f %%", perc);
 	bar = set_bar ((g_fs.used * 100) / g_fs.total);
 
+	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
 	gtk_tree_store_set (baobab.model, &firstiter,
 			    COL_DIR_NAME,
-			    _("<i>Total filesystem usage:</i>"),
+			    label,
 			    COL_H_FULLPATH, "",
 			    COL_BAR, bar,
 			    COL_H_PERC, perc,
@@ -270,6 +272,7 @@ first_row (void)
 
 	g_object_unref (bar);
 	g_free (size);
+	g_free (label);
 }
 
 /* fills model during scanning
