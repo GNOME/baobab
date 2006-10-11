@@ -236,7 +236,7 @@ create_directory_treeview (void)
 	gtk_tree_view_column_set_reorderable (col, TRUE);
 	gtk_tree_view_column_set_title (col, _("Usage"));
 	gtk_tree_view_column_set_sizing (col, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_resizable (col, TRUE);
+	gtk_tree_view_column_set_resizable (col, FALSE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
 	/* directory size column */
