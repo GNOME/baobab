@@ -29,8 +29,6 @@ baobab_SOURCES = \
 	baobab-treeview.h \
 	baobab-utils.c \
 	baobab-utils.h \
-	baobab-spinner.c \
-	baobab-spinner.h \
 	callbacks.c \
 	callbacks.h \
 	baobab-prefs.c \
@@ -38,7 +36,9 @@ baobab_SOURCES = \
 	baobab-tree-map.c \
 	baobab-tree-map.h \
 	baobab-remote-connect-dialog.c \
-	baobab-remote-connect-dialog.h
+	baobab-remote-connect-dialog.h \
+	gedit-spinner.c \
+	gedit-spinner.h
 
 baobab_CFLAGS = 			\
 	$(GNOME_UTILS_CFLAGS)		\

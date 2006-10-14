@@ -26,7 +26,6 @@
 #include "baobab.h"
 
 void baobab_get_filesystem (baobab_fs *fs);
-void set_statusbar (const gchar *);
 gchar* dir_select (gboolean, GtkWidget *);
 void on_toggled (GtkToggleButton *, gpointer);
 GdkPixbuf *set_bar (gfloat );

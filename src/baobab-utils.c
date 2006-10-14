@@ -72,19 +72,6 @@ baobab_get_filesystem (baobab_fs *fs)
 }
 
 void
-set_statusbar (const gchar *text)
-{
-	GtkWidget *sb;
-
-	sb = glade_xml_get_widget (baobab.main_xml, "statusbar1");
-	gtk_statusbar_pop (GTK_STATUSBAR (sb), 1);
-	gtk_statusbar_push (GTK_STATUSBAR (sb), 1, text);
-
-	while (gtk_events_pending ())
-		gtk_main_iteration ();
-}
-
-void
 filechooser_cb (GtkWidget * chooser,
                  gint response,
                  gpointer data)

@@ -37,11 +37,12 @@
 
 #include "baobab.h"
 #include "baobab-scan.h"
-#include "baobab-spinner.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
 #include "callbacks.h"
 #include "baobab-prefs.h"
+
+#include "gedit-spinner.h"
 
 static GnomeVFSMonitorHandle *handle_mtab;
 static GnomeVFSMonitorHandle *handle_home;
@@ -59,13 +60,7 @@ static GQueue *iterstack = NULL;
 #define BUSY_IMAGE_PATH		BAOBAB_PIX_DIR "busy.gif"
 #define DONE_IMAGE_PATH		BAOBAB_PIX_DIR "done.png"
 
-static GtkWidget *spinner = NULL;
 
-static void baobab_toolbar_style (GConfClient *client,
-	      			  guint cnxn_id,
-	      			  GConfEntry *entry,
-	      			  gpointer user_data);
-	      			  
 static gboolean
 scan_is_local (const gchar *uri_dir)
 {
@@ -89,12 +84,12 @@ void
 set_busy (gboolean busy)
 {
 	if (busy == TRUE) {
-		baobab_spinner_start (BAOBAB_SPINNER (spinner));
+		gedit_spinner_start (GEDIT_SPINNER (baobab.spinner));
  		baobab_ringschart_freeze_updates (baobab.ringschart);
 		baobab_ringschart_set_init_depth (baobab.ringschart, 0);
 	}
 	else {
-		baobab_spinner_stop (BAOBAB_SPINNER (spinner));
+		gedit_spinner_stop (GEDIT_SPINNER (baobab.spinner));
  		baobab_ringschart_thaw_updates (baobab.ringschart);
 	}
 }
@@ -171,7 +166,6 @@ prefill_model (struct chan_data *data)
 	GString *cdir;
 	char *basename;
 	GtkTreeIter iter, iterparent;
-	GtkTreePath *path;
 	GdkPixbuf *bar;
 	gchar *str;
 
@@ -182,6 +176,8 @@ prefill_model (struct chan_data *data)
 		firstiter = iter;
 	}
 	else if (data->depth == 1) {
+		GtkTreePath *path;
+
 		gtk_tree_store_append (baobab.model, &iter, &firstiter);
 		path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model),
 						&firstiter);
@@ -424,7 +420,8 @@ list_find (gconstpointer a, gconstpointer b)
 gboolean
 is_excluded_dir (const gchar *dir)
 {
-		
+	g_return_if_fail (dir != NULL);
+
 	return (baobab.bbExcludedDirs &&
 		(g_slist_find_custom (baobab.bbExcludedDirs, dir, list_find) != NULL));
 }
@@ -432,15 +429,12 @@ is_excluded_dir (const gchar *dir)
 void
 set_toolbar_visible (gboolean visible)
 {
-	GtkWidget *toolbar;
 	GtkWidget *menu;
 
-	toolbar = glade_xml_get_widget (baobab.main_xml, "toolbar1");
-
 	if (visible)
-		gtk_widget_show (toolbar);
+		gtk_widget_show (baobab.toolbar);
 	else
-		gtk_widget_hide (toolbar);
+		gtk_widget_hide (baobab.toolbar);
 
 	/* make sure the check menu item is consistent */
 	menu = glade_xml_get_widget (baobab.main_xml, "view_tb");
@@ -450,19 +444,47 @@ set_toolbar_visible (gboolean visible)
 void
 set_statusbar_visible (gboolean visible)
 {
-	GtkWidget *statusbar;
 	GtkWidget *menu;
 
-	statusbar = glade_xml_get_widget (baobab.main_xml, "statusbar1");
-
 	if (visible)
-		gtk_widget_show (statusbar);
+		gtk_widget_show (baobab.statusbar);
 	else
-		gtk_widget_hide (statusbar);
+		gtk_widget_hide (baobab.statusbar);
 
 	/* make sure the check menu item is consistent */
 	menu = glade_xml_get_widget (baobab.main_xml, "view_sb");
 	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (menu), visible);
+}
+
+void
+set_statusbar (const gchar *text)
+{
+	gtk_statusbar_pop (GTK_STATUSBAR (baobab.statusbar), 1);
+	gtk_statusbar_push (GTK_STATUSBAR (baobab.statusbar), 1, text);
+
+	while (gtk_events_pending ())
+		gtk_main_iteration ();
+}
+
+static void
+toolbar_reconfigured_cb (GtkToolItem  *item,
+			 GeditSpinner *spinner)
+{
+	GtkToolbarStyle style;
+	GtkIconSize size;
+
+	style = gtk_tool_item_get_toolbar_style (item);
+
+	if (style == GTK_TOOLBAR_BOTH)
+	{
+		size = GTK_ICON_SIZE_DIALOG;
+	}
+	else
+	{
+		size = GTK_ICON_SIZE_LARGE_TOOLBAR;
+	}
+
+	gedit_spinner_set_size (spinner, size);
 }
 
 static void
@@ -471,28 +493,89 @@ baobab_toolbar_style (GConfClient *client,
 	      	      GConfEntry *entry,
 	      	      gpointer user_data)
 {
-	GtkWidget *toolbar;
 	gchar *toolbar_setting;
 
-	toolbar = glade_xml_get_widget(baobab.main_xml, "toolbar1");
 	toolbar_setting = baobab_gconf_get_string_with_default (baobab.gconf_client,
 								SYSTEM_TOOLBAR_STYLE,
 								"both");
 
 	if (!strcmp(toolbar_setting, "icons")) {
-		gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_ICONS);
+		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
+				       GTK_TOOLBAR_ICONS);
 	}
 	else if (!strcmp(toolbar_setting, "both")) {
-		gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_BOTH);
+		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
+				       GTK_TOOLBAR_BOTH);
 	}
 	else if (!strcmp(toolbar_setting, "both-horiz")) {
-		gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_BOTH_HORIZ);
+		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
+				       GTK_TOOLBAR_BOTH_HORIZ);
 	}
 	else if (!strcmp(toolbar_setting, "text")) {
-		gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_TEXT);
+		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
+				       GTK_TOOLBAR_TEXT);
 	}
 
 	g_free (toolbar_setting);
+}
+
+static void
+baobab_create_toolbar (void)
+{
+	GtkWidget *toolbar;
+	GtkToolItem *item;
+	GtkToolItem *separator;
+	gboolean visible;
+
+	toolbar = glade_xml_get_widget (baobab.main_xml, "toolbar1");
+	if (toolbar == NULL) {
+		g_printerr ("Could not build toolbar\n");
+		return;
+	}
+
+	baobab.toolbar = toolbar;
+
+	separator = gtk_separator_tool_item_new ();
+	gtk_separator_tool_item_set_draw (GTK_SEPARATOR_TOOL_ITEM (separator), FALSE);
+	gtk_tool_item_set_expand (GTK_TOOL_ITEM (separator), TRUE);	
+	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (separator));
+	gtk_widget_show (GTK_WIDGET (separator));
+
+	baobab.spinner = gedit_spinner_new ();
+	item = gtk_tool_item_new ();		
+	gtk_container_add (GTK_CONTAINER (item), baobab.spinner);
+  	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
+	gtk_widget_show (GTK_WIDGET (baobab.spinner));
+	gtk_widget_show (GTK_WIDGET (item));
+
+	g_signal_connect (item, "toolbar-reconfigured",
+			  G_CALLBACK (toolbar_reconfigured_cb), baobab.spinner);
+
+	baobab_toolbar_style (NULL, 0, NULL, NULL);
+
+	visible = gconf_client_get_bool (baobab.gconf_client,
+					 BAOBAB_TOOLBAR_VISIBLE_KEY,
+					 NULL);
+
+	set_toolbar_visible (visible);
+}
+
+static void
+baobab_create_statusbar (void)
+{
+	gboolean visible;
+
+	baobab.statusbar = glade_xml_get_widget (baobab.main_xml,
+						 "statusbar1");
+	if (baobab.statusbar == NULL) {
+		g_printerr ("Could not build statusbar\n");
+		return;
+	}
+
+	visible = gconf_client_get_bool (baobab.gconf_client,
+					 BAOBAB_STATUSBAR_VISIBLE_KEY,
+					 NULL);
+	set_statusbar_visible (visible);
 }
 
 static void
@@ -500,7 +583,6 @@ baobab_init (void)
 {
 	GnomeVFSResult result;
 	GnomeVFSVolumeMonitor *volmonitor;
-	gboolean visible;
 
 	/* Load Glade */
 	baobab.main_xml = glade_xml_new (BAOBAB_GLADE_FILE,
@@ -526,7 +608,7 @@ baobab_init (void)
 	baobab.bbExcludedDirs = gconf_client_get_list (baobab.gconf_client, PROPS_SCAN_KEY,
 						       GCONF_VALUE_STRING, NULL);
 	
-	/*	Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
+	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
 	if (is_excluded_dir("/")) {
 		baobab.bbExcludedDirs = g_slist_delete_link (baobab.bbExcludedDirs, 
 						g_slist_find_custom(baobab.bbExcludedDirs, 
@@ -540,18 +622,9 @@ baobab_init (void)
 							    PROPS_ENABLE_HOME_MONITOR,
 							    NULL);
 
-	/* toolbar & statusbar visibility */
-	visible = gconf_client_get_bool (baobab.gconf_client,
-					 BAOBAB_TOOLBAR_VISIBLE_KEY,
-					 NULL);
-	set_toolbar_visible (visible);
-	visible = gconf_client_get_bool (baobab.gconf_client,
-					 BAOBAB_STATUSBAR_VISIBLE_KEY,
-					 NULL);
-	set_statusbar_visible (visible);
+	baobab_create_toolbar ();
 
-	/* set the toolbar style */
-	baobab_toolbar_style(NULL, 0, NULL, NULL);
+	baobab_create_statusbar ();
 
 	/* start VFS monitoring */
 	handle_home = NULL;
@@ -637,9 +710,6 @@ int
 main (int argc, char *argv[])
 {
 	GnomeProgram *program;
-	GtkToolItem *item;
-	GtkToolItem *separator;
-	GtkWidget *toolbar;
 
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -675,21 +745,6 @@ main (int argc, char *argv[])
 				 GTK_WIN_POS_CENTER);
 
 	baobab.tree_view = create_directory_treeview ();
-
-	toolbar = glade_xml_get_widget(baobab.main_xml, "toolbar1");
-	
-	separator = gtk_separator_tool_item_new ();
-	gtk_separator_tool_item_set_draw (GTK_SEPARATOR_TOOL_ITEM (separator), FALSE);
-	gtk_tool_item_set_expand (GTK_TOOL_ITEM (separator), TRUE);	
-	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (separator));
-	gtk_widget_show (GTK_WIDGET (separator));
-
-	spinner = baobab_spinner_new ();
-	item = gtk_tool_item_new ();		
-	gtk_container_add (GTK_CONTAINER (item), spinner);
-  	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
-	gtk_widget_show (GTK_WIDGET (spinner));
-	gtk_widget_show (GTK_WIDGET (item));
 
 	/* set allocated space checkbox */
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *)

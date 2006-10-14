@@ -51,6 +51,9 @@ struct _baobab_application {
   	GtkWidget *window;
   	GtkWidget *tree_view;
   	GtkWidget *ringschart;
+	GtkWidget *toolbar;
+	GtkWidget *spinner;
+	GtkWidget *statusbar;
 	GtkTreeStore *model;
 	gboolean STOP_SCANNING;
 	gboolean CONTENTS_CHANGED_DELAYED;
@@ -93,5 +96,6 @@ gint list_find (gconstpointer a, gconstpointer b);
 gboolean is_excluded_dir (const gchar *);
 void set_toolbar_visible (gboolean visible);
 void set_statusbar_visible (gboolean visible);
+void set_statusbar (const gchar *);
 
 #endif /* __BAOBAB_H_ */
