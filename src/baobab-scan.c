@@ -150,6 +150,12 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	tempHLsize = 0;
 	retloop.size = 0;
 	retloop.alloc_size = 0;
+	dir = NULL;
+	string_to_display = NULL;
+
+	/* Skip the /proc folder */
+	if (strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/proc") == 0)
+		goto exit;
 
 	dir = gnome_vfs_uri_to_string (vfs_uri_dir, GNOME_VFS_URI_HIDE_NONE);
 
@@ -158,12 +164,29 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	else
 		string_to_display = gnome_vfs_format_uri_for_display (dir);
 
+	/* Skip the user excluded folders */
 	if (is_excluded_dir (dir))
 		goto exit;
+	
+	/* get the directory-entry sizes */
+	dir_info = gnome_vfs_file_info_new ();
+	gnome_vfs_get_file_info (dir, dir_info,
+				 GNOME_VFS_FILE_INFO_DEFAULT);
+	
+	/* Folders we can't access (e.g perms 644). Skip'em. */			 
+	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_TYPE) == 0)
+		goto exit;				 
+	
+	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_SIZE) != 0)
+		retloop.size = dir_info->size;
+	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
+		retloop.alloc_size = dir_info->block_count * dir_info->io_block_size;
+	gnome_vfs_file_info_unref (dir_info);
 
-	if (strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/proc") == 0)
-		goto exit;
-
+	/* All skipped folders (i.e. bad type, excluded, /proc) must be
+	   skept *before* this point. Everything passes the prefill-model
+	   will be part of the GUI. */
+	   
 	/* prefill the model */
 	data.size = 1;
 	data.alloc_size = 1;
@@ -173,15 +196,6 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	data.tempHLsize = tempHLsize;
 	fill_model (&data);
 
-	/* get the directory-entry sizes */
-	dir_info = gnome_vfs_file_info_new ();
-	gnome_vfs_get_file_info (dir, dir_info,
-				 GNOME_VFS_FILE_INFO_DEFAULT);
-	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_SIZE) != 0)
-		retloop.size = dir_info->size;
-	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
-		retloop.alloc_size = dir_info->block_count * dir_info->io_block_size;
-	gnome_vfs_file_info_unref (dir_info);
 
 	/* get the GnomeVFSFileInfo stuct for every directory entry */
 	result = gnome_vfs_directory_list_load (&file_list,
@@ -200,11 +214,6 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 			if (strcmp (info->name, ".") == 0 ||
 			    strcmp (info->name, "..") == 0)
 				continue;
-
-			if ((info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_TYPE) == 0) {
-				gnome_vfs_file_info_list_free (file_list);
-				goto exit;
-			}
 
 			/* is a symlink? */
 			if (info->type == GNOME_VFS_FILE_TYPE_SYMBOLIC_LINK)
