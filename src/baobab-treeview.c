@@ -107,10 +107,10 @@ on_tv_button_press (GtkWidget *widget,
 	gboolean is_trash = FALSE;
 
 	if (baobab.CONTENTS_CHANGED_DELAYED) {
-			baobab.CONTENTS_CHANGED_DELAYED = FALSE;
-			if (baobab.STOP_SCANNING) {
-				contents_changed ();
-			}
+		baobab.CONTENTS_CHANGED_DELAYED = FALSE;
+		if (baobab.STOP_SCANNING) {
+			contents_changed ();
+		}
 	}
 
 	gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),

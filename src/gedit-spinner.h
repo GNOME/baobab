@@ -35,7 +35,7 @@
 #ifndef __GEDIT_SPINNER_H__
 #define __GEDIT_SPINNER_H__
 
-#include <gtk/gtkeventbox.h>
+#include <gtk/gtkwidget.h>
 #include <gtk/gtkenums.h>
 
 G_BEGIN_DECLS
@@ -61,7 +61,7 @@ typedef struct _GeditSpinner		GeditSpinner;
 
 struct _GeditSpinner
 {
-	GtkEventBox parent;
+	GtkWidget parent;
 
 	/*< private >*/
 	GeditSpinnerPrivate *priv;
@@ -74,7 +74,7 @@ typedef struct _GeditSpinnerClass	GeditSpinnerClass;
 
 struct _GeditSpinnerClass
 {
-	GtkEventBoxClass parent_class;
+	GtkWidgetClass parent_class;
 };
 
 /*

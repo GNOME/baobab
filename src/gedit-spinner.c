@@ -278,6 +278,7 @@ gedit_spinner_images_load (GdkScreen *screen,
 
 	rest_pixbuf = gdk_pixbuf_new_from_file (icon, NULL);
 	gtk_icon_info_free (icon_info);
+	icon_info = NULL;
 
 	if (rest_pixbuf == NULL)
 	{
@@ -308,6 +309,7 @@ gedit_spinner_images_load (GdkScreen *screen,
 
 	icon_pixbuf = gdk_pixbuf_new_from_file (icon, NULL);
 	gtk_icon_info_free (icon_info);
+	icon_info = NULL;
 
 	if (icon_pixbuf == NULL)
 	{
@@ -442,8 +444,10 @@ gedit_spinner_cache_get_images (GeditSpinnerCache *cache,
 	}
 
 	data = g_hash_table_lookup (priv->hash, screen);
+	if (data == NULL)
 	{
 		data = gedit_spinner_cache_data_new (screen);
+		/* FIXME: think about what happens when the screen's display is closed later on */
 		g_hash_table_insert (priv->hash, screen, data);
 	}
 
@@ -557,7 +561,7 @@ struct _GeditSpinnerPrivate
 static void gedit_spinner_class_init	(GeditSpinnerClass *class);
 static void gedit_spinner_init		(GeditSpinner      *spinner);
 
-static GObjectClass *parent_class = NULL;
+static GObjectClass *parent_class;
 
 GType
 gedit_spinner_get_type (void)
@@ -579,7 +583,7 @@ gedit_spinner_get_type (void)
 			(GInstanceInitFunc) gedit_spinner_init
 		};
 
-		type = g_type_register_static (GTK_TYPE_EVENT_BOX,
+		type = g_type_register_static (GTK_TYPE_WIDGET,
 					       "GeditSpinner",
 					       &our_info, 0);
 	}
@@ -639,6 +643,8 @@ gedit_spinner_init (GeditSpinner *spinner)
 	GeditSpinnerPrivate *priv;
 
 	priv = spinner->priv = GEDIT_SPINNER_GET_PRIVATE (spinner);
+
+	GTK_WIDGET_SET_FLAGS (GTK_WIDGET (spinner), GTK_NO_WINDOW);
 
 	priv->cache = gedit_spinner_cache_ref ();
 	priv->size = GTK_ICON_SIZE_DIALOG;
@@ -1010,7 +1016,5 @@ gedit_spinner_class_init (GeditSpinnerClass *class)
 GtkWidget *
 gedit_spinner_new (void)
 {
-	return GTK_WIDGET (g_object_new (GEDIT_TYPE_SPINNER,
-					 "visible-window", FALSE,
-					 NULL));
+	return GTK_WIDGET (g_object_new (GEDIT_TYPE_SPINNER, NULL));
 }
