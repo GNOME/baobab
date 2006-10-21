@@ -131,19 +131,20 @@ baobab_hardlinks_array_free (baobab_hardlinks_array *a)
 
 static struct allsizes
 loopdir (GnomeVFSURI *vfs_uri_dir,
+	 GnomeVFSFileInfo *dir_info,
 	 guint count,
 	 baobab_hardlinks_array *hla)
 {
-	GList *file_list, *l;
+	GList *file_list;
 	guint64 tempHLsize;
 	gint elements;
 	struct chan_data data;
 	struct allsizes retloop;
 	struct allsizes temp;
 	GnomeVFSResult result;
-	gchar *dir, *string_to_display;
+	gchar *dir;
+	gchar *string_to_display;
 	GnomeVFSURI *new_uri;
-	GnomeVFSFileInfo *dir_info;
 
 	count++;
 	elements = 0;
@@ -159,34 +160,28 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 
 	dir = gnome_vfs_uri_to_string (vfs_uri_dir, GNOME_VFS_URI_HIDE_NONE);
 
+	/* Skip the user excluded folders */
+	if (is_excluded_dir (dir))
+		goto exit;
+
 	if (!baobab.is_local)
 		string_to_display = gnome_vfs_unescape_string_for_display (dir);
 	else
 		string_to_display = gnome_vfs_format_uri_for_display (dir);
 
-	/* Skip the user excluded folders */
-	if (is_excluded_dir (dir))
-		goto exit;
-	
-	/* get the directory-entry sizes */
-	dir_info = gnome_vfs_file_info_new ();
-	gnome_vfs_get_file_info (dir, dir_info,
-				 GNOME_VFS_FILE_INFO_DEFAULT);
-	
 	/* Folders we can't access (e.g perms 644). Skip'em. */			 
 	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_TYPE) == 0)
 		goto exit;				 
-	
+
 	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_SIZE) != 0)
 		retloop.size = dir_info->size;
 	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
 		retloop.alloc_size = dir_info->block_count * dir_info->io_block_size;
-	gnome_vfs_file_info_unref (dir_info);
 
 	/* All skipped folders (i.e. bad type, excluded, /proc) must be
 	   skept *before* this point. Everything passes the prefill-model
 	   will be part of the GUI. */
-	   
+
 	/* prefill the model */
 	data.size = 1;
 	data.alloc_size = 1;
@@ -196,13 +191,14 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	data.tempHLsize = tempHLsize;
 	fill_model (&data);
 
-
 	/* get the GnomeVFSFileInfo stuct for every directory entry */
 	result = gnome_vfs_directory_list_load (&file_list,
 						dir,
 						GNOME_VFS_FILE_INFO_DEFAULT);
 
 	if (result == GNOME_VFS_OK) {
+		GList *l;
+
 		for (l = file_list; l != NULL; l = l->next) {
 			GnomeVFSFileInfo *info = l->data;
 
@@ -222,7 +218,7 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 			/* is a directory? */
 			if (info->type == GNOME_VFS_FILE_TYPE_DIRECTORY) {
 				new_uri = gnome_vfs_uri_append_file_name (vfs_uri_dir, info->name);
-				temp = loopdir (new_uri, count, hla);
+				temp = loopdir (new_uri, info, count, hla);
 				retloop.size += temp.size;
 				retloop.alloc_size += temp.alloc_size;
 				elements++;
@@ -277,6 +273,7 @@ getDir (const gchar *uri_dir)
 {
 	baobab_hardlinks_array *hla;
 	GnomeVFSURI *vfs_uri;
+	GnomeVFSFileInfo *info;
 
 	if (is_excluded_dir (uri_dir))
 		return;
@@ -285,8 +282,14 @@ getDir (const gchar *uri_dir)
 
 	vfs_uri = gnome_vfs_uri_new (uri_dir);
 
-	loopdir (vfs_uri, 0, hla);
+	info = gnome_vfs_file_info_new ();
+	gnome_vfs_get_file_info (uri_dir,
+				 info,
+	                         GNOME_VFS_FILE_INFO_DEFAULT);
+
+	loopdir (vfs_uri, info, 0, hla);
 
 	baobab_hardlinks_array_free (hla);
 	gnome_vfs_uri_unref (vfs_uri);
+	gnome_vfs_file_info_unref (info);
 }
