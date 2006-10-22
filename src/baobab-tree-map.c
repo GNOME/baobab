@@ -160,9 +160,6 @@ loop_treemap (BaobabTreeMap *tm,
 	      gboolean             b_horiz, 
 	      gint                 cur_depth)
 {
-	gchar *name;
-	gdouble ratio;
-	guint64	cur_size;
 	GtkTreeIter cur_iter;
 	rect_coords cur_R;
 
@@ -175,15 +172,25 @@ loop_treemap (BaobabTreeMap *tm,
 	cur_R.x2 = R->x2;
 	cur_R.y2 = R->y2;
 
-	gtk_tree_model_iter_children(tm->priv->model,&cur_iter,&anc_iter);
-	do {	
-		gtk_tree_model_get(tm->priv->model,&cur_iter,tm->priv->COL_FOLDERNAME,&name,-1);
-		gtk_tree_model_get(tm->priv->model,&cur_iter,tm->priv->COL_SIZE,&cur_size,-1);
+	gtk_tree_model_iter_children (tm->priv->model,
+				      &cur_iter,
+				      &anc_iter);
+	do {
+		guint64	cur_size;
+		gchar *name;
+		gdouble ratio;
+
+		gtk_tree_model_get (tm->priv->model,
+				    &cur_iter,
+				    tm->priv->COL_SIZE, &cur_size,
+				    tm->priv->COL_FOLDERNAME, &name,
+				    -1);
 		if (cur_size == 0 || anc_size ==0) {
-			g_free(name);
+			g_free (name);
 			continue;
 		}
-		ratio = (gdouble)cur_size/(gdouble)anc_size;
+
+		ratio = (gdouble)cur_size / (gdouble)anc_size;
 
 		/* check if rect is horiz or vert */
 		if (!b_horiz) {
@@ -192,19 +199,24 @@ loop_treemap (BaobabTreeMap *tm,
 		else  {
 			cur_R.y2 = (R->y2-R->y1)*ratio+cur_R.y1;
 		}
-			
-		draw_rect(tm,(const rect_coords *)&cur_R,g_random_int(),name);
-		
+
+		draw_rect (tm,
+			   (const rect_coords *)&cur_R,
+			   g_random_int(),
+			   name);
+
+		g_free (name);
+
 		/* recurse if iter has child */		
 		if (gtk_tree_model_iter_has_child(tm->priv->model,&cur_iter)) {
-			gtk_tree_model_get(tm->priv->model,
-						&cur_iter,
-						tm->priv->COL_SIZE,
-						&cur_size,
-						-1);
-			loop_treemap(tm, cur_iter,cur_size,&cur_R,!b_horiz, cur_depth+1);
+			loop_treemap (tm,
+				      cur_iter,
+				      cur_size,
+				      &cur_R,
+				      !b_horiz,
+				      cur_depth + 1);
 		}
-		
+
 		/* set up new rect for next child (sibling)*/
 		if (!b_horiz) {
 			cur_R.x1 = cur_R.x2;
@@ -214,7 +226,7 @@ loop_treemap (BaobabTreeMap *tm,
 			cur_R.y1 = cur_R.y2;
 			cur_R.y2 = R->y2;
 		}
-		g_free(name);
+
 	} while (gtk_tree_model_iter_next(tm->priv->model,&cur_iter));		
 }
 
