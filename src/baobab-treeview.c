@@ -28,6 +28,7 @@
 
 #include "baobab.h"
 #include "baobab-treeview.h"
+#include "baobab-cell-renderer-progress.h"
 #include "baobab-utils.h"
 #include "callbacks.h"
 
@@ -37,7 +38,6 @@ create_model (void)
 	GtkTreeStore *mdl = gtk_tree_store_new (NUM_TREE_COLUMNS,
 						G_TYPE_STRING,	/* COL_DIR_NAME */
 						G_TYPE_STRING,	/* COL_H_FULLPATH */
-						GDK_TYPE_PIXBUF,/* COL_BAR */
 						G_TYPE_FLOAT,	/* COL_H_PERC */
 						G_TYPE_STRING,	/* COL_DIR_SIZE */
 						G_TYPE_UINT64,	/* COL_H_SIZE */
@@ -220,10 +220,10 @@ create_directory_treeview (void)
 	/* percentage bar & text column */
 	col = gtk_tree_view_column_new ();
 
-	cell = gtk_cell_renderer_pixbuf_new ();
+	cell = baobab_cell_renderer_progress_new ();
 	gtk_tree_view_column_pack_start (col, cell, FALSE);
-	gtk_tree_view_column_set_attributes (col, cell, "pixbuf",
-	                                     COL_BAR, NULL);
+	gtk_tree_view_column_set_attributes (col, cell, "perc",
+	                                     COL_H_PERC, NULL);
 
 	cell = gtk_cell_renderer_text_new ();
 	gtk_tree_view_column_pack_start (col, cell, TRUE);

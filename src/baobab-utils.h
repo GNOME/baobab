@@ -28,7 +28,6 @@
 void baobab_get_filesystem (baobab_fs *fs);
 gchar* dir_select (gboolean, GtkWidget *);
 void on_toggled (GtkToggleButton *, gpointer);
-GdkPixbuf *set_bar (gfloat );
 void check_menu_sens (gboolean);
 void stop_scan (void);
 gboolean show_bars (GtkTreeModel *model,

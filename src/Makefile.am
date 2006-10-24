@@ -19,6 +19,8 @@ bin_PROGRAMS = baobab
 baobab_SOURCES = \
 	baobab.c \
 	baobab.h \
+	baobab-cell-renderer-progress.c \
+	baobab-cell-renderer-progress.h \
 	baobab-graphwin.c \
 	baobab-graphwin.h \
 	baobab-ringschart.c \

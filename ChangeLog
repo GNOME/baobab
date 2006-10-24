@@ -1,3 +1,25 @@
+2006-10-24  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/Makefile.am:
+	* src/baobab-cell-renderer-progress.c:
+	(baobab_cell_renderer_progress_init),
+	(baobab_cell_renderer_progress_new),
+	(baobab_cell_renderer_progress_get_property),
+	(baobab_cell_renderer_progress_set_property),
+	(baobab_cell_renderer_progress_get_size),
+	(set_color_according_to_perc),
+	(baobab_cell_renderer_progress_render),
+	(baobab_cell_renderer_progress_class_init):
+	* src/baobab-cell-renderer-progress.h:
+	* src/baobab-treeview.c: (create_model),
+	(create_directory_treeview):
+	* src/baobab-treeview.h:
+	* src/baobab-utils.c: (show_bars):
+	* src/baobab-utils.h:
+	* src/baobab.c: (prefill_model), (first_row), (fill_model):
+
+	Use a custom cell renderer instead of the pixbuf bars
+
 2006-10-22  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/gedit-tree-map.c: reduce memory usage, free the name

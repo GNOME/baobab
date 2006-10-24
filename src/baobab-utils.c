@@ -141,77 +141,6 @@ on_toggled (GtkToggleButton *togglebutton, gpointer dialog)
 					  (GTK_FILE_CHOOSER (dialog)));
 }
 
-static GdkPixbuf *
-baobab_load_pixbuf (const gchar *filename)
-{
-	gchar *pathname = NULL;
-	GdkPixbuf *pixbuf;
-	GError *error = NULL;
-
-	g_assert (filename != NULL && filename[0] != '\0');
-
-	pathname = g_build_filename (BAOBAB_PIX_DIR, filename, NULL);
-
-	if (pathname == NULL) {
-		g_warning (_("Couldn't find pixmap file: %s"), filename);
-		return NULL;
-	}
-
-	pixbuf = gdk_pixbuf_new_from_file (pathname, &error);
-	if (pixbuf == NULL) {
-		fprintf (stderr, "Failed to load pixbuf file: %s: %s\n",
-			 pathname, error->message);
-		g_error_free (error);
-	}
-	g_free (pathname);
-
-	return pixbuf;
-}
-
-GdkPixbuf *
-set_bar (gfloat perc)
-{
-	static GdkPixbuf *white_bar;
-	static GdkPixbuf *green_bar;
-	static GdkPixbuf *yellow_bar;
-	static GdkPixbuf *red_bar;
-	static gint height, width;
-
-	GdkPixbuf *srcpxb = NULL;
-	GdkPixbuf *destpxb;
-	gint perc_width;
-
-	if (white_bar == NULL) {
-		/* init pixbufs */
-		white_bar = baobab_load_pixbuf ("white.png");
-		green_bar = baobab_load_pixbuf ("green.png");
-		yellow_bar = baobab_load_pixbuf ("yellow.png");
-		red_bar = baobab_load_pixbuf ("red.png");
-		height = gdk_pixbuf_get_height (white_bar);
-		width = gdk_pixbuf_get_width (white_bar) - 1;
-	}
-
-	if (perc <= 33.0f)
-		srcpxb = green_bar;
-	else if (perc > 33.0f && perc <= 60.0f)
-		srcpxb = yellow_bar;
-	else if (perc > 60.0f)
-		srcpxb = red_bar;
-
-	destpxb = gdk_pixbuf_copy (white_bar);
-
-	/* if bar width == 50 --> $width = $perc/2 */
-	perc_width = (gint) (gfloat) ((width * perc) / 100.0f);
-
-	gdk_pixbuf_copy_area (srcpxb,
-			      1, 1,
-			      perc_width - 2, height - 2,
-			      destpxb,
-			      1, 1);
-
-	return destpxb;
-}
-
 void
 set_glade_widget_sens (const gchar *name, gboolean sens)
 {
@@ -276,7 +205,6 @@ show_bars (GtkTreeModel *mdl,
 	gfloat perc;
 	gint readelements, size_col;
 	guint64 refsize, size;
-	GdkPixbuf *bar;
 	gchar textperc[10];
 	char *sizecstr = NULL;
 
@@ -314,15 +242,12 @@ show_bars (GtkTreeModel *mdl,
 		gtk_tree_model_get (mdl, &parent, size_col, &refsize, -1);
                 perc = (refsize != 0) ? ((gfloat) size * 100) / (gfloat) refsize : 0.0;
 		g_sprintf (textperc, " %.1f %%", perc);
-		bar = set_bar (perc);
 
 		gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
-				    COL_BAR, bar,
 				    COL_DIR_SIZE, sizecstr,
 				    COL_H_PERC, perc,
 				    COL_PERC, textperc, -1);
 
-		g_object_unref (bar);
 		g_free (sizecstr);
 	} else {
 		gtk_tree_model_get (mdl, iter, COL_H_ELEMENTS,
@@ -331,15 +256,12 @@ show_bars (GtkTreeModel *mdl,
 			gtk_tree_model_get (mdl, iter, size_col, &size,
 					    -1);
 			sizecstr = gnome_vfs_format_file_size_for_display (size);
-			bar = set_bar (100.0);
 
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
-					    COL_BAR, bar,
 					    COL_H_PERC, 100.0,
 					    COL_PERC, "100 %",
 					    COL_DIR_SIZE, sizecstr, -1);
 
-			g_object_unref (bar);
 			g_free (sizecstr);
 		}
 		else {

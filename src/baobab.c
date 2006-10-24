@@ -166,7 +166,6 @@ prefill_model (struct chan_data *data)
 	GString *cdir;
 	char *basename;
 	GtkTreeIter iter, iterparent;
-	GdkPixbuf *bar;
 	gchar *str;
 
 	cdir = g_string_new ("");
@@ -216,16 +215,14 @@ prefill_model (struct chan_data *data)
 	/* check UTF-8 and locale */
 	check_UTF (cdir);
 
-	bar = set_bar (0.0f);
 	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning..."));
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
 	gtk_tree_store_set (baobab.model, &iter, COL_DIR_NAME, cdir->str,
 			    COL_H_FULLPATH, "", COL_H_ELEMENTS, -1, 
-			    COL_DIR_SIZE, str, COL_BAR, bar,
+			    COL_DIR_SIZE, str,
 			    COL_PERC, " -.- %", COL_ELEMENTS, str, -1);
 
-	g_object_unref (bar);
 	g_string_free (cdir, TRUE);
 	g_free(str);
 
@@ -243,7 +240,6 @@ first_row (void)
 	char *size;
 	gfloat perc;
 	gchar textperc[10];
-	GdkPixbuf *bar;
 	char *label;
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
@@ -252,34 +248,23 @@ first_row (void)
 	g_assert(g_fs.total != 0);
 	perc = ((gfloat) g_fs.used * 100) / (gfloat) g_fs.total;
 	g_sprintf (textperc, " %.1f %%", perc);
-	bar = set_bar ((g_fs.used * 100) / g_fs.total);
 
 	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
 	gtk_tree_store_set (baobab.model, &firstiter,
 			    COL_DIR_NAME,
 			    label,
 			    COL_H_FULLPATH, "",
-			    COL_BAR, bar,
 			    COL_H_PERC, perc,
 			    COL_DIR_SIZE, size, COL_PERC, textperc,
 			    COL_H_SIZE, g_fs.used,
 			    COL_H_ALLOCSIZE, g_fs.used,
 			    COL_H_ELEMENTS, -1, -1);
 
-	g_object_unref (bar);
 	g_free (size);
 	g_free (label);
 }
 
-/* fills model during scanning
- *  model:
- *
- *	0, $dir,					   1, $fullpath,
- *	2, set_bar($perc),				   3, $perc,
- *	4, calc($size),	        			   5, $size,
- *	6, sprintf("% 4s",$elements)." "._('elements'),	   7, $elements,
- *	8, text showing hardlink size,			   9, $HLsize
- */
+/* fills model during scanning */
 void
 fill_model (struct chan_data *data)
 {
@@ -287,7 +272,6 @@ fill_model (struct chan_data *data)
 	GString *hardlinks;
 	GString *basename;
 	GString *elementi;
-	GdkPixbuf *bar;
 	char *size;
 	char *alloc_size;
 	char *basename_cstr;
@@ -324,11 +308,10 @@ fill_model (struct chan_data *data)
 
 	size = gnome_vfs_format_file_size_for_display (data->size);
 	alloc_size = gnome_vfs_format_file_size_for_display (data->alloc_size);
-	bar = set_bar (0.0f);
 
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, basename->str, COL_H_FULLPATH,
-			    data->dir, COL_BAR, bar, COL_H_PERC, 0.0, 
+			    data->dir, COL_H_PERC, 0.0, 
 			    COL_PERC, "-.- %", COL_DIR_SIZE,
 			    baobab.show_allocated ? alloc_size : size,
 			    COL_H_SIZE, data->size, COL_ELEMENTS,
@@ -336,8 +319,6 @@ fill_model (struct chan_data *data)
 			    COL_HARDLINK, hardlinks->str, COL_H_HARDLINK,
 			    data->tempHLsize, COL_H_ALLOCSIZE,
 			    data->alloc_size, -1);
-
-	g_object_unref (bar);
 
 	while (gtk_events_pending ()) {
 		gtk_main_iteration ();
