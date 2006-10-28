@@ -157,6 +157,14 @@ start_proc_on_dir (const gchar *dir)
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 }
 
+void
+rescan_current_dir (void)
+{
+	g_return_if_fail (baobab.last_scan_command != NULL);
+
+	start_proc_on_dir (baobab.last_scan_command->str);
+}
+
 /*
  * pre-fills model during scanning
  */
@@ -716,8 +724,8 @@ main (int argc, char *argv[])
 	if (g_fs.total == 0) {
 		g_print("No mount points detected! Aborting...\n");
 		goto closing;
-		}
-	
+	}
+
 	set_label_scan (&g_fs);
 	show_label ();
 
@@ -726,6 +734,8 @@ main (int argc, char *argv[])
 				 GTK_WIN_POS_CENTER);
 
 	baobab.tree_view = create_directory_treeview ();
+
+	set_glade_widget_sens("menurescan",FALSE);
 
 	/* set allocated space checkbox */
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *)

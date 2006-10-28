@@ -111,16 +111,15 @@ on_menu_stop_activate (GtkMenuItem *menuitem, gpointer user_data)
 }
 
 void
-on_tbscandir_clicked (GtkToolButton *toolbutton, gpointer user_data)
+on_menu_rescan_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	dir_select (FALSE, baobab.window);
+	rescan_current_dir ();
 }
 
 void
-on_tbstop_clicked (GtkToolButton *toolbutton, gpointer user_data)
+on_tbscandir_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	baobab.STOP_SCANNING = TRUE;
-	stop_scan ();
+	dir_select (FALSE, baobab.window);
 }
 
 void
@@ -159,6 +158,19 @@ void
 on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
 	on_tb_scan_remote_clicked (NULL, NULL);
+}
+
+void
+on_tbstop_clicked (GtkToolButton *toolbutton, gpointer user_data)
+{
+	baobab.STOP_SCANNING = TRUE;
+	stop_scan ();
+}
+
+void
+on_tbrescan_clicked (GtkToolButton *toolbutton, gpointer user_data)
+{
+	rescan_current_dir ();
 }
 
 gboolean

@@ -165,14 +165,16 @@ check_menu_sens (gboolean scanning)
 		set_glade_widget_sens ("collapse_all", TRUE);		
 	}
 
-	set_glade_widget_sens ("tbstop", scanning);
-	set_glade_widget_sens ("menustop", scanning);
 	set_glade_widget_sens ("tbscanhome", !scanning);
 	set_glade_widget_sens ("tbscanall", !scanning);
 	set_glade_widget_sens ("tbscandir", !scanning);
 	set_glade_widget_sens ("menuscanhome", !scanning);
 	set_glade_widget_sens ("menuallfs", !scanning);
 	set_glade_widget_sens ("menuscandir", !scanning);
+	set_glade_widget_sens ("tbstop", scanning);
+	set_glade_widget_sens ("tbrescan", !scanning);
+	set_glade_widget_sens ("menustop", scanning);
+	set_glade_widget_sens ("menurescan", !scanning);
 	set_glade_widget_sens ("preferenze1", !scanning);
 	set_glade_widget_sens ("menu_scan_rem", !scanning);
 	set_glade_widget_sens ("tb_scan_remote", !scanning);
@@ -644,10 +646,10 @@ baobab_gconf_get_string_with_default (GConfClient *client,
 				      const gchar *key,
 				      const gchar *def)
 {
-  gchar *val;
+	gchar *val;
 
-  val = gconf_client_get_string (client, key, NULL);
-  return val ? val : g_strdup (def);
+	val = gconf_client_get_string (client, key, NULL);
+	return val ? val : g_strdup (def);
 }
 
 gboolean

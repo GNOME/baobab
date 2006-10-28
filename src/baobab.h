@@ -90,6 +90,7 @@ baobab_fs g_fs;
 
 void set_busy (gboolean busy);
 void start_proc_on_dir (const gchar *);
+void rescan_current_dir (void);
 void fill_model (struct chan_data *);
 void first_row (void);
 gint list_find (gconstpointer a, gconstpointer b);
