@@ -413,34 +413,28 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash)
 void
 set_label_scan (baobab_fs *fs)
 {
-	gchar *markup, *size;
-	GString *total;
-	GString *used;
-	GString *avail;
+	gchar *markup;
+	gchar *total;
+	gchar *used;
+	gchar *available;
 
-	if (baobab.label_scan)
-		g_free (baobab.label_scan);
+	g_free (baobab.label_scan);
 
-	size = gnome_vfs_format_file_size_for_display (fs->total);
-	total = g_string_new (size);
-	g_free (size);
-	size = gnome_vfs_format_file_size_for_display (fs->used);
-	used = g_string_new (size);
-	g_free (size);
+	total = gnome_vfs_format_file_size_for_display (fs->total);
+	used = gnome_vfs_format_file_size_for_display (fs->used);
+	available = gnome_vfs_format_file_size_for_display (fs->avail);
 
-	size = gnome_vfs_format_file_size_for_display (fs->avail);
-	avail = g_string_new (size);
-	g_free (size);
+	/* Translators: these are labels for disk space */
+	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b> (%s %s %s %s )</small>",
+					   _("Total filesystem capacity:"), total,
+					   _("used:"), used,
+					   _("available:"), available);
 
-	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b>  (%s %s, %s %s)</small>",
-					   _("Total filesystem capacity:"), total->str, _("Used:"),
-					   used->str, _("Free:"), avail->str);
-	baobab.label_scan = strdup (markup);
+	baobab.label_scan = markup;
 
-	g_string_free (total, TRUE);
-	g_string_free (used, TRUE);
-	g_string_free (avail, TRUE);
-	g_free (markup);
+	g_free (total);
+	g_free (used);
+	g_free (available);
 }
 
 void
