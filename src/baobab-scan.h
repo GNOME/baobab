@@ -30,14 +30,4 @@
 void getDir (const gchar *);
 void searchDir (const gchar *, const gchar *);
 
-/* hardlinks handling */
-
-typedef struct _baobab_hardlinks_array baobab_hardlinks_array;
-
-baobab_hardlinks_array * baobab_hardlinks_array_create (void);
-gboolean baobab_hardlinks_array_has (baobab_hardlinks_array *, GnomeVFSFileInfo *);
-void baobab_hardlinks_array_add (baobab_hardlinks_array *, GnomeVFSFileInfo *);
-void baobab_hardlinks_array_free (baobab_hardlinks_array *);
-
-
 #endif /* __BBTHREAD_H__ */

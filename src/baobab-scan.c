@@ -24,78 +24,54 @@
 #include <config.h>
 
 #include <glib.h>
-
-#include <string.h>
-#include <time.h>
-#include <pwd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include <gtk/gtk.h>
 #include <libgnomevfs/gnome-vfs.h>
-#include <glib/gstdio.h>
-#include <fnmatch.h>
 
 #include "baobab.h"
 #include "baobab-scan.h"
 
 
-struct allsizes {
-	GnomeVFSFileSize size;
-	GnomeVFSFileSize alloc_size;
-};
+/*
+   Hardlinks handling.
 
-struct _baobab_hardlinks_array {
-	/* Array of GnomeFileInfo *
-	   as long as we're optimistic about hardlinks count
-	   over the whole system (250 files with st_nlink > 1 here),
-	   we keep linear search.
+   As long as we're optimistic about hardlinks count
+   over the whole system (250 files with st_nlink > 1 here),
+   we keep linear search. If it turns out to be an bottleneck
+   we can switch to an hash table or tree.
 
-	   TODO: get real timings about this code. find out the average
-	   number of files with st_nlink > 1 on average computer.
+   TODO: get real timings about this code. find out the average
+   number of files with st_nlink > 1 on average computer.
 
-	   MAYBE: store only { inode, dev } instead of full struct stat.
-	   I don't know if dev_t and ino_t are standard enough so i guess
-	   i would be safier to store both as guint64.
-	   On my ppc :
-	   - dev_t is 8 bytes
-	   - ino_t is 4 bytes
-	   - struct stat is 88 bytes
+   To save memory, we store only { inode, dev } instead of full
+   GnomeVfsFileInfo.
 
-	   MAYBE: turn into a hashtable or tree for faster lookups.
-	   Would use st_ino or (st_ino and st_dev) for hash
-	   and use st_ino and st_dev for equality.
-	   Again, as we don't know the sizeof of these st_*, i don't
-	   think using g_direct_hash / g_direct_equal / boxing st_something
-	   into a void* would be safe.
+   EDIT: /me stupid. I realize that this code was not called that often
+   1 call per file with st_nlink > 1. BUT, i'm using pdumpfs to backup
+   my /etc. pdumpfs massively uses hard links. So there are more than
+   5000 files with st_nlink > 1. I believe this is the worst case.
+*/
 
-	   EDIT: /me stupid. I realize that this code was not called that often
-	   1 call per file with st_nlink > 1. BUT, i'm using pdumpfs to backup
-	   my /etc. pdumpfs massively uses hard links. So there are more than
-	   5000 files with st_nlink > 1. I believe this is the worst case.
-	 */
+typedef struct {
+	GnomeVFSInodeNumber inode;
+	dev_t               device;
+} BaobabHardLink;
 
-	GArray *inodes;
-};
+typedef GArray BaobabHardLinkArray;
 
-baobab_hardlinks_array *
+static BaobabHardLinkArray *
 baobab_hardlinks_array_create (void)
 {
-	baobab_hardlinks_array *array;
-
-	array = g_new (baobab_hardlinks_array, 1);
-	array->inodes = g_array_new (FALSE, FALSE, sizeof (GnomeVFSFileInfo));
-
-	return array;
+	return g_array_new (FALSE, FALSE, sizeof(BaobabHardLink));
 }
 
-gboolean
-baobab_hardlinks_array_has (baobab_hardlinks_array *a,
-			    GnomeVFSFileInfo *s)
+static gboolean
+baobab_hardlinks_array_has (BaobabHardLinkArray *a,
+			    GnomeVFSFileInfo    *s)
 {
 	guint i;
 
-	for (i = 0; i < a->inodes->len; ++i) {
-		GnomeVFSFileInfo *cur = &g_array_index (a->inodes, GnomeVFSFileInfo, i);
+	for (i = 0; i < a->len; ++i) {
+		BaobabHardLink *cur = &g_array_index (a, BaobabHardLink, i);
 
 		/*
 		 * cur->st_dev == s->st_dev is the common case and may be more
@@ -108,32 +84,43 @@ baobab_hardlinks_array_has (baobab_hardlinks_array *a,
 	return FALSE;
 }
 
-void
-baobab_hardlinks_array_add (baobab_hardlinks_array *a,
-			    GnomeVFSFileInfo *s)
+/* return FALSE if the element was already in the array */
+static gboolean
+baobab_hardlinks_array_add (BaobabHardLinkArray *a,
+			    GnomeVFSFileInfo    *s)
 {
-	/* FIXME: maybe slow check */
-	g_assert (!baobab_hardlinks_array_has (a, s));
-	g_array_append_val (a->inodes, *s);
+	BaobabHardLink hl;
+
+	if (baobab_hardlinks_array_has (a, s))
+		return FALSE;
+
+	hl.inode = s->inode;
+	hl.device = s->device;
+
+	g_array_append_val (a, hl);
+
+	return TRUE;
 }
 
-void
-baobab_hardlinks_array_free (baobab_hardlinks_array *a)
+static void
+baobab_hardlinks_array_free (BaobabHardLinkArray *a)
 {
-	/*
-	g_print("HL len was %u (size %u)\n",
-	a->inodes->len,
-	(unsigned) a->inodes->len * sizeof(struct stat));
-	*/
-	g_array_free (a->inodes, TRUE);
-	g_free (a);
+/*	g_print ("HL len was %d\n", a->len); */
+
+	g_array_free (a, TRUE);
 }
+
+
+struct allsizes {
+	GnomeVFSFileSize size;
+	GnomeVFSFileSize alloc_size;
+};
 
 static struct allsizes
 loopdir (GnomeVFSURI *vfs_uri_dir,
 	 GnomeVFSFileInfo *dir_info,
 	 guint count,
-	 baobab_hardlinks_array *hla)
+	 BaobabHardLinkArray *hla)
 {
 	GList *file_list;
 	guint64 tempHLsize;
@@ -231,13 +218,12 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 				if (GNOME_VFS_FILE_INFO_LOCAL (info)) {
 					if (info->link_count > 1) {
 
-						if (baobab_hardlinks_array_has (hla, info)) {
+						if (!baobab_hardlinks_array_add (hla, info)) {
+
+							/* we already acconted for it */
 							tempHLsize += (info->block_count *
 							               info->io_block_size);
 							continue;
-						}
-						else {
-							baobab_hardlinks_array_add (hla, info);
 						}
 					}
 				}
@@ -271,7 +257,7 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 void
 getDir (const gchar *uri_dir)
 {
-	baobab_hardlinks_array *hla;
+	BaobabHardLinkArray *hla;
 	GnomeVFSURI *vfs_uri;
 	GnomeVFSFileInfo *info;
 

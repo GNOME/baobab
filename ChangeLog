@@ -1,5 +1,14 @@
 2006-10-28  Paolo Borelli  <pborelli@katamail.com>
 
+	* src/baobab-scan.c:
+	* src/baobab-scan.h:
+
+	Clean up a bit Hard links handling so that we just store
+	inode and device in the list instead of the full
+	GnomeVfsFileInfo.
+
+2006-10-28  Paolo Borelli  <pborelli@katamail.com>
+
 	* data/baobab.glade:
 	* data/baobab:
 	* src/baobab-utils.c:
