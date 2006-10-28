@@ -110,6 +110,7 @@ baobab_hardlinks_array_free (BaobabHardLinkArray *a)
 	g_array_free (a, TRUE);
 }
 
+#define BLOCK_SIZE 512
 
 struct allsizes {
 	GnomeVFSFileSize size;
@@ -163,7 +164,7 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_SIZE) != 0)
 		retloop.size = dir_info->size;
 	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
-		retloop.alloc_size = dir_info->block_count * dir_info->io_block_size;
+		retloop.alloc_size = dir_info->block_count * BLOCK_SIZE;
 
 	/* All skipped folders (i.e. bad type, excluded, /proc) must be
 	   skept *before* this point. Everything passes the prefill-model
@@ -221,15 +222,14 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 						if (!baobab_hardlinks_array_add (hla, info)) {
 
 							/* we already acconted for it */
-							tempHLsize += (info->block_count *
-							               info->io_block_size);
+							tempHLsize += info->size;
 							continue;
 						}
 					}
 				}
 
 				if ((info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
-					retloop.alloc_size += (info->block_count * 512);
+					retloop.alloc_size += (info->block_count * BLOCK_SIZE);
 
 				retloop.size += info->size;
 				elements++;
