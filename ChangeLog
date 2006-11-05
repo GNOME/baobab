@@ -1,5 +1,13 @@
 2006-11-05 Alejandro G. Castro <acastro@igalia.com>
 
+	* src/baobab-ringschart.c: Changed all the M_PI constants for
+	G_PI, there are some platforms where the math constants are not
+	defined.
+	(tree_traverse): Fixed a problem with a GtkTreePath, we were using
+	g_free instead gtk_tree_path_free and it was causing a leak.
+	
+2006-11-05 Alejandro G. Castro <acastro@igalia.com>
+
         Patch cotributed by Miguel A. Gomez <magomez@igalia.com>
 	
 	* src/baobab-ringschart.c (bug #363608):

@@ -292,7 +292,7 @@ baobab_ringschart_init (BaobabRingschart *object)
   priv->current_depth = MAX_DRAWABLE_DEPTH +1;
   priv->drawn_elements = 0;
   priv->current_init_angle = 0; 
-  priv->current_final_angle = M_2_PI;
+  priv->current_final_angle = 2*G_PI;
   priv->real_sector = FALSE;
   priv->button_pressed = FALSE;
   priv->is_frozen = FALSE;
@@ -648,18 +648,18 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
 
   priv->drawn_elements = 0;
   priv->current_init_angle = 0;  
-  priv->current_final_angle = 3*M_PI;
+  priv->current_final_angle = 3*G_PI;
   priv->real_sector = FALSE;
   
   /* the tree has just one node */
   if (priv->init_depth == 0)     
-    max_angle = 2*M_PI;
+    max_angle = 2*G_PI;
   else
     {
       gtk_tree_model_get (priv->model, &initial_iter, 
                           priv->percentage_column, &perc, -1);
       
-      max_angle = 2*M_PI*perc*0.01;
+      max_angle = 2*G_PI*perc*0.01;
     }
 
   if (priv->draw_center)
@@ -763,7 +763,7 @@ draw_circle (cairo_t *cr,
   cairo_save (cr);
 
   cairo_set_line_width (cr, 1);
-  cairo_arc (cr, center_x, center_y, radius, 0, 2*M_PI);
+  cairo_arc (cr, center_x, center_y, radius, 0, 2*G_PI);
 
   cairo_set_source_rgb (cr, fill_color.red, fill_color.green, fill_color.blue);
   cairo_fill_preserve (cr);
@@ -920,13 +920,13 @@ get_color (Color *color,
     }
   else
     {
-      color_number = angle / (M_PI/3);
+      color_number = angle / (G_PI/3);
       next_color_number = (color_number+1) % 6;
 
       interpolate_colors (color,
                           tango_colors[color_number],
                           tango_colors[next_color_number],
-                          (angle-color_number*M_PI/3)/(M_PI/3));
+                          (angle-color_number*G_PI/3)/(G_PI/3));
       color->red = color->red * intensity;
       color->green = color->green * intensity;
       color->blue = color->blue * intensity;
@@ -966,7 +966,7 @@ tree_traverse (cairo_t *cr,
   if (final_angle - init_angle < MIN_DRAWABLE_ANGLE)
     return;
       
-  if ((priv->current_depth == depth) && (priv->current_final_angle == 3*M_PI))
+  if ((priv->current_depth == depth) && (priv->current_final_angle == 3*G_PI))
     {
       if (priv->point_angle < final_angle)
         {
@@ -975,8 +975,10 @@ tree_traverse (cairo_t *cr,
               if (priv->button_pressed)
                 {
                   GtkTreePath *path;
+
                   if (priv->root) 
                     gtk_tree_row_reference_free (priv->root);
+
                   path = gtk_tree_model_get_path (priv->model, iter);
                   priv->root = gtk_tree_row_reference_new (priv->model, path);
                   priv->button_pressed = FALSE;
@@ -984,13 +986,13 @@ tree_traverse (cairo_t *cr,
                   depth = priv->init_depth;
                   radius = priv->min_radius;
                   init_angle = 0;
-                  final_angle = 2*M_PI;
+                  final_angle = 2*G_PI;
 
                   g_signal_emit (BAOBAB_RINGSCHART (rchart),
                                  ringschart_signals[SECTOR_ACTIVATED],
                                  0, iter);
                   
-                  g_free (path);
+                  gtk_tree_path_free (path);
                 }
               else 
                 {
@@ -1153,8 +1155,8 @@ baobab_ringschart_motion_notify (GtkWidget        *widget,
 
   /* FIXME: could we use cairo_in_stroke or cairo_in_fill? would it be
      a better solution */
-  angle = -1.0 * atan2 (x, y) + M_PI_2;
-  angle = (angle > 0) ? angle : angle + 2*M_PI;
+  angle = -1.0 * atan2 (x, y) + G_PI_2;
+  angle = (angle > 0) ? angle : angle + 2*G_PI;
   
   depth = sqrt (x*x + y*y) / (priv->thickness);
 
