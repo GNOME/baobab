@@ -20,7 +20,7 @@
  *
  * Authors:
  *   Mario Sanchez <msanchez@igalia.com>
- *   Miguel Gomez <mgomez@igalia.com>
+ *   Miguel Gomez <magomez@igalia.com>
  *   Henrique Ferreiro <hferreiro@igalia.com>
  *   Alejandro Pinheiro <apinheiro@igalia.com>
  *   Carlos Sanmartin <csanmartin@igalia.com>
@@ -175,7 +175,8 @@ static void draw_sector (cairo_t *cr,
 static void draw_circle (cairo_t *cr, 
                          gdouble center_x, 
                          gdouble center_y,
-                         gdouble radius);
+                         gdouble radius,
+                         gboolean highlighted);
 static void draw_tip (cairo_t *cr,
                       GtkWidget *rchart,
                       gdouble init_angle,
@@ -183,11 +184,14 @@ static void draw_tip (cairo_t *cr,
                       gdouble depth,
                       gchar *name,
                       gchar *size);
-static Color *interpolate_colors (Color colora,
-                                  Color colorb,
-                                  gdouble percentage);
-static Color *get_color (gdouble angle,
-                         gint circle_number);
+static void interpolate_colors (Color *color,
+                                Color colora,
+                                Color colorb,
+                                gdouble percentage);
+static void get_color (Color *color,
+                       gdouble angle,
+                       gint circle_number,
+                       gboolean highlighted);
 static void tree_traverse (cairo_t *cr,
                            BaobabRingschart *rchart,
                            GtkTreeIter *iter,
@@ -272,30 +276,30 @@ baobab_ringschart_init (BaobabRingschart *object)
 {
   BaobabRingschartPrivate *priv = BAOBAB_RINGSCHART_GET_PRIVATE(object);
  
-  priv -> model = NULL;
-  priv -> center_x = 0;  
-  priv -> center_y = 0;
-  priv -> max_radius= 0;
-  priv -> min_radius= 0;
-  priv -> thickness= 0;
-  priv -> max_depth = MAX_DRAWABLE_DEPTH;
-  priv -> name_column = 0;
-  priv -> size_column = 0;
-  priv -> info_column = 0;
-  priv -> percentage_column = 0;
-  priv -> valid_column = 0;
+  priv->model = NULL;
+  priv->center_x = 0;  
+  priv->center_y = 0;
+  priv->max_radius= 0;
+  priv->min_radius= 0;
+  priv->thickness= 0;
+  priv->max_depth = MAX_DRAWABLE_DEPTH;
+  priv->name_column = 0;
+  priv->size_column = 0;
+  priv->info_column = 0;
+  priv->percentage_column = 0;
+  priv->valid_column = 0;
   /* we want to avoid to paint the first time */
-  priv -> current_depth = MAX_DRAWABLE_DEPTH +1;
-  priv -> drawn_elements = 0;
-  priv -> current_init_angle = 0; 
-  priv -> current_final_angle = M_2_PI;
-  priv -> real_sector = FALSE;
-  priv -> button_pressed = FALSE;
-  priv -> is_frozen = FALSE;
-  priv -> init_depth = 0;
-  priv -> draw_center = FALSE;
-  priv -> memento = NULL;
-  priv -> root = NULL;
+  priv->current_depth = MAX_DRAWABLE_DEPTH +1;
+  priv->drawn_elements = 0;
+  priv->current_init_angle = 0; 
+  priv->current_final_angle = M_2_PI;
+  priv->real_sector = FALSE;
+  priv->button_pressed = FALSE;
+  priv->is_frozen = FALSE;
+  priv->init_depth = 0;
+  priv->draw_center = FALSE;
+  priv->memento = NULL;
+  priv->root = NULL;
 }
 
 static void
@@ -390,12 +394,12 @@ baobab_ringschart_size_allocate (GtkWidget     *widget,
 			      allocation->width, allocation->height);
     }
   
-  priv -> center_x = widget->allocation.width / 2;  
-  priv -> center_y = widget->allocation.height / 2;
-  priv -> max_radius= MIN (widget->allocation.width / 2,
-                           widget->allocation.height / 2) - WINDOW_PADDING*2;
-  priv -> min_radius= priv -> max_radius / (priv -> max_depth + 1);
-  priv -> thickness= priv -> min_radius;
+  priv->center_x = widget->allocation.width / 2;  
+  priv->center_y = widget->allocation.height / 2;
+  priv->max_radius= MIN (widget->allocation.width / 2,
+                         widget->allocation.height / 2) - WINDOW_PADDING*2;
+  priv->min_radius= priv->max_radius / (priv->max_depth + 1);
+  priv->thickness= priv->min_radius;
 }
 
 static void
@@ -642,24 +646,27 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
   if (priv->root == NULL)
     gtk_tree_model_get_iter_first (priv->model, &initial_iter);
 
-  priv -> drawn_elements = 0;
-  priv -> current_init_angle = 0;  
-  priv -> current_final_angle = 3*M_PI;
-  priv -> real_sector = FALSE;
+  priv->drawn_elements = 0;
+  priv->current_init_angle = 0;  
+  priv->current_final_angle = 3*M_PI;
+  priv->real_sector = FALSE;
   
   /* the tree has just one node */
   if (priv->init_depth == 0)     
     max_angle = 2*M_PI;
   else
     {
-      gtk_tree_model_get (priv -> model, &initial_iter, 
-                          priv -> percentage_column, &perc, -1);
+      gtk_tree_model_get (priv->model, &initial_iter, 
+                          priv->percentage_column, &perc, -1);
       
       max_angle = 2*M_PI*perc*0.01;
     }
 
+  if (priv->draw_center)
+    draw_circle (cr, priv->center_x, priv->center_y, priv->min_radius, FALSE);
+
   tree_traverse(cr, BAOBAB_RINGSCHART (rchart), &initial_iter, 
-                priv->init_depth, priv -> min_radius, 0, max_angle, &tooltips, 
+                priv->init_depth, priv->min_radius, 0, max_angle, &tooltips, 
                 !priv->button_pressed);
 
   if (priv->root)
@@ -687,6 +694,10 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
         tips_iter = tooltips;
 
         tooltip = tips_iter->data;
+
+        /* check if the root is highlihgted in order to redraw it*/
+        if ((priv->draw_center) && (tooltip->depth == -1))
+          draw_circle (cr, priv->center_x, priv->center_y, priv->min_radius, TRUE);
 
         draw_tip (cr, rchart, tooltip->init_angle, tooltip->final_angle, 
                   tooltip->depth , tooltip->name, tooltip->size);
@@ -742,9 +753,12 @@ static void
 draw_circle (cairo_t *cr, 
              gdouble center_x, 
              gdouble center_y,
-             gdouble radius)
+             gdouble radius,
+             gboolean highlighted)
 {
-  const Color fill_color  = {0.83, 0.84, 0.82}; /* tango: d3d7cf */
+  Color fill_color;
+  
+  get_color (&fill_color, 0, 0, highlighted);
   
   cairo_save (cr);
 
@@ -885,12 +899,12 @@ draw_tip (cairo_t *cr,
   g_free (text);
 }
 
-static Color *
-interpolate_colors (Color colora,
+static void
+interpolate_colors (Color *color,
+                    Color colora,
                     Color colorb,
                     gdouble percentage)
 {
-  Color *color = g_new0 (Color, 1);
   gdouble diff;
 
   diff = colora.red - colorb.red;
@@ -900,34 +914,52 @@ interpolate_colors (Color colora,
   color->green = colora.green-diff*percentage;
 
   diff = colora.blue - colorb.blue;
-  color->blue = colora.blue-diff*percentage;
-  
-  return color;
+  color->blue = colora.blue-diff*percentage; 
 }
 
-static Color *
-get_color (gdouble angle,
-	   gint circle_number)
+static void
+get_color (Color *color,
+           gdouble angle,
+      	   gint circle_number,
+      	   gboolean highlighted)
 {
-  Color *color;
   gdouble intensity;
   gint color_number;
   gint next_color_number;
 
   intensity = 1-((circle_number*0.3)/MAX_DRAWABLE_DEPTH);
 
-  color_number = angle / (M_PI/3);
-  next_color_number = (color_number+1) % 6;
+  if (circle_number == 0)
+    {
+      static const Color circle_color = {0.83, 0.84, 0.82};
 
-  color = interpolate_colors (tango_colors[color_number], 
-                              tango_colors[next_color_number],
-                              (angle-color_number*M_PI/3)/(M_PI/3));
+      *color = circle_color;
+    }
+  else
+    {
+      color_number = angle / (M_PI/3);
+      next_color_number = (color_number+1) % 6;
 
-  color->red = color->red * intensity;
-  color->green = color->green * intensity;
-  color->blue = color->blue * intensity;
+      interpolate_colors (color,
+                          tango_colors[color_number],
+                          tango_colors[next_color_number],
+                          (angle-color_number*M_PI/3)/(M_PI/3));
+      color->red = color->red * intensity;
+      color->green = color->green * intensity;
+      color->blue = color->blue * intensity;
+    }
   
-  return color;
+  if (highlighted)
+    {
+      gdouble maximum;
+      
+      maximum = MAX (color->red,
+                     MAX (color->green,
+                          color->blue));
+      color->red /= maximum;
+      color->green /= maximum;
+      color->blue /= maximum;
+    }
 }
 
 static void
@@ -942,15 +974,16 @@ tree_traverse (cairo_t *cr,
                gboolean real_draw)
 {
   BaobabRingschartPrivate *priv;
-  Color *fill_color;
+  Color fill_color;
   GtkTreeIter child;
+  gboolean highlighted = FALSE;
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
 
   if (final_angle - init_angle < MIN_DRAWABLE_ANGLE)
     return;
       
-  if ((priv -> current_depth == depth) && (priv->current_final_angle == 3*M_PI))
+  if ((priv->current_depth == depth) && (priv->current_final_angle == 3*M_PI))
     {
       if (priv->point_angle < final_angle)
         {
@@ -966,7 +999,7 @@ tree_traverse (cairo_t *cr,
                   priv->button_pressed = FALSE;
                   real_draw = TRUE;
                   depth = priv->init_depth;
-                  radius = priv -> min_radius;
+                  radius = priv->min_radius;
                   init_angle = 0;
                   final_angle = 2*M_PI;
 
@@ -997,6 +1030,7 @@ tree_traverse (cairo_t *cr,
                   tip->size = size_column;
                   
                   *tooltips = g_slist_prepend (*tooltips , tip);
+                  highlighted = TRUE;
                 }
             }
           else 
@@ -1012,35 +1046,27 @@ tree_traverse (cairo_t *cr,
         {
           gboolean has_child_max_depth;
 
-          if ((priv->draw_center) && (depth == 1))
-            draw_circle (cr, priv->center_x, priv->center_y, radius); 
-
           /* FIXME: there is a problem when we are not in the
              max_depth but we are not going to paint any child because
              they are too small, the sector will not have a line but
              it should */
-          has_child_max_depth = gtk_tree_model_iter_has_child (priv -> model, iter) 
+          has_child_max_depth = gtk_tree_model_iter_has_child (priv->model, iter) 
             && (depth >= priv->max_depth);
 
-          fill_color = get_color(init_angle, depth); 
+          get_color (&fill_color, init_angle, depth, highlighted);
           draw_sector(cr, priv->center_x, priv->center_y, radius, priv->thickness, 
-                      init_angle, final_angle, *fill_color, has_child_max_depth);
+                      init_angle, final_angle, fill_color, has_child_max_depth);
 
-	  /* Update drawn elements count */
-	  priv->drawn_elements++;
-          
-          g_free (fill_color);
+      	  /* Update drawn elements count */
+      	  priv->drawn_elements++;
         }
-      else
-        draw_circle (cr, priv->center_x, priv->center_y, radius); 
-
     }
 
-  if (gtk_tree_model_iter_has_child (priv -> model, iter) && (depth < priv->max_depth))
+  if (gtk_tree_model_iter_has_child (priv->model, iter) && (depth < priv->max_depth))
     {
       gdouble _init_angle, _final_angle;
 
-      gtk_tree_model_iter_children (priv -> model, &child, iter);
+      gtk_tree_model_iter_children (priv->model, &child, iter);
 
       _init_angle = init_angle;
       do 
@@ -1048,7 +1074,7 @@ tree_traverse (cairo_t *cr,
           gfloat size;
           guint next_radius = depth == 0 ? radius : radius+priv->thickness;
 
-          gtk_tree_model_get (priv -> model, &child, priv -> percentage_column, &size, -1);
+          gtk_tree_model_get (priv->model, &child, priv->percentage_column, &size, -1);
 	 
           _final_angle = _init_angle + (final_angle - init_angle) * size/100;
 
@@ -1058,7 +1084,7 @@ tree_traverse (cairo_t *cr,
 
           _init_angle = _final_angle;
         }
-      while (gtk_tree_model_iter_next (priv -> model, &child));
+      while (gtk_tree_model_iter_next (priv->model, &child));
     }
 
 }
@@ -1147,16 +1173,16 @@ baobab_ringschart_motion_notify (GtkWidget        *widget,
   angle = -1.0 * atan2 (x, y) + M_PI_2;
   angle = (angle > 0) ? angle : angle + 2*M_PI;
   
-  depth = sqrt (x*x + y*y) / (priv -> thickness);
+  depth = sqrt (x*x + y*y) / (priv->thickness);
 
   /* we use +1 because we want to control the movement to the layer
      over the last one */
-  if (!(((priv -> current_depth == depth) || (depth > priv -> max_depth+1)) 
-        && (priv -> current_init_angle < angle)                             
-        && (angle < priv -> current_final_angle)))                          
+  if (!(((priv->current_depth == depth) || (depth > priv->max_depth+1)) 
+        && (priv->current_init_angle < angle)                             
+        && (angle < priv->current_final_angle)))                          
     {
-      priv -> current_depth = depth;
-      priv -> point_angle = angle;
+      priv->current_depth = depth;
+      priv->point_angle = angle;
              
       gtk_widget_queue_draw(widget);
     }
@@ -1288,15 +1314,15 @@ baobab_ringschart_set_model_with_columns (GtkWidget *rchart,
   
   if (root != NULL)
     {
-      priv -> root = gtk_tree_row_reference_new (model, root);
+      priv->root = gtk_tree_row_reference_new (model, root);
       g_object_notify (G_OBJECT (rchart), "root");
     }
 
-  priv -> name_column = name_column;
-  priv -> size_column = size_column;
-  priv -> info_column = info_column;
-  priv -> percentage_column = percentage_column;
-  priv -> valid_column = valid_column;
+  priv->name_column = name_column;
+  priv->size_column = size_column;
+  priv->info_column = info_column;
+  priv->percentage_column = percentage_column;
+  priv->valid_column = valid_column;
 }
 
 /**
@@ -1334,10 +1360,10 @@ baobab_ringschart_set_model (GtkWidget *rchart,
       if (!priv->is_frozen)
         baobab_ringschart_disconnect_signals (rchart, 
                                               priv->model);
-      g_object_unref (priv -> model);
+      g_object_unref (priv->model);
     }
 
-  priv -> model = model;
+  priv->model = model;
   g_object_ref (priv->model);
 
   if (!priv->is_frozen)
@@ -1349,7 +1375,7 @@ baobab_ringschart_set_model (GtkWidget *rchart,
       gtk_tree_row_reference_free (priv->root);
     }
 
-  priv -> root = NULL;
+  priv->root = NULL;
 
   g_object_notify (G_OBJECT (rchart), "model");
 
@@ -1372,7 +1398,7 @@ baobab_ringschart_get_model (GtkWidget *rchart)
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), NULL);
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return priv -> model;
+  return priv->model;
 }
 
 /**
@@ -1396,10 +1422,10 @@ baobab_ringschart_set_max_depth (GtkWidget *rchart,
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
   
-  if (max_depth != priv -> max_depth)
+  if (max_depth != priv->max_depth)
     {    
-      priv -> max_depth = MIN (max_depth,
-                               MAX_DRAWABLE_DEPTH);
+      priv->max_depth = MIN (max_depth,
+                             MAX_DRAWABLE_DEPTH);
 
       g_object_notify (G_OBJECT (rchart), "max-depth");
 
@@ -1424,7 +1450,7 @@ baobab_ringschart_get_max_depth (GtkWidget *rchart)
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), 0);
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return priv -> max_depth;
+  return priv->max_depth;
 }
 
 /**
@@ -1454,7 +1480,7 @@ baobab_ringschart_set_root (GtkWidget *rchart,
   if (priv->root) 
     gtk_tree_row_reference_free (priv->root);
     
-  priv -> root = gtk_tree_row_reference_new (priv->model, root);
+  priv->root = gtk_tree_row_reference_new (priv->model, root);
   
   g_object_notify (G_OBJECT (rchart), "root");
 
@@ -1479,7 +1505,7 @@ baobab_ringschart_get_root (GtkWidget *rchart)
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), NULL);
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return gtk_tree_row_reference_get_path (priv -> root);  
+  return gtk_tree_row_reference_get_path (priv->root);  
 }
 
 /**
@@ -1499,7 +1525,7 @@ baobab_ringschart_get_drawn_elements (GtkWidget *rchart)
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), 0);
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return priv -> drawn_elements;  
+  return priv->drawn_elements;  
 }
 
 

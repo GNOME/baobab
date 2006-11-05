@@ -1,3 +1,19 @@
+2006-11-05 Alejandro G. Castro <acastro@igalia.com>
+
+	Patch cotributed by Miguel A. Gomez <magomez@igalia.com>
+	
+	* src/baobab-ringschart.c (bug #363613):
+	(draw_circle): Added a new parameter 'highlighted' in order to
+	draw the sector highlighted if it is selected.
+	(interpolate_colors): Added a new paremeter 'color' to return the
+	result of the function.
+	(get_color): Added a new parameter 'highlighted' in order to get a
+	highlighted color for selected sectors.
+	(baobab_ringschart_draw): Modified in order to draw the center
+	circle before calling 'tree_traverse'.
+	(tree_traverse): Removed calls to 'draw_circle' to draw the inner
+	circle.
+
 2006-10-28  Emmanuele Bassi  <ebassi@cvs.gnome.org>
 
 	* src/baobab-utils.c (set_label_scan): drop GString usage.
