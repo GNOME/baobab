@@ -785,11 +785,11 @@ draw_tip (cairo_t *cr,
   BaobabRingschartPrivate *priv;
   gdouble medium_angle;
   gdouble start_radius;
-  gdouble end_radius;
+  gdouble max_radius;
   gdouble origin_x;
   gdouble origin_y;
-  gdouble middle_x;
-  gdouble middle_y;
+  gdouble max_radius_x;
+  gdouble max_radius_y;
   gdouble tooltip_x;
   gdouble tooltip_y;
   gdouble end_x;
@@ -809,24 +809,9 @@ draw_tip (cairo_t *cr,
   /* radius to start drawing from */
   start_radius = (depth != -1) ? (depth + 0.5) * priv->thickness + priv->min_radius : 0;
 
-  /* radius to end drawing */ 
-  end_radius = (priv->max_depth + 1.5) * priv->thickness + priv->min_radius; 
-
-  /* in order to draw a rect, we need the coordinates of the starting
-     and ending points */
+  /* coordinates of the starting point of the line */
   origin_x = priv->center_x + (cos(medium_angle) * start_radius);
-  middle_x = priv->center_x + (cos(medium_angle) * end_radius);
-
   origin_y = priv->center_y + (sin(medium_angle) * start_radius);
-  middle_y = priv->center_y + (sin(medium_angle) * end_radius);
-
-  if ((middle_x > rchart->allocation.width-WINDOW_PADDING) || (middle_x < 0) ||
-      (middle_y > rchart->allocation.height-WINDOW_PADDING) || (middle_y < 0))
-    {
-      end_radius = (priv->max_depth - 0.5) * priv->thickness + priv->min_radius;
-      middle_x = priv->center_x + (cos(medium_angle) * end_radius);
-      middle_y = priv->center_y + (sin(medium_angle) * end_radius);
-    }
 
   /* get the size of the text label */
   text = (size != NULL)
@@ -839,49 +824,47 @@ draw_tip (cairo_t *cr,
   pango_layout_get_pixel_extents (layout, &rect, NULL);
   width = rect.width;
 
-  tooltip_width = width+TOOLTIP_PADDING*2;  
-  tooltip_height = rect.height+TOOLTIP_PADDING*2;
-    
-  tooltip_y = middle_y-tooltip_height/2;
+  tooltip_width = floor(width+TOOLTIP_PADDING*2);  
+  tooltip_height = floor(rect.height+TOOLTIP_PADDING*2);
+  
+  /* We must calculate the radius we are going to use to draw the
+     line from the sector. To do this, we calculate the distance from
+     the sector to the edge of the window, both horizontally and
+     vertically. Using this measures and the angle we calculate the
+     maximum radius allowed in each direction that guarantees that the
+     tip is in the window. We must use the minor one as the radius to
+     use. */
 
-  /* FIXME: avoid painting lines when they are behind the tooltip */
-  if (tooltip_y < WINDOW_PADDING)
-    {
-      tooltip_y = WINDOW_PADDING;
-      middle_y = tooltip_y + tooltip_height/2;
-    }  
+  /* Horizontal radius */
+  max_radius_x = ABS ((priv->center_x - (tooltip_width/2 + WINDOW_PADDING)) / cos (medium_angle));
 
-  if ((tooltip_y + tooltip_height) > (rchart->allocation.height-WINDOW_PADDING))
-    {
-      tooltip_y = rchart->allocation.height-WINDOW_PADDING-tooltip_height;
-      middle_y = tooltip_y + tooltip_height/2;
-    }
+  /* and vertical one */
+  max_radius_y = ABS ((priv->center_y - (tooltip_height/2 + WINDOW_PADDING)) / sin (medium_angle));
 
-  end_y = middle_y;
-
-  /* we need this to know if we are drawing from right to left or from
-     left to right */
-  if (medium_angle > (M_PI/2) && medium_angle < (3*M_PI/2))
-    { 
-      tooltip_x = WINDOW_PADDING;
-      end_x = WINDOW_PADDING+tooltip_width;
-    }
-  else
-    {
-      tooltip_x = rchart->allocation.width - tooltip_width - WINDOW_PADDING;
-      end_x = tooltip_x;
-    }
+  /* get the minor radius */
+  max_radius = MIN (max_radius_x,
+                    max_radius_y);
+                    
+  /* now we get the final coordinates of the line */
+  end_x = priv->center_x + (max_radius * cos (medium_angle));
+  end_y = priv->center_y + (max_radius * sin (medium_angle));
+      
+  /* and the position on the tip */
+  tooltip_x = ceil(end_x - (tooltip_width/2)) + 0.5;
+  tooltip_y = ceil(end_y - (tooltip_height/2)) + 0.5;
 
   /* Time to the drawing stuff */
   cairo_save (cr);
-
   cairo_set_source_rgb (cr, 0, 0, 0);
-  
-  cairo_move_to(cr, origin_x, origin_y);
-  cairo_line_to(cr, middle_x, middle_y);
 
-  cairo_line_to(cr, end_x, end_y);
-  cairo_stroke (cr);
+  /* If the tip rectangle fully overlaps the line, we don't draw it */
+  if ((origin_x < tooltip_x) || (origin_x > tooltip_x + tooltip_width)
+      || (origin_y < tooltip_y) || (origin_y > tooltip_y + tooltip_height))
+    {
+      cairo_move_to(cr, origin_x, origin_y);
+      cairo_line_to(cr, end_x, end_y);
+      cairo_stroke(cr);
+    }
   
   cairo_set_line_width (cr, 1);
   cairo_rectangle (cr, tooltip_x, tooltip_y, tooltip_width, tooltip_height);

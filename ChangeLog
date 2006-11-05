@@ -1,5 +1,15 @@
 2006-11-05 Alejandro G. Castro <acastro@igalia.com>
 
+        Patch cotributed by Miguel A. Gomez <magomez@igalia.com>
+	
+	* src/baobab-ringschart.c (bug #363608):
+	(draw_tip): Changed the way the tips are drawn. Now the lines to
+	the tips don't have corners, and the tips can be drawn all around
+	the window (not only by the left and right edges). Made a little
+	adjustment to tip rectangles in order to avoid blurry borders.
+
+2006-11-05 Alejandro G. Castro <acastro@igalia.com>
+
 	Patch cotributed by Miguel A. Gomez <magomez@igalia.com>
 	
 	* src/baobab-ringschart.c (bug #363613):
