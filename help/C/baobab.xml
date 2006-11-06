@@ -187,8 +187,8 @@
 
     <sect2 id="baobab-fullscan">
       <title>Full filesystem scan</title>
-        <para>To start a full filesystem scan select <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Filesystem</guimenuitem></menuchoice> 
-    from the menu, or press on the <guibutton>Filesystem</guibutton> toolbar button.</para>
+        <para>To start a full filesystem scan select <menuchoice><guimenu>Analyzer</guimenu><guimenuitem>Scan Filesystem</guimenuitem></menuchoice> 
+    from the menu, or press on the <guibutton>Scan Filesystem</guibutton> toolbar button.</para>
 
 	<para>When the scanning process ends up, you will get the full tree of your filesystem,
 	like the one in the next Figure.</para>    
@@ -217,8 +217,7 @@
     <para><application>&app;</application> will display sizes in the 
     directory tree as allocated space. This means that the displayed sizes refer 
     to the actual disk usage and not to the apparent directory size. 
-    If you want to view the apparent file size, click on the toolbar's checkbox named 
-    <guibutton>Allocated space</guibutton>.</para>
+    If you want to view the apparent file size, uncheck <menuchoice><guimenu>View</guimenu><guimenuitem>Allocated Space</guimenuitem></menuchoice> .</para>
     
     <warning><para><application>&app;</application> will not count the /proc dir, nor
     any file size that is not related to a "plain" file, so symlinks, character blocks,
@@ -234,8 +233,8 @@
       <title>Single folder scan</title>
 
     <para>To start a single folder scan select 
-    <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Selected Folder</guimenuitem></menuchoice> 
-    from the menu, or press on the <guibutton>Folder</guibutton> toolbar button.</para>
+    <menuchoice><guimenu>Analyzer</guimenu><guimenuitem>Scan Folder...</guimenuitem></menuchoice> 
+    from the menu, or press on the <guibutton>Scan Folder</guibutton> toolbar button.</para>
 
 	</sect2>
 
@@ -243,7 +242,7 @@
       <title>Remote scan</title>
       
       <para>If you need to scan a remote server-folder, just click on the toolbar 
-      icon <guibutton>Network</guibutton> or select <menuchoice><guimenu>Analyser</guimenu><guimenuitem>Scan Remote Folder</guimenuitem></menuchoice>
+      icon <guibutton>Scan Remote Folder</guibutton> or select <menuchoice><guimenu>Analyzer</guimenu><guimenuitem>Scan Remote Folder</guimenuitem></menuchoice>
       from the menu and you will get the following dialog box. <application>&app;</application> 
       can connect to a server through ssh, ftp, smb, http and https.</para>
  
