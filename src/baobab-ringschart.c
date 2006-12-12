@@ -1144,41 +1144,37 @@ baobab_ringschart_motion_notify (GtkWidget        *widget,
 {
   BaobabRingschartPrivate *priv;
   gdouble angle;
-  gdouble x = event->x;
-  gdouble y = event->y;
+  gdouble x, y;
   guint depth;
   
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (widget);
 
-  x -= priv->center_x;
-  y -= priv->center_y;
+  x = event->x - priv->center_x;
+  y = event->y - priv->center_y;
 
   /* FIXME: could we use cairo_in_stroke or cairo_in_fill? would it be
      a better solution */
-  angle = -1.0 * atan2 (x, y) + G_PI_2;
+  angle = atan2 (y, x);
   angle = (angle > 0) ? angle : angle + 2*G_PI;
-  
+
   depth = sqrt (x*x + y*y) / (priv->thickness);
 
-  /* we use +1 because we want to control the movement to the layer
-     over the last one */
-  if (!(((priv->current_depth == depth) || (depth > priv->max_depth+1)) 
-        && (priv->current_init_angle < angle)                             
-        && (angle < priv->current_final_angle)))                          
+  if (priv->current_depth != depth     ||
+      angle < priv->current_init_angle ||
+      angle > priv->current_final_angle)
     {
       priv->current_depth = depth;
       priv->point_angle = angle;
-             
-      gtk_widget_queue_draw(widget);
+
+      gtk_widget_queue_draw (widget);
     }
-  else 
+  else
     {
       gdk_window_get_pointer (widget->window, NULL, NULL, NULL);
     }
 
   return FALSE;
 }
-
 
 static inline void
 baobab_ringschart_disconnect_signals (GtkWidget *rchart, 
