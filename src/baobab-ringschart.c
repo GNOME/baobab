@@ -42,7 +42,9 @@
 #define WINDOW_PADDING 5
 #define TOOLTIP_PADDING 5
 
-#define BAOBAB_RINGSCHART_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), BAOBAB_RINGSCHART_TYPE, BaobabRingschartPrivate))
+#define BAOBAB_RINGSCHART_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+                                            BAOBAB_RINGSCHART_TYPE, \
+                                            BaobabRingschartPrivate))
 
 G_DEFINE_TYPE (BaobabRingschart, baobab_ringschart, GTK_TYPE_WIDGET);
 
@@ -51,8 +53,6 @@ enum {
   MIDDLE_BUTTON = 2,
   RIGHT_BUTTON = 3
 };
-
-typedef struct _BaobabRingschartPrivate BaobabRingschartPrivate;
 
 struct _BaobabRingschartPrivate {
   GtkTreeModel *model;
@@ -100,11 +100,10 @@ struct _Tooltip {
 };
 
 /* Signals */
-enum
-  {
-    SECTOR_ACTIVATED,
-    LAST_SIGNAL
-  };
+enum {
+  SECTOR_ACTIVATED,
+  LAST_SIGNAL
+};
 
 static guint ringschart_signals [LAST_SIGNAL] = { 0 };
 
@@ -272,10 +271,13 @@ baobab_ringschart_class_init (BaobabRingschartClass *class)
 }
 
 static void
-baobab_ringschart_init (BaobabRingschart *object)
+baobab_ringschart_init (BaobabRingschart *rchart)
 {
-  BaobabRingschartPrivate *priv = BAOBAB_RINGSCHART_GET_PRIVATE(object);
- 
+  BaobabRingschartPrivate *priv;
+
+  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  rchart->priv = priv;
+
   priv->model = NULL;
   priv->center_x = 0;  
   priv->center_y = 0;
@@ -305,25 +307,15 @@ baobab_ringschart_init (BaobabRingschart *object)
 static void
 baobab_ringschart_dispose (GObject *object)
 {
-  BaobabRingschartPrivate *priv = BAOBAB_RINGSCHART_GET_PRIVATE(object);
-  
+  BaobabRingschartPrivate *priv;
+
+  priv = BAOBAB_RINGSCHART (object)->priv;
+
   if (priv->model)
     {
-      g_signal_handlers_disconnect_by_func (priv->model,
-					    baobab_ringschart_row_changed,
-					    object);
-      g_signal_handlers_disconnect_by_func (priv->model,
-					    baobab_ringschart_row_inserted,
-					    object);
-      g_signal_handlers_disconnect_by_func (priv->model,
-					    baobab_ringschart_row_has_child_toggled,
-					    object);
-      g_signal_handlers_disconnect_by_func (priv->model,
-					    baobab_ringschart_row_deleted,
-					    object);
-      g_signal_handlers_disconnect_by_func (priv->model,
-					    baobab_ringschart_rows_reordered,
-					    object);
+      baobab_ringschart_disconnect_signals (GTK_WIDGET (object),
+					    priv->model);
+
       g_object_unref (priv->model);
 
       priv->model = NULL;
@@ -383,7 +375,7 @@ baobab_ringschart_size_allocate (GtkWidget     *widget,
   g_return_if_fail (BAOBAB_IS_RINGSCHART (widget));
   g_return_if_fail (allocation != NULL);
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (widget);
+  priv = BAOBAB_RINGSCHART (widget)->priv;
 
   widget->allocation = *allocation;
 
@@ -424,6 +416,7 @@ baobab_ringschart_set_property (GObject         *object,
       baobab_ringschart_set_root (GTK_WIDGET (rings_chart), g_value_get_object (value));
       break;
     default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
     }
 }
@@ -436,7 +429,7 @@ baobab_ringschart_get_property (GObject    *object,
 {
   BaobabRingschartPrivate *priv;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (object);
+  priv = BAOBAB_RINGSCHART (object)->priv;
 
   switch (prop_id)
     {
@@ -466,7 +459,7 @@ baobab_ringschart_update_draw (BaobabRingschart* rchart,
   if (!GTK_WIDGET_REALIZED (rchart))
     return;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   if (priv->root != NULL)
     {
@@ -566,7 +559,8 @@ baobab_ringschart_expose (GtkWidget *rchart, GdkEventExpose *event)
 {
   cairo_t *cr;
   BaobabRingschartPrivate *priv;
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   /* the columns are not set we paint nothing */
   if (priv->name_column == priv->percentage_column)
@@ -626,7 +620,7 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
 
   cairo_stroke (cr); 
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   if (priv->root != NULL)
     {
@@ -712,7 +706,6 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
       }
     while (g_slist_next(tooltips));
 }
-
 
 static void 
 draw_sector (cairo_t *cr, 
@@ -961,7 +954,7 @@ tree_traverse (cairo_t *cr,
   GtkTreeIter child;
   gboolean highlighted = FALSE;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   if (final_angle - init_angle < MIN_DRAWABLE_ANGLE)
     return;
@@ -1081,7 +1074,7 @@ baobab_ringschart_button_release (GtkWidget *widget,
   BaobabRingschartPrivate *priv;
   GtkTreeIter parent_iter;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (widget);
+  priv = BAOBAB_RINGSCHART (widget)->priv;
 
   switch (event->button)
     {      
@@ -1146,8 +1139,8 @@ baobab_ringschart_motion_notify (GtkWidget        *widget,
   gdouble angle;
   gdouble x, y;
   guint depth;
-  
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (widget);
+
+  priv = BAOBAB_RINGSCHART (widget)->priv;
 
   x = event->x - priv->center_x;
   y = event->y - priv->center_y;
@@ -1289,7 +1282,7 @@ baobab_ringschart_set_model_with_columns (GtkWidget *rchart,
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
   g_return_if_fail (GTK_IS_TREE_MODEL (model));
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   baobab_ringschart_set_model (rchart, model);
   
@@ -1331,8 +1324,8 @@ baobab_ringschart_set_model (GtkWidget *rchart,
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
   g_return_if_fail (GTK_IS_TREE_MODEL (model));
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
+
   if (model == priv->model)
     return;
 
@@ -1374,12 +1367,9 @@ baobab_ringschart_set_model (GtkWidget *rchart,
 GtkTreeModel *
 baobab_ringschart_get_model (GtkWidget *rchart)
 {
-  BaobabRingschartPrivate *priv;
-
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), NULL);
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return priv->model;
+  return BAOBAB_RINGSCHART (rchart)->priv->model;
 }
 
 /**
@@ -1401,8 +1391,8 @@ baobab_ringschart_set_max_depth (GtkWidget *rchart,
 
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
+
   if (max_depth != priv->max_depth)
     {    
       priv->max_depth = MIN (max_depth,
@@ -1426,12 +1416,9 @@ baobab_ringschart_set_max_depth (GtkWidget *rchart,
 guint
 baobab_ringschart_get_max_depth (GtkWidget *rchart)
 {
-  BaobabRingschartPrivate *priv;
-
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), 0);
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return priv->max_depth;
+  return BAOBAB_RINGSCHART (rchart)->priv->max_depth;
 }
 
 /**
@@ -1454,7 +1441,7 @@ baobab_ringschart_set_root (GtkWidget *rchart,
 
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   g_return_if_fail (priv->model != NULL);
 
@@ -1481,12 +1468,9 @@ baobab_ringschart_set_root (GtkWidget *rchart,
 GtkTreePath *
 baobab_ringschart_get_root (GtkWidget *rchart)
 {
-  BaobabRingschartPrivate *priv;
-
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), NULL);
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return gtk_tree_row_reference_get_path (priv->root);  
+  return gtk_tree_row_reference_get_path (BAOBAB_RINGSCHART (rchart)->priv->root);  
 }
 
 /**
@@ -1501,14 +1485,10 @@ baobab_ringschart_get_root (GtkWidget *rchart)
 gint 
 baobab_ringschart_get_drawn_elements (GtkWidget *rchart)
 {
-  BaobabRingschartPrivate *priv;
-
   g_return_val_if_fail (BAOBAB_IS_RINGSCHART (rchart), 0);
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  return priv->drawn_elements;  
+  return BAOBAB_RINGSCHART (rchart)->priv->drawn_elements;  
 }
-
 
 /**
  * baobab_ringschart_freeze_updates:
@@ -1529,7 +1509,7 @@ baobab_ringschart_freeze_updates (GtkWidget *rchart)
 
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   if (!priv->is_frozen) 
     {
@@ -1592,8 +1572,8 @@ baobab_ringschart_thaw_updates (GtkWidget *rchart)
 
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
-  
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
+
   if (priv->is_frozen)
     {
       if (priv->model)
@@ -1628,8 +1608,8 @@ baobab_ringschart_set_init_depth (GtkWidget *rchart,
   BaobabRingschartPrivate *priv;
   
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
-  
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   priv->init_depth = depth;
   gtk_widget_queue_draw (rchart); 
@@ -1650,8 +1630,8 @@ void baobab_ringschart_draw_center (GtkWidget *rchart,
   BaobabRingschartPrivate *priv;
   
   g_return_if_fail (BAOBAB_IS_RINGSCHART (rchart));
-  
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (rchart);
+
+  priv = BAOBAB_RINGSCHART (rchart)->priv;
 
   priv->draw_center = draw_center;
   gtk_widget_queue_draw (rchart);   

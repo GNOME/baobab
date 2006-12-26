@@ -154,12 +154,13 @@ draw_rect (BaobabTreeMap *tm,
 
 static void
 loop_treemap (BaobabTreeMap *tm, 
-	      GtkTreeIter          anc_iter, 
-	      guint64              anc_size,
-	      rect_coords         *R, 
-	      gboolean             b_horiz, 
-	      gint                 cur_depth)
+	      GtkTreeIter   *anc_iter, 
+	      guint64        anc_size,
+	      rect_coords   *R, 
+	      gboolean       b_horiz, 
+	      gint           cur_depth)
 {
+	gboolean has_children;
 	GtkTreeIter cur_iter;
 	rect_coords cur_R;
 
@@ -167,14 +168,18 @@ loop_treemap (BaobabTreeMap *tm,
 		if (cur_depth > tm->priv->req_depth)
 			return;
 
+	has_children = gtk_tree_model_iter_children (tm->priv->model,
+						     &cur_iter,
+						     anc_iter);
+
+	if (!has_children)
+		return;
+
 	cur_R.x1 = R->x1;
 	cur_R.y1 = R->y1;
 	cur_R.x2 = R->x2;
 	cur_R.y2 = R->y2;
 
-	gtk_tree_model_iter_children (tm->priv->model,
-				      &cur_iter,
-				      &anc_iter);
 	do {
 		guint64	cur_size;
 		gchar *name;
@@ -207,15 +212,13 @@ loop_treemap (BaobabTreeMap *tm,
 
 		g_free (name);
 
-		/* recurse if iter has child */		
-		if (gtk_tree_model_iter_has_child(tm->priv->model,&cur_iter)) {
-			loop_treemap (tm,
-				      cur_iter,
-				      cur_size,
-				      &cur_R,
-				      !b_horiz,
-				      cur_depth + 1);
-		}
+		/* recurse */
+		loop_treemap (tm,
+			      &cur_iter,
+			      cur_size,
+			      &cur_R,
+			      !b_horiz,
+			      cur_depth + 1);
 
 		/* set up new rect for next child (sibling)*/
 		if (!b_horiz) {
@@ -236,11 +239,11 @@ baobab_tree_map_init (BaobabTreeMap *treemap)
 	treemap->priv = BAOBAB_TREE_MAP_GET_PRIVATE (treemap);
 
 	treemap->priv->tooltips = gtk_tooltips_new ();
-	g_object_ref (treemap->priv->tooltips);
-	gtk_object_sink (GTK_OBJECT(treemap->priv->tooltips));
+	g_object_ref_sink (treemap->priv->tooltips);
 }
 
 /**************  Start of public functions *****************************/
+
 void
 baobab_tree_map_draw (BaobabTreeMap *tm,
 		     GtkTreeModel *model,
@@ -255,6 +258,8 @@ baobab_tree_map_draw (BaobabTreeMap *tm,
 	guint64 size;
 	rect_coords R;
 
+	g_return_if_fail (BAOBAB_IS_TREE_MAP (tm));
+
 	tm->priv->model = model;
 	tm->priv->first_path = path;
 	tm->priv->COL_FOLDERNAME = nNameCol;
@@ -265,18 +270,20 @@ baobab_tree_map_draw (BaobabTreeMap *tm,
 	gnome_canvas_get_scroll_region (GNOME_CANVAS (tm), &R.x1, &R.y1, &R.x2, &R.y2);
 	baobab_tree_map_clear (tm);
 
-	gtk_tree_model_get_iter (tm->priv->model, &iter,tm->priv->first_path);	
-	gtk_tree_model_get(tm->priv->model,&iter,tm->priv->COL_FOLDERNAME,&name,-1);
+	gtk_tree_model_get_iter (tm->priv->model, &iter,tm->priv->first_path);
+
+	gtk_tree_model_get (tm->priv->model,
+			    &iter,
+			    tm->priv->COL_FOLDERNAME, &name,
+			    tm->priv->COL_SIZE, &size,
+			    -1);
 
 	/* how to draw the rectangle */
 	b_horiz = ((R.y2-R.y1) >= (R.x2-R.x1));
 
 	draw_rect (tm, (const rect_coords *)&R, g_random_int(), name);
-	
-	if (gtk_tree_model_iter_has_child(tm->priv->model,&iter)) {
-		gtk_tree_model_get(tm->priv->model,&iter,tm->priv->COL_SIZE,&size,-1);
-		loop_treemap(tm,iter,size,&R,b_horiz,1);
-	}
+
+	loop_treemap (tm, &iter, size, &R, b_horiz, 1);
 
 	g_free(name);
 }
@@ -284,6 +291,8 @@ baobab_tree_map_draw (BaobabTreeMap *tm,
 void
 baobab_tree_map_refresh(BaobabTreeMap *tm, gint new_depth)
 {
+	g_return_if_fail (BAOBAB_IS_TREE_MAP (tm));
+
 	baobab_tree_map_draw (tm, tm->priv->model,
 				tm->priv->first_path,
 				tm->priv->COL_FOLDERNAME,
@@ -294,20 +303,21 @@ baobab_tree_map_refresh(BaobabTreeMap *tm, gint new_depth)
 gint
 baobab_tree_map_get_total_elements (BaobabTreeMap *tm)
 {
+	g_return_val_if_fail (BAOBAB_IS_TREE_MAP (tm), 0);
+
 	return tm->priv->total_elements;
 }
 
 void
 baobab_tree_map_clear (BaobabTreeMap *tm)
 {
-	GList *a, *b;
+	GList *l;
 
-	a = tm->priv->group->item_list;
-	while (a)
+	g_return_if_fail (BAOBAB_IS_TREE_MAP (tm));
+
+	for (l = tm->priv->group->item_list; l != NULL; l = l->next)
 	{
-		b = a->next;
-		gtk_object_destroy (GTK_OBJECT (a->data));
-		a = b;
+		gtk_object_destroy (GTK_OBJECT (l->data));
 	}
 
 	tm->priv->total_elements = 0;
@@ -318,7 +328,9 @@ baobab_tree_map_get_pixbuf (BaobabTreeMap *tm)
 {
 	gint w,h;
 	GdkPixbuf *map_pixbuf;
-	
+
+	g_return_val_if_fail (BAOBAB_IS_TREE_MAP (tm), NULL);
+
 	gdk_drawable_get_size ((GTK_WIDGET(tm))->window, &w, &h);
 	map_pixbuf = gdk_pixbuf_get_from_drawable(NULL,
 					    GTK_WIDGET (tm)->window,
@@ -333,19 +345,25 @@ baobab_tree_map_get_pixbuf (BaobabTreeMap *tm)
 gdouble
 baobab_tree_map_get_zoom (BaobabTreeMap *tm)
 {
+	g_return_val_if_fail (BAOBAB_IS_TREE_MAP (tm), 0);
+
 	return GNOME_CANVAS (tm)->pixels_per_unit;
 }
 
 void
 baobab_tree_map_set_zoom (BaobabTreeMap *tm,
-			 gdouble        new_zoom)
+			  gdouble        new_zoom)
 {
+	g_return_if_fail (BAOBAB_IS_TREE_MAP (tm));
+
 	gnome_canvas_set_pixels_per_unit (GNOME_CANVAS (tm), new_zoom);
 }
 
 const gchar *
-baobab_tree_map_get_selected_item_name(BaobabTreeMap *tm)
+baobab_tree_map_get_selected_item_name (BaobabTreeMap *tm)
 {
+	g_return_val_if_fail (BAOBAB_IS_TREE_MAP (tm), NULL);
+
 	return (const gchar *)tm->priv->item_name;
 }
 

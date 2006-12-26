@@ -43,12 +43,14 @@ G_BEGIN_DECLS
 
 typedef struct _BaobabRingschart BaobabRingschart;
 typedef struct _BaobabRingschartClass BaobabRingschartClass;
+typedef struct _BaobabRingschartPrivate BaobabRingschartPrivate;
 
 struct _BaobabRingschart
 {
   GtkWidget parent;
   
-  /* < private > */  
+  /* < private > */
+  BaobabRingschartPrivate *priv;
 };
 
 struct _BaobabRingschartClass
