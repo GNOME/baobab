@@ -226,10 +226,13 @@ prefill_model (struct chan_data *data)
 	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning..."));
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
-	gtk_tree_store_set (baobab.model, &iter, COL_DIR_NAME, cdir->str,
-			    COL_H_FULLPATH, "", COL_H_ELEMENTS, -1, 
+	gtk_tree_store_set (baobab.model, &iter,
+			    COL_DIR_NAME, cdir->str,
+			    COL_H_FULLPATH, "",
+			    COL_H_ELEMENTS, -1, 
+ 			    COL_H_PERC, -1.0,
 			    COL_DIR_SIZE, str,
-			    COL_PERC, " -.- %", COL_ELEMENTS, str, -1);
+			    COL_ELEMENTS, str, -1);
 
 	g_string_free (cdir, TRUE);
 	g_free(str);
@@ -246,24 +249,21 @@ void
 first_row (void)
 {
 	char *size;
-	gfloat perc;
-	gchar textperc[10];
+	gdouble perc;
 	char *label;
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, NULL);
 	size = gnome_vfs_format_file_size_for_display (g_fs.used);
 	g_assert(g_fs.total != 0);
-	perc = ((gfloat) g_fs.used * 100) / (gfloat) g_fs.total;
-	g_sprintf (textperc, " %.1f %%", perc);
+	perc = ((gdouble) g_fs.used * 100) / (gdouble) g_fs.total;
 
 	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
 	gtk_tree_store_set (baobab.model, &firstiter,
-			    COL_DIR_NAME,
-			    label,
+			    COL_DIR_NAME, label,
 			    COL_H_FULLPATH, "",
 			    COL_H_PERC, perc,
-			    COL_DIR_SIZE, size, COL_PERC, textperc,
+			    COL_DIR_SIZE, size,
 			    COL_H_SIZE, g_fs.used,
 			    COL_H_ALLOCSIZE, g_fs.used,
 			    COL_H_ELEMENTS, -1, -1);
@@ -318,15 +318,17 @@ fill_model (struct chan_data *data)
 	alloc_size = gnome_vfs_format_file_size_for_display (data->alloc_size);
 
 	gtk_tree_store_set (baobab.model, &iter,
-			    COL_DIR_NAME, basename->str, COL_H_FULLPATH,
-			    data->dir, COL_H_PERC, 0.0, 
-			    COL_PERC, "-.- %", COL_DIR_SIZE,
+			    COL_DIR_NAME, basename->str,
+			    COL_H_FULLPATH, data->dir,
+			    COL_H_PERC, -1.0, 
+			    COL_DIR_SIZE,
 			    baobab.show_allocated ? alloc_size : size,
-			    COL_H_SIZE, data->size, COL_ELEMENTS,
-			    elementi->str, COL_H_ELEMENTS, data->elements,
-			    COL_HARDLINK, hardlinks->str, COL_H_HARDLINK,
-			    data->tempHLsize, COL_H_ALLOCSIZE,
-			    data->alloc_size, -1);
+			    COL_H_SIZE, data->size,
+			    COL_ELEMENTS, elementi->str,
+			    COL_H_ELEMENTS, data->elements,
+			    COL_HARDLINK, hardlinks->str,
+			    COL_H_HARDLINK, data->tempHLsize,
+			    COL_H_ALLOCSIZE, data->alloc_size, -1);
 
 	while (gtk_events_pending ()) {
 		gtk_main_iteration ();

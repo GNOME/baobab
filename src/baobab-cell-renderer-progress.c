@@ -247,7 +247,7 @@ baobab_cell_renderer_progress_class_init (BaobabCellRendererProgressClass *klass
 				   g_param_spec_double ("perc",
 						        "percentage",
 						        "precentage",
-						        0, 100, 0,
+						        -1, 100, 0,
 						        G_PARAM_READWRITE));
 
   g_type_class_add_private (object_class,

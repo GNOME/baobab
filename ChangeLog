@@ -1,3 +1,17 @@
+2007-01-04  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.c:
+	* src/baobab-treeview.c:
+	* src/baobab-ringschart.c:
+	* src/baobab-utils.c:
+
+	Turn the percentage column is a double, since ringschart
+	uses it for display calculation and since the progress cell
+	renderer uses doubles. Percentage set to -1 now means that
+	analysis is in progress.
+	Drop the percentual text string from the model, we can use
+	a simple cell_data_function and save some memory.
+
 2006-12-26  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab-ringschart.c:

@@ -204,10 +204,9 @@ show_bars (GtkTreeModel *mdl,
 	   gpointer data)
 {
 	GtkTreeIter parent;
-	gfloat perc;
+	gdouble perc;
 	gint readelements, size_col;
 	guint64 refsize, size;
-	gchar textperc[10];
 	char *sizecstr = NULL;
 
 	if (baobab.show_allocated)
@@ -218,13 +217,13 @@ show_bars (GtkTreeModel *mdl,
 	if (gtk_tree_model_iter_parent (mdl, &parent, iter)) {
 		gtk_tree_model_get (mdl, iter, COL_H_ELEMENTS,
 				    &readelements, -1);
-		if (readelements == -1)
-		  {
-		  	gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
-				    COL_DIR_SIZE, "--",
-				    COL_ELEMENTS, "--", -1);				    
+
+		if (readelements == -1) {
+			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
+					    COL_DIR_SIZE, "--",
+					    COL_ELEMENTS, "--", -1);				    
 			return FALSE;
-		  }
+		}
 
  		gtk_tree_model_get (mdl, &parent, COL_H_ELEMENTS,
  				    &readelements, -1);
@@ -232,28 +231,26 @@ show_bars (GtkTreeModel *mdl,
                 gtk_tree_model_get (mdl, iter, size_col, &size, -1);
                 sizecstr = gnome_vfs_format_file_size_for_display (size);
 
- 		if (readelements == -1)
-                  {
-                    gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
-                                        COL_DIR_SIZE, sizecstr, -1);
-                    
-                    g_free (sizecstr);
-                    return FALSE;
-                  }
+ 		if (readelements == -1) {
+			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
+				            COL_DIR_SIZE, sizecstr, -1);
+
+			g_free (sizecstr);
+			return FALSE;
+		}
 
 		gtk_tree_model_get (mdl, &parent, size_col, &refsize, -1);
-                perc = (refsize != 0) ? ((gfloat) size * 100) / (gfloat) refsize : 0.0;
-		g_sprintf (textperc, " %.1f %%", perc);
+		perc = (refsize != 0) ? ((gdouble) size * 100) / (gdouble) refsize : 0.0;
 
 		gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
 				    COL_DIR_SIZE, sizecstr,
-				    COL_H_PERC, perc,
-				    COL_PERC, textperc, -1);
+				    COL_H_PERC, perc, -1);
 
 		g_free (sizecstr);
 	} else {
 		gtk_tree_model_get (mdl, iter, COL_H_ELEMENTS,
 				    &readelements, -1);
+
 		if (readelements != -1) {
 			gtk_tree_model_get (mdl, iter, size_col, &size,
 					    -1);
@@ -261,7 +258,6 @@ show_bars (GtkTreeModel *mdl,
 
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
 					    COL_H_PERC, 100.0,
-					    COL_PERC, "100 %",
 					    COL_DIR_SIZE, sizecstr, -1);
 
 			g_free (sizecstr);
@@ -330,17 +326,14 @@ baobab_check_dir (const gchar *dirname)
 					  GNOME_VFS_FILE_INFO_DEFAULT |
 					  GNOME_VFS_FILE_INFO_FOLLOW_LINKS);
 
-	if (result != GNOME_VFS_OK)
+	if ((result != GNOME_VFS_OK) ||
+	    (info->type != GNOME_VFS_FILE_TYPE_DIRECTORY)) {
 		error_msg = g_strdup_printf (_("\"%s\" is not a valid folder"),
 					     dirname);
 
-	if (info->type != GNOME_VFS_FILE_TYPE_DIRECTORY)
-		error_msg = g_strdup_printf (_("\"%s\" is not a valid folder"),
-					     dirname);
-
-	if (error_msg) {
 		message (error_msg, _("Could not analyze disk usage."), 
 		         GTK_MESSAGE_ERROR, baobab.window);
+
 		g_free (error_msg);
 		ret = FALSE;
 	}

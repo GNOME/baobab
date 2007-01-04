@@ -615,7 +615,7 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
   BaobabRingschartPrivate *priv;
   GtkTreeIter initial_iter = {0};  
   GSList *tooltips = NULL;
-  gfloat perc;
+  gdouble perc;
   gdouble max_angle;
 
   cairo_stroke (cr); 
@@ -652,7 +652,7 @@ baobab_ringschart_draw (GtkWidget *rchart, cairo_t *cr)
     {
       gtk_tree_model_get (priv->model, &initial_iter, 
                           priv->percentage_column, &perc, -1);
-      
+
       max_angle = 2*G_PI*perc*0.01;
     }
 
@@ -1047,13 +1047,19 @@ tree_traverse (cairo_t *cr,
       gtk_tree_model_iter_children (priv->model, &child, iter);
 
       _init_angle = init_angle;
-      do 
-        {
-          gfloat size;
-          guint next_radius = depth == 0 ? radius : radius+priv->thickness;
 
-          gtk_tree_model_get (priv->model, &child, priv->percentage_column, &size, -1);
-	 
+      do
+        {
+          gdouble size;
+          guint next_radius;
+
+          next_radius = depth == 0 ? radius : radius+priv->thickness;
+
+          gtk_tree_model_get (priv->model, &child,
+                              priv->percentage_column, &size, -1);
+
+          g_assert (size >= 0);
+
           _final_angle = _init_angle + (final_angle - init_angle) * size/100;
 
           tree_traverse (cr, rchart, &child, depth+1, next_radius, 
@@ -1064,7 +1070,6 @@ tree_traverse (cairo_t *cr,
         }
       while (gtk_tree_model_iter_next (priv->model, &child));
     }
-
 }
 
 static gint 

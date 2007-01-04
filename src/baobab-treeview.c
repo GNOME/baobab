@@ -38,10 +38,9 @@ create_model (void)
 	GtkTreeStore *mdl = gtk_tree_store_new (NUM_TREE_COLUMNS,
 						G_TYPE_STRING,	/* COL_DIR_NAME */
 						G_TYPE_STRING,	/* COL_H_FULLPATH */
-						G_TYPE_FLOAT,	/* COL_H_PERC */
+						G_TYPE_DOUBLE,	/* COL_H_PERC */
 						G_TYPE_STRING,	/* COL_DIR_SIZE */
 						G_TYPE_UINT64,	/* COL_H_SIZE */
-						G_TYPE_STRING,	/* COL_PERC */
 						G_TYPE_UINT64,	/* COL_H_ALLOCSIZE */
 						G_TYPE_STRING,	/* COL_ELEMENTS */
 						G_TYPE_INT,	/* COL_H_ELEMENTS */
@@ -187,6 +186,28 @@ baobab_treeview_equal_func (GtkTreeModel *model,
 	return results;
 }
 
+static void
+perc_cell_data_func (GtkTreeViewColumn *col,
+		     GtkCellRenderer *renderer,
+		     GtkTreeModel *model,
+		     GtkTreeIter *iter,
+		     gpointer user_data)
+{
+	gdouble perc;
+	gchar textperc[10];
+
+	gtk_tree_model_get (model, iter, COL_H_PERC, &perc, -1);
+
+ 	if (perc < 0)
+		strcpy (textperc, "-.- %");
+	else if (perc == 100.0)
+		strcpy (textperc, "100 %");
+	else
+ 		g_sprintf (textperc, " %.1f %%", perc);
+
+	g_object_set (renderer, "text", textperc, NULL);
+}
+
 GtkWidget *
 create_directory_treeview (void)
 {
@@ -227,9 +248,9 @@ create_directory_treeview (void)
 
 	cell = gtk_cell_renderer_text_new ();
 	gtk_tree_view_column_pack_start (col, cell, TRUE);
-	gtk_tree_view_column_set_attributes (col, cell, "markup",
-	                                     COL_PERC, "text",
-	                                     COL_PERC, NULL);
+	gtk_tree_view_column_set_cell_data_func (col, cell,
+						 perc_cell_data_func,
+						 NULL, NULL);
 
 	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
 	gtk_tree_view_column_set_sort_column_id (col, COL_H_PERC);
