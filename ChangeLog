@@ -1,3 +1,8 @@
+2007-01-09  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab-ringschart.c: do not assert that percentage
+	is > 0, it can be -1 when the scan is stopped.
+
 2007-01-04  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab.c:

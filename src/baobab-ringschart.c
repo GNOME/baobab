@@ -1058,15 +1058,16 @@ tree_traverse (cairo_t *cr,
           gtk_tree_model_get (priv->model, &child,
                               priv->percentage_column, &size, -1);
 
-          g_assert (size >= 0);
+          if (size >= 0)
+            {
+               _final_angle = _init_angle + (final_angle - init_angle) * size/100;
 
-          _final_angle = _init_angle + (final_angle - init_angle) * size/100;
+               tree_traverse (cr, rchart, &child, depth+1, next_radius, 
+                              _init_angle, _final_angle, 
+                              tooltips, real_draw);
 
-          tree_traverse (cr, rchart, &child, depth+1, next_radius, 
-                         _init_angle, _final_angle, 
-                         tooltips, real_draw);
-
-          _init_angle = _final_angle;
+               _init_angle = _final_angle;
+            }
         }
       while (gtk_tree_model_iter_next (priv->model, &child));
     }
