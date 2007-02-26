@@ -105,7 +105,10 @@ start_proc_on_dir (const gchar *dir)
 
 	if (!baobab_check_dir (dir))
 		return;
-
+		
+	if (iterstack !=NULL)
+		return;
+		
 	g_string_assign (baobab.last_scan_command, dir);
 	baobab.STOP_SCANNING = FALSE;
 	set_busy (TRUE);
@@ -154,6 +157,7 @@ start_proc_on_dir (const gchar *dir)
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
 	baobab.STOP_SCANNING = TRUE;
 	g_queue_free (iterstack);
+	iterstack = NULL;
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 }
 
