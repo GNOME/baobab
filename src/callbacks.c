@@ -300,6 +300,9 @@ on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem,
 		gdk_window_set_cursor (baobab.window->window, cursor);
 	}
 
+	baobab_treeview_show_allocated_size (baobab.tree_view,
+					     baobab.show_allocated);
+
 	set_busy (TRUE);
 	set_statusbar (_("Calculating percentage bars..."));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),

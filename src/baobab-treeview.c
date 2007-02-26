@@ -48,11 +48,6 @@ create_model (void)
 						G_TYPE_UINT64	/* COL_H_HARDLINK */
 						);
 
-	/* Defaults to sort-by-size */
-	gtk_tree_sortable_set_sort_column_id ((GtkTreeSortable *) mdl,
-					      COL_H_SIZE,
-					      GTK_SORT_DESCENDING);
-
 	return mdl;
 }
 
@@ -266,12 +261,16 @@ create_directory_treeview (void)
 							COL_DIR_SIZE, "text",
 							COL_DIR_SIZE, NULL);
 	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
-	gtk_tree_view_column_set_sort_column_id (col, COL_H_SIZE);
+	gtk_tree_view_column_set_sort_column_id (col,
+						 baobab.show_allocated ? COL_H_ALLOCSIZE : COL_H_SIZE);
 	gtk_tree_view_column_set_reorderable (col, TRUE);
 	gtk_tree_view_column_set_title (col, _("Size"));
 	gtk_tree_view_column_set_sizing (col, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_resizable (col, TRUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
+
+	/* store this column, we need it when toggling 'allocated' */
+	g_object_set_data (G_OBJECT (tvw), "baobab_size_col", col);
 
 	/* objects column */
 	cell = gtk_cell_renderer_text_new ();
@@ -306,9 +305,41 @@ create_directory_treeview (void)
 
 	baobab.model = create_model ();
 
+	/* By default, sort by size */
+	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (baobab.model),
+					      baobab.show_allocated ? COL_H_ALLOCSIZE : COL_H_SIZE,
+					      GTK_SORT_DESCENDING);
+
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tvw),
 				 GTK_TREE_MODEL (baobab.model));
 	g_object_unref (baobab.model);
 
 	return tvw;
+}
+
+void
+baobab_treeview_show_allocated_size (GtkWidget *tv,
+				     gboolean show_allocated)
+{
+	gint sort_id;
+	gint new_sort_id;
+	GtkSortType order;
+	GtkTreeViewColumn *size_col;
+
+	g_return_if_fail (GTK_IS_TREE_VIEW (tv));
+
+	gtk_tree_sortable_get_sort_column_id (GTK_TREE_SORTABLE (baobab.model),
+					      &sort_id, &order);
+
+	/* set the sort id for the size column */
+	size_col = g_object_get_data (G_OBJECT (tv), "baobab_size_col");
+	new_sort_id = show_allocated ? COL_H_ALLOCSIZE : COL_H_SIZE;
+	gtk_tree_view_column_set_sort_column_id (size_col, new_sort_id);
+
+	/* if we are currently sorted on size or allocated size,
+	 * then trigger a resort (with the same order) */
+	if (sort_id == COL_H_SIZE || sort_id == COL_H_ALLOCSIZE) {
+		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (baobab.model),
+						      new_sort_id, order);
+	}
 }

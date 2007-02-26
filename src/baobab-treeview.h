@@ -56,6 +56,6 @@ enum
 };
 
 GtkWidget *create_directory_treeview (void);
-GtkWidget *create_filesearch_treeview (void);
+void baobab_treeview_show_allocated_size (GtkWidget *tv, gboolean show_allocated);
 
 #endif /* __BAOBAB_TV_H__ */
