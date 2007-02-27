@@ -30,6 +30,7 @@ enum
 	COL_DEVICE,
 	COL_MOUNT,
 	COL_TYPE,
+	COL_DIM,
 	TOT_COLUMNS
 };
 

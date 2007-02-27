@@ -27,8 +27,9 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gconf/gconf-client.h>
+#include <libgnomevfs/gnome-vfs.h>
 #include <glibtop/mountlist.h>
-
+#include <glibtop/fsusage.h>
 #include "baobab.h"
 #include "baobab-utils.h"
 #include "baobab-prefs.h"
@@ -142,7 +143,8 @@ create_props_model (void)
 				  G_TYPE_BOOLEAN,	/* checkbox */
 				  G_TYPE_STRING,	/* device */
 				  G_TYPE_STRING,	/* mount point */
-				  G_TYPE_STRING		/* fs type */
+				  G_TYPE_STRING,	/* fs type */
+				  G_TYPE_STRING		/* dimension */
 				  );
 
 	return mdl;
@@ -189,6 +191,15 @@ create_tree_props (GladeXML *dlg_xml)
 							cell, "markup",
 							COL_TYPE, "text",
 							COL_TYPE, NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
+
+	/* fourth text column */
+	cell = gtk_cell_renderer_text_new ();
+	col = gtk_tree_view_column_new_with_attributes (_("Dimension"),
+							cell, "markup",
+							COL_DIM, "text",
+							COL_DIM, NULL);
+	g_object_set (G_OBJECT (cell), "xalign", (gfloat) 1.0, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
 
@@ -238,19 +249,27 @@ fill_props_model (GtkWidget *dlg)
 	guint lo;
 	glibtop_mountlist mountlist;
 	glibtop_mountentry *mountentry, *mountentry_tofree;
-
+	guint64 fstotal;
+	
 	mountentry_tofree = glibtop_get_mountlist (&mountlist, 0);
 
 	for (lo = 0, mountentry = mountentry_tofree; lo < mountlist.number;
 	     lo++, mountentry++) {
+	     
+	     	glibtop_fsusage fsusage;
+		gchar * total;
+		glibtop_get_fsusage (&fsusage, mountentry->mountdir);
+		fstotal = fsusage.blocks * fsusage.block_size;
+		total = gnome_vfs_format_file_size_for_display(fstotal);
 		gtk_list_store_append (model_props, &iter);
 			gtk_list_store_set (model_props, &iter,
 					    COL_CHECK, TRUE,
 					    COL_DEVICE,
 					    mountentry->devname, COL_MOUNT,
 					    mountentry->mountdir, COL_TYPE,
-					    mountentry->type,
+					    mountentry->type,COL_DIM, total,
 					    -1);
+		g_free(total);
 	}
 
 	g_free (mountentry_tofree);
