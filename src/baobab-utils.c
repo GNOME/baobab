@@ -72,24 +72,23 @@ baobab_get_filesystem (baobab_fs *fs)
 }
 
 void
-filechooser_cb (GtkWidget * chooser,
-                 gint response,
-                 gpointer data)
+filechooser_cb (GtkWidget *chooser,
+                gint response,
+                gpointer data)
 {
-	if (response != GTK_RESPONSE_OK) {
-		gtk_widget_hide (chooser);
-	}
-	else {
-		char *filename;
+	if (response == GTK_RESPONSE_OK) {
+		gchar *filename;
 
 		filename = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
 		gtk_widget_hide (chooser);
+
 		start_proc_on_dir (filename);
 		g_free (filename);
 	}
-	
+	else {
+		gtk_widget_hide (chooser);
+	}
 }
-
 
 /*
  * GtkFileChooser to select a directory to scan
@@ -121,8 +120,10 @@ dir_select (gboolean SEARCH, GtkWidget *parent)
 		gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (file_chooser),
 						   toggle);
 
-		g_signal_connect (G_OBJECT (file_chooser), "response",
+		g_signal_connect (file_chooser, "response",
 				  G_CALLBACK (filechooser_cb), NULL);
+		g_signal_connect (file_chooser, "destroy",
+				  G_CALLBACK (gtk_widget_destroyed), &file_chooser);
 
 		gtk_window_set_modal (GTK_WINDOW (file_chooser), TRUE);
 		gtk_window_set_position (GTK_WINDOW (file_chooser), GTK_WIN_POS_CENTER_ON_PARENT);
