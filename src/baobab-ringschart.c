@@ -569,6 +569,10 @@ baobab_ringschart_expose (GtkWidget *rchart, GdkEventExpose *event)
   /* get a cairo_t */
   cr = gdk_cairo_create (rchart->window);
 
+  cairo_rectangle (cr,
+                   event->area.x, event->area.y,
+                   event->area.width, event->area.height);
+
   /* there is no model we can not paint */
   if ((priv->is_frozen) || (priv->model == NULL))
     {
@@ -579,10 +583,12 @@ baobab_ringschart_expose (GtkWidget *rchart, GdkEventExpose *event)
           w = cairo_image_surface_get_width (priv->memento);
           h = cairo_image_surface_get_height (priv->memento);
 
+          cairo_clip (cr);
+
           cairo_scale (cr, 
-                       (gdouble) event->area.width/w,
-                       (gdouble) event->area.height/h);
-          
+                       (gdouble) rchart->allocation.width/w,
+                       (gdouble) rchart->allocation.height/h);
+ 
           cairo_set_source_surface (cr, 
                                     priv->memento,
                                     0, 0);
@@ -591,9 +597,6 @@ baobab_ringschart_expose (GtkWidget *rchart, GdkEventExpose *event)
     }
   else 
     {
-      cairo_rectangle (cr,
-                       event->area.x, event->area.y,
-                       event->area.width, event->area.height);
       cairo_set_source_rgb (cr, 1, 1, 1);
       cairo_fill_preserve (cr);
 

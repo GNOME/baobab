@@ -1,3 +1,13 @@
+2007-07-16 Alejandro G. Castro <acastro@igalia.com>
+
+	Patch cotributed by Philippe Gauthier <philippe.gauthier@deuxpi.ca>
+	
+	* src/baobab-ringschart.c (bug #427126):
+	(baobab_ringschart_expose): Fixed a problem with the draw of the
+	frozen status of the ringschart widget, we were using the event
+	information instead of the widget allocation. Added a cairo_clip
+	to avoid uneeded redraws.
+	
 2007-06-03  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab-utils.c: make sure that file chooser pointer
