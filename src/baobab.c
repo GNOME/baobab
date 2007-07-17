@@ -728,7 +728,16 @@ main (int argc, char *argv[])
 
 	baobab_get_filesystem (&g_fs);
 	if (g_fs.total == 0) {
-		g_print("No mount points detected! Aborting...\n");
+		GtkWidget *dialog = gtk_message_dialog_new (NULL,
+                                  GTK_DIALOG_DESTROY_WITH_PARENT,
+                                  GTK_MESSAGE_ERROR,
+                                  GTK_BUTTONS_CLOSE,
+                                  "Could not detect any mount point.");
+                gtk_message_dialog_format_secondary_text
+                                                        (GTK_MESSAGE_DIALOG(dialog),
+                                                         "Without mount points disk usage cannot be analyzed.");
+ 		gtk_dialog_run (GTK_DIALOG (dialog));
+ 		gtk_widget_destroy (dialog);
 		goto closing;
 	}
 
