@@ -27,7 +27,6 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <string.h>
-#include <monetary.h>
 #include <glib/gi18n.h>
 #include <glib/gprintf.h>
 #include <gtk/gtk.h>
