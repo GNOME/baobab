@@ -142,8 +142,9 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	dir = NULL;
 	string_to_display = NULL;
 
-	/* Skip the /proc folder */
-	if (strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/proc") == 0)
+	/* Skip the virtual file systems */
+	if ((strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/proc") == 0) ||
+            (strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/sys") == 0))
 		goto exit;
 
 	dir = gnome_vfs_uri_to_string (vfs_uri_dir, GNOME_VFS_URI_HIDE_NONE);
@@ -157,7 +158,7 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	else
 		string_to_display = gnome_vfs_format_uri_for_display (dir);
 
-	/* Folders we can't access (e.g perms 644). Skip'em. */			 
+	/* Folders we can't access (e.g perms 644). Skip'em. */
 	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_TYPE) == 0)
 		goto exit;				 
 
