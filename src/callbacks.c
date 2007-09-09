@@ -93,7 +93,7 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
     	"02111-1307, USA.\n";
 
 
-	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2006";
+	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2007";
 
 	gtk_show_about_dialog (NULL,
 			       "name", _("Baobab"),
