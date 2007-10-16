@@ -180,7 +180,7 @@ check_menu_sens (gboolean scanning)
 	set_glade_widget_sens ("tb_scan_remote", !scanning);
 	set_glade_widget_sens ("ck_allocated",
 			       !scanning &&
-			       baobab.is_local);
+			       baobab.is_local && !g_noactivescans);
 
 }
 

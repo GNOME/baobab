@@ -109,6 +109,7 @@ start_proc_on_dir (const gchar *dir)
 	if (iterstack !=NULL)
 		return;
 		
+	g_noactivescans = FALSE; 
 	g_string_assign (baobab.last_scan_command, dir);
 	baobab.STOP_SCANNING = FALSE;
 	set_busy (TRUE);
@@ -725,7 +726,9 @@ main (int argc, char *argv[])
 	gtk_window_set_default_icon_name ("baobab");
 
 	baobab_init ();
-
+	
+	g_noactivescans = TRUE;
+	check_menu_sens(FALSE);
 	baobab_get_filesystem (&g_fs);
 	if (g_fs.total == 0) {
 		GtkWidget *dialog = gtk_message_dialog_new (NULL,

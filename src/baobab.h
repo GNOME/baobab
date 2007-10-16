@@ -85,6 +85,7 @@ struct chan_data {
 };
 
 /* globals */
+gboolean g_noactivescans;
 baobab_application baobab;
 baobab_fs g_fs;
 
