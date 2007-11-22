@@ -546,7 +546,7 @@ baobab_create_toolbar (void)
 
 	g_signal_connect (item, "toolbar-reconfigured",
 			  G_CALLBACK (toolbar_reconfigured_cb), baobab.spinner);
-
+        toolbar_reconfigured_cb (item, baobab.spinner);
 	baobab_toolbar_style (NULL, 0, NULL, NULL);
 
 	visible = gconf_client_get_bool (baobab.gconf_client,
