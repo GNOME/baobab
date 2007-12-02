@@ -85,7 +85,7 @@ filechooser_response_cb (GtkDialog *dialog,
 	switch (response_id) {
 		case GTK_RESPONSE_HELP:
 			baobab_help_display (GTK_WINDOW (baobab.window), 
-			                     "baobab.xml", NULL);
+			                     "baobab.xml", "baobab-preferences");
 			break;
 		case GTK_RESPONSE_CLOSE:
 			if (props_changed) { 
