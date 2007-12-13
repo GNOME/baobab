@@ -347,4 +347,98 @@
 	<note><para>Treemaps are very effective when size is the most important feature to be 
 	displayed.</para></note>
   </sect1>
+  <!-- ================ Ringschart ================================ -->
+
+  <sect1 id="baobab-ringschart"> 
+  <title>Ringschart</title>
+
+    <para><guilabel>Ringschart</guilabel> is a graphical
+      representation of the disk usage by a concrete folder. When
+      launching the application, it is notified the usage of
+      the file system as it can be seen in the next figure:</para>
+
+    <!-- ==== Figure ==== -->
+    <figure id="baobab-filesystem_scan"> 
+      <title>&app; showing a ringschart with the file sytem usage</title>
+      <screenshot> 
+	<mediaobject> 
+	  <imageobject>
+	    <imagedata fileref="figures/baobab_ringschart1.png" format="PNG"/> 
+	  </imageobject>
+	  <textobject> 
+	    <phrase>After launching the application, it is showed the
+	    file system usage. Graphical representation on the right. </phrase> 
+	  </textobject> 
+	</mediaobject> 
+      </screenshot> 
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <para>When you start scanning a folder, the tree of subfolders is
+      created and listed on the left side. Each row contains
+      information for the name, how much space it is taking up
+      (percentage and size in KB, MB or GB) and the number of items
+      (adding files and directories). When this process ends up,
+      the <guilabel>Ringschart</guilabel> is drawn on the right
+      side. If you stop it before it has been completed, only a
+      partial representation is done based on the directories whose
+      usage was computed.</para>
+
+
+    <!-- ==== Figure ==== -->
+    <figure id="baobab-folder_scan"> 
+      <title>&app; showing a ringschart with the usage of a folder</title>
+      <screenshot> 
+	<mediaobject> 
+	  <imageobject>
+	    <imagedata fileref="figures/baobab_ringschart2.png" format="PNG"/> 
+	  </imageobject>
+	  <textobject> 
+	    <phrase>After scanning a folder. </phrase> 
+	  </textobject> 
+	</mediaobject> 
+      </screenshot> 
+    </figure>
+    <!-- ==== End of Figure ==== -->
+    
+    <para>The <guilabel>Ringschart</guilabel> is composed of a set of 
+      nested rings around a central circle. This circle symbolizes the
+      root folder of the partial tree (that is, the folder that the 
+      user has selected for scanning). Each ring represents a level in
+      the partial tree, so i.e. the subfolders of the root folder will 
+      be represented in the first ring, and deeper levels in the tree 
+      correspond to outer rings in the chart. Each subfolder is 
+      represented by a sector of the ring, its angle being proportional 
+      to the size of the folder's contents, and painted with a different
+      color to ease visualization. Up to five levels can be drawn; in 
+      case that a folder in that last fifth level contains even more 
+      subfolders, this situation will be pointed by the presence of a 
+      black curve close to the edge of that folder's ring sector. When a
+      folder with no further subfolders is selected to be the root of 
+      the partial tree, only the inner circle will be drawn. When the 
+      mouse pointer hovers one of the folders in the graphic, it will be
+      highlighted and a tooltip will appears with information about its 
+      name and size. If there are any subfolders, small grey tooltips 
+      will appear, indicating their names. It's possible that not all of
+      the subfolders' names are displayed, to avoid overlappings.</para>
+
+    <para>You can go up and down the rows in the list (optionally 
+      expanding those with subfolders), the graphic representation will 
+      change using the selected folder as the root of the partial tree 
+      to be represented. The folders can also be navigated from the 
+      <guilabel>ringschart</guilabel> itself. If you click with the left
+      button of your mouse inside a folder, you'll move deeper by 
+      setting the root of the graphic to that folder. If you press the 
+      middle button (no matter the place as long as you click inside the 
+      <guilabel>ringschart</guilabel> frame) you'll get the opposite 
+      behaviour, going back one step in the hierarchy.</para>
+
+    <para>The percentage of its parent's radius that is used by a given
+      folder is directly proportional to the relation between it's own
+      size and its parent's. It's easy to understand that the size of 
+      a folder is equal or smaller than its parent's. Although only 
+      directories are shown in this graphical representation, files are 
+      taken into account to calculate the amount of space occupied by 
+      folders.</para>
+  </sect1>
 </article>
