@@ -4,12 +4,12 @@
 # Jorge González <jorgegonz@svn.gnome.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab.gnome-2-20.es\n"
+"Project-Id-Version: baobab.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-07 03:39+0100\n"
-"PO-Revision-Date: 2007-09-12 17:37+0200\n"
+"POT-Creation-Date: 2007-12-13 08:02+0000\n"
+"PO-Revision-Date: 2007-12-13 16:54+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,6 +46,26 @@ msgstr "@@image: 'figures/baobab_prefs.png'; md5=94dbb42d65cc8c32e50ac87bf993281
 msgid "@@image: 'figures/baobab_treemaps.png'; md5=b553b49db25f9d6b98efcc394a5d3689"
 msgstr "@@image: 'figures/baobab_treemaps.png'; md5=b553b49db25f9d6b98efcc394a5d3689"
 
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/baobab.xml:366(None)
+msgid ""
+"@@image: 'figures/baobab_ringschart1.png'; "
+"md5=84b2e52d360fbda7311ce59a9532be7a"
+msgstr ""
+"@@image: 'figures/baobab_ringschart1.png'; "
+"md5=84b2e52d360fbda7311ce59a9532be7a"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/baobab.xml:394(None)
+msgid ""
+"@@image: 'figures/baobab_ringschart2.png'; "
+"md5=d938ef7e9299de5b304c7654bf14e364"
+msgstr ""
+"@@image: 'figures/baobab_ringschart2.png'; "
+"md5=d938ef7e9299de5b304c7654bf14e364"
+
 #: C/baobab.xml:23(title)
 msgid "Disk Usage Analyzer Manual"
 msgstr "Manual del Analizador de uso del disco"
@@ -70,7 +90,7 @@ msgstr "Fabio Marzocca"
 #: C/baobab.xml:43(publishername) C/baobab.xml:53(orgname)
 #: C/baobab.xml:88(para)
 msgid "GNOME Documentation Project"
-msgstr "Proyecto de Documentación de GNOME"
+msgstr "Proyecto de documentación de GNOME"
 
 #: C/baobab.xml:2(para)
 msgid ""
@@ -82,7 +102,7 @@ msgid ""
 "in the file COPYING-DOCS distributed with this manual."
 msgstr ""
 "Se permite copiar, distribuir y/o modificar este documento bajo los términos "
-"de la GNU Free Documentacion License (GFDL), Versión 1.1 o por alguna de las "
+"de la GNU Free Documentation License (GFDL), Versión 1.1 o por alguna de las "
 "últimas versiones publicadas por la Free Software Foundation sin Secciones "
 "Invariantes, sin Portada, y sin Contraportada. Se puede copiar de la GFDL a "
 "este <ulink type=\"help\" url=\"ghelp:fdl\">enlace</ulink> o en el archivo "
@@ -483,7 +503,7 @@ msgstr ""
 "selecciona<menuchoice><guimenu>Analizador</guimenu><guimenuitem>Análisis de "
 "carpeta remota</guimenuitem></menuchoice>desde el menú y se mostrará el "
 "siguiente cuadro de diálogo. El<application>Analizador de uso del disco</"
-"application> puede conectarse a un servidor a través de SSH,  FTP, SMB, HTTP "
+"application> puede conectarse a un servidor a través de SSH, FTP, SMB, HTTP "
 "y HTTPS."
 
 #: C/baobab.xml:251(title)
@@ -529,8 +549,9 @@ msgid ""
 "filesystem scanning operations."
 msgstr ""
 "En la primera parte de la ventana de Preferencias , todos los dispositivos "
-"montados detectados son listados. Pulse en el caja de verificación para incluir/"
-"excluir la partición en las operaciones de sistema de archivos escaneados."
+"montados detectados son listados. Pulse en el caja de verificación para "
+"incluir/excluir la partición en las operaciones de sistema de archivos "
+"analizados."
 
 #: C/baobab.xml:298(para)
 msgid "The device mounted on \"/\" cannot be excluded from the scan."
@@ -616,10 +637,142 @@ msgstr ""
 "Los treemaps son muy efectivos cuando el tamaño es la característica más "
 "importante a ser mostrada."
 
+#: C/baobab.xml:353(title)
+msgid "Ringschart"
+msgstr "Gráfico de anillo"
+
+#: C/baobab.xml:355(para)
+msgid ""
+"<guilabel>Ringschart</guilabel> is a graphical representation of the disk "
+"usage by a concrete folder. When launching the application, it is notified "
+"the usage of the file system as it can be seen in the next figure:"
+msgstr ""
+"El <guilabel>gráfico de anillo</guilabel> es una representación gráfica del uso del disco "
+"que hace una carpeta concreta. Al lanzar la aplicación se notificará "
+"el uso del sistema de archivos como se puede ver en la siguiente figura:"
+
+#: C/baobab.xml:362(title)
+msgid "Disk Usage Analyzer showing a ringschart with the file sytem usage"
+msgstr "El Analizador del uso del disco mostrando un gráfico de anillo con el uso del sistema de archivos"
+
+#: C/baobab.xml:369(phrase)
+msgid ""
+"After launching the application, it is showed the file system usage. "
+"Graphical representation on the right."
+msgstr ""
+"Después de lanzar la aplicación se muestra el uso del sistema de archivos. "
+"Una representación gráfica a la derecha."
+
+#. ==== End of Figure ====
+#: C/baobab.xml:377(para)
+msgid ""
+"When you start scanning a folder, the tree of subfolders is created and "
+"listed on the left side. Each row contains information for the name, how "
+"much space it is taking up (percentage and size in KB, MB or GB) and the "
+"number of items (adding files and directories). When this process ends up, "
+"the <guilabel>Ringschart</guilabel> is drawn on the right side. If you stop "
+"it before it has been completed, only a partial representation is done based "
+"on the directories whose usage was computed."
+msgstr ""
+"Cuando comienza a analizar una carpeta, se crea el árbol de subcarpetas y "
+"se lista en la parte izquierda. Cada fila contiene información para el nombre, "
+"cuánto espacio ocupa (porcentaje y tamaño en KiB, MiB o GiB) y el "
+"número de elementos (incluyendo archivos y directorios). Cuando este proceso termina, "
+"se dibuja el <guilabel>gráfico de anillo</guilabel> en la parte derecha. Si para "
+"antes de que se haya completado, sólo se mostrará una representación parcial basada "
+"en los directorios cuyo uso se computó."
+
+#: C/baobab.xml:390(title)
+msgid "Disk Usage Analyzer showing a ringschart with the usage of a folder"
+msgstr "El analizador del uso del disco mostrando un gráfico de anillo con el uso de una carpeta"
+
+#: C/baobab.xml:397(phrase)
+msgid "After scanning a folder."
+msgstr "Después de analizar una carpeta."
+
+#. ==== End of Figure ====
+#: C/baobab.xml:404(para)
+msgid ""
+"The <guilabel>Ringschart</guilabel> is composed of a set of nested rings "
+"around a central circle. This circle symbolizes the root folder of the "
+"partial tree (that is, the folder that the user has selected for scanning). "
+"Each ring represents a level in the partial tree, so i.e. the subfolders of "
+"the root folder will be represented in the first ring, and deeper levels in "
+"the tree correspond to outer rings in the chart. Each subfolder is "
+"represented by a sector of the ring, its angle being proportional to the "
+"size of the folder's contents, and painted with a different color to ease "
+"visualization. Up to five levels can be drawn; in case that a folder in that "
+"last fifth level contains even more subfolders, this situation will be "
+"pointed by the presence of a black curve close to the edge of that folder's "
+"ring sector. When a folder with no further subfolders is selected to be the "
+"root of the partial tree, only the inner circle will be drawn. When the "
+"mouse pointer hovers one of the folders in the graphic, it will be "
+"highlighted and a tooltip will appears with information about its name and "
+"size. If there are any subfolders, small grey tooltips will appear, "
+"indicating their names. It's possible that not all of the subfolders' names "
+"are displayed, to avoid overlappings."
+msgstr ""
+"El <guilabel>gráfico de anillo</guilabel> está compuesto por un conjunto de anillos "
+"concéntricos alrededor de un círculo central. Éste círculo simboliza la carpeta raíz del "
+"árbol parcial (esto es, la carpeta que el usuario ha seleccionado para analizar). "
+"Cada anillo representa un nivel en el árbol parcial, de tal forma que las subcarpetas de "
+"la carpeta raíz se representarán en el primer anillo y los niveles más profundos en "
+"el árbol correspondiente a los anillos exteriores en el gráfico. Cada subcarpeta se "
+"representa por un sector del anillo, su ángulo es proporcional al "
+"tamaño del contenido de su carpeta y está pintado de un color diferente para facilitar "
+"la visualización. Se pueden dibujar hasta cinco niveles; en caso de que una carpeta en "
+"el último nivel contenga más subcareptas, esta situación se "
+"avisará con la presencia de una curva negra junto al borde del sector de "
+"esa carpeta. Cuando una carpeta sin subcarpetas se selecciona para ser la "
+"raíz del árbol parcial, sólo se dibujará el círculo interior. Cuando el "
+"puntero del ratón se posiciona sobre una de las carpetas del gráfico, éste se "
+"resaltará y aparecerá información contextual acerca de su nombre y "
+"tamaño. Si hay alguna subcarpeta aparecerá una pequeña ayuda contextual en gris "
+"indicando sus nombres. Para evitar solapamientos, es posible que no se muestren "
+"los nombres de todas las subcarpetas."
+
+#: C/baobab.xml:425(para)
+msgid ""
+"You can go up and down the rows in the list (optionally expanding those with "
+"subfolders), the graphic representation will change using the selected "
+"folder as the root of the partial tree to be represented. The folders can "
+"also be navigated from the <guilabel>ringschart</guilabel> itself. If you "
+"click with the left button of your mouse inside a folder, you'll move deeper "
+"by setting the root of the graphic to that folder. If you press the middle "
+"button (no matter the place as long as you click inside the "
+"<guilabel>ringschart</guilabel> frame) you'll get the opposite behaviour, "
+"going back one step in the hierarchy."
+msgstr ""
+"Puede moverse arriba y abajo de las filas de la lista (opcionalmente puede expandir aquellas "
+"con subcarpetas), la representación gráfica cambiará para mostrar la carpeta "
+"seleccionada como la raíz del árbol parcial que representar. También se puede "
+"navegar por las carpetas desde el <guilabel>gráfico de anillo</guilabel> en si. Si "
+"pulsa con el botón izquierdo del ratón dentro de una carpeta, se moverá dentro de ella "
+"haciendo que la raíz del gráfico sea dicha carpeta. Si pulsa con el botón del medio "
+"(no importa dónde siempre que pulse dentro del "
+"marco del <guilabel>gráfico de anillo</guilabel>) obtendrá el comportamiento opuesto, "
+"irá hacia atrás un paso en la jerarquía."
+
+#: C/baobab.xml:436(para)
+msgid ""
+"The percentage of its parent's radius that is used by a given folder is "
+"directly proportional to the relation between it's own size and its "
+"parent's. It's easy to understand that the size of a folder is equal or "
+"smaller than its parent's. Although only directories are shown in this "
+"graphical representation, files are taken into account to calculate the "
+"amount of space occupied by folders."
+msgstr ""
+"El porcentaje del radio del padre que usa una carpeta dada es "
+"directamente proporcional a la relación entre su propio tamaño y el de "
+"su padre. Es fácil entender que el tamaño de una carpeta es igual o "
+"menor que el de su padre. Aunque sólo se muestran directorios en esta "
+"representación gráfica, los archivos se tienen en cuenta para calcular "
+"la cantidad de espacio que ocupan las carpetas."
+
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/baobab.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-"Jorge González <jorge.gonzalez.gonzalez@hispalinux.es>, 2007\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "Montse Fernández Dopacio <mfernandez@igalia.com>, 2006"
 
