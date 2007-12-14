@@ -546,7 +546,7 @@ baobab_create_toolbar (void)
 
 	g_signal_connect (item, "toolbar-reconfigured",
 			  G_CALLBACK (toolbar_reconfigured_cb), baobab.spinner);
-        toolbar_reconfigured_cb (item, baobab.spinner);
+        toolbar_reconfigured_cb (item, GEDIT_SPINNER (baobab.spinner));
 	baobab_toolbar_style (NULL, 0, NULL, NULL);
 
 	visible = gconf_client_get_bool (baobab.gconf_client,
@@ -702,6 +702,14 @@ initialize_ringschart (void)
         gtk_widget_show_all (ringschart_frame);
 }
 
+static gboolean
+start_proc_on_command_line (const char *uri)
+{
+	start_proc_on_dir (uri);
+
+	return FALSE;
+}
+
 int
 main (int argc, char *argv[])
 {
@@ -774,9 +782,15 @@ main (int argc, char *argv[])
 	/* commandline */
 	if (argc > 1) {
 		gchar *uri_shell;
+
 		uri_shell = gnome_vfs_make_uri_from_shell_arg (argv[1]);
-		start_proc_on_dir (uri_shell);
-		g_free (uri_shell);
+
+		/* start processing the uri specified on the
+		 * command line as soon as we enter the main loop */
+		g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
+		                 (GSourceFunc) start_proc_on_command_line,
+		                 uri_shell,
+		                 (GDestroyNotify) g_free);
 	}
 
 	gtk_main ();
