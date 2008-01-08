@@ -23,6 +23,8 @@
 
 #include <config.h>
 
+#include <string.h>
+
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libgnomevfs/gnome-vfs.h>

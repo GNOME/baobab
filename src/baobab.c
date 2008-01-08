@@ -416,7 +416,7 @@ list_find (gconstpointer a, gconstpointer b)
 gboolean
 is_excluded_dir (const gchar *dir)
 {
-	g_return_if_fail (dir != NULL);
+	g_return_val_if_fail (dir != NULL, FALSE);
 
 	return (baobab.bbExcludedDirs &&
 		(g_slist_find_custom (baobab.bbExcludedDirs, dir, list_find) != NULL));
