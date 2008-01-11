@@ -1,5 +1,5 @@
 # French translation of baobab documentation.
-# Copyright (C) 2006 Free Software Foundation, Inc.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-utils
 # documentation package.
 #
@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab-help fr\n"
-"POT-Creation-Date: 2007-03-02 08:14+0100\n"
-"PO-Revision-Date: 2007-02-27 18:15+0100\n"
+"POT-Creation-Date: 2008-01-11 23:14+0100\n"
+"PO-Revision-Date: 2007-12-23 22:26+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: Gnome French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,6 +56,26 @@ msgid ""
 "@@image: 'figures/baobab_treemaps.png'; md5=b553b49db25f9d6b98efcc394a5d3689"
 msgstr ""
 "@@image: 'figures/baobab_treemaps.png'; md5=b553b49db25f9d6b98efcc394a5d3689"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../C/baobab.xml:366(None)
+msgid ""
+"@@image: 'figures/baobab_ringschart1.png'; "
+"md5=84b2e52d360fbda7311ce59a9532be7a"
+msgstr ""
+"@@image: 'figures/baobab_ringschart1.png'; "
+"md5=84b2e52d360fbda7311ce59a9532be7a"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../C/baobab.xml:394(None)
+msgid ""
+"@@image: 'figures/baobab_ringschart2.png'; "
+"md5=d938ef7e9299de5b304c7654bf14e364"
+msgstr ""
+"@@image: 'figures/baobab_ringschart2.png'; "
+"md5=d938ef7e9299de5b304c7654bf14e364"
 
 #: ../C/baobab.xml:23(title)
 msgid "Disk Usage Analyzer Manual"
@@ -632,6 +652,146 @@ msgid ""
 msgstr ""
 "Une carte d'arborescence est très pratique lorsque la taille est l'élément "
 "le plus important à afficher."
+
+#: ../C/baobab.xml:353(title)
+msgid "Ringschart"
+msgstr "Diagramme en anneaux"
+
+#: ../C/baobab.xml:355(para)
+msgid ""
+"<guilabel>Ringschart</guilabel> is a graphical representation of the disk "
+"usage by a concrete folder. When launching the application, it is notified "
+"the usage of the file system as it can be seen in the next figure:"
+msgstr ""
+"Le <guilabel>diagramme en anneaux</guilabel> est une représentation "
+"graphique de l'occupation des disques par dossier. Lorsque l'application est "
+"lancée, elle présente l'occupation du système de fichier comme on peut le "
+"voir sur la figure suivante :"
+
+#: ../C/baobab.xml:362(title)
+msgid "Disk Usage Analyzer showing a ringschart with the file sytem usage"
+msgstr ""
+"L'occupation du système de fichiers présenté dans un diagramme en anneaux "
+"par l'analyseur d'utilisation des disques"
+
+#: ../C/baobab.xml:369(phrase)
+msgid ""
+"After launching the application, it is showed the file system usage. "
+"Graphical representation on the right."
+msgstr ""
+"Après le lancement de l'application, l'occupation du système de fichiers est "
+"présenté. La représentation graphique apparaît sur la droite."
+
+#. ==== End of Figure ====
+#: ../C/baobab.xml:377(para)
+msgid ""
+"When you start scanning a folder, the tree of subfolders is created and "
+"listed on the left side. Each row contains information for the name, how "
+"much space it is taking up (percentage and size in KB, MB or GB) and the "
+"number of items (adding files and directories). When this process ends up, "
+"the <guilabel>Ringschart</guilabel> is drawn on the right side. If you stop "
+"it before it has been completed, only a partial representation is done based "
+"on the directories whose usage was computed."
+msgstr ""
+"Dès qu'un dossier commence à être analysé, l'arbre des sous-dossiers est "
+"créé et la liste correspondante s'affiche sur la gauche. Chaque ligne "
+"contient des informations sur le nom, l'espace disque occupé (pourcentage et "
+"taille en Kio, Mio ou Gio) et le nombre d'éléments (addition des fichiers et "
+"dossiers). Lorsque le processus se termine, le <guilabel>diagramme en "
+"anneaux</guilabel> est affiché sur la droite. Si vous arrêtez l'analyse "
+"avant la fin, seule une représentation partielle est générée en fonction des "
+"dossiers dont l'occupation a été analysée."
+
+#: ../C/baobab.xml:390(title)
+msgid "Disk Usage Analyzer showing a ringschart with the usage of a folder"
+msgstr ""
+"Diagramme en anneaux de l'occupation d'un dossier affiché par l'analyseur "
+"d'utilisation des disques"
+
+#: ../C/baobab.xml:397(phrase)
+msgid "After scanning a folder."
+msgstr "Après l'analyse d'un dossier."
+
+#. ==== End of Figure ====
+#: ../C/baobab.xml:404(para)
+msgid ""
+"The <guilabel>Ringschart</guilabel> is composed of a set of nested rings "
+"around a central circle. This circle symbolizes the root folder of the "
+"partial tree (that is, the folder that the user has selected for scanning). "
+"Each ring represents a level in the partial tree, so i.e. the subfolders of "
+"the root folder will be represented in the first ring, and deeper levels in "
+"the tree correspond to outer rings in the chart. Each subfolder is "
+"represented by a sector of the ring, its angle being proportional to the "
+"size of the folder's contents, and painted with a different color to ease "
+"visualization. Up to five levels can be drawn; in case that a folder in that "
+"last fifth level contains even more subfolders, this situation will be "
+"pointed by the presence of a black curve close to the edge of that folder's "
+"ring sector. When a folder with no further subfolders is selected to be the "
+"root of the partial tree, only the inner circle will be drawn. When the "
+"mouse pointer hovers one of the folders in the graphic, it will be "
+"highlighted and a tooltip will appears with information about its name and "
+"size. If there are any subfolders, small grey tooltips will appear, "
+"indicating their names. It's possible that not all of the subfolders' names "
+"are displayed, to avoid overlappings."
+msgstr ""
+"Le <guilabel>diagramme en anneaux</guilabel> est formé d'un ensemble "
+"d'anneaux autour d'un cercle central. Ce cercle symbolise le dossier racine "
+"de l'arborescence partielle (c'est-à-dire, le dossier qui a été sélectionné "
+"pour être analysé). Chaque anneau représente un niveau de l'arborescence "
+"partielle. Ainsi, les sous-dossiers du dossier racine sont représentés dans "
+"le premier anneau, et plus la profondeur de l'arborescence augmente, plus "
+"les anneaux sont éloignés du centre. Chaque sous-dossier est représenté par "
+"un secteur de l'anneau, l'angle occupé étant proportionnel à la taille du "
+"contenu du dossier. Chaque secteur est coloré différemment pour une "
+"meilleure différenciation visuelle. Le diagramme présente au maximum cinq "
+"niveaux d'anneaux. S'il y a encore des sous-dossiers après le cinquième "
+"niveau d'arborescence, une courbe noire est dessinée juste après le secteur "
+"d'anneau de ce dossier. Si un dossier sans sous-dossier est sélectionné "
+"comme racine de l'arborescence à analyser, seul le cercle central apparaît. "
+"Lorsque le pointeur de la souris survole un dossier dans le diagramme, le "
+"secteur correspondant est mis en évidence et une infobulle affiche des "
+"informations sur son nom et sa taille. S'il existe des sous-dossiers, de "
+"petites infobulles grises contenant leur nom apparaissent. Il est possible "
+"que certains noms de sous-dossiers n'apparaissent pas pour éviter une "
+"surcharge d'affichage."
+
+#: ../C/baobab.xml:425(para)
+msgid ""
+"You can go up and down the rows in the list (optionally expanding those with "
+"subfolders), the graphic representation will change using the selected "
+"folder as the root of the partial tree to be represented. The folders can "
+"also be navigated from the <guilabel>ringschart</guilabel> itself. If you "
+"click with the left button of your mouse inside a folder, you'll move deeper "
+"by setting the root of the graphic to that folder. If you press the middle "
+"button (no matter the place as long as you click inside the "
+"<guilabel>ringschart</guilabel> frame) you'll get the opposite behaviour, "
+"going back one step in the hierarchy."
+msgstr ""
+"Vous pouvez monter et descendre dans les lignes de la liste (et étendre ceux "
+"qui contiennent des sous-dossiers, si vous le souhaitez). La représentation "
+"graphique est modifiée en prenant le nouveau dossier sélectionné comme "
+"racine de l'arborescence partielle. Il est aussi possible de parcourir les "
+"dossiers directement dans le <guilabel>diagramme en anneau</guilabel>. Si "
+"vous cliquez sur un dossier, vous descendez dans l'arborescence analysée en "
+"prenant ce dossier comme racine du diagramme. Si vous cliquez avec le bouton "
+"du milieu de la souris (n'importe où sur le diagramme), vous générez "
+"l'opération inverse, en remontant d'un niveau dans l'arborescence."
+
+#: ../C/baobab.xml:436(para)
+msgid ""
+"The percentage of its parent's radius that is used by a given folder is "
+"directly proportional to the relation between it's own size and its "
+"parent's. It's easy to understand that the size of a folder is equal or "
+"smaller than its parent's. Although only directories are shown in this "
+"graphical representation, files are taken into account to calculate the "
+"amount of space occupied by folders."
+msgstr ""
+"Le pourcentage de la zone occupée par un dossier relativement à son parent "
+"est directement proportionnel à la relation entre sa taille et celle de son "
+"parent. Il est facile de comprendre que la taille d'un dossier est égale ou "
+"plus petite à celle de son parent. Même si seuls les dossiers sont affichés "
+"dans cette représentation graphique, les fichiers sont pris en compte dans "
+"le calcul de la quantité d'espace occupée par les dossiers."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: ../C/baobab.xml:0(None)
