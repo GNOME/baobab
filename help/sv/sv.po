@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
-"POT-Creation-Date: 2007-12-13 08:02+0000\n"
-"PO-Revision-Date: 2007-12-31 00:45+0100\n"
+"POT-Creation-Date: 2007-12-30 23:46+0000\n"
+"PO-Revision-Date: 2008-02-28 11:20+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -370,11 +370,11 @@ msgstr "Efter att programmet har startats kommer det att visa filsystemsanvändn
 #. ==== End of Figure ====
 #: C/baobab.xml:377(para)
 msgid "When you start scanning a folder, the tree of subfolders is created and listed on the left side. Each row contains information for the name, how much space it is taking up (percentage and size in KB, MB or GB) and the number of items (adding files and directories). When this process ends up, the <guilabel>Ringschart</guilabel> is drawn on the right side. If you stop it before it has been completed, only a partial representation is done based on the directories whose usage was computed."
-msgstr ""
+msgstr "När du startar avsökningen av en mapp kommer undermappsträdet att skapas och listas på vänstra sidan. Varje rad innehåller information om namnet, hur mycket utrymme som används (procenttal och storlek i KB, MB eller GB) och antalet objekt (både filer och kataloger). När denna process slutförts kommer ett <guilabel>Ringdiagram</guilabel> att ritas ut på högra sidan. Om du stoppar den innan den har slutförts kommer endast en del att representeras, baserat på de kataloger vars användning beräknades."
 
 #: C/baobab.xml:390(title)
 msgid "Disk Usage Analyzer showing a ringschart with the usage of a folder"
-msgstr ""
+msgstr "Diskanvändningsanalysator visar ett ringdiagram med användningen för en mapp"
 
 #: C/baobab.xml:397(phrase)
 msgid "After scanning a folder."
@@ -383,15 +383,15 @@ msgstr "Efter avsökning av en mapp."
 #. ==== End of Figure ====
 #: C/baobab.xml:404(para)
 msgid "The <guilabel>Ringschart</guilabel> is composed of a set of nested rings around a central circle. This circle symbolizes the root folder of the partial tree (that is, the folder that the user has selected for scanning). Each ring represents a level in the partial tree, so i.e. the subfolders of the root folder will be represented in the first ring, and deeper levels in the tree correspond to outer rings in the chart. Each subfolder is represented by a sector of the ring, its angle being proportional to the size of the folder's contents, and painted with a different color to ease visualization. Up to five levels can be drawn; in case that a folder in that last fifth level contains even more subfolders, this situation will be pointed by the presence of a black curve close to the edge of that folder's ring sector. When a folder with no further subfolders is selected to be the root of the partial tree, only the inner circle will be drawn. When the mouse pointer hovers one of the folders in the graphic, it will be highlighted and a tooltip will appears with information about its name and size. If there are any subfolders, small grey tooltips will appear, indicating their names. It's possible that not all of the subfolders' names are displayed, to avoid overlappings."
-msgstr ""
+msgstr "Ett <guilabel>Ringdiagram</guilabel> är sammansatt av en uppsättning nästade ringar runt en central cirkel. Denna cirkel symboliserar rotmappen för partiella trädet (alltså mappen som användaren har valt att söka av). Varje ring representerar en nivå i det partiella trädet, så till exempel kommer undermapparna till rotmappen att representeras i den första ringen, och djupare nivåer i trädet motsvarar de yttre ringarna i diagrammet. Varje undermapp representeras av en sektor i ringen, dess vinkel är proportionerlig till storleken för mappens innehåll och ritas ut med olika färger för att förenkla. Upp till fem nivåer kan ritas ut, om en mapp i den sista femte nivån innehåller ännu fler undermappar kommer denna situation att informeras om genom att en svart kurva ritas ut nära kanten på den mappens ringsektor. När en mapp som inte har fler undermappar väljs som roten för det partiella trädet kommer endast den inre cirkeln att ritas ut. När muspekaren svävar över en av mapparna i bilden, kommer den att framhävas och ett verktygstips kommer att visas med information om dess namn och storlek. Om det finns eventuella undermappar kommer små gråa verktygstips att visas som indikerar deras namn. Det är möjligt att inte alla undermapparnas namn visas, för att förhindra överlappning."
 
 #: C/baobab.xml:425(para)
 msgid "You can go up and down the rows in the list (optionally expanding those with subfolders), the graphic representation will change using the selected folder as the root of the partial tree to be represented. The folders can also be navigated from the <guilabel>ringschart</guilabel> itself. If you click with the left button of your mouse inside a folder, you'll move deeper by setting the root of the graphic to that folder. If you press the middle button (no matter the place as long as you click inside the <guilabel>ringschart</guilabel> frame) you'll get the opposite behaviour, going back one step in the hierarchy."
-msgstr ""
+msgstr "Du kan gå upp och ned i listans rader (och valfritt fälla ut de som innehåller undermappar), den grafiska representationen kommer att ändras till den markerade mappen som rot för det partiella trädet. Mapparna kan även navigeras i från själva <guilabel>ringdiagrammet</guilabel>. OM du klicka med vänstra musknappen inne i en mapp kommer du att förflytta dig djupare ner genom att ställa in roten till den mappen. Om du trycker på mittenknappen (oavsett var du klickar så länge som du klickar inne i rutan för <guilabel>ringdiagrammet</guilabel>) kommer du att få motsatt beteende, vilket tar dig tillbaka ett steg i hierarkin."
 
 #: C/baobab.xml:436(para)
 msgid "The percentage of its parent's radius that is used by a given folder is directly proportional to the relation between it's own size and its parent's. It's easy to understand that the size of a folder is equal or smaller than its parent's. Although only directories are shown in this graphical representation, files are taken into account to calculate the amount of space occupied by folders."
-msgstr ""
+msgstr "Procentandelen för dess förälders radie som används av en angiven mapp är direkt proportionerlig till förhållandet mellan sin egna storlek och dess förälders storlek. Det är enkelt att förstå att storleken för en mapp är lika stor eller mindre än dess förälders storlek. Även om endast kataloger visas i denna grafiska representation så tas filer med i beräkningen av mängden utrymme som används av mapparna."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/baobab.xml:0(None)
