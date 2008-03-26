@@ -743,10 +743,10 @@ main (int argc, char *argv[])
                                   GTK_DIALOG_DESTROY_WITH_PARENT,
                                   GTK_MESSAGE_ERROR,
                                   GTK_BUTTONS_CLOSE,
-                                  "Could not detect any mount point.");
+                                  _("Could not detect any mount point."));
                 gtk_message_dialog_format_secondary_text
                                                         (GTK_MESSAGE_DIALOG(dialog),
-                                                         "Without mount points disk usage cannot be analyzed.");
+                                                         _("Without mount points disk usage cannot be analyzed."));
  		gtk_dialog_run (GTK_DIALOG (dialog));
  		gtk_widget_destroy (dialog);
 		goto closing;
