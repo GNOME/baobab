@@ -166,6 +166,9 @@ void
 rescan_current_dir (void)
 {
 	g_return_if_fail (baobab.last_scan_command != NULL);
+	baobab_get_filesystem (&g_fs);
+	set_label_scan (&g_fs);
+	show_label ();
 
 	start_proc_on_dir (baobab.last_scan_command->str);
 }
