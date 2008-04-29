@@ -31,6 +31,7 @@
 #include <libgnomevfs/gnome-vfs-mime.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
 #include <gconf/gconf-client.h>
+#include <gio/gio.h>
 
 #include "baobab.h"
 #include "baobab-graphwin.h"
@@ -43,13 +44,21 @@
 void
 on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	start_proc_on_dir (g_get_home_dir ());
+	GFile *file;
+	
+	file = g_file_new_for_path (g_get_home_dir ());
+	start_proc_on_location (file);
+	g_object_unref (file);
 }
 
 void
 on_menuallfs_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	start_proc_on_dir ("file:///");
+	GFile	*file;
+	
+	file = g_file_new_for_uri ("file:///");
+	start_proc_on_location (file);
+	g_object_unref (file);
 }
 
 void
@@ -144,13 +153,21 @@ on_tbscandir_clicked (GtkToolButton *toolbutton, gpointer user_data)
 void
 on_tbscanhome_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	start_proc_on_dir (g_get_home_dir ());
+	GFile *file;
+	
+	file = g_file_new_for_path (g_get_home_dir ());
+	start_proc_on_location (file);
+	g_object_unref (file);
 }
 
 void
 on_tbscanall_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	start_proc_on_dir ("file:///");
+	GFile	*file;
+	
+	file = g_file_new_for_uri ("file:///");
+	start_proc_on_location (file);
+	g_object_unref (file);
 }
 
 void
@@ -169,8 +186,12 @@ on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data)
 	while (gtk_events_pending ())
 		gtk_main_iteration ();
 
-	if (response == GTK_RESPONSE_OK)
-		start_proc_on_dir (baobab.last_scan_command->str);
+	if (response == GTK_RESPONSE_OK) {
+		GFile	*file;
+		file = g_file_new_for_uri (baobab.last_scan_command->str);
+		start_proc_on_location (file);
+		g_object_unref (file);
+		}
 }
 
 void
@@ -203,22 +224,28 @@ on_delete_activate (GtkWidget *widget,
 void
 open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
-	GnomeVFSURI *vfs_uri;
+	GFile	*file;
 
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
-	vfs_uri = gnome_vfs_uri_new (baobab.selected_path);
-
-	if (!gnome_vfs_uri_exists (vfs_uri)) {
+	if (baobab.is_local) {
+		file = g_file_new_for_path(baobab.selected_path);
+		}
+	else {
+		file = g_file_new_for_uri(baobab.selected_path);
+	}
+	
+	
+	if (!g_file_query_exists (file, NULL)) {
 		message (_("The document does not exist."), "",
 		GTK_MESSAGE_INFO, baobab.window);
-		gnome_vfs_uri_unref (vfs_uri);
+		g_object_unref (file);
 		return;
 	}
 
-	gnome_vfs_uri_unref (vfs_uri);
-	open_file_with_application (baobab.selected_path);
+	open_file_with_application (file);
+	g_object_unref (file);
 }
 
 void
@@ -398,20 +425,19 @@ on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
 void 
 scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
-	GnomeVFSURI *vfs_uri;
-
+	GFile	*file;
+	
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
-	vfs_uri = gnome_vfs_uri_new (baobab.selected_path);
+	file = g_file_new_for_uri (baobab.selected_path);
 
-	if (!gnome_vfs_uri_exists (vfs_uri)) {
+	if (!g_file_query_exists(file,NULL)) {
 		message (_("The folder does not exist."), "", GTK_MESSAGE_INFO, baobab.window);
 	}
 
-	gnome_vfs_uri_unref (vfs_uri);
-	
-	start_proc_on_dir (baobab.selected_path);
+	start_proc_on_location (file);
+	g_object_unref (file);
 }
 
 void

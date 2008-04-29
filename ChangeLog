@@ -1,3 +1,20 @@
+2008-04-29  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab-treeview.c: (on_tv_button_press):
+	* src/baobab-utils.c: (filechooser_cb), (show_bars),
+	(baobab_check_dir), (set_label_scan), (open_file_with_application),
+	(trash_file), (contents_changed):
+	* src/baobab-utils.h:
+	* src/baobab.c: (start_proc_on_location), (rescan_current_dir),
+	(baobab_init), (start_proc_on_command_line):
+	* src/baobab.h:
+	* src/callbacks.c: (on_menuscanhome_activate),
+	(on_menuallfs_activate), (on_tbscanhome_clicked),
+	(on_tbscanall_clicked), (on_tb_scan_remote_clicked),
+	(open_file_cb), (scan_folder_cb):
+	
+	Starting Gio migration
+
 2008-04-14  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/baobab.c: (rescan_current_dir):

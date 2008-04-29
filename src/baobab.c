@@ -27,6 +27,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glib/gprintf.h>
+#include <gio/gio.h>
 #include <libgnomeui/libgnomeui.h>
 #include <libgnomeui/gnome-ui-init.h>
 #include <libgnomevfs/gnome-vfs.h>
@@ -98,17 +99,19 @@ set_busy (gboolean busy)
  * start scanning on a specific directory
  */
 void
-start_proc_on_dir (const gchar *dir)
+start_proc_on_location (GFile	*file)
 {
 	GdkCursor *cursor = NULL;
 	GtkWidget *ck_allocated;
+	gchar	  *dir = NULL;
 
-	if (!baobab_check_dir (dir))
+	if (!baobab_check_dir (file))
 		return;
 		
 	if (iterstack !=NULL)
 		return;
 		
+	dir = g_file_get_uri(file);
 	g_noactivescans = FALSE; 
 	g_string_assign (baobab.last_scan_command, dir);
 	baobab.STOP_SCANNING = FALSE;
@@ -160,17 +163,21 @@ start_proc_on_dir (const gchar *dir)
 	g_queue_free (iterstack);
 	iterstack = NULL;
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
+	g_free (dir);
 }
 
 void
 rescan_current_dir (void)
 {
+	GFile * file;
 	g_return_if_fail (baobab.last_scan_command != NULL);
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
 	show_label ();
 
-	start_proc_on_dir (baobab.last_scan_command->str);
+	file = g_file_new_for_uri(baobab.last_scan_command->str);
+	start_proc_on_location (file);
+	g_object_unref (file);
 }
 
 /*
@@ -590,7 +597,7 @@ baobab_init (void)
 
 	/* Misc */
 	baobab.label_scan = NULL;
-	baobab.last_scan_command = g_string_new ("/");
+	baobab.last_scan_command = g_string_new ("file:///");
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 	baobab.STOP_SCANNING = TRUE;
 	baobab.show_allocated = TRUE;
@@ -708,8 +715,12 @@ initialize_ringschart (void)
 static gboolean
 start_proc_on_command_line (const char *uri)
 {
-	start_proc_on_dir (uri);
-
+	GFile	*file;
+	
+	file = g_file_new_for_uri (uri);
+	start_proc_on_location (file);
+	g_object_unref (file);
+	
 	return FALSE;
 }
 

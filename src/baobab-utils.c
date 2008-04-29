@@ -30,9 +30,7 @@
 #include <glib/gi18n.h>
 #include <glib/gprintf.h>
 #include <gtk/gtk.h>
-#include <libgnomevfs/gnome-vfs.h>
-#include <libgnomevfs/gnome-vfs-mime.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
+#include <gio/gio.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
 #include <libgnome/gnome-help.h>
@@ -77,12 +75,15 @@ filechooser_cb (GtkWidget *chooser,
 {
 	if (response == GTK_RESPONSE_OK) {
 		gchar *filename;
+		GFile	*file;
 
 		filename = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
 		gtk_widget_hide (chooser);
 
-		start_proc_on_dir (filename);
+		file = g_file_new_for_uri (filename);
+		start_proc_on_location (file);
 		g_free (filename);
+		g_object_unref (file);
 	}
 	else {
 		gtk_widget_hide (chooser);
@@ -229,7 +230,7 @@ show_bars (GtkTreeModel *mdl,
  				    &readelements, -1);
                 
                 gtk_tree_model_get (mdl, iter, size_col, &size, -1);
-                sizecstr = gnome_vfs_format_file_size_for_display (size);
+                sizecstr = g_format_size_for_display (size);
 
  		if (readelements == -1) {
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
@@ -254,7 +255,7 @@ show_bars (GtkTreeModel *mdl,
 		if (readelements != -1) {
 			gtk_tree_model_get (mdl, iter, size_col, &size,
 					    -1);
-			sizecstr = gnome_vfs_format_file_size_for_display (size);
+			sizecstr = g_format_size_for_display (size);
 
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
 					    COL_H_PERC, 100.0,
@@ -314,32 +315,43 @@ messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gch
 }
 
 gboolean
-baobab_check_dir (const gchar *dirname)
+baobab_check_dir (GFile	*file)
 {
 	char *error_msg = NULL;
-	GnomeVFSFileInfo *info;
-	GnomeVFSResult result;
+	gchar	*uri = NULL;
+	GFileInfo *info;
+	GError *error = NULL;
 	gboolean ret = TRUE;
 
-	info = gnome_vfs_file_info_new ();
-	result = gnome_vfs_get_file_info (dirname, info,
-					  GNOME_VFS_FILE_INFO_DEFAULT |
-					  GNOME_VFS_FILE_INFO_FOLLOW_LINKS);
 
-	if ((result != GNOME_VFS_OK) ||
-	    (info->type != GNOME_VFS_FILE_TYPE_DIRECTORY)) {
+	info = g_file_query_info (file, "standard::*",
+				  G_FILE_QUERY_INFO_NONE,
+				  NULL,
+				  &error);
+	
+	if(!info) {
+		message("",error->message,
+			GTK_MESSAGE_INFO, baobab.window);
+		return FALSE;
+		}	
+
+	if ((error != NULL) ||
+	    (g_file_info_get_file_type (info) != G_FILE_TYPE_DIRECTORY)) { 
+	    	uri = g_file_get_uri(file);
 		error_msg = g_strdup_printf (_("\"%s\" is not a valid folder"),
-					     dirname);
+					     uri);
 
 		message (error_msg, _("Could not analyze disk usage."), 
 		         GTK_MESSAGE_ERROR, baobab.window);
 
 		g_free (error_msg);
+		if (error) g_error_free (error);
+		g_free (uri);
 		ret = FALSE;
 	}
 
-	gnome_vfs_file_info_unref (info);
-
+	if (info) g_object_unref(info);
+	
 	return ret;
 }
 
@@ -413,9 +425,9 @@ set_label_scan (baobab_fs *fs)
 
 	g_free (baobab.label_scan);
 
-	total = gnome_vfs_format_file_size_for_display (fs->total);
-	used = gnome_vfs_format_file_size_for_display (fs->used);
-	available = gnome_vfs_format_file_size_for_display (fs->avail);
+	total = g_format_size_for_display (fs->total);
+	used = g_format_size_for_display (fs->used);
+	available = g_format_size_for_display (fs->avail);
 
 	/* Translators: these are labels for disk space */
 	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b> (%s %s %s %s )</small>",
@@ -443,179 +455,93 @@ show_label (void)
 }
 
 void
-open_file_with_application (gchar *file)
+open_file_with_application (GFile *file)
 {
-	GnomeVFSMimeApplication *application;
-	gchar *mime;
+	GAppInfo *application ;
 	gchar *primary;
-	GnomeVFSFileInfo *info;
-	GnomeVFSURI *vfs_uri;
+	GFileInfo *info;
+	gchar *uri_scheme;
+	const char  *content, *executable;
+	gboolean local = FALSE;
 
-	info = gnome_vfs_file_info_new ();
-	vfs_uri = gnome_vfs_uri_new (file);
-
-	gnome_vfs_get_file_info (file, info,
-				 GNOME_VFS_FILE_INFO_GET_MIME_TYPE);
-	mime = info->mime_type;
-
-	application = gnome_vfs_mime_get_default_application (mime);
+	info = g_file_query_info (file, "standard::*",
+				  G_FILE_QUERY_INFO_NONE,
+				  NULL,
+				  NULL);
+	if (!info) return;
+	
+	uri_scheme = g_file_get_uri_scheme (file);
+	if (g_ascii_strcasecmp(uri_scheme,"file") == 0)  local = TRUE;
+	
+	content = g_file_info_get_content_type (info);
+	application = g_app_info_get_default_for_type (content, TRUE);
+	if (application) executable = g_app_info_get_executable (application);
+	
 
 	if (!application) {
-		if ((g_file_test (file, G_FILE_TEST_IS_EXECUTABLE)) &&
-		    (g_ascii_strcasecmp (mime, "application/x-executable") == 0) &&
-		     gnome_vfs_uri_is_local (vfs_uri)) {
-			g_spawn_command_line_async (file, NULL);
-		}
-		else {
 			primary = g_strdup_printf (_("Could not open folder \"%s\""), 
-			                           g_path_get_basename (file));
+			                           g_file_get_basename (file));
 			message (primary, 
 			         _("There is no installed viewer capable "
 				   "of displaying the folder."),
 				 GTK_MESSAGE_ERROR,
 				 baobab.window);
 			g_free (primary);
-		}
 	}
 	else {
 		GList *uris = NULL;
 		gchar *uri;
 
-		uri = gnome_vfs_uri_to_string (vfs_uri, GNOME_VFS_URI_HIDE_NONE);
+		uri = g_file_get_uri (file);
 		uris = g_list_append (uris, uri);
-		gnome_vfs_mime_application_launch (application, uris);
+		g_app_info_launch_uris (application, uris, NULL, NULL);
 
 		g_list_free (uris);
 		g_free (uri);
 	}
 
-	gnome_vfs_uri_unref (vfs_uri);
-	gnome_vfs_mime_application_free (application);
-	gnome_vfs_file_info_unref (info);
+
+	g_free (uri_scheme);
+	if (application) g_object_unref(application);
+	g_object_unref (info);
 }
 
-gchar *
-get_trash_path (const gchar *file)
-{
-	GnomeVFSURI *trash_uri;
-	GnomeVFSURI *uri;
-	gchar *filename;
-
-	filename = gnome_vfs_escape_path_string (file);
-	uri = gnome_vfs_uri_new (file);
-	g_free (filename);
-
-	gnome_vfs_find_directory (uri,
-				  GNOME_VFS_DIRECTORY_KIND_TRASH,
-				  &trash_uri, TRUE, TRUE, 0777);
-	gnome_vfs_uri_unref (uri);
-
-	if (trash_uri == NULL) {
-		return NULL;
-	} else {
-		gchar *trash_path;
-		trash_path =
-		    gnome_vfs_uri_to_string (trash_uri,
-					     GNOME_VFS_URI_HIDE_TOPLEVEL_METHOD);
-		gnome_vfs_uri_unref (trash_uri);
-		return trash_path;
-	}
-}
 
 gboolean
 trash_file (const gchar *filename)
 {
-	gchar *trash_path = NULL;
-	gchar *basename = NULL;
-	gchar *destination = NULL;
-	gchar *str = NULL;
-	GnomeVFSResult result;
-	gboolean ret = FALSE;
-
-	trash_path = get_trash_path (filename);
-
-	if (trash_path == NULL) {
-		str = g_strdup_printf (_("The folder \"%s\" was not moved to the trash."),
-		                       g_path_get_basename (filename));
-		message (_("Could not find a Trash folder on this system"), 
-		         str, GTK_MESSAGE_ERROR, baobab.window);
-		g_free (str);
-		goto out;
-	}
-
-	if ((!g_file_test (filename, G_FILE_TEST_EXISTS)) &&
-	    (!g_file_test (filename, G_FILE_TEST_IS_SYMLINK))) {
-	    	str = g_strdup_printf (_("Could not move \"%s\" to the Trash"), g_path_get_basename (filename));
-		message (str, _("The folder does not exist."), GTK_MESSAGE_ERROR, baobab.window);
-		g_free (str);
-		goto out;
-	}
-
-	basename = g_path_get_basename (filename);
-	destination = g_build_filename (trash_path, basename, NULL);
-
-	result = gnome_vfs_move (filename, destination, TRUE);
+	GError	*error = NULL;
+	GFile	*file;
+	gchar	*str = NULL;
 	
-	if (result != GNOME_VFS_OK) {
+	file = g_file_new_for_path(filename);
+
+	if (!g_file_trash(file, NULL, &error))
+		{
 		gchar *mess;
 
 		str = g_strdup_printf (_("Could not move \"%s\" to the Trash"), g_path_get_basename (filename));
-		mess = g_strdup_printf (_("Details: %s"),
-					  gnome_vfs_result_to_string (result));
+		mess = g_strdup_printf (_("Details: %s"), error->message);
 		message (str, mess, GTK_MESSAGE_ERROR, baobab.window);
 		g_free (str);
 		g_free (mess);
-		goto out;
-	}
-	else
-		ret = TRUE;
-
-	if (strcmp (destination, filename) == 0) {
-		gchar *mess;
-		gint response;
-
-		mess = g_strdup_printf (_("Delete the folder \"%s\" permanently?"),
-					  g_path_get_basename (filename));
-		response = messageyesno (mess, 
-		                         _("Could not move the folder to the trash."), GTK_MESSAGE_WARNING,
-					 _("_Delete Folder"), 
-					 baobab.window);
-		g_free (mess);
-
-		if (response == GTK_RESPONSE_OK) {
-			if (!g_file_test (filename, G_FILE_TEST_IS_DIR))
-				result = gnome_vfs_unlink (filename);
-			else
-				result = gnome_vfs_remove_directory (filename);
-
-			if (result != GNOME_VFS_OK) {
-				mess = g_strdup_printf (_("Deleting \"%s\" failed: %s."),
-							  g_path_get_basename (filename),
-							  gnome_vfs_result_to_string (result));
-				str = g_strdup_printf (_("Could not delete the folder \"%s\""), g_path_get_basename (filename));							  
-				message (str, mess, GTK_MESSAGE_ERROR, baobab.window);
-				g_free (mess);
-				g_free (str);
-				ret = FALSE;
-				goto out;
-			}
-
-			/* success */
-			ret = TRUE;
+		g_error_free (error);
+		g_object_unref (file);
+		return FALSE;
+		
 		}
-	}
+	
+	g_object_unref(file);
+	
+	return TRUE;
 
- out:
-	g_free (basename);
-	g_free (trash_path);
-	g_free (destination);
-
-	return ret;
 }
+
 
 void
 contents_changed (void)
 {
+	
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
 	show_label ();
@@ -623,8 +549,10 @@ contents_changed (void)
 	if (messageyesno (_("Rescan your home folder?"), 
 			  _("The content of your home folder has changed. Select rescan to update the disk usage details."),
 			  GTK_MESSAGE_QUESTION, _("_Rescan"), baobab.window) == GTK_RESPONSE_OK) {
-
-		start_proc_on_dir (baobab.last_scan_command->str);
+		GFile	* file;
+		file= g_file_new_for_uri(baobab.last_scan_command->str);
+		start_proc_on_location (file);
+		g_object_unref (file);
 	}
 }
 

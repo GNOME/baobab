@@ -99,8 +99,7 @@ on_tv_button_press (GtkWidget *widget,
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
-	gchar *trash_path, *dir_path;
-	gboolean is_trash = FALSE;
+	
 
 	if (baobab.CONTENTS_CHANGED_DELAYED) {
 		baobab.CONTENTS_CHANGED_DELAYED = FALSE;
@@ -134,16 +133,31 @@ on_tv_button_press (GtkWidget *widget,
 
 	/* right-click */
 	if (event->button == 3) {
-		trash_path = get_trash_path(baobab.selected_path);
-		dir_path = g_path_get_dirname(baobab.selected_path);
-		if (trash_path)
-			if (strcmp(trash_path, dir_path)==0)
-				is_trash = TRUE;
-		popupmenu_list (path, event, is_trash);
-
+		GFile		* file;
+		GFileInfo 	*info;
+		gboolean	isTrashable = FALSE;
+		
+		if (baobab.is_local) {
+			file = g_file_new_for_path(baobab.selected_path);
+		}
+		else {
+			file = g_file_new_for_uri(baobab.selected_path);
+		}
+		
+		info = g_file_query_info (file, "standard::*",
+				  G_FILE_QUERY_INFO_NONE,
+				  NULL,
+				  NULL);
+		if (info) {
+			if (g_file_info_get_attribute_boolean (info,
+					"access::can-trash")) 
+					isTrashable = FALSE;
+					
+		}
+		popupmenu_list (path, event, isTrashable);
 		gtk_tree_path_free (path);
-		g_free(trash_path);
-		g_free(dir_path);
+		g_object_unref (file);
+		if (info) g_object_unref (info);
 		return FALSE;
 	}
 

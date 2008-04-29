@@ -29,6 +29,7 @@
 #include <sys/types.h>
 #include <glib.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 #include <glade/glade-xml.h>
 #include <gconf/gconf-client.h>
 
@@ -90,7 +91,7 @@ baobab_application baobab;
 baobab_fs g_fs;
 
 void set_busy (gboolean busy);
-void start_proc_on_dir (const gchar *);
+void start_proc_on_location (GFile *);
 void rescan_current_dir (void);
 void fill_model (struct chan_data *);
 void first_row (void);

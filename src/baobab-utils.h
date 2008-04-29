@@ -36,13 +36,12 @@ gboolean show_bars (GtkTreeModel *model,
 		    gpointer data);
 void message (gchar *, gchar *, GtkMessageType, GtkWidget *);
 gint messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gchar * ok_button, GtkWidget *parent);
-gboolean baobab_check_dir (const gchar *);
+gboolean baobab_check_dir (GFile *);
 void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash);
 void open_nautilus (GtkMenuItem *, gpointer );
 void set_label_scan (baobab_fs *);
 void show_label (void);
-void open_file_with_application (gchar *file);
-gchar * get_trash_path (const gchar *file);
+void open_file_with_application (GFile *file);
 gboolean trash_file (const gchar *filename);
 void contents_changed (void);
 void set_glade_widget_sens (const gchar *name, gboolean sens);
