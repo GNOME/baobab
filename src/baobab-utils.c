@@ -451,7 +451,6 @@ show_label (void)
 
 	gtk_label_set_markup (GTK_LABEL (label),
 			      baobab.label_scan);
-
 }
 
 void
@@ -500,12 +499,13 @@ open_file_with_application (GFile *file)
 		g_free (uri);
 	}
 
-
 	g_free (uri_scheme);
-	if (application) g_object_unref(application);
+
+	if (application)
+		g_object_unref (application);
+
 	g_object_unref (info);
 }
-
 
 gboolean
 trash_file (const gchar *filename)
@@ -513,11 +513,10 @@ trash_file (const gchar *filename)
 	GError	*error = NULL;
 	GFile	*file;
 	gchar	*str = NULL;
-	
-	file = g_file_new_for_path(filename);
 
-	if (!g_file_trash(file, NULL, &error))
-		{
+	file = g_file_new_for_path (filename);
+
+	if (!g_file_trash(file, NULL, &error)) {
 		gchar *mess;
 
 		str = g_strdup_printf (_("Could not move \"%s\" to the Trash"), g_path_get_basename (filename));
@@ -529,19 +528,16 @@ trash_file (const gchar *filename)
 		g_object_unref (file);
 		return FALSE;
 		
-		}
-	
-	g_object_unref(file);
+	}
+
+	g_object_unref (file);
 	
 	return TRUE;
-
 }
-
 
 void
 contents_changed (void)
 {
-	
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
 	show_label ();
@@ -549,10 +545,7 @@ contents_changed (void)
 	if (messageyesno (_("Rescan your home folder?"), 
 			  _("The content of your home folder has changed. Select rescan to update the disk usage details."),
 			  GTK_MESSAGE_QUESTION, _("_Rescan"), baobab.window) == GTK_RESPONSE_OK) {
-		GFile	* file;
-		file= g_file_new_for_uri(baobab.last_scan_command->str);
-		start_proc_on_location (file);
-		g_object_unref (file);
+		baobab_rescan_current_dir ();
 	}
 }
 

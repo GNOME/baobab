@@ -40,6 +40,8 @@
 
 struct _BaobabRemoteConnectDialogDetails {
 	
+	char *uri;
+
 	GtkWidget *required_table;
 	GtkWidget *optional_table;
 	
@@ -86,6 +88,8 @@ baobab_remote_connect_dialog_finalize (GObject *object)
 
 	dialog = BAOBAB_REMOTE_CONNECT_DIALOG(object);
 
+	g_free (dialog->details->uri);
+
 	g_object_unref (dialog->details->uri_entry);
 	g_object_unref (dialog->details->server_entry);
 	g_object_unref (dialog->details->share_entry);
@@ -100,7 +104,6 @@ baobab_remote_connect_dialog_finalize (GObject *object)
 	G_OBJECT_CLASS (baobab_remote_connect_dialog_parent_class)->finalize (object);
 }
 
-
 static gboolean
 remote_connect (BaobabRemoteConnectDialog *dialog)
 {
@@ -110,7 +113,10 @@ remote_connect (BaobabRemoteConnectDialog *dialog)
 	char *error_message;
 	char *name;
 	int type;
-	
+
+	g_free (dialog->details->uri);
+	dialog->details->uri = NULL;	
+
 	type = gtk_combo_box_get_active (GTK_COMBO_BOX (dialog->details->type_combo));
 
 	if (type == TYPE_URI) {
@@ -308,9 +314,8 @@ remote_connect (BaobabRemoteConnectDialog *dialog)
 		gnome_vfs_uri_unref (vfs_uri);
 	}
 
-	g_string_assign(baobab.last_scan_command,uri);
-	
-	g_free (uri);
+	dialog->details->uri = uri;
+
 	g_free (name);
 
 	return TRUE;
@@ -341,11 +346,8 @@ baobab_remote_connect_dialog_class_init (BaobabRemoteConnectDialogClass *class)
 {
 	GObjectClass *gobject_class;
 
-
 	gobject_class = G_OBJECT_CLASS (class);
 	gobject_class->finalize = baobab_remote_connect_dialog_finalize;
-	
-	
 }
 
 static void
@@ -634,7 +636,6 @@ port_insert_text (GtkEditable *editable,
 	}
 }
 
-
 static void
 baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 {
@@ -700,7 +701,6 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 			  G_CALLBACK (combo_changed_callback),
 			  dialog);
 	
-
 	hbox = gtk_hbox_new (FALSE, 6);
 	gtk_box_pack_start (GTK_BOX (vbox),
 			    hbox, FALSE, TRUE, 0);
@@ -754,8 +754,6 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (response_callback),
 			  dialog);
-
-
 }
 
 GtkWidget *
@@ -791,3 +789,10 @@ baobab_remote_connect_dialog_new (GtkWindow *window, const gchar *location)
 
 	return dialog;
 }
+
+char *
+baobab_remote_connect_dialog_get_uri (BaobabRemoteConnectDialog *dlg)
+{
+	return g_strdup (dlg->details->uri);
+}
+

@@ -58,6 +58,8 @@ static GtkTreeIter currentiter;
 static GtkTreeIter firstiter;
 static GQueue *iterstack = NULL;
 
+static GFile *current_location = NULL;
+
 #define BUSY_IMAGE_PATH		BAOBAB_PIX_DIR "busy.gif"
 #define DONE_IMAGE_PATH		BAOBAB_PIX_DIR "done.png"
 
@@ -99,21 +101,22 @@ set_busy (gboolean busy)
  * start scanning on a specific directory
  */
 void
-start_proc_on_location (GFile	*file)
+start_proc_on_location (GFile *file)
 {
 	GdkCursor *cursor = NULL;
 	GtkWidget *ck_allocated;
-	gchar	  *dir = NULL;
+	gchar *dir = NULL;
 
 	if (!baobab_check_dir (file))
 		return;
-		
+
 	if (iterstack !=NULL)
 		return;
-		
-	dir = g_file_get_uri(file);
+
+	current_location = g_object_ref (file);
+
+	dir = g_file_get_uri (file);
 	g_noactivescans = FALSE; 
-	g_string_assign (baobab.last_scan_command, dir);
 	baobab.STOP_SCANNING = FALSE;
 	set_busy (TRUE);
 	check_menu_sens (TRUE);
@@ -167,17 +170,35 @@ start_proc_on_location (GFile	*file)
 }
 
 void
-rescan_current_dir (void)
+baobab_scan_home (void)
 {
-	GFile * file;
-	g_return_if_fail (baobab.last_scan_command != NULL);
+	GFile *file;
+
+	file = g_file_new_for_path (g_get_home_dir ());
+	start_proc_on_location (file);
+	g_object_unref (file);
+}
+
+void
+baobab_scan_root (void)
+{
+	GFile *file;
+
+	file = g_file_new_for_uri ("file:///");
+	start_proc_on_location (file);
+	g_object_unref (file);
+}
+
+void
+baobab_rescan_current_dir (void)
+{
+	g_return_if_fail (current_location != NULL);
+
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
 	show_label ();
 
-	file = g_file_new_for_uri(baobab.last_scan_command->str);
-	start_proc_on_location (file);
-	g_object_unref (file);
+	start_proc_on_location (current_location);
 }
 
 /*
@@ -597,7 +618,6 @@ baobab_init (void)
 
 	/* Misc */
 	baobab.label_scan = NULL;
-	baobab.last_scan_command = g_string_new ("file:///");
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 	baobab.STOP_SCANNING = TRUE;
 	baobab.show_allocated = TRUE;
@@ -615,7 +635,7 @@ baobab_init (void)
 						       GCONF_VALUE_STRING, NULL);
 	
 	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
-	if (is_excluded_dir("/")) {
+	if (is_excluded_dir ("/")) {
 		baobab.bbExcludedDirs = g_slist_delete_link (baobab.bbExcludedDirs, 
 						g_slist_find_custom(baobab.bbExcludedDirs, 
 							"/", list_find));
@@ -653,7 +673,10 @@ baobab_init (void)
 		g_error_free (error);
 	}
 	else {
-	g_signal_connect (monitor_home, "changed", G_CALLBACK (contents_changed_cb), NULL);
+		g_signal_connect (monitor_home,
+				  "changed",
+				  G_CALLBACK (contents_changed_cb),
+				  NULL);
 	}
 }
 
@@ -661,7 +684,9 @@ static void
 baobab_shutdown (void)
 {
 	g_free (baobab.label_scan);
-	g_string_free (baobab.last_scan_command, TRUE);
+
+	if (current_location)
+		g_object_unref (current_location);
 
 	if (monitor_vol)
 		g_object_unref (monitor_vol);
@@ -715,13 +740,9 @@ initialize_ringschart (void)
 }
 
 static gboolean
-start_proc_on_command_line (const char *uri)
+start_proc_on_command_line (GFile *file)
 {
-	GFile	*file;
-	
-	file = g_file_new_for_uri (uri);
 	start_proc_on_location (file);
-	g_object_unref (file);
 	
 	return FALSE;
 }
@@ -750,9 +771,9 @@ main (int argc, char *argv[])
 	gtk_window_set_default_icon_name ("baobab");
 
 	baobab_init ();
-	
+
 	g_noactivescans = TRUE;
-	check_menu_sens(FALSE);
+	check_menu_sens (FALSE);
 	baobab_get_filesystem (&g_fs);
 	if (g_fs.total == 0) {
 		GtkWidget *dialog = gtk_message_dialog_new (NULL,
@@ -777,7 +798,7 @@ main (int argc, char *argv[])
 
 	baobab.tree_view = create_directory_treeview ();
 
-	set_glade_widget_sens("menurescan",FALSE);
+	set_glade_widget_sens ("menurescan",FALSE);
 
 	/* set allocated space checkbox */
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *)
@@ -786,7 +807,7 @@ main (int argc, char *argv[])
 							    "ck_allocated"),
 				      baobab.show_allocated);
 
-	set_glade_widget_sens("menu_treemap",FALSE);
+	set_glade_widget_sens ("menu_treemap",FALSE);
 	gtk_widget_show (baobab.window);
 
 	first_row ();
@@ -797,16 +818,16 @@ main (int argc, char *argv[])
 
 	/* commandline */
 	if (argc > 1) {
-		gchar *uri_shell;
+		GFile *file;
 
-		uri_shell = gnome_vfs_make_uri_from_shell_arg (argv[1]);
+		file = g_file_new_for_commandline_arg (argv[1]);
 
-		/* start processing the uri specified on the
+		/* start processing the dir specified on the
 		 * command line as soon as we enter the main loop */
 		g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
 		                 (GSourceFunc) start_proc_on_command_line,
-		                 uri_shell,
-		                 (GDestroyNotify) g_free);
+		                 file,
+		                 (GDestroyNotify) g_object_unref);
 	}
 
 	gtk_main ();

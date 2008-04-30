@@ -41,21 +41,13 @@
 void
 on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	GFile *file;
-	
-	file = g_file_new_for_path (g_get_home_dir ());
-	start_proc_on_location (file);
-	g_object_unref (file);
+	baobab_scan_home ();
 }
 
 void
 on_menuallfs_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	GFile	*file;
-	
-	file = g_file_new_for_uri ("file:///");
-	start_proc_on_location (file);
-	g_object_unref (file);
+	baobab_scan_root ();
 }
 
 void
@@ -138,7 +130,7 @@ on_menu_stop_activate (GtkMenuItem *menuitem, gpointer user_data)
 void
 on_menu_rescan_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	rescan_current_dir ();
+	baobab_rescan_current_dir ();
 }
 
 void
@@ -150,21 +142,13 @@ on_tbscandir_clicked (GtkToolButton *toolbutton, gpointer user_data)
 void
 on_tbscanhome_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	GFile *file;
-	
-	file = g_file_new_for_path (g_get_home_dir ());
-	start_proc_on_location (file);
-	g_object_unref (file);
+	baobab_scan_home ();
 }
 
 void
 on_tbscanall_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	GFile	*file;
-	
-	file = g_file_new_for_uri ("file:///");
-	start_proc_on_location (file);
-	g_object_unref (file);
+	baobab_scan_root ();
 }
 
 void
@@ -172,23 +156,25 @@ on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
 	gint response;
 	GtkWidget *dlg;
+	char *uri = NULL;
 
-	dlg =
-	    baobab_remote_connect_dialog_new (GTK_WINDOW (baobab.window),
-					      NULL);
+	dlg = baobab_remote_connect_dialog_new (GTK_WINDOW (baobab.window),
+						NULL);
 	response = gtk_dialog_run (GTK_DIALOG (dlg));
+
+	if (response == GTK_RESPONSE_OK) {
+		uri = baobab_remote_connect_dialog_get_uri (BAOBAB_REMOTE_CONNECT_DIALOG (dlg));
+	}
 
 	gtk_widget_destroy (dlg);
 
-	while (gtk_events_pending ())
-		gtk_main_iteration ();
-
-	if (response == GTK_RESPONSE_OK) {
-		GFile	*file;
-		file = g_file_new_for_uri (baobab.last_scan_command->str);
+	if (uri) {
+		GFile *file;
+		file = g_file_new_for_uri (uri);
 		start_proc_on_location (file);
 		g_object_unref (file);
-		}
+		g_free (uri);
+	}
 }
 
 void
@@ -207,7 +193,7 @@ on_tbstop_clicked (GtkToolButton *toolbutton, gpointer user_data)
 void
 on_tbrescan_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	rescan_current_dir ();
+	baobab_rescan_current_dir ();
 }
 
 gboolean
@@ -221,19 +207,18 @@ on_delete_activate (GtkWidget *widget,
 void
 open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
-	GFile	*file;
+	GFile *file;
 
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
 	if (baobab.is_local) {
-		file = g_file_new_for_path(baobab.selected_path);
-		}
-	else {
-		file = g_file_new_for_uri(baobab.selected_path);
+		file = g_file_new_for_path (baobab.selected_path);
 	}
-	
-	
+	else {
+		file = g_file_new_for_uri (baobab.selected_path);
+	}
+
 	if (!g_file_query_exists (file, NULL)) {
 		message (_("The document does not exist."), "",
 		GTK_MESSAGE_INFO, baobab.window);

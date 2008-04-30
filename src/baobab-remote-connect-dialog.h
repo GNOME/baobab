@@ -55,6 +55,8 @@ GType      baobab_remote_connect_dialog_get_type (void);
 GtkWidget* baobab_remote_connect_dialog_new      (GtkWindow *window, 
 						    const gchar *uri);
 
+char      *baobab_remote_connect_dialog_get_uri (BaobabRemoteConnectDialog *dlg);
+
 /* Private internal calls */
 
 

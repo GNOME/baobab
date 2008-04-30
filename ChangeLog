@@ -1,3 +1,21 @@
+2008-04-29  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab-remote-connect-dialog.c:
+	* src/baobab-remote-connect-dialog.h:
+	Add a getter for the selected uri instead of abusing of 
+	'last_scan_command'
+
+	* src/baobab-utils.c:
+	use baobab_rescan_current_dir instead of open coding it
+
+	* src/baobab.c:
+	* src/baobab.h:
+	Remove last_scan_command and use a private GFile location to remember
+	the current scan. Factor out functions to scan home and root.
+
+	* src/callbacks.c
+	Adapt to the above changes
+
 2008-04-30  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/baobab-prefs.c: (fill_props_model):

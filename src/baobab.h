@@ -61,7 +61,6 @@ struct _baobab_application {
 	GSList *bbExcludedDirs;
 	gboolean bbEnableHomeMonitor;
 	gchar *label_scan;
-	GString *last_scan_command;
 	gboolean show_allocated;
 	gboolean is_local;
 
@@ -92,7 +91,9 @@ baobab_fs g_fs;
 
 void set_busy (gboolean busy);
 void start_proc_on_location (GFile *);
-void rescan_current_dir (void);
+void baobab_scan_home (void);
+void baobab_scan_root (void);
+void baobab_rescan_current_dir (void);
 void fill_model (struct chan_data *);
 void first_row (void);
 gint list_find (gconstpointer a, gconstpointer b);
