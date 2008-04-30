@@ -45,8 +45,8 @@
 
 #include "gedit-spinner.h"
 
-static GnomeVFSMonitorHandle *handle_mtab;
-static GnomeVFSMonitorHandle *handle_home;
+static GVolumeMonitor 	 *monitor_vol;
+static GFileMonitor	 *monitor_home;
 
 static void check_UTF (GString *);
 
@@ -632,26 +632,28 @@ baobab_init (void)
 
 	baobab_create_statusbar ();
 
-	/* start VFS monitoring */
-	handle_home = NULL;
+	/* start monitoring */
+	GError	*error = NULL;
+	GFile	*file;
+	monitor_home = NULL;
 
-	volmonitor = gnome_vfs_get_volume_monitor ();
-	g_signal_connect (volmonitor, "volume_mounted",
+	monitor_vol = g_volume_monitor_get ();
+	g_signal_connect (monitor_vol, "volume_changed",
 			  G_CALLBACK (volume_changed), NULL);
-	g_signal_connect (volmonitor, "volume_unmounted",
-			  G_CALLBACK (volume_changed), NULL);
 
-	result = gnome_vfs_monitor_add (&handle_home,
-					g_get_home_dir (),
-					GNOME_VFS_MONITOR_DIRECTORY,
-					contents_changed_cb, NULL);
-
-	if (result != GNOME_VFS_OK) {
-		message (_("Could not initialize GNOME VFS monitoring"),
+	file = g_file_new_for_path (g_get_home_dir ());
+	monitor_home = g_file_monitor_directory (file, 0, NULL, NULL);
+	g_object_unref (file);
+		
+	if (!monitor_home) {
+		message (_("Could not initialize monitoring"),
 			 _("Changes to your home folder will not be monitored."),
 			 GTK_MESSAGE_WARNING, NULL);
-		g_print ("homedir:%s\n",
-			 gnome_vfs_result_to_string (result));
+		g_print ("homedir:%s\n", error->message);
+		g_error_free (error);
+	}
+	else {
+	g_signal_connect (monitor_home, "changed", G_CALLBACK (contents_changed_cb), NULL);
 	}
 }
 
@@ -661,10 +663,10 @@ baobab_shutdown (void)
 	g_free (baobab.label_scan);
 	g_string_free (baobab.last_scan_command, TRUE);
 
-	if (handle_mtab)
-		gnome_vfs_monitor_cancel (handle_mtab);
-	if (handle_home)
-		gnome_vfs_monitor_cancel (handle_home);
+	if (monitor_vol)
+		g_object_unref (monitor_vol);
+	if (monitor_home)
+		g_file_monitor_cancel (monitor_home);
 
 	g_free (baobab.selected_path);
 

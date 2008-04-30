@@ -27,9 +27,6 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <libgnomevfs/gnome-vfs.h>
-#include <libgnomevfs/gnome-vfs-mime.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
 #include <gconf/gconf-client.h>
 #include <gio/gio.h>
 
@@ -285,8 +282,9 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 }
 
 void
-volume_changed (GnomeVFSVolumeMonitor *volume_monitor,
-		GnomeVFSVolume *volume)
+volume_changed (GVolumeMonitor *volume_monitor,
+                GVolume        *volume,
+                gpointer        user_data)
 {
 	/* filesystem has changed (mounted or unmounted device) */
 	baobab_get_filesystem (&g_fs);
@@ -295,11 +293,12 @@ volume_changed (GnomeVFSVolumeMonitor *volume_monitor,
 }
 
 void
-contents_changed_cb (GnomeVFSMonitorHandle *handle,
-		     const gchar *monitor_uri,
-		     const gchar *info_uri,
-		     GnomeVFSMonitorEventType event_type,
-		     gpointer user_data)
+contents_changed_cb (GFileMonitor      *file_monitor,
+              	     GFile             *child,
+              	     GFile             *other_file,
+              	     GFileMonitorEvent  event_type,
+              	     gpointer           user_data)
+
 {
 	gchar *excluding;
 
@@ -309,7 +308,7 @@ contents_changed_cb (GnomeVFSMonitorHandle *handle,
 	if (baobab.CONTENTS_CHANGED_DELAYED)
 		return;
 
-	excluding = g_path_get_basename (info_uri);
+	excluding = g_file_get_basename (child);
 	if (strcmp (excluding, ".recently-used") == 0   ||
 	    strcmp (excluding, ".gnome2_private") == 0  ||
 	    strcmp (excluding, ".xsession-errors") == 0 ||

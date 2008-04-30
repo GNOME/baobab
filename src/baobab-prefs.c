@@ -27,7 +27,6 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gconf/gconf-client.h>
-#include <libgnomevfs/gnome-vfs.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
 #include "baobab.h"
@@ -270,8 +269,8 @@ fill_props_model (GtkWidget *dlg)
 		glibtop_get_fsusage (&fsusage, mountentry->mountdir);
 		fstotal = fsusage.blocks * fsusage.block_size;
 		fsavail = fsusage.bfree * fsusage.block_size;
-		total = gnome_vfs_format_file_size_for_display(fstotal);
-		avail = gnome_vfs_format_file_size_for_display(fsavail);
+		total = g_format_size_for_display(fstotal);
+		avail = g_format_size_for_display(fsavail);
 		gtk_list_store_append (model_props, &iter);
 			gtk_list_store_set (model_props, &iter,
 					    COL_CHECK, TRUE,

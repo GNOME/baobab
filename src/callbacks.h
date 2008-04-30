@@ -24,9 +24,6 @@
 #define __BAOBAB_CALLBACKS_H__
 
 #include <gtk/gtk.h>
-#include <libgnomevfs/gnome-vfs.h>
-#include <libgnomevfs/gnome-vfs-mime.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
 #include "baobab-ringschart.h"
 
 void on_about_activate (GtkMenuItem *menuitem, gpointer user_data);
@@ -49,13 +46,15 @@ void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
 void graph_map_cb (GtkMenuItem *pmenu, gchar * path_to_string);
 void trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy);
 void list_all_cb (GtkMenuItem *pmenu, gpointer dummy);
-void contents_changed_cb (GnomeVFSMonitorHandle *handle,
-			  const gchar *monitor_uri,
-			  const gchar *info_uri,
-			  GnomeVFSMonitorEventType event_type,
-			  gpointer user_data);
+void contents_changed_cb (GFileMonitor      *file_monitor,
+              	          GFile             *child,
+              	          GFile             *other_file,
+              	          GFileMonitorEvent  event_type,
+              	          gpointer           user_data);
 void on_pref_menu (GtkMenuItem *menuitem, gpointer user_data);
-void volume_changed (GnomeVFSVolumeMonitor *volume_monitor, GnomeVFSVolume *volume);
+void volume_changed (GVolumeMonitor *volume_monitor,
+                     GVolume        *volume,
+                     gpointer        user_data);
 void on_graph_close_btn_clicked (GtkButton * button, gpointer user_data);
 void on_graph_zoom_in_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_graph_zoom_out_clicked (GtkToolButton *toolbutton, gpointer user_data);
