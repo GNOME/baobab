@@ -54,7 +54,7 @@ baobab_get_filesystem (baobab_fs *fs)
 	for (i = 0; i < mountlist.number; ++i) {
 		glibtop_fsusage fsusage;
 
-		if (is_excluded_dir (mountentries[i].mountdir))
+		if (baobab_is_excluded_dir (mountentries[i].mountdir))
 			continue;
 
 		glibtop_get_fsusage (&fsusage, mountentries[i].mountdir);

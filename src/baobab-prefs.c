@@ -26,6 +26,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+#include <libgnomevfs/gnome-vfs.h>
 #include <gconf/gconf-client.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
@@ -62,12 +63,15 @@ props_notify (GConfClient *client,
 	      GConfEntry *entry,
 	      gpointer user_data)
 {
-	g_slist_foreach (baobab.bbExcludedDirs, (GFunc) g_free, NULL);
-	g_slist_free (baobab.bbExcludedDirs);
+	GSList *dirs;
 
-	baobab.bbExcludedDirs =
-	    gconf_client_get_list (client, PROPS_SCAN_KEY,
-				   GCONF_VALUE_STRING, NULL);
+	dirs = 	gconf_client_get_list (client,
+				       PROPS_SCAN_KEY,
+				       GCONF_VALUE_STRING,
+				       NULL);
+	baobab_set_excluded_dirs (dirs);
+	g_slist_foreach (dirs, (GFunc) g_free, NULL);
+	g_slist_free (dirs);
 
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
@@ -342,6 +346,23 @@ set_gconf_list (GtkTreeModel *model,
 
 	/* g_free(mount); //freed in save_gconf() */
 	return FALSE;
+}
+
+static gint
+list_find (gconstpointer a, gconstpointer b)
+{
+	gchar *str_a, *str_b;
+	gint ret;
+
+	str_a = gnome_vfs_format_uri_for_display (a);
+	str_b = gnome_vfs_format_uri_for_display (b);
+
+	ret = strcmp (str_a, str_b);
+
+	g_free (str_a);
+	g_free (str_b);
+
+	return ret;
 }
 
 gboolean

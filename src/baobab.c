@@ -290,8 +290,8 @@ first_row (void)
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, NULL);
-	size = gnome_vfs_format_file_size_for_display (g_fs.used);
-	g_assert(g_fs.total != 0);
+	size = g_format_size_for_display (g_fs.used);
+	g_assert (g_fs.total != 0);
 	perc = ((gdouble) g_fs.used * 100) / (gdouble) g_fs.total;
 
 	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
@@ -336,7 +336,7 @@ fill_model (struct chan_data *data)
 
 	hardlinks = g_string_new ("");
 	if (data->tempHLsize > 0) {
-		size = gnome_vfs_format_file_size_for_display (data->tempHLsize);
+		size = g_format_size_for_display (data->tempHLsize);
 		g_string_assign (hardlinks, "<i>(");
 		g_string_append (hardlinks, _("contains hardlinks for:"));
 		g_string_append (hardlinks, " ");
@@ -350,8 +350,8 @@ fill_model (struct chan_data *data)
 			 ngettext ("% 5d item", "% 5d items",
 				   data->elements), data->elements);
 
-	size = gnome_vfs_format_file_size_for_display (data->size);
-	alloc_size = gnome_vfs_format_file_size_for_display (data->alloc_size);
+	size = g_format_size_for_display (data->size);
+	alloc_size = g_format_size_for_display (data->alloc_size);
 
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, basename->str,
@@ -427,7 +427,7 @@ check_UTF (GString *name)
 	g_free (escaped_str);
 }
 
-gint
+static gint
 list_find (gconstpointer a, gconstpointer b)
 {
 	gchar *str_a, *str_b;
@@ -444,13 +444,27 @@ list_find (gconstpointer a, gconstpointer b)
 	return ret;
 }
 
+void
+baobab_set_excluded_dirs (GSList *excluded_dirs)
+{
+	GSList *l;
+
+	g_slist_foreach (baobab.excluded_dirs, (GFunc) g_free, NULL);
+	g_slist_free (baobab.excluded_dirs);
+
+	for (l = excluded_dirs; l != NULL; l = l->next) {
+		baobab.excluded_dirs = g_slist_prepend (baobab.excluded_dirs,
+							g_strdup (l->data));
+	}
+}
+
 gboolean
-is_excluded_dir (const gchar *dir)
+baobab_is_excluded_dir (const gchar *dir)
 {
 	g_return_val_if_fail (dir != NULL, FALSE);
 
-	return (baobab.bbExcludedDirs &&
-		(g_slist_find_custom (baobab.bbExcludedDirs, dir, list_find) != NULL));
+	return (baobab.excluded_dirs &&
+		(g_slist_find_custom (baobab.excluded_dirs, dir, list_find) != NULL));
 }
 
 void
@@ -631,19 +645,23 @@ baobab_init (void)
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE, baobab_toolbar_style,
 				 NULL, NULL, NULL);				 
-	baobab.bbExcludedDirs = gconf_client_get_list (baobab.gconf_client, PROPS_SCAN_KEY,
-						       GCONF_VALUE_STRING, NULL);
-	
+	baobab.excluded_dirs = gconf_client_get_list (baobab.gconf_client,
+						      PROPS_SCAN_KEY,
+						      GCONF_VALUE_STRING,
+						      NULL);
+
 	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
-	if (is_excluded_dir ("/")) {
-		baobab.bbExcludedDirs = g_slist_delete_link (baobab.bbExcludedDirs, 
-						g_slist_find_custom(baobab.bbExcludedDirs, 
+	if (baobab_is_excluded_dir ("/")) {
+		baobab.excluded_dirs = g_slist_delete_link (baobab.excluded_dirs, 
+						g_slist_find_custom (baobab.excluded_dirs, 
 							"/", list_find));
-		gconf_client_set_list (baobab.gconf_client, PROPS_SCAN_KEY,
-						GCONF_VALUE_STRING, 
-						baobab.bbExcludedDirs, NULL);
+		gconf_client_set_list (baobab.gconf_client,
+				       PROPS_SCAN_KEY,
+				       GCONF_VALUE_STRING, 
+				       baobab.excluded_dirs,
+				       NULL);
 	}
-	
+
 	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
 							    PROPS_ENABLE_HOME_MONITOR,
 							    NULL);
@@ -695,8 +713,8 @@ baobab_shutdown (void)
 
 	g_free (baobab.selected_path);
 
-	g_slist_foreach (baobab.bbExcludedDirs, (GFunc) g_free, NULL);
-	g_slist_free (baobab.bbExcludedDirs);
+	g_slist_foreach (baobab.excluded_dirs, (GFunc) g_free, NULL);
+	g_slist_free (baobab.excluded_dirs);
 
 	if (baobab.gconf_client)
 		g_object_unref (baobab.gconf_client);

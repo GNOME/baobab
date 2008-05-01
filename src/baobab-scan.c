@@ -152,7 +152,7 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	dir = gnome_vfs_uri_to_string (vfs_uri_dir, GNOME_VFS_URI_HIDE_NONE);
 
 	/* Skip the user excluded folders */
-	if (is_excluded_dir (dir))
+	if (baobab_is_excluded_dir (dir))
 		goto exit;
 
 	if (!baobab.is_local)
@@ -264,7 +264,7 @@ getDir (const gchar *uri_dir)
 	GnomeVFSURI *vfs_uri;
 	GnomeVFSFileInfo *info;
 
-	if (is_excluded_dir (uri_dir))
+	if (baobab_is_excluded_dir (uri_dir))
 		return;
 
 	hla = baobab_hardlinks_array_create ();
