@@ -494,29 +494,64 @@ open_file_with_application (GFile *file)
 }
 
 gboolean
-trash_file (const gchar *filename)
+can_trash_file (GFile *file)
 {
-	GError	*error = NULL;
-	GFile	*file;
-	gchar	*str = NULL;
+	GFileInfo *info;
+	gboolean can_trash = FALSE;
 
-	file = g_file_new_for_path (filename);
+	info = g_file_query_info (file, "standard::*",
+				  G_FILE_QUERY_INFO_NONE,
+				  NULL,
+				  NULL);
 
-	if (!g_file_trash(file, NULL, &error)) {
-		gchar *mess;
+	if (info) {
+		if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH)) {
+			can_trash = g_file_info_get_attribute_boolean (info,
+								       G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH);
+		}
 
-		str = g_strdup_printf (_("Could not move \"%s\" to the Trash"), g_path_get_basename (filename));
+		g_object_unref (info);
+	}
+
+	return can_trash;
+}
+
+gboolean
+trash_file (GFile *file)
+{
+	GError *error = NULL;
+
+	if (!g_file_trash (file, NULL, &error)) {
+		GFileInfo *info;
+		char *str = NULL;
+		char *mess;
+
+		info = g_file_query_info (file, "standard::*",
+					  G_FILE_QUERY_INFO_NONE,
+					  NULL,
+					  NULL);
+
+		if (info) {
+			const char *displayname = g_file_info_get_display_name (info);
+			if (displayname)
+				str = g_strdup_printf (_("Could not move \"%s\" to the Trash"),
+						      displayname);
+
+			g_object_unref (info);
+		}
+
+		/* fallback */
+		if (str == NULL)
+			str = g_strdup (_("Could not move file to the Trash"));
+
 		mess = g_strdup_printf (_("Details: %s"), error->message);
 		message (str, mess, GTK_MESSAGE_ERROR, baobab.window);
 		g_free (str);
 		g_free (mess);
 		g_error_free (error);
-		g_object_unref (file);
-		return FALSE;
-		
-	}
 
-	g_object_unref (file);
+		return FALSE;		
+	}
 	
 	return TRUE;
 }

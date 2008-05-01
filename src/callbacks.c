@@ -243,10 +243,19 @@ graph_map_cb (GtkMenuItem *pmenu, gchar *path_to_string)
 void
 trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
+	GFile *file;
+
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
-	if (trash_file (baobab.selected_path)) {
+	if (baobab.is_local) {
+		file = g_file_new_for_path (baobab.selected_path);
+	}
+	else {
+		file = g_file_new_for_uri (baobab.selected_path);
+	}
+
+	if (trash_file (file)) {
 		GtkTreeIter iter;
 		guint64 filesize;
 		GtkTreeSelection *selection;
@@ -262,6 +271,8 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 		if (baobab.bbEnableHomeMonitor)
 			contents_changed ();
 	}
+
+	g_object_unref (file);
 }
 
 void

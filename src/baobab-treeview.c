@@ -133,31 +133,20 @@ on_tv_button_press (GtkWidget *widget,
 
 	/* right-click */
 	if (event->button == 3) {
-		GFile		* file;
-		GFileInfo 	*info;
-		gboolean	isTrashable = FALSE;
-		
+		GFile *file;
+
 		if (baobab.is_local) {
-			file = g_file_new_for_path(baobab.selected_path);
+			file = g_file_new_for_path (baobab.selected_path);
 		}
 		else {
-			file = g_file_new_for_uri(baobab.selected_path);
+			file = g_file_new_for_uri (baobab.selected_path);
 		}
-		
-		info = g_file_query_info (file, "standard::*",
-				  G_FILE_QUERY_INFO_NONE,
-				  NULL,
-				  NULL);
-		if (info) {
-			if (g_file_info_get_attribute_boolean (info,
-					"access::can-trash")) 
-					isTrashable = FALSE;
-					
-		}
-		popupmenu_list (path, event, isTrashable);
+
+		popupmenu_list (path, event, can_trash_file (file));
+
 		gtk_tree_path_free (path);
 		g_object_unref (file);
-		if (info) g_object_unref (info);
+
 		return FALSE;
 	}
 
