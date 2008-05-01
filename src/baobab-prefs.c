@@ -63,15 +63,15 @@ props_notify (GConfClient *client,
 	      GConfEntry *entry,
 	      gpointer user_data)
 {
-	GSList *dirs;
+	GSList *uris;
 
-	dirs = 	gconf_client_get_list (client,
+	uris = 	gconf_client_get_list (client,
 				       PROPS_SCAN_KEY,
 				       GCONF_VALUE_STRING,
 				       NULL);
-	baobab_set_excluded_dirs (dirs);
-	g_slist_foreach (dirs, (GFunc) g_free, NULL);
-	g_slist_free (dirs);
+	baobab_set_excluded_locations (uris);
+	g_slist_foreach (uris, (GFunc) g_free, NULL);
+	g_slist_free (uris);
 
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
@@ -145,10 +145,11 @@ create_props_model (void)
 	mdl = gtk_list_store_new (TOT_COLUMNS,
 				  G_TYPE_BOOLEAN,	/* checkbox */
 				  G_TYPE_STRING,	/* device */
-				  G_TYPE_STRING,	/* mount point */
+				  G_TYPE_STRING,	/*mount point display */
+				  G_TYPE_STRING,	/* mount point uri */
 				  G_TYPE_STRING,	/* fs type */
 				  G_TYPE_STRING,	/* fs size */
-				  G_TYPE_STRING		/* fs used */
+				  G_TYPE_STRING		/* fs avail */
 				  );
 
 	return mdl;
@@ -185,8 +186,8 @@ create_tree_props (GladeXML *dlg_xml)
 	cell = gtk_cell_renderer_text_new ();
 	col = gtk_tree_view_column_new_with_attributes (_("Mount Point"),
 							cell, "markup",
-							COL_MOUNT, "text",
-							COL_MOUNT, NULL);
+							COL_MOUNT_D, "text",
+							COL_MOUNT_D, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
 	/* third text column */
@@ -270,22 +271,30 @@ fill_props_model (GtkWidget *dlg)
 	     
 	     	glibtop_fsusage fsusage;
 		gchar * total, *avail;
+		GFile	*file;
+		gchar	*uri;
+		
 		glibtop_get_fsusage (&fsusage, mountentry->mountdir);
 		fstotal = fsusage.blocks * fsusage.block_size;
 		fsavail = fsusage.bfree * fsusage.block_size;
 		total = g_format_size_for_display(fstotal);
 		avail = g_format_size_for_display(fsavail);
+		file = g_file_new_for_path (mountentry->mountdir);
+		uri = g_file_get_uri (file);
 		gtk_list_store_append (model_props, &iter);
 			gtk_list_store_set (model_props, &iter,
 					    COL_CHECK, TRUE,
-					    COL_DEVICE, mountentry->devname, 
-					    COL_MOUNT, mountentry->mountdir, 
+					    COL_DEVICE, mountentry->devname,
+					    COL_MOUNT_D, mountentry->mountdir, 
+					    COL_MOUNT, uri, 
 					    COL_TYPE, mountentry->type,
 					    COL_FS_SIZE, total,
 					    COL_FS_AVAIL, avail,
 					    -1);
 		g_free(total);
 		g_free(avail);
+		g_free(uri);
+		g_object_unref(file);
 	}
 
 	g_free (mountentry_tofree);

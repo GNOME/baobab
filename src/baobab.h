@@ -42,7 +42,7 @@ struct BaobabSearchOpt;
 #define BAOBAB_KEY_DIR "/apps/baobab"
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
 #define BAOBAB_STATUSBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/statusbar_visible"
-#define PROPS_SCAN_KEY			BAOBAB_KEY_DIR "/properties/noscan"
+#define PROPS_SCAN_KEY			BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
 #define PROPS_ENABLE_HOME_MONITOR	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
 #define SYSTEM_TOOLBAR_STYLE		"/desktop/gnome/interface/toolbar_style"
 
@@ -58,7 +58,7 @@ struct _baobab_application {
 	GtkTreeStore *model;
 	gboolean STOP_SCANNING;
 	gboolean CONTENTS_CHANGED_DELAYED;
-	GSList *excluded_dirs;
+	GSList *excluded_locations;
 	gboolean bbEnableHomeMonitor;
 	gchar *label_scan;
 	gboolean show_allocated;
@@ -97,8 +97,9 @@ void baobab_rescan_current_dir (void);
 void baobab_stop_scan (void);
 void fill_model (struct chan_data *);
 void first_row (void);
-gboolean baobab_is_excluded_dir (const gchar *);
-void baobab_set_excluded_dirs (GSList *);
+gboolean baobab_is_excluded_location (GFile *);
+gboolean baobab_is_excluded_dir (const char *);
+void baobab_set_excluded_locations (GSList *);
 void set_toolbar_visible (gboolean visible);
 void set_statusbar_visible (gboolean visible);
 void set_statusbar (const gchar *);

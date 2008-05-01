@@ -65,21 +65,15 @@ static GFile *current_location = NULL;
 
 
 static gboolean
-scan_is_local (const gchar *uri_dir)
+scan_is_local (GFile	*file)
 {
-	GnomeVFSFileInfo *info;
-	GnomeVFSResult res;
-	gboolean ret;
-
-	info = gnome_vfs_file_info_new ();
-	res = gnome_vfs_get_file_info (uri_dir,
-				       info, GNOME_VFS_FILE_INFO_DEFAULT);
-
-	ret = ((res == GNOME_VFS_OK) &&
-	       (info->flags & GNOME_VFS_FILE_FLAGS_LOCAL));
-
-	gnome_vfs_file_info_unref (info);
-
+	gchar	*uri_scheme;
+	gboolean	ret=FALSE;
+	
+	uri_scheme = g_file_get_uri_scheme (file);
+	if (g_ascii_strcasecmp(uri_scheme,"file") == 0) ret= TRUE;
+	
+	g_free (uri_scheme);
 	return ret;
 }
 
@@ -124,7 +118,7 @@ baobab_scan_location (GFile *file)
 	iterstack = g_queue_new ();
 
 	/* check if the file system is local or remote */
-	baobab.is_local = scan_is_local (dir);
+	baobab.is_local = scan_is_local (file);
 	ck_allocated = glade_xml_get_widget (baobab.main_xml, "ck_allocated");
 	if (!baobab.is_local) {
 		gtk_toggle_button_set_active ((GtkToggleButton *)
@@ -441,45 +435,51 @@ check_UTF (GString *name)
 	g_free (escaped_str);
 }
 
-static gint
-list_find (gconstpointer a, gconstpointer b)
-{
-	gchar *str_a, *str_b;
-	gint ret;
-
-	str_a = gnome_vfs_format_uri_for_display (a);
-	str_b = gnome_vfs_format_uri_for_display (b);
-
-	ret = strcmp (str_a, str_b);
-
-	g_free (str_a);
-	g_free (str_b);
-
-	return ret;
-}
 
 void
-baobab_set_excluded_dirs (GSList *excluded_dirs)
+baobab_set_excluded_locations (GSList *excluded_uris)
 {
 	GSList *l;
 
-	g_slist_foreach (baobab.excluded_dirs, (GFunc) g_free, NULL);
-	g_slist_free (baobab.excluded_dirs);
-
-	for (l = excluded_dirs; l != NULL; l = l->next) {
-		baobab.excluded_dirs = g_slist_prepend (baobab.excluded_dirs,
-							g_strdup (l->data));
+	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
+	g_slist_free (baobab.excluded_locations);
+	baobab.excluded_locations = NULL;
+	for (l = excluded_uris; l != NULL; l = l->next) {
+		baobab.excluded_locations = g_slist_prepend (baobab.excluded_locations,
+						g_file_new_for_uri (l->data));
 	}
+
 }
 
 gboolean
-baobab_is_excluded_dir (const gchar *dir)
+baobab_is_excluded_location (GFile *file)
 {
-	g_return_val_if_fail (dir != NULL, FALSE);
-
-	return (baobab.excluded_dirs &&
-		(g_slist_find_custom (baobab.excluded_dirs, dir, list_find) != NULL));
+	gboolean ret = FALSE;
+	GSList	*l;
+	
+	for (l=baobab.excluded_locations; l != NULL; l = l->next) {	
+		if (g_file_equal(l->data, file))
+			ret = TRUE;
+	}
+	
+	return ret;
 }
+
+gboolean
+baobab_is_excluded_dir (const gchar *uri)
+{
+	gboolean ret = FALSE;
+	GFile	*file;
+
+	g_return_val_if_fail (uri != NULL, FALSE);
+	file = g_file_new_for_uri (uri);
+	ret = baobab_is_excluded_location (file);
+	g_object_unref (file);
+	return ret;
+}
+
+
+
 
 void
 set_toolbar_visible (gboolean visible)
@@ -636,9 +636,8 @@ baobab_create_statusbar (void)
 static void
 baobab_init (void)
 {
-	GnomeVFSResult result;
-	GnomeVFSVolumeMonitor *volmonitor;
-
+	GSList	*uri_list, *l;
+	
 	/* Load Glade */
 	baobab.main_xml = glade_xml_new (BAOBAB_GLADE_FILE,
 					 "baobab_window", NULL);
@@ -659,21 +658,37 @@ baobab_init (void)
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE, baobab_toolbar_style,
 				 NULL, NULL, NULL);				 
-	baobab.excluded_dirs = gconf_client_get_list (baobab.gconf_client,
+	uri_list = gconf_client_get_list (baobab.gconf_client,
 						      PROPS_SCAN_KEY,
 						      GCONF_VALUE_STRING,
 						      NULL);
+	
+	baobab_set_excluded_locations(uri_list);
+
+	g_slist_foreach (uri_list, (GFunc) g_free, NULL);
+	g_slist_free (uri_list);
 
 	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
-	if (baobab_is_excluded_dir ("/")) {
-		baobab.excluded_dirs = g_slist_delete_link (baobab.excluded_dirs, 
-						g_slist_find_custom (baobab.excluded_dirs, 
-							"/", list_find));
+	if (baobab_is_excluded_dir ("file:///")) {
+		GFile 	*file;
+		
+		file = g_file_new_for_uri ("file:///");
+
+		baobab.excluded_locations = g_slist_delete_link (baobab.excluded_locations, 
+						g_slist_find (baobab.excluded_locations, 
+							file));
+		g_object_unref (file);
+		for (l = baobab.excluded_locations; l != NULL; l = l->next) {
+			uri_list = g_slist_prepend (uri_list, g_file_get_uri(l->data));
+		}
+		
 		gconf_client_set_list (baobab.gconf_client,
 				       PROPS_SCAN_KEY,
 				       GCONF_VALUE_STRING, 
-				       baobab.excluded_dirs,
+				       uri_list,
 				       NULL);
+		g_slist_foreach (uri_list, (GFunc) g_free, NULL);
+		g_slist_free (uri_list);
 	}
 
 	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
@@ -727,8 +742,8 @@ baobab_shutdown (void)
 
 	g_free (baobab.selected_path);
 
-	g_slist_foreach (baobab.excluded_dirs, (GFunc) g_free, NULL);
-	g_slist_free (baobab.excluded_dirs);
+	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
+	g_slist_free (baobab.excluded_locations);
 
 	if (baobab.gconf_client)
 		g_object_unref (baobab.gconf_client);

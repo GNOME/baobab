@@ -38,16 +38,17 @@
       </locale>
     </schema>
     
+    
     <schema>
-      <key>/schemas/apps/baobab/properties/noscan</key>
-      <applyto>/apps/baobab/properties/noscan</applyto>
+      <key>/schemas/apps/baobab/properties/skip_scan_uri_list</key>
+      <applyto>/apps/baobab/properties/skip_scan_uri_list</applyto>
       <owner>baobab</owner>
       <type>list</type>
       <list_type>string</list_type>
       <default>[]</default>
       <locale name="C">
-	<short>Exluded partitions</short>
-	<long>A list of partitions to be excluded from scanning.</long>
+	<short>Exluded partitions uris</short>
+	<long>A list of uri for partitions to be excluded from scanning.</long>
       </locale>
     </schema>
     

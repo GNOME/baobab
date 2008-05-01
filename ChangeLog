@@ -1,3 +1,16 @@
+2008-05-01  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* data/baobab.schemas.in:
+	* src/baobab-prefs.c: 
+	* src/baobab-prefs.h:
+	* src/baobab-utils.c: 
+	* src/baobab.h:
+	
+	The gconf key <noscan> is now deprecated. 
+	The new key <skip_scan_uri_list> took over.
+	baobab.excluded_dirs GSList of paths is now replaced 
+	by baobab.excluded_location as a GSList of GFile*.
+
 2008-05-01  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab-utils.c:
@@ -70,6 +83,9 @@
 	(open_file_cb), (scan_folder_cb):
 	
 	Starting Gio migration
+	BUGZILLA #524573 - baobab uses ~/.Trash instead of new gvfs Trash system
+	BUGZILLA #526812 - Move to deleted items puts stuff in ~/.Trash 
+
 
 2008-04-14  Fabio Marzocca  <thesaltydog@gmail.com>
 

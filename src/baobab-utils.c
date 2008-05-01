@@ -52,10 +52,15 @@ baobab_get_filesystem (baobab_fs *fs)
 	mountentries = glibtop_get_mountlist (&mountlist, FALSE);
 
 	for (i = 0; i < mountlist.number; ++i) {
+		GFile	*file;
 		glibtop_fsusage fsusage;
+		
+		file = g_file_new_for_path(mountentries[i].mountdir);	
 
-		if (baobab_is_excluded_dir (mountentries[i].mountdir))
+		if (baobab_is_excluded_location (file)){
+			g_object_unref(file);
 			continue;
+			}
 
 		glibtop_get_fsusage (&fsusage, mountentries[i].mountdir);
 
@@ -63,6 +68,8 @@ baobab_get_filesystem (baobab_fs *fs)
 		fs->total += fsusage.blocks * fsusage.block_size;
 		fs->avail += fsusage.bfree * fsusage.block_size;
 		fs->used += (fsusage.blocks - fsusage.bfree) * fsusage.block_size;
+		g_object_unref(file);
+
 	}
 
 	g_free (mountentries);
