@@ -81,7 +81,7 @@ filechooser_cb (GtkWidget *chooser,
 		gtk_widget_hide (chooser);
 
 		file = g_file_new_for_uri (filename);
-		start_proc_on_location (file);
+		baobab_scan_location (file);
 		g_free (filename);
 		g_object_unref (file);
 	}
@@ -182,20 +182,6 @@ check_menu_sens (gboolean scanning)
 	set_glade_widget_sens ("ck_allocated",
 			       !scanning &&
 			       baobab.is_local && !g_noactivescans);
-
-}
-
-void
-stop_scan (void)
-{
-	set_statusbar (_("Calculating percentage bars..."));
-	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
-				show_bars, NULL);
-	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
-
-	set_busy (FALSE);
-	check_menu_sens (FALSE);
-	set_statusbar (_("Ready"));
 }
 
 gboolean

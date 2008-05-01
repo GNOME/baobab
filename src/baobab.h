@@ -90,10 +90,11 @@ baobab_application baobab;
 baobab_fs g_fs;
 
 void set_busy (gboolean busy);
-void start_proc_on_location (GFile *);
+void baobab_scan_location (GFile *);
 void baobab_scan_home (void);
 void baobab_scan_root (void);
 void baobab_rescan_current_dir (void);
+void baobab_stop_scan (void);
 void fill_model (struct chan_data *);
 void first_row (void);
 gboolean baobab_is_excluded_dir (const gchar *);

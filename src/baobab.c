@@ -97,11 +97,8 @@ set_busy (gboolean busy)
 	}
 }
 
-/*
- * start scanning on a specific directory
- */
 void
-start_proc_on_location (GFile *file)
+baobab_scan_location (GFile *file)
 {
 	GdkCursor *cursor = NULL;
 	GtkWidget *ck_allocated;
@@ -113,6 +110,8 @@ start_proc_on_location (GFile *file)
 	if (iterstack !=NULL)
 		return;
 
+	if (current_location)
+		g_object_unref (current_location);
 	current_location = g_object_ref (file);
 
 	dir = g_file_get_uri (file);
@@ -175,7 +174,7 @@ baobab_scan_home (void)
 	GFile *file;
 
 	file = g_file_new_for_path (g_get_home_dir ());
-	start_proc_on_location (file);
+	baobab_scan_location (file);
 	g_object_unref (file);
 }
 
@@ -185,7 +184,7 @@ baobab_scan_root (void)
 	GFile *file;
 
 	file = g_file_new_for_uri ("file:///");
-	start_proc_on_location (file);
+	baobab_scan_location (file);
 	g_object_unref (file);
 }
 
@@ -198,7 +197,22 @@ baobab_rescan_current_dir (void)
 	set_label_scan (&g_fs);
 	show_label ();
 
-	start_proc_on_location (current_location);
+	baobab_scan_location (current_location);
+}
+
+void
+baobab_stop_scan (void)
+{
+	baobab.STOP_SCANNING = TRUE;
+
+	set_statusbar (_("Calculating percentage bars..."));
+	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
+				show_bars, NULL);
+	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
+
+	set_busy (FALSE);
+	check_menu_sens (FALSE);
+	set_statusbar (_("Ready"));
 }
 
 /*
@@ -760,8 +774,8 @@ initialize_ringschart (void)
 static gboolean
 start_proc_on_command_line (GFile *file)
 {
-	start_proc_on_location (file);
-	
+	baobab_scan_location (file);
+
 	return FALSE;
 }
 

@@ -59,7 +59,7 @@ on_menuscandir_activate (GtkMenuItem *menuitem, gpointer user_data)
 void
 on_esci1_activate (GtkObject *menuitem, gpointer user_data)
 {
-	baobab.STOP_SCANNING = TRUE;
+	baobab_stop_scan ();
 	gtk_main_quit ();
 }
 
@@ -123,8 +123,7 @@ on_menu_collapse_activate (GtkMenuItem *menuitem, gpointer user_data)
 void
 on_menu_stop_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	baobab.STOP_SCANNING = TRUE;
-	stop_scan ();
+	baobab_stop_scan ();
 }
 
 void
@@ -171,7 +170,7 @@ on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data)
 	if (uri) {
 		GFile *file;
 		file = g_file_new_for_uri (uri);
-		start_proc_on_location (file);
+		baobab_scan_location (file);
 		g_object_unref (file);
 		g_free (uri);
 	}
@@ -186,8 +185,7 @@ on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data)
 void
 on_tbstop_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	baobab.STOP_SCANNING = TRUE;
-	stop_scan ();
+	baobab_stop_scan ();
 }
 
 void
@@ -420,7 +418,7 @@ scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
 		message (_("The folder does not exist."), "", GTK_MESSAGE_INFO, baobab.window);
 	}
 
-	start_proc_on_location (file);
+	baobab_scan_location (file);
 	g_object_unref (file);
 }
 
