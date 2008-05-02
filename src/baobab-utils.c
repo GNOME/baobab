@@ -158,39 +158,6 @@ set_glade_widget_sens (const gchar *name, gboolean sens)
 	gtk_widget_set_sensitive (w, sens);
 }
 
-/* menu & toolbar sensitivity */
-void
-check_menu_sens (gboolean scanning)
-{
-	if (scanning) {
-
-		while (gtk_events_pending ())
-			gtk_main_iteration ();
-
-		set_statusbar (_("Scanning..."));
-		set_glade_widget_sens ("menu_treemap", FALSE);
-		set_glade_widget_sens ("expand_all", TRUE);
-		set_glade_widget_sens ("collapse_all", TRUE);		
-	}
-
-	set_glade_widget_sens ("tbscanhome", !scanning);
-	set_glade_widget_sens ("tbscanall", !scanning);
-	set_glade_widget_sens ("tbscandir", !scanning);
-	set_glade_widget_sens ("menuscanhome", !scanning);
-	set_glade_widget_sens ("menuallfs", !scanning);
-	set_glade_widget_sens ("menuscandir", !scanning);
-	set_glade_widget_sens ("tbstop", scanning);
-	set_glade_widget_sens ("tbrescan", !scanning);
-	set_glade_widget_sens ("menustop", scanning);
-	set_glade_widget_sens ("menurescan", !scanning);
-	set_glade_widget_sens ("preferenze1", !scanning);
-	set_glade_widget_sens ("menu_scan_rem", !scanning);
-	set_glade_widget_sens ("tb_scan_remote", !scanning);
-	set_glade_widget_sens ("ck_allocated",
-			       !scanning &&
-			       baobab.is_local && !g_noactivescans);
-}
-
 gboolean
 show_bars (GtkTreeModel *mdl,
 	   GtkTreePath *path,

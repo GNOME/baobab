@@ -1,5 +1,12 @@
 2008-05-02  Paolo Borelli  <pborelli@katamail.com>
 
+	* src/baobab.c:
+	Ref the location before rescanning otherwise the current location
+	gets finalized. Also make sure the Rescan button is insensitive when
+	there is no current location. 
+
+2008-05-02  Paolo Borelli  <pborelli@katamail.com>
+
 	* src/baobab-scan.c:
 	* src/baobab-scan.h:
 	* src/baobab.c:

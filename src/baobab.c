@@ -99,6 +99,39 @@ baobab_set_busy (gboolean busy)
 	}
 }
 
+/* menu & toolbar sensitivity */
+static void
+check_menu_sens (gboolean scanning)
+{
+	if (scanning) {
+
+		while (gtk_events_pending ())
+			gtk_main_iteration ();
+
+		set_statusbar (_("Scanning..."));
+		set_glade_widget_sens ("menu_treemap", FALSE);
+		set_glade_widget_sens ("expand_all", TRUE);
+		set_glade_widget_sens ("collapse_all", TRUE);		
+	}
+
+	set_glade_widget_sens ("tbscanhome", !scanning);
+	set_glade_widget_sens ("tbscanall", !scanning);
+	set_glade_widget_sens ("tbscandir", !scanning);
+	set_glade_widget_sens ("menuscanhome", !scanning);
+	set_glade_widget_sens ("menuallfs", !scanning);
+	set_glade_widget_sens ("menuscandir", !scanning);
+	set_glade_widget_sens ("tbstop", scanning);
+	set_glade_widget_sens ("tbrescan", !scanning && current_location != NULL);
+	set_glade_widget_sens ("menustop", scanning);
+	set_glade_widget_sens ("menurescan", !scanning && current_location != NULL);
+	set_glade_widget_sens ("preferenze1", !scanning);
+	set_glade_widget_sens ("menu_scan_rem", !scanning);
+	set_glade_widget_sens ("tb_scan_remote", !scanning);
+	set_glade_widget_sens ("ck_allocated",
+			       !scanning &&
+			       baobab.is_local && !g_noactivescans);
+}
+
 void
 baobab_scan_location (GFile *file)
 {
@@ -182,7 +215,9 @@ baobab_rescan_current_dir (void)
 	set_label_scan (&g_fs);
 	show_label ();
 
+	g_object_ref (current_location);
 	baobab_scan_location (current_location);
+	g_object_unref (current_location);
 }
 
 void
@@ -788,14 +823,18 @@ int
 main (int argc, char *argv[])
 {
 	GnomeProgram *program;
+	GOptionContext *context;
 
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+	context = g_option_context_new (NULL);
+
 	program = gnome_program_init ("baobab", VERSION,
 				      LIBGNOMEUI_MODULE,
 				      argc, argv,
+				      GNOME_PARAM_GOPTION_CONTEXT, context,
 				      GNOME_PARAM_APP_DATADIR,
 				      BAOBAB_DATA_DIR, NULL);
 
