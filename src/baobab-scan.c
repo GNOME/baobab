@@ -155,6 +155,15 @@ loopdir (GFile	*file,
 	retloop.alloc_size = 0;
 	dir_uri = g_file_get_uri (file);
 	dir_path = g_file_get_path (file);
+
+	/* Skip the user excluded folders */
+	if (baobab_is_excluded_location (file))
+		goto exit;
+
+	/* Skip the virtual file systems */
+	if ((strcmp (dir_path, "/proc") == 0) ||
+            (strcmp (dir_path, "/sys") == 0))
+ 		goto exit;
  
 	dir_info = g_file_query_info (file, dir_attributes,
 				      G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS,
@@ -166,16 +175,6 @@ loopdir (GFile	*file,
 			   err->message);
 		goto exit;
 	}
-
-	/* Skip the virtual file systems */
-	if ((strcmp (dir_path, "/proc") == 0) ||
-            (strcmp (dir_path, "/sys") == 0))
- 		goto exit;
-
-
-	/* Skip the user excluded folders */
-	if (baobab_is_excluded_location (file))
-		goto exit;
 
 	string_to_display = g_file_get_parse_name (file);	
 	
@@ -204,7 +203,6 @@ loopdir (GFile	*file,
 			   err->message);
 		goto exit;
 	}
-
 
 	/* All skipped folders (i.e. bad type, excluded, /proc) must be
 	   skept *before* this point. Everything passes the prefill-model
@@ -296,22 +294,16 @@ loopdir (GFile	*file,
 }
 
 void
-getDir (const gchar *uri_dir)
+baobab_scan_execute (GFile *location)
 {
 	BaobabHardLinkArray *hla;
-	GFile *file;
-	
-	file = g_file_new_for_uri (uri_dir);
-	
-	if (baobab_is_excluded_location (file)) {
-		g_object_unref (file);
-		return;
-		}
+
+	g_return_if_fail (location != NULL);
 
 	hla = baobab_hardlinks_array_create ();
 
-	loopdir (file, 0, hla);
+	loopdir (location, 0, hla);
 
 	baobab_hardlinks_array_free (hla);
-	g_object_unref (file);
 }
+

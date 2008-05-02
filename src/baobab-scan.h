@@ -20,14 +20,11 @@
  * Boston, MA  02110-1301  USA
  */
 
-#ifndef __BBTHREAD_H__
-#define __BBTHREAD_H__
+#ifndef __BAOBAB_SCAN_H__
+#define __BAOBAB_SCAN_H__
 
-#include <glib/gtypes.h>
-#include <libgnomevfs/gnome-vfs.h>
-#include <sys/types.h>
+#include <gio/gio.h>
 
-void getDir (const gchar *);
-void searchDir (const gchar *, const gchar *);
+void baobab_scan_execute (GFile *location);
 
-#endif /* __BBTHREAD_H__ */
+#endif /* __BAOBAB_SCAN_H__ */

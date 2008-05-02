@@ -22,17 +22,12 @@
  
 #include <config.h>
 
-#include <pwd.h>
-#include <time.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <glib/gprintf.h>
 #include <gio/gio.h>
 #include <libgnomeui/libgnomeui.h>
 #include <libgnomeui/gnome-ui-init.h>
 #include <libgnomevfs/gnome-vfs.h>
-#include <libgnomevfs/gnome-vfs-mime.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
 #include <gconf/gconf-client.h>
 #include <glibtop.h>
 
@@ -107,9 +102,7 @@ baobab_set_busy (gboolean busy)
 void
 baobab_scan_location (GFile *file)
 {
-	GdkCursor *cursor = NULL;
 	GtkWidget *ck_allocated;
-	gchar *dir = NULL;
 
 	if (!baobab_check_dir (file))
 		return;
@@ -121,7 +114,6 @@ baobab_scan_location (GFile *file)
 		g_object_unref (current_location);
 	current_location = g_object_ref (file);
 
-	dir = g_file_get_uri (file);
 	g_noactivescans = FALSE; 
 	baobab.STOP_SCANNING = FALSE;
 	baobab_set_busy (TRUE);
@@ -134,8 +126,8 @@ baobab_scan_location (GFile *file)
 	baobab.is_local = scan_is_local (file);
 	ck_allocated = glade_xml_get_widget (baobab.main_xml, "ck_allocated");
 	if (!baobab.is_local) {
-		gtk_toggle_button_set_active ((GtkToggleButton *)
-					      ck_allocated, FALSE);
+		gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (ck_allocated),
+						FALSE);
 		gtk_widget_set_sensitive (ck_allocated, FALSE);
 		baobab.show_allocated = FALSE;
 	}
@@ -143,7 +135,7 @@ baobab_scan_location (GFile *file)
 		gtk_widget_set_sensitive (ck_allocated, TRUE);
 	}
 
-	getDir (dir);
+	baobab_scan_execute (file);
 
 	/* set statusbar, percentage and allocated/normal size */
 	set_statusbar (_("Calculating percentage bars..."));
@@ -159,7 +151,6 @@ baobab_scan_location (GFile *file)
 	g_queue_free (iterstack);
 	iterstack = NULL;
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
-	g_free (dir);
 }
 
 void
