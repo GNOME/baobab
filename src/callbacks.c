@@ -326,35 +326,20 @@ void
 on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem,
 			  gpointer user_data)
 {
-	GdkCursor *cursor = NULL;
-
 	if (!baobab.is_local)
 		return;
 
 	baobab.show_allocated = gtk_check_menu_item_get_active (checkmenuitem);
 
-	/* change the cursor */
-	if (baobab.window->window) {
-		cursor = gdk_cursor_new (GDK_WATCH);
-		gdk_window_set_cursor (baobab.window->window, cursor);
-	}
-
 	baobab_treeview_show_allocated_size (baobab.tree_view,
 					     baobab.show_allocated);
 
-	set_busy (TRUE);
+	baobab_set_busy (TRUE);
 	set_statusbar (_("Calculating percentage bars..."));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars, NULL);
-	set_busy (FALSE);
+	baobab_set_busy (FALSE);
 	set_statusbar (_("Ready"));
-
-	/* cursor clean up */
-	if (baobab.window->window) {
-		gdk_window_set_cursor (baobab.window->window, NULL);
-		if (cursor)
-			gdk_cursor_unref (cursor);
-	}
 }
 
 void

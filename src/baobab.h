@@ -89,7 +89,7 @@ gboolean g_noactivescans;
 baobab_application baobab;
 baobab_fs g_fs;
 
-void set_busy (gboolean busy);
+void baobab_set_busy (gboolean busy);
 void baobab_scan_location (GFile *);
 void baobab_scan_home (void);
 void baobab_scan_root (void);

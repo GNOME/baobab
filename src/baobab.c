@@ -78,9 +78,17 @@ scan_is_local (GFile	*file)
 }
 
 void
-set_busy (gboolean busy)
+baobab_set_busy (gboolean busy)
 {
+	static GdkCursor *busy_cursor = NULL;
+	GdkCursor *cursor = NULL;
+
 	if (busy == TRUE) {
+		if (!busy_cursor) {
+			busy_cursor = gdk_cursor_new (GDK_WATCH);
+		}
+		cursor = busy_cursor;
+
 		gedit_spinner_start (GEDIT_SPINNER (baobab.spinner));
  		baobab_ringschart_freeze_updates (baobab.ringschart);
 		baobab_ringschart_set_init_depth (baobab.ringschart, 0);
@@ -88,6 +96,11 @@ set_busy (gboolean busy)
 	else {
 		gedit_spinner_stop (GEDIT_SPINNER (baobab.spinner));
  		baobab_ringschart_thaw_updates (baobab.ringschart);
+	}
+
+	/* change the cursor */
+	if (baobab.window->window) {
+		gdk_window_set_cursor (baobab.window->window, cursor);
 	}
 }
 
@@ -111,7 +124,7 @@ baobab_scan_location (GFile *file)
 	dir = g_file_get_uri (file);
 	g_noactivescans = FALSE; 
 	baobab.STOP_SCANNING = FALSE;
-	set_busy (TRUE);
+	baobab_set_busy (TRUE);
 	check_menu_sens (TRUE);
 	gtk_tree_store_clear (baobab.model);
 	currentdepth = -1;	/* flag */
@@ -132,27 +145,14 @@ baobab_scan_location (GFile *file)
 
 	getDir (dir);
 
-	/* change the cursor */
-	if (baobab.window->window) {
-		cursor = gdk_cursor_new (GDK_WATCH);
-		gdk_window_set_cursor (baobab.window->window, cursor);
-	}
-
 	/* set statusbar, percentage and allocated/normal size */
 	set_statusbar (_("Calculating percentage bars..."));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars,
 				NULL);
-	set_busy (FALSE);
+	baobab_set_busy (FALSE);
 	check_menu_sens (FALSE);
 	set_statusbar (_("Ready"));
-
-	/* cursor clean up */
-	if (baobab.window->window) {
-		gdk_window_set_cursor (baobab.window->window, NULL);
-		if (cursor)
-			gdk_cursor_unref (cursor);
-	}
 
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
 	baobab.STOP_SCANNING = TRUE;
@@ -204,7 +204,7 @@ baobab_stop_scan (void)
 				show_bars, NULL);
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
 
-	set_busy (FALSE);
+	baobab_set_busy (FALSE);
 	check_menu_sens (FALSE);
 	set_statusbar (_("Ready"));
 }
@@ -435,7 +435,6 @@ check_UTF (GString *name)
 	g_free (escaped_str);
 }
 
-
 void
 baobab_set_excluded_locations (GSList *excluded_uris)
 {
@@ -448,20 +447,21 @@ baobab_set_excluded_locations (GSList *excluded_uris)
 		baobab.excluded_locations = g_slist_prepend (baobab.excluded_locations,
 						g_file_new_for_uri (l->data));
 	}
-
 }
 
 gboolean
 baobab_is_excluded_location (GFile *file)
 {
 	gboolean ret = FALSE;
-	GSList	*l;
-	
+	GSList *l;
+
+	g_return_val_if_fail (file != NULL, FALSE);
+
 	for (l=baobab.excluded_locations; l != NULL; l = l->next) {	
 		if (g_file_equal(l->data, file))
 			ret = TRUE;
 	}
-	
+
 	return ret;
 }
 
@@ -472,14 +472,13 @@ baobab_is_excluded_dir (const gchar *uri)
 	GFile	*file;
 
 	g_return_val_if_fail (uri != NULL, FALSE);
+
 	file = g_file_new_for_uri (uri);
 	ret = baobab_is_excluded_location (file);
 	g_object_unref (file);
+
 	return ret;
 }
-
-
-
 
 void
 set_toolbar_visible (gboolean visible)
