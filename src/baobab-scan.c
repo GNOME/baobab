@@ -27,7 +27,7 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <libgnomevfs/gnome-vfs.h>
+#include <gio/gio.h>
 
 #include "baobab.h"
 #include "baobab-scan.h"
@@ -45,7 +45,7 @@
    number of files with st_nlink > 1 on average computer.
 
    To save memory, we store only { inode, dev } instead of full
-   GnomeVfsFileInfo.
+   GFileInfo.
 
    EDIT: /me stupid. I realize that this code was not called that often
    1 call per file with st_nlink > 1. BUT, i'm using pdumpfs to backup
@@ -54,7 +54,7 @@
 */
 
 typedef struct {
-	GnomeVFSInodeNumber inode;
+	guint64		    inode;
 	dev_t               device;
 } BaobabHardLink;
 
@@ -67,8 +67,8 @@ baobab_hardlinks_array_create (void)
 }
 
 static gboolean
-baobab_hardlinks_array_has (BaobabHardLinkArray *a,
-			    GnomeVFSFileInfo    *s)
+baobab_hardlinks_array_has (BaobabHardLinkArray   *a,
+			    GFileInfo  		  *s)
 {
 	guint i;
 
@@ -79,7 +79,10 @@ baobab_hardlinks_array_has (BaobabHardLinkArray *a,
 		 * cur->st_dev == s->st_dev is the common case and may be more
 		 * expansive than cur->st_ino == s->st_ino
 		 * so keep this order */
-		if (cur->inode == s->inode && cur->device == s->device)
+		if (cur->inode == g_file_info_get_attribute_uint64 (s,
+							G_FILE_ATTRIBUTE_UNIX_INODE) &&
+		    cur->device == g_file_info_get_attribute_uint32 (s,
+							G_FILE_ATTRIBUTE_UNIX_DEVICE))
 			return TRUE;
 	}
 
@@ -89,16 +92,17 @@ baobab_hardlinks_array_has (BaobabHardLinkArray *a,
 /* return FALSE if the element was already in the array */
 static gboolean
 baobab_hardlinks_array_add (BaobabHardLinkArray *a,
-			    GnomeVFSFileInfo    *s)
+			    GFileInfo    *s)
 {
 	BaobabHardLink hl;
 
 	if (baobab_hardlinks_array_has (a, s))
 		return FALSE;
 
-	hl.inode = s->inode;
-	hl.device = s->device;
-
+	hl.inode = g_file_info_get_attribute_uint64 (s,
+				G_FILE_ATTRIBUTE_UNIX_INODE);
+	hl.device = g_file_info_get_attribute_uint32 (s,
+				G_FILE_ATTRIBUTE_UNIX_DEVICE);
 	g_array_append_val (a, hl);
 
 	return TRUE;
@@ -115,59 +119,92 @@ baobab_hardlinks_array_free (BaobabHardLinkArray *a)
 #define BLOCK_SIZE 512
 
 struct allsizes {
-	GnomeVFSFileSize size;
-	GnomeVFSFileSize alloc_size;
+	goffset size;
+	goffset alloc_size;
 };
 
+static const char *dir_attributes = 
+	G_FILE_ATTRIBUTE_STANDARD_NAME "," G_FILE_ATTRIBUTE_STANDARD_TYPE "," \
+	G_FILE_ATTRIBUTE_STANDARD_SIZE "," G_FILE_ATTRIBUTE_UNIX_BLOCKS "," \
+	G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
+
+static const char *child_attributes =
+	G_FILE_ATTRIBUTE_STANDARD_NAME "," G_FILE_ATTRIBUTE_STANDARD_TYPE "," \
+	G_FILE_ATTRIBUTE_UNIX_INODE "," G_FILE_ATTRIBUTE_UNIX_DEVICE;
+
+
 static struct allsizes
-loopdir (GnomeVFSURI *vfs_uri_dir,
-	 GnomeVFSFileInfo *dir_info,
+loopdir (GFile	*file,
 	 guint count,
 	 BaobabHardLinkArray *hla)
 {
 	GList *file_list;
-	guint64 tempHLsize;
-	gint elements;
+	guint64 tempHLsize = 0;
+	gint elements = 0;
 	struct chan_data data;
-	struct allsizes retloop;
-	struct allsizes temp;
-	GnomeVFSResult result;
-	gchar *dir;
-	gchar *string_to_display;
-	GnomeVFSURI *new_uri;
+	struct allsizes retloop, temp;
+	GFileInfo *dir_info, *temp_info;
+	GFileEnumerator *file_enum;
+	gchar *dir_uri = NULL;
+	gchar *dir_path = NULL;
+	gchar *string_to_display = NULL;
+	GError *err = NULL;
 
 	count++;
-	elements = 0;
-	tempHLsize = 0;
 	retloop.size = 0;
 	retloop.alloc_size = 0;
-	dir = NULL;
-	string_to_display = NULL;
+	dir_uri = g_file_get_uri (file);
+	dir_path = g_file_get_path (file);
+ 
+	dir_info = g_file_query_info (file, dir_attributes,
+				      G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS,
+				      NULL, &err);
+
+	if (dir_info == NULL && err != NULL) {
+		g_warning ("couldn't get info for dir %s: %s\n",
+			   dir_path,
+			   err->message);
+		goto exit;
+	}
 
 	/* Skip the virtual file systems */
-	if ((strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/proc") == 0) ||
-            (strcmp (gnome_vfs_uri_get_path (vfs_uri_dir), "/sys") == 0))
-		goto exit;
+	if ((strcmp (dir_path, "/proc") == 0) ||
+            (strcmp (dir_path, "/sys") == 0))
+ 		goto exit;
 
-	dir = gnome_vfs_uri_to_string (vfs_uri_dir, GNOME_VFS_URI_HIDE_NONE);
 
 	/* Skip the user excluded folders */
-	if (baobab_is_excluded_dir (dir))
+	if (baobab_is_excluded_location (file))
 		goto exit;
 
-	if (!baobab.is_local)
-		string_to_display = gnome_vfs_unescape_string_for_display (dir);
-	else
-		string_to_display = gnome_vfs_format_uri_for_display (dir);
-
+	string_to_display = g_file_get_parse_name (file);	
+	
 	/* Folders we can't access (e.g perms 644). Skip'em. */
-	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_TYPE) == 0)
-		goto exit;				 
+	if (!g_file_info_get_attribute_boolean(dir_info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
+		goto exit;
+	if (g_file_info_get_file_type (dir_info) == G_FILE_TYPE_UNKNOWN)
+		goto exit;
 
-	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_SIZE) != 0)
-		retloop.size = dir_info->size;
-	if ((dir_info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
-		retloop.alloc_size = dir_info->block_count * BLOCK_SIZE;
+	if (g_file_info_has_attribute (dir_info, G_FILE_ATTRIBUTE_STANDARD_SIZE))
+		retloop.size = g_file_info_get_size (dir_info);
+	if (g_file_info_has_attribute (dir_info, G_FILE_ATTRIBUTE_UNIX_BLOCKS))
+		retloop.alloc_size = BLOCK_SIZE * 
+			g_file_info_get_attribute_uint64 (dir_info,
+							  G_FILE_ATTRIBUTE_UNIX_BLOCKS);
+ 
+	/* load up the file enumerator */
+	file_enum = g_file_enumerate_children (file,
+					child_attributes,
+					G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS,
+					NULL, &err);
+
+	if (file_enum == NULL && err != NULL) {
+		g_warning ("couldn't get dir enum for dir %s: %s\n",
+			   dir_path,
+			   err->message);
+		goto exit;
+	}
+
 
 	/* All skipped folders (i.e. bad type, excluded, /proc) must be
 	   skept *before* this point. Everything passes the prefill-model
@@ -182,64 +219,62 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	data.tempHLsize = tempHLsize;
 	fill_model (&data);
 
-	/* get the GnomeVFSFileInfo stuct for every directory entry */
-	result = gnome_vfs_directory_list_load (&file_list,
-						dir,
-						GNOME_VFS_FILE_INFO_DEFAULT);
-
-	if (result == GNOME_VFS_OK) {
-		GList *l;
-
-		for (l = file_list; l != NULL; l = l->next) {
-			GnomeVFSFileInfo *info = l->data;
-
-			if (baobab.STOP_SCANNING) {
-				gnome_vfs_file_info_list_free (file_list);
-				goto exit;
-			}
-
-			if (strcmp (info->name, ".") == 0 ||
-			    strcmp (info->name, "..") == 0)
-				continue;
-
-			/* is a symlink? */
-			if (info->type == GNOME_VFS_FILE_TYPE_SYMBOLIC_LINK)
-				continue;
-
-			/* is a directory? */
-			if (info->type == GNOME_VFS_FILE_TYPE_DIRECTORY) {
-				new_uri = gnome_vfs_uri_append_file_name (vfs_uri_dir, info->name);
-				temp = loopdir (new_uri, info, count, hla);
-				retloop.size += temp.size;
-				retloop.alloc_size += temp.alloc_size;
-				elements++;
-				gnome_vfs_uri_unref (new_uri);
-			}
-
-			else if (info->type == GNOME_VFS_FILE_TYPE_REGULAR) {
-
-				/* check for hard links only on local files */
-				if (GNOME_VFS_FILE_INFO_LOCAL (info)) {
-					if (info->link_count > 1) {
-
-						if (!baobab_hardlinks_array_add (hla, info)) {
-
-							/* we already acconted for it */
-							tempHLsize += info->size;
-							continue;
-						}
-					}
-				}
-
-				if ((info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_BLOCK_COUNT) != 0)
-					retloop.alloc_size += (info->block_count * BLOCK_SIZE);
-
-				retloop.size += info->size;
-				elements++;
-			}
+	g_clear_error (&err);
+	while ((temp_info = g_file_enumerator_next_file (file_enum,
+							 NULL,
+							 &err)) != NULL) {
+		GFileType temp_type = g_file_info_get_file_type (temp_info);
+		if (baobab.STOP_SCANNING) {
+			g_object_unref (file_enum);
+			goto exit;
 		}
 
-		gnome_vfs_file_info_list_free (file_list);
+		/* is a symlink? */
+		if (temp_type == G_FILE_TYPE_SYMBOLIC_LINK)
+			continue;
+ 
+		/* is a directory? */
+		if (temp_type == G_FILE_TYPE_DIRECTORY) {
+			GFile *child_dir = g_file_get_child (file, 
+						g_file_info_get_name (temp_info));
+			temp = loopdir (child_dir, count, hla);
+			retloop.size += temp.size;
+			retloop.alloc_size += temp.alloc_size;
+			elements++;
+			g_object_unref (child_dir);
+		}
+
+		/* is it a regular file? */
+		else if (temp_type == G_FILE_TYPE_REGULAR) {
+ 
+			/* check for hard links only on local files */
+			if (g_file_info_has_attribute (temp_info,
+						       G_FILE_ATTRIBUTE_UNIX_NLINK) &&
+				g_file_info_get_attribute_uint32 (temp_info,
+							    G_FILE_ATTRIBUTE_UNIX_NLINK) > 1) {
+ 
+				if (!baobab_hardlinks_array_add (hla, temp_info)) {
+
+					/* we already acconted for it */
+					tempHLsize += g_file_info_get_size (temp_info);
+					continue;
+				}
+			}
+
+			if (g_file_info_has_attribute (temp_info, G_FILE_ATTRIBUTE_UNIX_BLOCKS)) {
+				retloop.alloc_size += BLOCK_SIZE *
+					g_file_info_get_attribute_uint64 (temp_info,
+							G_FILE_ATTRIBUTE_UNIX_BLOCKS);
+			}
+			retloop.size += g_file_info_get_size (temp_info);
+			elements++;
+		}
+	}
+
+	/* won't be an error if we've finished normally */
+	if (err != NULL) {
+		g_warning ("error in dir %s: %s\n", 
+			   dir_path, err->message);
 	}
 
 	data.dir = string_to_display;
@@ -249,9 +284,12 @@ loopdir (GnomeVFSURI *vfs_uri_dir,
 	data.elements = elements;
 	data.tempHLsize = tempHLsize;
 	fill_model (&data);
+	g_object_unref (file_enum);
 
  exit:
-	g_free (dir);
+ 	g_object_unref (dir_info);
+	g_free (dir_uri);
+	g_free (dir_path);
 	g_free (string_to_display);
 
 	return retloop;
@@ -261,24 +299,19 @@ void
 getDir (const gchar *uri_dir)
 {
 	BaobabHardLinkArray *hla;
-	GnomeVFSURI *vfs_uri;
-	GnomeVFSFileInfo *info;
-
-	if (baobab_is_excluded_dir (uri_dir))
+	GFile *file;
+	
+	file = g_file_new_for_uri (uri_dir);
+	
+	if (baobab_is_excluded_location (file)) {
+		g_object_unref (file);
 		return;
+		}
 
 	hla = baobab_hardlinks_array_create ();
 
-	vfs_uri = gnome_vfs_uri_new (uri_dir);
-
-	info = gnome_vfs_file_info_new ();
-	gnome_vfs_get_file_info (uri_dir,
-				 info,
-	                         GNOME_VFS_FILE_INFO_DEFAULT);
-
-	loopdir (vfs_uri, info, 0, hla);
+	loopdir (file, 0, hla);
 
 	baobab_hardlinks_array_free (hla);
-	gnome_vfs_uri_unref (vfs_uri);
-	gnome_vfs_file_info_unref (info);
+	g_object_unref (file);
 }
