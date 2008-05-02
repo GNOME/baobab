@@ -26,9 +26,6 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glade/glade-xml.h>
-#include <libgnomevfs/gnome-vfs.h>
-#include <libgnomevfs/gnome-vfs-mime.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
 
 #include "baobab.h"
 #include "baobab-graphwin.h"

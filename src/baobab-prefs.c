@@ -26,7 +26,6 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <libgnomevfs/gnome-vfs.h>
 #include <gconf/gconf-client.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
@@ -362,9 +361,9 @@ list_find (gconstpointer a, gconstpointer b)
 {
 	gchar *str_a, *str_b;
 	gint ret;
-
-	str_a = gnome_vfs_format_uri_for_display (a);
-	str_b = gnome_vfs_format_uri_for_display (b);
+	
+	str_a = g_uri_unescape_string (a,NULL);
+	str_b = g_uri_unescape_string (b,NULL);
 
 	ret = strcmp (str_a, str_b);
 
