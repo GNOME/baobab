@@ -128,13 +128,9 @@ static const char *dir_attributes =
 	G_FILE_ATTRIBUTE_STANDARD_SIZE "," G_FILE_ATTRIBUTE_UNIX_BLOCKS "," \
 	G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
 
-static const char *child_attributes =
-	G_FILE_ATTRIBUTE_STANDARD_NAME "," G_FILE_ATTRIBUTE_STANDARD_TYPE "," \
-	G_FILE_ATTRIBUTE_UNIX_INODE "," G_FILE_ATTRIBUTE_UNIX_DEVICE;
-
-
 static struct allsizes
-loopdir (GFile	*file,
+loopdir (GFile *file,
+	 GFileInfo *info,
 	 guint count,
 	 BaobabHardLinkArray *hla)
 {
@@ -143,7 +139,7 @@ loopdir (GFile	*file,
 	gint elements = 0;
 	struct chan_data data;
 	struct allsizes retloop, temp;
-	GFileInfo *dir_info, *temp_info;
+	GFileInfo *temp_info;
 	GFileEnumerator *file_enum;
 	gchar *dir_uri = NULL;
 	gchar *dir_path = NULL;
@@ -165,42 +161,30 @@ loopdir (GFile	*file,
             (strcmp (dir_path, "/sys") == 0))
  		goto exit;
  
-	dir_info = g_file_query_info (file, dir_attributes,
-				      G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS,
-				      NULL, &err);
-
-	if (dir_info == NULL && err != NULL) {
-		g_warning ("couldn't get info for dir %s: %s\n",
-			   dir_path,
-			   err->message);
-		goto exit;
-	}
-
 	string_to_display = g_file_get_parse_name (file);	
-	
+
 	/* Folders we can't access (e.g perms 644). Skip'em. */
-	if (!g_file_info_get_attribute_boolean(dir_info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
-		goto exit;
-	if (g_file_info_get_file_type (dir_info) == G_FILE_TYPE_UNKNOWN)
+	if (!g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
 		goto exit;
 
-	if (g_file_info_has_attribute (dir_info, G_FILE_ATTRIBUTE_STANDARD_SIZE))
-		retloop.size = g_file_info_get_size (dir_info);
-	if (g_file_info_has_attribute (dir_info, G_FILE_ATTRIBUTE_UNIX_BLOCKS))
+	if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_SIZE))
+		retloop.size = g_file_info_get_size (info);
+
+	if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_UNIX_BLOCKS))
 		retloop.alloc_size = BLOCK_SIZE * 
-			g_file_info_get_attribute_uint64 (dir_info,
+			g_file_info_get_attribute_uint64 (info,
 							  G_FILE_ATTRIBUTE_UNIX_BLOCKS);
  
 	/* load up the file enumerator */
 	file_enum = g_file_enumerate_children (file,
-					child_attributes,
-					G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS,
-					NULL, &err);
+					       dir_attributes,
+					       G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS,
+					       NULL,
+					       &err);
 
-	if (file_enum == NULL && err != NULL) {
+	if (file_enum == NULL) {
 		g_warning ("couldn't get dir enum for dir %s: %s\n",
-			   dir_path,
-			   err->message);
+			   string_to_display, err->message);
 		goto exit;
 	}
 
@@ -235,7 +219,7 @@ loopdir (GFile	*file,
 		if (temp_type == G_FILE_TYPE_DIRECTORY) {
 			GFile *child_dir = g_file_get_child (file, 
 						g_file_info_get_name (temp_info));
-			temp = loopdir (child_dir, count, hla);
+			temp = loopdir (child_dir, temp_info, count, hla);
 			retloop.size += temp.size;
 			retloop.alloc_size += temp.alloc_size;
 			elements++;
@@ -267,6 +251,8 @@ loopdir (GFile	*file,
 			retloop.size += g_file_info_get_size (temp_info);
 			elements++;
 		}
+
+		g_object_unref (temp_info);
 	}
 
 	/* won't be an error if we've finished normally */
@@ -285,7 +271,6 @@ loopdir (GFile	*file,
 	g_object_unref (file_enum);
 
  exit:
- 	g_object_unref (dir_info);
 	g_free (dir_uri);
 	g_free (dir_path);
 	g_free (string_to_display);
@@ -297,13 +282,36 @@ void
 baobab_scan_execute (GFile *location)
 {
 	BaobabHardLinkArray *hla;
+	GFileInfo *info;
+	GError *err = NULL;
+	GFileType ftype;
 
 	g_return_if_fail (location != NULL);
 
-	hla = baobab_hardlinks_array_create ();
+	/* NOTE: for the root of the scan we follow symlinks */
+	info = g_file_query_info (location,
+				  dir_attributes,
+				  G_FILE_QUERY_INFO_NONE,
+				  NULL,
+				  &err);
 
-	loopdir (location, 0, hla);
+	if (info == NULL) {
+		char *parse_name = g_file_get_parse_name (location);
+		g_warning ("couldn't get info for dir %s: %s\n",
+			   parse_name, err->message);
+		return;
+	}
 
-	baobab_hardlinks_array_free (hla);
+	ftype = g_file_info_get_file_type (info);
+
+	if (ftype == G_FILE_TYPE_DIRECTORY) {
+		hla = baobab_hardlinks_array_create ();
+
+		loopdir (location, info, 0, hla);
+
+		baobab_hardlinks_array_free (hla);
+	}
+
+	g_object_unref (info);
 }
 
