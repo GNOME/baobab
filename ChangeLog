@@ -1,6 +1,13 @@
 2008-05-03  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab.c:
+	* src/baobab.h:
+	now that baobab-scan has been ported to gio baobab_is_excluded_dir
+	can be removed.
+
+2008-05-03  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.c:
 	* src/baobab-scan.c:
 	* src/baobab-utils.c:
 	Some leak fixes and cleanups by Cosimo Cecchi.

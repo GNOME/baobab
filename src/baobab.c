@@ -491,21 +491,6 @@ baobab_is_excluded_location (GFile *file)
 	return ret;
 }
 
-gboolean
-baobab_is_excluded_dir (const gchar *uri)
-{
-	gboolean ret = FALSE;
-	GFile	*file;
-
-	g_return_val_if_fail (uri != NULL, FALSE);
-
-	file = g_file_new_for_uri (uri);
-	ret = baobab_is_excluded_location (file);
-	g_object_unref (file);
-
-	return ret;
-}
-
 void
 set_toolbar_visible (gboolean visible)
 {
@@ -659,11 +644,42 @@ baobab_create_statusbar (void)
 }
 
 static void
+sanity_check_excluded_locations (void)
+{
+	GFile *root;
+
+	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
+	root = g_file_new_for_uri ("file:///");
+	if (baobab_is_excluded_location (root)) {
+		GSList *uri_list, *l;
+
+		baobab.excluded_locations = g_slist_delete_link (baobab.excluded_locations, 
+						g_slist_find (baobab.excluded_locations, 
+							      root));
+
+		for (l = baobab.excluded_locations; l != NULL; l = l->next) {
+			uri_list = g_slist_prepend (uri_list, g_file_get_uri(l->data));
+		}
+		
+		gconf_client_set_list (baobab.gconf_client,
+				       PROPS_SCAN_KEY,
+				       GCONF_VALUE_STRING, 
+				       uri_list,
+				       NULL);
+
+		g_slist_foreach (uri_list, (GFunc) g_free, NULL);
+		g_slist_free (uri_list);
+	}
+
+	g_object_unref (root);
+}
+
+static void
 baobab_init (void)
 {
-	GSList	*uri_list, *l;
-	GError	*error = NULL;
-	GFile	*file;
+	GSList *uri_list;
+	GFile *file;
+	GError *error = NULL;
 	monitor_home = NULL;
 
 	/* Load Glade */
@@ -690,34 +706,13 @@ baobab_init (void)
 						      PROPS_SCAN_KEY,
 						      GCONF_VALUE_STRING,
 						      NULL);
-	
-	baobab_set_excluded_locations(uri_list);
+
+	baobab_set_excluded_locations (uri_list);
 
 	g_slist_foreach (uri_list, (GFunc) g_free, NULL);
 	g_slist_free (uri_list);
 
-	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
-	if (baobab_is_excluded_dir ("file:///")) {
-		GFile 	*file;
-		
-		file = g_file_new_for_uri ("file:///");
-
-		baobab.excluded_locations = g_slist_delete_link (baobab.excluded_locations, 
-						g_slist_find (baobab.excluded_locations, 
-							file));
-		g_object_unref (file);
-		for (l = baobab.excluded_locations; l != NULL; l = l->next) {
-			uri_list = g_slist_prepend (uri_list, g_file_get_uri(l->data));
-		}
-		
-		gconf_client_set_list (baobab.gconf_client,
-				       PROPS_SCAN_KEY,
-				       GCONF_VALUE_STRING, 
-				       uri_list,
-				       NULL);
-		g_slist_foreach (uri_list, (GFunc) g_free, NULL);
-		g_slist_free (uri_list);
-	}
+	sanity_check_excluded_locations ();
 
 	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
 							    PROPS_ENABLE_HOME_MONITOR,

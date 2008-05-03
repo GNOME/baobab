@@ -98,7 +98,6 @@ void baobab_stop_scan (void);
 void fill_model (struct chan_data *);
 void first_row (void);
 gboolean baobab_is_excluded_location (GFile *);
-gboolean baobab_is_excluded_dir (const char *);
 void baobab_set_excluded_locations (GSList *);
 void set_toolbar_visible (gboolean visible);
 void set_statusbar_visible (gboolean visible);
