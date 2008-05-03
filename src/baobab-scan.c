@@ -123,9 +123,12 @@ struct allsizes {
 	goffset alloc_size;
 };
 
-static const char *dir_attributes = 
-	G_FILE_ATTRIBUTE_STANDARD_NAME "," G_FILE_ATTRIBUTE_STANDARD_TYPE "," \
-	G_FILE_ATTRIBUTE_STANDARD_SIZE "," G_FILE_ATTRIBUTE_UNIX_BLOCKS "," \
+static const char *dir_attributes = \
+	G_FILE_ATTRIBUTE_STANDARD_NAME "," \
+	G_FILE_ATTRIBUTE_STANDARD_TYPE "," \
+	G_FILE_ATTRIBUTE_STANDARD_SIZE "," \
+	G_FILE_ATTRIBUTE_UNIX_BLOCKS "," \
+	G_FILE_ATTRIBUTE_UNIX_NLINK "," \
 	G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
 
 static struct allsizes
