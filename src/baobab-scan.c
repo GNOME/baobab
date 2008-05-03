@@ -211,10 +211,6 @@ loopdir (GFile *file,
 			goto exit;
 		}
 
-		/* is a symlink? */
-		if (temp_type == G_FILE_TYPE_SYMBOLIC_LINK)
-			continue;
- 
 		/* is a directory? */
 		if (temp_type == G_FILE_TYPE_DIRECTORY) {
 			GFile *child_dir = g_file_get_child (file, 
@@ -239,6 +235,7 @@ loopdir (GFile *file,
 
 					/* we already acconted for it */
 					tempHLsize += g_file_info_get_size (temp_info);
+					g_object_unref (temp_info);
 					continue;
 				}
 			}
@@ -251,6 +248,8 @@ loopdir (GFile *file,
 			retloop.size += g_file_info_get_size (temp_info);
 			elements++;
 		}
+
+		/* ignore other types (symlinks, sockets, devices, etc) */
 
 		g_object_unref (temp_info);
 	}
