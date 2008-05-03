@@ -125,11 +125,32 @@ struct allsizes {
 
 static const char *dir_attributes = \
 	G_FILE_ATTRIBUTE_STANDARD_NAME "," \
+	G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME "," \
 	G_FILE_ATTRIBUTE_STANDARD_TYPE "," \
 	G_FILE_ATTRIBUTE_STANDARD_SIZE "," \
 	G_FILE_ATTRIBUTE_UNIX_BLOCKS "," \
 	G_FILE_ATTRIBUTE_UNIX_NLINK "," \
 	G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
+
+static gboolean
+is_virtual_filesystem (GFile *file)
+{
+	gboolean ret = FALSE;
+	char *path;
+	
+	path = g_file_get_path (file);
+
+	/* FIXME: we need a better way to check virtual FS */
+	if (path != NULL) {
+		if ((strcmp (path, "/proc") == 0) ||
+		    (strcmp (path, "/sys") == 0))
+	 		ret = TRUE;
+	}
+
+	g_free (path);
+
+	return ret;
+}
 
 static struct allsizes
 loopdir (GFile *file,
@@ -145,7 +166,7 @@ loopdir (GFile *file,
 	GFileInfo *temp_info;
 	GFileEnumerator *file_enum;
 	gchar *dir_uri = NULL;
-	gchar *dir_path = NULL;
+	gchar *display_name = NULL;
 	gchar *string_to_display = NULL;
 	GError *err = NULL;
 
@@ -153,15 +174,13 @@ loopdir (GFile *file,
 	retloop.size = 0;
 	retloop.alloc_size = 0;
 	dir_uri = g_file_get_uri (file);
-	dir_path = g_file_get_path (file);
 
 	/* Skip the user excluded folders */
 	if (baobab_is_excluded_location (file))
 		goto exit;
 
 	/* Skip the virtual file systems */
-	if ((strcmp (dir_path, "/proc") == 0) ||
-            (strcmp (dir_path, "/sys") == 0))
+	if (is_virtual_filesystem (file))
  		goto exit;
  
 	string_to_display = g_file_get_parse_name (file);	
@@ -177,7 +196,13 @@ loopdir (GFile *file,
 		retloop.alloc_size = BLOCK_SIZE * 
 			g_file_info_get_attribute_uint64 (info,
 							  G_FILE_ATTRIBUTE_UNIX_BLOCKS);
- 
+
+	if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME))
+		display_name = g_strdup (g_file_info_get_display_name (info));
+	else
+		/* paranoid fallback */
+		display_name = g_filename_display_basename (g_file_info_get_name (info));
+
 	/* load up the file enumerator */
 	file_enum = g_file_enumerate_children (file,
 					       dir_attributes,
@@ -200,6 +225,7 @@ loopdir (GFile *file,
 	data.alloc_size = 1;
 	data.depth = count - 1;
 	data.elements = -1;
+	data.display_name = display_name;
 	data.dir = string_to_display;
 	data.tempHLsize = tempHLsize;
 	fill_model (&data);
@@ -260,9 +286,10 @@ loopdir (GFile *file,
 	/* won't be an error if we've finished normally */
 	if (err != NULL) {
 		g_warning ("error in dir %s: %s\n", 
-			   dir_path, err->message);
+			   string_to_display, err->message);
 	}
 
+	data.display_name = display_name;
 	data.dir = string_to_display;
 	data.size = retloop.size;
 	data.alloc_size = retloop.alloc_size;
@@ -274,7 +301,7 @@ loopdir (GFile *file,
 
  exit:
 	g_free (dir_uri);
-	g_free (dir_path);
+	g_free (display_name);
 	g_free (string_to_display);
 	if (err)
 		g_error_free (err);

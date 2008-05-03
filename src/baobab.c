@@ -43,8 +43,6 @@
 static GVolumeMonitor 	 *monitor_vol;
 static GFileMonitor	 *monitor_home;
 
-static void check_UTF (GString *);
-
 static void push_iter_in_stack (GtkTreeIter *);
 static GtkTreeIter pop_iter_from_stack (void);
 
@@ -241,12 +239,9 @@ baobab_stop_scan (void)
 static void
 prefill_model (struct chan_data *data)
 {
-	GString *cdir;
-	char *basename;
 	GtkTreeIter iter, iterparent;
-	gchar *str;
-
-	cdir = g_string_new ("");
+	char *name;
+	char *str;
 
 	if (currentdepth == -1) {
 		gtk_tree_store_append (baobab.model, &iter, NULL);
@@ -282,30 +277,27 @@ prefill_model (struct chan_data *data)
 		}
 		gtk_tree_store_append (baobab.model, &iter, &tempiter);
 	}
+
 	currentdepth = data->depth;
 	push_iter_in_stack (&iter);
 	currentiter = iter;
 
-	basename = g_filename_display_basename (data->dir);
-	g_string_assign (cdir, basename);
-	g_free (basename);
-
-	/* check UTF-8 and locale */
-	check_UTF (cdir);
+	/* in case filenames contains gmarkup */
+	name = g_markup_escape_text (data->display_name, -1);
 
 	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning..."));
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
 	gtk_tree_store_set (baobab.model, &iter,
-			    COL_DIR_NAME, cdir->str,
+			    COL_DIR_NAME, name,
 			    COL_H_FULLPATH, "",
 			    COL_H_ELEMENTS, -1, 
  			    COL_H_PERC, -1.0,
 			    COL_DIR_SIZE, str,
 			    COL_ELEMENTS, str, -1);
 
-	g_string_free (cdir, TRUE);
-	g_free(str);
+	g_free (name);
+	g_free (str);
 
 	while (gtk_events_pending ()) {
 		gtk_main_iteration ();
@@ -348,25 +340,20 @@ fill_model (struct chan_data *data)
 {
 	GtkTreeIter iter;
 	GString *hardlinks;
-	GString *basename;
 	GString *elements;
+	char *name;
 	char *size;
 	char *alloc_size;
-	char *basename_cstr;
 
 	if (data->elements == -1) {
 		prefill_model (data);
 		return;
 	}
 
-	basename = g_string_new ("");
-	basename_cstr = g_filename_display_basename (data->dir);
-	g_string_assign (basename, basename_cstr);
-	g_free (basename_cstr);
-
-	check_UTF (basename);
-
 	iter = pop_iter_from_stack ();
+
+	/* in case filenames contains gmarkup */
+	name = g_markup_escape_text (data->display_name, -1);
 
 	hardlinks = g_string_new ("");
 	if (data->tempHLsize > 0) {
@@ -388,7 +375,7 @@ fill_model (struct chan_data *data)
 	alloc_size = g_format_size_for_display (data->alloc_size);
 
 	gtk_tree_store_set (baobab.model, &iter,
-			    COL_DIR_NAME, basename->str,
+			    COL_DIR_NAME, name,
 			    COL_H_FULLPATH, data->dir,
 			    COL_H_PERC, -1.0, 
 			    COL_DIR_SIZE,
@@ -405,8 +392,8 @@ fill_model (struct chan_data *data)
 	}
 
 	g_string_free (hardlinks, TRUE);
-	g_string_free (basename, TRUE);
 	g_string_free (elements, TRUE);
+	g_free (name);
 	g_free (size);
 	g_free (alloc_size);
 }
@@ -431,34 +418,6 @@ pop_iter_from_stack (void)
 	iter.user_data3 = g_queue_pop_head (iterstack);
 
 	return iter;
-}
-
-void
-check_UTF (GString *name)
-{
-	char *str;
-	char *escaped_str;
-
-	str = g_filename_to_utf8 (name->str, -1, NULL, NULL, NULL);
-
-	if (!str) {
-		str = g_locale_to_utf8 (name->str, -1, NULL, NULL, NULL);
-
-		if (!str) {
-			str = g_strjoin ("<i>",
-					 _("Invalid UTF-8 characters"),
-					 "</i>", NULL);
-		}
-	}
-
-	g_assert (str);
-
-	escaped_str = g_markup_escape_text (str, strlen (str));
-
-	g_string_assign (name, escaped_str);
-
-	g_free (str);
-	g_free (escaped_str);
 }
 
 void

@@ -2,6 +2,15 @@
 
 	* src/baobab.c:
 	* src/baobab.h:
+	* src/baobab-scan.c:
+	get the display name from gio instead of manually getting the basename.
+	Also be robust to the fact that remote files have no path, so that
+	needs to be checked before comparin with "/proc".
+
+2008-05-03  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab.c:
+	* src/baobab.h:
 	now that baobab-scan has been ported to gio baobab_is_excluded_dir
 	can be removed.
 

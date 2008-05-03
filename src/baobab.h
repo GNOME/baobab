@@ -81,6 +81,7 @@ struct chan_data {
 	guint64 tempHLsize;
 	guint depth;
 	gint elements;
+	gchar *display_name;
 	gchar *dir;
 };
 
