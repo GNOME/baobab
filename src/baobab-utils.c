@@ -277,41 +277,41 @@ messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gch
 gboolean
 baobab_check_dir (GFile	*file)
 {
-	char *error_msg = NULL;
-	gchar	*uri = NULL;
 	GFileInfo *info;
 	GError *error = NULL;
 	gboolean ret = TRUE;
 
-
-	info = g_file_query_info (file, "standard::*",
+	info = g_file_query_info (file,
+				  G_FILE_ATTRIBUTE_STANDARD_TYPE,
 				  G_FILE_QUERY_INFO_NONE,
 				  NULL,
 				  &error);
-	
-	if(!info) {
-		message("",error->message,
-			GTK_MESSAGE_INFO, baobab.window);
-		return FALSE;
-		}	
 
-	if ((error != NULL) ||
-	    (g_file_info_get_file_type (info) != G_FILE_TYPE_DIRECTORY)) { 
-	    	uri = g_file_get_uri(file);
+	if (!info) {
+		message("", error->message, GTK_MESSAGE_INFO, baobab.window);
+		g_error_free (error);
+
+		return FALSE;
+	}	
+
+	if (g_file_info_get_file_type (info) != G_FILE_TYPE_DIRECTORY) {
+		char *error_msg = NULL;
+		gchar *name = NULL;
+
+	    	name = g_file_get_parse_name (file);
 		error_msg = g_strdup_printf (_("\"%s\" is not a valid folder"),
-					     uri);
+					     name);
 
 		message (error_msg, _("Could not analyze disk usage."), 
 		         GTK_MESSAGE_ERROR, baobab.window);
 
 		g_free (error_msg);
-		if (error) g_error_free (error);
-		g_free (uri);
+		g_free (name);
 		ret = FALSE;
 	}
 
-	if (info) g_object_unref(info);
-	
+	g_object_unref(info);
+
 	return ret;
 }
 
@@ -416,14 +416,15 @@ show_label (void)
 void
 open_file_with_application (GFile *file)
 {
-	GAppInfo *application ;
+	GAppInfo *application;
 	gchar *primary;
 	GFileInfo *info;
 	gchar *uri_scheme;
-	const char  *content, *executable;
+	const char *content;
 	gboolean local = FALSE;
 
-	info = g_file_query_info (file, "standard::*",
+	info = g_file_query_info (file,
+				  G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE,
 				  G_FILE_QUERY_INFO_NONE,
 				  NULL,
 				  NULL);
@@ -434,8 +435,6 @@ open_file_with_application (GFile *file)
 	
 	content = g_file_info_get_content_type (info);
 	application = g_app_info_get_default_for_type (content, TRUE);
-	if (application) executable = g_app_info_get_executable (application);
-	
 
 	if (!application) {
 			primary = g_strdup_printf (_("Could not open folder \"%s\""), 
@@ -473,7 +472,8 @@ can_trash_file (GFile *file)
 	GFileInfo *info;
 	gboolean can_trash = FALSE;
 
-	info = g_file_query_info (file, "standard::*",
+	info = g_file_query_info (file,
+				  G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH,
 				  G_FILE_QUERY_INFO_NONE,
 				  NULL,
 				  NULL);
@@ -500,7 +500,8 @@ trash_file (GFile *file)
 		char *str = NULL;
 		char *mess;
 
-		info = g_file_query_info (file, "standard::*",
+		info = g_file_query_info (file,
+					  G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME,
 					  G_FILE_QUERY_INFO_NONE,
 					  NULL,
 					  NULL);

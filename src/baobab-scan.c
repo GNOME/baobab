@@ -274,6 +274,8 @@ loopdir (GFile *file,
 	g_free (dir_uri);
 	g_free (dir_path);
 	g_free (string_to_display);
+	if (err)
+		g_error_free (err);
 
 	return retloop;
 }
@@ -299,6 +301,9 @@ baobab_scan_execute (GFile *location)
 		char *parse_name = g_file_get_parse_name (location);
 		g_warning ("couldn't get info for dir %s: %s\n",
 			   parse_name, err->message);
+		g_free (parse_name);
+		g_error_free (err);
+
 		return;
 	}
 

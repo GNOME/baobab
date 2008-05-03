@@ -349,7 +349,7 @@ fill_model (struct chan_data *data)
 	GtkTreeIter iter;
 	GString *hardlinks;
 	GString *basename;
-	GString *elementi;
+	GString *elements;
 	char *size;
 	char *alloc_size;
 	char *basename_cstr;
@@ -379,8 +379,8 @@ fill_model (struct chan_data *data)
 		g_free (size);
 	}
 
-	elementi = g_string_new ("");
-	g_string_printf (elementi,
+	elements = g_string_new ("");
+	g_string_printf (elements,
 			 ngettext ("% 5d item", "% 5d items",
 				   data->elements), data->elements);
 
@@ -394,7 +394,7 @@ fill_model (struct chan_data *data)
 			    COL_DIR_SIZE,
 			    baobab.show_allocated ? alloc_size : size,
 			    COL_H_SIZE, data->size,
-			    COL_ELEMENTS, elementi->str,
+			    COL_ELEMENTS, elements->str,
 			    COL_H_ELEMENTS, data->elements,
 			    COL_HARDLINK, hardlinks->str,
 			    COL_H_HARDLINK, data->tempHLsize,
@@ -406,7 +406,7 @@ fill_model (struct chan_data *data)
 
 	g_string_free (hardlinks, TRUE);
 	g_string_free (basename, TRUE);
-	g_string_free (elementi, TRUE);
+	g_string_free (elements, TRUE);
 	g_free (size);
 	g_free (alloc_size);
 }
@@ -662,7 +662,10 @@ static void
 baobab_init (void)
 {
 	GSList	*uri_list, *l;
-	
+	GError	*error = NULL;
+	GFile	*file;
+	monitor_home = NULL;
+
 	/* Load Glade */
 	baobab.main_xml = glade_xml_new (BAOBAB_GLADE_FILE,
 					 "baobab_window", NULL);
@@ -725,18 +728,14 @@ baobab_init (void)
 	baobab_create_statusbar ();
 
 	/* start monitoring */
-	GError	*error = NULL;
-	GFile	*file;
-	monitor_home = NULL;
-
 	monitor_vol = g_volume_monitor_get ();
 	g_signal_connect (monitor_vol, "volume_changed",
 			  G_CALLBACK (volume_changed), NULL);
 
 	file = g_file_new_for_path (g_get_home_dir ());
-	monitor_home = g_file_monitor_directory (file, 0, NULL, NULL);
+	monitor_home = g_file_monitor_directory (file, 0, NULL, &error);
 	g_object_unref (file);
-		
+
 	if (!monitor_home) {
 		message (_("Could not initialize monitoring"),
 			 _("Changes to your home folder will not be monitored."),
