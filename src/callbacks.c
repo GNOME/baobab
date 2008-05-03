@@ -210,12 +210,7 @@ open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
-	if (baobab.is_local) {
-		file = g_file_new_for_path (baobab.selected_path);
-	}
-	else {
-		file = g_file_new_for_uri (baobab.selected_path);
-	}
+	file = g_file_parse_name (baobab.selected_path);
 
 	if (!g_file_query_exists (file, NULL)) {
 		message (_("The document does not exist."), "",
@@ -234,7 +229,7 @@ graph_map_cb (GtkMenuItem *pmenu, gchar *path_to_string)
 	baobab_graphwin_create (GTK_TREE_MODEL (baobab.model),
 				path_to_string,
 				BAOBAB_GLADE_FILE,
-				COL_H_FULLPATH,
+				COL_H_PARSENAME,
 				baobab.is_local ? COL_H_ALLOCSIZE : COL_H_SIZE,
 				-1);
 	g_free (path_to_string);
@@ -248,12 +243,7 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
-	if (baobab.is_local) {
-		file = g_file_new_for_path (baobab.selected_path);
-	}
-	else {
-		file = g_file_new_for_uri (baobab.selected_path);
-	}
+	file = g_file_parse_name (baobab.selected_path);
 
 	if (trash_file (file)) {
 		GtkTreeIter iter;
@@ -408,9 +398,9 @@ scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
-	file = g_file_new_for_uri (baobab.selected_path);
+	file = g_file_parse_name (baobab.selected_path);
 
-	if (!g_file_query_exists(file,NULL)) {
+	if (!g_file_query_exists (file, NULL)) {
 		message (_("The folder does not exist."), "", GTK_MESSAGE_INFO, baobab.window);
 	}
 

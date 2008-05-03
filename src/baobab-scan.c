@@ -167,7 +167,7 @@ loopdir (GFile *file,
 	GFileEnumerator *file_enum;
 	gchar *dir_uri = NULL;
 	gchar *display_name = NULL;
-	gchar *string_to_display = NULL;
+	gchar *parse_name = NULL;
 	GError *err = NULL;
 
 	count++;
@@ -183,7 +183,7 @@ loopdir (GFile *file,
 	if (is_virtual_filesystem (file))
  		goto exit;
  
-	string_to_display = g_file_get_parse_name (file);	
+	parse_name = g_file_get_parse_name (file);	
 
 	/* Folders we can't access (e.g perms 644). Skip'em. */
 	if (!g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
@@ -212,7 +212,7 @@ loopdir (GFile *file,
 
 	if (file_enum == NULL) {
 		g_warning ("couldn't get dir enum for dir %s: %s\n",
-			   string_to_display, err->message);
+			   parse_name, err->message);
 		goto exit;
 	}
 
@@ -226,7 +226,7 @@ loopdir (GFile *file,
 	data.depth = count - 1;
 	data.elements = -1;
 	data.display_name = display_name;
-	data.dir = string_to_display;
+	data.parse_name = parse_name;
 	data.tempHLsize = tempHLsize;
 	fill_model (&data);
 
@@ -286,11 +286,11 @@ loopdir (GFile *file,
 	/* won't be an error if we've finished normally */
 	if (err != NULL) {
 		g_warning ("error in dir %s: %s\n", 
-			   string_to_display, err->message);
+			   parse_name, err->message);
 	}
 
 	data.display_name = display_name;
-	data.dir = string_to_display;
+	data.parse_name = parse_name;
 	data.size = retloop.size;
 	data.alloc_size = retloop.alloc_size;
 	data.depth = count - 1;
@@ -302,7 +302,7 @@ loopdir (GFile *file,
  exit:
 	g_free (dir_uri);
 	g_free (display_name);
-	g_free (string_to_display);
+	g_free (parse_name);
 	if (err)
 		g_error_free (err);
 

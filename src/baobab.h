@@ -82,7 +82,7 @@ struct chan_data {
 	guint depth;
 	gint elements;
 	gchar *display_name;
-	gchar *dir;
+	gchar *parse_name;
 };
 
 /* globals */

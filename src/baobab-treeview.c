@@ -39,7 +39,7 @@ create_model (void)
 {
 	GtkTreeStore *mdl = gtk_tree_store_new (NUM_TREE_COLUMNS,
 						G_TYPE_STRING,	/* COL_DIR_NAME */
-						G_TYPE_STRING,	/* COL_H_FULLPATH */
+						G_TYPE_STRING,	/* COL_H_PARSENAME */
 						G_TYPE_DOUBLE,	/* COL_H_PERC */
 						G_TYPE_STRING,	/* COL_DIR_SIZE */
 						G_TYPE_UINT64,	/* COL_H_SIZE */
@@ -65,30 +65,23 @@ on_tv_row_expanded (GtkTreeView *treeview,
 static void
 on_tv_cur_changed (GtkTreeView *treeview, gpointer data)
 {
-
 	GtkTreeIter iter;
-	gchar *text = NULL;
+	gchar *parsename = NULL;
 
 	gtk_tree_selection_get_selected (gtk_tree_view_get_selection (treeview), NULL, &iter);
 
 	if (gtk_tree_store_iter_is_valid (baobab.model, &iter)) {
-			gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
-				    COL_H_FULLPATH, &text, -1);
+		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
+				    COL_H_PARSENAME, &parsename, -1);
 	}
-	
+
 	set_glade_widget_sens("menu_treemap",FALSE);
-	if (text) {
-		gchar *msg;
+	if (parsename) {
+		set_statusbar (parsename);
+		if (strcmp (parsename, "") != 0)
+			set_glade_widget_sens("menu_treemap", TRUE);
 
-		/* make sure it is utf8 */
-		msg = g_filename_display_name (text);
-
-		set_statusbar (msg);
-		if (strcmp (text, "") != 0 )
-			set_glade_widget_sens("menu_treemap",TRUE);
-
-		g_free (msg);
-		g_free (text);
+		g_free (parsename);
 	}
 }
 
@@ -123,10 +116,10 @@ on_tv_button_press (GtkWidget *widget,
 	gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &iter,
 				 path);
 	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
-			    COL_H_FULLPATH, &baobab.selected_path, -1);
+			    COL_H_PARSENAME, &baobab.selected_path, -1);
 	
 	if (strcmp (baobab.selected_path, "") == 0) {
-		set_glade_widget_sens("menu_treemap",FALSE);
+		set_glade_widget_sens ("menu_treemap",FALSE);
 		gtk_tree_path_free (path);
 		return FALSE;
 	}
@@ -135,12 +128,7 @@ on_tv_button_press (GtkWidget *widget,
 	if (event->button == 3) {
 		GFile *file;
 
-		if (baobab.is_local) {
-			file = g_file_new_for_path (baobab.selected_path);
-		}
-		else {
-			file = g_file_new_for_uri (baobab.selected_path);
-		}
+		file = g_file_parse_name (baobab.selected_path);
 
 		popupmenu_list (path, event, can_trash_file (file));
 

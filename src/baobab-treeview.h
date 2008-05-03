@@ -29,7 +29,7 @@
 enum
 {
 	COL_DIR_NAME,
-	COL_H_FULLPATH,
+	COL_H_PARSENAME,
 	COL_H_PERC,
 	COL_DIR_SIZE,
 	COL_H_SIZE,
@@ -39,20 +39,6 @@ enum
 	COL_HARDLINK,
 	COL_H_HARDLINK,
 	NUM_TREE_COLUMNS
-};
-
-/* search model columns */
-enum
-{
-	COL0_ICON,
-	COL1_STRING,
-	COL2_STRING,
-	COL_FULLPATH,
-	COL_LASTACCESS,
-	COL_SIZE,
-	COL_FILETYPE,
-	COL_OWNER,	
-	NUM_COLUMNS
 };
 
 GtkWidget *create_directory_treeview (void);

@@ -290,7 +290,7 @@ prefill_model (struct chan_data *data)
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, name,
-			    COL_H_FULLPATH, "",
+			    COL_H_PARSENAME, "",
 			    COL_H_ELEMENTS, -1, 
  			    COL_H_PERC, -1.0,
 			    COL_DIR_SIZE, str,
@@ -323,7 +323,7 @@ first_row (void)
 	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
 	gtk_tree_store_set (baobab.model, &firstiter,
 			    COL_DIR_NAME, label,
-			    COL_H_FULLPATH, "",
+			    COL_H_PARSENAME, "",
 			    COL_H_PERC, perc,
 			    COL_DIR_SIZE, size,
 			    COL_H_SIZE, g_fs.used,
@@ -376,8 +376,8 @@ fill_model (struct chan_data *data)
 
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, name,
-			    COL_H_FULLPATH, data->dir,
-			    COL_H_PERC, -1.0, 
+			    COL_H_PARSENAME, data->parse_name,
+			    COL_H_PERC, -1.0,
 			    COL_DIR_SIZE,
 			    baobab.show_allocated ? alloc_size : size,
 			    COL_H_SIZE, data->size,
@@ -738,7 +738,7 @@ initialize_ringschart (void)
                                                   GTK_TREE_MODEL (baobab.model),
                                                   COL_DIR_NAME,
                                                   COL_DIR_SIZE,
-                                                  COL_H_FULLPATH,
+                                                  COL_H_PARSENAME,
                                                   COL_H_PERC,
                                                   COL_H_ELEMENTS,
                                                   NULL);
