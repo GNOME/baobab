@@ -31,6 +31,7 @@
 #define BAOBAB_REMOTE_CONNECT_DIALOG_H
 
 #include <gtk/gtkdialog.h>
+#include <gio/gio.h>
 
 
 #define BAOBAB_TYPE_REMOTE_CONNECT_DIALOG         (baobab_remote_connect_dialog_get_type())

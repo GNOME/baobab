@@ -27,7 +27,6 @@
 #include <gio/gio.h>
 #include <libgnomeui/libgnomeui.h>
 #include <libgnomeui/gnome-ui-init.h>
-#include <libgnomevfs/gnome-vfs.h>
 #include <gconf/gconf-client.h>
 #include <glibtop.h>
 
@@ -793,7 +792,6 @@ main (int argc, char *argv[])
 
 	g_set_application_name ("Baobab");
 
-	g_assert (gnome_vfs_init ());
 	gnome_authentication_manager_init ();
 	glibtop_init ();
 
@@ -865,7 +863,6 @@ main (int argc, char *argv[])
 	baobab_shutdown ();
 
 	glibtop_close ();
-	gnome_vfs_shutdown ();
 
 	g_object_unref (program);
 
