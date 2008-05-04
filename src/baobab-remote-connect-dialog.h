@@ -53,12 +53,6 @@ struct _BaobabRemoteConnectDialogClass {
 
 GType      baobab_remote_connect_dialog_get_type (void);
 GtkWidget* baobab_remote_connect_dialog_new      (GtkWindow *window, 
-						    const gchar *uri);
+						  GFile *location);
 
-char      *baobab_remote_connect_dialog_get_uri (BaobabRemoteConnectDialog *dlg);
-
-/* Private internal calls */
-
-
-						     
 #endif /* BAOBAB_REMOTE_CONNECT_DIALOG_H */

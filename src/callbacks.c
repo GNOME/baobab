@@ -153,27 +153,13 @@ on_tbscanall_clicked (GtkToolButton *toolbutton, gpointer user_data)
 void
 on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
-	gint response;
 	GtkWidget *dlg;
-	char *uri = NULL;
-
+	
 	dlg = baobab_remote_connect_dialog_new (GTK_WINDOW (baobab.window),
 						NULL);
-	response = gtk_dialog_run (GTK_DIALOG (dlg));
-
-	if (response == GTK_RESPONSE_OK) {
-		uri = baobab_remote_connect_dialog_get_uri (BAOBAB_REMOTE_CONNECT_DIALOG (dlg));
-	}
+	gtk_dialog_run (GTK_DIALOG (dlg));
 
 	gtk_widget_destroy (dlg);
-
-	if (uri) {
-		GFile *file;
-		file = g_file_new_for_uri (uri);
-		baobab_scan_location (file);
-		g_object_unref (file);
-		g_free (uri);
-	}
 }
 
 void
