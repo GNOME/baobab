@@ -61,7 +61,7 @@ G_DEFINE_TYPE(BaobabRemoteConnectDialog, baobab_remote_connect_dialog, GTK_TYPE_
 static void
 display_error_dialog (GError *error, 
 		      GFile *location,
-		      GtkWidget *parent)
+		      GtkWindow *parent)
 {
 	GtkWidget *dlg;
 	char *parse_name;
@@ -72,7 +72,7 @@ display_error_dialog (GError *error,
 					 parse_name);
 	g_free (parse_name);
 
-	dlg = gtk_message_dialog_new (GTK_WINDOW (parent),
+	dlg = gtk_message_dialog_new (parent,
 				      GTK_DIALOG_DESTROY_WITH_PARENT,
 				      GTK_MESSAGE_ERROR,
 				      GTK_BUTTONS_OK,
@@ -90,17 +90,22 @@ display_error_dialog (GError *error,
 static void
 mount_enclosing_ready_cb (GFile *location,
 			  GAsyncResult *res,
-			  GtkWidget *widget)
+			  GtkWindow *app)
 {
+	gboolean success;
 	GError *error = NULL;
-	
+
 	g_file_mount_enclosing_volume_finish (location,
 					      res, &error);
-	if (error) {
-		display_error_dialog (error, location, widget);
-	} else {
-		/* volume is mounted, show it */
+	success = g_file_mount_enclosing_volume_finish (location,
+							res, &error);
+
+	if (success ||
+	    g_error_matches (error, G_IO_ERROR, G_IO_ERROR_ALREADY_MOUNTED)) {
 		baobab_scan_location (location);
+	}
+	else {
+		display_error_dialog (error, location, app);
 	}
 
 	if (location)
@@ -108,7 +113,8 @@ mount_enclosing_ready_cb (GFile *location,
 }
 
 static void
-connect_server_dialog_present_uri (GFile *location,
+connect_server_dialog_present_uri (GtkWindow *app,
+				   GFile *location,
 				   GtkWidget *widget)
 {
 	GMountOperation *op;
@@ -119,7 +125,7 @@ connect_server_dialog_present_uri (GFile *location,
 				       0, op,
 				       NULL,
 				       (GAsyncReadyCallback) mount_enclosing_ready_cb,
-				       widget);
+				       app);
 }
 
 struct MethodInfo {
@@ -201,7 +207,7 @@ baobab_remote_connect_dialog_finalize (GObject *object)
 }
 
 static void
-connect_to_server (BaobabRemoteConnectDialog *dialog)
+connect_to_server (BaobabRemoteConnectDialog *dialog, GtkWindow *app)
 {
 	struct MethodInfo *meth;
 	char *uri;
@@ -340,25 +346,25 @@ connect_to_server (BaobabRemoteConnectDialog *dialog)
 	location = g_file_new_for_uri (uri);
 	g_free (uri);
 
-	connect_server_dialog_present_uri (location,
+	connect_server_dialog_present_uri (app,
+					   location,
 					   GTK_WIDGET (dialog));
 }
 
 static void
 response_callback (BaobabRemoteConnectDialog *dialog,
 		   int response_id,
-		   gpointer data)
+		   GtkWindow *app)
 {
 	GError *error;
 
 	switch (response_id) {
 	case RESPONSE_CONNECT:
-		connect_to_server (dialog);
+		connect_to_server (dialog, app);
 		break;
 	case GTK_RESPONSE_NONE:
 	case GTK_RESPONSE_DELETE_EVENT:
 	case GTK_RESPONSE_CANCEL:
-		gtk_widget_destroy (GTK_WIDGET (dialog));
 		break;
 	default :
 		g_assert_not_reached ();
@@ -444,6 +450,8 @@ setup_for_type (BaobabRemoteConnectDialog *dialog)
 				  0, 0);
 
 		i++;
+
+		return;
 	}
 	
 	label = gtk_label_new_with_mnemonic (_("_Server:"));
@@ -758,34 +766,28 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 	
 	setup_for_type (dialog);
 	
-        gtk_dialog_add_button (GTK_DIALOG (dialog),
-                               GTK_STOCK_HELP,
-                               GTK_RESPONSE_HELP);
 	gtk_dialog_add_button (GTK_DIALOG (dialog),
 			       GTK_STOCK_CANCEL,
 			       GTK_RESPONSE_CANCEL);
 	gtk_dialog_add_button (GTK_DIALOG (dialog),
-			       _("C_onnect"),
+			       _("_Scan"),
 			       RESPONSE_CONNECT);
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog),
 					 RESPONSE_CONNECT);
-
-	g_signal_connect (dialog, "response",
-			  G_CALLBACK (response_callback),
-			  dialog);
 }
 
 GtkWidget *
 baobab_remote_connect_dialog_new (GtkWindow *window, GFile *location)
 {
-	BaobabRemoteConnectDialog *conndlg;
 	GtkWidget *dialog;
 
 	dialog = gtk_widget_new (BAOBAB_TYPE_REMOTE_CONNECT_DIALOG, NULL);
 
-	if (window) {
-		conndlg = BAOBAB_REMOTE_CONNECT_DIALOG(dialog);
+	g_signal_connect (dialog, "response",
+			  G_CALLBACK (response_callback),
+			  window);
 
+	if (window) {
 		gtk_window_set_screen (GTK_WINDOW (dialog),
 				       gtk_window_get_screen (GTK_WINDOW (window)));
 	}
