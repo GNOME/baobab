@@ -28,6 +28,7 @@
 
 #include <config.h>
 #include "baobab-remote-connect-dialog.h"
+#include "baobab-mount-operation.h"
 
 #include <string.h>
 #include <glib/gi18n.h>
@@ -121,8 +122,8 @@ connect_server_dialog_present_uri (GtkWindow *app,
 {
 	GMountOperation *op;
 
-/*	op = eel_mount_operation_new (GTK_WINDOW (widget));*/
-	op = g_mount_operation_new ();
+	op = baobab_mount_operation_new (GTK_WINDOW (widget));
+
 	g_file_mount_enclosing_volume (location,
 				       0, op,
 				       NULL,

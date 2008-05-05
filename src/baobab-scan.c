@@ -185,10 +185,6 @@ loopdir (GFile *file,
  
 	parse_name = g_file_get_parse_name (file);	
 
-	/* Folders we can't access (e.g perms 644). Skip'em. */
-	if (!g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ))
-		goto exit;
-
 	if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_SIZE))
 		retloop.size = g_file_info_get_size (info);
 
@@ -211,8 +207,10 @@ loopdir (GFile *file,
 					       &err);
 
 	if (file_enum == NULL) {
-		g_warning ("couldn't get dir enum for dir %s: %s\n",
-			   parse_name, err->message);
+		if (!g_error_matches (err, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED)) {
+			g_warning ("couldn't get dir enum for dir %s: %s\n",
+			   	parse_name, err->message);
+		}
 		goto exit;
 	}
 
