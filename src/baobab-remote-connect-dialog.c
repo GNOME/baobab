@@ -95,8 +95,7 @@ mount_enclosing_ready_cb (GFile *location,
 	gboolean success;
 	GError *error = NULL;
 
-	g_file_mount_enclosing_volume_finish (location,
-					      res, &error);
+	
 	success = g_file_mount_enclosing_volume_finish (location,
 							res, &error);
 
