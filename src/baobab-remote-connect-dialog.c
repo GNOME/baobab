@@ -108,6 +108,9 @@ mount_enclosing_ready_cb (GFile *location,
 		display_error_dialog (error, location, app);
 	}
 
+	if (error)
+		g_error_free (error);
+
 	if (location)
 		g_object_unref (location);
 }
