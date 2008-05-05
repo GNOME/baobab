@@ -44,7 +44,6 @@ baobab_SOURCES = \
 
 baobab_CFLAGS = 			\
 	$(GNOME_UTILS_CFLAGS)		\
-	$(GNOMEVFS_CFLAGS)		\
 	$(LIBGLADE_CFLAGS)		\
 	$(GNOMECANVAS_CFLAGS)		\
 	$(LIBGTOP_CFLAGS)		\
@@ -53,7 +52,6 @@ baobab_CFLAGS = 			\
 baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = 				\
 	$(GNOME_UTILS_LIBS)		\
-	$(GNOMEVFS_LIBS)		\
 	$(LIBGLADE_LIBS)		\
 	$(GNOMECANVAS_LIBS)		\
 	$(LIBGTOP_LIBS)			\
