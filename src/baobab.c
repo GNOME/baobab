@@ -172,6 +172,8 @@ baobab_scan_location (GFile *file)
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars,
 				NULL);
+
+	baobab_ringschart_set_max_depth (baobab.ringschart, baobab.model_max_depth);
 	baobab_set_busy (FALSE);
 	check_menu_sens (FALSE);
 	set_statusbar (_("Ready"));
@@ -602,6 +604,18 @@ baobab_create_statusbar (void)
 }
 
 static void
+baobab_subfolderstips_toggled (GConfClient *client,
+			       guint cnxn_id,
+			       GConfEntry *entry,
+			       gpointer user_data)
+{
+        baobab_ringschart_set_subfoldertips_enabled (baobab.ringschart,
+						     gconf_client_get_bool (baobab.gconf_client,
+									    BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
+									    NULL));
+}
+
+static void
 sanity_check_excluded_locations (void)
 {
 	GFile *root;
@@ -660,6 +674,9 @@ baobab_init (void)
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE, baobab_toolbar_style,
 				 NULL, NULL, NULL);				 
+	gconf_client_notify_add (baobab.gconf_client, BAOBAB_SUBFLSTIPS_VISIBLE_KEY, baobab_subfolderstips_toggled,
+				 NULL, NULL, NULL);
+
 	uri_list = gconf_client_get_list (baobab.gconf_client,
 						      PROPS_SCAN_KEY,
 						      GCONF_VALUE_STRING,
@@ -727,10 +744,51 @@ baobab_shutdown (void)
 }
 
 static void
+create_context_menu (void)
+{
+	ContextMenu *menu = NULL;
+
+	baobab.rchart_menu = g_new0 (ContextMenu, 1);
+	menu = baobab.rchart_menu;
+
+	menu->widget = gtk_menu_new ();
+		
+	menu->up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder")); 
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->up_item), 
+				       gtk_image_new_from_stock(GTK_STOCK_GO_UP, GTK_ICON_SIZE_MENU));
+		
+	menu->zoom_in_item = gtk_image_menu_item_new_with_label (_("Zoom in")) ;
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_in_item), 
+				       gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_MENU));
+        
+	menu->zoom_out_item = gtk_image_menu_item_new_with_label (_("Zoom out"));
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item), 
+				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));       
+		
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
+			       menu->up_item);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
+			       menu->zoom_in_item);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
+			       menu->zoom_out_item);
+
+	/* connect signals */
+	g_signal_connect (menu->up_item, "activate",
+			  G_CALLBACK (on_move_upwards_cb), NULL);
+	g_signal_connect (menu->zoom_in_item, "activate",
+			  G_CALLBACK (on_zoom_in_cb), NULL);
+	g_signal_connect (menu->zoom_out_item, "activate",
+			  G_CALLBACK (on_zoom_out_cb), NULL);
+	
+	gtk_widget_show_all (menu->widget);
+}
+
+static void
 initialize_ringschart (void)
 {
         GtkWidget *hpaned_main;
         GtkWidget *ringschart_frame;
+        ContextMenu *menu = NULL;
 
         baobab.ringschart = GTK_WIDGET (baobab_ringschart_new ());
         baobab_ringschart_set_model_with_columns (baobab.ringschart,
@@ -742,6 +800,13 @@ initialize_ringschart (void)
                                                   COL_H_ELEMENTS,
                                                   NULL);
         baobab_ringschart_set_init_depth (baobab.ringschart, 1);
+
+	baobab_ringschart_set_max_depth (baobab.ringschart, 1);
+
+	baobab_ringschart_set_subfoldertips_enabled(baobab.ringschart, 
+						    gconf_client_get_bool (baobab.gconf_client,
+									   BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
+									   NULL));
 
         g_signal_connect (baobab.ringschart, "sector_activated",
                           G_CALLBACK (on_rchart_sector_activated), NULL);
@@ -759,6 +824,11 @@ initialize_ringschart (void)
         gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
 
         baobab_ringschart_draw_center (baobab.ringschart, TRUE);
+
+	create_context_menu ();
+
+	g_signal_connect (baobab.ringschart, "button-release-event", 
+			  G_CALLBACK (on_rchart_button_release), NULL);
 
         gtk_widget_show_all (ringschart_frame);
 }

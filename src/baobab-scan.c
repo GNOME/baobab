@@ -121,6 +121,7 @@ baobab_hardlinks_array_free (BaobabHardLinkArray *a)
 struct allsizes {
 	goffset size;
 	goffset alloc_size;
+	gint depth;
 };
 
 static const char *dir_attributes = \
@@ -156,7 +157,8 @@ static struct allsizes
 loopdir (GFile *file,
 	 GFileInfo *info,
 	 guint count,
-	 BaobabHardLinkArray *hla)
+	 BaobabHardLinkArray *hla,
+	 gint current_depth)
 {
 	GList *file_list;
 	guint64 tempHLsize = 0;
@@ -173,7 +175,7 @@ loopdir (GFile *file,
 	count++;
 	retloop.size = 0;
 	retloop.alloc_size = 0;
-	dir_uri = g_file_get_uri (file);
+	retloop.depth = 0;
 
 	/* Skip the user excluded folders */
 	if (baobab_is_excluded_location (file))
@@ -242,9 +244,10 @@ loopdir (GFile *file,
 		if (temp_type == G_FILE_TYPE_DIRECTORY) {
 			GFile *child_dir = g_file_get_child (file, 
 						g_file_info_get_name (temp_info));
-			temp = loopdir (child_dir, temp_info, count, hla);
+			temp = loopdir (child_dir, temp_info, count, hla, current_depth+1);
 			retloop.size += temp.size;
 			retloop.alloc_size += temp.alloc_size;
+			retloop.depth = ((temp.depth + 1) > retloop.depth) ? temp.depth + 1 : retloop.depth;
 			elements++;
 			g_object_unref (child_dir);
 		}
@@ -314,6 +317,7 @@ baobab_scan_execute (GFile *location)
 	GFileInfo *info;
 	GError *err = NULL;
 	GFileType ftype;
+	struct allsizes sizes;
 
 	g_return_if_fail (location != NULL);
 
@@ -339,7 +343,8 @@ baobab_scan_execute (GFile *location)
 	if (ftype == G_FILE_TYPE_DIRECTORY) {
 		hla = baobab_hardlinks_array_create ();
 
-		loopdir (location, info, 0, hla);
+		sizes = loopdir (location, info, 0, hla, 0);
+		baobab.model_max_depth = sizes.depth;
 
 		baobab_hardlinks_array_free (hla);
 	}

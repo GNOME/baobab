@@ -68,5 +68,9 @@ void on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data);
 void on_rchart_sector_activated (BaobabRingschart *rchart, GtkTreeIter *iter);
+gboolean on_rchart_button_release (BaobabRingschart *rchart, GdkEventButton *event, gpointer data);
+void on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+void on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+void on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 
 #endif /* __BAOBAB_CALLBACKS_H__ */

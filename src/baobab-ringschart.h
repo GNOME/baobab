@@ -1,7 +1,7 @@
 /*
  * baobab-ringschart.h
  *
- * Copyright (C) 2006 igalia
+ * Copyright (C) 2006, 2007, 2008 Igalia
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,10 +19,15 @@
  * Boston, MA  02110-1301  USA
  *
  * Authors:
+ *   Felipe Erias <femorandeira@igalia.com>
+ *   Pablo Santamaria <psantamaria@igalia.com>
+ *   Jacobo Aragunde <jaragunde@igalia.com>
+ *   Eduardo Lima <elima@igalia.com>
  *   Mario Sanchez <msanchez@igalia.com>
- *   Miguel Gomez <mgomez@igalia.com>
+ *   Miguel Gomez <magomez@igalia.com>
  *   Henrique Ferreiro <hferreiro@igalia.com>
  *   Alejandro Pinheiro <apinheiro@igalia.com>
+ *   Carlos Sanmartin <csanmartin@igalia.com>
  *   Alejandro Garcia <alex@igalia.com>
  */
 
@@ -33,6 +38,8 @@
 #include <gtk/gtktreemodel.h>
 
 G_BEGIN_DECLS
+
+#define MAX_DRAWABLE_DEPTH 8
 
 #define BAOBAB_RINGSCHART_TYPE		(baobab_ringschart_get_type ())
 #define BAOBAB_RINGSCHART(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), BAOBAB_RINGSCHART_TYPE, BaobabRingschart))
@@ -89,6 +96,9 @@ void baobab_ringschart_set_init_depth (GtkWidget *rchart,
                                        guint depth);
 void baobab_ringschart_draw_center (GtkWidget *rchart, 
                                     gboolean draw_center);
+void baobab_ringschart_set_subfoldertips_enabled (GtkWidget *rchart, 
+                                                  gboolean enabled);
+gboolean baobab_ringschart_get_subfoldertips_enabled (GtkWidget *rchart);
 
 G_END_DECLS
 

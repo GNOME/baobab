@@ -42,16 +42,27 @@ struct BaobabSearchOpt;
 #define BAOBAB_KEY_DIR "/apps/baobab"
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
 #define BAOBAB_STATUSBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/statusbar_visible"
+#define BAOBAB_SUBFLSTIPS_VISIBLE_KEY   BAOBAB_KEY_DIR "/ui/baobab_subfoldertips_visible"
 #define PROPS_SCAN_KEY			BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
 #define PROPS_ENABLE_HOME_MONITOR	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
 #define SYSTEM_TOOLBAR_STYLE		"/desktop/gnome/interface/toolbar_style"
 
+typedef struct _ContextMenu ContextMenu;
+
+struct _ContextMenu {
+	GtkWidget* widget;
+	GtkWidget* up_item;
+	GtkWidget* zoom_in_item;
+	GtkWidget* zoom_out_item;
+	GtkWidget* subfolders_item;
+};
 
 struct _baobab_application {
 	GladeXML *main_xml;
   	GtkWidget *window;
   	GtkWidget *tree_view;
   	GtkWidget *ringschart;
+	ContextMenu *rchart_menu;
 	GtkWidget *toolbar;
 	GtkWidget *spinner;
 	GtkWidget *statusbar;
@@ -67,6 +78,7 @@ struct _baobab_application {
 	char *selected_path;
 
 	GConfClient *gconf_client;
+	gint model_max_depth;
 };
 
 struct _baobab_fs {

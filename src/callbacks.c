@@ -424,3 +424,85 @@ on_rchart_sector_activated (BaobabRingschart *rchart, GtkTreeIter *iter)
 				  path, NULL, FALSE);
 	gtk_tree_path_free (path);
 }
+
+
+gboolean
+on_rchart_button_release (BaobabRingschart *rchart, GdkEventButton *event,
+                          gpointer data)
+{
+  ContextMenu *menu = baobab.rchart_menu;
+  
+  if (event->button== 3) /* right button */
+    {
+      GtkTreePath *root_path = NULL;
+
+      root_path = baobab_ringschart_get_root (baobab.ringschart);
+
+      gtk_widget_set_sensitive (menu->up_item,
+                                ((root_path != NULL) &&
+                                 (gtk_tree_path_get_depth (root_path) > 1)));
+      gtk_widget_set_sensitive (menu->zoom_in_item,
+                                (baobab_ringschart_get_max_depth (baobab.ringschart) > 1));
+      gtk_widget_set_sensitive (menu->zoom_out_item,
+                                (baobab_ringschart_get_max_depth (baobab.ringschart) < MAX_DRAWABLE_DEPTH));
+
+      /* show the menu */
+      gtk_menu_popup (GTK_MENU (menu->widget), NULL, NULL, NULL, NULL,
+                      event->button, event->time);
+      
+      gtk_tree_path_free (root_path);
+    }
+ 
+  return FALSE;
+}
+
+void
+on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
+{
+  GtkTreePath *path = baobab_ringschart_get_root (baobab.ringschart);
+
+  /* Go back to the parent dir */
+  if (path != NULL)
+    {
+      GtkTreeIter parent_iter;
+      GtkTreeIter root_iter;
+
+      if (path != NULL)
+        {
+          gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &root_iter, path);
+
+          if (gtk_tree_model_iter_parent (GTK_TREE_MODEL (baobab.model), &parent_iter, &root_iter))
+            {
+              gint valid;
+              GtkTreePath *parent_path;
+
+              gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &parent_iter, COL_H_ELEMENTS,
+                                  &valid, -1);
+
+              if (valid != -1)
+                {
+                  parent_path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), &parent_iter);
+
+                  baobab_ringschart_set_root (baobab.ringschart, parent_path);
+
+                  gtk_tree_path_free (parent_path);
+                }
+            }
+        }
+      gtk_tree_path_free (path);
+    }
+}
+
+void
+on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
+{
+  baobab_ringschart_set_max_depth (baobab.ringschart,
+                                   baobab_ringschart_get_max_depth (baobab.ringschart) - 1);
+}
+
+void
+on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
+{
+  baobab_ringschart_set_max_depth (baobab.ringschart,
+                                   baobab_ringschart_get_max_depth (baobab.ringschart) + 1);
+}

@@ -1,3 +1,67 @@
+2008-08-05 Alejandro G. Castro <acastro@igalia.com>
+
+	Patch contributed by Felipe Erias <femorandeira@igalia.com>, Pablo
+	Santamaria <psantamaria@igalia.com>, Jacobo Aragunde
+	<jaragunde@igalia.com> and Eduardo Lima <elima@igalia.com>
+	
+	Enhancement to the ringschart widget, added multiple tooltips
+	support (bug #421473)
+
+	* src/baobab.c:
+	(baobab_scan_location): We set the max depth after scanning in
+	order to zoom the graphic as much as possible.
+	(baobab_subfolderstips_toggled): This function is a callback that
+	manages changes in the gconf key that controls the subfolders
+	tips.
+	(baobab_init): Monitor the gconf subfolders tooltips key
+	connecting the callback.
+	(create_context_menu): Create a context menu with three actions:
+	go to the parent, zoom in and zoom out.
+	(initialize_ringschart): Initialize max_depth so we get the
+	biggest zoom for the initial ringschart. We also get the gconf
+	value for the subfolders tips and create the context menu.
+
+	* src/baobab.h: 
+	Added a new struct to manage the context menu. Added also a new
+	variable to the baobab_application struct, it is used to store the
+	maximum depth of the tree we are representing.
+	
+	* src/baobab-ringschart.c:
+	* src/baobab-ringschart.h: 	
+	Added two functions to the API in order to control the new
+	feature, adding subfolderstips. If we enable the subfoldertips we
+	will see the tooltip for the sector (directory) under the cursor
+	and tooltips for "some" of its children. 
+
+	The way the tooltip for the sector under the cursor is painted has
+	changed, now the tooltip is not painted all the time, if follows
+	the cursor and the user has to stop over the sector.
+
+	Added zoom support to the widget, it is connected to the
+	scrolling.
+
+	* src/callbacks.c:
+	* src/callbacks.h:	
+	(on_rchart_button_release): Callback that handles the context
+	sensitive menu.
+	(on_move_upwards_cb): Callback for an option in the menu, it tries
+	to go to parent of the current directory.
+	(on_zoom_in_cb): Callback for an option in the menu, it decreases
+	the maximum depth of the ringschart, that way the graphic is
+	bigger because we paint less levels.
+	(on_zoom_out_cb): Callback for an option in the menu, it increases
+	the maximum depth of the ringschart, that way the graphic is
+	smaller because we paint more levels.
+
+	* src/baobab-scan.c: 
+	Added a new parameter to the allsizes struct in order to calculate
+	the depth of the tree.
+	(loopdir): Added a new parameter in order to calculate the depth
+	of the tree.
+	(baobab_scan_execute): Store the maximum depth of the tree we have
+	scanned in the application structure. We will use it to calculate
+	the proper zoom for the tree.
+	
 2008-05-05  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/Makefile.am:
