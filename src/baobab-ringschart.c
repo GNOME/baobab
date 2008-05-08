@@ -625,12 +625,25 @@ baobab_ringschart_expose (GtkWidget *rchart, GdkEventExpose *event)
           h = cairo_image_surface_get_height (priv->memento);
 
           cairo_clip (cr);
+          
+          if (w > 0 && h > 0 &&
+	      !(rchart->allocation.width == w &&
+                rchart->allocation.height == h))
+            {
+              gdouble p, sx, sy;
+	  
+              /* minimal available proportion */
+              p = MIN (rchart->allocation.width / (1.0 * w),
+                       rchart->allocation.height / (1.0 * h));
+              
+              sx = (gdouble) (rchart->allocation.width - w * p) / 2.0;
+              sy = (gdouble) (rchart->allocation.height - h * p) / 2.0;
 
-          cairo_scale (cr, 
-                       (gdouble) rchart->allocation.width/w,
-                       (gdouble) rchart->allocation.height/h);
- 
-          cairo_set_source_surface (cr, 
+              cairo_translate (cr, sx, sy);
+              cairo_scale (cr, p, p);
+            }
+
+          cairo_set_source_surface (cr,
                                     priv->memento,
                                     0, 0);
           cairo_paint (cr);
