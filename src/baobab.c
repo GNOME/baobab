@@ -228,10 +228,6 @@ baobab_stop_scan (void)
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars, NULL);
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
-
-	baobab_set_busy (FALSE);
-	check_menu_sens (FALSE);
-	set_statusbar (_("Ready"));
 }
 
 /*

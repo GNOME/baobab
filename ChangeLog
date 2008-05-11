@@ -1,4 +1,11 @@
-2008-08-05 Alejandro G. Castro <acastro@igalia.com>
+2008-05-11 Alejandro G. Castro <acastro@igalia.com>
+
+	* src/baobab.c:
+	(baobab_stop_scan): Remove three lines setting the status of the
+	application from this function, baobab_scan_location is already
+	doing these actions, so the functions were called twice.
+	
+2008-05-08 Alejandro G. Castro <acastro@igalia.com>
 
 	Patch cotributed by Victor Jaquez <vjaquez@igalia.com>
 	
@@ -6,7 +13,7 @@
 	(baobab_ringschart_expose): Added code to control Enhance the
 	scale operation of the screenshot image, not it scales properly.
 	
-2008-08-05 Alejandro G. Castro <acastro@igalia.com>
+2008-05-08 Alejandro G. Castro <acastro@igalia.com>
 
 	Patch contributed by Felipe Erias <femorandeira@igalia.com>, Pablo
 	Santamaria <psantamaria@igalia.com>, Jacobo Aragunde
