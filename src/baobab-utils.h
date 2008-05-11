@@ -36,7 +36,7 @@ gboolean show_bars (GtkTreeModel *model,
 void message (gchar *, gchar *, GtkMessageType, GtkWidget *);
 gint messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gchar * ok_button, GtkWidget *parent);
 gboolean baobab_check_dir (GFile *);
-void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean is_trash);
+void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash);
 void open_nautilus (GtkMenuItem *, gpointer );
 void set_label_scan (baobab_fs *);
 void show_label (void);
