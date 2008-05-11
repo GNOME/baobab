@@ -90,6 +90,7 @@ struct _BaobabRingschartPrivate {
   gboolean subfoldertips_enabled;
   guint timeout_event_source;
   gboolean draw_tooltip;
+  gboolean draw_children_tooltips;
   guint init_depth;
   gboolean draw_center;
   cairo_surface_t *memento;
@@ -340,6 +341,9 @@ baobab_ringschart_init (BaobabRingschart *rchart)
   priv->transparent_tips = FALSE;
   priv->subfoldertips_enabled = FALSE;
   priv->init_depth = 0;
+  priv->timeout_event_source = 0;
+  priv->draw_tooltip = FALSE;
+  priv->draw_children_tooltips = FALSE;
   priv->draw_center = FALSE;
   priv->memento = NULL;
   priv->root = NULL;
@@ -825,8 +829,9 @@ draw_tooltips (GtkWidget *rchart,
           gtk_tree_model_get_iter (priv->model, &iter, path);
 
           /* draw the child tooltips */
-          if (gtk_tree_model_iter_has_child (priv->model, &iter) && 
-              (tooltip->depth == -1 || tooltip->depth < priv->max_depth-1))
+          if (priv->draw_children_tooltips && 
+              (gtk_tree_model_iter_has_child (priv->model, &iter) && 
+               (tooltip->depth == -1 || tooltip->depth < priv->max_depth-1)))
             {
               gdouble _init_angle, _final_angle;
 
@@ -1081,8 +1086,7 @@ draw_folder_tip (cairo_t *cr,
   /* get the size of the text label */
   /* text = (size != NULL) ? g_strconcat (name, "\n", size, NULL) : g_strdup (name); */
   /* only the name is shown */
-  text = g_strdup(name);
-  text = g_strconcat("<span size=\"small\">", text, "</span>", NULL);
+  text = g_strconcat("<span size=\"small\">", name, "</span>", NULL);
   
   layout = gtk_widget_create_pango_layout (rchart, NULL);
   pango_layout_set_markup (layout, text, -1);
@@ -1613,19 +1617,31 @@ gboolean
 baobab_ringschart_no_pointer_motion (GtkWidget *widget)
 {
   BaobabRingschartPrivate *priv;
-  
+
   priv = BAOBAB_RINGSCHART (widget)->priv;
-  
-  /* At this function we are sure the mouse pointer didn't move during
-     TOOLTIP_TIMEOUT miliseconds, so we redraw the chart, asking to
-     draw the tooltip also. */
-  priv->draw_tooltip = TRUE;
 
-  gtk_widget_queue_draw (widget);
+  if (!priv->draw_tooltip)
+    {
+      /* At this function we are sure the mouse pointer didn't move during
+         TOOLTIP_TIMEOUT miliseconds, so we redraw the chart, asking to
+         draw the tooltip also. */
+      priv->draw_tooltip = TRUE;
+      priv->draw_children_tooltips = FALSE;
+      
+      gtk_widget_queue_draw (widget);
 
-  /* It's important to return FALSE to prevent the timeout from
-     executing again */
-  return FALSE;
+      /* It's important to return FALSE to prevent the timeout from
+         executing again */
+      return TRUE;
+    }
+  else
+    {
+      priv->draw_children_tooltips = TRUE;
+
+      gtk_widget_queue_draw (widget);
+
+      return FALSE;
+    }
 }
 
 static gint 
@@ -2183,8 +2199,9 @@ baobab_ringschart_set_init_depth (GtkWidget *rchart,
  * If the draw_center is TRUE the widget will paint the center circle
  * even when you start painting in a level over the 0.
  **/
-void baobab_ringschart_draw_center (GtkWidget *rchart, 
-                                    gboolean draw_center)
+void 
+baobab_ringschart_draw_center (GtkWidget *rchart, 
+                               gboolean draw_center)
 {
   BaobabRingschartPrivate *priv;
   
@@ -2196,8 +2213,9 @@ void baobab_ringschart_draw_center (GtkWidget *rchart,
   gtk_widget_queue_draw (rchart);   
 }
 
-void baobab_ringschart_set_subfoldertips_enabled (GtkWidget *rchart, 
-                                                  gboolean enabled)
+void 
+baobab_ringschart_set_subfoldertips_enabled (GtkWidget *rchart, 
+                                             gboolean enabled)
 {
   BaobabRingschartPrivate *priv;
 
@@ -2212,7 +2230,8 @@ void baobab_ringschart_set_subfoldertips_enabled (GtkWidget *rchart,
     }
 }
 
-gboolean baobab_ringschart_get_subfoldertips_enabled (GtkWidget *rchart)
+gboolean 
+baobab_ringschart_get_subfoldertips_enabled (GtkWidget *rchart)
 {
   BaobabRingschartPrivate *priv;
 

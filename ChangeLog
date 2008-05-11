@@ -1,5 +1,16 @@
 2008-05-11 Alejandro G. Castro <acastro@igalia.com>
 
+	* src/baobab-ringschart.c: Added a new extended timeout for the
+	subfolders tooltips. A memory leak and some small style
+	modifications.
+	(draw_tooltips): extended the condition for drawing the subfolders
+	tooltips, we do not draw them until the second timeout.
+	(draw_folder_tip): Fixed a memory leak.
+	(baobab_ringschart_no_pointer_motion): Added a second timeout
+	where we set to TRUE the draw_children_tooltips variable.	
+	
+2008-05-11 Alejandro G. Castro <acastro@igalia.com>
+
 	* src/baobab.c:
 	(baobab_stop_scan): Remove three lines setting the status of the
 	application from this function, baobab_scan_location is already
