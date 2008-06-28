@@ -43,7 +43,6 @@ void on_esci1_activate (GtkObject *object, gpointer user_data);
 gboolean on_delete_activate (GtkWidget *widget, GdkEvent *event, gpointer user_data);
 void open_file_cb (GtkMenuItem *pmenu, gpointer dummy);
 void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
-void graph_map_cb (GtkMenuItem *pmenu, gchar * path_to_string);
 void trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy);
 void list_all_cb (GtkMenuItem *pmenu, gpointer dummy);
 void contents_changed_cb (GFileMonitor      *file_monitor,
@@ -55,16 +54,11 @@ void on_pref_menu (GtkMenuItem *menuitem, gpointer user_data);
 void volume_changed (GVolumeMonitor *volume_monitor,
                      GVolume        *volume,
                      gpointer        user_data);
-void on_graph_close_btn_clicked (GtkButton * button, gpointer user_data);
-void on_graph_zoom_in_clicked (GtkToolButton *toolbutton, gpointer user_data);
-void on_graph_zoom_out_clicked (GtkToolButton *toolbutton, gpointer user_data);
-void on_graph_zoom_100_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_view_tb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
 void on_view_sb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
 void on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data);
 void on_rchart_sector_activated (BaobabRingschart *rchart, GtkTreeIter *iter);
@@ -72,5 +66,6 @@ gboolean on_rchart_button_release (BaobabRingschart *rchart, GdkEventButton *eve
 void on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+void on_chart_type_change (GtkWidget *combo, gpointer user_data);
 
 #endif /* __BAOBAB_CALLBACKS_H__ */

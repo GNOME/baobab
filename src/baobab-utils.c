@@ -318,7 +318,7 @@ baobab_check_dir (GFile	*file)
 void
 popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash)
 {
-	GtkWidget *pmenu, *open, *trash, *sep, *graph_map, *remove;
+	GtkWidget *pmenu, *open, *trash, *remove;
 	gchar *path_to_string;
 	GtkWidget *image;
 
@@ -331,19 +331,10 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash)
 	open = gtk_image_menu_item_new_with_mnemonic(_("_Open Folder"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (open), image);
 
-	graph_map = gtk_image_menu_item_new_with_mnemonic (_("_Graphical Usage Map"));
-	image = gtk_image_new_from_stock ("gtk-select-color", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (graph_map), image);
-
-	sep = gtk_separator_menu_item_new ();
-
 	g_signal_connect (open, "activate",
 			  G_CALLBACK (open_file_cb), NULL);
-	g_signal_connect (graph_map, "activate",
-			  G_CALLBACK (graph_map_cb), path_to_string);
 
 	gtk_container_add (GTK_CONTAINER (pmenu), open);
-	gtk_container_add (GTK_CONTAINER (pmenu), graph_map);
 	
 	if (baobab.is_local && can_trash) {
 			trash = gtk_image_menu_item_new_with_mnemonic(_("Mo_ve to Trash"));

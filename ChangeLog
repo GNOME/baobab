@@ -1,3 +1,56 @@
+2008-06-28  Alejandro G. Castro <acastro@igalia.com>
+
+	Patch contributed by Eduardo Lima <elima@igalia.com>, bug #530512
+
+	Implemented a new treemap object and moved into the main window,
+	now we can select with a combobox in the main window which graph
+	we want: ringschart or treemap. We have used the ringschart code
+	in order to create a new abstract class and the new treemap just
+	inherits from it and changes the rendering, in the near future we
+	will change the ringschart in order to use this new abstract
+	class.
+
+	* data/baobab.glade:
+	* src/Makefile.am:
+	* src/baobab-graphwin.c:
+	* src/baobab-graphwin.h:
+	* src/baobab-tree-map.c:
+	* src/baobab-tree-map.h:
+	* src/baobab-treeview.c
+	(on_tv_cur_changed),
+	(on_tv_button_press):
+	* src/baobab-utils.c
+	(popupmenu_list):
+	* src/callbacks.h:
+	* src/callbacks.c
+	(on_tv_selection_changed),
+	(on_move_upwards_cb),
+	(on_zoom_in_cb),
+	(on_zoom_out_cb),
+	(on_chart_type_change):
+	Removed files, code and options in the menu that were used to show
+	the old treemap. Notice we have removed GnomeCanvas dependency
+	which was removed in the configure.ac file
+
+        * src/baobab-chart.c:
+        * src/baobab-chart.h:
+        * src/baobab-treemap.c:
+        * src/baobab-treemap.h:
+	New objects, the chart is the new abstract class, the treemap is
+	the new graphical representation, treemap inherits from chart. As
+	we said before the code from chart is copied from ringschart, in
+	the near future we must change ringschart in order to inherit also
+	from chart.
+
+	* src/baobab.h:
+	* src/baobab.c
+	(baobab_set_busy),
+	(check_menu_sens),
+	(baobab_scan_location),
+	(initialize_ringschart),
+	(main):
+	Added the code to manage the new treemap in the program.
+
 2008-05-14 Alejandro G. Castro <acastro@igalia.com>
 
 	* data/baobab.schemas.in: Fixed a misspelled sentence describing

@@ -74,16 +74,7 @@ on_tv_cur_changed (GtkTreeView *treeview, gpointer data)
 		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 				    COL_H_PARSENAME, &parsename, -1);
 	}
-
-	set_glade_widget_sens("menu_treemap",FALSE);
-	if (parsename) {
-		set_statusbar (parsename);
-		if (strcmp (parsename, "") != 0)
-			set_glade_widget_sens("menu_treemap", TRUE);
-
-		g_free (parsename);
 	}
-}
 
 static gboolean
 on_tv_button_press (GtkWidget *widget,
@@ -118,12 +109,6 @@ on_tv_button_press (GtkWidget *widget,
 	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 			    COL_H_PARSENAME, &baobab.selected_path, -1);
 	
-	if (strcmp (baobab.selected_path, "") == 0) {
-		set_glade_widget_sens ("menu_treemap",FALSE);
-		gtk_tree_path_free (path);
-		return FALSE;
-	}
-
 	/* right-click */
 	if (event->button == 3) {
 		GFile *file;

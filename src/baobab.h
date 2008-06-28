@@ -62,6 +62,9 @@ struct _baobab_application {
   	GtkWidget *window;
   	GtkWidget *tree_view;
   	GtkWidget *ringschart;
+	GtkWidget *treemap_chart;
+	GtkWidget *current_chart;
+	GtkWidget *chart_type_combo;
 	ContextMenu *rchart_menu;
 	GtkWidget *toolbar;
 	GtkWidget *spinner;

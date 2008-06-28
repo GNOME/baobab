@@ -31,12 +31,12 @@
 #include <gio/gio.h>
 
 #include "baobab.h"
-#include "baobab-graphwin.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
 #include "callbacks.h"
 #include "baobab-prefs.h"
 #include "baobab-remote-connect-dialog.h"
+#include "baobab-chart.h"
 
 void
 on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data)
@@ -210,18 +210,6 @@ open_file_cb (GtkMenuItem *pmenu, gpointer dummy)
 }
 
 void
-graph_map_cb (GtkMenuItem *pmenu, gchar *path_to_string)
-{
-	baobab_graphwin_create (GTK_TREE_MODEL (baobab.model),
-				path_to_string,
-				BAOBAB_GLADE_FILE,
-				COL_H_PARSENAME,
-				baobab.is_local ? COL_H_ALLOCSIZE : COL_H_SIZE,
-				-1);
-	g_free (path_to_string);
-}
-
-void
 trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
 	GFile *file;
@@ -349,28 +337,6 @@ on_view_sb_activate (GtkCheckMenuItem *checkmenuitem,
 }
 
 void
-on_menu_treemap_activate (GtkMenuItem *menuitem, gpointer user_data)
-{
-	GtkTreeIter iter;
-	GtkTreePath *path;
-	gchar *path_to_string;
-	
-	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection 
-							(GTK_TREE_VIEW(baobab.tree_view)), 
-					      NULL, 
-					      &iter))		 
-		return;
-
-	path = gtk_tree_model_get_path(GTK_TREE_MODEL(baobab.model), &iter);
-	
-	/* path_to_string is freed in graph_map_cb function */
-	path_to_string = gtk_tree_path_to_string (path);
-
-	gtk_tree_path_free(path);
-	graph_map_cb(NULL, path_to_string);
-}
-
-void
 on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
 	baobab_help_display (GTK_WINDOW (baobab.window), "baobab.xml", NULL);
@@ -404,6 +370,7 @@ on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data)
                 
 		path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), &iter);
                 
+		baobab_chart_set_root (baobab.treemap_chart, path);
 		baobab_ringschart_set_root (baobab.ringschart, path);
 		
 		gtk_tree_path_free (path);
@@ -484,6 +451,7 @@ on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
                   parent_path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), &parent_iter);
 
                   baobab_ringschart_set_root (baobab.ringschart, parent_path);
+                  baobab_chart_set_root (baobab.treemap_chart, parent_path);
 
                   gtk_tree_path_free (parent_path);
                 }
@@ -498,6 +466,8 @@ on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
   baobab_ringschart_set_max_depth (baobab.ringschart,
                                    baobab_ringschart_get_max_depth (baobab.ringschart) - 1);
+
+  baobab_chart_zoom_in (baobab.treemap_chart);
 }
 
 void
@@ -505,4 +475,40 @@ on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
   baobab_ringschart_set_max_depth (baobab.ringschart,
                                    baobab_ringschart_get_max_depth (baobab.ringschart) + 1);
+
+  baobab_chart_zoom_out (baobab.treemap_chart);
 }
+
+void
+on_chart_type_change (GtkWidget *combo, gpointer user_data)
+{
+  GtkWidget *chart;
+  GtkWidget *frame;
+
+  guint active = gtk_combo_box_get_active (GTK_COMBO_BOX (combo));
+
+  if (active != 0)
+    chart = baobab.treemap_chart;
+  else
+    chart = baobab.ringschart;
+
+  frame = gtk_widget_get_parent (baobab.current_chart);
+
+  if (BAOBAB_IS_CHART (baobab.current_chart))
+    {
+      baobab_chart_freeze_updates (baobab.current_chart);
+      baobab_ringschart_thaw_updates (chart);
+    }
+  else
+    {
+      baobab_chart_thaw_updates (chart);
+      baobab_ringschart_freeze_updates (baobab.current_chart);
+    }
+
+  g_object_ref_sink (baobab.current_chart);
+  gtk_container_remove (GTK_CONTAINER (frame), baobab.current_chart);
+  gtk_container_add (GTK_CONTAINER (frame), chart);
+
+  baobab.current_chart = chart;
+}
+

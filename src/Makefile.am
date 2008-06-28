@@ -21,8 +21,6 @@ baobab_SOURCES = \
 	baobab.h \
 	baobab-cell-renderer-progress.c \
 	baobab-cell-renderer-progress.h \
-	baobab-graphwin.c \
-	baobab-graphwin.h \
 	baobab-ringschart.c \
 	baobab-ringschart.h \
 	baobab-scan.c \
@@ -35,19 +33,20 @@ baobab_SOURCES = \
 	callbacks.h \
 	baobab-prefs.c \
 	baobab-prefs.h \
-	baobab-tree-map.c \
-	baobab-tree-map.h \
 	baobab-remote-connect-dialog.c \
 	baobab-remote-connect-dialog.h \
 	baobab-mount-operation.c \
 	baobab-mount-operation.h \
 	gedit-spinner.c \
-	gedit-spinner.h
+	gedit-spinner.h \
+	baobab-chart.c \
+	baobab-chart.h \
+	baobab-treemap.c \
+	baobab-treemap.h
 
 baobab_CFLAGS = 			\
 	$(GNOME_UTILS_CFLAGS)		\
 	$(LIBGLADE_CFLAGS)		\
-	$(GNOMECANVAS_CFLAGS)		\
 	$(LIBGTOP_CFLAGS)		\
 	$(NULL)
 
@@ -55,6 +54,5 @@ baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = 				\
 	$(GNOME_UTILS_LIBS)		\
 	$(LIBGLADE_LIBS)		\
-	$(GNOMECANVAS_LIBS)		\
 	$(LIBGTOP_LIBS)			\
 	$(NULL)
