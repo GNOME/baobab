@@ -5,4 +5,4 @@ DOC_MODULE = baobab
 DOC_ENTITIES = legal.xml
 DOC_INCLUDES =
 
-DOC_LINGUAS = ca da en_GB es fr it oc ru sv uk
+DOC_LINGUAS = ca da en_GB es fr it oc ru sv uk zh_HK zh_TW
