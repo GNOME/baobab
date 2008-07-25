@@ -25,6 +25,8 @@
  *   Eduardo Lima Mitev <elima@igalia.com>
  */
 
+#include <math.h>
+#include <string.h>
 #include <gtk/gtk.h>
 
 #include "baobab-chart.h"
