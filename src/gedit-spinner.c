@@ -92,8 +92,8 @@ typedef struct
 } GeditSpinnerImages;
 
 #define LAST_ICON_SIZE			GTK_ICON_SIZE_DIALOG + 1
-#define SPINNER_ICON_NAME		"gnome-spinner"
-#define SPINNER_REST_ICON_NAME		"gnome-spinner-rest"
+#define SPINNER_ICON_NAME		"process-working"
+#define SPINNER_REST_ICON_NAME		"process-idle"
 #define GEDIT_SPINNER_IMAGES_INVALID	((GeditSpinnerImages *) 0x1)
 
 typedef struct
