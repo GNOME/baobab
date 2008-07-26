@@ -236,6 +236,7 @@ loopdir (GFile *file,
 							 &err)) != NULL) {
 		GFileType temp_type = g_file_info_get_file_type (temp_info);
 		if (baobab.STOP_SCANNING) {
+			g_object_unref (temp_info);
 			g_object_unref (file_enum);
 			goto exit;
 		}
