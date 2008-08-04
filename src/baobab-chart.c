@@ -51,22 +51,8 @@ enum
 };
 
 
-typedef struct _BaobabChartContextMenu BaobabChartContextMenu;
-
-struct _BaobabChartContextMenu
-{
-  GtkWidget *menu;
-  GtkWidget *set_root_item;
-  GtkWidget *up_item;
-  GtkWidget *zoom_in_item;
-  GtkWidget *zoom_out_item;
-  GtkWidget *snapshot_item;
-};
-
-
 struct _BaobabChartPrivate
 {
-  gchar *total_fs_size;
   gboolean summary_mode;
 
   guint name_column;
@@ -87,15 +73,12 @@ struct _BaobabChartPrivate
   GList *first_item;
   GList *last_item;
   GList *highlighted_item;
-
-  BaobabChartContextMenu context_menu;
 };
 
 /* Signals */
 enum
 {
-  SECTOR_ACTIVATED,
-  POPULATE_MENU,
+  ITEM_ACTIVATED,
   LAST_SIGNAL
 };
 
@@ -183,8 +166,6 @@ static gboolean baobab_chart_query_tooltip (GtkWidget  *widget,
                                             gboolean    keyboard_mode,
                                             GtkTooltip *tooltip,
                                             gpointer    user_data);
-static gboolean baobab_chart_on_set_root_item (GtkCheckMenuItem *menuitem,
-                                               gpointer data);
 
 
 static void
@@ -209,6 +190,8 @@ baobab_chart_class_init (BaobabChartClass *class)
 
   /* Baobab Chart abstract methods */
   class->draw_item               = NULL;
+  class->pre_draw                = NULL;
+  class->post_draw               = NULL;
   class->calculate_item_geometry = NULL;
   class->is_point_over_item      = NULL;
   class->get_item_rectangle      = NULL;
@@ -239,25 +222,15 @@ baobab_chart_class_init (BaobabChartClass *class)
                                    GTK_TYPE_TREE_ITER,
                                    G_PARAM_READWRITE));
 
-  baobab_chart_signals[SECTOR_ACTIVATED] =
-    g_signal_new ("sector_activated",
+  baobab_chart_signals[ITEM_ACTIVATED] =
+    g_signal_new ("item_activated",
           G_TYPE_FROM_CLASS (obj_class),
           G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
-          G_STRUCT_OFFSET (BaobabChartClass, sector_activated),
+          G_STRUCT_OFFSET (BaobabChartClass, item_activated),
           NULL, NULL,
           g_cclosure_marshal_VOID__BOXED,
           G_TYPE_NONE, 1,
           GTK_TYPE_TREE_ITER);
-
-  baobab_chart_signals[POPULATE_MENU] =
-    g_signal_new ("populate_menu",
-          G_TYPE_FROM_CLASS (obj_class),
-          G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
-          G_STRUCT_OFFSET (BaobabChartClass, sector_activated),
-          NULL, NULL,
-          g_cclosure_marshal_VOID__BOXED,
-          G_TYPE_NONE, 1,
-          GTK_TYPE_WIDGET);
 
   g_type_class_add_private (obj_class, sizeof (BaobabChartPrivate));
 }
@@ -266,12 +239,10 @@ static void
 baobab_chart_init (BaobabChart *chart)
 {
   BaobabChartPrivate *priv;
-  BaobabChartContextMenu *menu;
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   chart->priv = priv;
 
-  priv->total_fs_size = NULL;
   priv->summary_mode = TRUE;
   priv->model = NULL;
   priv->max_depth = BAOBAB_CHART_MAX_DEPTH;
@@ -288,48 +259,6 @@ baobab_chart_init (BaobabChart *chart)
   priv->first_item = NULL;
   priv->last_item = NULL;
   priv->highlighted_item = NULL;
-
-  /* Init Context Menu */
-  menu = &priv->context_menu;
-  menu->set_root_item = NULL;
-
-  menu->menu = gtk_menu_new ();
-
-  menu->up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->up_item),
-                                 gtk_image_new_from_stock (GTK_STOCK_GO_UP,
-                                                           GTK_ICON_SIZE_MENU));
-
-  menu->zoom_in_item = gtk_image_menu_item_new_with_label (_("Zoom in"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_in_item),
-                                 gtk_image_new_from_stock (GTK_STOCK_ADD,
-                                                           GTK_ICON_SIZE_MENU));
-
-  menu->zoom_out_item = gtk_image_menu_item_new_with_label (_("Zoom out"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item),
-                                 gtk_image_new_from_stock (GTK_STOCK_REMOVE,
-                                                           GTK_ICON_SIZE_MENU));
-
-  menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save snapshot"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->snapshot_item),
-                                 gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
-
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu->menu),
-                         menu->up_item);
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu->menu),
-                         gtk_separator_menu_item_new ());
-
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu->menu),
-                         menu->zoom_in_item);
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu->menu),
-                         menu->zoom_out_item);
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu->menu),
-                         gtk_separator_menu_item_new ());
-
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu->menu),
-                         menu->snapshot_item);
-
-  gtk_widget_show_all (menu->menu);
 }
 
 static void
@@ -340,13 +269,6 @@ baobab_chart_dispose (GObject *object)
   baobab_chart_free_items (GTK_WIDGET (object));
 
   priv = BAOBAB_CHART (object)->priv;
-
-  /* Free context menu */
-  g_object_unref (priv->context_menu.menu);
-
-  /* Free total filesystem capacity label */
-  if (priv->total_fs_size != NULL)
-    g_free (priv->total_fs_size);
 
   if (priv->model)
     {
@@ -555,8 +477,8 @@ baobab_chart_free_items (GtkWidget *chart)
 
       g_free (item->name);
       g_free (item->size);
-      if (item->data != NULL)
-        g_free (item->data);
+
+      g_free (item->data);
       item->data = NULL;
 
       g_free (item);
@@ -574,7 +496,7 @@ static void
 baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
 {
   BaobabChartPrivate *priv;
-  BaobabChartItem *item;
+  BaobabChartItem *item, *child_item;
 
   GList *node;
   GtkTreeIter initial_iter = {0};
@@ -601,27 +523,27 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
   model_root_path = gtk_tree_path_new_first ();
   gtk_tree_model_get_iter (priv->model, &model_root_iter, model_root_path);
   gtk_tree_path_free (model_root_path);
+
   gtk_tree_model_get (priv->model, &model_root_iter,
                       priv->percentage_column, &size, -1);
 
+  /* Create first item */
+  node = baobab_chart_add_item (chart, 0, 0, 100, initial_iter);
+
+  /* If summary mode, insert a new item that will become root */
   if (priv->summary_mode)
     {
-      node = baobab_chart_add_item (chart, 0, 0, 100, initial_iter);
       item = (BaobabChartItem *) node->data;
-      g_free (item->name);
       g_free (item->size);
-      item->name = g_strdup (_("Total filesystem capacity"));
-      item->size = g_strdup (priv->total_fs_size);
+      item->size = NULL;
 
       child_node = baobab_chart_add_item (chart, 1, 0, size, initial_iter);
-      item = (BaobabChartItem *) child_node->data;
-      item->parent = node;
-      g_free (item->name);
-      item->name = g_strdup (_("Total filesystem usage"));
+      child_item = (BaobabChartItem *) child_node->data;
+      child_item->parent = node;
+      child_item->name = item->name;
+
+      item->name = NULL;
     }
-  else
-    /* Create first item */
-    node = baobab_chart_add_item (chart, 0, 0, 100, initial_iter);
 
   /* Iterate through childs building the list */
   class = BAOBAB_CHART_GET_CLASS (chart);
@@ -629,7 +551,9 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
   do
     {
       item = (BaobabChartItem *) node->data;
-      item->has_any_child = gtk_tree_model_iter_children (priv->model, &child_iter, &(item->iter));
+      item->has_any_child = gtk_tree_model_iter_children (priv->model, 
+                                                          &child_iter, 
+                                                          &(item->iter));
 
       /* Calculate item geometry */
       class->calculate_item_geometry (chart, item);
@@ -687,6 +611,10 @@ baobab_chart_draw (GtkWidget *chart,
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   class = BAOBAB_CHART_GET_CLASS (chart);
 
+  /* call pre-draw abstract method */
+  if (class->pre_draw)
+    class->pre_draw (chart, cr);
+
   cairo_save (cr);
 
   node = priv->first_item;
@@ -705,6 +633,10 @@ baobab_chart_draw (GtkWidget *chart,
     }
 
   cairo_restore (cr);
+
+  /* call post-draw abstract method */
+  if (class->post_draw)
+    class->post_draw (chart, cr);
 }
 
 static void
@@ -884,8 +816,10 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
       if (priv->root != NULL)
         root_path = gtk_tree_row_reference_get_path (priv->root);
 
-      if (root_path == NULL)
+      if (root_path == NULL) {
         root_path = gtk_tree_path_new_first ();
+        priv->root = NULL;
+      }
 
       /* Check if tree model was modified in any way */
       if ((priv->model_changed) ||
@@ -981,12 +915,11 @@ baobab_chart_button_release (GtkWidget *widget,
                              GdkEventButton *event)
 {
   BaobabChartPrivate *priv;
-  GtkTreePath *root_path;
-  BaobabChartContextMenu *menu;
-  BaobabChartItem *item;
-  char *text;
 
   priv = BAOBAB_CHART (widget)->priv;
+
+  if (priv->is_frozen)
+    return TRUE;
 
   switch (event->button)
     {
@@ -994,7 +927,7 @@ baobab_chart_button_release (GtkWidget *widget,
       /* Enter into a subdir */
       if (priv->highlighted_item != NULL)
         g_signal_emit (BAOBAB_CHART (widget),
-                       baobab_chart_signals[SECTOR_ACTIVATED],
+                       baobab_chart_signals[ITEM_ACTIVATED],
                        0, &((BaobabChartItem*) priv->highlighted_item->data)->iter);
 
       break;
@@ -1003,64 +936,9 @@ baobab_chart_button_release (GtkWidget *widget,
       /* Go back to the parent dir */
       baobab_chart_move_up_root (widget);
       break;
-
-    case RIGHT_BUTTON:
-      {
-        /* Popup context menu */
-        root_path = baobab_chart_get_root (widget);
-
-        menu = &priv->context_menu;
-
-        if (menu->set_root_item != NULL)
-          {
-            g_signal_handlers_disconnect_by_func (menu->set_root_item,
-                                                  baobab_chart_on_set_root_item,
-                                                  widget);
-            gtk_container_remove (GTK_CONTAINER (menu->menu), menu->set_root_item);
-            menu->set_root_item = NULL;
-          }
-
-        if ((! priv->summary_mode) &&
-            (priv->highlighted_item != NULL) &&
-            (priv->highlighted_item != priv->first_item))
-          {
-            item = (BaobabChartItem *) priv->highlighted_item->data;
-            text = g_strconcat ("Move to folder '", item->name, "'", NULL);
-
-            menu->set_root_item = gtk_image_menu_item_new_with_label (_(text));
-            gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->set_root_item),
-                                           gtk_image_new_from_stock (GTK_STOCK_GO_FORWARD,
-                                                                     GTK_ICON_SIZE_MENU));
-            gtk_menu_shell_prepend (GTK_MENU_SHELL (menu->menu),
-                                    menu->set_root_item);
-
-            g_signal_connect (menu->set_root_item, "activate",
-                              G_CALLBACK (baobab_chart_on_set_root_item), widget);
-
-            gtk_widget_show (menu->set_root_item);
-
-            g_free (text);
-          }
-
-        gtk_widget_set_sensitive (menu->up_item,
-                                 ((root_path != NULL) &&
-                                 (gtk_tree_path_get_depth (root_path) > 1)));
-        gtk_widget_set_sensitive (menu->zoom_in_item,
-                                  (baobab_chart_get_max_depth (widget) > BAOBAB_CHART_MIN_DEPTH));
-        gtk_widget_set_sensitive (menu->zoom_out_item,
-                                  (baobab_chart_get_max_depth (widget) < BAOBAB_CHART_MAX_DEPTH));
-
-        g_signal_emit (BAOBAB_CHART (widget),
-                       baobab_chart_signals[POPULATE_MENU],
-                       0, menu->menu);
-
-        gtk_menu_popup (GTK_MENU (menu->menu), NULL, NULL, NULL, NULL,
-                        event->button, event->time);
-      }
-      break;
     }
 
-  return TRUE;
+  return FALSE;
 }
 
 static gint
@@ -1074,7 +952,7 @@ baobab_chart_scroll (GtkWidget *widget,
     case GDK_SCROLL_LEFT :
     case GDK_SCROLL_UP :
       baobab_chart_zoom_out (widget);
-      /* change the selected sector when zooming */
+      /* change the selected item when zooming */
       baobab_chart_motion_notify (widget, (GdkEventMotion *)event);
       break;
 
@@ -1172,58 +1050,10 @@ baobab_chart_leave_notify (GtkWidget *widget,
   return FALSE;
 }
 
-static gboolean
-baobab_chart_on_set_root_item (GtkCheckMenuItem *menuitem, gpointer data)
-{
-  BaobabChartPrivate *priv;
-
-  priv = BAOBAB_CHART_GET_PRIVATE (data);
-
-  g_signal_emit (BAOBAB_CHART (data),
-                 baobab_chart_signals[SECTOR_ACTIVATED],
-                 0, &((BaobabChartItem*) priv->highlighted_item->data)->iter);
-
-  return TRUE;
-}
-
-static gboolean
-baobab_chart_on_up_menu_item (GtkCheckMenuItem *menuitem, gpointer data)
-{
-  baobab_chart_move_up_root (GTK_WIDGET (data));
-
-  return TRUE;
-}
-
-static gboolean
-baobab_chart_on_zoom_in_menu_item (GtkCheckMenuItem *menuitem, gpointer data)
-{
-  baobab_chart_zoom_in (GTK_WIDGET (data));
-
-  return TRUE;
-}
-
-static gboolean
-baobab_chart_on_zoom_out_menu_item (GtkCheckMenuItem *menuitem, gpointer data)
-{
-  baobab_chart_zoom_out (GTK_WIDGET (data));
-
-  return TRUE;
-}
-
-static gboolean
-baobab_chart_on_snapshot_menu_item (GtkCheckMenuItem *menuitem, gpointer data)
-{
-  baobab_chart_save_snapshot (GTK_WIDGET (data));
-
-  return TRUE;
-}
-
 static inline void
 baobab_chart_connect_signals (GtkWidget *chart,
                               GtkTreeModel *model)
 {
-  BaobabChartContextMenu *menu;
-
   g_signal_connect (model,
                     "row_changed",
                     G_CALLBACK (baobab_chart_row_changed),
@@ -1244,12 +1074,10 @@ baobab_chart_connect_signals (GtkWidget *chart,
                     "rows_reordered",
                     G_CALLBACK (baobab_chart_rows_reordered),
                     chart);
-
   g_signal_connect (chart,
                     "query-tooltip",
                     G_CALLBACK (baobab_chart_query_tooltip),
                     chart);
-
   g_signal_connect (chart,
                     "motion-notify-event",
                     G_CALLBACK (baobab_chart_motion_notify),
@@ -1258,31 +1086,16 @@ baobab_chart_connect_signals (GtkWidget *chart,
                     "leave-notify-event",
                     G_CALLBACK (baobab_chart_leave_notify),
                     chart);
-
   g_signal_connect (chart,
                     "button-release-event",
                     G_CALLBACK (baobab_chart_button_release),
                     chart);
-
-  /* Activate context menu callbacks */
-  menu = &BAOBAB_CHART_GET_PRIVATE (chart)->context_menu;
-
-  g_signal_connect (menu->up_item, "activate",
-                    G_CALLBACK (baobab_chart_on_up_menu_item), chart);
-  g_signal_connect (menu->zoom_in_item, "activate",
-                    G_CALLBACK (baobab_chart_on_zoom_in_menu_item), chart);
-  g_signal_connect (menu->zoom_out_item, "activate",
-                    G_CALLBACK (baobab_chart_on_zoom_out_menu_item), chart);
-  g_signal_connect (menu->snapshot_item, "activate",
-                    G_CALLBACK (baobab_chart_on_snapshot_menu_item), chart);
 }
 
 static inline void
 baobab_chart_disconnect_signals (GtkWidget *chart,
                                  GtkTreeModel *model)
 {
-  BaobabChartContextMenu *menu;
-
   g_signal_handlers_disconnect_by_func (model,
                                         baobab_chart_row_changed,
                                         chart);
@@ -1298,36 +1111,17 @@ baobab_chart_disconnect_signals (GtkWidget *chart,
   g_signal_handlers_disconnect_by_func (model,
                                         baobab_chart_rows_reordered,
                                         chart);
-
   g_signal_handlers_disconnect_by_func (chart,
                                         baobab_chart_query_tooltip,
                                         chart);
-
   g_signal_handlers_disconnect_by_func (chart,
                                         baobab_chart_motion_notify,
                                         chart);
   g_signal_handlers_disconnect_by_func (chart,
                                         baobab_chart_leave_notify,
                                         chart);
-
   g_signal_handlers_disconnect_by_func (chart,
                                         baobab_chart_button_release,
-                                        chart);
-
-  /* Deactivate context menu callbacks */
-  menu = &BAOBAB_CHART_GET_PRIVATE (chart)->context_menu;
-
-  g_signal_handlers_disconnect_by_func (menu->up_item,
-                                        baobab_chart_on_up_menu_item,
-                                        chart);
-  g_signal_handlers_disconnect_by_func (menu->zoom_in_item,
-                                        baobab_chart_on_zoom_in_menu_item,
-                                        chart);
-  g_signal_handlers_disconnect_by_func (menu->zoom_out_item,
-                                        baobab_chart_on_zoom_out_menu_item,
-                                        chart);
-  g_signal_handlers_disconnect_by_func (menu->snapshot_item,
-                                        baobab_chart_on_snapshot_menu_item,
                                         chart);
 }
 
@@ -1349,6 +1143,9 @@ baobab_chart_query_tooltip (GtkWidget  *widget,
     return FALSE;
 
   item = (BaobabChartItem *) priv->highlighted_item->data;
+
+  if ( (item->name == NULL) || (item->size == NULL) )
+    return FALSE;
 
   gtk_tooltip_set_tip_area (tooltip, &item->rect);
 
@@ -1434,13 +1231,13 @@ baobab_chart_new ()
  **/
 void
 baobab_chart_set_model_with_columns (GtkWidget *chart,
-                                          GtkTreeModel *model,
-                                          guint name_column,
-                                          guint size_column,
-                                          guint info_column,
-                                          guint percentage_column,
-                                          guint valid_column,
-                                          GtkTreePath *root)
+                                     GtkTreeModel *model,
+                                     guint name_column,
+                                     guint size_column,
+                                     guint info_column,
+                                     guint percentage_column,
+                                     guint valid_column,
+                                     GtkTreePath *root)
 {
   BaobabChartPrivate *priv;
 
@@ -1604,6 +1401,8 @@ baobab_chart_set_root (GtkWidget *chart,
                        GtkTreePath *root)
 {
   BaobabChartPrivate *priv;
+  GtkTreeIter iter = {0};
+  GtkTreePath *current_root;
 
   g_return_if_fail (BAOBAB_IS_CHART (chart));
 
@@ -1611,8 +1410,15 @@ baobab_chart_set_root (GtkWidget *chart,
 
   g_return_if_fail (priv->model != NULL);
 
-  if (priv->root)
+  if (priv->root) {
+    /* Check that given root is different from current */
+    current_root = gtk_tree_row_reference_get_path (priv->root);
+    if ( (current_root) && (gtk_tree_path_compare (current_root, root) == 0) )
+      return;
+
+    /* Free current root */
     gtk_tree_row_reference_free (priv->root);
+  }
 
   priv->root = gtk_tree_row_reference_new (priv->model, root);
 
@@ -1829,7 +1635,7 @@ baobab_chart_move_up_root (GtkWidget *chart)
       gtk_tree_path_free (parent_path);
 
       g_signal_emit (BAOBAB_CHART (chart),
-                     baobab_chart_signals[SECTOR_ACTIVATED],
+                     baobab_chart_signals[ITEM_ACTIVATED],
                      0, &parent_iter);
 
       gtk_widget_queue_draw (chart);
@@ -1842,7 +1648,8 @@ baobab_chart_move_up_root (GtkWidget *chart)
  * baobab_chart_save_snapshot:
  * @chart: the #BaobabChart requested to be exported to image.
  *
- * Opens a dialog to allow saving the current chart's image as a PNG, JPEG or BMP image.
+ * Opens a dialog to allow saving the current chart's image as a PNG, JPEG or 
+ * BMP image.
  *
  * Fails if @chart is not a #BaobabChart.
  **/
@@ -1862,11 +1669,6 @@ baobab_chart_save_snapshot (GtkWidget *chart)
   gchar *filename;
 
   g_return_if_fail (BAOBAB_IS_CHART (chart));
-
-  /* Popdown context menu */
-  priv = BAOBAB_CHART_GET_PRIVATE (chart);
-  gtk_menu_popdown (GTK_MENU (priv->context_menu.menu));
-  gtk_widget_queue_draw (chart);
 
   while (gtk_events_pending ())
     gtk_main_iteration ();
@@ -1941,32 +1743,12 @@ baobab_chart_save_snapshot (GtkWidget *chart)
 }
 
 /**
- * baobab_chart_set_total_fs_size:
- * @chart: the #BaobabChart to set the filesystem size to.
- * @total_fs_size: The total filesystem size.
- *
- * Sets the total filesystem size, to be shown as tooltip when summary mode is on.
- *
- * Fails if @chart is not a #BaobabChart.
- **/
-void
-baobab_chart_set_total_fs_size (GtkWidget *chart, guint64 total_fs_size)
-{
-  BaobabChartPrivate *priv;
-
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
-
-  priv = BAOBAB_CHART_GET_PRIVATE (chart);
-  priv->total_fs_size = g_format_size_for_display (total_fs_size);
-}
-
-/**
  * baobab_chart_set_summary_mode:
  * @chart: the #BaobabChart to set summary mode to.
  * @summary_mode: boolean specifying TRUE is summary mode is on.
  *
- * Toggles on/off the summary mode (the initial mode that shows filesystem
- * usage and capacity.
+ * Toggles on/off the summary mode (the initial mode that shows general state
+ * before any scan has been made).
  *
  * Fails if @chart is not a #BaobabChart.
  **/
@@ -1980,4 +1762,65 @@ baobab_chart_set_summary_mode (GtkWidget *chart,
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   priv->summary_mode = summary_mode;
+}
+
+/**
+ * baobab_chart_get_summary_mode:
+ * @chart: the #BaobabChart to obtain summary mode from.
+ *
+ * Returns a boolean representing whether the chart is in summary mode (the 
+ * initial mode that shows general state before any scan has been made).
+ *
+ * Fails if @chart is not a #BaobabChart.
+ **/
+gboolean
+baobab_chart_get_summary_mode (GtkWidget *chart)
+{
+  BaobabChartPrivate *priv;
+
+  g_return_if_fail (BAOBAB_IS_CHART (chart));
+
+  priv = BAOBAB_CHART_GET_PRIVATE (chart);
+  return priv->summary_mode;
+}
+
+/**
+ * baobab_chart_is_frozen:
+ * @chart: the #BaobabChart to ask if frozen.
+ *
+ * Returns a boolean telling whether the chart is in a frozen state, meanning 
+ * that no actions should be taken uppon it.
+ *
+ * Fails if @chart is not a #BaobabChart.
+ **/
+gboolean
+baobab_chart_is_frozen (GtkWidget *chart)
+{
+  BaobabChartPrivate *priv;
+
+  g_return_if_fail (BAOBAB_IS_CHART (chart));
+
+  priv = BAOBAB_CHART_GET_PRIVATE (chart);
+  return priv->is_frozen;
+}
+
+/**
+ * baobab_chart_is_frozen:
+ * @chart: the #BaobabChart to obtain the highlighted it from.
+ *
+ * Returns a BaobabChartItem corresponding to the item that currently has mouse 
+ * pointer over, or NULL if no item is highlighted.
+ *
+ * Fails if @chart is not a #BaobabChart.
+ **/
+BaobabChartItem *
+baobab_chart_get_highlighted_item (GtkWidget *chart)
+{
+  BaobabChartPrivate *priv;
+
+  g_return_if_fail (BAOBAB_IS_CHART (chart));
+
+  priv = BAOBAB_CHART_GET_PRIVATE (chart);
+  return (priv->highlighted_item ? 
+    (BaobabChartItem *) priv->highlighted_item->data : NULL);
 }

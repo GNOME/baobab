@@ -55,17 +55,19 @@ struct _ContextMenu {
 	GtkWidget* zoom_in_item;
 	GtkWidget* zoom_out_item;
 	GtkWidget* subfolders_item;
+	GtkWidget* snapshot_item;
+	GtkWidget* set_root_item;
 };
 
 struct _baobab_application {
 	GladeXML *main_xml;
   	GtkWidget *window;
   	GtkWidget *tree_view;
-  	GtkWidget *ringschart;
+	GtkWidget *rings_chart;
 	GtkWidget *treemap_chart;
 	GtkWidget *current_chart;
 	GtkWidget *chart_type_combo;
-	ContextMenu *rchart_menu;
+	ContextMenu *chart_menu;
 	GtkWidget *toolbar;
 	GtkWidget *spinner;
 	GtkWidget *statusbar;

@@ -40,6 +40,7 @@
 #include "gedit-spinner.h"
 
 #include "baobab-treemap.h"
+#include "baobab-ringschart.h"
 
 static GVolumeMonitor 	 *monitor_vol;
 static GFileMonitor	 *monitor_home;
@@ -61,13 +62,15 @@ static GFile *current_location = NULL;
 static gboolean
 scan_is_local (GFile	*file)
 {
-	gchar	*uri_scheme;
-	gboolean	ret=FALSE;
-	
+	gchar *uri_scheme;
+	gboolean ret = FALSE;
+
 	uri_scheme = g_file_get_uri_scheme (file);
-	if (g_ascii_strcasecmp(uri_scheme,"file") == 0) ret= TRUE;
-	
+	if (g_ascii_strcasecmp(uri_scheme,"file") == 0)
+		ret = TRUE;
+
 	g_free (uri_scheme);
+
 	return ret;
 }
 
@@ -84,18 +87,21 @@ baobab_set_busy (gboolean busy)
 		cursor = busy_cursor;
 
 		gedit_spinner_start (GEDIT_SPINNER (baobab.spinner));
- 		baobab_ringschart_freeze_updates (baobab.ringschart);
-		baobab_ringschart_set_init_depth (baobab.ringschart, 0);
+
+		baobab_chart_freeze_updates (baobab.rings_chart);
+		baobab_chart_set_summary_mode (baobab.rings_chart, FALSE);
 
 		baobab_chart_freeze_updates (baobab.treemap_chart);
 		baobab_chart_set_summary_mode (baobab.treemap_chart, FALSE);
+
 		gtk_widget_set_sensitive (baobab.chart_type_combo, FALSE);
 	}
 	else {
 		gedit_spinner_stop (GEDIT_SPINNER (baobab.spinner));
- 		baobab_ringschart_thaw_updates (baobab.ringschart);
 
+		baobab_chart_thaw_updates (baobab.rings_chart);
 		baobab_chart_thaw_updates (baobab.treemap_chart);
+
 		gtk_widget_set_sensitive (baobab.chart_type_combo, TRUE);
 	}
 
@@ -116,7 +122,7 @@ check_menu_sens (gboolean scanning)
 
 		set_statusbar (_("Scanning..."));
 		set_glade_widget_sens ("expand_all", TRUE);
-		set_glade_widget_sens ("collapse_all", TRUE);		
+		set_glade_widget_sens ("collapse_all", TRUE);
 	}
 
 	set_glade_widget_sens ("tbscanhome", !scanning);
@@ -181,7 +187,7 @@ baobab_scan_location (GFile *file)
 				show_bars,
 				NULL);
 
-	baobab_ringschart_set_max_depth (baobab.ringschart, baobab.model_max_depth);
+	baobab_chart_set_max_depth (baobab.rings_chart, baobab.model_max_depth);
 	baobab_chart_set_max_depth (baobab.treemap_chart, baobab.model_max_depth);
 
 	baobab_set_busy (FALSE);
@@ -568,20 +574,20 @@ baobab_create_toolbar (void)
 
 	separator = gtk_separator_tool_item_new ();
 	gtk_separator_tool_item_set_draw (GTK_SEPARATOR_TOOL_ITEM (separator), FALSE);
-	gtk_tool_item_set_expand (GTK_TOOL_ITEM (separator), TRUE);	
+	gtk_tool_item_set_expand (GTK_TOOL_ITEM (separator), TRUE);
 	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (separator));
 	gtk_widget_show (GTK_WIDGET (separator));
 
 	baobab.spinner = gedit_spinner_new ();
-	item = gtk_tool_item_new ();		
+	item = gtk_tool_item_new ();
 	gtk_container_add (GTK_CONTAINER (item), baobab.spinner);
-  	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
+	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
 	gtk_widget_show (GTK_WIDGET (baobab.spinner));
 	gtk_widget_show (GTK_WIDGET (item));
 
 	g_signal_connect (item, "toolbar-reconfigured",
 			  G_CALLBACK (toolbar_reconfigured_cb), baobab.spinner);
-        toolbar_reconfigured_cb (item, GEDIT_SPINNER (baobab.spinner));
+	toolbar_reconfigured_cb (item, GEDIT_SPINNER (baobab.spinner));
 	baobab_toolbar_style (NULL, 0, NULL, NULL);
 
 	visible = gconf_client_get_bool (baobab.gconf_client,
@@ -615,7 +621,7 @@ baobab_subfolderstips_toggled (GConfClient *client,
 			       GConfEntry *entry,
 			       gpointer user_data)
 {
-        baobab_ringschart_set_subfoldertips_enabled (baobab.ringschart,
+	baobab_ringschart_set_subfoldertips_enabled (baobab.rings_chart,
 						     gconf_client_get_bool (baobab.gconf_client,
 									    BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
 									    NULL));
@@ -754,8 +760,8 @@ create_context_menu (void)
 {
 	ContextMenu *menu = NULL;
 
-	baobab.rchart_menu = g_new0 (ContextMenu, 1);
-	menu = baobab.rchart_menu;
+	baobab.chart_menu = g_new0 (ContextMenu, 1);
+	menu = baobab.chart_menu;
 
 	menu->widget = gtk_menu_new ();
 		
@@ -771,12 +777,22 @@ create_context_menu (void)
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item), 
 				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));       
 		
+	menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save snapshot"));
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->snapshot_item),
+									gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
+
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
 			       menu->up_item);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
+			       gtk_separator_menu_item_new ());
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
 			       menu->zoom_in_item);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
 			       menu->zoom_out_item);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
+			       gtk_separator_menu_item_new ());
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
+			       menu->snapshot_item);
 
 	/* connect signals */
 	g_signal_connect (menu->up_item, "activate",
@@ -785,65 +801,33 @@ create_context_menu (void)
 			  G_CALLBACK (on_zoom_in_cb), NULL);
 	g_signal_connect (menu->zoom_out_item, "activate",
 			  G_CALLBACK (on_zoom_out_cb), NULL);
-	
+	g_signal_connect (menu->snapshot_item, "activate",
+					  G_CALLBACK (on_chart_snapshot_cb), NULL);
+
 	gtk_widget_show_all (menu->widget);
 }
 
 static void
 initialize_ringschart (void)
 {
-        GtkWidget *hpaned_main;
-        GtkWidget *ringschart_frame;
-        ContextMenu *menu = NULL;
+	GtkWidget *hpaned_main;
+	GtkWidget *chart_frame;
 	GtkWidget *hbox1;
 
-        baobab.ringschart = GTK_WIDGET (baobab_ringschart_new ());
-        baobab_ringschart_set_model_with_columns (baobab.ringschart,
-                                                  GTK_TREE_MODEL (baobab.model),
-                                                  COL_DIR_NAME,
-                                                  COL_DIR_SIZE,
-                                                  COL_H_PARSENAME,
-                                                  COL_H_PERC,
-                                                  COL_H_ELEMENTS,
-                                                  NULL);
-        baobab_ringschart_set_init_depth (baobab.ringschart, 1);
+	chart_frame = gtk_frame_new (NULL);
+	gtk_frame_set_label_align (GTK_FRAME (chart_frame), 0.0, 0.0);
+	gtk_frame_set_shadow_type (GTK_FRAME (chart_frame), GTK_SHADOW_IN);
 
-	baobab_ringschart_set_max_depth (baobab.ringschart, 1);
-
-	baobab_ringschart_set_subfoldertips_enabled(baobab.ringschart, 
-						    gconf_client_get_bool (baobab.gconf_client,
-									   BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
-									   NULL));
-
-        g_signal_connect (baobab.ringschart, "sector_activated",
-                          G_CALLBACK (on_rchart_sector_activated), NULL);
-
-        ringschart_frame = gtk_frame_new (NULL);
-        gtk_frame_set_label_align (GTK_FRAME (ringschart_frame), 0.0, 0.0);
-        gtk_frame_set_shadow_type (GTK_FRAME (ringschart_frame), GTK_SHADOW_IN);
-
-        gtk_container_add (GTK_CONTAINER (ringschart_frame),
-                           baobab.ringschart);
-
-        hpaned_main = glade_xml_get_widget (baobab.main_xml, "hpaned_main");
-        gtk_paned_pack2 (GTK_PANED (hpaned_main),
-                         ringschart_frame, TRUE, TRUE);
-        gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
-
-        baobab_ringschart_draw_center (baobab.ringschart, TRUE);
-
-	create_context_menu ();
-
-	g_signal_connect (baobab.ringschart, "button-release-event", 
-			  G_CALLBACK (on_rchart_button_release), NULL);
-
-        gtk_widget_show_all (ringschart_frame);
+	hpaned_main = glade_xml_get_widget (baobab.main_xml, "hpaned_main");
+	gtk_paned_pack2 (GTK_PANED (hpaned_main),
+			 chart_frame, TRUE, TRUE);
+	gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
 
 	baobab.chart_type_combo = gtk_combo_box_new_text ();
 	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo), 
-								_("View as Rings Chart"));
+				   _("View as Rings Chart"));
 	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo), 
-								_("View as Treemap Chart"));
+				   _("View as Treemap Chart"));
 	gtk_combo_box_set_active (GTK_COMBO_BOX (baobab.chart_type_combo), 0);
 	gtk_widget_show (baobab.chart_type_combo);
 	g_signal_connect (baobab.chart_type_combo,
@@ -861,23 +845,54 @@ initialize_ringschart (void)
 
 	/* Baobab's Treemap Chart */
 	baobab.treemap_chart = baobab_treemap_new ();
-	baobab_chart_set_total_fs_size (baobab.treemap_chart, g_fs.total);
 	baobab_chart_set_model_with_columns (baobab.treemap_chart,
-										GTK_TREE_MODEL (baobab.model),
-										COL_DIR_NAME,
-										COL_DIR_SIZE,
-										COL_H_PARSENAME,
-										COL_H_PERC,
-										COL_H_ELEMENTS,
-										NULL);
+					     GTK_TREE_MODEL (baobab.model),
+					     COL_DIR_NAME,
+					     COL_DIR_SIZE,
+					     COL_H_PARSENAME,
+					     COL_H_PERC,
+					     COL_H_ELEMENTS,
+					     NULL);
 	baobab_chart_set_max_depth (baobab.treemap_chart, 1);
-	g_signal_connect (baobab.treemap_chart, "sector_activated",
-					G_CALLBACK (on_rchart_sector_activated), NULL);
+	g_signal_connect (baobab.treemap_chart, "item_activated",
+					G_CALLBACK (on_chart_item_activated), NULL);
+	g_signal_connect (baobab.treemap_chart, "button-release-event", 
+					G_CALLBACK (on_chart_button_release), NULL);
 	gtk_widget_show (baobab.treemap_chart);
 	/* Ends Baobab's Treemap Chart */
 
-	baobab.current_chart = baobab.ringschart;
+	/* Baobab's Rings Chart */
+	baobab.rings_chart = (GtkWidget *) baobab_ringschart_new ();
+	baobab_chart_set_model_with_columns (baobab.rings_chart,
+					     GTK_TREE_MODEL (baobab.model),
+					     COL_DIR_NAME,
+					     COL_DIR_SIZE,
+					     COL_H_PARSENAME,
+					     COL_H_PERC,
+					     COL_H_ELEMENTS,
+					     NULL);
+	baobab_ringschart_set_subfoldertips_enabled (baobab.rings_chart,
+						     gconf_client_get_bool (baobab.gconf_client,
+									    BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
+									    NULL));
+	baobab_chart_set_max_depth (baobab.rings_chart, 1);
+	g_signal_connect (baobab.rings_chart, "item_activated",
+					G_CALLBACK (on_chart_item_activated), NULL);
+	g_signal_connect (baobab.rings_chart, "button-release-event", 
+					G_CALLBACK (on_chart_button_release), NULL);
+	gtk_widget_show (baobab.rings_chart);
+	/* Ends Baobab's Treemap Chart */
+
+	baobab.current_chart = baobab.rings_chart;
+
 	g_object_ref_sink (baobab.treemap_chart);
+	baobab_chart_freeze_updates (baobab.treemap_chart);
+
+	gtk_container_add (GTK_CONTAINER (chart_frame),
+			   baobab.current_chart);
+	gtk_widget_show_all (chart_frame);
+
+	create_context_menu ();
 }
 
 static gboolean
@@ -928,8 +943,8 @@ main (int argc, char *argv[])
                 gtk_message_dialog_format_secondary_text
                                                         (GTK_MESSAGE_DIALOG(dialog),
                                                          _("Without mount points disk usage cannot be analyzed."));
- 		gtk_dialog_run (GTK_DIALOG (dialog));
- 		gtk_widget_destroy (dialog);
+		gtk_dialog_run (GTK_DIALOG (dialog));
+		gtk_widget_destroy (dialog);
 		goto closing;
 	}
 

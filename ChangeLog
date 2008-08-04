@@ -1,3 +1,18 @@
+2008-08-04  Paolo Borelli  <pborelli@katamail.com>
+
+	Patch contributed by Eduardo Lima <elima@igalia.com>, bug #541407
+
+	* src/baobab-chart.c:
+	* src/baobab.c:
+	* src/baobab-ringschart.c:
+	* src/baobab-chart.h:
+	* src/baobab.h:
+	* src/baobab-rngschart.h:
+	* src/callbacks.c:
+	* src/callbacks.h:
+
+	Reimplemeny the ringschart as a subclass of BaobabChart.
+
 2008-07-25  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab-scan.c: do not leak file info when stopping scan.

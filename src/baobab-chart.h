@@ -93,7 +93,7 @@ struct _BaobabChartClass
   GtkWidgetClass parent_class;
 
   /* Signal prototypes */
-  void (* sector_activated) (BaobabChart *chart,
+  void (* item_activated) (BaobabChart *chart,
                              GtkTreeIter *iter);
 
   /* Abstract methods */
@@ -101,6 +101,12 @@ struct _BaobabChartClass
                       cairo_t *cr,
                       BaobabChartItem *item,
                       gboolean highlighted);
+
+  void (* pre_draw) (GtkWidget *chart,
+                     cairo_t *cr);
+
+  void (* post_draw) (GtkWidget *chart,
+                      cairo_t *cr);
 
   void (* calculate_item_geometry) (GtkWidget *chart,
                                     BaobabChartItem *item);
@@ -143,10 +149,11 @@ void  baobab_chart_move_up_root (GtkWidget *chart);
 void baobab_chart_zoom_in (GtkWidget *chart);
 void baobab_chart_zoom_out (GtkWidget *chart);
 void baobab_chart_save_snapshot (GtkWidget *chart);
-void baobab_chart_set_total_fs_size (GtkWidget *chart,
-                                     guint64 total_fs_size);
 void baobab_chart_set_summary_mode (GtkWidget *chart,
                                     gboolean summary_mode);
+gboolean baobab_chart_get_summary_mode (GtkWidget *chart);
+gboolean baobab_chart_is_frozen (GtkWidget *chart);
+BaobabChartItem *baobab_chart_get_highlighted_item (GtkWidget *chart);
 
 G_END_DECLS
 
