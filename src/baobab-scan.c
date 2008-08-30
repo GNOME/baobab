@@ -153,6 +153,35 @@ is_virtual_filesystem (GFile *file)
 	return ret;
 }
 
+static gboolean
+is_in_dot_gvfs (GFile *file)
+{
+	static GFile *dot_gvfs_dir = NULL;
+	GFile *parent;
+	gboolean res = FALSE;
+
+	if (dot_gvfs_dir == NULL)
+	{
+		gchar *dot_gvfs;
+
+		dot_gvfs = g_build_filename (g_get_home_dir (), ".gvfs", NULL);
+
+		dot_gvfs_dir = g_file_new_for_path (dot_gvfs);
+
+		g_free (dot_gvfs);
+	}
+
+	parent = g_file_get_parent (file);
+
+	if (parent != NULL)
+	{
+		res = g_file_equal (parent, dot_gvfs_dir);
+		g_object_unref (parent);
+	}
+
+	return res;
+}
+
 static struct allsizes
 loopdir (GFile *file,
 	 GFileInfo *info,
@@ -184,7 +213,13 @@ loopdir (GFile *file,
 	/* Skip the virtual file systems */
 	if (is_virtual_filesystem (file))
  		goto exit;
- 
+
+	/* FIXME: skip dirs in ~/.gvfs. It would be better to have a way
+	 * to check if a file is a FUSE mountpoint instead of just
+	 * hardcoding .gvfs */
+	if (is_in_dot_gvfs (file))
+		goto exit;
+
 	parse_name = g_file_get_parse_name (file);	
 
 	if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_SIZE))

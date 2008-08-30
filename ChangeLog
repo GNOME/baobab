@@ -1,3 +1,9 @@
+2008-08-30  Paolo Borelli  <pborelli@katamail.com>
+
+	* src/baobab-scan.c: Skip all subdirs of ~/.gvfs in order to avoid
+	scanning gvfs fuse mounts as local files. It would be cool to have
+	a less hackish way to do it.
+
 2008-08-04  Paolo Borelli  <pborelli@katamail.com>
 
 	Patch contributed by Eduardo Lima <elima@igalia.com>, bug #541407
