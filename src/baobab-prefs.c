@@ -262,7 +262,9 @@ fill_props_model (GtkWidget *dlg)
 	glibtop_mountlist mountlist;
 	glibtop_mountentry *mountentry, *mountentry_tofree;
 	guint64 fstotal, fsavail;
+	gchar	*dot_gvfs;
 	
+	dot_gvfs = g_build_filename (g_get_home_dir (), ".gvfs", NULL);
 	mountentry_tofree = glibtop_get_mountlist (&mountlist, 0);
 
 	for (lo = 0, mountentry = mountentry_tofree; lo < mountlist.number;
@@ -273,6 +275,11 @@ fill_props_model (GtkWidget *dlg)
 		GFile	*file;
 		gchar	*uri;
 		
+		
+		/* FIXME: skip gvfs fuse mounts... see baobab-scan.c for details */
+		if (dot_gvfs != NULL && mountentry->mountdir != NULL && strcmp (dot_gvfs, mountentry->mountdir) == 0) 
+			continue;
+				
 		glibtop_get_fsusage (&fsusage, mountentry->mountdir);
 		fstotal = fsusage.blocks * fsusage.block_size;
 		fsavail = fsusage.bfree * fsusage.block_size;
@@ -296,6 +303,7 @@ fill_props_model (GtkWidget *dlg)
 		g_object_unref(file);
 	}
 
+	g_free (dot_gvfs);
 	g_free (mountentry_tofree);
 }
 

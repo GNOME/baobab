@@ -1,8 +1,13 @@
+2008-09-01  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab-prefs.c: (fill_props_model):
+	skip gvfs fuse mounts in Preferences dialog.
+
 2008-08-30  Paolo Borelli  <pborelli@katamail.com>
 
 	* src/baobab-scan.c: Skip all subdirs of ~/.gvfs in order to avoid
 	scanning gvfs fuse mounts as local files. It would be cool to have
-	a less hackish way to do it.
+	a less hackish way to do it. Fixes #533878
 
 2008-08-04  Paolo Borelli  <pborelli@katamail.com>
 
