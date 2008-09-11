@@ -37,6 +37,12 @@
 
 #include "baobab.h"
 
+
+/* Translators: all the strings in this file are meant to map the
+   similar strings inside nautilus-connect-server and should be 
+   translated the same way
+*/
+
 struct _BaobabRemoteConnectDialogDetails {
 
 	GtkWidget *table;
