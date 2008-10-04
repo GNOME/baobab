@@ -114,9 +114,9 @@ on_tv_button_press (GtkWidget *widget,
 		GFile *file;
 
 		file = g_file_parse_name (baobab.selected_path);
-
-		popupmenu_list (path, event, can_trash_file (file));
-
+		if (g_file_query_exists (file, NULL)) {
+		     popupmenu_list (path, event, can_trash_file (file));
+		}
 		gtk_tree_path_free (path);
 		g_object_unref (file);
 
