@@ -25,8 +25,6 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <libgnomeui/libgnomeui.h>
-#include <libgnomeui/gnome-ui-init.h>
 #include <gconf/gconf-client.h>
 #include <glibtop.h>
 
@@ -906,25 +904,31 @@ start_proc_on_command_line (GFile *file)
 int
 main (int argc, char *argv[])
 {
-	GnomeProgram *program;
 	GOptionContext *context;
+	GError *error = NULL;
 
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
 	context = g_option_context_new (NULL);
+	g_option_context_set_ignore_unknown_options (context, FALSE);
+	g_option_context_set_help_enabled (context, TRUE);
+	g_option_context_add_group (context, gtk_get_option_group (TRUE));
 
-	program = gnome_program_init ("baobab", VERSION,
-				      LIBGNOMEUI_MODULE,
-				      argc, argv,
-				      GNOME_PARAM_GOPTION_CONTEXT, context,
-				      GNOME_PARAM_APP_DATADIR,
-				      BAOBAB_DATA_DIR, NULL);
+	g_option_context_parse (context, &argc, &argv, &error);
+
+	if (error) {
+		g_critical ("Unable to parse option: %s", error->message);
+		g_error_free (error);
+		g_option_context_free (context);
+
+		exit (1);
+	}
+	g_option_context_free (context);
 
 	g_set_application_name ("Baobab");
 
-	gnome_authentication_manager_init ();
 	glibtop_init ();
 
 	gtk_window_set_default_icon_name ("baobab");
@@ -994,8 +998,6 @@ main (int argc, char *argv[])
 	baobab_shutdown ();
 
 	glibtop_close ();
-
-	g_object_unref (program);
 
 	return 0;
 }

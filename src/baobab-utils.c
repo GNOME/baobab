@@ -33,7 +33,6 @@
 #include <gio/gio.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
-#include <libgnome/gnome-help.h>
 
 #include "baobab.h"
 #include "baobab-treeview.h"
@@ -549,11 +548,15 @@ baobab_help_display (GtkWindow   *parent,
 		     const gchar *link_id)
 {
 	GError *error = NULL;
+	char *uri;
 	gboolean ret;
 
-	ret = gnome_help_display (file_name,
-				  link_id,
-				  &error);
+	uri = (link_id) ? 
+		g_strdup_printf ("ghelp:%s#%s", file_name, link_id) :
+		g_strdup_printf ("ghelp:%s", file_name);
+
+	ret = gtk_show_uri (gtk_window_get_screen (parent),
+			    uri, gtk_get_current_event_time (), &error);
 
 	if (error != NULL) {
 		GtkWidget *dialog;

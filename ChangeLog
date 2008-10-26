@@ -1,3 +1,16 @@
+2008-10-26  Cosimo Cecchi  <cosimoc@gnome.org>
+
+        * src/Makefile.am:
+        * src/baobab-mount-operation.c: Removed.
+        * src/baobab-mount-operation.h: Removed.
+        * src/baobab-remote-connect-dialog.c:
+        (connect_server_dialog_present_uri):
+        * src/baobab-utils.c:
+        (baobab_help_display):
+        * src/baobab.c:
+        (main):
+	Drop libgnome dependency (#557264).
+
 2008-10-26  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* src/baobab-scan.c:
