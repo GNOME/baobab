@@ -557,6 +557,7 @@ baobab_help_display (GtkWindow   *parent,
 
 	ret = gtk_show_uri (gtk_window_get_screen (parent),
 			    uri, gtk_get_current_event_time (), &error);
+	g_free (uri);
 
 	if (error != NULL) {
 		GtkWidget *dialog;
