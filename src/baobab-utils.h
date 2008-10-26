@@ -47,5 +47,6 @@ void contents_changed (void);
 void set_glade_widget_sens (const gchar *name, gboolean sens);
 gchar *baobab_gconf_get_string_with_default (GConfClient *client, const gchar *key, const gchar *def);
 gboolean baobab_help_display (GtkWindow *parent, const gchar *file_name, const gchar *link_id);
+gboolean is_virtual_filesystem (GFile *file);
 
 #endif /* __BAOBAB_UTILS_H__ */

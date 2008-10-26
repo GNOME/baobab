@@ -40,6 +40,7 @@
 #include "baobab-utils.h"
 #include "callbacks.h"
 
+
 void
 baobab_get_filesystem (baobab_fs *fs)
 {
@@ -294,7 +295,9 @@ baobab_check_dir (GFile	*file)
 		return FALSE;
 	}	
 
-	if (g_file_info_get_file_type (info) != G_FILE_TYPE_DIRECTORY) {
+	if ((g_file_info_get_file_type (info) != G_FILE_TYPE_DIRECTORY) ||
+		is_virtual_filesystem(file)) {
+		
 		char *error_msg = NULL;
 		gchar *name = NULL;
 
@@ -571,6 +574,26 @@ baobab_help_display (GtkWindow   *parent,
 
 		g_error_free (error);
 	}
+
+	return ret;
+}
+
+gboolean
+is_virtual_filesystem (GFile *file)
+{
+	gboolean ret = FALSE;
+	char *path;
+	
+	path = g_file_get_path (file);
+
+	/* FIXME: we need a better way to check virtual FS */
+	if (path != NULL) {
+		if ((strcmp (path, "/proc") == 0) ||
+		    (strcmp (path, "/sys") == 0))
+	 		ret = TRUE;
+	}
+
+	g_free (path);
 
 	return ret;
 }

@@ -30,7 +30,7 @@
 #include <gio/gio.h>
 
 #include "baobab.h"
-#include "baobab-scan.h"
+#include "baobab-utils.h"
 
 
 /*
@@ -133,25 +133,6 @@ static const char *dir_attributes = \
 	G_FILE_ATTRIBUTE_UNIX_NLINK "," \
 	G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
 
-static gboolean
-is_virtual_filesystem (GFile *file)
-{
-	gboolean ret = FALSE;
-	char *path;
-	
-	path = g_file_get_path (file);
-
-	/* FIXME: we need a better way to check virtual FS */
-	if (path != NULL) {
-		if ((strcmp (path, "/proc") == 0) ||
-		    (strcmp (path, "/sys") == 0))
-	 		ret = TRUE;
-	}
-
-	g_free (path);
-
-	return ret;
-}
 
 static gboolean
 is_in_dot_gvfs (GFile *file)
