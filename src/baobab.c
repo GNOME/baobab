@@ -453,9 +453,11 @@ baobab_is_excluded_location (GFile *file)
 
 	g_return_val_if_fail (file != NULL, FALSE);
 
-	for (l=baobab.excluded_locations; l != NULL; l = l->next) {	
-		if (g_file_equal(l->data, file))
+	for (l = baobab.excluded_locations; l != NULL; l = l->next) {	
+		if (g_file_equal (l->data, file)) {
 			ret = TRUE;
+			break;
+		}
 	}
 
 	return ret;
