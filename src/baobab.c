@@ -328,8 +328,12 @@ first_row (void)
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, NULL);
 	size = g_format_size_for_display (g_fs.used);
-	g_assert (g_fs.total != 0);
-	perc = ((gdouble) g_fs.used * 100) / (gdouble) g_fs.total;
+	if (g_fs.total == 0 && g_fs.used == 0) {
+		perc = 100.0;
+	} else {
+		g_assert (g_fs.total != 0);
+		perc = ((gdouble) g_fs.used * 100) / (gdouble) g_fs.total;
+	}
 
 	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
 	gtk_tree_store_set (baobab.model, &firstiter,
@@ -628,31 +632,42 @@ baobab_subfolderstips_toggled (GConfClient *client,
 }
 
 static void
+store_excluded_locations (void)
+{
+	GSList *l;
+	GSList *uri_list = NULL;
+
+	for (l = baobab.excluded_locations; l != NULL; l = l->next) {
+		GSList *uri_list = NULL;
+
+		uri_list = g_slist_prepend (uri_list, g_file_get_uri(l->data));
+	}
+
+	gconf_client_set_list (baobab.gconf_client,
+			       PROPS_SCAN_KEY,
+			       GCONF_VALUE_STRING, 
+			       uri_list,
+			       NULL);
+
+	g_slist_foreach (uri_list, (GFunc) g_free, NULL);
+	g_slist_free (uri_list);
+}
+
+static void
 sanity_check_excluded_locations (void)
 {
 	GFile *root;
+	GSList *l;
 
 	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
 	root = g_file_new_for_uri ("file:///");
-	if (baobab_is_excluded_location (root)) {
-		GSList *uri_list, *l;
 
-		baobab.excluded_locations = g_slist_delete_link (baobab.excluded_locations, 
-						g_slist_find (baobab.excluded_locations, 
-							      root));
-
-		for (l = baobab.excluded_locations; l != NULL; l = l->next) {
-			uri_list = g_slist_prepend (uri_list, g_file_get_uri(l->data));
+	for (l = baobab.excluded_locations; l != NULL; l = l->next) {
+		if (g_file_equal (l->data, root)) {
+			baobab.excluded_locations = g_slist_delete_link (baobab.excluded_locations, l);
+			store_excluded_locations ();
+			break;			
 		}
-		
-		gconf_client_set_list (baobab.gconf_client,
-				       PROPS_SCAN_KEY,
-				       GCONF_VALUE_STRING, 
-				       uri_list,
-				       NULL);
-
-		g_slist_foreach (uri_list, (GFunc) g_free, NULL);
-		g_slist_free (uri_list);
 	}
 
 	g_object_unref (root);
