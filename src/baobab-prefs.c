@@ -237,7 +237,7 @@ check_toggled (GtkCellRendererToggle *cell,
 	gtk_tree_model_get_iter ((GtkTreeModel *) model_props, &iter,
 				 path);
 	gtk_tree_model_get ((GtkTreeModel *) model_props, &iter, COL_CHECK,
-			    &toggle, COL_MOUNT, &mountpoint, -1);
+			    &toggle, COL_MOUNT_D, &mountpoint, -1);
 
 	/* check if root dir */
 	if (strcmp ("/", mountpoint) == 0)
