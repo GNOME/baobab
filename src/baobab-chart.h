@@ -35,7 +35,6 @@
 #define __BAOBAB_CHART_H__
 
 #include <gtk/gtk.h>
-#include <gtk/gtktreemodel.h>
 
 G_BEGIN_DECLS
 

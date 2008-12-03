@@ -30,7 +30,7 @@
 #ifndef BAOBAB_REMOTE_CONNECT_DIALOG_H
 #define BAOBAB_REMOTE_CONNECT_DIALOG_H
 
-#include <gtk/gtkdialog.h>
+#include <gtk/gtk.h>
 #include <gio/gio.h>
 
 

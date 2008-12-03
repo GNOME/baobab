@@ -35,8 +35,7 @@
 #ifndef __GEDIT_SPINNER_H__
 #define __GEDIT_SPINNER_H__
 
-#include <gtk/gtkwidget.h>
-#include <gtk/gtkenums.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
