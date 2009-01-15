@@ -913,6 +913,11 @@ initialize_ringschart (void)
 static gboolean
 start_proc_on_command_line (GFile *file)
 {
+	if (baobab_is_excluded_location (file)) {
+		message("", _("Cannot check an excluded folder!"), GTK_MESSAGE_INFO, baobab.window);
+		return FALSE;
+		}
+		
 	baobab_scan_location (file);
 
 	return FALSE;

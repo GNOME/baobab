@@ -1,3 +1,10 @@
+2009-01-15  Fabio Marzocca  <thesaltydog@gmail.com>
+
+	* src/baobab.c: (start_proc_on_command_line):
+	Crash with segfault when trying to performe "scan folder" 
+	on a partition which is NOT included in "folders to scan"
+	(#567834)
+	
 2008-12-03  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* src/baobab-cell-renderer-progress.h:
