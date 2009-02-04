@@ -1165,7 +1165,7 @@ baobab_chart_get_pixbuf (GtkWidget *widget)
   gint w, h;
   GdkPixbuf *pixbuf;
 
-  g_return_if_fail (BAOBAB_IS_CHART (widget));
+  g_return_val_if_fail (BAOBAB_IS_CHART (widget), NULL);
 
   gdk_drawable_get_size (widget->window, &w, &h);
   pixbuf = gdk_pixbuf_get_from_drawable (NULL,
@@ -1778,7 +1778,7 @@ baobab_chart_get_summary_mode (GtkWidget *chart)
 {
   BaobabChartPrivate *priv;
 
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
+  g_return_val_if_fail (BAOBAB_IS_CHART (chart), FALSE);
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   return priv->summary_mode;
@@ -1798,7 +1798,7 @@ baobab_chart_is_frozen (GtkWidget *chart)
 {
   BaobabChartPrivate *priv;
 
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
+  g_return_val_if_fail (BAOBAB_IS_CHART (chart), FALSE);
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   return priv->is_frozen;
@@ -1818,7 +1818,7 @@ baobab_chart_get_highlighted_item (GtkWidget *chart)
 {
   BaobabChartPrivate *priv;
 
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
+  g_return_val_if_fail (BAOBAB_IS_CHART (chart), NULL);
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   return (priv->highlighted_item ? 

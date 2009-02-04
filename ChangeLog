@@ -1,3 +1,10 @@
+2009-02-04  Vincent Untz  <vuntz@gnome.org>
+
+	* src/baobab-chart.c: (baobab_chart_get_pixbuf),
+	(baobab_chart_get_summary_mode), (baobab_chart_is_frozen),
+	(baobab_chart_get_highlighted_item): use g_return_val_if_fail instead
+	of g_return_if_fail. Part of bug #570422.
+
 2009-01-27  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	* AUTHORS:
