@@ -74,22 +74,26 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 		NULL
 	};
 	
-	const gchar *license =
-    	"This program is free software; you can redistribute it and/or "
+	const gchar *license[] = {
+    	N_("This program is free software; you can redistribute it and/or "
     	"modify it under the terms of the GNU General Public License as "
     	"published by the Free Software Foundation; either version 2 of "
-    	"the License, or (at your option) any later version.\n"
-    	"\n"
-    	"This program is distributed in the hope that it will be useful, "
+    	"the License, or (at your option) any later version."),
+
+    	N_("This program is distributed in the hope that it will be useful, "
     	"but WITHOUT ANY WARRANTY; without even the implied warranty of "
     	"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
-    	"General Public License for more details.\n"
-    	"\n"
-    	"You should have received a copy of the GNU General Public License "
-    	"along with this program; if not, write to the Free Software "
-    	"Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA "
-    	"02111-1307, USA.\n";
+    	"General Public License for more details."),
 
+	N_("You should have received a copy of the GNU General Public License "
+	"along with this program; if not, write to the Free Software Foundation, Inc., 51 "
+	"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA")
+	};
+
+
+	gchar *license_trans = g_strjoin ("\n\n", _(license[0]), 
+                                   _(license[1]),
+                                   _(license[2]), NULL);
 
 	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2008";
 
@@ -100,12 +104,14 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 			       "version", VERSION,
 			       "copyright", copyright,
 			       "logo-icon-name", "baobab",
-			       "license", license,
+			       "license", license_trans,
 			       "authors", authors, 
 			       "translator-credits",
 			       _("translator-credits"), 
 			       "wrap-license", TRUE,
 			        NULL);
+  g_free (license_trans);
+
 }
 
 void
