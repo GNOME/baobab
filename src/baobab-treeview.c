@@ -188,7 +188,7 @@ create_directory_treeview (void)
 	GtkTreeViewColumn *col;
 	GtkWidget *scrolled;
 
-	GtkWidget *tvw = glade_xml_get_widget (baobab.main_xml, "treeview1");
+	GtkWidget *tvw = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "treeview1"));
 
 	g_signal_connect (tvw, "row-expanded",
 			  G_CALLBACK (on_tv_row_expanded), NULL);
@@ -272,7 +272,7 @@ create_directory_treeview (void)
 
 	gtk_tree_view_collapse_all (GTK_TREE_VIEW (tvw));
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (tvw), FALSE);
-	scrolled = glade_xml_get_widget (baobab.main_xml, "scrolledwindow1");
+	scrolled = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "scrolledwindow1"));
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
 					GTK_POLICY_AUTOMATIC,
 					GTK_POLICY_AUTOMATIC);

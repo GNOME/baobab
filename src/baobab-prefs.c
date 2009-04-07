@@ -40,7 +40,7 @@ static gboolean props_changed;
 static GtkTreeView *tree_props;
 static GtkListStore *model_props;
 static GtkListStore *create_props_model (void);
-static GtkWidget *create_tree_props (GladeXML *);
+static GtkWidget *create_tree_props (GtkBuilder *builder);
 static void fill_props_model (GtkWidget *);
 static void check_toggled (GtkCellRendererToggle * cell,
 			   gchar * path_str, gpointer data);
@@ -104,24 +104,34 @@ void
 create_props (void)
 {
 	GtkWidget *dlg, *check_enablehome;
-	GladeXML *dlg_xml;
+	GtkBuilder *builder;
+	GError *error = NULL;
 
 	props_changed = FALSE;
 
-	/* Glade stuff */
-	dlg_xml = glade_xml_new (BAOBAB_GLADE_FILE,
-				 "dialog_scan_props", NULL);
-	glade_xml_signal_autoconnect (dlg_xml);
-	dlg = glade_xml_get_widget (dlg_xml, "dialog_scan_props");
+	/* UI stuff */
+	builder = gtk_builder_new ();
+	gtk_builder_add_from_file (builder, BAOBAB_DIALOG_SCAN_UI_FILE, &error);
+
+	if (error) {
+		g_critical ("Can't load user interface file for the scan properties dialog: %s",
+			    error->message);
+		g_object_unref (builder);
+		g_error_free (error);
+
+		return;
+	}
+
+	dlg = GTK_WIDGET (gtk_builder_get_object (builder, "dialog_scan_props"));
 
 	gtk_window_set_transient_for (GTK_WINDOW (dlg),
 				      GTK_WINDOW (baobab.window));
 
-	tree_props = (GtkTreeView *) create_tree_props (dlg_xml);
+	tree_props = (GtkTreeView *) create_tree_props (builder);
 	fill_props_model (dlg);
 	read_gconf ();
 
-	check_enablehome = glade_xml_get_widget (dlg_xml, "check_enable_home");
+	check_enablehome = GTK_WIDGET (gtk_builder_get_object (builder, "check_enable_home"));
 	gtk_toggle_button_set_active ((GtkToggleButton *) check_enablehome,
 				      baobab.bbEnableHomeMonitor);
 
@@ -134,7 +144,6 @@ create_props (void)
 		    	  NULL);
 
   	gtk_widget_show_all (dlg);
-	g_object_unref (dlg_xml);
 }
 
 GtkListStore *
@@ -156,13 +165,13 @@ create_props_model (void)
 }
 
 GtkWidget *
-create_tree_props (GladeXML *dlg_xml)
+create_tree_props (GtkBuilder *builder)
 {
 	GtkCellRenderer *cell;
 	GtkTreeViewColumn *col;
 	GtkWidget *tvw;
 
-	tvw = glade_xml_get_widget (dlg_xml, "tree_view_props");
+	tvw = GTK_WIDGET (gtk_builder_get_object (builder , "tree_view_props"));
 
 	/* checkbox column */
 	cell = gtk_cell_renderer_toggle_new ();

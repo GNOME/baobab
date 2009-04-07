@@ -1,6 +1,6 @@
-# FIXME - this is an evil hack, but glade doesn't find the pixmaps otherwise
-gladedir         = $(datadir)/baobab/pixmaps
-glade_DATA       = baobab.glade
+uidir   = $(datadir)/baobab
+ui_DATA = baobab-main-window.ui \
+	  baobab-dialog-scan-props.ui
 
 baobabappdir	   = $(datadir)/applications
 baobabapp_in_files = baobab.desktop.in
@@ -28,7 +28,7 @@ install-data-local:
 endif
 
 EXTRA_DIST = 				\
-	$(glade_DATA)			\
+	$(ui_DATA)			\
 	baobab.desktop.in.in		\
 	$(schemas_in_files)		\
 	$(man_MANS)

@@ -328,12 +328,12 @@ on_view_tb_activate (GtkCheckMenuItem *checkmenuitem,
 }
 
 void
-on_view_sb_activate (GtkCheckMenuItem *checkmenuitem,
-                     gpointer          user_data) 
+on_view_sb_activate (GtkToggleAction *action,
+                     gpointer         user_data) 
 {
 	gboolean visible;
 
-	visible = gtk_check_menu_item_get_active (checkmenuitem);
+	visible = gtk_toggle_action_get_active (action);
 	set_statusbar_visible (visible);
 
 	gconf_client_set_bool (baobab.gconf_client,

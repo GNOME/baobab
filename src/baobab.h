@@ -30,14 +30,14 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#include <glade/glade-xml.h>
 #include <gconf/gconf-client.h>
 
 typedef struct _baobab_application baobab_application;
 typedef struct _baobab_fs baobab_fs;
 struct BaobabSearchOpt;
 
-#define BAOBAB_GLADE_FILE BAOBAB_PIX_DIR "baobab.glade"
+#define BAOBAB_UI_FILE PKGDATADIR "/baobab-main-window.ui"
+#define BAOBAB_DIALOG_SCAN_UI_FILE PKGDATADIR "/baobab-dialog-scan-props.ui"
 
 #define BAOBAB_KEY_DIR "/apps/baobab"
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
@@ -60,7 +60,7 @@ struct _ContextMenu {
 };
 
 struct _baobab_application {
-	GladeXML *main_xml;
+	GtkBuilder *main_ui;
   	GtkWidget *window;
   	GtkWidget *tree_view;
 	GtkWidget *rings_chart;

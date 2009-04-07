@@ -8,8 +8,6 @@ INCLUDES = \
 	-DLIBDIR=\""$(libdir)"\"				\
 	-DDATADIR=\""$(datadir)"\"				\
 	-DPKGDATADIR=\""$(datadir)/baobab"\"			\
-	-DUIDATADIR=\""$(datadir)/gnome-2.0/ui"\"		\
-	-DBAOBAB_DATA_DIR=\""$(datadir)"\" 			\
 	-DBAOBAB_PIX_DIR=\""$(datadir)/baobab/pixmaps/"\" 	\
 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 	\
 	$(NULL)
@@ -44,13 +42,11 @@ baobab_SOURCES = \
 
 baobab_CFLAGS = 			\
 	$(GNOME_UTILS_CFLAGS)		\
-	$(LIBGLADE_CFLAGS)		\
 	$(LIBGTOP_CFLAGS)		\
 	$(NULL)
 
 baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = 				\
 	$(GNOME_UTILS_LIBS)		\
-	$(LIBGLADE_LIBS)		\
 	$(LIBGTOP_LIBS)			\
 	$(NULL)

@@ -150,11 +150,20 @@ on_toggled (GtkToggleButton *togglebutton, gpointer dialog)
 }
 
 void
-set_glade_widget_sens (const gchar *name, gboolean sens)
+set_ui_action_sens (const gchar *name, gboolean sens)
+{
+	GtkAction *a;
+
+	a = GTK_ACTION (gtk_builder_get_object (baobab.main_ui, name));
+	gtk_action_set_sensitive (a, sens);
+}
+
+void
+set_ui_widget_sens (const gchar *name, gboolean sens)
 {
 	GtkWidget *w;
 
-	w = glade_xml_get_widget (baobab.main_xml, name);
+	w = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, name));
 	gtk_widget_set_sensitive (w, sens);
 }
 
@@ -393,7 +402,7 @@ show_label (void)
 {
 	GtkWidget *label;
 
-	label = glade_xml_get_widget (baobab.main_xml, "label1");
+	label = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "label1"));
 
 	gtk_label_set_markup (GTK_LABEL (label),
 			      baobab.label_scan);

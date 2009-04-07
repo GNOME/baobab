@@ -1,3 +1,22 @@
+2009-04-07  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* data/Makefile.am:
+	* data/baobab.glade:
+	* src/Makefile.am:
+	* src/baobab-prefs.c (create_props), (create_tree_props):
+	* src/baobab-treeview.c (create_directory_treeview):
+	* src/baobab-utils.c (set_ui_action_sens), (set_ui_widget_sens),
+	(show_label):
+	* src/baobab-utils.h:
+	* src/baobab.c (check_menu_sens), (baobab_scan_location),
+	(set_toolbar_visible), (set_statusbar_visible),
+	(baobab_create_toolbar), (baobab_create_statusbar), (baobab_init),
+	(initialize_ringschart), (main):
+	* src/baobab.h:
+	* src/callbacks.c (on_view_sb_activate):
+	* src/callbacks.h:
+	Port to GtkBuilder (#577940).
+
 2009-04-03  Fabio Marzocca  <thesaltydog@gmail.com>
 
 	Patch contributed by  Gabor Kelemen <kelemg@gnome.hu>

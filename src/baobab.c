@@ -119,32 +119,33 @@ check_menu_sens (gboolean scanning)
 			gtk_main_iteration ();
 
 		set_statusbar (_("Scanning..."));
-		set_glade_widget_sens ("expand_all", TRUE);
-		set_glade_widget_sens ("collapse_all", TRUE);
+		set_ui_action_sens ("expand_all", TRUE);
+		set_ui_action_sens ("collapse_all", TRUE);
 	}
 
-	set_glade_widget_sens ("tbscanhome", !scanning);
-	set_glade_widget_sens ("tbscanall", !scanning);
-	set_glade_widget_sens ("tbscandir", !scanning);
-	set_glade_widget_sens ("menuscanhome", !scanning);
-	set_glade_widget_sens ("menuallfs", !scanning);
-	set_glade_widget_sens ("menuscandir", !scanning);
-	set_glade_widget_sens ("tbstop", scanning);
-	set_glade_widget_sens ("tbrescan", !scanning && current_location != NULL);
-	set_glade_widget_sens ("menustop", scanning);
-	set_glade_widget_sens ("menurescan", !scanning && current_location != NULL);
-	set_glade_widget_sens ("preferenze1", !scanning);
-	set_glade_widget_sens ("menu_scan_rem", !scanning);
-	set_glade_widget_sens ("tb_scan_remote", !scanning);
-	set_glade_widget_sens ("ck_allocated",
-			       !scanning &&
-			       baobab.is_local && !g_noactivescans);
+	set_ui_action_sens ("menuscanhome", !scanning);
+	set_ui_action_sens ("menuallfs", !scanning);
+	set_ui_action_sens ("menuscandir", !scanning);
+	set_ui_action_sens ("menustop", scanning);
+	set_ui_action_sens ("menurescan", !scanning && current_location != NULL);
+	set_ui_action_sens ("preferenze1", !scanning);
+	set_ui_action_sens ("menu_scan_rem", !scanning);
+	set_ui_action_sens ("ck_allocated",
+			    !scanning &&
+			    baobab.is_local && !g_noactivescans);
+
+	set_ui_widget_sens ("tbscanhome", !scanning);
+	set_ui_widget_sens ("tbscanall", !scanning);
+	set_ui_widget_sens ("tbscandir", !scanning);
+	set_ui_widget_sens ("tbstop", scanning);
+	set_ui_widget_sens ("tbrescan", !scanning && current_location != NULL);
+	set_ui_widget_sens ("tb_scan_remote", !scanning);
 }
 
 void
 baobab_scan_location (GFile *file)
 {
-	GtkWidget *ck_allocated;
+	GtkToggleAction *ck_allocated;
 
 	if (!baobab_check_dir (file))
 		return;
@@ -166,15 +167,14 @@ baobab_scan_location (GFile *file)
 
 	/* check if the file system is local or remote */
 	baobab.is_local = scan_is_local (file);
-	ck_allocated = glade_xml_get_widget (baobab.main_xml, "ck_allocated");
+	ck_allocated = GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "ck_allocated"));
 	if (!baobab.is_local) {
-		gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (ck_allocated),
-						FALSE);
-		gtk_widget_set_sensitive (ck_allocated, FALSE);
+		gtk_toggle_action_set_active (ck_allocated, FALSE);
+		gtk_action_set_sensitive (GTK_ACTION (ck_allocated), FALSE);
 		baobab.show_allocated = FALSE;
 	}
 	else {
-		gtk_widget_set_sensitive (ck_allocated, TRUE);
+		gtk_action_set_sensitive (GTK_ACTION (ck_allocated), TRUE);
 	}
 
 	baobab_scan_execute (file);
@@ -470,7 +470,7 @@ baobab_is_excluded_location (GFile *file)
 void
 set_toolbar_visible (gboolean visible)
 {
-	GtkWidget *menu;
+	GtkToggleAction *action;
 
 	if (visible)
 		gtk_widget_show (baobab.toolbar);
@@ -478,14 +478,14 @@ set_toolbar_visible (gboolean visible)
 		gtk_widget_hide (baobab.toolbar);
 
 	/* make sure the check menu item is consistent */
-	menu = glade_xml_get_widget (baobab.main_xml, "view_tb");
-	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (menu), visible);
+	action = GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "view_tb"));
+	gtk_toggle_action_set_active (action, visible);
 }
 
 void
 set_statusbar_visible (gboolean visible)
 {
-	GtkWidget *menu;
+	GtkToggleAction *action;
 
 	if (visible)
 		gtk_widget_show (baobab.statusbar);
@@ -493,8 +493,8 @@ set_statusbar_visible (gboolean visible)
 		gtk_widget_hide (baobab.statusbar);
 
 	/* make sure the check menu item is consistent */
-	menu = glade_xml_get_widget (baobab.main_xml, "view_sb");
-	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (menu), visible);
+	action = GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "view_sb"));
+	gtk_toggle_action_set_active (action, visible);
 }
 
 void
@@ -568,7 +568,7 @@ baobab_create_toolbar (void)
 	GtkToolItem *separator;
 	gboolean visible;
 
-	toolbar = glade_xml_get_widget (baobab.main_xml, "toolbar1");
+	toolbar = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "toolbar1"));
 	if (toolbar == NULL) {
 		g_printerr ("Could not build toolbar\n");
 		return;
@@ -606,8 +606,8 @@ baobab_create_statusbar (void)
 {
 	gboolean visible;
 
-	baobab.statusbar = glade_xml_get_widget (baobab.main_xml,
-						 "statusbar1");
+	baobab.statusbar = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui,
+							       "statusbar1"));
 	if (baobab.statusbar == NULL) {
 		g_printerr ("Could not build statusbar\n");
 		return;
@@ -681,10 +681,18 @@ baobab_init (void)
 	GError *error = NULL;
 	monitor_home = NULL;
 
-	/* Load Glade */
-	baobab.main_xml = glade_xml_new (BAOBAB_GLADE_FILE,
-					 "baobab_window", NULL);
-	glade_xml_signal_autoconnect (baobab.main_xml);
+	/* Load the UI */
+	baobab.main_ui = gtk_builder_new ();
+	gtk_builder_add_from_file (baobab.main_ui, BAOBAB_UI_FILE, &error);
+
+	if (error) {
+		g_object_unref (baobab.main_ui);
+		g_critical ("Unable to load the user interface file: %s", error->message);
+		g_error_free (error);
+		exit (1);
+	}
+
+	gtk_builder_connect_signals (baobab.main_ui, NULL);
 
 	/* Misc */
 	baobab.label_scan = NULL;
@@ -833,7 +841,7 @@ initialize_ringschart (void)
 	gtk_frame_set_label_align (GTK_FRAME (chart_frame), 0.0, 0.0);
 	gtk_frame_set_shadow_type (GTK_FRAME (chart_frame), GTK_SHADOW_IN);
 
-	hpaned_main = glade_xml_get_widget (baobab.main_xml, "hpaned_main");
+	hpaned_main = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "hpaned_main"));
 	gtk_paned_pack2 (GTK_PANED (hpaned_main),
 			 chart_frame, TRUE, TRUE);
 	gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
@@ -849,7 +857,7 @@ initialize_ringschart (void)
 			  "changed",
 			  G_CALLBACK (on_chart_type_change), NULL);
 
-	hbox1 = glade_xml_get_widget (baobab.main_xml, "hbox1");
+	hbox1 = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "hbox1"));
 	gtk_container_add (GTK_CONTAINER (hbox1), baobab.chart_type_combo);
 	gtk_box_set_spacing (GTK_BOX (hbox1), 50);
 	gtk_box_set_child_packing (GTK_BOX (hbox1),
@@ -977,19 +985,17 @@ main (int argc, char *argv[])
 	set_label_scan (&g_fs);
 	show_label ();
 
-	baobab.window = glade_xml_get_widget (baobab.main_xml, "baobab_window");
+	baobab.window = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "baobab_window"));
 	gtk_window_set_position (GTK_WINDOW (baobab.window),
 				 GTK_WIN_POS_CENTER);
 
 	baobab.tree_view = create_directory_treeview ();
 
-	set_glade_widget_sens ("menurescan",FALSE);
+	set_ui_action_sens ("menurescan", FALSE);
 
 	/* set allocated space checkbox */
-	gtk_check_menu_item_set_active ((GtkCheckMenuItem *)
-				      glade_xml_get_widget (baobab.
-							    main_xml,
-							    "ck_allocated"),
+	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui,
+							 "ck_allocated")),
 				      baobab.show_allocated);
 
 	gtk_widget_show (baobab.window);

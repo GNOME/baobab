@@ -57,7 +57,7 @@ void volume_changed (GVolumeMonitor *volume_monitor,
 void on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_view_tb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
-void on_view_sb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
+void on_view_sb_activate (GtkToggleAction *action, gpointer         user_data);
 void on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data);
