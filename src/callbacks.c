@@ -345,7 +345,7 @@ on_view_sb_activate (GtkToggleAction *action,
 void
 on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	baobab_help_display (GTK_WINDOW (baobab.window), "baobab.xml", NULL);
+	baobab_help_display (GTK_WINDOW (baobab.window), "baobab", NULL);
 }
 
 void 
