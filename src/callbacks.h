@@ -45,15 +45,7 @@ void open_file_cb (GtkMenuItem *pmenu, gpointer dummy);
 void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
 void trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy);
 void list_all_cb (GtkMenuItem *pmenu, gpointer dummy);
-void contents_changed_cb (GFileMonitor      *file_monitor,
-              	          GFile             *child,
-              	          GFile             *other_file,
-              	          GFileMonitorEvent  event_type,
-              	          gpointer           user_data);
 void on_pref_menu (GtkMenuItem *menuitem, gpointer user_data);
-void volume_changed (GVolumeMonitor *volume_monitor,
-                     GVolume        *volume,
-                     gpointer        user_data);
 void on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_view_tb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 

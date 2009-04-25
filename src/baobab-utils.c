@@ -526,20 +526,6 @@ trash_file (GFile *file)
 	return TRUE;
 }
 
-void
-contents_changed (void)
-{
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
-
-	if (messageyesno (_("Rescan your home folder?"), 
-			  _("The content of your home folder has changed. Select rescan to update the disk usage details."),
-			  GTK_MESSAGE_QUESTION, _("_Rescan"), baobab.window) == GTK_RESPONSE_OK) {
-		baobab_rescan_current_dir ();
-	}
-}
-
 gchar *
 baobab_gconf_get_string_with_default (GConfClient *client,
 				      const gchar *key,

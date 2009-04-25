@@ -74,7 +74,21 @@ on_tv_cur_changed (GtkTreeView *treeview, gpointer data)
 		gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 				    COL_H_PARSENAME, &parsename, -1);
 	}
+}
+
+static void
+contents_changed (void)
+{
+	baobab_get_filesystem (&g_fs);
+	set_label_scan (&g_fs);
+	show_label ();
+
+	if (messageyesno (_("Rescan your home folder?"), 
+			  _("The content of your home folder has changed. Select rescan to update the disk usage details."),
+			  GTK_MESSAGE_QUESTION, _("_Rescan"), baobab.window) == GTK_RESPONSE_OK) {
+		baobab_rescan_current_dir ();
 	}
+}
 
 static gboolean
 on_tv_button_press (GtkWidget *widget,
@@ -83,14 +97,7 @@ on_tv_button_press (GtkWidget *widget,
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
-	
-
-	if (baobab.CONTENTS_CHANGED_DELAYED) {
-		baobab.CONTENTS_CHANGED_DELAYED = FALSE;
-		if (baobab.STOP_SCANNING) {
-			contents_changed ();
-		}
-	}
+	GFile *file;
 
 	gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),
 				       event->x, event->y,
@@ -98,32 +105,38 @@ on_tv_button_press (GtkWidget *widget,
 	if (!path)
 		return TRUE;		
 
-	/* check if a valid and scanned folder has been selected */
-	if (baobab.selected_path) {
-		g_free (baobab.selected_path);
-		baobab.selected_path = NULL;
-	}
-
+	/* get the selected path */
+	g_free (baobab.selected_path);
 	gtk_tree_model_get_iter (GTK_TREE_MODEL (baobab.model), &iter,
 				 path);
 	gtk_tree_model_get (GTK_TREE_MODEL (baobab.model), &iter,
 			    COL_H_PARSENAME, &baobab.selected_path, -1);
-	
+
+	file = g_file_parse_name (baobab.selected_path);
+
+	if (baobab.CONTENTS_CHANGED_DELAYED) {
+		GFile *home_file;
+
+		home_file = g_file_new_for_path (g_get_home_dir ());
+		if (g_file_has_prefix (file, home_file)) {
+			baobab.CONTENTS_CHANGED_DELAYED = FALSE;
+			if (baobab.STOP_SCANNING) {
+				contents_changed ();
+			}
+		}
+		g_object_unref (home_file);
+	}
+
 	/* right-click */
 	if (event->button == 3) {
-		GFile *file;
 
-		file = g_file_parse_name (baobab.selected_path);
 		if (g_file_query_exists (file, NULL)) {
 		     popupmenu_list (path, event, can_trash_file (file));
 		}
-		gtk_tree_path_free (path);
-		g_object_unref (file);
-
-		return FALSE;
 	}
 
 	gtk_tree_path_free (path);
+	g_object_unref (file);
 
 	return FALSE;
 }

@@ -674,12 +674,85 @@ sanity_check_excluded_locations (void)
 }
 
 static void
-baobab_init (void)
+volume_changed (GVolumeMonitor *volume_monitor,
+                GVolume        *volume,
+                gpointer        user_data)
 {
-	GSList *uri_list;
+	/* filesystem has changed (mounted or unmounted device) */
+	baobab_get_filesystem (&g_fs);
+	set_label_scan (&g_fs);
+	show_label ();
+}
+
+static void
+home_contents_changed (GFileMonitor      *file_monitor,
+		       GFile             *child,
+		       GFile             *other_file,
+		       GFileMonitorEvent  event_type,
+		       gpointer           user_data)
+
+{
+	gchar *excluding;
+
+	if (!baobab.bbEnableHomeMonitor)
+		return;
+
+	if (baobab.CONTENTS_CHANGED_DELAYED)
+		return;
+
+	excluding = g_file_get_basename (child);
+	if (strcmp (excluding, ".recently-used") == 0   ||
+	    strcmp (excluding, ".gnome2_private") == 0  ||
+	    strcmp (excluding, ".xsession-errors") == 0 ||
+	    strcmp (excluding, ".bash_history") == 0    ||
+	    strcmp (excluding, ".gconfd") == 0) {
+		g_free (excluding);
+		return;
+	}
+	g_free (excluding);
+
+	baobab.CONTENTS_CHANGED_DELAYED = TRUE;
+}
+
+static void
+monitor_volume (void)
+{
+	monitor_vol = g_volume_monitor_get ();
+	g_signal_connect (monitor_vol, "volume_changed",
+			  G_CALLBACK (volume_changed), NULL);
+}
+
+static void
+monitor_home_dir (void)
+{
 	GFile *file;
 	GError *error = NULL;
 	monitor_home = NULL;
+
+	file = g_file_new_for_path (g_get_home_dir ());
+	monitor_home = g_file_monitor_directory (file, 0, NULL, &error);
+	g_object_unref (file);
+
+	if (!monitor_home) {
+		message (_("Could not initialize monitoring"),
+			 _("Changes to your home folder will not be monitored."),
+			 GTK_MESSAGE_WARNING, NULL);
+		g_print ("homedir:%s\n", error->message);
+		g_error_free (error);
+	}
+	else {
+		g_signal_connect (monitor_home,
+				  "changed",
+				  G_CALLBACK (home_contents_changed),
+				  NULL);
+	}
+}
+
+static void
+baobab_init (void)
+{
+	GSList *uri_list;
+	GError *error = NULL;
 
 	/* Load the UI */
 	baobab.main_ui = gtk_builder_new ();
@@ -724,36 +797,17 @@ baobab_init (void)
 
 	sanity_check_excluded_locations ();
 
-	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
-							    PROPS_ENABLE_HOME_MONITOR,
-							    NULL);
-
 	baobab_create_toolbar ();
 
 	baobab_create_statusbar ();
 
-	/* start monitoring */
-	monitor_vol = g_volume_monitor_get ();
-	g_signal_connect (monitor_vol, "volume_changed",
-			  G_CALLBACK (volume_changed), NULL);
+	monitor_volume ();
 
-	file = g_file_new_for_path (g_get_home_dir ());
-	monitor_home = g_file_monitor_directory (file, 0, NULL, &error);
-	g_object_unref (file);
+	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
+							    PROPS_ENABLE_HOME_MONITOR,
+							    NULL);
 
-	if (!monitor_home) {
-		message (_("Could not initialize monitoring"),
-			 _("Changes to your home folder will not be monitored."),
-			 GTK_MESSAGE_WARNING, NULL);
-		g_print ("homedir:%s\n", error->message);
-		g_error_free (error);
-	}
-	else {
-		g_signal_connect (monitor_home,
-				  "changed",
-				  G_CALLBACK (contents_changed_cb),
-				  NULL);
-	}
+	monitor_home_dir ();
 }
 
 static void

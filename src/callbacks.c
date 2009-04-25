@@ -110,8 +110,7 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 			       _("translator-credits"), 
 			       "wrap-license", TRUE,
 			        NULL);
-  g_free (license_trans);
-
+	g_free (license_trans);
 }
 
 void
@@ -238,52 +237,9 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 				    5, &filesize, -1);
 		gtk_tree_store_remove (GTK_TREE_STORE (baobab.model),
 				       &iter);
-		if (baobab.bbEnableHomeMonitor)
-			contents_changed ();
 	}
 
 	g_object_unref (file);
-}
-
-void
-volume_changed (GVolumeMonitor *volume_monitor,
-                GVolume        *volume,
-                gpointer        user_data)
-{
-	/* filesystem has changed (mounted or unmounted device) */
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
-}
-
-void
-contents_changed_cb (GFileMonitor      *file_monitor,
-              	     GFile             *child,
-              	     GFile             *other_file,
-              	     GFileMonitorEvent  event_type,
-              	     gpointer           user_data)
-
-{
-	gchar *excluding;
-
-	if (!baobab.bbEnableHomeMonitor)
-		return;
-
-	if (baobab.CONTENTS_CHANGED_DELAYED)
-		return;
-
-	excluding = g_file_get_basename (child);
-	if (strcmp (excluding, ".recently-used") == 0   ||
-	    strcmp (excluding, ".gnome2_private") == 0  ||
-	    strcmp (excluding, ".xsession-errors") == 0 ||
-	    strcmp (excluding, ".bash_history") == 0    ||
-	    strcmp (excluding, ".gconfd") == 0) {
-		g_free (excluding);
-		return;
-	}
-	g_free (excluding);
-
-	baobab.CONTENTS_CHANGED_DELAYED = TRUE;
 }
 
 void

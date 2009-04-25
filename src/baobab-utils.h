@@ -43,7 +43,6 @@ void show_label (void);
 void open_file_with_application (GFile *file);
 gboolean can_trash_file (GFile *file);
 gboolean trash_file (GFile *file);
-void contents_changed (void);
 void set_ui_action_sens (const gchar *name, gboolean sens);
 void set_ui_widget_sens (const gchar *name, gboolean sens);
 gchar *baobab_gconf_get_string_with_default (GConfClient *client, const gchar *key, const gchar *def);
