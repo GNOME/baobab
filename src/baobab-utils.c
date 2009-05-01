@@ -290,6 +290,11 @@ baobab_check_dir (GFile	*file)
 	GError *error = NULL;
 	gboolean ret = TRUE;
 
+	if (baobab_is_excluded_location (file)) {
+		message("", _("Cannot check an excluded folder!"), GTK_MESSAGE_INFO, baobab.window);
+		return FALSE;
+		}
+
 	info = g_file_query_info (file,
 				  G_FILE_ATTRIBUTE_STANDARD_TYPE,
 				  G_FILE_QUERY_INFO_NONE,
