@@ -981,9 +981,26 @@ start_proc_on_command_line (GFile *file)
 	return FALSE;
 }
 
+static gboolean
+show_version (const gchar *option_name,
+              const gchar *value,
+              gpointer data,
+              GError **error)
+{
+	g_print("%s %s\n", g_get_application_name (), VERSION);
+	exit (0);
+	return TRUE; /* It's just good form */
+}
+
 int
 main (int argc, char *argv[])
 {
+	gchar **directories = NULL;
+	const GOptionEntry options[] = {
+		{"version", 'V', G_OPTION_FLAG_NO_ARG, G_OPTION_ARG_CALLBACK, show_version, N_("Show version"), NULL},
+		{G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &directories, NULL, N_("[DIRECTORY]")},
+		{NULL}
+	};
 	GOptionContext *context;
 	GError *error = NULL;
 
@@ -991,9 +1008,12 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+	g_set_application_name ("Baobab");
+
 	context = g_option_context_new (NULL);
 	g_option_context_set_ignore_unknown_options (context, FALSE);
 	g_option_context_set_help_enabled (context, TRUE);
+	g_option_context_add_main_entries(context, options, GETTEXT_PACKAGE);
 	g_option_context_add_group (context, gtk_get_option_group (TRUE));
 
 	g_option_context_parse (context, &argc, &argv, &error);
@@ -1007,7 +1027,10 @@ main (int argc, char *argv[])
 	}
 	g_option_context_free (context);
 
-	g_set_application_name ("Baobab");
+	if (directories && directories[0] && directories[1]) {
+		g_critical (_("Too many arguments. Only one directory can be specified."));
+		exit (1);
+	}
 
 	glibtop_init ();
 
@@ -1057,10 +1080,10 @@ main (int argc, char *argv[])
 	initialize_ringschart ();
 
 	/* commandline */
-	if (argc > 1) {
+	if (directories && directories[0]) {
 		GFile *file;
 
-		file = g_file_new_for_commandline_arg (argv[1]);
+		file = g_file_new_for_commandline_arg (directories[0]);
 
 		/* start processing the dir specified on the
 		 * command line as soon as we enter the main loop */
@@ -1069,6 +1092,7 @@ main (int argc, char *argv[])
 		                 file,
 		                 (GDestroyNotify) g_object_unref);
 	}
+	g_strfreev (directories);
 
 	gtk_main ();
 
