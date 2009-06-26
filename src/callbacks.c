@@ -95,7 +95,7 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
                                    _(license[1]),
                                    _(license[2]), NULL);
 
-	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2008";
+	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2009";
 
 	gtk_show_about_dialog (NULL,
 			       "name", _("Baobab"),
