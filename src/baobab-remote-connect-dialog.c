@@ -82,10 +82,10 @@ display_error_dialog (GError *error,
 				      GTK_DIALOG_DESTROY_WITH_PARENT,
 				      GTK_MESSAGE_ERROR,
 				      GTK_BUTTONS_OK,
-				      error_message);
+				      error_message, NULL);
 
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dlg),
-						  error->message);
+						  error->message, NULL);
 
 	g_free (error_message);
 

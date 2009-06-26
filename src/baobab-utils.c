@@ -251,7 +251,7 @@ message (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, GtkWidge
 					 type,
 					 GTK_BUTTONS_OK, "%s", primary_msg);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-	                                          secondary_msg);
+	                                          secondary_msg, NULL);
 	gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 }
@@ -269,7 +269,7 @@ messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gch
 					 GTK_BUTTONS_CANCEL,
 					 "%s", primary_msg);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-	                                          secondary_msg);
+	                                          secondary_msg, NULL);
 						  
 	button = gtk_button_new_with_mnemonic (ok_button);
 	GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);
@@ -569,7 +569,7 @@ baobab_help_display (GtkWindow   *parent,
 						 _("There was an error displaying help."));
 
 		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-							  error->message);
+							  error->message, NULL);
 
 		g_signal_connect (G_OBJECT (dialog), "response",
 				  G_CALLBACK (gtk_widget_destroy), NULL);
