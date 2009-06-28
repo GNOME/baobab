@@ -67,8 +67,8 @@ baobab_hardlinks_array_create (void)
 }
 
 static gboolean
-baobab_hardlinks_array_has (BaobabHardLinkArray   *a,
-			    GFileInfo  		  *s)
+baobab_hardlinks_array_has (BaobabHardLinkArray *a,
+			    BaobabHardLink      *s)
 {
 	guint i;
 
@@ -79,10 +79,7 @@ baobab_hardlinks_array_has (BaobabHardLinkArray   *a,
 		 * cur->st_dev == s->st_dev is the common case and may be more
 		 * expansive than cur->st_ino == s->st_ino
 		 * so keep this order */
-		if (cur->inode == g_file_info_get_attribute_uint64 (s,
-							G_FILE_ATTRIBUTE_UNIX_INODE) &&
-		    cur->device == g_file_info_get_attribute_uint32 (s,
-							G_FILE_ATTRIBUTE_UNIX_DEVICE))
+		if (cur->inode == s->inode && cur->device == s->device)
 			return TRUE;
 	}
 
@@ -92,20 +89,32 @@ baobab_hardlinks_array_has (BaobabHardLinkArray   *a,
 /* return FALSE if the element was already in the array */
 static gboolean
 baobab_hardlinks_array_add (BaobabHardLinkArray *a,
-			    GFileInfo    *s)
+			    GFileInfo           *s)
 {
-	BaobabHardLink hl;
 
-	if (baobab_hardlinks_array_has (a, s))
-		return FALSE;
+	if (g_file_info_has_attribute (s, G_FILE_ATTRIBUTE_UNIX_INODE) &&
+	    g_file_info_has_attribute (s, G_FILE_ATTRIBUTE_UNIX_DEVICE))
+	{
+		BaobabHardLink hl;
 
-	hl.inode = g_file_info_get_attribute_uint64 (s,
+		hl.inode = g_file_info_get_attribute_uint64 (s,
 				G_FILE_ATTRIBUTE_UNIX_INODE);
-	hl.device = g_file_info_get_attribute_uint32 (s,
+		hl.device = g_file_info_get_attribute_uint32 (s,
 				G_FILE_ATTRIBUTE_UNIX_DEVICE);
-	g_array_append_val (a, hl);
 
-	return TRUE;
+		if (baobab_hardlinks_array_has (a, s))
+			return FALSE;
+
+		g_array_append_val (a, hl);
+
+		return TRUE;
+	}
+	else
+	{
+		g_warning ("Could not obtain inode and device for hardlink");
+	}
+
+	return FALSE;
 }
 
 static void
@@ -131,6 +140,8 @@ static const char *dir_attributes = \
 	G_FILE_ATTRIBUTE_STANDARD_SIZE "," \
 	G_FILE_ATTRIBUTE_UNIX_BLOCKS "," \
 	G_FILE_ATTRIBUTE_UNIX_NLINK "," \
+	G_FILE_ATTRIBUTE_UNIX_INODE "," \
+	G_FILE_ATTRIBUTE_UNIX_DEVICE "," \
 	G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
 
 
