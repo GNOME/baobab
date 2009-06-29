@@ -102,7 +102,7 @@ baobab_hardlinks_array_add (BaobabHardLinkArray *a,
 		hl.device = g_file_info_get_attribute_uint32 (s,
 				G_FILE_ATTRIBUTE_UNIX_DEVICE);
 
-		if (baobab_hardlinks_array_has (a, s))
+		if (baobab_hardlinks_array_has (a, &hl))
 			return FALSE;
 
 		g_array_append_val (a, hl);
