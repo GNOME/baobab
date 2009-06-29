@@ -243,7 +243,10 @@ show_bars (GtkTreeModel *mdl,
 }
 
 void
-message (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, GtkWidget *parent)
+message (const gchar *primary_msg,
+	 const gchar *secondary_msg,
+	 GtkMessageType type,
+	 GtkWidget *parent)
 {
 	GtkWidget *dialog;
 	dialog = gtk_message_dialog_new (GTK_WINDOW (parent),
@@ -251,13 +254,17 @@ message (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, GtkWidge
 					 type,
 					 GTK_BUTTONS_OK, "%s", primary_msg);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-	                                          secondary_msg, NULL);
+	                                          "%s", secondary_msg);
 	gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 }
 
 gint
-messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gchar *ok_button, GtkWidget *parent)
+messageyesno (const gchar *primary_msg,
+	      const gchar *secondary_msg,
+	      GtkMessageType type,
+	      gchar *ok_button,
+	      GtkWidget *parent)
 {
 	GtkWidget *dialog;
 	GtkWidget *button;
@@ -269,8 +276,8 @@ messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gch
 					 GTK_BUTTONS_CANCEL,
 					 "%s", primary_msg);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-	                                          secondary_msg, NULL);
-						  
+	                                          "%s", secondary_msg);
+
 	button = gtk_button_new_with_mnemonic (ok_button);
 	GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);
 	gtk_widget_show (button);
@@ -569,7 +576,7 @@ baobab_help_display (GtkWindow   *parent,
 						 _("There was an error displaying help."));
 
 		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-							  error->message, NULL);
+							  "%s", error->message);
 
 		g_signal_connect (G_OBJECT (dialog), "response",
 				  G_CALLBACK (gtk_widget_destroy), NULL);

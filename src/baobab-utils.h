@@ -33,8 +33,8 @@ gboolean show_bars (GtkTreeModel *model,
 		    GtkTreePath *path,
 		    GtkTreeIter *iter,
 		    gpointer data);
-void message (gchar *, gchar *, GtkMessageType, GtkWidget *);
-gint messageyesno (gchar *primary_msg, gchar *secondary_msg, GtkMessageType type, gchar * ok_button, GtkWidget *parent);
+void message (const gchar *primary_msg, const gchar *secondary_msg, GtkMessageType type, GtkWidget *parent);
+gint messageyesno (const gchar *primary_msg, const gchar *secondary_msg, GtkMessageType type, gchar * ok_button, GtkWidget *parent);
 gboolean baobab_check_dir (GFile *);
 void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash);
 void set_label_scan (baobab_fs *);

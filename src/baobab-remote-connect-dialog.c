@@ -85,7 +85,7 @@ display_error_dialog (GError *error,
 				      error_message, NULL);
 
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dlg),
-						  error->message, NULL);
+						  "%s", error->message);
 
 	g_free (error_message);
 
@@ -101,7 +101,6 @@ mount_enclosing_ready_cb (GFile *location,
 	gboolean success;
 	GError *error = NULL;
 
-	
 	success = g_file_mount_enclosing_volume_finish (location,
 							res, &error);
 
