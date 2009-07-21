@@ -87,10 +87,8 @@ baobab_set_busy (gboolean busy)
 		gedit_spinner_start (GEDIT_SPINNER (baobab.spinner));
 
 		baobab_chart_freeze_updates (baobab.rings_chart);
-		baobab_chart_set_summary_mode (baobab.rings_chart, FALSE);
 
 		baobab_chart_freeze_updates (baobab.treemap_chart);
-		baobab_chart_set_summary_mode (baobab.treemap_chart, FALSE);
 
 		gtk_widget_set_sensitive (baobab.chart_type_combo, FALSE);
 	}
@@ -325,8 +323,27 @@ first_row (void)
 	gdouble perc;
 	char *label;
 
+        GtkTreeIter root_iter;
+
+	gchar *capacity_label, *capacity_size;
+
+	gtk_tree_store_append (baobab.model, &root_iter, NULL);
+	capacity_size = g_format_size_for_display (g_fs.total);
+
+	capacity_label = g_strdup (_("Total filesystem capacity"));
+	gtk_tree_store_set (baobab.model, &root_iter,
+			    COL_DIR_NAME, capacity_label,
+			    COL_H_PARSENAME, "",
+			    COL_H_PERC, 100.0,
+			    COL_DIR_SIZE, capacity_size,
+			    COL_H_SIZE, g_fs.total,
+			    COL_H_ALLOCSIZE, g_fs.total,
+			    COL_H_ELEMENTS, -1, -1);
+	g_free (capacity_label);
+	g_free (capacity_size);
+
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
-	gtk_tree_store_append (baobab.model, &firstiter, NULL);
+	gtk_tree_store_append (baobab.model, &firstiter, &root_iter);
 	size = g_format_size_for_display (g_fs.used);
 	if (g_fs.total == 0 && g_fs.used == 0) {
 		perc = 100.0;
@@ -335,7 +352,7 @@ first_row (void)
 		perc = ((gdouble) g_fs.used * 100) / (gdouble) g_fs.total;
 	}
 
-	label = g_strdup_printf ("<i>%s</i>", _("Total filesystem usage:"));
+	label = g_strdup (_("Total filesystem usage"));
 	gtk_tree_store_set (baobab.model, &firstiter,
 			    COL_DIR_NAME, label,
 			    COL_H_PARSENAME, "",
@@ -347,6 +364,8 @@ first_row (void)
 
 	g_free (size);
 	g_free (label);
+
+	gtk_tree_view_expand_all (GTK_TREE_VIEW (baobab.tree_view));
 }
 
 /* fills model during scanning */

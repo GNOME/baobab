@@ -53,8 +53,6 @@ enum
 
 struct _BaobabChartPrivate
 {
-  gboolean summary_mode;
-
   guint name_column;
   guint size_column;
   guint info_column;
@@ -243,7 +241,6 @@ baobab_chart_init (BaobabChart *chart)
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   chart->priv = priv;
 
-  priv->summary_mode = TRUE;
   priv->model = NULL;
   priv->max_depth = BAOBAB_CHART_MAX_DEPTH;
   priv->name_column = 0;
@@ -529,21 +526,6 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
 
   /* Create first item */
   node = baobab_chart_add_item (chart, 0, 0, 100, initial_iter);
-
-  /* If summary mode, insert a new item that will become root */
-  if (priv->summary_mode)
-    {
-      item = (BaobabChartItem *) node->data;
-      g_free (item->size);
-      item->size = NULL;
-
-      child_node = baobab_chart_add_item (chart, 1, 0, size, initial_iter);
-      child_item = (BaobabChartItem *) child_node->data;
-      child_item->parent = node;
-      child_item->name = item->name;
-
-      item->name = NULL;
-    }
 
   /* Iterate through childs building the list */
   class = BAOBAB_CHART_GET_CLASS (chart);
@@ -1740,48 +1722,6 @@ baobab_chart_save_snapshot (GtkWidget *chart)
 
   gtk_widget_destroy (fs_dlg);
   g_object_unref (pixbuf);
-}
-
-/**
- * baobab_chart_set_summary_mode:
- * @chart: the #BaobabChart to set summary mode to.
- * @summary_mode: boolean specifying TRUE is summary mode is on.
- *
- * Toggles on/off the summary mode (the initial mode that shows general state
- * before any scan has been made).
- *
- * Fails if @chart is not a #BaobabChart.
- **/
-void
-baobab_chart_set_summary_mode (GtkWidget *chart,
-                               gboolean summary_mode)
-{
-  BaobabChartPrivate *priv;
-
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
-
-  priv = BAOBAB_CHART_GET_PRIVATE (chart);
-  priv->summary_mode = summary_mode;
-}
-
-/**
- * baobab_chart_get_summary_mode:
- * @chart: the #BaobabChart to obtain summary mode from.
- *
- * Returns a boolean representing whether the chart is in summary mode (the 
- * initial mode that shows general state before any scan has been made).
- *
- * Fails if @chart is not a #BaobabChart.
- **/
-gboolean
-baobab_chart_get_summary_mode (GtkWidget *chart)
-{
-  BaobabChartPrivate *priv;
-
-  g_return_val_if_fail (BAOBAB_IS_CHART (chart), FALSE);
-
-  priv = BAOBAB_CHART_GET_PRIVATE (chart);
-  return priv->summary_mode;
 }
 
 /**

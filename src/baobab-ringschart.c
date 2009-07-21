@@ -587,10 +587,6 @@ baobab_ringschart_pre_draw (GtkWidget *chart, cairo_t *cr)
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
 
-  if ( (! priv->subfoldertips_enabled) ||
-       (baobab_chart_get_summary_mode (chart)) )
-    return;
-
   hl_item = baobab_chart_get_highlighted_item (chart);
 
   if ( (hl_item == NULL) || (! hl_item->has_visible_children) )

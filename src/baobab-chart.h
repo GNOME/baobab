@@ -148,9 +148,6 @@ void  baobab_chart_move_up_root (GtkWidget *chart);
 void baobab_chart_zoom_in (GtkWidget *chart);
 void baobab_chart_zoom_out (GtkWidget *chart);
 void baobab_chart_save_snapshot (GtkWidget *chart);
-void baobab_chart_set_summary_mode (GtkWidget *chart,
-                                    gboolean summary_mode);
-gboolean baobab_chart_get_summary_mode (GtkWidget *chart);
 gboolean baobab_chart_is_frozen (GtkWidget *chart);
 BaobabChartItem *baobab_chart_get_highlighted_item (GtkWidget *chart);
 
