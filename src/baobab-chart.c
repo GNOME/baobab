@@ -41,6 +41,8 @@
                                        BAOBAB_CHART_TYPE, \
                                        BaobabChartPrivate))
 
+#define SNAPSHOT_DEF_FILENAME_FORMAT "%s-disk-usage"
+
 G_DEFINE_ABSTRACT_TYPE (BaobabChart, baobab_chart, GTK_TYPE_WIDGET);
 
 enum
@@ -1649,6 +1651,9 @@ baobab_chart_save_snapshot (GtkWidget *chart)
   GtkWidget *opt_menu;
   gchar *sel_type;
   gchar *filename;
+  gchar *def_filename;
+
+  BaobabChartItem *item;
 
   g_return_if_fail (BAOBAB_IS_CHART (chart));
 
@@ -1671,6 +1676,8 @@ baobab_chart_save_snapshot (GtkWidget *chart)
       return;
     }
 
+  priv = BAOBAB_CHART (chart)->priv;
+
   /* Popup the File chooser dialog */
   fs_dlg = gtk_file_chooser_dialog_new (_("Save Snapshot"),
                                         NULL,
@@ -1679,6 +1686,12 @@ baobab_chart_save_snapshot (GtkWidget *chart)
                                         GTK_RESPONSE_CANCEL,
                                         GTK_STOCK_SAVE,
                                         GTK_RESPONSE_ACCEPT, NULL);
+
+  item = (BaobabChartItem *) priv->first_item->data;
+  def_filename = g_strdup_printf (SNAPSHOT_DEF_FILENAME_FORMAT, item->name);
+
+  gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (fs_dlg), def_filename);
+  g_free (def_filename);
 
   gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fs_dlg),
                                        g_get_home_dir ());
@@ -1714,6 +1727,13 @@ baobab_chart_save_snapshot (GtkWidget *chart)
     {
       filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (fs_dlg));
       sel_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (opt_menu));
+      if (! g_str_has_suffix (filename, sel_type))
+        {
+          gchar *tmp;
+          tmp = filename;
+          filename = g_strjoin (".", filename, sel_type, NULL);
+          g_free (tmp);
+        }
       gdk_pixbuf_save (pixbuf, filename, sel_type, NULL, NULL);
 
       g_free (filename);
