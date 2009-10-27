@@ -45,13 +45,13 @@ void open_file_cb (GtkMenuItem *pmenu, gpointer dummy);
 void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
 void trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy);
 void list_all_cb (GtkMenuItem *pmenu, gpointer dummy);
-void on_pref_menu (GtkMenuItem *menuitem, gpointer user_data);
+void on_pref_menu (GtkAction *a, gpointer user_data);
 void on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
-void on_view_tb_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data); 
+void on_view_tb_activate (GtkToggleAction *action, gpointer user_data); 
 void on_view_sb_activate (GtkToggleAction *action, gpointer         user_data);
-void on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data);
+void on_ck_allocated_activate (GtkToggleAction *action, gpointer user_data);
+void on_helpcontents_activate (GtkAction *a, gpointer user_data);
 void on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data);
 void on_chart_item_activated (BaobabChart *chart, GtkTreeIter *iter);
 gboolean on_chart_button_release (BaobabChart *chart, GdkEventButton *event, 

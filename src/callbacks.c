@@ -243,19 +243,19 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 }
 
 void
-on_pref_menu (GtkMenuItem *menuitem, gpointer user_data)
+on_pref_menu (GtkAction *a, gpointer user_data)
 {
 	create_props ();
 }
 
 void
-on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem,
+on_ck_allocated_activate (GtkToggleAction *action,
 			  gpointer user_data)
 {
 	if (!baobab.is_local)
 		return;
 
-	baobab.show_allocated = gtk_check_menu_item_get_active (checkmenuitem);
+	baobab.show_allocated = gtk_toggle_action_get_active (action);
 
 	baobab_treeview_show_allocated_size (baobab.tree_view,
 					     baobab.show_allocated);
@@ -269,12 +269,12 @@ on_ck_allocated_activate (GtkCheckMenuItem *checkmenuitem,
 }
 
 void
-on_view_tb_activate (GtkCheckMenuItem *checkmenuitem,
-                     gpointer          user_data) 
+on_view_tb_activate (GtkToggleAction *action,
+                     gpointer         user_data) 
 {
 	gboolean visible;
 
-	visible = gtk_check_menu_item_get_active (checkmenuitem);
+	visible = gtk_toggle_action_get_active (action);
 	set_toolbar_visible (visible);
 
 	gconf_client_set_bool (baobab.gconf_client,
@@ -299,7 +299,7 @@ on_view_sb_activate (GtkToggleAction *action,
 }
 
 void
-on_helpcontents_activate (GtkMenuItem *menuitem, gpointer user_data)
+on_helpcontents_activate (GtkAction *a, gpointer user_data)
 {
 	baobab_help_display (GTK_WINDOW (baobab.window), "baobab", NULL);
 }
