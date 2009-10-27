@@ -873,7 +873,7 @@ create_context_menu (void)
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item), 
 				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));       
 		
-	menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save snapshot"));
+	menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save screenshot"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->snapshot_item),
 									gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
 
