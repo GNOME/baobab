@@ -56,6 +56,13 @@ static GFile *current_location = NULL;
 #define BUSY_IMAGE_PATH		BAOBAB_PIX_DIR "busy.gif"
 #define DONE_IMAGE_PATH		BAOBAB_PIX_DIR "done.png"
 
+enum {
+	DND_TARGET_URI_LIST
+};
+
+static GtkTargetEntry dnd_target_list[] = {
+	{ "text/uri-list", 0, DND_TARGET_URI_LIST },
+};
 
 static gboolean
 scan_is_local (GFile	*file)
@@ -107,6 +114,19 @@ baobab_set_busy (gboolean busy)
 	}
 }
 
+static void
+set_drop_target (GtkWidget *target, gboolean active) {
+	if (active) {
+		gtk_drag_dest_set (GTK_WIDGET (target),
+				   GTK_DEST_DEFAULT_DROP | GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_HIGHLIGHT,
+				   dnd_target_list,
+				   G_N_ELEMENTS (dnd_target_list),
+				   GDK_ACTION_COPY);
+	} else {
+		gtk_drag_dest_unset (target);
+	}
+}
+
 /* menu & toolbar sensitivity */
 static void
 check_menu_sens (gboolean scanning)
@@ -138,6 +158,9 @@ check_menu_sens (gboolean scanning)
 	set_ui_widget_sens ("tbstop", scanning);
 	set_ui_widget_sens ("tbrescan", !scanning && current_location != NULL);
 	set_ui_widget_sens ("tb_scan_remote", !scanning);
+
+	set_drop_target (baobab.rings_chart, !scanning);
+	set_drop_target (baobab.treemap_chart, !scanning);
 }
 
 void
@@ -903,6 +926,44 @@ create_context_menu (void)
 	gtk_widget_show_all (menu->widget);
 }
 
+
+static void
+drag_data_received_handl (GtkWidget *widget,
+			 GdkDragContext *context,
+			 gint x,
+			 gint y,
+			 GtkSelectionData *selection_data,
+			 guint target_type,
+			 guint time,
+			 gpointer data)
+{
+	GFile *gf = NULL;
+	
+	/* set "gf" if we got some valid data */
+	if ((selection_data != NULL) &&
+	    (selection_data->length >= 0) &&
+	    (target_type == DND_TARGET_URI_LIST)) {
+		gchar **uri_list;
+		uri_list = g_uri_list_extract_uris ((gchar*)selection_data->data);
+		/* check list is 1 item long */
+		if (uri_list != NULL && uri_list[0] != NULL && uri_list[1] == NULL) {
+			gf = g_file_new_for_uri (uri_list[0]);
+		}
+		g_strfreev (uri_list);
+	}
+	
+	/* success if "gf" has been set */
+	if (gf != NULL) {
+		/* finish drop before beginning scan, as the drag-drop can
+		   probably time out */
+		gtk_drag_finish (context, TRUE, FALSE, time);
+		baobab_scan_location (gf);
+		g_object_unref (gf);
+	} else {
+		gtk_drag_finish (context, FALSE, FALSE, time);
+	}
+}
+
 static void
 initialize_ringschart (void)
 {
@@ -954,6 +1015,9 @@ initialize_ringschart (void)
 					G_CALLBACK (on_chart_item_activated), NULL);
 	g_signal_connect (baobab.treemap_chart, "button-release-event", 
 					G_CALLBACK (on_chart_button_release), NULL);
+	g_signal_connect (baobab.treemap_chart, "drag-data-received",
+					G_CALLBACK (drag_data_received_handl), NULL);
+	set_drop_target (baobab.treemap_chart, TRUE);
 	gtk_widget_show (baobab.treemap_chart);
 	/* Ends Baobab's Treemap Chart */
 
@@ -976,6 +1040,9 @@ initialize_ringschart (void)
 					G_CALLBACK (on_chart_item_activated), NULL);
 	g_signal_connect (baobab.rings_chart, "button-release-event", 
 					G_CALLBACK (on_chart_button_release), NULL);
+	g_signal_connect (baobab.rings_chart, "drag-data-received",
+					G_CALLBACK (drag_data_received_handl), NULL);
+	set_drop_target (baobab.rings_chart, TRUE);
 	gtk_widget_show (baobab.rings_chart);
 	/* Ends Baobab's Treemap Chart */
 
