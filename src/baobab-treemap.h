@@ -42,10 +42,13 @@ G_BEGIN_DECLS
 
 typedef struct _BaobabTreemap BaobabTreemap;
 typedef struct _BaobabTreemapClass BaobabTreemapClass;
+typedef struct _BaobabTreemapPrivate BaobabTreemapPrivate;
 
 struct _BaobabTreemap
 {
   BaobabChart parent;
+
+  BaobabTreemapPrivate *priv;
 };
 
 struct _BaobabTreemapClass

@@ -45,13 +45,15 @@
 
 G_DEFINE_ABSTRACT_TYPE (BaobabChart, baobab_chart, GTK_TYPE_WIDGET);
 
+#define BAOBAB_CHART_MAX_DEPTH 8
+#define BAOBAB_CHART_MIN_DEPTH 1
+
 enum
 {
   LEFT_BUTTON   = 1,
   MIDDLE_BUTTON = 2,
   RIGHT_BUTTON  = 3
 };
-
 
 struct _BaobabChartPrivate
 {
@@ -195,6 +197,8 @@ baobab_chart_class_init (BaobabChartClass *class)
   class->calculate_item_geometry = NULL;
   class->is_point_over_item      = NULL;
   class->get_item_rectangle      = NULL;
+  class->can_zoom_in             = NULL;
+  class->can_zoom_out            = NULL;
 
   g_object_class_install_property (obj_class,
                                    PROP_MAX_DEPTH,
@@ -549,7 +553,7 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
         }
 
       /* Get item's children and add them to the list */
-      if ((item->has_any_child) && (item->depth < priv->max_depth))
+      if ((item->has_any_child) && (item->depth < priv->max_depth + 1))
         {
           rel_start = 0;
 
@@ -606,7 +610,8 @@ baobab_chart_draw (GtkWidget *chart,
     {
       item = (BaobabChartItem *) node->data;
 
-      if ((item->visible) && (gdk_rectangle_intersect (&area, &item->rect, NULL)))
+      if ((item->visible) && (gdk_rectangle_intersect (&area, &item->rect, NULL))
+          && (item->depth <= priv->max_depth))
         {
           highlighted = (node == priv->highlighted_item);
 
@@ -935,14 +940,16 @@ baobab_chart_scroll (GtkWidget *widget,
     {
     case GDK_SCROLL_LEFT :
     case GDK_SCROLL_UP :
-      baobab_chart_zoom_out (widget);
+      if (baobab_chart_can_zoom_out (widget))
+        baobab_chart_zoom_out (widget);
       /* change the selected item when zooming */
       baobab_chart_motion_notify (widget, (GdkEventMotion *)event);
       break;
 
     case GDK_SCROLL_RIGHT :
     case GDK_SCROLL_DOWN :
-      baobab_chart_zoom_in (widget);
+      if (baobab_chart_can_zoom_in (widget))
+        baobab_chart_zoom_in (widget);
       break;
     }
 
@@ -1548,14 +1555,25 @@ baobab_chart_thaw_updates (GtkWidget *chart)
 void
 baobab_chart_zoom_in (GtkWidget *chart)
 {
+  BaobabChartPrivate *priv;
+  BaobabChartClass *class;
+  guint new_max_depth;
+
   g_return_if_fail (BAOBAB_IS_CHART (chart));
 
-  baobab_chart_set_max_depth (chart,
-                              baobab_chart_get_max_depth (chart) - 1);
+  priv = BAOBAB_CHART (chart)->priv;
+  class = BAOBAB_CHART_GET_CLASS (chart);
+
+  if (class->can_zoom_in != NULL)
+    new_max_depth = class->can_zoom_in (chart);
+  else
+    new_max_depth = priv->max_depth - 1;
+
+  baobab_chart_set_max_depth (chart, new_max_depth);
 }
 
 /**
- * baobab_chart_zoom_in:
+ * baobab_chart_zoom_out:
  * @chart: the #BaobabChart requested to zoom out.
  *
  * Zooms out the chart by increasing its maximun depth.
@@ -1783,4 +1801,56 @@ baobab_chart_get_highlighted_item (GtkWidget *chart)
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   return (priv->highlighted_item ? 
     (BaobabChartItem *) priv->highlighted_item->data : NULL);
+}
+
+/**
+ * baobab_chart_can_zoom_in:
+ * @chart: the #BaobabChart to ask if can be zoomed in.
+ *
+ * Returns a boolean telling whether the chart can be zoomed in, given its current
+ * visualization conditions.
+ *
+ * Fails if @chart is not a #BaobabChart.
+ **/
+gboolean
+baobab_chart_can_zoom_in (GtkWidget *chart)
+{
+  BaobabChartPrivate *priv;
+  BaobabChartClass *class;
+
+  g_return_if_fail (BAOBAB_IS_CHART (chart));
+
+  priv = BAOBAB_CHART (chart)->priv;
+  class = BAOBAB_CHART_GET_CLASS (chart);
+
+  if (class->can_zoom_in != NULL)
+    return class->can_zoom_in (chart) > 0;
+  else
+    return priv->max_depth > 1;
+}
+
+/**
+ * baobab_chart_can_zoom_out:
+ * @chart: the #BaobabChart to ask if can be zoomed out.
+ *
+ * Returns a boolean telling whether the chart can be zoomed out, given its current
+ * visualization conditions.
+ *
+ * Fails if @chart is not a #BaobabChart.
+ **/
+gboolean
+baobab_chart_can_zoom_out (GtkWidget *chart)
+{
+  BaobabChartPrivate *priv;
+  BaobabChartClass *class;
+
+  g_return_if_fail (BAOBAB_IS_CHART (chart));
+
+  priv = BAOBAB_CHART (chart)->priv;
+  class = BAOBAB_CHART_GET_CLASS (chart);
+
+  if (class->can_zoom_out != NULL)
+    return class->can_zoom_out (chart) > 0;
+  else
+    return (priv->max_depth < BAOBAB_CHART_MAX_DEPTH);
 }

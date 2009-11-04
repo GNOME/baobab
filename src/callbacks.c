@@ -375,10 +375,9 @@ on_chart_button_release (BaobabChart *chart, GdkEventButton *event,
                                 ((root_path != NULL) &&
                                  (gtk_tree_path_get_depth (root_path) > 1)));
       gtk_widget_set_sensitive (menu->zoom_in_item,
-                                (baobab_chart_get_max_depth (baobab.current_chart) > 1));
+                                baobab_chart_can_zoom_in (baobab.current_chart));
       gtk_widget_set_sensitive (menu->zoom_out_item,
-                               (baobab_chart_get_max_depth (baobab.current_chart) 
-                                < BAOBAB_CHART_MAX_DEPTH));
+                                baobab_chart_can_zoom_out (baobab.current_chart));
 
       /* show the menu */
       gtk_menu_popup (GTK_MENU (menu->widget), NULL, NULL, NULL, NULL,

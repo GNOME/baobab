@@ -38,9 +38,6 @@
 
 G_BEGIN_DECLS
 
-#define BAOBAB_CHART_MAX_DEPTH 8
-#define BAOBAB_CHART_MIN_DEPTH 1
-
 #define BAOBAB_CHART_TYPE       (baobab_chart_get_type ())
 #define BAOBAB_CHART(obj)       (G_TYPE_CHECK_INSTANCE_CAST ((obj), BAOBAB_CHART_TYPE, BaobabChart))
 #define BAOBAB_CHART_CLASS(obj) (G_TYPE_CHECK_CLASS_CAST ((obj), BAOBAB_CHART_TYPE, BaobabChartClass))
@@ -117,6 +114,9 @@ struct _BaobabChartClass
 
   void (* get_item_rectangle) (GtkWidget *chart,
                                BaobabChartItem *item);
+
+  guint (* can_zoom_in) (GtkWidget *chart);
+  guint (* can_zoom_out) (GtkWidget *chart);
 };
 
 GType baobab_chart_get_type (void) G_GNUC_CONST;
@@ -150,6 +150,9 @@ void baobab_chart_zoom_out (GtkWidget *chart);
 void baobab_chart_save_snapshot (GtkWidget *chart);
 gboolean baobab_chart_is_frozen (GtkWidget *chart);
 BaobabChartItem *baobab_chart_get_highlighted_item (GtkWidget *chart);
+
+gboolean baobab_chart_can_zoom_in (GtkWidget *chart);
+gboolean baobab_chart_can_zoom_out (GtkWidget *chart);
 
 G_END_DECLS
 
