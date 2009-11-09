@@ -425,7 +425,7 @@ fill_model (struct chan_data *data)
 
 	elements = g_string_new ("");
 	g_string_printf (elements,
-			 ngettext ("% 5d item", "% 5d items",
+			 ngettext ("%5d item", "%5d items",
 				   data->elements), data->elements);
 
 	size = g_format_size_for_display (data->size);
