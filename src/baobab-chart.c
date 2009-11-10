@@ -520,7 +520,12 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
   baobab_chart_free_items (chart);
 
   /* Get the tree iteration corresponding to root */
-  gtk_tree_model_get_iter (priv->model, &initial_iter, root);
+  if (!gtk_tree_model_get_iter (priv->model, &initial_iter, root))
+    {
+      priv->model_changed = FALSE;
+      return;
+    }
+
 
 
   model_root_path = gtk_tree_path_new_first ();
