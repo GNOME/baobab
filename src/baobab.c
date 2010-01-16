@@ -158,7 +158,11 @@ check_menu_sens (gboolean scanning)
 	set_ui_widget_sens ("tbstop", scanning);
 	set_ui_widget_sens ("tbrescan", !scanning && current_location != NULL);
 	set_ui_widget_sens ("tb_scan_remote", !scanning);
+}
 
+static void
+check_drop_targets (gboolean scanning)
+{
 	set_drop_target (baobab.rings_chart, !scanning);
 	set_drop_target (baobab.treemap_chart, !scanning);
 }
@@ -182,6 +186,7 @@ baobab_scan_location (GFile *file)
 	baobab.STOP_SCANNING = FALSE;
 	baobab_set_busy (TRUE);
 	check_menu_sens (TRUE);
+	check_drop_targets (TRUE);
 	gtk_tree_store_clear (baobab.model);
 	currentdepth = -1;	/* flag */
 	iterstack = g_queue_new ();
@@ -211,6 +216,7 @@ baobab_scan_location (GFile *file)
 
 	baobab_set_busy (FALSE);
 	check_menu_sens (FALSE);
+	check_drop_targets (FALSE);
 	set_statusbar (_("Ready"));
 
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
@@ -965,7 +971,7 @@ drag_data_received_handl (GtkWidget *widget,
 }
 
 static void
-initialize_ringschart (void)
+initialize_charts (void)
 {
 	GtkWidget *hpaned_main;
 	GtkWidget *chart_frame;
@@ -1017,7 +1023,6 @@ initialize_ringschart (void)
 					G_CALLBACK (on_chart_button_release), NULL);
 	g_signal_connect (baobab.treemap_chart, "drag-data-received",
 					G_CALLBACK (drag_data_received_handl), NULL);
-	set_drop_target (baobab.treemap_chart, TRUE);
 	gtk_widget_show (baobab.treemap_chart);
 	/* Ends Baobab's Treemap Chart */
 
@@ -1042,7 +1047,6 @@ initialize_ringschart (void)
 					G_CALLBACK (on_chart_button_release), NULL);
 	g_signal_connect (baobab.rings_chart, "drag-data-received",
 					G_CALLBACK (drag_data_received_handl), NULL);
-	set_drop_target (baobab.rings_chart, TRUE);
 	gtk_widget_show (baobab.rings_chart);
 	/* Ends Baobab's Treemap Chart */
 
@@ -1056,6 +1060,8 @@ initialize_ringschart (void)
 	gtk_widget_show_all (chart_frame);
 
 	create_context_menu ();
+
+	check_drop_targets (FALSE);
 }
 
 static gboolean
@@ -1163,7 +1169,7 @@ main (int argc, char *argv[])
 	set_statusbar (_("Ready"));
 
 	/* The ringschart */
-	initialize_ringschart ();
+	initialize_charts ();
 
 	/* commandline */
 	if (directories && directories[0]) {
