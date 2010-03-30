@@ -47,6 +47,7 @@ baobab_CFLAGS = 			\
 
 baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = 				\
+	-lm				\
 	$(GNOME_UTILS_LIBS)		\
 	$(LIBGTOP_LIBS)			\
 	$(NULL)
