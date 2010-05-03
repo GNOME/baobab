@@ -155,20 +155,23 @@ baobab_treemap_draw_item (GtkWidget *chart,
 {
   cairo_rectangle_t * rect;
   BaobabChartColor fill_color;
+  GtkAllocation allocation;
   gdouble width, height;
 
   rect = (cairo_rectangle_t *) item->data;
 
+  gtk_widget_get_allocation (chart, &allocation);
+
   if (item->depth % 2 != 0)
     {
-      baobab_chart_get_item_color (&fill_color, rect->x/chart->allocation.width*200,
+      baobab_chart_get_item_color (&fill_color, rect->x/allocation.width*200,
                                    item->depth, highlighted);
       width = rect->width - ITEM_PADDING;
       height = rect->height;
     }
   else
     {
-      baobab_chart_get_item_color (&fill_color, rect->y/chart->allocation.height*200,
+      baobab_chart_get_item_color (&fill_color, rect->y/allocation.height*200,
                                    item->depth, highlighted);
       width = rect->width;
       height = rect->height - ITEM_PADDING;
@@ -194,6 +197,7 @@ baobab_treemap_calculate_item_geometry (GtkWidget *chart,
   static cairo_rectangle_t *rect;
   gdouble width, height;
   BaobabChartItem *parent = NULL;
+  GtkAllocation allocation;
   guint max_depth;
 
   priv = BAOBAB_TREEMAP (chart)->priv;
@@ -208,10 +212,11 @@ baobab_treemap_calculate_item_geometry (GtkWidget *chart,
 
   if (item->parent == NULL)
     {
+      gtk_widget_get_allocation (chart, &allocation);
       p_area.x = 0 - ITEM_PADDING/2;
       p_area.y = 0 - ITEM_PADDING/2;
-      p_area.width = chart->allocation.width + ITEM_PADDING * 2;
-      p_area.height = chart->allocation.height + ITEM_PADDING;
+      p_area.width = allocation.width + ITEM_PADDING * 2;
+      p_area.height = allocation.height + ITEM_PADDING;
     }
   else
     {
