@@ -84,6 +84,7 @@ baobab_set_busy (gboolean busy)
 {
 	static GdkCursor *busy_cursor = NULL;
 	GdkCursor *cursor = NULL;
+	GdkWindow *window;
 
 	if (busy == TRUE) {
 		if (!busy_cursor) {
@@ -109,8 +110,9 @@ baobab_set_busy (gboolean busy)
 	}
 
 	/* change the cursor */
-	if (baobab.window->window) {
-		gdk_window_set_cursor (baobab.window->window, cursor);
+	window = gtk_widget_get_window (baobab.window);
+	if (window) {
+		gdk_window_set_cursor (window, cursor);
 	}
 }
 
@@ -947,10 +949,10 @@ drag_data_received_handl (GtkWidget *widget,
 	
 	/* set "gf" if we got some valid data */
 	if ((selection_data != NULL) &&
-	    (selection_data->length >= 0) &&
+	    (gtk_selection_data_get_length (selection_data) >= 0) &&
 	    (target_type == DND_TARGET_URI_LIST)) {
 		gchar **uri_list;
-		uri_list = g_uri_list_extract_uris ((gchar*)selection_data->data);
+		uri_list = g_uri_list_extract_uris (gtk_selection_data_get_data (selection_data));
 		/* check list is 1 item long */
 		if (uri_list != NULL && uri_list[0] != NULL && uri_list[1] == NULL) {
 			gf = g_file_new_for_uri (uri_list[0]);

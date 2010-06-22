@@ -44,9 +44,6 @@
                                             BAOBAB_RINGSCHART_TYPE, \
                                             BaobabRingschartPrivate))
 
-#define CENTER_X(widget) (widget->allocation.width / 2)
-#define CENTER_Y(widget) (widget->allocation.height / 2)
-
 #define ITEM_BORDER_WIDTH  1
 #define CHART_PADDING     13
 #define ITEM_MIN_ANGLE     0.03
@@ -186,6 +183,7 @@ baobab_ringschart_draw_item (GtkWidget *chart,
   BaobabRingschartPrivate *priv;
   BaobabRingschartItem *data;
   BaobabChartColor fill_color;
+  GtkAllocation allocation;
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
 
@@ -210,8 +208,10 @@ baobab_ringschart_draw_item (GtkWidget *chart,
                                item->depth,
                                highlighted);
 
+  gtk_widget_get_allocation (chart, &allocation);
   baobab_ringschart_draw_sector (cr,
-                                 CENTER_X (chart), CENTER_Y (chart),
+                                 allocation.width / 2,
+                                 allocation.height / 2,
                                  data->min_radius,
                                  data->max_radius - data->min_radius,
                                  data->start_angle,
@@ -228,6 +228,7 @@ baobab_ringschart_calculate_item_geometry (GtkWidget *chart,
   BaobabRingschartItem *data;
   BaobabRingschartItem p_data;
   BaobabChartItem *parent = NULL;
+  GtkAllocation allocation;
 
   gdouble max_radius;
   gdouble thickness;
@@ -243,7 +244,8 @@ baobab_ringschart_calculate_item_geometry (GtkWidget *chart,
   data->continued = FALSE;
   item->visible = FALSE;
 
-  max_radius = MIN (CENTER_X (chart), CENTER_Y (chart)) - CHART_PADDING;
+  gtk_widget_get_allocation (chart, &allocation);
+  max_radius = MIN (allocation.width / 2, allocation.height / 2) - CHART_PADDING;
   thickness = max_radius / (max_depth + 1);
 
   if (item->parent == NULL)
@@ -288,10 +290,12 @@ baobab_ringschart_is_point_over_item (GtkWidget *chart,
 {
   BaobabRingschartItem *data;
   gdouble radius, angle;
+  GtkAllocation allocation;
 
   data = (BaobabRingschartItem *) item->data;
-  x = x - CENTER_X (chart);
-  y = y - CENTER_Y (chart);
+  gtk_widget_get_allocation (chart, &allocation);
+  x = x - allocation.width / 2;
+  y = y - allocation.height / 2;
 
   radius = sqrt (x*x + y*y);
   angle = atan2 (y, x);
@@ -328,18 +332,20 @@ baobab_ringschart_get_item_rectangle (GtkWidget *chart,
   BaobabRingschartItem *data;
   GdkRectangle rect;
   gdouble cx, cy, r1, r2, a1, a2;
+  GtkAllocation allocation;
 
   data = (BaobabRingschartItem *) item->data;
 
-  cx = CENTER_X (chart);
-  cy = CENTER_Y (chart);
+  gtk_widget_get_allocation (chart, &allocation);
+  cx = allocation.width / 2;
+  cy = allocation.height / 2;
   r1 = data->min_radius;
   r2 = data->max_radius;
   a1 = data->start_angle;
   a2 = data->start_angle + data->angle;
 
-  rect.x = chart->allocation.width;
-  rect.y = chart->allocation.height;
+  rect.x = allocation.width;
+  rect.y = allocation.height;
   rect.width = 0;
   rect.height = 0;
 
@@ -432,6 +438,7 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
   gdouble sector_center_x, sector_center_y;
   gdouble a;
   guint i;
+  GtkAllocation allocation;
 
   PangoLayout *layout;
   PangoRectangle layout_rect;
@@ -442,8 +449,9 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
 
-  q_width = chart->allocation.width / 2;
-  q_height = chart->allocation.height / 2;
+  gtk_widget_get_allocation (chart, &allocation);
+  q_width = allocation.width / 2;
+  q_height = allocation.height / 2;
   q_angle = atan2 (q_height, q_width);
 
   memset (&last_rect, 0, sizeof (GdkRectangle));
@@ -506,10 +514,10 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
       while (a > M_PI/2)
         {
           if (i % 2 == 0)
-            tooltip_rect.x = chart->allocation.width - tooltip_rect.x
+            tooltip_rect.x = allocation.width - tooltip_rect.x
                              - tooltip_rect.width;
           else
-            tooltip_rect.y = chart->allocation.height - tooltip_rect.y
+            tooltip_rect.y = allocation.height - tooltip_rect.y
                              - tooltip_rect.height;
 
           i++;

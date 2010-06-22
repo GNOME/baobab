@@ -299,17 +299,22 @@ baobab_chart_realize (GtkWidget *widget)
   BaobabChart *chart;
   GdkWindowAttr attributes;
   gint attributes_mask;
+  GtkAllocation allocation;
+  GdkWindow *window;
+  GtkStyle *style;
 
   g_return_if_fail (BAOBAB_IS_CHART (widget));
 
   chart = BAOBAB_CHART (widget);
-  GTK_WIDGET_SET_FLAGS (widget, GTK_REALIZED);
+  gtk_widget_set_realized (widget, TRUE);
+
+  gtk_widget_get_allocation (widget, &allocation);
 
   attributes.window_type = GDK_WINDOW_CHILD;
-  attributes.x = widget->allocation.x;
-  attributes.y = widget->allocation.y;
-  attributes.width = widget->allocation.width;
-  attributes.height = widget->allocation.height;
+  attributes.x = allocation.x;
+  attributes.y = allocation.y;
+  attributes.width = allocation.width;
+  attributes.height = allocation.height;
   attributes.wclass = GDK_INPUT_OUTPUT;
   attributes.visual = gtk_widget_get_visual (widget);
   attributes.colormap = gtk_widget_get_colormap (widget);
@@ -317,13 +322,16 @@ baobab_chart_realize (GtkWidget *widget)
 
   attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_COLORMAP;
 
-  widget->window = gdk_window_new (gtk_widget_get_parent_window (widget),
-                                   &attributes,
-                                   attributes_mask);
-  gdk_window_set_user_data (widget->window, chart);
+  window = gdk_window_new (gtk_widget_get_parent_window (widget),
+                           &attributes,
+                           attributes_mask);
+  gtk_widget_set_window (widget, window);
+  gdk_window_set_user_data (window, chart);
 
-  widget->style = gtk_style_attach (widget->style, widget->window);
-  gtk_style_set_background (widget->style, widget->window, GTK_STATE_NORMAL);
+  gtk_widget_style_attach (widget);
+  gtk_style_set_background (gtk_widget_get_style (widget),
+                            window,
+                            GTK_STATE_NORMAL);
 
   gtk_widget_add_events (widget,
                          GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK |
@@ -346,11 +354,11 @@ baobab_chart_size_allocate (GtkWidget *widget,
   priv = BAOBAB_CHART (widget)->priv;
   class = BAOBAB_CHART_GET_CLASS (widget);
 
-  widget->allocation = *allocation;
+  gtk_widget_set_allocation (widget, allocation);
 
-  if (GTK_WIDGET_REALIZED (widget))
+  if (gtk_widget_get_realized (widget))
     {
-      gdk_window_move_resize (widget->window,
+      gdk_window_move_resize (gtk_widget_get_window (widget),
                   allocation->x, allocation->y,
                   allocation->width, allocation->height);
 
@@ -641,7 +649,7 @@ baobab_chart_update_draw (BaobabChart* chart,
   GtkTreePath *root_path = NULL;
   gint root_depth, node_depth;
 
-  if (!GTK_WIDGET_REALIZED (chart))
+  if (!gtk_widget_get_realized ( GTK_WIDGET (chart)))
     return;
 
   priv = BAOBAB_CHART (chart)->priv;
@@ -755,6 +763,7 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
   gdouble p, sx, sy;
   GtkTreePath *root_path = NULL;
   GtkTreePath *current_path = NULL;
+  GtkAllocation allocation;
 
   priv = BAOBAB_CHART (chart)->priv;
 
@@ -763,7 +772,7 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
     return FALSE;
 
   /* get a cairo_t */
-  cr = gdk_cairo_create (chart->window);
+  cr = gdk_cairo_create (gtk_widget_get_window (chart));
 
   cairo_rectangle (cr,
                    event->area.x, event->area.y,
@@ -779,16 +788,16 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
 
           cairo_clip (cr);
 
+          gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
           if (w > 0 && h > 0 &&
-          !(chart->allocation.width == w &&
-                chart->allocation.height == h))
+          !(allocation.width == w && allocation.height == h))
             {
               /* minimal available proportion */
-              p = MIN (chart->allocation.width / (1.0 * w),
-                       chart->allocation.height / (1.0 * h));
+              p = MIN (allocation.width / (1.0 * w),
+                       allocation.height / (1.0 * h));
 
-              sx = (gdouble) (chart->allocation.width - w * p) / 2.0;
-              sy = (gdouble) (chart->allocation.height - h * p) / 2.0;
+              sx = (gdouble) (allocation.width - w * p) / 2.0;
+              sy = (gdouble) (allocation.height - h * p) / 2.0;
 
               cairo_translate (cr, sx, sy);
               cairo_scale (cr, p, p);
@@ -982,7 +991,8 @@ baobab_chart_set_item_highlight (GtkWidget *chart,
   else
     priv->highlighted_item = NULL;
 
-  gdk_window_invalidate_rect (chart->window, &item->rect, TRUE);
+  gdk_window_invalidate_rect (gtk_widget_get_window ( GTK_WIDGET (chart)),
+                              &item->rect, TRUE);
 }
 
 static gint
@@ -1163,9 +1173,9 @@ baobab_chart_get_pixbuf (GtkWidget *widget)
 
   g_return_val_if_fail (BAOBAB_IS_CHART (widget), NULL);
 
-  gdk_drawable_get_size (widget->window, &w, &h);
+  gdk_drawable_get_size (gtk_widget_get_window (widget), &w, &h);
   pixbuf = gdk_pixbuf_get_from_drawable (NULL,
-                                         widget->window,
+                                         gtk_widget_get_window (widget),
                                          gdk_colormap_get_system (),
                                          0, 0,
                                          0, 0,
@@ -1464,6 +1474,7 @@ baobab_chart_freeze_updates (GtkWidget *chart)
   cairo_surface_t *surface = NULL;
   cairo_t *cr = NULL;
   GdkRectangle area;
+  GtkAllocation allocation;
 
   g_return_if_fail (BAOBAB_IS_CHART (chart));
 
@@ -1476,9 +1487,10 @@ baobab_chart_freeze_updates (GtkWidget *chart)
     baobab_chart_disconnect_signals (chart,
                                      priv->model);
 
+  gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
   surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
-                                        chart->allocation.width,
-                                        chart->allocation.height);
+                                        allocation.width,
+                                        allocation.height);
 
   if (cairo_surface_status (surface) == CAIRO_STATUS_SUCCESS)
     {
@@ -1486,14 +1498,14 @@ baobab_chart_freeze_updates (GtkWidget *chart)
 
       area.x = 0;
       area.y = 0;
-      area.width = chart->allocation.width;
-      area.height = chart->allocation.height;
+      area.width = allocation.width;
+      area.height = allocation.height;
       baobab_chart_draw (chart, cr, area);
 
       cairo_rectangle (cr,
                        0, 0,
-                       chart->allocation.width,
-                       chart->allocation.height);
+                       allocation.width,
+                       allocation.height);
 
       cairo_set_source_rgba (cr, 0.93, 0.93, 0.93, 0.5);  /* tango: eeeeec */
       cairo_fill_preserve (cr);
