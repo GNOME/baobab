@@ -33,8 +33,6 @@ baobab_SOURCES = \
 	baobab-prefs.h \
 	baobab-remote-connect-dialog.c \
 	baobab-remote-connect-dialog.h \
-	gedit-spinner.c \
-	gedit-spinner.h \
 	baobab-chart.c \
 	baobab-chart.h \
 	baobab-treemap.c \

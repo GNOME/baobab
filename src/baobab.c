@@ -35,8 +35,6 @@
 #include "callbacks.h"
 #include "baobab-prefs.h"
 
-#include "gedit-spinner.h"
-
 #include "baobab-treemap.h"
 #include "baobab-ringschart.h"
 
@@ -92,7 +90,8 @@ baobab_set_busy (gboolean busy)
 		}
 		cursor = busy_cursor;
 
-		gedit_spinner_start (GEDIT_SPINNER (baobab.spinner));
+		gtk_widget_show (baobab.spinner);
+		gtk_spinner_start (GTK_SPINNER (baobab.spinner));
 
 		baobab_chart_freeze_updates (baobab.rings_chart);
 
@@ -101,7 +100,8 @@ baobab_set_busy (gboolean busy)
 		gtk_widget_set_sensitive (baobab.chart_type_combo, FALSE);
 	}
 	else {
-		gedit_spinner_stop (GEDIT_SPINNER (baobab.spinner));
+		gtk_widget_hide (baobab.spinner);
+		gtk_spinner_stop (GTK_SPINNER (baobab.spinner));
 
 		baobab_chart_thaw_updates (baobab.rings_chart);
 		baobab_chart_thaw_updates (baobab.treemap_chart);
@@ -558,8 +558,8 @@ set_statusbar (const gchar *text)
 }
 
 static void
-toolbar_reconfigured_cb (GtkToolItem  *item,
-			 GeditSpinner *spinner)
+toolbar_reconfigured_cb (GtkToolItem *item,
+			 GtkWidget   *spinner)
 {
 	GtkToolbarStyle style;
 	GtkIconSize size;
@@ -575,7 +575,7 @@ toolbar_reconfigured_cb (GtkToolItem  *item,
 		size = GTK_ICON_SIZE_LARGE_TOOLBAR;
 	}
 
-	gedit_spinner_set_size (spinner, size);
+	gtk_widget_set_size_request (spinner, size, size);
 }
 
 static void
@@ -632,16 +632,16 @@ baobab_create_toolbar (void)
 	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (separator));
 	gtk_widget_show (GTK_WIDGET (separator));
 
-	baobab.spinner = gedit_spinner_new ();
+	baobab.spinner = gtk_spinner_new ();
 	item = gtk_tool_item_new ();
 	gtk_container_add (GTK_CONTAINER (item), baobab.spinner);
 	gtk_container_add (GTK_CONTAINER (toolbar), GTK_WIDGET (item));
-	gtk_widget_show (GTK_WIDGET (baobab.spinner));
 	gtk_widget_show (GTK_WIDGET (item));
 
 	g_signal_connect (item, "toolbar-reconfigured",
 			  G_CALLBACK (toolbar_reconfigured_cb), baobab.spinner);
-	toolbar_reconfigured_cb (item, GEDIT_SPINNER (baobab.spinner));
+	toolbar_reconfigured_cb (item, baobab.spinner);
+
 	baobab_toolbar_style (NULL, 0, NULL, NULL);
 
 	visible = gconf_client_get_bool (baobab.gconf_client,
