@@ -79,13 +79,13 @@ filechooser_response_cb (GtkDialog *dialog,
 void
 create_props (void)
 {
-	GtkWidget *dlg, *check_enablehome;
 	GtkBuilder *builder;
+	GtkWidget *dlg;
+	GtkWidget *check_enablehome;
 	GError *error = NULL;
 
 	props_changed = FALSE;
 
-	/* UI stuff */
 	builder = gtk_builder_new ();
 	gtk_builder_add_from_file (builder, BAOBAB_DIALOG_SCAN_UI_FILE, &error);
 
@@ -119,7 +119,7 @@ create_props (void)
 		    	  G_CALLBACK (filechooser_response_cb),
 		    	  NULL);
 
-  	gtk_widget_show_all (dlg);
+	gtk_widget_show_all (dlg);
 }
 
 GtkListStore *
@@ -248,21 +248,21 @@ fill_props_model (GtkWidget *dlg)
 	glibtop_mountlist mountlist;
 	glibtop_mountentry *mountentry, *mountentry_tofree;
 	guint64 fstotal, fsavail;
-	
+
 	mountentry_tofree = glibtop_get_mountlist (&mountlist, 0);
 
-	for (lo = 0, mountentry = mountentry_tofree; lo < mountlist.number;
+	for (lo = 0, mountentry = mountentry_tofree;
+	     lo < mountlist.number;
 	     lo++, mountentry++) {
-	     
-	     	glibtop_fsusage fsusage;
+		glibtop_fsusage fsusage;
 		gchar * total, *avail;
-		GFile	*file;
-		gchar	*uri;
-		
-                struct stat buf;
-                if (g_stat(mountentry->devname,&buf) == -1)
-                  continue;		
-				
+		GFile *file;
+		gchar *uri;
+
+		struct stat buf;
+		if (g_stat (mountentry->devname,&buf) == -1)
+			continue;
+
 		glibtop_get_fsusage (&fsusage, mountentry->mountdir);
 		fstotal = fsusage.blocks * fsusage.block_size;
 		fsavail = fsusage.bfree * fsusage.block_size;
@@ -271,15 +271,15 @@ fill_props_model (GtkWidget *dlg)
 		file = g_file_new_for_path (mountentry->mountdir);
 		uri = g_file_get_uri (file);
 		gtk_list_store_append (model_props, &iter);
-			gtk_list_store_set (model_props, &iter,
-					    COL_CHECK, TRUE,
-					    COL_DEVICE, mountentry->devname,
-					    COL_MOUNT_D, mountentry->mountdir, 
-					    COL_MOUNT, uri, 
-					    COL_TYPE, mountentry->type,
-					    COL_FS_SIZE, total,
-					    COL_FS_AVAIL, avail,
-					    -1);
+		gtk_list_store_set (model_props, &iter,
+				    COL_CHECK, TRUE,
+				    COL_DEVICE, mountentry->devname,
+				    COL_MOUNT_D, mountentry->mountdir,
+				    COL_MOUNT, uri,
+				    COL_TYPE, mountentry->type,
+				    COL_FS_SIZE, total,
+				    COL_FS_AVAIL, avail,
+				    -1);
 		g_free(total);
 		g_free(avail);
 		g_free(uri);
