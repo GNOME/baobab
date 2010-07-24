@@ -58,7 +58,9 @@ struct _BaobabChartMenu {
 	GtkWidget *set_root_item;
 };
 
-struct _baobab_application {
+typedef struct _BaobabApplication BaobabApplication;
+
+struct _BaobabApplication {
 	GtkBuilder *main_ui;
 	GtkWidget *window;
 	GtkWidget *tree_view;
@@ -85,6 +87,9 @@ struct _baobab_application {
 	gint model_max_depth;
 };
 
+/* Application singleton */
+BaobabApplication baobab;
+
 struct _baobab_fs {
 	guint64 total;
 	guint64 used;
@@ -103,7 +108,6 @@ struct chan_data {
 
 /* globals */
 gboolean g_noactivescans;
-baobab_application baobab;
 baobab_fs g_fs;
 
 void baobab_set_busy (gboolean busy);
