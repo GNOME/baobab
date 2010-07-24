@@ -147,9 +147,7 @@ check_menu_sens (gboolean scanning)
 	set_ui_action_sens ("menurescan", !scanning && current_location != NULL);
 	set_ui_action_sens ("preferenze1", !scanning);
 	set_ui_action_sens ("menu_scan_rem", !scanning);
-	set_ui_action_sens ("ck_allocated",
-			    !scanning &&
-			    baobab.is_local && !g_noactivescans);
+	set_ui_action_sens ("ck_allocated", !scanning && baobab.is_local);
 
 	set_ui_widget_sens ("tbscanhome", !scanning);
 	set_ui_widget_sens ("tbscanall", !scanning);
@@ -181,7 +179,6 @@ baobab_scan_location (GFile *file)
 		g_object_unref (current_location);
 	current_location = g_object_ref (file);
 
-	g_noactivescans = FALSE; 
 	baobab.STOP_SCANNING = FALSE;
 	baobab_set_busy (TRUE);
 	check_menu_sens (TRUE);
@@ -1216,7 +1213,6 @@ main (int argc, char *argv[])
 
 	baobab_init ();
 
-	g_noactivescans = TRUE;
 	check_menu_sens (FALSE);
 	baobab_get_filesystem (&g_fs);
 	if (g_fs.total == 0) {

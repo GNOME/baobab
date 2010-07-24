@@ -107,7 +107,6 @@ struct chan_data {
 };
 
 /* globals */
-gboolean g_noactivescans;
 baobab_fs g_fs;
 
 void baobab_set_busy (gboolean busy);
