@@ -744,6 +744,17 @@ excluded_locations_changed (GConfClient *client,
 }
 
 static void
+baobab_monitor_home_toggled (GConfClient *client,
+			     guint cnxn_id,
+			     GConfEntry *entry,
+			     gpointer user_data)
+{
+	baobab.monitor_home = gconf_client_get_bool (baobab.gconf_client,
+						     PROPS_ENABLE_HOME_MONITOR,
+						     NULL);
+}
+
+static void
 volume_changed (GVolumeMonitor *volume_monitor,
                 GVolume        *volume,
                 gpointer        user_data)
@@ -764,7 +775,7 @@ home_contents_changed (GFileMonitor      *file_monitor,
 {
 	gchar *excluding;
 
-	if (!baobab.bbEnableHomeMonitor)
+	if (!baobab.monitor_home)
 		return;
 
 	if (baobab.CONTENTS_CHANGED_DELAYED)
@@ -854,6 +865,8 @@ baobab_init (void)
 				 NULL, NULL, NULL);				 
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_SUBFLSTIPS_VISIBLE_KEY, baobab_subfolderstips_toggled,
 				 NULL, NULL, NULL);
+	gconf_client_notify_add (baobab.gconf_client, PROPS_ENABLE_HOME_MONITOR, baobab_monitor_home_toggled,
+				 NULL, NULL, NULL);
 
 	uri_list = gconf_client_get_list (baobab.gconf_client,
 						      PROPS_SCAN_KEY,
@@ -873,9 +886,9 @@ baobab_init (void)
 
 	monitor_volume ();
 
-	baobab.bbEnableHomeMonitor = gconf_client_get_bool (baobab.gconf_client,
-							    PROPS_ENABLE_HOME_MONITOR,
-							    NULL);
+	baobab.monitor_home = gconf_client_get_bool (baobab.gconf_client,
+						     PROPS_ENABLE_HOME_MONITOR,
+						     NULL);
 
 	monitor_home_dir ();
 }

@@ -75,7 +75,7 @@ struct _baobab_application {
 	gboolean STOP_SCANNING;
 	gboolean CONTENTS_CHANGED_DELAYED;
 	GSList *excluded_locations;
-	gboolean bbEnableHomeMonitor;
+	gboolean monitor_home;
 	gchar *label_scan;
 	gboolean show_allocated;
 	gboolean is_local;

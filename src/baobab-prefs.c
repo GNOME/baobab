@@ -103,10 +103,14 @@ save_gconf (GtkTreeModel *model)
 static void
 enable_home_cb (GtkToggleButton *togglebutton, gpointer user_data)
 {
-	baobab.bbEnableHomeMonitor = gtk_toggle_button_get_active (togglebutton);
+	gboolean enable;
 
-	gconf_client_set_bool (baobab.gconf_client, PROPS_ENABLE_HOME_MONITOR,
-			       baobab.bbEnableHomeMonitor, NULL);
+	enable = gtk_toggle_button_get_active (togglebutton);
+
+	gconf_client_set_bool (baobab.gconf_client,
+			       PROPS_ENABLE_HOME_MONITOR,
+			       enable,
+			       NULL);
 
 }
 
@@ -319,7 +323,7 @@ baobab_prefs_dialog (void)
 
 	check_enablehome = GTK_WIDGET (gtk_builder_get_object (builder, "check_enable_home"));
 	gtk_toggle_button_set_active ((GtkToggleButton *) check_enablehome,
-				      baobab.bbEnableHomeMonitor);
+				      baobab.monitor_home);
 
 	g_signal_connect_after ((GtkToggleButton *) check_enablehome,
 				"toggled", G_CALLBACK (enable_home_cb),
