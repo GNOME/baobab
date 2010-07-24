@@ -119,12 +119,10 @@ void baobab_scan_home (void);
 void baobab_scan_root (void);
 void baobab_rescan_current_dir (void);
 void baobab_stop_scan (void);
-void fill_model (struct chan_data *);
-void first_row (void);
+void baobab_fill_model (struct chan_data *);
 gboolean baobab_is_excluded_location (GFile *);
-void baobab_set_excluded_locations (GSList *);
-void set_toolbar_visible (gboolean visible);
-void set_statusbar_visible (gboolean visible);
-void set_statusbar (const gchar *);
+void baobab_set_toolbar_visible (gboolean visible);
+void baobab_set_statusbar_visible (gboolean visible);
+void baobab_set_statusbar (const gchar *);
 
 #endif /* __BAOBAB_H_ */

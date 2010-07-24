@@ -131,7 +131,7 @@ check_menu_sens (gboolean scanning)
 		while (gtk_events_pending ())
 			gtk_main_iteration ();
 
-		set_statusbar (_("Scanning..."));
+		baobab_set_statusbar (_("Scanning..."));
 		set_ui_action_sens ("expand_all", TRUE);
 		set_ui_action_sens ("collapse_all", TRUE);
 	}
@@ -200,7 +200,7 @@ baobab_scan_location (GFile *file)
 	baobab_scan_execute (file);
 
 	/* set statusbar, percentage and allocated/normal size */
-	set_statusbar (_("Calculating percentage bars..."));
+	baobab_set_statusbar (_("Calculating percentage bars..."));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars,
 				NULL);
@@ -211,7 +211,7 @@ baobab_scan_location (GFile *file)
 	baobab_set_busy (FALSE);
 	check_menu_sens (FALSE);
 	check_drop_targets (FALSE);
-	set_statusbar (_("Ready"));
+	baobab_set_statusbar (_("Ready"));
 
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
 	baobab.STOP_SCANNING = TRUE;
@@ -259,7 +259,7 @@ baobab_stop_scan (void)
 {
 	baobab.STOP_SCANNING = TRUE;
 
-	set_statusbar (_("Calculating percentage bars..."));
+	baobab_set_statusbar (_("Calculating percentage bars..."));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars, NULL);
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
@@ -336,10 +336,7 @@ prefill_model (struct chan_data *data)
 	}
 }
 
-/*
- * set filesystem first row
- */
-void
+static void
 first_row (void)
 {
 	char *size;
@@ -393,7 +390,7 @@ first_row (void)
 
 /* fills model during scanning */
 void
-fill_model (struct chan_data *data)
+baobab_fill_model (struct chan_data *data)
 {
 	GtkTreeIter iter;
 	GString *hardlinks;
@@ -575,7 +572,7 @@ monitor_home (gboolean enable)
 }
 
 void
-set_toolbar_visible (gboolean visible)
+baobab_set_toolbar_visible (gboolean visible)
 {
 	GtkToggleAction *action;
 
@@ -590,7 +587,7 @@ set_toolbar_visible (gboolean visible)
 }
 
 void
-set_statusbar_visible (gboolean visible)
+baobab_set_statusbar_visible (gboolean visible)
 {
 	GtkToggleAction *action;
 
@@ -605,7 +602,7 @@ set_statusbar_visible (gboolean visible)
 }
 
 void
-set_statusbar (const gchar *text)
+baobab_set_statusbar (const gchar *text)
 {
 	gtk_statusbar_pop (GTK_STATUSBAR (baobab.statusbar), 1);
 	gtk_statusbar_push (GTK_STATUSBAR (baobab.statusbar), 1, text);
@@ -705,7 +702,7 @@ baobab_create_toolbar (void)
 					 BAOBAB_TOOLBAR_VISIBLE_KEY,
 					 NULL);
 
-	set_toolbar_visible (visible);
+	baobab_set_toolbar_visible (visible);
 }
 
 static void
@@ -723,7 +720,8 @@ baobab_create_statusbar (void)
 	visible = gconf_client_get_bool (baobab.gconf_client,
 					 BAOBAB_STATUSBAR_VISIBLE_KEY,
 					 NULL);
-	set_statusbar_visible (visible);
+
+	baobab_set_statusbar_visible (visible);
 }
 
 static void
@@ -738,7 +736,7 @@ baobab_subfolderstips_toggled (GConfClient *client,
 									    NULL));
 }
 
-void
+static void
 baobab_set_excluded_locations (GSList *excluded_uris)
 {
 	GSList *l;
@@ -1260,7 +1258,7 @@ main (int argc, char *argv[])
 	gtk_widget_show (baobab.window);
 
 	first_row ();
-	set_statusbar (_("Ready"));
+	baobab_set_statusbar (_("Ready"));
 
 	/* The ringschart */
 	initialize_charts ();

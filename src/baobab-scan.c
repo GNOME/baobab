@@ -255,7 +255,7 @@ loopdir (GFile *file,
 	data.display_name = display_name;
 	data.parse_name = parse_name;
 	data.tempHLsize = tempHLsize;
-	fill_model (&data);
+	baobab_fill_model (&data);
 
 	g_clear_error (&err);
 	while ((temp_info = g_file_enumerator_next_file (file_enum,
@@ -325,7 +325,7 @@ loopdir (GFile *file,
 	data.depth = count - 1;
 	data.elements = elements;
 	data.tempHLsize = tempHLsize;
-	fill_model (&data);
+	baobab_fill_model (&data);
 	g_object_unref (file_enum);
 
  exit:

@@ -264,11 +264,11 @@ on_ck_allocated_activate (GtkToggleAction *action,
 					     baobab.show_allocated);
 
 	baobab_set_busy (TRUE);
-	set_statusbar (_("Calculating percentage bars..."));
+	baobab_set_statusbar (_("Calculating percentage bars..."));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars, NULL);
 	baobab_set_busy (FALSE);
-	set_statusbar (_("Ready"));
+	baobab_set_statusbar (_("Ready"));
 }
 
 void
@@ -278,7 +278,7 @@ on_view_tb_activate (GtkToggleAction *action,
 	gboolean visible;
 
 	visible = gtk_toggle_action_get_active (action);
-	set_toolbar_visible (visible);
+	baobab_set_toolbar_visible (visible);
 
 	gconf_client_set_bool (baobab.gconf_client,
 			       BAOBAB_TOOLBAR_VISIBLE_KEY,
@@ -293,7 +293,7 @@ on_view_sb_activate (GtkToggleAction *action,
 	gboolean visible;
 
 	visible = gtk_toggle_action_get_active (action);
-	set_statusbar_visible (visible);
+	baobab_set_statusbar_visible (visible);
 
 	gconf_client_set_bool (baobab.gconf_client,
 			       BAOBAB_STATUSBAR_VISIBLE_KEY,
