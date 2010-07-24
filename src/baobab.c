@@ -485,20 +485,6 @@ pop_iter_from_stack (void)
 	return iter;
 }
 
-void
-baobab_set_excluded_locations (GSList *excluded_uris)
-{
-	GSList *l;
-
-	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
-	g_slist_free (baobab.excluded_locations);
-	baobab.excluded_locations = NULL;
-	for (l = excluded_uris; l != NULL; l = l->next) {
-		baobab.excluded_locations = g_slist_prepend (baobab.excluded_locations,
-						g_file_new_for_uri (l->data));
-	}
-}
-
 gboolean
 baobab_is_excluded_location (GFile *file)
 {
@@ -681,6 +667,20 @@ baobab_subfolderstips_toggled (GConfClient *client,
 									    NULL));
 }
 
+void
+baobab_set_excluded_locations (GSList *excluded_uris)
+{
+	GSList *l;
+
+	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
+	g_slist_free (baobab.excluded_locations);
+	baobab.excluded_locations = NULL;
+	for (l = excluded_uris; l != NULL; l = l->next) {
+		baobab.excluded_locations = g_slist_prepend (baobab.excluded_locations,
+						g_file_new_for_uri (l->data));
+	}
+}
+
 static void
 store_excluded_locations (void)
 {
@@ -721,6 +721,29 @@ sanity_check_excluded_locations (void)
 	}
 
 	g_object_unref (root);
+}
+
+static void
+excluded_locations_changed (GConfClient *client,
+			    guint cnxn_id,
+			    GConfEntry *entry,
+			    gpointer user_data)
+{
+	GSList *uris;
+
+	uris = 	gconf_client_get_list (client,
+				       PROPS_SCAN_KEY,
+				       GCONF_VALUE_STRING,
+				       NULL);
+	baobab_set_excluded_locations (uris);
+	g_slist_foreach (uris, (GFunc) g_free, NULL);
+	g_slist_free (uris);
+
+	baobab_get_filesystem (&g_fs);
+	set_label_scan (&g_fs);
+	show_label ();
+	gtk_tree_store_clear (baobab.model);
+	first_row ();
 }
 
 static void
@@ -828,7 +851,7 @@ baobab_init (void)
 	baobab.gconf_client = gconf_client_get_default ();
 	gconf_client_add_dir (baobab.gconf_client, BAOBAB_KEY_DIR,
 			      GCONF_CLIENT_PRELOAD_NONE, NULL);
-	gconf_client_notify_add (baobab.gconf_client, PROPS_SCAN_KEY, props_notify,
+	gconf_client_notify_add (baobab.gconf_client, PROPS_SCAN_KEY, excluded_locations_changed,
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE, baobab_toolbar_style,
 				 NULL, NULL, NULL);				 

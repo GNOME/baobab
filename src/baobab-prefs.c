@@ -56,30 +56,6 @@ static gboolean set_model_checks (GtkTreeModel * model, GtkTreePath * path,
 static void enable_home_cb (GtkToggleButton * togglebutton,
 			    gpointer user_data);
 
-
-void
-props_notify (GConfClient *client,
-	      guint cnxn_id,
-	      GConfEntry *entry,
-	      gpointer user_data)
-{
-	GSList *uris;
-
-	uris = 	gconf_client_get_list (client,
-				       PROPS_SCAN_KEY,
-				       GCONF_VALUE_STRING,
-				       NULL);
-	baobab_set_excluded_locations (uris);
-	g_slist_foreach (uris, (GFunc) g_free, NULL);
-	g_slist_free (uris);
-
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
-	gtk_tree_store_clear (baobab.model);
-	first_row ();
-}
-
 static void
 filechooser_response_cb (GtkDialog *dialog,
                          gint       response_id,

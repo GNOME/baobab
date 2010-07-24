@@ -36,11 +36,6 @@ enum
 	TOT_COLUMNS
 };
 
-void props_notify (GConfClient *client,
-		   guint cnxn_id,
-		   GConfEntry *entry,
-		   gpointer user_data);	
-
 void create_props (void);
 
 #endif /* __BAOBAB_PROPS_H__ */
