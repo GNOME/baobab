@@ -23,6 +23,6 @@
 #ifndef __BAOBAB_PROPS_H__
 #define __BAOBAB_PROPS_H__
 
-void create_props (void);
+void baobab_prefs_dialog (void);
 
 #endif /* __BAOBAB_PROPS_H__ */

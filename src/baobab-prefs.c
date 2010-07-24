@@ -279,7 +279,7 @@ fill_props_model (GtkListStore *store)
 }
 
 void
-create_props (void)
+baobab_prefs_dialog (void)
 {
 	GtkBuilder *builder;
 	GtkWidget *dlg;

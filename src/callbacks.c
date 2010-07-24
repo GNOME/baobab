@@ -245,7 +245,7 @@ trash_dir_cb (GtkMenuItem *pmenu, gpointer dummy)
 void
 on_pref_menu (GtkAction *a, gpointer user_data)
 {
-	create_props ();
+	baobab_prefs_dialog ();
 }
 
 void
