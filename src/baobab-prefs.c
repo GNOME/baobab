@@ -325,13 +325,11 @@ baobab_prefs_dialog (void)
 	gtk_toggle_button_set_active ((GtkToggleButton *) check_enablehome,
 				      baobab.monitor_home);
 
-	g_signal_connect_after ((GtkToggleButton *) check_enablehome,
-				"toggled", G_CALLBACK (enable_home_cb),
-				NULL);
+	g_signal_connect (check_enablehome, "toggled",
+			  G_CALLBACK (enable_home_cb), NULL);
 
 	g_signal_connect (dlg, "response",
-		    	  G_CALLBACK (filechooser_response_cb),
-		    	  model);
+			  G_CALLBACK (filechooser_response_cb), model);
 
 	gtk_widget_show_all (dlg);
 }
