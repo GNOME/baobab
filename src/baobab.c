@@ -51,9 +51,6 @@ static GQueue *iterstack = NULL;
 
 static GFile *current_location = NULL;
 
-#define BUSY_IMAGE_PATH		BAOBAB_PIX_DIR "busy.gif"
-#define DONE_IMAGE_PATH		BAOBAB_PIX_DIR "done.png"
-
 enum {
 	DND_TARGET_URI_LIST
 };
