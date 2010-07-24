@@ -76,12 +76,14 @@ struct _BaobabApplication {
 	gboolean STOP_SCANNING;
 	gboolean CONTENTS_CHANGED_DELAYED;
 	GSList *excluded_locations;
-	gboolean monitor_home;
 	gchar *label_scan;
 	gboolean show_allocated;
 	gboolean is_local;
 
 	char *selected_path;
+
+	GVolumeMonitor *monitor_vol;
+	GFileMonitor *monitor_home;
 
 	GConfClient *gconf_client;
 	gint model_max_depth;

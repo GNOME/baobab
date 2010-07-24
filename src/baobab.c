@@ -38,9 +38,6 @@
 #include "baobab-treemap.h"
 #include "baobab-ringschart.h"
 
-static GVolumeMonitor 	 *monitor_vol;
-static GFileMonitor	 *monitor_home;
-
 static void push_iter_in_stack (GtkTreeIter *);
 static GtkTreeIter pop_iter_from_stack (void);
 
@@ -497,6 +494,85 @@ baobab_is_excluded_location (GFile *file)
 	return ret;
 }
 
+static void
+volume_changed (GVolumeMonitor *volume_monitor,
+                GVolume        *volume,
+                gpointer        user_data)
+{
+	/* filesystem has changed (mounted or unmounted device) */
+	baobab_get_filesystem (&g_fs);
+	set_label_scan (&g_fs);
+	show_label ();
+}
+
+static void
+home_contents_changed (GFileMonitor      *file_monitor,
+		       GFile             *child,
+		       GFile             *other_file,
+		       GFileMonitorEvent  event_type,
+		       gpointer           user_data)
+
+{
+	gchar *excluding;
+
+	if (baobab.CONTENTS_CHANGED_DELAYED)
+		return;
+
+	excluding = g_file_get_basename (child);
+	if (strcmp (excluding, ".recently-used") == 0   ||
+	    strcmp (excluding, ".gnome2_private") == 0  ||
+	    strcmp (excluding, ".xsession-errors") == 0 ||
+	    strcmp (excluding, ".bash_history") == 0    ||
+	    strcmp (excluding, ".gconfd") == 0) {
+		g_free (excluding);
+		return;
+	}
+	g_free (excluding);
+
+	baobab.CONTENTS_CHANGED_DELAYED = TRUE;
+}
+
+static void
+monitor_volume (void)
+{
+	baobab.monitor_vol = g_volume_monitor_get ();
+
+	g_signal_connect (baobab.monitor_vol, "volume_changed",
+			  G_CALLBACK (volume_changed), NULL);
+}
+
+static void
+monitor_home (gboolean enable)
+{
+	if (enable && baobab.monitor_home == NULL) {
+		GFile *file;
+		GError *error = NULL;
+
+		file = g_file_new_for_path (g_get_home_dir ());
+		baobab.monitor_home = g_file_monitor_directory (file, 0, NULL, &error);
+		g_object_unref (file);
+
+		if (!baobab.monitor_home) {
+			message (_("Could not initialize monitoring"),
+				 _("Changes to your home folder will not be monitored."),
+				 GTK_MESSAGE_WARNING, NULL);
+			g_print ("homedir:%s\n", error->message);
+			g_error_free (error);
+		}
+		else {
+			g_signal_connect (baobab.monitor_home,
+					  "changed",
+					  G_CALLBACK (home_contents_changed),
+					  NULL);
+		}
+	}
+	else if (!enable && baobab.monitor_home != NULL) {
+		g_file_monitor_cancel (baobab.monitor_home);
+		g_object_unref (baobab.monitor_home);
+		baobab.monitor_home = NULL;
+	}
+}
+
 void
 set_toolbar_visible (gboolean visible)
 {
@@ -746,84 +822,13 @@ baobab_monitor_home_toggled (GConfClient *client,
 			     GConfEntry *entry,
 			     gpointer user_data)
 {
-	baobab.monitor_home = gconf_client_get_bool (baobab.gconf_client,
-						     BAOBAB_ENABLE_HOME_MONITOR_KEY,
-						     NULL);
-}
+	gboolean enable;
 
-static void
-volume_changed (GVolumeMonitor *volume_monitor,
-                GVolume        *volume,
-                gpointer        user_data)
-{
-	/* filesystem has changed (mounted or unmounted device) */
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
-}
+	enable = gconf_client_get_bool (baobab.gconf_client,
+					BAOBAB_ENABLE_HOME_MONITOR_KEY,
+					NULL);
 
-static void
-home_contents_changed (GFileMonitor      *file_monitor,
-		       GFile             *child,
-		       GFile             *other_file,
-		       GFileMonitorEvent  event_type,
-		       gpointer           user_data)
-
-{
-	gchar *excluding;
-
-	if (!baobab.monitor_home)
-		return;
-
-	if (baobab.CONTENTS_CHANGED_DELAYED)
-		return;
-
-	excluding = g_file_get_basename (child);
-	if (strcmp (excluding, ".recently-used") == 0   ||
-	    strcmp (excluding, ".gnome2_private") == 0  ||
-	    strcmp (excluding, ".xsession-errors") == 0 ||
-	    strcmp (excluding, ".bash_history") == 0    ||
-	    strcmp (excluding, ".gconfd") == 0) {
-		g_free (excluding);
-		return;
-	}
-	g_free (excluding);
-
-	baobab.CONTENTS_CHANGED_DELAYED = TRUE;
-}
-
-static void
-monitor_volume (void)
-{
-	monitor_vol = g_volume_monitor_get ();
-	g_signal_connect (monitor_vol, "volume_changed",
-			  G_CALLBACK (volume_changed), NULL);
-}
-
-static void
-monitor_home_dir (void)
-{
-	GFile *file;
-	GError *error = NULL;
-	monitor_home = NULL;
-
-	file = g_file_new_for_path (g_get_home_dir ());
-	monitor_home = g_file_monitor_directory (file, 0, NULL, &error);
-	g_object_unref (file);
-
-	if (!monitor_home) {
-		message (_("Could not initialize monitoring"),
-			 _("Changes to your home folder will not be monitored."),
-			 GTK_MESSAGE_WARNING, NULL);
-		g_print ("homedir:%s\n", error->message);
-		g_error_free (error);
-	}
-	else {
-		g_signal_connect (monitor_home,
-				  "changed",
-				  G_CALLBACK (home_contents_changed),
-				  NULL);
-	}
+	monitor_home (enable);
 }
 
 static void
@@ -831,6 +836,7 @@ baobab_init (void)
 {
 	GSList *uri_list;
 	GError *error = NULL;
+	gboolean enable;
 
 	/* Load the UI */
 	baobab.main_ui = gtk_builder_new ();
@@ -883,11 +889,11 @@ baobab_init (void)
 
 	monitor_volume ();
 
-	baobab.monitor_home = gconf_client_get_bool (baobab.gconf_client,
-						     BAOBAB_ENABLE_HOME_MONITOR_KEY,
-						     NULL);
+	enable = gconf_client_get_bool (baobab.gconf_client,
+					BAOBAB_ENABLE_HOME_MONITOR_KEY,
+					NULL);
 
-	monitor_home_dir ();
+	monitor_home (enable);
 }
 
 static void
@@ -898,18 +904,23 @@ baobab_shutdown (void)
 	if (current_location)
 		g_object_unref (current_location);
 
-	if (monitor_vol)
-		g_object_unref (monitor_vol);
-	if (monitor_home)
-		g_file_monitor_cancel (monitor_home);
+	if (baobab.monitor_vol) {
+		g_object_unref (baobab.monitor_vol);
+	}
+
+	if (baobab.monitor_home) {
+		g_file_monitor_cancel (baobab.monitor_home);
+		g_object_unref (baobab.monitor_home);
+	}
 
 	g_free (baobab.selected_path);
 
 	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
 	g_slist_free (baobab.excluded_locations);
 
-	if (baobab.gconf_client)
+	if (baobab.gconf_client) {
 		g_object_unref (baobab.gconf_client);
+	}
 }
 
 static BaobabChartMenu *

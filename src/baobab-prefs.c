@@ -322,8 +322,8 @@ baobab_prefs_dialog (void)
 	fill_props_model (model);
 
 	check_enablehome = GTK_WIDGET (gtk_builder_get_object (builder, "check_enable_home"));
-	gtk_toggle_button_set_active ((GtkToggleButton *) check_enablehome,
-				      baobab.monitor_home);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check_enablehome),
+				      baobab.monitor_home != NULL);
 
 	g_signal_connect (check_enablehome, "toggled",
 			  G_CALLBACK (enable_home_cb), NULL);
