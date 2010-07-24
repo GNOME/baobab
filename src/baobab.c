@@ -46,8 +46,6 @@ static GtkTreeIter currentiter;
 static GtkTreeIter firstiter;
 static GQueue *iterstack = NULL;
 
-static GFile *current_location = NULL;
-
 enum {
 	DND_TARGET_URI_LIST
 };
@@ -127,8 +125,9 @@ set_drop_target (GtkWidget *target, gboolean active) {
 static void
 check_menu_sens (gboolean scanning)
 {
-	if (scanning) {
+	gboolean has_current_location;
 
+	if (scanning) {
 		while (gtk_events_pending ())
 			gtk_main_iteration ();
 
@@ -137,11 +136,13 @@ check_menu_sens (gboolean scanning)
 		set_ui_action_sens ("collapse_all", TRUE);
 	}
 
+	has_current_location = baobab.current_location != NULL;
+
 	set_ui_action_sens ("menuscanhome", !scanning);
 	set_ui_action_sens ("menuallfs", !scanning);
 	set_ui_action_sens ("menuscandir", !scanning);
 	set_ui_action_sens ("menustop", scanning);
-	set_ui_action_sens ("menurescan", !scanning && current_location != NULL);
+	set_ui_action_sens ("menurescan", !scanning && has_current_location);
 	set_ui_action_sens ("preferenze1", !scanning);
 	set_ui_action_sens ("menu_scan_rem", !scanning);
 	set_ui_action_sens ("ck_allocated", !scanning && baobab.is_local);
@@ -150,7 +151,7 @@ check_menu_sens (gboolean scanning)
 	set_ui_widget_sens ("tbscanall", !scanning);
 	set_ui_widget_sens ("tbscandir", !scanning);
 	set_ui_widget_sens ("tbstop", scanning);
-	set_ui_widget_sens ("tbrescan", !scanning && current_location != NULL);
+	set_ui_widget_sens ("tbrescan", !scanning && has_current_location);
 	set_ui_widget_sens ("tb_scan_remote", !scanning);
 }
 
@@ -172,9 +173,9 @@ baobab_scan_location (GFile *file)
 	if (iterstack !=NULL)
 		return;
 
-	if (current_location)
-		g_object_unref (current_location);
-	current_location = g_object_ref (file);
+	if (baobab.current_location)
+		g_object_unref (baobab.current_location);
+	baobab.current_location = g_object_ref (file);
 
 	baobab.STOP_SCANNING = FALSE;
 	baobab_set_busy (TRUE);
@@ -242,15 +243,15 @@ baobab_scan_root (void)
 void
 baobab_rescan_current_dir (void)
 {
-	g_return_if_fail (current_location != NULL);
+	g_return_if_fail (baobab.current_location != NULL);
 
 	baobab_get_filesystem (&g_fs);
 	set_label_scan (&g_fs);
 	show_label ();
 
-	g_object_ref (current_location);
-	baobab_scan_location (current_location);
-	g_object_unref (current_location);
+	g_object_ref (baobab.current_location);
+	baobab_scan_location (baobab.current_location);
+	g_object_unref (baobab.current_location);
 }
 
 void
@@ -901,8 +902,8 @@ baobab_shutdown (void)
 {
 	g_free (baobab.label_scan);
 
-	if (current_location)
-		g_object_unref (current_location);
+	if (baobab.current_location)
+		g_object_unref (baobab.current_location);
 
 	if (baobab.monitor_vol) {
 		g_object_unref (baobab.monitor_vol);

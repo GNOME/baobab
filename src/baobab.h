@@ -82,6 +82,8 @@ struct _BaobabApplication {
 
 	char *selected_path;
 
+	GFile *current_location;
+
 	GVolumeMonitor *monitor_vol;
 	GFileMonitor *monitor_home;
 
