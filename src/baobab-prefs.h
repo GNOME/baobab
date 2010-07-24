@@ -23,19 +23,6 @@
 #ifndef __BAOBAB_PROPS_H__
 #define __BAOBAB_PROPS_H__
 
-/* props model columns */
-enum
-{
-	COL_CHECK,
-	COL_DEVICE,
-	COL_MOUNT_D,
-	COL_MOUNT,
-	COL_TYPE,
-	COL_FS_SIZE,
-	COL_FS_AVAIL,
-	TOT_COLUMNS
-};
-
 void create_props (void);
 
 #endif /* __BAOBAB_PROPS_H__ */

@@ -34,6 +34,17 @@
 #include "baobab-utils.h"
 #include "baobab-prefs.h"
 
+enum
+{
+	COL_CHECK,
+	COL_DEVICE,
+	COL_MOUNT_D,
+	COL_MOUNT,
+	COL_TYPE,
+	COL_FS_SIZE,
+	COL_FS_AVAIL,
+	TOT_COLUMNS
+};
 
 static gboolean
 add_excluded_item (GtkTreeModel  *model,
