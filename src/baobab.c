@@ -16,10 +16,10 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA  02110-1301  USA
  */
- 
+
 #include <config.h>
 
 #include <gtk/gtk.h>
@@ -325,8 +325,8 @@ prefill_model (struct chan_data *data)
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, name,
 			    COL_H_PARSENAME, "",
-			    COL_H_ELEMENTS, -1, 
- 			    COL_H_PERC, -1.0,
+			    COL_H_ELEMENTS, -1,
+			    COL_H_PERC, -1.0,
 			    COL_DIR_SIZE, str,
 			    COL_ELEMENTS, str, -1);
 
@@ -348,7 +348,7 @@ first_row (void)
 	gdouble perc;
 	char *label;
 
-        GtkTreeIter root_iter;
+	GtkTreeIter root_iter;
 
 	gchar *capacity_label, *capacity_size;
 
@@ -487,7 +487,7 @@ baobab_is_excluded_location (GFile *file)
 
 	g_return_val_if_fail (file != NULL, FALSE);
 
-	for (l = baobab.excluded_locations; l != NULL; l = l->next) {	
+	for (l = baobab.excluded_locations; l != NULL; l = l->next) {
 		if (g_file_equal (l->data, file)) {
 			ret = TRUE;
 			break;
@@ -689,7 +689,7 @@ store_excluded_locations (void)
 
 	gconf_client_set_list (baobab.gconf_client,
 			       BAOBAB_EXCLUDED_DIRS_KEY,
-			       GCONF_VALUE_STRING, 
+			       GCONF_VALUE_STRING,
 			       uri_list,
 			       NULL);
 
@@ -710,7 +710,7 @@ sanity_check_excluded_locations (void)
 		if (g_file_equal (l->data, root)) {
 			baobab.excluded_locations = g_slist_delete_link (baobab.excluded_locations, l);
 			store_excluded_locations ();
-			break;			
+			break;
 		}
 	}
 
@@ -859,7 +859,7 @@ baobab_init (void)
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_EXCLUDED_DIRS_KEY, excluded_locations_changed,
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE_KEY, baobab_toolbar_style,
-				 NULL, NULL, NULL);				 
+				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_SUBFLSTIPS_VISIBLE_KEY, baobab_subfolderstips_toggled,
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_ENABLE_HOME_MONITOR_KEY, baobab_monitor_home_toggled,
@@ -922,16 +922,16 @@ create_context_menu (void)
 
 	menu->widget = gtk_menu_new ();
 
-	menu->up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder")); 
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->up_item), 
+	menu->up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder"));
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->up_item),
 				       gtk_image_new_from_stock(GTK_STOCK_GO_UP, GTK_ICON_SIZE_MENU));
-		
+
 	menu->zoom_in_item = gtk_image_menu_item_new_with_label (_("Zoom in")) ;
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_in_item), 
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_in_item),
 				       gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_MENU));
 
 	menu->zoom_out_item = gtk_image_menu_item_new_with_label (_("Zoom out"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item), 
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item),
 				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));
 
 	menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save screenshot"));
@@ -1027,7 +1027,7 @@ drag_data_received_handl (GtkWidget *widget,
 			 gpointer data)
 {
 	GFile *gf = NULL;
-	
+
 	/* set "gf" if we got some valid data */
 	if ((selection_data != NULL) &&
 	    (gtk_selection_data_get_length (selection_data) >= 0) &&
@@ -1040,7 +1040,7 @@ drag_data_received_handl (GtkWidget *widget,
 		}
 		g_strfreev (uri_list);
 	}
-	
+
 	/* success if "gf" has been set */
 	if (gf != NULL) {
 		/* finish drop before beginning scan, as the drag-drop can
@@ -1070,9 +1070,9 @@ initialize_charts (void)
 	gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
 
 	baobab.chart_type_combo = gtk_combo_box_new_text ();
-	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo), 
+	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo),
 				   _("View as Rings Chart"));
-	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo), 
+	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo),
 				   _("View as Treemap Chart"));
 	gtk_combo_box_set_active (GTK_COMBO_BOX (baobab.chart_type_combo), 0);
 	gtk_widget_show (baobab.chart_type_combo);
@@ -1104,7 +1104,7 @@ initialize_charts (void)
 	baobab_chart_set_max_depth (baobab.treemap_chart, 1);
 	g_signal_connect (baobab.treemap_chart, "item_activated",
 					G_CALLBACK (on_chart_item_activated), NULL);
-	g_signal_connect (baobab.treemap_chart, "button-release-event", 
+	g_signal_connect (baobab.treemap_chart, "button-release-event",
 					G_CALLBACK (on_chart_button_release), NULL);
 	g_signal_connect (baobab.treemap_chart, "drag-data-received",
 					G_CALLBACK (drag_data_received_handl), NULL);
@@ -1128,7 +1128,7 @@ initialize_charts (void)
 	baobab_chart_set_max_depth (baobab.rings_chart, 1);
 	g_signal_connect (baobab.rings_chart, "item_activated",
 					G_CALLBACK (on_chart_item_activated), NULL);
-	g_signal_connect (baobab.rings_chart, "button-release-event", 
+	g_signal_connect (baobab.rings_chart, "button-release-event",
 					G_CALLBACK (on_chart_button_release), NULL);
 	g_signal_connect (baobab.rings_chart, "drag-data-received",
 					G_CALLBACK (drag_data_received_handl), NULL);
@@ -1150,7 +1150,6 @@ initialize_charts (void)
 static gboolean
 start_proc_on_command_line (GFile *file)
 {
-		
 	baobab_scan_location (file);
 
 	return FALSE;
@@ -1216,14 +1215,15 @@ main (int argc, char *argv[])
 	check_menu_sens (FALSE);
 	baobab_get_filesystem (&g_fs);
 	if (g_fs.total == 0) {
-		GtkWidget *dialog = gtk_message_dialog_new (NULL,
-                                  GTK_DIALOG_DESTROY_WITH_PARENT,
-                                  GTK_MESSAGE_ERROR,
-                                  GTK_BUTTONS_CLOSE,
-                                  _("Could not detect any mount point."));
-                gtk_message_dialog_format_secondary_text
-                                                        (GTK_MESSAGE_DIALOG(dialog),
-                                                         _("Without mount points disk usage cannot be analyzed."));
+		GtkWidget *dialog;
+
+		dialog = gtk_message_dialog_new (NULL,
+				GTK_DIALOG_DESTROY_WITH_PARENT,
+				GTK_MESSAGE_ERROR,
+				GTK_BUTTONS_CLOSE,
+				_("Could not detect any mount point."));
+		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG(dialog),
+				_("Without mount points disk usage cannot be analyzed."));
 		gtk_dialog_run (GTK_DIALOG (dialog));
 		gtk_widget_destroy (dialog);
 		goto closing;
