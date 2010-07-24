@@ -16,7 +16,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA  02110-1301  USA
  */
 
@@ -73,17 +73,17 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 		"Igalia (rings-chart and treemap widget) <www.igalia.com>",
 		NULL
 	};
-	
-	const gchar *license[] = {
-    	N_("This program is free software; you can redistribute it and/or "
-    	"modify it under the terms of the GNU General Public License as "
-    	"published by the Free Software Foundation; either version 2 of "
-    	"the License, or (at your option) any later version."),
 
-    	N_("This program is distributed in the hope that it will be useful, "
-    	"but WITHOUT ANY WARRANTY; without even the implied warranty of "
-    	"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
-    	"General Public License for more details."),
+	const gchar *license[] = {
+	N_("This program is free software; you can redistribute it and/or "
+	"modify it under the terms of the GNU General Public License as "
+	"published by the Free Software Foundation; either version 2 of "
+	"the License, or (at your option) any later version."),
+
+	N_("This program is distributed in the hope that it will be useful, "
+	"but WITHOUT ANY WARRANTY; without even the implied warranty of "
+	"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
+	"General Public License for more details."),
 
 	N_("You should have received a copy of the GNU General Public License "
 	"along with this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -91,11 +91,13 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 	};
 
 
-	gchar *license_trans = g_strjoin ("\n\n", _(license[0]), 
-                                   _(license[1]),
-                                   _(license[2]), NULL);
+	gchar *license_trans = g_strjoin ("\n\n",
+	                                  _(license[0]),
+	                                  _(license[1]),
+	                                  _(license[2]),
+	                                  NULL);
 
-	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2009";
+	static const gchar copyright[] = "Fabio Marzocca <thesaltydog@gmail.com> \xc2\xa9 2005-2010";
 
 	gtk_show_about_dialog (NULL,
 			       "name", _("Baobab"),
@@ -105,11 +107,12 @@ on_about_activate (GtkMenuItem *menuitem, gpointer user_data)
 			       "copyright", copyright,
 			       "logo-icon-name", "baobab",
 			       "license", license_trans,
-			       "authors", authors, 
+			       "authors", authors,
 			       "translator-credits",
-			       _("translator-credits"), 
+			       _("translator-credits"),
 			       "wrap-license", TRUE,
 			        NULL);
+
 	g_free (license_trans);
 }
 
@@ -159,7 +162,7 @@ void
 on_tb_scan_remote_clicked (GtkToolButton *toolbutton, gpointer user_data)
 {
 	GtkWidget *dlg;
-	
+
 	dlg = baobab_remote_connect_dialog_new (GTK_WINDOW (baobab.window),
 						NULL);
 	gtk_dialog_run (GTK_DIALOG (dlg));
@@ -270,7 +273,7 @@ on_ck_allocated_activate (GtkToggleAction *action,
 
 void
 on_view_tb_activate (GtkToggleAction *action,
-                     gpointer         user_data) 
+                     gpointer         user_data)
 {
 	gboolean visible;
 
@@ -285,7 +288,7 @@ on_view_tb_activate (GtkToggleAction *action,
 
 void
 on_view_sb_activate (GtkToggleAction *action,
-                     gpointer         user_data) 
+                     gpointer         user_data)
 {
 	gboolean visible;
 
@@ -304,11 +307,11 @@ on_helpcontents_activate (GtkAction *a, gpointer user_data)
 	baobab_help_display (GTK_WINDOW (baobab.window), "baobab", NULL);
 }
 
-void 
+void
 scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy)
 {
 	GFile	*file;
-	
+
 	g_assert (!dummy);
 	g_assert (baobab.selected_path);
 
@@ -326,15 +329,15 @@ void
 on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data)
 {
 	GtkTreeIter iter;
-        
+
 	if (gtk_tree_selection_get_selected (selection, NULL, &iter)) {
 		GtkTreePath *path;
-                
+
 		path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), &iter);
-                
+
 		baobab_chart_set_root (baobab.rings_chart, path);
 		baobab_chart_set_root (baobab.treemap_chart, path);
-		
+
 		gtk_tree_path_free (path);
 	}
 }
@@ -355,89 +358,96 @@ on_chart_item_activated (BaobabChart *chart, GtkTreeIter *iter)
 }
 
 gboolean
-on_chart_button_release (BaobabChart *chart, GdkEventButton *event,
-                          gpointer data)
+on_chart_button_release (BaobabChart *chart,
+			 GdkEventButton *event,
+			 gpointer data)
 {
-  ContextMenu *menu;
-  
-  if (baobab_chart_is_frozen (baobab.current_chart))
-    return FALSE;
+	ContextMenu *menu;
 
-  menu = baobab.chart_menu;
-  
-  if (event->button== 3) /* right button */
-    {
-      GtkTreePath *root_path = NULL;
+	if (baobab_chart_is_frozen (baobab.current_chart))
+		return FALSE;
 
-      root_path = baobab_chart_get_root (baobab.current_chart);
+	menu = baobab.chart_menu;
 
-      gtk_widget_set_sensitive (menu->up_item,
-                                ((root_path != NULL) &&
-                                 (gtk_tree_path_get_depth (root_path) > 1)));
-      gtk_widget_set_sensitive (menu->zoom_in_item,
-                                baobab_chart_can_zoom_in (baobab.current_chart));
-      gtk_widget_set_sensitive (menu->zoom_out_item,
-                                baobab_chart_can_zoom_out (baobab.current_chart));
+	if (event->button== 3) /* right button */
+	{
+		GtkTreePath *root_path = NULL;
 
-      /* show the menu */
-      gtk_menu_popup (GTK_MENU (menu->widget), NULL, NULL, NULL, NULL,
-                      event->button, event->time);
-      
-      gtk_tree_path_free (root_path);
-    }
- 
-  return FALSE;
+		root_path = baobab_chart_get_root (baobab.current_chart);
+
+		gtk_widget_set_sensitive (menu->up_item,
+					  ((root_path != NULL) &&
+					  (gtk_tree_path_get_depth (root_path) > 1)));
+		gtk_widget_set_sensitive (menu->zoom_in_item,
+					  baobab_chart_can_zoom_in (baobab.current_chart));
+		gtk_widget_set_sensitive (menu->zoom_out_item,
+					  baobab_chart_can_zoom_out (baobab.current_chart));
+
+		/* show the menu */
+		gtk_menu_popup (GTK_MENU (menu->widget),
+				NULL, NULL, NULL, NULL,
+				event->button, event->time);
+
+		gtk_tree_path_free (root_path);
+	}
+
+	return FALSE;
 }
 
 void
 on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
-  baobab_chart_move_up_root (baobab.current_chart);
+	baobab_chart_move_up_root (baobab.current_chart);
 }
 
 void
 on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
-  baobab_chart_zoom_in (baobab.current_chart);
+	baobab_chart_zoom_in (baobab.current_chart);
 }
 
 void
 on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
-  baobab_chart_zoom_out (baobab.current_chart);
+	baobab_chart_zoom_out (baobab.current_chart);
 }
 
 void
 on_chart_snapshot_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
-  baobab_chart_save_snapshot (baobab.current_chart);
+	baobab_chart_save_snapshot (baobab.current_chart);
 }
 
 void
 on_chart_type_change (GtkWidget *combo, gpointer user_data)
 {
-  GtkWidget *chart;
-  GtkWidget *frame;
+	GtkWidget *chart;
+	GtkWidget *frame;
 
-  guint active;
+	guint active;
 
-  active = gtk_combo_box_get_active (GTK_COMBO_BOX (combo));
+	active = gtk_combo_box_get_active (GTK_COMBO_BOX (combo));
 
-  if (active == 0)
-    chart = baobab.rings_chart;
-  else
-    if (active == 1)
-      chart = baobab.treemap_chart;
+	switch (active) {
+	case 0:
+		chart = baobab.rings_chart;
+		break;
+	case 1:
+		chart = baobab.treemap_chart;
+		break;
+	default:
+		g_return_if_reached ();
+	}
 
-  frame = gtk_widget_get_parent (baobab.current_chart);
+	frame = gtk_widget_get_parent (baobab.current_chart);
 
-  baobab_chart_freeze_updates (baobab.current_chart);
-  baobab_chart_thaw_updates (chart);
+	baobab_chart_freeze_updates (baobab.current_chart);
+	baobab_chart_thaw_updates (chart);
 
-  g_object_ref_sink (baobab.current_chart);
-  gtk_container_remove (GTK_CONTAINER (frame), baobab.current_chart);
-  gtk_container_add (GTK_CONTAINER (frame), chart);
+	g_object_ref_sink (baobab.current_chart);
+	gtk_container_remove (GTK_CONTAINER (frame), baobab.current_chart);
+	gtk_container_add (GTK_CONTAINER (frame), chart);
 
-  baobab.current_chart = chart;
+	baobab.current_chart = chart;
 }
 
