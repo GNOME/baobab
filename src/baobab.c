@@ -570,7 +570,7 @@ baobab_toolbar_style (GConfClient *client,
 	gchar *toolbar_setting;
 
 	toolbar_setting = baobab_gconf_get_string_with_default (baobab.gconf_client,
-								SYSTEM_TOOLBAR_STYLE,
+								SYSTEM_TOOLBAR_STYLE_KEY,
 								"both");
 
 	if (!strcmp(toolbar_setting, "icons")) {
@@ -691,7 +691,7 @@ store_excluded_locations (void)
 	}
 
 	gconf_client_set_list (baobab.gconf_client,
-			       PROPS_SCAN_KEY,
+			       BAOBAB_EXCLUDED_DIRS_KEY,
 			       GCONF_VALUE_STRING, 
 			       uri_list,
 			       NULL);
@@ -729,7 +729,7 @@ excluded_locations_changed (GConfClient *client,
 	GSList *uris;
 
 	uris = 	gconf_client_get_list (client,
-				       PROPS_SCAN_KEY,
+				       BAOBAB_EXCLUDED_DIRS_KEY,
 				       GCONF_VALUE_STRING,
 				       NULL);
 	baobab_set_excluded_locations (uris);
@@ -750,7 +750,7 @@ baobab_monitor_home_toggled (GConfClient *client,
 			     gpointer user_data)
 {
 	baobab.monitor_home = gconf_client_get_bool (baobab.gconf_client,
-						     PROPS_ENABLE_HOME_MONITOR,
+						     BAOBAB_ENABLE_HOME_MONITOR_KEY,
 						     NULL);
 }
 
@@ -859,17 +859,17 @@ baobab_init (void)
 	baobab.gconf_client = gconf_client_get_default ();
 	gconf_client_add_dir (baobab.gconf_client, BAOBAB_KEY_DIR,
 			      GCONF_CLIENT_PRELOAD_NONE, NULL);
-	gconf_client_notify_add (baobab.gconf_client, PROPS_SCAN_KEY, excluded_locations_changed,
+	gconf_client_notify_add (baobab.gconf_client, BAOBAB_EXCLUDED_DIRS_KEY, excluded_locations_changed,
 				 NULL, NULL, NULL);
-	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE, baobab_toolbar_style,
+	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE_KEY, baobab_toolbar_style,
 				 NULL, NULL, NULL);				 
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_SUBFLSTIPS_VISIBLE_KEY, baobab_subfolderstips_toggled,
 				 NULL, NULL, NULL);
-	gconf_client_notify_add (baobab.gconf_client, PROPS_ENABLE_HOME_MONITOR, baobab_monitor_home_toggled,
+	gconf_client_notify_add (baobab.gconf_client, BAOBAB_ENABLE_HOME_MONITOR_KEY, baobab_monitor_home_toggled,
 				 NULL, NULL, NULL);
 
 	uri_list = gconf_client_get_list (baobab.gconf_client,
-						      PROPS_SCAN_KEY,
+						      BAOBAB_EXCLUDED_DIRS_KEY,
 						      GCONF_VALUE_STRING,
 						      NULL);
 
@@ -887,7 +887,7 @@ baobab_init (void)
 	monitor_volume ();
 
 	baobab.monitor_home = gconf_client_get_bool (baobab.gconf_client,
-						     PROPS_ENABLE_HOME_MONITOR,
+						     BAOBAB_ENABLE_HOME_MONITOR_KEY,
 						     NULL);
 
 	monitor_home_dir ();

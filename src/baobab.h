@@ -19,11 +19,9 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, 
  * Boston, MA  02110-1301  USA
  */
- 
 
 #ifndef __BAOBAB_H__
 #define __BAOBAB_H__
-
 
 #include <time.h>
 #include <sys/types.h>
@@ -39,13 +37,14 @@ struct BaobabSearchOpt;
 #define BAOBAB_UI_FILE PKGDATADIR "/baobab-main-window.ui"
 #define BAOBAB_DIALOG_SCAN_UI_FILE PKGDATADIR "/baobab-dialog-scan-props.ui"
 
+/* Settings */
 #define BAOBAB_KEY_DIR "/apps/baobab"
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
 #define BAOBAB_STATUSBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/statusbar_visible"
 #define BAOBAB_SUBFLSTIPS_VISIBLE_KEY   BAOBAB_KEY_DIR "/ui/baobab_subfoldertips_visible"
-#define PROPS_SCAN_KEY			BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
-#define PROPS_ENABLE_HOME_MONITOR	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
-#define SYSTEM_TOOLBAR_STYLE		"/desktop/gnome/interface/toolbar_style"
+#define BAOBAB_EXCLUDED_DIRS_KEY	BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
+#define BAOBAB_ENABLE_HOME_MONITOR_KEY	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
+#define SYSTEM_TOOLBAR_STYLE_KEY	"/desktop/gnome/interface/toolbar_style"
 
 typedef struct _ContextMenu ContextMenu;
 
@@ -61,8 +60,8 @@ struct _ContextMenu {
 
 struct _baobab_application {
 	GtkBuilder *main_ui;
-  	GtkWidget *window;
-  	GtkWidget *tree_view;
+	GtkWidget *window;
+	GtkWidget *tree_view;
 	GtkWidget *rings_chart;
 	GtkWidget *treemap_chart;
 	GtkWidget *current_chart;

@@ -93,7 +93,7 @@ save_gconf (GtkTreeModel *model)
 	l = get_excluded_locations (model);
 
 	gconf_client_set_list (baobab.gconf_client,
-			       PROPS_SCAN_KEY, GCONF_VALUE_STRING,
+			       BAOBAB_EXCLUDED_DIRS_KEY, GCONF_VALUE_STRING,
 			       l, NULL);
 
 	g_slist_foreach (l, (GFunc) g_free, NULL);
@@ -108,7 +108,7 @@ enable_home_cb (GtkToggleButton *togglebutton, gpointer user_data)
 	enable = gtk_toggle_button_get_active (togglebutton);
 
 	gconf_client_set_bool (baobab.gconf_client,
-			       PROPS_ENABLE_HOME_MONITOR,
+			       BAOBAB_ENABLE_HOME_MONITOR_KEY,
 			       enable,
 			       NULL);
 
