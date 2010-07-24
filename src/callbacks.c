@@ -343,58 +343,6 @@ on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data)
 }
 
 void
-on_chart_item_activated (BaobabChart *chart, GtkTreeIter *iter)
-{
-	GtkTreePath *path;
-
-	path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), iter);
-
-	if (!gtk_tree_view_row_expanded (GTK_TREE_VIEW (baobab.tree_view), path))
-                gtk_tree_view_expand_to_path (GTK_TREE_VIEW (baobab.tree_view), path);
-
-	gtk_tree_view_set_cursor (GTK_TREE_VIEW (baobab.tree_view),
-				  path, NULL, FALSE);
-	gtk_tree_path_free (path);
-}
-
-gboolean
-on_chart_button_release (BaobabChart *chart,
-			 GdkEventButton *event,
-			 gpointer data)
-{
-	ContextMenu *menu;
-
-	if (baobab_chart_is_frozen (baobab.current_chart))
-		return FALSE;
-
-	menu = baobab.chart_menu;
-
-	if (event->button== 3) /* right button */
-	{
-		GtkTreePath *root_path = NULL;
-
-		root_path = baobab_chart_get_root (baobab.current_chart);
-
-		gtk_widget_set_sensitive (menu->up_item,
-					  ((root_path != NULL) &&
-					  (gtk_tree_path_get_depth (root_path) > 1)));
-		gtk_widget_set_sensitive (menu->zoom_in_item,
-					  baobab_chart_can_zoom_in (baobab.current_chart));
-		gtk_widget_set_sensitive (menu->zoom_out_item,
-					  baobab_chart_can_zoom_out (baobab.current_chart));
-
-		/* show the menu */
-		gtk_menu_popup (GTK_MENU (menu->widget),
-				NULL, NULL, NULL, NULL,
-				event->button, event->time);
-
-		gtk_tree_path_free (root_path);
-	}
-
-	return FALSE;
-}
-
-void
 on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 {
 	baobab_chart_move_up_root (baobab.current_chart);

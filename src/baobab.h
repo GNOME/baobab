@@ -46,16 +46,16 @@ struct BaobabSearchOpt;
 #define BAOBAB_ENABLE_HOME_MONITOR_KEY	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
 #define SYSTEM_TOOLBAR_STYLE_KEY	"/desktop/gnome/interface/toolbar_style"
 
-typedef struct _ContextMenu ContextMenu;
+typedef struct _BaobabChartMenu BaobabChartMenu;
 
-struct _ContextMenu {
-	GtkWidget* widget;
-	GtkWidget* up_item;
-	GtkWidget* zoom_in_item;
-	GtkWidget* zoom_out_item;
-	GtkWidget* subfolders_item;
-	GtkWidget* snapshot_item;
-	GtkWidget* set_root_item;
+struct _BaobabChartMenu {
+	GtkWidget *widget;
+	GtkWidget *up_item;
+	GtkWidget *zoom_in_item;
+	GtkWidget *zoom_out_item;
+	GtkWidget *subfolders_item;
+	GtkWidget *snapshot_item;
+	GtkWidget *set_root_item;
 };
 
 struct _baobab_application {
@@ -66,7 +66,7 @@ struct _baobab_application {
 	GtkWidget *treemap_chart;
 	GtkWidget *current_chart;
 	GtkWidget *chart_type_combo;
-	ContextMenu *chart_menu;
+	BaobabChartMenu *chart_menu;
 	GtkWidget *toolbar;
 	GtkWidget *spinner;
 	GtkWidget *statusbar;

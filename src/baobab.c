@@ -915,16 +915,16 @@ baobab_shutdown (void)
 		g_object_unref (baobab.gconf_client);
 }
 
-static void
+static BaobabChartMenu *
 create_context_menu (void)
 {
-	ContextMenu *menu = NULL;
+	BaobabChartMenu *menu = NULL;
 
-	baobab.chart_menu = g_new0 (ContextMenu, 1);
+	baobab.chart_menu = g_new0 (BaobabChartMenu, 1);
 	menu = baobab.chart_menu;
 
 	menu->widget = gtk_menu_new ();
-		
+
 	menu->up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder")); 
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->up_item), 
 				       gtk_image_new_from_stock(GTK_STOCK_GO_UP, GTK_ICON_SIZE_MENU));
@@ -932,14 +932,14 @@ create_context_menu (void)
 	menu->zoom_in_item = gtk_image_menu_item_new_with_label (_("Zoom in")) ;
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_in_item), 
 				       gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_MENU));
-        
+
 	menu->zoom_out_item = gtk_image_menu_item_new_with_label (_("Zoom out"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item), 
-				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));       
-		
+				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));
+
 	menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save screenshot"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->snapshot_item),
-									gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
+				       gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
 
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
 			       menu->up_item);
@@ -965,8 +965,59 @@ create_context_menu (void)
 					  G_CALLBACK (on_chart_snapshot_cb), NULL);
 
 	gtk_widget_show_all (menu->widget);
+
+	return menu;
 }
 
+static void
+on_chart_item_activated (BaobabChart *chart, GtkTreeIter *iter)
+{
+	GtkTreePath *path;
+
+	path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), iter);
+
+	if (!gtk_tree_view_row_expanded (GTK_TREE_VIEW (baobab.tree_view), path))
+		gtk_tree_view_expand_to_path (GTK_TREE_VIEW (baobab.tree_view), path);
+
+	gtk_tree_view_set_cursor (GTK_TREE_VIEW (baobab.tree_view),
+				  path, NULL, FALSE);
+	gtk_tree_path_free (path);
+}
+
+static gboolean
+on_chart_button_release (BaobabChart *chart,
+			 GdkEventButton *event,
+			 gpointer data)
+{
+	if (baobab_chart_is_frozen (baobab.current_chart))
+		return FALSE;
+
+	if (event->button== 3) /* right button */
+	{
+		GtkTreePath *root_path;
+		BaobabChartMenu *menu;
+
+		root_path = baobab_chart_get_root (baobab.current_chart);
+
+		menu = baobab.chart_menu;
+		gtk_widget_set_sensitive (menu->up_item,
+					  ((root_path != NULL) &&
+					  (gtk_tree_path_get_depth (root_path) > 1)));
+		gtk_widget_set_sensitive (menu->zoom_in_item,
+					  baobab_chart_can_zoom_in (baobab.current_chart));
+		gtk_widget_set_sensitive (menu->zoom_out_item,
+					  baobab_chart_can_zoom_out (baobab.current_chart));
+
+		/* show the menu */
+		gtk_menu_popup (GTK_MENU (menu->widget),
+				NULL, NULL, NULL, NULL,
+				event->button, event->time);
+
+		gtk_tree_path_free (root_path);
+	}
+
+	return FALSE;
+}
 
 static void
 drag_data_received_handl (GtkWidget *widget,
@@ -1041,6 +1092,8 @@ initialize_charts (void)
 				   TRUE,
 				   0, GTK_PACK_END);
 
+	baobab.chart_menu = create_context_menu ();
+
 	/* Baobab's Treemap Chart */
 	baobab.treemap_chart = baobab_treemap_new ();
 	baobab_chart_set_model_with_columns (baobab.treemap_chart,
@@ -1093,8 +1146,6 @@ initialize_charts (void)
 	gtk_container_add (GTK_CONTAINER (chart_frame),
 			   baobab.current_chart);
 	gtk_widget_show_all (chart_frame);
-
-	create_context_menu ();
 
 	check_drop_targets (FALSE);
 }
