@@ -162,6 +162,41 @@ check_drop_targets (gboolean scanning)
 	set_drop_target (baobab.treemap_chart, !scanning);
 }
 
+static void
+update_scan_label (void)
+{
+	gchar *markup;
+	gchar *total;
+	gchar *used;
+	gchar *available;
+	GtkWidget *label;
+
+	total = g_format_size_for_display (baobab.fs.total);
+	used = g_format_size_for_display (baobab.fs.used);
+	available = g_format_size_for_display (baobab.fs.avail);
+
+	/* Translators: these are labels for disk space */
+	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b> (%s %s %s %s )</small>",
+					   _("Total filesystem capacity:"), total,
+					   _("used:"), used,
+					   _("available:"), available);
+
+	g_free (total);
+	g_free (used);
+	g_free (available);
+
+	label = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "label1"));
+
+	gtk_label_set_markup (GTK_LABEL (label), markup);
+}
+
+void
+baobab_update_filesystem (void)
+{
+	baobab_get_filesystem (&baobab.fs);
+	update_scan_label ();
+}
+
 void
 baobab_scan_location (GFile *file)
 {
@@ -245,9 +280,7 @@ baobab_rescan_current_dir (void)
 {
 	g_return_if_fail (baobab.current_location != NULL);
 
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
+	baobab_update_filesystem ();
 
 	g_object_ref (baobab.current_location);
 	baobab_scan_location (baobab.current_location);
@@ -348,7 +381,7 @@ first_row (void)
 	gchar *capacity_label, *capacity_size;
 
 	gtk_tree_store_append (baobab.model, &root_iter, NULL);
-	capacity_size = g_format_size_for_display (g_fs.total);
+	capacity_size = g_format_size_for_display (baobab.fs.total);
 
 	capacity_label = g_strdup (_("Total filesystem capacity"));
 	gtk_tree_store_set (baobab.model, &root_iter,
@@ -356,20 +389,20 @@ first_row (void)
 			    COL_H_PARSENAME, "",
 			    COL_H_PERC, 100.0,
 			    COL_DIR_SIZE, capacity_size,
-			    COL_H_SIZE, g_fs.total,
-			    COL_H_ALLOCSIZE, g_fs.total,
+			    COL_H_SIZE, baobab.fs.total,
+			    COL_H_ALLOCSIZE, baobab.fs.total,
 			    COL_H_ELEMENTS, -1, -1);
 	g_free (capacity_label);
 	g_free (capacity_size);
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, &root_iter);
-	size = g_format_size_for_display (g_fs.used);
-	if (g_fs.total == 0 && g_fs.used == 0) {
+	size = g_format_size_for_display (baobab.fs.used);
+	if (baobab.fs.total == 0 && baobab.fs.used == 0) {
 		perc = 100.0;
 	} else {
-		g_assert (g_fs.total != 0);
-		perc = ((gdouble) g_fs.used * 100) / (gdouble) g_fs.total;
+		g_assert (baobab.fs.total != 0);
+		perc = ((gdouble) baobab.fs.used * 100) / (gdouble) baobab.fs.total;
 	}
 
 	label = g_strdup (_("Total filesystem usage"));
@@ -378,8 +411,8 @@ first_row (void)
 			    COL_H_PARSENAME, "",
 			    COL_H_PERC, perc,
 			    COL_DIR_SIZE, size,
-			    COL_H_SIZE, g_fs.used,
-			    COL_H_ALLOCSIZE, g_fs.used,
+			    COL_H_SIZE, baobab.fs.used,
+			    COL_H_ALLOCSIZE, baobab.fs.used,
 			    COL_H_ELEMENTS, -1, -1);
 
 	g_free (size);
@@ -498,9 +531,7 @@ volume_changed (GVolumeMonitor *volume_monitor,
                 gpointer        user_data)
 {
 	/* filesystem has changed (mounted or unmounted device) */
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
+	baobab_update_filesystem ();
 }
 
 static void
@@ -808,9 +839,8 @@ excluded_locations_changed (GConfClient *client,
 	g_slist_foreach (uris, (GFunc) g_free, NULL);
 	g_slist_free (uris);
 
-	baobab_get_filesystem (&g_fs);
-	set_label_scan (&g_fs);
-	show_label ();
+	baobab_update_filesystem ();
+
 	gtk_tree_store_clear (baobab.model);
 	first_row ();
 }
@@ -837,6 +867,9 @@ baobab_init (void)
 	GError *error = NULL;
 	gboolean enable;
 
+	/* FileSystem usage */
+	baobab_get_filesystem (&baobab.fs);
+
 	/* Load the UI */
 	baobab.main_ui = gtk_builder_new ();
 	gtk_builder_add_from_file (baobab.main_ui, BAOBAB_UI_FILE, &error);
@@ -851,7 +884,6 @@ baobab_init (void)
 	gtk_builder_connect_signals (baobab.main_ui, NULL);
 
 	/* Misc */
-	baobab.label_scan = NULL;
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 	baobab.STOP_SCANNING = TRUE;
 	baobab.show_allocated = TRUE;
@@ -898,8 +930,6 @@ baobab_init (void)
 static void
 baobab_shutdown (void)
 {
-	g_free (baobab.label_scan);
-
 	if (baobab.current_location)
 		g_object_unref (baobab.current_location);
 
@@ -1222,9 +1252,7 @@ main (int argc, char *argv[])
 
 	baobab_init ();
 
-	check_menu_sens (FALSE);
-	baobab_get_filesystem (&g_fs);
-	if (g_fs.total == 0) {
+	if (baobab.fs.total == 0) {
 		GtkWidget *dialog;
 
 		dialog = gtk_message_dialog_new (NULL,
@@ -1239,8 +1267,8 @@ main (int argc, char *argv[])
 		goto closing;
 	}
 
-	set_label_scan (&g_fs);
-	show_label ();
+	check_menu_sens (FALSE);
+	update_scan_label ();
 
 	baobab.window = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "baobab_window"));
 	gtk_window_set_position (GTK_WINDOW (baobab.window),

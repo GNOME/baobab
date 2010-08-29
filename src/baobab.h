@@ -30,7 +30,6 @@
 #include <gio/gio.h>
 #include <gconf/gconf-client.h>
 
-typedef struct _baobab_application baobab_application;
 typedef struct _baobab_fs baobab_fs;
 struct BaobabSearchOpt;
 
@@ -58,9 +57,19 @@ struct _BaobabChartMenu {
 	GtkWidget *set_root_item;
 };
 
+typedef struct _BaobabFS BaobabFS;
+
+struct _BaobabFS {
+	guint64 total;
+	guint64 used;
+	guint64 avail;
+};
+
 typedef struct _BaobabApplication BaobabApplication;
 
 struct _BaobabApplication {
+	BaobabFS fs;
+
 	GtkBuilder *main_ui;
 	GtkWidget *window;
 	GtkWidget *tree_view;
@@ -76,7 +85,6 @@ struct _BaobabApplication {
 	gboolean STOP_SCANNING;
 	gboolean CONTENTS_CHANGED_DELAYED;
 	GSList *excluded_locations;
-	gchar *label_scan;
 	gboolean show_allocated;
 	gboolean is_local;
 
@@ -94,12 +102,6 @@ struct _BaobabApplication {
 /* Application singleton */
 BaobabApplication baobab;
 
-struct _baobab_fs {
-	guint64 total;
-	guint64 used;
-	guint64 avail;
-};
-
 struct chan_data {
 	guint64 size;
 	guint64 alloc_size;
@@ -110,10 +112,8 @@ struct chan_data {
 	gchar *parse_name;
 };
 
-/* globals */
-baobab_fs g_fs;
-
 void baobab_set_busy (gboolean busy);
+void baobab_update_filesystem (void);
 void baobab_scan_location (GFile *);
 void baobab_scan_home (void);
 void baobab_scan_root (void);

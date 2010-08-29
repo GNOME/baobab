@@ -25,7 +25,7 @@
 
 #include "baobab.h"
 
-void baobab_get_filesystem (baobab_fs *fs);
+void baobab_get_filesystem (BaobabFS *fs);
 gchar* dir_select (gboolean, GtkWidget *);
 void on_toggled (GtkToggleButton *, gpointer);
 void stop_scan (void);
@@ -37,8 +37,6 @@ void message (const gchar *primary_msg, const gchar *secondary_msg, GtkMessageTy
 gint messageyesno (const gchar *primary_msg, const gchar *secondary_msg, GtkMessageType type, gchar * ok_button, GtkWidget *parent);
 gboolean baobab_check_dir (GFile *);
 void popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash);
-void set_label_scan (baobab_fs *);
-void show_label (void);
 void open_file_with_application (GFile *file);
 gboolean can_trash_file (GFile *file);
 gboolean trash_file (GFile *file);

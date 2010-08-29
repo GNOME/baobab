@@ -39,9 +39,8 @@
 #include "baobab-utils.h"
 #include "callbacks.h"
 
-
 void
-baobab_get_filesystem (baobab_fs *fs)
+baobab_get_filesystem (BaobabFS *fs)
 {
 	size_t i;
 	glibtop_mountlist mountlist;
@@ -52,24 +51,21 @@ baobab_get_filesystem (baobab_fs *fs)
 	mountentries = glibtop_get_mountlist (&mountlist, FALSE);
 
 	for (i = 0; i < mountlist.number; ++i) {
-		GFile	*file;
+		GFile *file;
 		glibtop_fsusage fsusage;
-		
-		file = g_file_new_for_path(mountentries[i].mountdir);	
 
-		if (baobab_is_excluded_location (file)){
-			g_object_unref(file);
-			continue;
-			}
+		file = g_file_new_for_path (mountentries[i].mountdir);
 
-		glibtop_get_fsusage (&fsusage, mountentries[i].mountdir);
+		if (!baobab_is_excluded_location (file)) {
 
-		/*  v.1.1.1 changed bavail with bfree) */
-		fs->total += fsusage.blocks * fsusage.block_size;
-		fs->avail += fsusage.bfree * fsusage.block_size;
-		fs->used += (fsusage.blocks - fsusage.bfree) * fsusage.block_size;
-		g_object_unref(file);
+			glibtop_get_fsusage (&fsusage, mountentries[i].mountdir);
 
+			fs->total += fsusage.blocks * fsusage.block_size;
+			fs->avail += fsusage.bfree * fsusage.block_size;
+			fs->used += (fsusage.blocks - fsusage.bfree) * fsusage.block_size;
+		}
+
+		g_object_unref (file);
 	}
 
 	g_free (mountentries);
@@ -380,44 +376,6 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash)
 	gtk_widget_show_all (pmenu);
 	gtk_menu_popup (GTK_MENU (pmenu), NULL, NULL, NULL, NULL,
 			event->button, event->time);
-}
-
-void
-set_label_scan (baobab_fs *fs)
-{
-	gchar *markup;
-	gchar *total;
-	gchar *used;
-	gchar *available;
-
-	g_free (baobab.label_scan);
-
-	total = g_format_size_for_display (fs->total);
-	used = g_format_size_for_display (fs->used);
-	available = g_format_size_for_display (fs->avail);
-
-	/* Translators: these are labels for disk space */
-	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b> (%s %s %s %s )</small>",
-					   _("Total filesystem capacity:"), total,
-					   _("used:"), used,
-					   _("available:"), available);
-
-	baobab.label_scan = markup;
-
-	g_free (total);
-	g_free (used);
-	g_free (available);
-}
-
-void
-show_label (void)
-{
-	GtkWidget *label;
-
-	label = GTK_WIDGET (gtk_builder_get_object (baobab.main_ui, "label1"));
-
-	gtk_label_set_markup (GTK_LABEL (label),
-			      baobab.label_scan);
 }
 
 void
