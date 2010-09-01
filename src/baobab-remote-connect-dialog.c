@@ -364,8 +364,6 @@ response_callback (BaobabRemoteConnectDialog *dialog,
 		   int response_id,
 		   GtkWindow *app)
 {
-	GError *error;
-
 	switch (response_id) {
 	case RESPONSE_CONNECT:
 		connect_to_server (dialog, app);

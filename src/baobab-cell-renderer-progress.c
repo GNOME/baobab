@@ -191,7 +191,7 @@ baobab_cell_renderer_progress_render (GtkCellRenderer *cell,
 				      guint            flags)
 {
   BaobabCellRendererProgress *cellprogress = BAOBAB_CELL_RENDERER_PROGRESS (cell);
-  gint x, y, w, h, perc_w, pos;
+  gint x, y, w, h, perc_w;
   gboolean is_rtl;
   cairo_t *cr;
   gint xpad;

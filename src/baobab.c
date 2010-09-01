@@ -1073,7 +1073,7 @@ drag_data_received_handl (GtkWidget *widget,
 	    (gtk_selection_data_get_length (selection_data) >= 0) &&
 	    (target_type == DND_TARGET_URI_LIST)) {
 		gchar **uri_list;
-		uri_list = g_uri_list_extract_uris (gtk_selection_data_get_data (selection_data));
+		uri_list = g_uri_list_extract_uris ((const gchar *) gtk_selection_data_get_data (selection_data));
 		/* check list is 1 item long */
 		if (uri_list != NULL && uri_list[0] != NULL && uri_list[1] == NULL) {
 			gf = g_file_new_for_uri (uri_list[0]);

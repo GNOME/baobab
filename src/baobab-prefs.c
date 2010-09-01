@@ -27,6 +27,7 @@
 #include <sys/stat.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+#include <glib/gstdio.h>
 #include <gconf/gconf-client.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>

@@ -301,7 +301,6 @@ baobab_chart_realize (GtkWidget *widget)
   gint attributes_mask;
   GtkAllocation allocation;
   GdkWindow *window;
-  GtkStyle *style;
 
   g_return_if_fail (BAOBAB_IS_CHART (widget));
 
@@ -507,7 +506,7 @@ static void
 baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
 {
   BaobabChartPrivate *priv;
-  BaobabChartItem *item, *child_item;
+  BaobabChartItem *item;
 
   GList *node;
   GtkTreeIter initial_iter = {0};
@@ -520,7 +519,6 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
   GList *child_node;
   BaobabChartItem *child;
   gdouble rel_start;
-  gdouble rel_size;
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
 
@@ -900,17 +898,19 @@ baobab_chart_get_item_color (BaobabChartColor *color,
     }
 
   if (highlighted)
-    if (depth == 0)
-      *color = level_color_hl;
-    else
-      {
-        maximum = MAX (color->red,
-                       MAX (color->green,
-                            color->blue));
-        color->red /= maximum;
-        color->green /= maximum;
-        color->blue /= maximum;
-      }
+    {
+      if (depth == 0)
+        *color = level_color_hl;
+      else
+        {
+          maximum = MAX (color->red,
+                         MAX (color->green,
+                              color->blue));
+          color->red /= maximum;
+          color->green /= maximum;
+          color->blue /= maximum;
+        }
+    }
 }
 
 static gint
@@ -948,8 +948,6 @@ static gint
 baobab_chart_scroll (GtkWidget *widget,
                      GdkEventScroll *event)
 {
-  BaobabChartPrivate * priv = BAOBAB_CHART_GET_PRIVATE (widget);
-
   switch (event->direction)
     {
     case GDK_SCROLL_LEFT :
@@ -1407,7 +1405,6 @@ baobab_chart_set_root (GtkWidget *chart,
                        GtkTreePath *root)
 {
   BaobabChartPrivate *priv;
-  GtkTreeIter iter = {0};
   GtkTreePath *current_root;
 
   g_return_if_fail (BAOBAB_IS_CHART (chart));
@@ -1835,7 +1832,7 @@ baobab_chart_can_zoom_in (GtkWidget *chart)
   BaobabChartPrivate *priv;
   BaobabChartClass *class;
 
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
+  g_return_val_if_fail (BAOBAB_IS_CHART (chart), FALSE);
 
   priv = BAOBAB_CHART (chart)->priv;
   class = BAOBAB_CHART_GET_CLASS (chart);
@@ -1861,7 +1858,7 @@ baobab_chart_can_zoom_out (GtkWidget *chart)
   BaobabChartPrivate *priv;
   BaobabChartClass *class;
 
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
+  g_return_val_if_fail (BAOBAB_IS_CHART (chart), FALSE);
 
   priv = BAOBAB_CHART (chart)->priv;
   class = BAOBAB_CHART_GET_CLASS (chart);

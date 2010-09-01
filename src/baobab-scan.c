@@ -181,7 +181,6 @@ loopdir (GFile *file,
 	 BaobabHardLinkArray *hla,
 	 gint current_depth)
 {
-	GList *file_list;
 	guint64 tempHLsize = 0;
 	gint elements = 0;
 	struct chan_data data;

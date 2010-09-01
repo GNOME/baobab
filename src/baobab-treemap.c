@@ -198,7 +198,6 @@ baobab_treemap_calculate_item_geometry (GtkWidget *chart,
   gdouble width, height;
   BaobabChartItem *parent = NULL;
   GtkAllocation allocation;
-  guint max_depth;
 
   priv = BAOBAB_TREEMAP (chart)->priv;
 
@@ -287,7 +286,6 @@ static void
 baobab_treemap_get_item_rectangle (GtkWidget *chart,
                                    BaobabChartItem *item)
 {
-  GdkRectangle rect;
   cairo_rectangle_t *_rect;
 
   _rect = (cairo_rectangle_t *) item->data;

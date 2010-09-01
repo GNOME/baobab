@@ -432,9 +432,8 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
 
   gdouble q_angle, q_width, q_height;
 
-  gdouble tip_angle, tip_x, tip_y;
+  gdouble tip_x, tip_y;
   gdouble middle_angle, middle_angle_n, middle_radius;
-  gdouble min_angle, max_angle;
   gdouble sector_center_x, sector_center_y;
   gdouble a;
   guint i;

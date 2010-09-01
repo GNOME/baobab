@@ -352,9 +352,8 @@ add_popupmenu_item (GtkMenu *pmenu, const gchar *label, const gchar *stock, GCal
 void
 popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash)
 {
-	GtkWidget *pmenu, *open, *trash, *remove;
+	GtkWidget *pmenu;
 	gchar *path_to_string;
-	GtkWidget *image;
 
 	/* path_to_string is freed in callback function */
 	path_to_string = gtk_tree_path_to_string (path);
