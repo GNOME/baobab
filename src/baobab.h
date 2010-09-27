@@ -41,6 +41,7 @@ struct BaobabSearchOpt;
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
 #define BAOBAB_STATUSBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/statusbar_visible"
 #define BAOBAB_SUBFLSTIPS_VISIBLE_KEY   BAOBAB_KEY_DIR "/ui/baobab_subfoldertips_visible"
+#define BAOBAB_ACTIVE_CHART_KEY		BAOBAB_KEY_DIR "/ui/active_chart"
 #define BAOBAB_EXCLUDED_DIRS_KEY	BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
 #define BAOBAB_ENABLE_HOME_MONITOR_KEY	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
 #define SYSTEM_TOOLBAR_STYLE_KEY	"/desktop/gnome/interface/toolbar_style"
@@ -73,6 +74,7 @@ struct _BaobabApplication {
 	GtkBuilder *main_ui;
 	GtkWidget *window;
 	GtkWidget *tree_view;
+	GtkWidget *chart_frame;
 	GtkWidget *rings_chart;
 	GtkWidget *treemap_chart;
 	GtkWidget *current_chart;

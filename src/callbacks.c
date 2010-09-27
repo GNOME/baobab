@@ -366,36 +366,3 @@ on_chart_snapshot_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 	baobab_chart_save_snapshot (baobab.current_chart);
 }
 
-void
-on_chart_type_change (GtkWidget *combo, gpointer user_data)
-{
-	GtkWidget *chart;
-	GtkWidget *frame;
-
-	guint active;
-
-	active = gtk_combo_box_get_active (GTK_COMBO_BOX (combo));
-
-	switch (active) {
-	case 0:
-		chart = baobab.rings_chart;
-		break;
-	case 1:
-		chart = baobab.treemap_chart;
-		break;
-	default:
-		g_return_if_reached ();
-	}
-
-	frame = gtk_widget_get_parent (baobab.current_chart);
-
-	baobab_chart_freeze_updates (baobab.current_chart);
-	baobab_chart_thaw_updates (chart);
-
-	g_object_ref_sink (baobab.current_chart);
-	gtk_container_remove (GTK_CONTAINER (frame), baobab.current_chart);
-	gtk_container_add (GTK_CONTAINER (frame), chart);
-
-	baobab.current_chart = chart;
-}
-

@@ -57,6 +57,5 @@ void on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void on_chart_snapshot_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void on_chart_type_change (GtkWidget *combo, gpointer user_data);
 
 #endif /* __BAOBAB_CALLBACKS_H__ */
