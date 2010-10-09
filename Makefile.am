@@ -1,3 +1,1 @@
-## Process this file with automake to produce Makefile.in
-
 SUBDIRS =  src data pixmaps help

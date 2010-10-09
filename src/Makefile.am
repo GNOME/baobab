@@ -39,13 +39,20 @@ baobab_SOURCES = \
 	baobab-treemap.h
 
 baobab_CFLAGS = 			\
-	$(GNOME_UTILS_CFLAGS)		\
+	$(GLIB_CFLAGS)			\
+	$(GIO_CFLAGS)			\
+	$(GTK2_CFLAGS)			\
 	$(LIBGTOP_CFLAGS)		\
+	$(GCONF_CFLAGS)			\
 	$(NULL)
 
 baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = 				\
 	-lm				\
-	$(GNOME_UTILS_LIBS)		\
+	$(GLIB_LIBS)			\
+	$(GIO_LIBS)			\
+	$(GTK2_LIBS)			\
 	$(LIBGTOP_LIBS)			\
+	$(GCONF_LIBS)			\
 	$(NULL)
+
