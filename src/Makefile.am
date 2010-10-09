@@ -41,7 +41,7 @@ baobab_SOURCES = \
 baobab_CFLAGS = 			\
 	$(GLIB_CFLAGS)			\
 	$(GIO_CFLAGS)			\
-	$(GTK2_CFLAGS)			\
+	$(GTK_CFLAGS)			\
 	$(LIBGTOP_CFLAGS)		\
 	$(GCONF_CFLAGS)			\
 	$(NULL)
@@ -51,7 +51,7 @@ baobab_LDADD = 				\
 	-lm				\
 	$(GLIB_LIBS)			\
 	$(GIO_LIBS)			\
-	$(GTK2_LIBS)			\
+	$(GTK_LIBS)			\
 	$(LIBGTOP_LIBS)			\
 	$(GCONF_LIBS)			\
 	$(NULL)

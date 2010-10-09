@@ -97,13 +97,13 @@ baobab_cell_renderer_progress_set_property (GObject *object,
 #define FIXED_HEIGHT  8
 
 static void
-baobab_cell_renderer_progress_get_size (GtkCellRenderer *cell,
-					GtkWidget       *widget,
-					GdkRectangle    *cell_area,
-					gint            *x_offset,
-					gint            *y_offset,
-					gint            *width,
-					gint            *height)
+baobab_cell_renderer_progress_get_size (GtkCellRenderer    *cell,
+					GtkWidget          *widget,
+					const GdkRectangle *cell_area,
+					gint               *x_offset,
+					gint               *y_offset,
+					gint               *width,
+					gint               *height)
 {
   gint calc_width;
   gint calc_height;
@@ -182,31 +182,28 @@ set_color_according_to_perc (cairo_t *cr, double value)
 }
 
 static void
-baobab_cell_renderer_progress_render (GtkCellRenderer *cell,
-				      GdkWindow       *window,
-				      GtkWidget       *widget,
-				      GdkRectangle    *background_area,
-				      GdkRectangle    *cell_area,
-				      GdkRectangle    *expose_area,
-				      guint            flags)
+baobab_cell_renderer_progress_render (GtkCellRenderer    *cell,
+				      cairo_t            *cr,
+				      GtkWidget          *widget,
+				      const GdkRectangle *background_area,
+				      const GdkRectangle *cell_area,
+				      guint               flags)
 {
-  BaobabCellRendererProgress *cellprogress = BAOBAB_CELL_RENDERER_PROGRESS (cell);
+  BaobabCellRendererProgress *cellprogress;
   gint x, y, w, h, perc_w;
   gboolean is_rtl;
-  cairo_t *cr;
   gint xpad;
   gint ypad;
   GtkStyle *style;
 
+  cellprogress = BAOBAB_CELL_RENDERER_PROGRESS (cell);
+
   is_rtl = gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL;
-  
-  cr = gdk_cairo_create (window);
-  
+
   gtk_cell_renderer_get_padding (cell, &xpad, &ypad);
 
   x = cell_area->x + xpad;
   y = cell_area->y + ypad;
-  
   w = cell_area->width - xpad * 2;
   h = cell_area->height - ypad * 2;
 
@@ -226,7 +223,7 @@ baobab_cell_renderer_progress_render (GtkCellRenderer *cell,
   y += style->ythickness;
   w -= style->xthickness * 2;
   h -= style->ythickness * 2;
-  
+
   cairo_rectangle (cr, x, y, w, h);
   cairo_set_source_rgb (cr, 1, 1, 1);
   cairo_fill (cr);
@@ -236,8 +233,6 @@ baobab_cell_renderer_progress_render (GtkCellRenderer *cell,
   cairo_rectangle (cr, is_rtl ? (x + w - perc_w) : x, y, perc_w, h);
   set_color_according_to_perc (cr, cellprogress->priv->perc);
   cairo_fill (cr);
-  
-  cairo_destroy (cr);
 }
 
 static void
