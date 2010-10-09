@@ -126,5 +126,6 @@ gboolean baobab_is_excluded_location (GFile *);
 void baobab_set_toolbar_visible (gboolean visible);
 void baobab_set_statusbar_visible (gboolean visible);
 void baobab_set_statusbar (const gchar *);
+void baobab_quit (void);
 
 #endif /* __BAOBAB_H_ */

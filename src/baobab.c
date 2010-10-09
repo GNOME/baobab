@@ -1241,6 +1241,13 @@ initialize_charts (void)
 	check_drop_targets (FALSE);
 }
 
+void
+baobab_quit ()
+{
+	baobab_stop_scan ();
+	gtk_main_quit ();
+}
+
 static gboolean
 start_proc_on_command_line (GFile *file)
 {

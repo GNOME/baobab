@@ -62,10 +62,10 @@
           <accelerator key="R" modifiers="GDK_CONTROL_MASK"/>
         </child>
         <child>
-          <object class="GtkAction" id="esci1">
+          <object class="GtkAction" id="menuquit">
             <property name="stock_id">gtk-quit</property>
-            <property name="name">esci1</property>
-            <signal handler="on_esci1_activate" last_modification_time="Tue, 05 Jul 2005 08:47:26 GMT" name="activate"/>
+            <property name="name">menuquit</property>
+            <signal handler="on_quit_activate" last_modification_time="Tue, 05 Jul 2005 08:47:26 GMT" name="activate"/>
           </object>
         </child>
         <child>
@@ -160,7 +160,7 @@
           <menuitem action="menustop"/>
           <menuitem action="menurescan"/>
           <separator/>
-          <menuitem action="esci1"/>
+          <menuitem action="menuquit"/>
         </menu>
         <menu action="edit1">
           <menuitem action="expand_all"/>
@@ -197,7 +197,6 @@
     <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
     <property name="focus_on_map">True</property>
     <property name="urgency_hint">False</property>
-    <signal handler="on_esci1_activate" last_modification_time="Sun, 31 Jul 2005 16:47:41 GMT" name="destroy"/>
     <signal handler="on_delete_activate" last_modification_time="Sun, 31 Jul 2005 16:53:49 GMT" name="delete_event"/>
     <child>
       <object class="GtkVBox" id="vbox1">
@@ -234,8 +233,7 @@
                 <property name="visible_vertical">True</property>
                 <property name="is_important">True</property>
                 <accessibility>
-		
-	      </accessibility>
+                </accessibility>
                 <signal handler="on_tbscanhome_clicked" last_modification_time="Wed, 23 Aug 2006 12:30:03 GMT" name="clicked"/>
                 <child internal-child="accessible">
                   <object class="AtkObject" id="a11y-tbscanhome1">

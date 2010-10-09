@@ -39,6 +39,12 @@
 #include "baobab-chart.h"
 
 void
+on_quit_activate (GtkMenuItem *menuitem, gpointer user_data)
+{
+	baobab_quit ();
+}
+
+void
 on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
 	baobab_scan_home ();
@@ -54,13 +60,6 @@ void
 on_menuscandir_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
 	dir_select (FALSE, baobab.window);
-}
-
-void
-on_esci1_activate (GtkObject *menuitem, gpointer user_data)
-{
-	baobab_stop_scan ();
-	gtk_main_quit ();
 }
 
 void
@@ -192,7 +191,7 @@ gboolean
 on_delete_activate (GtkWidget *widget,
 		    GdkEvent *event, gpointer user_data)
 {
-	on_esci1_activate (NULL, NULL);
+	baobab_quit ();
 	return TRUE;
 }
 

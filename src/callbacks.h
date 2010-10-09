@@ -26,6 +26,7 @@
 #include <gtk/gtk.h>
 #include "baobab-chart.h"
 
+void on_quit_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_about_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_menuscanhome_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_menuallfs_activate (GtkMenuItem *menuitem, gpointer user_data);
@@ -39,7 +40,6 @@ void on_tbstop_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_tbrescan_clicked (GtkToolButton *toolbutton, gpointer user_data);
 void on_radio_allfs_clicked (GtkButton *button, gpointer user_data);
 void on_radio_dir_clicked (GtkButton *button, gpointer user_data);
-void on_esci1_activate (GtkObject *object, gpointer user_data);
 gboolean on_delete_activate (GtkWidget *widget, GdkEvent *event, gpointer user_data);
 void open_file_cb (GtkMenuItem *pmenu, gpointer dummy);
 void scan_folder_cb (GtkMenuItem *pmenu, gpointer dummy);
