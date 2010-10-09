@@ -28,7 +28,6 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
-#include <gconf/gconf-client.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
 #include "baobab.h"
@@ -53,13 +52,10 @@ static gboolean
 add_excluded_item (GtkTreeModel  *model,
 		   GtkTreePath   *path,
 		   GtkTreeIter   *iter,
-		   GSList       **list)
+		   GPtrArray     *uris)
 {
-	GSList *l;
 	gchar *mount;
 	gboolean check;
-
-	l = *list;
 
 	gtk_tree_model_get (model,
 			    iter,
@@ -68,53 +64,43 @@ add_excluded_item (GtkTreeModel  *model,
 			    -1);
 
 	if (!check) {
-		l = g_slist_prepend (l, mount);
+		g_ptr_array_add (uris, mount);
 	}
-
-	*list = l;
+	else {
+		g_free (mount);
+	}
 
 	return FALSE;
 }
 
-static GSList *
+static gchar **
 get_excluded_locations (GtkTreeModel *model)
 {
-	GSList *l = NULL;
+	GPtrArray *uris;
+
+	uris = g_ptr_array_new ();
 
 	gtk_tree_model_foreach (model,
 				(GtkTreeModelForeachFunc) add_excluded_item,
-				&l);
+				uris);
 
-	return g_slist_reverse (l);
+	g_ptr_array_add (uris, NULL);
+
+	return (gchar **) g_ptr_array_free (uris, FALSE);
 }
 
 static void
-save_gconf (GtkTreeModel *model)
+save_excluded_uris (GtkTreeModel *model)
 {
-	GSList *l;
+	gchar **uris;
 
-	l = get_excluded_locations (model);
+	uris = get_excluded_locations (model);
 
-	gconf_client_set_list (baobab.gconf_client,
-			       BAOBAB_EXCLUDED_DIRS_KEY, GCONF_VALUE_STRING,
-			       l, NULL);
+	g_settings_set_strv (baobab.prefs_settings,
+			     BAOBAB_SETTINGS_EXCLUDED_URIS,
+			     (const gchar * const *) uris);
 
-	g_slist_foreach (l, (GFunc) g_free, NULL);
-	g_slist_free (l);
-}
-
-static void
-enable_home_cb (GtkToggleButton *togglebutton, gpointer user_data)
-{
-	gboolean enable;
-
-	enable = gtk_toggle_button_get_active (togglebutton);
-
-	gconf_client_set_bool (baobab.gconf_client,
-			       BAOBAB_ENABLE_HOME_MONITOR_KEY,
-			       enable,
-			       NULL);
-
+	g_strfreev (uris);
 }
 
 static void
@@ -129,7 +115,7 @@ filechooser_response_cb (GtkDialog *dialog,
 			break;
 		case GTK_RESPONSE_DELETE_EVENT:
 		case GTK_RESPONSE_CLOSE:
-			save_gconf (model); 
+			save_excluded_uris (model);
 		default:
 			gtk_widget_destroy (GTK_WIDGET (dialog));
 			break;
@@ -328,11 +314,10 @@ baobab_prefs_dialog (void)
 	fill_props_model (model);
 
 	check_enablehome = GTK_WIDGET (gtk_builder_get_object (builder, "check_enable_home"));
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check_enablehome),
-				      baobab.monitor_home != NULL);
-
-	g_signal_connect (check_enablehome, "toggled",
-			  G_CALLBACK (enable_home_cb), NULL);
+	g_settings_bind (baobab.prefs_settings,
+			 BAOBAB_SETTINGS_MONITOR_HOME,
+			 check_enablehome, "active",
+			 G_SETTINGS_BIND_DEFAULT);
 
 	g_signal_connect (dlg, "response",
 			  G_CALLBACK (filechooser_response_cb), model);

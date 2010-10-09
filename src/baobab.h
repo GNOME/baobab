@@ -28,18 +28,16 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#include <gconf/gconf-client.h>
 
 struct BaobabSearchOpt;
 
 /* Settings */
-#define BAOBAB_KEY_DIR "/apps/baobab"
-#define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
-#define BAOBAB_STATUSBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/statusbar_visible"
-#define BAOBAB_ACTIVE_CHART_KEY		BAOBAB_KEY_DIR "/ui/active_chart"
-#define BAOBAB_EXCLUDED_DIRS_KEY	BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
-#define BAOBAB_ENABLE_HOME_MONITOR_KEY	BAOBAB_KEY_DIR "/properties/enable_home_monitor"
-#define SYSTEM_TOOLBAR_STYLE_KEY	"/desktop/gnome/interface/toolbar_style"
+#define BAOBAB_SETTINGS_TOOLBAR_VISIBLE "toolbar-visible"
+#define BAOBAB_SETTINGS_STATUSBAR_VISIBLE "statusbar-visible"
+#define BAOBAB_SETTINGS_ACTIVE_CHART "active-chart"
+#define BAOBAB_SETTINGS_MONITOR_HOME "monitor-home"
+#define BAOBAB_SETTINGS_EXCLUDED_URIS "excluded-uris"
+#define DESKTOP_SETTINGS_TOOLBAR_STYLE "toolbar-style"
 
 typedef struct _BaobabChartMenu BaobabChartMenu;
 
@@ -92,8 +90,11 @@ struct _BaobabApplication {
 	GVolumeMonitor *monitor_vol;
 	GFileMonitor *monitor_home;
 
-	GConfClient *gconf_client;
 	gint model_max_depth;
+
+	GSettings *ui_settings;
+	GSettings *prefs_settings;
+	GSettings *desktop_settings;
 };
 
 /* Application singleton */

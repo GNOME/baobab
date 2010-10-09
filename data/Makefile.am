@@ -1,5 +1,6 @@
 uidir = $(datadir)/baobab
-ui_DATA = baobab-main-window.ui \
+ui_DATA = \
+	baobab-main-window.ui \
 	baobab-preferences-dialog.ui
 
 baobabappdir	   = $(datadir)/applications
@@ -11,21 +12,14 @@ $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
 
 @INTLTOOL_DESKTOP_RULE@
 
-schemasdir	 = $(GCONF_SCHEMA_FILE_DIR)
-schemas_in_files = baobab.schemas.in
-schemas_DATA 	 = $(schemas_in_files:.schemas.in=.schemas)
-@INTLTOOL_SCHEMAS_RULE@
+gsettingsschema_in_files = org.gnome.baobab.gschema.xml.in
+gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
+
+@INTLTOOL_XML_NOMERGE_RULE@
+
+@GSETTINGS_RULES@
 
 man_MANS = baobab.1
-
-if GCONF_SCHEMAS_INSTALL
-install-data-local:
-	if test -z "$(DESTDIR)" ; then \
-		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(schemas_DATA) ; \
-	fi
-else
-install-data-local:
-endif
 
 EXTRA_DIST = 				\
 	$(ui_DATA)			\

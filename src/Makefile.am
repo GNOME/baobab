@@ -1,5 +1,3 @@
-## Process this file with automake to produce Makefile.in
-
 NULL =
 
 INCLUDES = \
@@ -43,7 +41,6 @@ baobab_CFLAGS = 			\
 	$(GIO_CFLAGS)			\
 	$(GTK_CFLAGS)			\
 	$(LIBGTOP_CFLAGS)		\
-	$(GCONF_CFLAGS)			\
 	$(NULL)
 
 baobab_LDFLAGS = -export-dynamic
@@ -53,6 +50,5 @@ baobab_LDADD = 				\
 	$(GIO_LIBS)			\
 	$(GTK_LIBS)			\
 	$(LIBGTOP_LIBS)			\
-	$(GCONF_LIBS)			\
 	$(NULL)
 

@@ -25,7 +25,6 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gconf/gconf-client.h>
 #include <glibtop.h>
 
 #include "baobab.h"
@@ -605,36 +604,6 @@ monitor_home (gboolean enable)
 }
 
 void
-baobab_set_toolbar_visible (gboolean visible)
-{
-	GtkToggleAction *action;
-
-	if (visible)
-		gtk_widget_show (baobab.toolbar);
-	else
-		gtk_widget_hide (baobab.toolbar);
-
-	/* make sure the check menu item is consistent */
-	action = GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "view_tb"));
-	gtk_toggle_action_set_active (action, visible);
-}
-
-void
-baobab_set_statusbar_visible (gboolean visible)
-{
-	GtkToggleAction *action;
-
-	if (visible)
-		gtk_widget_show (baobab.statusbar);
-	else
-		gtk_widget_hide (baobab.statusbar);
-
-	/* make sure the check menu item is consistent */
-	action = GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "view_sb"));
-	gtk_toggle_action_set_active (action, visible);
-}
-
-void
 baobab_set_statusbar (const gchar *text)
 {
 	gtk_statusbar_pop (GTK_STATUSBAR (baobab.statusbar), 1);
@@ -663,38 +632,6 @@ toolbar_reconfigured_cb (GtkToolItem *item,
 	}
 
 	gtk_widget_set_size_request (spinner, size, size);
-}
-
-static void
-baobab_toolbar_style (GConfClient *client,
-	      	      guint cnxn_id,
-	      	      GConfEntry *entry,
-	      	      gpointer user_data)
-{
-	gchar *toolbar_setting;
-
-	toolbar_setting = baobab_gconf_get_string_with_default (baobab.gconf_client,
-								SYSTEM_TOOLBAR_STYLE_KEY,
-								"both");
-
-	if (!strcmp(toolbar_setting, "icons")) {
-		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
-				       GTK_TOOLBAR_ICONS);
-	}
-	else if (!strcmp(toolbar_setting, "both")) {
-		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
-				       GTK_TOOLBAR_BOTH);
-	}
-	else if (!strcmp(toolbar_setting, "both-horiz")) {
-		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
-				       GTK_TOOLBAR_BOTH_HORIZ);
-	}
-	else if (!strcmp(toolbar_setting, "text")) {
-		gtk_toolbar_set_style (GTK_TOOLBAR(baobab.toolbar),
-				       GTK_TOOLBAR_TEXT);
-	}
-
-	g_free (toolbar_setting);
 }
 
 static void
@@ -729,13 +666,18 @@ baobab_create_toolbar (void)
 			  G_CALLBACK (toolbar_reconfigured_cb), baobab.spinner);
 	toolbar_reconfigured_cb (item, baobab.spinner);
 
-	baobab_toolbar_style (NULL, 0, NULL, NULL);
-
-	visible = gconf_client_get_bool (baobab.gconf_client,
-					 BAOBAB_TOOLBAR_VISIBLE_KEY,
-					 NULL);
-
-	baobab_set_toolbar_visible (visible);
+	g_settings_bind (baobab.ui_settings,
+			 BAOBAB_SETTINGS_TOOLBAR_VISIBLE,
+			 baobab.toolbar, "visible",
+			 G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (baobab.ui_settings,
+			 BAOBAB_SETTINGS_TOOLBAR_VISIBLE,
+			 GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "view_tb")), "active",
+			 G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (baobab.desktop_settings,
+			 DESKTOP_SETTINGS_TOOLBAR_STYLE,
+			 baobab.toolbar, "toolbar-style",
+			 G_SETTINGS_BIND_GET);
 }
 
 static void
@@ -750,24 +692,28 @@ baobab_create_statusbar (void)
 		return;
 	}
 
-	visible = gconf_client_get_bool (baobab.gconf_client,
-					 BAOBAB_STATUSBAR_VISIBLE_KEY,
-					 NULL);
-
-	baobab_set_statusbar_visible (visible);
+	g_settings_bind (baobab.ui_settings,
+			 BAOBAB_SETTINGS_STATUSBAR_VISIBLE,
+			 baobab.statusbar, "visible",
+			 G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (baobab.ui_settings,
+			 BAOBAB_SETTINGS_STATUSBAR_VISIBLE,
+			 GTK_TOGGLE_ACTION (gtk_builder_get_object (baobab.main_ui, "view_sb")), "active",
+			 G_SETTINGS_BIND_DEFAULT);
 }
 
 static void
-baobab_set_excluded_locations (GSList *excluded_uris)
+baobab_set_excluded_locations (gchar **uris)
 {
 	GSList *l;
+	gint i;
 
 	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
 	g_slist_free (baobab.excluded_locations);
 	baobab.excluded_locations = NULL;
-	for (l = excluded_uris; l != NULL; l = l->next) {
+	for (i = 0; uris[i] != NULL; ++i) {
 		baobab.excluded_locations = g_slist_prepend (baobab.excluded_locations,
-						g_file_new_for_uri (l->data));
+						g_file_new_for_uri (uris[i]));
 	}
 }
 
@@ -775,22 +721,22 @@ static void
 store_excluded_locations (void)
 {
 	GSList *l;
+	GPtrArray *uris;
 	GSList *uri_list = NULL;
 
-	for (l = baobab.excluded_locations; l != NULL; l = l->next) {
-		GSList *uri_list = NULL;
+	uris = g_ptr_array_new ();
 
-		uri_list = g_slist_prepend (uri_list, g_file_get_uri(l->data));
+	for (l = baobab.excluded_locations; l != NULL; l = l->next) {
+		g_ptr_array_add (uris, g_file_get_uri (l->data));
 	}
 
-	gconf_client_set_list (baobab.gconf_client,
-			       BAOBAB_EXCLUDED_DIRS_KEY,
-			       GCONF_VALUE_STRING,
-			       uri_list,
-			       NULL);
+	g_ptr_array_add (uris, NULL);
 
-	g_slist_foreach (uri_list, (GFunc) g_free, NULL);
-	g_slist_free (uri_list);
+	g_settings_set_strv (baobab.prefs_settings,
+			     BAOBAB_SETTINGS_EXCLUDED_URIS,
+			     (const gchar *const *) uris->pdata);
+
+	g_ptr_array_free (uris, TRUE);
 }
 
 static void
@@ -799,7 +745,7 @@ sanity_check_excluded_locations (void)
 	GFile *root;
 	GSList *l;
 
-	/* Verify if gconf wrongly contains root dir exclusion, and remove it from gconf. */
+	/* Make sure the root dir is not excluded */
 	root = g_file_new_for_uri ("file:///");
 
 	for (l = baobab.excluded_locations; l != NULL; l = l->next) {
@@ -814,20 +760,15 @@ sanity_check_excluded_locations (void)
 }
 
 static void
-excluded_locations_changed (GConfClient *client,
-			    guint cnxn_id,
-			    GConfEntry *entry,
-			    gpointer user_data)
+excluded_uris_changed (GSettings   *settings,
+		       const gchar *key,
+		       gpointer     user_data)
 {
-	GSList *uris;
+	gchar **uris;
 
-	uris = 	gconf_client_get_list (client,
-				       BAOBAB_EXCLUDED_DIRS_KEY,
-				       GCONF_VALUE_STRING,
-				       NULL);
+	uris = g_settings_get_strv (settings, key);
 	baobab_set_excluded_locations (uris);
-	g_slist_foreach (uris, (GFunc) g_free, NULL);
-	g_slist_free (uris);
+	g_strfreev (uris);
 
 	baobab_update_filesystem ();
 
@@ -836,16 +777,49 @@ excluded_locations_changed (GConfClient *client,
 }
 
 static void
-baobab_monitor_home_toggled (GConfClient *client,
-			     guint cnxn_id,
-			     GConfEntry *entry,
-			     gpointer user_data)
+baobab_setup_excluded_locations (void)
+{
+	gchar **uris;
+
+	uris = g_settings_get_strv (baobab.prefs_settings,
+				    BAOBAB_SETTINGS_EXCLUDED_URIS);
+	baobab_set_excluded_locations (uris);
+	g_strfreev (uris);
+
+	sanity_check_excluded_locations ();
+
+	g_signal_connect (baobab.prefs_settings,
+			 "changed::" BAOBAB_SETTINGS_EXCLUDED_URIS,
+			  G_CALLBACK (excluded_uris_changed),
+			  NULL);
+}
+
+static void
+baobab_settings_monitor_home_changed (GSettings *settings,
+				      const gchar *key,
+				      gpointer user_data)
 {
 	gboolean enable;
 
-	enable = gconf_client_get_bool (baobab.gconf_client,
-					BAOBAB_ENABLE_HOME_MONITOR_KEY,
-					NULL);
+	enable = g_settings_get_boolean (settings, key);
+
+	monitor_home (enable);
+}
+
+static void
+baobab_setup_monitors (void)
+{
+	gboolean enable;
+
+	monitor_volume ();
+
+	enable = g_settings_get_boolean (baobab.prefs_settings,
+					 BAOBAB_SETTINGS_MONITOR_HOME);
+
+	g_signal_connect (baobab.prefs_settings,
+			  "changed::" BAOBAB_SETTINGS_MONITOR_HOME,
+			  G_CALLBACK (baobab_settings_monitor_home_changed),
+			  NULL);
 
 	monitor_home (enable);
 }
@@ -853,9 +827,7 @@ baobab_monitor_home_toggled (GConfClient *client,
 static void
 baobab_init (void)
 {
-	GSList *uri_list;
 	GError *error = NULL;
-	gboolean enable;
 
 	/* FileSystem usage */
 	baobab_get_filesystem (&baobab.fs);
@@ -873,53 +845,31 @@ baobab_init (void)
 
 	gtk_builder_connect_signals (baobab.main_ui, NULL);
 
+	/* Settings */
+	baobab.ui_settings = g_settings_new ("org.gnome.baobab.ui");
+	baobab.prefs_settings = g_settings_new ("org.gnome.baobab.preferences");
+	baobab.desktop_settings = g_settings_new ("org.gnome.desktop.interface");
+
 	/* Misc */
 	baobab.CONTENTS_CHANGED_DELAYED = FALSE;
 	baobab.STOP_SCANNING = TRUE;
 	baobab.show_allocated = TRUE;
 	baobab.is_local = TRUE;
 
-	/* GConf */
-	baobab.gconf_client = gconf_client_get_default ();
-	gconf_client_add_dir (baobab.gconf_client, BAOBAB_KEY_DIR,
-			      GCONF_CLIENT_PRELOAD_NONE, NULL);
-	gconf_client_notify_add (baobab.gconf_client, BAOBAB_EXCLUDED_DIRS_KEY, excluded_locations_changed,
-				 NULL, NULL, NULL);
-	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE_KEY, baobab_toolbar_style,
-				 NULL, NULL, NULL);
-	gconf_client_notify_add (baobab.gconf_client, BAOBAB_ENABLE_HOME_MONITOR_KEY, baobab_monitor_home_toggled,
-				 NULL, NULL, NULL);
-
-	uri_list = gconf_client_get_list (baobab.gconf_client,
-						      BAOBAB_EXCLUDED_DIRS_KEY,
-						      GCONF_VALUE_STRING,
-						      NULL);
-
-	baobab_set_excluded_locations (uri_list);
-
-	g_slist_foreach (uri_list, (GFunc) g_free, NULL);
-	g_slist_free (uri_list);
-
-	sanity_check_excluded_locations ();
+	baobab_setup_excluded_locations ();
 
 	baobab_create_toolbar ();
-
 	baobab_create_statusbar ();
 
-	monitor_volume ();
-
-	enable = gconf_client_get_bool (baobab.gconf_client,
-					BAOBAB_ENABLE_HOME_MONITOR_KEY,
-					NULL);
-
-	monitor_home (enable);
+	baobab_setup_monitors ();
 }
 
 static void
 baobab_shutdown (void)
 {
-	if (baobab.current_location)
+	if (baobab.current_location) {
 		g_object_unref (baobab.current_location);
+	}
 
 	if (baobab.monitor_vol) {
 		g_object_unref (baobab.monitor_vol);
@@ -935,8 +885,16 @@ baobab_shutdown (void)
 	g_slist_foreach (baobab.excluded_locations, (GFunc) g_object_unref, NULL);
 	g_slist_free (baobab.excluded_locations);
 
-	if (baobab.gconf_client) {
-		g_object_unref (baobab.gconf_client);
+	if (baobab.ui_settings) {
+		g_object_unref (baobab.ui_settings);
+	}
+
+	if (baobab.prefs_settings) {
+		g_object_unref (baobab.prefs_settings);
+	}
+
+	if (baobab.desktop_settings) {
+		g_object_unref (baobab.desktop_settings);
 	}
 }
 
@@ -1102,10 +1060,9 @@ set_active_chart (GtkWidget *chart)
 
 		gtk_widget_show_all (baobab.chart_frame);
 
-		gconf_client_set_string (baobab.gconf_client,
-					 BAOBAB_ACTIVE_CHART_KEY,
-					 baobab.current_chart == baobab.rings_chart ? "rings" : "treemap",
-					 NULL);
+		g_settings_set_string (baobab.ui_settings,
+				       BAOBAB_SETTINGS_ACTIVE_CHART,
+				       baobab.current_chart == baobab.rings_chart ? "rings" : "treemap");
 	}
 }
 
@@ -1211,9 +1168,8 @@ initialize_charts (void)
 	g_object_ref_sink (baobab.rings_chart);
 	baobab_chart_freeze_updates (baobab.rings_chart);
 
-	saved_chart = baobab_gconf_get_string_with_default (baobab.gconf_client,
-							   BAOBAB_ACTIVE_CHART_KEY,
-							   "rings");
+	saved_chart = g_settings_get_string (baobab.ui_settings,
+					     BAOBAB_SETTINGS_ACTIVE_CHART);
 
 	if (0 == g_ascii_strcasecmp (saved_chart, "treemap")) {
 		set_active_chart (baobab.treemap_chart);

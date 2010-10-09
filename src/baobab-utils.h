@@ -42,7 +42,6 @@ gboolean can_trash_file (GFile *file);
 gboolean trash_file (GFile *file);
 void set_ui_action_sens (const gchar *name, gboolean sens);
 void set_ui_widget_sens (const gchar *name, gboolean sens);
-gchar *baobab_gconf_get_string_with_default (GConfClient *client, const gchar *key, const gchar *def);
 gboolean baobab_help_display (GtkWindow *parent, const gchar *file_name, const gchar *link_id);
 gboolean is_virtual_filesystem (GFile *file);
 

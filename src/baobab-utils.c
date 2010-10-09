@@ -495,17 +495,6 @@ trash_file (GFile *file)
 	return TRUE;
 }
 
-gchar *
-baobab_gconf_get_string_with_default (GConfClient *client,
-				      const gchar *key,
-				      const gchar *def)
-{
-	gchar *val;
-
-	val = gconf_client_get_string (client, key, NULL);
-	return val ? val : g_strdup (def);
-}
-
 gboolean
 baobab_help_display (GtkWindow   *parent,
 		     const gchar *file_name,
