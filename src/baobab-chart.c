@@ -118,9 +118,8 @@ static void baobab_chart_get_property (GObject *object,
                                        GValue *value,
                                        GParamSpec *pspec);
 static void baobab_chart_free_items (GtkWidget *chart);
-static void baobab_chart_draw (GtkWidget *chart,
-                               cairo_t *cr,
-                               GdkRectangle area);
+static void baobab_chart_draw_chart (GtkWidget *chart,
+                                     cairo_t *cr);
 static void baobab_chart_update_draw (BaobabChart *chart,
                                       GtkTreePath *path);
 static void baobab_chart_row_changed (GtkTreeModel *model,
@@ -143,8 +142,8 @@ static void baobab_chart_rows_reordered (GtkTreeModel *model,
                                          GtkTreeIter *iter,
                                          gint *new_order,
                                          gpointer data);
-static gboolean baobab_chart_expose (GtkWidget *chart,
-                                     GdkEventExpose *event);
+static gboolean baobab_chart_draw (GtkWidget *chart,
+                                   cairo_t *cr);
 static void baobab_chart_interpolate_colors (BaobabChartColor *color,
                                              BaobabChartColor colora,
                                              BaobabChartColor colorb,
@@ -186,7 +185,7 @@ baobab_chart_class_init (BaobabChartClass *class)
 
   /* GtkWidget signals */
   widget_class->realize = baobab_chart_realize;
-  widget_class->expose_event = baobab_chart_expose;
+  widget_class->draw = baobab_chart_draw;
   widget_class->size_allocate = baobab_chart_size_allocate;
   widget_class->scroll_event = baobab_chart_scroll;
 
@@ -316,10 +315,9 @@ baobab_chart_realize (GtkWidget *widget)
   attributes.height = allocation.height;
   attributes.wclass = GDK_INPUT_OUTPUT;
   attributes.visual = gtk_widget_get_visual (widget);
-  attributes.colormap = gtk_widget_get_colormap (widget);
   attributes.event_mask = gtk_widget_get_events (widget) | GDK_EXPOSURE_MASK;
 
-  attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_COLORMAP;
+  attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL;
 
   window = gdk_window_new (gtk_widget_get_parent_window (widget),
                            &attributes,
@@ -596,16 +594,12 @@ baobab_chart_get_items (GtkWidget *chart, GtkTreePath *root)
 }
 
 static void
-baobab_chart_draw (GtkWidget *chart,
-                   cairo_t *cr,
-                   GdkRectangle area)
+baobab_chart_draw_chart (GtkWidget *chart,
+                         cairo_t *cr)
 {
   BaobabChartPrivate *priv;
   BaobabChartClass *class;
-
   GList *node;
-  BaobabChartItem *item;
-  gboolean highlighted;
 
   priv = BAOBAB_CHART_GET_PRIVATE (chart);
   class = BAOBAB_CHART_GET_CLASS (chart);
@@ -619,11 +613,18 @@ baobab_chart_draw (GtkWidget *chart,
   node = priv->first_item;
   while (node != NULL)
     {
+      BaobabChartItem *item;
+      GdkRectangle clip;
+
       item = (BaobabChartItem *) node->data;
 
-      if ((item->visible) && (gdk_rectangle_intersect (&area, &item->rect, NULL))
-          && (item->depth <= priv->max_depth))
+      if (gdk_cairo_get_clip_rectangle (cr, &clip) &&
+          (item->visible) &&
+          (gdk_rectangle_intersect (&clip, &item->rect, NULL)) &&
+          (item->depth <= priv->max_depth))
         {
+          gboolean highlighted;
+
           highlighted = (node == priv->highlighted_item);
 
           class->draw_item (chart, cr, item, highlighted);
@@ -753,15 +754,9 @@ baobab_chart_rows_reordered (GtkTreeModel    *model,
 }
 
 static gboolean
-baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
+baobab_chart_draw (GtkWidget *chart, cairo_t *cr)
 {
-  cairo_t *cr;
   BaobabChartPrivate *priv;
-  gint w, h;
-  gdouble p, sx, sy;
-  GtkTreePath *root_path = NULL;
-  GtkTreePath *current_path = NULL;
-  GtkAllocation allocation;
 
   priv = BAOBAB_CHART (chart)->priv;
 
@@ -769,33 +764,27 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
   if (priv->name_column == priv->percentage_column)
     return FALSE;
 
-  /* get a cairo_t */
-  cr = gdk_cairo_create (gtk_widget_get_window (chart));
-
-  cairo_rectangle (cr,
-                   event->area.x, event->area.y,
-                   event->area.width, event->area.height);
-
   /* there is no model we can not paint */
   if ((priv->is_frozen) || (priv->model == NULL))
     {
       if (priv->memento != NULL)
         {
+          gint w, h, aw, ah;
+          gdouble p, sx, sy;
+
           w = cairo_image_surface_get_width (priv->memento);
           h = cairo_image_surface_get_height (priv->memento);
 
-          cairo_clip (cr);
+          aw = gtk_widget_get_allocated_width (chart);
+          ah = gtk_widget_get_allocated_height (chart);
 
-          gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
-          if (w > 0 && h > 0 &&
-          !(allocation.width == w && allocation.height == h))
+          if (w > 0 && h > 0 && !(aw == w && aw == h))
             {
               /* minimal available proportion */
-              p = MIN (allocation.width / (1.0 * w),
-                       allocation.height / (1.0 * h));
+              p = MIN (aw / (1.0 * w), ah / (1.0 * h));
 
-              sx = (gdouble) (allocation.width - w * p) / 2.0;
-              sy = (gdouble) (allocation.height - h * p) / 2.0;
+              sx = (gdouble) (aw - w * p) / 2.0;
+              sy = (gdouble) (ah - h * p) / 2.0;
 
               cairo_translate (cr, sx, sy);
               cairo_scale (cr, p, p);
@@ -809,25 +798,30 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
     }
   else
     {
+      GtkTreePath *root_path = NULL;
+
       cairo_set_source_rgb (cr, 1, 1, 1);
       cairo_fill_preserve (cr);
-
-      cairo_clip (cr);
 
       if (priv->root != NULL)
         root_path = gtk_tree_row_reference_get_path (priv->root);
 
-      if (root_path == NULL) {
-        root_path = gtk_tree_path_new_first ();
-        priv->root = NULL;
-      }
+      if (root_path == NULL)
+        {
+          root_path = gtk_tree_path_new_first ();
+          priv->root = NULL;
+        }
 
       /* Check if tree model was modified in any way */
       if ((priv->model_changed) ||
            (priv->first_item == NULL))
-        baobab_chart_get_items (chart, root_path);
+        {
+          baobab_chart_get_items (chart, root_path);
+        }
       else
         {
+          GtkTreePath *current_path;
+
           /* Check if root was changed */
           current_path = gtk_tree_model_get_path (priv->model,
                          &((BaobabChartItem*) priv->first_item->data)->iter);
@@ -840,10 +834,8 @@ baobab_chart_expose (GtkWidget *chart, GdkEventExpose *event)
 
       gtk_tree_path_free (root_path);
 
-      baobab_chart_draw (chart, cr, event->area);
+      baobab_chart_draw_chart (chart, cr);
     }
-
-  cairo_destroy (cr);
 
   return FALSE;
 }
@@ -1171,13 +1163,11 @@ baobab_chart_get_pixbuf (GtkWidget *widget)
 
   g_return_val_if_fail (BAOBAB_IS_CHART (widget), NULL);
 
-  gdk_drawable_get_size (gtk_widget_get_window (widget), &w, &h);
-  pixbuf = gdk_pixbuf_get_from_drawable (NULL,
-                                         gtk_widget_get_window (widget),
-                                         gdk_colormap_get_system (),
-                                         0, 0,
-                                         0, 0,
-                                         w, h);
+  w = gtk_widget_get_allocated_width (widget);
+  h = gtk_widget_get_allocated_height (widget);
+  pixbuf = gdk_pixbuf_get_from_window (gtk_widget_get_window (widget),
+                                       0, 0,
+                                       w, h);
 
   return pixbuf;
 }
@@ -1469,8 +1459,6 @@ baobab_chart_freeze_updates (GtkWidget *chart)
 {
   BaobabChartPrivate *priv;
   cairo_surface_t *surface = NULL;
-  cairo_t *cr = NULL;
-  GdkRectangle area;
   GtkAllocation allocation;
 
   g_return_if_fail (BAOBAB_IS_CHART (chart));
@@ -1491,13 +1479,11 @@ baobab_chart_freeze_updates (GtkWidget *chart)
 
   if (cairo_surface_status (surface) == CAIRO_STATUS_SUCCESS)
     {
+      cairo_t *cr;
+
       cr = cairo_create (surface);
 
-      area.x = 0;
-      area.y = 0;
-      area.width = allocation.width;
-      area.height = allocation.height;
-      baobab_chart_draw (chart, cr, area);
+      baobab_chart_draw_chart (chart, cr);
 
       cairo_rectangle (cr,
                        0, 0,
@@ -1728,9 +1714,7 @@ baobab_chart_save_snapshot (GtkWidget *chart)
   gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fs_dlg),
                                        g_get_home_dir ());
 
-#if GTK_CHECK_VERSION(2,8,0)
   gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (fs_dlg), TRUE);
-#endif
 
   /* extra widget */
   vbox = gtk_vbox_new (FALSE, 0);
