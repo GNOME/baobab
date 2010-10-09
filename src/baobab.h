@@ -30,7 +30,6 @@
 #include <gio/gio.h>
 #include <gconf/gconf-client.h>
 
-typedef struct _baobab_fs baobab_fs;
 struct BaobabSearchOpt;
 
 /* Settings */
