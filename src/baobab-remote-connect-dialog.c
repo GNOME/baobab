@@ -641,7 +641,6 @@ baobab_remote_connect_dialog_init (BaobabRemoteConnectDialog *dialog)
 	dialog->details = g_new0 (BaobabRemoteConnectDialogDetails, 1);
 
 	gtk_window_set_title (GTK_WINDOW (dialog), _("Connect to Server"));
-	gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
 	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 2);
 	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
