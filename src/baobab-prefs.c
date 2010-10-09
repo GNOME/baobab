@@ -35,7 +35,7 @@
 #include "baobab-utils.h"
 #include "baobab-prefs.h"
 
-#define BAOBAB_PREFERENCES_UI_FILE PKGDATADIR "/baobab-dialog-scan-props.ui"
+#define BAOBAB_PREFERENCES_UI_FILE PKGDATADIR "/baobab-preferences-dialog.ui"
 
 enum
 {

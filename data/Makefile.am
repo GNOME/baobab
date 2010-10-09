@@ -1,6 +1,6 @@
-uidir   = $(datadir)/baobab
+uidir = $(datadir)/baobab
 ui_DATA = baobab-main-window.ui \
-	  baobab-dialog-scan-props.ui
+	baobab-preferences-dialog.ui
 
 baobabappdir	   = $(datadir)/applications
 baobabapp_in_files = baobab.desktop.in
