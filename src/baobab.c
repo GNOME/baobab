@@ -38,6 +38,8 @@
 #include "baobab-treemap.h"
 #include "baobab-ringschart.h"
 
+#define BAOBAB_UI_FILE PKGDATADIR "/baobab-main-window.ui"
+
 static void push_iter_in_stack (GtkTreeIter *);
 static GtkTreeIter pop_iter_from_stack (void);
 

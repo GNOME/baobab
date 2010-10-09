@@ -35,6 +35,8 @@
 #include "baobab-utils.h"
 #include "baobab-prefs.h"
 
+#define BAOBAB_PREFERENCES_UI_FILE PKGDATADIR "/baobab-dialog-scan-props.ui"
+
 enum
 {
 	COL_CHECK,
@@ -294,7 +296,9 @@ baobab_prefs_dialog (void)
 	GError *error = NULL;
 
 	builder = gtk_builder_new ();
-	gtk_builder_add_from_file (builder, BAOBAB_DIALOG_SCAN_UI_FILE, &error);
+	gtk_builder_add_from_file (builder,
+				   BAOBAB_PREFERENCES_UI_FILE,
+				   &error);
 
 	if (error) {
 		g_critical ("Can't load user interface file for the scan properties dialog: %s",

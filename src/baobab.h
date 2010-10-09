@@ -33,9 +33,6 @@
 typedef struct _baobab_fs baobab_fs;
 struct BaobabSearchOpt;
 
-#define BAOBAB_UI_FILE PKGDATADIR "/baobab-main-window.ui"
-#define BAOBAB_DIALOG_SCAN_UI_FILE PKGDATADIR "/baobab-dialog-scan-props.ui"
-
 /* Settings */
 #define BAOBAB_KEY_DIR "/apps/baobab"
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
