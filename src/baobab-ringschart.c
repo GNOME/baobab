@@ -130,7 +130,7 @@ baobab_ringschart_init (BaobabRingschart *chart)
 
   priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
 
-  priv->subfoldertips_enabled = FALSE;
+  priv->subfoldertips_enabled = TRUE;
   priv->highlighted_item = NULL;
   priv->tips_timeout_event = 0;
   priv->subtip_items = NULL;

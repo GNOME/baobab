@@ -36,7 +36,6 @@ struct BaobabSearchOpt;
 #define BAOBAB_KEY_DIR "/apps/baobab"
 #define BAOBAB_TOOLBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/toolbar_visible"
 #define BAOBAB_STATUSBAR_VISIBLE_KEY	BAOBAB_KEY_DIR "/ui/statusbar_visible"
-#define BAOBAB_SUBFLSTIPS_VISIBLE_KEY   BAOBAB_KEY_DIR "/ui/baobab_subfoldertips_visible"
 #define BAOBAB_ACTIVE_CHART_KEY		BAOBAB_KEY_DIR "/ui/active_chart"
 #define BAOBAB_EXCLUDED_DIRS_KEY	BAOBAB_KEY_DIR "/properties/skip_scan_uri_list"
 #define BAOBAB_ENABLE_HOME_MONITOR_KEY	BAOBAB_KEY_DIR "/properties/enable_home_monitor"

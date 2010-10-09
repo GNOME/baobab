@@ -758,18 +758,6 @@ baobab_create_statusbar (void)
 }
 
 static void
-baobab_subfolderstips_toggled (GConfClient *client,
-			       guint cnxn_id,
-			       GConfEntry *entry,
-			       gpointer user_data)
-{
-	baobab_ringschart_set_subfoldertips_enabled (baobab.rings_chart,
-						     gconf_client_get_bool (baobab.gconf_client,
-									    BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
-									    NULL));
-}
-
-static void
 baobab_set_excluded_locations (GSList *excluded_uris)
 {
 	GSList *l;
@@ -898,8 +886,6 @@ baobab_init (void)
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_EXCLUDED_DIRS_KEY, excluded_locations_changed,
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, SYSTEM_TOOLBAR_STYLE_KEY, baobab_toolbar_style,
-				 NULL, NULL, NULL);
-	gconf_client_notify_add (baobab.gconf_client, BAOBAB_SUBFLSTIPS_VISIBLE_KEY, baobab_subfolderstips_toggled,
 				 NULL, NULL, NULL);
 	gconf_client_notify_add (baobab.gconf_client, BAOBAB_ENABLE_HOME_MONITOR_KEY, baobab_monitor_home_toggled,
 				 NULL, NULL, NULL);
@@ -1213,10 +1199,7 @@ initialize_charts (void)
 					     COL_H_PERC,
 					     COL_H_ELEMENTS,
 					     NULL);
-	baobab_ringschart_set_subfoldertips_enabled (baobab.rings_chart,
-						     gconf_client_get_bool (baobab.gconf_client,
-									    BAOBAB_SUBFLSTIPS_VISIBLE_KEY,
-									    NULL));
+
 	baobab_chart_set_max_depth (baobab.rings_chart, 1);
 	g_signal_connect (baobab.rings_chart, "item_activated",
 			  G_CALLBACK (on_chart_item_activated), NULL);
