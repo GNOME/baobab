@@ -1104,11 +1104,11 @@ initialize_charts (void)
 			 baobab.chart_frame, TRUE, TRUE);
 	gtk_paned_set_position (GTK_PANED (hpaned_main), 480);
 
-	baobab.chart_type_combo = gtk_combo_box_new_text ();
-	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo),
-				   _("View as Rings Chart"));
-	gtk_combo_box_append_text (GTK_COMBO_BOX (baobab.chart_type_combo),
-				   _("View as Treemap Chart"));
+	baobab.chart_type_combo = gtk_combo_box_text_new ();
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (baobab.chart_type_combo),
+					_("View as Rings Chart"));
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (baobab.chart_type_combo),
+					_("View as Treemap Chart"));
 	gtk_widget_show (baobab.chart_type_combo);
 	g_signal_connect (baobab.chart_type_combo,
 			  "changed",

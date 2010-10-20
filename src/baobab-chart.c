@@ -1730,9 +1730,9 @@ baobab_chart_save_snapshot (GtkWidget *chart)
                       FALSE, FALSE, 0);
 
   opt_menu = gtk_combo_box_new_text ();
-  gtk_combo_box_append_text (GTK_COMBO_BOX (opt_menu), "png");
-  gtk_combo_box_append_text (GTK_COMBO_BOX (opt_menu), "jpeg");
-  gtk_combo_box_append_text (GTK_COMBO_BOX (opt_menu), "bmp");
+  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "png");
+  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "jpeg");
+  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "bmp");
   gtk_combo_box_set_active (GTK_COMBO_BOX (opt_menu), 0);
   gtk_box_pack_start (GTK_BOX (hbox), opt_menu, TRUE, TRUE, 0);
 
@@ -1742,7 +1742,7 @@ baobab_chart_save_snapshot (GtkWidget *chart)
   if (gtk_dialog_run (GTK_DIALOG (fs_dlg)) == GTK_RESPONSE_ACCEPT)
     {
       filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (fs_dlg));
-      sel_type = gtk_combo_box_get_active_text (GTK_COMBO_BOX (opt_menu));
+      sel_type = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (opt_menu));
       if (! g_str_has_suffix (filename, sel_type))
         {
           gchar *tmp;
