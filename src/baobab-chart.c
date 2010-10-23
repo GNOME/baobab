@@ -1729,7 +1729,7 @@ baobab_chart_save_snapshot (GtkWidget *chart)
                       label,
                       FALSE, FALSE, 0);
 
-  opt_menu = gtk_combo_box_new_text ();
+  opt_menu = gtk_combo_box_text_new ();
   gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "png");
   gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "jpeg");
   gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "bmp");
