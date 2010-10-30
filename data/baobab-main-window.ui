@@ -392,9 +392,10 @@
               </packing>
             </child>
             <child>
-              <object class="GtkHPaned" id="hpaned_main">
+              <object class="GtkPaned" id="hpaned_main">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
                 <child>
                   <object class="GtkScrolledWindow" id="scrolledwindow1">
                     <property name="visible">True</property>
