@@ -25,7 +25,6 @@
 
 #include "baobab.h"
 
-void baobab_get_filesystem (BaobabFS *fs);
 gchar* dir_select (gboolean, GtkWidget *);
 void on_toggled (GtkToggleButton *, gpointer);
 void stop_scan (void);

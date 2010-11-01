@@ -51,19 +51,9 @@ struct _BaobabChartMenu {
 	GtkWidget *set_root_item;
 };
 
-typedef struct _BaobabFS BaobabFS;
-
-struct _BaobabFS {
-	guint64 total;
-	guint64 used;
-	guint64 avail;
-};
-
 typedef struct _BaobabApplication BaobabApplication;
 
 struct _BaobabApplication {
-	BaobabFS fs;
-
 	GtkBuilder *main_ui;
 	GtkWidget *window;
 	GtkWidget *tree_view;
@@ -82,6 +72,10 @@ struct _BaobabApplication {
 	GSList *excluded_locations;
 	gboolean show_allocated;
 	gboolean is_local;
+
+	guint64 fstotal;
+	guint64 fsused;
+	guint64 fsavail;
 
 	char *selected_path;
 

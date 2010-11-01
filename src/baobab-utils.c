@@ -31,45 +31,11 @@
 #include <glib/gprintf.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#include <glibtop/mountlist.h>
-#include <glibtop/fsusage.h>
 
 #include "baobab.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
 #include "callbacks.h"
-
-void
-baobab_get_filesystem (BaobabFS *fs)
-{
-	size_t i;
-	glibtop_mountlist mountlist;
-	glibtop_mountentry *mountentries;
-
-	memset (fs, 0, sizeof *fs);
-
-	mountentries = glibtop_get_mountlist (&mountlist, FALSE);
-
-	for (i = 0; i < mountlist.number; ++i) {
-		GFile *file;
-		glibtop_fsusage fsusage;
-
-		file = g_file_new_for_path (mountentries[i].mountdir);
-
-		if (!baobab_is_excluded_location (file)) {
-
-			glibtop_get_fsusage (&fsusage, mountentries[i].mountdir);
-
-			fs->total += fsusage.blocks * fsusage.block_size;
-			fs->avail += fsusage.bfree * fsusage.block_size;
-			fs->used += (fsusage.blocks - fsusage.bfree) * fsusage.block_size;
-		}
-
-		g_object_unref (file);
-	}
-
-	g_free (mountentries);
-}
 
 void
 filechooser_cb (GtkWidget *chooser,
