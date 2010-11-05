@@ -319,10 +319,6 @@ void
 popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash)
 {
 	GtkWidget *pmenu;
-	gchar *path_to_string;
-
-	/* path_to_string is freed in callback function */
-	path_to_string = gtk_tree_path_to_string (path);
 
 	pmenu = gtk_menu_new ();
 
