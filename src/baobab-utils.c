@@ -380,54 +380,49 @@ popupmenu_list (GtkTreePath *path, GdkEventButton *event, gboolean can_trash)
 void
 open_file_with_application (GFile *file)
 {
-	GAppInfo *application;
-	gchar *primary;
 	GFileInfo *info;
-	gchar *uri_scheme;
-	const char *content;
-	gboolean local = FALSE;
 
 	info = g_file_query_info (file,
 				  G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE,
 				  G_FILE_QUERY_INFO_NONE,
 				  NULL,
 				  NULL);
-	if (!info) return;
-	
-	uri_scheme = g_file_get_uri_scheme (file);
-	if (g_ascii_strcasecmp(uri_scheme,"file") == 0)  local = TRUE;
-	
-	content = g_file_info_get_content_type (info);
-	application = g_app_info_get_default_for_type (content, TRUE);
+	if (info) {
+		GAppInfo *application;
+		const char *content;
 
-	if (!application) {
-			primary = g_strdup_printf (_("Could not open folder \"%s\""), 
-			                           g_file_get_basename (file));
-			message (primary, 
-			         _("There is no installed viewer capable "
-				   "of displaying the folder."),
-				 GTK_MESSAGE_ERROR,
-				 baobab.window);
-			g_free (primary);
+		content = g_file_info_get_content_type (info);
+		application = g_app_info_get_default_for_type (content, TRUE);
+
+		if (!application) {
+				gchar *primary;
+
+				primary = g_strdup_printf (_("Could not open folder \"%s\""), 
+					                   g_file_get_basename (file));
+				message (primary,
+					 _("There is no installed viewer capable "
+					   "of displaying the folder."),
+					 GTK_MESSAGE_ERROR,
+					 baobab.window);
+				g_free (primary);
+		}
+		else {
+			GList *uris = NULL;
+			gchar *uri;
+
+			uri = g_file_get_uri (file);
+			uris = g_list_append (uris, uri);
+			g_app_info_launch_uris (application, uris, NULL, NULL);
+
+			g_list_free (uris);
+			g_free (uri);
+		}
+
+		if (application)
+			g_object_unref (application);
+
+		g_object_unref (info);
 	}
-	else {
-		GList *uris = NULL;
-		gchar *uri;
-
-		uri = g_file_get_uri (file);
-		uris = g_list_append (uris, uri);
-		g_app_info_launch_uris (application, uris, NULL, NULL);
-
-		g_list_free (uris);
-		g_free (uri);
-	}
-
-	g_free (uri_scheme);
-
-	if (application)
-		g_object_unref (application);
-
-	g_object_unref (info);
 }
 
 gboolean
