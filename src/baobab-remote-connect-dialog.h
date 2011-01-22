@@ -37,7 +37,7 @@
 #define BAOBAB_TYPE_REMOTE_CONNECT_DIALOG         (baobab_remote_connect_dialog_get_type())
 #define BAOBAB_REMOTE_CONNECT_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_CAST ((obj), BAOBAB_TYPE_REMOTE_CONNECT_DIALOG, BaobabRemoteConnectDialog))
 #define BAOBAB_REMOTE_CONNECT_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BAOBAB_TYPE_REMOTE_CONNECT_DIALOG, BaobabRemoteConnectDialogClass))
-#define BAOBAB_IS_REMOTE_CONNECT_DIALOG(obj)      (G_TYPE_INSTANCE_CHECK_TYPE ((obj), BAOBAB_TYPE_REMOTE_CONNECT_DIALOG)
+#define BAOBAB_IS_REMOTE_CONNECT_DIALOG(obj)      (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BAOBAB_TYPE_REMOTE_CONNECT_DIALOG)
 
 typedef struct _BaobabRemoteConnectDialog        BaobabRemoteConnectDialog;
 typedef struct _BaobabRemoteConnectDialogClass   BaobabRemoteConnectDialogClass;
