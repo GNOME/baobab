@@ -1,9 +1,9 @@
 <schemalist>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab" path="/apps/baobab/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab" path="/org/gnome/baobab/">
     <child name="preferences" schema="org.gnome.baobab.preferences"/>
     <child name="ui" schema="org.gnome.baobab.ui"/>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.preferences" path="/apps/baobab/preferences/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.preferences" path="/org/gnome/baobab/preferences/">
     <key name="monitor-home" type="b">
       <default>false</default>
       <_summary>Monitor Home</_summary>
@@ -15,7 +15,7 @@
       <_description>A list of URIs for partitions to be excluded from scanning.</_description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.ui" path="/apps/baobab/ui/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.ui" path="/org/gnome/baobab/ui/">
     <key name="toolbar-visible" type="b">
       <default>true</default>
       <_summary>Toolbar is Visible</_summary>
