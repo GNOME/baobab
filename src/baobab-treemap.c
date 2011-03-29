@@ -25,6 +25,10 @@
  *   Eduardo Lima Mitev <elima@igalia.com>
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <math.h>
 #include <string.h>
 #include <gtk/gtk.h>
