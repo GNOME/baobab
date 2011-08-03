@@ -161,7 +161,7 @@ show_bars (GtkTreeModel *mdl,
  				    &readelements, -1);
                 
                 gtk_tree_model_get (mdl, iter, size_col, &size, -1);
-                sizecstr = g_format_size_for_display (size);
+                sizecstr = g_format_size (size);
 
  		if (readelements == -1) {
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
@@ -186,7 +186,7 @@ show_bars (GtkTreeModel *mdl,
 		if (readelements != -1) {
 			gtk_tree_model_get (mdl, iter, size_col, &size,
 					    -1);
-			sizecstr = g_format_size_for_display (size);
+			sizecstr = g_format_size (size);
 
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
 					    COL_H_PERC, 100.0,

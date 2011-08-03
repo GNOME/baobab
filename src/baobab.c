@@ -173,9 +173,9 @@ update_scan_label (void)
 	gchar *available;
 	GtkWidget *label;
 
-	total = g_format_size_for_display (baobab.fstotal);
-	used = g_format_size_for_display (baobab.fsused);
-	available = g_format_size_for_display (baobab.fsavail);
+	total = g_format_size (baobab.fstotal);
+	used = g_format_size (baobab.fsused);
+	available = g_format_size (baobab.fsavail);
 
 	/* Translators: these are labels for disk space */
 	markup = g_markup_printf_escaped  ("<small>%s <b>%s</b> (%s %s %s %s )</small>",
@@ -416,7 +416,7 @@ first_row (void)
 	gchar *capacity_label, *capacity_size;
 
 	gtk_tree_store_append (baobab.model, &root_iter, NULL);
-	capacity_size = g_format_size_for_display (baobab.fstotal);
+	capacity_size = g_format_size (baobab.fstotal);
 
 	capacity_label = g_strdup (_("Total filesystem capacity"));
 	gtk_tree_store_set (baobab.model, &root_iter,
@@ -432,7 +432,7 @@ first_row (void)
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), FALSE);
 	gtk_tree_store_append (baobab.model, &firstiter, &root_iter);
-	size = g_format_size_for_display (baobab.fsused);
+	size = g_format_size (baobab.fsused);
 	if (baobab.fstotal == 0 && baobab.fsused == 0) {
 		perc = 100.0;
 	} else {
@@ -479,7 +479,7 @@ baobab_fill_model (struct chan_data *data)
 
 	hardlinks = g_string_new ("");
 	if (data->tempHLsize > 0) {
-		size = g_format_size_for_display (data->tempHLsize);
+		size = g_format_size (data->tempHLsize);
 		g_string_assign (hardlinks, "<i>(");
 		g_string_append (hardlinks, _("contains hardlinks for:"));
 		g_string_append (hardlinks, " ");
@@ -493,8 +493,8 @@ baobab_fill_model (struct chan_data *data)
 			 ngettext ("%5d item", "%5d items",
 				   data->elements), data->elements);
 
-	size = g_format_size_for_display (data->size);
-	alloc_size = g_format_size_for_display (data->alloc_size);
+	size = g_format_size (data->size);
+	alloc_size = g_format_size (data->alloc_size);
 
 	gtk_tree_store_set (baobab.model, &iter,
 			    COL_DIR_NAME, name,
