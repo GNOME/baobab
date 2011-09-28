@@ -1,1 +1,3 @@
-SUBDIRS =  src data pixmaps help
+SUBDIRS =  src data pixmaps help po
+
+EXTRA_DIST = COPYING.docs

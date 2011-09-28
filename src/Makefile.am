@@ -37,18 +37,12 @@ baobab_SOURCES = \
 	baobab-treemap.h
 
 baobab_CFLAGS = 			\
-	$(GLIB_CFLAGS)			\
-	$(GIO_CFLAGS)			\
-	$(GTK_CFLAGS)			\
-	$(LIBGTOP_CFLAGS)		\
+	$(BAOBAB_CFLAGS)		\
 	$(NULL)
 
 baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = 				\
 	-lm				\
-	$(GLIB_LIBS)			\
-	$(GIO_LIBS)			\
-	$(GTK_LIBS)			\
-	$(LIBGTOP_LIBS)			\
+	$(BAOBAB_LIBS)			\
 	$(NULL)
 

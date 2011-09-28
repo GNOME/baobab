@@ -1,0 +1,2330 @@
+# Përkthimi i mesazheve të gnome-utils në shqip
+# This file is distributed under the same license as the gnome-utils package.
+# Copyright (C) 2003, 2004 Free Software Foundation. Inc.
+# Laurent Dhima <laurenti@alblinux.net>, 2003, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils.HEAD.sq\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-17 06:39+0000\n"
+"PO-Revision-Date: 2005-08-17 12:40+0200\n"
+"Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
+"Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../gdictsrc/GNOME_GDictApplet.server.in.in.h:1
+#: ../gdictsrc/gdict-applet.c:149
+msgid "Dictionary Lookup"
+msgstr "Kërkim në fjalor"
+
+#: ../gdictsrc/GNOME_GDictApplet.server.in.in.h:2
+#: ../gdictsrc/gdict-applet.c:27 ../gdictsrc/gnome-dictionary.desktop.in.h:2
+msgid "Lookup words in an online dictionary"
+msgstr "Kërko fjalët tek një fjalor online"
+
+#: ../gdictsrc/GNOME_GDictApplet.xml.h:1 ../gdictsrc/gdict-app.c:619
+#: ../logview/logview.c:129
+msgid "_About"
+msgstr "_Informacione"
+
+#: ../gdictsrc/GNOME_GDictApplet.xml.h:2 ../logview/logview.c:99
+msgid "_Help"
+msgstr "_Ndihmë"
+
+#: ../gdictsrc/GNOME_GDictApplet.xml.h:3
+msgid "_Look Up Selected Text"
+msgstr "_Kërko tekstin e zgjedhur"
+
+#: ../gdictsrc/GNOME_GDictApplet.xml.h:4
+msgid "_Preferences"
+msgstr "_Preferimet"
+
+#: ../gdictsrc/dict.c:676 ../gdictsrc/gdict-pref-dialog.c:700
+#: ../gdictsrc/gdict-pref-dialog.c:747
+msgid "Cannot connect to server"
+msgstr "E pamundur lidhja me serverin"
+
+#: ../gdictsrc/dict.c:689
+msgid "Server Error"
+msgstr "Gabim në Server"
+
+#: ../gdictsrc/dict.c:690
+msgid ""
+"A serious error occurred. Please check that your server and port are "
+"correct. For reference the default server is dict.org and the port 2628"
+msgstr ""
+"Gabim serioz. Kontrollo që serveri dhe porta janë korrektë. Si referim "
+"serveri i prezgjedhur është dict.org dhe porta 2628"
+
+#. Translator credits
+#: ../gdictsrc/gdict-about.c:40 ../logview/about.c:43
+msgid "translator-credits"
+msgstr "Laurent Dhima <laurenti@alblinux.net>"
+
+#: ../gdictsrc/gdict-about.c:42
+msgid "A client for the MIT dictionary server."
+msgstr "Një klient për serverin fjalor të MIT."
+
+#: ../gdictsrc/gdict-about.c:45 ../gdictsrc/gdict-applet.c:351
+#: ../gdictsrc/gdict-defbox.c:101 ../gdictsrc/gdict-defbox.c:114
+#: ../gdictsrc/gdict-pref-dialog.c:499
+#: ../gdictsrc/gnome-dictionary.desktop.in.h:1 ../gdictsrc/main.c:87
+msgid "Dictionary"
+msgstr "Fjalori"
+
+#: ../gdictsrc/gdict-app.c:101
+msgid "Connection error"
+msgstr "Gabim i lidhjes"
+
+#: ../gdictsrc/gdict-app.c:117
+msgid "Unable to perform requested operation."
+msgstr "E pamundur kryerja e operacionit të kërkuar."
+
+#: ../gdictsrc/gdict-app.c:118
+msgid ""
+"Either the server you are using is not available \n"
+"or you are not connected to the Internet."
+msgstr ""
+"Serveri që jeni duke përdorur nuk është në dispozicion\n"
+"ose nuk jeni i lidhur në Internet."
+
+#: ../gdictsrc/gdict-app.c:276
+msgid "Print Word Definition"
+msgstr "Printo domethënien e fjalës"
+
+#: ../gdictsrc/gdict-app.c:391
+msgid "Find"
+msgstr "Gjej"
+
+#: ../gdictsrc/gdict-app.c:401
+msgid "_Search for:"
+msgstr "_Kërko për:"
+
+#: ../gdictsrc/gdict-app.c:500 ../gdictsrc/gdict-applet.c:299
+#: ../gdictsrc/gdict-pref-dialog.c:901
+msgid "Could not display help"
+msgstr "E pamundur shfaqja e ndihmës"
+
+#. Top
+#: ../gdictsrc/gdict-app.c:589
+msgid "_Dictionary"
+msgstr "_Fjalori"
+
+#. Dictionary menu
+#: ../gdictsrc/gdict-app.c:595
+msgid "_Look Up Word"
+msgstr "_Kërko fjalën"
+
+#: ../gdictsrc/gdict-app.c:596
+msgid "Lookup word in dictionary"
+msgstr "Kërko fjalën në fjalor"
+
+#: ../gdictsrc/gdict-app.c:597
+msgid "_Print"
+msgstr "_Printo"
+
+#: ../gdictsrc/gdict-app.c:598
+msgid "Print the current definition"
+msgstr "Printo shpjegimin aktual"
+
+#: ../gdictsrc/gdict-app.c:599
+msgid "_Close"
+msgstr "_Mbyll"
+
+#: ../gdictsrc/gdict-app.c:600
+msgid "Close the application"
+msgstr "Mbyll programin"
+
+#. Edit menu, see below for cut, paste etc.
+#: ../gdictsrc/gdict-app.c:603 ../logview/logview.c:114
+msgid "_Find..."
+msgstr "_Gjej..."
+
+#: ../gdictsrc/gdict-app.c:604
+msgid "Find a word in the text"
+msgstr "Gjej një fjalë në tekst"
+
+#: ../gdictsrc/gdict-app.c:605
+msgid "Find Ne_xt"
+msgstr "Gjej në _vazhdim"
+
+#: ../gdictsrc/gdict-app.c:606
+msgid "Find next occurrence of the word"
+msgstr "Gjej korrispondimin në vazhdim të fjalës"
+
+#: ../gdictsrc/gdict-app.c:607
+msgid "P_references"
+msgstr "P_referimet"
+
+#: ../gdictsrc/gdict-app.c:608
+msgid "Configure the application"
+msgstr "Konfiguro programin"
+
+#. View menu
+#: ../gdictsrc/gdict-app.c:611 ../logview/logview.c:117
+msgid "Bigger text size"
+msgstr "Tekst me madhësi më të madhe"
+
+#: ../gdictsrc/gdict-app.c:613 ../logview/logview.c:119
+msgid "Smaller text size"
+msgstr "Tekst me madhësi më të vogël"
+
+#. Help menu
+#: ../gdictsrc/gdict-app.c:617 ../logview/logview.c:127
+msgid "_Contents"
+msgstr "_Përmbajtja"
+
+#: ../gdictsrc/gdict-app.c:618
+msgid "View help for this application"
+msgstr "Shiko ndihmën në lidhje me këtë program"
+
+#: ../gdictsrc/gdict-app.c:620
+msgid "About this application"
+msgstr "Informacione mbi këtë program"
+
+#: ../gdictsrc/gdict-app.c:625
+msgid "Cu_t"
+msgstr "Pre_je"
+
+#: ../gdictsrc/gdict-app.c:626
+msgid "Cut the selection"
+msgstr "Preje pjesën e zgjedhur"
+
+#: ../gdictsrc/gdict-app.c:627
+msgid "_Copy"
+msgstr "_Kopjo"
+
+#: ../gdictsrc/gdict-app.c:628 ../logview/logview.c:110
+msgid "Copy the selection"
+msgstr "Kopjo pjesën e zgjedhur"
+
+#: ../gdictsrc/gdict-app.c:629
+msgid "_Paste"
+msgstr "_Ngjite"
+
+#: ../gdictsrc/gdict-app.c:630
+msgid "Paste clipboard"
+msgstr "Ngjit shënimet"
+
+#: ../gdictsrc/gdict-app.c:631
+msgid "Select _All"
+msgstr "Zgjidh _gjithçka"
+
+#: ../gdictsrc/gdict-app.c:632
+msgid "Select everything"
+msgstr "Zgjidh gjithçka"
+
+#: ../gdictsrc/gdict-app.c:637
+msgid "_Spellings"
+msgstr "_Drejtshkrime"
+
+#: ../gdictsrc/gdict-app.c:638
+msgid "View alternate spellings"
+msgstr "Shfaq drejtshkrimin alternativ"
+
+#: ../gdictsrc/gdict-app.c:748
+msgid "_Look Up"
+msgstr "_Kërko"
+
+#: ../gdictsrc/gdict-app.c:757
+msgid "In Dictionary"
+msgstr "Në Fjalor"
+
+#: ../gdictsrc/gdict-app.c:758
+msgid "On a Web Site"
+msgstr "Tek një sit Web"
+
+#: ../gdictsrc/gdict-app.c:774
+msgid "Word"
+msgstr "Fjala"
+
+#: ../gdictsrc/gdict-app.c:775
+msgid "Word Entry"
+msgstr "Fjala"
+
+#: ../gdictsrc/gdict-app.c:776
+msgid "Enter a Word or select one from the list below"
+msgstr "Shkruaj një fjalë ose zgjidh një nga lista e mëposhtme"
+
+#: ../gdictsrc/gdict-app.c:779
+msgid "Look Up for a Word"
+msgstr "Kërko fjalën"
+
+#: ../gdictsrc/gdict-applet.c:155
+msgid "Dictionary word entry"
+msgstr "Zëri në fjalor i fjalës"
+
+#: ../gdictsrc/gdict-defbox.c:103
+msgid "Looking up word..."
+msgstr "Duke kërkuar fjalën..."
+
+#: ../gdictsrc/gdict-defbox.c:132 ../gdictsrc/gdict-entry.c:114
+#: ../gdictsrc/gdict-speller.c:255
+msgid "No matches found"
+msgstr "Nuk u gjet asnjë përputhje"
+
+#: ../gdictsrc/gdict-defbox.c:143
+msgid "String not found"
+msgstr "Fraza nuk u gjet"
+
+#: ../gdictsrc/gdict-defbox.c:618
+msgid "Definition preview"
+msgstr "Pamja e parë e shpjegimit"
+
+#: ../gdictsrc/gdict-defbox.c:947 ../gdictsrc/gdict-entry.c:132
+#: ../gdictsrc/gdict-speller.c:295
+msgid "Error invoking query"
+msgstr "Gabim gjatë përgatitjes së kërkesës"
+
+#: ../gdictsrc/gdict-entry.c:102
+msgid "Looking up entry..."
+msgstr "Duke kërkuar zërin..."
+
+#: ../gdictsrc/gdict-pref-dialog.c:267
+msgid "De_fault Server"
+msgstr "Serveri i pre_zgjedhur"
+
+#: ../gdictsrc/gdict-pref-dialog.c:278
+msgid "_Server:"
+msgstr "_Serveri:"
+
+#: ../gdictsrc/gdict-pref-dialog.c:286
+msgid "Reset server to default"
+msgstr "Rivendos serverin si të prezgjedhur"
+
+#: ../gdictsrc/gdict-pref-dialog.c:288
+msgid "_Port:"
+msgstr "_Porta:"
+
+#: ../gdictsrc/gdict-pref-dialog.c:298
+msgid "Def_ault Port"
+msgstr "Porta e prezgjedhur"
+
+#: ../gdictsrc/gdict-pref-dialog.c:313
+msgid "Reset port to default"
+msgstr "Rivendos portën si e prezgjedhura"
+
+#: ../gdictsrc/gdict-pref-dialog.c:314
+msgid "Server"
+msgstr "Serveri"
+
+#: ../gdictsrc/gdict-pref-dialog.c:316
+msgid "Server Entry"
+msgstr "Serveri"
+
+#: ../gdictsrc/gdict-pref-dialog.c:316
+msgid "Enter the Server Name"
+msgstr "Shkruaj emrin e serverit"
+
+#: ../gdictsrc/gdict-pref-dialog.c:317
+msgid "Port"
+msgstr "Porta"
+
+#: ../gdictsrc/gdict-pref-dialog.c:319
+msgid "Port Entry"
+msgstr "Porta"
+
+#: ../gdictsrc/gdict-pref-dialog.c:319
+msgid "Enter the Port Number"
+msgstr "Shkruaj numrin e portës"
+
+#: ../gdictsrc/gdict-pref-dialog.c:322
+msgid "_Database:"
+msgstr "_Databaza:"
+
+#: ../gdictsrc/gdict-pref-dialog.c:332
+msgid "Strat_egy:"
+msgstr "Strat_egjia:"
+
+#: ../gdictsrc/gdict-pref-dialog.c:342
+msgid "F_ont:"
+msgstr "Gë_rmat:"
+
+#: ../gdictsrc/gdict-pref-dialog.c:372
+msgid "Web Site"
+msgstr "Siti Web"
+
+#: ../gdictsrc/gdict-pref-dialog.c:372
+msgid "Search Address"
+msgstr "Adresa e kërkimit"
+
+#: ../gdictsrc/gdict-pref-dialog.c:491
+msgid "Dictionary Preferences"
+msgstr "Preferimet e fjalorit"
+
+#: ../gdictsrc/gdict-pref-dialog.c:503
+msgid "Web Sites"
+msgstr "Site Web"
+
+#: ../gdictsrc/gdict-pref-dialog.c:690
+msgid "Search all databases"
+msgstr "Kërko në të gjitha databazat"
+
+#: ../gdictsrc/gdict-pref-dialog.c:855
+msgid "Database"
+msgstr "Databaza"
+
+#: ../gdictsrc/gdict-pref-dialog.c:855
+msgid "Database Name"
+msgstr "Emri i databazës"
+
+#: ../gdictsrc/gdict-pref-dialog.c:872
+msgid "Default Strategy"
+msgstr "Strategjia e prezgjedhur"
+
+#: ../gdictsrc/gdict-speller.c:115
+msgid "Spellings"
+msgstr "Drejtshkrime"
+
+#: ../gdictsrc/gdict-speller.c:236
+msgid "Spell-checking..."
+msgstr "Kontrolli i drejtshkrimit..."
+
+#: ../gdictsrc/gdict.schemas.in.h:1
+msgid "Dictionary server"
+msgstr "Serveri fjalorit"
+
+#: ../gdictsrc/gdict.schemas.in.h:2
+msgid "Port used to connect to server"
+msgstr "Porta e përdorur për t'u lidhur me serverin"
+
+#: ../gdictsrc/gdict.schemas.in.h:3
+msgid ""
+"Specify whether to use smart lookup. This key is dependant on whether the "
+"dictionary server supports this option. The default is TRUE"
+msgstr ""
+"Përcakton përdorimin e kërkimit inteligjent. Ky kyç varet nga suporti i "
+"këtij opcioni nga serveri. Vlera e prezgjedhur është TRUE"
+
+#: ../gdictsrc/gdict.schemas.in.h:4
+msgid "The database to use in the dictionary server."
+msgstr "Databaza që duhet përdorur tek serveri i fjalorit."
+
+#: ../gdictsrc/gdict.schemas.in.h:5
+msgid ""
+"The dictionary server to connect to. The default server is dict.org. See "
+"http://www.dict.org for details on other servers"
+msgstr ""
+"Serveri i fjalorit me të cilin të lidhesh. Serveri i prezgjedhur është dict."
+"org. Shiko http://www.dict.org për hollësi mbi serverët e tjerë"
+
+#: ../gdictsrc/gdict.schemas.in.h:6
+msgid ""
+"The name of the individual database to use in the dictionary server. ! "
+"specifies that gnome-dictionary should search all databases in a given server"
+msgstr ""
+"Emri i databazës individuale tek serveri i fjalorit. Shënja e pikësimit \"!"
+"\" specifikon që gnome-dictionary duhet të kërkojë në të gjitha databazat në "
+"server"
+
+#: ../gdictsrc/gdict.schemas.in.h:7
+msgid "The port number to connect to. The default port is 2628."
+msgstr "Numri i portës ku do të lidhesh. E prezgjedhura është 2628."
+
+#: ../gdictsrc/gdict.schemas.in.h:8
+msgid "The search strategy to use"
+msgstr "Strategjia e kërkimit që duhet përdorur"
+
+#: ../gdictsrc/gdict.schemas.in.h:9
+msgid ""
+"The search strategy to use. This is dependant on the search strategy that "
+"the dictionary server supports. The default strategy is 'lev' - Match words "
+"within Levenshtein distance one"
+msgstr ""
+"Strategjia e kërkimit që duhet përdorur. Varet nga strategjitë e suportuara "
+"nga serveri. Vlera e prezgjedhur është \"lev\" - gjej fjalët me distancën "
+"Levenshtein një."
+
+#: ../gdictsrc/gdict.schemas.in.h:10
+msgid "Use smart lookup"
+msgstr "Përdor kërkimin inteligjent"
+
+#: ../gfloppy/gfloppy.desktop.in.h:1 ../gfloppy/src/gfloppy2.glade.h:9
+msgid "Floppy Formatter"
+msgstr "Formatuesi i disketave floppy"
+
+#: ../gfloppy/gfloppy.desktop.in.h:2
+msgid "Format Floppy Disks"
+msgstr "Formaton disketat"
+
+#: ../gfloppy/gfloppy.schemas.in.h:1
+msgid ""
+"0 for the quick format, 1 for a standard one (adds a low-level format) and "
+"finally 2 for a thorough format (adds a bad blocks scan)."
+msgstr ""
+"Vendosni 0 për formatimin e shpejtë, 1 për atë standart (me formatim në "
+"nivel të ulët) dhe 2 për formatimin e kujdesshëm (me kërkimin e Blloqeve të "
+"dëmtuar)."
+
+#: ../gfloppy/gfloppy.schemas.in.h:2
+msgid "ADVANCED USERS ONLY - Default backend for FAT formatting"
+msgstr "VETËM PËR PËRDORUESIT EKSPERTË - backend i prezgjedhur për formatimin FAT"
+
+#: ../gfloppy/gfloppy.schemas.in.h:3
+msgid "Default filesystem type"
+msgstr "Lloji i prezgjedhur i file të sistemit"
+
+#: ../gfloppy/gfloppy.schemas.in.h:4
+msgid "Default formatting mode"
+msgstr "Mënyra e prezgjedhur e formatimit"
+
+#: ../gfloppy/gfloppy.schemas.in.h:5
+msgid ""
+"TRUE to set mkdosfs as the preferred FAT formatting backend or FALSE to set "
+"mtools as the preferred FAT formatting backend."
+msgstr ""
+"Zgjidh TRUE për të përdorur (si të preferuar) \"mkdosfs\" për formatimin "
+"FAT, FALSE për të përdorur \"mformat\"."
+
+#: ../gfloppy/gfloppy.schemas.in.h:6
+msgid "ext2 for the linux native filesystem or fat for the DOS filesystem."
+msgstr "ext2 për file sistemi linux ose fat për file sistemi DOS."
+
+#: ../gfloppy/src/badblocks.c:85
+msgid "Internal Error: Unable to seek to the correct location."
+msgstr "Gabim i brendshëm. Nuk arrij të shkoj tek pozicioni korrekt."
+
+#: ../gfloppy/src/badblocks.c:94
+#, c-format
+msgid "Internal Error: Weird value (%ld) in do_test\n"
+msgstr "Gabim i brendshëm: Vlerë pa kuptim (%ld) në do_test\n"
+
+#. while (!i)
+#. ;
+#: ../gfloppy/src/badblocks.c:252
+msgid "Checking for bad blocks..."
+msgstr "Duke kontrolluar për blloqe të dëmtuar..."
+
+#: ../gfloppy/src/badblocks.c:264
+#, c-format
+msgid "Failed to open device %s for badblock checking\n"
+msgstr "Hapja e dispozitivit %s për kërkimin e blloqeve të dëmtuar dështoi\n"
+
+#: ../gfloppy/src/badblocks.c:284 ../gfloppy/src/gfloppy.c:530
+msgid "Checking for bad blocks... Done"
+msgstr "Duke kërkuar për blloqe të dëmtuar... Përfundoi"
+
+#: ../gfloppy/src/fdformat.c:43
+msgid "Formatting the disk..."
+msgstr "Duke formatuar diskun..."
+
+#: ../gfloppy/src/fdformat.c:46
+msgid "I don't know what this is, but it's very wrong."
+msgstr "Nuk e di çfarë është kjo gjë, por është tepër e gabuar."
+
+#: ../gfloppy/src/fdformat.c:54 ../gfloppy/src/fdformat.c:67
+#, c-format
+msgid "Error formatting track #%d"
+msgstr "Gabim gjatë formatimit të track #%d"
+
+#: ../gfloppy/src/fdformat.c:76
+msgid "Error during completion of formatting"
+msgstr "Gabim gjatë përfundimit të formatimit"
+
+#. XXXX - need to tell parent we're finished
+#: ../gfloppy/src/fdformat.c:80
+msgid "Formatting the disk... Done"
+msgstr "Duke formatuar diskun... Përfundoi"
+
+#. XXXX - tell parent we're starting verify stage
+#: ../gfloppy/src/fdformat.c:96
+msgid "Verifying the format..."
+msgstr "Duke verifikuar formatin..."
+
+#: ../gfloppy/src/fdformat.c:101 ../gfloppy/src/fdformat.c:186
+msgid ""
+"Unable to write to the floppy.\n"
+"\n"
+"Please confirm that it is not write-protected."
+msgstr ""
+"I pamundur shkrimi në disketë.\n"
+"\n"
+"Sigurohu që nuk është e mbrojtur kundër shkrimit."
+
+#: ../gfloppy/src/fdformat.c:104 ../gfloppy/src/fdformat.c:189
+#, c-format
+msgid "Insufficient permissions to open floppy device %s."
+msgstr "Të drejta të pamjaftueshme për të hapur dispozitivin disketë %s."
+
+#: ../gfloppy/src/fdformat.c:108 ../gfloppy/src/fdformat.c:193
+msgid ""
+"Unable to access the floppy disk.\n"
+"\n"
+"Please confirm that it is in the drive\n"
+"with the drive door shut."
+msgstr ""
+"Nuk arrij të futem tek disketa.\n"
+"\n"
+"Sigurohu që e ke futur si duhet."
+
+#: ../gfloppy/src/fdformat.c:111
+#, c-format
+msgid ""
+"Generic error accessing floppy device %s.\n"
+"\n"
+"Error code %s:%d"
+msgstr ""
+"Gabim i përgjithshëm gjatë hyrjes tek dispozitivi disketë %s.\n"
+"\n"
+"Kodi i gabimit %s:%d"
+
+#: ../gfloppy/src/fdformat.c:134
+#, c-format
+msgid ""
+"Read Error:\n"
+"Problem reading cylinder %d, expected %d, read %d"
+msgstr ""
+"Gabim në lexim:\n"
+"Problem gjatë leximit të cilindrit %d, pritej %d, u lexua %d"
+
+#: ../gfloppy/src/fdformat.c:137
+#, c-format
+msgid "Problem reading cylinder %d, expected %d, read %d"
+msgstr "Problem gjatë leximit të cilindrit %d, pritej %d, u lexua %d"
+
+#: ../gfloppy/src/fdformat.c:148
+#, c-format
+msgid "Bad data in cyl %d.  Continuing... "
+msgstr "E dhënë e gabuar në cilindrin %d.  Proçesi vazhdon... "
+
+#: ../gfloppy/src/fdformat.c:157
+#, c-format
+msgid "Error closing device %s"
+msgstr "Gabim gjatë mbylljes së dispozitivit %s"
+
+#: ../gfloppy/src/fdformat.c:164
+msgid "Verifying the format... Done"
+msgstr "Duke verifikuar formatin... Përfundoi"
+
+#: ../gfloppy/src/fdformat.c:176
+#, c-format
+msgid "Unable to write to device %s"
+msgstr "Nuk arrij të shkruaj tek dispozitivi %s"
+
+#: ../gfloppy/src/fdformat.c:196
+#, c-format
+msgid ""
+"Generic error accessing floppy device %s.\n"
+"\n"
+"Error code %s"
+msgstr ""
+"Gabim i përgjithshëm gjatë hyrjes tek dispozitivi disketë %s.\n"
+"\n"
+"Kodi i gabimit %s"
+
+#: ../gfloppy/src/fdformat.c:208
+msgid "Could not determine current floppy geometry."
+msgstr "I pamundur përcaktimi i gjeometrisë së disketës aktuale. "
+
+#: ../gfloppy/src/gfloppy.c:218
+msgid "Error while creating a unique filename for the bad blocks list file."
+msgstr ""
+"Gabim gjatë krijimit të një emri të vetëm për file e listës së blloqeve të "
+"dëmtuar."
+
+#: ../gfloppy/src/gfloppy.c:238
+msgid "Error while filling the bad blocks list file."
+msgstr "Gabim gjatë mbushjes së file të listës së blloqeve të dëmtuar."
+
+#: ../gfloppy/src/gfloppy.c:301
+#, c-format
+msgid "Error while spawning the (%s) command: %s."
+msgstr "Gabim gjatë rigjenerimit të komandës «%s»: %s"
+
+#: ../gfloppy/src/gfloppy.c:327
+msgid "Unknown mke2fs starting signature, cancelling."
+msgstr "Firmë fillestare e mke2fs e panjohur; operacioni u anullua."
+
+#: ../gfloppy/src/gfloppy.c:341
+#, c-format
+msgid ""
+"The filesystem creation utility (%s) reported the following errors:\n"
+"\n"
+"%s (%d)"
+msgstr ""
+"Instrumenti për krijimin e file sistemit (%s) ka raportuar gabimet në "
+"vazhdim:\n"
+"\n"
+"%s (%d)"
+
+#: ../gfloppy/src/gfloppy.c:358
+msgid "Abnormal child process termination."
+msgstr "Përfundim jo normal i proçesit bir."
+
+#: ../gfloppy/src/gfloppy.c:383
+#, c-format
+msgid "Error while spawning the mbadblocks command: %s."
+msgstr "Gabim gjatë rigjenerimit të komandës «mbadblocks»: %s."
+
+#: ../gfloppy/src/gfloppy.c:395
+#, c-format
+msgid ""
+"The bad blocks checking utility (mbadblocks) reported the following errors:\n"
+"%s."
+msgstr ""
+"Instrumenti i kërkimit të blloqeve të dëmtuar (mbadblocks) raportoi gabimet "
+"në vazhdim:\n"
+"%s."
+
+#: ../gfloppy/src/gfloppy.c:438
+msgid "Abnormal mbadblocks child process termination."
+msgstr "Përfundim jo normal i proçesit bir \"mbadblocks\"."
+
+#. make the filesystem
+#: ../gfloppy/src/gfloppy.c:464 ../gfloppy/src/gfloppy.c:504
+msgid "Making filesystem on disk..."
+msgstr "Duke krijuar file e sistemit në disk..."
+
+#: ../gfloppy/src/gfloppy.c:472
+msgid "Unable to create filesystem correctly."
+msgstr "I pamundur krijimi korrekt i file të sistemit."
+
+#: ../gfloppy/src/gfloppy.c:477 ../gfloppy/src/gfloppy.c:516
+msgid "Making filesystem on disk... Done"
+msgstr "Duke krijuar file e sistemit në disk... Përfundoi"
+
+#: ../gfloppy/src/gfloppy.c:521
+msgid "Checking for bad blocks... (this might take a while)"
+msgstr "Duke kontrolluar për blloqe të dëmtuar... (mund të zgjasë pak)"
+
+#: ../gfloppy/src/gfloppy.c:526
+msgid "Error while checking the bad blocks."
+msgstr "Gabim gjatë kontrollit për blloqe të dëmtuar."
+
+#: ../gfloppy/src/gfloppy2.glade.h:1
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../gfloppy/src/gfloppy2.glade.h:2
+#: ../gnome-screenshot/gnome-screenshot.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../gfloppy/src/gfloppy2.glade.h:3
+msgid ""
+"<small><i><b>Note</b>: The mbadblocks utility isn't installed on this "
+"system.  It must be installed in order to perform a thorough DOS (fat) "
+"formatting.</i></small>"
+msgstr ""
+"<small><i><b>Shënim</b>: Instrumenti mbadblocks nuk është i instaluar në "
+"këtë sistem.  Duhet të jetë i instaluar që të kryej një formatim DOS (fat) "
+"të kujdesshëm.</i></small>"
+
+#: ../gfloppy/src/gfloppy2.glade.h:4
+msgid "DOS (FAT)"
+msgstr "DOS (FAT)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:5
+msgid "Double Density 3.5\" (720KB)"
+msgstr "3.5\" me densitet të dyfishtë (720KB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:6
+msgid "Double Density 5.25\" (360KB)"
+msgstr "5.25\" me densitet të dyfishtë (360KB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:7
+msgid "File system _type:"
+msgstr "_Lloji i file të sistemit:"
+
+#: ../gfloppy/src/gfloppy2.glade.h:8
+msgid "Filesystem Settings"
+msgstr "Rregullimet e file të sistemit"
+
+#: ../gfloppy/src/gfloppy2.glade.h:10
+msgid "Floppy _density:"
+msgstr "_Densiteti i disketës:"
+
+#: ../gfloppy/src/gfloppy2.glade.h:11
+msgid "Floppy de_vice:"
+msgstr "Dispoziti_vi disketë:"
+
+#: ../gfloppy/src/gfloppy2.glade.h:12
+msgid "Formatting Mode"
+msgstr "Mënyra e formatimit"
+
+#: ../gfloppy/src/gfloppy2.glade.h:13
+msgid "High Density 3.5\" (1.44MB)"
+msgstr "3.5\" me densitet të lartë (1.44MB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:14
+msgid "High Density 5.25\" (1.2MB)"
+msgstr "5.25\" me densitet të lartë (1.2MB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:15
+msgid "Linux Native (ext2)"
+msgstr "Linux Native (ext2)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:16
+msgid "Physical Settings"
+msgstr "Rregullimet fizike"
+
+#: ../gfloppy/src/gfloppy2.glade.h:17
+msgid "Thorou_gh (adds a bad blocks check to the standard mode)"
+msgstr "Me _kujdes (kërkon blloqet e dëmtuar përtej mënyrës «Standart»)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:18
+msgid "Volume _name:"
+msgstr "_Emri i volumit:"
+
+#. This is the "format" verb (not the noun).
+#: ../gfloppy/src/gfloppy2.glade.h:20
+msgid "_Format"
+msgstr "_Formato"
+
+#: ../gfloppy/src/gfloppy2.glade.h:21
+msgid "_Quick (only creates the filesystem)"
+msgstr "_I shpejtë (krijon vetëm filesystem)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:22
+msgid "_Standard (adds a low-level format to the quick mode)"
+msgstr "_Standart (formaton në nivel të ulët përtej mënyrës «I shpejtë»)"
+
+#: ../gfloppy/src/main.c:259
+msgid "Cannot Format"
+msgstr "I pamundur formatimi"
+
+#: ../gfloppy/src/main.c:260
+msgid ""
+"Neither the mke2fs nor the mkdosfs/mformat applications are installed. You "
+"can't format a floppy without one of them."
+msgstr ""
+"Nuk rezultojnë të instaluar as «mke2fs», e as «mkdosfs» apo «mformat». Për "
+"formatimin e një diskete kërkohet të paktën njëri nga këta instrumentë."
+
+#: ../gfloppy/src/main.c:280
+#, c-format
+msgid "Unable to open the device %s, formatting cannot continue."
+msgstr "E pamundur hapja e dispozitivit %s, formatimi nuk mund të vazhdojë."
+
+#: ../gfloppy/src/main.c:283 ../gfloppy/src/main.c:346
+#, c-format
+msgid ""
+"The device %s is disconnected.\n"
+"Please attach device to continue."
+msgstr ""
+"Dispozitivi %s është i shkëputur.\n"
+"Ju lutem, montoni këtë dispozitiv që të vazhdojmë."
+
+#: ../gfloppy/src/main.c:286 ../gfloppy/src/main.c:349
+#, c-format
+msgid ""
+"You do not have the proper permissions to write to %s, formatting will not "
+"be possible.\n"
+"Contact your system administrator about getting write permissions."
+msgstr ""
+"Nuk ke të drejtat për të shkruar tek %s; formatimi është i pamundur.\n"
+"Vihu në kontakt me administratorin e sistemit për të marrë të drejtën e "
+"shkrimit."
+
+#: ../gfloppy/src/main.c:293 ../gfloppy/src/main.c:357
+msgid "Cannot initialize device"
+msgstr "E pamundur nisja e dispozitivit"
+
+#: ../gfloppy/src/main.c:343
+msgid "Unable to open any device, formatting cannot continue."
+msgstr "E pamundur hapja e çfarëdo dispozitivi, formatimi nuk mund të vazhdojë."
+
+#: ../gfloppy/src/main.c:346 ../gfloppy/src/main.c:349
+msgid "/dev/floppy/0 or /dev/fd0"
+msgstr "/dev/floppy/0 ose /dev/fd0"
+
+#: ../gfloppy/src/main.c:510
+msgid "Could not display help for the floppy formatter."
+msgstr "E pamundur shfaqja e ndihmës për formatuesin e disketave."
+
+#: ../gfloppy/src/main.c:529
+msgid "Incorrect volume name"
+msgstr "Emër i pavlefshëm volumi"
+
+#: ../gfloppy/src/main.c:530
+msgid "The volume name can't contain any blank space."
+msgstr "Emri i volumit nuk mund të përmbajë asnjë hapësirë boshe."
+
+#: ../gfloppy/src/main.c:579
+msgid "The device to format"
+msgstr "Dispozitivi që duhet formatuar"
+
+#: ../gfloppy/src/main.c:580
+msgid "DEVICE"
+msgstr "DISPOZITIVI"
+
+#: ../gfloppy/src/progress.c:126
+#, c-format
+msgid ""
+"The floppy has been formatted, but <b>%d bad block</b> (out of %d) has been "
+"found and marked."
+msgid_plural ""
+"The floppy has been formatted, but <b>%d bad blocks</b> (out of %d) have "
+"been found and marked."
+msgstr[0] ""
+"Floppy u formatua por, <b>%d bllok i dëmtuar</b> (në %d) u gjet dhe u shënua "
+"si i tillë."
+msgstr[1] ""
+"Floppy u formatua por, <b>%d blloqe të dëmtuar</b> (në %d) u gjetën dhe u "
+"shënuan si të tillë."
+
+#: ../gfloppy/src/progress.c:129
+msgid "Floppy formatted successfully."
+msgstr "Floppy u formatua me sukses."
+
+#: ../gfloppy/src/progress.c:135
+msgid "Floppy formatting cancelled."
+msgstr "Formatimi i floppy u anullua."
+
+#: ../gfloppy/src/progress.c:178
+msgid "Format Progress"
+msgstr "Progresi i formatimit"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:191
+msgid " (invalid Unicode)"
+msgstr " (Unicode i pavlefshëm)"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:471
+#, c-format
+msgid "(%d:%02d:%d Remaining)"
+msgstr "(%d:%02d:%d akoma)"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:476
+#, c-format
+msgid "(%d:%02d Remaining)"
+msgstr "(%d:%02d akoma)"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:587
+#, c-format
+msgid "%ld of %ld"
+msgstr "%ld nga %ld"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:85
+msgid "Error loading help"
+msgstr "Gabim gjatë ngarkimit të ndihmës"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:86
+msgid "There was an error displaying the help pages for this dialog:"
+msgstr "Gabim gjatë shfaqjes së faqeve të ndihmës për këtë dialog:"
+
+#. translators: this is the name of the file that gets made up
+#. * with the screenshot if a specific window is taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:110
+#, c-format
+msgid "Screenshot-%s.png"
+msgstr "Pamja e Ekranit-%s.png"
+
+#. translators: this is the name of the file that gets made up
+#. * with the screenshot if the entire screen is taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:116
+msgid "Screenshot.png"
+msgstr "PamjaEkranit.png"
+
+#. translators: this is the name of the file that gets
+#. * made up with the screenshot if a specific window is
+#. * taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:154
+#, c-format
+msgid "Screenshot-%s-%d.png"
+msgstr "PamjaEkranit-%s-%d.png"
+
+#. translators: this is the name of the file that gets
+#. * made up with the screenshot if the entire screen is
+#. * taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:162
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr "PamjaEkranit-%d.png"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:341
+msgid "Unable to take a screenshot of the current desktop."
+msgstr "E pamundur marrja e pamjes së ekranit për hapësirën e tanishme të punës."
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:414
+msgid "Grab a window instead of the entire screen"
+msgstr "Fotografo një dritare në vend të të gjithë ekranit"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:415
+msgid "Include the window border with the screenshot"
+msgstr "Përfshi kornizën e dritares tek pamja"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:416
+msgid "Take screenshot after specified delay [in seconds]"
+msgstr "Merr pamjen e ekranit mbas një kohe të caktuar [në sekonda]"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:417
+msgid "Effect to add to the window border"
+msgstr "Efekti që i duhet dhënë kornizës së dritares"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:2
+msgid "<b>Options</b>"
+msgstr "<b>Mundësi</b>"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:3
+msgid "<b>Preview</b>"
+msgstr "<b>Shikoje</b>"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:4
+#: ../gnome-screenshot/gnome-screenshot.glade.h:2
+msgid "Save Screenshot"
+msgstr "Ruaj Pamjen e Ekranit"
+
+#: ../gnome-screenshot/gnome-screenshot.glade.h:3
+msgid "Save in _folder:"
+msgstr "Ruaje tek _kartela:"
+
+#: ../gnome-screenshot/gnome-screenshot.glade.h:4
+msgid "_Name:"
+msgstr "_Emri:"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:1
+msgid "Border Effect"
+msgstr "Efekti i kornizës"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:2
+msgid "Directory that the screenshooter last used to save in"
+msgstr "Directory ku u ruajt pamja e fundit e marrë"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:3
+msgid ""
+"Effect to add to the outside of a border. Possible values are \"shadow\", "
+"\"none\", and \"black-line\"."
+msgstr ""
+"Efekti që i duhet dhënë anës së jashtme të kornizës. Vlerat e mundëshme janë "
+"\"shadow\", \"none\", dhe \"black-line\"."
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:4
+msgid "Include Border"
+msgstr "Përfshi kornizën"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:5
+msgid "Include the window manager border along with the screenshot"
+msgstr "Përfshi dhe kornizën e organizuesit të dritareve tek pamja e ekranit"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:6
+msgid "Web directory"
+msgstr "Directory web"
+
+#: ../gnome-screenshot/screenshot-dialog.c:194
+msgid ""
+"Glade file for the screenshot program is missing.\n"
+"Please check your installation of gnome-panel"
+msgstr ""
+"File Glade për programin e pamjeve të ekranit mungon.\n"
+"Ju lutem kontrolloni korrektësinë e instalimit të gnome-panel"
+
+#: ../gnome-screenshot/screenshot-dialog.c:213
+msgid "Select a directory"
+msgstr "Zgjidh një directory"
+
+#: ../gnome-screenshot/screenshot-save.c:40
+#, c-format
+msgid ""
+"Unable to clear the temporary directory:\n"
+"%s"
+msgstr ""
+"I pamundur pastrimi i directory të përkohshme:\n"
+"%s"
+
+#: ../gnome-screenshot/screenshot-save.c:78
+msgid ""
+"The child save process unexpectedly exited.  We are unable to write the "
+"screenshot to disk."
+msgstr ""
+"Proçesi bir i ruajtjes përfundoi në menyrë të papritur.  I pamundur shkrimi "
+"i pamjes në disk."
+
+#: ../gnome-screenshot/screenshot-save.c:188
+msgid "Unknown error saving screenshot to disk"
+msgstr "Gabim i panjohur gjatë ruajtjes së pamjes në disk"
+
+#: ../gnome-screenshot/screenshot-utils.c:611
+msgid "Untitled Window"
+msgstr "Dritare pa titull"
+
+#: ../gnome-screenshot/screenshot-xfer.c:103
+msgid "Preparing to copy"
+msgstr "Duke u përgatitur për kopjim"
+
+#: ../gnome-screenshot/screenshot-xfer.c:181
+msgid "File already exists"
+msgstr "File ekziston"
+
+#: ../gnome-screenshot/screenshot-xfer.c:184
+#, c-format
+msgid "The file \"%s\" already exists.  Would you like to replace it?"
+msgstr "File \"%s\" ekziston.  Dëshironi t'a zevëndësoni?"
+
+#: ../gnome-screenshot/screenshot-xfer.c:190
+#: ../gsearchtool/gsearchtool-callbacks.c:1364
+msgid "_Replace"
+msgstr "_Zëvendëso"
+
+#: ../gnome-screenshot/screenshot-xfer.c:230
+#, c-format
+msgid "Unknown GnomeVFSXferProgressStatus %d"
+msgstr "GnomeVFSXferProgressStatus %d e panjohur"
+
+#: ../gsearchtool/gnome-search-tool.desktop.in.h:1
+msgid "Find files, folders, and documents on your computer"
+msgstr "Gjej files, kartela, dhe dokumentë në kompjuterin tuaj"
+
+#: ../gsearchtool/gnome-search-tool.desktop.in.h:2
+msgid "Search for Files..."
+msgstr "Kërko për files..."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:1
+msgid "Disable Quick Search"
+msgstr "Ç'aktivo kërkimin e shpejtë"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:2
+msgid "Disable Quick Search Second Scan"
+msgstr "Ç'aktivo kërkimin e shpejtë skanimi i dytë"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:3
+msgid "Quick Search Excluded Paths"
+msgstr "Pozicionet e përjashtuara nga kërkimi i shpejtë"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:4
+msgid "Quick Search Second Scan Excluded Paths"
+msgstr "Pozicionet e përjashtuara nga kërkimi i shpejtë skanimi i dytë"
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:7
+msgid "Select the search option \"Contains the text\""
+msgstr "Zgjidh opcionin e kërkimit \"Përmban tekstin\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:10
+msgid "Select the search option \"Date modified less than\""
+msgstr "Zgjidh opcionin e kërkimit \"Data e ndryshimit më të vogël se\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:13
+msgid "Select the search option \"Date modified more than\""
+msgstr "Zgjidh opcionin e kërkimit \"Data e ndryshimit më të madhe se\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:16
+msgid "Select the search option \"File is empty\""
+msgstr "Zgjidh opcionin e kërkimit \"File është bosh\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:19
+msgid "Select the search option \"Follow symbolic links\""
+msgstr "Zgjidh opcionin e kërkimit \"Ndiq lidhjet simbolike\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:22
+msgid "Select the search option \"Include other filesystems\""
+msgstr "Zgjidh opcionin e kërkimit \"Përfshi file sistemi të tjerë\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:25
+msgid "Select the search option \"Name does not contain\""
+msgstr "Zgjidh opcionin e kërkimit \"Emri nuk përmban\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:28
+msgid "Select the search option \"Name matches regular expression\""
+msgstr "Zgjidh opcionin e kërkimit \"Emri korrispondon me shprehjen e rregullt\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:31
+msgid "Select the search option \"Owned by group\""
+msgstr "Zgjidh opcionin e kërkimit \"Pronë e grupit\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:34
+msgid "Select the search option \"Owned by user\""
+msgstr "Zgjidh opcionin e kërkimit \"Pronë e përdoruesit\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:37
+msgid "Select the search option \"Owner is unrecognized\""
+msgstr "Zgjidh opcionin e kërkimit \"Pronari nuk njihet\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:40
+msgid "Select the search option \"Show hidden files and folders\""
+msgstr "Zgjidh opcionin e kërkimit \"Shfaq files dhe kartelat e padukshme\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:43
+msgid "Select the search option \"Size at least\""
+msgstr "Zgjidh opcionin e kërkimit \"Madhësia të paktën\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:46
+msgid "Select the search option \"Size at most\""
+msgstr "Zgjidh opcionin e kërkimit \"Madhësia më e madhe\""
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:47
+msgid "Show Additional Options"
+msgstr "Shfaq opcionet e tjera"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:48
+msgid ""
+"This key defines the paths the search tool will exclude from a quick search. "
+"The wildcards '*' and '?' are supported. The default values are /mnt/*, /"
+"media/*, /dev/*, /tmp/*, /proc/*, and /var/*."
+msgstr ""
+"Ky kyç përcakton pozicionet që instrumenti i kërkimit do të përjashtojë nga "
+"kërkimi i shpejtë. Fjalëkyçet '*' dhe '?' suportohen. Vlerat e prezgjedhura "
+"janë /mnt/*, /media/*, /dev/*, /tmp/*, /proc/*, dhe /var/*."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:49
+msgid ""
+"This key defines the paths the search tool will exclude from a second scan "
+"when performing a quick search. The second scan uses the find command to "
+"search for files. The purpose of the second scan is to find files that have "
+"not been indexed. The wildcards '*' and '?' are supported. The default value "
+"is /."
+msgstr ""
+"Ky kyç përcakton pozicionet që instrumenti i kërkimit do të përjashtojë nga "
+"kërkimi i dytë kur kryhet një kërkim i shpejtë. Skanimi i dytë përdor "
+"komandën \"find\" për të kërkuar për file. Qëllimi i skanimit të dytë është "
+"gjetja e files që nuk janë indeksuar. Fjalëkyçet '*' dhe '?' suportohen. "
+"Vlera e prezgjedhur është /."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:50
+msgid ""
+"This key determines if the \"Contains the text\" search option is selected "
+"when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Përmban tekstin\" "
+"kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:51
+msgid ""
+"This key determines if the \"Date modified less than\" search option is "
+"selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Data e ndryshimit "
+"më e vogël se\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:52
+msgid ""
+"This key determines if the \"Date modified more than\" search option is "
+"selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Data e ndryshimit "
+"më e madhe se\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:53
+msgid ""
+"This key determines if the \"File is empty\" search option is selected when "
+"the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"File është bosh\" "
+"kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:54
+msgid ""
+"This key determines if the \"Follow symbolic links\" search option is "
+"selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Ndiq lidhjet "
+"simbolike\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:55
+msgid ""
+"This key determines if the \"Include other filesystems\" search option is "
+"selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Pëfshi file e "
+"sistemeve të tjerë\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:56
+msgid ""
+"This key determines if the \"Name does not contain\" search option is "
+"selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Emri nuk përmban\" "
+"kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:57
+msgid ""
+"This key determines if the \"Name matches regular expression\" search option "
+"is selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Emri korrispondon "
+"me shprehjen e rregullt\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:58
+msgid ""
+"This key determines if the \"Owned by group\" search option is selected when "
+"the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"I takon grupit\" "
+"kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:59
+msgid ""
+"This key determines if the \"Owned by user\" search option is selected when "
+"the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"I takon përdoruesit"
+"\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:60
+msgid ""
+"This key determines if the \"Owner is unrecognized\" search option is "
+"selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Pronari nuk njihet"
+"\" kur niset instrumenti i kërkimit."
+
+#. Translators: The quoted text is the label of the additional
+#. options expander that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:63
+msgid ""
+"This key determines if the \"Select more options\" section is expanded when "
+"the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse seksioni \"Zgjidh opcione shtesë\" duhet hapur kur "
+"niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:64
+msgid ""
+"This key determines if the \"Show hidden files and folders\" search option "
+"is selected when the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Shfaq files dhe "
+"kartelat e padukshme\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:65
+msgid ""
+"This key determines if the \"Size at least\" search option is selected when "
+"the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Madhësia të paktën"
+"\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:66
+msgid ""
+"This key determines if the \"Size at most\" search option is selected when "
+"the search tool is started."
+msgstr ""
+"Ky kyç përcakton nëse duhet zgjedhur opcioni i kërkimit \"Madhësia maksimum"
+"\" kur niset instrumenti i kërkimit."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:67
+msgid ""
+"This key determines if the search tool disables the use of the find command "
+"after performing a quick search."
+msgstr ""
+"Kjo vlerë përcakton nëse instrumenti i kërkimit ç'aktivon përdorimin e "
+"komandës \"find\" mbas kryerjes së një kërkimi të shpejtë."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:68
+msgid ""
+"This key determines if the search tool disables the use of the locate "
+"command when performing simple file name searches."
+msgstr ""
+"Kjo vlerë përcakton nëse instrumenti i kërkimit ç'aktivon përdorimin e "
+"komandës \"locate\" kur kryen kërkime sipas thjeshtë emrit të file."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:169
+msgid "Could not open help document."
+msgstr "E pamundur hapja e dokumentit të ndihmës."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:304
+#, c-format
+msgid "Are you sure you want to open %d document?"
+msgid_plural "Are you sure you want to open %d documents?"
+msgstr[0] "Jeni i sigurt që dëshironi të hapni %d dokument?"
+msgstr[1] "Jeni i sigurt që dëshironi të hapni %d dokumente?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:309
+#: ../gsearchtool/gsearchtool-callbacks.c:497
+#, c-format
+msgid "This will open %d separate window."
+msgid_plural "This will open %d separate windows."
+msgstr[0] "Do të hapë %d dritare të veçantë."
+msgstr[1] "Do të hapë %d dritare të veçanta."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:349
+#, c-format
+msgid "Could not open document \"%s\"."
+msgstr "E pamundur hapja e dokumentit \"%s\"."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:378
+#, c-format
+msgid "Could not open folder \"%s\"."
+msgstr "E pamundur hapja e kartelës \"%s\"."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:386
+msgid "The nautilus file manager is not running."
+msgstr "Organizuesi i file Nautilus nuk është duke u ekzekutuar."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:453
+#: ../gsearchtool/gsearchtool-callbacks.c:767
+msgid "The document does not exist."
+msgstr "Dokumenti nuk ekziston."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:468
+msgid "There is no installed viewer capable of displaying the document."
+msgstr "Asnjë shikues i instaluar aktualisht është në gjendje të shfaqë dokumentin."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:492
+#, c-format
+msgid "Are you sure you want to open %d folder?"
+msgid_plural "Are you sure you want to open %d folders?"
+msgstr[0] "Jeni i sigurt që dëshironi të hapni %d kartelë?"
+msgstr[1] "Jeni i sigurt që dëshironi të hapni %d kartela?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:593
+#, c-format
+msgid "Could not move \"%s\" to trash."
+msgstr "E pamundur lëvizja e \"%s\" në kosh."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:624
+#, c-format
+msgid "Do you want to delete \"%s\" permanently?"
+msgstr "Dëshironi t'a eleminoni \"%s\" përgjithmonë?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:627
+#, c-format
+msgid "Trash is unavailable.  Could not move \"%s\" to the trash."
+msgstr "Koshi nuk ndodhet në dispozicion.  Nuk arrij të çoj \"%s\" në kosh."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:666
+#, c-format
+msgid "Could not delete \"%s\"."
+msgstr "I pamundur eleminimi i \"%s\"."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:786
+#, c-format
+msgid "Moving \"%s\" failed: %s."
+msgstr "Lëvizja e \"%s\" dështoi: %s."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:818
+#, c-format
+msgid "Deleting \"%s\" failed: %s."
+msgstr "Fshirja e \"%s\" dështoi: %s."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1249
+msgid "Save Search Results As..."
+msgstr "Ruaj rezultatet e kërkimit si..."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1280
+msgid "Could not save document."
+msgstr "E pamundur ruajtja e dokumentit."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1281
+msgid "You did not select a document name."
+msgstr "Nuk keni zgjedhur emrin e dokumentit."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1311
+#, c-format
+msgid "Could not save \"%s\" document to \"%s\"."
+msgstr "E pamundur ruajtja e dokumentit \"%s\" në \"%s\"."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1345
+#, c-format
+msgid "The document \"%s\" already exists.  Would you like to replace it?"
+msgstr "Dokumenti \"%s\" ekziston.  Dëshironi t'a zevëndësoni?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1349
+msgid "If you replace an existing file, its contents will be overwritten."
+msgstr "Nëse zevëndësoni një file ekzistues, përmbajtja e tij do të mbishkruhet."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1414
+msgid "The document name you selected is a folder."
+msgstr "Emri i dokumentit që keni zgjedhur është një kartelë."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1467
+msgid "You may not have write permissions to the document."
+msgstr "Nuk keni të drejtat e shkrimit tek ky dokument."
+
+#: ../gsearchtool/gsearchtool-support.c:71
+#, c-format
+msgid ""
+"GConf error:\n"
+"  %s"
+msgstr ""
+"Gabim i GConf:\n"
+"  %s"
+
+#. Translators:  Below are the strings displayed in the 'Date Modified'
+#. column of the list view.  The format of this string can vary depending
+#. on age of a file.  Please modify the format of the timestamp to match
+#. your locale.  For example, to display 24 hour time replace the '%-I'
+#. with '%-H' and remove the '%p'.  (See bugzilla report #120434.)
+#: ../gsearchtool/gsearchtool-support.c:601
+msgid "today at %-I:%M %p"
+msgstr "sot më %-I:%M %p"
+
+#: ../gsearchtool/gsearchtool-support.c:603
+msgid "yesterday at %-I:%M %p"
+msgstr "dje më %-I:%M %p"
+
+#: ../gsearchtool/gsearchtool-support.c:605
+#: ../gsearchtool/gsearchtool-support.c:607
+msgid "%A, %B %-d %Y at %-I:%M:%S %p"
+msgstr "%A, %B %-d %Y më %-I:%M:%S %p"
+
+#: ../gsearchtool/gsearchtool-support.c:786
+msgid "link (broken)"
+msgstr "lidhje (e shkëputur)"
+
+#: ../gsearchtool/gsearchtool-support.c:790
+#, c-format
+msgid "link to %s"
+msgstr "lidhje me %s"
+
+#: ../gsearchtool/gsearchtool.c:81
+msgid "Contains the _text"
+msgstr "Që përmban _tekstin"
+
+#: ../gsearchtool/gsearchtool.c:83
+msgid "_Date modified less than"
+msgstr "I _ndryshuar nga më pak se"
+
+#: ../gsearchtool/gsearchtool.c:83 ../gsearchtool/gsearchtool.c:84
+msgid "days"
+msgstr "ditë"
+
+#: ../gsearchtool/gsearchtool.c:84
+msgid "Date modified more than"
+msgstr "I ndryshuar nga më shumë se"
+
+#: ../gsearchtool/gsearchtool.c:86
+msgid "S_ize at least"
+msgstr "Madhës_ia të paktën"
+
+#: ../gsearchtool/gsearchtool.c:86 ../gsearchtool/gsearchtool.c:87
+msgid "kilobytes"
+msgstr "kilobytes"
+
+#: ../gsearchtool/gsearchtool.c:87
+msgid "Si_ze at most"
+msgstr "Madhës_ia maksimium"
+
+#: ../gsearchtool/gsearchtool.c:88
+msgid "File is empty"
+msgstr "File është bosh"
+
+#: ../gsearchtool/gsearchtool.c:90
+msgid "Owned by _user"
+msgstr "_Pronari"
+
+#: ../gsearchtool/gsearchtool.c:91
+msgid "Owned by _group"
+msgstr "_Grupi"
+
+#: ../gsearchtool/gsearchtool.c:92
+msgid "Owner is unrecognized"
+msgstr "Pronari nuk njihet"
+
+#: ../gsearchtool/gsearchtool.c:94
+msgid "Na_me does not contain"
+msgstr "E_mri nuk përmban"
+
+#: ../gsearchtool/gsearchtool.c:95
+msgid "Name matches regular e_xpression"
+msgstr "Emri korrispondon me e_kspresionin e rregullt"
+
+#: ../gsearchtool/gsearchtool.c:97
+msgid "Show hidden and backup files"
+msgstr "Shfaq files e fshehur dhe të backup"
+
+#: ../gsearchtool/gsearchtool.c:98
+msgid "Follow symbolic links"
+msgstr "Ndiq lidhjet simbolike"
+
+#: ../gsearchtool/gsearchtool.c:99
+msgid "Include other filesystems"
+msgstr "Përfshi file sistemi të tjerë"
+
+#: ../gsearchtool/gsearchtool.c:180
+msgid "_Open"
+msgstr "_Hap"
+
+#: ../gsearchtool/gsearchtool.c:181
+msgid "O_pen Folder"
+msgstr "Ha_p kartelën"
+
+#: ../gsearchtool/gsearchtool.c:182
+msgid "Mo_ve to Trash"
+msgstr "Lë_vize në Kosh"
+
+#: ../gsearchtool/gsearchtool.c:183
+msgid "_Save Results As..."
+msgstr "_Ruaj rezultatin si..."
+
+#: ../gsearchtool/gsearchtool.c:255 ../gsearchtool/gsearchtool.c:272
+msgid "A locate database has probably not been created."
+msgstr "Mesa duket nuk është krijuar akoma databaza e vendodhjeve."
+
+#: ../gsearchtool/gsearchtool.c:376
+#, c-format
+msgid "Character set conversion failed for \"%s\""
+msgstr "Konvertimi i gërmave për \"%s\" dështoi"
+
+#: ../gsearchtool/gsearchtool.c:770 ../gsearchtool/gsearchtool.c:799
+msgid "No files found"
+msgstr "Nuk u gjet asnjë file"
+
+#: ../gsearchtool/gsearchtool.c:792
+msgid "(stopped)"
+msgstr "(u ndalua)"
+
+#: ../gsearchtool/gsearchtool.c:798
+msgid "No Files Found"
+msgstr "Nuk u gjet asnjë file"
+
+#: ../gsearchtool/gsearchtool.c:803
+#, c-format
+msgid "%d File Found"
+msgid_plural "%d Files Found"
+msgstr[0] "U gjet %d File"
+msgstr[1] "U gjetën %d Files"
+
+#: ../gsearchtool/gsearchtool.c:807 ../gsearchtool/gsearchtool.c:845
+#, c-format
+msgid "%d file found"
+msgid_plural "%d files found"
+msgstr[0] "U gjet %d file"
+msgstr[1] "U gjetën %d files"
+
+#: ../gsearchtool/gsearchtool.c:824 ../gsearchtool/gsearchtool.c:1083
+#: ../gsearchtool/gsearchtool.c:1169 ../gsearchtool/gsearchtool.c:2897
+msgid "Search for Files"
+msgstr "Kërko për files"
+
+#: ../gsearchtool/gsearchtool.c:917
+msgid "Entry changed called for a non entry option!"
+msgstr "Ndryshimi i zërit të thirrur për një objekt që nuk është një zë!"
+
+#: ../gsearchtool/gsearchtool.c:1169
+msgid "Searching..."
+msgstr "Duke kërkuar..."
+
+#: ../gsearchtool/gsearchtool.c:1192
+msgid "Set the text of \"Name contains\" search option"
+msgstr "Shkruaj tekstin për opcionin e kërkimit «Emri përmban»"
+
+#: ../gsearchtool/gsearchtool.c:1193
+msgid "Set the text of \"Look in folder\" search option"
+msgstr "Shkruaj tekstin për opcionin e kërkimit «Kërko në kartela»"
+
+#: ../gsearchtool/gsearchtool.c:1194
+msgid "Sort files by one of the following: name, folder, size, type, or date"
+msgstr ""
+"Rendit files sipas njërit prej kriterëve në vazhdim: emri, kartela, "
+"madhësia, lloji ose data"
+
+#: ../gsearchtool/gsearchtool.c:1195
+msgid "Set sort order to descending, the default is ascending"
+msgstr "Vendos drejtimin e renditjes në zbritje, i prezgjedhur është në ngjitje"
+
+#: ../gsearchtool/gsearchtool.c:1196
+msgid "Automatically start a search"
+msgstr "Fillo automatikisht kërkimin"
+
+#: ../gsearchtool/gsearchtool.c:1202
+#, c-format
+msgid "Select the \"%s\" search option"
+msgstr "Zgjidh kushtin e kërkimit \"%s\""
+
+#: ../gsearchtool/gsearchtool.c:1205
+#, c-format
+msgid "Select and set the \"%s\" search option"
+msgstr "Zgjidh dhe cakto kushtin e kërkimit \"%s\""
+
+#: ../gsearchtool/gsearchtool.c:1312
+msgid "Invalid option passed to sortby command line argument."
+msgstr "I është kaluar një parametër i gabuar \"sortby\""
+
+#: ../gsearchtool/gsearchtool.c:1612
+msgid ""
+"\n"
+"... Too many errors to display ..."
+msgstr ""
+"\n"
+"... Tepër gabime, nuk mund të shfaqen ..."
+
+#: ../gsearchtool/gsearchtool.c:1626
+msgid ""
+"The search results may be invalid.  There were errors while performing this "
+"search."
+msgstr ""
+"Rezultatet e kërkimit mund të jenë të pavlefshëm.  Ndeshëm në gabime gjatë "
+"kryerjes së këtij kërkimi."
+
+#: ../gsearchtool/gsearchtool.c:1638 ../gsearchtool/gsearchtool.c:1682
+msgid "Show more _details"
+msgstr "Shfaq më tepër _hollësi"
+
+#: ../gsearchtool/gsearchtool.c:1668
+msgid ""
+"The search results may be out of date or invalid.  Do you want to disable "
+"the quick search feature?"
+msgstr ""
+"Rezultatet e kërkimit mund të jenë vjetër ose të pavlefshëm. Dëshironi të ç'aktivoni "
+"kërkimin e shpejtë?"
+
+#: ../gsearchtool/gsearchtool.c:1693
+msgid "Disable _Quick Search"
+msgstr "Ç'aktivo Kërkimin e _Shpejtë"
+
+#: ../gsearchtool/gsearchtool.c:1720
+#, c-format
+msgid "Failed to set process group id of child %d: %s.\n"
+msgstr "I pamundur caktimi i id të grupit të proçesit për birin %d: %s.\n"
+
+#: ../gsearchtool/gsearchtool.c:1747
+msgid "Error parsing the search command."
+msgstr "Gabim gjatë analizimit të komandës së kërkimit."
+
+#: ../gsearchtool/gsearchtool.c:1780
+msgid "Error running the search command."
+msgstr "Gabim gjatë ekzekutimit të komandës së kërkimit."
+
+#: ../gsearchtool/gsearchtool.c:1905
+#, c-format
+msgid "Enter a text value for the \"%s\" search option."
+msgstr "Shkruaj tekstin për opcionin e kërkimit \"%s\"."
+
+#. Translators:  Below is a string displaying the search options name
+#. and unit value.  For example, "\"Date modified less than\" in days".
+#: ../gsearchtool/gsearchtool.c:1910
+#, c-format
+msgid "\"%s\" in %s"
+msgstr "\"%s\" në %s"
+
+#: ../gsearchtool/gsearchtool.c:1912
+#, c-format
+msgid "Enter a value in %s for the \"%s\" search option."
+msgstr "Shkruaj një vlerë tek %s për kushtin e kërkimit \"%s\"."
+
+#: ../gsearchtool/gsearchtool.c:1971
+#, c-format
+msgid "Remove \"%s\""
+msgstr "Hiq \"%s\""
+
+#: ../gsearchtool/gsearchtool.c:1972
+#, c-format
+msgid "Click to remove the \"%s\" search option."
+msgstr "Kliko për të hequr kushtin e kërkimit \"%s\"."
+
+#: ../gsearchtool/gsearchtool.c:2065
+msgid "A_vailable options:"
+msgstr "Opcionet në d_ispozicion:"
+
+#: ../gsearchtool/gsearchtool.c:2094
+msgid "Available options"
+msgstr "Opcionet në dispozicion"
+
+#: ../gsearchtool/gsearchtool.c:2095
+msgid "Select a search option from the drop-down list."
+msgstr "Zgjidh një rregull kërkimi nga menuja rrëshket-poshtë."
+
+#: ../gsearchtool/gsearchtool.c:2107
+msgid "Add search option"
+msgstr "Shto një kusht kërkimi"
+
+#: ../gsearchtool/gsearchtool.c:2108
+msgid "Click to add the selected available search option."
+msgstr "Kliko për të shtuar kushtin e zgjedhur të kërkimit në dispozicion."
+
+#: ../gsearchtool/gsearchtool.c:2166
+msgid "S_earch results:"
+msgstr "R_ezultatet e kërkimit:"
+
+#: ../gsearchtool/gsearchtool.c:2202
+msgid "List View"
+msgstr "Paraqitja në formë liste"
+
+#: ../gsearchtool/gsearchtool.c:2262
+msgid "Name"
+msgstr "Emri"
+
+#: ../gsearchtool/gsearchtool.c:2285
+msgid "Folder"
+msgstr "Kartelë"
+
+#: ../gsearchtool/gsearchtool.c:2296
+msgid "Size"
+msgstr "Madhësia"
+
+#: ../gsearchtool/gsearchtool.c:2306
+msgid "Type"
+msgstr "Lloji"
+
+#: ../gsearchtool/gsearchtool.c:2316
+msgid "Date Modified"
+msgstr "Ndryshimi i fundit"
+
+#: ../gsearchtool/gsearchtool.c:2686
+msgid "_Name contains:"
+msgstr "_Emri përmban:"
+
+#: ../gsearchtool/gsearchtool.c:2700 ../gsearchtool/gsearchtool.c:2701
+msgid "Enter a filename or partial filename with or without wildcards."
+msgstr "Shto një emër të plotë apo të pjesshëm file me ose pa fjalëkyçe."
+
+#: ../gsearchtool/gsearchtool.c:2701
+msgid "Name contains"
+msgstr "Emri përmban"
+
+#: ../gsearchtool/gsearchtool.c:2707
+msgid "_Look in folder:"
+msgstr "_Kërko tek:"
+
+#: ../gsearchtool/gsearchtool.c:2713
+msgid "Browse"
+msgstr "Shfleto"
+
+#: ../gsearchtool/gsearchtool.c:2718
+msgid "Look in folder"
+msgstr "Kërko tek kartela"
+
+#: ../gsearchtool/gsearchtool.c:2718
+msgid "Select the folder or device from which you want to begin the search."
+msgstr "Zgjidh kartelën apo dispozitivin nga ku dëshiron të fillosh kërkimin."
+
+#: ../gsearchtool/gsearchtool.c:2729
+msgid "Select more _options"
+msgstr "Zgjidh opcione të _tjerë"
+
+#: ../gsearchtool/gsearchtool.c:2738
+msgid "Select more options"
+msgstr "Zgjidh opcione të tjerë"
+
+#: ../gsearchtool/gsearchtool.c:2738
+msgid "Click to expand or collapse the list of available options."
+msgstr "Kliko për të shpalosur apo mbledhur listën me opcionet në dispozicion."
+
+#: ../gsearchtool/gsearchtool.c:2762
+msgid "Click to display the help manual."
+msgstr "Kliko për të shfaqur ndihmën"
+
+#: ../gsearchtool/gsearchtool.c:2770
+msgid "Click to close \"Search for Files\"."
+msgstr "Kliko për të mbyllur \"Kërko për files\"."
+
+#: ../gsearchtool/gsearchtool.c:2796
+msgid "Click to perform a search."
+msgstr "Kliko për të kryer një kërkim."
+
+#: ../gsearchtool/gsearchtool.c:2797
+msgid "Click to stop a search."
+msgstr "Kliko për të ndaluar kërkimin."
+
+#: ../logview/about.c:47 ../logview/logview.c:49
+msgid "System Log Viewer"
+msgstr "Shikuesi i log të sistemit"
+
+#: ../logview/about.c:50
+msgid "A system log viewer for GNOME."
+msgstr "Një shikues i log të sistemit për GNOME."
+
+#: ../logview/actions.c:85
+msgid "Action Database"
+msgstr "Databaza e veprimeve"
+
+#: ../logview/actions.c:96
+msgid "Actions"
+msgstr "Veprimet"
+
+#: ../logview/actions.c:168
+msgid "_Add"
+msgstr "_Shto"
+
+#: ../logview/actions.c:173
+msgid "Add an action"
+msgstr "Shto një veprim"
+
+#: ../logview/actions.c:175 ../logview/logview.c:97
+msgid "_Edit"
+msgstr "_Ndrysho"
+
+#: ../logview/actions.c:180
+msgid "Edit an action"
+msgstr "Ndrysho një veprim"
+
+#: ../logview/actions.c:182
+msgid "_Remove"
+msgstr "_Hiq"
+
+#: ../logview/actions.c:187
+msgid "Remove an action"
+msgstr "Elemino një veprim"
+
+#: ../logview/actions.c:274
+#, c-format
+msgid "Cannot open action data base <%s>! Open failed."
+msgstr "E pamundur hapja e databazës së veprimeve <%s>! Gabim në hapje."
+
+#: ../logview/actions.c:309 ../logview/actions.c:322 ../logview/actions.c:333
+#: ../logview/actions.c:344 ../logview/actions.c:355 ../logview/actions.c:366
+msgid "Error parsing actions data base"
+msgstr "Gabim gjatë analizimit të databazës së veprimeve"
+
+#: ../logview/actions.c:400
+msgid "Can't write to actions database!"
+msgstr "I pamundur shkrimi tek databazë e veprimeve!"
+
+#: ../logview/actions.c:498
+#, c-format
+msgid "Error while executing specified action: %s"
+msgstr "Gabim gjatë ekzekutimit të veprimit të specifikuar: %s"
+
+#: ../logview/actions.c:521
+msgid "<empty>"
+msgstr "<bosh>"
+
+#: ../logview/actions.c:522
+msgid "log name regexp"
+msgstr "regexp emri i log"
+
+#: ../logview/actions.c:523
+msgid "process regexp"
+msgstr "regexp procesit"
+
+#: ../logview/actions.c:524
+msgid "message regexp"
+msgstr "regexp masazhin"
+
+#: ../logview/actions.c:525
+msgid "action to execute when regexps are TRUE"
+msgstr "veprimi që duhet ndërmarrë kur regexps është TRUE"
+
+#: ../logview/actions.c:526
+msgid "description"
+msgstr "përshkrimi"
+
+#: ../logview/actions.c:662
+msgid "Edit Action"
+msgstr "Ndrysho veprimin"
+
+#: ../logview/actions.c:698
+msgid "_Tag:"
+msgstr "_Tag:"
+
+#: ../logview/actions.c:707
+msgid "Tag that identifies the log file."
+msgstr "Tag që identifikon file e log."
+
+#: ../logview/actions.c:716
+msgid "_Log name:"
+msgstr "_Emri i log:"
+
+#: ../logview/actions.c:725
+msgid "Regular expression that will match the log name."
+msgstr "Ekspresioni i rregullt që përputhet me emrin e log."
+
+#: ../logview/actions.c:735
+msgid "_Process:"
+msgstr "_Proçesi:"
+
+#: ../logview/actions.c:744
+msgid "Regular expression that will match process part of message."
+msgstr "Ekspresioni i rregullt që përputhet me një pjesë të mesazhit."
+
+#: ../logview/actions.c:754
+msgid "_Message:"
+msgstr "_Mesazhi:"
+
+#: ../logview/actions.c:763
+msgid "Regular expression that will match the message."
+msgstr "Ekspresioni i rregullt që do të përputhet me mesazhin."
+
+#: ../logview/actions.c:773
+msgid "_Action:"
+msgstr "_Veprimi:"
+
+#: ../logview/actions.c:782
+msgid ""
+"Action that will be executed if all previous regexps. are matched. This is "
+"executed by a system command: system (action)."
+msgstr ""
+"Veprimi që do të ekzekutohet nëse të gjitha regexps. përputhen. Do të "
+"zbatohet nga një komandë e sistemit: system (veprimi)."
+
+#: ../logview/actions.c:792
+msgid "_Description:"
+msgstr "_Përshkrimi:"
+
+#: ../logview/actions.c:801
+msgid "Description of this entry."
+msgstr "Përshkrimi për këtë zë."
+
+#: ../logview/actions.c:825
+#, c-format
+msgid ""
+"tag: [%s]\n"
+"log_name: [%s]\n"
+"process: [%s]\n"
+"message: [%s]\n"
+"description: [%s]\n"
+"action: [%s]\n"
+msgstr ""
+"tag: [%s]\n"
+"emri_log: [%s]\n"
+"procesi: [%s]\n"
+"mesazhi: [%s]\n"
+"përshkrimi: [%s]\n"
+"veprimi: [%s]\n"
+
+#: ../logview/desc_db.c:67
+#, c-format
+msgid "Cannot open regexp data base <%s>! Open failed."
+msgstr "E pamundur hapja e databazës së regexp <%s>! Gabim në hapje."
+
+#: ../logview/desc_db.c:177
+#, c-format
+msgid "Cannot open description data base <%s>! Open failed."
+msgstr "E pamundur hapja e databazës së përshkrimeve <%s>! Gabim në hapje."
+
+#. ----------------------------------------------------------------------
+#. NAME:
+#. DESCRIPTION:
+#. ----------------------------------------------------------------------
+#: ../logview/gnome-system-log.desktop.in.h:1
+msgid "System Log"
+msgstr "Log i sistemit"
+
+#: ../logview/gnome-system-log.desktop.in.h:2
+msgid "View the system log file"
+msgstr "Shiko file e log të sistemit"
+
+#: ../logview/info.c:47
+msgid "Properties"
+msgstr "Pronësitë"
+
+#: ../logview/info.c:95
+#, c-format
+msgid "%ld byte"
+msgid_plural "%ld bytes"
+msgstr[0] "%ld byte"
+msgstr[1] "%ld bytes"
+
+#: ../logview/info.c:97
+#, c-format
+msgid "<b>Size</b>: %s"
+msgstr "<b>Madhësia</b>: %s"
+
+#: ../logview/info.c:102
+#, c-format
+msgid "<b>Modified</b>: %s"
+msgstr "<b>Ndryshuar</b>: %s"
+
+#: ../logview/info.c:106
+#, c-format
+msgid "<b>Start Date</b>: %s"
+msgstr "<b>Data e fillimit</b>: %s"
+
+#: ../logview/info.c:110
+#, c-format
+msgid "<b>Last Date</b>: %s"
+msgstr "<b>Data e fundit</b>: %s"
+
+#: ../logview/info.c:114
+#, c-format
+msgid "<b>Number of Lines</b>: %ld"
+msgstr "<b>Numri i rreshtave</b>: %ld"
+
+#: ../logview/log_repaint.c:36
+msgid "January"
+msgstr "Janar"
+
+#: ../logview/log_repaint.c:36
+msgid "February"
+msgstr "Shkurt"
+
+#: ../logview/log_repaint.c:36
+msgid "March"
+msgstr "Mars"
+
+#: ../logview/log_repaint.c:36
+msgid "April"
+msgstr "Prill"
+
+#: ../logview/log_repaint.c:36
+msgid "May"
+msgstr "Maj"
+
+#: ../logview/log_repaint.c:37
+msgid "June"
+msgstr "Qershor"
+
+#: ../logview/log_repaint.c:37
+msgid "July"
+msgstr "Korrik"
+
+#: ../logview/log_repaint.c:37
+msgid "August"
+msgstr "Gusht"
+
+#: ../logview/log_repaint.c:37
+msgid "September"
+msgstr "Shtator"
+
+#: ../logview/log_repaint.c:37
+msgid "October"
+msgstr "Tetor"
+
+#: ../logview/log_repaint.c:38
+msgid "November"
+msgstr "Nëntor"
+
+#: ../logview/log_repaint.c:38
+msgid "December"
+msgstr "Dhjetor"
+
+#. Translators: Date only format, %x should well do really
+#: ../logview/log_repaint.c:256
+#, c-format
+msgid "%x"
+msgstr "%x"
+
+#: ../logview/log_repaint.c:273
+#, c-format
+msgid "Last Modified: %s, %d lines"
+msgstr "Ndryshimi i fundit: %s, %d rreshta"
+
+#: ../logview/log_repaint.c:277
+#, c-format
+msgid "%d lines"
+msgstr "%d rreshta"
+
+#: ../logview/log_repaint.c:308
+msgid "Current"
+msgstr "Aktual"
+
+#. Translators: Make sure this is only Month and Day format, year
+#. * will be bogus here
+#: ../logview/log_repaint.c:344
+msgid "%B %e"
+msgstr "%B %e"
+
+#. Translators: should be only the time, date could be bogus
+#: ../logview/log_repaint.c:446
+#, c-format
+msgid "%X"
+msgstr "%X"
+
+#: ../logview/logrtns.c:51
+msgid "One file or more could not be opened"
+msgstr "Një apo më shumë file nuk mund të hapet"
+
+#: ../logview/logrtns.c:221
+msgid "Unable to open logfile!\n"
+msgstr "E pamundur hapja e file të log!\n"
+
+#: ../logview/logrtns.c:228 ../logview/logrtns.c:248
+msgid "Not enough memory!\n"
+msgstr "Kujtesë e pamjaftueshme!\n"
+
+#: ../logview/logrtns.c:303
+#, c-format
+msgid ""
+"%s is not user readable. Either run the program as root or ask the sysadmin "
+"to change the permissions on the file.\n"
+msgstr ""
+"%s nuk është i lexueshëm për përdoruesin.Provo të nisësh programin si root ose vihu "
+"në kontakt me administratorin e sistemit për të ndryshuar të drejtat mbi file.\n"
+
+#: ../logview/logrtns.c:308
+#, c-format
+msgid "%s is too big."
+msgstr "%s është tepër i madh."
+
+#: ../logview/logrtns.c:312
+#, c-format
+msgid "%s could not be opened."
+msgstr "%s nuk mund të hapet."
+
+#: ../logview/logrtns.c:351
+#, c-format
+msgid "%s not a log file."
+msgstr "%s nuk është një file log."
+
+#: ../logview/logrtns.c:556 ../logview/logrtns.c:580
+msgid "ReadLogStats: out of memory"
+msgstr "ReadLogStats: memorja u konsumua"
+
+#: ../logview/logview-findbar.c:275
+msgid "Fin_d:"
+msgstr "Gje_j:"
+
+#: ../logview/logview-findbar.c:280
+msgid "_Previous"
+msgstr "_Paraardhësi"
+
+#: ../logview/logview-findbar.c:282
+msgid "_Next"
+msgstr "_Në vazhdim"
+
+#: ../logview/logview.c:96
+msgid "_Log"
+msgstr "_Log"
+
+#: ../logview/logview.c:98
+msgid "_View"
+msgstr "_Shfaq"
+
+#: ../logview/logview.c:101
+msgid "_Open..."
+msgstr "_Hap..."
+
+#: ../logview/logview.c:101
+msgid "Open a log from file"
+msgstr "Hap një log nga file"
+
+#: ../logview/logview.c:103
+msgid "_Properties"
+msgstr "_Pronësitë"
+
+#: ../logview/logview.c:103
+msgid "Show Log Properties"
+msgstr "Shfaq pronësitë e logs"
+
+#: ../logview/logview.c:105
+msgid "Close"
+msgstr "Mbyll"
+
+#: ../logview/logview.c:105
+msgid "Close this log"
+msgstr "Mbyll këtë log"
+
+#: ../logview/logview.c:107
+msgid "_Quit"
+msgstr "_Dalja"
+
+#: ../logview/logview.c:107
+msgid "Quit the log viewer"
+msgstr "el nga shikuesi i log"
+
+#: ../logview/logview.c:110
+msgid "Copy"
+msgstr "Kopjo"
+
+#: ../logview/logview.c:112
+msgid "Select All"
+msgstr "Zgjidh gjithçka"
+
+#: ../logview/logview.c:112
+msgid "Select the entire log"
+msgstr "Zgjidh komplet log"
+
+#: ../logview/logview.c:114
+msgid "Find pattern in logs"
+msgstr "Gjej korrispondues në log"
+
+#: ../logview/logview.c:121
+msgid "Normal text size"
+msgstr "Madhësi e zakonshme teksti"
+
+#: ../logview/logview.c:124
+msgid "Collapse _All"
+msgstr "_Ngjishi të gjithë"
+
+#: ../logview/logview.c:124
+msgid "Collapse all the rows"
+msgstr "Ngjish të gjithë rreshtat"
+
+#: ../logview/logview.c:127
+msgid "Open the help contents for the log viewer"
+msgstr "Hap përmbajtjen e ndihmës për shikuesin e log"
+
+#: ../logview/logview.c:129
+msgid "Show the about dialog for the log viewer"
+msgstr "Shfaq dritaren e dialogut të informacioneve për shikuesin e log"
+
+#: ../logview/logview.c:135
+msgid "Sidebar"
+msgstr "Paneli anësor"
+
+#: ../logview/logview.c:135
+msgid "Show the sidebar"
+msgstr "Shfaq panelin ansor"
+
+#: ../logview/logview.c:137
+msgid "_Monitor"
+msgstr "_Monitori"
+
+#: ../logview/logview.c:137
+msgid "Monitor Current Log"
+msgstr "Monitoro log aktual"
+
+#: ../logview/logview.c:139
+msgid "Ca_lendar"
+msgstr "Ka_lendari"
+
+#: ../logview/logview.c:139
+msgid "Show Calendar Log"
+msgstr "Shfaq kalendarin e log"
+
+#: ../logview/logview.c:668
+msgid "Date"
+msgstr "Data"
+
+#: ../logview/logview.c:668
+msgid "Host Name"
+msgstr "Emri i host"
+
+#: ../logview/logview.c:669
+msgid "Process"
+msgstr "Proçesi"
+
+#: ../logview/logview.c:669
+msgid "Message"
+msgstr "Mesazh"
+
+#: ../logview/logview.c:745
+msgid "Version : "
+msgstr "Versioni : "
+
+#: ../logview/logview.c:857
+msgid "Open new logfile"
+msgstr "Hap një file log të ri"
+
+#: ../logview/logview.c:1214
+msgid "There was an error displaying help."
+msgstr "Gabim gjatë shfaqjes së ndihmës."
+
+#: ../logview/logview.c:1232
+#, c-format
+msgid "%s (monitored) - %s"
+msgstr "%s (monitoruar) - %s"
+
+#: ../logview/logview.schemas.in.h:1
+msgid "Log file to open up on startup"
+msgstr "Log file që duhet hapur gjatë nisjes"
+
+#: ../logview/logview.schemas.in.h:2
+msgid ""
+"Specifies the log file to open up at startup. The default is either /var/adm/"
+"messages or /var/log/messages, depending on your operating system."
+msgstr ""
+"Specifiko file e log që duhet hapur në nisje. Vendosja e prezgjedhur mund të "
+"jetë /var/log/messages ose /var/adm/messages, sipas sistemit operativ."
+
+#: ../logview/zoom.c:71
+msgid "Entry Detail"
+msgstr "Hollësi mbi elementin"
+
+#. Translators: do not include year, it would be bogus
+#: ../logview/zoom.c:135
+msgid "%B %e %X"
+msgstr "%B %e %X"
+

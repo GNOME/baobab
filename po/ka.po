@@ -1,0 +1,2746 @@
+# translation of gnome-utils.gnome-2-14.po to Georgian
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Malkhaz Barkalaya მალხაზ ბარკალაია <maxo127@mail.ru>
+# Vladimer Sichinava ვლადიმერ სიჭინავა <alinux@siena.linux.it>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils.gnome-2-14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-03-08 14:55+0100\n"
+"PO-Revision-Date: 2006-03-14 00:56+0100\n"
+"Last-Translator: Vladimer Sichinava <alinux@siena.linux.it>\n"
+"Language-Team: Georgian <gnome@inet.ge>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0"
+
+#: ../gfloppy/gfloppy.desktop.in.h:1 ../gfloppy/src/gfloppy2.glade.h:9
+msgid "Floppy Formatter"
+msgstr "დისკეტის დამფორმატებელი"
+
+#: ../gfloppy/gfloppy.desktop.in.h:2
+msgid "Format Floppy Disks"
+msgstr "დისკეტის ფორმატირება"
+
+#: ../gfloppy/gfloppy.schemas.in.h:1
+msgid ""
+"0 for the quick format, 1 for a standard one (adds a low-level format) and "
+"finally 2 for a thorough format (adds a bad blocks scan)."
+msgstr ""
+"ფორმატირება: 0 - სწრაფი, 1 - სტანდარტული (დაბალ დონეზე ფორმატირებით), "
+"2 - სრული (დაზიანებული ბლოკების სკანირებით)."
+
+#: ../gfloppy/gfloppy.schemas.in.h:2
+msgid "ADVANCED USERS ONLY - Default backend for FAT formatting"
+msgstr "მხოლოდ კვალიფიცირებული მომხმარებლებისათვის - ნაგულისხმევი მონაცემები ფატ-ფორმატირებისათვის."
+
+#: ../gfloppy/gfloppy.schemas.in.h:3
+msgid "Default filesystem type"
+msgstr "ფაილური სისტემის ნაგულისხმევი·ტიპი"
+
+#: ../gfloppy/gfloppy.schemas.in.h:4
+msgid "Default formatting mode"
+msgstr "ფორმატირების ნაგულისხმევი რეჟიმი"
+
+#: ../gfloppy/gfloppy.schemas.in.h:5
+msgid ""
+"TRUE to set mkdosfs as the preferred FAT formatting backend or FALSE to set "
+"mtools as the preferred FAT formatting backend."
+msgstr "უპირატესობის მინიჭება დამფორმატებლისათვის: TRUE - mkdosfs, FALSE - "
+"mtools."
+
+#: ../gfloppy/gfloppy.schemas.in.h:6
+msgid "ext2 for the linux native filesystem or fat for the DOS filesystem."
+msgstr "ext2 ლინუქსის ფაილური სისტემისათვის ან fat - DOS-სათვის."
+
+#: ../gfloppy/src/badblocks.c:89
+msgid "Internal Error: Unable to seek to the correct location."
+msgstr "შიდა შეცდომა: მდებარეობის განსაზღვრა ვერ მოხერხდა."
+
+#: ../gfloppy/src/badblocks.c:98
+#, c-format
+msgid "Internal Error: Weird value (%ld) in do_test\n"
+msgstr "შიდა შეცდომა - მიუღებელი მნიშვნელობა (%ld) do_test-ში\n"
+
+#. while (!i)
+#. ;
+#: ../gfloppy/src/badblocks.c:256
+msgid "Checking for bad blocks..."
+msgstr "ბლოკების შემოწმება დაზიანებაზე..."
+
+#: ../gfloppy/src/badblocks.c:268
+#, c-format
+msgid "Failed to open device %s for badblock checking\n"
+msgstr "ბლოკების დაზიანების შესამოწმებლად მოწყობილობა %s არ იხსნება\n"
+
+#: ../gfloppy/src/badblocks.c:288 ../gfloppy/src/gfloppy.c:531
+msgid "Checking for bad blocks... Done"
+msgstr "ბლოკები მოწმდება დაზიანებაზე...შესრულებულია"
+
+#: ../gfloppy/src/fdformat.c:46
+msgid "Formatting the disk..."
+msgstr "დისკეტის·ფორმატირება..."
+
+#: ../gfloppy/src/fdformat.c:49
+msgid "I don't know what this is, but it's very wrong."
+msgstr "ეს ჩემთვის გაუგებარია, მაგრამ აშკარად არასწორია."
+
+#: ../gfloppy/src/fdformat.c:57 ../gfloppy/src/fdformat.c:70
+#, c-format
+msgid "Error formatting track #%d"
+msgstr "ტრეკის ფორმატირების შეცდომა #%d"
+
+#: ../gfloppy/src/fdformat.c:79
+msgid "Error during completion of formatting"
+msgstr "შეცდომა ფორმატირების დასრულებისას"
+
+#. XXXX - need to tell parent we're finished
+#: ../gfloppy/src/fdformat.c:83
+msgid "Formatting the disk... Done"
+msgstr "დისკეტის ფორმატირება... შესრულებულია"
+
+#. XXXX - tell parent we're starting verify stage
+#: ../gfloppy/src/fdformat.c:99
+msgid "Verifying the format..."
+msgstr "ფორმატის შემოწმება..."
+
+#: ../gfloppy/src/fdformat.c:104 ../gfloppy/src/fdformat.c:189
+msgid ""
+"Unable to write to the floppy.\n"
+"\n"
+"Please confirm that it is not write-protected."
+msgstr "დისკეტა არ იწერება\n"
+"\n"
+"შეამოწმეთ, ხომ არ არის დაცული ჩაწერისაგან."
+
+#: ../gfloppy/src/fdformat.c:107 ../gfloppy/src/fdformat.c:192
+#, c-format
+msgid "Insufficient permissions to open floppy device %s."
+msgstr "თქვენ არა გაქვთ უფლება მიმართოთ ფლოპი-მოწყობილობას %s."
+
+#: ../gfloppy/src/fdformat.c:111 ../gfloppy/src/fdformat.c:196
+msgid ""
+"Unable to access the floppy disk.\n"
+"\n"
+"Please confirm that it is in the drive\n"
+"with the drive door shut."
+msgstr "დისკეტა არ იკითხება\n"
+"\n"
+"შეამოწმეთ, არის თუ არა დისკეტა ამძრავში\n"
+"და არის თუ არა კარგად ჩადებული."
+
+#: ../gfloppy/src/fdformat.c:114
+#, c-format
+msgid ""
+"Generic error accessing floppy device %s.\n"
+"\n"
+"Error code %s:%d"
+msgstr ""
+"%s დისკეტის ჩართვის ზოგადი შეცდომა.\n"
+"\n"
+"შეცდომის კოდია %s:%d"
+
+#: ../gfloppy/src/fdformat.c:137
+#, c-format
+msgid ""
+"Read Error:\n"
+"Problem reading cylinder %d, expected %d, read %d"
+msgstr "შეცდომა წაკითხვისას:\n"
+"%d ცილინდრის კითხვისას მოსალოდნელი იყო %d, წაკითხულ იქნა %d"
+
+#: ../gfloppy/src/fdformat.c:140
+#, c-format
+msgid "Problem reading cylinder %d, expected %d, read %d"
+msgstr "პრობლემა %d·ცილინდრის·კითხვისას,·მოსალოდნელი·იყო·%d,·წაკითხულ·იქნა·%d"
+
+#: ../gfloppy/src/fdformat.c:151
+#, c-format
+msgid "Bad data in cyl %d.  Continuing... "
+msgstr "ცილინდრი %d შეიცავს დაზიანებას.  ვაგრძელებთ... "
+
+#: ../gfloppy/src/fdformat.c:160
+#, c-format
+msgid "Error closing device %s"
+msgstr "%s მოწყობილობის დახურვის შეცდომა"
+
+#: ../gfloppy/src/fdformat.c:167
+msgid "Verifying the format... Done"
+msgstr "მოწმდება ფორმატი... შესრულებულია"
+
+#: ../gfloppy/src/fdformat.c:179
+#, c-format
+msgid "Unable to write to device %s"
+msgstr "%s მოწყობილობაზე ჩაწერა ვერ ხერხდება"
+
+#: ../gfloppy/src/fdformat.c:199
+#, c-format
+msgid ""
+"Generic error accessing floppy device %s.\n"
+"\n"
+"Error code %s"
+msgstr ""
+"დისკეტის ჩართვის ზოგადი·შეცდომა %s.\n"
+"\n"
+"შეცდომის·კოდი %s"
+
+#: ../gfloppy/src/fdformat.c:211
+msgid "Could not determine current floppy geometry."
+msgstr "გაურკვეველია ფლოპის გეომეტრია."
+
+#: ../gfloppy/src/gfloppy.c:219
+msgid "Error while creating a unique filename for the bad blocks list file."
+msgstr "შეცდომა დაზიანებული ბლოკების სიისათვის უნიკალური სახელის ფაილის შექმნისას."
+
+#: ../gfloppy/src/gfloppy.c:239
+msgid "Error while filling the bad blocks list file."
+msgstr "შეცდომა დაზიანებული ბლოკების სიის შედგენისას."
+
+#: ../gfloppy/src/gfloppy.c:302
+#, c-format
+msgid "Error while spawning the (%s) command: %s."
+msgstr "შეცდომა (%s) ბრძანების გენერირებისას:(%s)."
+
+#: ../gfloppy/src/gfloppy.c:328
+msgid "Unknown mke2fs starting signature, cancelling."
+msgstr "mke2fs სასტარტო სიგნატურა უცნობია. ოპერაცია შეწყვეტილია."
+
+#: ../gfloppy/src/gfloppy.c:342
+#, c-format
+msgid ""
+"The filesystem creation utility (%s) reported the following errors:\n"
+"\n"
+"%s (%d)"
+msgstr "ფაილური სისტემის გახსნის უტილიტა (%s) იტყობინება შეცდომის შეახებ:\n"
+"\n"
+"%s·(%d)"
+
+#: ../gfloppy/src/gfloppy.c:359
+msgid "Abnormal child process termination."
+msgstr "შვილობილი პროცესი არასწორად იქნა შეწყვეტილი"
+
+#: ../gfloppy/src/gfloppy.c:384
+#, c-format
+msgid "Error while spawning the mbadblocks command: %s."
+msgstr "შეცდომა mbadblocks კომანდის გენერირებისას:·%s."
+
+#: ../gfloppy/src/gfloppy.c:396
+#, c-format
+msgid ""
+"The bad blocks checking utility (mbadblocks) reported the following errors:\n"
+"%s."
+msgstr "დაზიანებული ბლოკების აღმოჩენის·უტილიტა·(mbadblocks)·იტყობინება·შეცდომის·შესახებ:\n"
+"%s."
+
+#: ../gfloppy/src/gfloppy.c:439
+msgid "Abnormal mbadblocks child process termination."
+msgstr "mbadblocks შვილობილი·პროცესი·არასწორად·იქნა·შეწყვეტილი"
+
+#. make the filesystem
+#: ../gfloppy/src/gfloppy.c:465 ../gfloppy/src/gfloppy.c:505
+msgid "Making filesystem on disk..."
+msgstr "დისკზე ფაილური სისტემის შექმნა..."
+
+#: ../gfloppy/src/gfloppy.c:473
+msgid "Unable to create filesystem correctly."
+msgstr "ფაილური სისტემის შექმნა შეუძლებელია."
+
+#: ../gfloppy/src/gfloppy.c:478 ../gfloppy/src/gfloppy.c:517
+msgid "Making filesystem on disk... Done"
+msgstr "დისკზე იქმნება ფაილური სისტემა... დასრულებულია"
+
+#: ../gfloppy/src/gfloppy.c:522
+msgid "Checking for bad blocks... (this might take a while)"
+msgstr "ბლოკების შემოწმება დაზიანებაზე... (ამას გარკვეული დრო დასჭირდება)"
+
+#: ../gfloppy/src/gfloppy.c:527
+msgid "Error while checking the bad blocks."
+msgstr "შეცდომა ბლოკების დაზიანებაზე შემოწმებისას."
+
+#: ../gfloppy/src/gfloppy2.glade.h:1
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../gfloppy/src/gfloppy2.glade.h:2
+#: ../gnome-screenshot/gnome-screenshot.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../gfloppy/src/gfloppy2.glade.h:3
+msgid ""
+"<small><i><b>Note</b>: The mbadblocks utility isn't installed on this "
+"system.  It must be installed in order to perform a thorough DOS (fat) "
+"formatting.</i></small>"
+msgstr "<small><i><b> შენიშვნა</b> უტილიტა mbadblocks არ აყენია "
+"სისტემაში.  სრული DOS·(fat) ფორმატირებისათვის მისი დაყენება "
+"აუცილებელია.</i></small>"
+
+#: ../gfloppy/src/gfloppy2.glade.h:4
+msgid "DOS (FAT)"
+msgstr "DOS·(FAT)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:5
+msgid "Double Density 3.5\" (720KB)"
+msgstr "ორმაგი სიმჭიდროვის 3.5\"·(720KB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:6
+msgid "Double Density 5.25\" (360KB)"
+msgstr "ორმაგი სიმჭიდროვის 5.25\"·(360KB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:7
+msgid "File system _type:"
+msgstr "ფაილური სისტემის _ტიპი:"
+
+#: ../gfloppy/src/gfloppy2.glade.h:8
+msgid "Filesystem Settings"
+msgstr "ფაილური სისტემის პარამეტრები"
+
+#: ../gfloppy/src/gfloppy2.glade.h:10
+msgid "Floppy _density:"
+msgstr "დისკეტის _სიმჭიდროვე:"
+
+#: ../gfloppy/src/gfloppy2.glade.h:11
+msgid "Floppy de_vice:"
+msgstr "ფლოპი _მოწყობილობა:"
+
+#: ../gfloppy/src/gfloppy2.glade.h:12
+msgid "Formatting Mode"
+msgstr "ფორმატირების რეჟიმი"
+
+#: ../gfloppy/src/gfloppy2.glade.h:13
+msgid "High Density 3.5\" (1.44MB)"
+msgstr "მაღალი სიმჭიდროვის 3.5\"·(1.44MB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:14
+msgid "High Density 5.25\" (1.2MB)"
+msgstr "მაღალი·სიმჭიდროვის 5.25\"·(1.2MB)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:15
+msgid "Linux Native (ext2)"
+msgstr "Linux·Native·(ext2)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:16
+msgid "Physical Settings"
+msgstr "ფიზიკური პარამეტრები"
+
+#: ../gfloppy/src/gfloppy2.glade.h:17
+msgid "Thorou_gh (adds a bad blocks check to the standard mode)"
+msgstr "სრული რეჟიმი (სტანდარტული რეჟიმი პლუს ბლოკების შემოწმება)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:18
+msgid "Volume _name:"
+msgstr "ტომის _სახელი:"
+
+#. This is the "format" verb (not the noun).
+#: ../gfloppy/src/gfloppy2.glade.h:20
+msgid "_Format"
+msgstr "_ფორმატირება"
+
+#: ../gfloppy/src/gfloppy2.glade.h:21
+msgid "_Quick (only creates the filesystem)"
+msgstr "_სწრაფი (მხოლოდ ფაილური სისტემის გახსნა)"
+
+#: ../gfloppy/src/gfloppy2.glade.h:22
+msgid "_Standard (adds a low-level format to the quick mode)"
+msgstr "_სტანდარტული რეჟიმი (სწრაფი რეჟიმი პლუს დაბალ დონეზე ფორმატირება)"
+
+#: ../gfloppy/src/main.c:259
+msgid "Cannot Format"
+msgstr "ფორმატირება შეუძლებელია"
+
+#: ../gfloppy/src/main.c:260
+msgid ""
+"Neither the mke2fs nor the mkdosfs/mformat applications are installed. You "
+"can't format a floppy without one of them."
+msgstr "არ არის ინსტალირებული არც mke2fs, და არც mkdosfs/mformat. მათ გარეშე დისკეტას ვერ დააფორმატებთ."
+
+#: ../gfloppy/src/main.c:280
+#, c-format
+msgid "Unable to open the device %s, formatting cannot continue."
+msgstr "მოწყობილობა %s ვერ იხსნება, ფორმატირება შეუძლებელია."
+
+#: ../gfloppy/src/main.c:283 ../gfloppy/src/main.c:345
+#, c-format
+msgid ""
+"The device %s is disconnected.\n"
+"Please attach device to continue."
+msgstr "მოწყობილობა %s გაითიშა.\n"
+"ოპერაციის გასაგრძელებლად მიაერთეთ მოწყობილობა."
+
+#: ../gfloppy/src/main.c:286 ../gfloppy/src/main.c:348
+#, c-format
+msgid ""
+"You do not have the proper permissions to write to %s, formatting will not "
+"be possible.\n"
+"Contact your system administrator about getting write permissions."
+msgstr "%s მოწყობილობაზე ჩაწერის უფლება არა გაქვთ. ფორმატირება შეუძლებელია.\n"
+"მიმართეთ სისტემურ ადმინისტრატორს უფლების მისაღებად."
+
+#: ../gfloppy/src/main.c:293 ../gfloppy/src/main.c:356
+msgid "Cannot initialize device"
+msgstr "მოწყობილობა არ ინიციალიზდება"
+
+#: ../gfloppy/src/main.c:342
+msgid "Unable to open any device, formatting cannot continue."
+msgstr "არცერთი მოწყობილობა არ იხსნება. ფორმატირება შეუძლებელია."
+
+#: ../gfloppy/src/main.c:345 ../gfloppy/src/main.c:348
+msgid "/dev/floppy/0 or /dev/fd0"
+msgstr "/dev/floppy/0·ან·/dev/fd0"
+
+#: ../gfloppy/src/main.c:509
+msgid "Could not display help for the floppy formatter."
+msgstr "ფლოპის დამფორმატებელს დახმარების ფაილი არა აქვს."
+
+#: ../gfloppy/src/main.c:528
+msgid "Incorrect volume name"
+msgstr "ტომის სახელი არასწორია"
+
+#: ../gfloppy/src/main.c:529
+msgid "The volume name can't contain any blank space."
+msgstr "ტომის სახელი ცარიელ ადგილებს არ უნდა შეიცავდეს."
+
+#: ../gfloppy/src/main.c:576
+msgid "The device to format"
+msgstr "დასაფორმატებელი მოწყობილობა"
+
+#: ../gfloppy/src/main.c:577
+msgid "DEVICE"
+msgstr "მოწყობილობა"
+
+#: ../gfloppy/src/progress.c:126
+#, c-format
+msgid ""
+"The floppy has been formatted, but <b>%d bad block</b> (out of %d) has been "
+"found and marked."
+"The floppy has been formatted, but <b>%d bad blocks</b> (out of %d) have "
+"been found and marked."
+msgstr "ფლოპი დაფორმატებულია. აღმოჩენილია და მარკირებული <b>%d დაზიანებული ბლოკი</b>. (%d-ზე მეტი).."
+"ფლოპი·დაფორმატებულია.·აღმოჩენილია·და·მარკირებული·<b>%d·დაზიანებული·ბლოკი</b>.·(%d-ზე·მეტი).."
+
+#: ../gfloppy/src/progress.c:129
+msgid "Floppy formatted successfully."
+msgstr "დისკეტა დაფორმატებულია."
+
+#: ../gfloppy/src/progress.c:135
+msgid "Floppy formatting cancelled."
+msgstr "დისკეტის ფორმატირება შეწყვეტილია."
+
+#: ../gfloppy/src/progress.c:178
+msgid "Format Progress"
+msgstr "ფორმატირების მიმდინარეობა"
+
+#: ../gnome-dictionary/data/default.desktop.in.h:1
+msgid "Default Dictionary Server"
+msgstr "ნაგულისხმევი ლექსიკონის სერვერი"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.server.in.in.h:1
+msgid "Dictionary Look up"
+msgstr "ლექსიკონის გახსნა"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.server.in.in.h:2
+msgid "Look up words in a dictionary"
+msgstr "სიტყვების ძებნა ლექსიკონში"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:1
+msgid "Cl_ear"
+msgstr "_წაშლა"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:2
+#: ../gnome-dictionary/src/gdict-window.c:839 ../logview/logview.c:116
+msgid "_About"
+msgstr "_შესახებ"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:3
+#: ../gnome-dictionary/src/gdict-window.c:799 ../logview/logview.c:88
+msgid "_Help"
+msgstr "_დახმარება"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:4
+msgid "_Look Up Selected Text"
+msgstr "მონიშნული ტექსტის _ძებნა"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:5
+#: ../gnome-dictionary/src/gdict-window.c:823
+msgid "_Preferences"
+msgstr "_პარამეტრები"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:6
+msgid "_Print"
+msgstr "_ბეჭდვა"
+
+#: ../gnome-dictionary/data/GNOME_DictionaryApplet.xml.h:7
+msgid "_Save"
+msgstr "_შენახვა"
+
+#: ../gnome-dictionary/data/gnome-dictionary.desktop.in.h:1
+#: ../gnome-dictionary/src/gdict-about.c:98
+#: ../gnome-dictionary/src/gdict-app.c:468
+#: ../gnome-dictionary/src/gdict-window.c:1207
+msgid "Dictionary"
+msgstr "ლექსიკონი"
+
+#: ../gnome-dictionary/data/gnome-dictionary.desktop.in.h:2
+msgid "Look up words in an online dictionary"
+msgstr "სიტყვების ძებნა ვებ-ლექსიკონში"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:1
+msgid "Dictionary server (Deprecated)"
+msgstr "ლექსიკონის სერვერი (მოძველებულია)"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:2
+msgid "Port used to connect to server (Deprecated)"
+msgstr "სერვერთან შეერთების პორტი (მოძველებულია)"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:3
+msgid ""
+"Specify whether to use smart lookup. This key is dependant on whether the "
+"dictionary server supports this option. The default is TRUE. This key is "
+"deprecated and no longer in use."
+msgstr "სწრაფი ძებნის ფუნქციის ჩართვა. გასაღების გამოყენება დამოკიდებულია იმაზე, თუ რამდენად აქვს სერვერს ამ ფუნქციის მხარდაჭერა. ნაგულისხმევია TRUE. ეს გასაღები მოძველებულია და ამოღებულია ხმარებიდან."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:4
+msgid "The default database to use"
+msgstr "მონაცემთა ნაგულისხმები·ბაზა"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:5
+msgid "The default height of the application window"
+msgstr "პროგრამის·ფანჯრის ნაგულისხმები სიმაღლე"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:6
+msgid "The default search strategy to use"
+msgstr "ძებნის ნაგულისხმები სტრატეგია"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:7
+msgid "The default width of the application window"
+msgstr "პროგრამის ფანჯრის·ნაგულისხმები სიგანე"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:8
+msgid ""
+"The dictionary server to connect to. The default server is dict.org. See "
+"http://www.dict.org for details on other servers. This key is deprecated and "
+"no longer in use."
+msgstr "ლექსიკონის სერვერი. ნაგულისხმები სერვერია dict.org. სხვა სერვერების სანახავად იხილეთ http://www.dict.org. ეს·გასაღები·მოძველებულია·და·ამოღებულია·ხმარებიდან."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:9
+msgid "The font to be used when printing"
+msgstr "ბეჭდვის ფონტის არჩევა"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:10
+msgid "The font to be used when printing a definition."
+msgstr "ფონტი, რომლითაც დაიბეჭდება განმარტება."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:11
+msgid ""
+"The name of the default individual database or meta-database to use on a "
+"dictionary source. An exclamation mark (\"!\") means that all the databases "
+"present in a dictionary source should be searched"
+msgstr "ნაგულისხმები ინდივიდუალური ან მეტა- მონაცემთა ბაზის სახელი, რომელიც გამოყენებულ იქნება ლექსიკონის მიერ. ძახილის ნიშნის (\"!\") შემთხვევაში გამოყენებული იქნება ყველა არსებული მონაცემთა ბაზა."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:12
+msgid ""
+"The name of the default search strategy to use on a dictionary source, if "
+"available. The default strategy is 'exact', that is match exact words."
+msgstr "ძებნის ნაგულისხმები სტრატეგიის არჩევა, თუ ეს შესაძლებელია. ნაგულისხმევი სტრატეგიაა 'exact', ანუ სიტყვების ზუსტი დამთხვევა."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:13
+msgid "The name of the dictionary source used"
+msgstr "ლექსიკონის სახელი, რომელსაც წყაროდ გამოიყენებს"
+"(მე ვფიქრობ ამ ფრაზას გამომყენებლის სახელი უნდა მოსდევდეს და იმიტომ დავწერე ასე)"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:14
+msgid "The name of the dictionary source used to retrieve the definitions of words."
+msgstr "სახელი ლექსიკონისა,·რომელიც სიტყვების·განმარტებების წყაროდ გამოიყენება."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:15
+msgid ""
+"The port number to connect to. The default port is 2628. This key is "
+"deprecated and no longer in use."
+msgstr "პორტის ნომრის არჩევა. ნაგულისხმევია 2628. ეს გასაღები მოძველებულია და ამოღებულია ხმარებიდან."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:16
+msgid ""
+"This key defines the window height and it's used to remember the size of the "
+"dictionary window across sessions. Setting it to -1 will make the dictionary "
+"window use a height based on the font size."
+msgstr "ეს გასაღები აყენებს ფანჯრის სიმაღლეს და გამოიყენება სესიებს შორის ფანჯრის ზომების დასამახსოვრებლად. თუ მითითებული იქნება 1, ლექსიკონი თვითონ შეარჩევს ზომებს ფონტის ზომების მიხედვით."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:17
+msgid ""
+"This key defines the window width and it's used to remember the size of the "
+"dictionary window across sessions. Setting it to -1 will make the dictionary "
+"window use a width based on the font size."
+msgstr "ეს·გასაღები·აყენებს·ფანჯრის·სიგანეს·და·გამოიყენება·სესიებს·შორის·ფანჯრის·ზომების·დასამახსოვრებლად.·თუ·მითითებული·იქნება·1,·ლექსიკონი·თვითონ·შეარჩევს·ზომებს·ფონტის·ზომების·მიხედვით."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:18
+msgid ""
+"This key defines whether the window should be maximized and it's used to "
+"remember the state of the dictionary window across sessions. Setting it to "
+"TRUE will make the window always appear as maximized."
+msgstr "ეს გასაღები აყენებს ფანჯრის მაქსიმიზაციას და გამოიყენება სესიებს შორის "
+"ფანჯრის მდგომარეობის დასამახსოვრებლად. თუ მითითებული იქნება TRUE, "
+"ფანჯარა ყოველთვის მაქსიმიზებული იქნება."
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:19
+msgid "Use smart lookup (Deprecated)"
+msgstr "სწრაფი ძებნა (მოძველებულია)"
+
+#: ../gnome-dictionary/data/gnome-dictionary.schemas.in.h:20
+msgid "Whether the application window should be maximized"
+msgstr "უნდა იყოს·თუ·არა პროგრამის·ფანჯარა მაქსიმიზებული"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:1
+msgid "Data_base:"
+msgstr "მონაცემთა _ბაზა:"
+
+#. Transport methods
+#. Translators: this is the same string used in the file
+#. * gnome-dictionary-preferences.glade for the transport_combo
+#. * widget items.
+#.
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:3
+#: ../gnome-dictionary/src/gdict-source-dialog.c:146
+msgid "Dictionary Server"
+msgstr "ლექსიკონის სერვერი"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:4
+msgid "H_ostname:"
+msgstr "_ჰოსტი:"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:5
+#: ../gnome-dictionary/src/gdict-applet.c:231
+#: ../gnome-dictionary/src/gdict-window.c:595
+msgid "Print"
+msgstr "ბეჭდვა"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:6
+msgid "Source"
+msgstr "წყარო"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:7
+msgid "Source Name"
+msgstr "წყაროს სახელი"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:8
+msgid "_Advanced settings"
+msgstr "_დეტალური პარამეტრები"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:9
+msgid "_Description:"
+msgstr "_აღწერა:"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:10
+msgid "_Port:"
+msgstr "_პორტი:"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:11
+msgid "_Print font:"
+msgstr "ბეჭდვის _ფონტი:"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:12
+msgid "_Select a dictionary source for looking up words:"
+msgstr "ლექსიკონის არჩევა·წყაროდ:"
+"(რად უნდა ეგ წყარო აქ? ლექსიკონის·არჩევა და ბასტა)"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:13
+msgid "_Strategy:"
+msgstr "_სტრატეგია:"
+
+#: ../gnome-dictionary/data/gnome-dictionary-preferences.glade.h:14
+msgid "_Transport:"
+msgstr "_ტრანსპორტი"
+
+#: ../gnome-dictionary/data/french.desktop.in.h:1
+msgid "French Dictionaries from Wikipedia"
+msgstr "ფრანგული ლექსიკონები ვიკიპედიადან"
+
+#: ../gnome-dictionary/data/spanish.desktop.in.h:1
+msgid "Spanish Dictionaries"
+msgstr "ესპანური ლექსიკონები"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:270
+msgid "Client Name"
+msgstr "კლიენტის სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:271
+msgid "The name of the client of the context object"
+msgstr "კონტექსტური ობიექტის კლიენტი:"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:284
+msgid "Hostname"
+msgstr "ჰოსტის სახელი"
+"ან"
+"ჰოსტი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:285
+msgid "The hostname of the dictionary server to connect to"
+msgstr "ლექსიკონის სერვერის ჰოსტის სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:298
+msgid "Port"
+msgstr "პორტი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:299
+msgid "The port of the dictionary server to connect to"
+msgstr "ლექსიკონის·სერვერის·პორტი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:314
+msgid "Status"
+msgstr "სტატუსი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:315
+msgid "The status code as returned by the dictionary server"
+msgstr "ლექსიკონის სერვერისაგან მიღებული სტატუსის კოდი"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:763
+#, c-format
+msgid "No connection to the dictionary server at '%s:%d'"
+msgstr "ლექსიკონის სერვერი '%s:%d' არ არის მიერთებული"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1025
+#, c-format
+msgid "Lookup failed for hostname '%s': no suitable resources found"
+msgstr "ჰოსტი '%s' ვერ მოიძებნა. არ მოინახა შესაბამისი რესურსი."
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1055
+#, c-format
+msgid "Lookup failed for host '%s': %s"
+msgstr "ვერ მოიძებნა ჰოსტი '%s':·%s"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1088
+#, c-format
+msgid "Lookup failed for host '%s': host not found"
+msgstr "ვერ·მოიძებნა·ჰოსტი·'%s':"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1140
+#, c-format
+msgid ""
+"Unable to connect to the dictionary server at '%s:%d'. The server replied "
+"with code %d (server down)"
+msgstr ""
+"ვერ დამყარდა კავშირი '%s:%d' ლექსიკონის სერვერთან. სერვერისაგან მიღებულია "
+"კოდი %d (სერვერი არ ფუნქციონირებს)"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1159
+#, c-format
+msgid ""
+"Unable to parse the dictionary server reply\n"
+": '%s'"
+msgstr "სერვერისაგან მიღებულია გაურკვეველი პასუხი\n"
+":·'%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1188
+#, c-format
+msgid "No definitions found for '%s'"
+msgstr "არ მოიძებნა რაიმე განსაზღვრება'%s'-სათვის"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1203
+#, c-format
+msgid "Invalid database '%s'"
+msgstr "შეცდომა მონაცემთა ბაზაში '%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1218
+#, c-format
+msgid "Invalid strategy '%s'"
+msgstr "არასწორია სტრატეგია '%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1233
+#, c-format
+msgid "Bad command '%s'"
+msgstr "არასწორია ბრძანება '%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1248
+#, c-format
+msgid "Bad parameters for command '%s'"
+msgstr "არასწორია პარამეტრები ბრძანებისა '%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1263
+#, c-format
+msgid "No databases found on dictionary server at '%s'"
+msgstr "ლექსიკონის სერვერზე მონაცემთა ბაზები ვერ მოინახა: '%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1278
+#, c-format
+msgid "No strategies found on dictionary server at '%s'"
+msgstr "ლექსიკონის·სერვერზე·სტრატეგია ვერ მოინახა:·'%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1679
+#, c-format
+msgid "Connection failed to the dictionary server at %s:%d"
+msgstr "ლექსიკონის·სერვერთან დაკავშირება ვერ მოხერხდა:%s:%d"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1718
+#, c-format
+msgid ""
+"Error while reading reply from server:\n"
+"%s"
+msgstr "შეცდომა სერვერის პასუხის კითხვისას:\n"
+"%s"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1791
+msgid "No hostname defined for the dictionary server"
+msgstr "ლექსიკონის სერვერის ჰოსტის სახელი არ არის განსაზღვრული"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1827
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1842
+msgid "Unable to create socket"
+msgstr "სოკეტის შექმნა არ ხერხდება"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1868
+#, c-format
+msgid "Unable to set the channel as non-blocking: %s"
+msgstr "არხისათვის ვერ ხერხდება არაბლოკირებადობის მინიჭება:%s"
+
+#: ../gnome-dictionary/libgdict/gdict-client-context.c:1883
+#, c-format
+msgid "Unable to connect to the dictionary server at '%s:%d'"
+msgstr "ვერ ხერხდება ლექსიკონის სერვერთან დაკავშირება: '%s:%d'"
+
+#: ../gnome-dictionary/libgdict/gdict-context.c:196
+msgid "Local Only"
+msgstr "მხოლოდ ლოკალურები"
+
+#: ../gnome-dictionary/libgdict/gdict-context.c:197
+msgid "Whether the context uses only local dictionaries or not"
+msgstr "კონტექსტმა მხოლოდ ლოკალური ლექსიკონები გამოიყენოს თუ არა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:352
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:441
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:469
+msgid "Not found"
+msgstr "ვერ მოიძებნა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:500
+msgid "F_ind:"
+msgstr "_ძებნა:"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:513
+msgid "_Previous"
+msgstr "_წინა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:521
+msgid "_Next"
+msgstr "_წინ"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:694
+#: ../gnome-dictionary/libgdict/gdict-entry.c:104
+#: ../gnome-dictionary/libgdict/gdict-source.c:303
+msgid "Context"
+msgstr "კონტექსტი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:695
+msgid "The GdictContext object used to get the word definition"
+msgstr "სიტყვის განმარტების მისაღებად GdictContext ობიექტის არჩევა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:709
+#: ../gnome-dictionary/libgdict/gdict-entry.c:119
+#: ../gnome-dictionary/libgdict/gdict-source.c:260
+msgid "Database"
+msgstr "მონაცემთა ბაზა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:710
+msgid "The database used to query the GdictContext"
+msgstr "GdictContext-სათვის მონაცემთა ბაზის არჩევა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:724
+msgid "Font Name"
+msgstr "შრიფტის სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:725
+msgid "The font to be used by the defbox"
+msgstr "defbox-სათვის ფონტის არჩევა"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:731
+msgid "Emphasys Color"
+msgstr "ფერი ტექსტის გამოსარჩევად"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:732
+msgid "Color of emphasised text"
+msgstr "გამორჩეული ტექსტის ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:737
+msgid "Link Color"
+msgstr "ბმის ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:738
+msgid "Color of hyperlinks"
+msgstr "ჰიპერბმების ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:743
+msgid "Word Color"
+msgstr "სიტყვის ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:744
+msgid "Color of the dictionary word"
+msgstr "ლექსიკონის სიტყვის ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:749
+msgid "Source Color"
+msgstr "წყაროს ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:750
+msgid "Color of the dictionary source"
+msgstr "ლექსიკონის წყაროს ფერი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1041
+msgid "Progress"
+msgstr "პროგრესი"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1078
+#, c-format
+msgid "Definition for '%s' (%d/%d)"
+msgstr "განსაზღვრება '%s'·(%d/%d)-სათვის"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1280
+msgid "Error while looking up definition"
+msgstr "შეცდომა განსაზღვრების ძებნისას"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1324
+#, c-format
+msgid "Attempting to look up '%s' but no GdictContext defined.  Aborting."
+msgstr "'%s'-ს ძებნის მცდელობა GdictContext-ის განსაზღვრის გარეშე!  ოპერაცია შეწყვეტილია."
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1332
+msgid "Another search is in progress"
+msgstr "ძებნის სხვა პროცესია გაშვებული"
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1333
+msgid "Please wait until the current search ends."
+msgstr "მოითმინეთ მიმდინარე ძებნის პროცესის დამთავრებამდე."
+
+#: ../gnome-dictionary/libgdict/gdict-defbox.c:1364
+msgid "Error while retrieving the definition"
+msgstr "შეცდომა განსაზღვრების მიღებისას"
+
+#: ../gnome-dictionary/libgdict/gdict-entry.c:105
+msgid "The GdictContext object bound to this entry"
+msgstr "ამ ელემენტისათვის GdictContext ობიექტის ბმის არჩევა"
+
+#: ../gnome-dictionary/libgdict/gdict-entry.c:120
+msgid "The database to be used to generate the completion list"
+msgstr "საბოლოო სიისათვის მონაცემთა ბაზის არჩევა"
+
+#: ../gnome-dictionary/libgdict/gdict-entry.c:134
+#: ../gnome-dictionary/libgdict/gdict-source.c:274
+msgid "Strategy"
+msgstr "სტრატეგია"
+
+#: ../gnome-dictionary/libgdict/gdict-entry.c:135
+msgid "The matching strategy to be used to generate the completion list"
+msgstr "საბოლოო სიის გენერირებისათვის შესაბამისი სტრატეგიის არჩევა"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:218
+msgid "Filename"
+msgstr "ფაილის სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:219
+msgid "The filename used by this dictionary source"
+msgstr "ლექსიკონის·წყაროს ფაილის სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:232
+#: ../gsearchtool/gsearchtool.c:2474
+msgid "Name"
+msgstr "სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:233
+msgid "The display name of this dictonary source"
+msgstr "ამ ლექსიკონის წყაროს ეკრანული სახელი"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:246
+msgid "Description"
+msgstr "აღწერა"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:247
+msgid "The description of this dictionary source"
+msgstr "ამ·ლექსიკონის·წყაროს·აღწერა"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:261
+msgid "The default database of this dictonary source"
+msgstr "ამ·ლექსიკონის·წყაროს·ნაგულისხმები მონაცემთა ბაზა"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:275
+msgid "The default strategy of this dictonary source"
+msgstr "ამ·ლექსიკონის·წყაროს·ნაგულისხმები სტრატეგია"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:288
+msgid "Transport"
+msgstr "ტრანსპორტი"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:289
+msgid "The transport mechanism used by this dictionary source"
+msgstr "ტრანსპორტის მექანიზმი ლექსიკონის წყაროსათვის"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:304
+msgid "The GdictContext bound to this source"
+msgstr "ამ·წყაროს·GdictContext-ბმა"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:399
+#, c-format
+msgid "Invalid transport type '%d'"
+msgstr "ტრანსპორტირების არასწორი სახე '%d'"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:427
+#, c-format
+msgid "No '%s' group found inside the dictionary source definition"
+msgstr "ლექსიკონის·წყაროს·განსაზღვრებაში '%s' ჯგუფი ვერ მოინახა"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:443
+#: ../gnome-dictionary/libgdict/gdict-source.c:467
+#: ../gnome-dictionary/libgdict/gdict-source.c:491
+#: ../gnome-dictionary/libgdict/gdict-source.c:516
+#, c-format
+msgid "Unable to get the '%s' key inside the dictionary source definition: %s"
+msgstr "ვერ·მოინახა·გასაღები·%s ლექსიკონის·წყაროს·განსაზღვრებაში: %s"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:541
+#, c-format
+msgid "Unable to get the '%s' key inside the dictionary source definition file: %s"
+msgstr "ვერ მოინახა გასაღები %s·ლექსიკონის წყაროს განსაზღვრების ფაილში:·%s"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:727
+msgid "Dictionary source does not have name"
+msgstr "ლექსიკონის წყაროს სახელი არ გააჩნია"
+
+#: ../gnome-dictionary/libgdict/gdict-source.c:736
+#, c-format
+msgid "Dictionary source '%s' has invalid transport '%s'"
+msgstr "ლექსიკონის '%s'· წყაროს·აქვს არასწორი ტრანსპორტი '%s'"
+
+#: ../gnome-dictionary/libgdict/gdict-source-loader.c:162
+msgid "Paths"
+msgstr "გეზი"
+
+#: ../gnome-dictionary/libgdict/gdict-source-loader.c:163
+msgid "Search paths used by this object"
+msgstr "ამ ობიექტის გეზის ძებნა"
+
+#: ../gnome-dictionary/libgdict/gdict-source-loader.c:175
+msgid "Sources"
+msgstr "წყაროები"
+
+#: ../gnome-dictionary/libgdict/gdict-source-loader.c:176
+msgid "Dictionary sources found"
+msgstr "ლექსიკონის შესატყვისთა წყარო ნაპოვნია"
+
+#. Translator credits
+#: ../gnome-dictionary/src/gdict-about.c:59 ../logview/about.c:47
+msgid "translator-credits"
+msgstr ""
+"Malkhaz Barkalaya <maxo127@mail.ru>"
+"Vladimer Sichinava <alinux@siena.linux.it>"
+
+#: ../gnome-dictionary/src/gdict-about.c:61
+#: ../gnome-dictionary/src/gdict-applet.c:610
+msgid "Look up words in dictionaries"
+msgstr "სიტყვების ძებნა ლექსიკონებში"
+
+#: ../gnome-dictionary/src/gdict-about.c:87
+#, c-format
+msgid "Unable to open the application icon: %s"
+msgstr "·%s პროგრამის ხატულა არ იხსნება"
+
+#. Translators: the first is the word found, the second is the
+#. * database name and the last is the definition's text; please
+#. * keep the new lines.
+#: ../gnome-dictionary/src/gdict-app.c:213
+#, c-format
+msgid ""
+"Definition for '%s'\n"
+"  From '%s':\n"
+"\n"
+"%s\n"
+msgstr ""
+"განსაზღვრება '%s'-სათვის\n"
+"'%s'-დან\n"
+"\n"
+"%s\n"
+
+#: ../gnome-dictionary/src/gdict-app.c:227
+#, c-format
+msgid "Error: %s\n"
+msgstr "შეცდომა:·%s\n"
+
+#: ../gnome-dictionary/src/gdict-app.c:253
+msgid "See gnome-dictionary --help for usage\n"
+msgstr "იხილე გნომ-ლექსიკონის დახმარება\n"
+
+#: ../gnome-dictionary/src/gdict-app.c:266
+msgid "Unable to find a suitable dictionary source"
+msgstr "შესაბამისი ლექსიკონის წყარო ვერ მოიძებნა"
+
+#: ../gnome-dictionary/src/gdict-app.c:300
+#, c-format
+msgid ""
+"Error while looking up the definition of \"%s\":\n"
+"%s"
+msgstr "შეცდომა \"%s\"-ის განსაზღვრების მოძებნისას:\n"
+"%s"
+
+#: ../gnome-dictionary/src/gdict-app.c:345
+#: ../gnome-dictionary/src/gdict-applet.c:1422
+#, c-format
+msgid "Unable to rename file '%s' to '%s': %s"
+msgstr "'%s' ფაილისათვის '%s' სახელის დარქმევა არ ხერხდება: %s"
+
+#: ../gnome-dictionary/src/gdict-app.c:369
+#: ../gnome-dictionary/src/gdict-app.c:392
+#: ../gnome-dictionary/src/gdict-applet.c:1446
+#: ../gnome-dictionary/src/gdict-applet.c:1469
+#, c-format
+msgid "Unable to create the data directory '%s': %s"
+msgstr "არ იხსნება მონაცემთა დირექტორია '%s':·%s"
+
+#: ../gnome-dictionary/src/gdict-app.c:427
+msgid "Words to look up"
+msgstr "საძიებელი სიტყვები"
+
+#: ../gnome-dictionary/src/gdict-app.c:427
+msgid "word"
+msgstr "სიტყვა"
+
+#: ../gnome-dictionary/src/gdict-app.c:429
+msgid "Dictionary source to use"
+msgstr "ლექსიკონის წყარო"
+
+#: ../gnome-dictionary/src/gdict-app.c:429
+msgid "source"
+msgstr "წყარო"
+
+#: ../gnome-dictionary/src/gdict-app.c:431
+msgid "Show available dictionary sources"
+msgstr "არსებული ლექსიკონის წყაროები"
+
+#: ../gnome-dictionary/src/gdict-app.c:433
+msgid "Print result to the console"
+msgstr "შედეგების ბეჭდვა კონსოლზე"
+
+#: ../gnome-dictionary/src/gdict-app.c:435
+msgid "Database to use"
+msgstr "მონაცემთა ბაზა"
+
+#. create the new option context
+#: ../gnome-dictionary/src/gdict-app.c:451
+msgid " - Look up words in dictionaries"
+msgstr " ·-·ლექსიკონები·სიტყვების·საძიებლად"
+
+#: ../gnome-dictionary/src/gdict-app.c:455
+msgid "Dictionary and spelling tool"
+msgstr "ლექსიკონი და მართლწერის ინსტრუმენტი"
+
+#: ../gnome-dictionary/src/gdict-app.c:456
+msgid "Show Dictionary options"
+msgstr "ლექსიკონის პარამეტრები"
+
+#: ../gnome-dictionary/src/gdict-applet.c:245
+#: ../gnome-dictionary/src/gdict-window.c:540
+msgid "Save a Copy"
+msgstr "ასლის შენახვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:255
+#: ../gnome-dictionary/src/gdict-window.c:550
+msgid "Untitled document"
+msgstr "უსახელო დოკუმენტი"
+
+#: ../gnome-dictionary/src/gdict-applet.c:276
+#: ../gnome-dictionary/src/gdict-window.c:571
+#, c-format
+msgid "Error while writing to '%s'"
+msgstr "შეცდომა '%s'-ში ჩაწერისას"
+
+#: ../gnome-dictionary/src/gdict-applet.c:384
+msgid "Clear the definitions found"
+msgstr "ნაპოვნი შესატყვისების წაშლა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:387
+msgid "Clear definition"
+msgstr "განსაზღვრების წაშლა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:388
+msgid "Clear the text of the definition"
+msgstr "განსაზღვრების·ტექსტის წაშლა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:398
+msgid "Print the definitions found"
+msgstr "ნაპოვნი განსაზღვრებების ბეჭდვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:401
+msgid "Print definition"
+msgstr "განსაზღვრების·ბეჭდვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:402
+msgid "Print the text of the definition"
+msgstr "განსაზღვრების ტექსტის ბეჭდვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:412
+msgid "Save the definitions found"
+msgstr "ნაპოვნი·განსაზღვრებების შენახვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:415
+msgid "Save definition"
+msgstr "განსაზღვრების·შენახვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:416
+msgid "Save the text of the definition to a file"
+msgstr "განსაზღვრების·ტექსტის შენახვა ფაილში"
+
+#: ../gnome-dictionary/src/gdict-applet.c:550
+msgid "Toggle dictionary window"
+msgstr "ლექსიკონის ფანჯრის გადართვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:551
+msgid "Show or hide the definition window"
+msgstr "ლექსიკონის·ფანჯრის·დამალვა/გამოჩენა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:554
+msgid "Click to view the dictionary window"
+msgstr "დააწკაპეთ ლექსიკონის ფანჯრის დასათვალიერებლად"
+
+#: ../gnome-dictionary/src/gdict-applet.c:609
+msgid "Dictionary entry"
+msgstr "ლექსიკონის ელემენტი"
+
+#: ../gnome-dictionary/src/gdict-applet.c:613
+msgid "Type the word you want to look up"
+msgstr "შეიყვანეთ საძიებელი სიტყვა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:747
+msgid "Preferences"
+msgstr "პარამეტრები"
+
+#: ../gnome-dictionary/src/gdict-applet.c:779
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:471
+#: ../gnome-dictionary/src/gdict-source-dialog.c:324
+#: ../gnome-dictionary/src/gdict-window.c:761
+msgid "There was an error while displaying help"
+msgstr "შეცდომა დახმარების ჩვენებისას"
+
+#: ../gnome-dictionary/src/gdict-applet.c:938
+#: ../gnome-dictionary/src/gdict-window.c:270
+#, c-format
+msgid "No dictionary source available with name '%s'"
+msgstr "ვერ მოიძებნა ლექსიკონის წყარო სახელად '%s'"
+
+#: ../gnome-dictionary/src/gdict-applet.c:942
+#: ../gnome-dictionary/src/gdict-window.c:274
+msgid "Unable to find dictionary source"
+msgstr "ვერ·მოიძებნა·ლექსიკონის·წყარო"
+
+#: ../gnome-dictionary/src/gdict-applet.c:958
+#: ../gnome-dictionary/src/gdict-window.c:290
+#, c-format
+msgid "No context available for source '%s'"
+msgstr "ვერ·მოიძებნა·კონტექსტი ლექსიკონის·წყაროსათვის '%s'"
+
+#: ../gnome-dictionary/src/gdict-applet.c:962
+#: ../gnome-dictionary/src/gdict-window.c:294
+msgid "Unable to create a context"
+msgstr "კონტექსტი ვერ შეიქმნა"
+
+#: ../gnome-dictionary/src/gdict-applet.c:1231
+msgid "Unable to load the applet icon"
+msgstr "აპლეტის ხატულა არ იტვირთება"
+
+#: ../gnome-dictionary/src/gdict-applet.c:1260
+#: ../gnome-dictionary/src/gdict-window.c:1316
+msgid "Unable to connect to GConf"
+msgstr "GConf-თან დაკავშირება არ ხერხდება"
+
+#: ../gnome-dictionary/src/gdict-applet.c:1275
+#: ../gnome-dictionary/src/gdict-window.c:1332
+msgid "Unable to get notification for preferences"
+msgstr "პარამეტრებისათვის შეტყობინების მიღება არ ხერხდება"
+
+#: ../gnome-dictionary/src/gdict-applet.c:1290
+#: ../gnome-dictionary/src/gdict-window.c:1348
+msgid "Unable to get notification for the document font"
+msgstr "დოკუმენტის ფონტისათვის შეტყობინების·მიღება·არ·ხერხდება"
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:272
+msgid "Add Dictionary Source"
+msgstr "ლექსიკონის·წყაროს დამატება"
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:318
+#, c-format
+msgid "Remove \"%s\"?"
+msgstr "წავშალოთ \"%s\"?"
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:320
+msgid "This will permanently remove the dictionary source from the list."
+msgstr "ლექსიკონის წყარო საბოლოოდ იქნება ამოშლილი."
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:350
+#, c-format
+msgid "Unable to remove source '%s'"
+msgstr "'%s' წყაროს ამოშლა არ ხერხდება."
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:638
+msgid "Add a new dictionary source"
+msgstr "ახალი წყაროს დამატება"
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:646
+msgid "Remove the currently selected dictionary source"
+msgstr "მონიშნული წყაროს ამოშლა"
+
+#: ../gnome-dictionary/src/gdict-pref-dialog.c:661
+msgid "Set the font used for printing the definitions"
+msgstr "განსაზღვრებების დასაბეჭდად გამოყენებული შრიფტი"
+
+#: ../gnome-dictionary/src/gdict-print.c:187
+#, c-format
+msgid "%s (page %d)"
+msgstr "%s·(გვერდი %d)"
+
+#: ../gnome-dictionary/src/gdict-print.c:246
+msgid "Print Preview"
+msgstr "წინასწარ ნახვა"
+
+#: ../gnome-dictionary/src/gdict-source-dialog.c:276
+msgid "Unable to create a source file"
+msgstr "წყაროს ფაილი არ იხსნება"
+
+#: ../gnome-dictionary/src/gdict-source-dialog.c:295
+msgid "Unable to save source file"
+msgstr "წყაროს·ფაილის შენახვა არ ხერხდება"
+
+#: ../gnome-dictionary/src/gdict-window.c:175
+#, c-format
+msgid "Searching for '%s'..."
+msgstr "'%s'-ს ძებნაში..."
+
+#: ../gnome-dictionary/src/gdict-window.c:199
+#: ../gnome-dictionary/src/gdict-window.c:221
+msgid "No definitions found"
+msgstr "განსაზღვრება ვერ მოიძებნა"
+
+#: ../gnome-dictionary/src/gdict-window.c:201
+#, fuzzy, c-format
+msgid "A definition found"
+msgid_plural "%d definitions found"
+msgstr[0] "ნაპოვნია შესატყვისი"
+
+#: ../gnome-dictionary/src/gdict-window.c:362
+#, c-format
+msgid "%s - Dictionary"
+msgstr "%s - ლექსიკონი"
+
+#: ../gnome-dictionary/src/gdict-window.c:680
+msgid "Dictionary Preferences"
+msgstr "ლექსიკონის პარამეტრები"
+
+#: ../gnome-dictionary/src/gdict-window.c:796
+msgid "_File"
+msgstr "_ფაილი"
+
+#: ../gnome-dictionary/src/gdict-window.c:797 ../logview/logview.c:86
+msgid "_Edit"
+msgstr "_დამუშავება"
+
+#: ../gnome-dictionary/src/gdict-window.c:798
+msgid "_Go"
+msgstr "_წინ"
+
+#. File menu
+#: ../gnome-dictionary/src/gdict-window.c:802
+msgid "_New"
+msgstr "_ახალი"
+
+#: ../gnome-dictionary/src/gdict-window.c:803
+msgid "New look up"
+msgstr "მორიგი ძებნა"
+
+#: ../gnome-dictionary/src/gdict-window.c:804
+msgid "_Save a Copy..."
+msgstr "_ასლის შენახვა"
+
+#: ../gnome-dictionary/src/gdict-window.c:806
+msgid "_Print..."
+msgstr "_ბეჭდვა..."
+
+#: ../gnome-dictionary/src/gdict-window.c:807
+msgid "Print this document"
+msgstr "ბეჭდვა"
+
+#: ../gnome-dictionary/src/gdict-window.c:814 ../logview/logview.c:99
+msgid "Select _All"
+msgstr "მონიშნე _ყველა"
+
+#: ../gnome-dictionary/src/gdict-window.c:817
+msgid "Find a word or phrase in the document"
+msgstr "სიტყვის ან ფრაზის ძებნა დოკუმენტში"
+
+#: ../gnome-dictionary/src/gdict-window.c:819
+msgid "Find Ne_xt"
+msgstr "შემდეგის _ძებნა"
+
+#: ../gnome-dictionary/src/gdict-window.c:821
+msgid "Find Pre_vious"
+msgstr "_წინას ძებნა"
+
+#. Go menu
+#: ../gnome-dictionary/src/gdict-window.c:827
+msgid "_Previous Definition"
+msgstr "_წინა განსაზღვრება"
+
+#: ../gnome-dictionary/src/gdict-window.c:828
+msgid "Go to the previous definition"
+msgstr "_გადასვლა წინა განსაზღვრებაზე"
+
+#: ../gnome-dictionary/src/gdict-window.c:829
+msgid "_Next Definition"
+msgstr "_შემდეგი განსაზღვრება"
+
+#: ../gnome-dictionary/src/gdict-window.c:830
+msgid "Go to the next definition"
+msgstr "გადასვლა შემდეგ·განსაზღვრებაზე"
+
+#: ../gnome-dictionary/src/gdict-window.c:831
+msgid "_First Definition"
+msgstr "_პირველი განსაზღვრება"
+
+#: ../gnome-dictionary/src/gdict-window.c:832
+msgid "Go to the first definition"
+msgstr "გადასვლა პირველ·განსაზღვრებაზე"
+
+#: ../gnome-dictionary/src/gdict-window.c:833
+msgid "_Last Definition"
+msgstr "_ბოლო განსაზღვრება"
+
+#: ../gnome-dictionary/src/gdict-window.c:834
+msgid "Go to the last definition"
+msgstr "გადასვლა ბოლო·განსაზღვრებაზე"
+
+#. Help menu
+#: ../gnome-dictionary/src/gdict-window.c:837 ../logview/logview.c:114
+msgid "_Contents"
+msgstr "_შინაარსი"
+
+#: ../gnome-dictionary/src/gdict-window.c:1129
+msgid "Look _up:"
+msgstr "_ძებნა:"
+
+#: ../gnome-dictionary/src/gdict-window.c:1372
+msgid "Unable to load the application icon"
+msgstr "პროგრამის ხატულა არ იტვირთება"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:191
+msgid " (invalid Unicode)"
+msgstr "(მცდარი უნიკოდი)"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:471
+#, c-format
+msgid "(%d:%02d:%d Remaining)"
+msgstr "(%d:%02d:%d·დარჩენილია)"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:476
+#, c-format
+msgid "(%d:%02d Remaining)"
+msgstr "(%d:%02d·დარჩენილია)"
+
+#: ../gnome-screenshot/gnome-egg-xfer-dialog.c:587
+#, c-format
+msgid "%ld of %ld"
+msgstr "%ld-დან %ld"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:86
+msgid "Error loading help"
+msgstr "შეცდომა დახმარების ჩატვირთვისას"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:87
+msgid "There was an error displaying the help pages for this dialog:"
+msgstr "შეცდომა დახმარების გვერდების ჩვენებისას ამ·დიალოგისათვის:"
+
+#. translators: this is the name of the file that gets made up
+#. * with the screenshot if a specific window is taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:110
+#, c-format
+msgid "Screenshot-%s.png"
+msgstr "ეკრანის ანაბეჭდი-%s.png"
+
+#. translators: this is the name of the file that gets made up
+#. * with the screenshot if the entire screen is taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:116
+#: ../gnome-screenshot/screenshot-save.c:164
+msgid "Screenshot.png"
+msgstr "Screenshot.png"
+
+#. translators: this is the name of the file that gets
+#. * made up with the screenshot if a specific window is
+#. * taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:152
+#, c-format
+msgid "Screenshot-%s-%d.png"
+msgstr "ეკრანის ასლი-%s-%d.png"
+
+#. translators: this is the name of the file that gets
+#. * made up with the screenshot if the entire screen is
+#. * taken
+#: ../gnome-screenshot/gnome-panel-screenshot.c:160
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr "ეკრანის ასლი-%d.png"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:337
+msgid "Unable to take a screenshot of the current desktop."
+msgstr "შეუძლებელია ეკრანის ანაბეჭდის აღება."
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:439
+msgid "Grab a window instead of the entire screen"
+msgstr "ფანჯრის (და არა მთელი ეკრანის) ასლი"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:440
+msgid "Include the window border with the screenshot"
+msgstr "ფანჯრის ასლი ჩარჩოს ჩათვლით"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:441
+msgid "Take screenshot after specified delay [in seconds]"
+msgstr "ეკრანის ასლის აღება მითითებული დროის შემდეგ [წამებში]"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:441
+msgid "seconds"
+msgstr "წამი"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:442
+msgid "Effect to add to the border"
+msgstr "ჩარჩოს ეფექტები"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:442
+msgid "effect"
+msgstr "ეფექტი"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:452
+msgid "Options for Screenshot"
+msgstr "ეკრანის ანაბეჭდის ოფციები"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:453
+msgid "Show Screenshot options"
+msgstr "ასლის·აღების·ოფციების ჩვენება"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.c:457
+msgid "Take a picture of the screen"
+msgstr "ეკრანის ასლის აღება"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:2
+msgid "<b>Options</b>"
+msgstr "<b>პარამეტრები</b>"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:3
+msgid "<b>Preview</b>"
+msgstr "<b>წინასწარი ჩვენება</b>"
+
+#: ../gnome-screenshot/gnome-panel-screenshot.glade.h:4
+#: ../gnome-screenshot/gnome-screenshot.glade.h:2
+msgid "Save Screenshot"
+msgstr "ეკრანის ანაბეჭდის დამახსოვრება"
+
+#: ../gnome-screenshot/gnome-screenshot.desktop.in.h:1
+msgid "Take Screenshot"
+msgstr "ეკრანის ანაბეჭდი"
+
+#: ../gnome-screenshot/gnome-screenshot.desktop.in.h:2
+msgid "Take a screenshot of your desktop"
+msgstr "ეკრანის ანაბეჭდის გადაღება"
+
+#: ../gnome-screenshot/gnome-screenshot.glade.h:3
+msgid "Save in _folder:"
+msgstr "შენახვა _დასტაში:"
+
+#: ../gnome-screenshot/gnome-screenshot.glade.h:4
+msgid "_Name:"
+msgstr "_სახელი:"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:1
+msgid "Border Effect"
+msgstr "ჩარჩოს ეფექტი"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:2
+msgid ""
+"Effect to add to the outside of a border. Possible values are \"shadow\", "
+"\"none\", and \"black-line\"."
+msgstr "ჩარჩოს უკანა მხარის გაფორმება. დასაშვები მნიშვნელობებია \"ჩრდილი\", \"არაფერი\" და \"მუქი ზოლი\""
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:3
+msgid "Include Border"
+msgstr "ჩარჩოს ჩათვლით"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:4
+msgid "Include the window manager border along with the screenshot"
+msgstr "ფანჯრების მენეჯერის ჩარჩოს ჩართვა ეკრანის ასლში"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:5
+msgid "Screenshot directory"
+msgstr "დასტა ეკრანის ასლისათვის"
+
+#: ../gnome-screenshot/gnome-screenshot.schemas.in.h:6
+msgid "The directory the last screenshot was saved in."
+msgstr "დასტა, სადაც შენახულია ეკრანის ბოლო ასლი."
+
+#: ../gnome-screenshot/screenshot-dialog.c:195
+msgid ""
+"Glade file for the screenshot program is missing.\n"
+"Please check your installation of gnome-utils"
+msgstr "ფაილი Glade გამოტოვებულია.\n"
+"შეამოწმეთ გნომ-უტილიტების ინსტალაცია"
+
+#: ../gnome-screenshot/screenshot-dialog.c:214
+msgid "Select a directory"
+msgstr "დასტის არჩევა"
+
+#: ../gnome-screenshot/screenshot-save.c:41
+#, c-format
+msgid ""
+"Unable to clear the temporary directory:\n"
+"%s"
+msgstr "ვერ სუფთავდება დროებითი ფაილების დასტა:\n"
+"%s"
+
+#: ../gnome-screenshot/screenshot-save.c:79
+msgid ""
+"The child save process unexpectedly exited.  We are unable to write the "
+"screenshot to disk."
+msgstr ""
+"შენახვის შვილი პროცესის გაუთვალისწინებელი დასრულების გ"
+"ამო ეკრანის ანაბეჭდის დისკზე ჩაწერა შეუძლებელია."
+
+#: ../gnome-screenshot/screenshot-save.c:191
+msgid "Unknown error saving screenshot to disk"
+msgstr "უცნობი შეცდომა ეკრანის ასლის დისკზე შენახვისას"
+
+#: ../gnome-screenshot/screenshot-utils.c:610
+msgid "Untitled Window"
+msgstr "უსახელო ფანჯარა"
+
+#: ../gnome-screenshot/screenshot-xfer.c:103
+msgid "Preparing to copy"
+msgstr "კოპირებისათვის მომზადება"
+
+#: ../gnome-screenshot/screenshot-xfer.c:181
+msgid "File already exists"
+msgstr "ფაილი უკვე არსებობს"
+
+#: ../gnome-screenshot/screenshot-xfer.c:184
+#, c-format
+msgid "The file \"%s\" already exists.  Would you like to replace it?"
+msgstr "ფაილი \"%s\" უკვე არსებობს.  ჩავანაცვლოთ?"
+
+#: ../gnome-screenshot/screenshot-xfer.c:190
+#: ../gsearchtool/gsearchtool-callbacks.c:1412
+msgid "_Replace"
+msgstr "_ჩაანაცვლე"
+
+#: ../gnome-screenshot/screenshot-xfer.c:230
+#, c-format
+msgid "Unknown GnomeVFSXferProgressStatus %d"
+msgstr "უცნობი GnomeVFSXferProgressStatus·%d"
+
+#: ../gsearchtool/gnome-search-tool.desktop.in.h:1
+msgid "Find files, folders, and documents on your computer"
+msgstr "ფაილების, დასტებისა და დოკუმენტების ძებნა კომპიუტერში"
+
+#: ../gsearchtool/gnome-search-tool.desktop.in.h:2
+msgid "Search for Files..."
+msgstr "ფაილის ძებნა..."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:1
+msgid "Default Window Height"
+msgstr "ფანჯრის ნაგულისხმევი სიმაღლე"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:2
+msgid "Default Window Maximized"
+msgstr "ფანჯრის·ნაგულისხმევი·მაქსიმიზება"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:3
+msgid "Default Window Width"
+msgstr "ფანჯრის ნაგულისხმევი სიგანე"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:4
+msgid "Disable Quick Search"
+msgstr "სწრაფი ძებნის გამორთვა"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:5
+msgid "Disable Quick Search Second Scan"
+msgstr "სწრაფი ძებნისას მეორადი სკანირების გამორთვა"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:6
+msgid "Quick Search Excluded Paths"
+msgstr "სწრაფი ძებნისას გამოსატოვებელი გეზები"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:7
+msgid "Quick Search Second Scan Excluded Paths"
+msgstr "სწრაფი ძებნის მეორადი სკანირებისას გამოსატოვებელი გეზები"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:8
+msgid "Search Result Columns Order"
+msgstr "სვეტების თანმიმდევრობა ძებნის შედეგებში"
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:11
+msgid "Select the search option \"Contains the text\""
+msgstr "ძებნა პირობით: \"შეიცავს ტექსტს\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:14
+msgid "Select the search option \"Date modified less than\""
+msgstr "ძებნა·პირობით:·\"შეცვლის თარიღი ნაკლებია ვიდრე\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:17
+msgid "Select the search option \"Date modified more than\""
+msgstr "ძებნა პირობით: \"შეცვლის თარიღი მეტია ვიდრე\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:20
+msgid "Select the search option \"File is empty\""
+msgstr "ძებნა პირობით: \"ცარიელი ფაილი\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:23
+msgid "Select the search option \"Follow symbolic links\""
+msgstr "ძებნა პირობით: \"სიმბოლურ ბმულზე მიყოლა\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:26
+msgid "Select the search option \"Include other filesystems\""
+msgstr "ძებნა პირობით: \"სხვა ფაილური სისტემების ჩათვლით\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:29
+msgid "Select the search option \"Name does not contain\""
+msgstr "ძებნა პირობით: \"სახელი არ შეიცავს\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:32
+msgid "Select the search option \"Name matches regular expression\""
+msgstr "ამოირჩიეთ პარამეტრი „ძიება რეგულარული გამოსახულებით\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:35
+msgid "Select the search option \"Owned by group\""
+msgstr "ძებნა·პირობით:·\"მფლობელი - ჯგუფი\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:38
+msgid "Select the search option \"Owned by user\""
+msgstr "ძებნა პირობით: \"მფლობელი·-·მომხმარებელი\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:41
+msgid "Select the search option \"Owner is unrecognized\""
+msgstr "ძებნა პირობით: \"მფლობელი უცნობია\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:44
+msgid "Select the search option \"Show hidden files and folders\""
+msgstr "ძებნა პირობით: \"დაფარული ფაილების და დასტების ჩვენება\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:47
+msgid "Select the search option \"Size at least\""
+msgstr "ძებნა პირობით: \"ზომა არანაკლებ\""
+
+#. Translators: The quoted text is the label of an available
+#. search option that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:50
+msgid "Select the search option \"Size at most\""
+msgstr "ძებნა·პირობით:·\"ზომა·არაუმეტეს\""
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:51
+msgid "Show Additional Options"
+msgstr "დამატებითი პირობები"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:52
+msgid ""
+"This key defines the order of the columns in the search results. This key "
+"should not be modified by the user."
+msgstr "ეს გასაღები განსაზღვრავს ძებნის შედეგებში სვეტების თანმიმდევრობას. ის ვერ შეიცვლება მომხმარებლის მიერ."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:53
+msgid ""
+"This key defines the paths the search tool will exclude from a quick search. "
+"The wildcards '*' and '?' are supported. The default values are /mnt/*, /"
+"media/*, /dev/*, /tmp/*, /proc/*, and /var/*."
+msgstr "ეს·გასაღები·განსაზღვრავს გეზებს, რომლებსაც არ მოიცავს სწრაფი ძებნის პროცესი.·დასაშვებია შაბლონები \"*\" და *?*. ნაგულისხმები გეზებია /mnt/*,·/media/*,·/dev/*,·/tmp/*,·/proc/*,·და·/var/*."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:54
+msgid ""
+"This key defines the paths the search tool will exclude from a second scan "
+"when performing a quick search. The second scan uses the find command to "
+"search for files. The purpose of the second scan is to find files that have "
+"not been indexed. The wildcards '*' and '?' are supported. The default value "
+"is /."
+msgstr "ეს·გასაღები·განსაზღვრავს·სწრაფი ძებნისას მეორადი სკანირების მიერ გამოსატოვებელ გეზებს. ·მეორადი·სკანირება იყენებს ძებნის კომანდას არაინდექსირებული ფაილების მოსაძებნად. დასაშვებია·შაბლონები·\"*\"·და·*?*.·ნაგულისხმები·გეზებია·/"
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:55
+msgid ""
+"This key defines the window height, and it's used to remember the size of "
+"the search tool between sessions. Setting it to -1 will make the search tool "
+"use the default height."
+msgstr "ეს გასაღები აყენებს ფანჯარის სიმაღლეს და გამოიყენება სესიებს შორის ძებნის·ფანჯრის ზომების დასამახსოვრებლად. თუ მითითებული იქნება 1, აღებული·იქნება·ნაგულისხმები·სიმაღლე."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:56
+msgid ""
+"This key defines the window width, and it's used to remember the size of the "
+"search tool between sessions. Setting it to -1 will make the search tool use "
+"the default width."
+msgstr "ეს·გასაღები·აყენებს·ფანჯარის·სიგანეს·და·გამოიყენება·სესიებს·შორის·ძებნის ფანჯრის·ზომების·დასამახსოვრებლად.·თუ·მითითებული·იქნება·1,·აღებული იქნება ნაგულისხმები სიგანე."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:57
+msgid ""
+"This key determines if the \"Contains the text\" search option is selected "
+"when the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"შეიცავს ტექსტს\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:58
+msgid ""
+"This key determines if the \"Date modified less than\" search option is "
+"selected when the search tool is started."
+msgstr "ეს·გასაღები·ძებნის·დაწყებამდე·ადგენს,·არის·თუ·არა·გამოყენებული·ძებნა·პირობით·\"შეცვლის თარიღი ნაკლებია ვიდრე\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:59
+msgid ""
+"This key determines if the \"Date modified more than\" search option is "
+"selected when the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"შეცვლის·თარიღი·მეტია·ვიდრე\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:60
+msgid ""
+"This key determines if the \"File is empty\" search option is selected when "
+"the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"ცარიელი ფაილი\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:61
+msgid ""
+"This key determines if the \"Follow symbolic links\" search option is "
+"selected when the search tool is started."
+msgstr "ეს·გასაღები·ძებნის·დაწყებამდე·ადგენს,·არის·თუ·არა·გამოყენებული·ძებნა·პირობით·\"სიმბოლურ ბმულზე მიყოლა\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:62
+msgid ""
+"This key determines if the \"Include other filesystems\" search option is "
+"selected when the search tool is started."
+msgstr "ეს·გასაღები·ძებნის·დაწყებამდე·ადგენს,·არის·თუ·არა·გამოყენებული·ძებნა·პირობით·\"სხვა ფაილური სისტემების ჩათვლით\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:63
+msgid ""
+"This key determines if the \"Name does not contain\" search option is "
+"selected when the search tool is started."
+msgstr "ეს·გასაღები·ძებნის·დაწყებამდე·ადგენს,·არის·თუ·არა·გამოყენებული·ძებნა·პირობით·\"სახელი არ შეიცავს\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:64
+msgid ""
+"This key determines if the \"Name matches regular expression\" search option "
+"is selected when the search tool is started."
+msgstr ""
+"ეს გასაღები, ძიების ხელსაწყოს გამოძახებისას, განსაზღვრავს აქტივირებულია "
+"თუ არა პარამეტრი „ძიება რეგულარული გამოსახულებით\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:65
+msgid ""
+"This key determines if the \"Owned by group\" search option is selected when "
+"the search tool is started."
+msgstr "ეს·გასაღები·ძებნის·დაწყებამდე·ადგენს,·არის·თუ·არა·გამოყენებული·ძებნა·პირობით·\"მფლობელი - ჯგუფი\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:66
+msgid ""
+"This key determines if the \"Owned by user\" search option is selected when "
+"the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"მფლობელი·-·მომხმარებელი\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:67
+msgid ""
+"This key determines if the \"Owner is unrecognized\" search option is "
+"selected when the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"მფლობელი·უცნობია\"."
+
+#. Translators: The quoted text is the label of the additional
+#. options expander that is translated elsewhere.
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:70
+msgid ""
+"This key determines if the \"Select more options\" section is expanded when "
+"the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა დამატებითი პირობებით."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:71
+msgid ""
+"This key determines if the \"Show hidden files and folders\" search option "
+"is selected when the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"დაფარული ფაილების და დასტების ჩვენება\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:72
+msgid ""
+"This key determines if the \"Size at least\" search option is selected when "
+"the search tool is started."
+msgstr "ეს გასაღები ძებნის დაწყებამდე ადგენს, არის თუ არა გამოყენებული ძებნა პირობით \"ზომა არანაკლებ\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:73
+msgid ""
+"This key determines if the \"Size at most\" search option is selected when "
+"the search tool is started."
+msgstr "ეს·გასაღები·ძებნის·დაწყებამდე·ადგენს,·არის·თუ·არა·გამოყენებული·ძებნა·პირობით·\"ზომა·არაუმეტეს\"."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:74
+msgid ""
+"This key determines if the search tool disables the use of the find command "
+"after performing a quick search."
+msgstr ""
+"ეს გასაღები სწრაფი ძიების შესრულების შემდეგ გამორთავს find ბრძანებას."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:75
+msgid ""
+"This key determines if the search tool disables the use of the locate "
+"command when performing simple file name searches."
+msgstr ""
+"ეს გასაღები სწრაფი ძიების შესრულების შემდეგ გამორთავს locate ბრძანებას."
+
+#: ../gsearchtool/gnome-search-tool.schemas.in.h:76
+msgid "This key determines if the search tool window starts in a maximized state."
+msgstr "ეს გასაღები ადგენს,·მაქსიმიზებულ·ფანჯარაში·გაიხსნას·თუ·არა ძებნის·ინსტრუმენტი."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:186
+msgid "Could not open help document."
+msgstr "დახმარების დოკუმენტი ვერ გაიხსნა."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:321
+#, c-format
+msgid "Are you sure you want to open %d document?"
+msgid_plural "Are you sure you want to open %d documents?"
+msgstr[0] "დარწმუნებული ხართ, რომ გინდათ %d დოკუმენტის გახსნა?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:326
+#: ../gsearchtool/gsearchtool-callbacks.c:514
+#, c-format
+msgid "This will open %d separate window."
+msgid_plural "This will open %d separate windows."
+msgstr[0] "%d გაიხსნება დამოუკიდებელ ფანჯრებში."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:366
+#, c-format
+msgid "Could not open document \"%s\"."
+msgstr "ვერ იხსნება დოკუმენტი \"%s\"."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:395
+#, c-format
+msgid "Could not open folder \"%s\"."
+msgstr "ვერ·იხსნება·დასტა·\"%s\"."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:403
+msgid "The nautilus file manager is not running."
+msgstr "ფაილ-მენეჯერი ნაუტილუსი არ არის გაშვებული."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:470
+#: ../gsearchtool/gsearchtool-callbacks.c:811
+msgid "The document does not exist."
+msgstr "დოკუმენტი არ არსებობს"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:485
+msgid "There is no installed viewer capable of displaying the document."
+msgstr "არ არის დაყენებული სანახავი პროგრამა, რომელსაც შეეძლოს ამ დოკუმენტის ჩვენება."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:509
+#, c-format
+msgid "Are you sure you want to open %d folder?"
+msgid_plural "Are you sure you want to open %d folders?"
+msgstr[0] "დარწმუნებული·ხართ,·რომ·გინდათ·%d·დასტის·გახსნა?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:637
+#, c-format
+msgid "Could not move \"%s\" to trash."
+msgstr "\"%s\"-ს  ურნაში გადატანა შეუძლებელია."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:668
+#, c-format
+msgid "Do you want to delete \"%s\" permanently?"
+msgstr "წავშალოთ \"%s\" აღდგენის შესაძლებლობის გარეშე?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:671
+#, c-format
+msgid "Trash is unavailable.  Could not move \"%s\" to the trash."
+msgstr "ურნა მიუწვდომელია. \"%s\" ვერ გადაგვაქვს ურნაში."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:710
+#, c-format
+msgid "Could not delete \"%s\"."
+msgstr "\"%s\" ვერ წაიშალა."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:832
+#, c-format
+msgid "Moving \"%s\" failed: %s."
+msgstr "\"%s\" ვერ გადაადგილდა: %s."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:866
+#, c-format
+msgid "Deleting \"%s\" failed: %s."
+msgstr "\"%s\"·ვერ·წაიშალა:·%s."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1297
+msgid "Save Search Results As..."
+msgstr " ძებნის შედეგების შენახვა სახელით..."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1328
+msgid "Could not save document."
+msgstr "დოკუმენტი ვერ ინახება."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1329
+msgid "You did not select a document name."
+msgstr "თქვენ დოკუმენტის სახელი არ მიგითითებიათ."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1359
+#, c-format
+msgid "Could not save \"%s\" document to \"%s\"."
+msgstr "\"%s\" დოკუმენტი ვერ ინახება \"%s\"-ში."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1393
+#, c-format
+msgid "The document \"%s\" already exists.  Would you like to replace it?"
+msgstr "დოკუმენტი \"%s\" უკვე არსებობს.  გადავაწეროთ?"
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1397
+msgid "If you replace an existing file, its contents will be overwritten."
+msgstr "არსებული ფაილის ჩანაცვლების შემთხვევაში მისი ძველი შინაარსი დაიკარგება და შეიცვლება ახლით."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1462
+msgid "The document name you selected is a folder."
+msgstr "სახელი, რომელიც თქვენ მიუთითეთ, არის დასტის, და არა დოკუმენტის სახელი."
+
+#: ../gsearchtool/gsearchtool-callbacks.c:1511
+msgid "You may not have write permissions to the document."
+msgstr "თქვენ, როგორც სჩანს, არა გაქვთ ამ დოკუმენტის ჩაწერის უფლება."
+
+#: ../gsearchtool/gsearchtool-support.c:71
+#, c-format
+msgid ""
+"GConf error:\n"
+"  %s"
+msgstr ""
+"GConf შეცდომა:\n"
+"  %s"
+
+#. Translators:  Below are the strings displayed in the 'Date Modified'
+#. column of the list view.  The format of this string can vary depending
+#. on age of a file.  Please modify the format of the timestamp to match
+#. your locale.  For example, to display 24 hour time replace the '%-I'
+#. with '%-H' and remove the '%p'.  (See bugzilla report #120434.)
+#: ../gsearchtool/gsearchtool-support.c:640
+msgid "today at %-I:%M %p"
+msgstr "დღეს %-I:%M·%p საათზე"
+
+#: ../gsearchtool/gsearchtool-support.c:642
+msgid "yesterday at %-I:%M %p"
+msgstr "გუშინ დრო %-I:%M·%p"
+""
+
+#: ../gsearchtool/gsearchtool-support.c:644
+#: ../gsearchtool/gsearchtool-support.c:646
+msgid "%A, %B %-d %Y at %-I:%M:%S %p"
+msgstr ""
+
+#: ../gsearchtool/gsearchtool-support.c:825
+msgid "link (broken)"
+msgstr "ბმული (გაწყვეტილი)"
+
+#: ../gsearchtool/gsearchtool-support.c:829
+#, c-format
+msgid "link to %s"
+msgstr "ბმულის შექმნა %s-სთან"
+
+#: ../gsearchtool/gsearchtool.c:82
+msgid "Contains the _text"
+msgstr "შეიცავს _ტექსტს"
+
+#: ../gsearchtool/gsearchtool.c:84
+msgid "_Date modified less than"
+msgstr "შეცვლის თარიღი·_ნაკლებია ვიდრე"
+
+#: ../gsearchtool/gsearchtool.c:84 ../gsearchtool/gsearchtool.c:85
+msgid "days"
+msgstr "დღე"
+
+#: ../gsearchtool/gsearchtool.c:85
+msgid "Date modified more than"
+msgstr "შეცვლის·თარიღი _მეტია·ვიდრე"
+
+#: ../gsearchtool/gsearchtool.c:87
+msgid "S_ize at least"
+msgstr "_ზომა არანაკლებ"
+
+#: ../gsearchtool/gsearchtool.c:87 ../gsearchtool/gsearchtool.c:88
+msgid "kilobytes"
+msgstr "კილობაიტი"
+
+#: ../gsearchtool/gsearchtool.c:88
+msgid "Si_ze at most"
+msgstr "_ზომა არაუმეტეს"
+
+#: ../gsearchtool/gsearchtool.c:89
+msgid "File is empty"
+msgstr "ფაილი ცარიელია"
+
+#: ../gsearchtool/gsearchtool.c:91
+msgid "Owned by _user"
+msgstr "_მფლობელი - მომხმარებელი"
+
+#: ../gsearchtool/gsearchtool.c:92
+msgid "Owned by _group"
+msgstr "მფლობელი - ჯგუფი"
+
+#: ../gsearchtool/gsearchtool.c:93
+msgid "Owner is unrecognized"
+msgstr "მფლობელი უცნობია"
+
+#: ../gsearchtool/gsearchtool.c:95
+msgid "Na_me does not contain"
+msgstr "_სახელი არ შეიცავს"
+
+#: ../gsearchtool/gsearchtool.c:96
+msgid "Name matches regular e_xpression"
+msgstr "ძიება რეგულარული გამოსახულებით"
+
+#: ../gsearchtool/gsearchtool.c:98
+msgid "Show hidden and backup files"
+msgstr "დამალული და სარეზერვო ფაილების ჩვენება"
+
+#: ../gsearchtool/gsearchtool.c:99
+msgid "Follow symbolic links"
+msgstr "სიმბოლურ ბმულზე მიყოლა"
+
+#: ../gsearchtool/gsearchtool.c:100
+msgid "Include other filesystems"
+msgstr "სხვა ფაილური სისტემების ჩათვლით"
+
+#: ../gsearchtool/gsearchtool.c:181
+msgid "_Open"
+msgstr "_გახსნა"
+
+#: ../gsearchtool/gsearchtool.c:182
+msgid "O_pen Folder"
+msgstr "_დასტის გახსნა"
+
+#: ../gsearchtool/gsearchtool.c:183
+msgid "Mo_ve to Trash"
+msgstr "სანაგვე _ურნაში გადატანა"
+
+#: ../gsearchtool/gsearchtool.c:184
+msgid "_Save Results As..."
+msgstr "შედეგების შენახვა სახელით..."
+
+#: ../gsearchtool/gsearchtool.c:390
+msgid "A locate database has probably not been created."
+msgstr "მითითებული ბაზა შეიძლება არ იყოს გახსნილი."
+
+#: ../gsearchtool/gsearchtool.c:492
+#, c-format
+msgid "Character set conversion failed for \"%s\""
+msgstr "შრიფტების კონვერტირება ჩაიშალა \"%s\""
+
+#: ../gsearchtool/gsearchtool.c:516
+msgid "Searching..."
+msgstr "ძებნა..."
+
+#: ../gsearchtool/gsearchtool.c:516 ../gsearchtool/gsearchtool.c:1021
+#: ../gsearchtool/gsearchtool.c:1299 ../gsearchtool/gsearchtool.c:3155
+msgid "Search for Files"
+msgstr "ფაილების ძებნა"
+
+#: ../gsearchtool/gsearchtool.c:967 ../gsearchtool/gsearchtool.c:996
+msgid "No files found"
+msgstr "არცერთი ფაილი არ მოინახა"
+
+#: ../gsearchtool/gsearchtool.c:989
+msgid "(stopped)"
+msgstr "(შეჩერებული)"
+
+#: ../gsearchtool/gsearchtool.c:995
+msgid "No Files Found"
+msgstr "ფაილი არ არის ნაპოვნი"
+
+#: ../gsearchtool/gsearchtool.c:1000
+#, c-format
+msgid "%d File Found"
+msgid_plural "%d Files Found"
+msgstr[0] "მოინახა ფაილი %d"
+
+#: ../gsearchtool/gsearchtool.c:1004 ../gsearchtool/gsearchtool.c:1042
+#, c-format
+msgid "%d file found"
+msgid_plural "%d files found"
+msgstr[0] "მოინახა ფაილი %d"
+
+#: ../gsearchtool/gsearchtool.c:1133
+msgid "Entry changed called for a non entry option!"
+msgstr ""
+
+#: ../gsearchtool/gsearchtool.c:1384
+msgid "Set the text of \"Name contains\" search option"
+msgstr "ტექსტის ძებნა პირობით: \"სახელი შეიცავს\""
+
+#: ../gsearchtool/gsearchtool.c:1385
+msgid "Set the text of \"Look in folder\" search option"
+msgstr "ტექსტის·ძებნა·პირობით:·\"მითითებულ დასტაში\""
+
+#: ../gsearchtool/gsearchtool.c:1386
+msgid "Sort files by one of the following: name, folder, size, type, or date"
+msgstr "ფაილების სორტირება რომელიმე ნიშნით: სახელი, დასტა, ზომა, ტიპი, თარიღი"
+
+#: ../gsearchtool/gsearchtool.c:1387
+msgid "Set sort order to descending, the default is ascending"
+msgstr "სორტირება კლებადობით. (ნაგულისხმები მნიშვნელობა - ზრდადობით)"
+
+#: ../gsearchtool/gsearchtool.c:1388
+msgid "Automatically start a search"
+msgstr "ძებნის ავტომატური დაწყება"
+
+#: ../gsearchtool/gsearchtool.c:1394
+#, c-format
+msgid "Select the \"%s\" search option"
+msgstr "\"%s\" ძებნის ფუნქციის არჩევა"
+
+#: ../gsearchtool/gsearchtool.c:1397
+#, c-format
+msgid "Select and set the \"%s\" search option"
+msgstr "\"%s\" ძებნის ფუნქციის არჩევა და გააქტიურება"
+
+#: ../gsearchtool/gsearchtool.c:1504
+msgid "Invalid option passed to sortby command line argument."
+msgstr "sortby ბრძანების არგუმენტის დაუშვებელი მნიშვნელობა"
+
+#: ../gsearchtool/gsearchtool.c:1802
+msgid ""
+"\n"
+"... Too many errors to display ..."
+msgstr ""
+"\n"
+"... მეტისმეტად ბევრი შეცდომაა ..."
+
+#: ../gsearchtool/gsearchtool.c:1816
+msgid ""
+"The search results may be invalid.  There were errors while performing this "
+"search."
+msgstr "ძებნისას მომხდარი შეცდომების გამო ძებნის შედეგი შეიძლება არასწორი იყოს."
+
+#: ../gsearchtool/gsearchtool.c:1828 ../gsearchtool/gsearchtool.c:1872
+msgid "Show more _details"
+msgstr "დამატებითი ინფოს ჩ_ვენება"
+
+#: ../gsearchtool/gsearchtool.c:1858
+msgid ""
+"The search results may be out of date or invalid.  Do you want to disable "
+"the quick search feature?"
+msgstr "ძებნის შედეგები შეიძლება ვადაგასული ან არასწორი იყოს. ხომ არ გამოვრთოთ "
+"სწრაფი ძებნის ფუნქცია?"
+
+#: ../gsearchtool/gsearchtool.c:1883
+msgid "Disable _Quick Search"
+msgstr "_სწრაფი ძებნის გამორთვა"
+
+#: ../gsearchtool/gsearchtool.c:1910
+#, c-format
+msgid "Failed to set process group id of child %d: %s.\n"
+msgstr "ვერ განხორციელდა ჯგუფის id შვილობილისათვის %d:·%s.\n"
+
+#: ../gsearchtool/gsearchtool.c:1935
+msgid "Error parsing the search command."
+msgstr "შეცდომა ძებნის ბრძანების შესრულებისას."
+
+#: ../gsearchtool/gsearchtool.c:1968
+msgid "Error running the search command."
+msgstr "შეცდომა·ძებნის·ბრძანების გაშვებისას."
+
+#: ../gsearchtool/gsearchtool.c:2083
+#, c-format
+msgid "Enter a text value for the \"%s\" search option."
+msgstr "ტექსტი ძებნის პირობისათვის \"%s\"."
+
+#. Translators:  Below is a string displaying the search options name
+#. and unit value.  For example, "\"Date modified less than\" in days".
+#: ../gsearchtool/gsearchtool.c:2088
+#, c-format
+msgid "\"%s\" in %s"
+msgstr "„%s\"·%s-ში"
+
+#: ../gsearchtool/gsearchtool.c:2090
+#, c-format
+msgid "Enter a value in %s for the \"%s\" search option."
+msgstr "%s-ს მნიშვნელობა ძებნის პირობისათვის \"%s\"."
+
+#: ../gsearchtool/gsearchtool.c:2149
+#, c-format
+msgid "Remove \"%s\""
+msgstr "გავაუქმოთ \"%s\""
+
+#: ../gsearchtool/gsearchtool.c:2150
+#, c-format
+msgid "Click to remove the \"%s\" search option."
+msgstr "დაწკაპეთ·ძებნის·პირობის·\"%s\"·გასაუქმებლად"
+
+#: ../gsearchtool/gsearchtool.c:2243
+msgid "A_vailable options:"
+msgstr "_დაშვებული პარამეტრები:"
+""
+
+#: ../gsearchtool/gsearchtool.c:2272
+msgid "Available options"
+msgstr "დაშვებული პარამეტრები"
+
+#: ../gsearchtool/gsearchtool.c:2273
+msgid "Select a search option from the drop-down list."
+msgstr "ჩამოშლილ სიაში აირჩიეთ ძებნის პირობა."
+
+#: ../gsearchtool/gsearchtool.c:2285
+msgid "Add search option"
+msgstr "ძებნის პირობის დამატება"
+
+#: ../gsearchtool/gsearchtool.c:2286
+msgid "Click to add the selected available search option."
+msgstr "დაწკაპეთ არჩეული პირობის დასამატებლად."
+
+#: ../gsearchtool/gsearchtool.c:2375
+msgid "S_earch results:"
+msgstr "_ძებნის შედეგები:"
+
+#: ../gsearchtool/gsearchtool.c:2414
+msgid "List View"
+msgstr "სიის სახით"
+
+#: ../gsearchtool/gsearchtool.c:2498
+msgid "Folder"
+msgstr "დასტა"
+
+#: ../gsearchtool/gsearchtool.c:2510
+msgid "Size"
+msgstr "ზომა"
+
+#: ../gsearchtool/gsearchtool.c:2521
+msgid "Type"
+msgstr "ტიპი"
+
+#: ../gsearchtool/gsearchtool.c:2532
+msgid "Date Modified"
+msgstr "შეცვლის თარიღი"
+
+#: ../gsearchtool/gsearchtool.c:2934
+msgid "_Name contains:"
+msgstr "_სახელი შეიცავს:"
+
+#: ../gsearchtool/gsearchtool.c:2948 ../gsearchtool/gsearchtool.c:2949
+msgid "Enter a filename or partial filename with or without wildcards."
+msgstr "შეიყვანეთ სახელი ან მისი ნაწილი, დაშვებულია შაბლონების [* და ?] გამოყენება."
+
+#: ../gsearchtool/gsearchtool.c:2949
+msgid "Name contains"
+msgstr "სახელი შეიცავს"
+
+#: ../gsearchtool/gsearchtool.c:2955
+msgid "_Look in folder:"
+msgstr "_მიუთითეთ დასტის სახელი:"
+
+#: ../gsearchtool/gsearchtool.c:2961
+msgid "Browse"
+msgstr "ნუსხა"
+"დასტები"
+"დათვალიერება"
+"გეზი"
+""
+
+#: ../gsearchtool/gsearchtool.c:2966
+msgid "Look in folder"
+msgstr "ნახვა ·დასტაში"
+
+#: ../gsearchtool/gsearchtool.c:2966
+msgid "Select the folder or device from which you want to begin the search."
+msgstr "აირჩიეთ დასტა ან მოწყობილობა, სადაც იწარმოებს ძებნა."
+
+#: ../gsearchtool/gsearchtool.c:2977
+msgid "Select more _options"
+msgstr "_დამატებითი პირობები"
+
+#: ../gsearchtool/gsearchtool.c:2986
+msgid "Select more options"
+msgstr "დამატებითი·პირობები"
+
+#: ../gsearchtool/gsearchtool.c:2986
+msgid "Click to expand or collapse the list of available options."
+msgstr "დაწკაპეთ პირობების სიის გასაშლელად/დასაკეცად."
+
+#: ../gsearchtool/gsearchtool.c:3010
+msgid "Click to display the help manual."
+msgstr "დაწკაპეთ დამხმარე სახელმძღვანელოს სანახავად."
+
+#: ../gsearchtool/gsearchtool.c:3018
+msgid "Click to close \"Search for Files\"."
+msgstr "დაწკაპეთ, თუ გინდათ დახუროთ \"ფაილების ძებნა\"."
+
+#: ../gsearchtool/gsearchtool.c:3044
+msgid "Click to perform a search."
+msgstr "დაწკაპეთ ძებნის დასაწყებად."
+
+#: ../gsearchtool/gsearchtool.c:3045
+msgid "Click to stop a search."
+msgstr "დაწკაპეთ·ძებნის·შესაწყვეტად."
+
+#: ../logview/about.c:51 ../logview/logview.c:37 ../logview/main.c:54
+msgid "System Log Viewer"
+msgstr "სისტემური ჟურნალის ნახვის პროგრამა"
+
+#: ../logview/about.c:54
+msgid "A system log viewer for GNOME."
+msgstr "გნომის სისტემური·ჟურნალის·ნახვის პროგრამა."
+
+#: ../logview/gnome-system-log.desktop.in.h:1
+msgid "System Log"
+msgstr "სისტემური ჟურნალი"
+
+#: ../logview/gnome-system-log.desktop.in.h:2
+msgid "View the system log file"
+msgstr "სისტემური ჟურნალის დათვალიერება"
+
+#: ../logview/log_repaint.c:179
+#, c-format
+msgid "last update : %s"
+msgstr "ბოლო განახლება :·%s"
+
+#: ../logview/log_repaint.c:181
+#, c-format
+msgid "%d lines (%s) - %s"
+msgstr "%d ხაზი (%s) - %s"
+
+#: ../logview/log_repaint.c:219
+msgid "Current"
+msgstr "მიმდინარე"
+
+#: ../logview/logrtns.c:37
+msgid "One file or more could not be opened"
+msgstr "ერთი ან მეტი ფაილი ვერ იხსნება"
+
+#: ../logview/logrtns.c:59
+#, c-format
+msgid ""
+"%s is not user readable. Either run the program as root or ask the sysadmin "
+"to change the permissions on the file.\n"
+msgstr "მომხმარებელს არ შეუძლია წაიკითხოს %s. ან გაუშვით პროგრამა root-ის სახელით, ან მიმართეთ სისტემურ ადმინისტრატორს ფაილის გამოყენების უფლებების შესაცვლელად.\n"
+
+#: ../logview/logrtns.c:64
+#, c-format
+msgid "%s is too big."
+msgstr "%s ძალიან დიდია."
+
+#: ../logview/logrtns.c:67
+#, c-format
+msgid "%s could not be opened."
+msgstr "%s ვერ იხსნება."
+
+#: ../logview/logrtns.c:378
+#, c-format
+msgid "%s is not a log file."
+msgstr "%s არ არის ლოგ-ფაილი."
+
+#: ../logview/logrtns.c:384
+msgid "Not enough memory."
+msgstr "მეხსიერება არასაკმარისია."
+
+#: ../logview/logrtns.c:398
+#, c-format
+msgid "%s cannot be opened."
+msgstr "%s·ვერ·იხსნება."
+
+#: ../logview/logview-findbar.c:152
+msgid "_Filter:"
+msgstr "_ფილტრი:"
+
+#: ../logview/logview-findbar.c:157
+msgid "_Clear"
+msgstr "_გაწმენდა"
+
+#: ../logview/logview.c:85
+msgid "_Log"
+msgstr "_ჟურნალი"
+
+#: ../logview/logview.c:87
+msgid "_View"
+msgstr "_ხედი"
+
+#: ../logview/logview.c:90
+msgid "_Open..."
+msgstr "_გახსნა..."
+
+#: ../logview/logview.c:90
+msgid "Open a log from file"
+msgstr "ჟურნალის გახსნა ფაილიდან"
+
+#: ../logview/logview.c:92
+msgid "_Close"
+msgstr "_დახურვა"
+
+#: ../logview/logview.c:92
+msgid "Close this log"
+msgstr "ჟურნალის დახურვა"
+
+#: ../logview/logview.c:94
+msgid "_Quit"
+msgstr "_გასვლა"
+
+#: ../logview/logview.c:94
+msgid "Quit the log viewer"
+msgstr "ჟურნალიდან გამოსვლა"
+
+#: ../logview/logview.c:97
+msgid "_Copy"
+msgstr "_კოპირება"
+
+#: ../logview/logview.c:97
+msgid "Copy the selection"
+msgstr "მონიშნულის კოპირება"
+
+#: ../logview/logview.c:99
+msgid "Select the entire log"
+msgstr "მთელი ჟურნალის მონიშვნა"
+
+#: ../logview/logview.c:101
+msgid "_Filter..."
+msgstr "_ფილტრი..."
+
+#: ../logview/logview.c:101
+msgid "Filter log"
+msgstr "ჟუნალის ფილტრი"
+
+#: ../logview/logview.c:104
+msgid "Bigger text size"
+msgstr "ტექსტის ზომის გადიდება"
+
+#: ../logview/logview.c:106
+msgid "Smaller text size"
+msgstr "ტექსტის ზომის შემცირება"
+
+#: ../logview/logview.c:108
+msgid "Normal text size"
+msgstr "ჩვეულებრივი ზომის ტექსტი"
+
+#: ../logview/logview.c:111
+msgid "Collapse _All"
+msgstr "ყველას ჩაკეცვა"
+
+#: ../logview/logview.c:111
+msgid "Collapse all the rows"
+msgstr "ყველა·სტრიქონის ჩაკეცვა"
+
+#: ../logview/logview.c:114
+msgid "Open the help contents for the log viewer"
+msgstr "დახმარება ჟურნალის·დათვალიერებისას"
+
+#: ../logview/logview.c:116
+msgid "Show the about dialog for the log viewer"
+msgstr "ჟურნალის დათვალიერების პროგრამის შესახებ"
+"ან"
+"პროგრამის·შესახებ"
+"ან"
+"ინფორმაცია"
+
+#: ../logview/logview.c:122
+msgid "_Statusbar"
+msgstr "_სტატუსის პანელი"
+
+#: ../logview/logview.c:122
+msgid "Show Status Bar"
+msgstr "სტატუსის პანელის ჩვენება"
+
+#: ../logview/logview.c:124
+msgid "Side _Pane"
+msgstr "_გვერდითა პანელი"
+
+#: ../logview/logview.c:124
+msgid "Show Side Pane"
+msgstr "გვერდითა პანელის ჩვენება"
+
+#: ../logview/logview.c:126
+msgid "_Monitor"
+msgstr "მონი_ტორი"
+
+#: ../logview/logview.c:126
+msgid "Monitor Current Log"
+msgstr "მიმდინარე ჟურნალის მონიტორინგი"
+
+#: ../logview/logview.c:128
+msgid "Ca_lendar"
+msgstr "_კალენდარი"
+
+#: ../logview/logview.c:128
+msgid "Show Calendar Log"
+msgstr "კალენდრის ჟურნალის ჩვენება"
+
+#: ../logview/logview.c:308
+#, c-format
+msgid "%s (monitored) - %s"
+msgstr "%s·(თვალყურის დევნის ქვეშ)·-·%s"
+
+#: ../logview/logview.c:519
+msgid "Open Log"
+msgstr "ჟურნალის გახსნა"
+
+#: ../logview/logview.c:774
+msgid "There was an error displaying help."
+msgstr "შეცდომა დახმარების ჩვენებისას."
+
+#: ../logview/logview.c:907
+msgid "Version: "
+msgstr "ვერსია: "
+
+#: ../logview/logview.c:976
+msgid "Days"
+msgstr "დღე"
+
+#: ../logview/logview.c:977
+msgid "Pointer towards a GSList of days for the current log."
+msgstr ""
+
+#: ../logview/logview.schemas.in.h:1
+msgid "Height of the main window in pixels"
+msgstr "მთავარი ფანჯრის სიმაღლე პიქსელებში"
+
+#: ../logview/logview.schemas.in.h:2
+msgid "Log file to open up on startup"
+msgstr "ჩატვირთვისას საჩვენებელი ჟურნალი"
+
+#: ../logview/logview.schemas.in.h:3
+msgid "Log files to open up on startup"
+msgstr "ჩატვირთვისას·საჩვენებელი·ჟურნალები"
+
+#: ../logview/logview.schemas.in.h:4
+msgid "Size of the font used to display the log"
+msgstr "ჟურნალის ფონტის ზომა"
+
+#: ../logview/logview.schemas.in.h:5
+msgid ""
+"Specifies a list of log files to open up at startup. A default list is "
+"created by reading /etc/syslog.conf."
+msgstr ""
+"ჩატვირთვისას·საჩვენებელი·ჟურნალების სია. ნაგულისხმებია /etc/syslog.conf."
+
+#: ../logview/logview.schemas.in.h:6
+msgid "Specifies the height of the log viewer main window in pixels."
+msgstr "ჟურნალის დამთვალიერებლის მთავარი·ფანჯრის·სიმაღლე·პიქსელებში"
+
+#: ../logview/logview.schemas.in.h:7
+msgid ""
+"Specifies the log file displayed at startup. The default is either /var/adm/"
+"messages or /var/log/messages, depending on your operating system."
+msgstr ""
+"ჩატვირთვისას საჩვენებელი ჟურნალის მითითება. ნაგულისხმებია ან var/adm/"
+"messages, ან /var/log/messages - ეს დამოკიდებულია სისტემაზე."
+
+#: ../logview/logview.schemas.in.h:8
+msgid ""
+"Specifies the size of the fixed-width font used to display the log in the "
+"main tree view. The default is taken from the default terminal font size."
+msgstr "ჟურნალის·ხისებრი·ხედით·ჩვენებისას·განსაზღვრავს ფიქსირებული სიგანის ფონტის ზომას. ნაგულისხმები მნიშვნელობა აიღება ტემინალის ფონტის ნაგულისხმები ზომიდან."
+
+#: ../logview/logview.schemas.in.h:9
+msgid "Specifies the width of the log viewer main window in pixels."
+msgstr "ჟურნალის·დამთვალიერებლის·მთავარი ფანჯრის სიგანე პიქსელებში"
+
+#: ../logview/logview.schemas.in.h:10
+msgid "Width of the main window in pixels"
+msgstr "მთავარი ფანჯრის სიგანე პიქსელებში"
+
+#: ../logview/main.c:49
+msgid "Show the application's version"
+msgstr "პროგრამის ვერსია"
+
+#: ../logview/main.c:55
+msgid "Show System Log Viewer options"
+msgstr "სისტემური ჟურნალის დამთვარიელებლების პარამეტრები"
+
+#: ../logview/main.c:59
+msgid " - Browse and monitor logs"
+msgstr "ჟურნალის თვალიერება და მონიტორინგი"
+
+#: ../logview/main.c:153
+msgid "Log Viewer"
+msgstr "ჟურნალის დამთვალიერებელი"
+
+#: ../logview/main.c:162
+msgid "Unable to create user interface."
+msgstr "სამომხმარებლო ინტერფეისი ვერ იხსნება."
+
+#: ../logview/misc.c:40
+msgid "January"
+msgstr "იანვარი"
+
+#: ../logview/misc.c:40
+msgid "February"
+msgstr "თებერვალი"
+
+#: ../logview/misc.c:40
+msgid "March"
+msgstr "მარტი"
+
+#: ../logview/misc.c:40
+msgid "April"
+msgstr "აპრილი"
+
+#: ../logview/misc.c:40
+msgid "May"
+msgstr "მაისი"
+
+#: ../logview/misc.c:41
+msgid "June"
+msgstr "ივნისი"
+
+#: ../logview/misc.c:41
+msgid "July"
+msgstr "ივლისი"
+
+#: ../logview/misc.c:41
+msgid "August"
+msgstr "აგვისტო"
+
+#: ../logview/misc.c:41
+msgid "September"
+msgstr "სექტემბერი"
+
+#: ../logview/misc.c:41
+msgid "October"
+msgstr "ოქტომბერი"
+
+#: ../logview/misc.c:42
+msgid "November"
+msgstr "ნოემბერი"
+
+#: ../logview/misc.c:42
+msgid "December"
+msgstr "დეკემბერი"
+
+#: ../logview/misc.c:162
+msgid "Invalid date"
+msgstr "არასწორი თარიღი"
+
+#. Translators: Only date format, time will be bogus
+#: ../logview/misc.c:167
+#, c-format
+msgid "%x"
+msgstr "%x"
+
+#: ../logview/monitor.c:83
+msgid "This file cannot be monitored."
+msgstr "ფაილის მონიტორინგი შეუძლებელია."
+
+#: ../logview/monitor.c:86
+msgid "File monitoring is not supported on this file system.\n"
+msgstr "ამ ფაილურ სისტემაში ფაილის მონიტორინგი არ არის შესაძლებელი.\n"
+
+#: ../logview/monitor.c:88
+msgid "Gnome-VFS Error.\n"
+msgstr "გნომის-VFS (ვირტ. ფაილ სისტემა) შეცდომა \n"
+
