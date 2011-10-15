@@ -46,3 +46,4 @@ baobab_LDADD = 				\
 	$(BAOBAB_LIBS)			\
 	$(NULL)
 
+-include $(top_srcdir)/git.mk

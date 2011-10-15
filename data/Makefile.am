@@ -32,3 +32,5 @@ CLEANFILES =	 			\
 	$(baobabapp_in_files)		\
 	$(baobabapp_DATA)		\
 	$(gsettings_SCHEMAS)
+
+-include $(top_srcdir)/git.mk
