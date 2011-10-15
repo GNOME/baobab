@@ -31,10 +31,12 @@
  *   Alejandro Garcia <alex@igalia.com>
  */
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
-#include <gtk/gtk.h>
-#include <glib/gi18n.h>
+#endif
 
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
 #include "baobab-chart.h"
 
 #define BAOBAB_CHART_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
@@ -1852,3 +1854,5 @@ baobab_chart_can_zoom_out (GtkWidget *chart)
   else
     return (priv->max_depth < BAOBAB_CHART_MAX_DEPTH);
 }
+
+/* ex:set ts=8 noet: */

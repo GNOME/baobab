@@ -21,14 +21,13 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
 #include <string.h>
-#include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-
+#include <gtk/gtk.h>
 #include "baobab.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
@@ -334,3 +333,4 @@ on_chart_snapshot_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
 	baobab_chart_save_snapshot (baobab.current_chart);
 }
 
+/* ex:set ts=8 noet: */

@@ -20,8 +20,9 @@
  * Boston, MA  02110-1301  USA
  */
 
-
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
 #include <string.h>
 #include <sys/stat.h>
@@ -325,3 +326,4 @@ baobab_prefs_dialog (void)
 	gtk_widget_show_all (dlg);
 }
 
+/* ex:set ts=8 noet: */

@@ -20,14 +20,15 @@
  * Boston, MA  02110-1301  USA
  */
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
-#include <gtk/gtk.h>
+#include <string.h>
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <glib/gi18n.h>
-#include <string.h>
-
+#include <gtk/gtk.h>
 #include "baobab.h"
 #include "baobab-treeview.h"
 #include "baobab-cell-renderer-progress.h"
@@ -334,3 +335,5 @@ baobab_treeview_show_allocated_size (GtkWidget *tv,
 						      new_sort_id, order);
 	}
 }
+
+/* ex:set ts=8 noet: */

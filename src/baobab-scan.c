@@ -20,18 +20,16 @@
  * Boston, MA  02110-1301  USA
  */
 
-
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
 #include <string.h>
-
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-
 #include "baobab.h"
 #include "baobab-utils.h"
-
 
 /*
    Hardlinks handling.
@@ -379,3 +377,4 @@ baobab_scan_execute (GFile *location)
 	g_object_unref (info);
 }
 
+/* ex:set ts=8 noet: */

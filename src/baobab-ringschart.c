@@ -37,10 +37,8 @@
 
 #include <math.h>
 #include <string.h>
-
-#include <gtk/gtk.h>
 #include <pango/pangocairo.h>
-
+#include <gtk/gtk.h>
 #include "baobab-chart.h"
 #include "baobab-ringschart.h"
 
@@ -677,3 +675,5 @@ baobab_ringschart_set_subfoldertips_enabled (GtkWidget *chart, gboolean enabled)
       baobab_ringschart_clean_subforlder_tips_state (chart);
     }
 }
+
+/* ex:set ts=8 noet: */

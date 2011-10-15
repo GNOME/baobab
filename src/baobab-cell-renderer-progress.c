@@ -18,9 +18,11 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include "config.h"
-#include <stdlib.h>
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
+#include <stdlib.h>
 #include "baobab-cell-renderer-progress.h"
 
 #define BAOBAB_CELL_RENDERER_PROGRESS_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object),                        \
@@ -258,3 +260,5 @@ baobab_cell_renderer_progress_class_init (BaobabCellRendererProgressClass *klass
   g_type_class_add_private (object_class,
 			    sizeof (BaobabCellRendererProgressPrivate));
 }
+
+/* ex:set ts=8 noet: */

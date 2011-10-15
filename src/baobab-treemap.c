@@ -32,7 +32,6 @@
 #include <math.h>
 #include <string.h>
 #include <gtk/gtk.h>
-
 #include "baobab-chart.h"
 #include "baobab-treemap.h"
 
@@ -344,3 +343,5 @@ baobab_treemap_new (void)
 {
   return g_object_new (BAOBAB_TREEMAP_TYPE, NULL);
 }
+
+/* ex:set ts=8 noet: */

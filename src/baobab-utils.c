@@ -20,18 +20,19 @@
  * Boston, MA  02110-1301  USA
  */
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
-#include <glib.h>
-#include <glib/gstdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <string.h>
+#include <glib.h>
+#include <glib/gstdio.h>
 #include <glib/gi18n.h>
 #include <glib/gprintf.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-
 #include "baobab.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
@@ -511,3 +512,5 @@ is_virtual_filesystem (GFile *file)
 
 	return ret;
 }
+
+/* ex:set ts=8 noet: */

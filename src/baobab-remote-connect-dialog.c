@@ -26,16 +26,16 @@
  * Boston, MA 02111-1307, USA.
  */
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
-#include "baobab-remote-connect-dialog.h"
+#endif
 
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-
 #include "baobab.h"
-
+#include "baobab-remote-connect-dialog.h"
 
 /* Translators: all the strings in this file are meant to map the
    similar strings inside nautilus-connect-server and should be 
@@ -800,3 +800,4 @@ baobab_remote_connect_dialog_new (GtkWindow *window, GFile *location)
 	return dialog;
 }
 
+/* ex:set ts=8 noet: */

@@ -20,21 +20,21 @@
  * Boston, MA  02110-1301  USA
  */
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
-#include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <glibtop/mountlist.h>
 #include <glibtop/fsusage.h>
-
+#include <gtk/gtk.h>
 #include "baobab.h"
 #include "baobab-scan.h"
 #include "baobab-treeview.h"
 #include "baobab-utils.h"
 #include "callbacks.h"
 #include "baobab-prefs.h"
-
 #include "baobab-treemap.h"
 #include "baobab-ringschart.h"
 
@@ -57,15 +57,13 @@ static GtkTargetEntry dnd_target_list[] = {
 };
 
 static gboolean
-scan_is_local (GFile	*file)
+scan_is_local (GFile *file)
 {
 	gchar *uri_scheme;
-	gboolean ret = FALSE;
+	gboolean ret;
 
 	uri_scheme = g_file_get_uri_scheme (file);
-	if (g_ascii_strcasecmp(uri_scheme,"file") == 0)
-		ret = TRUE;
-
+	ret = (g_ascii_strcasecmp(uri_scheme, "file") == 0);
 	g_free (uri_scheme);
 
 	return ret;
@@ -1350,3 +1348,5 @@ main (int argc, char *argv[])
 
 	return 0;
 }
+
+/* ex:set ts=8 noet: */
