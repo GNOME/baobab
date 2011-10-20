@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils.master\n"
+"Project-Id-Version: baobab.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:28-0400\n"
-"PO-Revision-Date: 2011-09-11 22:13+0300\n"
+"POT-Creation-Date: 2011-10-20 22:29+0300\n"
+"PO-Revision-Date: 2011-10-20 22:28+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -39,44 +39,43 @@ msgstr "_Сачыць за зменамі ў хатняй папцы"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr ""
+msgstr "Спіс URI-адрасоў раздзелаў, для якіх трэба выключыць назіранне."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "Active Chart"
-msgstr ""
+msgstr "Актыўная дыяграма"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
-msgstr ""
+msgstr "URI-адрасы выключаных раздзелаў"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Monitor Home"
-msgstr ""
+msgstr "Хатняя папка назіральніка"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
 msgid "Statusbar is Visible"
-msgstr ""
+msgstr "Бачнасць стужкі стану"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Toolbar is Visible"
-msgstr ""
+msgstr "Бачнасць паліцы прылад"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-#, fuzzy
 msgid "Whether any change to the home directory should be monitored."
-msgstr "Змены ў хатняй папцы не будуць адсочвацца."
+msgstr "Ці трэба адсочваць змены ў хатнім каталозе."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:8
 msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr ""
+msgstr "Ці трэба паказваць стужку стану ўнізе галоўнага акна."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Whether the toolbar should be visible in main window."
-msgstr ""
+msgstr "Ці трэба паказваць паліцу прылад у галоўным акне."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
-msgstr ""
+msgstr "Тып паказанай дыяграмы."
 
 #: ../data/baobab-main-window.ui.h:1
 msgid "All_ocated Space"
@@ -174,44 +173,44 @@ msgstr "_Паліца прылад"
 msgid "_View"
 msgstr "_Від"
 
-#: ../src/baobab.c:136 ../src/baobab.c:388
+#: ../src/baobab.c:134 ../src/baobab.c:386
 msgid "Scanning..."
 msgstr "Даследаванне..."
 
-#: ../src/baobab.c:182
+#: ../src/baobab.c:180
 msgid "Total filesystem capacity:"
 msgstr "Агульная ёмістасць файлавай сістэмы:"
 
-#: ../src/baobab.c:183
+#: ../src/baobab.c:181
 msgid "used:"
 msgstr "занята:"
 
-#: ../src/baobab.c:184
+#: ../src/baobab.c:182
 msgid "available:"
 msgstr "даступна:"
 
 #. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
+#: ../src/baobab.c:271 ../src/baobab.c:328 ../src/callbacks.c:264
 msgid "Calculating percentage bars..."
 msgstr "Падлік працэнтаў..."
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
+#: ../src/baobab.c:282 ../src/baobab.c:1323 ../src/callbacks.c:268
 msgid "Ready"
 msgstr "Гатова"
 
-#: ../src/baobab.c:421
+#: ../src/baobab.c:419
 msgid "Total filesystem capacity"
 msgstr "Агульная ёмістасць файлавай сістэмы"
 
-#: ../src/baobab.c:443
+#: ../src/baobab.c:441
 msgid "Total filesystem usage"
 msgstr "Агульны ўзровень выкарыстання файлавай сістэмы"
 
-#: ../src/baobab.c:484
+#: ../src/baobab.c:482
 msgid "contains hardlinks for:"
 msgstr "змяшчае строгія спасылкі на:"
 
-#: ../src/baobab.c:493
+#: ../src/baobab.c:491
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
@@ -219,118 +218,118 @@ msgstr[0] "%5d байт"
 msgstr[1] "%5d байты"
 msgstr[2] "%5d байтаў"
 
-#: ../src/baobab.c:620
+#: ../src/baobab.c:618
 msgid "Could not initialize monitoring"
 msgstr "Не ўдалося ініцыяваць назіранне"
 
-#: ../src/baobab.c:621
+#: ../src/baobab.c:619
 msgid "Changes to your home folder will not be monitored."
 msgstr "Змены ў хатняй папцы не будуць адсочвацца."
 
-#: ../src/baobab.c:945
+#: ../src/baobab.c:943
 msgid "Move to parent folder"
 msgstr "Перайсці ў бацькоўскую папку"
 
-#: ../src/baobab.c:949
+#: ../src/baobab.c:947
 msgid "Zoom in"
 msgstr "Павялічыць"
 
-#: ../src/baobab.c:953
+#: ../src/baobab.c:951
 msgid "Zoom out"
 msgstr "Зменшыць"
 
-#: ../src/baobab.c:957
+#: ../src/baobab.c:955
 msgid "Save screenshot"
 msgstr "Захаваць экранны здымак"
 
-#: ../src/baobab.c:1143
+#: ../src/baobab.c:1141
 msgid "View as Rings Chart"
 msgstr "У выглядзе кругавой дыяграмы"
 
-#: ../src/baobab.c:1145
+#: ../src/baobab.c:1143
 msgid "View as Treemap Chart"
 msgstr "У выглядзе іерархічнай карты"
 
-#: ../src/baobab.c:1250
+#: ../src/baobab.c:1248
 msgid "Show version"
 msgstr "Паказаць нумар версіі праграмы"
 
-#: ../src/baobab.c:1251
+#: ../src/baobab.c:1249
 msgid "[DIRECTORY]"
 msgstr "[КАТАЛОГ]"
 
-#: ../src/baobab.c:1281
+#: ../src/baobab.c:1279
 msgid "Too many arguments. Only one directory can be specified."
 msgstr "Надта шмат аргументаў. Можна падаць толькі адзін каталог."
 
-#: ../src/baobab.c:1298
+#: ../src/baobab.c:1296
 msgid "Could not detect any mount point."
 msgstr "Не ўдалося апазнаць ні аднаго пункта мацавання."
 
-#: ../src/baobab.c:1300
+#: ../src/baobab.c:1298
 msgid "Without mount points disk usage cannot be analyzed."
 msgstr ""
 "Без пунктаў мацавання немагчыма прааналізаваць выкарыстанне дыскавай "
 "прасторы."
 
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:207
 msgid "Maximum depth"
 msgstr "Максімальная глыбіня"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:208
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Максімальная глыбіня дыяграмы, пачынаючы з кораня"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:217
 msgid "Chart model"
 msgstr "Від дыяграмы"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:218
 msgid "Set the model of the chart"
 msgstr "Прызначыць від дыяграмы"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:225
 msgid "Chart root node"
 msgstr "Каранёвы вузел дыяграмы"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:226
 msgid "Set the root node from the model"
 msgstr "Прызначыць каранёвы вузел дыяграмы"
 
-#: ../src/baobab-chart.c:1690
+#: ../src/baobab-chart.c:1692
 msgid "Cannot create pixbuf image!"
 msgstr "Не ўдалося стварыць растравую выяву!"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
+#: ../src/baobab-chart.c:1702
 msgid "Save Snapshot"
 msgstr "Захаванне імгненнага здымка"
 
-#: ../src/baobab-chart.c:1727
+#: ../src/baobab-chart.c:1729
 msgid "_Image type:"
 msgstr "_Тып выявы:"
 
-#: ../src/baobab-prefs.c:172
+#: ../src/baobab-prefs.c:173
 msgid "Scan"
 msgstr "Даследаваць"
 
-#: ../src/baobab-prefs.c:179
+#: ../src/baobab-prefs.c:180
 msgid "Device"
 msgstr "Прыстасаванне"
 
-#: ../src/baobab-prefs.c:187
+#: ../src/baobab-prefs.c:188
 msgid "Mount Point"
 msgstr "Пункт мацавання"
 
-#: ../src/baobab-prefs.c:195
+#: ../src/baobab-prefs.c:196
 msgid "Filesystem Type"
 msgstr "Тып файлавай сістэмы"
 
-#: ../src/baobab-prefs.c:203
+#: ../src/baobab-prefs.c:204
 msgid "Total Size"
 msgstr "Агульны памер"
 
-#: ../src/baobab-prefs.c:212
+#: ../src/baobab-prefs.c:213
 msgid "Available"
 msgstr "Даступна"
 
@@ -419,11 +418,11 @@ msgstr "_Тып паслугі:"
 msgid "_Scan"
 msgstr "_Даследаваць"
 
-#: ../src/baobab-treeview.c:82
+#: ../src/baobab-treeview.c:83
 msgid "Rescan your home folder?"
 msgstr "Перачытаць хатнюю папку?"
 
-#: ../src/baobab-treeview.c:83
+#: ../src/baobab-treeview.c:84
 msgid ""
 "The content of your home folder has changed. Select rescan to update the "
 "disk usage details."
@@ -431,84 +430,84 @@ msgstr ""
 "Змесціва хатняй папкі было зменена. Каб абнавіць інфармацыю аб выкарыстанні "
 "дыскавай прасторы, перачытайце яе."
 
-#: ../src/baobab-treeview.c:84
+#: ../src/baobab-treeview.c:85
 msgid "_Rescan"
 msgstr "Пера_чытаць"
 
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-treeview.c:223
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-treeview.c:245
 msgid "Usage"
 msgstr "Выкарыстанне"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-treeview.c:259
 msgid "Size"
 msgstr "Памер"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-treeview.c:275
 msgid "Contents"
 msgstr "Змест"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-utils.c:73
 msgid "Select Folder"
 msgstr "Выбар папкі"
 
 #. add extra widget
-#: ../src/baobab-utils.c:84
+#: ../src/baobab-utils.c:85
 msgid "_Show hidden folders"
 msgstr "_Паказваць схаваныя папкі"
 
-#: ../src/baobab-utils.c:263
+#: ../src/baobab-utils.c:264
 msgid "Cannot check an excluded folder!"
 msgstr "Немагчыма праверыць папку, выключаную са спіса!"
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-utils.c:288
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" не з'яўляецца папкай"
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-utils.c:291
 msgid "Could not analyze disk usage."
 msgstr "Не ўдалося даследаваць выкарыстанне дыскавай прасторы."
 
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-utils.c:327
 msgid "_Open Folder"
 msgstr "_Адкрыць папку"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-utils.c:333
 msgid "Mo_ve to Trash"
 msgstr "Пера_мясціць у сметніцу"
 
-#: ../src/baobab-utils.c:362
+#: ../src/baobab-utils.c:363
 #, c-format
 msgid "Could not open folder \"%s\""
 msgstr "Не ўдалося адкрыць папку \"%s\""
 
-#: ../src/baobab-utils.c:365
+#: ../src/baobab-utils.c:366
 msgid "There is no installed viewer capable of displaying the folder."
 msgstr "Для паказу гэтай папкі адсутнічае прыдатны праглядальнік."
 
-#: ../src/baobab-utils.c:433
+#: ../src/baobab-utils.c:434
 #, c-format
 msgid "Could not move \"%s\" to the Trash"
 msgstr "Не ўдалося перамясціць \"%s\" у сметніцу"
 
-#: ../src/baobab-utils.c:441
+#: ../src/baobab-utils.c:442
 msgid "Could not move file to the Trash"
 msgstr "Не ўдалося перамясціць файл у сметніцу"
 
-#: ../src/baobab-utils.c:443
+#: ../src/baobab-utils.c:444
 #, c-format
 msgid "Details: %s"
 msgstr "Падрабязнасці: %s"
 
-#: ../src/baobab-utils.c:479
+#: ../src/baobab-utils.c:480
 msgid "There was an error displaying help."
 msgstr "Узнікла памылка паказу даведкі."
 
-#: ../src/callbacks.c:76
+#: ../src/callbacks.c:75
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -519,7 +518,7 @@ msgstr ""
 "яе згодна з умовамі Агульнай Грамадскай Ліцэнзіі GNU (GPL), апублікаванай "
 "Фондам свабоднага апраграмавання, версіі 2 ці любой пазнейшай."
 
-#: ../src/callbacks.c:81
+#: ../src/callbacks.c:80
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -531,7 +530,7 @@ msgstr ""
 "карысці. Падрабязней глядзіце ў тэксце Агульнай Грамадскай Ліцэнзіі GNU "
 "(GPL)."
 
-#: ../src/callbacks.c:86
+#: ../src/callbacks.c:85
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -542,25 +541,25 @@ msgstr ""
 "свабоднага апраграмавання на адрас: the Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 
-#: ../src/callbacks.c:101
+#: ../src/callbacks.c:100
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
+#: ../src/callbacks.c:101
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графічная прылада для даследавання выкарыстання дыскавай прасторы."
 
-#: ../src/callbacks.c:110
+#: ../src/callbacks.c:109
 msgid "translator-credits"
 msgstr ""
 "Vital Khilko <dojlid@mova.org>\n"
 "Ales Nyakhaychyk <nab@mail.by>\n"
 "Ihar Hrachyshka <ihar.hrachyshka@gmail.com>"
 
-#: ../src/callbacks.c:208
+#: ../src/callbacks.c:207
 msgid "The document does not exist."
 msgstr "Такога дакумента не існуе."
 
-#: ../src/callbacks.c:289
+#: ../src/callbacks.c:288
 msgid "The folder does not exist."
 msgstr "Такой папкі не існуе."
