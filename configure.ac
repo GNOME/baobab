@@ -39,7 +39,7 @@ GLIB_GSETTINGS
 GNOME_DOC_INIT
 
 PKG_CHECK_MODULES(BAOBAB, [
-    glib-2.0 >= 2.28.0
+    glib-2.0 >= 2.30.0
     gtk+-3.0 >= 3.0.0
     libgtop-2.0
 ])
