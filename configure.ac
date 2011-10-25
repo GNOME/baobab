@@ -24,12 +24,6 @@ AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 PKG_PROG_PKG_CONFIG([0.22])
 
-# no stupid static libraries
-AM_DISABLE_STATIC
-# enable libtool
-AC_PROG_LIBTOOL
-# avoid libtool for LTCOMPILE, use it only to link
-
 ## don't rerun to this point if we abort
 AC_CACHE_SAVE
 
