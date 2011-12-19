@@ -1,0 +1,37 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic" style="task"
+      id="ssh">
+  <info>
+    <revision version="0.1" date="2011-12-19" status="stub"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+
+    <desc>Displaying a multilevel pie chart of a remote file system over SSH - Secure Shell Protocol</desc>
+  </info>
+
+  <title>Secure Shell Protocol</title>
+
+  <comment><cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
+  <p>This assumes the reader knows there are many forms to establish connection remotely to scan folders.</p></comment>
+
+  <p>Maybe you are an admin of an Intranet file server and one day you are greeted with an urgent notice that nobody in the company 
+  can save any folder on it. The alert when you logged in is that the disks are completely full. In this case you can start solving 
+  your problem by plugging in your SSH credentials and configure the scanning by doing:</p>    
+
+  <steps>
+	<item><p>Click <gui>SSH</gui> as a Service type.</p></item>
+ 	<item><p>Write the name your server to establish the connection on  <gui>Server</gui>.</p></item>
+        <item><p>Add some <gui>Optional information</gui></p>
+              <p>The <gui>Port</gui> of this protocol is 22.</p>
+              <p>The <gui>Folder</gui> is the folder you want to scan, consider <gui>/</gui> to write the specific route</p>
+              <p>The <gui>User Name</gui>is the name of the home of the server.</p></item>
+  </steps>
+
+  <p>You can read more about this <link xref="http://www.ietf.org/rfc/rfc4251.txt">protocol</link> and 
+  get more help <link xref= "https://live.gnome.org/DejaDup/Help/Restore/WorstCase">here</link></p>
+
+</page>
