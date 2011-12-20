@@ -1,58 +1,72 @@
 <page xmlns="http://projectmallard.org/1.0/"
       type="topic" style="task"
       id="scan-home">
+
   <info>
     <revision version="0.1" date="2011-12-19" status="stub"/>
+    <revision version="0.1" date="2011-12-20" status="review"/>
     <link type="guide" xref="index#scan"/>
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
+    <credit type="author editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2011</years>
+    </credit>
 
-    <desc>Scan your Home folder which contains <gui>Desktop</gui>, <gui>Documents</gui>, 
-          <gui>Downloads</gui>, <gui>Videos</gui>, <gui>Pictures</gui> and <gui>Music</gui> folder.</desc>
+    <desc>Scan your <file>Home</file> folder, which contains
+    <file>Desktop</file>, <file>Documents</file>, <file>Downloads</file>,
+    <file>Videos</file>, <file>Pictures</file> and <file>Music</file>
+    folders.</desc>
+  </info>
 
-   </info>
-
-     <title>Scan Home Folder</title>
-
-
-     <comment>
-	<cite date="2011-12-17" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-	<p>This assumes the reader knows how to know about the tree filesystem in Linux. 
-	By the end of this page, the reader will be able to use the scan home in order to organize better his or her folders.</p>
-      </comment>
-
-
-      <p>One of the partitioned part in our disk that has a lot of movements, is the home folder. 
-      Most of the Linux beginners do not realize that the documents are saving by default there. 
-      This is because basic configuration set our user and others in Home folder, and User folder contains 
-      <gui>Desktop</gui>, <gui>Documents</gui>, <gui>Download</gui>, <gui>Pictures</gui>, <gui>Music</gui> 
-      and <gui>Videos</gui>. So, probably this is the first folder we know is getting full in our disk.</p>
-
-      <p>To scan Home folder:</p>
-	<list>
-		<item><p>Select from the menu, <guiseq><gui>Analyzer</gui>
-	            <gui>Scan Home</gui></guiseq>.</p></item>
-		<item><p>Click <gui>Scan Home</gui></p>
-		      <p>Choose the first button that has the form of Home folder icon</p>
-	              <p>There is a home icon, as a first button on the menu.</p></item>
-		<item><p>Press <key>CTRL</key> + <key>S</key>.</p></item>
-	</list>
-
-	<p>As soon as you get the results, you can decide which applications could be uninstalled, 
-	or which folders can be <link href="help:gnome-help/files-delete">deleted</link> or 
-	<link href="help:gnome-help/files-copy">moved</link>.</p>
-
-	<p>If you organized folders or delete them, and still don't have any space in your <gui>Home folder</gui>, 
-	you can do a <link href="help:gnome-help/backup-how">backup</link> of your information. 
-	If you need another disk, you have to ask a specialist to do that.</p>
+  <title>Scan your <file>Home</file> folder</title>
 
 
-	<note style="tip">
-	       <p>Click <gui>Stop Scanning</gui> (a circle red icon) to cancel this process.</p>
-	       <p>Click <gui>Refresh</gui> to update the scanning process.</p>
-	</note> 
+  <comment>
+    <cite date="2011-12-17" href="mailto:yrazes@gmail.com">Julita Inca</cite>
+    <p>This assumes the reader knows how to know about the tree file system in
+    Linux.  By the end of this page, the reader will be able to use the scan
+    home in order to organize better his or her folders.</p>
+  </comment>
+
+  <p>The <file>Home</file> folder is where most files are located for the
+  average user because default settings are often set to save or copy files
+  into subdirectories within it. This includes downloads from the internet,
+  documents which you work on and photos from your camera. Normally, a
+  <file>Home</file> folder exists for each user on the computer.</p>
+  
+  <note style="advanced">
+    <p>The default subdirectories are usually include <file>Desktop</file>,
+    <file>Documents</file>, <file>Downloads</file>, <file>Pictures</file> and
+    <file>Music</file>, among others: these are called <em>XDK user dirs</em>.
+    Some of these will already exist when GNOME is installed, others will be
+    created by applications as and when they are needed.</p>
+  </note>
+
+  <p>To scan your <file>Home</file> folder:</p>
+  <list>
+    <item><p>Select <guiseq><gui>Analyzer</gui> <gui>Scan Home
+    Folder</gui></guiseq> from the menu</p></item>
+    <item><p>Click <gui>Scan Home</gui> in the toolbar</p></item>
+    <item><p>Press <keyseq><key>CTRL</key><key>S</key></keyseq></p></item>
+  </list>
+
+  <p>The results may be useful in deciding which applications to uninstall, or
+  which folders can be
+  <link href="help:gnome-help/files-delete">deleted</link> or
+  <link href="help:gnome-help/files-copy">moved</link>, to free up space on the
+  hard disk. You can also use them to estimate how much space would be needed
+  for a <link href="help:gnome-help/backup-how">backup</link> of your
+  <file>Home</file> directory.</p>
+
+  <note style="tip">
+    <p>Click the <gui>Stop</gui> button in the toolbar to cancel the current
+    scan.</p>
+    <p>Click <gui>Refresh</gui> to repeat the last scan.</p>
+  </note> 
 
 </page>
