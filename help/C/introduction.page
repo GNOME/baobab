@@ -1,42 +1,55 @@
 <page xmlns="http://projectmallard.org/1.0/"
-      type="topic" style="task"
+      type="topic"
       id="introduction">
+
   <info>
     <revision version="0.1" date="2011-12-19" status="stub"/>
-    <link type="guide" xref="index"  group="#first"/>
+    <revision version="0.1" date="2011-12-20" status="review"/>
+    <link type="guide" xref="index" group="#first"/>
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
+    <credit type="author editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2011</years>
+    </credit>
 
-    <desc><app>Disk Usage Analyzer</app>; also referred as <app>baobab</app>, 
-          is a graphical directory tree scanner.</desc>
-   </info>
+    <desc><app>Disk Usage Analyzer</app>, also referred to as
+    <app>baobab</app>, is a graphical file system scanner.</desc>
+  </info>
 
-   <title>Introduction</title>
+  <title>Introduction</title>
 
-   <comment>
-	<cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-	<p>This assumes the reader knows how to start Disk Usage Manager. 
-	By the end of this page, the reader will be able to know the features Disk Usage Manager offers.</p>
+  <comment>
+    <cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
+    <p>This assumes the reader knows how to start Disk Usage Manager. By the
+    end of this page, the reader will be able to know the features Disk Usage
+    Manager offers.</p>
   </comment>
 
-	<p>Ever wondered how much space your music collection is taking up on your hard disk? 
-	<app>Disk Usage Analyzer</app> is a graphical scanner application for the GNOME Desktop, 
-	which gives you a pretty visuals that tell you what you'll have to shell out for an external hard disk some time soon.</p>
+  <p><app>Disk Usage Analyzer</app> is a graphical scanner application for the
+  GNOME Desktop. It uses charts to graphically represent your usage of hard
+  disk space, including available space.</p>
 
-	<p>It scans and analyzes the usage and capacity of any folder; 
-	either the whole file system tree or any specific user-request. You can 
-	<link xref="scan-file-system"><gui>Scan Filesystem</gui></link>, 
-	<link xref="scan-home"><gui>Scan Home Folder</gui></link>, 
-	<link xref="scan-folder">Scan a folder</link> or  
-	<link xref="scan-remote"><gui>Scan a remote folder</gui></link>. </p>
+  <p>It scans and displays the volume of folders, the whole file system or
+  what you specifically request. You can scan
+  <link xref="scan-file-system">the whole filesystem</link>,
+  <link xref="scan-home">your <file>Home</file> folder</link>,
+  <link xref="scan-folder">another folder on the system</link> or
+  <link xref="scan-remote">a remote folder</link>.</p>
 
-	<p>It also detects automatically any change made to your <file>Home</file> as far as any mounted/unmounted device.</p>
+  <p><app>Disk Usage Analyzer</app> also automatically detects any changes that
+  are made to your <file>Home</file> folder, including any mounted or
+  unmounted devices.</p>
 
-	<p>By default, the results are shown in a graphical way <link xref="view-ring"><gui>View as Rings Chart</gui></link>, 
-	where each folder is colored in rectangle, but you can change to the <link xref="view-tree"><gui>View as Treemap Chart</gui></link>, 
-	where folders are colored and grouped in circles forms</p>
+  <p>By default, the results are shown as a <link xref="view-ring"><gui>ring
+  chart</gui></link>, which shows each folder is displayed as a differently
+  colored part or a ring, or you can also use to the <link
+  xref="view-tree"><gui>treemap chart</gui></link>, where folders are shown as
+  rectangles. Both views reflect the volume of each folder and the directory
+  structure in the chart.</p>
 
 </page>
