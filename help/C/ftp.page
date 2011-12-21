@@ -16,17 +16,24 @@
   <title>File Transfer Protocol</title>
 
   <comment><cite date="2011-12-17" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-  <p>This assumes the reader knows there are many forms to establish connection remotely to scan folders.</p></comment>
+    <p>This assumes the reader knows there are many forms to establish connection remotely to scan folders.</p>
+  </comment>
+  
+  <p>You can access a remote server by using FTP Protocol:</p>
 
   <steps>
-        <item><p>Click <gui>FTP (with login)</gui> as a Service type.</p></item>
-	<item><p>Write the name your server to establish the connection on  <gui>Server</gui>.</p></item>
-        <item><p>Add some <gui>Optional information</gui></p>
-            <p>The <gui>Port</gui> of this protocol is 21.</p>
-	    <p>The <gui>Folder</gui> is the folder you want to scan, consider <gui>/</gui> to write the specific route</p>
-            <p>The <gui>User Name</gui>is the name of the home of the server.</p></item>
+    <item><p>Click <gui>FTP (with login)</gui> as a Service type.</p></item>
+    <item><p>Write the name or address server to establish the connection.</p></item>
+    <item><p>Add some <gui>Optional information</gui></p>
+      <p>The <gui>Port</gui> to connect to on the server is 21.</p>
+      <p>The <gui>Folder</gui> you want to scan has to be written considering the initial route <gui>/</gui>.</p>
+      <p>The <gui>User Name</gui> is the name of the account used to connect to the server.</p></item>
   </steps>
-
-  <p>You can read more about this protocol <link xref="http://www.ietf.org/rfc/rfc959.txt">here</link></p>
+  
+  <note style="important">
+    <p>If you select <gui>Public FTP</gui> as a Service type the user name information is not neccesary because the user is usually anonymous.</p>
+  </note>
+ 
+  <p>You can read more about this protocol <link href="http://www.ietf.org/rfc/rfc959.txt">here</link>.</p>
 
 </page>

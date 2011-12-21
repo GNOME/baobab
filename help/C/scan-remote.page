@@ -13,35 +13,50 @@
     <desc>Scan folders from wherever you are from other computer.</desc>
   </info>
 
-    <title>Scan Remote Folder</title>
+  <title>Scan Remote Folder</title>
 
-    <comment><cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-    <p>This assumes the reader knows when to use the communication protocols. 
-    By the end of this page, the reader will be able to scan remote folders.</p></comment>
+  <comment><cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
+  <p>This assumes the reader knows when to use the communication protocols. 
+  By the end of this page, the reader will be able to scan remote folders.</p></comment>
 
-   <p>You can scan remote folders by selecting <guiseq><gui>Analyzer</gui><gui>Scan Remote Folder</gui></guiseq> from the menu,
-    or by clicking <gui>Scan a remote folder</gui> in the toolbar.</p>
+  <p>Maybe you are an admin of an Intranet file server and one day you are greeted with 
+  an urgent notice that nobody in the company can save any folder on it because the disks are completely full. 
+  You can also may need to trim down the size of a server to get its filesystem to fit on another
+  server so that you can move it from a physical server to a virtual server. Whichever can be the case,
+  you can scan remotely from other computer.</p> 
 
-   <p>Choose one of these protocols to start the scanning process:</p>
+  <note style="advanced">
+    <p>Make sure your remote computer is in the same network of the server and your account has the local permissions.</p>
+  </note>
+ 
+  <p>To start the scanning, select <guiseq><gui>Analyzer</gui><gui>Scan Remote Folder</gui></guiseq> from the menu,
+  or click <gui>Scan a remote folder</gui> in the toolbar.</p>
+
+  <p>Choose one of following protocols:</p>
 
   <list>
-	<item><p><link xref="ssh"><gui>SSH</gui></link> is an acronym for Secure Shell.  
+	<item><p><link xref="ssh">SSH</link> is an acronym for Secure Shell.  
         It is a protocol for secure remote login and other secure network services over an insecure network.</p></item>
 
-	<item><p><link xref="ftp"><gui>FTP (with login)</gui></link>: it is an acronym for File Transfer Protocol. 
-	It is used to promote sharing of files (computer programs and/or data), to encourage indirect or implicit (via programs) 
-	use of remote computers, to shield a user from variations in file storage systems among hosts, and to transfer data reliably and 		efficiently. FTP, though usable directly by a user at a terminal, is designed mainly for use by programs.</p></item>
+	<item><p><link xref="ftp">FTP (with login)</link> is an acronym for File Transfer Protocol. 
+	It is used to sharing and transfering folders reliably and efficiently. You can scan from remote computers 
+        shielding a user account.</p></item>
 
-	<item><p><link xref="ftp"><gui>Public FTP</gui></link>: File Transfer Protocol for sharing files where it is not necessary to 
-	login with a user name and password, the server creates an anonymus user to do the connection.</p></item>
+	<item><p><link xref="ftp">Public FTP</link> share files where it is not necessary to login with a user 
+        name and password, the server creates an anonymus user to do the connection.</p></item>
 
-	<item><p><link xref="windows-share"><gui>Windows Share</gui></link></p></item>
+	<item><p><link xref="windows-share">Windows Share</link> lets run the client on a linux machine and still be able to 
+        view and manage the Windows shares from a linux machine.</p></item>
 
-	<item><p><link xref="web-dav"><gui>WebDAV (HTTP)</gui></link></p></item>
+	<item><p><link xref="web-dav">WebDAV (HTTP)</link> is an acronym for Web-based Distributed Authoring and Versioning.
+        It is based on methods of Hypertext Transfer Protocol (HTTP) that facilitates collaboration between users
+        in editing and managing documents and files stored on World Wide Web servers.</p></item>
 
-	<item><p><link xref="web-dav"><gui>Secure WebDAV (HTTPS)</gui></link></p></item>
+	<item><p><link xref="web-dav">Secure WebDAV (HTTPS)</link>: Secure WebDAV assure encryption of transfered data 
+        (Web DAV over https will be used).</p></item>
 
-	<item><p><link xref="custom-location"><gui>Custom Location</gui></link></p></item>
+	<item><p><link xref="custom-location">Custom Location</link> enables you to access a particular function
+        from the folder manager.</p></item>
    </list>
 
 </page>
