@@ -1,0 +1,73 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic" style="task"
+      id="scan-file-system">
+
+  <info>
+    <revision version="0.1" date="2011-12-19" status="stub"/>
+    <link type="guide" xref="index#scan" group="#first"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Scan all the folders in the filesystem at the same time.</desc>
+  </info>
+
+  <title>Scan the filesystem</title>
+
+  <comment>
+    <cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
+    <p>This assumes the reader knows what are the folders that belongs to the
+    file system.  By the end of this page, the reader will be able to scan a
+    full file system.</p>
+  </comment>
+
+  <p>You can scan every folder in the filesystem at the same time, including
+  the <file>home</file>, <file>usr</file> and <file>mnt</file> directories. To
+  do this:</p>
+
+  <list>
+    <item><p>Select <guiseq><gui>Analyzer</gui><gui>Scan
+    filesystem</gui></guiseq> from the menu.</p></item>
+    <item><p>Click <gui>Scan Filesystem</gui> in the toolbar.</p></item>
+    <item><p>Press <keyseq><key>Ctrl</key><key>F</key></keyseq>.</p></item>
+  </list>
+
+  <note style="warning">
+    <p>If the filesystem that you are trying to scan is large, it may take
+    a few minutes for the scan to complete.</p>
+  </note>
+
+  <comment>
+    <cite date="2011-12-21" href="mailto:kittykat3756@gmail.com">Ekaterina
+    Gerasimova</cite>
+    <p>What does this note mean? If I cannot understand it, I don't think the
+    average user can either…</p>
+  </comment>
+  <note style="advanced">
+    <p><app>Disk Usage Analyzer</app> will display sizes in the directory tree
+    as <link xref="allocated-space">allocated space</link>. This means that
+    the displayed sizes refer to the actual disk usage and not to the apparent
+    directory size.</p>
+  </note>
+
+  <p>The results may be useful in deciding which applications to uninstall, or
+  which folders can be
+  <link href="ghelp:file-roller">archived</link>,
+  <link href="help:gnome-help/files-delete">deleted</link> or
+  <link href="help:gnome-help/files-copy">moved</link>, to free up space. You
+  can also use the results to estimate how much space would be needed for a
+  <link href="help:gnome-help/backup-how">backup</link> of your
+  filesystem.</p>
+
+  <note style="tip">
+    <p>Click the <gui>Stop</gui> button in the toolbar to cancel the current
+    scan, or <gui>Refresh</gui> to repeat the last scan.</p>
+  </note>
+
+</page>
