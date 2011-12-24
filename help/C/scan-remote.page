@@ -9,54 +9,70 @@
       <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
 
-    <desc>Scan folders from wherever you are from other computer.</desc>
+    <desc>Scan folders remotely from another computer.</desc>
   </info>
 
   <title>Scan Remote Folder</title>
 
-  <comment><cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-  <p>This assumes the reader knows when to use the communication protocols. 
-  By the end of this page, the reader will be able to scan remote folders.</p></comment>
+  <comment>
+    <cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
+    <p>This assumes the reader knows when to use the communication protocols.
+    By the end of this page, the reader will be able to scan remote
+    folders.</p>
+  </comment>
 
-  <p>Maybe you are an admin of an Intranet file server and one day you are greeted with 
-  an urgent notice that nobody in the company can save any folder on it because the disks are completely full. 
-  You can also may need to trim down the size of a server to get its filesystem to fit on another
-  server so that you can move it from a physical server to a virtual server. Whichever can be the case,
-  you can scan remotely from other computer.</p> 
+  <p>Maybe you are the admin of an intranet file server: one day you are
+  greeted with an urgent notice that nobody in the company can save files to it
+  because the disks are completely full. Maybe you need to trim down the size
+  of a server's filesystem so that you can move it to a virtual server. In
+  cases like these, it is useful to be able to scan remotely from another
+  computer.</p> 
 
   <note style="advanced">
-    <p>Make sure your remote computer is in the same network of the server and your account has the local permissions.</p>
+    <p>Make sure the remote computer is on the same network as your computer,
+    and that your account has local administrator permissions.</p>
   </note>
- 
-  <p>To start the scanning, select <guiseq><gui>Analyzer</gui><gui>Scan Remote Folder</gui></guiseq> from the menu,
-  or click <gui>Scan a remote folder</gui> in the toolbar.</p>
+
+  <p>To start scanning, select <guiseq><gui>Analyzer</gui><gui>Scan Remote
+  Folder</gui></guiseq> from the menu, or click <gui>Scan a remote folder</gui>
+  in the toolbar.</p>
 
   <p>Choose one of following protocols:</p>
 
   <list>
-	<item><p><link xref="ssh">SSH</link> is an acronym for Secure Shell.  
-        It is a protocol for secure remote login and other secure network services over an insecure network.</p></item>
+    <item><p><link xref="ssh">SSH</link>: an acronym for Secure Shell, a
+    protocol for secure remote login and other secure network services over an
+    insecure network.</p></item>
 
-	<item><p><link xref="ftp">FTP (with login)</link> is an acronym for File Transfer Protocol. 
-	It is used to sharing and transfering folders reliably and efficiently. You can scan from remote computers 
-        using your user account.</p></item>
+    <item><p><link xref="ftp">FTP (with login)</link>: an acronym for File
+    Transfer Protocol, used for sharing and transferring folders reliably and
+    efficiently. Remote computers can be scanned using one user
+    account.</p></item>
 
-	<item><p><link xref="ftp">Public FTP</link> share files where it is not necessary to login with a user 
-        name and password, the server creates an anonymus user to do the connection.</p></item>
+    <item><p><link xref="ftp">Public FTP</link>: share files without the need
+    to log in with a user name and password. The server creates an anonymous
+    user to make the connection.</p></item>
 
-	<item><p><link xref="windows-share">Windows Share</link> lets run the client on a linux machine and still be able to 
-        view and manage the Windows shares from a linux machine.</p></item>
+    <item><p><link xref="windows-share">Windows Share</link>: view and manage
+    Windows shares from a Linux machine.</p></item>
 
-	<item><p><link xref="web-dav">WebDAV (HTTP)</link> is an acronym for Web-based Distributed Authoring and Versioning.
-        It is based on methods of Hypertext Transfer Protocol (HTTP) that facilitates collaboration between users
-        in editing and managing documents and files stored on World Wide Web servers.</p></item>
+    <item><p><link xref="web-dav">WebDAV (HTTP)</link>: an acronym for
+    Web-based Distributed Authoring and Versioning, methods of Hypertext
+    Transfer Protocol (HTTP) that facilitate collaboration between users in
+    editing and managing documents and files stored on World Wide Web
+    servers.</p></item>
 
-	<item><p><link xref="web-dav">Secure WebDAV (HTTPS)</link>: Secure WebDAV assure encryption of transfered data 
-        (Web DAV over https will be used).</p></item>
+    <item><p><link xref="web-dav">Secure WebDAV (HTTPS)</link>: Secure WebDAV
+    ensures encryption of transfered data (WebDAV over HTTPS will be
+    used).</p></item>
 
-	<item><p><link xref="custom-location">Custom Location</link> enables you to access a particular function
-        from the folder manager.</p></item>
-   </list>
+    <item><p><link xref="custom-location">Custom Location</link>: enables you
+    to access a particular function from the folder manager.</p></item>
+  </list>
 
 </page>
