@@ -9,27 +9,41 @@
       <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
 
-    <desc>Displaying a multilevel pie chart of a remote file system over SSH - Secure Shell Protocol</desc>
+    <desc>Scanning a remote file system using SSH - Secure Shell Protocol</desc>
   </info>
 
   <title>Secure Shell Protocol</title>
 
   <comment><cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-  <p>This assumes the reader knows there are many forms to establish connection remotely to scan folders.</p></comment>
+  <p>This assumes the reader knows there are many forms to establish connection
+  remotely to scan folders.</p></comment>
 
-  <p>Use your SSH credentials and configure the scanning process by doing:</p>    
+  <p>To scan remotely using your SSH credentials:</p>    
 
   <steps>
-    <item><p>Click <gui>SSH</gui> as a Service type.</p></item>
-    <item><p>Write the name your server to establish the connection on  <gui>Server</gui>.</p></item>
-    <item><p>Add some <gui>Optional information</gui></p>
-      <p>The <gui>Port</gui> of this protocol is 22.</p>
-      <p>The <gui>Folder</gui> is the folder you want to scan, consider <gui>/</gui> to write the specific route</p>
-      <p>The <gui>User Name</gui> is the name of the account used to connect to the server.</p></item>
+    <item>
+      <p>Click <gui>SSH</gui> as a <gui>Service type</gui>.</p>
+    </item>
+    <item>
+      <p>Enter the name of the remote <gui>Server</gui>.</p>
+    </item>
+    <item>
+      <p>Add the following <gui>Optional information</gui>:</p>
+      <p>The <gui>Port</gui> for this protocol is 22;</p>
+      <p>The <gui>Folder</gui> to be scanned beginning with a <file>/</file>;</p>
+      <p>The <gui>User Name</gui> of the account used to connect to the server.</p>
+    </item>
   </steps>
 
-  <p>You can read more about this <link href="http://www.ietf.org/rfc/rfc4251.txt">protocol</link> and 
-  get more help <link href="https://live.gnome.org/DejaDup/Help/Restore/WorstCase">here</link></p>
+  <p>You can read more about this
+    <link href="http://www.ietf.org/rfc/rfc4251.txt">protocol</link>
+    and get more help
+    <link href="https://live.gnome.org/DejaDup/Help/Restore/WorstCase">here</link>
+  </p>
 
 </page>
