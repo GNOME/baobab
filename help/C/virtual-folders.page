@@ -10,7 +10,7 @@
       <years>2011</years>
     </credit>
 
-    <desc>The list shown in terminal does not match with the graphic list in Disk Usage Analyzer.</desc>
+    <desc>The list shown in command line does not match with the graphic list in <app>baobab</app>.</desc>
   </info>
 
   <title>Why not all the folders are shown in the scan filesystem option?</title>
@@ -22,10 +22,9 @@
   </comment>
 
   <p>When you start or restart your computer there are some folders that are created with 0 size.
-  These folders contain information like timestamp and other features that only a root user can manage
-  because it affects the configuration of the kernel.</p>
-  <p><file>/proc</file> is one folder of that type, others like <file>/vmlinuz</file> also can be found
-  if you have installed a virtual machine in your computer.</p>
+  These folders contain information like timestamp and other features that only an administrator
+  can manage because it affects the configuration of the whole system.</p>
+  <p><file>/proc</file> is one folder of that type.</p>
 
   <note style="tip">
    <p>You can learn more about these kind of folders <link href="http://unixhelp.ed.ac.uk/CGI/man-cgi?proc+5">here</link></p>
