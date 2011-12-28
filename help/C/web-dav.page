@@ -9,35 +9,53 @@
       <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
 
-    <desc>WebDAV (HTTP) Protocol</desc>
+    <desc>Scanning a remote file system using the WebDAV (HTTP) Protocol.</desc>
   </info>
 
   <title>WebDAV (HTTP) Protocol</title>
 
   <comment><cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-   <p>This assumes the reader knows there are many forms to establish connection remotely to scan folders.</p>
+   <p>This assumes the reader knows there are many forms to establish connection
+   remotely to scan folders.</p>
   </comment>
  
-  <p>The WebDAV protocol makes documents on the Web readables and writables. You can create, 
-  change and move documents within a web server or web share. 
-  You can also lock (“overwrite prevention”) and make queries of information about author and modified date.</p> 
+  <p>The WebDAV protocol makes documents on the Web readable and writable. You
+  can create, change and move documents within a web server or web share. You
+  can also lock (“overwrite prevention”) and make queries of information about
+  author and modified date.</p> 
+
+  <p>To scan remotely using the WebDAV (HTTP) Protocol:</p>
 
   <steps>
-     <item><p>Click <gui>WebDAV (HTTP)</gui> as a Service type.</p></item>
-     <item><p>Write the name your server to establish the connection on  <gui>Server</gui>.</p></item>
-     <item><p>Add some <gui>Optional information</gui></p>
-      <p>The <gui>Port</gui> of this protocol is 22880.</p>
-      <p>The <gui>Folder</gui> is the folder you want to scan, consider <gui>/</gui> to write the specific route</p>
-      <p>The <gui>User Name</gui> is the name of the account used to connect to the server.</p></item>
+    <item>
+      <p>Click <gui>WebDAV (HTTP)</gui> as the <gui>Service type</gui>.</p>
+    </item>
+    <item>
+      <p>Enter the name of the remote <gui>Server</gui>.</p>
+    </item>
+    <item>
+      <p>Add the following <gui>Optional information</gui>:</p>
+      <p>The <gui>Port</gui> of this protocol is 22880;</p>
+      <p>The <gui>Folder</gui> to be scanned, beginning with a <file>/</file>;</p>
+      <p>The <gui>User Name</gui> of the account used to connect to the server.</p>
+    </item>
   </steps>
   
   <note style="important">
-   <p>Secure WebDAV requires the port 5006 be opened.</p>
+    <p><gui>Secure WebDAV (HTTPS)</gui> requires 5006 to be entered for
+    <gui>Port</gui>.</p>
   </note>
 
   <note style="tip">
-    <p>You can see more details of the <link href="http://www.ietf.org/rfc/rfc5397.txt">WebDAV protocol</link> and learn more <link href="http://unixwiz.net/techtips/ms971492-webdav-vuln.html"> here</link>.</p>
+    <p>You can see more details of the
+    <link href="http://www.ietf.org/rfc/rfc5397.txt">WebDAV protocol</link>
+    and learn more
+    <link href="http://unixwiz.net/techtips/ms971492-webdav-vuln.html"> here</link>.</p>
   </note>
 
 </page>
