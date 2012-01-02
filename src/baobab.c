@@ -928,6 +928,8 @@ baobab_shutdown (void)
 	if (baobab.desktop_settings) {
 		g_object_unref (baobab.desktop_settings);
 	}
+
+  g_settings_sync ();
 }
 
 static BaobabChartMenu *
