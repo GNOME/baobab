@@ -929,7 +929,7 @@ baobab_shutdown (void)
 		g_object_unref (baobab.desktop_settings);
 	}
 
-  g_settings_sync ();
+	g_settings_sync ();
 }
 
 static BaobabChartMenu *
