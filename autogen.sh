@@ -8,7 +8,7 @@ PKG_NAME="baobab"
 
 (test -f $srcdir/configure.ac \
   && test -f $srcdir/README \
-  && test -f $srcdir/src/baobab.c) || {
+  && test -f $srcdir/src/main.vala) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
     echo " top-level $PKG_NAME directory"
     exit 1

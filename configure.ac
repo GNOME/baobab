@@ -7,7 +7,7 @@ AC_INIT([baobab],
         [baobab])
 
 AC_CONFIG_HEADERS(config.h)
-AC_CONFIG_SRCDIR(src/baobab.c)
+AC_CONFIG_SRCDIR(src/main.vala)
 AC_CONFIG_MACRO_DIR([m4])
 
 AC_CANONICAL_TARGET
@@ -29,6 +29,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[The name of the gettext d
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
+AM_PROG_VALAC
 PKG_PROG_PKG_CONFIG([0.22])
 
 ## don't rerun to this point if we abort
@@ -39,11 +40,8 @@ GLIB_GSETTINGS
 # Mallard help
 YELP_HELP_INIT
 
-PKG_CHECK_MODULES(BAOBAB, [
-    glib-2.0 >= 2.30.0
-    gtk+-3.0 >= 3.3.18
-    libgtop-2.0
-])
+PKG_CHECK_MODULES(gtk, gtk+-3.0 >= 3.3.18)
+PKG_CHECK_MODULES(gio, gio-2.0 >= 2.30.0)
 
 AC_CONFIG_FILES([
 Makefile
@@ -59,8 +57,9 @@ AC_OUTPUT
 echo "
     Baobab $VERSION
 
-    prefix:    ${prefix}
-    compiler:  ${CC}
+    prefix: ${prefix}
+    Vala compiler: ${VALAC}
+    C compiler: ${CC}
 
     Now type 'make' to build $PACKAGE
 "

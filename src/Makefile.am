@@ -2,6 +2,7 @@ NULL =
 
 INCLUDES = \
 	-DPREFIX=\""$(prefix)"\" 				\
+	-DGETTEXT_PACKAGE=\""$(GETTEXT_PACKAGE)"\" 		\
 	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
 	-DLIBDIR=\""$(libdir)"\"				\
 	-DDATADIR=\""$(datadir)"\"				\
@@ -12,38 +13,39 @@ INCLUDES = \
 
 bin_PROGRAMS = baobab
 
+baobab_VALAFLAGS = --pkg gtk+-3.0
 baobab_SOURCES = \
-	baobab.c \
-	baobab.h \
-	baobab-cell-renderer-progress.c \
-	baobab-cell-renderer-progress.h \
-	baobab-ringschart.c \
-	baobab-ringschart.h \
-	baobab-scan.c \
-	baobab-scan.h \
-	baobab-treeview.c \
-	baobab-treeview.h \
-	baobab-utils.c \
-	baobab-utils.h \
-	callbacks.c \
-	callbacks.h \
-	baobab-prefs.c \
-	baobab-prefs.h \
-	baobab-remote-connect-dialog.c \
-	baobab-remote-connect-dialog.h \
-	baobab-chart.c \
-	baobab-chart.h \
-	baobab-treemap.c \
-	baobab-treemap.h
+	baobab.vapi			\
+	config.vapi			\
+	baobab-chart.c			\
+	baobab-treemap.c		\
+	baobab-ringschart.c		\
+	baobab-scanner.vala		\
+	baobab-cell-renderer-progress.c	\
+	baobab-cellrenderers.vala	\
+	baobab-application.vala		\
+	baobab-window.vala		\
+	main.vala
 
-baobab_CFLAGS = 			\
-	$(BAOBAB_CFLAGS)		\
+AM_CFLAGS = \
+	$(gtk_CFLAGS)			\
+	-Wall				\
+	-Wno-unused-but-set-variable	\
+	-Wno-unused-variable		\
 	$(NULL)
 
 baobab_LDFLAGS = -export-dynamic
-baobab_LDADD = 				\
+baobab_LDADD = \
 	-lm				\
-	$(BAOBAB_LIBS)			\
+	$(gtk_LIBS)			\
 	$(NULL)
+
+MAINTAINERCLEANFILES = \
+	baobab-application.c		\
+	baobab-scanner.c		\
+	baobab-cellrenderers.c		\
+	baobab-window.c			\
+	baobab_vala.stamp		\
+	main.c
 
 -include $(top_srcdir)/git.mk
