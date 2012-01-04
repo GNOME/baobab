@@ -40,9 +40,6 @@
 
 #define BAOBAB_UI_FILE PKGDATADIR "/baobab-main-window.ui"
 
-static void push_iter_in_stack (GtkTreeIter *);
-static GtkTreeIter pop_iter_from_stack (void);
-
 static gint currentdepth = 0;
 static GtkTreeIter currentiter;
 static GtkTreeIter firstiter;
@@ -331,6 +328,28 @@ baobab_stop_scan (void)
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
 }
 
+static void
+push_iter_on_stack (GtkTreeIter *iter)
+{
+	g_queue_push_head (iterstack, iter->user_data3);
+	g_queue_push_head (iterstack, iter->user_data2);
+	g_queue_push_head (iterstack, iter->user_data);
+	g_queue_push_head (iterstack, GINT_TO_POINTER (iter->stamp));
+}
+
+static GtkTreeIter
+pop_iter_from_stack (void)
+{
+	GtkTreeIter iter;
+
+	iter.stamp = GPOINTER_TO_INT (g_queue_pop_head (iterstack));
+	iter.user_data = g_queue_pop_head (iterstack);
+	iter.user_data2 = g_queue_pop_head (iterstack);
+	iter.user_data3 = g_queue_pop_head (iterstack);
+
+	return iter;
+}
+
 /*
  * pre-fills model during scanning
  */
@@ -377,7 +396,7 @@ prefill_model (struct chan_data *data)
 	}
 
 	currentdepth = data->depth;
-	push_iter_in_stack (&iter);
+	push_iter_on_stack (&iter);
 	currentiter = iter;
 
 	/* in case filenames contains gmarkup */
@@ -516,28 +535,6 @@ baobab_fill_model (struct chan_data *data)
 	g_free (name);
 	g_free (size);
 	g_free (alloc_size);
-}
-
-void
-push_iter_in_stack (GtkTreeIter *iter)
-{
-	g_queue_push_head (iterstack, iter->user_data3);
-	g_queue_push_head (iterstack, iter->user_data2);
-	g_queue_push_head (iterstack, iter->user_data);
-	g_queue_push_head (iterstack, GINT_TO_POINTER (iter->stamp));
-}
-
-GtkTreeIter
-pop_iter_from_stack (void)
-{
-	GtkTreeIter iter;
-
-	iter.stamp = GPOINTER_TO_INT (g_queue_pop_head (iterstack));
-	iter.user_data = g_queue_pop_head (iterstack);
-	iter.user_data2 = g_queue_pop_head (iterstack);
-	iter.user_data3 = g_queue_pop_head (iterstack);
-
-	return iter;
 }
 
 gboolean
