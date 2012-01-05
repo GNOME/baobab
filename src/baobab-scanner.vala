@@ -144,6 +144,8 @@ namespace Baobab {
 				warning ("couldn't iterate %s: %s", parse_name, e.message);
 			}
 
+			add_percent (results.size, iter);
+
 			if (!cancellable.is_cancelled ()) {
 				set (iter,
 				     Columns.SIZE,       results.size,
@@ -168,7 +170,6 @@ namespace Baobab {
 					set (iter,
 					     Columns.PERCENT, 100 * ((double) size) / ((double) parent_size),
 					     Columns.STATE,   State.DONE);
-					add_percent (size, iter);
 				} while (iter_next (ref iter));
 			}
 		}
