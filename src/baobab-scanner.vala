@@ -178,8 +178,11 @@ namespace Baobab {
 				var info = directory.query_info (ATTRIBUTES, 0, cancellable);
 				var results = add_directory (directory, info);
 				add_percent (results.size);
+				max_depth = results.max_depth;
 			} catch { }
 		}
+
+		public int max_depth { get; private set; }
 
 		public Scanner (File directory) {
 			set_column_types (new Type[] {

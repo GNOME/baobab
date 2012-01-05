@@ -88,8 +88,20 @@ namespace Baobab {
 			model = new Scanner (directory);
 			var rings_chart = builder.get_object ("rings-chart") as Chart;
 			var treemap = builder.get_object ("treemap") as Chart;
-			rings_chart.set_model_with_columns (model, 0, 1, 2, 3, 4, null);
-			treemap.set_model_with_columns (model, 0, 1, 2, 3, 4, null);
+			model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
+			model.bind_property ("max-depth", treemap, "max-depth", BindingFlags.SYNC_CREATE);
+			treemap.set_model_with_columns (model,
+			                                Scanner.Columns.DISPLAY_NAME,
+			                                Scanner.Columns.SIZE,
+			                                Scanner.Columns.PARSE_NAME,
+			                                Scanner.Columns.PERCENT,
+			                                Scanner.Columns.ELEMENTS, null);
+			rings_chart.set_model_with_columns (model,
+			                                    Scanner.Columns.DISPLAY_NAME,
+			                                    Scanner.Columns.SIZE,
+			                                    Scanner.Columns.PARSE_NAME,
+			                                    Scanner.Columns.PERCENT,
+			                                    Scanner.Columns.ELEMENTS, null);
 			var treeview = builder.get_object ("treeview") as Gtk.TreeView;
 			treeview.model = model;
 		}
