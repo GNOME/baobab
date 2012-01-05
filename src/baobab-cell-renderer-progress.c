@@ -59,9 +59,9 @@ baobab_cell_renderer_progress_new (void)
 
 static void
 baobab_cell_renderer_progress_get_property (GObject *object,
-					    guint param_id,
-					    GValue *value,
-					    GParamSpec *pspec)
+                                            guint param_id,
+                                            GValue *value,
+                                            GParamSpec *pspec)
 {
   BaobabCellRendererProgress *cellprogress = BAOBAB_CELL_RENDERER_PROGRESS (object);
   
@@ -77,9 +77,9 @@ baobab_cell_renderer_progress_get_property (GObject *object,
 
 static void
 baobab_cell_renderer_progress_set_property (GObject *object,
-					    guint param_id,
-					    const GValue *value,
-					    GParamSpec   *pspec)
+                                            guint param_id,
+                                            const GValue *value,
+                                            GParamSpec   *pspec)
 {
   BaobabCellRendererProgress *cellprogress = BAOBAB_CELL_RENDERER_PROGRESS (object);
 
@@ -100,12 +100,12 @@ baobab_cell_renderer_progress_set_property (GObject *object,
 
 static void
 baobab_cell_renderer_progress_get_size (GtkCellRenderer    *cell,
-					GtkWidget          *widget,
-					const GdkRectangle *cell_area,
-					gint               *x_offset,
-					gint               *y_offset,
-					gint               *width,
-					gint               *height)
+                                        GtkWidget          *widget,
+                                        const GdkRectangle *cell_area,
+                                        gint               *x_offset,
+                                        gint               *y_offset,
+                                        gint               *width,
+                                        gint               *height)
 {
   gint calc_width;
   gint calc_height;
@@ -144,17 +144,17 @@ baobab_cell_renderer_progress_get_size (GtkCellRenderer    *cell,
 static void
 set_color_according_to_perc (cairo_t *cr, double value)
 {
-  static GdkColor red;
-  static GdkColor yellow;
-  static GdkColor green;
+  static GdkRGBA red;
+  static GdkRGBA yellow;
+  static GdkRGBA green;
   static gboolean colors_initialized = FALSE;
 
   if (!colors_initialized)
     {
       /* hardcoded tango colors */
-      gdk_color_parse ("#cc0000", &red);
-      gdk_color_parse ("#edd400", &yellow);
-      gdk_color_parse ("#73d216", &green);
+      gdk_rgba_parse (&red, "#cc0000");
+      gdk_rgba_parse (&yellow, "#edd400");
+      gdk_rgba_parse (&green, "#73d216");
 
       colors_initialized = TRUE;
     }
@@ -166,17 +166,17 @@ set_color_according_to_perc (cairo_t *cr, double value)
     }
   else if (value <= 33.33)
     {
-      gdk_cairo_set_source_color (cr, &green);
+      gdk_cairo_set_source_rgba (cr, &green);
       return;
     }
   else if (value <= 66.66)
     {
-      gdk_cairo_set_source_color (cr, &yellow);
+      gdk_cairo_set_source_rgba (cr, &yellow);
       return;
     }
   else if (value <= 100.0)
     {
-      gdk_cairo_set_source_color (cr, &red);
+      gdk_cairo_set_source_rgba (cr, &red);
       return;
     }
   else
@@ -185,11 +185,11 @@ set_color_according_to_perc (cairo_t *cr, double value)
 
 static void
 baobab_cell_renderer_progress_render (GtkCellRenderer    *cell,
-				      cairo_t            *cr,
-				      GtkWidget          *widget,
-				      const GdkRectangle *background_area,
-				      const GdkRectangle *cell_area,
-				      guint               flags)
+                                      cairo_t            *cr,
+                                      GtkWidget          *widget,
+                                      const GdkRectangle *background_area,
+                                      const GdkRectangle *cell_area,
+                                      guint               flags)
 {
   BaobabCellRendererProgress *cellprogress;
   gint x, y, w, h, perc_w;
@@ -250,15 +250,13 @@ baobab_cell_renderer_progress_class_init (BaobabCellRendererProgressClass *klass
   cell_class->render = baobab_cell_renderer_progress_render;
 
   g_object_class_install_property (object_class,
-				   PROP_PERC,
-				   g_param_spec_double ("perc",
-						        "percentage",
-						        "precentage",
-						        -1, 100, 0,
-						        G_PARAM_READWRITE));
+                                   PROP_PERC,
+                                   g_param_spec_double ("perc",
+                                                        "percentage",
+                                                        "precentage",
+                                                        -1, 100, 0,
+                                                        G_PARAM_READWRITE));
 
   g_type_class_add_private (object_class,
-			    sizeof (BaobabCellRendererProgressPrivate));
+                            sizeof (BaobabCellRendererProgressPrivate));
 }
-
-/* ex:set ts=8 noet: */
