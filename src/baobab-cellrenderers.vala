@@ -53,4 +53,47 @@ namespace Baobab {
 			}
 		}
 	}
+
+	public class CellRendererProgress : Gtk.CellRendererProgress {
+		public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
+			int xpad;
+			int ypad;
+			get_padding (out xpad, out ypad);
+
+			// fill entire drawing area with black
+			var x = cell_area.x + xpad;
+			var y = cell_area.y + ypad;
+			var w = cell_area.width - xpad * 2;
+			var h = cell_area.height - ypad * 2;
+			cr.rectangle (x, y, w, h);
+			cr.set_source_rgb (0, 0, 0);
+			cr.fill ();
+
+			// draw a smaller white rectangle on top, leaving a black outline
+			var style = widget.get_style ();
+			x += style.xthickness;
+			y += style.xthickness;
+			w -= style.xthickness * 2;
+			h -= style.xthickness * 2;
+			cr.rectangle (x, y, w, h);
+			cr.set_source_rgb (1, 1, 1);
+			cr.fill ();
+
+			// fill in remaining area according to percentage value
+			var percent = value;
+			var perc_w = (w * percent) / 100;
+			if (widget.get_direction () == Gtk.TextDirection.RTL) {
+				x += w - perc_w;
+			}
+			cr.rectangle (x, y, perc_w, h);
+			if (percent <= 33) {
+				cr.set_source_rgb (0x73 / 255.0, 0xd2 / 255.0, 0x16 / 255.0);
+			} else if (percent <= 66) {
+				cr.set_source_rgb (0xed / 255.0, 0xd4 / 255.0, 0x00 / 255.0);
+			} else {
+				cr.set_source_rgb (0xcc / 255.0, 0x00 / 255.0, 0x00 / 255.0);
+			}
+			cr.fill ();
+		}
+	}
 }

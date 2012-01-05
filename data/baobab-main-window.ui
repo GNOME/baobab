@@ -229,9 +229,12 @@
                     <property name="reorderable">True</property>
                     <property name="sort_column_id">2</property>
                     <child>
-                      <object class="BaobabCellRendererProgress" id="usage-column-bar-renderer"/>
+                      <object class="BaobabCellRendererProgress" id="usage-column-bar-renderer">
+                        <property name="xpad">4</property>
+                        <property name="ypad">4</property>
+                      </object>
                       <attributes>
-                        <attribute name="perc">2</attribute>
+                        <attribute name="value">2</attribute>
                       </attributes>
                     </child>
                     <child>

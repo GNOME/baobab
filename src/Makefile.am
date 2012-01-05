@@ -21,7 +21,6 @@ baobab_SOURCES = \
 	baobab-treemap.c		\
 	baobab-ringschart.c		\
 	baobab-scanner.vala		\
-	baobab-cell-renderer-progress.c	\
 	baobab-cellrenderers.vala	\
 	baobab-application.vala		\
 	baobab-window.vala		\
