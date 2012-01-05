@@ -26,7 +26,15 @@ namespace Baobab {
 			SIZE,
 			ALLOC_SIZE,
 			ELEMENTS,
+			STATE,
 			COLUMNS
+		}
+
+		public enum State {
+			SCANNING,
+			CANCELLED,
+			NEED_PERCENT,
+			DONE
 		}
 
 		struct HardLink {
@@ -37,6 +45,13 @@ namespace Baobab {
 				this.inode = info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_INODE);
 				this.device = info.get_attribute_uint32 (FILE_ATTRIBUTE_UNIX_DEVICE);
 			}
+		}
+
+		struct Results {
+			uint64 size;
+			uint64 alloc_size;
+			uint64 elements;
+			int max_depth;
 		}
 
 		Cancellable? cancellable;
@@ -53,54 +68,49 @@ namespace Baobab {
 			FILE_ATTRIBUTE_UNIX_DEVICE + "," +
 			FILE_ATTRIBUTE_ACCESS_CAN_READ;
 
-		void add_directory (File directory, FileInfo info, Gtk.TreeIter? parent_iter = null) {
+		Results add_directory (File directory, FileInfo info, Gtk.TreeIter? parent_iter = null) {
+			var results = Results ();
 			Gtk.TreeIter iter;
-			uint64 alloc_size;
-			uint64 size;
-			int elements;
-
-			elements = 0;
 
 			if (Application.is_excluded_location (directory)) {
-				return;
+				return results;
 			}
 
 			var display_name = info.get_display_name ();
 			var parse_name = directory.get_parse_name ();
 
+			append (out iter, parent_iter);
+			set (iter,
+			     Columns.DISPLAY_NAME, display_name,
+			     Columns.PARSE_NAME,   parse_name);
+
 			if (info.has_attribute (FILE_ATTRIBUTE_STANDARD_SIZE)) {
-				size = info.get_size ();
-			} else {
-				size = 0;
+				results.size = info.get_size ();
 			}
 
 			if (info.has_attribute (FILE_ATTRIBUTE_UNIX_BLOCKS)) {
-				alloc_size = 512 * info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_BLOCKS);
-			} else {
-				alloc_size = 0;
+				results.alloc_size = 512 * info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_BLOCKS);
 			}
 
-			append (out iter, parent_iter);
-			set (iter, 0, display_name);
-			set (iter, 1, parse_name);
-			set (iter, 2, 0.0);
-			set (iter, 3, size);
-			set (iter, 4, alloc_size);
-			set (iter, 5, elements);
+			results.elements = 1;
 
 			try {
 				var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
 				FileInfo? child_info;
 				while ((child_info = children.next_file (cancellable)) != null) {
 					if (cancellable.is_cancelled ()) {
-						return;
+						break;
 					}
 
 					switch (child_info.get_file_type ()) {
 						case FileType.DIRECTORY:
 							var child = directory.get_child (child_info.get_name ());
-							add_directory (child, child_info, iter);
-							elements++;
+							var child_results = add_directory (child, child_info, iter);
+
+							results.size += child_results.size;
+							results.alloc_size += child_results.size;
+							results.elements += child_results.elements;
+							results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
 							break;
 
 						case FileType.REGULAR:
@@ -118,10 +128,10 @@ namespace Baobab {
 							}
 
 							if (child_info.has_attribute (FILE_ATTRIBUTE_UNIX_BLOCKS)) {
-								alloc_size += 512 * child_info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_BLOCKS);
+								results.alloc_size += 512 * child_info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_BLOCKS);
 							}
-							size += child_info.get_size ();
-							elements++;
+							results.size += child_info.get_size ();
+							results.elements++;
 							break;
 
 						default:
@@ -134,21 +144,52 @@ namespace Baobab {
 				warning ("couldn't iterate %s: %s", parse_name, e.message);
 			}
 
+			if (!cancellable.is_cancelled ()) {
+				set (iter,
+				     Columns.SIZE,       results.size,
+				     Columns.ALLOC_SIZE, results.alloc_size,
+				     Columns.ELEMENTS,   results.elements,
+				     Columns.STATE,      State.NEED_PERCENT);
+			} else {
+				set (iter,
+				     Columns.STATE,      State.CANCELLED);
+			}
+
+			return results;
+		}
+
+		void add_percent (uint64 parent_size, Gtk.TreeIter? parent = null) {
+			Gtk.TreeIter iter;
+
+			if (iter_children (out iter, parent)) {
+				do {
+					uint64 size;
+					get (iter, Columns.SIZE, out size);
+					set (iter,
+					     Columns.PERCENT, 100 * ((double) size) / ((double) parent_size),
+					     Columns.STATE,   State.DONE);
+					add_percent (size, iter);
+				} while (iter_next (ref iter));
+			}
 		}
 
 		void scan (File directory) {
-			try {var info = directory.query_info (ATTRIBUTES, 0, cancellable);
-			add_directory (directory, info);} catch { }
+			try {
+				var info = directory.query_info (ATTRIBUTES, 0, cancellable);
+				var results = add_directory (directory, info);
+				add_percent (results.size);
+			} catch { }
 		}
 
 		public Scanner (File directory) {
 			set_column_types (new Type[] {
-			                  typeof (string), /* DIR_NAME */
-			                  typeof (string), /* PARSE_NAME */
-			                  typeof (double), /* PERCENT */
-			                  typeof (uint64), /* SIZE */
-			                  typeof (uint64), /* ALLOC_SIZE */
-			                  typeof (int)});  /* ELEMENTS */
+			                  typeof (string),  /* DIR_NAME */
+			                  typeof (string),  /* PARSE_NAME */
+			                  typeof (double),  /* PERCENT */
+			                  typeof (uint64),  /* SIZE */
+			                  typeof (uint64),  /* ALLOC_SIZE */
+			                  typeof (int),     /* ELEMENTS */
+			                  typeof (State)}); /* STATE */
 			scan (directory);
 		}
 	}
