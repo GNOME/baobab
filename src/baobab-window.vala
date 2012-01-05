@@ -85,7 +85,7 @@ namespace Baobab {
 				return;
 			}
 
-			var scanner = new SyncScanner ();
+			var scanner = new ThreadedScanner ();
 			scanner.scan (directory);
 			model = scanner;
 			var rings_chart = builder.get_object ("rings-chart") as Chart;

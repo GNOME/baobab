@@ -15,11 +15,13 @@ bin_PROGRAMS = baobab
 
 baobab_VALAFLAGS = --pkg gtk+-3.0
 baobab_SOURCES = \
+	fixes.vapi			\
 	baobab.vapi			\
 	config.vapi			\
 	baobab-chart.c			\
 	baobab-treemap.c		\
 	baobab-ringschart.c		\
+	baobab-threaded-scanner.vala	\
 	baobab-sync-scanner.vala	\
 	baobab-scanner.vala		\
 	baobab-cellrenderers.vala	\
@@ -42,6 +44,7 @@ baobab_LDADD = \
 
 MAINTAINERCLEANFILES = \
 	baobab-application.c		\
+	baobab-threaded-scanner.c	\
 	baobab-sync-scanner.c		\
 	baobab-scanner.c		\
 	baobab-cellrenderers.c		\
