@@ -20,6 +20,7 @@ baobab_SOURCES = \
 	baobab-chart.c			\
 	baobab-treemap.c		\
 	baobab-ringschart.c		\
+	baobab-sync-scanner.vala	\
 	baobab-scanner.vala		\
 	baobab-cellrenderers.vala	\
 	baobab-application.vala		\
@@ -41,6 +42,7 @@ baobab_LDADD = \
 
 MAINTAINERCLEANFILES = \
 	baobab-application.c		\
+	baobab-sync-scanner.c		\
 	baobab-scanner.c		\
 	baobab-cellrenderers.c		\
 	baobab-window.c			\

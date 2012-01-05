@@ -85,7 +85,9 @@ namespace Baobab {
 				return;
 			}
 
-			model = new Scanner (directory);
+			var scanner = new SyncScanner ();
+			scanner.scan (directory);
+			model = scanner;
 			var rings_chart = builder.get_object ("rings-chart") as Chart;
 			var treemap = builder.get_object ("treemap") as Chart;
 			model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
