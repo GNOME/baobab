@@ -24,11 +24,20 @@ namespace Baobab {
 		Chart rings_chart;
 		Chart treemap;
 
-		enum DndTargets {
+		private const GLib.ActionEntry[] action_entries = {
+			{ "scan-home",       on_scan_home_activate       },
+			{ "scan-filesystem", on_scan_filesystem_activate },
+			{ "scan-folder",     on_scan_folder_activate     },
+			{ "scan-remote",     on_scan_remote_activate     },
+			{ "stop",            on_stop_activate            },
+			{ "refresh",         on_refresh_activate         }
+		};
+
+		private enum DndTargets {
 			URI_LIST
 		}
 
-		const Gtk.TargetEntry dnd_target_list[1] = {
+		private const Gtk.TargetEntry dnd_target_list[1] = {
 		    {"text/uri-list", 0, DndTargets.URI_LIST}
 		};
 
@@ -73,27 +82,27 @@ namespace Baobab {
 			show ();
 		}
 
-		void scan_home_activated () {
+		void on_scan_home_activate () {
 			print ("sh\n");
 		}
 
-		void scan_filesystem_activated () {
+		void on_scan_filesystem_activate () {
 			print ("sfs\n");
 		}
 
-		void scan_folder_activated () {
+		void on_scan_folder_activate () {
 			print ("sf\n");
 		}
 
-		void scan_remote_activated () {
+		void on_scan_remote_activate () {
 			print ("sr\n");
 		}
 
-		void stop_activated () {
+		void on_stop_activate () {
 			print ("s\n");
 		}
 
-		void refresh_activated () {
+		void on_refresh_activate () {
 			print ("r\n");
 		}
 
@@ -127,15 +136,6 @@ namespace Baobab {
 		void disable_drop () {
 			Gtk.drag_dest_unset (this);
 		}
-
-		private const GLib.ActionEntry[] action_entries = {
-			{ "scan-home",       scan_home_activated       },
-			{ "scan-filesystem", scan_filesystem_activated },
-			{ "scan-folder",     scan_folder_activated     },
-			{ "scan-remote",     scan_remote_activated     },
-			{ "stop",            stop_activated            },
-			{ "refresh",         refresh_activated         }
-		};
 
 		void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
 			var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.DESTROY_WITH_PARENT, type,
