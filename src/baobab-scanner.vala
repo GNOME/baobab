@@ -48,7 +48,7 @@ namespace Baobab {
 			}
 		}
 
-		protected Cancellable? cancellable;
+		protected Cancellable cancellable;
 		protected HardLink[] hardlinks;
 
 		protected static const string ATTRIBUTES =
@@ -68,7 +68,12 @@ namespace Baobab {
 
 		public int max_depth { get; protected set; }
 
+		public virtual void stop () {
+			cancellable.cancel ();
+		}
+
 		public Scanner () {
+			cancellable = new Cancellable();
 			set_column_types (new Type[] {
 			                  typeof (string),  /* DIR_NAME */
 			                  typeof (string),  /* PARSE_NAME */

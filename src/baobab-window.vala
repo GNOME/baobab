@@ -23,6 +23,7 @@ namespace Baobab {
 		Gtk.TreeView treeview;
 		Chart rings_chart;
 		Chart treemap;
+		Scanner? scanner;
 
 		private const GLib.ActionEntry[] action_entries = {
 			{ "scan-home",       on_scan_home_activate       },
@@ -116,11 +117,15 @@ namespace Baobab {
 		}
 
 		void on_stop_activate () {
-			print ("s\n");
+			if (scanner != null) {
+				scanner.stop ();
+			}
 		}
 
 		void on_refresh_activate () {
-			print ("r\n");
+			if (scanner != null) {
+				scan_directory (scanner.directory);
+			}
 		}
 
 		void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
@@ -221,7 +226,7 @@ namespace Baobab {
 
 			disable_drop ();
 
-			var scanner = new ThreadedScanner ();
+			scanner = new ThreadedScanner ();
 			scanner.scan (directory);
 
 			set_model (scanner);
