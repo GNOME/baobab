@@ -83,11 +83,13 @@ namespace Baobab {
 		}
 
 		void on_scan_home_activate () {
-			print ("sh\n");
+			var dir = File.new_for_path (GLib.Environment.get_home_dir ());
+			scan_directory (dir);
 		}
 
 		void on_scan_filesystem_activate () {
-			print ("sfs\n");
+			var dir = File.new_for_uri ("file:///");
+			scan_directory (dir);
 		}
 
 		void on_scan_folder_activate () {
