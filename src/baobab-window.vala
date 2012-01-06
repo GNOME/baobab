@@ -19,19 +19,25 @@
 
 namespace Baobab {
 	public class Window : Gtk.ApplicationWindow {
-		Gtk.TreeModel? model;
-		Gtk.Builder builder;
+		Gtk.TreeView treeview;
+		Chart rings_chart;
+		Chart treemap;
 
 		public Window (Application app) {
 			Object (application: app);
 
 			// Build ourselves.
-			builder = new Gtk.Builder ();
+			var builder = new Gtk.Builder ();
 			try {
 				builder.add_from_file (Config.PKGDATADIR + "/baobab-main-window.ui");
 			} catch (Error e) {
 				error ("loading main builder file: %s", e.message);
 			}
+
+			// Cache some objects from the builder.
+			rings_chart = builder.get_object ("rings-chart") as Chart;
+			treemap = builder.get_object ("treemap") as Chart;
+			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 
 			var ui_settings = Application.get_ui_settings ();
 
@@ -80,16 +86,22 @@ namespace Baobab {
 			}
 		}
 
-		public void scan_directory (File directory) {
-			if (!check_dir (directory)) {
-				return;
+		void first_row_has_child (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
+			model.row_has_child_toggled.disconnect (first_row_has_child);
+			treeview.expand_row (path, false);
+		}
+
+		void set_model (Scanner model) {
+			Gtk.TreeIter first;
+
+			treeview.model = model;
+
+			if (model.iter_children (out first, null) && model.iter_has_child (first)) {
+				treeview.expand_row (model.get_path (first), false);
+			} else {
+				model.row_has_child_toggled.connect (first_row_has_child);
 			}
 
-			var scanner = new ThreadedScanner ();
-			scanner.scan (directory);
-			model = scanner;
-			var rings_chart = builder.get_object ("rings-chart") as Chart;
-			var treemap = builder.get_object ("treemap") as Chart;
 			model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
 			model.bind_property ("max-depth", treemap, "max-depth", BindingFlags.SYNC_CREATE);
 			treemap.set_model_with_columns (model,
@@ -104,8 +116,17 @@ namespace Baobab {
 			                                    Scanner.Columns.PARSE_NAME,
 			                                    Scanner.Columns.PERCENT,
 			                                    Scanner.Columns.ELEMENTS, null);
-			var treeview = builder.get_object ("treeview") as Gtk.TreeView;
-			treeview.model = model;
+		}
+
+		public void scan_directory (File directory) {
+			if (!check_dir (directory)) {
+				return;
+			}
+
+			var scanner = new ThreadedScanner ();
+			scanner.scan (directory);
+
+			set_model (scanner);
 		}
 	}
 }
