@@ -143,28 +143,6 @@
       </packing>
     </child>
     <child>
-      <object class="GtkComboBoxText" id="chart-type-combo">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">25</property>
-        <property name="margin_right">6</property>
-        <property name="margin_top">6</property>
-        <property name="margin_bottom">6</property>
-        <property name="active">0</property>
-        <property name="id_column">1</property>
-        <items>
-          <item id="rings" translatable="yes">View as Rings Chart</item>
-          <item id="treemap" translatable="yes">View as Treemap Chart</item>
-        </items>
-      </object>
-      <packing>
-        <property name="left_attach">1</property>
-        <property name="top_attach">1</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
       <object class="GtkLabel" id="label">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
@@ -183,16 +161,24 @@
       </packing>
     </child>
     <child>
-      <object class="GtkStatusbar" id="statusbar">
+      <object class="GtkComboBoxText" id="chart-type-combo">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="hexpand">True</property>
-        <property name="spacing">2</property>
+        <property name="margin_left">25</property>
+        <property name="margin_right">6</property>
+        <property name="margin_top">6</property>
+        <property name="margin_bottom">6</property>
+        <property name="active">0</property>
+        <property name="id_column">1</property>
+        <items>
+          <item id="rings" translatable="yes">View as Rings Chart</item>
+          <item id="treemap" translatable="yes">View as Treemap Chart</item>
+        </items>
       </object>
       <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">3</property>
-        <property name="width">2</property>
+        <property name="left_attach">1</property>
+        <property name="top_attach">1</property>
+        <property name="width">1</property>
         <property name="height">1</property>
       </packing>
     </child>
@@ -325,6 +311,20 @@
       <packing>
         <property name="left_attach">0</property>
         <property name="top_attach">2</property>
+        <property name="width">2</property>
+        <property name="height">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkStatusbar" id="statusbar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="hexpand">True</property>
+        <property name="spacing">2</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">3</property>
         <property name="width">2</property>
         <property name="height">1</property>
       </packing>
