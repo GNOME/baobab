@@ -74,6 +74,7 @@ namespace Baobab {
 			                  typeof (uint64),  /* ALLOC_SIZE */
 			                  typeof (int),     /* ELEMENTS */
 			                  typeof (State)}); /* STATE */
+			set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 		}
 	}
 }
