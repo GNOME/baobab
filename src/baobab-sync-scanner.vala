@@ -31,7 +31,7 @@ namespace Baobab {
 			var results = Results ();
 			Gtk.TreeIter iter;
 
-			if (excluded_locations.lookup (directory) != null) {
+			if (directory in excluded_locations) {
 				return results;
 			}
 

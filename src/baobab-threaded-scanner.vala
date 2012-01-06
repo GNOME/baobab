@@ -87,7 +87,7 @@ namespace Baobab {
 		Results? add_directory (File directory, FileInfo info, Results? parent = null) {
 			var results_array = new ResultsArray ();
 
-			if (excluded_locations.lookup (directory) != null) {
+			if (directory in excluded_locations) {
 				return null;
 			}
 

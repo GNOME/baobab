@@ -36,27 +36,22 @@ namespace Baobab {
 			}
 		}
 
-		static void add_excluded_location (HashTable<File, unowned File> table, File file) {
-			table.insert (file, file);
-		}
-
 		public static HashTable<File, unowned File> get_excluded_locations () {
 			var app = baobab;
 
 			var excluded_locations = new HashTable<File, unowned File> (file_hash, file_equal);
-			add_excluded_location (excluded_locations, File.new_for_path ("/proc"));
-			add_excluded_location (excluded_locations, File.new_for_path ("/sys"));
-			add_excluded_location (excluded_locations, File.new_for_path ("/selinux"));
-			add_excluded_location (excluded_locations, File.new_for_path ("/selinux"));
+			excluded_locations.add (File.new_for_path ("/proc"));
+			excluded_locations.add (File.new_for_path ("/sys"));
+			excluded_locations.add (File.new_for_path ("/selinux"));
 
 			var home = File.new_for_path (Environment.get_home_dir ());
-			add_excluded_location (excluded_locations, home.get_child (".gvfs"));
+			excluded_locations.add (home.get_child (".gvfs"));
 
 			var root = File.new_for_path ("/");
 			foreach (var uri in app.prefs_settings.get_value ("excluded-uris")) {
 				var file = File.new_for_uri ((string) uri);
 				if (!file.equal (root)) {
-					excluded_locations.insert (file, file);
+					excluded_locations.add (file);
 				}
 			}
 
