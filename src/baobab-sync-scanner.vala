@@ -1,6 +1,7 @@
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
+ * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -133,6 +134,7 @@ namespace Baobab {
 		}
 
 		protected override void scan (File directory) {
+			this.directory = directory;
 			try {
 				var info = directory.query_info (ATTRIBUTES, 0, cancellable);
 				var results = add_directory (directory, info);

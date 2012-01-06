@@ -1,6 +1,7 @@
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
+ * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -21,7 +22,6 @@ namespace Baobab {
 	class ThreadedScanner : Scanner {
 		AsyncQueue<ResultsArray> results_queue;
 		ThreadedScanner? self;
-		File directory;
 
 		/* General overview:
 		 *

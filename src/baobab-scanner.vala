@@ -1,6 +1,7 @@
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
+ * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -60,6 +61,8 @@ namespace Baobab {
 			FILE_ATTRIBUTE_UNIX_INODE + "," +
 			FILE_ATTRIBUTE_UNIX_DEVICE + "," +
 			FILE_ATTRIBUTE_ACCESS_CAN_READ;
+
+		public File directory { get; protected set; }
 
 		public abstract void scan (File directory);
 
