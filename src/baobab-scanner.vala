@@ -49,6 +49,7 @@ namespace Baobab {
 		}
 
 		protected Cancellable cancellable;
+		protected HashTable<File, unowned File> excluded_locations;
 		protected HardLink[] hardlinks;
 
 		protected static const string ATTRIBUTES =
@@ -83,6 +84,7 @@ namespace Baobab {
 			                  typeof (int),     /* ELEMENTS */
 			                  typeof (State)}); /* STATE */
 			set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
+			excluded_locations = Application.get_excluded_locations ();
 		}
 	}
 }

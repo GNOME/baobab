@@ -87,7 +87,7 @@ namespace Baobab {
 		Results? add_directory (File directory, FileInfo info, Results? parent = null) {
 			var results_array = new ResultsArray ();
 
-			if (Application.is_excluded_location (directory)) {
+			if (excluded_locations.lookup (directory) != null) {
 				return null;
 			}
 
@@ -240,6 +240,7 @@ namespace Baobab {
 
 		protected override void scan (File directory) {
 			this.directory = directory;
+			this.excluded_locations = Application.get_excluded_locations ();
 
 			// the thread owns a reference on the Scanner object
 			this.self = this;

@@ -195,10 +195,10 @@ namespace Baobab {
 		}
 
 		public bool check_dir (File directory) {
-			if (Application.is_excluded_location (directory)) {
-				message("", _("Cannot check an excluded folder!"), Gtk.MessageType.INFO);
-				return false;
-			}
+			//if (Application.is_excluded_location (directory)) {
+			//	message("", _("Cannot check an excluded folder!"), Gtk.MessageType.INFO);
+			//	return false;
+			//}
 
 			try {
 				var info = directory.query_info (FILE_ATTRIBUTE_STANDARD_TYPE, FileQueryInfoFlags.NONE, null);

@@ -23,8 +23,6 @@ namespace Baobab {
 		Settings prefs_settings;
 		Settings ui_settings;
 
-		File[] excluded_locations;
-
 		static Application baobab;
 
 		protected override void activate () {
@@ -38,18 +36,31 @@ namespace Baobab {
 			}
 		}
 
-		void excluded_uris_changed (Settings settings, string key) {
-			var uris = settings.get_strv (key);
+		static void add_excluded_location (HashTable<File, unowned File> table, File file) {
+			table.insert (file, file);
+		}
 
-			excluded_locations = new File[0];
+		public static HashTable<File, unowned File> get_excluded_locations () {
+			var app = baobab;
+
+			var excluded_locations = new HashTable<File, unowned File> (file_hash, file_equal);
+			add_excluded_location (excluded_locations, File.new_for_path ("/proc"));
+			add_excluded_location (excluded_locations, File.new_for_path ("/sys"));
+			add_excluded_location (excluded_locations, File.new_for_path ("/selinux"));
+			add_excluded_location (excluded_locations, File.new_for_path ("/selinux"));
+
+			var home = File.new_for_path (Environment.get_home_dir ());
+			add_excluded_location (excluded_locations, home.get_child (".gvfs"));
 
 			var root = File.new_for_path ("/");
-			foreach (var uri in uris) {
-				var file = File.new_for_uri (uri);
+			foreach (var uri in app.prefs_settings.get_value ("excluded-uris")) {
+				var file = File.new_for_uri ((string) uri);
 				if (!file.equal (root)) {
-					excluded_locations += file;
+					excluded_locations.insert (file, file);
 				}
 			}
+
+			return excluded_locations;
 		}
 
 		protected override void startup () {
@@ -60,9 +71,6 @@ namespace Baobab {
 			ui_settings = new Settings ("org.gnome.baobab.ui");
 			prefs_settings = new Settings ("org.gnome.baobab.preferences");
 			desktop_settings = new Settings ("org.gnome.desktop.interface");
-
-			excluded_uris_changed (prefs_settings, "excluded-uris");
-			prefs_settings.changed["excluded-uris"] += excluded_uris_changed;
 		}
 
 		protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
@@ -77,18 +85,6 @@ namespace Baobab {
 
 		public Application () {
 			Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
-		}
-
-		public static bool is_excluded_location (File file) {
-			var app = baobab;
-
-			foreach (var location in app.excluded_locations) {
-				if (file.equal (location)) {
-					return true;
-				}
-			}
-
-			return false;
 		}
 
 		public static Settings get_desktop_settings () {
