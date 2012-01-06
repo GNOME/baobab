@@ -1,6 +1,7 @@
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
+ * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -22,6 +23,14 @@ namespace Baobab {
 		Gtk.TreeView treeview;
 		Chart rings_chart;
 		Chart treemap;
+
+		enum DndTargets {
+			URI_LIST
+		}
+
+		const Gtk.TargetEntry dnd_target_list[1] = {
+		    {"text/uri-list", 0, DndTargets.URI_LIST}
+		};
 
 		public Window (Application app) {
 			Object (application: app);
@@ -53,6 +62,10 @@ namespace Baobab {
 			var statusbar = builder.get_object ("statusbar") as Gtk.Widget;
 			statusbar.visible = ui_settings.get_boolean ("statusbar-visible");
 
+			// Setup drag-n-drop
+			drag_data_received.connect(on_drag_data_received);
+			enable_drop ();
+
 			// Go live.
 			add (builder.get_object ("window-contents") as Gtk.Widget);
 			title = _("Disk Usage Analyzer");
@@ -82,6 +95,37 @@ namespace Baobab {
 
 		void refresh_activated () {
 			print ("r\n");
+		}
+
+		void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
+		                            Gtk.SelectionData selection_data, uint target_type, uint time) {
+			File dir = null;
+
+			if ((selection_data != null) && (selection_data.get_length () >= 0) && (target_type == DndTargets.URI_LIST)) {
+				var uris = GLib.Uri.list_extract_uris ((string) selection_data.get_data ());
+				if (uris != null && uris.length == 1) {
+					dir = File.new_for_uri (uris[0]);
+				}
+			}
+
+			if (dir != null) {
+				// finish drop before scanning, since the it can time out
+				Gtk.drag_finish (context, true, false, time);
+				scan_directory (dir);
+			} else {
+				Gtk.drag_finish (context, false, false, time);
+			}
+		}
+
+		void enable_drop () {
+			Gtk.drag_dest_set (this,
+			                   Gtk.DestDefaults.DROP | Gtk.DestDefaults.MOTION | Gtk.DestDefaults.HIGHLIGHT,
+			                   dnd_target_list,
+			                   Gdk.DragAction.COPY);
+		}
+
+		void disable_drop () {
+			Gtk.drag_dest_unset (this);
 		}
 
 		private const GLib.ActionEntry[] action_entries = {
@@ -158,10 +202,14 @@ namespace Baobab {
 				return;
 			}
 
+			disable_drop ();
+
 			var scanner = new ThreadedScanner ();
 			scanner.scan (directory);
 
 			set_model (scanner);
+
+			enable_drop ();
 		}
 	}
 }
