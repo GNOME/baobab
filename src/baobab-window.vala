@@ -21,9 +21,12 @@
 namespace Baobab {
 	public class Window : Gtk.ApplicationWindow {
 		Gtk.TreeView treeview;
+		Gtk.Widget chart_type_combo;
 		Chart rings_chart;
-		Chart treemap;
+		Chart treemap_chart;
 		Scanner? scanner;
+
+		static Gdk.Cursor busy_cursor;
 
 		private const GLib.ActionEntry[] action_entries = {
 			{ "scan-home",       on_scan_home_activate       },
@@ -45,6 +48,8 @@ namespace Baobab {
 		public Window (Application app) {
 			Object (application: app);
 
+			busy_cursor = new Gdk.Cursor (Gdk.CursorType.WATCH);
+
 			add_action_entries (action_entries, this);
 
 			// Build ourselves.
@@ -56,14 +61,14 @@ namespace Baobab {
 			}
 
 			// Cache some objects from the builder.
+			chart_type_combo = builder.get_object ("chart-type-combo") as Gtk.Widget;
 			rings_chart = builder.get_object ("rings-chart") as Chart;
-			treemap = builder.get_object ("treemap") as Chart;
+			treemap_chart = builder.get_object ("treemap-chart") as Chart;
 			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 
 			var ui_settings = Application.get_ui_settings ();
 
 			// Setup the logic for switching between the chart types.
-			var chart_type_combo = builder.get_object ("chart-type-combo");
 			var charts_notebook = builder.get_object ("chart-notebook");
 			chart_type_combo.bind_property ("active", charts_notebook, "page", BindingFlags.SYNC_CREATE);
 			ui_settings.bind ("active-chart", chart_type_combo, "active-id", SettingsBindFlags.GET_NO_CHANGES);
@@ -167,6 +172,28 @@ namespace Baobab {
 			dialog.destroy ();
 		}
 
+		void set_busy (bool busy) {
+			Gdk.Cursor? cursor = null;
+
+			if (busy) {
+				cursor = busy_cursor;
+				disable_drop ();
+				rings_chart.freeze_updates();
+				treemap_chart.freeze_updates ();
+				chart_type_combo.set_sensitive (false);
+			} else {
+				enable_drop ();
+				rings_chart.thaw_updates();
+				treemap_chart.thaw_updates ();
+				chart_type_combo.set_sensitive (true);
+			}
+
+			var window = get_window ();
+			if (window != null) {
+				window.set_cursor (cursor);
+			}
+		}
+
 		public bool check_dir (File directory) {
 			if (Application.is_excluded_location (directory)) {
 				message("", _("Cannot check an excluded folder!"), Gtk.MessageType.INFO);
@@ -204,13 +231,13 @@ namespace Baobab {
 			}
 
 			model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
-			model.bind_property ("max-depth", treemap, "max-depth", BindingFlags.SYNC_CREATE);
-			treemap.set_model_with_columns (model,
-			                                Scanner.Columns.DISPLAY_NAME,
-			                                Scanner.Columns.SIZE,
-			                                Scanner.Columns.PARSE_NAME,
-			                                Scanner.Columns.PERCENT,
-			                                Scanner.Columns.ELEMENTS, null);
+			model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
+			treemap_chart.set_model_with_columns (model,
+			                                      Scanner.Columns.DISPLAY_NAME,
+			                                      Scanner.Columns.SIZE,
+			                                      Scanner.Columns.PARSE_NAME,
+			                                      Scanner.Columns.PERCENT,
+			                                      Scanner.Columns.ELEMENTS, null);
 			rings_chart.set_model_with_columns (model,
 			                                    Scanner.Columns.DISPLAY_NAME,
 			                                    Scanner.Columns.SIZE,
@@ -224,14 +251,14 @@ namespace Baobab {
 				return;
 			}
 
-			disable_drop ();
+			set_busy (true);
 
 			scanner = new ThreadedScanner ();
 			scanner.scan (directory);
 
 			set_model (scanner);
 
-			enable_drop ();
+			set_busy (false);
 		}
 	}
 }
