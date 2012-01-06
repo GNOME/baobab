@@ -13,7 +13,7 @@
           <class name="primary-toolbar"/>
         </style>
         <child>
-          <object class="GtkToolButton" id="tbscanhome1">
+          <object class="GtkToolButton" id="scan-home-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -25,6 +25,7 @@
             <property name="label" translatable="yes">Scan Home</property>
             <property name="use_underline">True</property>
             <property name="stock_id">gtk-home</property>
+            <property name="action_name">win.scan-home</property>
             <child internal-child="accessible">
               <object class="AtkObject" id="tbscanhome1-atkobject">
                 <property name="AtkObject::accessible-name" translatable="yes">Scan home folder</property>
@@ -37,7 +38,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="tbscanall1">
+          <object class="GtkToolButton" id="scan-filesystem-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -48,6 +49,7 @@
             <property name="label" translatable="yes">Scan Filesystem</property>
             <property name="use_underline">True</property>
             <property name="stock_id">gtk-harddisk</property>
+            <property name="action_name">win.scan-filesystem</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -55,7 +57,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="tbscandir1">
+          <object class="GtkToolButton" id="scan-folder-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -66,6 +68,7 @@
             <property name="label" translatable="yes">Scan Folder</property>
             <property name="use_underline">True</property>
             <property name="stock_id">gtk-directory</property>
+            <property name="action_name">win.scan-folder</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -73,7 +76,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="tb_scan_remote1">
+          <object class="GtkToolButton" id="scan-remote-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -84,6 +87,7 @@
             <property name="label" translatable="yes">Scan Remote Folder</property>
             <property name="use_underline">True</property>
             <property name="stock_id">gtk-network</property>
+            <property name="action_name">win.scan-remote</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -100,16 +104,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="tbstop1">
+          <object class="GtkToolButton" id="stop-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
-            <property name="sensitive">False</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
             <property name="tooltip_markup" translatable="yes">Stop scanning</property>
             <property name="tooltip_text" translatable="yes">Stop scanning</property>
             <property name="use_action_appearance">False</property>
             <property name="stock_id">gtk-stop</property>
+            <property name="action_name">win.stop</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -117,16 +121,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="tbrescan1">
+          <object class="GtkToolButton" id="rescan-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
-            <property name="sensitive">False</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
             <property name="tooltip_markup" translatable="yes">Refresh</property>
             <property name="tooltip_text" translatable="yes">Refresh</property>
             <property name="use_action_appearance">False</property>
             <property name="stock_id">gtk-refresh</property>
+            <property name="action_name">win.refresh</property>
           </object>
           <packing>
             <property name="expand">False</property>

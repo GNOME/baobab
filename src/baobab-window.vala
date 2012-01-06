@@ -26,6 +26,8 @@ namespace Baobab {
 		public Window (Application app) {
 			Object (application: app);
 
+			add_action_entries (action_entries, this);
+
 			// Build ourselves.
 			var builder = new Gtk.Builder ();
 			try {
@@ -57,6 +59,39 @@ namespace Baobab {
 			set_default_size (800, 500);
 			show ();
 		}
+
+		void scan_home_activated () {
+			print ("sh\n");
+		}
+
+		void scan_filesystem_activated () {
+			print ("sfs\n");
+		}
+
+		void scan_folder_activated () {
+			print ("sf\n");
+		}
+
+		void scan_remote_activated () {
+			print ("sr\n");
+		}
+
+		void stop_activated () {
+			print ("s\n");
+		}
+
+		void refresh_activated () {
+			print ("r\n");
+		}
+
+		private const GLib.ActionEntry[] action_entries = {
+			{ "scan-home",       scan_home_activated       },
+			{ "scan-filesystem", scan_filesystem_activated },
+			{ "scan-folder",     scan_folder_activated     },
+			{ "scan-remote",     scan_remote_activated     },
+			{ "stop",            stop_activated            },
+			{ "refresh",         refresh_activated         }
+		};
 
 		void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
 			var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.DESTROY_WITH_PARENT, type,
