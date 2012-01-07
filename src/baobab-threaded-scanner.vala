@@ -96,14 +96,10 @@ namespace Baobab {
 			results.parse_name = directory.get_parse_name ();
 			results.parent = parent;
 
-			if (info.has_attribute (FILE_ATTRIBUTE_STANDARD_SIZE)) {
-				results.size = info.get_size ();
+			results.size = info.get_size ();
+			if (info.has_attribute (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE)) {
+				results.alloc_size = info.get_attribute_uint64 (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE);
 			}
-
-			if (info.has_attribute (FILE_ATTRIBUTE_UNIX_BLOCKS)) {
-				results.alloc_size = 512 * info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_BLOCKS);
-			}
-
 			results.elements = 1;
 
 			try {
@@ -142,10 +138,10 @@ namespace Baobab {
 								}
 							}
 
-							if (child_info.has_attribute (FILE_ATTRIBUTE_UNIX_BLOCKS)) {
-								results.alloc_size += 512 * child_info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_BLOCKS);
-							}
 							results.size += child_info.get_size ();
+							if (child_info.has_attribute (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE)) {
+								results.alloc_size += child_info.get_attribute_uint64 (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE);
+							}
 							results.elements++;
 							break;
 
