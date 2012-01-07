@@ -93,7 +93,22 @@ namespace Baobab {
 		}
 
 		void on_scan_folder_activate () {
-			print ("sf\n");
+			var file_chooser = new Gtk.FileChooserDialog (_("Select Folder"), this,
+			                                              Gtk.FileChooserAction.SELECT_FOLDER,
+			                                              Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL,
+			                                              Gtk.Stock.OPEN, Gtk.ResponseType.ACCEPT);
+
+			file_chooser.set_modal (true);
+
+			file_chooser.response.connect ((response) => {
+				if (response == Gtk.ResponseType.ACCEPT) {
+					var dir = file_chooser.get_file ();
+					scan_directory (dir);
+				}
+				file_chooser.destroy ();
+			});
+
+			file_chooser.show ();
 		}
 
 		void on_scan_remote_activate () {
