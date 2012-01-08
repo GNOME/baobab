@@ -123,7 +123,7 @@ namespace Baobab {
 
 		void on_stop_activate () {
 			if (scanner != null) {
-				scanner.stop ();
+				scanner.cancel ();
 			}
 		}
 
@@ -244,6 +244,11 @@ namespace Baobab {
 			                                    Scanner.Columns.PARSE_NAME,
 			                                    Scanner.Columns.PERCENT,
 			                                    Scanner.Columns.ELEMENTS, null);
+
+			set_busy (true);
+			scanner.completed.connect(() => {
+				set_busy (false);
+			});
 		}
 
 		public void scan_directory (File directory) {
@@ -251,13 +256,10 @@ namespace Baobab {
 				return;
 			}
 
-			set_busy (true);
-
 			scanner = new ThreadedScanner (directory);
 			set_model (scanner);
 
 			scanner.scan ();
-			set_busy (false);
 		}
 	}
 }

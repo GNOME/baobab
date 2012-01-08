@@ -67,9 +67,11 @@ namespace Baobab {
 
 		public int max_depth { get; protected set; }
 
+		public signal void completed();
+
 		public abstract void scan ();
 
-		public virtual void stop () {
+		public virtual void cancel () {
 			cancellable.cancel ();
 		}
 

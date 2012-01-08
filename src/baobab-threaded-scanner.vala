@@ -227,6 +227,10 @@ namespace Baobab {
 					if (results.max_depth > max_depth) {
 						max_depth = results.max_depth;
 					}
+
+					if (results.parent == null) {
+						completed ();
+					}
 				}
 			}
 
