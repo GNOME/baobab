@@ -228,26 +228,23 @@ namespace Baobab {
 						max_depth = results.max_depth;
 					}
 				}
-
 			}
 
 			return this.self != null;
 		}
 
-		protected override void scan (File directory) {
-			this.directory = directory;
-			this.excluded_locations = Application.get_excluded_locations ();
-
-			// the thread owns a reference on the Scanner object
-			this.self = this;
-
+		public override void scan () {
 			new GLib2.Thread ("scanner", scan_in_thread);
-
 			Timeout.add (100, process_results);
 		}
 
-		public ThreadedScanner () {
+		public ThreadedScanner (File directory) {
+			base (directory);
+
 			results_queue = new AsyncQueue<ResultsArray> ();
+
+			// the thread owns a reference on the Scanner object
+			this.self = this;
 		}
 	}
 }

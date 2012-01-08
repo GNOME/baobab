@@ -253,11 +253,10 @@ namespace Baobab {
 
 			set_busy (true);
 
-			scanner = new ThreadedScanner ();
-			scanner.scan (directory);
-
+			scanner = new ThreadedScanner (directory);
 			set_model (scanner);
 
+			scanner.scan ();
 			set_busy (false);
 		}
 	}

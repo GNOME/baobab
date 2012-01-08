@@ -129,14 +129,17 @@ namespace Baobab {
 			}
 		}
 
-		protected override void scan (File directory) {
-			this.directory = directory;
+		public override void scan () {
 			try {
 				var info = directory.query_info (ATTRIBUTES, 0, cancellable);
 				var results = add_directory (directory, info);
 				add_percent (results.size);
 				max_depth = results.max_depth;
 			} catch { }
+		}
+
+		public SyncScanner (File directory) {
+			base (directory);
 		}
 	}
 }

@@ -63,26 +63,27 @@ namespace Baobab {
 			FileAttribute.UNIX_DEVICE + "," +
 			FileAttribute.ACCESS_CAN_READ;
 
-		public File directory { get; protected set; }
-
-		public abstract void scan (File directory);
+		public File directory { get; private set; }
 
 		public int max_depth { get; protected set; }
+
+		public abstract void scan ();
 
 		public virtual void stop () {
 			cancellable.cancel ();
 		}
 
-		public Scanner () {
+		public Scanner (File directory) {
+			this.directory = directory;
 			cancellable = new Cancellable();
 			set_column_types (new Type[] {
-			                  typeof (string),  /* DIR_NAME */
-			                  typeof (string),  /* PARSE_NAME */
-			                  typeof (double),  /* PERCENT */
-			                  typeof (uint64),  /* SIZE */
-			                  typeof (uint64),  /* ALLOC_SIZE */
-			                  typeof (int),     /* ELEMENTS */
-			                  typeof (State)}); /* STATE */
+			                  typeof (string),  // DIR_NAME
+			                  typeof (string),  // PARSE_NAME
+			                  typeof (double),  // PERCENT
+			                  typeof (uint64),  // SIZE
+			                  typeof (uint64),  // ALLOC_SIZE
+			                  typeof (int),     // ELEMENTS
+			                  typeof (State)}); // STATE
 			set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 			excluded_locations = Application.get_excluded_locations ();
 		}
