@@ -1,6 +1,7 @@
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
+ * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,11 +20,17 @@
 
 namespace Baobab {
 	public class Application : Gtk.Application {
+		static Application baobab;
+
+		private const GLib.ActionEntry[] action_entries = {
+			{ "help", on_help_activate },
+			{ "about", on_about_activate },
+			{ "quit", on_quit_activate }
+		};
+
 		Settings desktop_settings;
 		Settings prefs_settings;
 		Settings ui_settings;
-
-		static Application baobab;
 
 		protected override void activate () {
 			new Window (this);
@@ -63,9 +70,22 @@ namespace Baobab {
 
 			baobab = this;
 
+			// Settings
 			ui_settings = new Settings ("org.gnome.baobab.ui");
 			prefs_settings = new Settings ("org.gnome.baobab.preferences");
 			desktop_settings = new Settings ("org.gnome.desktop.interface");
+
+			// Menus
+			var builder = new Gtk.Builder ();
+			try {
+				builder.add_from_file (Config.PKGDATADIR + "/baobab-menu.ui");
+			} catch (Error e) {
+				error ("loading menu builder file: %s", e.message);
+			}
+			var app_menu = builder.get_object ("appmenu") as MenuModel;
+			var menubar = builder.get_object ("menubar") as MenuModel;
+			set_app_menu (app_menu);
+			set_menubar (menubar);
 		}
 
 		protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
@@ -80,6 +100,8 @@ namespace Baobab {
 
 		public Application () {
 			Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
+
+			add_action_entries (action_entries, this);
 		}
 
 		public static Settings get_desktop_settings () {
@@ -95,6 +117,15 @@ namespace Baobab {
 		public static Settings get_ui_settings () {
 			var app = baobab;
 			return app.ui_settings;
+		}
+
+		void on_help_activate () {
+		}
+
+		void on_about_activate () {
+		}
+
+		void on_quit_activate () {
 		}
 	}
 }

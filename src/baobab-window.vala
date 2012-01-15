@@ -29,12 +29,17 @@ namespace Baobab {
 		static Gdk.Cursor busy_cursor;
 
 		private const GLib.ActionEntry[] action_entries = {
-			{ "scan-home",       on_scan_home_activate       },
+			{ "scan-home", on_scan_home_activate },
 			{ "scan-filesystem", on_scan_filesystem_activate },
-			{ "scan-folder",     on_scan_folder_activate     },
-			{ "scan-remote",     on_scan_remote_activate     },
-			{ "stop",            on_stop_activate            },
-			{ "refresh",         on_refresh_activate         }
+			{ "scan-folder", on_scan_folder_activate },
+			{ "scan-remote", on_scan_remote_activate },
+			{ "stop", on_stop_activate },
+			{ "reload", on_reload_activate },
+			{ "show-toolbar", on_show_toolbar },
+			{ "show-statusbar", on_show_statusbar },
+			{ "show-allocated", on_show_allocated },
+			{ "expand-all", on_expand_all },
+			{ "collapse-all", on_collapse_all }
 		};
 
 		private enum DndTargets {
@@ -127,10 +132,27 @@ namespace Baobab {
 			}
 		}
 
-		void on_refresh_activate () {
+		void on_reload_activate () {
 			if (scanner != null) {
 				scan_directory (scanner.directory);
 			}
+		}
+
+		void on_show_toolbar () {
+		}
+
+		void on_show_statusbar () {
+		}
+
+		void on_show_allocated () {
+		}
+
+		void on_expand_all () {
+			treeview.expand_all ();
+		}
+
+		void on_collapse_all () {
+			treeview.collapse_all ();
 		}
 
 		void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="appmenu">
+    <section>
+      <item label="_Help" action="app.help" accel="F1"/>
+      <item label="_About" action="app.about"/>
+      <item label="_Quit" action="app.quit" accel="&lt;Primary&gt;q"/>
+    </section>
+  </menu>
+  <menu id="menubar">
+    <submenu label="_Analyzer">
+      <section>
+        <item label="_Scan Home" action="win.scan-home" accel="&lt;Primary&gt;h"/>
+        <item label="Scan _Filesystem" action="win.scan-filesystem" accel="&lt;Primary&gt;f"/>
+        <item label="Scan F_older" action="win.scan-folder" accel="&lt;Primary&gt;o"/>
+      </section>
+    </submenu>
+    <submenu label="_View">
+      <section>
+        <item label="_Stop" action="win.stop"/>
+        <item label="_Reload" action="win.reload" accel="&lt;Primary&gt;r"/>
+      </section>
+      <section>
+        <item label="_Toolbar" action="win.show-toolbar"/>
+        <item label="_Statusbar" action="win.show-statusbar"/>
+      </section>
+      <section>
+        <item label="_Allocated Space" action="win.show-allocated"/>
+      </section>
+      <section>
+        <item label="_Expand All" action="win.expand-all"/>
+        <item label="_Collapse All" action="win.collapse-all"/>
+      </section>
+    </submenu>
+  </menu>
+</interface>
