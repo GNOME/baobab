@@ -42,6 +42,23 @@ namespace Baobab {
 			{ "collapse-all", on_collapse_all }
 		};
 
+		protected struct ActionState {
+			string name;
+			bool enable;
+		}
+
+		private const ActionState[] actions_while_scanning = {
+			{ "scan-home", false },
+			{ "scan-filesystem", false },
+			{ "scan-folder", false },
+			{ "scan-remote", false },
+			{ "stop", true },
+			{ "reload", false },
+			{ "show-allocated", false },
+			{ "expand-all", false },
+			{ "collapse-all", false }
+		};
+
 		private enum DndTargets {
 			URI_LIST
 		}
@@ -86,10 +103,12 @@ namespace Baobab {
 			drag_data_received.connect(on_drag_data_received);
 			enable_drop ();
 
-			// Go live.
 			add (builder.get_object ("window-contents") as Gtk.Widget);
 			title = _("Disk Usage Analyzer");
 			set_default_size (800, 500);
+
+			set_busy (false);
+
 			show ();
 		}
 
@@ -213,6 +232,11 @@ namespace Baobab {
 			var window = get_window ();
 			if (window != null) {
 				window.set_cursor (cursor);
+			}
+
+			foreach (ActionState action_state in actions_while_scanning) {
+				var action = lookup_action (action_state.name) as SimpleAction;
+				action.set_enabled (busy == action_state.enable);
 			}
 		}
 
