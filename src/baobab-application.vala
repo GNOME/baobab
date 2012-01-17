@@ -23,8 +23,6 @@ namespace Baobab {
 		static Application baobab;
 
 		private const GLib.ActionEntry[] action_entries = {
-			{ "help", on_help_activate },
-			{ "about", on_about_activate },
 			{ "quit", on_quit_activate }
 		};
 
@@ -117,12 +115,6 @@ namespace Baobab {
 		public static Settings get_ui_settings () {
 			var app = baobab;
 			return app.ui_settings;
-		}
-
-		void on_help_activate () {
-		}
-
-		void on_about_activate () {
 		}
 
 		void on_quit_activate () {

@@ -3,19 +3,19 @@
   <!-- interface-requires gtk+ 3.0 -->
   <menu id="appmenu">
     <section>
-      <item label="_Help" action="app.help" accel="F1"/>
-      <item label="_About" action="app.about"/>
+      <item label="_Scan Home" action="win.scan-home" accel="&lt;Primary&gt;h"/>
+      <item label="Scan _Filesystem" action="win.scan-filesystem" accel="&lt;Primary&gt;f"/>
+      <item label="Scan F_older" action="win.scan-folder" accel="&lt;Primary&gt;o"/>
+    </section>
+    <section>
+      <item label="_Help" action="win.help" accel="F1"/>
+      <item label="_About" action="win.about"/>
+    </section>
+    <section>
       <item label="_Quit" action="app.quit" accel="&lt;Primary&gt;q"/>
     </section>
   </menu>
   <menu id="menubar">
-    <submenu label="_Analyzer">
-      <section>
-        <item label="_Scan Home" action="win.scan-home" accel="&lt;Primary&gt;h"/>
-        <item label="Scan _Filesystem" action="win.scan-filesystem" accel="&lt;Primary&gt;f"/>
-        <item label="Scan F_older" action="win.scan-folder" accel="&lt;Primary&gt;o"/>
-      </section>
-    </submenu>
     <submenu label="_View">
       <section>
         <item label="_Stop" action="win.stop"/>

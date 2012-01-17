@@ -39,7 +39,9 @@ namespace Baobab {
 			{ "show-statusbar", on_show_statusbar },
 			{ "show-allocated", on_show_allocated },
 			{ "expand-all", on_expand_all },
-			{ "collapse-all", on_collapse_all }
+			{ "collapse-all", on_collapse_all },
+			{ "help", on_help_activate },
+			{ "about", on_about_activate }
 		};
 
 		protected struct ActionState {
@@ -172,6 +174,39 @@ namespace Baobab {
 
 		void on_collapse_all () {
 			treeview.collapse_all ();
+		}
+
+		void on_help_activate () {
+			try {
+				Gtk.show_uri (get_screen (), "help:baobab", Gtk.get_current_event_time ());
+			} catch (Error e) {
+				warning ("Failed to show help: %s", e.message);
+			}
+		}
+
+		void on_about_activate () {
+			const string authors[] = {
+				"Ryan Lortie <desrt@desrt.ca>",
+				"Fabio Marzocca <thesaltydog@gmail.com>",
+				"Paolo Borelli <pborelli@gnome.com>",
+				"Benoît Dejean <benoit@placenet.org>",
+				"Igalia (rings-chart and treemap widget) <www.igalia.com>"
+			};
+
+			const string copyright = "Copyright \xc2\xa9 2005-2011 Fabio Marzocca, Paolo Borelli, Benoît Dejean, Igalia\n" +
+			                         "Copyright \xc2\xa9 2011-2012 Ryan Lortie, Paolo Borelli\n";
+
+			Gtk.show_about_dialog (this,
+			                       "program-name", _("Baobab"),
+			                       "logo-icon-name", "baobab",
+			                       "version", Config.VERSION,
+			                       "comments", "A graphical tool to analyze disk usage.",
+			                       "copyright", copyright,
+			                       "license-type", Gtk.License.GPL_2_0,
+			                       "wrap-license", false,
+			                       "authors", authors,
+			                       "translator-credits", _("translator-credits"),
+			                       null);
 		}
 
 		void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
