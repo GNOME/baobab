@@ -73,17 +73,22 @@ namespace Baobab {
 			prefs_settings = new Settings ("org.gnome.baobab.preferences");
 			desktop_settings = new Settings ("org.gnome.desktop.interface");
 
-			// Menus
+			// Menus: in gnome shell we just use the app menu, since the remaining
+			// items are too few to look ok in a menubar and they are not essential
+			var gtk_settings = Gtk.Settings.get_default ();
 			var builder = new Gtk.Builder ();
 			try {
 				builder.add_from_file (Config.PKGDATADIR + "/baobab-menu.ui");
 			} catch (Error e) {
 				error ("loading menu builder file: %s", e.message);
 			}
-			var app_menu = builder.get_object ("appmenu") as MenuModel;
-			var menubar = builder.get_object ("menubar") as MenuModel;
-			set_app_menu (app_menu);
-			set_menubar (menubar);
+			if (gtk_settings.gtk_shell_shows_app_menu) {
+				var app_menu = builder.get_object ("appmenu") as MenuModel;
+				set_app_menu (app_menu);
+			} else {
+				var menubar = builder.get_object ("menubar") as MenuModel;
+				set_menubar (menubar);
+			}
 		}
 
 		protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {

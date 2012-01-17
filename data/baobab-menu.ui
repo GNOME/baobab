@@ -16,6 +16,16 @@
     </section>
   </menu>
   <menu id="menubar">
+    <submenu label="_Analizer">
+      <section>
+        <item label="_Scan Home" action="win.scan-home" accel="&lt;Primary&gt;h"/>
+        <item label="Scan _Filesystem" action="win.scan-filesystem" accel="&lt;Primary&gt;f"/>
+        <item label="Scan F_older" action="win.scan-folder" accel="&lt;Primary&gt;o"/>
+      </section>
+      <section>
+        <item label="_Quit" action="app.quit" accel="&lt;Primary&gt;q"/>
+      </section>
+    </submenu>
     <submenu label="_View">
       <section>
         <item label="_Stop" action="win.stop"/>
@@ -31,6 +41,12 @@
       <section>
         <item label="_Expand All" action="win.expand-all"/>
         <item label="_Collapse All" action="win.collapse-all"/>
+      </section>
+    </submenu>
+    <submenu label="_Help">
+      <section>
+        <item label="_Help" action="win.help" accel="F1"/>
+        <item label="_About" action="win.about"/>
       </section>
     </submenu>
   </menu>
