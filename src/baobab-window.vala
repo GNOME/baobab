@@ -36,7 +36,6 @@ namespace Baobab {
 			{ "stop", on_stop_activate },
 			{ "reload", on_reload_activate },
 			{ "show-toolbar", on_show_toolbar },
-			{ "show-statusbar", on_show_statusbar },
 			{ "show-allocated", on_show_allocated },
 			{ "expand-all", on_expand_all },
 			{ "collapse-all", on_collapse_all },
@@ -97,10 +96,6 @@ namespace Baobab {
 			chart_type_combo.bind_property ("active", charts_notebook, "page", BindingFlags.SYNC_CREATE);
 			ui_settings.bind ("active-chart", chart_type_combo, "active-id", SettingsBindFlags.GET_NO_CHANGES);
 
-			// Setup the logic for statusbar visibility.
-			var statusbar = builder.get_object ("statusbar") as Gtk.Widget;
-			statusbar.visible = ui_settings.get_boolean ("statusbar-visible");
-
 			// Setup drag-n-drop
 			drag_data_received.connect(on_drag_data_received);
 			enable_drop ();
@@ -160,9 +155,6 @@ namespace Baobab {
 		}
 
 		void on_show_toolbar () {
-		}
-
-		void on_show_statusbar () {
 		}
 
 		void on_show_allocated () {
