@@ -20,15 +20,21 @@
 
 namespace Baobab {
 	public class Window : Gtk.ApplicationWindow {
+		Settings ui_settings;
 		Gtk.TreeView treeview;
-		Gtk.Widget chart_type_combo;
+		Gtk.Notebook chart_notebook;
 		Chart rings_chart;
 		Chart treemap_chart;
 		Scanner? scanner;
 
 		static Gdk.Cursor busy_cursor;
 
+		void radio_activate (SimpleAction action, Variant? parameter) {
+			action.change_state (parameter);
+		}
+
 		private const GLib.ActionEntry[] action_entries = {
+			{ "active-chart", radio_activate, "s", "'rings'", on_chart_type_changed },
 			{ "scan-home", on_scan_home_activate },
 			{ "scan-filesystem", on_scan_filesystem_activate },
 			{ "scan-folder", on_scan_folder_activate },
@@ -84,17 +90,13 @@ namespace Baobab {
 			}
 
 			// Cache some objects from the builder.
-			chart_type_combo = builder.get_object ("chart-type-combo") as Gtk.Widget;
+			chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
 			rings_chart = builder.get_object ("rings-chart") as Chart;
 			treemap_chart = builder.get_object ("treemap-chart") as Chart;
 			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 
-			var ui_settings = Application.get_ui_settings ();
-
-			// Setup the logic for switching between the chart types.
-			var charts_notebook = builder.get_object ("chart-notebook");
-			chart_type_combo.bind_property ("active", charts_notebook, "page", BindingFlags.SYNC_CREATE);
-			ui_settings.bind ("active-chart", chart_type_combo, "active-id", SettingsBindFlags.GET_NO_CHANGES);
+			ui_settings = Application.get_ui_settings ();
+			lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 
 			// Setup drag-n-drop
 			drag_data_received.connect(on_drag_data_received);
@@ -107,6 +109,22 @@ namespace Baobab {
 			set_busy (false);
 
 			show ();
+		}
+
+		void on_chart_type_changed (SimpleAction action, Variant value) {
+			switch (value as string) {
+				case "rings":
+					chart_notebook.page = 0;
+					break;
+				case "treemap":
+					chart_notebook.page = 1;
+					break;
+				default:
+					return;
+			}
+
+			ui_settings.set_value ("active-chart", value);
+			action.set_state (value);
 		}
 
 		void on_scan_home_activate () {
@@ -248,12 +266,12 @@ namespace Baobab {
 				disable_drop ();
 				rings_chart.freeze_updates();
 				treemap_chart.freeze_updates ();
-				chart_type_combo.set_sensitive (false);
+				(lookup_action ("active-chart") as SimpleAction).set_enabled (false);
 			} else {
 				enable_drop ();
 				rings_chart.thaw_updates();
 				treemap_chart.thaw_updates ();
-				chart_type_combo.set_sensitive (true);
+				(lookup_action ("active-chart") as SimpleAction).set_enabled (true);
 			}
 
 			var window = get_window ();
