@@ -97,8 +97,8 @@ namespace Baobab {
 			results.parent = parent;
 
 			results.size = info.get_size ();
-			if (info.has_attribute (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE)) {
-				results.alloc_size = info.get_attribute_uint64 (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE);
+			if (info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
+				results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
 			}
 			results.elements = 1;
 
@@ -125,8 +125,8 @@ namespace Baobab {
 							break;
 
 						case FileType.REGULAR:
-							if (child_info.has_attribute (FILE_ATTRIBUTE_UNIX_NLINK)) {
-								if (child_info.get_attribute_uint32 (FILE_ATTRIBUTE_UNIX_NLINK) > 1) {
+							if (child_info.has_attribute (FileAttribute.UNIX_NLINK)) {
+								if (child_info.get_attribute_uint32 (FileAttribute.UNIX_NLINK) > 1) {
 									var hl = HardLink (child_info);
 
 									// check if we've already encountered this file
@@ -139,8 +139,8 @@ namespace Baobab {
 							}
 
 							results.size += child_info.get_size ();
-							if (child_info.has_attribute (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE)) {
-								results.alloc_size += child_info.get_attribute_uint64 (FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE);
+							if (child_info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
+								results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
 							}
 							results.elements++;
 							break;

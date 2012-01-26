@@ -201,7 +201,7 @@ namespace Baobab {
 			//}
 
 			try {
-				var info = directory.query_info (FILE_ATTRIBUTE_STANDARD_TYPE, FileQueryInfoFlags.NONE, null);
+				var info = directory.query_info (FileAttribute.STANDARD_TYPE, FileQueryInfoFlags.NONE, null);
 				if (info.get_file_type () != FileType.DIRECTORY/* || is_virtual_filesystem ()*/) {
 					var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
 					message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);

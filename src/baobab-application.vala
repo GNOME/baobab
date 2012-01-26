@@ -39,7 +39,7 @@ namespace Baobab {
 		public static HashTable<File, unowned File> get_excluded_locations () {
 			var app = baobab;
 
-			var excluded_locations = new HashTable<File, unowned File> (file_hash, file_equal);
+			var excluded_locations = new HashTable<File, unowned File> (File.hash, File.equal);
 			excluded_locations.add (File.new_for_path ("/proc"));
 			excluded_locations.add (File.new_for_path ("/sys"));
 			excluded_locations.add (File.new_for_path ("/selinux"));

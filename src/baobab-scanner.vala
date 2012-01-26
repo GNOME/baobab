@@ -43,8 +43,8 @@ namespace Baobab {
 			uint32 device;
 
 			public HardLink (FileInfo info) {
-				this.inode = info.get_attribute_uint64 (FILE_ATTRIBUTE_UNIX_INODE);
-				this.device = info.get_attribute_uint32 (FILE_ATTRIBUTE_UNIX_DEVICE);
+				this.inode = info.get_attribute_uint64 (FileAttribute.UNIX_INODE);
+				this.device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
 			}
 		}
 
@@ -53,15 +53,15 @@ namespace Baobab {
 		protected HardLink[] hardlinks;
 
 		protected static const string ATTRIBUTES =
-			FILE_ATTRIBUTE_STANDARD_NAME + "," +
-			FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME + "," +
-			FILE_ATTRIBUTE_STANDARD_TYPE + "," +
-			FILE_ATTRIBUTE_STANDARD_SIZE +  "," +
-			FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE +  "," +
-			FILE_ATTRIBUTE_UNIX_NLINK + "," +
-			FILE_ATTRIBUTE_UNIX_INODE + "," +
-			FILE_ATTRIBUTE_UNIX_DEVICE + "," +
-			FILE_ATTRIBUTE_ACCESS_CAN_READ;
+			FileAttribute.STANDARD_NAME + "," +
+			FileAttribute.STANDARD_DISPLAY_NAME + "," +
+			FileAttribute.STANDARD_TYPE + "," +
+			FileAttribute.STANDARD_SIZE +  "," +
+			FileAttribute.STANDARD_ALLOCATED_SIZE +  "," +
+			FileAttribute.UNIX_NLINK + "," +
+			FileAttribute.UNIX_INODE + "," +
+			FileAttribute.UNIX_DEVICE + "," +
+			FileAttribute.ACCESS_CAN_READ;
 
 		public File directory { get; protected set; }
 
