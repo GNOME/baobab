@@ -1,55 +1,130 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <menu id="appmenu">
     <section>
-      <item label="_Scan Home" action="win.scan-home" accel="&lt;Primary&gt;h"/>
-      <item label="Scan _Filesystem" action="win.scan-filesystem" accel="&lt;Primary&gt;f"/>
-      <item label="Scan F_older" action="win.scan-folder" accel="&lt;Primary&gt;o"/>
+      <item>
+        <attribute name="label" translatable="yes">_Scan Home</attribute>
+        <attribute name="action">win.scan-home</attribute>
+        <attribute name="accel">&lt;Primary&gt;h</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Scan _Filesystem</attribute>
+        <attribute name="action">win.scan-filesystem</attribute>
+        <attribute name="accel">&lt;Primary&gt;f</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Scan F_older</attribute>
+        <attribute name="action">win.scan-folder</attribute>
+        <attribute name="accel">&lt;Primary&gt;o</attribute>
+      </item>
     </section>
     <section>
-      <item label="_Stop" action="win.stop"/>
-      <item label="_Reload" action="win.reload" accel="&lt;Primary&gt;r"/>
+      <item>
+        <attribute name="label" translatable="yes">_Stop</attribute>
+        <attribute name="action">win.stop</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Reload</attribute>
+        <attribute name="action">win.reload</attribute>
+        <attribute name="accel">&lt;Primary&gt;r</attribute>
+      </item>
     </section>
     <section>
-      <item label="_Help" action="win.help" accel="F1"/>
-      <item label="_About" action="win.about"/>
+      <item>
+        <attribute name="label" translatable="yes">_Help</attribute>
+        <attribute name="action">win.help</attribute>
+        <attribute name="accel">F1</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About</attribute>
+        <attribute name="action">win.about</attribute>
+      </item>
     </section>
     <section>
-      <item label="_Quit" action="app.quit" accel="&lt;Primary&gt;q"/>
+      <item>
+        <attribute name="label" translatable="yes">_Quit</attribute>
+        <attribute name="action">app.quit</attribute>
+        <attribute name="accel">&lt;Primary&gt;q</attribute>
+      </item>
     </section>
   </menu>
   <menu id="menubar">
-    <submenu label="_Analizer">
+    <submenu>
+      <attribute name="label" translatable="yes">_Analizer</attribute>
       <section>
-        <item label="_Scan Home" action="win.scan-home" accel="&lt;Primary&gt;h"/>
-        <item label="Scan _Filesystem" action="win.scan-filesystem" accel="&lt;Primary&gt;f"/>
-        <item label="Scan F_older" action="win.scan-folder" accel="&lt;Primary&gt;o"/>
+        <item>
+          <attribute name="label" translatable="yes">_Scan Home</attribute>
+          <attribute name="action">win.scan-home</attribute>
+          <attribute name="accel">&lt;Primary&gt;h</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Scan _Filesystem</attribute>
+          <attribute name="action">win.scan-filesystem</attribute>
+          <attribute name="accel">&lt;Primary&gt;f</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Scan F_older</attribute>
+          <attribute name="action">win.scan-folder</attribute>
+          <attribute name="accel">&lt;Primary&gt;o</attribute>
+        </item>
       </section>
       <section>
-        <item label="_Quit" action="app.quit" accel="&lt;Primary&gt;q"/>
+        <item>
+          <attribute name="label" translatable="yes">_Quit</attribute>
+          <attribute name="action">app.quit</attribute>
+          <attribute name="accel">&lt;Primary&gt;q</attribute>
+        </item>
       </section>
     </submenu>
-    <submenu label="_View">
+    <submenu>
+      <attribute name="label" translatable="yes">_View</attribute>
       <section>
-        <item label="_Stop" action="win.stop"/>
-        <item label="_Reload" action="win.reload" accel="&lt;Primary&gt;r"/>
+        <item>
+          <attribute name="label" translatable="yes">_Stop</attribute>
+          <attribute name="action">win.stop</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Reload</attribute>
+          <attribute name="action">win.reload</attribute>
+          <attribute name="accel">&lt;Primary&gt;r</attribute>
+        </item>
       </section>
       <section>
-        <item label="_Toolbar" action="win.show-toolbar"/>
+        <item>
+          <attribute name="label" translatable="yes">_Toolbar</attribute>
+          <attribute name="action">win.show-toolbar</attribute>
+        </item>
       </section>
       <section>
-        <item label="_Allocated Space" action="win.show-allocated"/>
+        <item>
+          <attribute name="label" translatable="yes">_Allocated Space</attribute>
+          <attribute name="action">win.show-allocated</attribute>
+        </item>
       </section>
       <section>
-        <item label="_Expand All" action="win.expand-all"/>
-        <item label="_Collapse All" action="win.collapse-all"/>
+        <item>
+          <attribute name="label" translatable="yes">_Expand All</attribute>
+          <attribute name="action">win.expand-all</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Collapse All</attribute>
+          <attribute name="action">win.collapse-all</attribute>
+        </item>
       </section>
     </submenu>
-    <submenu label="_Help">
+    <submenu>
+      <attribute name="label" translatable="yes">_Help</attribute>
       <section>
-        <item label="_Help" action="win.help" accel="F1"/>
-        <item label="_About" action="win.about"/>
+        <item>
+          <attribute name="label" translatable="yes">_Help</attribute>
+          <attribute name="action">win.help</attribute>
+          <attribute name="accel">F1</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_About</attribute>
+          <attribute name="action">win.about</attribute>
+        </item>
       </section>
     </submenu>
   </menu>
