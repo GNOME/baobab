@@ -95,6 +95,8 @@ namespace Baobab {
 			treemap_chart = builder.get_object ("treemap-chart") as Chart;
 			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 
+			setup_treeview_popup (builder);
+
 			ui_settings = Application.get_ui_settings ();
 			lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 
@@ -248,6 +250,70 @@ namespace Baobab {
 
 		void disable_drop () {
 			Gtk.drag_dest_unset (this);
+		}
+
+		bool show_treeview_popup (Gtk.Menu popup, Gdk.EventButton? event) {
+			if (event != null) {
+				popup.popup (null, null, null, event.button, event.time);
+			} else {
+				popup.popup (null, null, null, 0, Gtk.get_current_event_time ());
+				popup.select_first (false);
+			}
+			return true;
+		}
+
+		void setup_treeview_popup (Gtk.Builder builder) {
+			var popup = builder.get_object ("treeview-popup-menu") as Gtk.Menu;
+			var open_item = builder.get_object ("treeview-popup-open") as Gtk.MenuItem;
+			var trash_item = builder.get_object ("treeview-popup-trash") as Gtk.MenuItem;
+
+			treeview.button_press_event.connect ((event) => {
+				if (((Gdk.Event) (&event)).triggers_context_menu ()) {
+					return show_treeview_popup (popup, event);
+				}
+
+				return false;
+			});
+
+			treeview.popup_menu.connect (() => {
+				return show_treeview_popup (popup, null);
+			});
+
+			open_item.activate.connect (() => {
+				var selection = treeview.get_selection ();
+				Gtk.TreeIter iter;
+				if (selection.get_selected (null, out iter)) {
+					string parse_name;
+					scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+					var file = File.parse_name (parse_name);
+					try {
+						var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, 0, null);
+						var content = info.get_content_type ();
+						var appinfo = AppInfo.get_default_for_type (content, true);
+						var files = new List<File>();
+						files.append (file);
+						appinfo.launch(files, null);
+					} catch (Error e) {
+						warning ("Failed open file with application: %s", e.message);
+					}
+				}
+			});
+
+			trash_item.activate.connect (() => {
+				var selection = treeview.get_selection ();
+				Gtk.TreeIter iter;
+				if (selection.get_selected (null, out iter)) {
+					string parse_name;
+					scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+					var file = File.parse_name (parse_name);
+					try {
+						file.trash ();
+						scanner.remove (iter);
+					} catch (Error e) {
+						warning ("Failed to move file to the trash: %s", e.message);
+					}
+				}
+			});
 		}
 
 		void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
