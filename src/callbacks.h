@@ -51,9 +51,5 @@ void on_menu_scan_rem_activate (GtkMenuItem *menuitem, gpointer user_data);
 void on_ck_allocated_activate (GtkToggleAction *action, gpointer user_data);
 void on_helpcontents_activate (GtkAction *a, gpointer user_data);
 void on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data);
-void on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void on_chart_snapshot_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 
 #endif /* __BAOBAB_CALLBACKS_H__ */

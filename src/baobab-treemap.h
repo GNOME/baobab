@@ -56,8 +56,9 @@ struct _BaobabTreemapClass
   BaobabChartClass parent_class;
 };
 
-GType baobab_treemap_get_type (void) G_GNUC_CONST;
-GtkWidget* baobab_treemap_new (void);
+GType            baobab_treemap_get_type          (void) G_GNUC_CONST;
+
+GtkWidget       *baobab_treemap_new               (void);
 
 G_END_DECLS
 

@@ -39,18 +39,6 @@ struct BaobabSearchOpt;
 #define BAOBAB_SETTINGS_EXCLUDED_URIS "excluded-uris"
 #define DESKTOP_SETTINGS_TOOLBAR_STYLE "toolbar-style"
 
-typedef struct _BaobabChartMenu BaobabChartMenu;
-
-struct _BaobabChartMenu {
-	GtkWidget *widget;
-	GtkWidget *up_item;
-	GtkWidget *zoom_in_item;
-	GtkWidget *zoom_out_item;
-	GtkWidget *subfolders_item;
-	GtkWidget *snapshot_item;
-	GtkWidget *set_root_item;
-};
-
 typedef struct _BaobabApplication BaobabApplication;
 
 struct _BaobabApplication {
@@ -62,7 +50,6 @@ struct _BaobabApplication {
 	GtkWidget *treemap_chart;
 	GtkWidget *current_chart;
 	GtkWidget *chart_type_combo;
-	BaobabChartMenu *chart_menu;
 	GtkWidget *toolbar;
 	GtkWidget *spinner;
 	GtkWidget *statusbar;

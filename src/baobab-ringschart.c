@@ -53,7 +53,7 @@
 
 #define SUBFOLDER_TIP_PADDING 3
 
-G_DEFINE_TYPE (BaobabRingschart, baobab_ringschart, BAOBAB_CHART_TYPE);
+G_DEFINE_TYPE (BaobabRingschart, baobab_ringschart, BAOBAB_TYPE_CHART);
 
 typedef struct _BaobabRingschartItem BaobabRingschartItem;
 
@@ -84,23 +84,23 @@ static void baobab_ringschart_draw_sector (cairo_t *cr,
                                            gdouble init_angle, gdouble final_angle,
                                            BaobabChartColor fill_color,
                                            gboolean continued, guint border);
-static void baobab_ringschart_draw_item (GtkWidget *chart,
+static void baobab_ringschart_draw_item (BaobabChart *chart,
                                          cairo_t *cr,
                                          BaobabChartItem *item,
                                          gboolean highlighted);
-static void baobab_ringschart_calculate_item_geometry (GtkWidget *chart,
+static void baobab_ringschart_calculate_item_geometry (BaobabChart *chart,
                                                        BaobabChartItem *item);
-static gboolean baobab_ringschart_is_point_over_item (GtkWidget *chart,
+static gboolean baobab_ringschart_is_point_over_item (BaobabChart *chart,
                                                       BaobabChartItem *item,
                                                       gdouble x,
                                                       gdouble y);
 static void baobab_ringschart_get_point_min_rect (gdouble cx, gdouble cy,
                                                   gdouble radius, gdouble angle,
                                                   GdkRectangle *rect);
-static void baobab_ringschart_get_item_rectangle (GtkWidget *chart,
+static void baobab_ringschart_get_item_rectangle (BaobabChart *chart,
                                                   BaobabChartItem *item);
-static void baobab_ringschart_pre_draw (GtkWidget *chart, cairo_t *cr);
-static void baobab_ringschart_post_draw (GtkWidget *chart, cairo_t *cr);
+static void baobab_ringschart_pre_draw (BaobabChart *chart, cairo_t *cr);
+static void baobab_ringschart_post_draw (BaobabChart *chart, cairo_t *cr);
 
 
 static void
@@ -126,21 +126,20 @@ baobab_ringschart_class_init (BaobabRingschartClass *class)
 static void
 baobab_ringschart_init (BaobabRingschart *chart)
 {
-  BaobabRingschartPrivate *priv;
   GtkSettings* settings;
   gint timeout;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  chart->priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
 
-  priv->subfoldertips_enabled = TRUE;
-  priv->highlighted_item = NULL;
-  priv->tips_timeout_event = 0;
-  priv->subtip_items = NULL;
-  priv->drawing_subtips = FALSE;
+  chart->priv->subfoldertips_enabled = TRUE;
+  chart->priv->highlighted_item = NULL;
+  chart->priv->tips_timeout_event = 0;
+  chart->priv->subtip_items = NULL;
+  chart->priv->drawing_subtips = FALSE;
 
   settings = gtk_settings_get_default ();
   g_object_get (G_OBJECT (settings), "gtk-tooltip-timeout", &timeout, NULL);
-  priv->subtip_timeout = 2 * timeout;
+  chart->priv->subtip_timeout = 2 * timeout;
 }
 
 static void
@@ -177,17 +176,17 @@ baobab_ringschart_draw_sector (cairo_t *cr,
 }
 
 static void
-baobab_ringschart_draw_item (GtkWidget *chart,
-                             cairo_t *cr,
+baobab_ringschart_draw_item (BaobabChart     *chart,
+                             cairo_t         *cr,
                              BaobabChartItem *item,
-                             gboolean highlighted)
+                             gboolean         highlighted)
 {
   BaobabRingschartPrivate *priv;
   BaobabRingschartItem *data;
   BaobabChartColor fill_color;
   GtkAllocation allocation;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  priv = BAOBAB_RINGSCHART (chart)->priv;
 
   data = (BaobabRingschartItem *) item->data;
 
@@ -210,7 +209,8 @@ baobab_ringschart_draw_item (GtkWidget *chart,
                                item->depth,
                                highlighted);
 
-  gtk_widget_get_allocation (chart, &allocation);
+  gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
+
   baobab_ringschart_draw_sector (cr,
                                  allocation.width / 2,
                                  allocation.height / 2,
@@ -224,7 +224,7 @@ baobab_ringschart_draw_item (GtkWidget *chart,
 }
 
 static void
-baobab_ringschart_calculate_item_geometry (GtkWidget *chart,
+baobab_ringschart_calculate_item_geometry (BaobabChart *chart,
                                            BaobabChartItem *item)
 {
   BaobabRingschartItem *data;
@@ -246,7 +246,7 @@ baobab_ringschart_calculate_item_geometry (GtkWidget *chart,
   data->continued = FALSE;
   item->visible = FALSE;
 
-  gtk_widget_get_allocation (chart, &allocation);
+  gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
   max_radius = MIN (allocation.width / 2, allocation.height / 2) - CHART_PADDING;
   thickness = max_radius / (max_depth + 1);
 
@@ -285,7 +285,7 @@ baobab_ringschart_calculate_item_geometry (GtkWidget *chart,
 }
 
 static gboolean
-baobab_ringschart_is_point_over_item (GtkWidget *chart,
+baobab_ringschart_is_point_over_item (BaobabChart *chart,
                                       BaobabChartItem *item,
                                       gdouble x,
                                       gdouble y)
@@ -295,7 +295,7 @@ baobab_ringschart_is_point_over_item (GtkWidget *chart,
   GtkAllocation allocation;
 
   data = (BaobabRingschartItem *) item->data;
-  gtk_widget_get_allocation (chart, &allocation);
+  gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
   x = x - allocation.width / 2;
   y = y - allocation.height / 2;
 
@@ -328,8 +328,8 @@ baobab_ringschart_get_point_min_rect (gdouble cx,
 }
 
 static void
-baobab_ringschart_get_item_rectangle (GtkWidget *chart,
-                                       BaobabChartItem *item)
+baobab_ringschart_get_item_rectangle (BaobabChart *chart,
+                                      BaobabChartItem *item)
 {
   BaobabRingschartItem *data;
   GdkRectangle rect;
@@ -338,7 +338,7 @@ baobab_ringschart_get_item_rectangle (GtkWidget *chart,
 
   data = (BaobabRingschartItem *) item->data;
 
-  gtk_widget_get_allocation (chart, &allocation);
+  gtk_widget_get_allocation (GTK_WIDGET (chart), &allocation);
   cx = allocation.width / 2;
   cy = allocation.height / 2;
   r1 = data->min_radius;
@@ -374,12 +374,12 @@ baobab_ringschart_get_item_rectangle (GtkWidget *chart,
   item->rect = rect;
 }
 
-gboolean
+static gboolean
 baobab_ringschart_subfolder_tips_timeout (gpointer data)
 {
   BaobabRingschartPrivate *priv;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (data);
+  priv = BAOBAB_RINGSCHART (data)->priv;
 
   priv->drawing_subtips = TRUE;
 
@@ -389,15 +389,15 @@ baobab_ringschart_subfolder_tips_timeout (gpointer data)
 }
 
 void
-baobab_ringschart_clean_subforlder_tips_state (GtkWidget *chart)
+baobab_ringschart_clean_subforlder_tips_state (BaobabRingschart *chart)
 {
   BaobabRingschartPrivate *priv;
   GList *node;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  priv = chart->priv;
 
   if (priv->drawing_subtips)
-    gtk_widget_queue_draw (chart);
+    gtk_widget_queue_draw (GTK_WIDGET (chart));
 
   priv->drawing_subtips = FALSE;
 
@@ -429,26 +429,11 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
 {
   BaobabRingschartPrivate *priv;
   GList *node;
-  BaobabChartItem *item;
-  BaobabRingschartItem *data;
-
   gdouble q_angle, q_width, q_height;
-
-  gdouble tip_x, tip_y;
-  gdouble middle_angle, middle_angle_n, middle_radius;
-  gdouble sector_center_x, sector_center_y;
-  gdouble a;
-  guint i;
   GtkAllocation allocation;
+  GdkRectangle last_rect;
 
-  PangoLayout *layout;
-  PangoRectangle layout_rect;
-  gchar *markup = NULL;
-
-  cairo_rectangle_t tooltip_rect;
-  GdkRectangle _rect, last_rect;
-
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  priv = BAOBAB_RINGSCHART (chart)->priv;
 
   gtk_widget_get_allocation (chart, &allocation);
   q_width = allocation.width / 2;
@@ -462,6 +447,20 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
   node = priv->subtip_items;
   while (node != NULL)
     {
+      BaobabChartItem *item;
+      BaobabRingschartItem *data;
+      gdouble middle_angle, middle_angle_n, middle_radius;
+      gdouble tip_x, tip_y;
+      gdouble sector_center_x, sector_center_y;
+      gdouble a;
+      guint i;
+      char *escaped;
+      char *markup;
+      PangoLayout *layout;
+      PangoRectangle layout_rect;
+      GdkRectangle _rect;
+      cairo_rectangle_t tooltip_rect;
+
       item = (BaobabChartItem *) node->data;
       data = (BaobabRingschartItem *) item->data;
 
@@ -476,9 +475,12 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
 
       /* get the pango layout and its enclosing rectangle */
       layout = gtk_widget_create_pango_layout (chart, NULL);
-      markup = g_strconcat ("<span size=\"small\">", item->name, "</span>", NULL);
+      escaped = g_markup_escape_text (item->name, -1);
+      markup = g_strconcat ("<span size=\"small\">", escaped, "</span>", NULL);
       pango_layout_set_markup (layout, markup, -1);
+      g_free (escaped);
       g_free (markup);
+
       pango_layout_set_indent (layout, 0);
       pango_layout_set_spacing (layout, 0);
       pango_layout_get_pixel_extents (layout, NULL, &layout_rect);
@@ -589,25 +591,25 @@ baobab_ringschart_draw_subfolder_tips (GtkWidget *chart, cairo_t *cr)
 }
 
 static void
-baobab_ringschart_pre_draw (GtkWidget *chart, cairo_t *cr)
+baobab_ringschart_pre_draw (BaobabChart *chart,
+                            cairo_t     *cr)
 {
   BaobabRingschartPrivate *priv;
   BaobabChartItem *hl_item;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  priv = BAOBAB_RINGSCHART (chart)->priv;
 
   hl_item = baobab_chart_get_highlighted_item (chart);
 
-  if ( (hl_item == NULL) || (! hl_item->has_visible_children) )
+  if ((hl_item == NULL) || (! hl_item->has_visible_children))
     {
-      baobab_ringschart_clean_subforlder_tips_state (chart);
-
+      baobab_ringschart_clean_subforlder_tips_state (BAOBAB_RINGSCHART (chart));
       return;
     }
 
   if (hl_item != priv->highlighted_item)
     {
-      baobab_ringschart_clean_subforlder_tips_state (chart);
+      baobab_ringschart_clean_subforlder_tips_state (BAOBAB_RINGSCHART (chart));
 
       priv->highlighted_item = hl_item;
 
@@ -619,18 +621,19 @@ baobab_ringschart_pre_draw (GtkWidget *chart, cairo_t *cr)
 }
 
 static void
-baobab_ringschart_post_draw (GtkWidget *chart, cairo_t *cr)
+baobab_ringschart_post_draw (BaobabChart *chart,
+                             cairo_t     *cr)
 {
   BaobabRingschartPrivate *priv;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  priv = BAOBAB_RINGSCHART (chart)->priv;
 
   if (priv->drawing_subtips)
     {
       /* Reverse the glist, which was created from the tail */
       priv->subtip_items = g_list_reverse (priv->subtip_items);
 
-      baobab_ringschart_draw_subfolder_tips (chart, cr);
+      baobab_ringschart_draw_subfolder_tips (GTK_WIDGET (chart), cr);
     }
 }
 
@@ -661,15 +664,16 @@ baobab_ringschart_new (void)
  *
  **/
 void
-baobab_ringschart_set_subfoldertips_enabled (GtkWidget *chart, gboolean enabled)
+baobab_ringschart_set_subfoldertips_enabled (BaobabRingschart *chart,
+                                             gboolean          enabled)
 {
   BaobabRingschartPrivate *priv;
 
-  priv = BAOBAB_RINGSCHART_GET_PRIVATE (chart);
+  priv = chart->priv;
 
   priv->subfoldertips_enabled = enabled;
 
-  if ( (! enabled) && (priv->drawing_subtips) )
+  if (!enabled && priv->drawing_subtips)
     {
       /* Turn off currently drawn tips */
       baobab_ringschart_clean_subforlder_tips_state (chart);

@@ -302,35 +302,11 @@ on_tv_selection_changed (GtkTreeSelection *selection, gpointer user_data)
 
 		path = gtk_tree_model_get_path (GTK_TREE_MODEL (baobab.model), &iter);
 
-		baobab_chart_set_root (baobab.rings_chart, path);
-		baobab_chart_set_root (baobab.treemap_chart, path);
+		baobab_chart_set_root (BAOBAB_CHART (baobab.rings_chart), path);
+		baobab_chart_set_root (BAOBAB_CHART (baobab.treemap_chart), path);
 
 		gtk_tree_path_free (path);
 	}
-}
-
-void
-on_move_upwards_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
-{
-	baobab_chart_move_up_root (baobab.current_chart);
-}
-
-void
-on_zoom_in_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
-{
-	baobab_chart_zoom_in (baobab.current_chart);
-}
-
-void
-on_zoom_out_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
-{
-	baobab_chart_zoom_out (baobab.current_chart);
-}
-
-void
-on_chart_snapshot_cb (GtkCheckMenuItem *checkmenuitem, gpointer user_data)
-{
-	baobab_chart_save_snapshot (baobab.current_chart);
 }
 
 /* ex:set ts=8 noet: */

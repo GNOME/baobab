@@ -82,9 +82,8 @@ baobab_set_busy (gboolean busy)
 		gtk_widget_show (baobab.spinner);
 		gtk_spinner_start (GTK_SPINNER (baobab.spinner));
 
-		baobab_chart_freeze_updates (baobab.rings_chart);
-
-		baobab_chart_freeze_updates (baobab.treemap_chart);
+		baobab_chart_freeze_updates (BAOBAB_CHART (baobab.rings_chart));
+		baobab_chart_freeze_updates (BAOBAB_CHART (baobab.treemap_chart));
 
 		gtk_widget_set_sensitive (baobab.chart_type_combo, FALSE);
 	}
@@ -92,8 +91,8 @@ baobab_set_busy (gboolean busy)
 		gtk_widget_hide (baobab.spinner);
 		gtk_spinner_stop (GTK_SPINNER (baobab.spinner));
 
-		baobab_chart_thaw_updates (baobab.rings_chart);
-		baobab_chart_thaw_updates (baobab.treemap_chart);
+		baobab_chart_thaw_updates (BAOBAB_CHART (baobab.rings_chart));
+		baobab_chart_thaw_updates (BAOBAB_CHART (baobab.treemap_chart));
 
 		gtk_widget_set_sensitive (baobab.chart_type_combo, TRUE);
 	}
@@ -270,8 +269,8 @@ baobab_scan_location (GFile *file)
 				show_bars,
 				NULL);
 
-	baobab_chart_set_max_depth (baobab.rings_chart, baobab.model_max_depth);
-	baobab_chart_set_max_depth (baobab.treemap_chart, baobab.model_max_depth);
+	baobab_chart_set_max_depth (BAOBAB_CHART (baobab.rings_chart), baobab.model_max_depth);
+	baobab_chart_set_max_depth (BAOBAB_CHART (baobab.treemap_chart), baobab.model_max_depth);
 
 	baobab_set_busy (FALSE);
 	check_menu_sens (FALSE);
@@ -929,60 +928,6 @@ baobab_shutdown (void)
 	g_settings_sync ();
 }
 
-static BaobabChartMenu *
-create_context_menu (void)
-{
-	BaobabChartMenu *menu = NULL;
-
-	baobab.chart_menu = g_new0 (BaobabChartMenu, 1);
-	menu = baobab.chart_menu;
-
-	menu->widget = gtk_menu_new ();
-
-	menu->up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->up_item),
-				       gtk_image_new_from_stock(GTK_STOCK_GO_UP, GTK_ICON_SIZE_MENU));
-
-	menu->zoom_in_item = gtk_image_menu_item_new_with_label (_("Zoom in")) ;
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_in_item),
-				       gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_MENU));
-
-	menu->zoom_out_item = gtk_image_menu_item_new_with_label (_("Zoom out"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->zoom_out_item),
-				       gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));
-
-	menu->snapshot_item = gtk_image_menu_item_new_with_label (_("Save screenshot"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu->snapshot_item),
-				       gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
-
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
-			       menu->up_item);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
-			       gtk_separator_menu_item_new ());
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
-			       menu->zoom_in_item);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
-			       menu->zoom_out_item);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
-			       gtk_separator_menu_item_new ());
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu->widget),
-			       menu->snapshot_item);
-
-	/* connect signals */
-	g_signal_connect (menu->up_item, "activate",
-			  G_CALLBACK (on_move_upwards_cb), NULL);
-	g_signal_connect (menu->zoom_in_item, "activate",
-			  G_CALLBACK (on_zoom_in_cb), NULL);
-	g_signal_connect (menu->zoom_out_item, "activate",
-			  G_CALLBACK (on_zoom_out_cb), NULL);
-	g_signal_connect (menu->snapshot_item, "activate",
-					  G_CALLBACK (on_chart_snapshot_cb), NULL);
-
-	gtk_widget_show_all (menu->widget);
-
-	return menu;
-}
-
 static void
 on_chart_item_activated (BaobabChart *chart, GtkTreeIter *iter)
 {
@@ -996,41 +941,6 @@ on_chart_item_activated (BaobabChart *chart, GtkTreeIter *iter)
 	gtk_tree_view_set_cursor (GTK_TREE_VIEW (baobab.tree_view),
 				  path, NULL, FALSE);
 	gtk_tree_path_free (path);
-}
-
-static gboolean
-on_chart_button_release (BaobabChart *chart,
-			 GdkEventButton *event,
-			 gpointer data)
-{
-	if (baobab_chart_is_frozen (baobab.current_chart))
-		return FALSE;
-
-	if (event->button== 3) /* right button */
-	{
-		GtkTreePath *root_path;
-		BaobabChartMenu *menu;
-
-		root_path = baobab_chart_get_root (baobab.current_chart);
-
-		menu = baobab.chart_menu;
-		gtk_widget_set_sensitive (menu->up_item,
-					  ((root_path != NULL) &&
-					  (gtk_tree_path_get_depth (root_path) > 1)));
-		gtk_widget_set_sensitive (menu->zoom_in_item,
-					  baobab_chart_can_zoom_in (baobab.current_chart));
-		gtk_widget_set_sensitive (menu->zoom_out_item,
-					  baobab_chart_can_zoom_out (baobab.current_chart));
-
-		/* show the menu */
-		gtk_menu_popup (GTK_MENU (menu->widget),
-				NULL, NULL, NULL, NULL,
-				event->button, event->time);
-
-		gtk_tree_path_free (root_path);
-	}
-
-	return FALSE;
 }
 
 static void
@@ -1075,7 +985,7 @@ set_active_chart (GtkWidget *chart)
 {
 	if (baobab.current_chart != chart) {
 		if (baobab.current_chart) {
-			baobab_chart_freeze_updates (baobab.current_chart);
+			baobab_chart_freeze_updates (BAOBAB_CHART (baobab.current_chart));
 
 			g_object_ref (baobab.current_chart);
 			gtk_container_remove (GTK_CONTAINER (baobab.chart_frame),
@@ -1085,7 +995,7 @@ set_active_chart (GtkWidget *chart)
 		gtk_container_add (GTK_CONTAINER (baobab.chart_frame), chart);
 		g_object_unref (chart);
 
-		baobab_chart_thaw_updates (chart);
+		baobab_chart_thaw_updates (BAOBAB_CHART (chart));
 
 		baobab.current_chart = chart;
 
@@ -1154,11 +1064,9 @@ initialize_charts (void)
 				   TRUE,
 				   0, GTK_PACK_END);
 
-	baobab.chart_menu = create_context_menu ();
-
 	/* Baobab's Treemap Chart */
 	baobab.treemap_chart = baobab_treemap_new ();
-	baobab_chart_set_model_with_columns (baobab.treemap_chart,
+	baobab_chart_set_model_with_columns (BAOBAB_CHART (baobab.treemap_chart),
 					     GTK_TREE_MODEL (baobab.model),
 					     COL_DIR_NAME,
 					     COL_DIR_SIZE,
@@ -1166,20 +1074,18 @@ initialize_charts (void)
 					     COL_H_PERC,
 					     COL_H_ELEMENTS,
 					     NULL);
-	baobab_chart_set_max_depth (baobab.treemap_chart, 1);
+	baobab_chart_set_max_depth (BAOBAB_CHART (baobab.treemap_chart), 1);
 	g_signal_connect (baobab.treemap_chart, "item_activated",
 			  G_CALLBACK (on_chart_item_activated), NULL);
-	g_signal_connect (baobab.treemap_chart, "button-release-event",
-			  G_CALLBACK (on_chart_button_release), NULL);
 	g_signal_connect (baobab.treemap_chart, "drag-data-received",
 			  G_CALLBACK (drag_data_received_handl), NULL);
 	gtk_widget_show (baobab.treemap_chart);
 	g_object_ref_sink (baobab.treemap_chart);
-	baobab_chart_freeze_updates (baobab.treemap_chart);
+	baobab_chart_freeze_updates (BAOBAB_CHART (baobab.treemap_chart));
 
 	/* Baobab's Rings Chart */
 	baobab.rings_chart = (GtkWidget *) baobab_ringschart_new ();
-	baobab_chart_set_model_with_columns (baobab.rings_chart,
+	baobab_chart_set_model_with_columns (BAOBAB_CHART (baobab.rings_chart),
 					     GTK_TREE_MODEL (baobab.model),
 					     COL_DIR_NAME,
 					     COL_DIR_SIZE,
@@ -1188,16 +1094,14 @@ initialize_charts (void)
 					     COL_H_ELEMENTS,
 					     NULL);
 
-	baobab_chart_set_max_depth (baobab.rings_chart, 1);
+	baobab_chart_set_max_depth (BAOBAB_CHART (baobab.rings_chart), 1);
 	g_signal_connect (baobab.rings_chart, "item_activated",
 			  G_CALLBACK (on_chart_item_activated), NULL);
-	g_signal_connect (baobab.rings_chart, "button-release-event",
-			  G_CALLBACK (on_chart_button_release), NULL);
 	g_signal_connect (baobab.rings_chart, "drag-data-received",
 			  G_CALLBACK (drag_data_received_handl), NULL);
 	gtk_widget_show (baobab.rings_chart);
 	g_object_ref_sink (baobab.rings_chart);
-	baobab_chart_freeze_updates (baobab.rings_chart);
+	baobab_chart_freeze_updates (BAOBAB_CHART (baobab.rings_chart));
 
 	saved_chart = g_settings_get_string (baobab.ui_settings,
 					     BAOBAB_SETTINGS_ACTIVE_CHART);
