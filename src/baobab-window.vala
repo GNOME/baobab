@@ -314,6 +314,16 @@ namespace Baobab {
 					}
 				}
 			});
+
+			var selection = treeview.get_selection ();
+			selection.changed.connect (() => {
+				Gtk.TreeIter iter;
+				if (selection.get_selected (null, out iter)) {
+					var path = scanner.get_path (iter);
+					rings_chart.set_root (path);
+					treemap_chart.set_root (path);
+				}
+			});
 		}
 
 		void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
