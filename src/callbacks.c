@@ -271,7 +271,7 @@ on_ck_allocated_activate (GtkToggleAction *action,
 void
 on_helpcontents_activate (GtkAction *a, gpointer user_data)
 {
-	baobab_help_display (GTK_WINDOW (baobab.window), "baobab", NULL);
+	baobab_help_display (GTK_WINDOW (baobab.window), NULL);
 }
 
 void

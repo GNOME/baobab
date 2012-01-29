@@ -154,7 +154,7 @@ show_bars (GtkTreeModel *mdl,
 		if (readelements == -1) {
 			gtk_tree_store_set (GTK_TREE_STORE (mdl), iter,
 					    COL_DIR_SIZE, "--",
-					    COL_ELEMENTS, "--", -1);				    
+					    COL_ELEMENTS, "--", -1);
 			return FALSE;
 		}
 
@@ -455,16 +455,16 @@ trash_file (GFile *file)
 
 gboolean
 baobab_help_display (GtkWindow   *parent,
-		     const gchar *file_name,
 		     const gchar *link_id)
 {
 	GError *error = NULL;
 	char *uri;
 	gboolean ret;
 
-	uri = (link_id) ? 
-		g_strdup_printf ("ghelp:%s#%s", file_name, link_id) :
-		g_strdup_printf ("ghelp:%s", file_name);
+	if (link_id)
+		uri = g_strdup_printf ("ghelp:%s?%s", "baobab", link_id);
+	else
+		uri = g_strdup_printf ("ghelp:%s", "baobab");
 
 	ret = gtk_show_uri (gtk_window_get_screen (parent),
 			    uri, gtk_get_current_event_time (), &error);
