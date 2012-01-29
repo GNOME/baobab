@@ -404,7 +404,18 @@ namespace Baobab {
 
 			set_busy (true);
 			scanner.completed.connect(() => {
-				set_busy (false);
+				try {
+					scanner.finish();
+				} catch (IOError.CANCELLED e) {
+					// Handle cancellation silently
+					scanner.clear ();
+				} catch (Error e) {
+					var primary = _("Could not scan folder \"%s\"").printf (scanner.directory.get_parse_name ());
+					message (primary, e.message, Gtk.MessageType.INFO);
+					scanner.clear ();
+				} finally {
+					set_busy (false);
+				}
 			});
 		}
 

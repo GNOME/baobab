@@ -51,6 +51,7 @@ namespace Baobab {
 		protected Cancellable cancellable;
 		protected HashTable<File, unowned File> excluded_locations;
 		protected HardLink[] hardlinks;
+		protected Error? scan_error;
 
 		protected static const string ATTRIBUTES =
 			FileAttribute.STANDARD_NAME + "," +
@@ -75,9 +76,16 @@ namespace Baobab {
 			cancellable.cancel ();
 		}
 
+		public virtual void finish () throws Error {
+			if (scan_error != null) {
+				throw scan_error;
+			}
+		}
+
 		public Scanner (File directory) {
 			this.directory = directory;
 			cancellable = new Cancellable();
+			scan_error = null;
 			set_column_types (new Type[] {
 			                  typeof (string),  // DIR_NAME
 			                  typeof (string),  // PARSE_NAME

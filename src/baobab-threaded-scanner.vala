@@ -78,6 +78,7 @@ namespace Baobab {
 			internal uint64 elements;
 			internal double percent;
 			internal int max_depth;
+			internal Error? error;
 
 			// accessed only by the main thread
 			internal Gtk.TreeIter iter;
@@ -101,15 +102,12 @@ namespace Baobab {
 				results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
 			}
 			results.elements = 1;
+			results.error = null;
 
 			try {
 				var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, cancellable);
 				FileInfo? child_info;
 				while ((child_info = children.next_file (cancellable)) != null) {
-					if (cancellable.is_cancelled ()) {
-						break;
-					}
-
 					switch (child_info.get_file_type ()) {
 						case FileType.DIRECTORY:
 							var child = directory.get_child (child_info.get_name ());
@@ -150,9 +148,8 @@ namespace Baobab {
 							break;
 					}
 				}
-			} catch (IOError.PERMISSION_DENIED e) {
 			} catch (Error e) {
-				warning ("couldn't iterate %s: %s", results.parse_name, e.message);
+				results.error = e;
 			}
 
 			foreach (unowned Results child_results in results_array.results) {
@@ -228,8 +225,17 @@ namespace Baobab {
 						max_depth = results.max_depth;
 					}
 
+					// only on the first error
+					if (scan_error == null && results.error != null) {
+						scan_error = results.error;
+						cancellable.cancel ();
+						completed ();
+						return false;
+					}
+
 					if (results.parent == null) {
 						completed ();
+						return false;
 					}
 				}
 			}
