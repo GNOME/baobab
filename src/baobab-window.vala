@@ -90,18 +90,21 @@ namespace Baobab {
 			}
 
 			// Cache some objects from the builder.
+			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 			chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
 			rings_chart = builder.get_object ("rings-chart") as Chart;
 			treemap_chart = builder.get_object ("treemap-chart") as Chart;
-			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 
-			setup_treeview_popup (builder);
+			setup_treeview (builder);
 
 			ui_settings = Application.get_ui_settings ();
 			lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 
+			rings_chart.item_activated.connect (on_chart_item_activated);
+			treemap_chart.item_activated.connect (on_chart_item_activated);
+
 			// Setup drag-n-drop
-			drag_data_received.connect(on_drag_data_received);
+			drag_data_received.connect (on_drag_data_received);
 			enable_drop ();
 
 			add (builder.get_object ("window-contents") as Gtk.Widget);
@@ -221,6 +224,16 @@ namespace Baobab {
 			                       null);
 		}
 
+		void on_chart_item_activated (Chart chart, Gtk.TreeIter iter) {
+			var path = scanner.get_path (iter);
+
+			if (!treeview.is_row_expanded (path)) {
+				treeview.expand_to_path (path);
+			}
+
+			treeview.set_cursor (path, null, false);
+		}
+
 		void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
 		                            Gtk.SelectionData selection_data, uint target_type, uint time) {
 			File dir = null;
@@ -262,7 +275,7 @@ namespace Baobab {
 			return true;
 		}
 
-		void setup_treeview_popup (Gtk.Builder builder) {
+		void setup_treeview (Gtk.Builder builder) {
 			var popup = builder.get_object ("treeview-popup-menu") as Gtk.Menu;
 			var open_item = builder.get_object ("treeview-popup-open") as Gtk.MenuItem;
 			var trash_item = builder.get_object ("treeview-popup-trash") as Gtk.MenuItem;

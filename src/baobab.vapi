@@ -12,6 +12,8 @@ namespace Baobab {
 
 	[CCode (cheader_filename = "baobab-chart.h")]
 	public class Chart : Gtk.Widget {
+		public virtual signal void item_activated (Gtk.TreeIter iter);
+
 		public void set_model_with_columns (Gtk.TreeModel model, uint name_column, uint size_column, uint info_column, uint percentage_column, uint valid_column, Gtk.TreePath? root);
 
 		public Gtk.TreeModel model { get; set; }
