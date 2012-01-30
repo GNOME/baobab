@@ -25,6 +25,7 @@ namespace Baobab {
 		Gtk.Notebook chart_notebook;
 		Chart rings_chart;
 		Chart treemap_chart;
+		Gtk.Spinner spinner;
 		Scanner? scanner;
 
 		static Gdk.Cursor busy_cursor;
@@ -66,6 +67,12 @@ namespace Baobab {
 			{ "collapse-all", false }
 		};
 
+		private enum ChartPage {
+			RINGS,
+			TREEMAP,
+			SPINNER
+		}
+
 		private enum DndTargets {
 			URI_LIST
 		}
@@ -94,6 +101,7 @@ namespace Baobab {
 			chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
 			rings_chart = builder.get_object ("rings-chart") as Chart;
 			treemap_chart = builder.get_object ("treemap-chart") as Chart;
+			spinner = builder.get_object ("spinner") as Gtk.Spinner;
 
 			setup_treeview (builder);
 
@@ -119,10 +127,10 @@ namespace Baobab {
 		void on_chart_type_changed (SimpleAction action, Variant value) {
 			switch (value as string) {
 				case "rings":
-					chart_notebook.page = 0;
+					chart_notebook.page = ChartPage.RINGS;
 					break;
 				case "treemap":
-					chart_notebook.page = 1;
+					chart_notebook.page = ChartPage.TREEMAP;
 					break;
 				default:
 					return;
@@ -353,14 +361,18 @@ namespace Baobab {
 			if (busy) {
 				cursor = busy_cursor;
 				disable_drop ();
-				rings_chart.freeze_updates();
+				rings_chart.freeze_updates ();
 				treemap_chart.freeze_updates ();
 				(lookup_action ("active-chart") as SimpleAction).set_enabled (false);
+				chart_notebook.page = ChartPage.SPINNER;
+				spinner.start ();
 			} else {
 				enable_drop ();
-				rings_chart.thaw_updates();
+				rings_chart.thaw_updates ();
 				treemap_chart.thaw_updates ();
 				(lookup_action ("active-chart") as SimpleAction).set_enabled (true);
+				spinner.start ();
+				lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 			}
 
 			var window = get_window ();
