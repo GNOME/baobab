@@ -27,6 +27,7 @@ baobab_SOURCES = \
 	baobab-cellrenderers.vala	\
 	baobab-application.vala		\
 	baobab-window.vala		\
+	baobab-connect-server.vala	\
 	main.vala
 
 AM_CFLAGS = \

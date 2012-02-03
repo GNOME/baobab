@@ -170,7 +170,16 @@ namespace Baobab {
 		}
 
 		void on_scan_remote_activate () {
-			print ("sr\n");
+			var connect_server = new ConnectServer ();
+
+			connect_server.selected.connect ((uri) => {
+				if (uri != null) {
+					var dir = File.new_for_uri (uri);
+					scan_directory (dir);
+				}
+			});
+
+			connect_server.show ();
 		}
 
 		void on_stop_activate () {
