@@ -307,7 +307,7 @@
                   <class name="linked"/>
                 </style>
                 <child>
-                  <object class="GtkToggleButton" id="rings-button">
+                  <object class="GtkRadioButton" id="rings-button">
                     <property name="label" translatable="yes">Rings</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -326,7 +326,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkToggleButton" id="treemap-button">
+                  <object class="GtkRadioButton" id="treemap-button">
                     <property name="label" translatable="yes">Treemap</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -335,6 +335,7 @@
                     <property name="xalign">0.5</property>
                     <property name="active">True</property>
                     <property name="draw_indicator">False</property>
+                    <property name="group">rings-button</property>
                     <property name="action_name">win.active-chart</property>
                     <property name="action_target">'treemap'</property>
                   </object>
