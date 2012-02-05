@@ -21,6 +21,9 @@
 namespace Baobab {
 	public class Window : Gtk.ApplicationWindow {
 		Settings ui_settings;
+		Gtk.InfoBar infobar;
+		Gtk.Label infobar_primary;
+		Gtk.Label infobar_secondary;
 		Gtk.TreeView treeview;
 		Gtk.Notebook chart_notebook;
 		Chart rings_chart;
@@ -97,6 +100,9 @@ namespace Baobab {
 			}
 
 			// Cache some objects from the builder.
+			infobar = builder.get_object ("infobar") as Gtk.InfoBar;
+			infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
+			infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
 			treeview = builder.get_object ("treeview") as Gtk.TreeView;
 			chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
 			rings_chart = builder.get_object ("rings-chart") as Chart;
@@ -357,11 +363,14 @@ namespace Baobab {
 		}
 
 		void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
-			var dialog = new Gtk.MessageDialog (this, Gtk.DialogFlags.DESTROY_WITH_PARENT, type,
-			                                    Gtk.ButtonsType.OK, "%s", primary_msg);
-			dialog.format_secondary_text ("%s", secondary_msg);
-			dialog.run (); /* XXX kill it with fire */
-			dialog.destroy ();
+			infobar.message_type = type;
+			infobar_primary.set_label ("<b>%s</b>".printf (_(primary_msg)));
+			infobar_secondary.set_label ("<small>%s</small>".printf (_(secondary_msg)));
+			infobar.show ();
+		}
+
+		void clear_message () {
+			infobar.hide ();
 		}
 
 		void set_busy (bool busy) {
@@ -446,6 +455,7 @@ namespace Baobab {
 			                                    Scanner.Columns.PERCENT,
 			                                    Scanner.Columns.ELEMENTS, null);
 
+			clear_message ();
 			set_busy (true);
 			scanner.completed.connect(() => {
 				try {
@@ -455,7 +465,7 @@ namespace Baobab {
 					scanner.clear ();
 				} catch (Error e) {
 					var primary = _("Could not scan folder \"%s\"").printf (scanner.directory.get_parse_name ());
-					message (primary, e.message, Gtk.MessageType.INFO);
+					message (primary, e.message, Gtk.MessageType.WARNING);
 					scanner.clear ();
 				} finally {
 					set_busy (false);
