@@ -219,18 +219,25 @@ namespace Baobab {
 					     Columns.ALLOC_SIZE, results.alloc_size,
 					     Columns.PERCENT,    results.percent,
 					     Columns.ELEMENTS,   results.elements,
-					     Columns.STATE,      State.DONE);
+					     Columns.STATE,      results.error == null ? State.DONE : State.ERROR,
+					     Columns.ERROR,      results.error);
 
 					if (results.max_depth > max_depth) {
 						max_depth = results.max_depth;
 					}
 
-					// only on the first error
-					if (scan_error == null && results.error != null) {
-						scan_error = results.error;
-						cancellable.cancel ();
-						completed ();
-						return false;
+					// If the user cancelled abort the scan and
+					// report CANCELLED as the error, otherwise
+					// consider the error not fatal and report the
+					// first error we encountered
+					if (results.error != null) {
+						if (results.error is IOError.CANCELLED) {
+							scan_error = results.error;
+							completed ();
+							return false;
+						} else if (scan_error == null) {
+							scan_error = results.error;
+						}
 					}
 
 					if (results.parent == null) {

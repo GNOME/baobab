@@ -28,6 +28,7 @@ namespace Baobab {
 			ALLOC_SIZE,
 			ELEMENTS,
 			STATE,
+			ERROR,
 			COLUMNS
 		}
 
@@ -35,6 +36,7 @@ namespace Baobab {
 			SCANNING,
 			CANCELLED,
 			NEED_PERCENT,
+			ERROR,
 			DONE
 		}
 
@@ -93,7 +95,8 @@ namespace Baobab {
 			                  typeof (uint64),  // SIZE
 			                  typeof (uint64),  // ALLOC_SIZE
 			                  typeof (int),     // ELEMENTS
-			                  typeof (State)}); // STATE
+			                  typeof (State),   // STATE
+			                  typeof (Error)}); // ERROR (if STATE is ERROR)
 			set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 			excluded_locations = Application.get_excluded_locations ();
 		}
