@@ -94,7 +94,7 @@ namespace Baobab {
 			// Build ourselves.
 			var builder = new Gtk.Builder ();
 			try {
-				builder.add_from_file (Config.PKGDATADIR + "/baobab-main-window.ui");
+				builder.add_from_resource ("/org/gnome/baobab/ui/baobab-main-window.ui");
 			} catch (Error e) {
 				error ("loading main builder file: %s", e.message);
 			}

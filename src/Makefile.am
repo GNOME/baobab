@@ -13,6 +13,8 @@ INCLUDES = \
 
 bin_PROGRAMS = baobab
 
+BUILT_SOURCES = baobab-resources.c
+
 baobab_VALAFLAGS = --pkg gtk+-3.0
 baobab_SOURCES = \
 	fixes.vapi			\
@@ -28,7 +30,11 @@ baobab_SOURCES = \
 	baobab-application.vala		\
 	baobab-window.vala		\
 	baobab-connect-server.vala	\
-	main.vala
+	main.vala			\
+	$(BUILT_SOURCES)
+
+baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies baobab.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source baobab.gresource.xml
 
 AM_CFLAGS = \
 	$(gtk_CFLAGS)			\
@@ -51,6 +57,13 @@ MAINTAINERCLEANFILES = \
 	baobab-cellrenderers.c		\
 	baobab-window.c			\
 	baobab_vala.stamp		\
-	main.c
+	main.c				\
+	$(BUILT_SOURCES)
+
+EXTRA_DIST = \
+	baobab.gresource.xml \
+	baobab-main-window.ui \
+	baobab-preferences-dialog.ui \
+	baobab-menu.ui
 
 -include $(top_srcdir)/git.mk

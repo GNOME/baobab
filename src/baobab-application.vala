@@ -78,7 +78,7 @@ namespace Baobab {
 			var gtk_settings = Gtk.Settings.get_default ();
 			var builder = new Gtk.Builder ();
 			try {
-				builder.add_from_file (Config.PKGDATADIR + "/baobab-menu.ui");
+				builder.add_from_resource ("/org/gnome/baobab/ui/baobab-menu.ui");
 			} catch (Error e) {
 				error ("loading menu builder file: %s", e.message);
 			}
