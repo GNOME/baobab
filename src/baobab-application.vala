@@ -31,7 +31,8 @@ namespace Baobab {
 		Settings ui_settings;
 
 		protected override void activate () {
-			new Window (this);
+			var window = new Window (this);
+			window.show_filesystem_usage ();
 		}
 
 		protected override void open (File[] files, string hint) {

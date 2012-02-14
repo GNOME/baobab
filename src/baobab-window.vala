@@ -429,7 +429,7 @@ namespace Baobab {
 			treeview.expand_row (path, false);
 		}
 
-		void set_model (Scanner model) {
+		void set_model (Gtk.TreeModel model) {
 			Gtk.TreeIter first;
 
 			treeview.model = model;
@@ -454,21 +454,21 @@ namespace Baobab {
 			                                    Scanner.Columns.PARSE_NAME,
 			                                    Scanner.Columns.PERCENT,
 			                                    Scanner.Columns.ELEMENTS, null);
+		}
 
-			clear_message ();
-			set_busy (true);
-			scanner.completed.connect(() => {
-				set_busy (false);
-				try {
-					scanner.finish();
-				} catch (IOError.CANCELLED e) {
-					// Handle cancellation silently
-					scanner.clear ();
-				} catch (Error e) {
-					var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());
-					message (primary, e.message, Gtk.MessageType.WARNING);
-				}
-			});
+		public void show_filesystem_usage () {
+			var dir = File.new_for_uri ("file:///");
+
+			scanner = new ThreadedScanner (dir);
+			set_model (scanner);
+
+			try {
+				scanner.get_filesystem_usage ();
+			} catch (Error e) {
+				message (_("Could not get filesytem usage."), e.message, Gtk.MessageType.WARNING);
+			}
+
+			treeview.set_headers_visible (false);
 		}
 
 		public void scan_directory (File directory) {
@@ -478,6 +478,24 @@ namespace Baobab {
 
 			scanner = new ThreadedScanner (directory);
 			set_model (scanner);
+
+			scanner.completed.connect(() => {
+				set_busy (false);
+				try {
+					scanner.finish();
+				} catch (IOError.CANCELLED e) {
+					// Handle cancellation silently
+					scanner.clear ();
+					show_filesystem_usage ();
+				} catch (Error e) {
+					var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());
+					message (primary, e.message, Gtk.MessageType.WARNING);
+				}
+			});
+
+			clear_message ();
+			treeview.set_headers_visible (true);
+			set_busy (true);
 
 			scanner.scan ();
 		}

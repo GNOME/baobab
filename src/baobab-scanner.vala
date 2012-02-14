@@ -84,6 +84,57 @@ namespace Baobab {
 			}
 		}
 
+		protected static const string FS_ATTRIBUTES =
+			FileAttribute.FILESYSTEM_SIZE + "," +
+			FileAttribute.FILESYSTEM_USED + "," +
+			FileAttribute.FILESYSTEM_FREE;
+
+		public void get_filesystem_usage () throws Error {
+			var info = directory.query_filesystem_info (FS_ATTRIBUTES, cancellable);
+
+			var size = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_SIZE);
+			var used = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_USED);
+			var free = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_FREE);
+			var reserved = size - free - used;
+
+			var used_perc = 100 * ((double) used) / ((double) size);
+			var reserved_perc = 100 * ((double) reserved) / ((double) size);
+
+			Gtk.TreeIter? root_iter, iter;
+			append (out root_iter, null);
+			set (root_iter,
+			     Columns.STATE, State.DONE,
+			     Columns.DISPLAY_NAME, _("Total filesystem capacity"),
+			     Columns.PARSE_NAME, "",
+			     Columns.SIZE, size,
+			     Columns.ALLOC_SIZE, size,
+			     Columns.PERCENT, 100.0,
+			     Columns.ELEMENTS, -1,
+			     Columns.ERROR, null);
+
+			append (out iter, root_iter);
+			set (iter,
+			     Columns.STATE, State.DONE,
+			     Columns.DISPLAY_NAME, _("Used"),
+			     Columns.PARSE_NAME, "",
+			     Columns.SIZE, used,
+			     Columns.ALLOC_SIZE, used,
+			     Columns.PERCENT, used_perc,
+			     Columns.ELEMENTS, -1,
+			     Columns.ERROR, null);
+
+			append (out iter, root_iter);
+			set (iter,
+			     Columns.STATE, State.DONE,
+			     Columns.DISPLAY_NAME, _("Reserved"),
+			     Columns.PARSE_NAME, "",
+			     Columns.SIZE, reserved,
+			     Columns.ALLOC_SIZE, reserved,
+			     Columns.PERCENT, reserved_perc,
+			     Columns.ELEMENTS, -1,
+			     Columns.ERROR, null);
+		}
+
 		public Scanner (File directory) {
 			this.directory = directory;
 			cancellable = new Cancellable();

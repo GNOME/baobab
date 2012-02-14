@@ -49,7 +49,7 @@ namespace Baobab {
 	public class CellRendererItems : Gtk.CellRendererText {
 		public int items {
 			set {
-				text = ngettext ("%d item", "%d items", value).printf (value);
+				text = value >= 0 ? ngettext ("%d item", "%d items", value).printf (value) : "";
 			}
 		}
 	}
