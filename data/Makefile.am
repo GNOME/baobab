@@ -1,6 +1,11 @@
-baobabappdir	   = $(datadir)/applications
+baobabicondir = $(datadir)/icons/hicolor/scalable/actions/
+baobabicon_DATA = \
+	view-ringschart-symbolic.svg	\
+	view-treemap-symbolic.svg
+
+baobabappdir = $(datadir)/applications
 baobabapp_in_files = baobab.desktop.in
-baobabapp_DATA     = $(baobabapp_in_files:.desktop.in=.desktop)
+baobabapp_DATA = $(baobabapp_in_files:.desktop.in=.desktop)
 
 $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
 	sed -e "s|\@VERSION\@|@VERSION@|" $< > $@
