@@ -3,7 +3,7 @@
       id="scan-file-system">
 
   <info>
-    <revision version="0.1" date="2011-12-19" status="stub"/>
+    <revision pkgversion="3.4" date="2012-02-17" status="stub"/>
     <link type="guide" xref="index#scan" group="#first"/>
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -15,10 +15,10 @@
       <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <desc>Scan all the folders on internal and external disks.</desc>
+    <desc>Scan all internal and external storage devices.</desc>
   </info>
 
-  <title>Scan the filesystem</title>
+  <title>Scan the file system</title>
 
   <comment>
     <cite date="2011-12-19" href="mailto:yrazes@gmail.com">Julita Inca</cite>
@@ -27,22 +27,33 @@
     full file system.</p>
   </comment>
 
-  <p>You can check all the folders in your <file>Home</file> folder, on external
-  devices and across your computer's filesystem using one of the following:</p>
-
-  <list>
-    <item><p>Select <guiseq><gui>Analyzer</gui><gui>Scan
-    filesystem</gui></guiseq> from the menu.</p></item>
-    <item><p>Press <keyseq><key>Ctrl</key><key>F</key></keyseq>.</p></item>
-  </list>
+  <p>Scan all the folders in your file system, including the <file>Home</file>
+  directory and removable devices, by selecting
+  <guiseq><gui>Analyzer</gui><gui>Scan File System</gui></guiseq> from the menu
+  or press <keyseq><key>Ctrl</key><key>F</key></keyseq>.</p>
 
   <note style="tip">
-    <p>Click the <gui>Stop</gui> button in the toolbar to cancel the current
-    scan, or <gui>Refresh</gui> to repeat the last scan.</p>
+    <p>If the disk that you are trying to scan is large, it may take a few
+    minutes for the scan to complete.</p>
+    <p>You can stop the scan by selecting
+    <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> and rescan by selecting
+    <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq></p>
   </note>
 
-  <p>If the disk that you are trying to scan is large, it may take
-  a few minutes for the scan to complete.</p>
+  <p>Right-click on any folder and select <gui>Open Folder</gui> to browse all
+  the folders inside, or <gui>Move to Trash</gui> to move your folder to
+  <file>Trash</file>.</p>
+
+  <p>The results may be useful in deciding which applications to uninstall, or
+  which folders can be <link href="ghelp:file-roller">archived</link>, <link
+  href="help:gnome-help/files-delete">deleted</link> or <link
+  href="help:gnome-help/files-copy">moved</link>, to free up space. You can
+  also use the results to estimate how much space would be needed for a <link
+  href="help:gnome-help/backup-how">backup</link> of your disk.</p>
+
+  <p>Right-click on any folder and select <gui>Open Folder</gui> to browse all
+  the folders inside, or <gui>Move to Trash</gui> to move your folder to
+  <file>Trash</file>.</p>
 
   <comment>
     <cite date="2011-12-21" href="mailto:kittykat3756@gmail.com">Ekaterina
@@ -50,18 +61,6 @@
     <p>What does this note mean? If I cannot understand it, I don't think the
     average user can either…</p>
   </comment>
-
-  <p>The results may be useful in deciding which applications to uninstall, or
-  which folders can be
-  <link href="ghelp:file-roller">archived</link>,
-  <link href="help:gnome-help/files-delete">deleted</link> or
-  <link href="help:gnome-help/files-copy">moved</link>, to free up space. You
-  can also use the results to estimate how much space would be needed for a
-  <link href="help:gnome-help/backup-how">backup</link> of your disk.</p>
-
-  <p>Right-click on any folder and select <gui>Open Folder</gui> to browse all
-  the folders inside, or <gui>Move to Trash</gui> to move your folder to
-  <file>Trash</file>.</p>
 
   <note style="advanced">
     <p><app>Disk Usage Analyzer</app> will display sizes in the directory tree
