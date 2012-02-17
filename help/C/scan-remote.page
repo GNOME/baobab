@@ -3,6 +3,7 @@
       id="scan-remote">
   <info>
     <revision version="0.1" date="2011-12-19" status="stub"/>
+    <revision pkgversion="3.4" date="2012-02-17" status="review"/>
     <link type="guide" xref="index#scan" group="#last"/>
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -13,8 +14,12 @@
       <name>Michael Hill</name>
       <email>mdhillca@gmail.com</email>
     </credit>
+    <credit type="author editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
 
-    <desc>Scan folders remotely from another computer.</desc>
+    <desc>Scan a folder remotely from your computer.</desc>
   </info>
 
   <title>Scan Remote Folder</title>
@@ -26,59 +31,76 @@
     folders.</p>
   </comment>
 
-  <p>You can use <app>baobab</app> to scan folders shared over a network.</p>
+  <p><app>Disk Usage Analyzer</app> can scan folders that are shared over the
+  network. This feature can be used to scan individual folders or a whole file
+  system. To scan a remote folder:</p>
 
-  <p>Maybe you are the admin of an intranet file server, and one day you notice
-  that nobody in the company can save files to it because the disks are
-  completely full. In this case, it is useful to be able to scan remotely from
-  another computer. </p>
-
-  <p>To start scanning, select <guiseq><gui>Analyzer</gui><gui>Scan Remote
-  Folder</gui></guiseq> from the menu, or click <gui>Scan a remote folder</gui>
-  in the toolbar.</p>
-
-  <p>Scanning over a network may be slow.</p>
-
-  <p>Right-click on any folder and select <gui>Open Folder</gui> to browse all
-  the folders inside, or <gui>Move to trash</gui> to move your folder to
-  <file>Trash</file>.</p>
-  
-  <p>Choose one of following protocols:</p>
-
-  <list>
-    <item><p><link xref="ssh">SSH</link> (Secure Shell) is a protocol which lets
-    you access other folders from another computer over the network. It uses a
-    secure remote login because it is not possible to discover users and
-    passwords.</p></item>
-
-    <item><p><link xref="ftp">FTP (with login)</link> (File Transfer Protocol)
-    with login, lets you share and transfer folders reliably and efficiently
-    from remote computers. In this case a user account is required.</p></item>
-
-    <item><p><link xref="ftp">Public FTP</link> lets you share files without the
-    need to log in with a user name and password. The server creates an
-    anonymous user to make the connection.</p></item>
-
-    <item><p><link xref="windows-share">Windows Share</link> lets you view and
-    manage folders used in your Windows network. You can do Windows shares from
-    a Linux machine.</p></item>
-
-    <item><p><link xref="web-dav">WebDAV (HTTP)</link> (Web-based Distributed
-    Authoring and Versioning methods of Hypertext Transfer Protocol HTTP) lets
-    you collaborate with other users in editing and managing documents over the
-    network. These folders are stored on World Wide Web servers.</p></item>
-
-    <item><p><link xref="web-dav">Secure WebDAV (HTTPS)</link>: Secure WebDAV
-    ensures encryption of transfered data (WebDAV over HTTPS will be
-    used).</p></item>
-
-    <item><p><link xref="custom-location">Custom Location</link>: enables you
-    to access a particular function from the folder manager.</p></item>
-  </list>
+  <steps>
+    <item>
+      <p>Select <guiseq><gui>Analyzer</gui><gui>Scan Remote
+      Folder…</gui></guiseq> from the menu, or click <gui>Scan Remote
+      Folder</gui> in the toolbar.</p>
+      <note>
+        <p>Scanning over the network may be slower than scanning a local file
+        system.</p>
+      </note>
+    </item>
+    <item>
+      <p>Choose one of following protocols:</p>
+      <list>
+        <item>
+          <p><link xref="ssh">SSH</link> (Secure Shell) is a protocol which
+          lets you access other folders from another computer over the
+          network. It uses a secure remote login because it is not possible
+          to discover users and passwords.</p>
+        </item>
+        <item>
+          <p><link xref="ftp">FTP (with login)</link> (File Transfer
+          Protocol) with login, lets you share and transfer folders reliably
+          and efficiently from remote computers. In this case a user account
+          is required.</p>
+        </item>
+        <item>
+          <p><link xref="ftp">Public FTP</link> lets you share files without
+          the need to log in with a user name and password. The server
+          creates an anonymous user to make the connection.</p>
+        </item>
+        <item>
+          <p><link xref="windows-share">Windows Share</link> lets you view
+          and manage folders used in your Windows network. You can do Windows
+          shares from a Linux machine.</p>
+        </item>
+        <item>
+          <p><link xref="web-dav">WebDAV (HTTP)</link> (Web-based Distributed
+          Authoring and Versioning methods of Hypertext Transfer Protocol
+          HTTP) lets you collaborate with other users in editing and managing
+          documents over the network. These folders are stored on World Wide
+          Web servers.</p>
+        </item>
+        <item>
+          <p><link xref="web-dav">Secure WebDAV (HTTPS)</link>: Secure WebDAV
+          ensures encryption of transfered data (WebDAV over HTTPS will be
+          used).</p>
+        </item>
+        <item>
+          <p><link xref="custom-location">Custom Location</link>: enables you
+          to access a particular function from the folder manager.</p>
+        </item>
+      </list>
+    </item>
+  </steps>
 
   <comment>
     <cite date="2011-12-28" href="mailto:mdhillca@gmail.com">Michael Hill</cite>
     <p>Custom Location needs a better explanation.</p>
   </comment>
+
+  <note>
+    <p>Right-click on a folder and select <gui>Open Folder</gui> to browse all
+    the folders inside, or <gui>Move to Trash</gui> to move your folder to
+    <file>Trash</file>.</p>
+    <p>If you try to open a folder which contains no subfolders, it will be
+    opened in the <app>Files</app> application.</p>
+  </note>
 
 </page>
