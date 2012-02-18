@@ -40,6 +40,7 @@
 enum
 {
 	COL_CHECK,
+	COL_CHECK_SENS,
 	COL_DEVICE,
 	COL_MOUNT_D,
 	COL_MOUNT,
@@ -171,6 +172,7 @@ create_tree_props (GtkBuilder *builder, GtkTreeModel *model)
 
 	col = gtk_tree_view_column_new_with_attributes (_("Scan"), cell,
 							"active", COL_CHECK,
+							"sensitive", COL_CHECK_SENS,
 							NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tvw), col);
 
@@ -239,6 +241,7 @@ fill_props_model (GtkListStore *store)
 		GFile *file;
 		gchar *uri;
 		gboolean excluded;
+		gboolean sensitive;
 
 		struct stat buf;
 		if (g_stat (mountentry->devname,&buf) == -1)
@@ -252,10 +255,12 @@ fill_props_model (GtkListStore *store)
 		file = g_file_new_for_path (mountentry->mountdir);
 		uri = g_file_get_uri (file);
 		excluded = baobab_is_excluded_location (file);
+		sensitive = (strcmp ("/", mountentry->mountdir) == 0) ? FALSE : TRUE;
 
 		gtk_list_store_append (store, &iter);
 		gtk_list_store_set (store, &iter,
 				    COL_CHECK, !excluded,
+				    COL_CHECK_SENS, sensitive,
 				    COL_DEVICE, mountentry->devname,
 				    COL_MOUNT_D, mountentry->mountdir,
 				    COL_MOUNT, uri,
@@ -263,6 +268,7 @@ fill_props_model (GtkListStore *store)
 				    COL_FS_SIZE, total,
 				    COL_FS_AVAIL, avail,
 				    -1);
+
 		g_free(total);
 		g_free(avail);
 		g_free(uri);
@@ -302,6 +308,7 @@ baobab_prefs_dialog (void)
 
 	model = gtk_list_store_new (TOT_COLUMNS,
 				    G_TYPE_BOOLEAN,	/* checkbox */
+				    G_TYPE_BOOLEAN,	/* checkbox sensitivity */
 				    G_TYPE_STRING,	/* device */
 				    G_TYPE_STRING,	/*mount point display */
 				    G_TYPE_STRING,	/* mount point uri */
