@@ -32,67 +32,72 @@
   </comment>
 
   <p><app>Disk Usage Analyzer</app> can scan folders that are shared over the
-  network. This feature can be used to scan individual folders or a whole file
-  system. To scan a remote folder:</p>
+  network. To scan the whole file system or any specific folder remotely:</p>
 
   <steps>
     <item>
       <p>Select <guiseq><gui>Analyzer</gui><gui>Scan Remote
-      Folder…</gui></guiseq> from the menu.</p>
-      <note>
-        <p>Scanning over the network may be slower than scanning a local file
-        system.</p>
-      </note>
-    </item>
-    <item>
-      <p>Choose one of following protocols:</p>
-      <list>
-        <item>
-          <p><link xref="ssh">SSH</link> (Secure Shell) is a protocol which
-          lets you access other folders from another computer over the
-          network. It uses a secure remote login because it is not possible
-          to discover users and passwords.</p>
-        </item>
-        <item>
-          <p><link xref="ftp">FTP (with login)</link> (File Transfer
-          Protocol) with login, lets you share and transfer folders reliably
-          and efficiently from remote computers. In this case a user account
-          is required.</p>
-        </item>
-        <item>
-          <p><link xref="ftp">Public FTP</link> lets you share files without
-          the need to log in with a user name and password. The server
-          creates an anonymous user to make the connection.</p>
-        </item>
-        <item>
-          <p><link xref="windows-share">Windows Share</link> lets you view
-          and manage folders used in your Windows network. You can do Windows
-          shares from a Linux machine.</p>
-        </item>
-        <item>
-          <p><link xref="web-dav">WebDAV (HTTP)</link> (Web-based Distributed
-          Authoring and Versioning methods of Hypertext Transfer Protocol
-          HTTP) lets you collaborate with other users in editing and managing
-          documents over the network. These folders are stored on World Wide
-          Web servers.</p>
-        </item>
-        <item>
-          <p><link xref="web-dav">Secure WebDAV (HTTPS)</link>: Secure WebDAV
-          ensures encryption of transfered data (WebDAV over HTTPS will be
-          used).</p>
-        </item>
-        <item>
-          <p><link xref="custom-location">Custom Location</link>: enables you
-          to access a particular function from the folder manager.</p>
-        </item>
-      </list>
-    </item>
-  </steps>
+      Folder…</gui></guiseq> from the menu.</p></item>
 
+    <item><p>Choose one of following protocols, depends of what you want to do:
+      </p>
+
+   <terms>
+    <item>
+      <title><link xref="ssh">SSH</link></title>
+        <p>Secure Shell offers you a secure connection because you need to login 
+        with user and password.</p>
+    </item>
+   
+    <item>
+     <title><link xref="ftp">FTP (with login)</link></title>
+     <p>File Transfer Protocol with login is reliably because a user account is 
+      required.</p>
+    </item>
+    
+    <item>
+      <title><link xref="windows-share">Windows Share</link></title>
+      <p>can do scan between Windows and Linux machines.</p>
+    </item>
+   
+    <item>
+     <title><link xref="web-dav">WebDAV (HTTP)</link></title>
+     <p>Web-based Distributed Authoring and Versioning methods of Hypertext 
+     Transfer Protocol HTTP scan folders that are stored on 
+     World Wide Web servers.</p>
+    </item>
+
+    <item>
+     <title><link xref="web-dav">Secure WebDAV (HTTPS)</link></title>
+     <p>Secure WebDAV,ensures encryption while you are transfering data.</p>
+    </item>
+ 
+    <item>
+      <title><link xref="custom-location">Custom Location</link></title>
+      <p>Custom Location enables you to access a particular function from the 
+      folder manager.</p>
+    </item>
+
+  </terms>
+ </item>
+
+ <item>
+    <p>Write you IP or custom location (URI) to find the machine you will scan.
+    </p><p>If you are not so sure about the information you have to write into 
+    <gui>Port</gui> and <gui>Folder</gui>, left in blank.</p>
+ </item>
+
+</steps>
   <comment>
     <cite date="2011-12-28" href="mailto:mdhillca@gmail.com">Michael Hill</cite>
     <p>Custom Location needs a better explanation.</p>
   </comment>
+
+
+  <note>
+    <p>Scanning over the network may be slower than scanning a local file
+       system.</p>
+  </note>
 
   <note>
     <p>Right-click on a folder and select <gui>Open Folder</gui> to browse all
