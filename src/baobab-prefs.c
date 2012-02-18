@@ -194,7 +194,7 @@ create_tree_props (GtkBuilder *builder, GtkTreeModel *model)
 
 	/* third text column */
 	cell = gtk_cell_renderer_text_new ();
-	col = gtk_tree_view_column_new_with_attributes (_("Filesystem Type"),
+	col = gtk_tree_view_column_new_with_attributes (_("File System Type"),
 							cell, "markup",
 							COL_TYPE, "text",
 							COL_TYPE, NULL);

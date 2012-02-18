@@ -261,7 +261,7 @@ on_ck_allocated_activate (GtkToggleAction *action,
 					     baobab.show_allocated);
 
 	baobab_set_busy (TRUE);
-	baobab_set_statusbar (_("Calculating percentage bars..."));
+	baobab_set_statusbar (_("Calculating percentage bars…"));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars, NULL);
 	baobab_set_busy (FALSE);

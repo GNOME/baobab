@@ -127,7 +127,7 @@ check_menu_sens (gboolean scanning)
 		while (gtk_events_pending ())
 			gtk_main_iteration ();
 
-		baobab_set_statusbar (_("Scanning..."));
+		baobab_set_statusbar (_("Scanning…"));
 		set_ui_action_sens ("expand_all", TRUE);
 		set_ui_action_sens ("collapse_all", TRUE);
 	}
@@ -264,7 +264,7 @@ baobab_scan_location (GFile *file)
 	baobab_scan_execute (file);
 
 	/* set statusbar, percentage and allocated/normal size */
-	baobab_set_statusbar (_("Calculating percentage bars..."));
+	baobab_set_statusbar (_("Calculating percentage bars…"));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars,
 				NULL);
@@ -321,7 +321,7 @@ baobab_stop_scan (void)
 {
 	baobab.STOP_SCANNING = TRUE;
 
-	baobab_set_statusbar (_("Calculating percentage bars..."));
+	baobab_set_statusbar (_("Calculating percentage bars…"));
 	gtk_tree_model_foreach (GTK_TREE_MODEL (baobab.model),
 				show_bars, NULL);
 	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (baobab.tree_view));
@@ -401,7 +401,7 @@ prefill_model (struct chan_data *data)
 	/* in case filenames contains gmarkup */
 	name = g_markup_escape_text (data->display_name, -1);
 
-	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning..."));
+	str = g_strdup_printf ("<small><i>%s</i></small>", _("Scanning…"));
 
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (baobab.tree_view), TRUE);
 	gtk_tree_store_set (baobab.model, &iter,

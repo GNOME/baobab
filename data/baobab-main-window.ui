@@ -32,7 +32,7 @@
           <object class="GtkAction" id="menuscandir">
             <property name="stock_id">gtk-directory</property>
             <property name="name">menuscandir</property>
-            <property name="label" translatable="yes">Scan F_older...</property>
+            <property name="label" translatable="yes">Scan F_older…</property>
             <signal handler="on_menuscandir_activate" last_modification_time="Tue, 05 Jul 2005 08:47:26 GMT" name="activate"/>
           </object>
           <accelerator key="O" modifiers="GDK_CONTROL_MASK"/>
@@ -41,7 +41,7 @@
           <object class="GtkAction" id="menu_scan_rem">
             <property name="stock_id">gtk-network</property>
             <property name="name">menu_scan_rem</property>
-            <property name="label" translatable="yes">S_can Remote Folder...</property>
+            <property name="label" translatable="yes">S_can Remote Folder…</property>
             <signal handler="on_menu_scan_rem_activate" last_modification_time="Fri, 18 Nov 2005 18:20:25 GMT" name="activate"/>
           </object>
         </child>
@@ -225,7 +225,7 @@
             <child>
               <object class="GtkToolButton" id="tbscanhome">
                 <property name="visible">True</property>
-                <property name="tooltip-text" translatable="yes">Scan home folder</property>
+                <property name="tooltip-text" translatable="yes">Scan your home folder</property>
                 <property name="label" translatable="yes">Scan Home</property>
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-home</property>
@@ -237,7 +237,7 @@
                 <signal handler="on_tbscanhome_clicked" last_modification_time="Wed, 23 Aug 2006 12:30:03 GMT" name="clicked"/>
                 <child internal-child="accessible">
                   <object class="AtkObject" id="a11y-tbscanhome1">
-                    <property name="AtkObject::accessible_name" translatable="yes">Scan home folder</property>
+                    <property name="AtkObject::accessible_name" translatable="yes">Scan your home folder</property>
                   </object>
                 </child>
               </object>
@@ -249,8 +249,8 @@
             <child>
               <object class="GtkToolButton" id="tbscanall">
                 <property name="visible">True</property>
-                <property name="tooltip-text" translatable="yes">Scan filesystem</property>
-                <property name="label" translatable="yes">Scan Filesystem</property>
+                <property name="tooltip-text" translatable="yes">Scan the file system</property>
+                <property name="label" translatable="yes">Scan File System</property>
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-harddisk</property>
                 <property name="visible_horizontal">True</property>
@@ -283,7 +283,7 @@
             <child>
               <object class="GtkToolButton" id="tb_scan_remote">
                 <property name="visible">True</property>
-                <property name="tooltip-text" translatable="yes">Scan a remote folder</property>
+                <property name="tooltip-text" translatable="yes">Scan a remote folder or file system</property>
                 <property name="label" translatable="yes">Scan Remote Folder</property>
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-network</property>
