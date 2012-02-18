@@ -1,0 +1,40 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic" style="guide"
+      id="pref">
+  <info>
+    <revision pkgversion="3.4" date="2012-02-18" status="draft"/>
+    <link type="guide" xref="index#preferences"/>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Skip specific devices and partitions when performing a scan of the
+    file system.</desc>
+
+  </info>
+
+  <title>Disable scanning of individual storage devices and partitions</title>
+
+  <p><app>Disk Usage Analyzer</app> allows you to scan only the partitions and
+  storage devices that you have selected in the <gui>Preferences</gui> dialog.
+  By default, all devices and partitions are selected, but the application will
+  store your preferences when you close it.</p>
+
+  <steps>
+    <item>
+      <p>Select <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq></p>
+    </item>
+    <item>
+      <p>Select the storage devices and partitions that you want to scan, or deselect those that you do not wish to scan</p>
+    </item>
+    <item>
+      <p>Click <gui>Close</gui> to save your preferences</p>
+    </item>
+  </steps>
+
+  <note style="bug">
+    <p>The first item in the list, which is mounted on <file>/</file>, cannot be deselected</p>
+  </note>
+
+</page>
