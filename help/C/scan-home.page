@@ -4,70 +4,62 @@
 
   <info>
     <revision version="0.1" date="2011-12-19" status="stub"/>
-    <revision version="0.1" date="2011-12-20" status="draft"/>
+    <revision version="0.1" date="2011-12-20" status="review"/>
     <link type="guide" xref="index#scan"/>
+
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email>yrazes@gmail.com</email>
-      <years>2011</years>
     </credit>
     <credit type="author editor">
       <name>Ekaterina Gerasimova</name>
       <email>kittykat3756@gmail.com</email>
-      <years>2011</years>
     </credit>
 
-    <desc>Scan your <file>Home</file> folder, which contains
-    <file>Desktop</file>, <file>Documents</file>, <file>Downloads</file>,
-    <file>Videos</file>, <file>Pictures</file> and <file>Music</file>
-    folders.</desc>
+    <desc>Scan all of your personal files files that are on your internal
+    storage device.</desc>
+
   </info>
 
   <title>Scan your <file>Home</file> folder</title>
-
-  <comment>
-    <cite date="2011-12-17" href="mailto:yrazes@gmail.com">Julita Inca</cite>
-    <p>This assumes the reader knows how to know about the tree file system in
-    Linux.  By the end of this page, the reader will be able to use the scan
-    home in order to organize better his or her folders.</p>
-  </comment>
 
   <p>The <file>Home</file> folder is where most files are located for the
   average user because default settings are often set to save or copy files
   into subdirectories within it. This includes downloads from the internet,
   documents which you work on and photos from your camera. Normally, one
   <file>Home</file> folder exists for each user on the computer.</p>
-  
+
+  <steps>
+    <item>
+      <p>Select <guiseq><gui>Analyzer</gui><gui>Scan Home Folder</gui></guiseq>
+      from the menu</p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Select <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> to cancel the
+    current scan, or <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq> to
+    repeat the last scan.</p>
+  </note>
+
+  <p>The results may be useful in deciding which folders can be
+  <link href="ghelp:file-roller">archived</link>,
+  <link href="help:gnome-help/files-delete">deleted</link> or
+  <link href="help:gnome-help/files-copy">moved</link> to free up space. You can
+  also use the results to estimate how much space would be needed for a
+  <link href="help:gnome-help/backup-how">backup</link> of your
+  <file>Home</file> folder.</p>
+
+  <p>Right-click on any folder and select <gui>Open Folder</gui> to launch the
+  <app>Files</app> application, or <gui>Move to Trash</gui> to move your folder
+  to <file>Trash</file>.</p>
+
   <note style="advanced">
     <p>The default subdirectories usually include <file>Desktop</file>,
     <file>Documents</file>, <file>Downloads</file>, <file>Pictures</file> and
-    <file>Music</file>, among others.
-    Some of these will already exist when GNOME is installed, others will be
-    created by applications when they are needed.</p>
+    <file>Music</file>, among others. Some of these will already exist when
+    GNOME is installed, others will be created by applications when they are
+    needed.</p>
   </note>
-
-  <p>To scan your <file>Home</file> folder, choose one of the following:</p>
-  <list>
-    <item><p>select <guiseq><gui>Analyzer</gui><gui>Scan Home
-    Folder</gui></guiseq> from the menu.</p></item>
-    <item><p>press <keyseq><key>CTRL</key><key>S</key></keyseq>.</p></item>
-  </list>
-
-  <note style="tip">
-    <p>Click the <gui>Stop</gui> button in the toolbar to cancel the current
-    scan, or <gui>Refresh</gui> to repeat the last scan.</p>
-  </note> 
-
-  <p>The results may be useful in deciding which applications to uninstall, 
-  or which folders can be <link href="ghelp:file-roller">archived</link>,
-  <link href="help:gnome-help/files-delete">deleted</link> or
-  <link href="help:gnome-help/files-copy">moved</link>, to free up space on the
-  hard disk. You can also use them to estimate how much space would be needed
-  for a <link href="help:gnome-help/backup-how">backup</link> of your
-  <file>Home</file> directory.</p>
-
-  <p>Right click on any folder and select <gui>Open Folder</gui> 
-  to browse all the folders inside, or <gui>Move to Trash</gui> 
-  to move your folder to <file>Trash</file>.</p>
 
 </page>
