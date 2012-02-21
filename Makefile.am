@@ -10,7 +10,6 @@ MAINTAINERCLEANFILES = 		\
 	config.h.in		\
 	config.sub		\
 	depcomp			\
-	gnome-doc-utils.make	\
 	INSTALL			\
 	install-sh		\
 	ltmain.sh		\

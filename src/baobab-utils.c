@@ -462,9 +462,9 @@ baobab_help_display (GtkWindow   *parent,
 	gboolean ret;
 
 	if (link_id)
-		uri = g_strdup_printf ("ghelp:%s?%s", "baobab", link_id);
+		uri = g_strdup_printf ("help:%s?%s", "baobab", link_id);
 	else
-		uri = g_strdup_printf ("ghelp:%s", "baobab");
+		uri = g_strdup_printf ("help:%s", "baobab");
 
 	ret = gtk_show_uri (gtk_window_get_screen (parent),
 			    uri, gtk_get_current_event_time (), &error);
