@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-02-21 13:59+0100\n"
+"POT-Creation-Date: 2012-02-21 13:20+0000\n"
+"PO-Revision-Date: 2012-02-21 18:09+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,11 +41,9 @@ msgid "Disk Usage Analyzer Preferences"
 msgstr "Preferencias del analizador de uso de disco"
 
 #: ../data/baobab-preferences-dialog.ui.h:2
-#| msgid "Select _devices to include in filesystem scan:"
 msgid "Select _devices to include in file system scan:"
 msgstr ""
-"Seleccionar qué _dispositivos incluir en la inspección del sistema de "
-"archivos:"
+"Seleccionar qué _dispositivos incluir en el análisis del sistema de archivos:"
 
 #: ../data/baobab-preferences-dialog.ui.h:3
 msgid "_Monitor changes to your home folder"
@@ -66,7 +64,7 @@ msgstr "URI de las particiones excluidas"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Una lista de URI para las particiones que excluir de la inspección."
+msgstr "Una lista de URI para las particiones que excluir del análisis."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
 msgid "Toolbar is Visible"
@@ -101,21 +99,19 @@ msgstr "_Analizador"
 
 #: ../data/baobab-main-window.ui.h:2
 msgid "Scan _Home Folder"
-msgstr "Inspeccionar carpeta _personal"
+msgstr "Analizar carpeta _personal"
 
 #: ../data/baobab-main-window.ui.h:3
 msgid "Scan _Filesystem"
-msgstr "Inspeccionar sistema de _archivos"
+msgstr "Analizar sistema de _archivos"
 
 #: ../data/baobab-main-window.ui.h:4
-#| msgid "Scan Folder"
 msgid "Scan F_older…"
-msgstr "Inspeccionar _carpeta…"
+msgstr "Analizar _carpeta…"
 
 #: ../data/baobab-main-window.ui.h:5
-#| msgid "Scan Remote Folder"
 msgid "S_can Remote Folder…"
-msgstr "Inspeccionar carpeta _remota…"
+msgstr "Analizar carpeta _remota…"
 
 #: ../data/baobab-main-window.ui.h:6
 msgid "_Edit"
@@ -154,53 +150,48 @@ msgid "_Contents"
 msgstr "Índ_ice"
 
 #: ../data/baobab-main-window.ui.h:16
-#| msgid "Rescan your home folder?"
 msgid "Scan your home folder"
-msgstr "Inspeccionar su carpeta personal"
+msgstr "Analizar su carpeta personal"
 
 #: ../data/baobab-main-window.ui.h:17
 msgid "Scan Home"
-msgstr "Inspeccionar carpeta personal"
+msgstr "Analizar carpeta personal"
 
 #: ../data/baobab-main-window.ui.h:18
-#| msgid "Scan filesystem"
 msgid "Scan the file system"
-msgstr "Inspeccionar el sistema de archivos"
+msgstr "Analizar el sistema de archivos"
 
 #: ../data/baobab-main-window.ui.h:19
-#| msgid "Scan Filesystem"
 msgid "Scan File System"
-msgstr "Inspeccionar sistema de archivos"
+msgstr "Analizar sistema de archivos"
 
 #: ../data/baobab-main-window.ui.h:20
 msgid "Scan a folder"
-msgstr "Inspeccionar una carpeta"
+msgstr "Analizar una carpeta"
 
 #: ../data/baobab-main-window.ui.h:21
 msgid "Scan Folder"
-msgstr "Inspeccionar carpeta"
+msgstr "Analizar carpeta"
 
 #: ../data/baobab-main-window.ui.h:22
-#| msgid "Scan a remote folder"
 msgid "Scan a remote folder or file system"
-msgstr "Inspeccionar una carpeta o un sistema de archivos remoto"
+msgstr "Analizar una carpeta o un sistema de archivos remoto"
 
 #: ../data/baobab-main-window.ui.h:23
 msgid "Scan Remote Folder"
-msgstr "Inspeccionar carpeta remota"
+msgstr "Analizar carpeta remota"
 
 #: ../data/baobab-main-window.ui.h:24
 msgid "Stop scanning"
-msgstr "Detener la inspección"
+msgstr "Detener el análisis"
 
 #: ../data/baobab-main-window.ui.h:25
 msgid "Refresh"
 msgstr "Actualizar"
 
 #: ../src/baobab.c:130 ../src/baobab.c:404
-#| msgid "Scanning..."
 msgid "Scanning…"
-msgstr "Inspeccionando…"
+msgstr "Analizando…"
 
 #: ../src/baobab.c:176
 msgid "Total filesystem capacity:"
@@ -216,7 +207,6 @@ msgstr "Disponible:"
 
 #. set statusbar, percentage and allocated/normal size
 #: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-#| msgid "Calculating percentage bars..."
 msgid "Calculating percentage bars…"
 msgstr "Calculando barras de porcentajes…"
 
@@ -334,7 +324,7 @@ msgstr "Tipo de _imagen:"
 
 #: ../src/baobab-prefs.c:173
 msgid "Scan"
-msgstr "Inspeccionar"
+msgstr "Analizar"
 
 #: ../src/baobab-prefs.c:181
 msgid "Device"
@@ -345,7 +335,6 @@ msgid "Mount Point"
 msgstr "Punto de montaje"
 
 #: ../src/baobab-prefs.c:197
-#| msgid "Filesystem Type"
 msgid "File System Type"
 msgstr "Tipo de sistema de archivos"
 
@@ -442,11 +431,11 @@ msgstr "_Tipo de servicio:"
 
 #: ../src/baobab-remote-connect-dialog.c:778
 msgid "_Scan"
-msgstr "In_speccionar"
+msgstr "A_nalizar"
 
 #: ../src/baobab-treeview.c:83
 msgid "Rescan your home folder?"
-msgstr "¿Quiere volver a inspeccionar su carpeta personal?"
+msgstr "¿Quiere volver a analizar su carpeta personal?"
 
 #: ../src/baobab-treeview.c:84
 msgid ""
@@ -454,11 +443,11 @@ msgid ""
 "disk usage details."
 msgstr ""
 "El contenido de su carpeta personal ha cambiado. Seleccione volver a "
-"inspeccionar para actualizar los detalles de uso de disco."
+"analizar para actualizar los detalles de uso de disco."
 
 #: ../src/baobab-treeview.c:85
 msgid "_Rescan"
-msgstr "_Volver a inspeccionar"
+msgstr "_Volver a analizar"
 
 #: ../src/baobab-treeview.c:223
 msgid "Folder"
