@@ -1,5 +1,6 @@
-# Gnome utiliitide eesti keele tõlge.
-# Estonian translation of Gnome-utils.
+# Baobab'i eesti keele tõlge.
+# Estonian translation of Baobab.
+# Some of it was known as gnome-utils before.
 #
 # Copyright (C) 1999, 2002, 2005, 2006 Free Software Foundation, Inc.
 # Copyright (C) 2007–2011 The GNOME Project.
@@ -9,425 +10,327 @@
 # Tõivo Leedjärv <toivo linux ee>, 2002.
 # Ivar Smolin <okul linux ee>, 2005–2011.
 # Priit Laes <amd store20 com>, 2005.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils MASTER\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2011-03-21 10:50+0200\n"
-"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
-"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-02-27 12:07+0000\n"
+"PO-Revision-Date: 2012-02-29 11:16+0200\n"
+"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
+"Language-Team: Estonian <>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Kaustade suuruse ja saadaoleva kettaruumi kontroll"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
 msgid "Disk Usage Analyzer"
 msgstr "Kettakasutuse analüsaator"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
+msgid "Check folder sizes and available disk space"
+msgstr "Kaustade suuruse ja saadaoleva kettaruumi kontroll"
+
 msgid "Disk Usage Analyzer Preferences"
 msgstr "Kettakasutuse analüsaatori eelistused"
 
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
+msgid "Select _devices to include in file system scan:"
 msgstr "_Failisüsteemi läbivaatusele kaasatavate seadmete nimekiri:"
 
-#: ../data/baobab-preferences-dialog.ui.h:3
 msgid "_Monitor changes to your home folder"
 msgstr "_Jälgitakse kodukataloogis toimuvaid _muutusi"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Läbivaatusele mittekuuluvate jaotiste URI-de loetelu."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Aktiivne diagramm"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
-msgid "Excluded partitions URIs"
-msgstr "Välistatud jaotiste URI-d"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Monitor Home"
 msgstr "Kodukataloogi jälgimine"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Olekuriba on nähtaval"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Tööriistariba on nähtaval"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
 msgid "Whether any change to the home directory should be monitored."
 msgstr "Kas kodukataloogis toimuvaid muudatusi tuleb jälgida või mitte."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "Excluded partitions URIs"
+msgstr "Välistatud jaotiste URI-d"
+
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Läbivaatusele mittekuuluvate jaotiste URI-de loetelu."
+
+msgid "Toolbar is Visible"
+msgstr "Tööriistariba on nähtaval"
+
+msgid "Whether the toolbar should be visible in main window."
+msgstr "Kas peaakna tööriistariba peab nähtaval olema või mitte."
+
+msgid "Statusbar is Visible"
+msgstr "Olekuriba on nähtaval"
+
 msgid "Whether the status bar at the bottom of main window should be visible."
 msgstr ""
 "Kas peaakna alumises osas olev olekuriba peab nähtaval olema või mitte."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Kas peaakna tööriistariba peab nähtaval olema või mitte."
+msgid "Active Chart"
+msgstr "Aktiivne diagramm"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Kuvatava diagrammi liik."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Eraldatud _ruum"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Värskendamine"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "Vaata kau_gkataloog läbi..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "Vaata _kataloogi läbi..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "Failisüsteemi läbivaatus"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Kataloogi läbivaatus"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Kodukataloogi läbivaatus"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Võrgukataloogi läbivaatus"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Vaata _failisüsteem läbi"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Vaata ko_dukataloog läbi"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Kataloogi läbivaatamine"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "Kaugkataloogi läbivaatamine"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "Failisüsteemi läbivaatus"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "Kodukataloogi läbivaatus"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "_Olekuriba"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Läbivaatuse seiskamine"
-
-#: ../data/baobab-main-window.ui.h:18
 msgid "_Analyzer"
 msgstr "A_nalüsaator"
 
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "_Ahenda kõik"
+msgid "Scan _Home Folder"
+msgstr "Vaata ko_dukataloog läbi"
 
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_Sisukord"
+msgid "Scan _Filesystem"
+msgstr "Vaata _failisüsteem läbi"
 
-#: ../data/baobab-main-window.ui.h:21
+msgid "Scan F_older…"
+msgstr "_Kataloogi läbivaatus…"
+
+msgid "S_can Remote Folder…"
+msgstr "_Võrgukataloogi läbivaatus…"
+
 msgid "_Edit"
 msgstr "_Redaktor"
 
-#: ../data/baobab-main-window.ui.h:22
 msgid "_Expand All"
 msgstr "_Laienda kõik"
 
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "A_bi"
+msgid "_Collapse All"
+msgstr "_Ahenda kõik"
 
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "_Tööriistariba"
-
-#: ../data/baobab-main-window.ui.h:25
 msgid "_View"
 msgstr "_Vaade"
 
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "Läbivaatus..."
+msgid "_Toolbar"
+msgstr "_Tööriistariba"
 
-#: ../src/baobab.c:182
+msgid "St_atusbar"
+msgstr "_Olekuriba"
+
+msgid "All_ocated Space"
+msgstr "Eraldatud _ruum"
+
+msgid "_Help"
+msgstr "A_bi"
+
+msgid "_Contents"
+msgstr "_Sisukord"
+
+msgid "Scan your home folder"
+msgstr "Kodukataloogi läbivaatus"
+
+msgid "Scan Home"
+msgstr "Kodukataloogi läbivaatus"
+
+msgid "Scan the file system"
+msgstr "Failisüsteemi läbivaatus"
+
+msgid "Scan File System"
+msgstr "Failisüsteemi läbivaatus"
+
+msgid "Scan a folder"
+msgstr "Kataloogi läbivaatus"
+
+msgid "Scan Folder"
+msgstr "Kataloogi läbivaatus"
+
+msgid "Scan a remote folder or file system"
+msgstr "Kaugkataloogi või failisüsteemi läbivaatus"
+
+msgid "Scan Remote Folder"
+msgstr "Võrgukataloogi läbivaatus"
+
+msgid "Stop scanning"
+msgstr "Läbivaatuse seiskamine"
+
+msgid "Refresh"
+msgstr "Värskendamine"
+
+msgid "Scanning…"
+msgstr "Läbivaatus…"
+
 msgid "Total filesystem capacity:"
 msgstr "Kõigi failisüsteemide mahtuvus:"
 
-#: ../src/baobab.c:183
 msgid "used:"
 msgstr "kasutusel:"
 
-#: ../src/baobab.c:184
 msgid "available:"
 msgstr "vaba:"
 
 #. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "Protsenditulpade arvutamine..."
+msgid "Calculating percentage bars…"
+msgstr "Protsenditulpade arvutamine…"
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
 msgid "Ready"
 msgstr "Valmis"
 
-#: ../src/baobab.c:421
 msgid "Total filesystem capacity"
 msgstr "Failisüsteemi kogumahtuvus"
 
-#: ../src/baobab.c:443
 msgid "Total filesystem usage"
 msgstr "Kogu failisüsteemi kasutus"
 
-#: ../src/baobab.c:484
 msgid "contains hardlinks for:"
 msgstr "sisaldab püsiviitasid andmemahule"
 
-#: ../src/baobab.c:493
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
 msgstr[0] "%5d kirje"
 msgstr[1] "%5d kirjet"
 
-#: ../src/baobab.c:620
 msgid "Could not initialize monitoring"
 msgstr "Jälgimist pole võimalik lähtestada"
 
-#: ../src/baobab.c:621
 msgid "Changes to your home folder will not be monitored."
 msgstr "Kodukataloogis toimuvaid muudatusi ei jälgita."
 
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "Tõsta ülemisse kataloogi"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "Suurendamine"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "Vähendamine"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "Kuvatõmmise salvestamine"
-
-#: ../src/baobab.c:1143
 msgid "View as Rings Chart"
 msgstr "Ringdiagrammi vaade"
 
-#: ../src/baobab.c:1145
 msgid "View as Treemap Chart"
 msgstr "Puudiagrammi vaade"
 
-#: ../src/baobab.c:1250
 msgid "Show version"
 msgstr "Versiooni näitamine"
 
-#: ../src/baobab.c:1251
 msgid "[DIRECTORY]"
 msgstr "[KATALOOG]"
 
-#: ../src/baobab.c:1281
 msgid "Too many arguments. Only one directory can be specified."
 msgstr "Liiga palju argumente. Ainult üks kataloog võib olla määratud."
 
-#: ../src/baobab.c:1298
 msgid "Could not detect any mount point."
 msgstr "Ühtegi ühendamispunkti pole võimalik tuvastada."
 
-#: ../src/baobab.c:1300
 msgid "Without mount points disk usage cannot be analyzed."
 msgstr "Ilme ühendamispunktideta pole võimalik kettakasutust analüüsida."
 
-#: ../src/baobab-chart.c:205
 msgid "Maximum depth"
 msgstr "Suurim sügavus"
 
-#: ../src/baobab-chart.c:206
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Suurim diagrammile joonistatud tasemete arv alates juurikast"
 
-#: ../src/baobab-chart.c:215
 msgid "Chart model"
 msgstr "Diagrammi mudel"
 
-#: ../src/baobab-chart.c:216
 msgid "Set the model of the chart"
 msgstr "Diagrammi mudeli määramine"
 
-#: ../src/baobab-chart.c:223
 msgid "Chart root node"
 msgstr "Diagrammi juurpunkt"
 
-#: ../src/baobab-chart.c:224
 msgid "Set the root node from the model"
 msgstr "Mudeli juurpunkti määramine"
 
-#: ../src/baobab-chart.c:1690
+msgid "Move to parent folder"
+msgstr "Tõsta ülemisse kataloogi"
+
+msgid "Zoom in"
+msgstr "Suurendamine"
+
+msgid "Zoom out"
+msgstr "Vähendamine"
+
+msgid "Save screenshot"
+msgstr "Kuvatõmmise salvestamine"
+
 msgid "Cannot create pixbuf image!"
 msgstr "Pixbuf pilti pole võimalik luua!"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
 msgid "Save Snapshot"
 msgstr "Tõmmise salvestamine"
 
-#: ../src/baobab-chart.c:1727
 msgid "_Image type:"
 msgstr "_Pildi liik:"
 
-#: ../src/baobab-prefs.c:172
 msgid "Scan"
 msgstr "Vaatlusel"
 
-#: ../src/baobab-prefs.c:179
 msgid "Device"
 msgstr "Seade"
 
-#: ../src/baobab-prefs.c:187
 msgid "Mount Point"
 msgstr "Ühenduspunkt"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
+msgid "File System Type"
 msgstr "Failisüsteemi liik"
 
-#: ../src/baobab-prefs.c:203
 msgid "Total Size"
 msgstr "Kogusuurus"
 
-#: ../src/baobab-prefs.c:212
 msgid "Available"
 msgstr "Vaba"
 
-#: ../src/baobab-remote-connect-dialog.c:77
 #, c-format
 msgid "Cannot scan location \"%s\""
 msgstr "Asukohta \"%s\" pole võimalik läbi vaadata"
 
-#: ../src/baobab-remote-connect-dialog.c:175
 msgid "Custom Location"
 msgstr "Kohandatud asukoht"
 
-#: ../src/baobab-remote-connect-dialog.c:177
 msgid "SSH"
 msgstr "SSH"
 
-#: ../src/baobab-remote-connect-dialog.c:180
 msgid "Public FTP"
 msgstr "Avalik FTP"
 
-#: ../src/baobab-remote-connect-dialog.c:182
 msgid "FTP (with login)"
 msgstr "FTP (sisselogimisega)"
 
-#: ../src/baobab-remote-connect-dialog.c:185
 msgid "Windows share"
 msgstr "Windowsi jagatud kataloog"
 
-#: ../src/baobab-remote-connect-dialog.c:187
 msgid "WebDAV (HTTP)"
 msgstr "WebDAV (HTTP)"
 
-#: ../src/baobab-remote-connect-dialog.c:189
 msgid "Secure WebDAV (HTTPS)"
 msgstr "Turvaline WebDAV (HTTPS)"
 
-#: ../src/baobab-remote-connect-dialog.c:249
 msgid "Cannot Connect to Server. You must enter a name for the server."
 msgstr "Serveriga pole võimalik ühenduda. Sa pead sisestama serveri nime."
 
-#: ../src/baobab-remote-connect-dialog.c:252
 msgid "Please enter a name and try again."
 msgstr "Palun sisesta nimi ja proovi uuesti."
 
-#: ../src/baobab-remote-connect-dialog.c:441
 msgid "_Location (URI):"
 msgstr "_Asukoht (URI):"
 
-#: ../src/baobab-remote-connect-dialog.c:463
 msgid "_Server:"
 msgstr "_Server:"
 
-#: ../src/baobab-remote-connect-dialog.c:482
 msgid "Optional information:"
 msgstr "Valikulsed andmed:"
 
-#: ../src/baobab-remote-connect-dialog.c:494
 msgid "_Share:"
 msgstr "_Jagatud kataloog:"
 
-#: ../src/baobab-remote-connect-dialog.c:515
 msgid "_Port:"
 msgstr "_Port:"
 
-#: ../src/baobab-remote-connect-dialog.c:535
 msgid "_Folder:"
 msgstr "_Kataloog:"
 
-#: ../src/baobab-remote-connect-dialog.c:555
 msgid "_User Name:"
 msgstr "Kasutaja _nimi:"
 
-#: ../src/baobab-remote-connect-dialog.c:576
 msgid "_Domain Name:"
 msgstr "_Domeeni nimi:"
 
-#: ../src/baobab-remote-connect-dialog.c:643
 msgid "Connect to Server"
 msgstr "Ühendumine serveriga"
 
-#: ../src/baobab-remote-connect-dialog.c:659
 msgid "Service _type:"
 msgstr "_Teenuse liik:"
 
-#: ../src/baobab-remote-connect-dialog.c:778
 msgid "_Scan"
 msgstr "_Vaata läbi"
 
-#: ../src/baobab-treeview.c:82
 msgid "Rescan your home folder?"
 msgstr "Kas vaadata kodukaugkataloog uuesti läbi?"
 
-#: ../src/baobab-treeview.c:83
 msgid ""
 "The content of your home folder has changed. Select rescan to update the "
 "disk usage details."
@@ -435,84 +338,65 @@ msgstr ""
 "Sinu kodukataloogi sisu on muutunud. Kettakasutuse üksikasjade uuendamiseks "
 "tuleb läbi viia uus läbivaatus."
 
-#: ../src/baobab-treeview.c:84
 msgid "_Rescan"
 msgstr "_Vaata uuesti läbi"
 
-#: ../src/baobab-treeview.c:222
 msgid "Folder"
 msgstr "Kataloog"
 
-#: ../src/baobab-treeview.c:244
 msgid "Usage"
 msgstr "Kasutus"
 
-#: ../src/baobab-treeview.c:258
 msgid "Size"
 msgstr "Suurus"
 
-#: ../src/baobab-treeview.c:274
 msgid "Contents"
 msgstr "Sisu"
 
-#: ../src/baobab-utils.c:72
 msgid "Select Folder"
 msgstr "Kataloogi valimine"
 
 #. add extra widget
-#: ../src/baobab-utils.c:84
 msgid "_Show hidden folders"
 msgstr "Näita _peidetud katalooge"
 
-#: ../src/baobab-utils.c:263
 msgid "Cannot check an excluded folder!"
 msgstr "Välistatud kausta pole võimalik kontrollida!"
 
-#: ../src/baobab-utils.c:287
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ei ole korrektne kataloog"
 
-#: ../src/baobab-utils.c:290
 msgid "Could not analyze disk usage."
 msgstr "Kettakasutust pole võimalik analüüsida."
 
-#: ../src/baobab-utils.c:326
 msgid "_Open Folder"
 msgstr "_Ava kataloog"
 
-#: ../src/baobab-utils.c:332
 msgid "Mo_ve to Trash"
 msgstr "Tõsta _prügikasti"
 
-#: ../src/baobab-utils.c:362
 #, c-format
 msgid "Could not open folder \"%s\""
 msgstr "Kataloogi \"%s\" pole võimalik avada"
 
-#: ../src/baobab-utils.c:365
 msgid "There is no installed viewer capable of displaying the folder."
 msgstr "Kataloogi jaoks pole sobivat vaatlusprogrammi paigaldatud."
 
-#: ../src/baobab-utils.c:433
 #, c-format
 msgid "Could not move \"%s\" to the Trash"
 msgstr "\"%s\" pole võimalik prügikasti visata."
 
-#: ../src/baobab-utils.c:441
 msgid "Could not move file to the Trash"
 msgstr "Faili pole võimalik prügikasti visata"
 
-#: ../src/baobab-utils.c:443
 #, c-format
 msgid "Details: %s"
 msgstr "Üksikasjad: %s"
 
-#: ../src/baobab-utils.c:479
 msgid "There was an error displaying help."
 msgstr "Abiteabe kuvamisel tekkis viga."
 
-#: ../src/callbacks.c:76
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -524,7 +408,6 @@ msgstr ""
 "Tarkvara Fondi poolt avaldatud; kas Litsentsi versioon number 2 või "
 "(vastavalt Teie valikule) ükskõik milline hilisem versioon."
 
-#: ../src/callbacks.c:81
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -536,7 +419,6 @@ msgstr ""
 "TEATUD KINDLAKS EESMÄRGIKS. Üksikasjade suhtes vaata GNU Üldist Avalikku "
 "Litsentsi."
 
-#: ../src/callbacks.c:86
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -546,15 +428,12 @@ msgstr ""
 "programmiga; kui ei, siis võtke ühendust Free Software Foundation'iga, 51 "
 "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 
-#: ../src/callbacks.c:101
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
 msgid "A graphical tool to analyze disk usage."
 msgstr "Graafiline tööriist kettakasutuse analüüsimiseks."
 
-#: ../src/callbacks.c:110
 msgid "translator-credits"
 msgstr ""
 "Lauris Kaplinski <lauris ariman ee>, 1999.\n"
@@ -562,10 +441,8 @@ msgstr ""
 "Ivar Smolin <okul linux ee>, 2005–2011.\n"
 "Priit Laes <amd store20 com>, 2005."
 
-#: ../src/callbacks.c:208
 msgid "The document does not exist."
 msgstr "Dokumenti pole olemas."
 
-#: ../src/callbacks.c:289
 msgid "The folder does not exist."
 msgstr "Kataloogi pole olemas."
