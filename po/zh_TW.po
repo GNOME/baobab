@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils 3.1.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2011-09-05 19:15+0800\n"
+"POT-Creation-Date: 2012-03-05 20:23+0800\n"
+"PO-Revision-Date: 2012-02-25 11:19+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional)\n"
 "Language: zh_TW\n"
@@ -36,8 +36,8 @@ msgid "Disk Usage Analyzer Preferences"
 msgstr "磁碟用量分析器偏好設定"
 
 #: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
-msgstr "選擇系統掃描時包括的裝置(_D)"
+msgid "Select _devices to include in file system scan:"
+msgstr "選擇系統掃描時包括的裝置(_D):"
 
 #: ../data/baobab-preferences-dialog.ui.h:3
 msgid "_Monitor changes to your home folder"
@@ -92,15 +92,15 @@ msgid "Refresh"
 msgstr "重新整理"
 
 #: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
+msgid "S_can Remote Folder…"
 msgstr "掃描遠端資料夾(_C)…"
 
 #: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
+msgid "Scan F_older…"
 msgstr "掃描資料夾(_O)…"
 
 #: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
+msgid "Scan File System"
 msgstr "掃描檔案系統"
 
 #: ../data/baobab-main-window.ui.h:7
@@ -128,16 +128,16 @@ msgid "Scan a folder"
 msgstr "掃描資料夾"
 
 #: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "掃描遠端資料夾"
+msgid "Scan a remote folder or file system"
+msgstr "掃描遠端資料夾或檔案系統"
 
 #: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
+msgid "Scan the file system"
 msgstr "掃描檔案系統"
 
 #: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "掃描個人資料夾"
+msgid "Scan your home folder"
+msgstr "重新您的個人資料夾"
 
 #: ../data/baobab-main-window.ui.h:16
 msgid "St_atusbar"
@@ -179,161 +179,161 @@ msgstr "工具列(_T)"
 msgid "_View"
 msgstr "檢視(_V)"
 
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
+#: ../src/baobab.c:130 ../src/baobab.c:404
+msgid "Scanning…"
 msgstr "掃描中…"
 
-#: ../src/baobab.c:182
+#: ../src/baobab.c:176
 msgid "Total filesystem capacity:"
 msgstr "檔案系統總容量："
 
-#: ../src/baobab.c:183
+#: ../src/baobab.c:177
 msgid "used:"
 msgstr "已使用："
 
-#: ../src/baobab.c:184
+#: ../src/baobab.c:178
 msgid "available:"
 msgstr "剩餘："
 
 #. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
+#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
+msgid "Calculating percentage bars…"
 msgstr "正在計算百分比長條圖…"
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
+#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
 msgid "Ready"
 msgstr "準備就緒"
 
-#: ../src/baobab.c:421
+#: ../src/baobab.c:437
 msgid "Total filesystem capacity"
 msgstr "檔案系統總容量"
 
-#: ../src/baobab.c:443
+#: ../src/baobab.c:459
 msgid "Total filesystem usage"
 msgstr "檔案系統的總用量"
 
-#: ../src/baobab.c:484
+#: ../src/baobab.c:500
 msgid "contains hardlinks for:"
 msgstr "包含的硬連結有："
 
-#: ../src/baobab.c:493
+#: ../src/baobab.c:509
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
 msgstr[0] "%5d 個項目"
 
-#: ../src/baobab.c:620
+#: ../src/baobab.c:614
 msgid "Could not initialize monitoring"
 msgstr "無法初始化監控"
 
-#: ../src/baobab.c:621
+#: ../src/baobab.c:615
 msgid "Changes to your home folder will not be monitored."
 msgstr "不會監察個人資料夾的變更"
 
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "移至上層資料夾"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "拉近"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "拉遠"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "儲存螢幕截圖"
-
-#: ../src/baobab.c:1143
+#: ../src/baobab.c:1050
 msgid "View as Rings Chart"
 msgstr "以環狀圖表檢視"
 
-#: ../src/baobab.c:1145
+#: ../src/baobab.c:1052
 msgid "View as Treemap Chart"
 msgstr "以樹狀圖表檢視"
 
-#: ../src/baobab.c:1250
+#: ../src/baobab.c:1151
 msgid "Show version"
 msgstr "顯示版本"
 
-#: ../src/baobab.c:1251
+#: ../src/baobab.c:1152
 msgid "[DIRECTORY]"
 msgstr "[目錄]"
 
-#: ../src/baobab.c:1281
+#: ../src/baobab.c:1182
 msgid "Too many arguments. Only one directory can be specified."
 msgstr "參數太多。只能指定一個目錄。"
 
-#: ../src/baobab.c:1298
+#: ../src/baobab.c:1199
 msgid "Could not detect any mount point."
 msgstr "無法偵測到任何掛載點。"
 
-#: ../src/baobab.c:1300
+#: ../src/baobab.c:1201
 msgid "Without mount points disk usage cannot be analyzed."
 msgstr "沒有掛載點的磁碟機用量無法被分析。"
 
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "最大深度"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:189
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "從根 (/) 開始繪製圖表深度的上限"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:198
 msgid "Chart model"
 msgstr "圖表型式"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:199
 msgid "Set the model of the chart"
 msgstr "設定圖表的型式"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:206
 msgid "Chart root node"
 msgstr "圖表根節點"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:207
 msgid "Set the root node from the model"
 msgstr "從模式中設定根節點"
 
+#: ../src/baobab-chart.c:905
+msgid "Move to parent folder"
+msgstr "移至上層資料夾"
+
+#: ../src/baobab-chart.c:909
+msgid "Zoom in"
+msgstr "拉近"
+
+#: ../src/baobab-chart.c:913
+msgid "Zoom out"
+msgstr "拉遠"
+
+#: ../src/baobab-chart.c:917
+msgid "Save screenshot"
+msgstr "儲存螢幕截圖"
+
 # zh_HK: msgstr "無法產生 pixbuf 圖像！"
-#: ../src/baobab-chart.c:1690
+#: ../src/baobab-chart.c:1776
 msgid "Cannot create pixbuf image!"
 msgstr "無法產生 pixbuf 影像！"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
+#: ../src/baobab-chart.c:1784
 msgid "Save Snapshot"
 msgstr "儲存螢幕截圖"
 
 # zh_HK: msgstr "圖像類型："
-#: ../src/baobab-chart.c:1727
+#: ../src/baobab-chart.c:1811
 msgid "_Image type:"
 msgstr "影像類型(_I)："
 
-#: ../src/baobab-prefs.c:172
+#: ../src/baobab-prefs.c:173
 msgid "Scan"
 msgstr "掃描"
 
-#: ../src/baobab-prefs.c:179
+#: ../src/baobab-prefs.c:181
 msgid "Device"
 msgstr "裝置"
 
-#: ../src/baobab-prefs.c:187
+#: ../src/baobab-prefs.c:189
 msgid "Mount Point"
 msgstr "掛載點"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
+#: ../src/baobab-prefs.c:197
+msgid "File System Type"
 msgstr "檔案系統類型"
 
-#: ../src/baobab-prefs.c:203
+#: ../src/baobab-prefs.c:205
 msgid "Total Size"
 msgstr "全部容量"
 
-#: ../src/baobab-prefs.c:212
+#: ../src/baobab-prefs.c:214
 msgid "Available"
 msgstr "可用"
 
@@ -422,94 +422,94 @@ msgstr "服務類型(_T):"
 msgid "_Scan"
 msgstr "掃描(_S)"
 
-#: ../src/baobab-treeview.c:82
+#: ../src/baobab-treeview.c:83
 msgid "Rescan your home folder?"
 msgstr "重新掃描個人資料夾？"
 
-#: ../src/baobab-treeview.c:83
+#: ../src/baobab-treeview.c:84
 msgid ""
 "The content of your home folder has changed. Select rescan to update the "
 "disk usage details."
 msgstr "您的個人資料夾的內容已經改變。選擇重新掃描來更新用量的詳細資料。"
 
-#: ../src/baobab-treeview.c:84
+#: ../src/baobab-treeview.c:85
 msgid "_Rescan"
 msgstr "重新掃描(_R)"
 
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-treeview.c:223
 msgid "Folder"
 msgstr "資料夾"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-treeview.c:245
 msgid "Usage"
 msgstr "用量"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-treeview.c:259
 msgid "Size"
 msgstr "大小"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-treeview.c:275
 msgid "Contents"
 msgstr "內容"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-utils.c:73
 msgid "Select Folder"
 msgstr "選擇資料夾"
 
 #. add extra widget
-#: ../src/baobab-utils.c:84
+#: ../src/baobab-utils.c:85
 msgid "_Show hidden folders"
 msgstr "顯示隱藏資料夾(_S)"
 
-#: ../src/baobab-utils.c:263
+#: ../src/baobab-utils.c:264
 msgid "Cannot check an excluded folder!"
 msgstr "不能檢查已排除的資料夾！"
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-utils.c:288
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s”不是有效的資料夾"
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-utils.c:291
 msgid "Could not analyze disk usage."
 msgstr "無法分析磁碟使用率"
 
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-utils.c:327
 msgid "_Open Folder"
 msgstr "開啟資料夾(_O)"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-utils.c:333
 msgid "Mo_ve to Trash"
 msgstr "丟進回收筒(_V)"
 
-#: ../src/baobab-utils.c:362
+#: ../src/baobab-utils.c:363
 #, c-format
 msgid "Could not open folder \"%s\""
 msgstr "無法開啟資料夾“%s”"
 
-#: ../src/baobab-utils.c:365
+#: ../src/baobab-utils.c:366
 msgid "There is no installed viewer capable of displaying the folder."
 msgstr "沒有任何已安裝的顯示程式可以顯示該檔案。"
 
-#: ../src/baobab-utils.c:433
+#: ../src/baobab-utils.c:434
 #, c-format
 msgid "Could not move \"%s\" to the Trash"
 msgstr "無法將“%s”丟進回收筒"
 
-#: ../src/baobab-utils.c:441
+#: ../src/baobab-utils.c:442
 msgid "Could not move file to the Trash"
 msgstr "無法將檔案移至回收筒"
 
-#: ../src/baobab-utils.c:443
+#: ../src/baobab-utils.c:444
 #, c-format
 msgid "Details: %s"
 msgstr "詳細資料：%s"
 
-#: ../src/baobab-utils.c:479
+#: ../src/baobab-utils.c:480
 msgid "There was an error displaying help."
 msgstr "顯示說明文件時發生錯誤。"
 
-#: ../src/callbacks.c:76
+#: ../src/callbacks.c:75
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -520,7 +520,7 @@ msgstr ""
 "的 GNU 通用公共許可證條款 (GNU General Public License) 第二版來修改和重新發布"
 "這一程式，或者自由選擇使用任何更新的版本。"
 
-#: ../src/callbacks.c:81
+#: ../src/callbacks.c:80
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -530,7 +530,7 @@ msgstr ""
 "發布這一程式的目的是希望它有用，但沒有任何擔保。甚至沒有適合特定目的而隱含的"
 "擔保。更詳細的情況請參閱 GNU 通用公共許可證。"
 
-#: ../src/callbacks.c:86
+#: ../src/callbacks.c:85
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -540,15 +540,15 @@ msgstr ""
 "Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
 "02110-1301, USA"
 
-#: ../src/callbacks.c:101
+#: ../src/callbacks.c:100
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
+#: ../src/callbacks.c:101
 msgid "A graphical tool to analyze disk usage."
 msgstr "分析磁碟使用率的圖形化工具。"
 
-#: ../src/callbacks.c:110
+#: ../src/callbacks.c:109
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -562,10 +562,19 @@ msgstr ""
 "Abel Cheung <abel@oaka.org>, 2001-2004\n"
 "Ming-Yen Hsu <myhsu@cyberdude.com>, 1999"
 
-#: ../src/callbacks.c:208
+#: ../src/callbacks.c:207
 msgid "The document does not exist."
 msgstr "資料夾不存在。"
 
-#: ../src/callbacks.c:289
+#: ../src/callbacks.c:288
 msgid "The folder does not exist."
 msgstr "資料夾不存在。"
+
+#~ msgid "S_can Remote Folder..."
+#~ msgstr "掃描遠端資料夾(_C)…"
+
+#~ msgid "Scan F_older..."
+#~ msgstr "掃描資料夾(_O)…"
+
+#~ msgid "Scan home folder"
+#~ msgstr "掃描個人資料夾"
