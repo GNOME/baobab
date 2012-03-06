@@ -3,6 +3,7 @@
 #
 # update by Young-Ho, Cha <ganadist@chollian.net>, 2001
 # Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2006, 2007, 2008, 2009, 2010, 2011.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012
 #
 # 새로 번역하시는 분은 아래 translator-credits에 추가하세요.
 #
@@ -12,31 +13,32 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2011-09-23 06:19+0900\n"
-"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-03-05 12:23+0000\n"
+"PO-Revision-Date: 2012-03-07 00:05+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "폴더 크기와 디스크의 사용 가능한 공간을 검사합니다"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
 msgid "Disk Usage Analyzer"
 msgstr "디스크 사용량 분석"
+
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "폴더 크기와 디스크의 사용 가능한 공간을 검사합니다"
 
 #: ../data/baobab-preferences-dialog.ui.h:1
 msgid "Disk Usage Analyzer Preferences"
 msgstr "디스크 사용량 분석 기본 설정"
 
 #: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
+msgid "Select _devices to include in file system scan:"
 msgstr "파일 시스템 검사에 포함할 장치 선택(_D):"
 
 #: ../data/baobab-preferences-dialog.ui.h:3
@@ -44,294 +46,294 @@ msgid "_Monitor changes to your home folder"
 msgstr "내 폴더의 바뀐 사항 감시(_M)"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "검사에서 제외할 파티션의 URI 목록."
+msgid "Monitor Home"
+msgstr "홈 감시"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "사용할 차트"
+msgid "Whether any change to the home directory should be monitored."
+msgstr "홈 디렉터리의 바뀐 사항을 감시하는지 여부."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "제외한 파티션 URI"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "홈 감시"
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "검사에서 제외할 파티션의 URI 목록."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "상태 표시줄 표시"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Toolbar is Visible"
 msgstr "도구 모음 표시"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "Whether the toolbar should be visible in main window."
+msgstr "메인 창의 도구 모음을 표시할지 여부."
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "홈 디렉터리의 바뀐 사항을 감시하는지 여부."
+msgid "Statusbar is Visible"
+msgstr "상태 표시줄 표시"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:8
 msgid "Whether the status bar at the bottom of main window should be visible."
 msgstr "메인 창의 아래에 있는 상태 표시줄을 표시할지 여부."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "메인 창의 도구 모음을 표시할지 여부."
+msgid "Active Chart"
+msgstr "사용할 차트"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "표시할 차트 종류."
 
 #: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "할당한 크기(_O)"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "새로 고침"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "원격 폴더 검사(_C)..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "폴더 검사(_O)..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "파일 시스템 검사"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "폴더 검사"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "홈 검사"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "원격 폴더 검사"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "파일 시스템 검사(_F)"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "내 폴더 검사(_H)"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "폴더 검사"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "원격 폴더 검사"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "파일 시스템 검사"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "내 폴더 검사"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "상태 표시줄(_A)"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "찾기 중지"
-
-#: ../data/baobab-main-window.ui.h:18
 msgid "_Analyzer"
 msgstr "분석(_A)"
 
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "모두 접기(_C)"
+#: ../data/baobab-main-window.ui.h:2
+msgid "Scan _Home Folder"
+msgstr "내 폴더 검사(_H)"
 
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "차례(_C)"
+#: ../data/baobab-main-window.ui.h:3
+msgid "Scan _Filesystem"
+msgstr "파일 시스템 검사(_F)"
 
-#: ../data/baobab-main-window.ui.h:21
+#: ../data/baobab-main-window.ui.h:4
+msgid "Scan F_older…"
+msgstr "폴더 검사(_O)…"
+
+#: ../data/baobab-main-window.ui.h:5
+msgid "S_can Remote Folder…"
+msgstr "원격 폴더 검사(_C)…"
+
+#: ../data/baobab-main-window.ui.h:6
 msgid "_Edit"
 msgstr "편집(_E)"
 
-#: ../data/baobab-main-window.ui.h:22
+#: ../data/baobab-main-window.ui.h:7
 msgid "_Expand All"
 msgstr "모두 펴기(_E)"
 
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "도움말(_H)"
+#: ../data/baobab-main-window.ui.h:8
+msgid "_Collapse All"
+msgstr "모두 접기(_C)"
 
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "도구 모음(_T)"
-
-#: ../data/baobab-main-window.ui.h:25
+#: ../data/baobab-main-window.ui.h:9
 msgid "_View"
 msgstr "보기(_V)"
 
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "검사하는 중입니다..."
+#: ../data/baobab-main-window.ui.h:10
+msgid "_Toolbar"
+msgstr "도구 모음(_T)"
 
-#: ../src/baobab.c:182
+#: ../data/baobab-main-window.ui.h:11
+msgid "St_atusbar"
+msgstr "상태 표시줄(_A)"
+
+#: ../data/baobab-main-window.ui.h:12
+msgid "All_ocated Space"
+msgstr "할당한 크기(_O)"
+
+#: ../data/baobab-main-window.ui.h:13
+msgid "_Help"
+msgstr "도움말(_H)"
+
+#: ../data/baobab-main-window.ui.h:14
+msgid "_Contents"
+msgstr "차례(_C)"
+
+#: ../data/baobab-main-window.ui.h:16
+msgid "Scan your home folder"
+msgstr "홈 폴더 검사"
+
+#: ../data/baobab-main-window.ui.h:17
+msgid "Scan Home"
+msgstr "홈 검사"
+
+#: ../data/baobab-main-window.ui.h:18
+msgid "Scan the file system"
+msgstr "파일 시스템 검사"
+
+#: ../data/baobab-main-window.ui.h:19
+msgid "Scan File System"
+msgstr "파일 시스템 검사"
+
+#: ../data/baobab-main-window.ui.h:20
+msgid "Scan a folder"
+msgstr "폴더 검사"
+
+#: ../data/baobab-main-window.ui.h:21
+msgid "Scan Folder"
+msgstr "폴더 검사"
+
+#: ../data/baobab-main-window.ui.h:22
+msgid "Scan a remote folder or file system"
+msgstr "원격 폴더 또는 파일 시스템 검사"
+
+#: ../data/baobab-main-window.ui.h:23
+msgid "Scan Remote Folder"
+msgstr "원격 폴더 검사"
+
+#: ../data/baobab-main-window.ui.h:24
+msgid "Stop scanning"
+msgstr "찾기 중지"
+
+#: ../data/baobab-main-window.ui.h:25
+msgid "Refresh"
+msgstr "새로 고침"
+
+#: ../src/baobab.c:130 ../src/baobab.c:404
+msgid "Scanning…"
+msgstr "검사하는 중…"
+
+#: ../src/baobab.c:176
 msgid "Total filesystem capacity:"
 msgstr "전체 파일 시스템 용량:"
 
-#: ../src/baobab.c:183
+#: ../src/baobab.c:177
 msgid "used:"
 msgstr "사용:"
 
-#: ../src/baobab.c:184
+#: ../src/baobab.c:178
 msgid "available:"
 msgstr "사용 가능:"
 
 #. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "퍼센트 표시 계산하는 중..."
+#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
+msgid "Calculating percentage bars…"
+msgstr "퍼센트 표시 계산하는 중…"
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
+#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
 msgid "Ready"
 msgstr "준비"
 
-#: ../src/baobab.c:421
+#: ../src/baobab.c:437
 msgid "Total filesystem capacity"
 msgstr "전체 파일 시스템 용량"
 
-#: ../src/baobab.c:443
+#: ../src/baobab.c:459
 msgid "Total filesystem usage"
 msgstr "전체 파일 시스템 사용량"
 
-#: ../src/baobab.c:484
+#: ../src/baobab.c:500
 msgid "contains hardlinks for:"
 msgstr "다음에 대한 하드 링크 포함:"
 
-#: ../src/baobab.c:493
+#: ../src/baobab.c:509
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
 msgstr[0] "%5d개 항목"
 
-#: ../src/baobab.c:620
+#: ../src/baobab.c:614
 msgid "Could not initialize monitoring"
 msgstr "감시 기능을 초기화할 수 없습니다"
 
-#: ../src/baobab.c:621
+#: ../src/baobab.c:615
 msgid "Changes to your home folder will not be monitored."
 msgstr "내 폴더에 바뀐 사항을 감시할 수 없습니다."
 
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "상위 폴더로 이동"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "확대"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "축소"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "스크린샷 저장"
-
-#: ../src/baobab.c:1143
+#: ../src/baobab.c:1050
 msgid "View as Rings Chart"
 msgstr "링 차트"
 
-#: ../src/baobab.c:1145
+#: ../src/baobab.c:1052
 msgid "View as Treemap Chart"
 msgstr "트리맵 차트"
 
-#: ../src/baobab.c:1250
+#: ../src/baobab.c:1151
 msgid "Show version"
 msgstr "버전을 표시합니다"
 
-#: ../src/baobab.c:1251
+#: ../src/baobab.c:1152
 msgid "[DIRECTORY]"
 msgstr "[디렉터리]"
 
-#: ../src/baobab.c:1281
+#: ../src/baobab.c:1182
 msgid "Too many arguments. Only one directory can be specified."
 msgstr "인수가 너무 많습니다. 디렉터리 한 개만 지정할 수 있습니다."
 
-#: ../src/baobab.c:1298
+#: ../src/baobab.c:1199
 msgid "Could not detect any mount point."
 msgstr "마우스 위치를 찾지 못했습니다."
 
-#: ../src/baobab.c:1300
+#: ../src/baobab.c:1201
 msgid "Without mount points disk usage cannot be analyzed."
 msgstr "마운트 위치가 없으면 디스크 사용량을 분석할 수 없습니다."
 
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "최대 깊이"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:189
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "차트를 그릴 때 루트에서 최대 깊이"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:198
 msgid "Chart model"
 msgstr "차트 모델"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:199
 msgid "Set the model of the chart"
 msgstr "차트의 모델을 설정합니다"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:206
 msgid "Chart root node"
 msgstr "차트 루트 노드"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:207
 msgid "Set the root node from the model"
 msgstr "모델의 루트 노드를 설정합니다"
 
-#: ../src/baobab-chart.c:1690
+#: ../src/baobab-chart.c:905
+msgid "Move to parent folder"
+msgstr "상위 폴더로 이동"
+
+#: ../src/baobab-chart.c:909
+msgid "Zoom in"
+msgstr "확대"
+
+#: ../src/baobab-chart.c:913
+msgid "Zoom out"
+msgstr "축소"
+
+#: ../src/baobab-chart.c:917
+msgid "Save screenshot"
+msgstr "스크린샷 저장"
+
+#: ../src/baobab-chart.c:1776
 msgid "Cannot create pixbuf image!"
 msgstr "픽스버퍼 그림을 만들 수 없습니다!"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
+#: ../src/baobab-chart.c:1784
 msgid "Save Snapshot"
 msgstr "스냅샷 저장"
 
-#: ../src/baobab-chart.c:1727
+#: ../src/baobab-chart.c:1811
 msgid "_Image type:"
 msgstr "그림 종류(_I):"
 
-#: ../src/baobab-prefs.c:172
+#: ../src/baobab-prefs.c:173
 msgid "Scan"
 msgstr "검사"
 
-#: ../src/baobab-prefs.c:179
+#: ../src/baobab-prefs.c:181
 msgid "Device"
 msgstr "장치"
 
-#: ../src/baobab-prefs.c:187
+#: ../src/baobab-prefs.c:189
 msgid "Mount Point"
 msgstr "마운트 위치"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
+#: ../src/baobab-prefs.c:197
+msgid "File System Type"
 msgstr "파일 시스템 형식"
 
-#: ../src/baobab-prefs.c:203
+#: ../src/baobab-prefs.c:205
 msgid "Total Size"
 msgstr "전체 크기"
 
-#: ../src/baobab-prefs.c:212
+#: ../src/baobab-prefs.c:214
 msgid "Available"
 msgstr "사용 가능"
 
@@ -420,11 +422,11 @@ msgstr "서비스 종류(_T):"
 msgid "_Scan"
 msgstr "검사(_S)"
 
-#: ../src/baobab-treeview.c:82
+#: ../src/baobab-treeview.c:83
 msgid "Rescan your home folder?"
 msgstr "내 폴더를 다시 검사하시겠습니까?"
 
-#: ../src/baobab-treeview.c:83
+#: ../src/baobab-treeview.c:84
 msgid ""
 "The content of your home folder has changed. Select rescan to update the "
 "disk usage details."
@@ -432,84 +434,84 @@ msgstr ""
 "내 폴더의 내용이 바뀌었습니다. 디스크 사용량 정보를 업데이트하려면 다시 검사"
 "를 선택하십시오."
 
-#: ../src/baobab-treeview.c:84
+#: ../src/baobab-treeview.c:85
 msgid "_Rescan"
 msgstr "다시 검사(_R)"
 
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-treeview.c:223
 msgid "Folder"
 msgstr "폴더"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-treeview.c:245
 msgid "Usage"
 msgstr "사용량"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-treeview.c:259
 msgid "Size"
 msgstr "크기"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-treeview.c:275
 msgid "Contents"
 msgstr "내용"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-utils.c:73
 msgid "Select Folder"
 msgstr "폴더 선택"
 
 #. add extra widget
-#: ../src/baobab-utils.c:84
+#: ../src/baobab-utils.c:85
 msgid "_Show hidden folders"
 msgstr "숨긴 폴더 보이기(_S)"
 
-#: ../src/baobab-utils.c:263
+#: ../src/baobab-utils.c:264
 msgid "Cannot check an excluded folder!"
 msgstr "제외한 폴더를 검사할 수 없습니다!"
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-utils.c:288
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\"은(는) 올바른 폴더가 아닙니다"
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-utils.c:291
 msgid "Could not analyze disk usage."
 msgstr "디스크 사용량을 분석할 수 없습니다."
 
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-utils.c:327
 msgid "_Open Folder"
 msgstr "폴더 열기(_O)"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-utils.c:333
 msgid "Mo_ve to Trash"
 msgstr "휴지통으로 옮기기(_V)"
 
-#: ../src/baobab-utils.c:362
+#: ../src/baobab-utils.c:363
 #, c-format
 msgid "Could not open folder \"%s\""
 msgstr "\"%s\" 폴더를 열 수 없습니다"
 
-#: ../src/baobab-utils.c:365
+#: ../src/baobab-utils.c:366
 msgid "There is no installed viewer capable of displaying the folder."
 msgstr "이 폴더를 표시할 수 있는 보기 프로그램이 설치되어 있지 않습니다."
 
-#: ../src/baobab-utils.c:433
+#: ../src/baobab-utils.c:434
 #, c-format
 msgid "Could not move \"%s\" to the Trash"
 msgstr "\"%s\"을(를) 휴지통에 옮길 수 없습니다"
 
-#: ../src/baobab-utils.c:441
+#: ../src/baobab-utils.c:442
 msgid "Could not move file to the Trash"
 msgstr "파일을 휴지통에 옮길 수 없습니다"
 
-#: ../src/baobab-utils.c:443
+#: ../src/baobab-utils.c:444
 #, c-format
 msgid "Details: %s"
 msgstr "자세한 정보: %s"
 
-#: ../src/baobab-utils.c:479
+#: ../src/baobab-utils.c:480
 msgid "There was an error displaying help."
 msgstr "도움말을 표시하는 데 오류가 발생했습니다."
 
-#: ../src/callbacks.c:76
+#: ../src/callbacks.c:75
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -520,7 +522,7 @@ msgstr ""
 "재단이 공표한 GNU 일반 공중 사용 허가서 2판 또는 그 이후 판을 임의로 선택해"
 "서, 그 규정에 따라 프로그램을 개작하거나 재배포할 수 있습니다."
 
-#: ../src/callbacks.c:81
+#: ../src/callbacks.c:80
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -532,7 +534,7 @@ msgstr ""
 "함한 어떠한 형태의 보증도 제공하지 않습니다. 보다 자세한 사항에 대해서는 GNU "
 "일반 공중 사용 허가서를 참고하시기 바랍니다."
 
-#: ../src/callbacks.c:86
+#: ../src/callbacks.c:85
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -542,24 +544,34 @@ msgstr ""
 "락되어 있다면 다음으로 연락하십시오: Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 
-#: ../src/callbacks.c:101
+#: ../src/callbacks.c:100
 msgid "Baobab"
 msgstr "바오밥"
 
-#: ../src/callbacks.c:102
+#: ../src/callbacks.c:101
 msgid "A graphical tool to analyze disk usage."
 msgstr "디스크 사용량을 분석하는 그래픽 도구."
 
-#: ../src/callbacks.c:110
+#: ../src/callbacks.c:109
 msgid "translator-credits"
 msgstr ""
 "류창우 <cwryu debian.org>\n"
-"차영호 <ganadist gmail.com>"
+"차영호 <ganadist gmail.com>\n"
+"조성호 <darkcircle.0426 gmail.com>"
 
-#: ../src/callbacks.c:208
+#: ../src/callbacks.c:207
 msgid "The document does not exist."
 msgstr "해당 문서가 없습니다."
 
-#: ../src/callbacks.c:289
+#: ../src/callbacks.c:288
 msgid "The folder does not exist."
 msgstr "폴더가 없습니다."
+
+#~ msgid "S_can Remote Folder..."
+#~ msgstr "원격 폴더 검사(_C)..."
+
+#~ msgid "Scan F_older..."
+#~ msgstr "폴더 검사(_O)..."
+
+#~ msgid "Scan home folder"
+#~ msgstr "내 폴더 검사"
