@@ -1025,6 +1025,12 @@ baobab_chart_scroll (GtkWidget *widget,
       if (baobab_chart_can_zoom_in (chart))
         baobab_chart_zoom_in (chart);
       break;
+
+    case GDK_SCROLL_SMOOTH :
+      /* since we don't add GDK_SMOOTH_SCROLL_MASK to received
+         events, this is actually never reached and it's here
+         just to silence compiler warnings */
+      break;
     }
 
   return FALSE;
