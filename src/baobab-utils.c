@@ -462,7 +462,7 @@ baobab_help_display (GtkWindow   *parent,
 	gboolean ret;
 
 	if (link_id)
-		uri = g_strdup_printf ("help:%s?%s", "baobab", link_id);
+		uri = g_strdup_printf ("help:%s/%s", "baobab", link_id);
 	else
 		uri = g_strdup_printf ("help:%s", "baobab");
 
