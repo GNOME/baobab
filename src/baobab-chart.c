@@ -976,11 +976,35 @@ baobab_chart_button_press_event (GtkWidget      *widget,
           switch (event->button)
             {
               case 1:
-                /* Enter into a subdir */
                 if (chart->priv->highlighted_item != NULL)
-                  g_signal_emit (chart,
-                                 baobab_chart_signals[ITEM_ACTIVATED], 0,
-                                 &((BaobabChartItem*) chart->priv->highlighted_item->data)->iter);
+                  {
+                    GtkTreePath *path, *root_path;
+                    GtkTreeIter *iter;
+
+                    iter = &((BaobabChartItem*) chart->priv->highlighted_item->data)->iter;
+                    path = gtk_tree_model_get_path (chart->priv->model, iter);
+
+                    if (chart->priv->root)
+                      root_path = gtk_tree_row_reference_get_path (chart->priv->root);
+                    else
+                      root_path = gtk_tree_path_new_first ();
+
+                    if (gtk_tree_path_compare (path, root_path) == 0)
+                      {
+                        /* Go back to the parent dir */
+                        baobab_chart_move_up_root (chart);
+                      }
+                    else
+                      {
+                        /* Enter into a subdir */
+                        g_signal_emit (chart,
+                                       baobab_chart_signals[ITEM_ACTIVATED], 0,
+                                       iter);
+                      }
+
+                    gtk_tree_path_free (path);
+                  }
+
                 break;
 
               case 2:
