@@ -264,7 +264,7 @@ baobab_ringschart_calculate_item_geometry (BaobabChart *chart,
 
       data->min_radius = (item->depth) * thickness;
 
-      if (data->min_radius + thickness > max_radius)
+      if (item->depth > max_depth)
         return;
       else
         data->max_radius = data->min_radius + thickness;
