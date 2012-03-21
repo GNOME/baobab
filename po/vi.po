@@ -6,32 +6,35 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils GNOME TRUNK\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2011-04-14 18:42+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-02-20 18:44+0000\n"
+"PO-Revision-Date: 2012-03-21 15:08+0700\n"
 "Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
-"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.8\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Kiểm tra kích cỡ thư mục và chỗ rảnh trên đĩa"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
 msgid "Disk Usage Analyzer"
 msgstr "Bộ phân tích cách sử dụng đĩa"
+
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "Kiểm tra kích cỡ thư mục và chỗ rảnh trên đĩa"
 
 #: ../data/baobab-preferences-dialog.ui.h:1
 msgid "Disk Usage Analyzer Preferences"
 msgstr "Tùy thích bộ phân tích cách sử dụng đĩa"
 
 #: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
+#, fuzzy
+#| msgid "Select _devices to include in filesystem scan:"
+msgid "Select _devices to include in file system scan:"
 msgstr "Chọn các thiết _bị cần xem xét khi quét hệ thống:"
 
 #: ../data/baobab-preferences-dialog.ui.h:3
@@ -39,295 +42,313 @@ msgid "_Monitor changes to your home folder"
 msgstr "Theo dõi thay đổi trong thư _mục cá nhân của bạn"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr ""
-"Danh sách các địa chỉ URI của phân vùng cần loại trừ khỏi tiến trình quét."
+msgid "Monitor Home"
+msgstr "Theo dõi thư mục cá nhân"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Biểu đồ hoạt động"
+msgid "Whether any change to the home directory should be monitored."
+msgstr "Bật/tắt theo dõi thay đổi trong thư mục chính."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI phân vùng bị loại trừ"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "Theo dõi thư mục cá nhân"
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr ""
+"Danh sách các địa chỉ URI của phân vùng cần loại trừ khỏi tiến trình quét."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Hiện thanh trạng thái"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Toolbar is Visible"
 msgstr "Hiện thanh công cụ"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "Whether the toolbar should be visible in main window."
+msgstr "Hiện/Ẩn thanh công cụ trong cửa sổ chính."
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Bật/tắt theo dõi thay đổi trong thư mục chính."
+msgid "Statusbar is Visible"
+msgstr "Hiện thanh trạng thái"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:8
 msgid "Whether the status bar at the bottom of main window should be visible."
 msgstr "Hiện/Ẩn thanh trạng thái bên dưới cửa sổ chính."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Hiện/Ẩn thanh công cụ trong cửa sổ chính."
+msgid "Active Chart"
+msgstr "Biểu đồ hoạt động"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Hiện loại biểu đồ nào."
 
 #: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Vùng đã cấp _phát"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Vẽ lại"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "Quét thư mục ở _xa..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "_Quét thư mục..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "Quét hệ tập tin"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Quét thư mục"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Quét thư mục cá nhân"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Quét thư mục ở xa"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Quét _hệ thống tập tin"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Quét thư mục _cá nhân"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Quét thư mục"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "Quét một thư mục ở xa"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "Quét hệ thống tập tin"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "Quét thư mục cá nhân"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "Thanh t_rạng thái"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Dừng quét"
-
-#: ../data/baobab-main-window.ui.h:18
 msgid "_Analyzer"
 msgstr "Bộ _phân tích"
 
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "_Co lại tất cả"
+#: ../data/baobab-main-window.ui.h:2
+msgid "Scan _Home Folder"
+msgstr "Quét thư mục _cá nhân"
 
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "Mục lụ_c"
+#: ../data/baobab-main-window.ui.h:3
+msgid "Scan _Filesystem"
+msgstr "Quét _hệ thống tập tin"
 
-#: ../data/baobab-main-window.ui.h:21
+#: ../data/baobab-main-window.ui.h:4
+#, fuzzy
+#| msgid "Scan Folder"
+msgid "Scan F_older…"
+msgstr "Quét thư mục"
+
+#: ../data/baobab-main-window.ui.h:5
+#, fuzzy
+#| msgid "Scan Remote Folder"
+msgid "S_can Remote Folder…"
+msgstr "Quét thư mục ở xa"
+
+#: ../data/baobab-main-window.ui.h:6
 msgid "_Edit"
 msgstr "_Sửa"
 
-#: ../data/baobab-main-window.ui.h:22
+#: ../data/baobab-main-window.ui.h:7
 msgid "_Expand All"
 msgstr "Giãn _ra tất cả"
 
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "Trợ g_iúp"
+#: ../data/baobab-main-window.ui.h:8
+msgid "_Collapse All"
+msgstr "_Co lại tất cả"
 
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "_Thanh công cụ"
-
-#: ../data/baobab-main-window.ui.h:25
+#: ../data/baobab-main-window.ui.h:9
 msgid "_View"
 msgstr "_Xem"
 
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
+#: ../data/baobab-main-window.ui.h:10
+msgid "_Toolbar"
+msgstr "_Thanh công cụ"
+
+#: ../data/baobab-main-window.ui.h:11
+msgid "St_atusbar"
+msgstr "Thanh t_rạng thái"
+
+#: ../data/baobab-main-window.ui.h:12
+msgid "All_ocated Space"
+msgstr "Vùng đã cấp _phát"
+
+#: ../data/baobab-main-window.ui.h:13
+msgid "_Help"
+msgstr "Trợ g_iúp"
+
+#: ../data/baobab-main-window.ui.h:14
+msgid "_Contents"
+msgstr "Mục lụ_c"
+
+#: ../data/baobab-main-window.ui.h:16
+#, fuzzy
+#| msgid "Rescan your home folder?"
+msgid "Scan your home folder"
+msgstr "Quét lại thư mục cá nhân không?"
+
+#: ../data/baobab-main-window.ui.h:17
+msgid "Scan Home"
+msgstr "Quét thư mục cá nhân"
+
+#: ../data/baobab-main-window.ui.h:18
+#, fuzzy
+#| msgid "Scan filesystem"
+msgid "Scan the file system"
+msgstr "Quét hệ thống tập tin"
+
+#: ../data/baobab-main-window.ui.h:19
+#, fuzzy
+#| msgid "Scan Filesystem"
+msgid "Scan File System"
+msgstr "Quét hệ tập tin"
+
+#: ../data/baobab-main-window.ui.h:20
+msgid "Scan a folder"
+msgstr "Quét thư mục"
+
+#: ../data/baobab-main-window.ui.h:21
+msgid "Scan Folder"
+msgstr "Quét thư mục"
+
+#: ../data/baobab-main-window.ui.h:22
+#, fuzzy
+#| msgid "Scan a remote folder"
+msgid "Scan a remote folder or file system"
+msgstr "Quét một thư mục ở xa"
+
+#: ../data/baobab-main-window.ui.h:23
+msgid "Scan Remote Folder"
+msgstr "Quét thư mục ở xa"
+
+#: ../data/baobab-main-window.ui.h:24
+msgid "Stop scanning"
+msgstr "Dừng quét"
+
+#: ../data/baobab-main-window.ui.h:25
+msgid "Refresh"
+msgstr "Vẽ lại"
+
+#: ../src/baobab.c:130 ../src/baobab.c:404
+#, fuzzy
+#| msgid "Scanning..."
+msgid "Scanning…"
 msgstr "Đang quét..."
 
-#: ../src/baobab.c:182
+#: ../src/baobab.c:176
 msgid "Total filesystem capacity:"
 msgstr "Tổng khả năng của hệ thống tập tin:"
 
-#: ../src/baobab.c:183
+#: ../src/baobab.c:177
 msgid "used:"
 msgstr "dùng:"
 
-#: ../src/baobab.c:184
+#: ../src/baobab.c:178
 msgid "available:"
 msgstr "rảnh:"
 
 #. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
+#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
+#, fuzzy
+#| msgid "Calculating percentage bars..."
+msgid "Calculating percentage bars…"
 msgstr "Đang tính các thanh phần trăm..."
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
+#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
 msgid "Ready"
 msgstr "Sẵn sàng"
 
-#: ../src/baobab.c:421
+#: ../src/baobab.c:437
 msgid "Total filesystem capacity"
 msgstr "Sức chứa của hệ thống tập tin"
 
-#: ../src/baobab.c:443
+#: ../src/baobab.c:459
 msgid "Total filesystem usage"
 msgstr "Cách sử dụng toàn hệ thống tập tin"
 
-#: ../src/baobab.c:484
+#: ../src/baobab.c:500
 msgid "contains hardlinks for:"
 msgstr "chứa liên kết cứng cho:"
 
-#: ../src/baobab.c:493
+#: ../src/baobab.c:509
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
 msgstr[0] "%5d mục"
 
-#: ../src/baobab.c:620
+#: ../src/baobab.c:614
 msgid "Could not initialize monitoring"
 msgstr "Không thể khởi động chức năng theo dõi"
 
-#: ../src/baobab.c:621
+#: ../src/baobab.c:615
 msgid "Changes to your home folder will not be monitored."
 msgstr "Thay đổi trong thư mục cá nhân sẽ không bị theo dõi."
 
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "Chuyển sang thư mục cha"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "Phóng to"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "Thu nhỏ"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "Chụp màn hình"
-
-#: ../src/baobab.c:1143
+#: ../src/baobab.c:1050
 msgid "View as Rings Chart"
 msgstr "Xem dạng biểu đồ nhẫn"
 
-#: ../src/baobab.c:1145
+#: ../src/baobab.c:1052
 msgid "View as Treemap Chart"
 msgstr "Xem dạng biểu đồ cây"
 
-#: ../src/baobab.c:1250
+#: ../src/baobab.c:1151
 msgid "Show version"
 msgstr "Hiện phiên bản"
 
-#: ../src/baobab.c:1251
+#: ../src/baobab.c:1152
 msgid "[DIRECTORY]"
 msgstr "[THƯ MỤC]"
 
-#: ../src/baobab.c:1281
+#: ../src/baobab.c:1182
 msgid "Too many arguments. Only one directory can be specified."
 msgstr "Quá nhiều đối số. Chỉ có thể xác định một thư mục."
 
-#: ../src/baobab.c:1298
+#: ../src/baobab.c:1199
 msgid "Could not detect any mount point."
 msgstr "Không thể phát hiện điểm lắp."
 
-#: ../src/baobab.c:1300
+#: ../src/baobab.c:1201
 msgid "Without mount points disk usage cannot be analyzed."
 msgstr "Không có điểm lắp thì không thể phân tích cách sử dụng đĩa."
 
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "Độ sâu tối đa"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:189
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Độ sâu tối đa khi vẽ biểu đồ nhẫn từ gốc"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:198
 msgid "Chart model"
 msgstr "Kiểu biểu đồ"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:199
 msgid "Set the model of the chart"
 msgstr "Chọn kiểu biểu đồ"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:206
 msgid "Chart root node"
 msgstr "Nút gốc biểu đồ"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:207
 msgid "Set the root node from the model"
 msgstr "Đặt nút gốc cho mô hình"
 
-#: ../src/baobab-chart.c:1690
+#: ../src/baobab-chart.c:905
+msgid "Move to parent folder"
+msgstr "Chuyển sang thư mục cha"
+
+#: ../src/baobab-chart.c:909
+msgid "Zoom in"
+msgstr "Phóng to"
+
+#: ../src/baobab-chart.c:913
+msgid "Zoom out"
+msgstr "Thu nhỏ"
+
+#: ../src/baobab-chart.c:917
+msgid "Save screenshot"
+msgstr "Chụp màn hình"
+
+#: ../src/baobab-chart.c:1776
 msgid "Cannot create pixbuf image!"
 msgstr "Không thể tạo ảnh đệm điểm ảnh !"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
+#: ../src/baobab-chart.c:1784
 msgid "Save Snapshot"
 msgstr "Lưu hình chụp"
 
-#: ../src/baobab-chart.c:1727
+#: ../src/baobab-chart.c:1811
 msgid "_Image type:"
 msgstr "_Kiểu ảnh:"
 
-#: ../src/baobab-prefs.c:172
+#: ../src/baobab-prefs.c:173
 msgid "Scan"
 msgstr "Quét"
 
-#: ../src/baobab-prefs.c:179
+#: ../src/baobab-prefs.c:181
 msgid "Device"
 msgstr "Thiết bị"
 
-#: ../src/baobab-prefs.c:187
+#: ../src/baobab-prefs.c:189
 msgid "Mount Point"
 msgstr "Điểm lắp"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
+#: ../src/baobab-prefs.c:197
+#, fuzzy
+#| msgid "Filesystem Type"
+msgid "File System Type"
 msgstr "Loại hệ tập tin"
 
-#: ../src/baobab-prefs.c:203
+#: ../src/baobab-prefs.c:205
 msgid "Total Size"
 msgstr "Tổng cỡ"
 
-#: ../src/baobab-prefs.c:212
+#: ../src/baobab-prefs.c:214
 msgid "Available"
 msgstr "Trống"
 
@@ -417,11 +438,11 @@ msgstr "_Kiểu dịch vụ :"
 msgid "_Scan"
 msgstr "_Quét"
 
-#: ../src/baobab-treeview.c:82
+#: ../src/baobab-treeview.c:83
 msgid "Rescan your home folder?"
 msgstr "Quét lại thư mục cá nhân không?"
 
-#: ../src/baobab-treeview.c:83
+#: ../src/baobab-treeview.c:84
 msgid ""
 "The content of your home folder has changed. Select rescan to update the "
 "disk usage details."
@@ -429,84 +450,84 @@ msgstr ""
 "Nội dung của thư mục chính của bạn đã thay đổi. Hãy chọn quét lại để cập "
 "nhật chi tiết sử dụng."
 
-#: ../src/baobab-treeview.c:84
+#: ../src/baobab-treeview.c:85
 msgid "_Rescan"
 msgstr "Quét _lại"
 
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-treeview.c:223
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-treeview.c:245
 msgid "Usage"
 msgstr "Sử dụng"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-treeview.c:259
 msgid "Size"
 msgstr "Cỡ"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-treeview.c:275
 msgid "Contents"
 msgstr "Mục lục"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-utils.c:73
 msgid "Select Folder"
 msgstr "Chọn thư mục"
 
 #. add extra widget
-#: ../src/baobab-utils.c:84
+#: ../src/baobab-utils.c:85
 msgid "_Show hidden folders"
 msgstr "Hiện thư mục ẩ_n"
 
-#: ../src/baobab-utils.c:263
+#: ../src/baobab-utils.c:264
 msgid "Cannot check an excluded folder!"
 msgstr "Không thể kiểm tra một thư mục bị loại trừ."
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-utils.c:288
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "« %s » không phải là thư mục hợp lệ"
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-utils.c:291
 msgid "Could not analyze disk usage."
 msgstr "Không thể phân tích sử dụng đĩa."
 
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-utils.c:327
 msgid "_Open Folder"
 msgstr "Mở t_hư mục"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-utils.c:333
 msgid "Mo_ve to Trash"
 msgstr "Chuyển vào Sọt _Rác"
 
-#: ../src/baobab-utils.c:362
+#: ../src/baobab-utils.c:363
 #, c-format
 msgid "Could not open folder \"%s\""
 msgstr "Không mở được thư mục « %s »"
 
-#: ../src/baobab-utils.c:365
+#: ../src/baobab-utils.c:366
 msgid "There is no installed viewer capable of displaying the folder."
 msgstr "Chưa cài đặt chương trình nào có khả năng hiển thị tài liệu này."
 
-#: ../src/baobab-utils.c:433
+#: ../src/baobab-utils.c:434
 #, c-format
 msgid "Could not move \"%s\" to the Trash"
 msgstr "Không chuyển được « %s » vào Sọt rác"
 
-#: ../src/baobab-utils.c:441
+#: ../src/baobab-utils.c:442
 msgid "Could not move file to the Trash"
 msgstr "Không chuyển được tập tin vào Sọt rác"
 
-#: ../src/baobab-utils.c:443
+#: ../src/baobab-utils.c:444
 #, c-format
 msgid "Details: %s"
 msgstr "Chi tiết: %s"
 
-#: ../src/baobab-utils.c:479
+#: ../src/baobab-utils.c:480
 msgid "There was an error displaying help."
 msgstr "Gặp lỗi khi hiển thị trợ giúp."
 
-#: ../src/callbacks.c:76
+#: ../src/callbacks.c:75
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -518,7 +539,7 @@ msgstr ""
 "Chức Phần Mềm Tự Do; hoặc phiên bản 2 của Giấy Phép này, hoặc (tùy chọn) bất "
 "kỳ phiên bản sau nào."
 
-#: ../src/callbacks.c:81
+#: ../src/callbacks.c:80
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -529,7 +550,7 @@ msgstr ""
 "HÀNH GÌ CẢ, THẬM CHÍ KHÔNG CÓ BẢO ĐẢM ĐƯỢC NGỤ Ý KHẢ NĂNG BÁN HAY KHẢ NĂNG "
 "LÀM ĐƯỢC VIỆC DỨT KHOÁT. Xem Giấy Phép Công Cộng GNU để biết thêm chi tiết."
 
-#: ../src/callbacks.c:86
+#: ../src/callbacks.c:85
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -542,22 +563,31 @@ msgstr ""
 "Boston, MA  02110-1301, USA (Mỹ)."
 
 # Name: don't translate / Tên: đừng dịch
-#: ../src/callbacks.c:101
+#: ../src/callbacks.c:100
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
+#: ../src/callbacks.c:101
 msgid "A graphical tool to analyze disk usage."
 msgstr "Công cụ đồ họa để phân tích cách sử dụng đĩa."
 
-#: ../src/callbacks.c:110
+#: ../src/callbacks.c:109
 msgid "translator-credits"
 msgstr "Nhóm Việt hoá GNOME (http://gnomevi.sourceforge.net)"
 
-#: ../src/callbacks.c:208
+#: ../src/callbacks.c:207
 msgid "The document does not exist."
 msgstr "Tài liệu này không tồn tại."
 
-#: ../src/callbacks.c:289
+#: ../src/callbacks.c:288
 msgid "The folder does not exist."
 msgstr "Thư mục không tồn tại."
+
+#~ msgid "S_can Remote Folder..."
+#~ msgstr "Quét thư mục ở _xa..."
+
+#~ msgid "Scan F_older..."
+#~ msgstr "_Quét thư mục..."
+
+#~ msgid "Scan home folder"
+#~ msgstr "Quét thư mục cá nhân"
