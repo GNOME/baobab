@@ -4,14 +4,14 @@
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
 # Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012.
 # Anas Afif Emad <anas.e87@gmail.com, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-16.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:28-0400\n"
-"PO-Revision-Date: 2011-03-07 08:15+0300\n"
+"POT-Creation-Date: 2012-03-29 23:38+0200\n"
+"PO-Revision-Date: 2012-03-29 23:44+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -20,22 +20,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Virtaal 0.6.1\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "افحص حجم المجلدات والمساحة المتوفرة"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
 msgid "Disk Usage Analyzer"
 msgstr "محلّل استخدام القرص"
+
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "افحص حجم المجلدات والمساحة المتوفرة"
 
 #: ../data/baobab-preferences-dialog.ui.h:1
 msgid "Disk Usage Analyzer Preferences"
 msgstr "تفضيلات محلّل استخدام القرص"
 
 #: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
+msgid "Select _devices to include in file system scan:"
 msgstr "ا_ختر الأجهزة التي ستضمّن أثناء فحص نظام الملفات:"
 
 #: ../data/baobab-preferences-dialog.ui.h:3
@@ -43,301 +44,301 @@ msgid "_Monitor changes to your home folder"
 msgstr "_راقب التغييرات في مجلّدك المنزلي"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "قائمة التقسيمات المستثناة من الفحص."
+msgid "Monitor Home"
+msgstr "راقب المنزل"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "الرسم البياني النشط"
+msgid "Whether any change to the home directory should be monitored."
+msgstr "إذا وجب مراقبة أي تغيّرات على الدليل المنزلي."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "الأقسام المستنثاة"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "راقب المنزل"
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "قائمة التقسيمات المستثناة من الفحص."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "شريط الحالة مرئي"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Toolbar is Visible"
 msgstr "شريط الأدوات مرئي"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "Whether the toolbar should be visible in main window."
+msgstr "ما إذا وجب لشريط الأدوات أن يكون مرئيّا في نوافذ التحرير."
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "إذا وجب مراقبة أي تغيّرات على الدليل المنزلي."
+msgid "Statusbar is Visible"
+msgstr "شريط الحالة مرئي"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:8
 msgid "Whether the status bar at the bottom of main window should be visible."
 msgstr "ما إذا وجب لعمود الحالة في أسفل نافذة التحرير أن يكون مرئيّا."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "ما إذا وجب لشريط الأدوات أن يكون مرئيّا في نوافذ التحرير."
+msgid "Active Chart"
+msgstr "الرسم البياني النشط"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "أي نوع من الرسوم البيانية يُعرض."
 
 #: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "ال_مساحة المحصّصة:"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "أعِد التّحميل"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "افحص مجلّدا _بعيدا..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "افحص مجلّ_دا..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "افحص نظام الملفات"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "افحص المجلّد"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "افحص المنزل"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "افحص مجلّدا بعيدا"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "افحص _نظام الملفّات"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "افحص _مجلّد المنزل"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "افحص مجلّدا"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "افحص مجلّدا بعيدا"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "افحص نظام الملفات"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "افحص مجلد المنزل"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "شريط ال_حالة"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "أوقف الفحص"
-
-#: ../data/baobab-main-window.ui.h:18
 msgid "_Analyzer"
 msgstr "الم_حلّل"
 
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "قلّص ال_كل"
+#: ../data/baobab-main-window.ui.h:2
+msgid "Scan _Home Folder"
+msgstr "افحص _مجلّد المنزل"
 
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "الم_حتويات"
+#: ../data/baobab-main-window.ui.h:3
+msgid "Scan _Filesystem"
+msgstr "افحص _نظام الملفّات"
 
-#: ../data/baobab-main-window.ui.h:21
+#: ../data/baobab-main-window.ui.h:4
+msgid "Scan F_older…"
+msgstr "اف_حص المجلّد…"
+
+#: ../data/baobab-main-window.ui.h:5
+msgid "S_can Remote Folder…"
+msgstr "افحص مجلّدا ب_عيدا…"
+
+#: ../data/baobab-main-window.ui.h:6
 msgid "_Edit"
 msgstr "ت_حرير"
 
-#: ../data/baobab-main-window.ui.h:22
+#: ../data/baobab-main-window.ui.h:7
 msgid "_Expand All"
 msgstr "_مدّد الكل"
 
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "م_ساعدة"
+#: ../data/baobab-main-window.ui.h:8
+msgid "_Collapse All"
+msgstr "قلّص ال_كل"
 
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "شريط الأ_دوات"
-
-#: ../data/baobab-main-window.ui.h:25
+#: ../data/baobab-main-window.ui.h:9
 msgid "_View"
 msgstr "_عرض"
 
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "يفحص..."
+#: ../data/baobab-main-window.ui.h:10
+msgid "_Toolbar"
+msgstr "شريط الأ_دوات"
 
-#: ../src/baobab.c:182
+#: ../data/baobab-main-window.ui.h:11
+msgid "St_atusbar"
+msgstr "شريط ال_حالة"
+
+#: ../data/baobab-main-window.ui.h:12
+msgid "All_ocated Space"
+msgstr "ال_مساحة المحصّصة"
+
+#: ../data/baobab-main-window.ui.h:13
+msgid "_Help"
+msgstr "م_ساعدة"
+
+#: ../data/baobab-main-window.ui.h:14
+msgid "_Contents"
+msgstr "الم_حتويات"
+
+#: ../data/baobab-main-window.ui.h:16
+msgid "Scan your home folder"
+msgstr "افحص مجلد المنزل"
+
+#: ../data/baobab-main-window.ui.h:17
+msgid "Scan Home"
+msgstr "افحص المنزل"
+
+#: ../data/baobab-main-window.ui.h:18
+msgid "Scan the file system"
+msgstr "افحص نظام الملفات"
+
+#: ../data/baobab-main-window.ui.h:19
+msgid "Scan File System"
+msgstr "افحص نظام الملفات"
+
+#: ../data/baobab-main-window.ui.h:20
+msgid "Scan a folder"
+msgstr "افحص مجلّدا"
+
+#: ../data/baobab-main-window.ui.h:21
+msgid "Scan Folder"
+msgstr "افحص المجلّد"
+
+#: ../data/baobab-main-window.ui.h:22
+msgid "Scan a remote folder or file system"
+msgstr "افحص مجلّدا أو نظام ملفات بعيد"
+
+#: ../data/baobab-main-window.ui.h:23
+msgid "Scan Remote Folder"
+msgstr "افحص مجلّدا بعيدا"
+
+#: ../data/baobab-main-window.ui.h:24
+msgid "Stop scanning"
+msgstr "أوقف الفحص"
+
+#: ../data/baobab-main-window.ui.h:25
+msgid "Refresh"
+msgstr "أعِد التّحميل"
+
+#: ../src/baobab.c:130 ../src/baobab.c:404
+msgid "Scanning…"
+msgstr "يفحص…"
+
+#: ../src/baobab.c:176
 msgid "Total filesystem capacity:"
 msgstr "السّعة الكلية لنظام الملفات:"
 
-#: ../src/baobab.c:183
+#: ../src/baobab.c:177
 msgid "used:"
 msgstr "مُسْتخدَم:"
 
-#: ../src/baobab.c:184
+#: ../src/baobab.c:178
 msgid "available:"
 msgstr "متوفّر:"
 
 #. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "يحسب أشرطة النسبة..."
+#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
+msgid "Calculating percentage bars…"
+msgstr "يحسب أشرطة النسبة…"
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
+#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
 msgid "Ready"
 msgstr "جاهز"
 
-#: ../src/baobab.c:421
+#: ../src/baobab.c:437
 msgid "Total filesystem capacity"
 msgstr "السّعة الكلية لنظام الملفات"
 
-#: ../src/baobab.c:443
+#: ../src/baobab.c:459
 msgid "Total filesystem usage"
 msgstr "الاستخدام الكلي لنظام الملفات"
 
-#: ../src/baobab.c:484
+#: ../src/baobab.c:500
 msgid "contains hardlinks for:"
 msgstr "يحتوي على وصلات صلبة إلى:"
 
-#: ../src/baobab.c:493
+#: ../src/baobab.c:509
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
 msgstr[0] "لا عناصر"
 msgstr[1] "عنصر واحد"
 msgstr[2] "عنصرين"
-msgstr[3] "%I 5d عناصر"
-msgstr[4] "%I 5d عنصرا"
-msgstr[5] "%I 5d عنصر"
+msgstr[3] "%5d عناصر"
+msgstr[4] "%5d عنصرا"
+msgstr[5] "%5d عنصر"
 
-#: ../src/baobab.c:620
+#: ../src/baobab.c:614
 msgid "Could not initialize monitoring"
 msgstr "تعذّر بدأ المراقبة"
 
-#: ../src/baobab.c:621
+#: ../src/baobab.c:615
 msgid "Changes to your home folder will not be monitored."
 msgstr "لن تُراقَب التغيّرات على الدليل المنزلي."
 
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "انقل للمجلد الأصل"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "قرّب"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "بعّد"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "احفظ لقطة الشاشة"
-
-#: ../src/baobab.c:1143
+#: ../src/baobab.c:1050
 msgid "View as Rings Chart"
 msgstr "اعرض كرسم بياني حلقي"
 
-#: ../src/baobab.c:1145
+#: ../src/baobab.c:1052
 msgid "View as Treemap Chart"
 msgstr "اعرض كرسم بياني شجري"
 
-#: ../src/baobab.c:1250
+#: ../src/baobab.c:1151
 msgid "Show version"
 msgstr "اعرض الإصدار"
 
-#: ../src/baobab.c:1251
+#: ../src/baobab.c:1152
 msgid "[DIRECTORY]"
 msgstr "[دليل]"
 
-#: ../src/baobab.c:1281
+#: ../src/baobab.c:1182
 msgid "Too many arguments. Only one directory can be specified."
 msgstr "كثير من المعاملات، يمكنك تحديد دليل واحد فقط."
 
-#: ../src/baobab.c:1298
+#: ../src/baobab.c:1199
 msgid "Could not detect any mount point."
 msgstr "تعذّر تحديد أي نقطة وصل."
 
-#: ../src/baobab.c:1300
+#: ../src/baobab.c:1201
 msgid "Without mount points disk usage cannot be analyzed."
 msgstr "بدون نقاط الوصل لا يمكن تحليل استخدام القرص."
 
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "العمق الأقصى"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:189
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "العمق الأقصى من الجذر المرسوم في الرسم البياني"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:198
 msgid "Chart model"
 msgstr "نموذج الرسم البياني"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:199
 msgid "Set the model of the chart"
 msgstr "اضبط نموذج الرسم البياني"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:206
 msgid "Chart root node"
 msgstr "عقدة جذر الرسم البياني"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:207
 msgid "Set the root node from the model"
 msgstr "اضبط عقدة الجذر من النموذج"
 
-#: ../src/baobab-chart.c:1690
+#: ../src/baobab-chart.c:906
+msgid "Move to parent folder"
+msgstr "انقل للمجلد الأصل"
+
+#: ../src/baobab-chart.c:910
+msgid "Zoom in"
+msgstr "قرّب"
+
+#: ../src/baobab-chart.c:914
+msgid "Zoom out"
+msgstr "بعّد"
+
+#: ../src/baobab-chart.c:918
+msgid "Save screenshot"
+msgstr "احفظ لقطة الشاشة"
+
+#: ../src/baobab-chart.c:1807
 msgid "Cannot create pixbuf image!"
 msgstr "لم أستطع إنشاء صورة pixbuf!"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
+#: ../src/baobab-chart.c:1815
 msgid "Save Snapshot"
 msgstr "احفظ اللقطة"
 
-#: ../src/baobab-chart.c:1727
+#: ../src/baobab-chart.c:1842
 msgid "_Image type:"
 msgstr "نوع _الصورة:"
 
-#: ../src/baobab-prefs.c:172
+#: ../src/baobab-prefs.c:173
 msgid "Scan"
 msgstr "افحص"
 
-#: ../src/baobab-prefs.c:179
+#: ../src/baobab-prefs.c:181
 msgid "Device"
 msgstr "جهاز"
 
-#: ../src/baobab-prefs.c:187
+#: ../src/baobab-prefs.c:189
 msgid "Mount Point"
 msgstr "نقطة الوصل"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
-msgstr "_نوع نظام الملفات:"
+#: ../src/baobab-prefs.c:197
+msgid "File System Type"
+msgstr "نوع نظام الملفات"
 
-#: ../src/baobab-prefs.c:203
+#: ../src/baobab-prefs.c:205
 msgid "Total Size"
 msgstr "الحجم الكلي"
 
-#: ../src/baobab-prefs.c:212
+#: ../src/baobab-prefs.c:214
 msgid "Available"
-msgstr "متوفّر:"
+msgstr "متوفّر"
 
 #: ../src/baobab-remote-connect-dialog.c:77
 #, c-format
@@ -422,97 +423,97 @@ msgstr "_نوع الخدمة:"
 
 #: ../src/baobab-remote-connect-dialog.c:778
 msgid "_Scan"
-msgstr "افحص"
+msgstr "ا_فحص"
 
-#: ../src/baobab-treeview.c:82
+#: ../src/baobab-treeview.c:83
 msgid "Rescan your home folder?"
 msgstr "أأعيد فحص مجلّد المنزل؟"
 
-#: ../src/baobab-treeview.c:83
+#: ../src/baobab-treeview.c:84
 msgid ""
 "The content of your home folder has changed. Select rescan to update the "
 "disk usage details."
 msgstr ""
 "محتويات مجلّدك المنزلي تغيّرت. اختر أعِد الفحص لتحدّث تفاصيل استخدام القرص."
 
-#: ../src/baobab-treeview.c:84
+#: ../src/baobab-treeview.c:85
 msgid "_Rescan"
 msgstr "أ_عد الفحص"
 
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-treeview.c:223
 msgid "Folder"
 msgstr "مجلد"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-treeview.c:245
 msgid "Usage"
 msgstr "الاستخدام"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-treeview.c:259
 msgid "Size"
 msgstr "الحجم"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-treeview.c:275
 msgid "Contents"
 msgstr "المحتويات"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-utils.c:73
 msgid "Select Folder"
 msgstr "اختر مجلدا"
 
 #. add extra widget
-#: ../src/baobab-utils.c:84
+#: ../src/baobab-utils.c:85
 msgid "_Show hidden folders"
-msgstr "اعرض المجلدات المخفية"
+msgstr "اعرض المجلدات الم_خفية"
 
-#: ../src/baobab-utils.c:263
+#: ../src/baobab-utils.c:264
 msgid "Cannot check an excluded folder!"
 msgstr "لا يمكن فحص مجلد مستبعد!"
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-utils.c:288
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ليس مجلّدا سليما"
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-utils.c:291
 msgid "Could not analyze disk usage."
 msgstr "تعذّر تحليل استعمال القرص."
 
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-utils.c:327
 msgid "_Open Folder"
 msgstr "ا_فتح المجلّد"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-utils.c:333
 msgid "Mo_ve to Trash"
 msgstr "ا_نقل للمهملات"
 
-#: ../src/baobab-utils.c:362
+#: ../src/baobab-utils.c:363
 #, c-format
 msgid "Could not open folder \"%s\""
 msgstr "تعذّر فتح المجلّد \"%s\""
 
-#: ../src/baobab-utils.c:365
+#: ../src/baobab-utils.c:366
 msgid "There is no installed viewer capable of displaying the folder."
 msgstr "لا يوجد عارض مثبّت قادر على عرض المجلّد."
 
-#: ../src/baobab-utils.c:433
+#: ../src/baobab-utils.c:434
 #, c-format
 msgid "Could not move \"%s\" to the Trash"
 msgstr "تعذّر نقل \"%s\" إلى المهملات"
 
-#: ../src/baobab-utils.c:441
+#: ../src/baobab-utils.c:442
 msgid "Could not move file to the Trash"
-msgstr "تعذّر نقل \"%s\" إلى المهملات"
+msgstr "تعذّر نقل الملف إلى المهملات"
 
-#: ../src/baobab-utils.c:443
+#: ../src/baobab-utils.c:444
 #, c-format
 msgid "Details: %s"
 msgstr "تفاصيل: %s"
 
-#: ../src/baobab-utils.c:479
+#: ../src/baobab-utils.c:480
 msgid "There was an error displaying help."
 msgstr "حدث خطأ عند عرض المساعدة."
 
-#: ../src/callbacks.c:76
+#: ../src/callbacks.c:75
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -523,18 +524,18 @@ msgstr ""
 "العامة لجنو والتي نشرتها منظمة البرمجيات الحرة؛ سواء الإصدارة 2 من الرخصة أو "
 "أي إصدارة بعدها حسب رغبتك."
 
-#: ../src/callbacks.c:81
+#: ../src/callbacks.c:80
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details."
 msgstr ""
-"يوزّع البرنامج على أمل أن يكون مفيدًا لمن يستخدمه دون أدنى مسؤولية؛ ولا حتى أي "
-"ضمان يضمن صلاحية العرض في السوق أو توافقه مع أي استخدام محدد. يمكنك مراجعة "
-"الرخصة العمومية العامة لجنو لمزيد من التفاصيل."
+"يوزّع البرنامج على أمل أن يكون مفيدًا لمن يستخدمه دون أدنى مسؤولية؛ ولا حتى "
+"أي ضمان يضمن صلاحية العرض في السوق أو توافقه مع أي استخدام محدد.  يمكنك "
+"مراجعة الرخصة العمومية العامة لجنو لمزيد من التفاصيل."
 
-#: ../src/callbacks.c:86
+#: ../src/callbacks.c:85
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -542,18 +543,18 @@ msgid ""
 msgstr ""
 "من المفترض أن تكون قد استلمت نسخة من رخصة جنو العامة مع هذا البرنامج؛ في حال "
 "عدم استلامك لذلك، يمكنك مكاتبة:\n"
-"Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  "
-"02111-1307  USA"
+"Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
+" 02110-1301, USA"
 
-#: ../src/callbacks.c:101
+#: ../src/callbacks.c:100
 msgid "Baobab"
 msgstr "بوباب"
 
-#: ../src/callbacks.c:102
+#: ../src/callbacks.c:101
 msgid "A graphical tool to analyze disk usage."
 msgstr "أداة رسوميّة لتحليل استعمال القرص."
 
-#: ../src/callbacks.c:110
+#: ../src/callbacks.c:109
 msgid "translator-credits"
 msgstr ""
 "فريق عربآيز للترجمة http://www.arabeyes.org :\n"
@@ -562,10 +563,19 @@ msgstr ""
 "خالد حسني\t<khaledhosny@eglug.org>\n"
 "أنس عفيف عماد\t<anas.e87@gmail.com>"
 
-#: ../src/callbacks.c:208
+#: ../src/callbacks.c:207
 msgid "The document does not exist."
 msgstr "المستند غير موجود."
 
-#: ../src/callbacks.c:289
+#: ../src/callbacks.c:288
 msgid "The folder does not exist."
 msgstr "المجلد غير موجود."
+
+#~ msgid "S_can Remote Folder..."
+#~ msgstr "افحص مجلّدا _بعيدا..."
+
+#~ msgid "Scan F_older..."
+#~ msgstr "افحص مجلّ_دا..."
+
+#~ msgid "Scan home folder"
+#~ msgstr "افحص مجلد المنزل"
