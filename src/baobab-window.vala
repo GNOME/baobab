@@ -389,7 +389,7 @@ namespace Baobab {
 				rings_chart.thaw_updates ();
 				treemap_chart.thaw_updates ();
 				(lookup_action ("active-chart") as SimpleAction).set_enabled (true);
-				spinner.start ();
+				spinner.stop ();
 				lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 			}
 
