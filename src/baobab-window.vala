@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
  * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
+ * Copyright (C) 2012  Stefano Facchini <stefano.facchini@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -444,13 +445,13 @@ namespace Baobab {
 			model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
 			treemap_chart.set_model_with_columns (model,
 			                                      Scanner.Columns.DISPLAY_NAME,
-			                                      Scanner.Columns.SIZE,
+			                                      Scanner.Columns.ALLOC_SIZE,
 			                                      Scanner.Columns.PARSE_NAME,
 			                                      Scanner.Columns.PERCENT,
 			                                      Scanner.Columns.ELEMENTS, null);
 			rings_chart.set_model_with_columns (model,
 			                                    Scanner.Columns.DISPLAY_NAME,
-			                                    Scanner.Columns.SIZE,
+			                                    Scanner.Columns.ALLOC_SIZE,
 			                                    Scanner.Columns.PARSE_NAME,
 			                                    Scanner.Columns.PERCENT,
 			                                    Scanner.Columns.ELEMENTS, null);

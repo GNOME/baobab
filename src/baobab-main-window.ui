@@ -271,10 +271,11 @@
                     <property name="sizing">autosize</property>
                     <property name="title" translatable="yes">Size</property>
                     <property name="reorderable">True</property>
-                    <property name="sort_column_id">3</property>
+                    <property name="sort_column_id">4</property>
                     <child>
                       <object class="BaobabCellRendererSize" id="size-column-size-renderer">
                         <property name="xalign">1.0</property>
+                        <property name="show-allocated-size">True</property>
                       </object>
                       <attributes>
                         <attribute name="size">3</attribute>
