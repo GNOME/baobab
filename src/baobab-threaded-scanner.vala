@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
  * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
+ * Copyright (C) 2012  Stefano Facchini <stefano.facchini@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -115,7 +116,7 @@ namespace Baobab {
 
 							if (child_results != null) {
 								results.size += child_results.size;
-								results.alloc_size += child_results.size;
+								results.alloc_size += child_results.alloc_size;
 								results.elements += child_results.elements;
 								results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
 								results_array.results += (owned) child_results;
