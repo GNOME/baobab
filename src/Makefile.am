@@ -15,7 +15,11 @@ bin_PROGRAMS = baobab
 
 BUILT_SOURCES = baobab-resources.c
 
-baobab_VALAFLAGS = --pkg gtk+-3.0
+baobab_VALAFLAGS = \
+	--pkg gtk+-3.0		\
+	--pkg gio-2.0		\
+	--pkg gio-unix-2.0
+
 baobab_SOURCES = \
 	fixes.vapi			\
 	baobab.vapi			\
@@ -30,6 +34,9 @@ baobab_SOURCES = \
 	baobab-application.vala		\
 	baobab-window.vala		\
 	baobab-connect-server.vala	\
+	baobab-location.vala		\
+	baobab-location-monitor.vala	\
+	baobab-location-widget.vala	\
 	main.vala			\
 	$(BUILT_SOURCES)
 
@@ -63,7 +70,6 @@ MAINTAINERCLEANFILES = \
 EXTRA_DIST = \
 	baobab.gresource.xml \
 	baobab-main-window.ui \
-	baobab-preferences-dialog.ui \
 	baobab-menu.ui
 
 -include $(top_srcdir)/git.mk
