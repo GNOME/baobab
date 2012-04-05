@@ -420,7 +420,7 @@ baobab_chart_add_item (BaobabChart *chart,
 {
   BaobabChartItem *item;
   gchar *name;
-  gchar *size;
+  guint64 size;
 
   gtk_tree_model_get (chart->priv->model, &iter,
                       chart->priv->name_column, &name,
@@ -429,7 +429,7 @@ baobab_chart_add_item (BaobabChart *chart,
 
   item = g_new (BaobabChartItem, 1);
   item->name = name;
-  item->size = size;
+  item->size = g_format_size (size);
   item->depth = depth;
   item->rel_start = rel_start;
   item->rel_size = rel_size;
