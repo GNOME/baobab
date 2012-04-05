@@ -197,7 +197,7 @@ namespace Baobab {
 
 		void on_reload_activate () {
 			if (scanner != null) {
-				scan_directory (scanner.directory);
+				scan_directory (scanner.directory, scanner.scan_flags);
 			}
 		}
 
@@ -460,7 +460,7 @@ namespace Baobab {
 		public void show_filesystem_usage () {
 			var dir = File.new_for_uri ("file:///");
 
-			scanner = new ThreadedScanner (dir);
+			scanner = new ThreadedScanner (dir, ScanFlags.NONE);
 			set_model (scanner);
 
 			try {
@@ -472,12 +472,12 @@ namespace Baobab {
 			treeview.set_headers_visible (false);
 		}
 
-		public void scan_directory (File directory) {
+		public void scan_directory (File directory, ScanFlags flags = ScanFlags.NONE) {
 			if (!check_dir (directory)) {
 				return;
 			}
 
-			scanner = new ThreadedScanner (directory);
+			scanner = new ThreadedScanner (directory, flags);
 			set_model (scanner);
 
 			scanner.completed.connect(() => {

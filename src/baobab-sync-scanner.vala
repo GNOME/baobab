@@ -139,8 +139,8 @@ namespace Baobab {
 			} catch { }
 		}
 
-		public SyncScanner (File directory) {
-			base (directory);
+		public SyncScanner (File directory, ScanFlags flags) {
+			base (directory, flags);
 		}
 	}
 }

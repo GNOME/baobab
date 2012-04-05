@@ -256,8 +256,8 @@ namespace Baobab {
 			Timeout.add (100, process_results);
 		}
 
-		public ThreadedScanner (File directory) {
-			base (directory);
+		public ThreadedScanner (File directory, ScanFlags flags) {
+			base (directory, flags);
 
 			results_queue = new AsyncQueue<ResultsArray> ();
 

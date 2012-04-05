@@ -20,6 +20,12 @@
  */
 
 namespace Baobab {
+	[Flags]
+	public enum ScanFlags {
+		NONE,
+		EXCLUDE_MOUNTS
+	}
+
 	abstract class Scanner : Gtk.TreeStore {
 		public enum Columns {
 			DISPLAY_NAME,
@@ -61,13 +67,15 @@ namespace Baobab {
 			FileAttribute.STANDARD_DISPLAY_NAME + "," +
 			FileAttribute.STANDARD_TYPE + "," +
 			FileAttribute.STANDARD_SIZE +  "," +
-			FileAttribute.STANDARD_ALLOCATED_SIZE +  "," +
+			FileAttribute.STANDARD_ALLOCATED_SIZE +	 "," +
 			FileAttribute.UNIX_NLINK + "," +
 			FileAttribute.UNIX_INODE + "," +
 			FileAttribute.UNIX_DEVICE + "," +
 			FileAttribute.ACCESS_CAN_READ;
 
 		public File directory { get; private set; }
+
+		public ScanFlags scan_flags { get; private set; }
 
 		public int max_depth { get; protected set; }
 
@@ -136,21 +144,31 @@ namespace Baobab {
 			     Columns.ERROR, null);
 		}
 
-		public Scanner (File directory) {
+		public Scanner (File directory, ScanFlags flags) {
 			this.directory = directory;
+			this.scan_flags = flags;
 			cancellable = new Cancellable();
 			scan_error = null;
 			set_column_types (new Type[] {
-			                  typeof (string),  // DIR_NAME
-			                  typeof (string),  // PARSE_NAME
-			                  typeof (double),  // PERCENT
-			                  typeof (uint64),  // SIZE
-			                  typeof (uint64),  // ALLOC_SIZE
-			                  typeof (int),     // ELEMENTS
-			                  typeof (State),   // STATE
-			                  typeof (Error)}); // ERROR (if STATE is ERROR)
+					  typeof (string),  // DIR_NAME
+					  typeof (string),  // PARSE_NAME
+					  typeof (double),  // PERCENT
+					  typeof (uint64),  // SIZE
+					  typeof (uint64),  // ALLOC_SIZE
+					  typeof (int),	    // ELEMENTS
+					  typeof (State),   // STATE
+					  typeof (Error)}); // ERROR (if STATE is ERROR)
 			set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
+
 			excluded_locations = Application.get_excluded_locations ();
+
+			if (ScanFlags.EXCLUDE_MOUNTS in flags) {
+				foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {
+					excluded_locations.add (File.new_for_path (mount.get_mount_path ()));
+				}
+			}
+
+			excluded_locations.remove (directory);
 		}
 	}
 }
