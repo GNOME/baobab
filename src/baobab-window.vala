@@ -22,15 +22,22 @@
 namespace Baobab {
 	public class Window : Gtk.ApplicationWindow {
 		Settings ui_settings;
+		Gtk.Notebook main_notebook;
+		Gtk.Toolbar toolbar;
+		Gtk.ToolItem toolbar_home_toolitem;
+		Gtk.ToolButton toolbar_show_home_page;
+		Gtk.ToolButton toolbar_rescan;
 		Gtk.InfoBar infobar;
 		Gtk.Label infobar_primary;
 		Gtk.Label infobar_secondary;
 		Gtk.TreeView treeview;
 		Gtk.Notebook chart_notebook;
+		Gtk.Grid location_view;
 		Chart rings_chart;
 		Chart treemap_chart;
 		Gtk.Spinner spinner;
 		Scanner? scanner;
+		LocationMonitor location_monitor;
 
 		static Gdk.Cursor busy_cursor;
 
@@ -39,9 +46,9 @@ namespace Baobab {
 		}
 
 		private const GLib.ActionEntry[] action_entries = {
+			{ "show-home-page", on_show_home_page_activate },
 			{ "active-chart", radio_activate, "s", "'rings'", on_chart_type_changed },
 			{ "scan-home", on_scan_home_activate },
-			{ "scan-filesystem", on_scan_filesystem_activate },
 			{ "scan-folder", on_scan_folder_activate },
 			{ "scan-remote", on_scan_remote_activate },
 			{ "stop", on_stop_activate },
@@ -61,7 +68,6 @@ namespace Baobab {
 
 		private const ActionState[] actions_while_scanning = {
 			{ "scan-home", false },
-			{ "scan-filesystem", false },
 			{ "scan-folder", false },
 			{ "scan-remote", false },
 			{ "stop", true },
@@ -70,6 +76,11 @@ namespace Baobab {
 			{ "expand-all", false },
 			{ "collapse-all", false }
 		};
+
+		private enum UIPage {
+			HOME,
+			RESULT
+		}
 
 		private enum ChartPage {
 			RINGS,
@@ -100,7 +111,13 @@ namespace Baobab {
 				error ("loading main builder file: %s", e.message);
 			}
 
+
 			// Cache some objects from the builder.
+			main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
+			toolbar = builder.get_object ("toolbar") as Gtk.Toolbar;
+			toolbar_home_toolitem = builder.get_object ("home-page-toolitem") as Gtk.ToolItem;
+			toolbar_show_home_page = builder.get_object ("show-home-page-button") as Gtk.ToolButton;
+			toolbar_rescan = builder.get_object ("rescan-button") as Gtk.ToolButton;
 			infobar = builder.get_object ("infobar") as Gtk.InfoBar;
 			infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
 			infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
@@ -109,8 +126,13 @@ namespace Baobab {
 			rings_chart = builder.get_object ("rings-chart") as Chart;
 			treemap_chart = builder.get_object ("treemap-chart") as Chart;
 			spinner = builder.get_object ("spinner") as Gtk.Spinner;
+			location_view = builder.get_object ("location-view") as Gtk.Grid;
 
+			setup_home_page ();
 			setup_treeview (builder);
+
+			// To make it draggable like a primary toolbar
+			toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUBAR);
 
 			ui_settings = Application.get_ui_settings ();
 			lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
@@ -125,10 +147,29 @@ namespace Baobab {
 			add (builder.get_object ("window-contents") as Gtk.Widget);
 			title = _("Disk Usage Analyzer");
 			set_default_size (800, 500);
+			set_hide_titlebar_when_maximized (true);
+
+			set_ui_page (UIPage.HOME);
 
 			set_busy (false);
 
 			show ();
+		}
+
+		void set_ui_page (UIPage page) {
+			toolbar_home_toolitem.visible = (page == UIPage.HOME);
+			toolbar_show_home_page.visible = (page == UIPage.RESULT);
+			toolbar_rescan.visible = (page == UIPage.RESULT);
+
+			main_notebook.page = page;
+		}
+
+		void on_show_home_page_activate () {
+			if (scanner != null) {
+				scanner.cancel ();
+			}
+
+			set_ui_page (UIPage.HOME);
 		}
 
 		void on_chart_type_changed (SimpleAction action, Variant value) {
@@ -149,11 +190,6 @@ namespace Baobab {
 
 		void on_scan_home_activate () {
 			var dir = File.new_for_path (GLib.Environment.get_home_dir ());
-			scan_directory (dir);
-		}
-
-		void on_scan_filesystem_activate () {
-			var dir = File.new_for_uri ("file:///");
 			scan_directory (dir);
 		}
 
@@ -289,6 +325,40 @@ namespace Baobab {
 			Gtk.drag_dest_unset (this);
 		}
 
+		void update_locations () {
+			location_view.foreach ((widget) => { widget.destroy (); });
+
+			foreach (var location in location_monitor.get_locations ()) {
+				LocationWidget loc_widget;
+				if (location.is_home_location) {
+					loc_widget = new LocationWidget (location, (location_) => {
+						on_scan_home_activate ();
+					});
+				} else {
+					loc_widget = new LocationWidget (location, (location_) => {
+						location_.mount_volume.begin ((location__, res) => {
+							try {
+								location_.mount_volume.end (res);
+								scan_directory (File.new_for_path (location_.mount_point), ScanFlags.EXCLUDE_MOUNTS);
+							} catch (Error e) {
+								message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
+							}
+						});
+					});
+				}
+
+				location_view.add (loc_widget);
+			}
+
+			location_view.show_all ();
+		}
+
+		void setup_home_page () {
+			location_monitor = LocationMonitor.get ();
+			location_monitor.changed.connect (() => { update_locations (); });
+			update_locations ();
+		}
+
 		bool show_treeview_popup (Gtk.Menu popup, Gdk.EventButton? event) {
 			if (event != null) {
 				popup.popup (null, null, null, event.button, event.time);
@@ -385,6 +455,7 @@ namespace Baobab {
 				(lookup_action ("active-chart") as SimpleAction).set_enabled (false);
 				chart_notebook.page = ChartPage.SPINNER;
 				spinner.start ();
+				toolbar_show_home_page.label = _("Cancel scan");
 			} else {
 				enable_drop ();
 				rings_chart.thaw_updates ();
@@ -392,6 +463,7 @@ namespace Baobab {
 				(lookup_action ("active-chart") as SimpleAction).set_enabled (true);
 				spinner.stop ();
 				lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
+				toolbar_show_home_page.label = _("All locations");
 			}
 
 			var window = get_window ();
@@ -457,21 +529,6 @@ namespace Baobab {
 			                                    Scanner.Columns.ELEMENTS, null);
 		}
 
-		public void show_filesystem_usage () {
-			var dir = File.new_for_uri ("file:///");
-
-			scanner = new ThreadedScanner (dir, ScanFlags.NONE);
-			set_model (scanner);
-
-			try {
-				scanner.get_filesystem_usage ();
-			} catch (Error e) {
-				message (_("Could not get filesytem usage."), e.message, Gtk.MessageType.WARNING);
-			}
-
-			treeview.set_headers_visible (false);
-		}
-
 		public void scan_directory (File directory, ScanFlags flags = ScanFlags.NONE) {
 			if (!check_dir (directory)) {
 				return;
@@ -487,7 +544,6 @@ namespace Baobab {
 				} catch (IOError.CANCELLED e) {
 					// Handle cancellation silently
 					scanner.clear ();
-					show_filesystem_usage ();
 				} catch (Error e) {
 					var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());
 					message (primary, e.message, Gtk.MessageType.WARNING);
@@ -495,7 +551,8 @@ namespace Baobab {
 			});
 
 			clear_message ();
-			treeview.set_headers_visible (true);
+
+			set_ui_page (UIPage.RESULT);
 			set_busy (true);
 
 			scanner.scan ();

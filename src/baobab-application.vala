@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
  * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
+ * Copyright (C) 2012  Stefano Facchini <stefano.facchini@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -31,8 +32,7 @@ namespace Baobab {
 		Settings ui_settings;
 
 		protected override void activate () {
-			var window = new Window (this);
-			window.show_filesystem_usage ();
+			new Window (this);
 		}
 
 		protected override void open (File[] files, string hint) {

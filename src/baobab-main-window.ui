@@ -3,91 +3,69 @@
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkGrid" id="window-contents">
     <property name="visible">True</property>
-    <property name="can_focus">False</property>
+    <property name="orientation">vertical</property>
     <child>
       <object class="GtkToolbar" id="toolbar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="show_arrow">False</property>
-        <style>
-          <class name="primary-toolbar"/>
-        </style>
         <child>
-          <object class="GtkToolButton" id="scan-home-button">
-            <property name="use_action_appearance">False</property>
+          <object class="GtkToolItem" id="home-page-toolitem">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="has_tooltip">True</property>
-            <property name="tooltip_markup" translatable="yes">Scan your home folder</property>
-            <property name="tooltip_text" translatable="yes">Scan your home folder</property>
-            <property name="use_action_appearance">False</property>
-            <property name="is_important">True</property>
-            <property name="action_name">win.scan-home</property>
-            <property name="label" translatable="yes">Scan Home</property>
-            <property name="use_underline">True</property>
-            <property name="stock_id">gtk-home</property>
-            <child internal-child="accessible">
-              <object class="AtkObject" id="scan-home-button-atkobject">
-                <property name="AtkObject::accessible-name" translatable="yes">Scan your home folder</property>
+            <child>
+              <object class="GtkButtonBox" id="scan-buttonbox">
+                <property name="visible">True</property>
+                <property name="layout_style">start</property>
+                <style>
+                  <class name="linked"/>
+                </style>
+                <child>
+                  <object class="GtkButton" id="scan-folder-button">
+                    <property name="use_action_appearance">False</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">Scan a folder</property>
+                    <property name="tooltip_text" translatable="yes">Scan a folder</property>
+                    <property name="use_action_appearance">False</property>
+                    <property name="action_name">win.scan-folder</property>
+                    <property name="label" translatable="yes">Scan Folder</property>
+                    <property name="use_underline">True</property>
+                    <!--<property name="stock_id">gtk-directory</property>-->
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="scan-remote-button">
+                    <property name="use_action_appearance">False</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">Scan a remote folder</property>
+                    <property name="tooltip_text" translatable="yes">Scan a remote folder</property>
+                    <property name="use_action_appearance">False</property>
+                    <property name="action_name">win.scan-remote</property>
+                    <property name="label" translatable="yes">Scan Remote Folder</property>
+                    <property name="use_underline">True</property>
+                    <!--<property name="stock_id">gtk-network</property>-->
+                  </object>
+                </child>
               </object>
             </child>
           </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="homogeneous">True</property>
-          </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="scan-filesystem-button">
+          <object class="GtkToolButton" id="show-home-page-button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
-            <property name="tooltip_markup" translatable="yes">Scan the file system</property>
-            <property name="tooltip_text" translatable="yes">Scan the file system</property>
+            <property name="is_important">True</property>
+            <property name="tooltip_markup" translatable="yes">Show all locations</property>
+            <property name="tooltip_text" translatable="yes">Show all locations</property>
             <property name="use_action_appearance">False</property>
-            <property name="action_name">win.scan-filesystem</property>
-            <property name="label" translatable="yes">Scan File System</property>
+            <property name="action_name">win.show-home-page</property>
+            <property name="label" translatable="yes">All locations</property>
             <property name="use_underline">True</property>
-            <property name="stock_id">gtk-harddisk</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="homogeneous">True</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkToolButton" id="scan-folder-button">
-            <property name="use_action_appearance">False</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="has_tooltip">True</property>
-            <property name="tooltip_markup" translatable="yes">Scan a folder</property>
-            <property name="tooltip_text" translatable="yes">Scan a folder</property>
-            <property name="use_action_appearance">False</property>
-            <property name="action_name">win.scan-folder</property>
-            <property name="label" translatable="yes">Scan Folder</property>
-            <property name="use_underline">True</property>
-            <property name="stock_id">gtk-directory</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="homogeneous">True</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkToolButton" id="scan-remote-button">
-            <property name="use_action_appearance">False</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="has_tooltip">True</property>
-            <property name="tooltip_markup" translatable="yes">Scan a remote folder</property>
-            <property name="tooltip_text" translatable="yes">Scan a remote folder</property>
-            <property name="use_action_appearance">False</property>
-            <property name="action_name">win.scan-remote</property>
-            <property name="label" translatable="yes">Scan Remote Folder</property>
-            <property name="use_underline">True</property>
-            <property name="stock_id">gtk-network</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -98,15 +76,16 @@
           <object class="GtkSeparatorToolItem" id="separatortoolitem1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="draw">False</property>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
           </packing>
         </child>
         <child>
           <object class="GtkToolButton" id="stop-button">
             <property name="use_action_appearance">False</property>
-            <property name="visible">True</property>
+            <property name="visible">False</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
             <property name="tooltip_markup" translatable="yes">Stop scanning</property>
@@ -198,230 +177,273 @@
           </object>
         </child>
       </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">1</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
     </child>
     <child>
-      <object class="GtkPaned" id="hpaned">
+      <object class="GtkNotebook" id="main-notebook">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
-        <property name="hexpand">True</property>
-        <property name="vexpand">True</property>
-        <property name="position">480</property>
+        <property name="show_tabs">False</property> -->
+        <property name="show_border">False</property> -->
         <child>
-          <object class="GtkScrolledWindow" id="scrolled-window">
+          <object class="GtkGrid" id="home-page">
+            <property name="can_focus">False</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="shadow_type">in</property>
+            <property name="orientation">vertical</property>
             <child>
-              <object class="GtkTreeView" id="treeview">
+              <object class="GtkScrolledWindow" id="volume-scrolled-window">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <child internal-child="selection">
-                  <object class="GtkTreeSelection" id="treeview-selection1"/>
-                </child>
+                <property name="vexpand">True</property>
+                <property name="hexpand">True</property>
                 <child>
-                  <object class="GtkTreeViewColumn" id="folder-column">
-                    <property name="resizable">True</property>
-                    <property name="sizing">autosize</property>
-                    <property name="title" translatable="yes">Folder</property>
-                    <property name="expand">True</property>
-                    <property name="reorderable">True</property>
-                    <property name="sort_column_id">0</property>
+                  <object class="GtkViewport" id="volume-viewport">
+                    <property name="visible">True</property>
                     <child>
-                      <object class="GtkCellRendererText" id="folder-column-text-renderer"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="usage-column">
-                    <property name="sizing">autosize</property>
-                    <property name="title" translatable="yes">Usage</property>
-                    <property name="reorderable">True</property>
-                    <property name="sort_column_id">2</property>
-                    <child>
-                      <object class="BaobabCellRendererProgress" id="usage-column-bar-renderer">
-                        <property name="xpad">4</property>
-                        <property name="ypad">4</property>
+                      <object class="GtkGrid" id="location-view">
+                        <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
                       </object>
-                      <attributes>
-                        <attribute name="value">2</attribute>
-                      </attributes>
-                    </child>
-                    <child>
-                      <object class="BaobabCellRendererPercent" id="usage-column-percent-renderer">
-                        <property name="xalign">1.0</property>
-                      </object>
-                      <attributes>
-                        <attribute name="percent">2</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="size-column">
-                    <property name="resizable">True</property>
-                    <property name="sizing">autosize</property>
-                    <property name="title" translatable="yes">Size</property>
-                    <property name="reorderable">True</property>
-                    <property name="sort_column_id">4</property>
-                    <child>
-                      <object class="BaobabCellRendererSize" id="size-column-size-renderer">
-                        <property name="xalign">1.0</property>
-                        <property name="show-allocated-size">True</property>
-                      </object>
-                      <attributes>
-                        <attribute name="size">3</attribute>
-                        <attribute name="alloc-size">4</attribute>
-                      </attributes>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="contents-column">
-                    <property name="resizable">True</property>
-                    <property name="sizing">autosize</property>
-                    <property name="title" translatable="yes">Contents</property>
-                    <property name="reorderable">True</property>
-                    <property name="sort_column_id">5</property>
-                    <child>
-                      <object class="BaobabCellRendererItems" id="contents-column-items-renderer">
-                        <property name="xalign">1.0</property>
-                      </object>
-                      <attributes>
-                        <attribute name="items">5</attribute>
-                      </attributes>
                     </child>
                   </object>
                 </child>
               </object>
             </child>
-          </object>
-          <packing>
-            <property name="resize">False</property>
-            <property name="shrink">True</property>
-          </packing>
+           </object>
         </child>
         <child>
-          <object class="GtkGrid" id="chart-grid">
+          <object class="GtkGrid" id="result-page">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
             <child>
-              <object class="GtkNotebook" id="chart-notebook">
+              <object class="GtkPaned" id="hpaned">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="show_tabs">False</property>
-                <property name="show_border">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="position">480</property>
                 <child>
-                  <object class="BaobabRingschart" id="rings-chart">
+                  <object class="GtkScrolledWindow" id="scrolled-window">
                     <property name="visible">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="vexpand">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="shadow_type">in</property>
+                    <child>
+                      <object class="GtkTreeView" id="treeview">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <child internal-child="selection">
+                          <object class="GtkTreeSelection" id="treeview-selection1"/>
+                        </child>
+                        <child>
+                          <object class="GtkTreeViewColumn" id="folder-column">
+                            <property name="resizable">True</property>
+                            <property name="sizing">autosize</property>
+                            <property name="title" translatable="yes">Folder</property>
+                            <property name="expand">True</property>
+                            <property name="reorderable">True</property>
+                            <property name="sort_column_id">0</property>
+                            <child>
+                              <object class="GtkCellRendererText" id="folder-column-text-renderer"/>
+                              <attributes>
+                                <attribute name="text">0</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkTreeViewColumn" id="usage-column">
+                            <property name="sizing">autosize</property>
+                            <property name="title" translatable="yes">Usage</property>
+                            <property name="reorderable">True</property>
+                            <property name="sort_column_id">2</property>
+                            <child>
+                              <object class="BaobabCellRendererProgress" id="usage-column-bar-renderer">
+                                <property name="xpad">4</property>
+                                <property name="ypad">4</property>
+                              </object>
+                              <attributes>
+                                <attribute name="value">2</attribute>
+                              </attributes>
+                            </child>
+                            <child>
+                              <object class="BaobabCellRendererPercent" id="usage-column-percent-renderer">
+                                <property name="xalign">1.0</property>
+                              </object>
+                              <attributes>
+                                <attribute name="percent">2</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkTreeViewColumn" id="size-column">
+                            <property name="resizable">True</property>
+                            <property name="sizing">autosize</property>
+                            <property name="title" translatable="yes">Size</property>
+                            <property name="reorderable">True</property>
+                            <property name="sort_column_id">4</property>
+                            <child>
+                              <object class="BaobabCellRendererSize" id="size-column-size-renderer">
+                                <property name="xalign">1.0</property>
+                                <property name="show-allocated-size">True</property>
+                              </object>
+                              <attributes>
+                                <attribute name="size">3</attribute>
+                                <attribute name="alloc-size">4</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkTreeViewColumn" id="contents-column">
+                            <property name="resizable">True</property>
+                            <property name="sizing">autosize</property>
+                            <property name="title" translatable="yes">Contents</property>
+                            <property name="reorderable">True</property>
+                            <property name="sort_column_id">5</property>
+                            <child>
+                              <object class="BaobabCellRendererItems" id="contents-column-items-renderer">
+                                <property name="xalign">1.0</property>
+                              </object>
+                              <attributes>
+                                <attribute name="items">5</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
+                  <packing>
+                    <property name="resize">False</property>
+                    <property name="shrink">True</property>
+                  </packing>
                 </child>
                 <child>
-                  <object class="BaobabTreemap" id="treemap-chart">
-                    <property name="visible">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="vexpand">True</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSpinner" id="spinner">
+                  <object class="GtkGrid" id="chart-grid">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <property name="margin_left">24</property>
-                    <property name="margin_right">24</property>
-                    <property name="margin_top">24</property>
-                    <property name="margin_bottom">24</property>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButtonBox" id="chart-buttonbox">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="margin_right">20</property>
-                <property name="margin_top">6</property>
-                <property name="margin_bottom">6</property>
-                <property name="homogeneous">False</property>
-                <property name="layout_style">end</property>
-                <style>
-                  <class name="linked"/>
-                </style>
-                <child>
-                  <object class="GtkRadioButton" id="rings-button">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="tooltip_markup" translatable="yes">Rings Chart</property>
-                    <property name="xalign">0.5</property>
-                    <property name="yalign">0.5</property>
-                    <property name="active">True</property>
-                    <property name="draw_indicator">False</property>
-                    <property name="action_name">win.active-chart</property>
-                    <property name="action_target">'rings'</property>
                     <child>
-                      <object class="GtkImage" id="ringschart-icon">
+                      <object class="GtkNotebook" id="chart-notebook">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="show_tabs">False</property>
+                        <property name="show_border">False</property>
+                        <child>
+                          <object class="BaobabRingschart" id="rings-chart">
+                            <property name="visible">True</property>
+                            <property name="hexpand">True</property>
+                            <property name="vexpand">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="BaobabTreemap" id="treemap-chart">
+                            <property name="visible">True</property>
+                            <property name="hexpand">True</property>
+                            <property name="vexpand">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkSpinner" id="spinner">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="hexpand">True</property>
+                            <property name="vexpand">True</property>
+                            <property name="margin_left">24</property>
+                            <property name="margin_right">24</property>
+                            <property name="margin_top">24</property>
+                            <property name="margin_bottom">24</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButtonBox" id="chart-buttonbox">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="icon_name">view-ringschart-symbolic</property>
+                        <property name="margin_right">20</property>
+                        <property name="margin_top">6</property>
+                        <property name="margin_bottom">6</property>
+                        <property name="homogeneous">False</property>
+                        <property name="layout_style">end</property>
+                        <style>
+                          <class name="linked"/>
+                        </style>
+                        <child>
+                          <object class="GtkRadioButton" id="rings-button">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="tooltip_markup" translatable="yes">Rings Chart</property>
+                            <property name="xalign">0.5</property>
+                            <property name="yalign">0.5</property>
+                            <property name="active">True</property>
+                            <property name="draw_indicator">False</property>
+                            <property name="action_name">win.active-chart</property>
+                            <property name="action_target">'rings'</property>
+                            <child>
+                              <object class="GtkImage" id="ringschart-icon">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="icon_name">view-ringschart-symbolic</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                            <property name="non_homogeneous">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="treemap-button">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="tooltip_markup" translatable="yes">Treemap Chart</property>
+                            <property name="xalign">0.5</property>
+                            <property name="yalign">0.5</property>
+                            <property name="active">True</property>
+                            <property name="draw_indicator">False</property>
+                            <property name="group">rings-button</property>
+                            <property name="action_name">win.active-chart</property>
+                            <property name="action_target">'treemap'</property>
+                            <child>
+                              <object class="GtkImage" id="treemap-icon">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="icon_name">view-treemap-symbolic</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                            <property name="non_homogeneous">True</property>
+                          </packing>
+                        </child>
                       </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
                     </child>
                   </object>
                   <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkRadioButton" id="treemap-button">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="tooltip_markup" translatable="yes">Treemap Chart</property>
-                    <property name="xalign">0.5</property>
-                    <property name="yalign">0.5</property>
-                    <property name="active">True</property>
-                    <property name="draw_indicator">False</property>
-                    <property name="group">rings-button</property>
-                    <property name="action_name">win.active-chart</property>
-                    <property name="action_target">'treemap'</property>
-                    <child>
-                      <object class="GtkImage" id="treemap-icon">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="icon_name">view-treemap-symbolic</property>
-                      </object>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                    <property name="non_homogeneous">True</property>
+                    <property name="resize">True</property>
+                    <property name="shrink">True</property>
                   </packing>
                 </child>
               </object>
@@ -433,18 +455,8 @@
               </packing>
             </child>
           </object>
-          <packing>
-            <property name="resize">True</property>
-            <property name="shrink">True</property>
-          </packing>
         </child>
       </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">2</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
     </child>
   </object>
   <object class="GtkMenu" id="treeview-popup-menu">
