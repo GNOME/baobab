@@ -1,3 +1,4 @@
+/* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
@@ -20,110 +21,111 @@
  */
 
 namespace Baobab {
-	public class Application : Gtk.Application {
-		static Application baobab;
 
-		private const GLib.ActionEntry[] action_entries = {
-			{ "quit", on_quit_activate }
-		};
+    public class Application : Gtk.Application {
+        static Application baobab;
 
-		Settings desktop_settings;
-		Settings prefs_settings;
-		Settings ui_settings;
+        private const GLib.ActionEntry[] action_entries = {
+            { "quit", on_quit_activate }
+        };
 
-		protected override void activate () {
-			new Window (this);
-		}
+        Settings desktop_settings;
+        Settings prefs_settings;
+        Settings ui_settings;
 
-		protected override void open (File[] files, string hint) {
-			foreach (var file in files) {
-				var window = new Window (this);
-				window.scan_directory (file);
-			}
-		}
+        protected override void activate () {
+            new Window (this);
+        }
 
-		public static HashTable<File, unowned File> get_excluded_locations () {
-			var app = baobab;
+        protected override void open (File[] files, string hint) {
+            foreach (var file in files) {
+                var window = new Window (this);
+                window.scan_directory (file);
+            }
+        }
 
-			var excluded_locations = new HashTable<File, unowned File> (File.hash, File.equal);
-			excluded_locations.add (File.new_for_path ("/proc"));
-			excluded_locations.add (File.new_for_path ("/sys"));
-			excluded_locations.add (File.new_for_path ("/selinux"));
+        public static HashTable<File, unowned File> get_excluded_locations () {
+            var app = baobab;
 
-			var home = File.new_for_path (Environment.get_home_dir ());
-			excluded_locations.add (home.get_child (".gvfs"));
+            var excluded_locations = new HashTable<File, unowned File> (File.hash, File.equal);
+            excluded_locations.add (File.new_for_path ("/proc"));
+            excluded_locations.add (File.new_for_path ("/sys"));
+            excluded_locations.add (File.new_for_path ("/selinux"));
 
-			var root = File.new_for_path ("/");
-			foreach (var uri in app.prefs_settings.get_value ("excluded-uris")) {
-				var file = File.new_for_uri ((string) uri);
-				if (!file.equal (root)) {
-					excluded_locations.add (file);
-				}
-			}
+            var home = File.new_for_path (Environment.get_home_dir ());
+            excluded_locations.add (home.get_child (".gvfs"));
 
-			return excluded_locations;
-		}
+            var root = File.new_for_path ("/");
+            foreach (var uri in app.prefs_settings.get_value ("excluded-uris")) {
+                var file = File.new_for_uri ((string) uri);
+                if (!file.equal (root)) {
+                    excluded_locations.add (file);
+                }
+            }
 
-		protected override void startup () {
-			base.startup ();
+            return excluded_locations;
+        }
 
-			baobab = this;
+        protected override void startup () {
+            base.startup ();
 
-			// Settings
-			ui_settings = new Settings ("org.gnome.baobab.ui");
-			prefs_settings = new Settings ("org.gnome.baobab.preferences");
-			desktop_settings = new Settings ("org.gnome.desktop.interface");
+            baobab = this;
 
-			// Menus: in gnome shell we just use the app menu, since the remaining
-			// items are too few to look ok in a menubar and they are not essential
-			var gtk_settings = Gtk.Settings.get_default ();
-			var builder = new Gtk.Builder ();
-			try {
-				builder.add_from_resource ("/org/gnome/baobab/ui/baobab-menu.ui");
-			} catch (Error e) {
-				error ("loading menu builder file: %s", e.message);
-			}
-			if (gtk_settings.gtk_shell_shows_app_menu) {
-				var app_menu = builder.get_object ("appmenu") as MenuModel;
-				set_app_menu (app_menu);
-			} else {
-				var menubar = builder.get_object ("menubar") as MenuModel;
-				set_menubar (menubar);
-			}
-		}
+            // Settings
+            ui_settings = new Settings ("org.gnome.baobab.ui");
+            prefs_settings = new Settings ("org.gnome.baobab.preferences");
+            desktop_settings = new Settings ("org.gnome.desktop.interface");
 
-		protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
-			if (arguments[1] == "-v") {
-				print ("%s %s\n", Environment.get_application_name (), Config.VERSION);
-				exit_status = 0;
-				return true;
-			}
+            // Menus: in gnome shell we just use the app menu, since the remaining
+            // items are too few to look ok in a menubar and they are not essential
+            var gtk_settings = Gtk.Settings.get_default ();
+            var builder = new Gtk.Builder ();
+            try {
+                builder.add_from_resource ("/org/gnome/baobab/ui/baobab-menu.ui");
+            } catch (Error e) {
+                error ("loading menu builder file: %s", e.message);
+            }
+            if (gtk_settings.gtk_shell_shows_app_menu) {
+                var app_menu = builder.get_object ("appmenu") as MenuModel;
+                set_app_menu (app_menu);
+            } else {
+                var menubar = builder.get_object ("menubar") as MenuModel;
+                set_menubar (menubar);
+            }
+        }
 
-			return base.local_command_line (ref arguments, out exit_status);
-		}
+        protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
+            if (arguments[1] == "-v") {
+                print ("%s %s\n", Environment.get_application_name (), Config.VERSION);
+                exit_status = 0;
+                return true;
+            }
 
-		public Application () {
-			Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
+            return base.local_command_line (ref arguments, out exit_status);
+        }
 
-			add_action_entries (action_entries, this);
-		}
+        public Application () {
+            Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
 
-		public static Settings get_desktop_settings () {
-			var app = baobab;
-			return app.desktop_settings;
-		}
+            add_action_entries (action_entries, this);
+        }
 
-		public static Settings get_prefs_settings () {
-			var app = baobab;
-			return app.prefs_settings;
-		}
+        public static Settings get_desktop_settings () {
+            var app = baobab;
+            return app.desktop_settings;
+        }
 
-		public static Settings get_ui_settings () {
-			var app = baobab;
-			return app.ui_settings;
-		}
+        public static Settings get_prefs_settings () {
+            var app = baobab;
+            return app.prefs_settings;
+        }
 
-		void on_quit_activate () {
-		}
-	}
+        public static Settings get_ui_settings () {
+            var app = baobab;
+            return app.ui_settings;
+        }
+
+        void on_quit_activate () {
+        }
+    }
 }

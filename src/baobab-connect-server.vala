@@ -1,3 +1,4 @@
+/* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
@@ -18,65 +19,66 @@
  */
 
 namespace Baobab {
-	class ConnectServer : Object {
-		string[] argv = {
-			"nautilus-connect-server",
-			"--print-uri"
-		};
 
-		public signal void selected(string? uri);
+    class ConnectServer : Object {
+        string[] argv = {
+            "nautilus-connect-server",
+            "--print-uri"
+        };
 
-		void on_child_watch (Pid pid, int status) {
-			Process.close_pid (pid);
-		}
+        public signal void selected(string? uri);
 
-		bool on_out_watch (IOChannel channel, IOCondition cond) {
-			if (IOCondition.HUP in cond) {
-				selected(null);
-				return false;
-			}
+        void on_child_watch (Pid pid, int status) {
+            Process.close_pid (pid);
+        }
 
-			string? uri = null;
-			try {
-				size_t len;
-				size_t lineend;
-				channel.read_line(out uri, out len, out lineend);
-				if (len > 0) {
-					uri = uri[0:(int)lineend];
-				}
-			} catch {
-			} finally {
-				selected(uri);
-			}
+        bool on_out_watch (IOChannel channel, IOCondition cond) {
+            if (IOCondition.HUP in cond) {
+                selected(null);
+                return false;
+            }
 
-			return true;
-		}
+            string? uri = null;
+            try {
+                size_t len;
+                size_t lineend;
+                channel.read_line(out uri, out len, out lineend);
+                if (len > 0) {
+                    uri = uri[0:(int)lineend];
+                }
+            } catch {
+            } finally {
+                selected(uri);
+            }
 
-		public void show () {
+            return true;
+        }
 
-			Pid pid;
-			int out_fd;
+        public void show () {
 
-			try {
-				Process.spawn_async_with_pipes (
-				    null,
-				    argv,
-				    null, // envp
-				    SpawnFlags.SEARCH_PATH | SpawnFlags.STDERR_TO_DEV_NULL,
-				    null, // child_setup
-				    out pid,
-				    null, // stdin
-				    out out_fd,
-				    null // stderr
-				);
-			} catch (SpawnError e) {
-				warning ("Failed to run nautilus-connect-server: %s", e.message);
-			}
+            Pid pid;
+            int out_fd;
 
-			var out_channel = new IOChannel.unix_new (out_fd);
-			out_channel.add_watch (IOCondition.IN | IOCondition.HUP, on_out_watch);
+            try {
+                Process.spawn_async_with_pipes (
+                    null,
+                    argv,
+                    null, // envp
+                    SpawnFlags.SEARCH_PATH | SpawnFlags.STDERR_TO_DEV_NULL,
+                    null, // child_setup
+                    out pid,
+                    null, // stdin
+                    out out_fd,
+                    null // stderr
+                );
+            } catch (SpawnError e) {
+                warning ("Failed to run nautilus-connect-server: %s", e.message);
+            }
 
-			ChildWatch.add (pid, on_child_watch);
-		}
-	}
+            var out_channel = new IOChannel.unix_new (out_fd);
+            out_channel.add_watch (IOCondition.IN | IOCondition.HUP, on_out_watch);
+
+            ChildWatch.add (pid, on_child_watch);
+        }
+    }
 }

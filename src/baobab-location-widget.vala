@@ -19,6 +19,7 @@
  */
 
 namespace Baobab {
+
     public class LocationWidget : Gtk.Grid {
         private static Gtk.SizeGroup name_size_group = null;
         private static Gtk.SizeGroup mount_point_size_group = null;

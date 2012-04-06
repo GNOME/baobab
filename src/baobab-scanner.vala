@@ -1,3 +1,4 @@
+/* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
@@ -20,155 +21,157 @@
  */
 
 namespace Baobab {
-	[Flags]
-	public enum ScanFlags {
-		NONE,
-		EXCLUDE_MOUNTS
-	}
 
-	abstract class Scanner : Gtk.TreeStore {
-		public enum Columns {
-			DISPLAY_NAME,
-			PARSE_NAME,
-			PERCENT,
-			SIZE,
-			ALLOC_SIZE,
-			ELEMENTS,
-			STATE,
-			ERROR,
-			COLUMNS
-		}
+    [Flags]
+    public enum ScanFlags {
+        NONE,
+        EXCLUDE_MOUNTS
+    }
 
-		public enum State {
-			SCANNING,
-			CANCELLED,
-			NEED_PERCENT,
-			ERROR,
-			DONE
-		}
+    abstract class Scanner : Gtk.TreeStore {
+        public enum Columns {
+            DISPLAY_NAME,
+            PARSE_NAME,
+            PERCENT,
+            SIZE,
+            ALLOC_SIZE,
+            ELEMENTS,
+            STATE,
+            ERROR,
+            COLUMNS
+        }
 
-		protected struct HardLink {
-			uint64 inode;
-			uint32 device;
+        public enum State {
+            SCANNING,
+            CANCELLED,
+            NEED_PERCENT,
+            ERROR,
+            DONE
+        }
 
-			public HardLink (FileInfo info) {
-				this.inode = info.get_attribute_uint64 (FileAttribute.UNIX_INODE);
-				this.device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
-			}
-		}
+        protected struct HardLink {
+            uint64 inode;
+            uint32 device;
 
-		protected Cancellable cancellable;
-		protected HashTable<File, unowned File> excluded_locations;
-		protected HardLink[] hardlinks;
-		protected Error? scan_error;
+            public HardLink (FileInfo info) {
+                this.inode = info.get_attribute_uint64 (FileAttribute.UNIX_INODE);
+                this.device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
+            }
+        }
 
-		protected static const string ATTRIBUTES =
-			FileAttribute.STANDARD_NAME + "," +
-			FileAttribute.STANDARD_DISPLAY_NAME + "," +
-			FileAttribute.STANDARD_TYPE + "," +
-			FileAttribute.STANDARD_SIZE +  "," +
-			FileAttribute.STANDARD_ALLOCATED_SIZE +	 "," +
-			FileAttribute.UNIX_NLINK + "," +
-			FileAttribute.UNIX_INODE + "," +
-			FileAttribute.UNIX_DEVICE + "," +
-			FileAttribute.ACCESS_CAN_READ;
+        protected Cancellable cancellable;
+        protected HashTable<File, unowned File> excluded_locations;
+        protected HardLink[] hardlinks;
+        protected Error? scan_error;
 
-		public File directory { get; private set; }
+        protected static const string ATTRIBUTES =
+            FileAttribute.STANDARD_NAME + "," +
+            FileAttribute.STANDARD_DISPLAY_NAME + "," +
+            FileAttribute.STANDARD_TYPE + "," +
+            FileAttribute.STANDARD_SIZE +  "," +
+            FileAttribute.STANDARD_ALLOCATED_SIZE +     "," +
+            FileAttribute.UNIX_NLINK + "," +
+            FileAttribute.UNIX_INODE + "," +
+            FileAttribute.UNIX_DEVICE + "," +
+            FileAttribute.ACCESS_CAN_READ;
 
-		public ScanFlags scan_flags { get; private set; }
+        public File directory { get; private set; }
 
-		public int max_depth { get; protected set; }
+        public ScanFlags scan_flags { get; private set; }
 
-		public signal void completed();
+        public int max_depth { get; protected set; }
 
-		public abstract void scan ();
+        public signal void completed();
 
-		public virtual void cancel () {
-			cancellable.cancel ();
-		}
+        public abstract void scan ();
 
-		public virtual void finish () throws Error {
-			if (scan_error != null) {
-				throw scan_error;
-			}
-		}
+        public virtual void cancel () {
+            cancellable.cancel ();
+        }
 
-		protected static const string FS_ATTRIBUTES =
-			FileAttribute.FILESYSTEM_SIZE + "," +
-			FileAttribute.FILESYSTEM_USED + "," +
-			FileAttribute.FILESYSTEM_FREE;
+        public virtual void finish () throws Error {
+            if (scan_error != null) {
+                throw scan_error;
+            }
+        }
 
-		public void get_filesystem_usage () throws Error {
-			var info = directory.query_filesystem_info (FS_ATTRIBUTES, cancellable);
+        protected static const string FS_ATTRIBUTES =
+            FileAttribute.FILESYSTEM_SIZE + "," +
+            FileAttribute.FILESYSTEM_USED + "," +
+            FileAttribute.FILESYSTEM_FREE;
 
-			var size = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_SIZE);
-			var used = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_USED);
-			var free = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_FREE);
-			var reserved = size - free - used;
+        public void get_filesystem_usage () throws Error {
+            var info = directory.query_filesystem_info (FS_ATTRIBUTES, cancellable);
 
-			var used_perc = 100 * ((double) used) / ((double) size);
-			var reserved_perc = 100 * ((double) reserved) / ((double) size);
+            var size = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_SIZE);
+            var used = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_USED);
+            var free = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_FREE);
+            var reserved = size - free - used;
 
-			Gtk.TreeIter? root_iter, iter;
-			append (out root_iter, null);
-			set (root_iter,
-			     Columns.STATE, State.DONE,
-			     Columns.DISPLAY_NAME, _("Total filesystem capacity"),
-			     Columns.PARSE_NAME, "",
-			     Columns.SIZE, size,
-			     Columns.ALLOC_SIZE, size,
-			     Columns.PERCENT, 100.0,
-			     Columns.ELEMENTS, -1,
-			     Columns.ERROR, null);
+            var used_perc = 100 * ((double) used) / ((double) size);
+            var reserved_perc = 100 * ((double) reserved) / ((double) size);
 
-			append (out iter, root_iter);
-			set (iter,
-			     Columns.STATE, State.DONE,
-			     Columns.DISPLAY_NAME, _("Used"),
-			     Columns.PARSE_NAME, "",
-			     Columns.SIZE, used,
-			     Columns.ALLOC_SIZE, used,
-			     Columns.PERCENT, used_perc,
-			     Columns.ELEMENTS, -1,
-			     Columns.ERROR, null);
+            Gtk.TreeIter? root_iter, iter;
+            append (out root_iter, null);
+            set (root_iter,
+                 Columns.STATE, State.DONE,
+                 Columns.DISPLAY_NAME, _("Total filesystem capacity"),
+                 Columns.PARSE_NAME, "",
+                 Columns.SIZE, size,
+                 Columns.ALLOC_SIZE, size,
+                 Columns.PERCENT, 100.0,
+                 Columns.ELEMENTS, -1,
+                 Columns.ERROR, null);
 
-			append (out iter, root_iter);
-			set (iter,
-			     Columns.STATE, State.DONE,
-			     Columns.DISPLAY_NAME, _("Reserved"),
-			     Columns.PARSE_NAME, "",
-			     Columns.SIZE, reserved,
-			     Columns.ALLOC_SIZE, reserved,
-			     Columns.PERCENT, reserved_perc,
-			     Columns.ELEMENTS, -1,
-			     Columns.ERROR, null);
-		}
+            append (out iter, root_iter);
+            set (iter,
+                 Columns.STATE, State.DONE,
+                 Columns.DISPLAY_NAME, _("Used"),
+                 Columns.PARSE_NAME, "",
+                 Columns.SIZE, used,
+                 Columns.ALLOC_SIZE, used,
+                 Columns.PERCENT, used_perc,
+                 Columns.ELEMENTS, -1,
+                 Columns.ERROR, null);
 
-		public Scanner (File directory, ScanFlags flags) {
-			this.directory = directory;
-			this.scan_flags = flags;
-			cancellable = new Cancellable();
-			scan_error = null;
-			set_column_types (new Type[] {
-					  typeof (string),  // DIR_NAME
-					  typeof (string),  // PARSE_NAME
-					  typeof (double),  // PERCENT
-					  typeof (uint64),  // SIZE
-					  typeof (uint64),  // ALLOC_SIZE
-					  typeof (int),	    // ELEMENTS
-					  typeof (State),   // STATE
-					  typeof (Error)}); // ERROR (if STATE is ERROR)
-			set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
+            append (out iter, root_iter);
+            set (iter,
+                 Columns.STATE, State.DONE,
+                 Columns.DISPLAY_NAME, _("Reserved"),
+                 Columns.PARSE_NAME, "",
+                 Columns.SIZE, reserved,
+                 Columns.ALLOC_SIZE, reserved,
+                 Columns.PERCENT, reserved_perc,
+                 Columns.ELEMENTS, -1,
+                 Columns.ERROR, null);
+        }
 
-			excluded_locations = Application.get_excluded_locations ();
+        public Scanner (File directory, ScanFlags flags) {
+            this.directory = directory;
+            this.scan_flags = flags;
+            cancellable = new Cancellable();
+            scan_error = null;
+            set_column_types (new Type[] {
+                typeof (string),  // DIR_NAME
+                typeof (string),  // PARSE_NAME
+                typeof (double),  // PERCENT
+                typeof (uint64),  // SIZE
+                typeof (uint64),  // ALLOC_SIZE
+                typeof (int),     // ELEMENTS
+                typeof (State),   // STATE
+                typeof (Error)    // ERROR (if STATE is ERROR)
+            });
+            set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 
-			if (ScanFlags.EXCLUDE_MOUNTS in flags) {
-				foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {
-					excluded_locations.add (File.new_for_path (mount.get_mount_path ()));
-				}
-			}
+            excluded_locations = Application.get_excluded_locations ();
 
-			excluded_locations.remove (directory);
-		}
-	}
+            if (ScanFlags.EXCLUDE_MOUNTS in flags) {
+                foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {
+                    excluded_locations.add (File.new_for_path (mount.get_mount_path ()));
+                }
+            }
+
+            excluded_locations.remove (directory);
+        }
+    }
 }

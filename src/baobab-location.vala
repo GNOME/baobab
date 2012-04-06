@@ -19,6 +19,7 @@
  */
 
 namespace Baobab {
+
     public class Location {
         public string name { get; private set; }
         public string? mount_point { get; private set; }

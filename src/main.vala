@@ -1,3 +1,4 @@
+/* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
@@ -18,10 +19,10 @@
  */
 
 int main (string[] args) {
-	Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
-	Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
-	Intl.textdomain (Config.GETTEXT_PACKAGE);
+    Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
+    Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
+    Intl.textdomain (Config.GETTEXT_PACKAGE);
 
-	var baobab = new Baobab.Application ();
-	return baobab.run (args);
+    var baobab = new Baobab.Application ();
+    return baobab.run (args);
 }

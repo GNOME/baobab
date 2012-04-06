@@ -19,6 +19,7 @@
  */
 
 namespace Baobab {
+
     public class LocationMonitor {
         private static LocationMonitor? instance = null;
 

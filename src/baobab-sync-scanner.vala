@@ -1,3 +1,4 @@
+/* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
@@ -20,127 +21,128 @@
  */
 
 namespace Baobab {
-	class SyncScanner : Scanner {
-		struct Results {
-			uint64 size;
-			uint64 alloc_size;
-			uint64 elements;
-			int max_depth;
-		}
 
-		Results add_directory (File directory, FileInfo info, Gtk.TreeIter? parent_iter = null) {
-			var results = Results ();
-			Gtk.TreeIter iter;
+    class SyncScanner : Scanner {
+        struct Results {
+            uint64 size;
+            uint64 alloc_size;
+            uint64 elements;
+            int max_depth;
+        }
 
-			if (directory in excluded_locations) {
-				return results;
-			}
+        Results add_directory (File directory, FileInfo info, Gtk.TreeIter? parent_iter = null) {
+            var results = Results ();
+            Gtk.TreeIter iter;
 
-			var display_name = info.get_display_name ();
-			var parse_name = directory.get_parse_name ();
+            if (directory in excluded_locations) {
+                return results;
+            }
 
-			append (out iter, parent_iter);
-			set (iter,
-			     Columns.DISPLAY_NAME, display_name,
-			     Columns.PARSE_NAME,   parse_name);
+            var display_name = info.get_display_name ();
+            var parse_name = directory.get_parse_name ();
 
-			results.size = info.get_size ();
-			if (info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
-				results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
-			}
-			results.elements = 1;
+            append (out iter, parent_iter);
+            set (iter,
+                 Columns.DISPLAY_NAME, display_name,
+                 Columns.PARSE_NAME,   parse_name);
 
-			try {
-				var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
-				FileInfo? child_info;
-				while ((child_info = children.next_file (cancellable)) != null) {
-					if (cancellable.is_cancelled ()) {
-						break;
-					}
+            results.size = info.get_size ();
+            if (info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
+                results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+            }
+            results.elements = 1;
 
-					switch (child_info.get_file_type ()) {
-						case FileType.DIRECTORY:
-							var child = directory.get_child (child_info.get_name ());
-							var child_results = add_directory (child, child_info, iter);
+            try {
+                var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+                FileInfo? child_info;
+                while ((child_info = children.next_file (cancellable)) != null) {
+                    if (cancellable.is_cancelled ()) {
+                        break;
+                    }
 
-							results.size += child_results.size;
-							results.alloc_size += child_results.alloc_size;
-							results.elements += child_results.elements;
-							results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
-							break;
+                    switch (child_info.get_file_type ()) {
+                        case FileType.DIRECTORY:
+                            var child = directory.get_child (child_info.get_name ());
+                            var child_results = add_directory (child, child_info, iter);
 
-						case FileType.REGULAR:
-							if (child_info.has_attribute (FileAttribute.UNIX_NLINK)) {
-								if (child_info.get_attribute_uint32 (FileAttribute.UNIX_NLINK) > 1) {
-									var hl = HardLink (child_info);
+                            results.size += child_results.size;
+                            results.alloc_size += child_results.alloc_size;
+                            results.elements += child_results.elements;
+                            results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
+                            break;
 
-									/* check if we've already encountered this file */
-									if (hl in hardlinks) {
-										continue;
-									}
+                        case FileType.REGULAR:
+                            if (child_info.has_attribute (FileAttribute.UNIX_NLINK)) {
+                                if (child_info.get_attribute_uint32 (FileAttribute.UNIX_NLINK) > 1) {
+                                    var hl = HardLink (child_info);
 
-									hardlinks += hl;
-								}
-							}
+                                    /* check if we've already encountered this file */
+                                    if (hl in hardlinks) {
+                                        continue;
+                                    }
 
-							results.size += child_info.get_size ();
-							if (child_info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
-								results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
-							}
-							results.elements++;
-							break;
+                                    hardlinks += hl;
+                                }
+                            }
 
-						default:
-							/* ignore other types (symlinks, sockets, devices, etc) */
-							break;
-					}
-				}
-			} catch (IOError.PERMISSION_DENIED e) {
-			} catch (Error e) {
-				warning ("couldn't iterate %s: %s", parse_name, e.message);
-			}
+                            results.size += child_info.get_size ();
+                            if (child_info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
+                                results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                            }
+                            results.elements++;
+                            break;
 
-			add_percent (results.size, iter);
+                        default:
+                            /* ignore other types (symlinks, sockets, devices, etc) */
+                            break;
+                    }
+                }
+            } catch (IOError.PERMISSION_DENIED e) {
+            } catch (Error e) {
+                warning ("couldn't iterate %s: %s", parse_name, e.message);
+            }
 
-			if (!cancellable.is_cancelled ()) {
-				set (iter,
-				     Columns.SIZE,       results.size,
-				     Columns.ALLOC_SIZE, results.alloc_size,
-				     Columns.ELEMENTS,   results.elements,
-				     Columns.STATE,      State.NEED_PERCENT);
-			} else {
-				set (iter,
-				     Columns.STATE,      State.CANCELLED);
-			}
+            add_percent (results.size, iter);
 
-			return results;
-		}
+            if (!cancellable.is_cancelled ()) {
+                set (iter,
+                     Columns.SIZE,       results.size,
+                     Columns.ALLOC_SIZE, results.alloc_size,
+                     Columns.ELEMENTS,   results.elements,
+                     Columns.STATE,      State.NEED_PERCENT);
+            } else {
+                set (iter,
+                     Columns.STATE,      State.CANCELLED);
+            }
 
-		void add_percent (uint64 parent_size, Gtk.TreeIter? parent = null) {
-			Gtk.TreeIter iter;
+            return results;
+        }
 
-			if (iter_children (out iter, parent)) {
-				do {
-					uint64 size;
-					get (iter, Columns.SIZE, out size);
-					set (iter,
-					     Columns.PERCENT, 100 * ((double) size) / ((double) parent_size),
-					     Columns.STATE,   State.DONE);
-				} while (iter_next (ref iter));
-			}
-		}
+        void add_percent (uint64 parent_size, Gtk.TreeIter? parent = null) {
+            Gtk.TreeIter iter;
 
-		public override void scan () {
-			try {
-				var info = directory.query_info (ATTRIBUTES, 0, cancellable);
-				var results = add_directory (directory, info);
-				add_percent (results.size);
-				max_depth = results.max_depth;
-			} catch { }
-		}
+            if (iter_children (out iter, parent)) {
+                do {
+                    uint64 size;
+                    get (iter, Columns.SIZE, out size);
+                    set (iter,
+                         Columns.PERCENT, 100 * ((double) size) / ((double) parent_size),
+                         Columns.STATE,   State.DONE);
+                } while (iter_next (ref iter));
+            }
+        }
 
-		public SyncScanner (File directory, ScanFlags flags) {
-			base (directory, flags);
-		}
-	}
+        public override void scan () {
+            try {
+                var info = directory.query_info (ATTRIBUTES, 0, cancellable);
+                var results = add_directory (directory, info);
+                add_percent (results.size);
+                max_depth = results.max_depth;
+            } catch { }
+        }
+
+        public SyncScanner (File directory, ScanFlags flags) {
+            base (directory, flags);
+        }
+    }
 }
