@@ -26,12 +26,13 @@ namespace Baobab {
 
         public uint64? size { get; private set; }
         public uint64? used { get; private set; }
+        public uint64? reserved { get; private set; }
         public Icon? icon { get; private set; }
 
         public Volume? volume { get; private set; }
         public Mount? mount { get; private set; }
 
-        protected static const string FS_ATTRIBUTES =
+        private static const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
             FileAttribute.FILESYSTEM_USED;
 
@@ -65,12 +66,7 @@ namespace Baobab {
             mount_point = "/";
             icon = new ThemedIcon ("drive-harddisk-system");
 
-            uint64? size_ = null;
-            uint64? used_ = null;
-            get_fs_size (File.new_for_path ("/"), out size_, out used_);
-
-            size = size_;
-            used = used_;
+            get_fs_usage (File.new_for_path ("/"));
         }
 
         public Location.for_home_folder () {
@@ -110,21 +106,25 @@ namespace Baobab {
                 make_this_home_location ();
             }
 
-            uint64? size_ = null;
-            uint64? used_ = null;
-            get_fs_size (file, out size_, out used_);
-
-            size = size_;
-            used = used_;
+            get_fs_usage (file);
         }
 
-        static void get_fs_size (File file, out uint64? size, out uint64? used) {
+        private void get_fs_usage (File file) {
+            size = null;
+            used = null;
+            reserved = null;
             try {
                 var info = file.query_filesystem_info (FS_ATTRIBUTES, null);
-                if (info.has_attribute (FileAttribute.FILESYSTEM_SIZE))
+                if (info.has_attribute (FileAttribute.FILESYSTEM_SIZE)) {
                     size = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_SIZE);
-                if (info.has_attribute (FileAttribute.FILESYSTEM_USED))
+                }
+                if (info.has_attribute (FileAttribute.FILESYSTEM_USED)) {
                     used = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_USED);
+                }
+                if (size != null && used != null && info.has_attribute (FileAttribute.FILESYSTEM_FREE)) {
+                    var free = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_FREE);
+                    reserved = size - free - used;
+                }
             } catch (Error e) {
             }
         }
