@@ -27,16 +27,15 @@ baobab_SOURCES = \
 	baobab-chart.c			\
 	baobab-treemap.c		\
 	baobab-ringschart.c		\
-	baobab-threaded-scanner.vala	\
-	baobab-sync-scanner.vala	\
-	baobab-scanner.vala		\
-	baobab-cellrenderers.vala	\
 	baobab-application.vala		\
-	baobab-window.vala		\
+	baobab-cellrenderers.vala	\
 	baobab-connect-server.vala	\
-	baobab-location.vala		\
 	baobab-location-monitor.vala	\
+	baobab-location.vala		\
 	baobab-location-widget.vala	\
+	baobab-scanner.vala		\
+	baobab-threaded-scanner.vala	\
+	baobab-window.vala		\
 	main.vala			\
 	$(BUILT_SOURCES)
 
@@ -58,10 +57,13 @@ baobab_LDADD = \
 
 MAINTAINERCLEANFILES = \
 	baobab-application.c		\
-	baobab-threaded-scanner.c	\
-	baobab-sync-scanner.c		\
-	baobab-scanner.c		\
 	baobab-cellrenderers.c		\
+	baobab-connect-server.c		\
+	baobab-location-monitor.c	\
+	baobab-location.c		\
+	baobab-location-widget.c	\
+	baobab-scanner.c		\
+	baobab-threaded-scanner.c	\
 	baobab-window.c			\
 	baobab_vala.stamp		\
 	main.c				\
