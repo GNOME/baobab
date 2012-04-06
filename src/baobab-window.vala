@@ -276,7 +276,7 @@ namespace Baobab {
                                    "program-name", _("Baobab"),
                                    "logo-icon-name", "baobab",
                                    "version", Config.VERSION,
-                                   "comments", "A graphical tool to analyze disk usage.",
+                                   "comments", _("A graphical tool to analyze disk usage."),
                                    "copyright", copyright,
                                    "license-type", Gtk.License.GPL_2_0,
                                    "wrap-license", false,
