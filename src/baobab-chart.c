@@ -334,8 +334,6 @@ baobab_chart_size_allocate (GtkWidget     *widget,
 {
   BaobabChart *chart;
   BaobabChartClass *class;
-  BaobabChartItem *item;
-  GList *node;
 
   g_return_if_fail (BAOBAB_IS_CHART (widget));
   g_return_if_fail (allocation != NULL);
@@ -347,12 +345,16 @@ baobab_chart_size_allocate (GtkWidget     *widget,
 
   if (gtk_widget_get_realized (widget))
     {
+      GList *node;
+
       gdk_window_move_resize (gtk_widget_get_window (widget),
-                  allocation->x, allocation->y,
-                  allocation->width, allocation->height);
+                              allocation->x, allocation->y,
+                              allocation->width, allocation->height);
 
       for (node = chart->priv->first_item; node != NULL; node = node->next)
         {
+          BaobabChartItem *item;
+
           item = (BaobabChartItem *) node->data;
           item->has_visible_children = FALSE;
           item->visible = FALSE;
@@ -483,7 +485,6 @@ static void
 baobab_chart_get_items (BaobabChart *chart,
                         GtkTreePath *root)
 {
-  BaobabChartItem *item;
   GList *node;
   GtkTreeIter initial_iter = {0};
   gdouble size;
@@ -520,13 +521,15 @@ baobab_chart_get_items (BaobabChart *chart,
 
   do
     {
+      BaobabChartItem *item;
+
       item = (BaobabChartItem *) node->data;
       item->has_any_child = gtk_tree_model_iter_children (chart->priv->model, &child_iter, &(item->iter));
 
       /* Calculate item geometry */
       class->calculate_item_geometry (chart, item);
 
-      if (! item->visible)
+      if (!item->visible)
         {
           node = node->prev;
           continue;
@@ -627,7 +630,6 @@ baobab_chart_update_draw (BaobabChart* chart,
 
   if (chart->priv->root == NULL)
     root_path = gtk_tree_path_new_first ();
-
 
   root_depth = gtk_tree_path_get_depth (root_path);
   node_depth = gtk_tree_path_get_depth (path);
