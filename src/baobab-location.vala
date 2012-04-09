@@ -66,12 +66,14 @@ namespace Baobab {
             mount_point = "/";
             icon = new ThemedIcon ("drive-harddisk-system");
 
-            get_fs_usage (File.new_for_path ("/"));
+            get_fs_usage (File.new_for_path (mount_point));
         }
 
         public Location.for_home_folder () {
             mount_point = Environment.get_home_dir ();
             make_this_home_location ();
+
+            get_fs_usage (File.new_for_path (mount_point));
         }
 
         void make_this_home_location () {
