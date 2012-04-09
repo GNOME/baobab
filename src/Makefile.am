@@ -34,7 +34,6 @@ baobab_SOURCES = \
 	baobab-location.vala		\
 	baobab-location-widget.vala	\
 	baobab-scanner.vala		\
-	baobab-threaded-scanner.vala	\
 	baobab-window.vala		\
 	main.vala			\
 	$(BUILT_SOURCES)
@@ -63,7 +62,6 @@ MAINTAINERCLEANFILES = \
 	baobab-location.c		\
 	baobab-location-widget.c	\
 	baobab-scanner.c		\
-	baobab-threaded-scanner.c	\
 	baobab-window.c			\
 	baobab_vala.stamp		\
 	main.c				\

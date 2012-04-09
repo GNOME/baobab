@@ -535,7 +535,7 @@ namespace Baobab {
                 return;
             }
 
-            scanner = new ThreadedScanner (directory, flags);
+            scanner = new Scanner (directory, flags);
             set_model (scanner);
 
             scanner.completed.connect(() => {
