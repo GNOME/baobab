@@ -49,9 +49,14 @@ namespace Baobab {
 
             var icon_theme = Gtk.IconTheme.get_default ();
             var icon_info = icon_theme.lookup_by_gicon (location.icon, 64, 0);
-            var pixbuf = icon_info.load_icon ();
-            var image = new Gtk.Image.from_pixbuf (pixbuf);
-            add (image);
+
+            try {
+                var pixbuf = icon_info.load_icon ();
+                var image = new Gtk.Image.from_pixbuf (pixbuf);
+                add (image);
+            } catch (Error e) {
+                warning ("Failed to load icon %s: %s", location.icon.to_string(), e.message);
+            }
 
             var label = new Gtk.Label (location.name);
             label.xalign = 0;
