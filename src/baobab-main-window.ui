@@ -163,12 +163,18 @@
         </child>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="infobar-action-area">
-            <property name="visible">False</property>
+            <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="infobar-close-button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Close</property>
+              </object>
+            </child>
           </object>
         </child>
       </object>

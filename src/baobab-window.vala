@@ -132,6 +132,9 @@ namespace Baobab {
             setup_home_page ();
             setup_treeview (builder);
 
+            var infobar_close_button = builder.get_object ("infobar-close-button") as Gtk.Button;
+            infobar_close_button.clicked.connect (() => { clear_message (); });
+
             // To make it draggable like a primary toolbar
             toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUBAR);
 
@@ -170,6 +173,7 @@ namespace Baobab {
                 scanner.cancel ();
             }
 
+            clear_message ();
             set_ui_page (UIPage.HOME);
         }
 
