@@ -20,16 +20,17 @@
 
 namespace Baobab {
 
-    public class LocationWidget : Gtk.Grid {
-        private static Gtk.SizeGroup name_size_group = null;
-        private static Gtk.SizeGroup mount_point_size_group = null;
-        private static Gtk.SizeGroup size_size_group = null;
-        private static Gtk.SizeGroup used_size_group = null;
-        private static Gtk.SizeGroup button_size_group = null;
+    public abstract class BaseLocationWidget : Gtk.Grid {
 
-        public delegate void ActionOnClick (Location location);
+        protected static Gtk.SizeGroup name_size_group = null;
+        protected static Gtk.SizeGroup mount_point_size_group = null;
+        protected static Gtk.SizeGroup size_size_group = null;
+        protected static Gtk.SizeGroup used_size_group = null;
+        protected static Gtk.SizeGroup button_size_group = null;
 
-        void ensure_size_groups () {
+        public delegate void ActionOnClick (Location? location = null);
+
+        protected void ensure_size_groups () {
             if (name_size_group != null)
                 return;
 
@@ -40,10 +41,17 @@ namespace Baobab {
             button_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
         }
 
-        public LocationWidget (Location location, ActionOnClick action) {
+        public BaseLocationWidget () {
             orientation = Gtk.Orientation.HORIZONTAL;
             column_spacing = 10;
             margin = 6;
+        }
+    }
+
+    public class LocationWidget : BaseLocationWidget {
+
+        public LocationWidget (Location location, BaseLocationWidget.ActionOnClick action) {
+            base ();
 
             ensure_size_groups ();
 
