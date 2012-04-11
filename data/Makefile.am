@@ -25,7 +25,8 @@ man_MANS = baobab.1
 EXTRA_DIST = 				\
 	baobab.desktop.in.in		\
 	$(gsettingsschema_in_files)	\
-	$(man_MANS)
+	$(man_MANS)			\
+	$(baobabicon_DATA)
 
 CLEANFILES =	 			\
 	$(baobabapp_in_files)		\
