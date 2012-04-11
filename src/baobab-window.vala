@@ -497,7 +497,8 @@ namespace Baobab {
                 }
                 return true;
             } catch (Error e) {
-                message ("", e.message, Gtk.MessageType.INFO);
+                var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
+                message (primary, e.message, Gtk.MessageType.ERROR);
                 return false;
             }
         }
