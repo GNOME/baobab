@@ -33,25 +33,23 @@ namespace Baobab {
         }
 
         bool on_out_watch (IOChannel channel, IOCondition cond) {
-            if (IOCondition.HUP in cond) {
-                selected(null);
-                return false;
-            }
-
             string? uri = null;
-            try {
-                size_t len;
-                size_t lineend;
-                channel.read_line(out uri, out len, out lineend);
-                if (len > 0) {
-                    uri = uri[0:(int)lineend];
+
+            if (IOCondition.IN in cond) {
+                try {
+                    size_t len;
+                    size_t lineend;
+                    channel.read_line(out uri, out len, out lineend);
+                    if (len > 0) {
+                        uri = uri[0:(int)lineend];
+                    }
+                } catch {
                 }
-            } catch {
-            } finally {
-                selected(uri);
             }
 
-            return true;
+            selected (uri);
+
+            return false;
         }
 
         public void show () {
