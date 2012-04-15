@@ -33,6 +33,7 @@ baobab_SOURCES = \
 	baobab-location-monitor.vala	\
 	baobab-location.vala		\
 	baobab-location-widget.vala	\
+	baobab-location-view.vala	\
 	baobab-scanner.vala		\
 	baobab-window.vala		\
 	main.vala			\
@@ -61,6 +62,7 @@ MAINTAINERCLEANFILES = \
 	baobab-location-monitor.c	\
 	baobab-location.c		\
 	baobab-location-widget.c	\
+	baobab-location-view.c		\
 	baobab-scanner.c		\
 	baobab-window.c			\
 	baobab_vala.stamp		\
@@ -70,7 +72,8 @@ MAINTAINERCLEANFILES = \
 EXTRA_DIST = \
 	baobab.gresource.xml \
 	baobab-main-window.ui \
-	baobab-menu.ui	\
-	baobab.css
+	baobab-menu.ui \
+	baobab.css \
+	baobab-watermark.svg
 
 -include $(top_srcdir)/git.mk

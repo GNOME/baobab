@@ -2,6 +2,17 @@
 @define-color location_bg_b alpha(shade(@theme_base_color, 0.9), 0.8);
 @define-color location_bg_c alpha(shade(@theme_base_color, 0.98), 0.8);
 
+#baobab-location-scrolled-window {
+    border-width: 1px 0 0 0;
+}
+
+#baobab-location-viewport {
+    background-image: url("resource:///org/gnome/baobab/ui/baobab-watermark.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+}
+
 BaobabBaseLocationWidget {
     padding: 6px;
 

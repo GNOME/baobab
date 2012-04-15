@@ -35,7 +35,7 @@ namespace Baobab {
         Gtk.Label infobar_secondary;
         Gtk.TreeView treeview;
         Gtk.Notebook chart_notebook;
-        Gtk.Grid location_view;
+        LocationView location_view;
         Chart rings_chart;
         Chart treemap_chart;
         Gtk.Spinner spinner;
@@ -139,9 +139,9 @@ namespace Baobab {
             rings_chart = builder.get_object ("rings-chart") as Chart;
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
-            location_view = builder.get_object ("location-view") as Gtk.Grid;
+            location_view = builder.get_object ("location-view") as Baobab.LocationView;
 
-            setup_home_page ();
+            setup_home_page (builder);
             setup_treeview (builder);
 
             var infobar_close_button = builder.get_object ("infobar-close-button") as Gtk.Button;
@@ -168,7 +168,6 @@ namespace Baobab {
             set_hide_titlebar_when_maximized (true);
 
             set_ui_page (UIPage.HOME);
-
             set_busy (false);
 
             show ();
@@ -346,7 +345,7 @@ namespace Baobab {
         }
 
         void update_locations () {
-            location_view.foreach ((widget) => { widget.destroy (); });
+            location_view.clear ();
 
             foreach (var location in location_monitor.get_locations ()) {
                 LocationWidget loc_widget;
@@ -354,6 +353,7 @@ namespace Baobab {
                     loc_widget = new LocationWidget (location, (location_) => {
                         on_scan_home_activate ();
                     });
+                    location_view.add_to_folders (loc_widget);
                 } else {
                     loc_widget = new LocationWidget (location, (location_) => {
                         location_.mount_volume.begin ((location__, res) => {
@@ -365,15 +365,26 @@ namespace Baobab {
                             }
                         });
                     });
+                    if (location.volume != null || location.mount_point == "/") {
+                        location_view.add_to_volumes (loc_widget);
+                    } else {
+                        location_view.add_to_folders (loc_widget);
+                    }
                 }
-
-                location_view.add (loc_widget);
             }
-
-            location_view.show_all ();
         }
 
-        void setup_home_page () {
+        void setup_home_page (Gtk.Builder builder) {
+            var scrolled_window = builder.get_object ("location-scrolled-window") as Gtk.ScrolledWindow;
+            scrolled_window.name = "baobab-location-scrolled-window";
+
+            location_view = new LocationView ();
+            location_view.show ();
+
+            var viewport = builder.get_object ("location-viewport") as Gtk.Viewport;
+            viewport.name = "baobab-location-viewport";
+            viewport.add (location_view);
+
             location_monitor = LocationMonitor.get ();
             location_monitor.changed.connect (() => { update_locations (); });
             update_locations ();
