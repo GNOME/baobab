@@ -27,6 +27,7 @@ namespace Baobab {
         Gtk.Notebook main_notebook;
         Gtk.Toolbar toolbar;
         Gtk.ToolItem toolbar_home_toolitem;
+        Gtk.SeparatorToolItem toolbar_separator;
         Gtk.ToolButton toolbar_show_home_page;
         Gtk.ToolButton toolbar_rescan;
         Gtk.InfoBar infobar;
@@ -117,6 +118,7 @@ namespace Baobab {
             main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
             toolbar = builder.get_object ("toolbar") as Gtk.Toolbar;
             toolbar_home_toolitem = builder.get_object ("home-page-toolitem") as Gtk.ToolItem;
+            toolbar_separator = builder.get_object ("separatortoolitem1") as Gtk.SeparatorToolItem;
             toolbar_show_home_page = builder.get_object ("show-home-page-button") as Gtk.ToolButton;
             toolbar_rescan = builder.get_object ("rescan-button") as Gtk.ToolButton;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
@@ -137,6 +139,8 @@ namespace Baobab {
 
             // To make it draggable like a primary toolbar
             toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUBAR);
+
+            toolbar_home_toolitem.set_expand (true);
 
             ui_settings = Application.get_ui_settings ();
             lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
@@ -162,6 +166,7 @@ namespace Baobab {
 
         void set_ui_page (UIPage page) {
             toolbar_home_toolitem.visible = (page == UIPage.HOME);
+            toolbar_separator.visible = (page == UIPage.RESULT);
             toolbar_show_home_page.visible = (page == UIPage.RESULT);
             toolbar_rescan.visible = (page == UIPage.RESULT);
 
