@@ -70,6 +70,7 @@ MAINTAINERCLEANFILES = \
 EXTRA_DIST = \
 	baobab.gresource.xml \
 	baobab-main-window.ui \
-	baobab-menu.ui
+	baobab-menu.ui	\
+	baobab.css
 
 -include $(top_srcdir)/git.mk

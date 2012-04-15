@@ -1,0 +1,21 @@
+@define-color location_bg_a alpha(shade(@theme_base_color, 0.97), 0.8);
+@define-color location_bg_b alpha(shade(@theme_base_color, 0.9), 0.8);
+@define-color location_bg_c alpha(shade(@theme_base_color, 0.98), 0.8);
+
+BaobabBaseLocationWidget {
+    padding: 6px;
+
+    border-radius : 5px;
+    border-width: 1px;
+    border-color: @borders;
+    border-style: solid;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from(@location_bg_a),
+                                    color-stop(0.63, @location_bg_b),
+                                    to(@location_bg_c));
+    background-color: transparent;
+}
+
+BaobabBaseLocationWidget GtkProgressBar {
+    font: 8px;
+}

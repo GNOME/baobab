@@ -114,6 +114,16 @@ namespace Baobab {
                 error ("loading main builder file: %s", e.message);
             }
 
+            // Attach custom CSS
+            try {
+                var css_provider = new Gtk.CssProvider ();
+                var data = GLib.resources_lookup_data ("/org/gnome/baobab/ui/baobab.css", 0);
+                css_provider.load_from_data ((string) data.get_data (), -1);
+                Gtk.StyleContext.add_provider_for_screen (get_screen (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (Error e) {
+                error ("loading CSS data: %s", e.message);
+            }
+
             // Cache some objects from the builder.
             main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
             toolbar = builder.get_object ("toolbar") as Gtk.Toolbar;
