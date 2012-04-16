@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-21 17:19+0000\n"
-"PO-Revision-Date: 2012-02-22 11:07+0100\n"
+"POT-Creation-Date: 2012-04-10 21:24+0000\n"
+"PO-Revision-Date: 2012-04-16 16:16+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,26 +28,13 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Compruebe el tamaño de las carpetas y el espacio disponible en disco"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Preferencias del analizador de uso de disco"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr ""
-"Seleccionar qué _dispositivos incluir en el análisis del sistema de archivos:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Monitorizar cambios en su carpeta personal"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Monitor Home"
@@ -93,182 +80,6 @@ msgstr "Gráfico activo"
 msgid "Which type of chart should be displayed."
 msgstr "Qué tipo de gráfico se debe mostrar."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Analizador"
-
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Analizar carpeta _personal"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Analizar sistema de _archivos"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "Analizar _carpeta…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "Analizar carpeta _remota…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Editar"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "_Expandir todo"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "_Contraer todo"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_Ver"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "Barra de _herramientas"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "Barra de _estado"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "Espacio _ocupado"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "Ay_uda"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "Índ_ice"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "Analizar su carpeta personal"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Analizar carpeta personal"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "Analizar el sistema de archivos"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "Analizar sistema de archivos"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Analizar una carpeta"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Analizar carpeta"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "Analizar una carpeta o un sistema de archivos remoto"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Analizar carpeta remota"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Detener el análisis"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Actualizar"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Analizando…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Capacidad total del sistema de archivos:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "Usado:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "Disponible:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Calculando barras de porcentajes…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Preparada"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Capacidad total de los sistemas de archivos"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Uso total de los sistemas de archivos"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "contiene enlaces duros de:"
-
-#: ../src/baobab.c:509
-#, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d elemento"
-msgstr[1] "%5d elementos"
-
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "No se pudo inicializar la monitorización"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Los cambios en su carpeta personal no serán monitorizados."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Ver como gráfico de anillo"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Ver como gráfico de árbol"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Mostrar versión"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[CARPETA]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Demasiados parámetros. Sólo se puede especificar una carpeta."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "No se pudo detectar ningún punto de montaje."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "El uso del disco no se puede analizar sin puntos de montaje."
-
 #: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "Profundidad máxima"
@@ -293,279 +104,213 @@ msgstr "Nodo raíz del gráfico"
 msgid "Set the root node from the model"
 msgstr "Establecer el nodo raíz del modelo"
 
-#: ../src/baobab-chart.c:905
+#: ../src/baobab-chart.c:908
 msgid "Move to parent folder"
 msgstr "Mover a la carpeta superior"
 
-#: ../src/baobab-chart.c:909
+#: ../src/baobab-chart.c:912
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: ../src/baobab-chart.c:913
+#: ../src/baobab-chart.c:916
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: ../src/baobab-chart.c:917
+#: ../src/baobab-chart.c:920
 msgid "Save screenshot"
 msgstr "Guardar la captura de pantalla"
 
-#: ../src/baobab-chart.c:1776
+#: ../src/baobab-chart.c:1809
 msgid "Cannot create pixbuf image!"
 msgstr "No se puede crear la imagen pixbuf"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
+#: ../src/baobab-chart.c:1817
 msgid "Save Snapshot"
 msgstr "Guardar captura"
 
-#: ../src/baobab-chart.c:1811
+#: ../src/baobab-chart.c:1844
 msgid "_Image type:"
 msgstr "Tipo de _imagen:"
 
-#: ../src/baobab-prefs.c:173
+#: ../src/baobab-location.vala:65
+#| msgid "Scan Home"
+msgid "Main volume"
+msgstr "Volumen principal"
+
+#: ../src/baobab-location.vala:80
+#| msgid "Scan home folder"
+msgid "Home folder"
+msgstr "Carpeta personal"
+
+#: ../src/baobab-location-widget.vala:85
+msgid "Usage unknown"
+msgstr "Uso desconocido"
+
+#: ../src/baobab-location-widget.vala:90
 msgid "Scan"
 msgstr "Analizar"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Dispositivo"
+#: ../src/baobab-location-widget.vala:90
+msgid "Mount and scan"
+msgstr "Montar y analizar"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Punto de montaje"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Analizar una carpeta"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Tipo de sistema de archivos"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Analizar carpeta"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Tamaño total"
+#: ../src/baobab-main-window.ui.h:3
+#| msgid "Scan Remote Folder"
+msgid "Scan a remote folder"
+msgstr "Analizar una carpeta remota"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Disponible"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Analizar carpeta remota"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "No se puede analizar la ubicación «%s»"
+#: ../src/baobab-main-window.ui.h:5
+#| msgid "Cannot scan location \"%s\""
+msgid "Show all locations"
+msgstr "Mostrar todas las ubicaciones"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Lugar personalizado"
+#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
+msgid "All locations"
+msgstr "Todas las ubicaciones"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Stop scanning"
+msgstr "Detener el análisis"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP público"
+#: ../src/baobab-main-window.ui.h:8
+#| msgid "Ready"
+msgid "Reload"
+msgstr "Recargar"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (con entrada)"
+#: ../src/baobab-main-window.ui.h:9
+msgid "label"
+msgstr "etiqueta"
 
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Compartición Windows"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Close"
+msgstr "Cerrar"
 
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV seguro (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
-"No se puede conectar con el servidor. Debe introducir un nombre para el "
-"servidor."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Introduzca un nombre e inténtelo de nuevo."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Lugar (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Servidor:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Información opcional:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Compartición:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Puerto:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Carpeta:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Usuario:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Nombre del _dominio:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Conectar con el servidor"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "_Tipo de servicio:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "A_nalizar"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "¿Quiere volver a analizar su carpeta personal?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"El contenido de su carpeta personal ha cambiado. Seleccione volver a "
-"analizar para actualizar los detalles de uso de disco."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "_Volver a analizar"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:11
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:12
 msgid "Usage"
 msgstr "Uso"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:13
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:14
 msgid "Contents"
 msgstr "Contenido"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Seleccione la carpeta"
+#: ../src/baobab-main-window.ui.h:15
+#| msgid "View as Rings Chart"
+msgid "Rings Chart"
+msgstr "Gráfico de anillos"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "_Mostrar carpetas ocultas"
+#: ../src/baobab-main-window.ui.h:16
+#| msgid "View as Treemap Chart"
+msgid "Treemap Chart"
+msgstr "Gráfico de árbol"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "No se puede comprobar la carpeta excluida."
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "«%s» no es una carpeta válida"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "No se pudo analizar el uso del disco."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:17
 msgid "_Open Folder"
 msgstr "_Abrir carpeta"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver a la papelera"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "No se ha podido abrir la carpeta «%s»"
+#: ../src/baobab-menu.ui.h:1
+msgid "_All locations"
+msgstr "_Todas las ubicaciones"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "No hay instalado ningún visor capaz de mostrar la carpeta."
+#: ../src/baobab-menu.ui.h:2
+#| msgid "Scan Home"
+msgid "_Scan Home"
+msgstr "_Analizar carpeta personal"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "No se ha podido mover «%s» a la papelera"
+#: ../src/baobab-menu.ui.h:3
+msgid "Scan F_older…"
+msgstr "Analizar _carpeta…"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "No se pudo mover el archivo a la papelera"
+#: ../src/baobab-menu.ui.h:4
+#| msgid "S_can Remote Folder…"
+msgid "Scan Remote Fo_lder…"
+msgstr "Analizar carpeta _remota…"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Detalles: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Stop"
+msgstr "_Detener"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Hubo un error al mostrar la ayuda."
+#: ../src/baobab-menu.ui.h:6
+#| msgid "Ready"
+msgid "_Reload"
+msgstr "_Recargar"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Este programa es software libre; puede distribuirlo y modificarlo bajo los "
-"términos GNU Licencia Publica General como fue publicado por la Free "
-"Software Foundation; en la versión 2 de la licencia, o (a su elección) "
-"cualquier versión posterior."
+#: ../src/baobab-menu.ui.h:7
+msgid "_Help"
+msgstr "Ay_uda"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Este programa se distribuye con la esperanza de que sea útil, pero SIN "
-"NINGUNA GARANTÍA, incluso sin la garantía implícita de COMERCIABILIDAD o "
-"IDONEIDAD PARA UN PROPÓSITO EN FIN. Véase la Licencia Pública General de GNU "
-"para más detalles."
+#: ../src/baobab-menu.ui.h:8
+msgid "_About"
+msgstr "A_cerca de"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Debería haber recibido una copia de la Licencia Pública General GNU junto "
-"con el Visor de sucesos de GNOME; de lo contrario, escriba a la Free "
-"Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-"
-"1301 EE. UU."
+#: ../src/baobab-menu.ui.h:9
+#| msgid "_Edit"
+msgid "_Quit"
+msgstr "_Salir"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+#| msgid "_Analyzer"
+msgid "_Analizer"
+msgstr "_Analizador"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_View"
+msgstr "_Ver"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Toolbar"
+msgstr "Barra de _herramientas"
+
+#: ../src/baobab-menu.ui.h:13
+#| msgid "All_ocated Space"
+msgid "_Allocated Space"
+msgstr "Espacio _ocupado"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "_Expand All"
+msgstr "_Expandir todo"
+
+#: ../src/baobab-menu.ui.h:15
+msgid "_Collapse All"
+msgstr "_Contraer todo"
+
+#: ../src/baobab-window.vala:202
+msgid "Select Folder"
+msgstr "Seleccione la carpeta"
+
+#: ../src/baobab-window.vala:280
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:283
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una herramienta gráfica para analizar el uso del disco."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:288
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012\n"
@@ -578,19 +323,272 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "El documento no existe."
+#: ../src/baobab-window.vala:349
+#| msgid "Could not analyze disk usage."
+msgid "Could not analyze volume."
+msgstr "No se pudo analizar el volumen."
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "La carpeta no existe."
+#: ../src/baobab-window.vala:463
+msgid "Cancel scan"
+msgstr "Cancelar análisis"
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:494
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "«%s» no es una carpeta válida"
+
+#: ../src/baobab-window.vala:495
+msgid "Could not analyze disk usage."
+msgstr "No se pudo analizar el uso del disco."
+
+#: ../src/baobab-window.vala:553
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "No se pudo analizar la carpeta «%s» o alguna de sus subcarpetas."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Preferencias del analizador de uso de disco"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr ""
+#~ "Seleccionar qué _dispositivos incluir en el análisis del sistema de "
+#~ "archivos:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Monitorizar cambios en su carpeta personal"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Analizar carpeta _personal"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Analizar sistema de _archivos"
+
+#~ msgid "St_atusbar"
+#~ msgstr "Barra de _estado"
+
+#~ msgid "_Contents"
+#~ msgstr "Índ_ice"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Analizar su carpeta personal"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Analizar el sistema de archivos"
+
+#~ msgid "Scan File System"
+#~ msgstr "Analizar sistema de archivos"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Analizar una carpeta o un sistema de archivos remoto"
+
+#~ msgid "Refresh"
+#~ msgstr "Actualizar"
+
+#~ msgid "Scanning…"
+#~ msgstr "Analizando…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Capacidad total del sistema de archivos:"
+
+#~ msgid "used:"
+#~ msgstr "Usado:"
+
+#~ msgid "available:"
+#~ msgstr "Disponible:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Calculando barras de porcentajes…"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Capacidad total de los sistemas de archivos"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Uso total de los sistemas de archivos"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "contiene enlaces duros de:"
+
+#~ msgid "%5d item"
+#~ msgid_plural "%5d items"
+#~ msgstr[0] "%5d elemento"
+#~ msgstr[1] "%5d elementos"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "No se pudo inicializar la monitorización"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Los cambios en su carpeta personal no serán monitorizados."
+
+#~ msgid "Show version"
+#~ msgstr "Mostrar versión"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[CARPETA]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Demasiados parámetros. Sólo se puede especificar una carpeta."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "No se pudo detectar ningún punto de montaje."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "El uso del disco no se puede analizar sin puntos de montaje."
+
+#~ msgid "Device"
+#~ msgstr "Dispositivo"
+
+#~ msgid "Mount Point"
+#~ msgstr "Punto de montaje"
+
+#~ msgid "File System Type"
+#~ msgstr "Tipo de sistema de archivos"
+
+#~ msgid "Total Size"
+#~ msgstr "Tamaño total"
+
+#~ msgid "Available"
+#~ msgstr "Disponible"
+
+#~ msgid "Custom Location"
+#~ msgstr "Lugar personalizado"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "FTP público"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (con entrada)"
+
+#~ msgid "Windows share"
+#~ msgstr "Compartición Windows"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "WebDAV seguro (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "No se puede conectar con el servidor. Debe introducir un nombre para el "
+#~ "servidor."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Introduzca un nombre e inténtelo de nuevo."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Lugar (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Servidor:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Información opcional:"
+
+#~ msgid "_Share:"
+#~ msgstr "_Compartición:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Puerto:"
+
+#~ msgid "_Folder:"
+#~ msgstr "_Carpeta:"
+
+#~ msgid "_User Name:"
+#~ msgstr "_Usuario:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "Nombre del _dominio:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Conectar con el servidor"
+
+#~ msgid "Service _type:"
+#~ msgstr "_Tipo de servicio:"
+
+#~ msgid "_Scan"
+#~ msgstr "A_nalizar"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "¿Quiere volver a analizar su carpeta personal?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "El contenido de su carpeta personal ha cambiado. Seleccione volver a "
+#~ "analizar para actualizar los detalles de uso de disco."
+
+#~ msgid "_Rescan"
+#~ msgstr "_Volver a analizar"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "_Mostrar carpetas ocultas"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "No se puede comprobar la carpeta excluida."
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "No se ha podido abrir la carpeta «%s»"
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "No hay instalado ningún visor capaz de mostrar la carpeta."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "No se ha podido mover «%s» a la papelera"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "No se pudo mover el archivo a la papelera"
+
+#~ msgid "Details: %s"
+#~ msgstr "Detalles: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Hubo un error al mostrar la ayuda."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Este programa es software libre; puede distribuirlo y modificarlo bajo "
+#~ "los términos GNU Licencia Publica General como fue publicado por la Free "
+#~ "Software Foundation; en la versión 2 de la licencia, o (a su elección) "
+#~ "cualquier versión posterior."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Este programa se distribuye con la esperanza de que sea útil, pero SIN "
+#~ "NINGUNA GARANTÍA, incluso sin la garantía implícita de COMERCIABILIDAD o "
+#~ "IDONEIDAD PARA UN PROPÓSITO EN FIN. Véase la Licencia Pública General de "
+#~ "GNU para más detalles."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Debería haber recibido una copia de la Licencia Pública General GNU junto "
+#~ "con el Visor de sucesos de GNOME; de lo contrario, escriba a la Free "
+#~ "Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
+#~ "02110-1301 EE. UU."
+
+#~ msgid "The document does not exist."
+#~ msgstr "El documento no existe."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "La carpeta no existe."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "Inspeccionar carpeta _remota…"
 
 #~ msgid "Scan F_older..."
 #~ msgstr "Inspeccionar _carpeta…"
-
-#~ msgid "Scan home folder"
-#~ msgstr "Inspecciona la carpeta personal"
