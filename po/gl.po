@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-21 11:42+0100\n"
-"PO-Revision-Date: 2012-02-21 11:43+0100\n"
+"POT-Creation-Date: 2012-04-19 18:36+0200\n"
+"PO-Revision-Date: 2012-04-19 18:38+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
@@ -35,26 +35,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Verificar o tamaño dos cartafoles e o espazo dispoñíbel no disco"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Preferencias do analizador do uso do disco"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr ""
-"Seleccione os _dispositivos a incluír no exame do sistema de ficheiros:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Monitorizar os cambios no cartafol persoal"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Monitor Home"
@@ -100,182 +87,6 @@ msgstr "Gráfico activo"
 msgid "Which type of chart should be displayed."
 msgstr "Que tipo de gráfica debería mostrarse."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Analizador"
-
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Analizar o cartafol _persoal"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Examinar o sistema de _ficheiros"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "Inspeccionar _cartafol…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "Inspeccionar cartafol _remoto…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Editar"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "_Expandir todo"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "_Contraer todo"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_Ver"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "Barra de _ferramentas"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "B_arra de estado"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "Espaz_o asignado"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "A_xuda"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "_Contidos"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "Inspeccionar o seu cartafol persoal"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Inspeccionar o cartafol persoal"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "Inspeccionar o sistema de ficheiros"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "Inspeccionar o sistema de ficheiros"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Inspeccionar un cartafol"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Inspeccionar cartafol"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "Inspeccionar un cartafol remoto ou sistema de ficheiros"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Analizar cartafol remoto"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Deter a análise"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Actualizar"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Inspeccionando…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Capacidade total do sistema de ficheiros:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "usado:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "dispoñíbel:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Calculando barras de porcentaxes…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Listo"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Capacidade total do sistema de ficheiros"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Uso total do sistema de ficheiros"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "contén ligazóns duras para:"
-
-#: ../src/baobab.c:509
-#, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d elemento"
-msgstr[1] "%5d elementos"
-
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Non foi posíbel inicializar a monitorización"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Non se monitorizarán os cambios no seu cartafol persoal."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Visualizar como gráfica de aneis"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Visualizar como diagrama en árbore"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Mostrar a versión"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[DIRECTORY]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Demasiados argumentos. Só se pode especificar un cartafol."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Non foi posíbel detectar ningún punto de montaxe."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Sen puntos de montaxe non é posíbel analizar o uso do disco."
-
 #: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "Profundidade máxima"
@@ -300,276 +111,200 @@ msgstr "Nodo raíz da gráfica"
 msgid "Set the root node from the model"
 msgstr "Definir o nodo raíz do modelo"
 
-#: ../src/baobab-chart.c:905
+#: ../src/baobab-chart.c:908
 msgid "Move to parent folder"
 msgstr "Mover a un cartafol pai"
 
-#: ../src/baobab-chart.c:909
+#: ../src/baobab-chart.c:912
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: ../src/baobab-chart.c:913
+#: ../src/baobab-chart.c:916
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: ../src/baobab-chart.c:917
+#: ../src/baobab-chart.c:920
 msgid "Save screenshot"
 msgstr "Gardar a captura de pantalla"
 
-#: ../src/baobab-chart.c:1776
+#: ../src/baobab-chart.c:1809
 msgid "Cannot create pixbuf image!"
 msgstr "Non é posíbel crear a imaxe pixbuf!"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
+#: ../src/baobab-chart.c:1817
 msgid "Save Snapshot"
 msgstr "Gardar a foto instantánea"
 
-#: ../src/baobab-chart.c:1811
+#: ../src/baobab-chart.c:1844
 msgid "_Image type:"
 msgstr "Tipo de _imaxe:"
 
-#: ../src/baobab-prefs.c:173
+#: ../src/baobab-location.vala:65
+msgid "Main volume"
+msgstr "Volume principal"
+
+#: ../src/baobab-location.vala:80
+msgid "Home folder"
+msgstr "Cartafol persoal"
+
+#: ../src/baobab-location-widget.vala:85
+msgid "Usage unknown"
+msgstr "Uso descoñecido"
+
+#: ../src/baobab-location-widget.vala:90
 msgid "Scan"
 msgstr "Análise"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Dispositivo"
+#: ../src/baobab-location-widget.vala:90
+msgid "Mount and scan"
+msgstr "Montar e analizar"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Punto de montaxe"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Inspeccionar un cartafol"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Tipo de sistema de ficheiros"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Inspeccionar cartafol"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Tamaño total"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Analizar un cartafol remoto"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Dispoñíbel"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Analizar cartafol remoto"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Non é posíbel analizar a localización «%s»"
+#: ../src/baobab-main-window.ui.h:5
+msgid "Show all locations"
+msgstr "Mostrar todas as localizacións"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Localización personalizada"
+#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
+msgid "All locations"
+msgstr "Todas as localizacións"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Stop scanning"
+msgstr "Deter a análise"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP público"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Reload"
+msgstr "Recargar"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (con rexistro)"
+#: ../src/baobab-main-window.ui.h:9
+msgid "label"
+msgstr "etiqueta"
 
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Ficheiros compartidos con Windows"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Close"
+msgstr "Pechar"
 
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV seguro (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Non é posíbel conectar co servidor. Introduza un nome para o servidor."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Introduza un nome e ténteo de novo."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Localización (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Servidor:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Información opcional:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "C_ompartir:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Porto:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "Carta_fol:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "Nome de _usuario:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Nome do _dominio:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Conectar co servidor"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "_Tipo de servizo:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "A_nalizar"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Quere analizar de novo o seu cartafol persoal?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"O contido do seu cartafol persoal cambiou. Seleccione Analizar de novo para "
-"actualizar os detalles de uso do disco."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "Analiza_r de novo"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:11
 msgid "Folder"
 msgstr "Cartafol"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:12
 msgid "Usage"
 msgstr "Uso"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:13
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:14
 msgid "Contents"
 msgstr "Contidos"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Seleccionar cartafol"
+#: ../src/baobab-main-window.ui.h:15
+msgid "Rings Chart"
+msgstr "Gráfico de aneis"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "Mo_strar os cartafoles ocultos"
+#: ../src/baobab-main-window.ui.h:16
+msgid "Treemap Chart"
+msgstr "Gráfico de árbore"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Non é posíbel comprobar un cartafol excluído!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "«%s» non é un cartafol válido"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Non foi posíbel analizar o uso do disco."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:17
 msgid "_Open Folder"
 msgstr "_Abrir cartafol"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Mov_er ao lixo"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Non foi posíbel abrir o cartafol «%s»"
+#: ../src/baobab-menu.ui.h:1
+msgid "_All locations"
+msgstr "_Todas as localizacións"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Non hai instalado ningún visualizador capaz de mostrar o cartafol."
+#: ../src/baobab-menu.ui.h:2
+msgid "_Scan Home"
+msgstr "_Analizar cartafol persoal"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Non foi posíbel mover «%s» ao lixo"
+#: ../src/baobab-menu.ui.h:3
+msgid "Scan F_older…"
+msgstr "Inspeccionar _cartafol…"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Non foi posíbel mover o ficheiro ao lixo"
+#: ../src/baobab-menu.ui.h:4
+msgid "Scan Remote Fo_lder…"
+msgstr "Analizar cartafol _remoto…"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Detalles: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Stop"
+msgstr "_Deter"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Produciuse un erro ao mostrar a axuda."
+#: ../src/baobab-menu.ui.h:6
+msgid "_Reload"
+msgstr "_Recargar"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Este programa é software libre; pode redistribuílo ou modificalo baixo as "
-"condicións da Licenza pública xeral GNU, tal como a publica a Free Software "
-"Foundation; tanto na versión 2 da Licenza como (segundo o seu criterio) en "
-"calquera versión posterior."
+#: ../src/baobab-menu.ui.h:7
+msgid "_Help"
+msgstr "A_xuda"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Este programa distribúese coa intención de que sexa útil, mais SEN NINGUNHA "
-"GARANTIA, nin sequera a garantía implícita de VALOR COMERCIAL ou ADECUACIÓN "
-"A UN FIN ESPECÍFICO. Consulte a Licenza pública xeral de GNU para máis "
-"información."
+#: ../src/baobab-menu.ui.h:8
+msgid "_About"
+msgstr "_Sobre"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Debeu recibir unha copia da Licenza pública xeral GNU xunto con este "
-"programa. De non ser así, escriba á Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Quit"
+msgstr "_Saír"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Analyzer"
+msgstr "_Analizador"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_View"
+msgstr "_Ver"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Toolbar"
+msgstr "Barra de _ferramentas"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Allocated Space"
+msgstr "Espazo _ocupado"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "_Expand All"
+msgstr "_Expandir todo"
+
+#: ../src/baobab-menu.ui.h:15
+msgid "_Collapse All"
+msgstr "_Contraer todo"
+
+#: ../src/baobab-window.vala:202
+msgid "Select Folder"
+msgstr "Seleccionar cartafol"
+
+#: ../src/baobab-window.vala:280
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:283
 msgid "A graphical tool to analyze disk usage."
 msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:288
 msgid "translator-credits"
 msgstr ""
 "Fran Diéguez <frandieguez@ubuntu.com>, 2009, 2010.\n"
@@ -581,19 +316,275 @@ msgstr ""
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000-2001.\n"
 "Ruben Lopez Gomez <ryu@mundivia.es>, 1999."
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "O documento non existe."
+#: ../src/baobab-window.vala:349
+msgid "Could not analyze volume."
+msgstr "Non foi posíbel analizar o volume."
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "O cartafol non existe."
+#: ../src/baobab-window.vala:463
+msgid "Cancel scan"
+msgstr "Cancelar análise"
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "«%s» non é un cartafol válido"
+
+#: ../src/baobab-window.vala:495
+msgid "Could not analyze disk usage."
+msgstr "Non foi posíbel analizar o uso do disco."
+
+#: ../src/baobab-window.vala:554
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Non foi posíbel analizar o cartafol «%s» ou algún dos seus subcartafois."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Preferencias do analizador do uso do disco"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr ""
+#~ "Seleccione os _dispositivos a incluír no exame do sistema de ficheiros:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Monitorizar os cambios no cartafol persoal"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Analizar o cartafol _persoal"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Examinar o sistema de _ficheiros"
+
+#~ msgid "_Edit"
+#~ msgstr "_Editar"
+
+#~ msgid "St_atusbar"
+#~ msgstr "B_arra de estado"
+
+#~ msgid "_Contents"
+#~ msgstr "_Contidos"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Inspeccionar o seu cartafol persoal"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Inspeccionar o sistema de ficheiros"
+
+#~ msgid "Scan File System"
+#~ msgstr "Inspeccionar o sistema de ficheiros"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Inspeccionar un cartafol remoto ou sistema de ficheiros"
+
+#~ msgid "Refresh"
+#~ msgstr "Actualizar"
+
+#~ msgid "Scanning…"
+#~ msgstr "Inspeccionando…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Capacidade total do sistema de ficheiros:"
+
+#~ msgid "used:"
+#~ msgstr "usado:"
+
+#~ msgid "available:"
+#~ msgstr "dispoñíbel:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Calculando barras de porcentaxes…"
+
+#~ msgid "Ready"
+#~ msgstr "Listo"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Capacidade total do sistema de ficheiros"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Uso total do sistema de ficheiros"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "contén ligazóns duras para:"
+
+#~ msgid "%5d item"
+#~ msgid_plural "%5d items"
+#~ msgstr[0] "%5d elemento"
+#~ msgstr[1] "%5d elementos"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Non foi posíbel inicializar a monitorización"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Non se monitorizarán os cambios no seu cartafol persoal."
+
+#~ msgid "Show version"
+#~ msgstr "Mostrar a versión"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[DIRECTORY]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Demasiados argumentos. Só se pode especificar un cartafol."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Non foi posíbel detectar ningún punto de montaxe."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "Sen puntos de montaxe non é posíbel analizar o uso do disco."
+
+#~ msgid "Device"
+#~ msgstr "Dispositivo"
+
+#~ msgid "Mount Point"
+#~ msgstr "Punto de montaxe"
+
+#~ msgid "File System Type"
+#~ msgstr "Tipo de sistema de ficheiros"
+
+#~ msgid "Total Size"
+#~ msgstr "Tamaño total"
+
+#~ msgid "Available"
+#~ msgstr "Dispoñíbel"
+
+#~ msgid "Custom Location"
+#~ msgstr "Localización personalizada"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "FTP público"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (con rexistro)"
+
+#~ msgid "Windows share"
+#~ msgstr "Ficheiros compartidos con Windows"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "WebDAV seguro (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "Non é posíbel conectar co servidor. Introduza un nome para o servidor."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Introduza un nome e ténteo de novo."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Localización (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Servidor:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Información opcional:"
+
+#~ msgid "_Share:"
+#~ msgstr "C_ompartir:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Porto:"
+
+#~ msgid "_Folder:"
+#~ msgstr "Carta_fol:"
+
+#~ msgid "_User Name:"
+#~ msgstr "Nome de _usuario:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "Nome do _dominio:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Conectar co servidor"
+
+#~ msgid "Service _type:"
+#~ msgstr "_Tipo de servizo:"
+
+#~ msgid "_Scan"
+#~ msgstr "A_nalizar"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Quere analizar de novo o seu cartafol persoal?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "O contido do seu cartafol persoal cambiou. Seleccione Analizar de novo "
+#~ "para actualizar os detalles de uso do disco."
+
+#~ msgid "_Rescan"
+#~ msgstr "Analiza_r de novo"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "Mo_strar os cartafoles ocultos"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Non é posíbel comprobar un cartafol excluído!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "Non foi posíbel abrir o cartafol «%s»"
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "Non hai instalado ningún visualizador capaz de mostrar o cartafol."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "Non foi posíbel mover «%s» ao lixo"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Non foi posíbel mover o ficheiro ao lixo"
+
+#~ msgid "Details: %s"
+#~ msgstr "Detalles: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Produciuse un erro ao mostrar a axuda."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Este programa é software libre; pode redistribuílo ou modificalo baixo as "
+#~ "condicións da Licenza pública xeral GNU, tal como a publica a Free "
+#~ "Software Foundation; tanto na versión 2 da Licenza como (segundo o seu "
+#~ "criterio) en calquera versión posterior."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Este programa distribúese coa intención de que sexa útil, mais SEN "
+#~ "NINGUNHA GARANTIA, nin sequera a garantía implícita de VALOR COMERCIAL ou "
+#~ "ADECUACIÓN A UN FIN ESPECÍFICO. Consulte a Licenza pública xeral de GNU "
+#~ "para máis información."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Debeu recibir unha copia da Licenza pública xeral GNU xunto con este "
+#~ "programa. De non ser así, escriba á Free Software Foundation, Inc., 51 "
+#~ "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "O documento non existe."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "O cartafol non existe."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "Anali_zar cartafol remoto…"
 
 #~ msgid "Scan F_older..."
 #~ msgstr "Analizar cartaf_ol…"
-
-#~ msgid "Scan home folder"
-#~ msgstr "Analizar o cartafol persoal"
