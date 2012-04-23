@@ -164,7 +164,7 @@ namespace Baobab {
 
             add (builder.get_object ("window-contents") as Gtk.Widget);
             title = _("Disk Usage Analyzer");
-            set_default_size (800, 500);
+            set_default_size (1000, 600);
             set_hide_titlebar_when_maximized (true);
 
             set_ui_page (UIPage.HOME);
