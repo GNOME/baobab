@@ -76,6 +76,10 @@ namespace Baobab {
             get_fs_usage (File.new_for_path (mount_point));
         }
 
+        public void update () {
+            update_volume_info ();
+        }
+
         void make_this_home_location () {
             name = _("Home folder");
             icon = new ThemedIcon ("user-home");
