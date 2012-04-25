@@ -89,8 +89,16 @@ namespace Baobab {
         }
 
         void mount_added (Mount mount) {
-            if (mount.get_volume () == null) {
+            var volume = mount.get_volume ();
+            if (volume == null) {
                 locations.append (new Location.from_mount (mount));
+            } else {
+                foreach (var location in locations) {
+                    if (location.volume == volume) {
+                        location.update ();
+                        break;
+                    }
+                }
             }
 
             changed ();

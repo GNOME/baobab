@@ -74,6 +74,10 @@ namespace Baobab {
             make_this_home_location ();
         }
 
+        public void update () {
+            update_volume_info ();
+        }
+
         void make_this_home_location () {
             name = _("Home folder");
             icon = new ThemedIcon ("user-home");
