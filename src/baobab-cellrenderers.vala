@@ -62,32 +62,32 @@ namespace Baobab {
             int ypad;
             get_padding (out xpad, out ypad);
 
-            // fill entire drawing area with black
             var x = cell_area.x + xpad;
             var y = cell_area.y + ypad;
             var w = cell_area.width - xpad * 2;
             var h = cell_area.height - ypad * 2;
-            cr.rectangle (x, y, w, h);
-            cr.set_source_rgb (0, 0, 0);
-            cr.fill ();
 
-            // draw a smaller white rectangle on top, leaving a black outline
-            var style = widget.get_style ();
-            x += style.xthickness;
-            y += style.xthickness;
-            w -= style.xthickness * 2;
-            h -= style.xthickness * 2;
-            cr.rectangle (x, y, w, h);
-            cr.set_source_rgb (1, 1, 1);
-            cr.fill ();
+            var context = widget.get_style_context ();
 
-            // fill in remaining area according to percentage value
+            context.save ();
+            context.add_class ("baobab-level-cell");
+
+            context.render_background (cr, x, y, w, h);
+            context.render_frame (cr, x, y, w, h);
+
+            var border = context.get_border (Gtk.StateFlags.NORMAL);
+            x += border.left;
+            y += border.top;
+            w -= border.left + border.right;
+            h -= border.top + border.bottom;
+
             var percent = value;
             var perc_w = (w * percent) / 100;
+            var x_bar = x;
             if (widget.get_direction () == Gtk.TextDirection.RTL) {
-                x += w - perc_w;
+                x_bar += w - perc_w;
             }
-            cr.rectangle (x, y, perc_w, h);
+            cr.rectangle (x_bar, y, perc_w, h);
             if (percent <= 33) {
                 cr.set_source_rgb (0x73 / 255.0, 0xd2 / 255.0, 0x16 / 255.0);
             } else if (percent <= 66) {
@@ -96,6 +96,8 @@ namespace Baobab {
                 cr.set_source_rgb (0xcc / 255.0, 0x00 / 255.0, 0x00 / 255.0);
             }
             cr.fill ();
+
+            context.restore ();
         }
     }
 }
