@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-26 13:35+0200\n"
-"PO-Revision-Date: 2012-04-25 08:46+0200\n"
+"POT-Creation-Date: 2012-04-26 13:53+0200\n"
+"PO-Revision-Date: 2012-04-25 15:21+0200\n"
 "Last-Translator: Åsmund Skjæveland <aasmunds@ulrik.uio.no>\n"
 "Language-Team: Norwegian Nynorsk <i18n-no@lister.ping.uio.no>\n"
 "Language: nn\n"
@@ -39,7 +39,7 @@ msgstr "Innstillingar for diskanalyse"
 
 #: ../data/baobab-preferences-dialog.ui.h:2
 msgid "Select _devices to include in file system scan:"
-msgstr "Vel _einingar å ta med i filsystemskanninga:"
+msgstr "Vel _einingar å ta med i filsystemsøket:"
 
 #
 #: ../data/baobab-preferences-dialog.ui.h:3
@@ -49,6 +49,7 @@ msgstr "_Overvak endringar i heimemappa di"
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr ""
+"Ei liste over adresser (URIar) til partisjonar som er utelatne frå søket."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "Active Chart"
@@ -56,7 +57,7 @@ msgstr "Aktivt diagram"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
-msgstr ""
+msgstr "URIar til utelatne partisjonar"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Monitor Home"
@@ -110,7 +111,7 @@ msgstr "Søk i _mappe …"
 
 #: ../data/baobab-main-window.ui.h:6
 msgid "Scan File System"
-msgstr ""
+msgstr "Søk gjennom filene i filsystemet"
 
 #
 #: ../data/baobab-main-window.ui.h:7
@@ -120,7 +121,7 @@ msgstr "Søk i mappe"
 #
 #: ../data/baobab-main-window.ui.h:8
 msgid "Scan Home"
-msgstr "Skann heimemappa"
+msgstr "Søk i heimemappa"
 
 #
 #: ../data/baobab-main-window.ui.h:9
@@ -148,11 +149,11 @@ msgstr "Søk i ei ekstern mappe eller filsystem"
 
 #: ../data/baobab-main-window.ui.h:14
 msgid "Scan the file system"
-msgstr "Skann filsystemet"
+msgstr "Søk i filsystemet"
 
 #: ../data/baobab-main-window.ui.h:15
 msgid "Scan your home folder"
-msgstr "Skann filene i heimemappa"
+msgstr "Søk gjennom filene i heimemappa"
 
 #
 #: ../data/baobab-main-window.ui.h:16
@@ -224,7 +225,7 @@ msgstr "tilgjengeleg:"
 #. set statusbar, percentage and allocated/normal size
 #: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
 msgid "Calculating percentage bars…"
-msgstr ""
+msgstr "Reknar ut prosentsøylar …"
 
 #
 #: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
@@ -233,11 +234,11 @@ msgstr "Klar"
 
 #: ../src/baobab.c:437
 msgid "Total filesystem capacity"
-msgstr ""
+msgstr "Samanlagt filsystemkapasitet"
 
 #: ../src/baobab.c:459
 msgid "Total filesystem usage"
-msgstr ""
+msgstr "Samanlagt bruk av filsystemet"
 
 #
 #: ../src/baobab.c:500
@@ -248,8 +249,8 @@ msgstr "inneheld harde lenkjer for:"
 #, c-format
 msgid "%5d item"
 msgid_plural "%5d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%5d element"
+msgstr[1] "%5d element"
 
 #: ../src/baobab.c:614
 msgid "Could not initialize monitoring"
@@ -274,7 +275,7 @@ msgstr "Vis versjon"
 
 #: ../src/baobab.c:1152
 msgid "[DIRECTORY]"
-msgstr ""
+msgstr "[KATALOG]"
 
 #: ../src/baobab.c:1182
 msgid "Too many arguments. Only one directory can be specified."
@@ -443,7 +444,7 @@ msgstr "Valfri informasjon:"
 
 #: ../src/baobab-remote-connect-dialog.c:494
 msgid "_Share:"
-msgstr ""
+msgstr "_Delt område:"
 
 #: ../src/baobab-remote-connect-dialog.c:515
 msgid "_Port:"
@@ -460,11 +461,11 @@ msgstr "Br_ukarnamn:"
 
 #: ../src/baobab-remote-connect-dialog.c:576
 msgid "_Domain Name:"
-msgstr ""
+msgstr "_Domenenamn:"
 
 #: ../src/baobab-remote-connect-dialog.c:643
 msgid "Connect to Server"
-msgstr ""
+msgstr "Kopla til tenar"
 
 #
 #: ../src/baobab-remote-connect-dialog.c:659
@@ -526,7 +527,7 @@ msgstr "Vi_s skjulte mapper"
 
 #: ../src/baobab-utils.c:264
 msgid "Cannot check an excluded folder!"
-msgstr ""
+msgstr "Kan ikkje søka i ekskludert mappe."
 
 #: ../src/baobab-utils.c:288
 #, c-format
@@ -564,7 +565,7 @@ msgstr "Kunne ikkje flytta «%s» til papirkorga"
 
 #: ../src/baobab-utils.c:442
 msgid "Could not move file to the Trash"
-msgstr ""
+msgstr "Klarte ikkje flytta fila til søppelbøtta"
 
 #: ../src/baobab-utils.c:444
 #, c-format
@@ -583,6 +584,10 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
+"Dette programmet er fri programvare. Du kan fritt endra og distribuera det "
+"vidare, så lenge du følgjer vilkåra i GNU General Public License, utgjeven "
+"av Free Software Foundation – anten versjon 2 av lisensen, eller (viss du "
+"ynskjer det) einkvar seinare versjon."
 
 #: ../src/callbacks.c:80
 msgid ""
@@ -591,6 +596,10 @@ msgid ""
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details."
 msgstr ""
+"Programmet er gjort tilgjengeleg med håp om at det vil vera til nytte, men "
+"UTAN NOKON GARANTI, og heller ikkje med nokon indirekte garanti om at det "
+"vil OMSETJELEG eller EIGNA TIL NOKO SPESIELT FORMÅL. Sjå GNU General Public "
+"License for meir informasjon."
 
 #: ../src/callbacks.c:85
 msgid ""
@@ -598,6 +607,9 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 msgstr ""
+"Du skal ha fått eit eksemplar av GNU General Public License saman med dette "
+"programmet. Om du ikkje fekk det, skriv til Free Software Foundation, Inc., "
+"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
 
 #
 #: ../src/callbacks.c:100
@@ -607,7 +619,7 @@ msgstr "Baobab"
 #
 #: ../src/callbacks.c:101
 msgid "A graphical tool to analyze disk usage."
-msgstr "Eit grafisk verktøy for å analysere diskbruk."
+msgstr "Eit grafisk verktøy for å analysera diskbruk."
 
 #: ../src/callbacks.c:109
 msgid "translator-credits"
