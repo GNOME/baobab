@@ -32,9 +32,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-26\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2010-03-27 20:22+0200\n"
-"Last-Translator: Simos Xenitellis <simos.lists@googlemail.com>\n"
+"POT-Creation-Date: 2012-05-02 12:42+0300\n"
+"PO-Revision-Date: 2012-04-24 17:35+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -47,23 +47,9 @@ msgstr ""
 msgid "Check folder sizes and available disk space"
 msgstr "Έλεγχος μεγέθους φακέλων και διαθέσιμου χώρου στο δίσκο"
 
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:2 ../src/baobab-window.vala:152
 msgid "Disk Usage Analyzer"
 msgstr "Ανάλυση χρήσης δίσκου"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Προτιμήσεις ανάλυσης χρήσης δίσκου"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
-msgstr ""
-"Επιλέξτε τις _συσκευές που θα συμπεριλαμβάνονται κατά την σάρωση του "
-"συστήματος αρχείων:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Παρακολούθηση αλλαγών στον αρχικό σας κατάλογο"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "A list of URIs for partitions to be excluded from scanning."
@@ -71,7 +57,7 @@ msgstr "Μια λίστα URI για κατατμήσεις που θα εξαι
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "Active Chart"
-msgstr ""
+msgstr "Ενεργό διάγραμμα"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
@@ -79,12 +65,11 @@ msgstr "URI κατατμήσεων που εξαιρούνται"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Monitor Home"
-msgstr ""
+msgstr "Αρχική σελίδα"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#, fuzzy
 msgid "Statusbar is Visible"
-msgstr "Η γραμμή κατάστασης είναι ορατή"
+msgstr "Ορατή γραμμή κατάστασης"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Toolbar is Visible"
@@ -104,486 +89,167 @@ msgid "Whether the toolbar should be visible in main window."
 msgstr "Αν η εργαλειοθήκη θα είναι ορατή στο κύριο παράθυρο."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:10
-#, fuzzy
 msgid "Which type of chart should be displayed."
-msgstr "Αν η πλευρική στήλη θα είναι ορατή"
+msgstr "Ποιος τύπος διαγράμματος θα εμφανιστεί."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Εκχωρημένος _χώρος"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Ανανέωση"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "Σάρωση α_πομακρυσμένου φακέλου..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "Σάρωση _φακέλου..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "Σάρωση συστήματος αρχείων"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Σάρωση φακέλου"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Σάρωση αρχικού καταλόγου"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Σάρωση απομακρυσμένου φακέλου"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Σάρωση σ_υστήματος αρχείων"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Σάρωση αρ_χικού καταλόγου"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Σάρωση ενός φακέλου"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "Σάρωση ενός απομακρυσμένου"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "Σάρωση συστήματος αρχείων"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "Σάρωση ενός αρχικού καταλόγου"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "_Γραμμή κατάστασης"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Διακοπή σάρωσης "
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Αναλυτής"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "Σύμπτυξη ό_λων"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_Περιεχόμενα"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Επεξεργασία"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "Α_νάπτυξη όλων"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "Ε_ργαλειοθήκη"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "Προ_βολή"
-
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "Σάρωση..."
-
-#: ../src/baobab.c:182
-msgid "Total filesystem capacity:"
-msgstr "Συνολική χωρητικότητα συστήματος αρχείων:"
-
-#: ../src/baobab.c:183
-msgid "used:"
-msgstr "σε χρήση:"
-
-#: ../src/baobab.c:184
-msgid "available:"
-msgstr "Διαθέσιμο:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "Υπολογισμός ποσοστιαίων μπαρών..."
-
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
-msgid "Ready"
-msgstr "Έτοιμο"
-
-#: ../src/baobab.c:421
-msgid "Total filesystem capacity"
-msgstr "Συνολική χωρητικότητα συστήματος αρχείων"
-
-#: ../src/baobab.c:443
-msgid "Total filesystem usage"
-msgstr "Συνολική χρήση συστήματος αρχείων"
-
-#: ../src/baobab.c:484
-msgid "contains hardlinks for:"
-msgstr "περιέχει hardlinks για:"
-
-#: ../src/baobab.c:493
-#, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d αντικείμενο"
-msgstr[1] "%5d αντικείμενα"
-
-#: ../src/baobab.c:620
-msgid "Could not initialize monitoring"
-msgstr "Αδυναμία αρχικοποίησης παρακολούθησης "
-
-#: ../src/baobab.c:621
-msgid "Changes to your home folder will not be monitored."
-msgstr "Δεν θα παρακολουθείται για αλλαγές ο αρχικός σας κατάλογος."
-
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "Μετακίνηση σε γονικό φάκελο"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "Μεγέθυνση "
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "Σμίκρυνση"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "Αποθήκευση στιγμιότυπου οθόνης"
-
-#: ../src/baobab.c:1143
-msgid "View as Rings Chart"
-msgstr "Προβολή ως διάγραμμα δακτυλίων"
-
-#: ../src/baobab.c:1145
-msgid "View as Treemap Chart"
-msgstr "Προβολή ως  δενδροειδές διάγραμμα "
-
-#: ../src/baobab.c:1250
-msgid "Show version"
-msgstr "Προβολή έκδοσης"
-
-#: ../src/baobab.c:1251
-msgid "[DIRECTORY]"
-msgstr "[ΚΑΤΑΛΟΓΟΣ]"
-
-#: ../src/baobab.c:1281
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Πάρα πολλές επιλογές. Μόνο ένας κατάλογος μπορεί να οριστεί."
-
-#: ../src/baobab.c:1298
-msgid "Could not detect any mount point."
-msgstr "Δεν εντοπίστηκε κάποιο σημείο προσάρτησης."
-
-#: ../src/baobab.c:1300
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Χωρίς τα σημεία προσάρτησης δεν είναι δυνατή η ανάλυση χρήσης δίσκων."
-
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:188
 msgid "Maximum depth"
 msgstr "Μέγιστο βάθος"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:189
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Το μέγιστος βάος που θα σχεδιάζεται στο διάγραμμα από το κατάλογο root"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:198
 msgid "Chart model"
 msgstr "Μοντέλο διαγράμματος"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:199
 msgid "Set the model of the chart"
 msgstr "Ορισμός του μοντέλου για το διάγραμμα"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:206
 msgid "Chart root node"
 msgstr "Κόμβος root διαγράμματος"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:207
 msgid "Set the root node from the model"
 msgstr "Ορισμός του κόμβου root από το μοντέλο"
 
-#: ../src/baobab-chart.c:1690
+#: ../src/baobab-chart.c:908
+msgid "Move to parent folder"
+msgstr "Μετακίνηση σε γονικό φάκελο"
+
+#: ../src/baobab-chart.c:912
+msgid "Zoom in"
+msgstr "Μεγέθυνση "
+
+#: ../src/baobab-chart.c:916
+msgid "Zoom out"
+msgstr "Σμίκρυνση"
+
+#: ../src/baobab-chart.c:920
+msgid "Save screenshot"
+msgstr "Αποθήκευση στιγμιότυπου οθόνης"
+
+#: ../src/baobab-chart.c:1809
 msgid "Cannot create pixbuf image!"
 msgstr "Αδυναμία δημιουργίας εικόνας pixbuf!"
 
 #. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
+#: ../src/baobab-chart.c:1817
 msgid "Save Snapshot"
 msgstr "Αποθήκευση στιγμιότυπου οθόνης"
 
-#: ../src/baobab-chart.c:1727
+#: ../src/baobab-chart.c:1844
 msgid "_Image type:"
 msgstr "Τύπος ε_ικόνας:"
 
-#: ../src/baobab-prefs.c:172
+#: ../src/baobab-location.vala:65
+msgid "Main volume"
+msgstr "Κύριος τόμος"
+
+#: ../src/baobab-location.vala:80
+msgid "Home folder"
+msgstr "Προσωπικός φάκελος"
+
+#: ../src/baobab-location-widget.vala:85
+msgid "Usage unknown"
+msgstr "Άγνωστη χρήση"
+
+#: ../src/baobab-location-widget.vala:90
 msgid "Scan"
 msgstr "Σάρωση"
 
-#: ../src/baobab-prefs.c:179
-msgid "Device"
-msgstr "Συσκευή"
+#: ../src/baobab-location-widget.vala:90
+msgid "Mount and scan"
+msgstr "Προσάρτηση και σάρωση"
 
-#: ../src/baobab-prefs.c:187
-msgid "Mount Point"
-msgstr "Σημείο προσάρτησης"
+#: ../src/baobab-main-window.ui.h:1 ../src/baobab-window.vala:471
+msgid "All locations"
+msgstr "Όλες οι τοποθεσίες"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
-msgstr "Τύπος συστήματος αρχείων"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Close"
+msgstr "Κλείσιμο"
 
-#: ../src/baobab-prefs.c:203
-msgid "Total Size"
-msgstr "Συνολικό μέγεθος"
-
-#: ../src/baobab-prefs.c:212
-msgid "Available"
-msgstr "Διαθέσιμο"
-
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Αδυναμία σάρωσης τοποθεσίας \"%s\""
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Προσαρμοσμένη τοποθεσία"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Δημόσιο FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (με σύνδεση)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Κοινόχρηστο Windows"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Secure WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
-"Αδυναμία σύνδεσης με τον εξυπηρετητή. Θα πρέπει να εισάγετε ένα όνομα για "
-"αυτό τον εξυπηρετητή"
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Παρακαλώ εισάγετε ένα όνομα και προσπαθήστε ξανά."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Τοποθεσία (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Εξυπηρετητής:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Προαιρετικές πληροφορίες"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Κοινή χρήση:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Θύρα:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Φάκελος:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "Όνομα χρήσ_τη:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Ό_νομα τομέα:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Σύνδεση στον εξυπηρετητή"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Τύπος υ_πηρεσίας:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Σάρωση"
-
-#: ../src/baobab-treeview.c:82
-msgid "Rescan your home folder?"
-msgstr "Σάρωση ξανά του αρχικού σας κατάλογου;"
-
-#: ../src/baobab-treeview.c:83
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"Τα περιεχόμενα του αρχικού σας καταλόγου άλλαξαν.Επιλέξτε να γίνει σάρωση "
-"ξανά για να ενημερωθούν οι λεπτομέρειες της χρήσης δίσκου"
-
-#: ../src/baobab-treeview.c:84
-msgid "_Rescan"
-msgstr "Σάρωση _ξανά"
-
-#: ../src/baobab-treeview.c:222
-msgid "Folder"
-msgstr "Φάκελος"
-
-#: ../src/baobab-treeview.c:244
-msgid "Usage"
-msgstr "Χρήση"
-
-#: ../src/baobab-treeview.c:258
-msgid "Size"
-msgstr "Μέγεθος"
-
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-main-window.ui.h:3
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
-#: ../src/baobab-utils.c:72
-msgid "Select Folder"
-msgstr "Επιλογή φακέλου"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Folder"
+msgstr "Φάκελος"
 
-#. add extra widget
-#: ../src/baobab-utils.c:84
-msgid "_Show hidden folders"
-msgstr "Εμ_φάνιση κρυφών φακέλων"
-
-#: ../src/baobab-utils.c:263
-msgid "Cannot check an excluded folder!"
-msgstr "Δεν είναι δυνατός ο έλεγχος φακέλων που εξαιρούνται!"
-
-#: ../src/baobab-utils.c:287
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "Το %s δεν είναι έγκυρος φάκελος"
-
-#: ../src/baobab-utils.c:290
-msgid "Could not analyze disk usage."
-msgstr "Αδυναμία ανάλυσης χρήσης του δίσκου"
-
-#: ../src/baobab-utils.c:326
-msgid "_Open Folder"
-msgstr "Ά_νοιγμα φακέλου "
-
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-main-window.ui.h:5
 msgid "Mo_ve to Trash"
 msgstr "_Μετακίνηση στα απορρίμματα"
 
-#: ../src/baobab-utils.c:362
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Αδυναμία ανοίγματος φακέλου \"%s\"."
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Επαναφόρτωση"
 
-#: ../src/baobab-utils.c:365
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr ""
-"Δεν υπάρχει εγκατεστημένο πρόγραμμα παρουσίασης για την εμφάνιση του φακέλου."
+#: ../src/baobab-main-window.ui.h:7
+msgid "Rings Chart"
+msgstr "Διάγραμμα δακτυλίων"
 
-#: ../src/baobab-utils.c:433
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Αδυναμία μετακίνησης \"%s\" στα απορρίμματα"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Scan Folder"
+msgstr "Σάρωση φακέλου"
 
-#: ../src/baobab-utils.c:441
-msgid "Could not move file to the Trash"
-msgstr "Αδυναμία μετακίνησης αρχείου στα απορρίμματα"
+#: ../src/baobab-main-window.ui.h:9
+msgid "Scan Remote Folder"
+msgstr "Σάρωση απομακρυσμένου φακέλου"
 
-#: ../src/baobab-utils.c:443
-#, c-format
-msgid "Details: %s"
-msgstr "Λεπτομέρειες: %s"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Scan a folder"
+msgstr "Σάρωση ενός φακέλου"
 
-#: ../src/baobab-utils.c:479
-msgid "There was an error displaying help."
-msgstr "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας."
+#: ../src/baobab-main-window.ui.h:11
+msgid "Scan a remote folder"
+msgstr "Σάρωση ενός απομακρυσμένου"
 
-#: ../src/callbacks.c:76
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό. Επιτρέπεται η αναδιανομή ή/και η "
-"τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GNU "
-"General Public License) όπως αυτή δημοσιεύεται από το Ίδρυμα Ελεύθερου "
-"Λογισμικού (Free Software Foundation) -είτε της έκδοσης 2 της άδειας, είτε "
-"(κατ' επιλογήν) οποιασδήποτε μεταγενέστερης έκδοσης."
+#: ../src/baobab-main-window.ui.h:12
+msgid "Show all locations"
+msgstr "Εμφάνιση όλων των τοποθεσιών"
 
-#: ../src/callbacks.c:81
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Αυτό το πρόγραμμα διανέμεται με την ελπίδα οτι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ "
-"ΚΑΜΙΑ ΑΠΟΛΥΤΩΣ ΕΓΓΥΗΣΗ -χωρίς ακόμη και την έμμεση εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ "
-"ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε για περισσότερες λεπτομέρειες "
-"τη Γενική Άδεια Δημόσιας Χρήσης GNU (GNU General Public License)."
+#: ../src/baobab-main-window.ui.h:13
+msgid "Size"
+msgstr "Μέγεθος"
 
-#: ../src/callbacks.c:86
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας Χρήσης "
-"GNU (GNU General Public License) μαζί με αυτό το πρόγραμμα. Αν όχι, "
-"επικοινωνήστε γραπτώς με το Ίδρυμα Ελεύθερου Λογισμικού (Free Software "
-"Foundation, Inc.), 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
-"USA"
+#: ../src/baobab-main-window.ui.h:14
+msgid "Stop scanning"
+msgstr "Διακοπή σάρωσης "
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-main-window.ui.h:15
+msgid "Treemap Chart"
+msgstr "Δενδροειδές διάγραμμα "
+
+#: ../src/baobab-main-window.ui.h:16
+msgid "Usage"
+msgstr "Χρήση"
+
+#: ../src/baobab-main-window.ui.h:17
+msgid "_Open Folder"
+msgstr "Ά_νοιγμα φακέλου "
+
+#: ../src/baobab-main-window.ui.h:18
+msgid "label"
+msgstr "ετικέτα"
+
+#: ../src/baobab-window.vala:202
+msgid "Select Folder"
+msgstr "Επιλογή φακέλου"
+
+#: ../src/baobab-window.vala:280
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
+#: ../src/baobab-window.vala:283
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ένα γραφικό εργαλείο για την ανάλυση της χρήσης του δίσκου."
 
-#: ../src/callbacks.c:110
+#: ../src/baobab-window.vala:288
 msgid "translator-credits"
 msgstr ""
 "Σπύρος Παπαδημητρίου <spapadim+@cs.cmu.edu>\n"
@@ -591,10 +257,323 @@ msgstr ""
 "Κώστας Παπαδήμας <pkst@gnome.org>\n"
 "Νίκος Χαρωνιτάκης <nikosx@gmail.com>"
 
-#: ../src/callbacks.c:208
-msgid "The document does not exist."
-msgstr "Το έγγραφο δεν υπάρχει."
+#: ../src/baobab-window.vala:349
+msgid "Could not analyze volume."
+msgstr "Αδυναμία ανάλυσης τόμου: %s"
 
-#: ../src/callbacks.c:289
-msgid "The folder does not exist."
-msgstr "Ο φάκελος δεν υπάρχει."
+#: ../src/baobab-window.vala:463
+msgid "Cancel scan"
+msgstr "Ακύρωση σάρωσης"
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "Το %s δεν είναι έγκυρος φάκελος"
+
+#: ../src/baobab-window.vala:495
+msgid "Could not analyze disk usage."
+msgstr "Αδυναμία ανάλυσης χρήσης του δίσκου"
+
+#: ../src/baobab-window.vala:554
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Αδυναμία σάρωσης του φακέλου \"%s\" ή μερικών από τους φακέλους που περιέχει."
+
+#~ msgid "_All locations"
+#~ msgstr "Όλ_ες οι τοποθεσίες"
+
+#~| msgid "Scan Home"
+#~ msgid "_Scan Home"
+#~ msgstr "_Σάρωση αρχικού καταλόγου"
+
+#~| msgid "Scan Folder"
+#~ msgid "Scan F_older…"
+#~ msgstr "Σάρωση φα_κέλου"
+
+#~| msgid "Scan Remote Folder"
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "Σάρωση απομακρυσμένου φακέ_λου"
+
+#~ msgid "_Stop"
+#~ msgstr "_Διακοπή"
+
+#~| msgid "Ready"
+#~ msgid "_Reload"
+#~ msgstr "_Επαναφόρτωση"
+
+#~ msgid "_Help"
+#~ msgstr "_Βοήθεια"
+
+#~ msgid "_About"
+#~ msgstr "_Περί"
+
+#~| msgid "_Edit"
+#~ msgid "_Quit"
+#~ msgstr "Έ_ξοδος"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Αναλυτής"
+
+#~ msgid "_View"
+#~ msgstr "Προ_βολή"
+
+#~ msgid "_Toolbar"
+#~ msgstr "Ε_ργαλειοθήκη"
+
+#~| msgid "All_ocated Space"
+#~ msgid "_Allocated Space"
+#~ msgstr "Χώρος μη _εκχωρημένος"
+
+#~ msgid "_Expand All"
+#~ msgstr "Α_νάπτυξη όλων"
+
+#~ msgid "_Collapse All"
+#~ msgstr "Σύμπτυξη ό_λων"
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Προτιμήσεις ανάλυσης χρήσης δίσκου"
+
+#~ msgid "Select _devices to include in filesystem scan:"
+#~ msgstr ""
+#~ "Επιλέξτε τις _συσκευές που θα συμπεριλαμβάνονται κατά την σάρωση του "
+#~ "συστήματος αρχείων:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Παρακολούθηση αλλαγών στον αρχικό σας κατάλογο"
+
+#~ msgid "Refresh"
+#~ msgstr "Ανανέωση"
+
+#~ msgid "S_can Remote Folder..."
+#~ msgstr "Σάρωση α_πομακρυσμένου φακέλου..."
+
+#~ msgid "Scan F_older..."
+#~ msgstr "Σάρωση _φακέλου..."
+
+#~ msgid "Scan Filesystem"
+#~ msgstr "Σάρωση συστήματος αρχείων"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Σάρωση σ_υστήματος αρχείων"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Σάρωση αρ_χικού καταλόγου"
+
+#~ msgid "Scan filesystem"
+#~ msgstr "Σάρωση συστήματος αρχείων"
+
+#~ msgid "St_atusbar"
+#~ msgstr "_Γραμμή κατάστασης"
+
+#~ msgid "_Contents"
+#~ msgstr "_Περιεχόμενα"
+
+#~ msgid "Scanning..."
+#~ msgstr "Σάρωση..."
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Συνολική χωρητικότητα συστήματος αρχείων:"
+
+#~ msgid "used:"
+#~ msgstr "σε χρήση:"
+
+#~ msgid "available:"
+#~ msgstr "Διαθέσιμο:"
+
+#~ msgid "Calculating percentage bars..."
+#~ msgstr "Υπολογισμός ποσοστιαίων μπαρών..."
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Συνολική χωρητικότητα συστήματος αρχείων"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Συνολική χρήση συστήματος αρχείων"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "περιέχει hardlinks για:"
+
+#~ msgid "%5d item"
+#~ msgid_plural "%5d items"
+#~ msgstr[0] "%5d αντικείμενο"
+#~ msgstr[1] "%5d αντικείμενα"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Αδυναμία αρχικοποίησης παρακολούθησης "
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Δεν θα παρακολουθείται για αλλαγές ο αρχικός σας κατάλογος."
+
+#~ msgid "Show version"
+#~ msgstr "Προβολή έκδοσης"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[ΚΑΤΑΛΟΓΟΣ]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Πάρα πολλές επιλογές. Μόνο ένας κατάλογος μπορεί να οριστεί."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Δεν εντοπίστηκε κάποιο σημείο προσάρτησης."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr ""
+#~ "Χωρίς τα σημεία προσάρτησης δεν είναι δυνατή η ανάλυση χρήσης δίσκων."
+
+#~ msgid "Device"
+#~ msgstr "Συσκευή"
+
+#~ msgid "Mount Point"
+#~ msgstr "Σημείο προσάρτησης"
+
+#~ msgid "Filesystem Type"
+#~ msgstr "Τύπος συστήματος αρχείων"
+
+#~ msgid "Total Size"
+#~ msgstr "Συνολικό μέγεθος"
+
+#~ msgid "Available"
+#~ msgstr "Διαθέσιμο"
+
+#~ msgid "Custom Location"
+#~ msgstr "Προσαρμοσμένη τοποθεσία"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "Δημόσιο FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (με σύνδεση)"
+
+#~ msgid "Windows share"
+#~ msgstr "Κοινόχρηστο Windows"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "Secure WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "Αδυναμία σύνδεσης με τον εξυπηρετητή. Θα πρέπει να εισάγετε ένα όνομα για "
+#~ "αυτό τον εξυπηρετητή"
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Παρακαλώ εισάγετε ένα όνομα και προσπαθήστε ξανά."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Τοποθεσία (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Εξυπηρετητής:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Προαιρετικές πληροφορίες"
+
+#~ msgid "_Share:"
+#~ msgstr "_Κοινή χρήση:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Θύρα:"
+
+#~ msgid "_Folder:"
+#~ msgstr "_Φάκελος:"
+
+#~ msgid "_User Name:"
+#~ msgstr "Όνομα χρήσ_τη:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "Ό_νομα τομέα:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Σύνδεση στον εξυπηρετητή"
+
+#~ msgid "Service _type:"
+#~ msgstr "Τύπος υ_πηρεσίας:"
+
+#~ msgid "_Scan"
+#~ msgstr "_Σάρωση"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Σάρωση ξανά του αρχικού σας κατάλογου;"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "Τα περιεχόμενα του αρχικού σας καταλόγου άλλαξαν.Επιλέξτε να γίνει σάρωση "
+#~ "ξανά για να ενημερωθούν οι λεπτομέρειες της χρήσης δίσκου"
+
+#~ msgid "_Rescan"
+#~ msgstr "Σάρωση _ξανά"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "Εμ_φάνιση κρυφών φακέλων"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Δεν είναι δυνατός ο έλεγχος φακέλων που εξαιρούνται!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "Αδυναμία ανοίγματος φακέλου \"%s\"."
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr ""
+#~ "Δεν υπάρχει εγκατεστημένο πρόγραμμα παρουσίασης για την εμφάνιση του "
+#~ "φακέλου."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "Αδυναμία μετακίνησης \"%s\" στα απορρίμματα"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Αδυναμία μετακίνησης αρχείου στα απορρίμματα"
+
+#~ msgid "Details: %s"
+#~ msgstr "Λεπτομέρειες: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό. Επιτρέπεται η αναδιανομή ή/"
+#~ "και η τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης "
+#~ "GNU (GNU General Public License) όπως αυτή δημοσιεύεται από το Ίδρυμα "
+#~ "Ελεύθερου Λογισμικού (Free Software Foundation) -είτε της έκδοσης 2 της "
+#~ "άδειας, είτε (κατ' επιλογήν) οποιασδήποτε μεταγενέστερης έκδοσης."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Αυτό το πρόγραμμα διανέμεται με την ελπίδα οτι θα είναι χρήσιμο, αλλά "
+#~ "ΧΩΡΙΣ ΚΑΜΙΑ ΑΠΟΛΥΤΩΣ ΕΓΓΥΗΣΗ -χωρίς ακόμη και την έμμεση εγγύηση "
+#~ "ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε για "
+#~ "περισσότερες λεπτομέρειες τη Γενική Άδεια Δημόσιας Χρήσης GNU (GNU "
+#~ "General Public License)."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας Χρήσης "
+#~ "GNU (GNU General Public License) μαζί με αυτό το πρόγραμμα. Αν όχι, "
+#~ "επικοινωνήστε γραπτώς με το Ίδρυμα Ελεύθερου Λογισμικού (Free Software "
+#~ "Foundation, Inc.), 51 Franklin Street, Fifth Floor, Boston, MA "
+#~ "02110-1301, USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "Το έγγραφο δεν υπάρχει."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "Ο φάκελος δεν υπάρχει."
