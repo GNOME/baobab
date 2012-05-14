@@ -39,8 +39,6 @@
 #include <gtk/gtk.h>
 #include "baobab-chart.h"
 
-#define SNAPSHOT_DEF_FILENAME_FORMAT "%s-disk-usage"
-
 G_DEFINE_ABSTRACT_TYPE (BaobabChart, baobab_chart, GTK_TYPE_WIDGET);
 
 #define BAOBAB_CHART_MAX_DEPTH 8
@@ -883,13 +881,6 @@ popup_menu_activate_zoom_out (GtkMenuItem *checkmenuitem,
 }
 
 static void
-popup_menu_activate_snapshot (GtkMenuItem *checkmenuitem,
-                              BaobabChart *chart)
-{
-  baobab_chart_save_snapshot (chart);
-}
-
-static void
 do_popup_menu (BaobabChart    *chart,
                GdkEventButton *event)
 {
@@ -897,7 +888,6 @@ do_popup_menu (BaobabChart    *chart,
   GtkWidget *up_item;
   GtkWidget *zoom_in_item;
   GtkWidget *zoom_out_item;
-  GtkWidget *snapshot_item;
   GtkTreePath *root_path;
 
   menu = gtk_menu_new ();
@@ -917,16 +907,10 @@ do_popup_menu (BaobabChart    *chart,
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (zoom_out_item),
                                  gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));
 
-  snapshot_item = gtk_image_menu_item_new_with_label (_("Save screenshot"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (snapshot_item),
-                                 gtk_image_new_from_file (BAOBAB_PIX_DIR "shot.png"));
-
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), up_item);
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), gtk_separator_menu_item_new ());
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), zoom_in_item);
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), zoom_out_item);
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu), gtk_separator_menu_item_new ());
-  gtk_menu_shell_append (GTK_MENU_SHELL (menu), snapshot_item);
 
   g_signal_connect (up_item, "activate",
                     G_CALLBACK (popup_menu_activate_up), chart);
@@ -934,8 +918,6 @@ do_popup_menu (BaobabChart    *chart,
                     G_CALLBACK (popup_menu_activate_zoom_in), chart);
   g_signal_connect (zoom_out_item, "activate",
                     G_CALLBACK (popup_menu_activate_zoom_out), chart);
-  g_signal_connect (snapshot_item, "activate",
-                    G_CALLBACK (popup_menu_activate_snapshot), chart);
 
   gtk_widget_show_all (menu);
 
@@ -949,8 +931,6 @@ do_popup_menu (BaobabChart    *chart,
                             baobab_chart_can_zoom_in (chart));
   gtk_widget_set_sensitive (zoom_out_item,
                             baobab_chart_can_zoom_out (chart));
-  gtk_widget_set_sensitive (snapshot_item,
-                            (!chart->priv->is_frozen));
 
   gtk_menu_popup (GTK_MENU (menu),
                   NULL, NULL, NULL, NULL,
@@ -1256,21 +1236,6 @@ baobab_chart_item_activated (BaobabChart *chart,
   baobab_chart_set_root (chart, path);
 
   gtk_tree_path_free (path);
-}
-
-static GdkPixbuf *
-baobab_chart_get_pixbuf (BaobabChart *chart)
-{
-  gint w, h;
-  GdkPixbuf *pixbuf;
-
-  g_return_val_if_fail (BAOBAB_IS_CHART (chart), NULL);
-
-  w = gtk_widget_get_allocated_width (GTK_WIDGET (chart));
-  h = gtk_widget_get_allocated_height (GTK_WIDGET (chart));
-  pixbuf = gdk_pixbuf_get_from_window (gtk_widget_get_window (GTK_WIDGET (chart)), 0, 0, w, h);
-
-  return pixbuf;
 }
 
 /* Public functions start here */
@@ -1766,115 +1731,6 @@ baobab_chart_move_up_root (BaobabChart *chart)
     }
 
   gtk_tree_path_free (path);
-}
-
-/**
- * baobab_chart_save_snapshot:
- * @chart: the #BaobabChart requested to be exported to image.
- *
- * Opens a dialog to allow saving the current chart's image as a PNG, JPEG or 
- * BMP image.
- *
- * Fails if @chart is not a #BaobabChart.
- **/
-void
-baobab_chart_save_snapshot (BaobabChart *chart)
-{
-  GdkPixbuf *pixbuf;
-  GtkWidget *fs_dlg;
-  GtkWidget *vbox;
-  GtkWidget *hbox;
-  GtkWidget *label;
-  GtkWidget *opt_menu;
-  gchar *sel_type;
-  gchar *filename;
-  gchar *def_filename;
-
-  BaobabChartItem *item;
-
-  g_return_if_fail (BAOBAB_IS_CHART (chart));
-
-  while (gtk_events_pending ())
-    gtk_main_iteration ();
-
-  /* Get the chart's pixbuf */
-  pixbuf = baobab_chart_get_pixbuf (chart);
-  if (pixbuf == NULL)
-    {
-      GtkWidget *dialog;
-      dialog = gtk_message_dialog_new (NULL,
-                                       GTK_DIALOG_DESTROY_WITH_PARENT,
-                                       GTK_MESSAGE_ERROR,
-                                       GTK_BUTTONS_OK,
-                                       _("Cannot create pixbuf image!"));
-      gtk_dialog_run (GTK_DIALOG (dialog));
-      gtk_widget_destroy (dialog);
-
-      return;
-    }
-
-  /* Popup the File chooser dialog */
-  fs_dlg = gtk_file_chooser_dialog_new (_("Save Snapshot"),
-                                        NULL,
-                                        GTK_FILE_CHOOSER_ACTION_SAVE,
-                                        GTK_STOCK_CANCEL,
-                                        GTK_RESPONSE_CANCEL,
-                                        GTK_STOCK_SAVE,
-                                        GTK_RESPONSE_ACCEPT, NULL);
-
-  item = (BaobabChartItem *) chart->priv->first_item->data;
-  def_filename = g_strdup_printf (SNAPSHOT_DEF_FILENAME_FORMAT, item->name);
-
-  gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (fs_dlg), def_filename);
-  g_free (def_filename);
-
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fs_dlg),
-                                       g_get_home_dir ());
-
-  gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (fs_dlg), TRUE);
-
-  /* extra widget */
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 0);
-  gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (fs_dlg), vbox);
-
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 6);
-
-  label = gtk_label_new_with_mnemonic (_("_Image type:"));
-  gtk_box_pack_start (GTK_BOX (hbox),
-                      label,
-                      FALSE, FALSE, 0);
-
-  opt_menu = gtk_combo_box_text_new ();
-  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "png");
-  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "jpeg");
-  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (opt_menu), "bmp");
-  gtk_combo_box_set_active (GTK_COMBO_BOX (opt_menu), 0);
-  gtk_box_pack_start (GTK_BOX (hbox), opt_menu, TRUE, TRUE, 0);
-
-  gtk_label_set_mnemonic_widget (GTK_LABEL (label), opt_menu);
-  gtk_widget_show_all (vbox);
-
-  if (gtk_dialog_run (GTK_DIALOG (fs_dlg)) == GTK_RESPONSE_ACCEPT)
-    {
-      filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (fs_dlg));
-      sel_type = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (opt_menu));
-      if (! g_str_has_suffix (filename, sel_type))
-        {
-          gchar *tmp;
-          tmp = filename;
-          filename = g_strjoin (".", filename, sel_type, NULL);
-          g_free (tmp);
-        }
-      gdk_pixbuf_save (pixbuf, filename, sel_type, NULL, NULL);
-
-      g_free (filename);
-      g_free (sel_type);
-    }
-
-  gtk_widget_destroy (fs_dlg);
-  g_object_unref (pixbuf);
 }
 
 /**
