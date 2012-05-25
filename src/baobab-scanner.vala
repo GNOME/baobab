@@ -139,7 +139,7 @@ namespace Baobab {
             // read from the main thread only after dispatch
             internal uint64 size;
             internal uint64 alloc_size;
-            internal uint64 elements;
+            internal int elements;
             internal double percent;
             internal int max_depth;
             internal Error? error;
