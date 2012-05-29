@@ -10,40 +10,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-02-29 20:26+0100\n"
+"POT-Creation-Date: 2012-05-25 14:59+0000\n"
+"PO-Revision-Date: 2012-05-29 20:03+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../data/baobab.desktop.in.in.h:1
-#: ../data/baobab-main-window.ui.h:15
+#: ../src/baobab-window.vala:152
 msgid "Disk Usage Analyzer"
 msgstr "Orodje za preučevanje porabe diska"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Preveri velikosti map in prostor na disku"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Možnosti orodja za preučevanje porabe diska"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-#| msgid "Select _devices to include in filesystem scan:"
-msgid "Select _devices to include in file system scan:"
-msgstr "Izberite _naprave zajete v preiskovanje sistema:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Nadziraj spremembe domače mape"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Monitor Home"
@@ -85,477 +72,237 @@ msgstr "Dejavni grafikon"
 msgid "Which type of chart should be displayed."
 msgstr "Katera vrsta grafikona naj bo izrisana."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Preučevalnik"
-
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Preišči do_mačo mapo"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Preišči _datotečni sistem"
-
-#: ../data/baobab-main-window.ui.h:4
-#| msgid "Scan Folder"
-msgid "Scan F_older…"
-msgstr "Preišči _mapo ..."
-
-#: ../data/baobab-main-window.ui.h:5
-#| msgid "Scan Remote Folder"
-msgid "S_can Remote Folder…"
-msgstr "Preišči _oddaljeno mapo ..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Uredi"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "_Razširi vse"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "_Zloži vse"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "Po_gled"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "_Orodna vrstica"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "_Vrstica stanja"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "_Zaseden prostor"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "Pomo_č"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "_Vsebina"
-
-#: ../data/baobab-main-window.ui.h:16
-#| msgid "Rescan your home folder?"
-msgid "Scan your home folder"
-msgstr "Preišči domačo mapo"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Preišči domačo mapo"
-
-#: ../data/baobab-main-window.ui.h:18
-#| msgid "Scan filesystem"
-msgid "Scan the file system"
-msgstr "Preišči datotečni sistem"
-
-#: ../data/baobab-main-window.ui.h:19
-#| msgid "Scan Filesystem"
-msgid "Scan File System"
-msgstr "Preišči datotečni sistem"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Preišči mapo"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Preišči mapo"
-
-#: ../data/baobab-main-window.ui.h:22
-#| msgid "Scan a remote folder"
-msgid "Scan a remote folder or file system"
-msgstr "Preišči oddaljeno mapo oziroma datotečni sistem"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Preišči oddaljeno mapo"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Ustavi preiskovanje"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Osveži"
-
-#: ../src/baobab.c:130
-#: ../src/baobab.c:404
-#| msgid "Scanning..."
-msgid "Scanning…"
-msgstr "Preiskovanje ..."
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Celotna zmogljivost datotečnega sistema:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "porabljeno:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "na voljo:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267
-#: ../src/baobab.c:324
-#: ../src/callbacks.c:264
-#| msgid "Calculating percentage bars..."
-msgid "Calculating percentage bars…"
-msgstr "Računanje stolpcev odstotkov ..."
-
-#: ../src/baobab.c:278
-#: ../src/baobab.c:1226
-#: ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Pripravljeno"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Celotna zmogljivost datotečnega sistema"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Celotna poraba datotečnega sistema"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "vsebuje trde povezave za:"
-
-#: ../src/baobab.c:509
-#, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d predmetov"
-msgstr[1] "%5d predmet"
-msgstr[2] "%5d predmeta"
-msgstr[3] "%5d predmeti"
-
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Ni mogoče zagnati merjenja"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Ali naj bodo spremembe v domačem imeniku nadzorovane."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Krožni grafikon"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Drevesni grafikon"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Počasna različica"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[MAPA]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Argumentov je preveč. Določena je lahko le ena mapa."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Ni mogoče zaznati priklopne točke."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Brez določene priklopne točne, zasedenosti diska ni mogoče preučiti."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Največja globina"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Največja narisana globina grafikona od korenskega vozlišča"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Grafični grafikon"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Določitev grafičnega grafikona"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Korensko vozlišče grafikona"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Določitev korenskega vozlišča modela"
 
-#: ../src/baobab-chart.c:905
+#: ../src/baobab-chart.c:898
 msgid "Move to parent folder"
 msgstr "Premakniti v nadrejeno mapo"
 
-#: ../src/baobab-chart.c:909
+#: ../src/baobab-chart.c:902
 msgid "Zoom in"
 msgstr "Približaj"
 
-#: ../src/baobab-chart.c:913
+#: ../src/baobab-chart.c:906
 msgid "Zoom out"
 msgstr "Oddalji"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Shrani sliko zaslona "
+#: ../src/baobab-location.vala:65
+msgid "Main volume"
+msgstr "Glavni nosilec"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Ni mogoče ustvariti medpomnilnika sličic!"
+#: ../src/baobab-location.vala:80
+msgid "Home folder"
+msgstr "Domača mapa"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Shrani zaslonsko sliko"
+#: ../src/baobab-location-widget.vala:85
+msgid "Usage unknown"
+msgstr "Uporaba ni znana"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "_Vrsta slike:"
-
-#: ../src/baobab-prefs.c:173
+#: ../src/baobab-location-widget.vala:90
 msgid "Scan"
 msgstr "Preišči"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Naprava"
+#: ../src/baobab-location-widget.vala:90
+msgid "Mount and scan"
+msgstr "Priklopi in preišči"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Priklopna točka"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Preišči mapo"
 
-#: ../src/baobab-prefs.c:197
-#| msgid "Filesystem Type"
-msgid "File System Type"
-msgstr "Vrsta datotečnega sistema"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Preišči mapo"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Skupna velikost"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Preišči oddaljeno mapo"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Na voljo"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Preišči oddaljeno mapo"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Ni mogoče preiskati mesta \"%s\""
+#: ../src/baobab-main-window.ui.h:5
+msgid "Show all locations"
+msgstr "Pokaži vsa mesta"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Mesto po meri"
+#: ../src/baobab-main-window.ui.h:6
+#: ../src/baobab-window.vala:471
+msgid "All locations"
+msgstr "Vsa mesta"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Stop scanning"
+msgstr "Ustavi preiskovanje"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Javni FTP"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Reload"
+msgstr "Ponovno naloži"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (s prijavo)"
+#: ../src/baobab-main-window.ui.h:9
+msgid "label"
+msgstr "oznaka"
 
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Souporaba z Windows sistemom"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Close"
+msgstr "Zapri"
 
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Varen WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Ni se mogoče povezati s strežnikom. Vnesti morate ime strežnika."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Vpišite ime in poskusite znova."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Mesto (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Strežnik:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Dodatne podrobnosti:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Souporaba:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Vrata:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Mapa:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Uporabniško ime:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "_Ime domene:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Povezava s strežnikom"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Vrsta _storitve:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Preišči"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Ali naj bo domača mapa ponovno preiskana?"
-
-#: ../src/baobab-treeview.c:84
-msgid "The content of your home folder has changed. Select rescan to update the disk usage details."
-msgstr "Vsebina vašega domačega imenika se je spremenila. S ponovno preiskavo se posodobijo podatki o zasedenosti map."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "Znova _preišči"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:11
 msgid "Folder"
 msgstr "Mapa"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:12
 msgid "Usage"
 msgstr "Uporaba"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:13
 msgid "Size"
 msgstr "Velikost"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:14
 msgid "Contents"
 msgstr "Vsebina"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Izbor mape"
+#: ../src/baobab-main-window.ui.h:15
+msgid "Rings Chart"
+msgstr "Krožni diagram"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "_Pokaži skrite mape"
+#: ../src/baobab-main-window.ui.h:16
+msgid "Treemap Chart"
+msgstr "Drevesni diagram"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Ni mogoče pregledati izločene mape"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" ni veljavna mapa"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Ni mogoče preučiti porabe diska."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:17
 msgid "_Open Folder"
 msgstr "Odpri _mapo"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Pr_emakni v smeti"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Ni mogoče odprti mape \"%s\""
+#: ../src/baobab-menu.ui.h:1
+msgid "_All locations"
+msgstr "_Vsa mesta"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Za prikaz mape ni nameščen ustrezen pregledovalnik."
+#: ../src/baobab-menu.ui.h:2
+msgid "_Scan Home"
+msgstr "_Preišči domačo mapo"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Ni mogoče premakniti \"%s\" v smeti"
+#: ../src/baobab-menu.ui.h:3
+msgid "Scan F_older…"
+msgstr "Preišči _mapo ..."
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Ni mogoče premakniti datoteke v smeti"
+#: ../src/baobab-menu.ui.h:4
+msgid "Scan Remote Fo_lder…"
+msgstr "Preišči _oddaljeno mapo ..."
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Podrobnosti: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Stop"
+msgstr "_Zaustavi"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Prišlo je do napake med prikazovanjem pomoči."
+#: ../src/baobab-menu.ui.h:6
+msgid "_Reload"
+msgstr "_Ponovno naloži"
 
-#: ../src/callbacks.c:75
-msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
-msgstr "Ta program spada med prosto programsko opremo; lahko ga širite in/ali spreminjate pod pogoji Splošnega javnega dovoljenja GNU (GNU General Public License), kot ga je objavila ustanova Free Software Foundation; bodisi različice 2 ali (po vaši izbiri) katerikoli poznejši različici."
+#: ../src/baobab-menu.ui.h:7
+msgid "_Help"
+msgstr "Pomo_č"
 
-#: ../src/callbacks.c:80
-msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
-msgstr "Ta program je na voljo v upanju, da bo uporaben, vendar je BREZ VSAKRŠNEGA JAMSTVA; tudi brez jamstva o USTREZNOSTI ZA PRODAJO ali PRIMERNOSTI ZA UPORABO. Za več podrobnosti si glejte besedilo Splošnega javnega dovoljenja (GNU GPL)."
+#: ../src/baobab-menu.ui.h:8
+msgid "_About"
+msgstr "_O programu"
 
-#: ../src/callbacks.c:85
-msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr "Skupaj s tem programom bi morali prejeti izvod Splošnega Javnega dovoljenja GNU (GNU General Public License); v primeru, da ga niste, pišite na Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+#: ../src/baobab-menu.ui.h:9
+msgid "_Quit"
+msgstr "_Končaj"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Analyzer"
+msgstr "_Preučevalnik"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_View"
+msgstr "Po_gled"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Toolbar"
+msgstr "_Orodna vrstica"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Allocated Space"
+msgstr "_Dodeljen prostor"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "_Expand All"
+msgstr "_Razširi vse"
+
+#: ../src/baobab-menu.ui.h:15
+msgid "_Collapse All"
+msgstr "_Zloži vse"
+
+#: ../src/baobab-window.vala:202
+msgid "Select Folder"
+msgstr "Izbor mape"
+
+#: ../src/baobab-window.vala:280
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:283
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafično orodje za preučevanje porabe diska."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:288
 msgid "translator-credits"
 msgstr ""
 "Matic Žgur <mr.zgur@gmail.com>\n"
 "Andraž Tori <andraz.tori1@guest.arnes.si>\n"
 "Matej Urbančič <mateju@svn.gnome.org>"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Dokument ne obstaja."
+#: ../src/baobab-window.vala:349
+msgid "Could not analyze volume."
+msgstr "Nosilca ni mogoče preučiti."
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Mapa ne obstaja."
+#: ../src/baobab-window.vala:463
+msgid "Cancel scan"
+msgstr "Prekliči preiskovanje"
 
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:494
+#: ../src/baobab-window.vala:500
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" ni veljavna mapa"
+
+#: ../src/baobab-window.vala:495
+msgid "Could not analyze disk usage."
+msgstr "Ni mogoče preučiti porabe diska."
+
+#: ../src/baobab-window.vala:554
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Mape \"%s\" ali pa njenih podrejenih map ni mogoče preiskati."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Možnosti orodja za preučevanje porabe diska"
