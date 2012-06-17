@@ -12,41 +12,29 @@
 # Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2010, 2011.
 # Takayoshi OKANO <kano@na.rim.or.jp>, 2011.
 # Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2012.
+# Shuuji Takahashi <shuuji3@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-03-20 13:14+0000\n"
-"PO-Revision-Date: 2012-03-20 22:09+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-06-03 08:27+0000\n"
+"PO-Revision-Date: 2012-06-15 21:34+0900\n"
+"Last-Translator: Shuuji Takahashi <shuuji3@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
 msgid "Disk Usage Analyzer"
 msgstr "ディスク使用量の解析"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "フォルダーと利用可能なディスク容量をチェックします"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "解析ツールの設定"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "ファイルシステムスキャンの対象とするデバイスを選択してください(_D):"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "ホームフォルダーに対する変更を監視する(_M)"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Monitor Home"
@@ -88,474 +76,207 @@ msgstr "アクティブなチャート"
 msgid "Which type of chart should be displayed."
 msgstr "表示すべきチャートの種類を設定します。"
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "解析(_A)"
-
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "ホームフォルダーのスキャン(_H)"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "ファイルシステムのスキャン(_F)"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "フォルダーのスキャン(_O)…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "リモートフォルダーのスキャン(_C)…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "編集(_E)"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "すべて展開する(_E)"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "すべて畳む(_C)"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "表示(_V)"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "ツールバー(_T)"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "ステータスバー(_A)"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "使用量の分布(_O)"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "ヘルプ(_H)"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "目次(_C)"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "ホームフォルダーをスキャンします"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "ホームフォルダーのスキャン"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "ファイルシステムをスキャンします"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "ファイルシステムのスキャン"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "フォルダーをスキャンします"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "フォルダーのスキャン"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "リモートのフォルダーやファイルシステムをスキャンします"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "リモートフォルダーのスキャン"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "スキャンを停止します"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "更新"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "スキャン中…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "ファイルシステムの容量:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "使用済:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "利用可能:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "使用率バーの計算中…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "準備完了です"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "ファイルシステムの容量"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "ファイルシステム使用量"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "含むハードリンク:"
-
-#: ../src/baobab.c:509
-#, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d 個のオブジェクト"
-
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "監視機能を初期化できませんでした"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "ホームフォルダーに対する変更を監視しません。"
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "リングチャート表示"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "ツリーマップチャート表示"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "バージョンを表示"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[ディレクトリ]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "引数が多すぎます。ディレクトリを 1 つだけ指定可能です。"
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "1 つもマウントポイントを検出できませんでした。"
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "マウントポイントの無いディスクの容量は解析できません。"
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "深さの最大値"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "描画できるチャートの深さです (ルートからの)"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "チャートのモデル"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "チャートのモデルをセットします"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "チャートのルート"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "チャートのルートにするフォルダーを選択します"
 
-#: ../src/baobab-chart.c:906
+#: ../src/baobab-chart.c:898
 msgid "Move to parent folder"
 msgstr "親フォルダーへ移動する"
 
-#: ../src/baobab-chart.c:910
+#: ../src/baobab-chart.c:902
 msgid "Zoom in"
 msgstr "拡大する"
 
-#: ../src/baobab-chart.c:914
+#: ../src/baobab-chart.c:906
 msgid "Zoom out"
 msgstr "縮小する"
 
-#: ../src/baobab-chart.c:918
-msgid "Save screenshot"
-msgstr "スクリーンショットの保存"
+#: ../src/baobab-location.vala:65
+msgid "Main volume"
+msgstr "メインボリューム"
 
-#: ../src/baobab-chart.c:1807
-msgid "Cannot create pixbuf image!"
-msgstr "Pixbuf 画像を生成できません!"
+#: ../src/baobab-location.vala:80
+msgid "Home folder"
+msgstr "ホームフォルダー"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1815
-msgid "Save Snapshot"
-msgstr "スナップショットの保存"
+#: ../src/baobab-location-widget.vala:85
+msgid "Usage unknown"
+msgstr "使用量不明"
 
-#: ../src/baobab-chart.c:1842
-msgid "_Image type:"
-msgstr "画像の種類(_I):"
-
-#: ../src/baobab-prefs.c:173
+#: ../src/baobab-location-widget.vala:90
 msgid "Scan"
 msgstr "スキャン"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "デバイス"
+#: ../src/baobab-location-widget.vala:90
+msgid "Mount and scan"
+msgstr "マウントしてスキャン"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "マウントポイント"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "フォルダーをスキャンします"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "ファイルシステムの種類"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "フォルダーのスキャン"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "合計"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "リモートフォルダーをスキャンします"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "空き"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "リモートフォルダーのスキャン"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "次の場所をスキャンできませんでした: %s"
+#: ../src/baobab-main-window.ui.h:5
+msgid "Show all locations"
+msgstr "すべての場所を表示します"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "その他"
+#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
+msgid "All locations"
+msgstr "すべての場所"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Stop scanning"
+msgstr "スキャンを停止します"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "公開 FTP"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Reload"
+msgstr "再読み込み"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (ログイン有り)"
+#: ../src/baobab-main-window.ui.h:9
+msgid "label"
+msgstr "ラベル"
 
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows 共有"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Close"
+msgstr "閉じる"
 
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "セキュア WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "サーバーに接続できません (サーバー名を指定してください)。"
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "名前を入力してもう一度実行してください。"
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "場所 (URI)(_L):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "サーバー(_S):"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "追加情報:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "共有する場所(_S):"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "ポート(_P):"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "フォルダー(_F):"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "ユーザー名(_U):"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "ドメイン名(_D):"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "サーバーへの接続"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "サービスの種類(_T):"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "スキャン(_S)"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "ホームフォルダーをスキャンしますか?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"ホームフォルダーの内容が変更されています。再スキャンを選択してディスク使用量"
-"の詳細を更新してください。"
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "再スキャン(_R)"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:11
 msgid "Folder"
 msgstr "フォルダー"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:12
 msgid "Usage"
 msgstr "使用量"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:13
 msgid "Size"
 msgstr "サイズ"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:14
 msgid "Contents"
 msgstr "内容"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "フォルダーの選択"
+#: ../src/baobab-main-window.ui.h:15
+msgid "Rings Chart"
+msgstr "リングチャート"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "隠しフォルダーも表示する(_S)"
+#: ../src/baobab-main-window.ui.h:16
+msgid "Treemap Chart"
+msgstr "ツリーマップチャート"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "対象外のフォルダーをチェックできませんでした!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" はフォルダーとして妥当ではありません"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "ディスクの使用量を解析できませんでした。"
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:17
 msgid "_Open Folder"
 msgstr "フォルダーを開く(_O)"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "フォルダー \"%s\"  を開けませんでした"
+#: ../src/baobab-menu.ui.h:1
+msgid "_All locations"
+msgstr "すべての場所(_A)"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr ""
-"フォルダーを表示する機能を持ったビューアーがインストールされていません。"
+#: ../src/baobab-menu.ui.h:2
+msgid "_Scan Home"
+msgstr "ホームのスキャン(_S)"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "\"%s\" をゴミ箱に移動できませんでした"
+#: ../src/baobab-menu.ui.h:3
+msgid "Scan F_older…"
+msgstr "フォルダーのスキャン(_O)…"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "ファイルをゴミ箱に移動できませんでした"
+#: ../src/baobab-menu.ui.h:4
+msgid "Scan Remote Fo_lder…"
+msgstr "リモートフォルダーのスキャン(_L)…"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "詳細: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Stop"
+msgstr "停止(_S)"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "ヘルプを表示する際にエラーが発生しました。"
+#: ../src/baobab-menu.ui.h:6
+msgid "_Reload"
+msgstr "再読み込み(_R)"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"このプログラムはフリーソフトウェアです。フリーソフトウェア財団が提供する GNU "
-"一般公衆利用許諾契約書の第二版、あるいは(オプションで)それ以降の版が定める条"
-"項の下で本プログラムを再頒布または変更することができます。"
+#: ../src/baobab-menu.ui.h:7
+msgid "_Help"
+msgstr "ヘルプ(_H)"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"このプログラムは有用とは思いますが、頒布にあたっては市場性または特定の目的に"
-"対する適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細は "
-"GNU 一般公衆利用許諾契約書をご覧ください。"
+#: ../src/baobab-menu.ui.h:8
+msgid "_About"
+msgstr "情報(_A)"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"あなたは本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを受け取っている"
-"はずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA 02110-1301, USA まで連絡してください。"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Quit"
+msgstr "終了(_Q)"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Analyzer"
+msgstr "解析(_A)"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_View"
+msgstr "表示(_V)"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Toolbar"
+msgstr "ツールバー(_T)"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Allocated Space"
+msgstr "使用量の分布(_A)"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "_Expand All"
+msgstr "すべて展開する(_E)"
+
+#: ../src/baobab-menu.ui.h:15
+msgid "_Collapse All"
+msgstr "すべて畳む(_C)"
+
+#: ../src/baobab-window.vala:202
+msgid "Select Folder"
+msgstr "フォルダーの選択"
+
+#: ../src/baobab-window.vala:280
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:283
 msgid "A graphical tool to analyze disk usage."
 msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:288
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -567,21 +288,254 @@ msgstr ""
 "Eiichiro ITANI <emu@ceres.dti.ne.jp>\n"
 "やまねひでき <henrich@debian.or.jp>\n"
 "松澤 二郎 <jmatsuzawa@src.gnome.org>\n"
+"高橋 宗史 <shuuji3@gmail.com>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "ドキュメントは存在しません。"
+#: ../src/baobab-window.vala:349
+msgid "Could not analyze volume."
+msgstr "ボリュームを解析できませんでした。"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "そのフォルダーは存在しません。"
+#: ../src/baobab-window.vala:463
+msgid "Cancel scan"
+msgstr "スキャンのキャンセル"
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" はフォルダーとして妥当ではありません"
+
+#: ../src/baobab-window.vala:495
+msgid "Could not analyze disk usage."
+msgstr "ディスクの使用量を解析できませんでした。"
+
+#: ../src/baobab-window.vala:554
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "フォルダー \"%s\"、または、そのサブフォルダーをスキャンできませんでした。"
+
+#~ msgid "Save screenshot"
+#~ msgstr "スクリーンショットの保存"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "Pixbuf 画像を生成できません"
+
+#~ msgid "Save Snapshot"
+#~ msgstr "スナップショットの保存"
+
+#~ msgid "_Image type:"
+#~ msgstr "画像の種類(_I):"
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "解析ツールの設定"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr "ファイルシステムスキャンの対象とするデバイスを選択してください(_D):"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "ホームフォルダーに対する変更を監視する(_M)"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "ホームフォルダーのスキャン(_H)"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "ファイルシステムのスキャン(_F)"
+
+#~ msgid "St_atusbar"
+#~ msgstr "ステータスバー(_A)"
+
+#~ msgid "_Contents"
+#~ msgstr "目次(_C)"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "ホームフォルダーをスキャンします"
+
+#~ msgid "Scan the file system"
+#~ msgstr "ファイルシステムをスキャンします"
+
+#~ msgid "Scan File System"
+#~ msgstr "ファイルシステムのスキャン"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "リモートのフォルダーやファイルシステムをスキャンします"
+
+#~ msgid "Refresh"
+#~ msgstr "更新"
+
+#~ msgid "Scanning…"
+#~ msgstr "スキャン中…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "ファイルシステムの容量:"
+
+#~ msgid "used:"
+#~ msgstr "使用済:"
+
+#~ msgid "available:"
+#~ msgstr "利用可能:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "使用率バーの計算中…"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "ファイルシステムの容量"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "ファイルシステム使用量"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "含むハードリンク:"
+
+#~ msgid "%5d item"
+#~ msgid_plural "%5d items"
+#~ msgstr[0] "%5d 個のオブジェクト"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "監視機能を初期化できませんでした"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "ホームフォルダーに対する変更を監視しません。"
+
+#~ msgid "Show version"
+#~ msgstr "バージョンを表示"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[ディレクトリ]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "引数が多すぎます。ディレクトリを 1 つだけ指定可能です。"
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "1 つもマウントポイントを検出できませんでした。"
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "マウントポイントの無いディスクの容量は解析できません。"
+
+#~ msgid "Device"
+#~ msgstr "デバイス"
+
+#~ msgid "Mount Point"
+#~ msgstr "マウントポイント"
+
+#~ msgid "File System Type"
+#~ msgstr "ファイルシステムの種類"
+
+#~ msgid "Total Size"
+#~ msgstr "合計"
+
+#~ msgid "Available"
+#~ msgstr "空き"
+
+#~ msgid "Custom Location"
+#~ msgstr "その他"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "公開 FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (ログイン有り)"
+
+#~ msgid "Windows share"
+#~ msgstr "Windows 共有"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "セキュア WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr "サーバーに接続できません (サーバー名を指定してください)。"
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "名前を入力してもう一度実行してください。"
+
+#~ msgid "_Location (URI):"
+#~ msgstr "場所 (URI)(_L):"
+
+#~ msgid "_Server:"
+#~ msgstr "サーバー(_S):"
+
+#~ msgid "Optional information:"
+#~ msgstr "追加情報:"
+
+#~ msgid "_Share:"
+#~ msgstr "共有する場所(_S):"
+
+#~ msgid "_Port:"
+#~ msgstr "ポート(_P):"
+
+#~ msgid "_Folder:"
+#~ msgstr "フォルダー(_F):"
+
+#~ msgid "_User Name:"
+#~ msgstr "ユーザー名(_U):"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "ドメイン名(_D):"
+
+#~ msgid "Connect to Server"
+#~ msgstr "サーバーへの接続"
+
+#~ msgid "Service _type:"
+#~ msgstr "サービスの種類(_T):"
+
+#~ msgid "_Scan"
+#~ msgstr "スキャン(_S)"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "ホームフォルダーをスキャンしますか?"
+
+#~ msgid "The content of your home folder has changed. Select rescan to update the disk usage details."
+#~ msgstr "ホームフォルダーの内容が変更されています。再スキャンを選択してディスク使用量の詳細を更新してください。"
+
+#~ msgid "_Rescan"
+#~ msgstr "再スキャン(_R)"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "隠しフォルダーも表示する(_S)"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "対象外のフォルダーをチェックできませんでした"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "フォルダー \"%s\"  を開けませんでした"
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "フォルダーを表示する機能を持ったビューアーがインストールされていません。"
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "\"%s\" をゴミ箱に移動できませんでした"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "ファイルをゴミ箱に移動できませんでした"
+
+#~ msgid "Details: %s"
+#~ msgstr "詳細: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "ヘルプを表示する際にエラーが発生しました。"
+
+#~ msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
+#~ msgstr "このプログラムはフリーソフトウェアです。フリーソフトウェア財団が提供する GNU 一般公衆利用許諾契約書の第二版、あるいは(オプションで)それ以降の版が定める条項の下で本プログラムを再頒布または変更することができます。"
+
+#~ msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
+#~ msgstr "このプログラムは有用とは思いますが、頒布にあたっては市場性または特定の目的に対する適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細は GNU 一般公衆利用許諾契約書をご覧ください。"
+
+#~ msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr "あなたは本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを受け取っているはずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA まで連絡してください。"
+
+#~ msgid "The document does not exist."
+#~ msgstr "ドキュメントは存在しません。"
+
+#~ msgid "The folder does not exist."
+#~ msgstr "そのフォルダーは存在しません。"
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "リモートフォルダーのスキャン(_C)..."
 
 #~ msgid "Scan F_older..."
 #~ msgstr "フォルダーのスキャン(_O)..."
-
-#~ msgid "Scan home folder"
-#~ msgstr "ホームフォルダーを解析します"
