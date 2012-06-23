@@ -420,7 +420,7 @@ namespace Baobab {
                     var file = File.parse_name (parse_name);
                     try {
                         file.trash ();
-                        scanner.remove (iter);
+                        scanner.remove (ref iter);
                     } catch (Error e) {
                         warning ("Failed to move file to the trash: %s", e.message);
                     }
