@@ -20,6 +20,11 @@ baobab_VALAFLAGS = \
 	--pkg gio-2.0		\
 	--pkg gio-unix-2.0
 
+noinst_HEADERS = \
+	baobab-chart.h			\
+	baobab-treemap.h		\
+	baobab-ringschart.h
+
 baobab_SOURCES = \
 	fixes.vapi			\
 	baobab.vapi			\
