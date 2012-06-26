@@ -7,10 +7,10 @@
 # Dirgita <dirgitadevina@yahoo.co.id>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils.master\n"
+"Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-03-31 09:09+0700\n"
+"POT-Creation-Date: 2012-05-14 14:28+0000\n"
+"PO-Revision-Date: 2012-06-27 02:35+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,26 +24,13 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../data/baobab.desktop.in.in.h:1
-#: ../data/baobab-main-window.ui.h:15
+#: ../src/baobab-window.vala:152
 msgid "Disk Usage Analyzer"
 msgstr "Penganalisa Penggunaan Disk"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Periksa ukuran folder dan ruang disk yang tersedia"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Preferensi Penganalisa Penggunaan Disk"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-#| msgid "Select _devices to include in filesystem scan:"
-msgid "Select _devices to include in file system scan:"
-msgstr "Pilih perangkat yang akan _disertakan dalam pemindaian sistem berkas:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "Pantau perubahan pada folder ru_mah Anda"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Monitor Home"
@@ -85,463 +72,220 @@ msgstr "Grafik Aktif"
 msgid "Which type of chart should be displayed."
 msgstr "Jenis grafik mana yang mesti ditampilkan."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "Peng_analisa"
-
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Pindai Folder _Home"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Pindai Sistem _Berkas"
-
-#: ../data/baobab-main-window.ui.h:4
-#| msgid "Scan Folder"
-msgid "Scan F_older…"
-msgstr "Pindai F_older..."
-
-#: ../data/baobab-main-window.ui.h:5
-#| msgid "Scan Remote Folder"
-msgid "S_can Remote Folder…"
-msgstr "_Pindai Folder Jauh..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Sunting"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "K_embangkan Semua"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "_Lipat Semua"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_Tampilan"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "_Panel"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "Bil_ah status"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "Ruang Terpaka_i"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "Ba_ntuan"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "Daftar _Isi"
-
-#: ../data/baobab-main-window.ui.h:16
-#| msgid "Rescan your home folder?"
-msgid "Scan your home folder"
-msgstr "Pindai folder rumah Anda"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Pindai Home"
-
-#: ../data/baobab-main-window.ui.h:18
-#| msgid "Scan filesystem"
-msgid "Scan the file system"
-msgstr "Pindai sistem berkas"
-
-#: ../data/baobab-main-window.ui.h:19
-#| msgid "Scan Filesystem"
-msgid "Scan File System"
-msgstr "Pindai Sistem Berkas"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Pindai suatu folder"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Pindai Folder"
-
-#: ../data/baobab-main-window.ui.h:22
-#| msgid "Scan a remote folder"
-msgid "Scan a remote folder or file system"
-msgstr "Pindai suatu folder atau sistem berkas jauh"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Pindai Folder Jauh"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Berhenti memindai"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Segarkan"
-
-#: ../src/baobab.c:130
-#: ../src/baobab.c:404
-#| msgid "Scanning..."
-msgid "Scanning…"
-msgstr "Memindai..."
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Kapasitas total sistem berkas:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "digunakan:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "tersedia:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267
-#: ../src/baobab.c:324
-#: ../src/callbacks.c:264
-#| msgid "Calculating percentage bars..."
-msgid "Calculating percentage bars…"
-msgstr "Menghitung batang persentasi..."
-
-#: ../src/baobab.c:278
-#: ../src/baobab.c:1226
-#: ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Siap"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Kapasitas total sistem berkas"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Total pemakaian sistem berkas"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "mengandung hardlink untuk:"
-
-#: ../src/baobab.c:509
-#, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d objek"
-
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Tak dapat menginisialisasi pemantauan"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Perubahan pada direktori home tak akan dipantau."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Tilik Sebagai Diagram Cincin"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Tilik Sebagai Diagram Peta Pohon"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Tampilkan versi"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[DIREKTORI]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Terlalu banyak argumen. Hanya bisa menyatakan satu direktori."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Tak dapat mendeteksi titik kait manapun."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Tanpa titik kait penggunaan disk tak dapat dianalisis."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Kedalaman maksimum"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Kedalaman maksimum penggambaran diagram dari akar"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Model diagram"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Tata model diagram"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Titik akar diagram"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Tata titik akar dari model"
 
-#: ../src/baobab-chart.c:905
+#: ../src/baobab-chart.c:898
 msgid "Move to parent folder"
 msgstr "Pindahkan ke folder induk"
 
-#: ../src/baobab-chart.c:909
+#: ../src/baobab-chart.c:902
 msgid "Zoom in"
 msgstr "Perbesar"
 
-#: ../src/baobab-chart.c:913
+#: ../src/baobab-chart.c:906
 msgid "Zoom out"
 msgstr "Perkecil"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Simpan cuplikan layar"
+#: ../src/baobab-location.vala:65
+#| msgid "Scan Home"
+msgid "Main volume"
+msgstr "Volume utama"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Tidak bisa membuat gambar pixbuf!"
+#: ../src/baobab-location.vala:80
+#| msgid "Scan _Home Folder"
+msgid "Home folder"
+msgstr "Folder rumah"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Simpan Snapshot"
+#: ../src/baobab-location-widget.vala:85
+msgid "Usage unknown"
+msgstr "Pemakaian tak diketahui"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "Tipe c_itra:"
-
-#: ../src/baobab-prefs.c:173
+#: ../src/baobab-location-widget.vala:90
 msgid "Scan"
 msgstr "Pindai"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Perangkat"
+#: ../src/baobab-location-widget.vala:90
+msgid "Mount and scan"
+msgstr "Kaitkan dan pindai"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Titik Kait"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Pindai suatu folder"
 
-#: ../src/baobab-prefs.c:197
-#| msgid "Filesystem Type"
-msgid "File System Type"
-msgstr "Tipe Sistem Berkas"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Pindai Folder"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Ukuran Total"
+#: ../src/baobab-main-window.ui.h:3
+#| msgid "Scan Remote Folder"
+msgid "Scan a remote folder"
+msgstr "Pindai suatu folder jauh"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Tersedia"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Pindai Folder Jauh"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Tak bisa memindai lokasi \"%s\""
+#: ../src/baobab-main-window.ui.h:5
+#| msgid "Cannot scan location \"%s\""
+msgid "Show all locations"
+msgstr "Tampilkan semua lokasi"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Lokasi Gubahan"
+#: ../src/baobab-main-window.ui.h:6
+#: ../src/baobab-window.vala:471
+msgid "All locations"
+msgstr "Semua lokasi"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Stop scanning"
+msgstr "Berhenti memindai"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP Publik"
+#: ../src/baobab-main-window.ui.h:8
+#| msgid "Ready"
+msgid "Reload"
+msgstr "Muat ulang"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (dengan login)"
+#: ../src/baobab-main-window.ui.h:9
+msgid "label"
+msgstr "label"
 
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows berbagi"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Close"
+msgstr "Tutup"
 
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV Aman (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Tak Bisa Menyambung ke Server. Anda mesti memasukkan sebuah nama bagi server."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Silahkan berikan nama dan coba lagi."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Lokasi (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Server:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Informasi pilihan:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Bagi:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Folder"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Nama Pengguna:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Nama _Domain:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Sambungkan ke Server"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "_Jenis server:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Pindai"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Pindai ulang folder rumah Anda?"
-
-#: ../src/baobab-treeview.c:84
-msgid "The content of your home folder has changed. Select rescan to update the disk usage details."
-msgstr "Isi dari folder rumah Anda telah berubah. Pilih pindai ulang untuk memperbarui rincian pemakaian disk."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "_Pindai ulang"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:11
 msgid "Folder"
 msgstr "Folder"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:12
 msgid "Usage"
 msgstr "Cara pakai"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:13
 msgid "Size"
 msgstr "Ukuran"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:14
 msgid "Contents"
 msgstr "Isi"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Pilih Folder"
+#: ../src/baobab-main-window.ui.h:15
+#| msgid "View as Rings Chart"
+msgid "Rings Chart"
+msgstr "Bagan Cincin"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "Tampilkan folder ter_sembunyi"
+#: ../src/baobab-main-window.ui.h:16
+#| msgid "View as Treemap Chart"
+msgid "Treemap Chart"
+msgstr "Bagan Peta Pohon"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Tak bisa mencontreng folder yang tak disertakan"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" bukan folder yang valid"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Tak bisa menganalisa penggunaan disk."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:17
 msgid "_Open Folder"
 msgstr "Buka F_older"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Buang ke _Tong Sampah"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Folder \"%s\" tidak dapat dibuka."
+#: ../src/baobab-menu.ui.h:1
+msgid "_All locations"
+msgstr "Semu_a lokasi"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Tidak ada penilik yang dapat mampu menampilkan folder ini."
+#: ../src/baobab-menu.ui.h:2
+#| msgid "Scan Home"
+msgid "_Scan Home"
+msgstr "_Pindai Home"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "\"%s\" tak bisa dipindah ke Tong Sampah"
+#: ../src/baobab-menu.ui.h:3
+msgid "Scan F_older…"
+msgstr "Pindai F_older..."
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Tak bisa membuang berkas ke Tong Sampah"
+#: ../src/baobab-menu.ui.h:4
+#| msgid "S_can Remote Folder…"
+msgid "Scan Remote Fo_lder…"
+msgstr "Pindai Fo_lder Jauh..."
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Rincian: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Stop"
+msgstr "_Stop"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Ada kesalahan saat menampilkan bantuan."
+#: ../src/baobab-menu.ui.h:6
+#| msgid "Ready"
+msgid "_Reload"
+msgstr "Muat _Ulang"
 
-#: ../src/callbacks.c:75
-msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
-msgstr "Program ini adalah perangkat lunak bebas: Anda dapat menyebarluaskannya dan/atau mengubahnya di bawah syarat dari GNU General Public License sebagaimana dipublikasikan oleh Free Software Foundation, bisa Lisensi versi 2, atau (sesuai pilihan Anda) sebarang versi setelahnya."
+#: ../src/baobab-menu.ui.h:7
+msgid "_Help"
+msgstr "Ba_ntuan"
 
-#: ../src/callbacks.c:80
-msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
-msgstr "Program ini disebarluaskan dengan harapan akan berguna, tapi TANPA JAMINAN APAPUN; bahkan tanpa jaminan tersirat atas KELAYAKAN JUAL atau KECOCOKAN BAGI KEPERLUAN TERTENTU. Lihat GNU General Public License untuk rincian lebih jauh."
+#: ../src/baobab-menu.ui.h:8
+msgid "_About"
+msgstr "Tent_ang"
 
-#: ../src/callbacks.c:85
-msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr "Anda seharusnya menerima salinan dari GNU General Public License bersama dengan program ini; jika tidak, tulis ke Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+#| msgid "_Edit"
+msgid "_Quit"
+msgstr "_Keluar"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Analyzer"
+msgstr "Peng_analisa"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_View"
+msgstr "_Tampilan"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Toolbar"
+msgstr "_Panel"
+
+#: ../src/baobab-menu.ui.h:13
+#| msgid "All_ocated Space"
+msgid "_Allocated Space"
+msgstr "Ru_ang Terpakai"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "_Expand All"
+msgstr "K_embangkan Semua"
+
+#: ../src/baobab-menu.ui.h:15
+msgid "_Collapse All"
+msgstr "_Lipat Semua"
+
+#: ../src/baobab-window.vala:202
+msgid "Select Folder"
+msgstr "Pilih Folder"
+
+#: ../src/baobab-window.vala:280
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:283
 msgid "A graphical tool to analyze disk usage."
 msgstr "Alat grafis untuk menganalisa penggunaan disk."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:288
 msgid "translator-credits"
 msgstr ""
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
@@ -549,11 +293,28 @@ msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2010, 2011, 2012.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2011."
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Dokumen tidak ada."
+#: ../src/baobab-window.vala:349
+#| msgid "Could not analyze disk usage."
+msgid "Could not analyze volume."
+msgstr "Tak bisa menganalisa volume."
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Folder tidak ada."
+#: ../src/baobab-window.vala:463
+msgid "Cancel scan"
+msgstr "Batalkan pemindaian"
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:494
+#: ../src/baobab-window.vala:500
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" bukan folder yang valid"
+
+#: ../src/baobab-window.vala:495
+msgid "Could not analyze disk usage."
+msgstr "Tak bisa menganalisa penggunaan disk."
+
+#: ../src/baobab-window.vala:554
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Tak bisa memindai folder \"%s\" atau beberapa folder yang dikandungnya."
 
