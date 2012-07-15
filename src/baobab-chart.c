@@ -895,15 +895,15 @@ do_popup_menu (BaobabChart    *chart,
 
   gtk_menu_attach_to_widget (GTK_MENU (menu), GTK_WIDGET (chart), popup_menu_detach);
 
-  up_item = gtk_image_menu_item_new_with_label (_("Move to parent folder"));
+  up_item = gtk_image_menu_item_new_with_mnemonic (_("_Move to parent folder"));
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (up_item),
                                  gtk_image_new_from_stock(GTK_STOCK_GO_UP, GTK_ICON_SIZE_MENU));
 
-  zoom_in_item = gtk_image_menu_item_new_with_label (_("Zoom in")) ;
+  zoom_in_item = gtk_image_menu_item_new_with_mnemonic (_("Zoom _in")) ;
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (zoom_in_item),
                                  gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_MENU));
 
-  zoom_out_item = gtk_image_menu_item_new_with_label (_("Zoom out"));
+  zoom_out_item = gtk_image_menu_item_new_with_mnemonic (_("Zoom _out"));
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (zoom_out_item),
                                  gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));
 
