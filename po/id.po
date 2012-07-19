@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-05-14 14:28+0000\n"
-"PO-Revision-Date: 2012-07-10 21:35+0700\n"
+"POT-Creation-Date: 2012-07-18 11:21+0000\n"
+"PO-Revision-Date: 2012-07-19 11:26+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,24 +97,28 @@ msgid "Set the root node from the model"
 msgstr "Tata titik akar dari model"
 
 #: ../src/baobab-chart.c:898
-msgid "Move to parent folder"
-msgstr "Pindahkan ke folder induk"
+msgid "_Move to parent folder"
+msgstr "_Pindahkan ke folder induk"
 
 #: ../src/baobab-chart.c:902
-msgid "Zoom in"
-msgstr "Perbesar"
+msgid "Zoom _in"
+msgstr "Per_besar"
 
 #: ../src/baobab-chart.c:906
-msgid "Zoom out"
-msgstr "Perkecil"
+msgid "Zoom _out"
+msgstr "Per_kecil"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d butir"
 
 #: ../src/baobab-location.vala:65
-#| msgid "Scan Home"
 msgid "Main volume"
 msgstr "Volume utama"
 
 #: ../src/baobab-location.vala:80
-#| msgid "Scan _Home Folder"
 msgid "Home folder"
 msgstr "Folder rumah"
 
@@ -139,7 +143,6 @@ msgid "Scan Folder"
 msgstr "Pindai Folder"
 
 #: ../src/baobab-main-window.ui.h:3
-#| msgid "Scan Remote Folder"
 msgid "Scan a remote folder"
 msgstr "Pindai suatu folder jauh"
 
@@ -148,7 +151,6 @@ msgid "Scan Remote Folder"
 msgstr "Pindai Folder Jauh"
 
 #: ../src/baobab-main-window.ui.h:5
-#| msgid "Cannot scan location \"%s\""
 msgid "Show all locations"
 msgstr "Tampilkan semua lokasi"
 
@@ -162,7 +164,6 @@ msgid "Stop scanning"
 msgstr "Berhenti memindai"
 
 #: ../src/baobab-main-window.ui.h:8
-#| msgid "Ready"
 msgid "Reload"
 msgstr "Muat ulang"
 
@@ -191,12 +192,10 @@ msgid "Contents"
 msgstr "Isi"
 
 #: ../src/baobab-main-window.ui.h:15
-#| msgid "View as Rings Chart"
 msgid "Rings Chart"
 msgstr "Bagan Cincin"
 
 #: ../src/baobab-main-window.ui.h:16
-#| msgid "View as Treemap Chart"
 msgid "Treemap Chart"
 msgstr "Bagan Peta Pohon"
 
@@ -213,7 +212,6 @@ msgid "_All locations"
 msgstr "Semu_a lokasi"
 
 #: ../src/baobab-menu.ui.h:2
-#| msgid "Scan Home"
 msgid "_Scan Home"
 msgstr "_Pindai Home"
 
@@ -222,7 +220,6 @@ msgid "Scan F_older…"
 msgstr "Pindai F_older..."
 
 #: ../src/baobab-menu.ui.h:4
-#| msgid "S_can Remote Folder…"
 msgid "Scan Remote Fo_lder…"
 msgstr "Pindai Fo_lder Jauh..."
 
@@ -231,7 +228,6 @@ msgid "_Stop"
 msgstr "_Stop"
 
 #: ../src/baobab-menu.ui.h:6
-#| msgid "Ready"
 msgid "_Reload"
 msgstr "Muat _Ulang"
 
@@ -244,7 +240,6 @@ msgid "_About"
 msgstr "Tent_ang"
 
 #: ../src/baobab-menu.ui.h:9
-#| msgid "_Edit"
 msgid "_Quit"
 msgstr "_Keluar"
 
@@ -261,7 +256,6 @@ msgid "_Toolbar"
 msgstr "_Panel"
 
 #: ../src/baobab-menu.ui.h:13
-#| msgid "All_ocated Space"
 msgid "_Allocated Space"
 msgstr "Ru_ang Terpakai"
 
@@ -294,7 +288,6 @@ msgstr ""
 "Dirgita <dirgitadevina@yahoo.co.id>, 2011."
 
 #: ../src/baobab-window.vala:349
-#| msgid "Could not analyze disk usage."
 msgid "Could not analyze volume."
 msgstr "Tak bisa menganalisa volume."
 
