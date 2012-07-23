@@ -153,19 +153,9 @@ namespace Baobab {
             set_default_size (800, 500);
             set_hide_titlebar_when_maximized (true);
 
-            set_ui_page (UIPage.HOME);
-
-            set_busy (false);
+            set_ui_state (UIPage.HOME, false);
 
             show ();
-        }
-
-        void set_ui_page (UIPage page) {
-            toolbar_home_toolitem.visible = (page == UIPage.HOME);
-            toolbar_show_home_page.visible = (page == UIPage.RESULT);
-            toolbar_rescan.visible = (page == UIPage.RESULT);
-
-            main_notebook.page = page;
         }
 
         void on_show_home_page_activate () {
@@ -174,7 +164,7 @@ namespace Baobab {
             }
 
             clear_message ();
-            set_ui_page (UIPage.HOME);
+            set_ui_state (UIPage.HOME, false);
         }
 
         void on_chart_type_changed (SimpleAction action, Variant value) {
@@ -482,6 +472,21 @@ namespace Baobab {
             }
         }
 
+        void set_ui_state (UIPage page, bool busy) {
+            toolbar_home_toolitem.visible = (page == UIPage.HOME);
+            toolbar_show_home_page.visible = (page == UIPage.RESULT);
+            toolbar_rescan.visible = (page == UIPage.RESULT);
+
+            set_busy (busy);
+
+            if (page == UIPage.HOME) {
+                var action = lookup_action ("reload") as SimpleAction;
+                action.set_enabled (false);
+            }
+
+            main_notebook.page = page;
+        }
+
         public bool check_dir (File directory) {
             //if (Application.is_excluded_location (directory)) {
             //    message("", _("Cannot check an excluded folder!"), Gtk.MessageType.INFO);
@@ -544,7 +549,7 @@ namespace Baobab {
             set_model (scanner);
 
             scanner.completed.connect(() => {
-                set_busy (false);
+                set_ui_state (UIPage.RESULT, false);
                 try {
                     scanner.finish();
                 } catch (IOError.CANCELLED e) {
@@ -557,9 +562,7 @@ namespace Baobab {
             });
 
             clear_message ();
-
-            set_ui_page (UIPage.RESULT);
-            set_busy (true);
+            set_ui_state (UIPage.RESULT, true);
 
             scanner.scan ();
         }
