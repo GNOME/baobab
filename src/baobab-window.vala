@@ -348,10 +348,20 @@ namespace Baobab {
             location_list.show_all ();
         }
 
+        void update_separator (ref Gtk.Widget? separator, Gtk.Widget widget, Gtk.Widget? before_widget) {
+            if (before_widget != null && separator == null) {
+                separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+            } else {
+                separator = null;
+            }
+        }
+
         void setup_home_page () {
             location_list = new Egg.ListBox ();
             location_scroll.add_with_viewport (location_list);
             location_list.set_adjustment (location_scroll.get_vadjustment ());
+            location_list.get_style_context ().add_class ("baobab-main-view");
+            location_list.set_separator_funcs (update_separator);
 
             location_monitor = LocationMonitor.get ();
             location_monitor.changed.connect (() => { update_locations (); });
