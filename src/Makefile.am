@@ -40,6 +40,7 @@ baobab_SOURCES = \
 	baobab-location-widget.vala	\
 	baobab-scanner.vala		\
 	baobab-window.vala		\
+	egg-list-box.vala		\
 	main.vala			\
 	$(BUILT_SOURCES)
 

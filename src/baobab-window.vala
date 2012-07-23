@@ -32,9 +32,10 @@ namespace Baobab {
         Gtk.InfoBar infobar;
         Gtk.Label infobar_primary;
         Gtk.Label infobar_secondary;
+        Gtk.ScrolledWindow location_scroll;
+        Egg.ListBox location_list;
         Gtk.TreeView treeview;
         Gtk.Notebook chart_notebook;
-        Gtk.Grid location_view;
         Chart rings_chart;
         Chart treemap_chart;
         Gtk.Spinner spinner;
@@ -121,12 +122,13 @@ namespace Baobab {
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
+            location_scroll = builder.get_object ("volume-scrolled-window") as Gtk.ScrolledWindow;
+            location_list = builder.get_object ("location-view") as Egg.ListBox;
             treeview = builder.get_object ("treeview") as Gtk.TreeView;
             chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
             rings_chart = builder.get_object ("rings-chart") as Chart;
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
-            location_view = builder.get_object ("location-view") as Gtk.Grid;
 
             setup_home_page ();
             setup_treeview (builder);
@@ -317,7 +319,7 @@ namespace Baobab {
         }
 
         void update_locations () {
-            location_view.foreach ((widget) => { widget.destroy (); });
+            location_list.foreach ((widget) => { widget.destroy (); });
 
             foreach (var location in location_monitor.get_locations ()) {
                 LocationWidget loc_widget;
@@ -338,13 +340,17 @@ namespace Baobab {
                     });
                 }
 
-                location_view.add (loc_widget);
+                location_list.add (loc_widget);
             }
 
-            location_view.show_all ();
+            location_list.show_all ();
         }
 
         void setup_home_page () {
+            location_list = new Egg.ListBox ();
+            location_scroll.add_with_viewport (location_list);
+            location_list.set_adjustment (location_scroll.get_vadjustment ());
+
             location_monitor = LocationMonitor.get ();
             location_monitor.changed.connect (() => { update_locations (); });
             update_locations ();
