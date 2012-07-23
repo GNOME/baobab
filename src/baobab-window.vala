@@ -55,7 +55,6 @@ namespace Baobab {
             { "scan-remote", on_scan_remote_activate },
             { "stop", on_stop_activate },
             { "reload", on_reload_activate },
-            { "show-toolbar", on_show_toolbar },
             { "show-allocated", on_show_allocated },
             { "expand-all", on_expand_all },
             { "collapse-all", on_collapse_all },
@@ -230,9 +229,6 @@ namespace Baobab {
             if (scanner != null) {
                 scan_directory (scanner.directory, scanner.scan_flags);
             }
-        }
-
-        void on_show_toolbar () {
         }
 
         void on_show_allocated () {
