@@ -126,6 +126,7 @@ namespace Baobab {
         }
 
         void on_quit_activate () {
+            quit ();
         }
     }
 }
