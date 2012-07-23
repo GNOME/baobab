@@ -15,7 +15,7 @@
             <child>
               <object class="GtkButtonBox" id="scan-buttonbox">
                 <property name="visible">True</property>
-                <property name="layout_style">start</property>
+                <property name="layout_style">center</property>
                 <style>
                   <class name="linked"/>
                 </style>
@@ -50,10 +50,14 @@
               </object>
             </child>
           </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="homogeneous">True</property>
+          </packing>
         </child>
         <child>
           <object class="GtkToolButton" id="show-home-page-button">
-            <property name="visible">True</property>
+            <property name="visible">False</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
             <property name="is_important">True</property>
@@ -70,8 +74,8 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSeparatorToolItem" id="separatortoolitem1">
-            <property name="visible">True</property>
+          <object class="GtkSeparatorToolItem" id="toolbar-separator">
+            <property name="visible">False</property>
             <property name="can_focus">False</property>
             <property name="draw">False</property>
           </object>
@@ -97,7 +101,7 @@
         </child>
         <child>
           <object class="GtkToolButton" id="rescan-button">
-            <property name="visible">True</property>
+            <property name="visible">False</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
             <property name="tooltip_markup" translatable="yes">Reload</property>
