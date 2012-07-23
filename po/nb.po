@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab 3.4.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-18 19:40+0200\n"
-"PO-Revision-Date: 2012-04-18 19:40+0200\n"
+"POT-Creation-Date: 2012-07-23 12:08+0200\n"
+"PO-Revision-Date: 2012-07-23 12:09+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -66,58 +66,48 @@ msgstr "Aktivt plott"
 msgid "Which type of chart should be displayed."
 msgstr "Type plott som skal vises."
 
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maksimal dybde"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Maksimal dybde som tegnes i diagrammet fra roten"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Modell for diagram"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Sett modell for diagram"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Rotnode for diagram"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Sett rot-node fra modellen"
 
-#: ../src/baobab-chart.c:908
-msgid "Move to parent folder"
-msgstr "Flytt til opphavsmappe"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "Flytt til opphavs_mappe"
 
-#: ../src/baobab-chart.c:912
-msgid "Zoom in"
-msgstr "Zoom inn"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Zoom _inn"
 
-#: ../src/baobab-chart.c:916
-msgid "Zoom out"
-msgstr "Zoom ut"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "Zoom _ut"
 
-#: ../src/baobab-chart.c:920
-msgid "Save screenshot"
-msgstr "Lagre skjermdump"
-
-#: ../src/baobab-chart.c:1809
-msgid "Cannot create pixbuf image!"
-msgstr "Kan ikke opprette pixbuf-bilde!"
-
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1817
-msgid "Save Snapshot"
-msgstr "Lagre snapshot"
-
-#: ../src/baobab-chart.c:1844
-msgid "_Image type:"
-msgstr "B_ildetype:"
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d oppføring"
+msgstr[1] "%d oppføringer"
 
 #: ../src/baobab-location.vala:65
 msgid "Main volume"
@@ -127,15 +117,11 @@ msgstr "Hovedvolum"
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "Bruk ukjent"
-
-#: ../src/baobab-location-widget.vala:90
+#: ../src/baobab-location-widget.vala:96
 msgid "Scan"
 msgstr "Søk"
 
-#: ../src/baobab-location-widget.vala:90
+#: ../src/baobab-location-widget.vala:96
 msgid "Mount and scan"
 msgstr "Monter og gjennomsøk"
 
@@ -313,229 +299,3 @@ msgstr "Kunne ikke analysere diskbruk"
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Kunne ikke gjennomsøke mappe «%s» eller noen av mappene den inneholder."
-
-#~ msgid "_Edit"
-#~ msgstr "R_ediger"
-
-#~ msgid "St_atusbar"
-#~ msgstr "St_atuslinje"
-
-#~ msgid "_Contents"
-#~ msgstr "_Innhold"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "Søk i din hjemmemappe"
-
-#~ msgid "Scan the file system"
-#~ msgstr "Søk i filsystem"
-
-#~ msgid "Scan File System"
-#~ msgstr "Søk i filsystem"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Søk i en ekstern mappe eller filsystem"
-
-#~ msgid "Refresh"
-#~ msgstr "Oppdater"
-
-#~ msgid "Scanning…"
-#~ msgstr "Søker …"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Total kapasitet for filsystemet:"
-
-#~ msgid "used:"
-#~ msgstr "brukt:"
-
-#~ msgid "available:"
-#~ msgstr "tilgjengelig:"
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Beregner prosentsøylene …"
-
-#~ msgid "Ready"
-#~ msgstr "Klar"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Total kapasitet for filsystemet"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Total benyttet plass på filsystemet"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "inneholder harde lenker for:"
-
-#~ msgid "%5d item"
-#~ msgid_plural "%5d items"
-#~ msgstr[0] "%5d oppføring"
-#~ msgstr[1] "%5d oppføringer"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Kunne ikke initiere overvåking"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Endringer i hjemmekatalogen vil ikke overvåkes."
-
-#~ msgid "Show version"
-#~ msgstr "Vis versjon"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[KATALOG]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "For mange argumenter. Du kan kun oppgi en katalog."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Fant ingen monterinspunkter."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "Diskbruk kan ikke analyseres uten monteringspunkter."
-
-#~ msgid "Device"
-#~ msgstr "Enhet"
-
-#~ msgid "Mount Point"
-#~ msgstr "Monteringspunkt"
-
-#~ msgid "File System Type"
-#~ msgstr "Type filsystem"
-
-#~ msgid "Total Size"
-#~ msgstr "Total størrelse"
-
-#~ msgid "Available"
-#~ msgstr "Tilgjengelig"
-
-#~ msgid "Custom Location"
-#~ msgstr "Egendefinert adresse"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "Offentlig FTP"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (med innlogging)"
-
-#~ msgid "Windows share"
-#~ msgstr "Delt ressurs"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "Sikker WebDAV (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr "Kan ikke koble til tjener. Du må oppgi et navn for tjeneren"
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Vennligst oppgi et nytt navn og prøv igjen."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Adresse (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Tjener:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Valgfri informasjon:"
-
-#~ msgid "_Share:"
-#~ msgstr "Delt re_ssurs:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Port:"
-
-#~ msgid "_Folder:"
-#~ msgstr "_Mappe:"
-
-#~ msgid "_User Name:"
-#~ msgstr "Br_ukernavn:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "_Domenenavn:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Koble til tjener"
-
-#~ msgid "Service _type:"
-#~ msgstr "_Type tjeneste:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Søk"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Oppdater din hjemmemappe?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "Innholdet i din hjemmekatalog er endret. Velg oppdater for å oppdatere "
-#~ "detaljene for mappene?"
-
-#~ msgid "_Rescan"
-#~ msgstr "Oppdate_r"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "Vi_s skjulte mapper"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Kan ikke sjekke en utelukket mappe!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Kunne ikke åpne mappe «%s»."
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "Du har ikke installert visningsprogram som kan vise mappen."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "Kunne ikke flytte «%s» til papirkurven"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "Kunne ikke flytte filen til papirkurven"
-
-#~ msgid "Details: %s"
-#~ msgstr "Detaljer: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "Det oppsto en feil under visning av hjelp."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Dette programmet er fri programvare. Du kan redistribuere og/eller endre "
-#~ "programmet under betingelsene gitt i GNU General Public License som "
-#~ "utgitt av Free Software Foundation; enten versjon 2 av lisensen, eller "
-#~ "(hvis du ønsker det) enhver senere versjon."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Programmet distribueres i håp om at programmet er nyttig, men uten NOEN "
-#~ "GARANTI, ikke engang implisitt garanti om at det er SALGBART eller PASSER "
-#~ "ET BESTEMT FORMÅL. Se GNU General Public License for detaljer."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Du skal ha mottatt en kopi av GNU General Public License sammen med dette "
-#~ "programmet. Hvis dette ikke er tilfelle, kan du skrive til Free Software "
-#~ "Foundation, Inc. 51 Franklin Street, Fifth Florr, Boston, MA 02110-1301, "
-#~ "USA"
-
-#~ msgid "The document does not exist."
-#~ msgstr "Dokumentet eksisterer ikke."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "Mappen eksisterer ikke."
