@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-22 11:28+0300\n"
-"PO-Revision-Date: 2012-04-22 11:31+0200\n"
+"POT-Creation-Date: 2012-07-24 22:54+0300\n"
+"PO-Revision-Date: 2012-07-24 22:55+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Poedit-Language: Hebrew\n"
 
 #: ../data/baobab.desktop.in.in.h:1
-#: ../src/baobab-window.vala:152
+#: ../src/baobab-window.vala:157
 msgid "Disk Usage Analyzer"
 msgstr "מנתח השימוש בכונן"
 
@@ -78,76 +78,62 @@ msgstr "Active Chart"
 msgid "Which type of chart should be displayed."
 msgstr "Which type of chart should be displayed."
 
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "עומק מרבי"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "העומק במרבי שיוצג בתרשים החל מתיקיית הבסיס"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "דגם טבלה"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "הגדרת דגם הטבלה"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "המיקום הראשי לתרשים"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "בחירת המיקום הראשי מהדגם"
 
-#: ../src/baobab-chart.c:908
-msgid "Move to parent folder"
-msgstr "העברה לתיקיית ההורה"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "ה_עברה לתיקיית ההורה"
 
-#: ../src/baobab-chart.c:912
-msgid "Zoom in"
-msgstr "התקרבות"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "הת_קרבות"
 
-#: ../src/baobab-chart.c:916
-msgid "Zoom out"
-msgstr "התרחקות"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "הת_רחקות"
 
-#: ../src/baobab-chart.c:920
-msgid "Save screenshot"
-msgstr "שמירת צילום המסך"
-
-#: ../src/baobab-chart.c:1809
-msgid "Cannot create pixbuf image!"
-msgstr "לא ניתן ליצור תמונת pixbuf!"
-
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1817
-msgid "Save Snapshot"
-msgstr "שמירת צילום מפה"
-
-#: ../src/baobab-chart.c:1844
-msgid "_Image type:"
-msgstr "_סוג התמונה:"
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "פריט אחד"
+msgstr[1] "%d פריטים"
 
 #: ../src/baobab-location.vala:65
 msgid "Main volume"
 msgstr "הכרך הראשי"
 
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:84
 msgid "Home folder"
 msgstr "תיקיית הבית"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "השימוש בלתי ידוע"
-
-#: ../src/baobab-location-widget.vala:90
+#: ../src/baobab-location-widget.vala:96
 msgid "Scan"
 msgstr "סריקה"
 
-#: ../src/baobab-location-widget.vala:90
+#: ../src/baobab-location-widget.vala:96
 msgid "Mount and scan"
 msgstr "עיגון וסריקה"
 
@@ -172,7 +158,7 @@ msgid "Show all locations"
 msgstr "הצגת כל המיקומים"
 
 #: ../src/baobab-main-window.ui.h:6
-#: ../src/baobab-window.vala:471
+#: ../src/baobab-window.vala:444
 msgid "All locations"
 msgstr "כל המיקומים"
 
@@ -269,34 +255,34 @@ msgid "_View"
 msgstr "תצוגה"
 
 #: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "_סרגל כלים"
-
-#: ../src/baobab-menu.ui.h:13
 msgid "_Allocated Space"
 msgstr "מקום מוק_צה"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:13
 msgid "_Expand All"
 msgstr "הר_חבת הכול"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:14
 msgid "_Collapse All"
 msgstr "_צמצום הכול"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:197
 msgid "Select Folder"
 msgstr "בחירת תיקייה"
 
-#: ../src/baobab-window.vala:280
+#: ../src/baobab-window.vala:237
+msgid "Could not analyze volume."
+msgstr "לא ניתן לנתח את הכרך."
+
+#: ../src/baobab-window.vala:287
 msgid "Baobab"
 msgstr "‏Baobab"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
 msgstr "כלי גרפי לניתוח השימוש בכונן."
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:295
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -308,29 +294,43 @@ msgstr ""
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../src/baobab-window.vala:349
-msgid "Could not analyze volume."
-msgstr "לא ניתן לנתח את הכרך."
-
-#: ../src/baobab-window.vala:463
+#: ../src/baobab-window.vala:436
 msgid "Cancel scan"
 msgstr "ביטול הסריקה"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494
-#: ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:483
+#: ../src/baobab-window.vala:489
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" אינה תיקייה תקינה"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:484
 msgid "Could not analyze disk usage."
 msgstr "לא ניתן לנתח את השימוש בכונן."
 
-#: ../src/baobab-window.vala:554
+#: ../src/baobab-window.vala:543
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "לא ניתן לסרוק את התיקייה „%s“ או חלק מהתיקיות שהיא מכילה."
+
+#~ msgid "Save screenshot"
+#~ msgstr "שמירת צילום המסך"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "לא ניתן ליצור תמונת pixbuf!"
+
+#~ msgid "Save Snapshot"
+#~ msgstr "שמירת צילום מפה"
+
+#~ msgid "_Image type:"
+#~ msgstr "_סוג התמונה:"
+
+#~ msgid "Usage unknown"
+#~ msgstr "השימוש בלתי ידוע"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_סרגל כלים"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "העדפות מנתח השימוש בכונן"
@@ -397,12 +397,6 @@ msgstr "לא ניתן לסרוק את התיקייה „%s“ או חלק מהת
 
 #~ msgid "contains hardlinks for:"
 #~ msgstr "מכיל קישורים קשיחים עבור:"
-
-#~ msgid "%5d item"
-
-#~ msgid_plural "%5d items"
-#~ msgstr[0] "פריט אחד"
-#~ msgstr[1] "%5d פריטים"
 
 #~ msgid "Could not initialize monitoring"
 #~ msgstr "לא ניתן להפעיל את המעקב"
