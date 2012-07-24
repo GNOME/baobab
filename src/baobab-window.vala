@@ -34,14 +34,13 @@ namespace Baobab {
         Gtk.Label infobar_primary;
         Gtk.Label infobar_secondary;
         Gtk.ScrolledWindow location_scroll;
-        Egg.ListBox location_list;
+        LocationList location_list;
         Gtk.TreeView treeview;
         Gtk.Notebook chart_notebook;
         Chart rings_chart;
         Chart treemap_chart;
         Gtk.Spinner spinner;
         Scanner? scanner;
-        LocationMonitor location_monitor;
 
         static Gdk.Cursor busy_cursor;
 
@@ -124,15 +123,18 @@ namespace Baobab {
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
-            location_scroll = builder.get_object ("volume-scrolled-window") as Gtk.ScrolledWindow;
-            location_list = builder.get_object ("location-view") as Egg.ListBox;
+            location_scroll = builder.get_object ("location-scrolled-window") as Gtk.ScrolledWindow;
+            location_list = builder.get_object ("location-list") as LocationList;
             treeview = builder.get_object ("treeview") as Gtk.TreeView;
             chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
             rings_chart = builder.get_object ("rings-chart") as Chart;
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
 
-            setup_home_page ();
+            location_list.set_adjustment (location_scroll.get_vadjustment ());
+            location_list.set_action (on_scan_location_activate);
+            location_list.update ();
+
             setup_treeview (builder);
 
             var infobar_close_button = builder.get_object ("infobar-close-button") as Gtk.Button;
@@ -221,6 +223,21 @@ namespace Baobab {
             });
 
             connect_server.show ();
+        }
+
+        void on_scan_location_activate (Location location) {
+            if (location.is_home_location) {
+                on_scan_home_activate ();
+            } else {
+                location.mount_volume.begin ((location_, res) => {
+                    try {
+                        location.mount_volume.end (res);
+                        scan_directory (File.new_for_path (location.mount_point), ScanFlags.EXCLUDE_MOUNTS);
+                    } catch (Error e) {
+                        message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
+                    }
+                });
+            }
         }
 
         void on_stop_activate () {
@@ -318,54 +335,6 @@ namespace Baobab {
 
         void disable_drop () {
             Gtk.drag_dest_unset (this);
-        }
-
-        void update_locations () {
-            location_list.foreach ((widget) => { widget.destroy (); });
-
-            foreach (var location in location_monitor.get_locations ()) {
-                LocationWidget loc_widget;
-                if (location.is_home_location) {
-                    loc_widget = new LocationWidget (location, (location_) => {
-                        on_scan_home_activate ();
-                    });
-                } else {
-                    loc_widget = new LocationWidget (location, (location_) => {
-                        location_.mount_volume.begin ((location__, res) => {
-                            try {
-                                location_.mount_volume.end (res);
-                                scan_directory (File.new_for_path (location_.mount_point), ScanFlags.EXCLUDE_MOUNTS);
-                            } catch (Error e) {
-                                message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
-                            }
-                        });
-                    });
-                }
-
-                location_list.add (loc_widget);
-            }
-
-            location_list.show_all ();
-        }
-
-        void update_separator (ref Gtk.Widget? separator, Gtk.Widget widget, Gtk.Widget? before_widget) {
-            if (before_widget != null && separator == null) {
-                separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            } else {
-                separator = null;
-            }
-        }
-
-        void setup_home_page () {
-            location_list = new Egg.ListBox ();
-            location_scroll.add_with_viewport (location_list);
-            location_list.set_adjustment (location_scroll.get_vadjustment ());
-            location_list.get_style_context ().add_class ("baobab-main-view");
-            location_list.set_separator_funcs (update_separator);
-
-            location_monitor = LocationMonitor.get ();
-            location_monitor.changed.connect (() => { update_locations (); });
-            update_locations ();
         }
 
         bool show_treeview_popup (Gtk.Menu popup, Gdk.EventButton? event) {

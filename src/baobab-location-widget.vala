@@ -26,7 +26,7 @@ namespace Baobab {
         private static Gtk.SizeGroup usage_size_group = null;
         private static Gtk.SizeGroup button_size_group = null;
 
-        public delegate void ActionOnClick (Location location);
+        public delegate void LocationAction (Location location);
 
         void ensure_size_groups () {
             if (name_size_group == null) {
@@ -36,7 +36,7 @@ namespace Baobab {
             }
         }
 
-        public LocationWidget (Location location, ActionOnClick action) {
+        public LocationWidget (Location location, LocationAction action) {
             orientation = Gtk.Orientation.HORIZONTAL;
             column_spacing = 12;
             margin = 6;
