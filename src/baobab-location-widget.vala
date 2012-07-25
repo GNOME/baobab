@@ -93,7 +93,7 @@ namespace Baobab {
                 attach (usagebar, 2, 1, 1, 1);
             }
 
-            var button = new Gtk.Button.with_label (location.mount_point != null ? _("Scan") : _("Mount and scan"));
+            var button = new Gtk.Button.with_label (location.mount_point != null ? _("Scan") : _("Mount and Scan"));
             button_size_group.add_widget (button);
             button.valign = Gtk.Align.CENTER;
             attach (button, 3, 0, 1, 2);
