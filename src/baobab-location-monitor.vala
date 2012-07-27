@@ -21,6 +21,8 @@
 namespace Baobab {
 
     public class LocationMonitor {
+        private const int MAX_RECENT_LOCATIONS = 5;
+
         private static LocationMonitor? instance = null;
 
         private VolumeMonitor monitor;
@@ -119,11 +121,61 @@ namespace Baobab {
                 }
             }
 
-            if (Location.get_home_location () == null) {
-                locations.append(new Location.for_home_folder ());
+            locations.append (Location.get_home_location ());
+
+            Gtk.RecentManager recent_manager = Gtk.RecentManager.get_default ();
+            List<Gtk.RecentInfo> recent_items = recent_manager.get_items ();
+
+            int n_recents = 0;
+            foreach (var info in recent_items) {
+                if (n_recents >= this.MAX_RECENT_LOCATIONS) {
+                    break;
+                }
+                if (info.has_group ("baobab") && info.exists ()) {
+                    // FIXME: I do not like this hack to avoid duplucates
+                    // and beside locations should have a proper uri field
+                    // to be uniquely identified
+                    bool dup = false;
+                    foreach (var l in locations) {
+                        if (l.mount_point == info.get_uri_display ()) {
+                            dup = true;
+                        }
+                    }
+                    if (!dup) {
+                        locations.append (new Location.for_recent_info (info));
+                        n_recents++;
+                    }
+                }
             }
 
             changed ();
+        }
+
+        public void recent_add (File directory) {
+            Gtk.RecentData data = Gtk.RecentData ();
+            data.display_name = null;
+            data.description = null;
+            data.mime_type = "inode/directory";
+            data.app_name = GLib.Environment.get_application_name ();
+            data.app_exec = "%s %%u".printf (GLib.Environment.get_prgname ());
+            string[] groups = new string[2];
+            groups[0] = "baobab";
+            groups[1] = null;
+            data.groups = groups;
+
+            Gtk.RecentManager.get_default ().add_full (directory.get_uri (), data);
+
+            // FIXME: it would probably be cleaner to add the dir to the list of
+            // locations ourselves, but for now we cheat and just rebuild the list
+            // from scratch so that we get the proper ordering and deduplication
+            // FIXME: is this really how I clear a list in vala??
+            unowned List<Location> l = locations;
+            while (l != null) {
+                unowned List<Location> tmp = l.next;
+                locations.delete_link (l);
+                l = tmp;
+            }
+            initial_fill ();
         }
     }
 }

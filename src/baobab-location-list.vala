@@ -52,5 +52,9 @@ namespace Baobab {
 
             show_all ();
         }
+
+        public void recent_add (File directory) {
+            location_monitor.recent_add (directory);
+        }
     }
 }

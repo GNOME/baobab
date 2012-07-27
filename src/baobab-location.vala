@@ -38,7 +38,18 @@ namespace Baobab {
 
         private static Location? home_location = null;
 
+        Location.for_home_folder () {
+            mount_point = Environment.get_home_dir ();
+            make_this_home_location ();
+
+            get_fs_usage (File.new_for_path (mount_point));
+        }
+
         public static Location get_home_location () {
+            if (home_location == null) {
+                home_location = new Location.for_home_folder ();
+            }
+
             return home_location;
         }
 
@@ -69,11 +80,14 @@ namespace Baobab {
             get_fs_usage (File.new_for_path (mount_point));
         }
 
-        public Location.for_home_folder () {
-            mount_point = Environment.get_home_dir ();
-            make_this_home_location ();
+        public Location.for_recent_info (Gtk.RecentInfo info) {
+            name = info.get_display_name ();
+            mount_point = info.get_uri_display ();
+            icon = info.get_gicon ();
 
-            get_fs_usage (File.new_for_path (mount_point));
+            if (info.is_local ()) {
+                get_fs_usage (File.new_for_uri (info.get_uri ()));
+            }
         }
 
         public void update () {

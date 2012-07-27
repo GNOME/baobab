@@ -529,6 +529,9 @@ namespace Baobab {
                 return;
             }
 
+            // FIXME: only add folders and skip volumes?
+            location_list.recent_add (directory);
+
             scanner = new Scanner (directory, flags);
             set_model (scanner);
 
