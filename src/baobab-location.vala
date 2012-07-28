@@ -23,7 +23,7 @@ namespace Baobab {
 
     public class Location {
         public string name { get; private set; }
-        public string? mount_point { get; private set; }
+        public File? file { get; private set; }
         public bool is_volume { get; private set; default = true; }
 
         public uint64? size { get; private set; }
@@ -42,10 +42,10 @@ namespace Baobab {
 
         Location.for_home_folder () {
             is_volume = false;
-            mount_point = Environment.get_home_dir ();
+            file = File.new_for_path (GLib.Environment.get_home_dir ());
             make_this_home_location ();
 
-            get_fs_usage (File.new_for_path (mount_point));
+            get_fs_usage ();
         }
 
         public static Location get_home_location () {
@@ -71,20 +71,20 @@ namespace Baobab {
 
         public Location.for_main_volume () {
             name = _("Main volume");
-            mount_point = "/";
+            file = File.new_for_path ("/");
             icon = new ThemedIcon ("drive-harddisk-system");
 
-            get_fs_usage (File.new_for_path (mount_point));
+            get_fs_usage ();
         }
 
         public Location.for_recent_info (Gtk.RecentInfo info) {
             is_volume = false; // we assume recent locations are just folders
             name = info.get_display_name ();
-            mount_point = info.get_uri_display ();
+            file = File.new_for_uri (info.get_uri ());
             icon = info.get_gicon ();
 
             if (info.is_local ()) {
-                get_fs_usage (File.new_for_uri (info.get_uri ()));
+                get_fs_usage ();
             }
         }
 
@@ -107,7 +107,7 @@ namespace Baobab {
             } else {
                 name = volume.get_name ();
                 icon = volume.get_icon ();
-                mount_point = null;
+                file = null;
                 size = null;
                 used = null;
             }
@@ -116,18 +116,16 @@ namespace Baobab {
         void fill_from_mount () {
             name = mount.get_name ();
             icon = mount.get_icon ();
+            file = mount.get_root ();
 
-            var file = mount.get_root ();
-            mount_point = file.get_path ();
-
-            if (mount_point == Environment.get_home_dir ()) {
+            if (file != null && file.equal (File.new_for_path (Environment.get_home_dir ()))) {
                 make_this_home_location ();
             }
 
-            get_fs_usage (file);
+            get_fs_usage ();
         }
 
-        private void get_fs_usage (File file) {
+        private void get_fs_usage () {
             size = null;
             used = null;
             reserved = null;

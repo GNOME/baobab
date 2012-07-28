@@ -230,13 +230,13 @@ namespace Baobab {
                 location.mount_volume.begin ((location_, res) => {
                     try {
                         location.mount_volume.end (res);
-                        scan_directory (File.new_for_path (location.mount_point), ScanFlags.EXCLUDE_MOUNTS);
+                        scan_directory (location.file, ScanFlags.EXCLUDE_MOUNTS);
                     } catch (Error e) {
                         message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
                     }
                 });
             } else {
-                scan_directory (File.new_for_path (location.mount_point));
+                scan_directory (location.file);
             }
         }
 

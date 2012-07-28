@@ -128,12 +128,10 @@ namespace Baobab {
                     break;
                 }
                 if (info.has_group ("baobab") && info.exists ()) {
-                    // FIXME: I do not like this hack to avoid duplucates
-                    // and beside locations should have a proper uri field
-                    // to be uniquely identified
+                    // FIXME: I do not like this hack to avoid duplucates...
                     bool dup = false;
                     foreach (var l in locations) {
-                        if (l.mount_point == info.get_uri_display ()) {
+                        if (l.file != null && l.file.equal (File.new_for_uri (info.get_uri ()))) {
                             dup = true;
                         }
                     }

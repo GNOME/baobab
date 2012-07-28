@@ -63,7 +63,7 @@ namespace Baobab {
             label.xalign = 0;
             attach (label, 1, 0, 1, 1);
 
-            label = new Gtk.Label ("<small>%s</small>".printf (location.mount_point != null ? location.mount_point : ""));
+            label = new Gtk.Label ("<small>%s</small>".printf (location.file != null ? location.file.get_parse_name () : ""));
             name_size_group.add_widget (label);
             label.use_markup = true;
             label.hexpand = true;
@@ -93,7 +93,7 @@ namespace Baobab {
                 attach (usagebar, 2, 1, 1, 1);
             }
 
-            var button = new Gtk.Button.with_label (location.mount_point != null ? _("Scan") : _("Mount and Scan"));
+            var button = new Gtk.Button.with_label (location.file != null ? _("Scan") : _("Mount and Scan"));
             button_size_group.add_widget (button);
             button.valign = Gtk.Align.CENTER;
             attach (button, 3, 0, 1, 2);
