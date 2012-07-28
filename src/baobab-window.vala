@@ -28,7 +28,6 @@ namespace Baobab {
         Gtk.Toolbar toolbar;
         Gtk.ToolItem toolbar_home_toolitem;
         Gtk.ToolButton toolbar_show_home_page;
-        Gtk.SeparatorToolItem toolbar_separator;
         Gtk.ToolButton toolbar_rescan;
         Gtk.InfoBar infobar;
         Gtk.Label infobar_primary;
@@ -118,7 +117,6 @@ namespace Baobab {
             toolbar = builder.get_object ("toolbar") as Gtk.Toolbar;
             toolbar_home_toolitem = builder.get_object ("home-page-toolitem") as Gtk.ToolItem;
             toolbar_show_home_page = builder.get_object ("show-home-page-button") as Gtk.ToolButton;
-            toolbar_separator = builder.get_object ("toolbar-separator") as Gtk.SeparatorToolItem;
             toolbar_rescan = builder.get_object ("rescan-button") as Gtk.ToolButton;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
@@ -458,7 +456,6 @@ namespace Baobab {
         void set_ui_state (UIPage page, bool busy) {
             toolbar_home_toolitem.visible = (page == UIPage.HOME);
             toolbar_show_home_page.visible = (page == UIPage.RESULT);
-            toolbar_separator.visible = (page == UIPage.RESULT);
             toolbar_rescan.visible = (page == UIPage.RESULT);
 
             set_busy (busy);
