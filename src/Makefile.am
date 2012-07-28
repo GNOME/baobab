@@ -35,7 +35,6 @@ baobab_SOURCES = \
 	baobab-application.vala		\
 	baobab-cellrenderers.vala	\
 	baobab-connect-server.vala	\
-	baobab-location-monitor.vala	\
 	baobab-location.vala		\
 	baobab-location-list.vala	\
 	baobab-location-widget.vala	\

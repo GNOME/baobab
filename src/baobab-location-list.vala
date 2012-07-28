@@ -21,14 +21,26 @@
 namespace Baobab {
 
     public class LocationList : Egg.ListBox {
-        LocationMonitor location_monitor;
-        LocationWidget.LocationAction? location_action;
+        private const int MAX_RECENT_LOCATIONS = 5;
+
+        private VolumeMonitor monitor;
+
+        private List<Location> locations = null;
+
+        private LocationWidget.LocationAction? location_action;
 
         construct {
-            location_monitor = LocationMonitor.get ();
-            location_monitor.changed.connect (() => { update (); });
+            monitor = VolumeMonitor.get ();
+            monitor.mount_changed.connect (mount_changed);
+            monitor.mount_removed.connect (mount_removed);
+            monitor.mount_added.connect (mount_added);
+            monitor.volume_changed.connect (volume_changed);
+            monitor.volume_removed.connect (volume_removed);
+            monitor.volume_added.connect (volume_added);
 
             set_separator_funcs (update_separator);
+
+            populate ();
         }
 
         void update_separator (ref Gtk.Widget? separator, Gtk.Widget widget, Gtk.Widget? before_widget) {
@@ -39,6 +51,102 @@ namespace Baobab {
             }
         }
 
+        void volume_changed (Volume volume) {
+            update ();
+        }
+
+        void volume_removed (Volume volume) {
+            foreach (var location in locations) {
+                if (location.volume == volume) {
+                    locations.remove (location);
+                    break;
+                }
+            }
+
+            update ();
+        }
+
+        void volume_added (Volume volume) {
+            locations.append (new Location.from_volume (volume));
+
+            update ();
+        }
+
+        void mount_changed (Mount mount) {
+        }
+
+        void mount_removed (Mount mount) {
+            foreach (var location in locations) {
+                if (location.mount == mount) {
+                    locations.remove (location);
+                    break;
+                }
+            }
+
+            update ();
+        }
+
+        void mount_added (Mount mount) {
+            var volume = mount.get_volume ();
+            if (volume == null) {
+                 locations.append (new Location.from_mount (mount));
+            } else {
+                foreach (var location in locations) {
+                    if (location.volume == volume) {
+                        location.update ();
+                        break;
+                    }
+                }
+            }
+
+            update ();
+        }
+
+        void populate () {
+            locations.append (new Location.for_main_volume ());
+
+            foreach (var volume in monitor.get_volumes ()) {
+                locations.append (new Location.from_volume (volume));
+            }
+
+            foreach (var mount in monitor.get_mounts ()) {
+                if (mount.get_volume () == null) {
+                    locations.append (new Location.from_mount (mount));
+                } else {
+                    // Already added as volume
+                }
+            }
+
+            locations.append (Location.get_home_location ());
+
+            Gtk.RecentManager recent_manager = Gtk.RecentManager.get_default ();
+            List<Gtk.RecentInfo> recent_items = recent_manager.get_items ();
+
+            int n_recents = 0;
+            foreach (var info in recent_items) {
+                if (n_recents >= this.MAX_RECENT_LOCATIONS) {
+                    break;
+                }
+                if (info.has_group ("baobab") && info.exists ()) {
+                    // FIXME: I do not like this hack to avoid duplucates
+                    // and beside locations should have a proper uri field
+                    // to be uniquely identified
+                    bool dup = false;
+                    foreach (var l in locations) {
+                        if (l.mount_point == info.get_uri_display ()) {
+                            dup = true;
+                        }
+                    }
+                    if (!dup) {
+                        locations.append (new Location.for_recent_info (info));
+                        n_recents++;
+                    }
+                }
+            }
+
+            update ();
+        }
+
         public void set_action (owned LocationWidget.LocationAction? action) {
             location_action = (owned)action;
         }
@@ -46,7 +154,7 @@ namespace Baobab {
         public void update () {
             this.foreach ((widget) => { widget.destroy (); });
 
-            foreach (var location in location_monitor.get_locations ()) {
+            foreach (var location in locations) {
                 add (new LocationWidget (location, location_action));
             }
 
@@ -54,7 +162,30 @@ namespace Baobab {
         }
 
         public void recent_add (File directory) {
-            location_monitor.recent_add (directory);
+            Gtk.RecentData data = Gtk.RecentData ();
+            data.display_name = null;
+            data.description = null;
+            data.mime_type = "inode/directory";
+            data.app_name = GLib.Environment.get_application_name ();
+            data.app_exec = "%s %%u".printf (GLib.Environment.get_prgname ());
+            string[] groups = new string[2];
+            groups[0] = "baobab";
+            groups[1] = null;
+            data.groups = groups;
+
+            Gtk.RecentManager.get_default ().add_full (directory.get_uri (), data);
+
+            // FIXME: it would probably be cleaner to add the dir to the list of
+            // locations ourselves, but for now we cheat and just rebuild the list
+            // from scratch so that we get the proper ordering and deduplication
+            // FIXME: is this really how I clear a list in vala??
+            unowned List<Location> l = locations;
+            while (l != null) {
+                unowned List<Location> tmp = l.next;
+                locations.delete_link (l);
+                l = tmp;
+            }
+            populate ();
         }
     }
 }
