@@ -1,6 +1,7 @@
 /* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
+ * Copyright (C) 2012  Paolo Borelli <pborelli@gnome.org>
  * Copyright (C) 2012  Stefano Facchini <stefano.facchini@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -23,6 +24,7 @@ namespace Baobab {
     public class Location {
         public string name { get; private set; }
         public string? mount_point { get; private set; }
+        public bool is_volume { get; private set; default = true; }
 
         public uint64? size { get; private set; }
         public uint64? used { get; private set; }
@@ -39,6 +41,7 @@ namespace Baobab {
         private static Location? home_location = null;
 
         Location.for_home_folder () {
+            is_volume = false;
             mount_point = Environment.get_home_dir ();
             make_this_home_location ();
 
@@ -51,12 +54,6 @@ namespace Baobab {
             }
 
             return home_location;
-        }
-
-        public bool is_home_location {
-            get {
-                return (this == home_location);
-            }
         }
 
         public Location.from_volume (Volume volume_) {
@@ -81,6 +78,7 @@ namespace Baobab {
         }
 
         public Location.for_recent_info (Gtk.RecentInfo info) {
+            is_volume = false; // we assume recent locations are just folders
             name = info.get_display_name ();
             mount_point = info.get_uri_display ();
             icon = info.get_gicon ();

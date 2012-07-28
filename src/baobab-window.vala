@@ -226,9 +226,7 @@ namespace Baobab {
         }
 
         void on_scan_location_activate (Location location) {
-            if (location.is_home_location) {
-                on_scan_home_activate ();
-            } else {
+            if (location.is_volume) {
                 location.mount_volume.begin ((location_, res) => {
                     try {
                         location.mount_volume.end (res);
@@ -237,6 +235,8 @@ namespace Baobab {
                         message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
                     }
                 });
+            } else {
+                scan_directory (File.new_for_path (location.mount_point));
             }
         }
 
