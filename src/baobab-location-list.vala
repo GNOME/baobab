@@ -176,13 +176,7 @@ namespace Baobab {
             // FIXME: it would probably be cleaner to add the dir to the list of
             // locations ourselves, but for now we cheat and just rebuild the list
             // from scratch so that we get the proper ordering and deduplication
-            // FIXME: is this really how I clear a list in vala??
-            unowned List<Location> l = locations;
-            while (l != null) {
-                unowned List<Location> tmp = l.next;
-                locations.delete_link (l);
-                l = tmp;
-            }
+            locations = null;
             populate ();
         }
     }
