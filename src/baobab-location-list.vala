@@ -102,6 +102,15 @@ namespace Baobab {
             update ();
         }
 
+        bool already_present (File file) {
+            foreach (var l in locations) {
+                if (l.file != null && l.file.equal (file)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         void populate () {
             locations.append (new Location.for_main_volume ());
 
@@ -128,14 +137,7 @@ namespace Baobab {
                     break;
                 }
                 if (info.has_group ("baobab") && info.exists ()) {
-                    // FIXME: I do not like this hack to avoid duplucates...
-                    bool dup = false;
-                    foreach (var l in locations) {
-                        if (l.file != null && l.file.equal (File.new_for_uri (info.get_uri ()))) {
-                            dup = true;
-                        }
-                    }
-                    if (!dup) {
+                    if (!already_present (File.new_for_uri (info.get_uri ()))) {
                         locations.append (new Location.for_recent_info (info));
                         n_recents++;
                     }
