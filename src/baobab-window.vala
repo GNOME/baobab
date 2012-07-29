@@ -39,7 +39,8 @@ namespace Baobab {
         Chart rings_chart;
         Chart treemap_chart;
         Gtk.Spinner spinner;
-        Scanner? scanner;
+        Location? active_location;
+        ulong scan_completed_handler;
 
         static Gdk.Cursor busy_cursor;
 
@@ -156,14 +157,17 @@ namespace Baobab {
             set_default_size (960, 600);
             set_hide_titlebar_when_maximized (true);
 
+            active_location = null;
+            scan_completed_handler = 0;
+
             set_ui_state (UIPage.HOME, false);
 
             show ();
         }
 
         void on_show_home_page_activate () {
-            if (scanner != null) {
-                scanner.cancel ();
+            if (active_location != null && active_location.scanner != null) {
+                active_location.scanner.cancel ();
             }
 
             clear_message ();
@@ -187,8 +191,7 @@ namespace Baobab {
         }
 
         void on_scan_home_activate () {
-            var dir = File.new_for_path (GLib.Environment.get_home_dir ());
-            scan_directory (dir);
+            scan_directory (File.new_for_path (GLib.Environment.get_home_dir ()));
         }
 
         void on_scan_folder_activate () {
@@ -201,8 +204,7 @@ namespace Baobab {
 
             file_chooser.response.connect ((response) => {
                 if (response == Gtk.ResponseType.ACCEPT) {
-                    var dir = file_chooser.get_file ();
-                    scan_directory (dir);
+                    scan_directory (file_chooser.get_file ());
                 }
                 file_chooser.destroy ();
             });
@@ -215,8 +217,7 @@ namespace Baobab {
 
             connect_server.selected.connect ((uri) => {
                 if (uri != null) {
-                    var dir = File.new_for_uri (uri);
-                    scan_directory (dir);
+                    scan_directory (File.new_for_uri (uri));
                 }
             });
 
@@ -224,29 +225,30 @@ namespace Baobab {
         }
 
         void on_scan_location_activate (Location location) {
+            active_location = location;
             if (location.is_volume) {
                 location.mount_volume.begin ((location_, res) => {
                     try {
                         location.mount_volume.end (res);
-                        scan_directory (location.file, ScanFlags.EXCLUDE_MOUNTS);
+                        scan_active_location (false);
                     } catch (Error e) {
                         message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
                     }
                 });
             } else {
-                scan_directory (location.file);
+                scan_active_location (false);
             }
         }
 
         void on_stop_activate () {
-            if (scanner != null) {
-                scanner.cancel ();
+            if (active_location != null && active_location.scanner != null) {
+                active_location.scanner.cancel ();
             }
         }
 
         void on_reload_activate () {
-            if (scanner != null) {
-                scan_directory (scanner.directory, scanner.scan_flags);
+            if (active_location != null) {
+                scan_active_location (true);
             }
         }
 
@@ -295,7 +297,7 @@ namespace Baobab {
         }
 
         void on_chart_item_activated (Chart chart, Gtk.TreeIter iter) {
-            var path = scanner.get_path (iter);
+            var path = active_location.scanner.get_path (iter);
 
             if (!treeview.is_row_expanded (path)) {
                 treeview.expand_to_path (path);
@@ -367,7 +369,7 @@ namespace Baobab {
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
                     string parse_name;
-                    scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+                    active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
                     var file = File.parse_name (parse_name);
                     try {
                         var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, 0, null);
@@ -387,11 +389,11 @@ namespace Baobab {
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
                     string parse_name;
-                    scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+                    active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
                     var file = File.parse_name (parse_name);
                     try {
                         file.trash ();
-                        scanner.remove (ref iter);
+                        active_location.scanner.remove (ref iter);
                     } catch (Error e) {
                         warning ("Failed to move file to the trash: %s", e.message);
                     }
@@ -402,7 +404,7 @@ namespace Baobab {
             selection.changed.connect (() => {
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
-                    var path = scanner.get_path (iter);
+                    var path = active_location.scanner.get_path (iter);
                     rings_chart.set_root (path);
                     treemap_chart.set_root (path);
                 }
@@ -468,27 +470,6 @@ namespace Baobab {
             main_notebook.page = page;
         }
 
-        public bool check_dir (File directory) {
-            //if (Application.is_excluded_location (directory)) {
-            //    message("", _("Cannot check an excluded folder!"), Gtk.MessageType.INFO);
-            //    return false;
-            //}
-
-            try {
-                var info = directory.query_info (FileAttribute.STANDARD_TYPE, FileQueryInfoFlags.NONE, null);
-                if (info.get_file_type () != FileType.DIRECTORY/* || is_virtual_filesystem ()*/) {
-                    var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
-                    message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
-                    return false;
-                }
-                return true;
-            } catch (Error e) {
-                var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
-                message (primary, e.message, Gtk.MessageType.ERROR);
-                return false;
-            }
-        }
-
         void first_row_has_child (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
             model.row_has_child_toggled.disconnect (first_row_has_child);
             treeview.expand_row (path, false);
@@ -521,18 +502,13 @@ namespace Baobab {
                                                 Scanner.Columns.ELEMENTS, null);
         }
 
-        public void scan_directory (File directory, ScanFlags flags = ScanFlags.NONE) {
-            if (!check_dir (directory)) {
-                return;
-            }
+        void scan_active_location (bool force) {
+            var scanner = active_location.scanner;
 
-            // FIXME: only add folders and skip volumes?
-            location_list.recent_add (directory);
+            set_model (active_location.scanner);
 
-            scanner = new Scanner (directory, flags);
-            set_model (scanner);
-
-            scanner.completed.connect(() => {
+            scanner.disconnect (scan_completed_handler);
+            scan_completed_handler = scanner.completed.connect(() => {
                 set_ui_state (UIPage.RESULT, false);
                 try {
                     scanner.finish();
@@ -548,7 +524,28 @@ namespace Baobab {
             clear_message ();
             set_ui_state (UIPage.RESULT, true);
 
-            scanner.scan ();
+            scanner.scan (force);
+        }
+
+        public void scan_directory (File directory) {
+            var location = new Location.for_file (directory);
+
+            if (location.info == null) {
+                var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
+                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
+                return;
+            }
+
+            if (location.info.get_file_type () != FileType.DIRECTORY/* || is_virtual_filesystem ()*/) {
+                var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
+                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
+                return;
+            }
+
+            location_list.add_location (location);
+
+            active_location = location;
+            scan_active_location (false);
         }
     }
 }

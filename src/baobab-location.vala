@@ -24,6 +24,7 @@ namespace Baobab {
     public class Location {
         public string name { get; private set; }
         public File? file { get; private set; }
+        public FileInfo? info { get; private set; }
         public bool is_volume { get; private set; default = true; }
 
         public uint64? size { get; private set; }
@@ -34,18 +35,35 @@ namespace Baobab {
         public Volume? volume { get; private set; }
         public Mount? mount { get; private set; }
 
+        public Scanner? scanner { get; private set; }
+
         private static const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
             FileAttribute.FILESYSTEM_USED;
 
+        private static const string FILE_ATTRIBUTES =
+            FileAttribute.STANDARD_DISPLAY_NAME + "," +
+            FileAttribute.STANDARD_ICON + "," +
+            FileAttribute.STANDARD_TYPE;
+
         private static Location? home_location = null;
+
+        void make_this_home_location () {
+            name = _("Home folder");
+            icon = new ThemedIcon ("user-home");
+
+            home_location = this;
+        }
 
         Location.for_home_folder () {
             is_volume = false;
             file = File.new_for_path (GLib.Environment.get_home_dir ());
+            get_file_info ();
+            get_fs_usage ();
+
             make_this_home_location ();
 
-            get_fs_usage ();
+            scanner = new Scanner (file, ScanFlags.NONE);
         }
 
         public static Location get_home_location () {
@@ -72,31 +90,47 @@ namespace Baobab {
         public Location.for_main_volume () {
             name = _("Main volume");
             file = File.new_for_path ("/");
+            get_file_info ();
             icon = new ThemedIcon ("drive-harddisk-system");
 
             get_fs_usage ();
+
+            scanner = new Scanner (file, ScanFlags.NONE);
         }
 
-        public Location.for_recent_info (Gtk.RecentInfo info) {
+        public Location.for_recent_info (Gtk.RecentInfo recent_info) {
             is_volume = false; // we assume recent locations are just folders
-            name = info.get_display_name ();
-            file = File.new_for_uri (info.get_uri ());
-            icon = info.get_gicon ();
+            file = File.new_for_uri (recent_info.get_uri ());
+            name = recent_info.get_display_name ();
+            icon = recent_info.get_gicon ();
 
-            if (info.is_local ()) {
+            if (recent_info.is_local ()) {
                 get_fs_usage ();
             }
+
+            scanner = new Scanner (file, ScanFlags.NONE);
+        }
+
+        public Location.for_file (File file_) {
+            is_volume = false;
+            file = file_;
+            get_file_info ();
+
+            if (info != null) {
+                name = info.get_display_name ();
+                icon = info.get_icon ();
+            } else {
+                name = file_.get_parse_name ();
+                icon = null;
+            }
+
+            get_fs_usage ();
+
+            scanner = new Scanner (file, ScanFlags.NONE);
         }
 
         public void update () {
             update_volume_info ();
-        }
-
-        void make_this_home_location () {
-            name = _("Home folder");
-            icon = new ThemedIcon ("user-home");
-
-            home_location = this;
         }
 
         void update_volume_info () {
@@ -108,8 +142,10 @@ namespace Baobab {
                 name = volume.get_name ();
                 icon = volume.get_icon ();
                 file = null;
-                size = null;
-                used = null;
+                info = null;
+                size = 0;
+                used = 0;
+                scanner = null;
             }
         }
 
@@ -117,15 +153,26 @@ namespace Baobab {
             name = mount.get_name ();
             icon = mount.get_icon ();
             file = mount.get_root ();
+            get_file_info ();
 
             if (file != null && file.equal (File.new_for_path (Environment.get_home_dir ()))) {
                 make_this_home_location ();
             }
 
             get_fs_usage ();
+
+            scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
-        private void get_fs_usage () {
+        void get_file_info () {
+            try {
+                info = file.query_info (FILE_ATTRIBUTES, FileQueryInfoFlags.NONE, null);
+            } catch (Error e) {
+                info = null;
+            }
+        }
+
+        void get_fs_usage () {
             size = null;
             used = null;
             reserved = null;

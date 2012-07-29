@@ -28,7 +28,7 @@ namespace Baobab {
         EXCLUDE_MOUNTS
     }
 
-    class Scanner : Gtk.TreeStore {
+    public class Scanner : Gtk.TreeStore {
         public enum Columns {
             DISPLAY_NAME,
             PARSE_NAME,
@@ -80,6 +80,8 @@ namespace Baobab {
 
         HardLink[] hardlinks;
         HashTable<File, unowned File> excluded_locations;
+
+        bool successful = false;
 
         /* General overview:
          *
@@ -304,6 +306,7 @@ namespace Baobab {
                     }
 
                     if (results.parent == null) {
+                        successful = true;
                         completed ();
                         return false;
                     }
@@ -313,9 +316,18 @@ namespace Baobab {
             return this.self != null;
         }
 
-        public void scan () {
-            new GLib2.Thread ("scanner", scan_in_thread);
-            Timeout.add (100, process_results);
+        public void scan (bool force) {
+            if (force) {
+                successful = false;
+                clear ();
+            }
+
+            if (!successful) {
+                new GLib2.Thread ("scanner", scan_in_thread);
+                Timeout.add (100, process_results);
+            } else {
+                completed ();
+            }
         }
 
         public virtual void cancel () {

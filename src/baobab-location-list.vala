@@ -161,7 +161,14 @@ namespace Baobab {
             show_all ();
         }
 
-        public void recent_add (File directory) {
+        public void add_location (Location location) {
+            if (!already_present (location.file)) {
+                locations.append (location);
+            }
+
+            update ();
+
+            // Add to recent files
             Gtk.RecentData data = Gtk.RecentData ();
             data.display_name = null;
             data.description = null;
@@ -172,14 +179,7 @@ namespace Baobab {
             groups[0] = "baobab";
             groups[1] = null;
             data.groups = groups;
-
-            Gtk.RecentManager.get_default ().add_full (directory.get_uri (), data);
-
-            // FIXME: it would probably be cleaner to add the dir to the list of
-            // locations ourselves, but for now we cheat and just rebuild the list
-            // from scratch so that we get the proper ordering and deduplication
-            locations = null;
-            populate ();
+            Gtk.RecentManager.get_default ().add_full (location.file.get_uri (), data);
         }
     }
 }
