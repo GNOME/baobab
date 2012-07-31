@@ -27,7 +27,8 @@ namespace Baobab {
 
         private List<Location> locations = null;
 
-        private LocationWidget.LocationAction? location_action;
+        public delegate void LocationAction (Location l);
+        private LocationAction? location_action;
 
         construct {
             monitor = VolumeMonitor.get ();
@@ -38,6 +39,7 @@ namespace Baobab {
             monitor.volume_removed.connect (volume_removed);
             monitor.volume_added.connect (volume_added);
 
+            set_selection_mode (Gtk.SelectionMode.NONE);
             set_separator_funcs (update_separator);
 
             populate ();
@@ -48,6 +50,13 @@ namespace Baobab {
                 separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
             } else {
                 separator = null;
+            }
+        }
+
+        public override void child_activated (Gtk.Widget? widget) {
+            if (location_action != null) {
+                var location_widget = widget as LocationWidget;
+                location_action (location_widget.location);
             }
         }
 
@@ -147,7 +156,7 @@ namespace Baobab {
             update ();
         }
 
-        public void set_action (owned LocationWidget.LocationAction? action) {
+        public void set_action (owned LocationAction? action) {
             location_action = (owned)action;
         }
 
@@ -155,7 +164,7 @@ namespace Baobab {
             this.foreach ((widget) => { widget.destroy (); });
 
             foreach (var location in locations) {
-                add (new LocationWidget (location, location_action));
+                add (new LocationWidget (location));
             }
 
             show_all ();

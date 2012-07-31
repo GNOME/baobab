@@ -24,21 +24,17 @@ namespace Baobab {
     public class LocationWidget : Gtk.Grid {
         private static Gtk.SizeGroup name_size_group = null;
         private static Gtk.SizeGroup usage_size_group = null;
-        private static Gtk.SizeGroup button_size_group = null;
 
         public Location? location { get; private set; }
-
-        public delegate void LocationAction (Location l);
 
         void ensure_size_groups () {
             if (name_size_group == null) {
                 name_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
                 usage_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-                button_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             }
         }
 
-        public LocationWidget (Location location_, LocationAction action) {
+        public LocationWidget (Location location_) {
             location = location_;
 
             orientation = Gtk.Orientation.HORIZONTAL;
@@ -96,13 +92,6 @@ namespace Baobab {
                 usagebar.valign = Gtk.Align.START;
                 attach (usagebar, 2, 1, 1, 1);
             }
-
-            var button = new Gtk.Button.with_label (location.file != null ? _("Scan") : _("Mount and Scan"));
-            button_size_group.add_widget (button);
-            button.valign = Gtk.Align.CENTER;
-            attach (button, 3, 0, 1, 2);
-
-            button.clicked.connect(() => { action (location); });
 
             show_all ();
         }
