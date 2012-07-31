@@ -507,7 +507,10 @@ namespace Baobab {
 
             set_model (active_location.scanner);
 
-            scanner.disconnect (scan_completed_handler);
+            if (scan_completed_handler > 0) {
+                scanner.disconnect (scan_completed_handler);
+            }
+
             scan_completed_handler = scanner.completed.connect(() => {
                 set_ui_state (UIPage.RESULT, false);
                 try {
