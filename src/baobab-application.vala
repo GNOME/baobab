@@ -25,7 +25,13 @@ namespace Baobab {
     public class Application : Gtk.Application {
         static Application baobab;
 
-        private const GLib.ActionEntry[] action_entries = {
+        static bool print_version;
+        const OptionEntry[] option_entries = {
+            { "version", 'v', 0, OptionArg.NONE, ref print_version, N_("Print version information and exit"), null },
+            { null }
+        };
+
+        const GLib.ActionEntry[] action_entries = {
             { "quit", on_quit_activate }
         };
 
@@ -95,7 +101,22 @@ namespace Baobab {
         }
 
         protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
-            if (arguments[1] == "-v") {
+            var ctx = new OptionContext (_("- Disk Usage Analyzer"));
+
+            ctx.add_main_entries (option_entries, Config.GETTEXT_PACKAGE);
+            ctx.add_group (Gtk.get_option_group (true));
+
+            // Workaround for bug #642885
+            unowned string[] argv = arguments;
+
+            try {
+                ctx.parse (ref argv);
+            } catch (Error e) {
+                exit_status = 1;
+                return true;
+            }
+
+            if (print_version) {
                 print ("%s %s\n", Environment.get_application_name (), Config.VERSION);
                 exit_status = 0;
                 return true;
