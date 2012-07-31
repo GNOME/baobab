@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-30 01:55+0200\n"
-"PO-Revision-Date: 2012-07-30 01:57+0200\n"
+"POT-Creation-Date: 2012-07-31 16:11+0200\n"
+"PO-Revision-Date: 2012-07-31 16:11+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Gtranslator 2.91.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:155
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:156
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
@@ -111,13 +111,13 @@ msgid_plural "%d items"
 msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
-#: ../src/baobab-location.vala:73
-msgid "Main volume"
-msgstr "Volume principal"
-
-#: ../src/baobab-location.vala:96
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "Cartafol persoal"
+
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Volume principal"
 
 #: ../src/baobab-location-widget.vala:96
 msgid "Scan"
@@ -192,6 +192,10 @@ msgid "_Open Folder"
 msgstr "_Abrir cartafol"
 
 #: ../src/baobab-main-window.ui.h:17
+msgid "_Copy Path to Clipboard"
+msgstr "_Copiar ruta ao portapapeis"
+
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Mov_er ao lixo"
 
@@ -212,32 +216,32 @@ msgid "Scan Remote Fo_lder…"
 msgstr "Analizar cartafol _remoto…"
 
 #: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "_Deter"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "_Recargar"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "A_xuda"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:6
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:7
 msgid "_Quit"
 msgstr "_Saír"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:8
 msgid "_Analyzer"
 msgstr "_Analizador"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:9
 msgid "_View"
 msgstr "_Ver"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Stop"
+msgstr "_Deter"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Reload"
+msgstr "_Recargar"
 
 #: ../src/baobab-menu.ui.h:12
 msgid "_Allocated Space"
@@ -251,23 +255,23 @@ msgstr "_Expandir todo"
 msgid "_Collapse All"
 msgstr "_Contraer todo"
 
-#: ../src/baobab-window.vala:195
+#: ../src/baobab-window.vala:198
 msgid "Select Folder"
 msgstr "Seleccionar cartafol"
 
-#: ../src/baobab-window.vala:233
+#: ../src/baobab-window.vala:235
 msgid "Could not analyze volume."
 msgstr "Non foi posíbel analizar o volume."
 
-#: ../src/baobab-window.vala:285
+#: ../src/baobab-window.vala:287
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
 msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 
-#: ../src/baobab-window.vala:293
+#: ../src/baobab-window.vala:295
 msgid "translator-credits"
 msgstr ""
 "Fran Diéguez <frandieguez@ubuntu.com>, 2009, 2010.\n"
@@ -279,29 +283,29 @@ msgstr ""
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000-2001.\n"
 "Ruben Lopez Gomez <ryu@mundivia.es>, 1999."
 
-#: ../src/baobab-window.vala:434
+#: ../src/baobab-window.vala:449
 msgid "Cancel Scan"
 msgstr "Cancelar análise"
 
-#: ../src/baobab-window.vala:442
+#: ../src/baobab-window.vala:457
 msgid "All Locations"
 msgstr "Todas as localizacións"
 
-#. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:480 ../src/baobab-window.vala:486
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "«%s» non é un cartafol válido"
-
-#: ../src/baobab-window.vala:481
-msgid "Could not analyze disk usage."
-msgstr "Non foi posíbel analizar o uso do disco."
-
-#: ../src/baobab-window.vala:543
+#: ../src/baobab-window.vala:535
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Non foi posíbel analizar o cartafol «%s» ou algún dos seus subcartafois."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:550 ../src/baobab-window.vala:556
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "«%s» non é un cartafol válido"
+
+#: ../src/baobab-window.vala:551 ../src/baobab-window.vala:557
+msgid "Could not analyze disk usage."
+msgstr "Non foi posíbel analizar o uso do disco."
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "A barra de ferramentas é visíbel"
