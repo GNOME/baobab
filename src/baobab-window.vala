@@ -350,6 +350,7 @@ namespace Baobab {
         void setup_treeview (Gtk.Builder builder) {
             var popup = builder.get_object ("treeview-popup-menu") as Gtk.Menu;
             var open_item = builder.get_object ("treeview-popup-open") as Gtk.MenuItem;
+            var copy_item = builder.get_object ("treeview-popup-copy") as Gtk.MenuItem;
             var trash_item = builder.get_object ("treeview-popup-trash") as Gtk.MenuItem;
 
             treeview.button_press_event.connect ((event) => {
@@ -381,6 +382,18 @@ namespace Baobab {
                     } catch (Error e) {
                         warning ("Failed open file with application: %s", e.message);
                     }
+                }
+            });
+
+            copy_item.activate.connect (() => {
+                var selection = treeview.get_selection ();
+                Gtk.TreeIter iter;
+                if (selection.get_selected (null, out iter)) {
+                    string parse_name;
+                    active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+                    var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
+                    clipboard.set_text (parse_name, -1);
+                    clipboard.store ();
                 }
             });
 
