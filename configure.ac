@@ -43,7 +43,7 @@ AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 # Mallard help
 YELP_HELP_INIT
 
-PKG_CHECK_MODULES(gtk, gtk+-3.0 >= 3.3.18)
+PKG_CHECK_MODULES(gtk, gtk+-3.0 >= 3.5.9)
 PKG_CHECK_MODULES(gio, gio-2.0 >= 2.30.0)
 
 AC_CONFIG_FILES([

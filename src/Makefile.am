@@ -66,10 +66,12 @@ MAINTAINERCLEANFILES = \
 	baobab-connect-server.c		\
 	baobab-location-monitor.c	\
 	baobab-location.c		\
+	baobab-location-list.c		\
 	baobab-location-widget.c	\
 	baobab-scanner.c		\
 	baobab-window.c			\
 	baobab_vala.stamp		\
+	egg-list-box.c			\
 	main.c				\
 	$(BUILT_SOURCES)
 
