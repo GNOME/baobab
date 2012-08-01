@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils-2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-26 13:51+0000\n"
-"PO-Revision-Date: 2012-07-27 00:02+0200\n"
+"POT-Creation-Date: 2012-07-31 15:19+0000\n"
+"PO-Revision-Date: 2012-08-01 08:20+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:157
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:156
 msgid "Disk Usage Analyzer"
 msgstr "Analizer iskorišćenosti diska"
 
@@ -42,28 +42,30 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Spisak adresa particija koje će biti izdvojene iz pretraživanja."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Traka alata je vidljiva"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Da li traka alata treba da bude vidljiva u glavnom prozoru."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Traka stanja je vidljiva"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Da li traka stanja treba da bude vidljiva u glavnom prozoru."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "Aktivni grafikon"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "Vrsta grafika koji će biti prikazan."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Ispisuje podatke o izdanju i izlazi"
+
+#: ../src/baobab-application.vala:104
+#| msgid "Disk Usage Analyzer"
+msgid "- Disk Usage Analyzer"
+msgstr "— Analizer iskorišćenosti diska"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d stavka"
+msgstr[1] "%d stavke"
+msgstr[2] "%d stavki"
+msgstr[3] "Jedna stavka"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -101,22 +103,13 @@ msgstr "U_većaj"
 msgid "Zoom _out"
 msgstr "U_manji"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d stavka"
-msgstr[1] "%d stavke"
-msgstr[2] "%d stavki"
-msgstr[3] "~~"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "Glavni disk"
-
-#: ../src/baobab-location.vala:84
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "Lična fascikla"
+
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Glavni disk"
 
 #: ../src/baobab-location-widget.vala:96
 msgid "Scan"
@@ -191,6 +184,10 @@ msgid "_Open Folder"
 msgstr "_Otvori fasciklu"
 
 #: ../src/baobab-main-window.ui.h:17
+msgid "_Copy Path to Clipboard"
+msgstr "_Umnoži putanju u ostavu"
+
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Premesti u _smeće"
 
@@ -211,32 +208,32 @@ msgid "Scan Remote Fo_lder…"
 msgstr "Pregledaj _udaljenu fasciklu…"
 
 #: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "_Zaustavi"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "_Osveži"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "Po_moć"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:6
 msgid "_About"
 msgstr "_O programu"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:7
 msgid "_Quit"
 msgstr "_Izađi"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:8
 msgid "_Analyzer"
 msgstr "_Analizator"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:9
 msgid "_View"
 msgstr "_Pregled"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Stop"
+msgstr "_Zaustavi"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Reload"
+msgstr "_Osveži"
 
 #: ../src/baobab-menu.ui.h:12
 msgid "_Allocated Space"
@@ -250,11 +247,11 @@ msgstr "_Razgranaj sve"
 msgid "_Collapse All"
 msgstr "_Sažmi sve"
 
-#: ../src/baobab-window.vala:197
+#: ../src/baobab-window.vala:198
 msgid "Select Folder"
 msgstr "Izaberite fasciklu"
 
-#: ../src/baobab-window.vala:237
+#: ../src/baobab-window.vala:235
 msgid "Could not analyze volume."
 msgstr "Ne mogu da analiziram disk."
 
@@ -270,25 +267,38 @@ msgstr "Grafički alat za analizu iskorišenosti diska."
 msgid "translator-credits"
 msgstr "  Miroslav Nikolić <mirosavnikoic@rocketmailcom>"
 
-#: ../src/baobab-window.vala:436
+#: ../src/baobab-window.vala:449
 msgid "Cancel Scan"
 msgstr "Otkaži pregled"
 
-#: ../src/baobab-window.vala:444
+#: ../src/baobab-window.vala:457
 msgid "All Locations"
 msgstr "Sva mesta"
 
+#: ../src/baobab-window.vala:535
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Ne mogu da pregledam fasciklu „%s“ ili neku od fascikli koje sadrži."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:483 ../src/baobab-window.vala:489
+#: ../src/baobab-window.vala:550 ../src/baobab-window.vala:556
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ nije ispravna fascikla"
 
-#: ../src/baobab-window.vala:484
+#: ../src/baobab-window.vala:551 ../src/baobab-window.vala:557
 msgid "Could not analyze disk usage."
 msgstr "Ne mogu da analiziram iskorišćenost diska."
 
-#: ../src/baobab-window.vala:543
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Ne mogu da pregledam fasciklu „%s“ ili neku od fascikli koje sadrži."
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Traka alata je vidljiva"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Da li traka alata treba da bude vidljiva u glavnom prozoru."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Traka stanja je vidljiva"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "Da li traka stanja treba da bude vidljiva u glavnom prozoru."

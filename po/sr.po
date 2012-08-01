@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils-2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-26 13:51+0000\n"
-"PO-Revision-Date: 2012-07-27 00:02+0200\n"
+"POT-Creation-Date: 2012-07-31 15:19+0000\n"
+"PO-Revision-Date: 2012-08-01 08:20+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:157
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:156
 msgid "Disk Usage Analyzer"
 msgstr "Анализер искоришћености диска"
 
@@ -42,28 +42,30 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Списак адреса партиција које ће бити издвојене из претраживања."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Трака алата је видљива"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Да ли трака алата треба да буде видљива у главном прозору."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Трака стања је видљива"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Да ли трака стања треба да буде видљива у главном прозору."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "Активни графикон"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "Врста графика који ће бити приказан."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Исписује податке о издању и излази"
+
+#: ../src/baobab-application.vala:104
+#| msgid "Disk Usage Analyzer"
+msgid "- Disk Usage Analyzer"
+msgstr "— Анализер искоришћености диска"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d ставка"
+msgstr[1] "%d ставке"
+msgstr[2] "%d ставки"
+msgstr[3] "Једна ставка"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -101,22 +103,13 @@ msgstr "У_већај"
 msgid "Zoom _out"
 msgstr "У_мањи"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d ставка"
-msgstr[1] "%d ставке"
-msgstr[2] "%d ставки"
-msgstr[3] "~~"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "Главни диск"
-
-#: ../src/baobab-location.vala:84
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "Лична фасцикла"
+
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Главни диск"
 
 #: ../src/baobab-location-widget.vala:96
 msgid "Scan"
@@ -191,6 +184,10 @@ msgid "_Open Folder"
 msgstr "_Отвори фасциклу"
 
 #: ../src/baobab-main-window.ui.h:17
+msgid "_Copy Path to Clipboard"
+msgstr "_Умножи путању у оставу"
+
+#: ../src/baobab-main-window.ui.h:18
 msgid "Mo_ve to Trash"
 msgstr "Премести у _смеће"
 
@@ -211,32 +208,32 @@ msgid "Scan Remote Fo_lder…"
 msgstr "Прегледај _удаљену фасциклу…"
 
 #: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "_Заустави"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "_Освежи"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "По_моћ"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:6
 msgid "_About"
 msgstr "_О програму"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:7
 msgid "_Quit"
 msgstr "_Изађи"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:8
 msgid "_Analyzer"
 msgstr "_Анализатор"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:9
 msgid "_View"
 msgstr "_Преглед"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Stop"
+msgstr "_Заустави"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Reload"
+msgstr "_Освежи"
 
 #: ../src/baobab-menu.ui.h:12
 msgid "_Allocated Space"
@@ -250,11 +247,11 @@ msgstr "_Разгранај све"
 msgid "_Collapse All"
 msgstr "_Сажми све"
 
-#: ../src/baobab-window.vala:197
+#: ../src/baobab-window.vala:198
 msgid "Select Folder"
 msgstr "Изаберите фасциклу"
 
-#: ../src/baobab-window.vala:237
+#: ../src/baobab-window.vala:235
 msgid "Could not analyze volume."
 msgstr "Не могу да анализирам диск."
 
@@ -270,25 +267,38 @@ msgstr "Графички алат за анализу искоришености
 msgid "translator-credits"
 msgstr "  Мирослав Николић <mirosavnikoic@rocketmailcom>"
 
-#: ../src/baobab-window.vala:436
+#: ../src/baobab-window.vala:449
 msgid "Cancel Scan"
 msgstr "Откажи преглед"
 
-#: ../src/baobab-window.vala:444
+#: ../src/baobab-window.vala:457
 msgid "All Locations"
 msgstr "Сва места"
 
+#: ../src/baobab-window.vala:535
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Не могу да прегледам фасциклу „%s“ или неку од фасцикли које садржи."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:483 ../src/baobab-window.vala:489
+#: ../src/baobab-window.vala:550 ../src/baobab-window.vala:556
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ није исправна фасцикла"
 
-#: ../src/baobab-window.vala:484
+#: ../src/baobab-window.vala:551 ../src/baobab-window.vala:557
 msgid "Could not analyze disk usage."
 msgstr "Не могу да анализирам искоришћеност диска."
 
-#: ../src/baobab-window.vala:543
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Не могу да прегледам фасциклу „%s“ или неку од фасцикли које садржи."
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Трака алата је видљива"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Да ли трака алата треба да буде видљива у главном прозору."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Трака стања је видљива"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "Да ли трака стања треба да буде видљива у главном прозору."
