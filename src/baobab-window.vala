@@ -525,16 +525,18 @@ namespace Baobab {
             }
 
             scan_completed_handler = scanner.completed.connect(() => {
-                set_ui_state (UIPage.RESULT, false);
                 try {
                     scanner.finish();
                 } catch (IOError.CANCELLED e) {
                     // Handle cancellation silently
                     scanner.clear ();
+                    return;
                 } catch (Error e) {
                     var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());
                     message (primary, e.message, Gtk.MessageType.WARNING);
                 }
+
+                set_ui_state (UIPage.RESULT, false);
             });
 
             clear_message ();
