@@ -529,7 +529,11 @@ namespace Baobab {
                     scanner.finish();
                 } catch (IOError.CANCELLED e) {
                     // Handle cancellation silently
-                    scanner.clear ();
+                    if (scan_completed_handler > 0) {
+                        scanner.disconnect (scan_completed_handler);
+                        scan_completed_handler = 0;
+                    }
+                    scanner.cancel_scan ();
                     return;
                 } catch (Error e) {
                     var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());

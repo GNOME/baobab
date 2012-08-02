@@ -3,5 +3,6 @@ namespace GLib2 {
 	public class Thread {
 		public delegate void* ThreadFunc ();
 		public Thread (string thread_name, ThreadFunc func);
+		public void* join ();
 	}
 }

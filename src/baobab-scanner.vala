@@ -78,6 +78,8 @@ namespace Baobab {
             }
         }
 
+        GLib2.Thread? thread;
+
         HardLink[] hardlinks;
         HashTable<File, unowned File> excluded_locations;
 
@@ -238,7 +240,7 @@ namespace Baobab {
                 results.percent = 100.0;
                 array.results += (owned) results;
                 results_queue.push ((owned) array);
-            } catch {
+            } catch (Error e) {
             }
 
             // drop the thread's reference on the Scanner object
@@ -316,14 +318,27 @@ namespace Baobab {
             return this.self != null;
         }
 
+        public void cancel_scan () {
+            if (thread != null) {
+                thread.join ();
+                thread = null;
+            }
+            var tmp = results_queue.try_pop ();
+            while (tmp != null) {
+                tmp = results_queue.try_pop ();
+            }
+            base.clear ();
+            cancellable.reset ();
+        }
+
         public void scan (bool force) {
             if (force) {
+                cancel_scan ();
                 successful = false;
-                clear ();
             }
 
             if (!successful) {
-                new GLib2.Thread ("scanner", scan_in_thread);
+                thread = new GLib2.Thread ("scanner", scan_in_thread);
                 Timeout.add (100, process_results);
             } else {
                 completed ();
