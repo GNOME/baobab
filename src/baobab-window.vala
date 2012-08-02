@@ -224,8 +224,16 @@ namespace Baobab {
             connect_server.show ();
         }
 
-        void on_scan_location_activate (Location location) {
+        void set_active_location (Location location) {
+            if (scan_completed_handler > 0) {
+                active_location.scanner.disconnect (scan_completed_handler);
+            }
+
             active_location = location;
+        }
+
+        void on_scan_location_activate (Location location) {
+            set_active_location (location);
             if (location.is_volume) {
                 location.mount_volume.begin ((location_, res) => {
                     try {
@@ -520,10 +528,6 @@ namespace Baobab {
 
             set_model (active_location.scanner);
 
-            if (scan_completed_handler > 0) {
-                scanner.disconnect (scan_completed_handler);
-            }
-
             scan_completed_handler = scanner.completed.connect(() => {
                 try {
                     scanner.finish();
@@ -566,7 +570,7 @@ namespace Baobab {
 
             location_list.add_location (location);
 
-            active_location = location;
+            set_active_location (location);
             scan_active_location (false);
         }
     }
