@@ -1222,7 +1222,7 @@ baobab_chart_query_tooltip (GtkWidget  *widget,
                         item->size,
                         NULL);
   escaped = g_markup_escape_text (markup, -1);
-  gtk_tooltip_set_markup (tooltip, markup);
+  gtk_tooltip_set_markup (tooltip, escaped);
   g_free (markup);
   g_free (escaped);
 
