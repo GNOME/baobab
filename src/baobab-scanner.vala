@@ -78,7 +78,8 @@ namespace Baobab {
             }
         }
 
-        GLib2.Thread? thread;
+        GLib2.Thread? thread = null;
+        uint process_result_idle = 0;
 
         HardLink[] hardlinks;
         HashTable<File, unowned File> excluded_locations;
@@ -323,23 +324,38 @@ namespace Baobab {
                 thread.join ();
                 thread = null;
             }
+
+            if (process_result_idle != 0) {
+                GLib.Source.remove (process_result_idle);
+                process_result_idle = 0;
+            }
+
+            // Drain the async queue
             var tmp = results_queue.try_pop ();
             while (tmp != null) {
                 tmp = results_queue.try_pop ();
             }
+
             base.clear ();
+
             cancellable.reset ();
+            scan_error = null;
         }
 
         public void scan (bool force) {
             if (force) {
-                cancel_scan ();
                 successful = false;
             }
 
             if (!successful) {
+                cancel_scan ();
+
+                // the thread owns a reference on the Scanner object
+                this.self = this;
+
                 thread = new GLib2.Thread ("scanner", scan_in_thread);
-                Timeout.add (100, process_results);
+
+                process_result_idle = Timeout.add (100, process_results);
             } else {
                 completed ();
             }
@@ -383,9 +399,6 @@ namespace Baobab {
             excluded_locations.remove (directory);
 
             results_queue = new AsyncQueue<ResultsArray> ();
-
-            // the thread owns a reference on the Scanner object
-            this.self = this;
         }
     }
 }
