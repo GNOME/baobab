@@ -1205,6 +1205,7 @@ baobab_chart_query_tooltip (GtkWidget  *widget,
   BaobabChart *chart = BAOBAB_CHART (widget);
   BaobabChartItem *item;
   char *markup;
+  char *escaped;
 
   if (chart->priv->highlighted_item == NULL)
     return FALSE;
@@ -1220,8 +1221,10 @@ baobab_chart_query_tooltip (GtkWidget  *widget,
                         "\n",
                         item->size,
                         NULL);
+  escaped = g_markup_escape_text (markup, -1);
   gtk_tooltip_set_markup (tooltip, markup);
   g_free (markup);
+  g_free (escaped);
 
   return TRUE;
 }

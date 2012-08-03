@@ -54,7 +54,8 @@ namespace Baobab {
                 warning ("Failed to load icon %s: %s", location.icon.to_string(), e.message);
             }
 
-            var label = new Gtk.Label ("<b>%s</b>".printf (location.name));
+            var escaped = GLib.Markup.escape_text (location.name, -1);
+            var label = new Gtk.Label ("<b>%s</b>".printf (escaped));
             name_size_group.add_widget (label);
             label.use_markup = true;
             label.hexpand = true;
@@ -63,7 +64,8 @@ namespace Baobab {
             label.xalign = 0;
             attach (label, 1, 0, 1, 1);
 
-            label = new Gtk.Label ("<small>%s</small>".printf (location.file != null ? location.file.get_parse_name () : ""));
+            escaped = location.file != null ? GLib.Markup.escape_text (location.file.get_parse_name (), -1) : "";
+            label = new Gtk.Label ("<small>%s</small>".printf (escaped));
             name_size_group.add_widget (label);
             label.use_markup = true;
             label.hexpand = true;
