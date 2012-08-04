@@ -21,7 +21,7 @@
 namespace Baobab {
 
     class ConnectServer : Object {
-        string[] argv = {
+        const string[] argv = {
             "nautilus-connect-server",
             "--print-uri"
         };
@@ -77,6 +77,10 @@ namespace Baobab {
             out_channel.add_watch (IOCondition.IN | IOCondition.HUP, on_out_watch);
 
             ChildWatch.add (pid, on_child_watch);
+        }
+
+        public static bool available () {
+            return (GLib.Environment.find_program_in_path (argv[0]) != null);
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Baobab {
         Settings ui_settings;
         Gtk.Notebook main_notebook;
         Gtk.Toolbar toolbar;
+        Gtk.Button scan_remote;
         Gtk.ToolItem toolbar_home_toolitem;
         Gtk.ToolButton toolbar_show_home_page;
         Gtk.Label toolbar_label;
@@ -117,6 +118,7 @@ namespace Baobab {
             // Cache some objects from the builder.
             main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
             toolbar = builder.get_object ("toolbar") as Gtk.Toolbar;
+            scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
             toolbar_home_toolitem = builder.get_object ("home-page-toolitem") as Gtk.ToolItem;
             toolbar_show_home_page = builder.get_object ("show-home-page-button") as Gtk.ToolButton;
             toolbar_label = builder.get_object ("toolbar-label") as Gtk.Label;
@@ -135,6 +137,8 @@ namespace Baobab {
             location_list.set_adjustment (location_scroll.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
+
+            scan_remote.visible = ConnectServer.available ();
 
             setup_treeview (builder);
 
