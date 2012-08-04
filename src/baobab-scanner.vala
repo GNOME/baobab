@@ -325,10 +325,7 @@ namespace Baobab {
             }
 
             if (!successful) {
-                cancel ();
-
-                cancellable.reset ();
-                scan_error = null;
+                cancel_and_reset ();
 
                 // the thread owns a reference on the Scanner object
                 this.self = this;
@@ -341,7 +338,7 @@ namespace Baobab {
             }
         }
 
-        public virtual void cancel () {
+        void cancel_and_reset () {
             cancellable.cancel ();
 
             if (thread != null) {
@@ -361,9 +358,18 @@ namespace Baobab {
             }
 
             base.clear ();
+
+            cancellable.reset ();
+            scan_error = null;
         }
 
-        public virtual void finish () throws Error {
+        public void cancel () {
+            if (!successful) {
+                cancel_and_reset ();
+            }
+        }
+
+        public void finish () throws Error {
             if (scan_error != null) {
                 throw scan_error;
             }
