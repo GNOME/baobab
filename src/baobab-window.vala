@@ -454,7 +454,8 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
                 chart_notebook.page = ChartPage.SPINNER;
                 spinner.start ();
-                toolbar_show_home_page.label = _("Cancel Scan");
+                toolbar_show_home_page.icon_name = "process-stop-symbolic";
+                toolbar_show_home_page.tooltip_markup = _("Cancel");
             } else {
                 enable_drop ();
                 rings_chart.thaw_updates ();
@@ -462,7 +463,8 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
                 lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
-                toolbar_show_home_page.label = _("All Locations");
+                toolbar_show_home_page.icon_name = "view-list-symbolic";
+                toolbar_show_home_page.tooltip_markup = _("Show all locations");
             }
 
             var window = get_window ();
