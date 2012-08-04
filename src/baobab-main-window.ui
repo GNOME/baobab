@@ -68,14 +68,30 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSeparatorToolItem" id="separatortoolitem1">
+          <object class="GtkToolItem" id="toolbar-label-toolitem">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="draw">False</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkLabel" id="toolbar-label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label"></property>
+                <property name="selectable">True</property>
+                <property name="halign">GTK_ALIGN_CENTER</property>
+                <property name="ellipsize">end</property>
+                <property name="single_line_mode">True</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+              </packing>
+            </child>
           </object>
-          <packing>
-            <property name="expand">True</property>
-          </packing>
+              <packing>
+                <property name="expand">True</property>
+              </packing>
         </child>
         <child>
           <object class="GtkToolButton" id="rescan-button">
