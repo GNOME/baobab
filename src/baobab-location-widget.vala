@@ -24,6 +24,7 @@ namespace Baobab {
     public class LocationWidget : Gtk.Grid {
         private static Gtk.SizeGroup name_size_group = null;
         private static Gtk.SizeGroup usage_size_group = null;
+        private static Gtk.IconSize icon_size;
 
         public Location? location { get; private set; }
 
@@ -31,6 +32,7 @@ namespace Baobab {
             if (name_size_group == null) {
                 name_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
                 usage_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+                icon_size = Gtk.icon_size_register ("baobab", 64, 64);
             }
         }
 
@@ -43,16 +45,9 @@ namespace Baobab {
 
             ensure_size_groups ();
 
-            var icon_theme = Gtk.IconTheme.get_default ();
-            var icon_info = icon_theme.lookup_by_gicon (location.icon, 64, 0);
-
-            try {
-                var pixbuf = icon_info.load_icon ();
-                var image = new Gtk.Image.from_pixbuf (pixbuf);
-                attach (image, 0, 0, 1, 2);
-            } catch (Error e) {
-                warning ("Failed to load icon %s: %s", location.icon.to_string(), e.message);
-            }
+            var image = new Gtk.Image.from_gicon (location.icon, icon_size);
+            image.set_pixel_size (64);
+            attach (image, 0, 0, 1, 2);
 
             var escaped = GLib.Markup.escape_text (location.name, -1);
             var label = new Gtk.Label ("<b>%s</b>".printf (escaped));
