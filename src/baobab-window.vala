@@ -508,16 +508,20 @@ namespace Baobab {
             treeview.expand_row (path, false);
         }
 
-        void set_model (Gtk.TreeModel model) {
+        void expand_fisrt_row () {
             Gtk.TreeIter first;
 
+            if (treeview.model.get_iter_first (out first) && treeview.model.iter_has_child (first)) {
+                treeview.expand_row (treeview.model.get_path (first), false);
+            } else {
+                treeview.model.row_has_child_toggled.connect (first_row_has_child);
+            }
+        }
+
+        void set_model (Gtk.TreeModel model) {
             treeview.model = model;
 
-            if (model.iter_children (out first, null) && model.iter_has_child (first)) {
-                treeview.expand_row (model.get_path (first), false);
-            } else {
-                model.row_has_child_toggled.connect (first_row_has_child);
-            }
+            expand_fisrt_row ();
 
             model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
             model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
