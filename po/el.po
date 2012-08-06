@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-26\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-15 16:14+0000\n"
-"PO-Revision-Date: 2012-07-20 19:37+0200\n"
+"POT-Creation-Date: 2012-08-04 10:01+0000\n"
+"PO-Revision-Date: 2012-08-06 17:57+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
 "Language: el\n"
@@ -44,7 +44,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../data/baobab.desktop.in.in.h:1
-#: ../src/baobab-window.vala:152
+#: ../src/baobab-window.vala:158
 msgid "Disk Usage Analyzer"
 msgstr "Αναλυτής χρήσης δίσκου"
 
@@ -69,28 +69,28 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Μια λίστα από URI για κατατμήσεις που θα εξαιρούνται από τη σάρωση."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Η εργαλειοθήκη είναι ορατή "
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Αν η εργαλειοθήκη θα είναι ορατή στο κύριο παράθυρο."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Η γραμμή κατάσταση είναι ορατή"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Αν θα είναι ορατή η γραμμή κατάστασης στο κάτω μέρος του κύριου παραθύρου."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "Ενεργό διάγραμμα"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "Ποιος τύπος διαγράμματος θα εμφανιστεί."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
+
+#: ../src/baobab-application.vala:104
+#| msgid "Disk Usage Analyzer"
+msgid "- Disk Usage Analyzer"
+msgstr "- Αναλυτής χρήσης δίσκου"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d αντικείμενο"
+msgstr[1] "%d αντικείμενα"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -117,48 +117,24 @@ msgid "Set the root node from the model"
 msgstr "Ορισμός του κόμβου υπερχρήστη από το μοντέλο"
 
 #: ../src/baobab-chart.c:898
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
 msgstr "_Μετακίνηση στο γονικό φάκελο"
 
 #: ../src/baobab-chart.c:902
-#| msgid "Zoom in"
 msgid "Zoom _in"
 msgstr "Μεγέ_θυνση "
 
 #: ../src/baobab-chart.c:906
-#| msgid "Zoom out"
 msgid "Zoom _out"
 msgstr "Σμίκρυ_νση"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d αντικείμενο"
-msgstr[1] "%d αντικείμενα"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "Κύριος τόμος"
-
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "Προσωπικός φάκελος"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "Άγνωστη χρήση"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Scan"
-msgstr "Σάρωση"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Mount and scan"
-msgstr "Προσάρτηση και σάρωση"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Κύριος τόμος"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -177,135 +153,127 @@ msgid "Scan Remote Folder"
 msgstr "Σάρωση απομακρυσμένου φακέλου"
 
 #: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-window.vala:469
 msgid "Show all locations"
 msgstr "Εμφάνιση όλων των τοποθεσιών"
 
 #: ../src/baobab-main-window.ui.h:6
-#: ../src/baobab-window.vala:471
-msgid "All locations"
-msgstr "Όλες οι τοποθεσίες"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "Διακοπή σάρωσης "
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Reload"
 msgstr "Επαναφόρτωση"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr "ετικέτα"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Φάκελος"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Χρήση"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 msgid "Rings Chart"
 msgstr "Διάγραμμα δακτυλίων"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 msgid "Treemap Chart"
 msgstr "Δενδροειδές διάγραμμα "
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "Ά_νοιγμα φακέλου "
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "Αντι_γραφή διαδρομής στο πρόχειρο"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "_Μετακίνηση στα απορρίμματα"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr "Όλ_ες οι τοποθεσίες"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "_Σάρωση αρχικού καταλόγου"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "Σάρωση φα_κέλου"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "Σάρωση απομακρυσμένου φακέ_λου"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "_Διακοπή"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "_Επαναφόρτωση"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "_Περί"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "Έ_ξοδος"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "_Αναλυτής"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Σάρωση αρχικού καταλόγου"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Σάρωση φα_κέλου"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Σάρωση απομακρυσμένου φακέ_λου"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "Προ_βολή"
 
-#: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "Ε_ργαλειοθήκη"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Διακοπή"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Επαναφόρτωση"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "Χώρος μη _εκχωρημένος"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "Α_νάπτυξη όλων"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "Σύμπτυξη ό_λων"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:200
 msgid "Select Folder"
 msgstr "Επιλογή φακέλου"
 
-#: ../src/baobab-window.vala:280
+#: ../src/baobab-window.vala:245
+msgid "Could not analyze volume."
+msgstr "Αδυναμία ανάλυσης τόμου."
+
+#: ../src/baobab-window.vala:297
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:300
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ένα γραφικό εργαλείο για την ανάλυση της χρήσης του δίσκου."
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:305
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -315,29 +283,62 @@ msgstr ""
 " Νίκος Χαρωνιτάκης <nikosx@gmail.com>\n"
 "Για περισσότερα δείτε http://www.gnome.gr/"
 
-#: ../src/baobab-window.vala:349
-msgid "Could not analyze volume."
-msgstr "Αδυναμία ανάλυσης τόμου."
+#: ../src/baobab-window.vala:460
+#| msgid "Cancel scan"
+msgid "Cancel"
+msgstr "Ακύρωση"
 
-#: ../src/baobab-window.vala:463
-msgid "Cancel scan"
-msgstr "Ακύρωση σάρωσης"
+#: ../src/baobab-window.vala:550
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Αδυναμία σάρωσης του φακέλου \"%s\" ή μερικών από τους φακέλους που περιέχει."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494
-#: ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:567
+#: ../src/baobab-window.vala:573
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "Το \"%s\" δεν είναι έγκυρος φάκελος"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:568
+#: ../src/baobab-window.vala:574
 msgid "Could not analyze disk usage."
 msgstr "Αδυναμία ανάλυσης χρήσης του δίσκου."
 
-#: ../src/baobab-window.vala:554
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Αδυναμία σάρωσης του φακέλου \"%s\" ή μερικών από τους φακέλους που περιέχει."
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Η εργαλειοθήκη είναι ορατή "
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Αν η εργαλειοθήκη θα είναι ορατή στο κύριο παράθυρο."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Η γραμμή κατάσταση είναι ορατή"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr ""
+#~ "Αν θα είναι ορατή η γραμμή κατάστασης στο κάτω μέρος του κύριου παραθύρου."
+
+#~ msgid "Usage unknown"
+#~ msgstr "Άγνωστη χρήση"
+
+#~ msgid "Scan"
+#~ msgstr "Σάρωση"
+
+#~ msgid "Mount and scan"
+#~ msgstr "Προσάρτηση και σάρωση"
+
+#~ msgid "All locations"
+#~ msgstr "Όλες οι τοποθεσίες"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Διακοπή σάρωσης "
+
+#~ msgid "_All locations"
+#~ msgstr "Όλ_ες οι τοποθεσίες"
+
+#~ msgid "_Toolbar"
+#~ msgstr "Ε_ργαλειοθήκη"
 
 #~ msgid "Save screenshot"
 #~ msgstr "Αποθήκευση στιγμιότυπου οθόνης"
