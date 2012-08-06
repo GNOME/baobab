@@ -142,7 +142,7 @@ namespace Baobab {
 
             int n_recents = 0;
             foreach (var info in recent_items) {
-                if (n_recents >= this.MAX_RECENT_LOCATIONS) {
+                if (n_recents >= MAX_RECENT_LOCATIONS) {
                     break;
                 }
                 if (info.has_group ("baobab") && info.exists ()) {
