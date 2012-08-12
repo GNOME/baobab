@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils 3.1.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 19:21+0800\n"
-"PO-Revision-Date: 2012-07-18 19:21+0800\n"
+"POT-Creation-Date: 2012-08-12 22:42+0800\n"
+"PO-Revision-Date: 2012-08-12 22:42+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "Language: zh_TW\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "磁碟用量分析器"
 
@@ -48,28 +48,26 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "掃描時排除的分割區 URI 清單。"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "顯示工具列"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "應否顯示在主視窗中的工具列"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "狀態列設為顯示"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "應否顯示在主視窗底部的狀態列。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "使用圖表"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "要顯示哪一種類型的圖表"
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "輸出版本資訊並離開"
+
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- 磁碟用量分析器"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d 個項目"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -107,31 +105,13 @@ msgstr "拉近(_I)"
 msgid "Zoom _out"
 msgstr "拉遠(_O)"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d 個項目"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "主要儲存區"
-
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "個人資料夾"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "使用量不明"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Scan"
-msgstr "掃描"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Mount and scan"
-msgstr "掛載並掃描"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "主要儲存區"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -149,135 +129,127 @@ msgstr "掃描遠端資料夾"
 msgid "Scan Remote Folder"
 msgstr "掃描遠端資料夾"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:473
 msgid "Show all locations"
 msgstr "顯示所有位置"
 
-#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
-msgid "All locations"
-msgstr "所有的位置"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "停止掃描"
-
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Reload"
 msgstr "重新載入"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr "標籤"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "關閉"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "資料夾"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "用量"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "大小"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "內容"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 msgid "Rings Chart"
 msgstr "環狀圖表"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 msgid "Treemap Chart"
 msgstr "樹狀圖表"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "開啟資料夾(_O)"
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "複製路徑至剪貼簿(_C)"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "丟進回收筒(_V)"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr "所有的位置(_A)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "掃描個人資料夾(_S)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "掃描資料夾(_O)…"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "掃描遠端資料夾(_L)…"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "停止(_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "重新載入(_R)"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "關於(_A)"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "結束(_Q)"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "分析器(_A)"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "掃描個人資料夾(_S)"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "掃描資料夾(_O)…"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "掃描遠端資料夾(_L)…"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "檢視(_V)"
 
-#: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "工具列(_T)"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "停止(_S)"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "重新載入(_R)"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "已配置空間(_A)"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "全部展開(_E)"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "全部收起(_C)"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "選擇資料夾"
 
-#: ../src/baobab-window.vala:280
+#: ../src/baobab-window.vala:249
+msgid "Could not analyze volume."
+msgstr "無法分析儲存區。"
+
+#: ../src/baobab-window.vala:301
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:304
 msgid "A graphical tool to analyze disk usage."
 msgstr "分析磁碟使用率的圖形化工具。"
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:309
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -291,28 +263,58 @@ msgstr ""
 "Abel Cheung <abel@oaka.org>, 2001-2004\n"
 "Ming-Yen Hsu <myhsu@cyberdude.com>, 1999"
 
-#: ../src/baobab-window.vala:349
-msgid "Could not analyze volume."
-msgstr "無法分析儲存區。"
+#: ../src/baobab-window.vala:464
+msgid "Cancel"
+msgstr "取消"
 
-#: ../src/baobab-window.vala:463
-msgid "Cancel scan"
-msgstr "取消掃描"
+#: ../src/baobab-window.vala:558
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "無法掃描資料夾「%s」或它包含的某些資料夾。"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:575 ../src/baobab-window.vala:581
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s”不是有效的資料夾"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 msgid "Could not analyze disk usage."
 msgstr "無法分析磁碟使用率"
 
-#: ../src/baobab-window.vala:554
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "無法掃描資料夾「%s」或它包含的某些資料夾。"
+#~ msgid "Toolbar is Visible"
+#~ msgstr "顯示工具列"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "應否顯示在主視窗中的工具列"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "狀態列設為顯示"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "應否顯示在主視窗底部的狀態列。"
+
+#~ msgid "Usage unknown"
+#~ msgstr "使用量不明"
+
+#~ msgid "Scan"
+#~ msgstr "掃描"
+
+#~ msgid "Mount and scan"
+#~ msgstr "掛載並掃描"
+
+#~ msgid "All locations"
+#~ msgstr "所有的位置"
+
+#~ msgid "Stop scanning"
+#~ msgstr "停止掃描"
+
+#~ msgid "_All locations"
+#~ msgstr "所有的位置(_A)"
+
+#~ msgid "_Toolbar"
+#~ msgstr "工具列(_T)"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "磁碟用量分析器偏好設定"
