@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-16.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-17 19:16+0200\n"
-"PO-Revision-Date: 2012-06-17 19:16+0200\n"
+"POT-Creation-Date: 2012-08-12 12:22+0200\n"
+"PO-Revision-Date: 2012-08-12 12:22+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.0\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "محلّل استخدام القرص"
 
@@ -48,28 +48,31 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "قائمة التقسيمات المستثناة من الفحص."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "شريط الأدوات مرئي"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "ما إذا وجب لشريط الأدوات أن يكون مرئيّا في نوافذ التحرير."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "شريط الحالة مرئي"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "ما إذا وجب لعمود الحالة في أسفل نافذة التحرير أن يكون مرئيّا."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "الرسم البياني النشط"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "أي نوع من الرسوم البيانية يُعرض."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "اكتب رقم الإصدار ثم اخرج"
+
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- محلّل استخدام القرص"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "لا عناصر"
+msgstr[1] "عنصر واحد"
+msgstr[2] "عنصرين"
+msgstr[3] "%d عناصر"
+msgstr[4] "%d عنصرا"
+msgstr[5] "%d عنصر"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -96,36 +99,24 @@ msgid "Set the root node from the model"
 msgstr "اضبط عقدة الجذر من النموذج"
 
 #: ../src/baobab-chart.c:898
-msgid "Move to parent folder"
-msgstr "انقل للمجلد الأصل"
+msgid "_Move to parent folder"
+msgstr "ا_نقل للمجلد الأصل"
 
 #: ../src/baobab-chart.c:902
-msgid "Zoom in"
-msgstr "قرّب"
+msgid "Zoom _in"
+msgstr "_قرّب"
 
 #: ../src/baobab-chart.c:906
-msgid "Zoom out"
-msgstr "بعّد"
+msgid "Zoom _out"
+msgstr "ب_عّد"
 
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "الجزء الرئيسي"
-
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "مجلّد المنزل"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "الاستخدام غير معروف"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Scan"
-msgstr "افحص"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Mount and scan"
-msgstr "صِل وافحص"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "الجزء الرئيسي"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -143,135 +134,127 @@ msgstr "افحص مجلّدا بعيدا"
 msgid "Scan Remote Folder"
 msgstr "افحص مجلّدا بعيدا"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:473
 msgid "Show all locations"
 msgstr "اعرض كل الأماكن"
 
-#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
-msgid "All locations"
-msgstr "كل الأماكن"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "أوقف الفحص"
-
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Reload"
 msgstr "أعد التحميل"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr "العنوان"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "أغلق"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "مجلد"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "الاستخدام"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "الحجم"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "المحتويات"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 msgid "Rings Chart"
 msgstr "رسم بياني حلقي"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 msgid "Treemap Chart"
 msgstr "رسم بياني شجري"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "ا_فتح المجلّد"
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "ان_سخ المسار إلى الحافظة"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "ا_نقل للمهملات"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr "_كل الأماكن"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "اف_حص المنزل"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "اف_حص المجلّد…"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "افحص مجلّدا ب_عيدا…"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "أو_قف"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "أ_عد التحميل"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "م_ساعدة"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "_عن"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "أ_نهِ"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "الم_حلّل"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "اف_حص المنزل"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "اف_حص المجلّد…"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "افحص مجلّدا ب_عيدا…"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "_عرض"
 
-#: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "شريط الأ_دوات"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "أو_قف"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "أ_عد التحميل"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "ال_مساحة المحصّصة"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "_مدّد الكل"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "قلّص ال_كل"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "اختر مجلدا"
 
-#: ../src/baobab-window.vala:280
+#: ../src/baobab-window.vala:249
+msgid "Could not analyze volume."
+msgstr "تعذّر تحليل الجزء."
+
+#: ../src/baobab-window.vala:301
 msgid "Baobab"
 msgstr "بوباب"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:304
 msgid "A graphical tool to analyze disk usage."
 msgstr "أداة رسوميّة لتحليل استعمال القرص."
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:309
 msgid "translator-credits"
 msgstr ""
 "فريق عربآيز للترجمة http://www.arabeyes.org:\n"
@@ -280,28 +263,58 @@ msgstr ""
 "خالد حسني <khaledhosny@eglug.org>\n"
 "أنس عفيف عماد <anas.e87@gmail.com>"
 
-#: ../src/baobab-window.vala:349
-msgid "Could not analyze volume."
-msgstr "تعذّر تحليل الجزء."
+#: ../src/baobab-window.vala:464
+msgid "Cancel"
+msgstr "ألغِ"
 
-#: ../src/baobab-window.vala:463
-msgid "Cancel scan"
-msgstr "ألغِ الفحص"
+#: ../src/baobab-window.vala:558
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "تعذّر فحص المجلد \"%s\" أو أحد المجلدات التي يحتويها."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:575 ../src/baobab-window.vala:581
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ليس مجلّدا سليما"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 msgid "Could not analyze disk usage."
 msgstr "تعذّر تحليل استعمال القرص."
 
-#: ../src/baobab-window.vala:554
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "تعذّر فحص المجلد \"%s\" أو أحد المجلدات التي يحتويها."
+#~ msgid "Toolbar is Visible"
+#~ msgstr "شريط الأدوات مرئي"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "ما إذا وجب لشريط الأدوات أن يكون مرئيّا في نوافذ التحرير."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "شريط الحالة مرئي"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "ما إذا وجب لعمود الحالة في أسفل نافذة التحرير أن يكون مرئيّا."
+
+#~ msgid "Usage unknown"
+#~ msgstr "الاستخدام غير معروف"
+
+#~ msgid "Scan"
+#~ msgstr "افحص"
+
+#~ msgid "Mount and scan"
+#~ msgstr "صِل وافحص"
+
+#~ msgid "All locations"
+#~ msgstr "كل الأماكن"
+
+#~ msgid "Stop scanning"
+#~ msgstr "أوقف الفحص"
+
+#~ msgid "_All locations"
+#~ msgstr "_كل الأماكن"
+
+#~ msgid "_Toolbar"
+#~ msgstr "شريط الأ_دوات"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "تفضيلات محلّل استخدام القرص"
@@ -368,15 +381,6 @@ msgstr "تعذّر فحص المجلد \"%s\" أو أحد المجلدات ال�
 
 #~ msgid "contains hardlinks for:"
 #~ msgstr "يحتوي على وصلات صلبة إلى:"
-
-#~ msgid "%5d item"
-#~ msgid_plural "%5d items"
-#~ msgstr[0] "لا عناصر"
-#~ msgstr[1] "عنصر واحد"
-#~ msgstr[2] "عنصرين"
-#~ msgstr[3] "%5d عناصر"
-#~ msgstr[4] "%5d عنصرا"
-#~ msgstr[5] "%5d عنصر"
 
 #~ msgid "Could not initialize monitoring"
 #~ msgstr "تعذّر بدأ المراقبة"
