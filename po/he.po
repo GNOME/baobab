@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-24 22:54+0300\n"
-"PO-Revision-Date: 2012-07-24 22:55+0200\n"
+"POT-Creation-Date: 2012-08-13 23:25+0300\n"
+"PO-Revision-Date: 2012-08-13 23:25+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Poedit-Language: Hebrew\n"
 
 #: ../data/baobab.desktop.in.in.h:1
-#: ../src/baobab-window.vala:157
+#: ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "מנתח השימוש בכונן"
 
@@ -55,28 +55,27 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "A list of uri for partitions to be excluded from scanning."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Toolbar is Visible"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Whether the toolbar should be visible in main window."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Statusbar is Visible"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Whether the status bar at the bottom of main window should be visible."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "Active Chart"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "Which type of chart should be displayed."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "הצגת פרטי הגרסה ויציאה"
+
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- מנתח השימוש בכונן"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "פריט אחד"
+msgstr[1] "%d פריטים"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -114,28 +113,13 @@ msgstr "הת_קרבות"
 msgid "Zoom _out"
 msgstr "הת_רחקות"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "פריט אחד"
-msgstr[1] "%d פריטים"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "הכרך הראשי"
-
-#: ../src/baobab-location.vala:84
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "תיקיית הבית"
 
-#: ../src/baobab-location-widget.vala:96
-msgid "Scan"
-msgstr "סריקה"
-
-#: ../src/baobab-location-widget.vala:96
-msgid "Mount and scan"
-msgstr "עיגון וסריקה"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "הכרך הראשי"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -154,135 +138,127 @@ msgid "Scan Remote Folder"
 msgstr "סריקת תיקייה מרוחקת"
 
 #: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-window.vala:474
 msgid "Show all locations"
 msgstr "הצגת כל המיקומים"
 
 #: ../src/baobab-main-window.ui.h:6
-#: ../src/baobab-window.vala:444
-msgid "All locations"
-msgstr "כל המיקומים"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "עצירת הסריקה"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Reload"
 msgstr "רענון"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr "תווית"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "סגירה"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "תיקייה"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "ניצולת"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "גודל"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "תכנים"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 msgid "Rings Chart"
 msgstr "הצגה כתרשים טבעות"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 msgid "Treemap Chart"
 msgstr "הצגה כתרשים מפת עץ"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "_פתיחת תיקייה"
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "העתקת ה_נתיב ללוח הגזירים"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "ה_עברה לאשפה"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr "_כל המיקומים"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "סריקת תיקיית ה_בית"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "סריקת תי_קייה…"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "סריקת תיקייה מ_רוחקת…"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "ע_צירה"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "_רענון"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "ע_זרה"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "על _אודות"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "י_ציאה"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "מ_נתח"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "סריקת תיקיית ה_בית"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "סריקת תי_קייה…"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "סריקת תיקייה מ_רוחקת…"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "תצוגה"
 
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "ע_צירה"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_רענון"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "מקום מוק_צה"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "הר_חבת הכול"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "_צמצום הכול"
 
-#: ../src/baobab-window.vala:197
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "בחירת תיקייה"
 
-#: ../src/baobab-window.vala:237
+#: ../src/baobab-window.vala:250
 msgid "Could not analyze volume."
 msgstr "לא ניתן לנתח את הכרך."
 
-#: ../src/baobab-window.vala:287
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "‏Baobab"
 
-#: ../src/baobab-window.vala:290
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "כלי גרפי לניתוח השימוש בכונן."
 
-#: ../src/baobab-window.vala:295
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -294,25 +270,55 @@ msgstr ""
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../src/baobab-window.vala:436
-msgid "Cancel scan"
-msgstr "ביטול הסריקה"
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "ביטול"
+
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "לא ניתן לסרוק את התיקייה „%s“ או חלק מהתיקיות שהיא מכילה."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:483
-#: ../src/baobab-window.vala:489
+#: ../src/baobab-window.vala:576
+#: ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" אינה תיקייה תקינה"
 
-#: ../src/baobab-window.vala:484
+#: ../src/baobab-window.vala:577
+#: ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "לא ניתן לנתח את השימוש בכונן."
 
-#: ../src/baobab-window.vala:543
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "לא ניתן לסרוק את התיקייה „%s“ או חלק מהתיקיות שהיא מכילה."
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Toolbar is Visible"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Whether the toolbar should be visible in main window."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Statusbar is Visible"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+
+#~ msgid "Scan"
+#~ msgstr "סריקה"
+
+#~ msgid "Mount and scan"
+#~ msgstr "עיגון וסריקה"
+
+#~ msgid "All locations"
+#~ msgstr "כל המיקומים"
+
+#~ msgid "Stop scanning"
+#~ msgstr "עצירת הסריקה"
+
+#~ msgid "_All locations"
+#~ msgstr "_כל המיקומים"
 
 #~ msgid "Save screenshot"
 #~ msgstr "שמירת צילום המסך"
