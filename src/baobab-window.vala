@@ -233,6 +233,7 @@ namespace Baobab {
         void set_active_location (Location location) {
             if (scan_completed_handler > 0) {
                 active_location.scanner.disconnect (scan_completed_handler);
+                scan_completed_handler = 0;
             }
 
             active_location = location;
