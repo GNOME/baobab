@@ -543,8 +543,6 @@ namespace Baobab {
         void scan_active_location (bool force) {
             var scanner = active_location.scanner;
 
-            set_model (active_location.scanner);
-
             scan_completed_handler = scanner.completed.connect(() => {
                 try {
                     scanner.finish();
@@ -567,6 +565,8 @@ namespace Baobab {
             set_ui_state (UIPage.RESULT, true);
 
             scanner.scan (force);
+
+            set_model (active_location.scanner);
         }
 
         public void scan_directory (File directory) {
