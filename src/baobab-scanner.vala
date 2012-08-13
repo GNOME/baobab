@@ -319,25 +319,6 @@ namespace Baobab {
             return this.self != null;
         }
 
-        public void scan (bool force) {
-            if (force) {
-                successful = false;
-            }
-
-            if (!successful) {
-                cancel_and_reset ();
-
-                // the thread owns a reference on the Scanner object
-                this.self = this;
-
-                thread = new GLib2.Thread ("scanner", scan_in_thread);
-
-                process_result_idle = Timeout.add (100, process_results);
-            } else {
-                completed ();
-            }
-        }
-
         void cancel_and_reset () {
             cancellable.cancel ();
 
@@ -361,6 +342,25 @@ namespace Baobab {
 
             cancellable.reset ();
             scan_error = null;
+        }
+
+        public void scan (bool force) {
+            if (force) {
+                successful = false;
+            }
+
+            if (!successful) {
+                cancel_and_reset ();
+
+                // the thread owns a reference on the Scanner object
+                this.self = this;
+
+                thread = new GLib2.Thread ("scanner", scan_in_thread);
+
+                process_result_idle = Timeout.add (100, process_results);
+            } else {
+                completed ();
+            }
         }
 
         public void cancel () {
