@@ -23,12 +23,14 @@ baobab_VALAFLAGS = \
 noinst_HEADERS = \
 	baobab-chart.h			\
 	baobab-treemap.h		\
-	baobab-ringschart.h
+	baobab-ringschart.h		\
+	egg-list-box.h
 
 baobab_SOURCES = \
 	fixes.vapi			\
 	baobab.vapi			\
 	config.vapi			\
+	egglistbox.vapi			\
 	baobab-chart.c			\
 	baobab-treemap.c		\
 	baobab-ringschart.c		\
@@ -40,7 +42,7 @@ baobab_SOURCES = \
 	baobab-location-widget.vala	\
 	baobab-scanner.vala		\
 	baobab-window.vala		\
-	egg-list-box.vala		\
+	egg-list-box.c			\
 	main.vala			\
 	$(BUILT_SOURCES)
 
@@ -71,7 +73,6 @@ MAINTAINERCLEANFILES = \
 	baobab-scanner.c		\
 	baobab-window.c			\
 	baobab_vala.stamp		\
-	egg-list-box.c			\
 	main.c				\
 	$(BUILT_SOURCES)
 
