@@ -1,4 +1,4 @@
-# gnome-utils ja.po.
+# baobab ja.po.
 # Copyright (C) 1998-2012 gnome-util's COPYRIGHT HOLDER
 # Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1998.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
@@ -16,11 +16,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils master\n"
+"Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-03 08:27+0000\n"
-"PO-Revision-Date: 2012-06-15 21:34+0900\n"
-"Last-Translator: Shuuji Takahashi <shuuji3@gmail.com>\n"
+"POT-Creation-Date: 2012-08-19 03:25+0000\n"
+"PO-Revision-Date: 2012-08-19 19:19+0900\n"
+"Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "ディスク使用量の解析"
 
@@ -53,28 +53,28 @@ msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "スキャンを実行しないパーティションの URI を要素とするリストです。"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "ツールバーの表示可否"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "メインウィンドウにツールバーを表示するかどうか設定します。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "ステータスバーの表示可否"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "メインウィンドウの下にステータスバーを表示するかどうかを設定します。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
 msgid "Active Chart"
 msgstr "アクティブなチャート"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "表示すべきチャートの種類を設定します。"
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "バージョン情報を表示して終了する"
+
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- ディスク使用量の解析"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, fuzzy, c-format
+#| msgid "%5d item"
+#| msgid_plural "%5d items"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%5d 個のオブジェクト"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -101,36 +101,24 @@ msgid "Set the root node from the model"
 msgstr "チャートのルートにするフォルダーを選択します"
 
 #: ../src/baobab-chart.c:898
-msgid "Move to parent folder"
-msgstr "親フォルダーへ移動する"
+msgid "_Move to parent folder"
+msgstr "親フォルダーへ移動する(_M)"
 
 #: ../src/baobab-chart.c:902
-msgid "Zoom in"
-msgstr "拡大する"
+msgid "Zoom _in"
+msgstr "拡大する(_I)"
 
 #: ../src/baobab-chart.c:906
-msgid "Zoom out"
-msgstr "縮小する"
+msgid "Zoom _out"
+msgstr "縮小する(_O)"
 
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "メインボリューム"
-
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "ホームフォルダー"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "使用量不明"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Scan"
-msgstr "スキャン"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Mount and scan"
-msgstr "マウントしてスキャン"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "メインボリューム"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -148,135 +136,127 @@ msgstr "リモートフォルダーをスキャンします"
 msgid "Scan Remote Folder"
 msgstr "リモートフォルダーのスキャン"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
 msgid "Show all locations"
 msgstr "すべての場所を表示します"
 
-#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
-msgid "All locations"
-msgstr "すべての場所"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "スキャンを停止します"
-
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Reload"
 msgstr "再読み込み"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr "ラベル"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "閉じる"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "フォルダー"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "使用量"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "サイズ"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "内容"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 msgid "Rings Chart"
 msgstr "リングチャート"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 msgid "Treemap Chart"
 msgstr "ツリーマップチャート"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "フォルダーを開く(_O)"
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "パスをクリップボードにコピーする(_C)"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr "すべての場所(_A)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "ホームのスキャン(_S)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "フォルダーのスキャン(_O)…"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "リモートフォルダーのスキャン(_L)…"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "停止(_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "再読み込み(_R)"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "このアプリケーションについて(_A)"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "終了(_Q)"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "解析(_A)"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "ホームのスキャン(_S)"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "フォルダーのスキャン(_O)…"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "リモートフォルダーのスキャン(_L)…"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "表示(_V)"
 
-#: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "ツールバー(_T)"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "停止(_S)"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "再読み込み(_R)"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "使用量の分布(_A)"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "すべて展開する(_E)"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "すべて畳む(_C)"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "フォルダーの選択"
 
-#: ../src/baobab-window.vala:280
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "ボリュームを解析できませんでした。"
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -291,28 +271,59 @@ msgstr ""
 "高橋 宗史 <shuuji3@gmail.com>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
-#: ../src/baobab-window.vala:349
-msgid "Could not analyze volume."
-msgstr "ボリュームを解析できませんでした。"
-
-#: ../src/baobab-window.vala:463
-msgid "Cancel scan"
+#: ../src/baobab-window.vala:465
+#, fuzzy
+#| msgid "Cancel scan"
+msgid "Cancel"
 msgstr "スキャンのキャンセル"
 
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "フォルダー \"%s\"、または、そのサブフォルダーをスキャンできませんでした。"
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" はフォルダーとして妥当ではありません"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "ディスクの使用量を解析できませんでした。"
 
-#: ../src/baobab-window.vala:554
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "フォルダー \"%s\"、または、そのサブフォルダーをスキャンできませんでした。"
+#~ msgid "Toolbar is Visible"
+#~ msgstr "ツールバーの表示可否"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "メインウィンドウにツールバーを表示するかどうか設定します。"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "ステータスバーの表示可否"
+
+#~ msgid "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "メインウィンドウの下にステータスバーを表示するかどうかを設定します。"
+
+#~ msgid "Usage unknown"
+#~ msgstr "使用量不明"
+
+#~ msgid "Scan"
+#~ msgstr "スキャン"
+
+#~ msgid "Mount and scan"
+#~ msgstr "マウントしてスキャン"
+
+#~ msgid "All locations"
+#~ msgstr "すべての場所"
+
+#~ msgid "Stop scanning"
+#~ msgstr "スキャンを停止します"
+
+#~ msgid "_All locations"
+#~ msgstr "すべての場所(_A)"
+
+#~ msgid "_Toolbar"
+#~ msgstr "ツールバー(_T)"
 
 #~ msgid "Save screenshot"
 #~ msgstr "スクリーンショットの保存"
@@ -385,10 +396,6 @@ msgstr "フォルダー \"%s\"、または、そのサブフォルダーをス�
 
 #~ msgid "contains hardlinks for:"
 #~ msgstr "含むハードリンク:"
-
-#~ msgid "%5d item"
-#~ msgid_plural "%5d items"
-#~ msgstr[0] "%5d 個のオブジェクト"
 
 #~ msgid "Could not initialize monitoring"
 #~ msgstr "監視機能を初期化できませんでした"
