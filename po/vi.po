@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: gnome-utils GNOME TRUNK\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-05-14 14:28+0000\n"
-"PO-Revision-Date: 2012-06-30 20:04+0700\n"
+"POT-Creation-Date: 2012-08-20 14:51+0000\n"
+"PO-Revision-Date: 2012-08-22 13:57+0700\n"
 "Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.8\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Bộ phân tích cách sử dụng đĩa"
 
@@ -28,45 +28,39 @@ msgid "Check folder sizes and available disk space"
 msgstr "Kiểm tra kích cỡ thư mục và chỗ rảnh trên đĩa"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Theo dõi thư mục cá nhân"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Bật/tắt theo dõi thay đổi trong thư mục chính."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI phân vùng bị loại trừ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr ""
 "Danh sách các địa chỉ URI của phân vùng cần loại trừ khỏi tiến trình quét."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Hiện thanh công cụ"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Hiện/Ẩn thanh công cụ trong cửa sổ chính."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Hiện thanh trạng thái"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Hiện/Ẩn thanh trạng thái bên dưới cửa sổ chính."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Biểu đồ hoạt động"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Hiện loại biểu đồ nào."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr ""
+
+#: ../src/baobab-application.vala:104
+#, fuzzy
+#| msgid "Disk Usage Analyzer"
+msgid "- Disk Usage Analyzer"
+msgstr "Bộ phân tích cách sử dụng đĩa"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, fuzzy, c-format
+#| msgid "%5d item"
+#| msgid_plural "%5d items"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%5d mục"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -93,40 +87,34 @@ msgid "Set the root node from the model"
 msgstr "Đặt nút gốc cho mô hình"
 
 #: ../src/baobab-chart.c:898
-msgid "Move to parent folder"
+#, fuzzy
+#| msgid "Move to parent folder"
+msgid "_Move to parent folder"
 msgstr "Chuyển sang thư mục cha"
 
 #: ../src/baobab-chart.c:902
-msgid "Zoom in"
+#, fuzzy
+#| msgid "Zoom in"
+msgid "Zoom _in"
 msgstr "Phóng to"
 
 #: ../src/baobab-chart.c:906
-msgid "Zoom out"
+#, fuzzy
+#| msgid "Zoom out"
+msgid "Zoom _out"
 msgstr "Thu nhỏ"
 
-#: ../src/baobab-location.vala:65
-#, fuzzy
-#| msgid "Scan Home"
-msgid "Main volume"
-msgstr "Quét thư mục cá nhân"
-
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:52
 #, fuzzy
 #| msgid "Scan home folder"
 msgid "Home folder"
 msgstr "Quét thư mục cá nhân"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr ""
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Scan"
-msgstr "Quét"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Mount and scan"
-msgstr ""
+#: ../src/baobab-location.vala:91
+#, fuzzy
+#| msgid "Scan Home"
+msgid "Main volume"
+msgstr "Quét thư mục cá nhân"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -146,181 +134,197 @@ msgstr "Quét thư mục ở xa"
 msgid "Scan Remote Folder"
 msgstr "Quét thư mục ở xa"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
 #, fuzzy
 #| msgid "Cannot scan location \"%s\""
 msgid "Show all locations"
 msgstr "Không thể quét vị trí « %s »"
 
-#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
-msgid "All locations"
-msgstr ""
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "Dừng quét"
-
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 #, fuzzy
 #| msgid "Ready"
 msgid "Reload"
 msgstr "Sẵn sàng"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr ""
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr ""
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Sử dụng"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Cỡ"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Mục lục"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 #, fuzzy
 #| msgid "View as Rings Chart"
 msgid "Rings Chart"
 msgstr "Xem dạng biểu đồ nhẫn"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 #, fuzzy
 #| msgid "View as Treemap Chart"
 msgid "Treemap Chart"
 msgstr "Xem dạng biểu đồ cây"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "Mở t_hư mục"
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr ""
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "Chuyển vào Sọt _Rác"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr ""
-
-#: ../src/baobab-menu.ui.h:2
-#, fuzzy
-#| msgid "Scan Home"
-msgid "_Scan Home"
-msgstr "Quét thư mục cá nhân"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "Quét _thư mục…"
-
-#: ../src/baobab-menu.ui.h:4
-#, fuzzy
-#| msgid "S_can Remote Folder…"
-msgid "Scan Remote Fo_lder…"
-msgstr "Q_uét thư mục ở xa…"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr ""
-
-#: ../src/baobab-menu.ui.h:6
-#, fuzzy
-#| msgid "Ready"
-msgid "_Reload"
-msgstr "Sẵn sàng"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "Trợ g_iúp"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr ""
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 #, fuzzy
 #| msgid "_Edit"
 msgid "_Quit"
 msgstr "_Sửa"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "Bộ _phân tích"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+#, fuzzy
+#| msgid "Scan Home"
+msgid "_Scan Home"
+msgstr "Quét thư mục cá nhân"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Quét _thư mục…"
+
+#: ../src/baobab-menu.ui.h:7
+#, fuzzy
+#| msgid "S_can Remote Folder…"
+msgid "Scan Remote Fo_lder…"
+msgstr "Q_uét thư mục ở xa…"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "_Xem"
 
-#: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "_Thanh công cụ"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr ""
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:10
+#, fuzzy
+#| msgid "Ready"
+msgid "_Reload"
+msgstr "Sẵn sàng"
+
+#: ../src/baobab-menu.ui.h:11
 #, fuzzy
 #| msgid "All_ocated Space"
 msgid "_Allocated Space"
 msgstr "Vùng đã cấp _phát"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "Giãn _ra tất cả"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "_Co lại tất cả"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "Chọn thư mục"
 
-# Name: don't translate / Tên: đừng dịch
-#: ../src/baobab-window.vala:280
-msgid "Baobab"
-msgstr "Baobab"
-
-#: ../src/baobab-window.vala:283
-msgid "A graphical tool to analyze disk usage."
-msgstr "Công cụ đồ họa để phân tích cách sử dụng đĩa."
-
-#: ../src/baobab-window.vala:288
-msgid "translator-credits"
-msgstr "Nhóm Việt hoá GNOME (http://gnomevi.sourceforge.net)"
-
-#: ../src/baobab-window.vala:349
+#: ../src/baobab-window.vala:250
 #, fuzzy
 #| msgid "Could not analyze disk usage."
 msgid "Could not analyze volume."
 msgstr "Không thể phân tích sử dụng đĩa."
 
-#: ../src/baobab-window.vala:463
-msgid "Cancel scan"
+# Name: don't translate / Tên: đừng dịch
+#: ../src/baobab-window.vala:302
+msgid "Baobab"
+msgstr "Baobab"
+
+#: ../src/baobab-window.vala:305
+msgid "A graphical tool to analyze disk usage."
+msgstr "Công cụ đồ họa để phân tích cách sử dụng đĩa."
+
+#: ../src/baobab-window.vala:310
+msgid "translator-credits"
+msgstr "Nhóm Việt hoá GNOME (http://gnomevi.sourceforge.net)"
+
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr ""
+
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "« %s » không phải là thư mục hợp lệ"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "Không thể phân tích sử dụng đĩa."
 
-#: ../src/baobab-window.vala:554
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
+#~ msgid "Monitor Home"
+#~ msgstr "Theo dõi thư mục cá nhân"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Bật/tắt theo dõi thay đổi trong thư mục chính."
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Hiện thanh công cụ"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Hiện/Ẩn thanh công cụ trong cửa sổ chính."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Hiện thanh trạng thái"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "Hiện/Ẩn thanh trạng thái bên dưới cửa sổ chính."
+
+#~ msgid "Scan"
+#~ msgstr "Quét"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Dừng quét"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Thanh công cụ"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Tùy thích bộ phân tích cách sử dụng đĩa"
@@ -388,10 +392,6 @@ msgstr ""
 
 #~ msgid "contains hardlinks for:"
 #~ msgstr "chứa liên kết cứng cho:"
-
-#~ msgid "%5d item"
-#~ msgid_plural "%5d items"
-#~ msgstr[0] "%5d mục"
 
 #~ msgid "Could not initialize monitoring"
 #~ msgstr "Không thể khởi động chức năng theo dõi"
