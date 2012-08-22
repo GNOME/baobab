@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 23:53+0100\n"
-"PO-Revision-Date: 2012-03-04 00:36+0100\n"
+"POT-Creation-Date: 2012-08-22 04:04+0200\n"
+"PO-Revision-Date: 2012-08-22 04:05+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -21,547 +21,246 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Wyświetlanie rozmiaru katalogów i dostępnego miejsca na dysku"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Analizator wykorzystania dysku"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Preferencje analizatora wykorzystania dysku"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "Wybór urzą_dzeń do dołączenia w skanowaniu systemu plików:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Monitorowanie zmian w katalogu domowym"
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "Wyświetlanie rozmiaru katalogów i dostępnego miejsca na dysku"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Lista adresów URI partycji wykluczonych ze skanowania."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Aktywny wykres"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Adresy URI wykluczonych partycji"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Lista adresów URI partycji wykluczonych ze skanowania."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "Aktywny wykres"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "Monitorowanie katalogu domowego"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Pasek stanu jest widoczny"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Pasek narzędzi jest widoczny"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Określa, czy zmiany w katalogu domowym mają być monitorowane."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Określa, czy ma być widoczny pasek stanu u dołu okna."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Określa, czy wyświetlać pasek narzędzi głównego okna."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Określa, który typ wykresu ma być wyświetlany."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Przestrzeń pr_zydzielona"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Wyświetla informacje o wersji i kończy działanie"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Odśwież"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- analizator wykorzystania dysku"
 
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder…"
-msgstr "S_kanuj zdalny katalog…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older…"
-msgstr "Skanuj k_atalog…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan File System"
-msgstr "Skanuj system plików"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Skanuj katalog"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Skanuj katalog domowy"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Skanuj zdalny katalog"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "_Skanuj system plików"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Skanuj katalog _domowy"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Skanuje katalog"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder or file system"
-msgstr "Skanuje zdalny katalog lub system plików"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan the file system"
-msgstr "Skanuje system plików"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan your home folder"
-msgstr "Skanuje katalog domowy"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "_Pasek stanu"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Zatrzymaj skanowanie"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Analiza"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "_Zwiń wszystko"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_Spis treści"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Edycja"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "R_ozwiń wszystko"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "Pomo_c"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "Pasek _narzędziowy"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_Widok"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Skanowanie…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Pojemność systemu plików:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "użyte:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "dostępne:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Obliczanie wartości procentowych…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Gotowy"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Całkowita pojemność systemu plików"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Całkowite wykorzystanie systemu plików"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "zawiera twarde dowiązania dla:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d element"
-msgstr[1] "%5d elementy"
-msgstr[2] "%5d elementów"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d element"
+msgstr[1] "%d elementy"
+msgstr[2] "%d elementów"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Nie można zainicjować monitorowania"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Zmiany w katalogu domowym nie będą monitorowane."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Wykres pierścieniowy"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Wykres drzewa"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Wyświetla wersję"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[KATALOG]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Za dużo parametrów. Tylko jeden katalog może zostać podany."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Nie można wykryć żadnego punktu montowania."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Bez punktów montowania użycie dysku nie może zostać przeanalizowane."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maksymalna głębokość"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Maksymalna głębokość rysowana na wykresie z węzła głównego"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Model wykresu"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Ustawia model wykresu"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Węzeł główny wykresu"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Ustawia węzeł główny z modelu"
 
-# pozycja menu
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "Przejdź do katalogu nadrzędnego"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Przenieś do katalogu nadrzędnego"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "Powiększ"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "P_owiększ"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "Pomniejsz"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "Po_mniejsz"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Zapis zrzutu ekranu"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "Katalog domowy"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Nie można utworzyć obrazu bufora mapy pikseli."
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Główny wolumin"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Zapis stanu"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Skanuje katalog"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "Typ _obrazu:"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Skanuj katalog"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Skanuj"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Skanuj zdalny katalog"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Urządzenie"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Skanuj zdalny katalog"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Punkt montowania"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Wyświetl wszystkie położenia"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Typ systemu plików"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Wczytaj ponownie"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Całkowity rozmiar"
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
+msgstr "etykieta"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Dostępne"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Zamknij"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Nie można przeskanować położenia \"%s\""
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Własne położenie"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Publiczny FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (z logowaniem)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Udział Windows"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Bezpieczne WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Nie można połączyć się z serwerem. Proszę wprowadzić nazwę serwera."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Proszę wprowadzić nazwę i spróbować ponownie."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Położenie (adres URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "S_erwer:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Informacje opcjonalne:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Udział:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Katalog:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Nazwa użytkownika:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Nazwa _domeny:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Połączenie z serwerem"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "_Typ usługi:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Skanuj"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Przeskanować ponowne katalog domowy?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"Zawartość katalogu domowego została zmieniona. Ponowne przeskanowanie "
-"pozwoli uzyskać szczegóły."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "Przesk_anuj ponownie"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Katalog"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Użycie"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Rozmiar"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Zawartość"
 
-#: ../src/baobab-utils.c:73
+#: ../src/baobab-main-window.ui.h:13
+msgid "Rings Chart"
+msgstr "Wykres pierścieniowy"
+
+#: ../src/baobab-main-window.ui.h:14
+msgid "Treemap Chart"
+msgstr "Wykres drzewa"
+
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Open Folder"
+msgstr "O_twórz katalog"
+
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "S_kopiuj ścieżkę do schowka"
+
+#: ../src/baobab-main-window.ui.h:17
+msgid "Mo_ve to Trash"
+msgstr "Przenieś do k_osza"
+
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "Pomo_c"
+
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_O programie"
+
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "Za_kończ"
+
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analiza"
+
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Skanuj katalog domowy"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Skanuj k_atalog…"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "S_kanuj zdalny katalog…"
+
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Widok"
+
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Zatrzymaj"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Wczytaj ponownie"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "Przestrzeń pr_zydzielona"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "R_ozwiń wszystko"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "_Zwiń wszystko"
+
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "Wybór katalogu"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "Wyświetlanie _ukrytych katalogów"
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "Nie można analizować woluminu."
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Nie można sprawdzić wykluczonego katalogu."
+#: ../src/baobab-window.vala:302
+msgid "Baobab"
+msgstr "Baobab"
 
-#: ../src/baobab-utils.c:288
+#: ../src/baobab-window.vala:305
+msgid "A graphical tool to analyze disk usage."
+msgstr "Graficzne narzędzie do analizy wykorzystania dysku."
+
+#: ../src/baobab-window.vala:310
+msgid "translator-credits"
+msgstr "Aviary.pl <gnomepl@aviary.pl>, 2008, 2009, 2010, 2011, 2012"
+
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Nie można skanować katalogu \"%s\" lub niektórych katalogów w nim zawartych."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" nie jest prawidłowym katalogiem"
 
-#: ../src/baobab-utils.c:291
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "Nie można zanalizować wykorzystania dysku."
-
-#: ../src/baobab-utils.c:327
-msgid "_Open Folder"
-msgstr "O_twórz katalog"
-
-#: ../src/baobab-utils.c:333
-msgid "Mo_ve to Trash"
-msgstr "Przenieś do k_osza"
-
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Nie można otworzyć katalogu \"%s\""
-
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr ""
-"W systemie nie zainstalowano przeglądarki mogącej wyświetlić ten katalog."
-
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Nie można przenieść \"%s\" do kosza"
-
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Nie można przenieść pliku do kosza"
-
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Szczegóły: %s"
-
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Wystąpił błąd podczas wyświetlania pomocy."
-
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Niniejszy program jest wolnym oprogramowaniem; można go rozprowadzać dalej i/"
-"lub modyfikować na warunkach Powszechnej Licencji Publicznej GNU, wydanej "
-"przez Fundację Wolnego Oprogramowania - według wersji drugiej tej Licencji "
-"lub którejś z późniejszych wersji."
-
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Niniejszy program rozpowszechniany jest z nadzieją, iż będzie on użyteczny - "
-"jednak BEZ JAKIEJKOLWIEK GWARANCJI, nawet domyślnej gwarancji PRZYDATNOŚCI "
-"HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH ZASTOSOWAŃ. W celu uzyskania "
-"bliższych informacji należy zapoznać się z Powszechną Licencją Publiczną GNU."
-
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Z pewnością wraz z niniejszym programem dostarczono także egzemplarz "
-"Powszechnej Licencji Publicznej GNU (GNU General Public License); jeśli nie "
-"- proszę napisać do Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA 02110-130159 USA"
-
-#: ../src/callbacks.c:100
-msgid "Baobab"
-msgstr "Baobab"
-
-#: ../src/callbacks.c:101
-msgid "A graphical tool to analyze disk usage."
-msgstr "Graficzne narzędzie do analizy wykorzystania dysku."
-
-#: ../src/callbacks.c:109
-msgid "translator-credits"
-msgstr "Aviary.pl <gnomepl@aviary.pl>, 2008, 2009, 2010, 2011, 2012"
-
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Dokument nie istnieje."
-
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Katalog nie istnieje."
