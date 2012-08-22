@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab 3.5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 18:07+0200\n"
-"PO-Revision-Date: 2012-07-26 18:07+0200\n"
+"POT-Creation-Date: 2012-08-22 10:37+0200\n"
+"PO-Revision-Date: 2012-08-22 10:38+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:157
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Analyse av diskplass"
 
@@ -27,44 +27,35 @@ msgid "Check folder sizes and available disk space"
 msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Overvåk hjemmekatalog"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Om endringer i hjemmekatalogen skal overvåkes."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URIer til ekskluderte partisjoner"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "En liste med URIer til partisjoner som skal ekskluderes fra søket."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Verktøylinjen er synlig"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Hvorvidt verktøylinjen skal være synlig i hovedvinduet."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Statuslinjen er synlig"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Hvorvidt statuslinjen nederst i hovedvinduet skal være synlig."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Aktivt plott"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Type plott som skal vises."
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Skriv ut versjonsinformasjon og avslutt"
+
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- Analyse av diskplass"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d oppføring"
+msgstr[1] "%d oppføringer"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -102,28 +93,13 @@ msgstr "Zoom _inn"
 msgid "Zoom _out"
 msgstr "Zoom _ut"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d oppføring"
-msgstr[1] "%d oppføringer"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "Hovedvolum"
-
-#: ../src/baobab-location.vala:84
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
-#: ../src/baobab-location-widget.vala:96
-msgid "Scan"
-msgstr "Søk"
-
-#: ../src/baobab-location-widget.vala:96
-msgid "Mount and Scan"
-msgstr "Monter og gjennomsøk"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Hovedvolum"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -141,157 +117,149 @@ msgstr "Søk i en ekstern mappe"
 msgid "Scan Remote Folder"
 msgstr "Søk i ekstern mappe"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
 msgid "Show all locations"
 msgstr "Vis alle lokasjoner"
 
 #: ../src/baobab-main-window.ui.h:6
-msgid "All locations"
-msgstr "Alle lokasjoner"
-
-#: ../src/baobab-main-window.ui.h:7
 msgid "Reload"
 msgstr "Last på nytt"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:7
 msgid "label"
 msgstr "etikett"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Lukk"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Mappe"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Bruk"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Størrelse"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Innhold"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:13
 msgid "Rings Chart"
 msgstr "Ringdiagram"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:14
 msgid "Treemap Chart"
 msgstr "Trekartdiagram"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "_Åpne mappe"
+
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopier sti til utklippstavlen"
 
 #: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "Fl_ytt til papirkurven"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All Locations"
-msgstr "_Alle lokasjoner"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "_Søk gjennom hjemmemappe"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "Søk i _mappe …"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "Søk i e_kstern mappe …"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "_Stopp"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "_Last på nytt"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "A_vslutt"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "_Analyse"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Søk gjennom hjemmemappe"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Søk i _mappe …"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Søk i e_kstern mappe …"
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "_Vis"
 
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Stopp"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Last på nytt"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "_Allokert plass"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "_Utvid alle"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "S_lå sammen alle"
 
-#: ../src/baobab-window.vala:197
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "Velg mappe"
 
-#: ../src/baobab-window.vala:237
+#: ../src/baobab-window.vala:250
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere volum."
 
-#: ../src/baobab-window.vala:287
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:290
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk verktøy for å analysere diskbruk."
 
-#: ../src/baobab-window.vala:295
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <libbe AT stefansen DOT net>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/baobab-window.vala:436
-msgid "Cancel Scan"
-msgstr "Avbryt søk"
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Avbryt"
 
-#: ../src/baobab-window.vala:444
-msgid "All Locations"
-msgstr "Alle lokasjoner"
-
-#. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:483 ../src/baobab-window.vala:489
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "«%s» er ikke en gyldig mappe"
-
-#: ../src/baobab-window.vala:484
-msgid "Could not analyze disk usage."
-msgstr "Kunne ikke analysere diskbruk"
-
-#: ../src/baobab-window.vala:543
+#: ../src/baobab-window.vala:557
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Kunne ikke gjennomsøke mappe «%s» eller noen av mappene den inneholder."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "«%s» er ikke en gyldig mappe"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "Kunne ikke analysere diskbruk"
