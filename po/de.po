@@ -1,5 +1,6 @@
 # German baobab translation
 # Copyright (C) 1999-2004, 2008 Free Software Foundation, Inc.
+#
 # Matthias Warkus <mawarkus@gnome.org>, 1999.
 # Karl Eichwalder <ke@suse.de>, 2000.
 # Benedikt Roth <Benedikt.Roth@gmx.net>, 2000, 2001.
@@ -15,24 +16,26 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2009, 2011, 2012.
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2011.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2011.
-# Christian Kirbach <Christian.Kirbach@googlemail.com>, 2009, 2011.
+# Christian Kirbach <Christian.Kirbach@gmail.com>, 2009, 2011, 2012.
+# Hedda Peters <hpeters@redhat.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-02-22 02:05+0100\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"POT-Creation-Date: 2012-08-20 14:51+0000\n"
+"PO-Revision-Date: 2012-08-20 08:45+0000\n"
+"Last-Translator: Hedda Peters <hpeters@redhat.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Festplattenbelegung analysieren"
 
@@ -40,542 +43,224 @@ msgstr "Festplattenbelegung analysieren"
 msgid "Check folder sizes and available disk space"
 msgstr "Ordnergrößen und freien Festplattenplatz analysieren"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Einstellungen"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr ""
-"Legen Sie die _Laufwerke fest, die beim Einlesen des Dateisystems "
-"berücksichtigt werden sollen:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Persönlichen Ordner auf Änderungen überwachen"
-
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Persönlichen Ordner überwachen"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr ""
-"Legt fest, ob der persönliche Ordner auf Änderungen überwacht werden soll."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Adressen der ausgeschlossenen Partitionen"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr ""
 "Eine Liste von Adressen der Partitionen, die nicht eingelesen werden sollen."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Werkzeugleiste anzeigen"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Legt fest, ob die Werkzeugleiste im Hauptfenster angezeigt wird."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Statusleiste ist sichtbar"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr ""
-"Legt fest, ob die Statusleiste am unteren Rand des Hauptfensters angezeigt "
-"wird."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Aktives Diagramm"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Legt fest, welcher Diagrammtyp angezeigt werden soll."
 
-# CHECK
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Aktionen"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Versionsinformationen anzeigen und beenden"
 
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "_Persönlichen Ordner einlesen"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- Festplattenbelegung analysieren"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "_Dateisystem einlesen"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "_Ordner einlesen …"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "_Entfernten Ordner einlesen …"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Bearbeiten"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "Alles aus_klappen"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "Alles ein_klappen"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_Ansicht"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "_Werkzeugleiste"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "S_tatusleiste"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "_Belegter Speicherplatz"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "_Hilfe"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "_Inhalt"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "Persönlichen Ordner einlesen"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Persönlichen Ordner einlesen"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "Das Dateisystem einlesen"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "Dateisystem einlesen"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Einen Ordner einlesen"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Ordner einlesen"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "Einen entfernten Ordner oder Dateisystemeinlesen"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Entfernten Ordner einlesen …"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Einlesen abbrechen"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Aktualisieren"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Einlesen läuft …"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Speicherkapazität des Dateisystems:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "belegt:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "frei:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Prozentuale Anzeigen werden berechnet …"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Fertig"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Gesamte Speicherkapazität des Dateisystems"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Gesamte Belegung des Dateisystems"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "enthält harte Verknüpfungen für:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d Objekt"
-msgstr[1] "%5d Objekte"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d Objekt"
+msgstr[1] "%d Objekte"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Überwachung konnte nicht initialisiert werden"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Ihr persönlicher Ordner wird nicht auf Änderungen überwacht."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Als Kreisdiagramm betrachten"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Als Tree Map anzeigen"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Version anzeigen"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[ORDNER]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Zu viele Argumente. Es kann nur ein Ordner angegeben werden."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Es konnte kein Einhängepunkt gefunden werden."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr ""
-"Ohne einen Einhängepunkt kann die Festplattenbelegung nicht analysiert werden."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maximale Tiefe"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr ""
 "Die maximale Tiefe ausgehend vom Wurzelelement, die im Diagramm dargestellt "
 "wird"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Diagramm-Modell"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Modell des Diagramms festlegen"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Wurzelelement des Diagramms"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Wurzelelement des Modells festlegen"
 
 # CHECK
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "Zum Elternordner bewegen"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "Zum _Elternordner bewegen"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "Ansicht vergrößern"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Ansicht ver_größern"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "Ansicht verkleinern"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "Ansicht ver_kleinern"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Bildschirmfoto speichern"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "Persönlicher Ordner"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Pixbuf-Bild konnte nicht erstellt werden."
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Hauptdatenträger"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Bildschirmfoto speichern"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Einen Ordner einlesen"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "_Bildtyp:"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Ordner einlesen"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Einlesen"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Einen entfernten Ordner einlesen …"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Gerät"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Entfernten Ordner einlesen …"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Einhängepunkt"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Alle Orte anzeigen"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Dateisystemtyp"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Neu laden"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Gesamtgröße"
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
+msgstr "Kennung"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Frei"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Schließen"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Ort »%s« kann nicht eingelesen werden"
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Benutzerdefinierter Ort"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Öffentlicher FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (mit Zugangsbeschränkung)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows-Freigabe"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Sicheres WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
-"Keine Verbindung zum Server. Sie müssen einen Namen für den Server eingeben."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Bitte geben Sie einen Namen ein und versuchen es erneut."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Ort (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Server:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Optionale Informationen:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Freigabe:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Ordner:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Benutzername:"
-
-# CHECK
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "_Domänenname:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Mit Server verbinden"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Dienste-_Typ:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Einlesen"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Persönlichen Ordner erneut einlesen?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the disk "
-"usage details."
-msgstr ""
-"Der Inhalt Ihres persönlichen Ordners wurde geändert. Wählen Sie »Erneut "
-"einlesen« um die Anzeige des verbrauchten Speicherplatzes zu aktualisieren."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "_Erneut einlesen"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Ordner"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Verbrauch"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Größe"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Inhalt"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Ordner auswählen"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Rings Chart"
+msgstr "Kreisdiagramm"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "_Verborgene Ordner anzeigen"
+#: ../src/baobab-main-window.ui.h:14
+msgid "Treemap Chart"
+msgstr "Kacheldiagramm"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Ein ausgeschlossener Ordner kann nicht eingelesen werden!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "»%s« ist kein gültiger Ordner"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Festplattenbelegung konnte nicht analysiert werden."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "_Ordner öffnen"
 
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "Pfad in Zwischenablage _kopieren"
+
 # Nautilus-Konsistenz beachten!
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "In den _Müll verschieben"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Der Ordner »%s« konnte nicht geöffnet werden"
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Hilfe"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Kein installierter Betrachter ist in der Lage, das Dokument anzuzeigen."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_Info"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "»%s« konnte nicht in den Müll verschoben werden"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Beenden"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Datei konnte nicht in den Müll verschoben werden"
+# CHECK
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Aktionen"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Details: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Persönlichen Ordner einlesen"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Beim Anzeigen der Hilfe ist ein Fehler aufgetreten."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "_Ordner einlesen …"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it under "
-"the terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Dieses Programm ist freie Software. Sie können es unter den Bedingungen der "
-"GNU General Public License, wie von der Free Software Foundation "
-"veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 "
-"der Lizenz oder (nach Ihrer Option) jeder späteren Version. "
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "_Entfernten Ordner einlesen …"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, dass es Ihnen "
-"von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite "
-"Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. "
-"Details finden Sie in der GNU General Public License."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Ansicht"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Sie sollten ein Exemplar der GNU General Public License zusammen mit diesem "
-"Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software "
-"Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Stopp"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Neu laden"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "_Belegter Speicherplatz"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "Alles aus_klappen"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "Alles ein_klappen"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "Ordner auswählen"
+
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "Datenträger konnte nicht analysiert werden."
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ein grafisches Werkzeug zur Analyse der Festplattenbelegung."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -590,21 +275,321 @@ msgstr ""
 "Christian Kirbach <christian.kirbach@googlemail.com>\n"
 "Nathan-J. Hirschauer <nathanhirschauer@verfriemelt.org>\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>\n"
-"Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>"
+"Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
+"Hedda Peters <hpeters@redhat.com>"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Das Dokument existiert nicht."
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Abbrechen"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Der Ordner existiert nicht."
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Ordner »%s« oder darin enthaltene Unterordner konnten nicht eingelesen "
+"werden."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "»%s« ist kein gültiger Ordner"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "Festplattenbelegung konnte nicht analysiert werden."
+
+#~ msgid "Monitor Home"
+#~ msgstr "Persönlichen Ordner überwachen"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr ""
+#~ "Legt fest, ob der persönliche Ordner auf Änderungen überwacht werden soll."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Einstellungen"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr ""
+#~ "Legen Sie die _Laufwerke fest, die beim Einlesen des Dateisystems "
+#~ "berücksichtigt werden sollen:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Persönlichen Ordner auf Änderungen überwachen"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Werkzeugleiste anzeigen"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Legt fest, ob die Werkzeugleiste im Hauptfenster angezeigt wird."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Statusleiste ist sichtbar"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr ""
+#~ "Legt fest, ob die Statusleiste am unteren Rand des Hauptfensters "
+#~ "angezeigt wird."
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "_Persönlichen Ordner einlesen"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "_Dateisystem einlesen"
+
+#~ msgid "_Edit"
+#~ msgstr "_Bearbeiten"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Werkzeugleiste"
+
+#~ msgid "St_atusbar"
+#~ msgstr "S_tatusleiste"
+
+#~ msgid "_Contents"
+#~ msgstr "_Inhalt"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Persönlichen Ordner einlesen"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Das Dateisystem einlesen"
+
+#~ msgid "Scan File System"
+#~ msgstr "Dateisystem einlesen"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Einen entfernten Ordner oder Dateisystemeinlesen"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Einlesen abbrechen"
+
+#~ msgid "Refresh"
+#~ msgstr "Aktualisieren"
+
+#~ msgid "Scanning…"
+#~ msgstr "Einlesen läuft …"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Speicherkapazität des Dateisystems:"
+
+#~ msgid "used:"
+#~ msgstr "belegt:"
+
+#~ msgid "available:"
+#~ msgstr "frei:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Prozentuale Anzeigen werden berechnet …"
+
+#~ msgid "Ready"
+#~ msgstr "Fertig"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Gesamte Speicherkapazität des Dateisystems"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Gesamte Belegung des Dateisystems"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "enthält harte Verknüpfungen für:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Überwachung konnte nicht initialisiert werden"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Ihr persönlicher Ordner wird nicht auf Änderungen überwacht."
+
+#~ msgid "Show version"
+#~ msgstr "Version anzeigen"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[ORDNER]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Zu viele Argumente. Es kann nur ein Ordner angegeben werden."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Es konnte kein Einhängepunkt gefunden werden."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr ""
+#~ "Ohne einen Einhängepunkt kann die Festplattenbelegung nicht analysiert "
+#~ "werden."
+
+#~ msgid "Save screenshot"
+#~ msgstr "Bildschirmfoto speichern"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "Pixbuf-Bild konnte nicht erstellt werden."
+
+#~ msgid "Save Snapshot"
+#~ msgstr "Bildschirmfoto speichern"
+
+#~ msgid "_Image type:"
+#~ msgstr "_Bildtyp:"
+
+#~ msgid "Scan"
+#~ msgstr "Einlesen"
+
+#~ msgid "Device"
+#~ msgstr "Gerät"
+
+#~ msgid "Mount Point"
+#~ msgstr "Einhängepunkt"
+
+#~ msgid "File System Type"
+#~ msgstr "Dateisystemtyp"
+
+#~ msgid "Total Size"
+#~ msgstr "Gesamtgröße"
+
+#~ msgid "Available"
+#~ msgstr "Frei"
+
+#~ msgid "Custom Location"
+#~ msgstr "Benutzerdefinierter Ort"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "Öffentlicher FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (mit Zugangsbeschränkung)"
+
+#~ msgid "Windows share"
+#~ msgstr "Windows-Freigabe"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "Sicheres WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "Keine Verbindung zum Server. Sie müssen einen Namen für den Server "
+#~ "eingeben."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Bitte geben Sie einen Namen ein und versuchen es erneut."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Ort (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Server:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Optionale Informationen:"
+
+#~ msgid "_Share:"
+#~ msgstr "_Freigabe:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Port:"
+
+#~ msgid "_Folder:"
+#~ msgstr "_Ordner:"
+
+#~ msgid "_User Name:"
+#~ msgstr "_Benutzername:"
+
+# CHECK
+#~ msgid "_Domain Name:"
+#~ msgstr "_Domänenname:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Mit Server verbinden"
+
+#~ msgid "Service _type:"
+#~ msgstr "Dienste-_Typ:"
+
+#~ msgid "_Scan"
+#~ msgstr "_Einlesen"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Persönlichen Ordner erneut einlesen?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "Der Inhalt Ihres persönlichen Ordners wurde geändert. Wählen Sie »Erneut "
+#~ "einlesen« um die Anzeige des verbrauchten Speicherplatzes zu "
+#~ "aktualisieren."
+
+#~ msgid "_Rescan"
+#~ msgstr "_Erneut einlesen"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "_Verborgene Ordner anzeigen"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Ein ausgeschlossener Ordner kann nicht eingelesen werden!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "Der Ordner »%s« konnte nicht geöffnet werden"
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr ""
+#~ "Kein installierter Betrachter ist in der Lage, das Dokument anzuzeigen."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "»%s« konnte nicht in den Müll verschoben werden"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Datei konnte nicht in den Müll verschoben werden"
+
+#~ msgid "Details: %s"
+#~ msgstr "Details: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Beim Anzeigen der Hilfe ist ein Fehler aufgetreten."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Dieses Programm ist freie Software. Sie können es unter den Bedingungen "
+#~ "der GNU General Public License, wie von der Free Software Foundation "
+#~ "veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version "
+#~ "2 der Lizenz oder (nach Ihrer Option) jeder späteren Version. "
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, dass es "
+#~ "Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die "
+#~ "implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN "
+#~ "BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Sie sollten ein Exemplar der GNU General Public License zusammen mit "
+#~ "diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free "
+#~ "Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, "
+#~ "USA."
+
+#~ msgid "The document does not exist."
+#~ msgstr "Das Dokument existiert nicht."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "Der Ordner existiert nicht."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "_Entfernten Ordner einlesen …"
 
 #~ msgid "Scan F_older..."
 #~ msgstr "_Ordner einlesen …"
-
-#~ msgid "Scan home folder"
-#~ msgstr "Persönlichen Ordner einlesen"
