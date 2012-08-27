@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-04 10:01+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-08-20 14:51+0000\n"
 "PO-Revision-Date: 2012-08-07 14:19+0530\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
 "Language-Team: as_IN <kde-i18n-doc@kde.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1)\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:158
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষক"
 
@@ -30,26 +30,18 @@ msgid "Check folder sizes and available disk space"
 msgstr "ফোল্ডাৰৰ মাপ আৰু ডিস্কত উপলব্ধ স্থান নীৰিক্ষণ কৰক"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "মনিটৰ ঘৰ"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "ব্যক্তিগত ডাইৰেকটৰিত কোনো পৰিবৰ্তন পৰ্যবেক্ষিত হ'ব নে নহয়।"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "উপেক্ষিত বিভাজনসমূহৰ URLসমূহ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "স্কেনৰ সময় উপেক্ষা কৰাৰ বাবে চিহ্নিত বিভাজনৰ URLসমূহৰ তালিকা।"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "সক্ৰিয় ৰেখাচিত্ৰ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "কোন ধৰণৰ ৰেখাচিত্ৰ প্ৰদৰ্শন কৰা হ'ব।"
 
@@ -128,7 +120,7 @@ msgstr "এটা দূৰবৰ্তী ফোল্ডাৰ স্কেন
 msgid "Scan Remote Folder"
 msgstr "দূৰবৰ্তী ফোল্ডাৰ স্কেন কৰক"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:469
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
 msgid "Show all locations"
 msgstr "সকলো অবস্থান দেখুৱাওক"
 
@@ -232,47 +224,52 @@ msgstr "সকলো প্ৰসাৰিত কৰক (_E)"
 msgid "_Collapse All"
 msgstr "সকলো স্খলন কৰক (_C)"
 
-#: ../src/baobab-window.vala:200
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "ফোল্ডাৰ নিৰ্বাচন কৰক"
 
-#: ../src/baobab-window.vala:245
+#: ../src/baobab-window.vala:250
 msgid "Could not analyze volume."
 msgstr "আয়তন বিশ্লেষণ কৰিব নোৱাৰি।"
 
-#: ../src/baobab-window.vala:297
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:300
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰিবলে এটা গ্ৰাফীয় সঁজুলি।"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "অমিতাক্ষ ফুকন (aphukan@fedoraproject.org), নীলমদ্যুতি গোস্বামী (ngoswami@redhat."
 "com)"
 
-#: ../src/baobab-window.vala:460
-#| msgid "Cancel Scan"
+#: ../src/baobab-window.vala:465
 msgid "Cancel"
 msgstr "বাতিল কৰক"
 
-#: ../src/baobab-window.vala:550
+#: ../src/baobab-window.vala:557
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "ফোল্ডাৰ \"%s\" অথবা ই অন্তৰ্ভুক্ত কৰা কিছুমান ফোল্ডাৰ স্কেন কৰিব পৰা নগল।"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:567 ../src/baobab-window.vala:573
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" এটা বৈধ ফোল্ডাৰ নহয়"
 
-#: ../src/baobab-window.vala:568 ../src/baobab-window.vala:574
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰিব নোৱাৰি।"
+
+#~ msgid "Monitor Home"
+#~ msgstr "মনিটৰ ঘৰ"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "ব্যক্তিগত ডাইৰেকটৰিত কোনো পৰিবৰ্তন পৰ্যবেক্ষিত হ'ব নে নহয়।"
 
 #~ msgid "All locations"
 #~ msgstr "সকলো অৱস্থান"
@@ -284,10 +281,10 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষক পছন্দসমূহ"
 
 #~ msgid "Select _devices to include in file system scan:"
-#~ msgstr "নথিপত্ৰ প্ৰণালী স্কেনত অন্তৰ্ভুক্ত কৰিবলে ডিভাইচসমূহ বাছক (_d):"
+#~ msgstr "ফাইল চিস্টেম স্কেনত অন্তৰ্ভুক্ত কৰিবলে ডিভাইচসমূহ বাছক (_d):"
 
 #~ msgid "_Monitor changes to your home folder"
-#~ msgstr "আপোনাৰ ঘৰ ফোল্ডাৰলে পৰিৱৰ্তনসমূহ পৰ্যবেক্ষণ কৰে (_M)"
+#~ msgstr "আপোনাৰ ঘৰ ফোল্ডাৰলে পৰিবৰ্তনসমূহ পৰ্যবেক্ষণ কৰে (_M)"
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "টুল-বাৰ দৃশ্যমান"
@@ -306,7 +303,7 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "ঘৰৰ ফোল্ডাৰ স্কেন কৰক (_H)"
 
 #~ msgid "Scan _Filesystem"
-#~ msgstr "নথিপত্ৰ-প্ৰণালী স্কেন কৰক (_F)"
+#~ msgstr "ফাইল-প্ৰণালী স্কেন কৰক (_F)"
 
 #~ msgid "_Toolbar"
 #~ msgstr "টুল-বাৰ (_T)"
@@ -321,13 +318,13 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "আপোনাৰ ঘৰ ফোল্ডাৰ স্কেন কৰক"
 
 #~ msgid "Scan the file system"
-#~ msgstr "নথিপত্ৰ প্ৰনালী স্কেন কৰক"
+#~ msgstr "ফাইল প্ৰনালী স্কেন কৰক"
 
 #~ msgid "Scan File System"
-#~ msgstr "নথিপত্ৰ প্ৰণালী স্কেন কৰক"
+#~ msgstr "ফাইল চিস্টেম স্কেন কৰক"
 
 #~ msgid "Scan a remote folder or file system"
-#~ msgstr "এটা দূৰবৰ্তী ফোল্ডাৰ অথবা নথিপত্ৰ প্ৰণালী স্কেন কৰক"
+#~ msgstr "এটা দূৰবৰ্তী ফোল্ডাৰ অথবা ফাইল চিস্টেম স্কেন কৰক"
 
 #~ msgid "Stop scanning"
 #~ msgstr "স্কেন কৰ্ম বন্ধ কৰক"
@@ -339,7 +336,7 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "স্কেন কৰা হৈ আছে…"
 
 #~ msgid "Total filesystem capacity:"
-#~ msgstr "নথিপত্ৰ-প্ৰণালীৰ মুঠ ধাৰণক্ষমতা:"
+#~ msgstr "ফাইল-প্ৰণালীৰ মুঠ ধাৰণক্ষমতা:"
 
 #~ msgid "used:"
 #~ msgstr "ব্যৱহৃত:"
@@ -351,10 +348,10 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "শতাংশ বাৰসমূহ গণনা কৰা হৈছে..."
 
 #~ msgid "Total filesystem capacity"
-#~ msgstr "নথিপত্ৰ-প্ৰণালীৰ মুঠ ধাৰণক্ষমতা"
+#~ msgstr "ফাইল-প্ৰণালীৰ মুঠ ধাৰণক্ষমতা"
 
 #~ msgid "Total filesystem usage"
-#~ msgstr "নথিপত্ৰ-প্ৰণালীৰ মুঠ ব্যৱহাৰ"
+#~ msgstr "ফাইল-প্ৰণালীৰ মুঠ ব্যৱহাৰ"
 
 #~ msgid "contains hardlinks for:"
 #~ msgstr "বাবে হাৰ্ডলিঙ্ক অন্তৰ্ভুক্ত কৰে:"
@@ -363,7 +360,7 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "পৰ্যবেক্ষণ আৰম্ভ কৰিব পৰা নগল"
 
 #~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "আপোনাৰ ঘৰ ফোল্ডাৰলে কৰা পৰিৱৰ্তনসমূহ পৰ্যবেক্ষণ কৰা নহব।"
+#~ msgstr "আপোনাৰ ঘৰ ফোল্ডাৰলে কৰা পৰিবৰ্তনসমূহ পৰ্যবেক্ষণ কৰা নহব।"
 
 #~ msgid "Show version"
 #~ msgstr "সংস্কৰণ সংখ্যা দেখুৱাওক"
@@ -402,7 +399,7 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "মাউন্ট বিন্দু"
 
 #~ msgid "File System Type"
-#~ msgstr "নথিপত্ৰ প্ৰণালী ধৰণ"
+#~ msgstr "ফাইল চিস্টেম ধৰণ"
 
 #~ msgid "Total Size"
 #~ msgstr "মুঠ মাপ"
@@ -496,7 +493,7 @@ msgstr "ডিস্ক ব্যৱহাৰ বিশ্লেষণ কৰি
 #~ msgstr "\"%s\" ক আবৰ্জনা লৈ নিব নোৱাৰি"
 
 #~ msgid "Could not move file to the Trash"
-#~ msgstr "আবৰ্জনাৰ বাকচত নথিপত্ৰ স্থানান্তৰ কৰিব পৰা নগল"
+#~ msgstr "আবৰ্জনাৰ বাকচত ফাইল স্থানান্তৰ কৰিব পৰা নগল"
 
 #~ msgid "Details: %s"
 #~ msgstr "বিৱৰণ: %s"
