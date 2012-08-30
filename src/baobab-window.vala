@@ -470,7 +470,7 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
                 lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
-                toolbar_show_home_page.icon_name = "view-list-symbolic";
+                toolbar_show_home_page.icon_name = "go-previous-symbolic";
                 toolbar_show_home_page.tooltip_markup = _("Show all locations");
             }
 
