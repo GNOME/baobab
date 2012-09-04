@@ -1,21 +1,21 @@
-# Turkish translation of gnome-utils.
+# Turkish translation for baobab.
 # Copyright (C) 2003 gnome-utils' copyright holder
 # This file is distributed under the same license as the gnome-utils package.
 #
-# Barbaros Uluta�_ <tebarul@yahoo.com>, 2003.
-# Rıdvan CAN <ridvan@linuxdeneyimi.com>, 2003.
-# Deniz Koçak <lenduha@gmail.com>, 2005.
+# Barbaros Ulutaş <tebarul@yahoo.com>, 2003.
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
+# Deniz Koçak <lenduha@gmail.com>, 2005.
 # İlker DAĞLI <ilker@ilkerdagli.info>, 2011.
-# Muhammet Kara <muhammet.k@gmail.com>, 2011.
-#
+# Muhammet Kara <muhammetk@acikkaynak.name.tr>, 2011, 2012.
+# Rıdvan CAN <ridvan@linuxdeneyimi.com>, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2011-07-03 13:07+0300\n"
-"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-08-28 23:17+0000\n"
+"PO-Revision-Date: 2012-08-22 12:13+0000\n"
+"Last-Translator: Muhammet Kara <muhammetk@acikkaynak.name.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -23,540 +23,243 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+msgid "Disk Usage Analyzer"
+msgstr "Disk Kullanımı Analizcisi"
+
+#: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Klasör boyutlarını ve mevcut boş disk alanını kontrol et"
 
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
-msgid "Disk Usage Analyzer"
-msgstr "Disk Kullanım Analizcisi"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Disk Kullanım Analizcisi Tercihleri"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
-msgstr "Dosya sistemi taramasında içermek için _aygıları seç:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "Başlangıç _klasörünüzdeki değişiklikleri izle"
-
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Tarama işleminden hariç tutulacak bölümlerin adres listesi."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Etkin Grafik"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Hariç tutulan bölüm adresleri"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Tarama işleminden hariç tutulacak bölümlerin adres listesi."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "Etkin Grafik"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "Evi İzle"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Durum Çubuğu Görünür"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Araç çubuğu Görünür"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Başlangıç dizinindeki değişikliklerin izlenip izlenmemesi."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Ana pencerenin altındaki durum çubuğunun görünür olup olmayacağı."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Ana pencere içindeki araç çubuğunun görünür olup olmayacağı."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Hangi tür grafik görüntüleneceği."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Ayrılmış _Alan"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Sürüm bilgisini yazdır ve çık"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Tazele"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- Disk Kullanımı Analizcisi"
 
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "_Uzaktaki Klasörü Tara..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "Klasörü _Tara..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "Dosya Sistemini Tara"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Dizini Tara"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Başlangıç Dizinini Tara"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Uzaktaki Klasörü Tara"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "_Dosya sistemini tara"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "_Başlangıç Klasörünü Tara"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Bir klasörü tara"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "Uzaktaki bir dizini tara"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "Dosya sistemini tara"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "Başlangıç klasörünü tara"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "_Durum Çubuğu"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Taramayı durdur"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Analizci"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "Hepsini _Katla"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_İçindekiler"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Düzenle"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "_Hepsini Genişlet"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "_Yardım"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "_Araç çubuğu"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_Görüntüle"
-
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "Tarıyor..."
-
-#: ../src/baobab.c:182
-msgid "Total filesystem capacity:"
-msgstr "Toplam dosya sistemi kapasitesi:"
-
-#: ../src/baobab.c:183
-msgid "used:"
-msgstr "kullanılan:"
-
-#: ../src/baobab.c:184
-msgid "available:"
-msgstr "ulaşılabilir:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "Yüzde çubuğu hesaplanıyor..."
-
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
-msgid "Ready"
-msgstr "Hazır"
-
-#: ../src/baobab.c:421
-msgid "Total filesystem capacity"
-msgstr "Toplam dosya sistemi kapasitesi"
-
-#: ../src/baobab.c:443
-msgid "Total filesystem usage"
-msgstr "Toplam dosya sistemi kullanımı"
-
-#: ../src/baobab.c:484
-msgid "contains hardlinks for:"
-msgstr "sabit bağlantılar içerir:"
-
-#: ../src/baobab.c:493
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d öğe"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d öge"
 
-#: ../src/baobab.c:620
-msgid "Could not initialize monitoring"
-msgstr "İzleme başlatılamadı"
-
-#: ../src/baobab.c:621
-msgid "Changes to your home folder will not be monitored."
-msgstr "Başlangıç dizinindeki değişiklikler izlenmeyecek."
-
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "Üst klasöre taşı"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "Yakınlaştır"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "Uzaklaştır"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "Ekran görüntüsünü kaydet"
-
-#: ../src/baobab.c:1143
-msgid "View as Rings Chart"
-msgstr "Halka Çizelgesi Olarak Göster"
-
-#: ../src/baobab.c:1145
-msgid "View as Treemap Chart"
-msgstr "Ağaç Haritası Çizelgesi Olarak Göster"
-
-#: ../src/baobab.c:1250
-msgid "Show version"
-msgstr "Sürümü göster"
-
-#: ../src/baobab.c:1251
-msgid "[DIRECTORY]"
-msgstr "[DİZİN]"
-
-#: ../src/baobab.c:1281
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Çok fazla argüman. Sadece bir dizin belirtilebilir."
-
-#: ../src/baobab.c:1298
-msgid "Could not detect any mount point."
-msgstr "Hiçbir bağlama noktası tespit edilemedi."
-
-#: ../src/baobab.c:1300
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Bağlama noktaları olmadan disk kullanımı analiz edilemez."
-
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Azami derinlik"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Kökten çizelgenin çizileceği azami derinlik"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Çizelge modeli"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Çizelgenin modelini ayarlayın"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Çizelge kök düğümü"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Modelden kök düğümü atan"
 
-#: ../src/baobab-chart.c:1690
-msgid "Cannot create pixbuf image!"
-msgstr "pixbuf görüntüsü oluşturulamıyor"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Üst klasöre taşı"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
-msgid "Save Snapshot"
-msgstr "Anlık Durum Kaydet"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Yakınlaşt_ır"
 
-#: ../src/baobab-chart.c:1727
-msgid "_Image type:"
-msgstr "_Görüntü türü:"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "Uzakla_ştır"
 
-#: ../src/baobab-prefs.c:172
-msgid "Scan"
-msgstr "Tara"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "Başlangıç klasörü"
 
-#: ../src/baobab-prefs.c:179
-msgid "Device"
-msgstr "Aygıt"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Ana birim"
 
-#: ../src/baobab-prefs.c:187
-msgid "Mount Point"
-msgstr "Bağlama Noktası"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Bir klasörü tara"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
-msgstr "Dosya Sistemi Türü"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Dizini Tara"
 
-#: ../src/baobab-prefs.c:203
-msgid "Total Size"
-msgstr "Toplum Boyut"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Uzaktaki bir dizini tara"
 
-#: ../src/baobab-prefs.c:212
-msgid "Available"
-msgstr "Mevcut"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Uzaktaki Klasörü Tara"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Konum \"%s\" taranamadı"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Tüm konumları göster"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Özel Konum"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Yeniden yükle"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
+msgstr "etiket"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Genel FTP"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Kapat"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (giriş ile)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows paylaşımı"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Güvenli WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Sunucuya Bağlanılamıyor. Sunucu için bir isim girmeniz gerekiyor."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Lütfen bir isim girin ve yeniden deneyin."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Konum (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Sunucu:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Tercihi bilgi:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Paylaşım:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Kapı:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Dizin:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "K_ullanıcı adı:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Alan A_dı:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Sunucuya Bağlan"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Servis _türü:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Tara"
-
-#: ../src/baobab-treeview.c:82
-msgid "Rescan your home folder?"
-msgstr "Başlangıç klasörünüz tekrar taransın mı?"
-
-#: ../src/baobab-treeview.c:83
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"Başlangıç klasörünun içeriği değişti. Disk kullanım ayrıntılarını "
-"güncellemek için tekrar taramayı seçin."
-
-#: ../src/baobab-treeview.c:84
-msgid "_Rescan"
-msgstr "_Tekrar Tara"
-
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Klasör"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Kullanım"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Boyut"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "İçindekiler"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-main-window.ui.h:13
+msgid "Rings Chart"
+msgstr "Halka Çizelgesi"
+
+#: ../src/baobab-main-window.ui.h:14
+msgid "Treemap Chart"
+msgstr "Ağaç Haritası Çizelgesi"
+
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Open Folder"
+msgstr "_Klasör Aç"
+
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "Yolu Panoya _Kopyala"
+
+#: ../src/baobab-main-window.ui.h:17
+msgid "Mo_ve to Trash"
+msgstr "Çöp'e _Taşı"
+
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Yardım"
+
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_Hakkında"
+
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Çık"
+
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analizci"
+
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "Başlangıç Klasörünü _Tara"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Klas_örü Tara..."
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Uzak K_lasörü Tara..."
+
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Görüntüle"
+
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Dur"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Yeniden Yükle"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "_Ayrılmış Alan"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "_Hepsini Genişlet"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "Hepsini _Katla"
+
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "Bir Klasör Seçin"
 
-#. add extra widget
-#: ../src/baobab-utils.c:84
-msgid "_Show hidden folders"
-msgstr "_Gizli klasörleri göster"
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "Birim analiz edilemedi."
 
-#: ../src/baobab-utils.c:263
-msgid "Cannot check an excluded folder!"
-msgstr "Dışlanan bir klasörü kontrol edilemez!"
+#: ../src/baobab-window.vala:302
+msgid "Baobab"
+msgstr "Baobab"
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-window.vala:305
+msgid "A graphical tool to analyze disk usage."
+msgstr "Disk kullanımını analiz etmek için grafiksel bir araç."
+
+#: ../src/baobab-window.vala:310
+msgid "translator-credits"
+msgstr "Barış Çiçek <baris@teamforce.name.tr>"
+
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Vazgeç"
+
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "\"%s\" klasörü ya da içerdiği klasörlerden bazıları taranamadı."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" geçerli bir klasör değil"
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "Disk kullanımını analiz edilemedi."
-
-#: ../src/baobab-utils.c:326
-msgid "_Open Folder"
-msgstr "_Klasör Aç"
-
-#: ../src/baobab-utils.c:332
-msgid "Mo_ve to Trash"
-msgstr "Çöp'e _Taşı"
-
-#: ../src/baobab-utils.c:362
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "\"%s\" klasörü açılamadı"
-
-#: ../src/baobab-utils.c:365
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Klasörü gösterebilecek bir görüntüleyici yüklü değil."
-
-#: ../src/baobab-utils.c:433
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "\"%s\" Çöpe taşınamadı"
-
-#: ../src/baobab-utils.c:441
-msgid "Could not move file to the Trash"
-msgstr "Dosya Çöpe taşınamadı"
-
-#: ../src/baobab-utils.c:443
-#, c-format
-msgid "Details: %s"
-msgstr "Ayrıntılar: %s"
-
-#: ../src/baobab-utils.c:479
-msgid "There was an error displaying help."
-msgstr "Yardım gösterilirken bir hata oluştu."
-
-#: ../src/callbacks.c:76
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Bu program bir özgür yazılımdır ve Özgür Yazılım Vakfı tarafından yayınlanan "
-"GNU Genel Kamu Lisansı sürüm 2 ya da (tercihinize göre) daha sonraki "
-"sürümleri altında tekrar dağıtabilir ya da değiştirebilirsiniz."
-
-#: ../src/callbacks.c:81
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Bu program faydalı olacağı umut edilerek dağıtılmaktadır, fakat HİÇBİR "
-"GARANTİSİ YOKTUR; hatta ÜRÜN DEĞERİ ya da BİR AMACA UYGUNLUK gibi garantiler "
-"de vermez.  Lütfen daha fazla detay için GNU Genel Kamu Lisansı'nı inceleyin."
-
-#: ../src/callbacks.c:86
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Bu programla birlikte GNU Genel Kamu Lisansı'nın bir kopyasını almış "
-"olmalısınız; eğer almadıysanız, the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA adresine yazınız."
-
-#: ../src/callbacks.c:101
-msgid "Baobab"
-msgstr "Baobab"
-
-#: ../src/callbacks.c:102
-msgid "A graphical tool to analyze disk usage."
-msgstr "Disk kullanımını analiz etmek için grafiksel bir araç."
-
-#: ../src/callbacks.c:110
-msgid "translator-credits"
-msgstr "Barış Çiçek <baris@teamforce.name.tr>"
-
-#: ../src/callbacks.c:208
-msgid "The document does not exist."
-msgstr "Belge bulunmuyor."
-
-#: ../src/callbacks.c:289
-msgid "The folder does not exist."
-msgstr "Dizin mevcut değil."
