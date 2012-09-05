@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-13 14:35+0000\n"
-"PO-Revision-Date: 2012-03-13 14:37+0100\n"
+"POT-Creation-Date: 2012-09-05 13:36+0100\n"
+"PO-Revision-Date: 2012-09-05 13:37+0100\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 "Language-Team: British English <en@li.org>\n"
 "Language: en_GB\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Disk Usage Analyser"
 
@@ -28,528 +28,218 @@ msgstr "Disk Usage Analyser"
 msgid "Check folder sizes and available disk space"
 msgstr "Check folder sizes and available disk space"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Disk Usage Analyser Preferences"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "Select _devices to include in file system scan:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Monitor changes to your home folder"
-
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Monitor Home"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Whether any change to the home directory should be monitored."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Excluded partitions URIs"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "A list of URIs for partitions to be excluded from scanning."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Toolbar is Visible"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Whether the toolbar should be visible in main window."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Statusbar is Visible"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Whether the status bar at the bottom of main window should be visible."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Active Chart"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Which type of chart should be displayed."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Analyser"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Print version information and exit"
 
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Scan _Home Folder"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- Disk Usage Analyser"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Scan _Filesystem"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "Scan F_older…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "S_can Remote Folder…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Edit"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "_Expand All"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "_Collapse All"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_View"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "_Toolbar"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "St_atusbar"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "All_ocated Space"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "_Help"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "_Contents"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "Scan your home folder"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Scan Home"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "Scan the file system"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "Scan File System"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Scan a folder"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Scan Folder"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "Scan a remote folder or file system"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Scan Remote Folder"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Stop scanning"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Refresh"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Scanning…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Total filesystem capacity:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "used:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "available:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Calculating percentage bars…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Ready"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Total filesystem capacity"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Total filesystem usage"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "contains hardlinks for:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d item"
-msgstr[1] "%5d items"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d item"
+msgstr[1] "%d items"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Could not initialise monitoring"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Changes to your home folder will not be monitored."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "View as Ring Chart"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "View as Treemap Chart"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Show version"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[DIRECTORY]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Too many arguments. Only one directory can be specified."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Could not detect any mount point."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Without mount points disk usage cannot be analysed."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maximum depth"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "The maximum depth drawn in the chart from the root"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Chart model"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Set the model of the chart"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Chart root node"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Set the root node from the model"
 
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Move to parent folder"
+
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Zoom _in"
+
 #: ../src/baobab-chart.c:906
-msgid "Move to parent folder"
-msgstr "Move to parent folder"
+msgid "Zoom _out"
+msgstr "Zoom _out"
 
-#: ../src/baobab-chart.c:910
-msgid "Zoom in"
-msgstr "Zoom in"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "Home folder"
 
-#: ../src/baobab-chart.c:914
-msgid "Zoom out"
-msgstr "Zoom out"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Main volume"
 
-#: ../src/baobab-chart.c:918
-msgid "Save screenshot"
-msgstr "Save screenshot"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Scan a folder"
 
-#: ../src/baobab-chart.c:1777
-msgid "Cannot create pixbuf image!"
-msgstr "Cannot create pixbuf image!"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Scan Folder"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1785
-msgid "Save Snapshot"
-msgstr "Save Snapshot"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Scan a remote folder"
 
-#: ../src/baobab-chart.c:1812
-msgid "_Image type:"
-msgstr "_Image type:"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Scan Remote Folder"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Scan"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Show all locations"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Device"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Reload"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Mount Point"
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
+msgstr "label"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "File System Type"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Close"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Total Size"
-
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Available"
-
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Cannot scan location \"%s\""
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Custom Location"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Public FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (with login)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows share"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Secure WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Cannot connect to server. You must enter a name for the server."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Please enter a name and try again."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Location (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Server:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Optional information:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Share:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Folder:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_User Name:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "_Domain Name:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Connect to Server"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Service _type:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Scan"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Rescan your home folder?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "_Rescan"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Folder"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Usage"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Size"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Contents"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Select Folder"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Rings Chart"
+msgstr "Rings Chart"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "_Show hidden folders"
+#: ../src/baobab-main-window.ui.h:14
+msgid "Treemap Chart"
+msgstr "Treemap Chart"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Cannot check an excluded folder!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" is not a valid folder"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Could not analyse disk usage."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "_Open Folder"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "_Copy Path to Clipboard"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "Mo_ve to Wastebasket"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Could not open folder \"%s\""
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Help"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "There is no installed viewer capable of displaying the folder."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_About"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Could not move \"%s\" to the Wastebasket"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Quit"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Could not move file to the Wastebasket"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analyser"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Details: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Scan Home"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "There was an error displaying help."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Scan F_older…"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public Licence as published by the Free "
-"Software Foundation; either version 2 of the Licence, or (at your option) "
-"any later version."
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Scan Remote Fo_lder…"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public Licence for "
-"more details."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_View"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"You should have received a copy of the GNU General Public Licence along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Stop"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Reload"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "_Allocated Space"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "_Expand All"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "_Collapse All"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "Select Folder"
+
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "Could not analyse volume."
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "A graphical tool to analyse disk usage."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Bastien Nocera <hadess@hadess.net>\n"
@@ -559,19 +249,304 @@ msgstr ""
 "Philip Withnall <philip@tecnocode.co.uk>\n"
 "Bruce Cowan <bruce@bcowan.me.uk>"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "The document does not exist."
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Cancel"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "The folder does not exist."
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Could not scan folder \"%s\" or some of the folders it contains."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" is not a valid folder"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "Could not analyse disk usage."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Disk Usage Analyser Preferences"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr "Select _devices to include in file system scan:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Monitor changes to your home folder"
+
+#~ msgid "Monitor Home"
+#~ msgstr "Monitor Home"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Whether any change to the home directory should be monitored."
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Toolbar is Visible"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Whether the toolbar should be visible in main window."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Statusbar is Visible"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Scan _Home Folder"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Scan _Filesystem"
+
+#~ msgid "_Edit"
+#~ msgstr "_Edit"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Toolbar"
+
+#~ msgid "St_atusbar"
+#~ msgstr "St_atusbar"
+
+#~ msgid "_Contents"
+#~ msgstr "_Contents"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Scan your home folder"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Scan the file system"
+
+#~ msgid "Scan File System"
+#~ msgstr "Scan File System"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Scan a remote folder or file system"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Stop scanning"
+
+#~ msgid "Refresh"
+#~ msgstr "Refresh"
+
+#~ msgid "Scanning…"
+#~ msgstr "Scanning…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Total filesystem capacity:"
+
+#~ msgid "used:"
+#~ msgstr "used:"
+
+#~ msgid "available:"
+#~ msgstr "available:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Calculating percentage bars…"
+
+#~ msgid "Ready"
+#~ msgstr "Ready"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Total filesystem capacity"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Total filesystem usage"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "contains hardlinks for:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Could not initialise monitoring"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Changes to your home folder will not be monitored."
+
+#~ msgid "Show version"
+#~ msgstr "Show version"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[DIRECTORY]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Too many arguments. Only one directory can be specified."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Could not detect any mount point."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "Without mount points disk usage cannot be analysed."
+
+#~ msgid "Save screenshot"
+#~ msgstr "Save screenshot"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "Cannot create pixbuf image!"
+
+#~ msgid "Save Snapshot"
+#~ msgstr "Save Snapshot"
+
+#~ msgid "_Image type:"
+#~ msgstr "_Image type:"
+
+#~ msgid "Scan"
+#~ msgstr "Scan"
+
+#~ msgid "Device"
+#~ msgstr "Device"
+
+#~ msgid "Mount Point"
+#~ msgstr "Mount Point"
+
+#~ msgid "File System Type"
+#~ msgstr "File System Type"
+
+#~ msgid "Total Size"
+#~ msgstr "Total Size"
+
+#~ msgid "Available"
+#~ msgstr "Available"
+
+#~ msgid "Custom Location"
+#~ msgstr "Custom Location"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "Public FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (with login)"
+
+#~ msgid "Windows share"
+#~ msgstr "Windows share"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "Secure WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr "Cannot connect to server. You must enter a name for the server."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Please enter a name and try again."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Location (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Server:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Optional information:"
+
+#~ msgid "_Share:"
+#~ msgstr "_Share:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Port:"
+
+#~ msgid "_Folder:"
+#~ msgstr "_Folder:"
+
+#~ msgid "_User Name:"
+#~ msgstr "_User Name:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "_Domain Name:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Connect to Server"
+
+#~ msgid "Service _type:"
+#~ msgstr "Service _type:"
+
+#~ msgid "_Scan"
+#~ msgstr "_Scan"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Rescan your home folder?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+
+#~ msgid "_Rescan"
+#~ msgstr "_Rescan"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "_Show hidden folders"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Cannot check an excluded folder!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "Could not open folder \"%s\""
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "There is no installed viewer capable of displaying the folder."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "Could not move \"%s\" to the Wastebasket"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Could not move file to the Wastebasket"
+
+#~ msgid "Details: %s"
+#~ msgstr "Details: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "There was an error displaying help."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public Licence as published by the "
+#~ "Free Software Foundation; either version 2 of the Licence, or (at your "
+#~ "option) any later version."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public Licence for more details."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "You should have received a copy of the GNU General Public Licence along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "The document does not exist."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "The folder does not exist."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "S_can Remote Folder…"
 
 #~ msgid "Scan F_older..."
 #~ msgstr "Scan F_older…"
-
-#~ msgid "Scan home folder"
-#~ msgstr "Scan home folder"
