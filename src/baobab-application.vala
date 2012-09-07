@@ -32,6 +32,7 @@ namespace Baobab {
         };
 
         const GLib.ActionEntry[] action_entries = {
+            { "new-window", on_new_window_activate },
             { "quit", on_quit_activate }
         };
 
@@ -144,6 +145,10 @@ namespace Baobab {
         public static Settings get_ui_settings () {
             var app = baobab;
             return app.ui_settings;
+        }
+
+        void on_new_window_activate () {
+            activate ();
         }
 
         void on_quit_activate () {
