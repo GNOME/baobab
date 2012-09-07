@@ -25,12 +25,11 @@ namespace Baobab {
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
         Gtk.Notebook main_notebook;
-        Gtk.Toolbar toolbar;
+        Gd.MainToolbar home_toolbar;
+        Gd.MainToolbar result_toolbar;
         Gtk.Button scan_remote;
-        Gtk.ToolItem toolbar_home_toolitem;
-        Gtk.ToolButton toolbar_show_home_page;
-        Gtk.Label toolbar_label;
-        Gtk.ToolButton toolbar_rescan;
+        Gtk.Button stop_button;
+        Gtk.Button show_home_page_button;
         Gtk.InfoBar infobar;
         Gtk.Label infobar_primary;
         Gtk.Label infobar_secondary;
@@ -117,12 +116,6 @@ namespace Baobab {
 
             // Cache some objects from the builder.
             main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
-            toolbar = builder.get_object ("toolbar") as Gtk.Toolbar;
-            scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
-            toolbar_home_toolitem = builder.get_object ("home-page-toolitem") as Gtk.ToolItem;
-            toolbar_show_home_page = builder.get_object ("show-home-page-button") as Gtk.ToolButton;
-            toolbar_label = builder.get_object ("toolbar-label") as Gtk.Label;
-            toolbar_rescan = builder.get_object ("rescan-button") as Gtk.ToolButton;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
@@ -134,6 +127,25 @@ namespace Baobab {
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
 
+            // Home page toolbar
+            var toolbar = builder.get_object ("home-toolbar") as Gd.MainToolbar;
+            home_toolbar = toolbar;
+            var button_box = builder.get_object ("scan-button-box") as Gtk.ButtonBox;
+            scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
+            toolbar.add_widget (button_box, true);
+            toolbar.show_all ();
+
+            // Result page toolbar
+            toolbar = builder.get_object ("result-toolbar") as Gd.MainToolbar;
+            result_toolbar = toolbar;
+            show_home_page_button = toolbar.add_button ("go-previous-symbolic", null, true) as Gtk.Button;
+            show_home_page_button.action_name = "win.show-home-page";
+            stop_button = toolbar.add_button ("process-stop-symbolic", null, true) as Gtk.Button;
+            stop_button.action_name = "win.show-home-page";
+            var button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
+            button.action_name = "win.reload";
+            toolbar.show_all ();
+
             location_list.set_adjustment (location_scroll.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
@@ -144,9 +156,6 @@ namespace Baobab {
 
             var infobar_close_button = builder.get_object ("infobar-close-button") as Gtk.Button;
             infobar_close_button.clicked.connect (() => { clear_message (); });
-
-            // To make it draggable like a primary toolbar
-            toolbar.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUBAR);
 
             ui_settings = Application.get_ui_settings ();
             lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
@@ -461,8 +470,8 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
                 chart_notebook.page = ChartPage.SPINNER;
                 spinner.start ();
-                toolbar_show_home_page.icon_name = "process-stop-symbolic";
-                toolbar_show_home_page.tooltip_markup = _("Cancel");
+                show_home_page_button.hide ();
+                stop_button.show ();
             } else {
                 enable_drop ();
                 rings_chart.thaw_updates ();
@@ -470,8 +479,8 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
                 lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
-                toolbar_show_home_page.icon_name = "go-previous-symbolic";
-                toolbar_show_home_page.tooltip_markup = _("Show all locations");
+                show_home_page_button.show ();
+                stop_button.hide ();
             }
 
             var window = get_window ();
@@ -486,19 +495,16 @@ namespace Baobab {
         }
 
         void set_ui_state (UIPage page, bool busy) {
-            toolbar_home_toolitem.visible = (page == UIPage.HOME);
-            toolbar_show_home_page.visible = (page == UIPage.RESULT);
-            toolbar_label.visible = (page == UIPage.RESULT);
-            toolbar_rescan.visible = (page == UIPage.RESULT);
+            home_toolbar.visible = (page == UIPage.HOME);
+            result_toolbar.visible = (page == UIPage.RESULT);
 
             set_busy (busy);
 
             if (page == UIPage.HOME) {
-                toolbar_label.set_text ("");
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
             } else {
-                toolbar_label.set_text (active_location.name);
+                result_toolbar.set_labels (active_location.name, null);
             }
 
             main_notebook.page = page;
