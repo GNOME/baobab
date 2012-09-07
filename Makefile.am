@@ -1,7 +1,7 @@
-ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ACLOCAL_AMFLAGS = -I m4 -I libgd ${ACLOCAL_FLAGS}
 NULL =
 
-SUBDIRS =  src data pixmaps help po
+SUBDIRS =  libgd src data pixmaps help po
 
 EXTRA_DIST = COPYING.docs
 

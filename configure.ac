@@ -43,8 +43,17 @@ AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 # Mallard help
 YELP_HELP_INIT
 
-PKG_CHECK_MODULES(gtk, gtk+-3.0 >= 3.5.9)
-PKG_CHECK_MODULES(gio, gio-2.0 >= 2.30.0)
+PKG_CHECK_MODULES(BAOBAB, [
+    gtk+-3.0 >= 3.5.9
+    gio-2.0 >= 2.30.0
+])
+
+LT_INIT([disable-static])
+
+LIBGD_INIT([
+    main-toolbar
+    vapi
+])
 
 AC_CONFIG_FILES([
 Makefile
@@ -52,6 +61,7 @@ data/Makefile
 help/Makefile
 pixmaps/Makefile
 src/Makefile
+libgd/Makefile
 po/Makefile.in
 ])
 

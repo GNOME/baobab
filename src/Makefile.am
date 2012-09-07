@@ -16,9 +16,11 @@ bin_PROGRAMS = baobab
 BUILT_SOURCES = baobab-resources.c
 
 baobab_VALAFLAGS = \
+	--vapidir=$(top_srcdir)/libgd	\
 	--pkg gtk+-3.0		\
 	--pkg gio-2.0		\
-	--pkg gio-unix-2.0
+	--pkg gio-unix-2.0	\
+	--pkg gd-1.0
 
 noinst_HEADERS = \
 	baobab-chart.h			\
@@ -54,16 +56,18 @@ baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --gen
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source baobab.gresource.xml
 
 AM_CFLAGS = \
-	$(gtk_CFLAGS)			\
+	$(BAOBAB_CFLAGS)		\
+	-I$(top_srcdir)/libgd		\
 	-Wall				\
 	-Wno-unused-but-set-variable	\
 	-Wno-unused-variable		\
 	$(NULL)
 
-baobab_LDFLAGS = -export-dynamic
+baobab_LDFLAGS = -export-dynamic -rpath $(libdir)
 baobab_LDADD = \
 	-lm				\
-	$(gtk_LIBS)			\
+	$(BAOBAB_LIBS)			\
+	$(top_builddir)/libgd/libgd.la \
 	$(NULL)
 
 MAINTAINERCLEANFILES =	\
