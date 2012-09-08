@@ -19,14 +19,15 @@
 # Rodrigo Padula de Oliveira <contato@rodrigopadula.com>, 2011.
 # André Gondim <andregondim@ubuntu.com>, 2011.
 # Jonh Wendell <jwendell@gnome.org>, 2012.
+# Enrico Nicoletto <liverig@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-01 08:35-0300\n"
-"PO-Revision-Date: 2012-03-01 08:35-0300\n"
-"Last-Translator: Jonh Wendell <jwendell@gnome.org>\n"
+"POT-Creation-Date: 2012-09-07 22:34-0400\n"
+"PO-Revision-Date: 2012-09-07 22:57-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -37,543 +38,226 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: Brazil\n"
 
-#: ../data/baobab.desktop.in.in.h:1
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+msgid "Disk Usage Analyzer"
+msgstr "Analisador do uso do disco"
+
+#: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Verifique o tamanho das pastas e espaço disponível no disco"
 
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
-msgid "Disk Usage Analyzer"
-msgstr "Analisador do Uso do Disco"
-
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Preferências do Analisador de Uso do Disco"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr ""
-"Selecione os _dispositivos a incluir na varredura do sistema de arquivos:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Monitorar alterações no seu diretório pessoal"
-
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Uma lista de URIs das partições a serem excluídas da varredura."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Ativar gráfico"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI's das partições excluídas"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Uma lista de URIs das partições a serem excluídas da varredura."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "Ativar gráfico"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "Monitorar diretório pessoal"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Barra de status é visível"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Barra de ferramentas é visível"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Monitorar ou não qualquer alteração no diretório pessoal."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr ""
-"Manter ou não a barra de status visível na parte inferior da janela "
-"principal."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Mostrar ou não a barra de ferramentas na janela principal."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Qual tipo de gráfico deveria ser exibido."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "E_spaço alocado"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Imprimir informações da versão e sair"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Atualiza"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- analisador do uso do disco"
 
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder…"
-msgstr "Varrer pasta _remota…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older…"
-msgstr "Varrer _pasta…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan File System"
-msgstr "Varrer sistema de arquivos"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Varrer pasta"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Varrer pasta pessoal"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Varrer pasta remota"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Varrer _sistema de arquivos"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Varrer pasta _pessoal"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Varre uma pasta"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder or file system"
-msgstr "Varre uma pasta ou sistema de arquivos remoto"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan the file system"
-msgstr "Varre o sistema de arquivos"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan your home folder"
-msgstr "Varre a sua pasta pessoal"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "Barra de st_atus"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Interrompe a varredura"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Analisador"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "En_colher todos"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "Su_mário"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Editar"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "Expan_dir tudo"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "Aj_uda"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "Barra de _ferramentas"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_Ver"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Varrendo…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Capacidade total do sistema de arquivos:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "usado:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "disponível:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Calculando barras de porcentagens…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Pronto"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Capacidade total do sistema de arquivos"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Uso total do sistema de arquivos"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "contém hardlinks para:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d item"
-msgstr[1] "%5d itens"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d ítem"
+msgstr[1] "%d ítens"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Não foi possível inicializar o monitoramento"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Alterações na sua pasta pessoal não serão monitoradas."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Ver como gráficos de anéis"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Ver como gráficos de mapa em árvore (Treemap)"
-
-# baobab --help
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Mostra a versão"
-
-# baobab --help
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[DIRETÓRIO]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Excesso de argumentos. Somente um diretório pode ser especificado."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Não foi possível detectar nenhum ponto de montagem."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Sem um ponto de montagem o uso do disco não pode ser analisada."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Profundidade máxima"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "A profundidade máxima a desenhar no gráfico a partir da raiz"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Modelo de gráfico"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Definir o modelo do gráfico"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Nó raiz do gráfico"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Definir o nó raiz do modelo"
 
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "Mover para pasta pai"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Mover para pasta pai"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "Ampliar"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Amp_liar"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "Reduzir"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "Redu_zir"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Salvar captura de tela"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "Pasta pessoal"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Não é possível criar imagem pixbuf!"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Volume principal"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Salvar captura de tela"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Varre uma pasta"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "Tipo de _imagem:"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Varrer pasta"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Analisar"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Varrer uma pasta remota"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Dispositivo"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Varrer pasta remota"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Ponto de montagem"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Mostrar todas as localizações"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Tipo do sistema de arquivos"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Recarregar"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Tamanho total"
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
+msgstr "rótulo"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Disponível"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Fechar"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Não foi possível varrer a localização \"%s\""
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Localização personalizada"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP público"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (com início de sessão)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Compartilhamento Windows"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV seguro (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
-"Não foi possível conectar ao servidor. Você deve digitar um nome para o "
-"servidor."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Por favor, digite um nome e tente novamente."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Localização (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "S_ervidor:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Informações opcionais:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "Comp_artilhamento:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Porta:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Pasta:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "Nome de _usuário:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Nome do _domínio:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Conectar ao servidor"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "_Tipo de serviço:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Varrer"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Varrer novamente sua pasta pessoal?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"O conteúdo do seu diretório pessoal foi alterado. Selecione varrer novamente "
-"para atualizar detalhes do uso do disco."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "Varrer _novamente"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Utilização"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Tamanho"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Conteúdo"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Selecione uma pasta"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Rings Chart"
+msgstr "Gráficos de anéis"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "Mostrar pasta_s ocultas"
+#: ../src/baobab-main-window.ui.h:14
+msgid "Treemap Chart"
+msgstr "Gráficos de mapa em árvore (Treemap)"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Não é possível verificar em uma pasta excluída!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" não é uma pasta válida"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Não foi possível analisar o uso do disco."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "_Abrir pasta"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "_Copiar caminho para a área de transferência"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "_Mover para a lixeira"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Não foi possível abrir a pasta \"%s\""
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "Aj_uda"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Não há visualizador instalado capaz de exibir a pasta."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_Sobre"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Não foi possível mover \"%s\" para a lixeira"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "Sa_ir"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Não foi possível mover o arquivo para a lixeira"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analisador"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Detalhes: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Varrer pasta pessoal"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Ocorreu um erro ao exibir a ajuda."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Varrer _pasta…"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Este programa é um software livre; você pode redistribuí-lo e/ou modificá-lo "
-"sob os termos da Licença Pública Geral GNU como publicada pela Free Software "
-"Foundation (FSF); na versão 2 da Licença, ou (na sua opinião) qualquer "
-"versão."
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Varrer pasta remo_ta…"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Este programa é distribuído na esperança de que seja útil, mas SEM NENHUMA "
-"GARANTIA; sem mesmo implicar garantias de COMERCIABILIDADE ou ADAPTAÇÃO A UM "
-"PROPÓSITO PARTICULAR.  Veja a Licença Pública Geral GNU (GPL) para mais "
-"detalhes. "
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Ver"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Você deve ter recebido uma cópia da Licença Pública Geral GNU junto com este "
-"programa; se não, escreva para a Fundação do Software Livre (FSF) Inc., 51 "
-"Franklin St, Fifth Floor, Boston, MA 02110-1301 USA."
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Parar"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Recarregar"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "_Espaço alocado"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "Expan_dir tudo"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "En_colher todos"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "Selecione uma pasta"
+
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "Não foi possível analisar o volume."
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobá"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Uma ferramenta gráfica para analisar o uso do disco."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Alexandre Hautequest <hquest@fesppr.br>\n"
@@ -592,21 +276,126 @@ msgstr ""
 "Krix Apolinário <krixapolinario@gmail.com>\n"
 "Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
 "Rodrigo Padula de Oliveira <contato@rodrigopadula.com>\n"
-"André Gondim <andregondim@ubuntu.com>"
+"André Gondim <andregondim@ubuntu.com>\n"
+"Enrico Nicoletto <liverig@gmail.com>"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "O documento não existe."
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Cancelar"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "A pasta não existe."
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Não foi possível varrer a pasta \"%s\" ou algumas das pastas as quais ela "
+"contém."
 
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "_Varrer pasta remota..."
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" não é uma pasta válida"
 
-#~ msgid "Scan F_older..."
-#~ msgstr "Varrer _pasta..."
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "Não foi possível analisar o uso do disco."
 
-#~ msgid "Scan home folder"
-#~ msgstr "Varre pasta pessoal"
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Preferências do Analisador de Uso do Disco"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr ""
+#~ "Selecione os _dispositivos a incluir na varredura do sistema de arquivos:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Monitorar alterações no seu diretório pessoal"
+
+#~ msgid "Monitor Home"
+#~ msgstr "Monitorar diretório pessoal"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Barra de status é visível"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Barra de ferramentas é visível"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Monitorar ou não qualquer alteração no diretório pessoal."
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr ""
+#~ "Manter ou não a barra de status visível na parte inferior da janela "
+#~ "principal."
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Mostrar ou não a barra de ferramentas na janela principal."
+
+#~ msgid "Refresh"
+#~ msgstr "Atualiza"
+
+#~ msgid "Scan File System"
+#~ msgstr "Varrer sistema de arquivos"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Varrer _sistema de arquivos"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Varrer pasta _pessoal"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Varre uma pasta ou sistema de arquivos remoto"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Varre o sistema de arquivos"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Varre a sua pasta pessoal"
+
+#~ msgid "St_atusbar"
+#~ msgstr "Barra de st_atus"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Interrompe a varredura"
+
+#~ msgid "_Contents"
+#~ msgstr "Su_mário"
+
+#~ msgid "_Edit"
+#~ msgstr "_Editar"
+
+#~ msgid "_Toolbar"
+#~ msgstr "Barra de _ferramentas"
+
+#~ msgid "Scanning…"
+#~ msgstr "Varrendo…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Capacidade total do sistema de arquivos:"
+
+#~ msgid "used:"
+#~ msgstr "usado:"
+
+#~ msgid "available:"
+#~ msgstr "disponível:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Calculando barras de porcentagens…"
+
+#~ msgid "Ready"
+#~ msgstr "Pronto"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Capacidade total do sistema de arquivos"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Uso total do sistema de arquivos"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "contém hardlinks para:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Não foi possível inicializar o monitoramento"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Alterações na sua pasta pessoal não serão monitoradas."
