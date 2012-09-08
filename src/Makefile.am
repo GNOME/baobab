@@ -20,7 +20,8 @@ baobab_VALAFLAGS = \
 	--pkg gtk+-3.0		\
 	--pkg gio-2.0		\
 	--pkg gio-unix-2.0	\
-	--pkg gd-1.0
+	--pkg gd-1.0		\
+	--pkg json-glib-1.0
 
 noinst_HEADERS = \
 	baobab-chart.h			\

@@ -46,6 +46,7 @@ YELP_HELP_INIT
 PKG_CHECK_MODULES(BAOBAB, [
     gtk+-3.0 >= 3.5.9
     gio-2.0 >= 2.30.0
+    json-glib-1.0
 ])
 
 LT_INIT([disable-static])

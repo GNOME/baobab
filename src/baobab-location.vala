@@ -129,8 +129,35 @@ namespace Baobab {
             scanner = new Scanner (file, ScanFlags.NONE);
         }
 
+
+        public Location.load_from_file (File report_file) throws Error {
+            var parser = new Json.Parser ();
+            parser.load_from_file (report_file.get_path ());
+
+            var root_object = parser.get_root ().get_object ();
+
+            name = root_object.get_string_member ("name");
+
+            var scanner_object = root_object.get_object_member ("scanner");
+            scanner = new Scanner.from_json_object (scanner_object);
+        }
+
         public void update () {
             update_volume_info ();
+        }
+
+        public void save_to_file (string filename) throws Error {
+            var root_object = new Json.Object ();
+            root_object.set_string_member ("name", name);
+
+            var scanner_object = scanner.to_json_object ();
+            root_object.set_object_member ("scanner", scanner_object);
+
+            var root_node = new Json.Node (Json.NodeType.OBJECT);
+            root_node.set_object (root_object);
+
+            var generator = new Json.Generator () { pretty = true, root = root_node };
+            generator.to_file (filename);
         }
 
         void update_volume_info () {

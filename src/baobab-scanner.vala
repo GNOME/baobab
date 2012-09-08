@@ -375,13 +375,106 @@ namespace Baobab {
             }
         }
 
+        void save_node (Gtk.TreeIter iter, Json.Array json_array) {
+            string name;
+            string parse_name;
+            uint64 alloc_size;
+            double percent;
+            int elements;
+            get (iter,
+                 Scanner.Columns.DISPLAY_NAME, out name,
+                 Scanner.Columns.PARSE_NAME, out parse_name,
+                 Scanner.Columns.PERCENT, out percent,
+                 Scanner.Columns.ALLOC_SIZE, out alloc_size,
+                 Scanner.Columns.ELEMENTS, out elements);
+
+            var obj = new Json.Object ();
+            obj.set_string_member ("n", name);
+            obj.set_string_member ("p", parse_name);
+            obj.set_double_member ("s", (double) alloc_size);
+            obj.set_double_member ("per", percent);
+            obj.set_int_member ("e", elements);
+
+            json_array.add_object_element (obj);
+
+            Gtk.TreeIter child_iter;
+            if (!iter_children (out child_iter, iter))
+                return;
+
+            var children_array = new Json.Array ();
+            obj.set_array_member ("c", children_array);
+
+            do {
+                save_node (child_iter, children_array);
+            } while (iter_next (ref child_iter));
+        }
+
+        public Json.Object to_json_object () {
+            var obj = new Json.Object ();
+
+            obj.set_int_member ("flags", scan_flags);
+
+            Gtk.TreeIter first;
+            get_iter_first (out first);
+            var tree_array = new Json.Array ();
+            save_node (first, tree_array);
+
+            obj.set_array_member ("tree", tree_array);
+
+            return obj;
+        }
+
+        void load_children (Gtk.TreeIter? parent, Json.Array? children_array, int branch_depth) {
+            children_array.foreach_element ((array, index, node) => {
+                var obj = node.get_object ();
+                string name = obj.get_string_member ("n");
+                string parse_name = obj.get_string_member ("p");
+                uint64 alloc_size = (uint64) obj.get_double_member ("s");
+                double percent = obj.get_double_member ("per");
+                int elements = (int) obj.get_int_member ("e");
+
+                Gtk.TreeIter iter;
+                append (out iter, parent);
+                set (iter,
+                     Scanner.Columns.DISPLAY_NAME, name,
+                     Scanner.Columns.PARSE_NAME, parse_name,
+                     Scanner.Columns.PERCENT, percent,
+                     Scanner.Columns.ALLOC_SIZE, alloc_size,
+                     Scanner.Columns.ELEMENTS, elements);
+
+                if (branch_depth > max_depth) {
+                    max_depth = branch_depth;
+                }
+
+                if (obj.has_member ("c")) {
+                    load_children (iter, obj.get_array_member ("c"), branch_depth + 1);
+                }
+            });
+        }
+
+        public Scanner.from_json_object (Json.Object obj) {
+            var tree_array = obj.get_array_member ("tree");
+            var path = tree_array.get_object_element (0).get_string_member ("p");
+            directory = File.new_for_path (path);
+            scan_flags = (ScanFlags) obj.get_int_member ("flags");
+
+            setup_scanner ();
+            load_children (null, tree_array, 0);
+        }
+
         public Scanner (File directory, ScanFlags flags) {
             this.directory = directory;
             this.scan_flags = flags;
+
+            setup_scanner ();
+        }
+
+        void setup_scanner () {
             cancellable = new Cancellable();
             scan_error = null;
+
             set_column_types (new Type[] {
-                typeof (string),  // DIR_NAME
+                typeof (string),  // DISPLAY_NAME
                 typeof (string),  // PARSE_NAME
                 typeof (double),  // PERCENT
                 typeof (uint64),  // SIZE
@@ -394,13 +487,13 @@ namespace Baobab {
 
             excluded_locations = Application.get_excluded_locations ();
 
-            if (ScanFlags.EXCLUDE_MOUNTS in flags) {
+            if (ScanFlags.EXCLUDE_MOUNTS in this.scan_flags) {
                 foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {
                     excluded_locations.add (File.new_for_path (mount.get_mount_path ()));
                 }
             }
 
-            excluded_locations.remove (directory);
+            excluded_locations.remove (this.directory);
 
             results_queue = new AsyncQueue<ResultsArray> ();
         }

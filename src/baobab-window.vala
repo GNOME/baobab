@@ -60,6 +60,8 @@ namespace Baobab {
             { "show-allocated", on_show_allocated },
             { "expand-all", on_expand_all },
             { "collapse-all", on_collapse_all },
+            { "save-report", on_save_report },
+            { "load-report", on_load_report },
             { "help", on_help_activate },
             { "about", on_about_activate }
         };
@@ -133,6 +135,8 @@ namespace Baobab {
             var button_box = builder.get_object ("scan-button-box") as Gtk.ButtonBox;
             scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
             toolbar.add_widget (button_box, true);
+            var button = toolbar.add_button (null, "Load report", false) as Gtk.Button;
+            button.action_name = "win.load-report";
             toolbar.show_all ();
 
             // Result page toolbar
@@ -142,8 +146,12 @@ namespace Baobab {
             show_home_page_button.action_name = "win.show-home-page";
             stop_button = toolbar.add_button ("process-stop-symbolic", null, true) as Gtk.Button;
             stop_button.action_name = "win.show-home-page";
-            var button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
+            button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
             button.action_name = "win.reload";
+            button = toolbar.add_button (null, "Save Report", false) as Gtk.Button;
+            button.action_name = "win.save-report";
+            button = toolbar.add_button (null, "Load report", false) as Gtk.Button;
+            button.action_name = "win.load-report";
             toolbar.show_all ();
 
             location_list.set_adjustment (location_scroll.get_vadjustment ());
@@ -203,6 +211,55 @@ namespace Baobab {
 
             ui_settings.set_value ("active-chart", value);
             action.set_state (value);
+        }
+
+
+        void on_save_report () {
+            var file_chooser = new Gtk.FileChooserDialog (_("Save report as"), this,
+                                                          Gtk.FileChooserAction.SAVE,
+                                                          Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL,
+                                                          Gtk.Stock.SAVE, Gtk.ResponseType.ACCEPT);
+            file_chooser.set_modal (true);
+
+            file_chooser.response.connect ((response) => {
+                if (response == Gtk.ResponseType.ACCEPT) {
+                    try {
+                        active_location.save_to_file (file_chooser.get_filename ());
+                    } catch (Error e) {
+                        message (_("Could not save report."), e.message, Gtk.MessageType.ERROR);
+                    }
+                }
+                file_chooser.destroy ();
+            });
+
+            file_chooser.show ();
+        }
+
+        void on_load_report () {
+            var file_chooser = new Gtk.FileChooserDialog (_("Open report"), this,
+                                                          Gtk.FileChooserAction.OPEN,
+                                                          Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL,
+                                                          Gtk.Stock.OPEN, Gtk.ResponseType.ACCEPT);
+            file_chooser.set_modal (true);
+
+            file_chooser.response.connect ((response) => {
+                if (response == Gtk.ResponseType.ACCEPT) {
+                    clear_message ();
+                    set_ui_state (UIPage.RESULT, true);
+                    try {
+                        var location = new Location.load_from_file (file_chooser.get_file ());
+                        set_active_location (location);
+                        set_model (location.scanner);
+                        set_ui_state (UIPage.RESULT, false);
+                    } catch (Error e) {
+                        message (_("Could not load report."), e.message, Gtk.MessageType.ERROR);
+                        set_ui_state (UIPage.HOME, false);
+                    }
+                }
+                file_chooser.destroy ();
+            });
+
+            file_chooser.show ();
         }
 
         void on_scan_home_activate () {
