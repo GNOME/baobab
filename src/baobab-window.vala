@@ -509,7 +509,7 @@ namespace Baobab {
             treeview.expand_row (path, false);
         }
 
-        void expand_fisrt_row () {
+        void expand_first_row () {
             Gtk.TreeIter first;
 
             if (treeview.model.get_iter_first (out first) && treeview.model.iter_has_child (first)) {
@@ -522,7 +522,7 @@ namespace Baobab {
         void set_model (Gtk.TreeModel model) {
             treeview.model = model;
 
-            expand_fisrt_row ();
+            expand_first_row ();
 
             model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
             model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
