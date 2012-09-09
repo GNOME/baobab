@@ -207,11 +207,19 @@ namespace Baobab {
                                 }
                             }
 
-                            results.size += child_info.get_size ();
+                            var child_results = new Results ();
+                            child_results.display_name = child_info.get_display_name ();
+                            child_results.parse_name = child_results.display_name; // FIXME
+                            child_results.parent = results;
+                            child_results.size = child_info.get_size ();
+
+                            results.size += child_results.size;
                             if (child_info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
-                                results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                                child_results.alloc_size = child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                                results.alloc_size += child_results.alloc_size;
                             }
                             results.elements++;
+                            results_array.results += (owned) child_results;
                             break;
 
                         default:
