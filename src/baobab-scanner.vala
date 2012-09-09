@@ -416,6 +416,7 @@ namespace Baobab {
             var obj = new Json.Object ();
 
             obj.set_int_member ("flags", scan_flags);
+            obj.set_int_member ("timestamp", last_scan_timestamp);
 
             Gtk.TreeIter first;
             get_iter_first (out first);
@@ -460,6 +461,7 @@ namespace Baobab {
             var path = tree_array.get_object_element (0).get_string_member ("p");
             directory = File.new_for_path (path);
             scan_flags = (ScanFlags) obj.get_int_member ("flags");
+            last_scan_timestamp = obj.get_int_member ("timestamp");
 
             setup_scanner ();
             load_children (null, tree_array, 0);
