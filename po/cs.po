@@ -22,18 +22,18 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-03-15 21:04+0100\n"
+"POT-Creation-Date: 2012-08-20 14:51+0000\n"
+"PO-Revision-Date: 2012-09-09 23:19+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využití disku"
 
@@ -41,527 +41,222 @@ msgstr "Analyzátor využití disku"
 msgid "Check folder sizes and available disk space"
 msgstr "Zkontrolovat velikost složek a dostupné místo na disku"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Nastavení Analyzátoru využití disku"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "Vyberte zařízení zahrnutá _do procházení souborového systému:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "Sledovat z_měny ve vaší domovské složce"
-
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Sledování domovské složky"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Jestli mají být sledovány změny v domovské složce."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Vyřazené URI oddílů"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Seznam URI pro oddíly, které budou vyřazeny z procházení."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Lišta nástrojů je zobrazena"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Jestli má být lišta nástrojů v hlavním okně viditelná."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Stavový panel je zobrazen"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Jestli má být stavový řádek ve spodní části hlavního okna viditelný."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Aktivní graf"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Jaký typ grafu by měl být zobrazen."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Analyzátor"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Vypsat informace o verzi a skončit"
 
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Projít _domovskou složku"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "– Analyzátor využití disku"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Projí_t souborový systém"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "Projít _složku…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "Pro_jít vzdálenou složku…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Upravit"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "Rozbalit vš_e"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "S_balit vše"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_Zobrazit"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "Lišta nás_trojů"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "_Stavový řádek"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "_Obsazené místo"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "_Nápověda"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "_Obsah"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "Projít vaši domovskou složku"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Projít domovskou složku"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "Projít souborový systém"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "Projít souborový systém"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Projít složku"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Projít složku"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "Projít vzdálenou složku nebo souborový systém"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Projít vzdálenou složku"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Zastavit procházení"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Občerstvit"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Prochází se…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Celková kapacita souborového systému:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "obsazeno:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "dostupné:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Vypočítává se procentuální zastoupení…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Hotovo"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Celková kapacita souborového systému"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Celkové využití souborového systému"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "obsahuje pevné odkazy na:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d položka"
-msgstr[1] "%5d položky"
-msgstr[2] "%5d položek"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d položka"
+msgstr[1] "%d položky"
+msgstr[2] "%d položek"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Nelze zahájit sledování"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Změny ve vaší domovské složce nebudou sledovány."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Zobrazit jako kruhový diagram"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Zobrazit jako diagram ve stylu stromové mapy"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Zobrazit verzi"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[SLOŽKA]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Příliš mnoho parametrů. Je možné stanovit pouze jednu složku."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Nelze rozpoznat žádný bod připojení."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Bez bodů připojení nelze analyzovat využití disku."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maximální hloubka"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Maximální hloubka vykreslovaná v diagramu od kořene"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Model diagramu"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Nastavit model diagramu"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Kořenový uzel diagramu"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Nastavit kořenový uzel z modelu"
 
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "Přejít do nadřazené složky"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Přejít do nadřazené složky"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "Zvětšit"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Př_iblížit"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "Zmenšit"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "_Oddálit"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Uložit snímek obrazovky"
+#: ../src/baobab-location.vala:52
+#| msgid "Scan _Home Folder"
+msgid "Home folder"
+msgstr "Domovská složka"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Nelze vytvořit obrázek pixbuf!"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Hlavní svazek"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Uložit snímek obrazovky"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Projít složku"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "_Typ obrázku:"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Projít složku"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Projít"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Projít vzdálenou složku"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Zařízení"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Projít vzdálenou složku"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Bod připojení"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Zobrazit všechna umístění"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Typ souborového systému"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Znovu načíst"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Celková velikost"
-
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Dostupné"
-
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Nelze projít umístění „%s“"
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Uživatelské umístění"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Veřejný FTP server"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP server (s přihlášením)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows sdílení"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Zabezpečený WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Nelze se připojit k serveru. Je nutné zadat název serveru."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Vložte prosím jméno a zkuste to znovu."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Umístění (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Server:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Nepovinné informace:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Sdílení:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Složka:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Uživatelské jméno:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Název _domény:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Připojit se k serveru"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "_Typ služby:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Projít"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Znovu projít vaši domovskou složku?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
 msgstr ""
-"Obsah vaší domovské složky se změnil. Nechte ji znovu projít kvůli "
-"aktualizaci podrobností o využití disku."
 
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "Znovu p_rojít"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Zavřít"
 
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Složka"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Využití"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Velikost"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "Obsah"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Zvolte složku"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Rings Chart"
+msgstr "Kruhový diagram"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "Zobrazit _skryté složky"
+#: ../src/baobab-main-window.ui.h:14
+msgid "Treemap Chart"
+msgstr "Stromová mapa"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Nelze zkontrolovat vyřazenou složku!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "„%s“ není platná složka"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Nelze analyzovat využití disku."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Open Folder"
 msgstr "_Otevřít složku"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopírovat cestu do schránky"
+
+#: ../src/baobab-main-window.ui.h:17
 msgid "Mo_ve to Trash"
 msgstr "_Přesunout do koše"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Nelze otevřít složku „%s“"
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Nápověda"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Není nainstalován žádný prohlížeč schopný zobrazit tuto složku."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "O _aplikaci"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Nelze přesunout „%s“ do koše"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "U_končit"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Soubor nelze přesunout do koše"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analyzátor"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Podrobnosti: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "Projít domov_skou složku"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Při zobrazování nápovědy došlo k chybě."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Projít sl_ožku…"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Tento program je svobodný software; můžete jej šířit a/nebo upravovat podle "
-"ustanovení GNU General Public License vydané Free Software Foundation; buď "
-"verze 2 této licence nebo (dle vlastního uvážení) kterékoliv pozdější verze."
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Projít vzdálenou s_ložku…"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Tento program je šířen v naději, že bude užitečný, avšak BEZ JAKÉKOLIV "
-"ZÁRUKY; neposkytují se ani odvozené záruky PRODEJNOSTI anebo VHODNOSTI PRO "
-"URČITÝ ÚČEL. Další podrobnosti hledejte v GNU General Public License."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Zobrazit"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Kopii GNU General Public License byste měli obdržet spolu s tímto programem; "
-"pokud se tak nestalo, napište si o ni Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "Za_stavit"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "Znov_u načíst"
+
+#: ../src/baobab-menu.ui.h:11
+#| msgid "All_ocated Space"
+msgid "_Allocated Space"
+msgstr "Obs_azené místo"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "Rozbalit vš_e"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "S_balit vše"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "Výběr složky"
+
+#: ../src/baobab-window.vala:250
+#| msgid "Could not analyze disk usage."
+msgid "Could not analyze volume."
+msgstr "Nelze analyzovat svazek."
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj pro analýzu využití disku."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "David Šauer <davids@penguin.cz>\n"
@@ -576,10 +271,21 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Dokument neexistuje."
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Zrušit"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Složka neexistuje."
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Nelze procházet složku „%s“ nebo některé v ní obsažené složky."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "„%s“ není platná složka"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "Nelze analyzovat využití disku."
