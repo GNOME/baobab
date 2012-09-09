@@ -128,6 +128,7 @@ namespace Baobab {
             rings_chart = builder.get_object ("rings-chart") as Chart;
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
+            var menu_model = builder.get_object ("winmenu") as MenuModel;
 
             // Home page toolbar
             var toolbar = builder.get_object ("home-toolbar") as Gd.MainToolbar;
@@ -135,8 +136,8 @@ namespace Baobab {
             var button_box = builder.get_object ("scan-button-box") as Gtk.ButtonBox;
             scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
             toolbar.add_widget (button_box, true);
-            var button = toolbar.add_button (null, "Load report", false) as Gtk.Button;
-            button.action_name = "win.load-report";
+            var menu_button = toolbar.add_menu ("emblem-system-symbolic", null, false) as Gtk.MenuButton;
+            menu_button.set_menu_model (menu_model);
             toolbar.show_all ();
 
             // Result page toolbar
@@ -146,12 +147,10 @@ namespace Baobab {
             show_home_page_button.action_name = "win.show-home-page";
             stop_button = toolbar.add_button ("process-stop-symbolic", null, true) as Gtk.Button;
             stop_button.action_name = "win.show-home-page";
-            button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
+            var button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
             button.action_name = "win.reload";
-            button = toolbar.add_button (null, "Save Report", false) as Gtk.Button;
-            button.action_name = "win.save-report";
-            button = toolbar.add_button (null, "Load report", false) as Gtk.Button;
-            button.action_name = "win.load-report";
+            menu_button = toolbar.add_menu ("emblem-system-symbolic", null, false) as Gtk.MenuButton;
+            menu_button.set_menu_model (menu_model);
             toolbar.show_all ();
 
             location_list.set_adjustment (location_scroll.get_vadjustment ());
