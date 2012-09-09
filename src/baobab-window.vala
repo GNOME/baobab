@@ -63,7 +63,8 @@ namespace Baobab {
             { "save-report", on_save_report },
             { "load-report", on_load_report },
             { "help", on_help_activate },
-            { "about", on_about_activate }
+            { "about", on_about_activate },
+            { "close", on_close_activate }
         };
 
         protected struct ActionState {
@@ -374,6 +375,10 @@ namespace Baobab {
                                    "authors", authors,
                                    "translator-credits", _("translator-credits"),
                                    null);
+        }
+
+        void on_close_activate () {
+            this.destroy ();
         }
 
         void on_chart_item_activated (Chart chart, Gtk.TreeIter iter) {
