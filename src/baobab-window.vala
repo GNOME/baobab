@@ -561,7 +561,9 @@ namespace Baobab {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
             } else {
-                result_toolbar.set_labels (active_location.name, null);
+                var unixtime = active_location.scanner.last_scan_timestamp;
+                var timestamp_label = (unixtime != null) ? (new DateTime.from_unix_local (unixtime)).format ("%c") : null;
+                result_toolbar.set_labels (active_location.name, timestamp_label);
             }
 
             main_notebook.page = page;

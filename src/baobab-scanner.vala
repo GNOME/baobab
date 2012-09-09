@@ -55,6 +55,8 @@ namespace Baobab {
 
         public int max_depth { get; protected set; }
 
+        public int64? last_scan_timestamp { get; protected set; }
+
         public signal void completed();
 
         static const string ATTRIBUTES =
@@ -310,6 +312,7 @@ namespace Baobab {
 
                     if (results.parent == null) {
                         successful = true;
+                        last_scan_timestamp = get_real_time () / 1000000;
                         completed ();
                         return false;
                     }
