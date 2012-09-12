@@ -1,13 +1,6 @@
 # Finnish messages for gnome-utils
 # Copyright (C) 2003-2009 Free Software Foundation, Inc.
 # Suomennos: http://gnome.fi/
-# Tuomas Merilä <tuomas@merila.org>, 1999.
-# Antti Ahvensalmi <aahven@mbnet.fi>, 2000.
-# Lauri Nurmi <lanurmi@iki.fi>, 2003.
-# Pauli Virtanen <pauli.virtanen@hut.fi>, 2003-2005.
-# Ilkka Tuohela <hile@iki.fi>, 2005-2009.
-# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
-# Tommi Vainikainen <thv@iki.fi>, 2009-2011.
 #
 # days = päivää sitten, ks. konteksti
 #
@@ -15,24 +8,32 @@
 # Jiri Grönroos
 # Niklas Laxström
 # Timo Jyrinki
+# Tuomas Merilä <tuomas@merila.org>, 1999.
+# Antti Ahvensalmi <aahven@mbnet.fi>, 2000.
+# Lauri Nurmi <lanurmi@iki.fi>, 2003.
+# Pauli Virtanen <pauli.virtanen@hut.fi>, 2003-2005.
+# Ilkka Tuohela <hile@iki.fi>, 2005-2009.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
+# Tommi Vainikainen <thv@iki.fi>, 2009-2011.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2012.
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-03-12 08:36:42+0000\n"
-"Last-Translator: Tommi Vainikainen <thv@iki.fi>\n"
-"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-08-20 14:51+0000\n"
+"PO-Revision-Date: 2012-09-06 18:48+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-03-05 15:05:01+0000\n"
-"X-Generator: MediaWiki 1.20alpha (r113129); Translate 2012-03-02\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Levynkäytön analysointi"
 
@@ -40,510 +41,535 @@ msgstr "Levynkäytön analysointi"
 msgid "Check folder sizes and available disk space"
 msgstr "Tarkista kansioiden koko ja käytettävissä oleva levytila"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Levynkäytön analysoinnin asetukset"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "Valitse _laitteet, jotka sisällytetään järjestelmäkartoitukseen:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Tarkkaile muutoksia kotikansioon"
-
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Tarkkaile kotihakemistoa"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Tarkkaillaanko muutoksia kotihakemistossa."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Ohitettujen osioiden URIt"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Luettelo osioiden URI:sta, joita ei huomioida kartoitettaessa."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "Näytetäänkö työkalupalkki"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Näytetäänkö työkalupalkki pääikkunassa."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "Tilapalkki on näkyvissä"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Näytetäänkö tilarivi pääikkunan alareunassa."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Aktiivinen kaavio"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Minkä tyyppinen kaavio näytetään."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "_Analysaattori"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Tulosta versiotiedot ja sulkeudu"
 
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "Kartoita _kotikansio"
+#: ../src/baobab-application.vala:104
+#| msgid "Disk Usage Analyzer"
+msgid "- Disk Usage Analyzer"
+msgstr "- Levynkäytön analysointi"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "Kartoita _tiedostojärjestelmä"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "Scan F_older…"
-msgstr "Kartoita _kansio…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "S_can Remote Folder…"
-msgstr "Kartoita _etäkansio…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "_Muokkaa"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "_Laajenna kaikki"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "_Kutista kaikki"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "_Näytä"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "_Työkalupalkki"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "_Tilarivi"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "Varattu _tila"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "O_hje"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "_Sisältö"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "Scan your home folder"
-msgstr "Kartoita kotikansio"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "Kartoita kotikansio"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "Scan the file system"
-msgstr "Kartoita tiedostojärjestelmä"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "Scan File System"
-msgstr "Kartoita tiedostojärjestelmä"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "Kartoita kansio"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "Kartoita kansio"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "Scan a remote folder or file system"
-msgstr "Kartoita etäkansio tai -tiedostojärjestelmä"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "Kartoita etäkansio"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "Pysäytä kartoitus"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "Päivitä"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Kartoitetaan…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Tiedostojärjestelmän koko:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "käytössä:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "vapaana:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Lasketaan prosenttipalkkeja..."
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Valmis"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Tiedostojärjestelmän koko"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Tiedostojärjestelmän käyttöaste"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "sisältää kovia linkkejä kohteelle:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d kohde"
-msgstr[1] "%5d kohdetta"
+#| msgid "%5d item"
+#| msgid_plural "%5d items"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d kohde"
+msgstr[1] "%d kohdetta"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Tarkkailijaa ei voitu alustaa"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Muutoksia kotihakemistoosi ei tarkkailla."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Näytä ympyräkaaviona"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Näytä puukarttana"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Näytä versio"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[KANSIO]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Liian monta valitsinta. Vain yksi kansio voidaan käsitellä."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Yhtäkään liitoskohtaa ei havaittu."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Ilman liitoskohtia levynkäyttöä ei voi analysoida."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Enimmäissyvyys"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Kaavioon piirretty enimmäissyvyys juuresta lähtien"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Kaaviomalli"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Aseta kaavion malli"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Kaavion juurisolmu"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Aseta juurisolmu mallista"
 
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "Siirry ylempään kansioon"
+#: ../src/baobab-chart.c:898
+#| msgid "Move to parent folder"
+msgid "_Move to parent folder"
+msgstr "_Siirry ylempään kansioon"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "Lähennä"
+#: ../src/baobab-chart.c:902
+#| msgid "Zoom in"
+msgid "Zoom _in"
+msgstr "L_ähennä"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "Loitonna"
+#: ../src/baobab-chart.c:906
+#| msgid "Zoom out"
+msgid "Zoom _out"
+msgstr "L_oitonna"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Tallenna kuvakaappaus"
+#: ../src/baobab-location.vala:52
+#| msgid "Scan _Home Folder"
+msgid "Home folder"
+msgstr "Kotikansio"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Pixbuf-kuvaa ei voi luoda."
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Päätaltio"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Tallenna kuvakaappaus"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Kartoita kansio"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "Kuvan tyypp_i:"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Kartoita kansio"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Kartoita"
+#: ../src/baobab-main-window.ui.h:3
+#| msgid "Scan Remote Folder"
+msgid "Scan a remote folder"
+msgstr "Kartoita etäkansio"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Laite"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Kartoita etäkansio"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Liitospiste"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+#| msgid "Cannot scan location \"%s\""
+msgid "Show all locations"
+msgstr "Näytä kaikki sijainnit"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Tiedostojärjestelmän tyyppi"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Päivitä"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Kokonaiskoko"
+#: ../src/baobab-main-window.ui.h:7
+msgid "label"
+msgstr "nimike"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Käytettävissä"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Close"
+msgstr "Sulje"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Sijaintia ”%s” ei voi tutkia"
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Oma sijainti"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Julkinen FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (vaatii sisäänkirjautumisen)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows-jako"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Salattu WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Palvelimeen ei saatu yhteyttä. Sinun täytyy antaa nimi palvelimelle."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Syötä nimi ja yritä uudestaan."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Sijainti (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Palvelin:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Lisätiedot:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Jako:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "Po_rtti:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Kansio:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Käyttäjätunnus:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "_Toimialue:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Yhdistä palvelimeen"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Palvelun _tyyppi:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Kartoita"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Kartoitetaanko kotikansio uudestaan?"
-
-#: ../src/baobab-treeview.c:84
-msgid "The content of your home folder has changed. Select rescan to update the disk usage details."
-msgstr "Kotihakemistosi sisältö on muuttunut. Valitse kotikansion uudelleenkartoitus, jos haluat päivittä levynkäytön yksityiskohdat."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "Kartoita _uudestaan"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:9
 msgid "Folder"
 msgstr "Kansio"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:10
 msgid "Usage"
 msgstr "Käyttö"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:11
 msgid "Size"
 msgstr "Koko"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:12
 msgid "Contents"
 msgstr "_Sisältö"
 
-#: ../src/baobab-utils.c:73
+#: ../src/baobab-main-window.ui.h:13
+#| msgid "View as Rings Chart"
+msgid "Rings Chart"
+msgstr "_Ympyräkaavio"
+
+#: ../src/baobab-main-window.ui.h:14
+#| msgid "View as Treemap Chart"
+msgid "Treemap Chart"
+msgstr "_Puukartta"
+
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Open Folder"
+msgstr "Avaa _kansio"
+
+#: ../src/baobab-main-window.ui.h:16
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopioi polku leikepöydälle"
+
+#: ../src/baobab-main-window.ui.h:17
+msgid "Mo_ve to Trash"
+msgstr "_Siirrä roskakoriin"
+
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "O_hje"
+
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_Tietoja"
+
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Lopeta"
+
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analysointi"
+
+#: ../src/baobab-menu.ui.h:5
+#| msgid "Scan Home"
+msgid "_Scan Home"
+msgstr "_Kartoita kotikansio"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Kartoita k_ansio…"
+
+#: ../src/baobab-menu.ui.h:7
+#| msgid "S_can Remote Folder…"
+msgid "Scan Remote Fo_lder…"
+msgstr "Kartoita _etäkansio…"
+
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Näytä"
+
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Pysäytä"
+
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "Pä_ivitä"
+
+#: ../src/baobab-menu.ui.h:11
+#| msgid "All_ocated Space"
+msgid "_Allocated Space"
+msgstr "Varattu _tila"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "_Laajenna kaikki"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "_Kutista kaikki"
+
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "Valitse kansio"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "_Näytä piilokansiot"
+#: ../src/baobab-window.vala:250
+#| msgid "Could not analyze disk usage."
+msgid "Could not analyze volume."
+msgstr "Levynkäyttöä ei voitu analysoida."
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Ohitettua kansiota ei voi tarkistaa!"
+#: ../src/baobab-window.vala:302
+msgid "Baobab"
+msgstr "Baobab"
 
-#: ../src/baobab-utils.c:288
+#: ../src/baobab-window.vala:305
+msgid "A graphical tool to analyze disk usage."
+msgstr "Graafinen työkalu levytilan käytön analysointiin."
+
+#: ../src/baobab-window.vala:310
+msgid "translator-credits"
+msgstr ""
+"Jiri Grönroos, 2012\n"
+"Tommi Vainikainen, 2009-2011\n"
+"Timo Jyrinki, 2008\n"
+"Ilkka Tuohela, 2005-2009\n"
+"Pauli Virtanen, 2003-2005\n"
+"Lauri Nurmi, 2003\n"
+"Antti Ahvensalmi, 2000\n"
+"Tuomas Merilä, 1999\n"
+"\n"
+"http://gnome.fi/"
+
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Peru"
+
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "Kansion \"%s\" tai joidenkin sen alikansioiden kartoitus epäonnistui."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "”%s” ei ole kelvollinen kansio"
 
-#: ../src/baobab-utils.c:291
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "Levynkäyttöä ei voitu analysoida."
 
-#: ../src/baobab-utils.c:327
-msgid "_Open Folder"
-msgstr "Avaa _kansio"
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Levynkäytön analysoinnin asetukset"
 
-#: ../src/baobab-utils.c:333
-msgid "Mo_ve to Trash"
-msgstr "_Siirrä roskakoriin"
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr "Valitse _laitteet, jotka sisällytetään järjestelmäkartoitukseen:"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Kansiota ”%s” ei voi avata"
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Tarkkaile muutoksia kotikansioon"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Kansion näyttämistä varten ei löydy asennettua katselinta."
+#~ msgid "Monitor Home"
+#~ msgstr "Tarkkaile kotihakemistoa"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Kohdetta ”%s” ei voi siirtää roskakoriin"
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Tarkkaillaanko muutoksia kotihakemistossa."
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Tiedostoi ei voitu siirtää roskakoriin"
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Näytetäänkö työkalupalkki"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Yksityiskohdat: %s"
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Näytetäänkö työkalupalkki pääikkunassa."
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Ohjeen näyttämisessä tapahtui virhe."
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Tilapalkki on näkyvissä"
 
-#: ../src/callbacks.c:75
-msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
-msgstr "Tämä on vapaa ohjelma; sitä on sallittu levittää edelleen ja muuttaa GNU yleisen lisenssin (GPL-lisenssin) ehtojen mukaan sellaisina kuin Free Software Foundation on ne julkaissut; joko lisenssin version 2, tai (valinnan mukaan) minkä tahansa myöhemmän version mukaisesti."
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "Näytetäänkö tilarivi pääikkunan alareunassa."
 
-#: ../src/callbacks.c:80
-msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
-msgstr "Tätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen, mutta ilman mitään takuuta; ilman edes hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL lisenssistä lisää yksityiskohtia."
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Kartoita _tiedostojärjestelmä"
 
-#: ../src/callbacks.c:85
-msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr "Tämä ohjelman mukana pitäisi tulla kopio GPL-lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free Software Foundation Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
+#~ msgid "_Edit"
+#~ msgstr "_Muokkaa"
 
-#: ../src/callbacks.c:100
-msgid "Baobab"
-msgstr "Baobab"
+#~ msgid "_Toolbar"
+#~ msgstr "_Työkalupalkki"
 
-#: ../src/callbacks.c:101
-msgid "A graphical tool to analyze disk usage."
-msgstr "Graafinen työkalu levytilan käytön analysointiin."
+#~ msgid "St_atusbar"
+#~ msgstr "_Tilarivi"
 
-#: ../src/callbacks.c:109
-msgid "translator-credits"
-msgstr "Tommi Vainikainen, 2009-2011\nTimo Jyrinki, 2008\nIlkka Tuohela, 2005-2009\nPauli Virtanen, 2003-2005\nLauri Nurmi, 2003\nAntti Ahvensalmi, 2000\nTuomas Merilä, 1999\n\nhttp://gnome.fi/"
+#~ msgid "_Contents"
+#~ msgstr "_Sisältö"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Asiakirja ei ole olemassa."
+#~ msgid "Scan your home folder"
+#~ msgstr "Kartoita kotikansio"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Kansiota ei ole olemassa."
+#~ msgid "Scan the file system"
+#~ msgstr "Kartoita tiedostojärjestelmä"
 
+#~ msgid "Scan File System"
+#~ msgstr "Kartoita tiedostojärjestelmä"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Kartoita etäkansio tai -tiedostojärjestelmä"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Pysäytä kartoitus"
+
+#~ msgid "Refresh"
+#~ msgstr "Päivitä"
+
+#~ msgid "Scanning…"
+#~ msgstr "Kartoitetaan…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Tiedostojärjestelmän koko:"
+
+#~ msgid "used:"
+#~ msgstr "käytössä:"
+
+#~ msgid "available:"
+#~ msgstr "vapaana:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Lasketaan prosenttipalkkeja..."
+
+#~ msgid "Ready"
+#~ msgstr "Valmis"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Tiedostojärjestelmän koko"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Tiedostojärjestelmän käyttöaste"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "sisältää kovia linkkejä kohteelle:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Tarkkailijaa ei voitu alustaa"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Muutoksia kotihakemistoosi ei tarkkailla."
+
+#~ msgid "Show version"
+#~ msgstr "Näytä versio"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[KANSIO]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Liian monta valitsinta. Vain yksi kansio voidaan käsitellä."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Yhtäkään liitoskohtaa ei havaittu."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "Ilman liitoskohtia levynkäyttöä ei voi analysoida."
+
+#~ msgid "Save screenshot"
+#~ msgstr "Tallenna kuvakaappaus"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "Pixbuf-kuvaa ei voi luoda."
+
+#~ msgid "Save Snapshot"
+#~ msgstr "Tallenna kuvakaappaus"
+
+#~ msgid "_Image type:"
+#~ msgstr "Kuvan tyypp_i:"
+
+#~ msgid "Scan"
+#~ msgstr "Kartoita"
+
+#~ msgid "Device"
+#~ msgstr "Laite"
+
+#~ msgid "Mount Point"
+#~ msgstr "Liitospiste"
+
+#~ msgid "File System Type"
+#~ msgstr "Tiedostojärjestelmän tyyppi"
+
+#~ msgid "Total Size"
+#~ msgstr "Kokonaiskoko"
+
+#~ msgid "Available"
+#~ msgstr "Käytettävissä"
+
+#~ msgid "Custom Location"
+#~ msgstr "Oma sijainti"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "Julkinen FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (vaatii sisäänkirjautumisen)"
+
+#~ msgid "Windows share"
+#~ msgstr "Windows-jako"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "Salattu WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "Palvelimeen ei saatu yhteyttä. Sinun täytyy antaa nimi palvelimelle."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Syötä nimi ja yritä uudestaan."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Sijainti (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Palvelin:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Lisätiedot:"
+
+#~ msgid "_Share:"
+#~ msgstr "_Jako:"
+
+#~ msgid "_Port:"
+#~ msgstr "Po_rtti:"
+
+#~ msgid "_Folder:"
+#~ msgstr "_Kansio:"
+
+#~ msgid "_User Name:"
+#~ msgstr "_Käyttäjätunnus:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "_Toimialue:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Yhdistä palvelimeen"
+
+#~ msgid "Service _type:"
+#~ msgstr "Palvelun _tyyppi:"
+
+#~ msgid "_Scan"
+#~ msgstr "_Kartoita"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Kartoitetaanko kotikansio uudestaan?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "Kotihakemistosi sisältö on muuttunut. Valitse kotikansion "
+#~ "uudelleenkartoitus, jos haluat päivittä levynkäytön yksityiskohdat."
+
+#~ msgid "_Rescan"
+#~ msgstr "Kartoita _uudestaan"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "_Näytä piilokansiot"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Ohitettua kansiota ei voi tarkistaa!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "Kansiota ”%s” ei voi avata"
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "Kansion näyttämistä varten ei löydy asennettua katselinta."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "Kohdetta ”%s” ei voi siirtää roskakoriin"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Tiedostoi ei voitu siirtää roskakoriin"
+
+#~ msgid "Details: %s"
+#~ msgstr "Yksityiskohdat: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Ohjeen näyttämisessä tapahtui virhe."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Tämä on vapaa ohjelma; sitä on sallittu levittää edelleen ja muuttaa GNU "
+#~ "yleisen lisenssin (GPL-lisenssin) ehtojen mukaan sellaisina kuin Free "
+#~ "Software Foundation on ne julkaissut; joko lisenssin version 2, tai "
+#~ "(valinnan mukaan) minkä tahansa myöhemmän version mukaisesti."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Tätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen, mutta "
+#~ "ilman mitään takuuta; ilman edes hiljaista takuuta kaupallisesti "
+#~ "hyväksyttävästä laadusta tai soveltuvuudesta tiettyyn tarkoitukseen. "
+#~ "Katso GPL lisenssistä lisää yksityiskohtia."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Tämä ohjelman mukana pitäisi tulla kopio GPL-lisenssistä; jos näin ei "
+#~ "ole, kirjoita osoitteeseen Free Software Foundation Inc., 51 Franklin St, "
+#~ "Fifth Floor, Boston, MA 02110-1301, USA."
+
+#~ msgid "The document does not exist."
+#~ msgstr "Asiakirja ei ole olemassa."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "Kansiota ei ole olemassa."
