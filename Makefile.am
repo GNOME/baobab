@@ -1,4 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+NULL =
 
 SUBDIRS =  src data pixmaps help po
 
@@ -22,7 +23,17 @@ MAINTAINERCLEANFILES = 		\
 	m4/ltsugar.m4		\
 	m4/ltversion.m4		\
 	omf.make		\
-	xmldocs.make
+	xmldocs.make		\
+	po/Makefile.in.in	\
+	po/Makevars.template	\
+	po/Rules-quot		\
+	po/boldquot.sed		\
+	po/en@boldquot.header	\
+	po/en@quot.header	\
+	po/insert-header.sin	\
+	po/quot.sed		\
+	po/remove-potcdate.sin	\
+	$(NULL)
 
 dist-hook:
 	@if test -d "$(srcdir)/.git"; \

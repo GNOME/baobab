@@ -62,18 +62,9 @@ baobab_LDADD = \
 	$(gtk_LIBS)			\
 	$(NULL)
 
-MAINTAINERCLEANFILES = \
-	baobab-application.c		\
-	baobab-cellrenderers.c		\
-	baobab-connect-server.c		\
-	baobab-location-monitor.c	\
-	baobab-location.c		\
-	baobab-location-list.c		\
-	baobab-location-widget.c	\
-	baobab-scanner.c		\
-	baobab-window.c			\
-	baobab_vala.stamp		\
-	main.c				\
+MAINTAINERCLEANFILES =	\
+	*.stamp				\
+	$(baobab_SOURCES:.vala=.c)	\
 	$(BUILT_SOURCES)
 
 EXTRA_DIST = \
