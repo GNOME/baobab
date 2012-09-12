@@ -26,14 +26,7 @@ noinst_HEADERS = \
 	baobab-ringschart.h		\
 	egg-list-box.h
 
-baobab_SOURCES = \
-	fixes.vapi			\
-	baobab.vapi			\
-	config.vapi			\
-	egglistbox.vapi			\
-	baobab-chart.c			\
-	baobab-treemap.c		\
-	baobab-ringschart.c		\
+VALA_SOURCES = \
 	baobab-application.vala		\
 	baobab-cellrenderers.vala	\
 	baobab-connect-server.vala	\
@@ -42,8 +35,19 @@ baobab_SOURCES = \
 	baobab-location-widget.vala	\
 	baobab-scanner.vala		\
 	baobab-window.vala		\
-	egg-list-box.c			\
 	main.vala			\
+	$(NULL)
+
+baobab_SOURCES = \
+	$(VALA_SOURCES)		\
+	fixes.vapi			\
+	baobab.vapi			\
+	config.vapi			\
+	egglistbox.vapi			\
+	baobab-chart.c			\
+	baobab-treemap.c		\
+	baobab-ringschart.c		\
+	egg-list-box.c			\
 	$(BUILT_SOURCES)
 
 baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies baobab.gresource.xml)
@@ -64,7 +68,7 @@ baobab_LDADD = \
 
 MAINTAINERCLEANFILES =	\
 	*.stamp				\
-	$(baobab_SOURCES:.vala=.c)	\
+	$(VALA_SOURCES:.vala=.c)	\
 	$(BUILT_SOURCES)
 
 EXTRA_DIST = \
