@@ -8,17 +8,17 @@
 # Hinker <hinkerliu@gmail.com>, 2009.
 # chiachen <luojiazhen@gmail.com>, 2011.
 # Aron Xu <happyaron.xu@gmail.com>, 2009, 2011.
-# Cheng Lu <chenglu1990@gmail.com>, 2012.
 # Wylmer Wang <wantinghard@gmail.com>, 2012.
+# Cheng Lu <chenglu1990@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-15 16:14+0000\n"
-"PO-Revision-Date: 2012-07-18 13:18+0800\n"
-"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2012-09-11 16:34+0000\n"
+"PO-Revision-Date: 2012-08-31 15:56+0800\n"
+"Last-Translator: Cheng Lu <chenglu1990@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:152
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "磁盘使用分析器"
 
@@ -35,44 +35,34 @@ msgid "Check folder sizes and available disk space"
 msgstr "检查文件夹大小和可用磁盘空间"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "监视主文件夹"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "是否应该监视对主目录的任何更改。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "排除的分区 URI"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "列出要在扫描中排除的分区 URI。"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "工具栏可见"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "主窗口中的工具栏是否可见。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "状态栏可见"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "主窗口底部的状态栏是否可见。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "活动的图表"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "应该显示哪个类型的图表。"
+
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "打印版本信息并离开"
+
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- 磁盘使用分析器"
+
+#: ../src/baobab-cellrenderers.vala:54
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d 项"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -99,47 +89,24 @@ msgid "Set the root node from the model"
 msgstr "设定模型的根节点"
 
 #: ../src/baobab-chart.c:898
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
 msgstr "移动到父文件夹(_M)"
 
 #: ../src/baobab-chart.c:902
-#| msgid "Zoom in"
 msgid "Zoom _in"
 msgstr "放大(_I)"
 
 #: ../src/baobab-chart.c:906
-#| msgid "Zoom out"
 msgid "Zoom _out"
 msgstr "缩小(_O)"
 
-#: ../src/baobab-cellrenderers.vala:54
-#, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d 项"
-
-#: ../src/baobab-location.vala:65
-msgid "Main volume"
-msgstr "主卷"
-
-#: ../src/baobab-location.vala:80
+#: ../src/baobab-location.vala:52
 msgid "Home folder"
 msgstr "主文件夹"
 
-#: ../src/baobab-location-widget.vala:85
-msgid "Usage unknown"
-msgstr "用量未知"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Scan"
-msgstr "扫描"
-
-#: ../src/baobab-location-widget.vala:90
-msgid "Mount and scan"
-msgstr "挂载并扫描"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "主卷"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan a folder"
@@ -157,163 +124,190 @@ msgstr "扫描远程文件夹"
 msgid "Scan Remote Folder"
 msgstr "扫描远程文件夹"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
 msgid "Show all locations"
 msgstr "显示所有位置"
 
-#: ../src/baobab-main-window.ui.h:6 ../src/baobab-window.vala:471
-msgid "All locations"
-msgstr "所有位置"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Stop scanning"
-msgstr "停止扫描"
-
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Reload"
 msgstr "重新载入"
 
-#: ../src/baobab-main-window.ui.h:9
-msgid "label"
-msgstr "标签"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:7
 msgid "Close"
 msgstr "关闭"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "文件夹"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:9
 msgid "Usage"
 msgstr "用量"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "大小"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:11
 msgid "Contents"
 msgstr "内容"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
 msgstr "查看为圆环图"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
 msgstr "查看为树形图"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:14
 msgid "_Open Folder"
 msgstr "打开文件夹(_O)"
 
-#: ../src/baobab-main-window.ui.h:18
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Copy Path to Clipboard"
+msgstr "复制路径到剪贴板(_C)"
+
+#: ../src/baobab-main-window.ui.h:16
 msgid "Mo_ve to Trash"
 msgstr "移动到回收站(_V)"
 
 #: ../src/baobab-menu.ui.h:1
-msgid "_All locations"
-msgstr "所有位置(_A)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_Scan Home"
-msgstr "扫描主文件夹(_S)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "Scan F_older…"
-msgstr "扫描文件夹(_O)..."
-
-#: ../src/baobab-menu.ui.h:4
-msgid "Scan Remote Fo_lder…"
-msgstr "扫描远程文件夹(_L)..."
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Stop"
-msgstr "停止(_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "_Reload"
-msgstr "重新载入(_R)"
-
-#: ../src/baobab-menu.ui.h:7
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../src/baobab-menu.ui.h:8
+#: ../src/baobab-menu.ui.h:2
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../src/baobab-menu.ui.h:9
+#: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../src/baobab-menu.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "分析器(_A)"
 
-#: ../src/baobab-menu.ui.h:11
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "扫描主文件夹(_S)"
+
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "扫描文件夹(_O)..."
+
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "扫描远程文件夹(_L)..."
+
+#: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "查看(_V)"
 
-#: ../src/baobab-menu.ui.h:12
-msgid "_Toolbar"
-msgstr "工具栏(_T)"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "停止(_S)"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "重新载入(_R)"
+
+#: ../src/baobab-menu.ui.h:11
 msgid "_Allocated Space"
 msgstr "分配的空间(_A)"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:12
 msgid "_Expand All"
 msgstr "全部展开(_E)"
 
-#: ../src/baobab-menu.ui.h:15
+#: ../src/baobab-menu.ui.h:13
 msgid "_Collapse All"
 msgstr "全部折叠(_C)"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "选择文件夹"
 
-#: ../src/baobab-window.vala:280
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "无法分析磁盘使用。"
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "分析磁盘使用的图形工具。"
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Wang Li <charlesw1234@163.com>\n"
 "Funda Wang <fundawang@linux.net.cn>\n"
 "Cheng Lu<chenglu1990@gmail.com>"
 
-#: ../src/baobab-window.vala:349
-msgid "Could not analyze volume."
-msgstr "无法分析磁盘使用。"
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "取消"
 
-#: ../src/baobab-window.vala:463
-msgid "Cancel scan"
-msgstr "取消扫描"
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "无法扫描“%s”文件夹或者它所包含的文件夹"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:494 ../src/baobab-window.vala:500
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s”不是有效的文件夹"
 
-#: ../src/baobab-window.vala:495
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "无法分析磁盘使用。"
 
-#: ../src/baobab-window.vala:554
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "无法扫描“%s”文件夹或者它所包含的文件夹"
+#~ msgid "label"
+#~ msgstr "标签"
+
+#~ msgid "Monitor Home"
+#~ msgstr "监视主文件夹"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "是否应该监视对主目录的任何更改。"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "工具栏可见"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "主窗口中的工具栏是否可见。"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "状态栏可见"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "主窗口底部的状态栏是否可见。"
+
+#~ msgid "Usage unknown"
+#~ msgstr "用量未知"
+
+#~ msgid "Scan"
+#~ msgstr "扫描"
+
+#~ msgid "Mount and scan"
+#~ msgstr "挂载并扫描"
+
+#~ msgid "All locations"
+#~ msgstr "所有位置"
+
+#~ msgid "Stop scanning"
+#~ msgstr "停止扫描"
+
+#~ msgid "_All locations"
+#~ msgstr "所有位置(_A)"
+
+#~ msgid "_Toolbar"
+#~ msgstr "工具栏(_T)"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "磁盘使用分析器首选项"
