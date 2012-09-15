@@ -60,6 +60,15 @@ namespace Baobab {
             }
         }
 
+        bool already_present (File file) {
+            foreach (var l in locations) {
+                if (l.file != null && l.file.equal (file)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         void volume_changed (Volume volume) {
             update ();
         }
@@ -98,7 +107,9 @@ namespace Baobab {
         void mount_added (Mount mount) {
             var volume = mount.get_volume ();
             if (volume == null) {
-                 locations.append (new Location.from_mount (mount));
+                if (!already_present (mount.get_root ())) {
+                    locations.append (new Location.from_mount (mount));
+                }
             } else {
                 foreach (var location in locations) {
                     if (location.volume == volume) {
@@ -109,15 +120,6 @@ namespace Baobab {
             }
 
             update ();
-        }
-
-        bool already_present (File file) {
-            foreach (var l in locations) {
-                if (l.file != null && l.file.equal (file)) {
-                    return true;
-                }
-            }
-            return false;
         }
 
         void populate () {
