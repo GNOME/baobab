@@ -1,5 +1,5 @@
 # Danish Translation of gnome-utils.
-# Copyright (C) 1999-2011 Free Software Foundation, Inc.
+# Copyright (C) 1999-2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-utils package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
 # Kim Schulz <kim@schulz.dk>, 1999.
@@ -7,7 +7,7 @@
 # Keld Simonsen <keld@dkuug.dk>, 2000-2001.
 # Ole Laursen <olau@hardworking.dk>, 2001, 02, 03, 04.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
-# Kenneth Nielsen <k.nielsen81@gmail.com>, 2008.
+# Kenneth Nielsen <k.nielsen81@gmail.com>, 2008, 2012.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011.
 #
@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-21 18:29+0100\n"
-"PO-Revision-Date: 2012-03-21 17:45+0100\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"POT-Creation-Date: 2012-09-16 14:47+0200\n"
+"PO-Revision-Date: 2012-09-16 14:44+0200\n"
+"Last-Translator: Kenneth Nielsen <k.nielsen81@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -32,539 +32,223 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Kontrollér mappestørrelser og tilgængelig diskplads"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Diskforbrugsanalyse"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Indstillinger for diskforbrugsanalyse"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "Vælg de _enheder der skal medtages i skanning af filsystem:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Overvåg ændringer i din hjemmemappe"
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "Kontrollér mappestørrelser og tilgængelig diskplads"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "En liste af URI'er for partitioner, der ekskluderes fra scanning."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Aktivt diagram"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI'er for ekskluderede partitioner"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "En liste af URI'er for partitioner, der ekskluderes fra scanning."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "Aktivt diagram"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "Overvåg hjemmemappe"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Statusbjælken er synlig"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Værktøjslinjen er synlig"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Om enhver ændring af hjemmemappen skal overvåges."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Om statusbjælken i bunden af hovedvinduet skal være synlig."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Om værktøjslinjen skal være synlig i hovedvinduet."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Typen af diagram, der skal vises."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "All_okeret plads"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Vis versionsinformation og afslut"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Opdatér"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- Diskforbrugsanalyse"
 
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder…"
-msgstr "S_kan fjern mappe…"
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older…"
-msgstr "Skan m_appe…"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan File System"
-msgstr "Skan filsystem"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Skan mappe"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Skan hjemmemappe"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Skan fjern mappe"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Skan _filsystem"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Skan _hjemmemappe"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Skan en mappe"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder or file system"
-msgstr "Skan en fjern mappe eller filsystem"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan the file system"
-msgstr "Skan filsystemet"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan your home folder"
-msgstr "Skan din hjemmemappe"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "St_atusbjælke"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Stop skanning"
-
-# Dette er menupunktet længst til venstre i menubaren
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Analyse"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "_Sammenfold alle"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_Indhold"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Redigér"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "_Udfold alle"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "_Hjælp"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "_Værktøjslinje"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_Vis"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Skanner…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Total filsystemskapacitet:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "brugt:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "tilgængelig:"
-
-# Gad vide om de mener progress bars
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Beregner procentbjælker…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Klar"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Total filsystemskapacitet"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Totalt pladsforbrug på filsystemet"
-
-# Der kommer til at stå "contains hard links for: 117 kB", f.eks.
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "indeholder hårde lænker for:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d objekt"
-msgstr[1] "%5d objekter"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d objekt"
+msgstr[1] "%d objekter"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Kunne ikke initialisere overvågning"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Ændringer i din hjemmemappe vil ikke blive overvåget."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Vis som ringdiagram"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Vis som træafbildning"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Vis version"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[KATALOG]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "For mange argumenter. Kun ét katalog kan angives."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Kunne ikke detektere noget monteringspunkt."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Uden monteringspunkter kan diskforbruget ikke analyseres."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maksimal dybde"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Maksimal dybde der tegnes i diagrammet fra roden"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Diagrammodel"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Angiv modellen for diagrammet"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Rodpunkt for diagrammet"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Sæt rodpunktet fra modellen"
 
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Gå til mappen et niveau over"
+
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "For_stør"
+
 #: ../src/baobab-chart.c:906
-msgid "Move to parent folder"
-msgstr "Gå til mappen et niveau over"
+msgid "Zoom _out"
+msgstr "For_mindsk"
 
-#: ../src/baobab-chart.c:910
-msgid "Zoom in"
-msgstr "Førstør"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "Hjemmemappe"
 
-#: ../src/baobab-chart.c:914
-msgid "Zoom out"
-msgstr "Formindsk"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "Primære diskenhed"
 
-#: ../src/baobab-chart.c:918
-msgid "Save screenshot"
-msgstr "Gem skærmbillede"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "Skan en mappe"
 
-#: ../src/baobab-chart.c:1807
-msgid "Cannot create pixbuf image!"
-msgstr "Kan ikke oprette pixbuf-billede!"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "Skan mappe"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1815
-msgid "Save Snapshot"
-msgstr "Gem skærmbillede"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "Skan fjernmappe"
 
-#: ../src/baobab-chart.c:1842
-msgid "_Image type:"
-msgstr "_Billedtype:"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "Skan fjernmappe"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Skan"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "Vis alle steder"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Enhed"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "Genindlæs"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Monteringspunkt"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Luk"
 
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Filsystemstype"
-
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Samlet størrelse"
-
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Tilgængeligt"
-
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Kan ikke skanne placeringen \"%s\""
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Tilpasset placering"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "Offentlig FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (med logind)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows-deling"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "Sikker WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "Kan ikke forbinde til serveren. Du skal indtaste et navn for serveren."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Indtast venligst et navn og prøv igen."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Placering (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Server:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Valgfri information:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Deling:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Mappe:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Brugernavn:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "_Domænenavn:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Forbind til server"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Tjeneste_type:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Skan"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Skan hjemmemappen igen?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"Indholdet af din hjemmemappe er ændret. Vælg \"Skan igen\" for at opdatere "
-"detaljerne vedrørende diskforbrug."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "_Skan igen"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "Mappe"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:9
 msgid "Usage"
 msgstr "Forbrug"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Størrelse"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:11
 msgid "Contents"
 msgstr "Indhold"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Markér mappe"
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Ringdiagram"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "_Vis skjulte mapper"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Træafbildning"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Kan ikke kontrollere en ekskluderet mappe!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" er ikke en gyldig mappe"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Kunne ikke analysere diskforbrug."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:14
 msgid "_Open Folder"
 msgstr "_Åbn mappe"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopiér sti til udklipsholder"
+
+#: ../src/baobab-main-window.ui.h:16
 msgid "Mo_ve to Trash"
 msgstr "F_lyt til papirkurv"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Kunne ikke åbne mappen \"%s\""
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Hjælp"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Der er ikke nogen installeret fremviser der kan vise mappen."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_Om"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Kunne ikke flytte \"%s\" til papirkurven"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Afslut"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Kunne ikke flytte filen til papirkurven"
+# Dette er menupunktet længst til venstre i menubaren
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Analyse"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Detaljer: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Skan hjemmemappe"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Der opstod en fejl ved visning af hjælp."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Skan _mappe…"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Dette program er fri software. Du kan redistribuere og/eller modificere det "
-"under de betingelserne som er angivet i GNU General Public License, som "
-"udgivet af Free Software Foundation. Enten version 2 af licensen eller "
-"(efter eget valg) enhver senere version."
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "S_kan fjernmappe…"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Dette program distribueres i håb om at det vil vise sig nyttigt, men UDEN "
-"NOGEN FORM FOR GARANTI, uden selv de underforståede garantier omkring "
-"SALGBARHED eller EGNETHED TIL ET BESTEMT FORMÅL. Yderligere detaljer kan "
-"læses i GNU General Public License."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Vis"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Du bør have modtaget en kopi af GNU General Public License sammen med dette "
-"program; hvis ikke, så skriv til Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_Stop"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "_Genindlæs"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "_Allokeret plads"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "_Udfold alle"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "_Sammenfold alle"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "Markér mappe"
+
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "Kunne ikke analysere diskenhed."
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk værktøj til at analysere diskforbrug."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Birger Langkjer\n"
@@ -580,19 +264,307 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Dokumentet findes ikke."
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "Afbryd"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Mappen findes ikke."
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Kunne ikke skanne mappen \"%s\" eller nogle af de mapper den indeholder."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" er ikke en gyldig mappe"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "Kunne ikke analysere diskforbrug."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Indstillinger for diskforbrugsanalyse"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr "Vælg de _enheder der skal medtages i skanning af filsystem:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Overvåg ændringer i din hjemmemappe"
+
+#~ msgid "Monitor Home"
+#~ msgstr "Overvåg hjemmemappe"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Statusbjælken er synlig"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Værktøjslinjen er synlig"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Om enhver ændring af hjemmemappen skal overvåges."
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "Om statusbjælken i bunden af hovedvinduet skal være synlig."
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Om værktøjslinjen skal være synlig i hovedvinduet."
+
+#~ msgid "Refresh"
+#~ msgstr "Opdatér"
+
+#~ msgid "Scan File System"
+#~ msgstr "Skan filsystem"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Skan _filsystem"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Skan _hjemmemappe"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Skan en fjern mappe eller filsystem"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Skan filsystemet"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Skan din hjemmemappe"
+
+#~ msgid "St_atusbar"
+#~ msgstr "St_atusbjælke"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Stop skanning"
+
+#~ msgid "_Contents"
+#~ msgstr "_Indhold"
+
+#~ msgid "_Edit"
+#~ msgstr "_Redigér"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Værktøjslinje"
+
+#~ msgid "Scanning…"
+#~ msgstr "Skanner…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Total filsystemskapacitet:"
+
+#~ msgid "used:"
+#~ msgstr "brugt:"
+
+#~ msgid "available:"
+#~ msgstr "tilgængelig:"
+
+# Gad vide om de mener progress bars
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Beregner procentbjælker…"
+
+#~ msgid "Ready"
+#~ msgstr "Klar"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Total filsystemskapacitet"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Totalt pladsforbrug på filsystemet"
+
+# Der kommer til at stå "contains hard links for: 117 kB", f.eks.
+#~ msgid "contains hardlinks for:"
+#~ msgstr "indeholder hårde lænker for:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Kunne ikke initialisere overvågning"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Ændringer i din hjemmemappe vil ikke blive overvåget."
+
+#~ msgid "Show version"
+#~ msgstr "Vis version"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[KATALOG]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "For mange argumenter. Kun ét katalog kan angives."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Kunne ikke detektere noget monteringspunkt."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "Uden monteringspunkter kan diskforbruget ikke analyseres."
+
+#~ msgid "Save screenshot"
+#~ msgstr "Gem skærmbillede"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "Kan ikke oprette pixbuf-billede!"
+
+#~ msgid "Save Snapshot"
+#~ msgstr "Gem skærmbillede"
+
+#~ msgid "_Image type:"
+#~ msgstr "_Billedtype:"
+
+#~ msgid "Scan"
+#~ msgstr "Skan"
+
+#~ msgid "Device"
+#~ msgstr "Enhed"
+
+#~ msgid "Mount Point"
+#~ msgstr "Monteringspunkt"
+
+#~ msgid "File System Type"
+#~ msgstr "Filsystemstype"
+
+#~ msgid "Total Size"
+#~ msgstr "Samlet størrelse"
+
+#~ msgid "Available"
+#~ msgstr "Tilgængeligt"
+
+#~ msgid "Custom Location"
+#~ msgstr "Tilpasset placering"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "Offentlig FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (med logind)"
+
+#~ msgid "Windows share"
+#~ msgstr "Windows-deling"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "Sikker WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "Kan ikke forbinde til serveren. Du skal indtaste et navn for serveren."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Indtast venligst et navn og prøv igen."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Placering (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Server:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Valgfri information:"
+
+#~ msgid "_Share:"
+#~ msgstr "_Deling:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Port:"
+
+#~ msgid "_Folder:"
+#~ msgstr "_Mappe:"
+
+#~ msgid "_User Name:"
+#~ msgstr "_Brugernavn:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "_Domænenavn:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Forbind til server"
+
+#~ msgid "Service _type:"
+#~ msgstr "Tjeneste_type:"
+
+#~ msgid "_Scan"
+#~ msgstr "_Skan"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Skan hjemmemappen igen?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "Indholdet af din hjemmemappe er ændret. Vælg \"Skan igen\" for at "
+#~ "opdatere detaljerne vedrørende diskforbrug."
+
+#~ msgid "_Rescan"
+#~ msgstr "_Skan igen"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "_Vis skjulte mapper"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Kan ikke kontrollere en ekskluderet mappe!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "Kunne ikke åbne mappen \"%s\""
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "Der er ikke nogen installeret fremviser der kan vise mappen."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "Kunne ikke flytte \"%s\" til papirkurven"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Kunne ikke flytte filen til papirkurven"
+
+#~ msgid "Details: %s"
+#~ msgstr "Detaljer: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Der opstod en fejl ved visning af hjælp."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Dette program er fri software. Du kan redistribuere og/eller modificere "
+#~ "det under de betingelserne som er angivet i GNU General Public License, "
+#~ "som udgivet af Free Software Foundation. Enten version 2 af licensen "
+#~ "eller (efter eget valg) enhver senere version."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Dette program distribueres i håb om at det vil vise sig nyttigt, men UDEN "
+#~ "NOGEN FORM FOR GARANTI, uden selv de underforståede garantier omkring "
+#~ "SALGBARHED eller EGNETHED TIL ET BESTEMT FORMÅL. Yderligere detaljer kan "
+#~ "læses i GNU General Public License."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Du bør have modtaget en kopi af GNU General Public License sammen med "
+#~ "dette program; hvis ikke, så skriv til Free Software Foundation, Inc., 51 "
+#~ "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "Dokumentet findes ikke."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "Mappen findes ikke."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "S_kan fjern mappe..."
 
 #~ msgid "Scan F_older..."
 #~ msgstr "Skan M_appe..."
-
-#~ msgid "Scan home folder"
-#~ msgstr "Skan hjemmemappe"
