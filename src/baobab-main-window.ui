@@ -229,7 +229,7 @@
                     <child>
                       <object class="GtkTreeViewColumn" id="folder-column">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">grow-only</property>
                         <property name="title" translatable="yes">Folder</property>
                         <property name="expand">True</property>
                         <property name="reorderable">True</property>
@@ -244,7 +244,8 @@
                     </child>
                     <child>
                       <object class="GtkTreeViewColumn" id="usage-column">
-                        <property name="sizing">autosize</property>
+                        <property name="resizable">True</property>
+                        <property name="sizing">grow-only</property>
                         <property name="title" translatable="yes">Usage</property>
                         <property name="reorderable">True</property>
                         <property name="sort_column_id">2</property>
@@ -270,7 +271,7 @@
                     <child>
                       <object class="GtkTreeViewColumn" id="size-column">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">grow-only</property>
                         <property name="title" translatable="yes">Size</property>
                         <property name="reorderable">True</property>
                         <property name="sort_column_id">4</property>
@@ -289,7 +290,7 @@
                     <child>
                       <object class="GtkTreeViewColumn" id="contents-column">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">grow-only</property>
                         <property name="title" translatable="yes">Contents</property>
                         <property name="reorderable">True</property>
                         <property name="sort_column_id">5</property>
