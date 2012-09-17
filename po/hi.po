@@ -6,24 +6,25 @@
 # Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006, 2009.
 # Rajesh Ranjan <rajesh672@gmail.com>, 2009.
 # chandankumar <chandankumar.093047@gmail.com>, 2012.
+# rajesh <rajeshkajha@yahoo.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.hi\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 18:44+0000\n"
-"PO-Revision-Date: 2012-04-06 09:57+0530\n"
-"Last-Translator: chandankumar <chandankumar.093047@gmail.com>\n"
+"POT-Creation-Date: 2012-09-11 16:34+0000\n"
+"PO-Revision-Date: 2012-09-17 14:30+0530\n"
+"Last-Translator: rajesh <rajeshkajha@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-DamnedLies-Scope: partial\n"
 "X-Generator: Lokalize 1.2\n"
+"X-DamnedLies-Scope: partial\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../data/baobab-main-window.ui.h:15
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "डिस्क प्रयोग विश्लेषण"
 
@@ -31,549 +32,532 @@ msgstr "डिस्क प्रयोग विश्लेषण"
 msgid "Check folder sizes and available disk space"
 msgstr "फोल्डर आकार जाँचें और उपलब्ध डिस्क स्थान"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "डिस्क प्रयोग विश्लेषक वरीयता"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-#| msgid "Select _devices to include in filesystem scan:"
-msgid "Select _devices to include in file system scan:"
-msgstr "फाइलसिस्टम स्कैन में शामिल करने के लिए डिवाइस चुनें: (_d)"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "अपने होम फोल्डर में परिवर्तन निरीक्षण करें (_M)"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "क्या होम निर्देशिका में कोई परिवर्तन को निरीक्षण किया जाना चाहिए."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "बहिष्कृत URIs विभाजन"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "स्कैनिंग से अलग करने के लिए विभाजन के लिए URIs की सूचि."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Toolbar is Visible"
-msgstr "उपकरण-पट्टी दृष्टिगोचर है"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Whether the toolbar should be visible in main window."
-msgstr "क्या टूलबार को मुख्य विंडो में दिखाई देना चाहिए."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Statusbar is Visible"
-msgstr "प्रस्थिति पट्टी दृश्यमान है"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "क्या मुख्य विंडो के तल का स्थितिबार को दिखाई पड़ना चाहिए."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "चार्ट किस प्रकार प्रदर्शित किया जाना चाहिए."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "_Analyzer"
-msgstr "विश्लेषक (_A)"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "छपाई संस्करण सूचना और निकास"
 
-#: ../data/baobab-main-window.ui.h:2
-msgid "Scan _Home Folder"
-msgstr "होम फ़ोल्डर स्कैन करें (_H)"
+#: ../src/baobab-application.vala:104
+#| msgid "Disk Usage Analyzer"
+msgid "- Disk Usage Analyzer"
+msgstr "- डिस्क प्रयोग विश्लेषण"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Scan _Filesystem"
-msgstr "स्कैन फाइलसिस्टम (_F)"
-
-#: ../data/baobab-main-window.ui.h:4
-#| msgid "Scan Folder"
-msgid "Scan F_older…"
-msgstr "स्कैन फ़ोल्डर… (_o)"
-
-#: ../data/baobab-main-window.ui.h:5
-#| msgid "Scan Remote Folder"
-msgid "S_can Remote Folder…"
-msgstr "रिमोट फोल्डर स्कैन करें… (_c)"
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "_Edit"
-msgstr "संपादन (_E)"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "_Expand All"
-msgstr "सभी विस्तारित करें (_E)"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "_Collapse All"
-msgstr "सभी कोलैप्स करें (_C)"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "_View"
-msgstr "देखें (_V)"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "_Toolbar"
-msgstr "उपकरण-पट्टी (_T)"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "St_atusbar"
-msgstr "स्थिति-पट्टी (_a)"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "All_ocated Space"
-msgstr "आबंटित स्थान (_o)"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "_Help"
-msgstr "मदद (_H)"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "_Contents"
-msgstr "विषय सूची (_C)"
-
-#: ../data/baobab-main-window.ui.h:16
-#| msgid "Rescan your home folder?"
-msgid "Scan your home folder"
-msgstr "अपना होम फोल्डर स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Scan Home"
-msgstr "घर स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:18
-#| msgid "Scan filesystem"
-msgid "Scan the file system"
-msgstr "फाइल सिस्टम स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:19
-#| msgid "Scan Filesystem"
-msgid "Scan File System"
-msgstr "फाइल सिस्टम स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "Scan a folder"
-msgstr "फ़ोल्डर स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "Scan Folder"
-msgstr "स्कैन फ़ोल्डर"
-
-#: ../data/baobab-main-window.ui.h:22
-#| msgid "Scan a remote folder"
-msgid "Scan a remote folder or file system"
-msgstr "दूरस्थ फोल्डर या फाइल स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "Scan Remote Folder"
-msgstr "रिमोट फोल्डर स्कैन करें"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "Stop scanning"
-msgstr "स्कैनिंग रोकें"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "Refresh"
-msgstr "ताज़ा करें"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-#| msgid "Scanning..."
-msgid "Scanning…"
-msgstr "स्कैन कर रहा है…"
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "कुल फ़ाइल-सिस्टम क्षमता:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "प्रयुक्त:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "उपलब्ध:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-#| msgid "Calculating percentage bars..."
-msgid "Calculating percentage bars…"
-msgstr "प्रतिशत बार की गणना कर रहा है..."
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "तैयार"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "कुल फ़ाइल-सिस्टम क्षमता"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "कुल फाइलसिस्टम प्रयोग"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "इसके लिये हार्डलिंक शामिल करता है:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "% 5d वस्तु"
-msgstr[1] "% 5d वस्तु"
+#| msgid "%5d item"
+#| msgid_plural "%5d items"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d वस्तु"
+msgstr[1] "%d वस्तु"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "मॉनिटरिंग प्रारंभ नही कर सका"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "आपके होम फोल्डर में परिवर्तन निरीक्षण नहीं किया जायेगा."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "बतौर रिंग चार्ट देखें"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "ट्रीमैप चार्ट रूप में देखें"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "संस्करण दिखाएँ"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[DIRECTORY]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "कई वितर्क. केवल एक निर्देशिका निर्दिष्ट की जा सकती है."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "कोई आरोह बिंदु नहीं पता किया है."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "बिना आरोह बिंदु के डिस्क प्रयोग का विश्लेषण नहीं किया जा सकता है."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "अधिकतम गहराई"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "रूट से चार्ट में अधिकतम गहराई ली गई"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "चार्ट मॉडल"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "चार्ट का मॉडल सेट करें"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "चार्ट रूट नोड"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "मॉडल से रूट नोड सेट करें"
 
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "एक जनक फोल्डर बनायें"
+#: ../src/baobab-chart.c:898
+#| msgid "Move to parent folder"
+msgid "_Move to parent folder"
+msgstr "जनक फ़ोल्डर में खिसकाएँ (_M)"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "बडे रूप में दिखाएँ"
+#: ../src/baobab-chart.c:902
+#| msgid "Zoom in"
+msgid "Zoom _in"
+msgstr "बड़ा आकार (_i)"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "छोटे रूप में दिखाएँ"
+#: ../src/baobab-chart.c:906
+#| msgid "Zoom out"
+msgid "Zoom _out"
+msgstr "छोटा आकार (_o)"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "सहेजें स्क्रीनशॉट"
+#: ../src/baobab-location.vala:52
+#| msgid "Scan home folder"
+msgid "Home folder"
+msgstr "घर फ़ोल्डर"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "pixbuf बिंब बना नहीं सकता!"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "प्रधान वॉल्यूम"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "स्नैपशॉट सहेजें"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "फ़ोल्डर स्कैन करें"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "चित्र प्रकार (_I):"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "स्कैन फ़ोल्डर"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "स्कैन"
+#: ../src/baobab-main-window.ui.h:3
+#| msgid "Scan Remote Folder"
+msgid "Scan a remote folder"
+msgstr "रिमोट फोल्डर स्कैन करें"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "उपकरण"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "रिमोट फोल्डर स्कैन करें"
 
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "आरोह बिंदु"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+#| msgid "Cannot scan location \"%s\""
+msgid "Show all locations"
+msgstr "सभी स्थान दिखाएँ"
 
-#: ../src/baobab-prefs.c:197
-#| msgid "Filesystem Type"
-msgid "File System Type"
-msgstr "फ़ाइल तंत्र प्रकार"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "फिर लोड करें"
 
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "कुल आकार"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "बंद करें"
 
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "उपलब्ध"
-
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "\"%s\" स्थान स्कैन नहीं कर सकता है"
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "पसंदीदा स्थानः"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "जन FTP"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (with login)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "विंडोज़ शेयर"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "सुरक्षित WebDAV (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "सर्वर से जोड़ नहीं सका. सर्वर हेतु आपको एक नाम प्रविष्ट करना होगा."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "कृपया एक नाम प्रविष्ट करें तथा पुनः कोशिश करें."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "स्थान (यूआरएल): (_L)"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "सर्वर (_S):"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "वैकल्पिक जानकारी"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "साझा (_S):"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "पोर्ट (_P):"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "फ़ोल्डर (_F):"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "उपयोक्ता नाम (_U):"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "डोमेन नाम (_D):"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "सर्वर से जुड़ें"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "सेवा प्रकार (_t):"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "स्कैन करें (_S)"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "अपना होम फोल्डर फिर स्कैन करें?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"आपके होम फोल्डर की सामग्री बदल गई है. डिस्क प्रयोग विवरण को अद्यतन करने के "
-"लिए फिर "
-"स्कैन करें चुनें."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "फिर स्कैन करें (_R)"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "फ़ोल्डर"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:9
 msgid "Usage"
 msgstr "उपयोग"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "आकार"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:11
 msgid "Contents"
 msgstr "विषय सूची"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "फोल्डर चुनें"
+#: ../src/baobab-main-window.ui.h:12
+#| msgid "View as Rings Chart"
+msgid "Rings Chart"
+msgstr "रिंग चार्ट"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "छुपे फोल्डर दिखाएँ (_S)"
+#: ../src/baobab-main-window.ui.h:13
+#| msgid "View as Treemap Chart"
+msgid "Treemap Chart"
+msgstr "ट्रीमैप चार्ट"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "कोई अलग किया फोल्डर जाँच नहीं सकता है!"
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" एक वैध फोल्डर नहीं है"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "डिस्क प्रयोग विश्लेषण नहीं कर सका."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:14
 msgid "_Open Folder"
 msgstr "फोल्डर खोलें (_O)"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Copy Path to Clipboard"
+msgstr "क्लिपबोर्ड में पथ की नक़ल लें (_C)"
+
+#: ../src/baobab-main-window.ui.h:16
 msgid "Mo_ve to Trash"
 msgstr "रद्दी में भेजें (_v)"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "फ़ोल्डर \"%s\" खोल नहीं सका."
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "मदद (_H)"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr ""
-"यहाँ कोई भी ऐसे प्रदर्शक संस्थापित नहीं हैं जो फोल्डर को प्रदर्शित कर सकें."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "परिचय (_A)"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "\"%s\"  को रद्दी में नहीं ले जा सका."
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "बाहर (_Q)"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "रद्दी में फाइल नहीं खिसका सका"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "विश्लेषक (_A)"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "विवरण %s:"
+#: ../src/baobab-menu.ui.h:5
+#| msgid "Scan Home"
+msgid "_Scan Home"
+msgstr "घर स्कैन करें (_S)"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "मदद दिखाने में कोई त्रुटि हुई."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "स्कैन फ़ोल्डर… (_o)"
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
+#: ../src/baobab-menu.ui.h:7
+#| msgid "S_can Remote Folder…"
+msgid "Scan Remote Fo_lder…"
+msgstr "रिमोट फोल्डर स्कैन करें… (_l)"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "देखें (_V)"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "रोकें (_S)"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "पुनः लोड करें (_R)"
+
+#: ../src/baobab-menu.ui.h:11
+#| msgid "All_ocated Space"
+msgid "_Allocated Space"
+msgstr "आबंटित स्थान (_A)"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "सभी विस्तारित करें (_E)"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "सभी कोलैप्स करें (_C)"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "फोल्डर चुनें"
+
+#: ../src/baobab-window.vala:250
+#| msgid "Could not analyze disk usage."
+msgid "Could not analyze volume."
+msgstr "वॉल्यूम का विश्लेषण नहीं कर सका."
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "डिस्क प्रयोग विश्लेषण के लिये एक आलेखीय औजार"
 
 #  Translator credits
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr "राजेश रंजन (rranjan@redhat.com, rajeshkajha@yahoo.com)"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "दस्तावेज़ मौज़ूद नहीं है."
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "रद्द करें"
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "फोल्डर मौज़ूद नहीं है."
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"फ़ोल्डर \"%s\" स्कैन नहीं कर सका या कुछ इसके फ़ोल्डर को जो यह समाहित करता है."
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" एक वैध फोल्डर नहीं है"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "डिस्क प्रयोग विश्लेषण नहीं कर सका."
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "डिस्क प्रयोग विश्लेषक वरीयता"
+
+#~| msgid "Select _devices to include in filesystem scan:"
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr "फाइलसिस्टम स्कैन में शामिल करने के लिए डिवाइस चुनें: (_d)"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "अपने होम फोल्डर में परिवर्तन निरीक्षण करें (_M)"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "क्या होम निर्देशिका में कोई परिवर्तन को निरीक्षण किया जाना चाहिए."
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "उपकरण-पट्टी दृष्टिगोचर है"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "क्या टूलबार को मुख्य विंडो में दिखाई देना चाहिए."
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "प्रस्थिति पट्टी दृश्यमान है"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "क्या मुख्य विंडो के तल का स्थितिबार को दिखाई पड़ना चाहिए."
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "होम फ़ोल्डर स्कैन करें (_H)"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "स्कैन फाइलसिस्टम (_F)"
+
+#~ msgid "_Edit"
+#~ msgstr "संपादन (_E)"
+
+#~ msgid "_Toolbar"
+#~ msgstr "उपकरण-पट्टी (_T)"
+
+#~ msgid "St_atusbar"
+#~ msgstr "स्थिति-पट्टी (_a)"
+
+#~ msgid "_Contents"
+#~ msgstr "विषय सूची (_C)"
+
+#~| msgid "Rescan your home folder?"
+#~ msgid "Scan your home folder"
+#~ msgstr "अपना होम फोल्डर स्कैन करें"
+
+#~| msgid "Scan filesystem"
+#~ msgid "Scan the file system"
+#~ msgstr "फाइल सिस्टम स्कैन करें"
+
+#~| msgid "Scan Filesystem"
+#~ msgid "Scan File System"
+#~ msgstr "फाइल सिस्टम स्कैन करें"
+
+#~| msgid "Scan a remote folder"
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "दूरस्थ फोल्डर या फाइल स्कैन करें"
+
+#~ msgid "Stop scanning"
+#~ msgstr "स्कैनिंग रोकें"
+
+#~ msgid "Refresh"
+#~ msgstr "ताज़ा करें"
+
+#~| msgid "Scanning..."
+#~ msgid "Scanning…"
+#~ msgstr "स्कैन कर रहा है…"
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "कुल फ़ाइल-सिस्टम क्षमता:"
+
+#~ msgid "used:"
+#~ msgstr "प्रयुक्त:"
+
+#~ msgid "available:"
+#~ msgstr "उपलब्ध:"
+
+#~| msgid "Calculating percentage bars..."
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "प्रतिशत बार की गणना कर रहा है..."
+
+#~ msgid "Ready"
+#~ msgstr "तैयार"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "कुल फ़ाइल-सिस्टम क्षमता"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "कुल फाइलसिस्टम प्रयोग"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "इसके लिये हार्डलिंक शामिल करता है:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "मॉनिटरिंग प्रारंभ नही कर सका"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "आपके होम फोल्डर में परिवर्तन निरीक्षण नहीं किया जायेगा."
+
+#~ msgid "Show version"
+#~ msgstr "संस्करण दिखाएँ"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[DIRECTORY]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "कई वितर्क. केवल एक निर्देशिका निर्दिष्ट की जा सकती है."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "कोई आरोह बिंदु नहीं पता किया है."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "बिना आरोह बिंदु के डिस्क प्रयोग का विश्लेषण नहीं किया जा सकता है."
+
+#~ msgid "Save screenshot"
+#~ msgstr "सहेजें स्क्रीनशॉट"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "pixbuf बिंब बना नहीं सकता!"
+
+#~ msgid "Save Snapshot"
+#~ msgstr "स्नैपशॉट सहेजें"
+
+#~ msgid "_Image type:"
+#~ msgstr "चित्र प्रकार (_I):"
+
+#~ msgid "Scan"
+#~ msgstr "स्कैन"
+
+#~ msgid "Device"
+#~ msgstr "उपकरण"
+
+#~ msgid "Mount Point"
+#~ msgstr "आरोह बिंदु"
+
+#~| msgid "Filesystem Type"
+#~ msgid "File System Type"
+#~ msgstr "फ़ाइल तंत्र प्रकार"
+
+#~ msgid "Total Size"
+#~ msgstr "कुल आकार"
+
+#~ msgid "Available"
+#~ msgstr "उपलब्ध"
+
+#~ msgid "Custom Location"
+#~ msgstr "पसंदीदा स्थानः"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "जन FTP"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (with login)"
+
+#~ msgid "Windows share"
+#~ msgstr "विंडोज़ शेयर"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "सुरक्षित WebDAV (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr "सर्वर से जोड़ नहीं सका. सर्वर हेतु आपको एक नाम प्रविष्ट करना होगा."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "कृपया एक नाम प्रविष्ट करें तथा पुनः कोशिश करें."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "स्थान (यूआरएल): (_L)"
+
+#~ msgid "_Server:"
+#~ msgstr "सर्वर (_S):"
+
+#~ msgid "Optional information:"
+#~ msgstr "वैकल्पिक जानकारी"
+
+#~ msgid "_Share:"
+#~ msgstr "साझा (_S):"
+
+#~ msgid "_Port:"
+#~ msgstr "पोर्ट (_P):"
+
+#~ msgid "_Folder:"
+#~ msgstr "फ़ोल्डर (_F):"
+
+#~ msgid "_User Name:"
+#~ msgstr "उपयोक्ता नाम (_U):"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "डोमेन नाम (_D):"
+
+#~ msgid "Connect to Server"
+#~ msgstr "सर्वर से जुड़ें"
+
+#~ msgid "Service _type:"
+#~ msgstr "सेवा प्रकार (_t):"
+
+#~ msgid "_Scan"
+#~ msgstr "स्कैन करें (_S)"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "अपना होम फोल्डर फिर स्कैन करें?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "आपके होम फोल्डर की सामग्री बदल गई है. डिस्क प्रयोग विवरण को अद्यतन करने के लिए फिर "
+#~ "स्कैन करें चुनें."
+
+#~ msgid "_Rescan"
+#~ msgstr "फिर स्कैन करें (_R)"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "छुपे फोल्डर दिखाएँ (_S)"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "कोई अलग किया फोल्डर जाँच नहीं सकता है!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "फ़ोल्डर \"%s\" खोल नहीं सका."
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "यहाँ कोई भी ऐसे प्रदर्शक संस्थापित नहीं हैं जो फोल्डर को प्रदर्शित कर सकें."
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "\"%s\"  को रद्दी में नहीं ले जा सका."
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "रद्दी में फाइल नहीं खिसका सका"
+
+#~ msgid "Details: %s"
+#~ msgstr "विवरण %s:"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "मदद दिखाने में कोई त्रुटि हुई."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "दस्तावेज़ मौज़ूद नहीं है."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "फोल्डर मौज़ूद नहीं है."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "रिमोट फोल्डर स्कैन करें (_c)..."
 
 #~ msgid "Scan F_older..."
 #~ msgstr "स्कैन फ़ोल्डर (_o)..."
-
-#~ msgid "Scan home folder"
-#~ msgstr "होम फोल्डर स्कैन करें"
