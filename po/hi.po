@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.hi\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
-"&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-11 16:34+0000\n"
-"PO-Revision-Date: 2012-09-17 14:33+0530\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-17 09:03+0000\n"
+"PO-Revision-Date: 2012-09-17 14:54+0530\n"
 "Last-Translator: rajesh <rajeshkajha@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
@@ -40,6 +40,11 @@ msgstr "बहिष्कृत URIs विभाजन"
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "स्कैनिंग से अलग करने के लिए विभाजन के लिए URIs की सूचि."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#| msgid "Rings Chart"
+msgid "Active Chart"
+msgstr "सक्रिय चार्ट"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "चार्ट किस प्रकार प्रदर्शित किया जाना चाहिए."
@@ -49,14 +54,11 @@ msgid "Print version information and exit"
 msgstr "छपाई संस्करण सूचना और निकास"
 
 #: ../src/baobab-application.vala:104
-#| msgid "Disk Usage Analyzer"
 msgid "- Disk Usage Analyzer"
 msgstr "- डिस्क प्रयोग विश्लेषण"
 
 #: ../src/baobab-cellrenderers.vala:54
 #, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d वस्तु"
@@ -87,22 +89,18 @@ msgid "Set the root node from the model"
 msgstr "मॉडल से रूट नोड सेट करें"
 
 #: ../src/baobab-chart.c:898
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
 msgstr "जनक फ़ोल्डर में खिसकाएँ (_M)"
 
 #: ../src/baobab-chart.c:902
-#| msgid "Zoom in"
 msgid "Zoom _in"
 msgstr "बड़ा आकार (_i)"
 
 #: ../src/baobab-chart.c:906
-#| msgid "Zoom out"
 msgid "Zoom _out"
 msgstr "छोटा आकार (_o)"
 
 #: ../src/baobab-location.vala:52
-#| msgid "Scan home folder"
 msgid "Home folder"
 msgstr "घर फ़ोल्डर"
 
@@ -119,7 +117,6 @@ msgid "Scan Folder"
 msgstr "स्कैन फ़ोल्डर"
 
 #: ../src/baobab-main-window.ui.h:3
-#| msgid "Scan Remote Folder"
 msgid "Scan a remote folder"
 msgstr "रिमोट फोल्डर स्कैन करें"
 
@@ -128,7 +125,6 @@ msgid "Scan Remote Folder"
 msgstr "रिमोट फोल्डर स्कैन करें"
 
 #: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-#| msgid "Cannot scan location \"%s\""
 msgid "Show all locations"
 msgstr "सभी स्थान दिखाएँ"
 
@@ -157,12 +153,10 @@ msgid "Contents"
 msgstr "विषय सूची"
 
 #: ../src/baobab-main-window.ui.h:12
-#| msgid "View as Rings Chart"
 msgid "Rings Chart"
 msgstr "रिंग चार्ट"
 
 #: ../src/baobab-main-window.ui.h:13
-#| msgid "View as Treemap Chart"
 msgid "Treemap Chart"
 msgstr "ट्रीमैप चार्ट"
 
@@ -195,7 +189,6 @@ msgid "_Analyzer"
 msgstr "विश्लेषक (_A)"
 
 #: ../src/baobab-menu.ui.h:5
-#| msgid "Scan Home"
 msgid "_Scan Home"
 msgstr "घर स्कैन करें (_S)"
 
@@ -204,7 +197,6 @@ msgid "Scan F_older…"
 msgstr "स्कैन फ़ोल्डर… (_o)"
 
 #: ../src/baobab-menu.ui.h:7
-#| msgid "S_can Remote Folder…"
 msgid "Scan Remote Fo_lder…"
 msgstr "रिमोट फोल्डर स्कैन करें… (_l)"
 
@@ -221,7 +213,6 @@ msgid "_Reload"
 msgstr "पुनः लोड करें (_R)"
 
 #: ../src/baobab-menu.ui.h:11
-#| msgid "All_ocated Space"
 msgid "_Allocated Space"
 msgstr "आबंटित स्थान (_A)"
 
@@ -238,7 +229,6 @@ msgid "Select Folder"
 msgstr "फोल्डर चुनें"
 
 #: ../src/baobab-window.vala:250
-#| msgid "Could not analyze disk usage."
 msgid "Could not analyze volume."
 msgstr "वॉल्यूम का विश्लेषण नहीं कर सका."
 
