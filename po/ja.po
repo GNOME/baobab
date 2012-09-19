@@ -13,14 +13,15 @@
 # Takayoshi OKANO <kano@na.rim.or.jp>, 2011.
 # Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2012.
 # Shuuji Takahashi <shuuji3@gmail.com>, 2012.
+# Noriko Mizumoto <noriko@fedoraproject.org>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-19 03:25+0000\n"
-"PO-Revision-Date: 2012-08-19 19:19+0900\n"
-"Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
+"POT-Creation-Date: 2012-09-11 16:34+0000\n"
+"PO-Revision-Date: 2012-09-03 16:58+0000\n"
+"Last-Translator: Noriko Mizumoto <noriko@fedoraproject.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -37,26 +38,18 @@ msgid "Check folder sizes and available disk space"
 msgstr "フォルダーと利用可能なディスク容量をチェックします"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "ホームの監視"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "ホームフォルダーの変更を監視するかどうかを設定します。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "対象外となるパーティションの URI"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "スキャンを実行しないパーティションの URI を要素とするリストです。"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "アクティブなチャート"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "表示すべきチャートの種類を設定します。"
 
@@ -69,12 +62,10 @@ msgid "- Disk Usage Analyzer"
 msgstr "- ディスク使用量の解析"
 
 #: ../src/baobab-cellrenderers.vala:54
-#, fuzzy, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
+#, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] "%5d 個のオブジェクト"
+msgstr[0] "%d 個のアイテム"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
@@ -145,46 +136,42 @@ msgid "Reload"
 msgstr "再読み込み"
 
 #: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "ラベル"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "閉じる"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "フォルダー"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:9
 msgid "Usage"
 msgstr "使用量"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "サイズ"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:11
 msgid "Contents"
 msgstr "内容"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
 msgstr "リングチャート"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
 msgstr "ツリーマップチャート"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:14
 msgid "_Open Folder"
 msgstr "フォルダーを開く(_O)"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Copy Path to Clipboard"
 msgstr "パスをクリップボードにコピーする(_C)"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:16
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
 
@@ -272,10 +259,8 @@ msgstr ""
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
 #: ../src/baobab-window.vala:465
-#, fuzzy
-#| msgid "Cancel scan"
 msgid "Cancel"
-msgstr "スキャンのキャンセル"
+msgstr "取り消し"
 
 #: ../src/baobab-window.vala:557
 #, c-format
@@ -291,6 +276,15 @@ msgstr "\"%s\" はフォルダーとして妥当ではありません"
 #: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "ディスクの使用量を解析できませんでした。"
+
+#~ msgid "label"
+#~ msgstr "ラベル"
+
+#~ msgid "Monitor Home"
+#~ msgstr "ホームの監視"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "ホームフォルダーの変更を監視するかどうかを設定します。"
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "ツールバーの表示可否"
