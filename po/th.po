@@ -1,17 +1,18 @@
 # Thai translation for gnome-utils.
-# Copyright (C) 2004-2011 Free Software Foundation, Inc.
+# Copyright (C) 2004-2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-utils package.
 # Khunti Yeesoon <sc445138@bucc3.buu.ac.th>, 2003.
 # Paisa Seeluangsawat <paisa@users.sf.net>, 2004.
 # Supranee Thirawatthanasuk <supranee@opentle.org>, 2004.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2011.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2011-09-18 14:16+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-11 16:34+0000\n"
+"PO-Revision-Date: 2012-09-20 20:19+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -20,547 +21,512 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "ตรวจสอบขนาดของโฟลเดอร์ต่างๆ และเนื้อที่ว่างในดิสก์"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "เครื่องมือวิเคราะห์การใช้ดิสก์"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "ปรับแต่งเครื่องมือวิเคราะห์การใช้ดิสก์"
-
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
-msgstr "เลือกอุป_กรณ์ที่จะนับรวมในการตรวจข้อมูลระบบแฟ้ม:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "เ_ฝ้าสังเกตการเปลี่ยนแปลงในโฟลเดอร์บ้านของคุณ"
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "ตรวจสอบขนาดของโฟลเดอร์ต่างๆ และเนื้อที่ว่างในดิสก์"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "รายชื่อ URI ของพาร์ทิชันที่จะไม่นับรวมในการตรวจข้อมูล"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "แผนภูมิที่เปิดใช้"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI ของพาร์ทิชันที่ไม่นับรวม"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "รายชื่อ URI ของพาร์ทิชันที่จะไม่นับรวมในการตรวจข้อมูล"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "แผนภูมิที่เปิดใช้"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "เฝ้าสังเกตไดเรกทอรีบ้าน"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "แสดงแถบสถานะ"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "แสดงแถบเครื่องมือ"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "กำหนดว่าจะเฝ้าสังเกตการเปลี่ยนแปลงในไดเรกทอรีบ้านหรือไม่"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "กำหนดว่าจะแสดงแถบสถานะที่ด้านล่างของหน้าต่างหลักหรือไม่"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "กำหนดว่าจะแสดงแถบเครื่องมือในหน้าต่างหลักหรือไม่"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "แผนภูมิชนิดใดที่จะให้แสดง"
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "_พื้นที่ที่จอง"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "แสดงเลขรุ่นแล้วออก"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "ปรับแสดง"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- เครื่องมือวิเคราะห์การใช้ดิสก์"
 
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "ตรวจข้อมูลโฟลเดอร์ในเ_ครือข่าย..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "ตรวจข้อมูลโ_ฟลเดอร์..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "ตรวจข้อมูลระบบแฟ้ม"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "ตรวจข้อมูลโฟลเดอร์"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "ตรวจข้อมูลโฟลเดอร์บ้าน"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "ตรวจข้อมูลโฟลเดอร์ในเครือข่าย"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "ตรวจข้อมูล_ระบบแฟ้ม"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "ตรวจข้อมูลโฟลเดอร์บ้าน"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "ตรวจข้อมูลโฟลเดอร์"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "ตรวจข้อมูลโฟลเดอร์ในเครือข่าย"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "ตรวจข้อมูลระบบแฟ้ม"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "ตรวจข้อมูลโฟลเดอร์บ้าน"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "แถบ_สถานะ"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "หยุดตรวจข้อมูล"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "เ_ครื่องมือวิเคราะห์"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "_พับเก็บทั้งหมด"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "เนื้อ_หา"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "แ_ก้ไข"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "_ขยายทั้งหมด"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "_วิธีใช้"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "แ_ถบเครื่องมือ"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_มุมมอง"
-
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "กำลังตรวจข้อมูล..."
-
-#: ../src/baobab.c:182
-msgid "Total filesystem capacity:"
-msgstr "ความจุรวมของระบบแฟ้ม:"
-
-#: ../src/baobab.c:183
-msgid "used:"
-msgstr "ใช้ไป:"
-
-#: ../src/baobab.c:184
-msgid "available:"
-msgstr "เหลืออยู่:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "กำลังคำนวณแถบร้อยละ..."
-
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
-msgid "Ready"
-msgstr "พร้อม"
-
-#: ../src/baobab.c:421
-msgid "Total filesystem capacity"
-msgstr "ความจุรวมของระบบแฟ้ม"
-
-#: ../src/baobab.c:443
-msgid "Total filesystem usage"
-msgstr "การใช้เนื้อที่ทั้งหมดในระบบแฟ้ม"
-
-#: ../src/baobab.c:484
-msgid "contains hardlinks for:"
-msgstr "มี hardlink รวม:"
-
-#: ../src/baobab.c:493
+#: ../src/baobab-cellrenderers.vala:54
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d รายการ"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d รายการ"
 
-#: ../src/baobab.c:620
-msgid "Could not initialize monitoring"
-msgstr "ไม่สามารถเริ่มใช้การเฝ้าสังเกตแฟ้มได้"
-
-#: ../src/baobab.c:621
-msgid "Changes to your home folder will not be monitored."
-msgstr "จะไม่มีการเฝ้าสังเกตการเปลี่ยนแปลงในไดเรกทอรีบ้านของคุณ"
-
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "ย้ายไปยังโฟลเดอร์แม่"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "แสดงขยาย"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "แสดงย่อ"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "บันทึกภาพหน้าจอ"
-
-#: ../src/baobab.c:1143
-msgid "View as Rings Chart"
-msgstr "แสดงเป็นแผนภูมิวงแหวน"
-
-#: ../src/baobab.c:1145
-msgid "View as Treemap Chart"
-msgstr "แสดงเป็นแผนภูมิต้นไม้"
-
-#: ../src/baobab.c:1250
-msgid "Show version"
-msgstr "แสดงหมายเลขรุ่น"
-
-#: ../src/baobab.c:1251
-msgid "[DIRECTORY]"
-msgstr "[DIRECTORY]"
-
-#: ../src/baobab.c:1281
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "อาร์กิวเมนต์เยอะเกินไป สามารถระบุไดเรกทอรีได้เพียงไดเรกทอรีเดียวเท่านั้น"
-
-#: ../src/baobab.c:1298
-msgid "Could not detect any mount point."
-msgstr "ตรวจไม่พบจุดเมานท์ใดๆ"
-
-#: ../src/baobab.c:1300
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "ถ้าไม่มีจุดเมานท์ ก็ไม่สามารถวิเคราะห์การใช้เนื้อที่ดิสก์ได้"
-
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "ความลึกสูงสุด"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "ความลึกสูงสุดที่จะวาดในแผนภูมิ นับจากระดับบนสุด"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "โมเดลแผนภูมิ"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "กำหนดโมเดลสำหรับแผนภูมิ"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "โหนดรากของแผนภูมิ"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "กำหนดโหนดรากในโมเดล"
 
-#: ../src/baobab-chart.c:1690
-msgid "Cannot create pixbuf image!"
-msgstr "ไม่สามารถสร้างรูปภาพใน pixbuf!"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "ย้ายไปยังโฟลเดอร์แ_ม่"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
-msgid "Save Snapshot"
-msgstr "บันทึกภาพ"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "แสดง_ขยาย"
 
-#: ../src/baobab-chart.c:1727
-msgid "_Image type:"
-msgstr "_ชนิดของรูปภาพ:"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "แสดง_ย่อ"
 
-#: ../src/baobab-prefs.c:172
-msgid "Scan"
-msgstr "ตรวจ"
+#: ../src/baobab-location.vala:52
+msgid "Home folder"
+msgstr "โฟลเดอร์บ้าน"
 
-#: ../src/baobab-prefs.c:179
-msgid "Device"
-msgstr "อุปกรณ์"
+#: ../src/baobab-location.vala:91
+msgid "Main volume"
+msgstr "โวลุมหลัก"
 
-#: ../src/baobab-prefs.c:187
-msgid "Mount Point"
-msgstr "ตำแหน่งเมานท์"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan a folder"
+msgstr "ตรวจข้อมูลโฟลเดอร์"
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
-msgstr "ชนิดระบบแฟ้ม"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Folder"
+msgstr "ตรวจข้อมูลโฟลเดอร์"
 
-#: ../src/baobab-prefs.c:203
-msgid "Total Size"
-msgstr "ขนาดทั้งหมด"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Scan a remote folder"
+msgstr "ตรวจข้อมูลโฟลเดอร์ในเครือข่าย"
 
-#: ../src/baobab-prefs.c:212
-msgid "Available"
-msgstr "เหลืออยู่"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan Remote Folder"
+msgstr "ตรวจข้อมูลโฟลเดอร์ในเครือข่าย"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "ไม่สามารถตรวจข้อมูลที่ตำแหน่ง \"%s\""
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
+msgid "Show all locations"
+msgstr "แสดงตำแหน่งทั้งหมด"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "ตำแหน่งกำหนดเอง"
+#: ../src/baobab-main-window.ui.h:6
+msgid "Reload"
+msgstr "โหลดใหม่"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "ปิด"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP สาธารณะ"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (แบบล็อกอิน)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "โฟลเดอร์ใช้ร่วมของวินโดวส์"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV นิรภัย (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr "ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ คุณต้องป้อนชื่อของเซิร์ฟเวอร์ด้วย"
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "กรุณาป้อนชื่อแล้วลองใหม่"
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_ตำแหน่ง (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "เ_ซิร์ฟเวอร์:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "ข้อมูลประกอบ:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "ชื่อใช้_ร่วม:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_พอร์ต:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "โ_ฟลเดอร์:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "ชื่อผู้ใ_ช้:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "ชื่อโ_ดเมน:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "เชื่อมต่อไปยังเซิร์ฟเวอร์"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "ชนิดของ_บริการ:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_ตรวจ"
-
-#: ../src/baobab-treeview.c:82
-msgid "Rescan your home folder?"
-msgstr "ตรวจข้อมูลโฟลเดอร์บ้านของคุณใหม่หรือไม่?"
-
-#: ../src/baobab-treeview.c:83
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"เนื้อหาของโฟลเดอร์บ้านของคุณมีการเปลี่ยนแปลง "
-"เลือกตรวจข้อมูลใหม่หากต้องการปรับข้อมูลรายละเอียดการใช้ดิสก์"
-
-#: ../src/baobab-treeview.c:84
-msgid "_Rescan"
-msgstr "_ตรวจข้อมูลใหม่"
-
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "โฟลเดอร์"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-main-window.ui.h:9
 msgid "Usage"
 msgstr "การใช้เนื้อที่"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "ขนาด"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-main-window.ui.h:11
 msgid "Contents"
 msgstr "เนื้อหา"
 
-#: ../src/baobab-utils.c:72
-msgid "Select Folder"
-msgstr "เลือกโฟลเดอร์"
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "แผนภูมิวงแหวน"
 
-#. add extra widget
-#: ../src/baobab-utils.c:84
-msgid "_Show hidden folders"
-msgstr "แ_สดงโฟลเดอร์ซ่อนด้วย"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "แผนภูมิต้นไม้"
 
-#: ../src/baobab-utils.c:263
-msgid "Cannot check an excluded folder!"
-msgstr "ไม่สามารถตรวจสอบโฟลเดอร์ที่จะไม่นับรวมได้!"
-
-#: ../src/baobab-utils.c:287
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" ไม่ใช่โฟลเดอร์ที่ใช้การได้"
-
-#: ../src/baobab-utils.c:290
-msgid "Could not analyze disk usage."
-msgstr "ไม่สามารถวิเคราะห์การใช้งานดิสก์ได้"
-
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-main-window.ui.h:14
 msgid "_Open Folder"
 msgstr "เปิดโฟ_ลเดอร์"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-main-window.ui.h:15
+msgid "_Copy Path to Clipboard"
+msgstr "_คัดลอกพาธไปยังคลิปบอร์ด"
+
+#: ../src/baobab-main-window.ui.h:16
 msgid "Mo_ve to Trash"
 msgstr "_ทิ้งลงถังขยะ"
 
-#: ../src/baobab-utils.c:362
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "ไม่สามารถเปิดโฟลเดอร์ \"%s\""
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_วิธีใช้"
 
-#: ../src/baobab-utils.c:365
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "ไม่มีโปรแกรมที่สามารถแสดงโฟลเดอร์นี้ได้ติดตั้งอยู่"
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "เ_กี่ยวกับ"
 
-#: ../src/baobab-utils.c:433
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "ไม่สามารถย้าย \"%s\" ไปลงถังขยะ"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_ออก"
 
-#: ../src/baobab-utils.c:441
-msgid "Could not move file to the Trash"
-msgstr "ไม่สามารถย้ายแฟ้มไปลงถังขยะ"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "เ_ครื่องมือวิเคราะห์"
 
-#: ../src/baobab-utils.c:443
-#, c-format
-msgid "Details: %s"
-msgstr "รายละเอียด: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_ตรวจข้อมูลโฟลเดอร์บ้าน"
 
-#: ../src/baobab-utils.c:479
-msgid "There was an error displaying help."
-msgstr "เกิดข้อผิดพลาดขณะแสดงวิธีใช้"
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "ตรวจข้อมูลโ_ฟลเดอร์…"
 
-#: ../src/callbacks.c:76
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"โปรแกรมนี้เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ ภายใต้เงื่อนไขของ "
-"GNU General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2 "
-"หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "ตรวจข้อมูลโฟลเดอร์ในเ_ครือข่าย…"
 
-#: ../src/callbacks.c:81
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"โปรแกรมนี้เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ *ไม่มีการรับประกันใดๆ* "
-"ไม่มีแม้การรับประกัน *อรรถประโยชน์เชิงพาณิชย์* หรือ "
-"*ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ* กรุณาอ่าน GNU General Public License "
-"เพื่อดูรายละเอียดเพิ่มเติม"
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "มุ_มมอง"
 
-#: ../src/callbacks.c:86
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้ ถ้าคุณไม่ได้รับ "
-"กรุณาติดต่อไปที่ Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
-"Boston, MA 02110-1301 USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Stop"
+msgstr "_หยุด"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-menu.ui.h:10
+msgid "_Reload"
+msgstr "โห_ลดใหม่"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Allocated Space"
+msgstr "_พื้นที่ที่จอง"
+
+#: ../src/baobab-menu.ui.h:12
+msgid "_Expand All"
+msgstr "_ขยายทั้งหมด"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "_Collapse All"
+msgstr "_พับเก็บทั้งหมด"
+
+#: ../src/baobab-window.vala:204
+msgid "Select Folder"
+msgstr "เลือกโฟลเดอร์"
+
+#: ../src/baobab-window.vala:250
+msgid "Could not analyze volume."
+msgstr "ไม่สามารถวิเคราะห์โวลุมได้"
+
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "เครื่องมือกราฟิกสำหรับวิเคราะห์การใช้งานดิสก์"
 
-#: ../src/callbacks.c:110
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
-"Khunti Yeesoon\n"
-"ไพศาข์ สีเหลืองสวัสดิ์\n"
-"เทพพิทักษ์ การุญบุญญานันท์\n"
+"Khunti Yeesoon <sc445138@bucc3.buu.ac.th>\n"
+"Paisa Seeluangsawat <paisa@users.sf.net>\n"
+"Supranee Thirawatthanasuk <supranee@opentle.org>\n"
+"Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "\n"
 "ถ้ามีเวลาโปรดมาช่วยกันแปล :-)\n"
 "http://gnome-th.sf.net"
 
-#: ../src/callbacks.c:208
-msgid "The document does not exist."
-msgstr "เอกสารไม่มีอยู่จริง"
+#: ../src/baobab-window.vala:465
+msgid "Cancel"
+msgstr "ยกเลิก"
 
-#: ../src/callbacks.c:289
-msgid "The folder does not exist."
-msgstr "โฟลเดอร์ไม่มีอยู่จริง"
+#: ../src/baobab-window.vala:557
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "ไม่สามารถตรวจข้อมูลโฟลเดอร์ \"%s\" หรือโฟลเดอร์ย่อยในนั้น"
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" ไม่ใช่โฟลเดอร์ที่ใช้การได้"
+
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+msgid "Could not analyze disk usage."
+msgstr "ไม่สามารถวิเคราะห์การใช้งานดิสก์ได้"
+
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "ปรับแต่งเครื่องมือวิเคราะห์การใช้ดิสก์"
+
+#~ msgid "Select _devices to include in filesystem scan:"
+#~ msgstr "เลือกอุป_กรณ์ที่จะนับรวมในการตรวจข้อมูลระบบแฟ้ม:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "เ_ฝ้าสังเกตการเปลี่ยนแปลงในโฟลเดอร์บ้านของคุณ"
+
+#~ msgid "Monitor Home"
+#~ msgstr "เฝ้าสังเกตไดเรกทอรีบ้าน"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "แสดงแถบสถานะ"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "แสดงแถบเครื่องมือ"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "กำหนดว่าจะเฝ้าสังเกตการเปลี่ยนแปลงในไดเรกทอรีบ้านหรือไม่"
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "กำหนดว่าจะแสดงแถบสถานะที่ด้านล่างของหน้าต่างหลักหรือไม่"
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "กำหนดว่าจะแสดงแถบเครื่องมือในหน้าต่างหลักหรือไม่"
+
+#~ msgid "Refresh"
+#~ msgstr "ปรับแสดง"
+
+#~ msgid "S_can Remote Folder..."
+#~ msgstr "ตรวจข้อมูลโฟลเดอร์ในเ_ครือข่าย..."
+
+#~ msgid "Scan F_older..."
+#~ msgstr "ตรวจข้อมูลโ_ฟลเดอร์..."
+
+#~ msgid "Scan Filesystem"
+#~ msgstr "ตรวจข้อมูลระบบแฟ้ม"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "ตรวจข้อมูล_ระบบแฟ้ม"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "ตรวจข้อมูลโฟลเดอร์บ้าน"
+
+#~ msgid "Scan filesystem"
+#~ msgstr "ตรวจข้อมูลระบบแฟ้ม"
+
+#~ msgid "St_atusbar"
+#~ msgstr "แถบ_สถานะ"
+
+#~ msgid "Stop scanning"
+#~ msgstr "หยุดตรวจข้อมูล"
+
+#~ msgid "_Contents"
+#~ msgstr "เนื้อ_หา"
+
+#~ msgid "_Edit"
+#~ msgstr "แ_ก้ไข"
+
+#~ msgid "_Toolbar"
+#~ msgstr "แ_ถบเครื่องมือ"
+
+#~ msgid "Scanning..."
+#~ msgstr "กำลังตรวจข้อมูล..."
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "ความจุรวมของระบบแฟ้ม:"
+
+#~ msgid "used:"
+#~ msgstr "ใช้ไป:"
+
+#~ msgid "available:"
+#~ msgstr "เหลืออยู่:"
+
+#~ msgid "Calculating percentage bars..."
+#~ msgstr "กำลังคำนวณแถบร้อยละ..."
+
+#~ msgid "Ready"
+#~ msgstr "พร้อม"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "ความจุรวมของระบบแฟ้ม"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "การใช้เนื้อที่ทั้งหมดในระบบแฟ้ม"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "มี hardlink รวม:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "ไม่สามารถเริ่มใช้การเฝ้าสังเกตแฟ้มได้"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "จะไม่มีการเฝ้าสังเกตการเปลี่ยนแปลงในไดเรกทอรีบ้านของคุณ"
+
+#~ msgid "Save screenshot"
+#~ msgstr "บันทึกภาพหน้าจอ"
+
+#~ msgid "Show version"
+#~ msgstr "แสดงหมายเลขรุ่น"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "อาร์กิวเมนต์เยอะเกินไป สามารถระบุไดเรกทอรีได้เพียงไดเรกทอรีเดียวเท่านั้น"
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "ตรวจไม่พบจุดเมานท์ใดๆ"
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "ถ้าไม่มีจุดเมานท์ ก็ไม่สามารถวิเคราะห์การใช้เนื้อที่ดิสก์ได้"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "ไม่สามารถสร้างรูปภาพใน pixbuf!"
+
+#~ msgid "Save Snapshot"
+#~ msgstr "บันทึกภาพ"
+
+#~ msgid "_Image type:"
+#~ msgstr "_ชนิดของรูปภาพ:"
+
+#~ msgid "Scan"
+#~ msgstr "ตรวจ"
+
+#~ msgid "Device"
+#~ msgstr "อุปกรณ์"
+
+#~ msgid "Mount Point"
+#~ msgstr "ตำแหน่งเมานท์"
+
+#~ msgid "Filesystem Type"
+#~ msgstr "ชนิดระบบแฟ้ม"
+
+#~ msgid "Total Size"
+#~ msgstr "ขนาดทั้งหมด"
+
+#~ msgid "Available"
+#~ msgstr "เหลืออยู่"
+
+#~ msgid "Custom Location"
+#~ msgstr "ตำแหน่งกำหนดเอง"
+
+#~ msgid "Public FTP"
+#~ msgstr "FTP สาธารณะ"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (แบบล็อกอิน)"
+
+#~ msgid "Windows share"
+#~ msgstr "โฟลเดอร์ใช้ร่วมของวินโดวส์"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "WebDAV นิรภัย (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr "ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ คุณต้องป้อนชื่อของเซิร์ฟเวอร์ด้วย"
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "กรุณาป้อนชื่อแล้วลองใหม่"
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_ตำแหน่ง (URI):"
+
+#~ msgid "_Server:"
+#~ msgstr "เ_ซิร์ฟเวอร์:"
+
+#~ msgid "Optional information:"
+#~ msgstr "ข้อมูลประกอบ:"
+
+#~ msgid "_Share:"
+#~ msgstr "ชื่อใช้_ร่วม:"
+
+#~ msgid "_Port:"
+#~ msgstr "_พอร์ต:"
+
+#~ msgid "_Folder:"
+#~ msgstr "โ_ฟลเดอร์:"
+
+#~ msgid "_User Name:"
+#~ msgstr "ชื่อผู้ใ_ช้:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "ชื่อโ_ดเมน:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "เชื่อมต่อไปยังเซิร์ฟเวอร์"
+
+#~ msgid "Service _type:"
+#~ msgstr "ชนิดของ_บริการ:"
+
+#~ msgid "_Scan"
+#~ msgstr "_ตรวจ"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "ตรวจข้อมูลโฟลเดอร์บ้านของคุณใหม่หรือไม่?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "เนื้อหาของโฟลเดอร์บ้านของคุณมีการเปลี่ยนแปลง "
+#~ "เลือกตรวจข้อมูลใหม่หากต้องการปรับข้อมูลรายละเอียดการใช้ดิสก์"
+
+#~ msgid "_Rescan"
+#~ msgstr "_ตรวจข้อมูลใหม่"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "แ_สดงโฟลเดอร์ซ่อนด้วย"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "ไม่สามารถตรวจสอบโฟลเดอร์ที่จะไม่นับรวมได้!"
+
+#~ msgid "Could not open folder \"%s\""
+#~ msgstr "ไม่สามารถเปิดโฟลเดอร์ \"%s\""
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "ไม่มีโปรแกรมที่สามารถแสดงโฟลเดอร์นี้ได้ติดตั้งอยู่"
+
+#~ msgid "Could not move \"%s\" to the Trash"
+#~ msgstr "ไม่สามารถย้าย \"%s\" ไปลงถังขยะ"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "ไม่สามารถย้ายแฟ้มไปลงถังขยะ"
+
+#~ msgid "Details: %s"
+#~ msgstr "รายละเอียด: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "เกิดข้อผิดพลาดขณะแสดงวิธีใช้"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "โปรแกรมนี้เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ "
+#~ "ภายใต้เงื่อนไขของ GNU General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี "
+#~ "ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2 หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "โปรแกรมนี้เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ *ไม่มีการรับประกันใดๆ* "
+#~ "ไม่มีแม้การรับประกัน *อรรถประโยชน์เชิงพาณิชย์* หรือ "
+#~ "*ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ* กรุณาอ่าน GNU General Public License "
+#~ "เพื่อดูรายละเอียดเพิ่มเติม"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้ "
+#~ "ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA 02110-1301 USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "เอกสารไม่มีอยู่จริง"
+
+#~ msgid "The folder does not exist."
+#~ msgstr "โฟลเดอร์ไม่มีอยู่จริง"
