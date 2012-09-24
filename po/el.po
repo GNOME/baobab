@@ -31,9 +31,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-26\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-04 10:01+0000\n"
-"PO-Revision-Date: 2012-08-06 17:57+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-11 16:34+0000\n"
+"PO-Revision-Date: 2012-09-21 09:36+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
 "Language: el\n"
@@ -43,8 +44,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-#: ../src/baobab-window.vala:158
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
 msgid "Disk Usage Analyzer"
 msgstr "Αναλυτής χρήσης δίσκου"
 
@@ -53,26 +53,18 @@ msgid "Check folder sizes and available disk space"
 msgstr "Έλεγχος μεγέθους φακέλων και διαθέσιμου χώρου στο δίσκο"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Παρακολούθηση προσωπικού φακέλου"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Αν θα παρακολουθείται για αλλαγές ο προσωπικός σας κατάλογος."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI κατατμήσεων που εξαιρούνται"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Μια λίστα από URI για κατατμήσεις που θα εξαιρούνται από τη σάρωση."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Ενεργό διάγραμμα"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Ποιος τύπος διαγράμματος θα εμφανιστεί."
 
@@ -81,7 +73,6 @@ msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
 #: ../src/baobab-application.vala:104
-#| msgid "Disk Usage Analyzer"
 msgid "- Disk Usage Analyzer"
 msgstr "- Αναλυτής χρήσης δίσκου"
 
@@ -152,8 +143,7 @@ msgstr "Σάρωση ενός απομακρυσμένου"
 msgid "Scan Remote Folder"
 msgstr "Σάρωση απομακρυσμένου φακέλου"
 
-#: ../src/baobab-main-window.ui.h:5
-#: ../src/baobab-window.vala:469
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
 msgid "Show all locations"
 msgstr "Εμφάνιση όλων των τοποθεσιών"
 
@@ -162,46 +152,42 @@ msgid "Reload"
 msgstr "Επαναφόρτωση"
 
 #: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "ετικέτα"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "Φάκελος"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:9
 msgid "Usage"
 msgstr "Χρήση"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:11
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
 msgstr "Διάγραμμα δακτυλίων"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
-msgstr "Δενδροειδές διάγραμμα "
+msgstr "Διάγραμμα δέντρου"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:14
 msgid "_Open Folder"
 msgstr "Ά_νοιγμα φακέλου "
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:15
 msgid "_Copy Path to Clipboard"
 msgstr "Αντι_γραφή διαδρομής στο πρόχειρο"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:16
 msgid "Mo_ve to Trash"
 msgstr "_Μετακίνηση στα απορρίμματα"
 
@@ -257,23 +243,23 @@ msgstr "Α_νάπτυξη όλων"
 msgid "_Collapse All"
 msgstr "Σύμπτυξη ό_λων"
 
-#: ../src/baobab-window.vala:200
+#: ../src/baobab-window.vala:204
 msgid "Select Folder"
 msgstr "Επιλογή φακέλου"
 
-#: ../src/baobab-window.vala:245
+#: ../src/baobab-window.vala:250
 msgid "Could not analyze volume."
 msgstr "Αδυναμία ανάλυσης τόμου."
 
-#: ../src/baobab-window.vala:297
+#: ../src/baobab-window.vala:302
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:300
+#: ../src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ένα γραφικό εργαλείο για την ανάλυση της χρήσης του δίσκου."
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:310
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -283,27 +269,34 @@ msgstr ""
 " Νίκος Χαρωνιτάκης <nikosx@gmail.com>\n"
 "Για περισσότερα δείτε http://www.gnome.gr/"
 
-#: ../src/baobab-window.vala:460
-#| msgid "Cancel scan"
+#: ../src/baobab-window.vala:465
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../src/baobab-window.vala:550
+#: ../src/baobab-window.vala:557
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Αδυναμία σάρωσης του φακέλου \"%s\" ή μερικών από τους φακέλους που περιέχει."
+msgstr ""
+"Αδυναμία σάρωσης του φακέλου \"%s\" ή μερικών από τους φακέλους που περιέχει."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:567
-#: ../src/baobab-window.vala:573
+#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "Το \"%s\" δεν είναι έγκυρος φάκελος"
 
-#: ../src/baobab-window.vala:568
-#: ../src/baobab-window.vala:574
+#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
 msgstr "Αδυναμία ανάλυσης χρήσης του δίσκου."
+
+#~ msgid "Monitor Home"
+#~ msgstr "Παρακολούθηση προσωπικού φακέλου"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Αν θα παρακολουθείται για αλλαγές ο προσωπικός σας κατάλογος."
+
+#~ msgid "label"
+#~ msgstr "ετικέτα"
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "Η εργαλειοθήκη είναι ορατή "
