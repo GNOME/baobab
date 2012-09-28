@@ -21,6 +21,12 @@
 
 namespace Baobab {
 
+    [DBus (name = "org.freedesktop.hostname1")]
+    interface HostnameIface : Object {
+        public abstract string pretty_hostname { owned get; set; }
+        public abstract string hostname { owned get; set; }
+    }
+
     public class Location {
         public string name { get; private set; }
         public File? file { get; private set; }
@@ -47,6 +53,19 @@ namespace Baobab {
             FileAttribute.STANDARD_TYPE;
 
         private static Location? home_location = null;
+
+        string get_hostname () throws Error {
+            HostnameIface hostname_iface;
+            hostname_iface = Bus.get_proxy_sync (BusType.SYSTEM,
+                                                 "org.freedesktop.hostname1",
+                                                 "/org/freedesktop/hostname1");
+            var pretty_name = hostname_iface.pretty_hostname;
+            if (pretty_name != "") {
+                return pretty_name;
+            } else {
+                return hostname_iface.hostname;
+            }
+        }
 
         void make_this_home_location () {
             name = _("Home folder");
@@ -88,7 +107,12 @@ namespace Baobab {
         }
 
         public Location.for_main_volume () {
-            name = _("Main volume");
+            try {
+                name = get_hostname ();
+            } catch (Error e) {
+                name = _("Main volume");
+            }
+
             file = File.new_for_path ("/");
             get_file_info ();
             icon = new ThemedIcon ("drive-harddisk-system");
