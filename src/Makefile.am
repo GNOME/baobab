@@ -1,6 +1,6 @@
 NULL =
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DPREFIX=\""$(prefix)"\" 				\
 	-DGETTEXT_PACKAGE=\""$(GETTEXT_PACKAGE)"\" 		\
 	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
