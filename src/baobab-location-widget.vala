@@ -90,6 +90,8 @@ namespace Baobab {
                 attach (usagebar, 2, 1, 1, 1);
             }
 
+            attach (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 3, 0, 1, 2);
+
             show_all ();
         }
     }
