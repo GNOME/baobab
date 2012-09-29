@@ -177,9 +177,10 @@
                         <property name="reorderable">True</property>
                         <property name="sort_column_id">0</property>
                         <child>
-                          <object class="GtkCellRendererText" id="folder-column-text-renderer"/>
+                          <object class="BaobabCellRendererName" id="folder-column-text-renderer"/>
                           <attributes>
-                            <attribute name="text">0</attribute>
+                            <attribute name="name">0</attribute>
+                            <attribute name="state">6</attribute>
                           </attributes>
                         </child>
                       </object>
@@ -198,6 +199,7 @@
                           </object>
                           <attributes>
                             <attribute name="value">2</attribute>
+                            <attribute name="state">6</attribute>
                           </attributes>
                         </child>
                         <child>
@@ -206,6 +208,7 @@
                           </object>
                           <attributes>
                             <attribute name="percent">2</attribute>
+                            <attribute name="state">6</attribute>
                           </attributes>
                         </child>
                       </object>
@@ -225,6 +228,7 @@
                           <attributes>
                             <attribute name="size">3</attribute>
                             <attribute name="alloc-size">4</attribute>
+                            <attribute name="state">6</attribute>
                           </attributes>
                         </child>
                       </object>
@@ -242,6 +246,7 @@
                           </object>
                           <attributes>
                             <attribute name="items">5</attribute>
+                            <attribute name="state">6</attribute>
                           </attributes>
                         </child>
                       </object>

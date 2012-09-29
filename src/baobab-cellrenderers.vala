@@ -21,18 +21,62 @@
 namespace Baobab {
 
     public class CellRendererPercent : Gtk.CellRendererText {
+        public Scanner.State state { set; get; }
+
         public double percent {
             set {
-                text = "%.1f %%".printf (value);
+                text = (state != Scanner.State.ERROR ? "%.1f %%".printf (value) : "");
             }
         }
     }
 
+    public class CellRendererName : Gtk.CellRendererText {
+        public Scanner.State state { set; get; }
+
+        public string name {
+            set {
+                switch (state) {
+                case Scanner.State.ERROR:
+                    markup = "<b>%s</b>".printf (value);
+                    break;
+                case Scanner.State.CHILD_ERROR:
+                    markup = "<b>%s</b>".printf (value);
+                    break;
+                default:
+                    markup = value;
+                    break;
+                }
+            }
+        }
+
+        protected override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
+            var context = widget.get_style_context ();
+
+            context.save ();
+
+            switch (state) {
+            case Scanner.State.ERROR:
+                context.add_class ("baobab-cell-error");
+                break;
+            case Scanner.State.CHILD_ERROR:
+                context.add_class ("baobab-cell-warning");
+                break;
+            }
+
+            base.render (cr, widget, background_area, cell_area, flags);
+
+            context.restore ();
+        }
+
+    }
+
     public class CellRendererSize : Gtk.CellRendererText {
+        public Scanner.State state { set; get; }
+
         public new uint64 size {
             set {
                 if (!show_allocated_size) {
-                    text = format_size (value);
+                    text = (state != Scanner.State.ERROR ? format_size (value) : "");
                 }
             }
         }
@@ -40,7 +84,7 @@ namespace Baobab {
         public uint64 alloc_size {
             set {
                 if (show_allocated_size) {
-                    text = format_size (value);
+                    text = (state != Scanner.State.ERROR ? format_size (value) : "");
                 }
             }
         }
@@ -49,15 +93,23 @@ namespace Baobab {
     }
 
     public class CellRendererItems : Gtk.CellRendererText {
+        public Scanner.State state { set; get; }
+
         public int items {
             set {
-                text = value >= 0 ? ngettext ("%d item", "%d items", value).printf (value) : "";
+                text = (value >= 0 && state != Scanner.State.ERROR) ? ngettext ("%d item", "%d items", value).printf (value) : "";
             }
         }
     }
 
     public class CellRendererProgress : Gtk.CellRendererProgress {
+        public Scanner.State state { set; get; }
+
         public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
+            if (state == Scanner.State.ERROR) {
+                return;
+            }
+
             int xpad;
             int ypad;
             get_padding (out xpad, out ypad);

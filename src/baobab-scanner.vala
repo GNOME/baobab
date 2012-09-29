@@ -46,6 +46,7 @@ namespace Baobab {
             CANCELLED,
             NEED_PERCENT,
             ERROR,
+            CHILD_ERROR,
             DONE
         }
 
@@ -148,6 +149,7 @@ namespace Baobab {
             internal double percent;
             internal int max_depth;
             internal Error? error;
+            internal bool child_error;
 
             // accessed only by the main thread
             internal Gtk.TreeIter iter;
@@ -172,6 +174,7 @@ namespace Baobab {
             }
             results.elements = 1;
             results.error = null;
+            results.child_error = false;
 
             try {
                 var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, cancellable);
@@ -187,6 +190,10 @@ namespace Baobab {
                                 results.alloc_size += child_results.alloc_size;
                                 results.elements += child_results.elements;
                                 results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
+                                if (child_results.error != null) {
+                                    results.child_error = true;
+                                }
+
                                 results_array.results += (owned) child_results;
                             }
                             break;
@@ -282,12 +289,21 @@ namespace Baobab {
                 foreach (unowned Results results in results_array.results) {
                     ensure_iter_exists (results);
 
+                    State state;
+                    if (results.child_error) {
+                        state = State.CHILD_ERROR;
+                    } else if (results.error != null) {
+                        state = State.ERROR;
+                    } else {
+                        state = State.DONE;
+                    }
+
                     set (results.iter,
                          Columns.SIZE,       results.size,
                          Columns.ALLOC_SIZE, results.alloc_size,
                          Columns.PERCENT,    results.percent,
                          Columns.ELEMENTS,   results.elements,
-                         Columns.STATE,      results.error == null ? State.DONE : State.ERROR,
+                         Columns.STATE,      state,
                          Columns.ERROR,      results.error);
 
                     if (results.max_depth > max_depth) {
