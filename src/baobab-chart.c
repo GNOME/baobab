@@ -1477,7 +1477,7 @@ baobab_chart_set_root (BaobabChart *chart,
  * @chart: a #BaobabChart.
  *
  * Returns a #GtkTreePath pointing to the root of the widget. The
- * programmer has the responsability to free the used memory once
+ * programmer has the responsibility to free the used memory once
  * finished with the returned value. It returns NULL if there is no
  * root node defined
  *
