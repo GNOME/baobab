@@ -1,4 +1,4 @@
-/* -*- indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/* -*- tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* Baobab - disk usage analyzer
  *
  * Copyright (C) 2012  Ryan Lortie <desrt@desrt.ca>
