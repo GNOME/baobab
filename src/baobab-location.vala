@@ -167,8 +167,8 @@ namespace Baobab {
                 icon = volume.get_icon ();
                 file = null;
                 info = null;
-                size = 0;
-                used = 0;
+                size = null;
+                used = null;
                 scanner = null;
             }
         }
