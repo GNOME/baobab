@@ -142,17 +142,24 @@ namespace Baobab {
             Gtk.RecentManager recent_manager = Gtk.RecentManager.get_default ();
             List<Gtk.RecentInfo> recent_items = recent_manager.get_items ();
 
-            int n_recents = 0;
+            unowned List<Gtk.RecentInfo> iter = recent_items;
+            while (iter != null) {
+                unowned List<Gtk.RecentInfo> next = iter.next;
+                if (!iter.data.has_group ("baobab") || !iter.data.exists () || already_present (File.new_for_uri (iter.data.get_uri ()))) {
+                    recent_items.remove_link (iter);
+                }
+                iter = next;
+            }
+
+            recent_items.sort ((a, b) => {
+                return (int)(b.get_modified () - a.get_modified ());
+            });
+
+            recent_items.nth (MAX_RECENT_LOCATIONS - 1).next = null;
+            recent_items.reverse ();
+
             foreach (var info in recent_items) {
-                if (n_recents >= MAX_RECENT_LOCATIONS) {
-                    break;
-                }
-                if (info.has_group ("baobab") && info.exists ()) {
-                    if (!already_present (File.new_for_uri (info.get_uri ()))) {
-                        locations.append (new Location.for_recent_info (info));
-                        n_recents++;
-                    }
-                }
+                locations.append (new Location.for_recent_info (info));
             }
 
             update ();
