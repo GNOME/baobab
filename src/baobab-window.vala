@@ -246,10 +246,14 @@ namespace Baobab {
             }
 
             active_location = location;
+
+            // Update the timestamp for GtkRecentManager
+            location_list.add_location (location);
         }
 
         void on_scan_location_activate (Location location) {
             set_active_location (location);
+
             if (location.is_volume) {
                 location.mount_volume.begin ((location_, res) => {
                     try {
@@ -590,8 +594,6 @@ namespace Baobab {
                 message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
                 return;
             }
-
-            location_list.add_location (location);
 
             set_active_location (location);
             scan_active_location (false);
