@@ -70,7 +70,7 @@ namespace Baobab {
             label.get_style_context ().add_class ("dim-label");
             attach (label, 1, 1, 1, 1);
 
-            if (location.used != null && location.size != null) {
+            if (location.is_volume && location.used != null && location.size != null) {
                 label = new Gtk.Label ("<small>%s / %s</small>".printf (format_size (location.used), format_size (location.size)));
                 usage_size_group.add_widget (label);
                 label.use_markup = true;
