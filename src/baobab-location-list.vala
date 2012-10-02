@@ -69,6 +69,10 @@ namespace Baobab {
             return false;
         }
 
+        void append_to_volumes (Location location) {
+            locations.insert_before (locations.find (Location.get_home_location ()), location);
+        }
+
         void volume_changed (Volume volume) {
             update ();
         }
@@ -85,8 +89,7 @@ namespace Baobab {
         }
 
         void volume_added (Volume volume) {
-            locations.append (new Location.from_volume (volume));
-
+            append_to_volumes (new Location.from_volume (volume));
             update ();
         }
 
@@ -108,7 +111,7 @@ namespace Baobab {
             var volume = mount.get_volume ();
             if (volume == null) {
                 if (!already_present (mount.get_root ())) {
-                    locations.append (new Location.from_mount (mount));
+                    append_to_volumes (new Location.from_mount (mount));
                 }
             } else {
                 foreach (var location in locations) {
