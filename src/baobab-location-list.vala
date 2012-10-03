@@ -183,6 +183,10 @@ namespace Baobab {
         }
 
         public void add_location (Location location) {
+            if (location.file == null) {
+                return;
+            }
+
             if (!already_present (location.file)) {
                 locations.append (location);
             }
