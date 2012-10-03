@@ -89,7 +89,16 @@ namespace Baobab {
         }
 
         void volume_added (Volume volume) {
+            // Since GVolumeMonitor unnecessarly fires "volume-added" signals
+            // at startup (see bugzilla bug 684677) we need to workaround and
+            // check for duplicates, until a fixed version of gvfs is released.
+            foreach (var location in locations) {
+                if (location.volume == volume) {
+                    return;
+                }
+            }
             append_to_volumes (new Location.from_volume (volume));
+
             update ();
         }
 
