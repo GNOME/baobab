@@ -167,7 +167,11 @@ namespace Baobab {
                 return (int)(b.get_modified () - a.get_modified ());
             });
 
-            recent_items.nth (MAX_RECENT_LOCATIONS - 1).next = null;
+            unowned List<Gtk.RecentInfo> last = recent_items.nth (MAX_RECENT_LOCATIONS - 1);
+            if (last != null) {
+                last.next = null;
+            }
+
             recent_items.reverse ();
 
             foreach (var info in recent_items) {
