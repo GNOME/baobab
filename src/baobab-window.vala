@@ -28,8 +28,6 @@ namespace Baobab {
         Gd.MainToolbar home_toolbar;
         Gd.MainToolbar result_toolbar;
         Gtk.Button scan_remote;
-        Gtk.Button stop_button;
-        Gtk.Button show_home_page_button;
         Gtk.InfoBar infobar;
         Gtk.Label infobar_primary;
         Gtk.Label infobar_secondary;
@@ -55,7 +53,6 @@ namespace Baobab {
             { "scan-home", on_scan_home_activate },
             { "scan-folder", on_scan_folder_activate },
             { "scan-remote", on_scan_remote_activate },
-            { "stop", on_stop_activate },
             { "reload", on_reload_activate },
             { "show-allocated", on_show_allocated },
             { "expand-all", on_expand_all },
@@ -73,8 +70,6 @@ namespace Baobab {
             { "scan-home", false },
             { "scan-folder", false },
             { "scan-remote", false },
-            { "stop", true },
-            { "reload", false },
             { "show-allocated", false },
             { "expand-all", false },
             { "collapse-all", false }
@@ -138,11 +133,9 @@ namespace Baobab {
             // Result page toolbar
             toolbar = builder.get_object ("result-toolbar") as Gd.MainToolbar;
             result_toolbar = toolbar;
-            show_home_page_button = toolbar.add_button ("go-previous-symbolic", null, true) as Gtk.Button;
-            show_home_page_button.action_name = "win.show-home-page";
-            stop_button = toolbar.add_button ("process-stop-symbolic", null, true) as Gtk.Button;
-            stop_button.action_name = "win.show-home-page";
-            var button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
+            var button = toolbar.add_button ("go-previous-symbolic", null, true) as Gtk.Button;
+            button.action_name = "win.show-home-page";
+            button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
             button.action_name = "win.reload";
             toolbar.show_all ();
 
@@ -268,14 +261,11 @@ namespace Baobab {
             }
         }
 
-        void on_stop_activate () {
-            if (active_location != null && active_location.scanner != null) {
-                active_location.scanner.cancel ();
-            }
-        }
-
         void on_reload_activate () {
             if (active_location != null) {
+                if (active_location.scanner != null) {
+                    active_location.scanner.cancel ();
+                }
                 scan_active_location (true);
             }
         }
@@ -475,8 +465,6 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
                 chart_notebook.page = ChartPage.SPINNER;
                 spinner.start ();
-                show_home_page_button.hide ();
-                stop_button.show ();
             } else {
                 enable_drop ();
                 rings_chart.thaw_updates ();
@@ -484,8 +472,6 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
                 lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
-                show_home_page_button.show ();
-                stop_button.hide ();
             }
 
             var window = get_window ();
@@ -509,6 +495,8 @@ namespace Baobab {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
             } else {
+                var action = lookup_action ("reload") as SimpleAction;
+                action.set_enabled (true);
                 result_toolbar.set_labels (active_location.name, null);
             }
 
