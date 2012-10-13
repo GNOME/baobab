@@ -138,12 +138,18 @@ namespace Baobab {
             locations.append (new Location.for_main_volume ());
 
             foreach (var volume in monitor.get_volumes ()) {
-                locations.append (new Location.from_volume (volume));
+                var location = new Location.from_volume (volume);
+                if (!location.is_home) {
+                    locations.append (location);
+                }
             }
 
             foreach (var mount in monitor.get_mounts ()) {
                 if (mount.get_volume () == null) {
-                    locations.append (new Location.from_mount (mount));
+                    var location = new Location.from_mount (mount);
+                    if (!location.is_home) {
+                        locations.append (location);
+                    }
                 } else {
                     // Already added as volume
                 }

@@ -43,6 +43,12 @@ namespace Baobab {
 
         public Scanner? scanner { get; private set; }
 
+        public bool is_home {
+            get {
+                return home_location == this;
+            }
+        }
+
         private static const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
             FileAttribute.FILESYSTEM_USED;
