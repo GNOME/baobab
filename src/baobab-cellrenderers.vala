@@ -139,15 +139,16 @@ namespace Baobab {
             if (widget.get_direction () == Gtk.TextDirection.RTL) {
                 x_bar += w - perc_w;
             }
-            cr.rectangle (x_bar, y, perc_w, h);
+
+            context.add_class ("fill-block");
+
             if (percent <= 33) {
-                cr.set_source_rgb (0x73 / 255.0, 0xd2 / 255.0, 0x16 / 255.0);
-            } else if (percent <= 66) {
-                cr.set_source_rgb (0xed / 255.0, 0xd4 / 255.0, 0x00 / 255.0);
-            } else {
-                cr.set_source_rgb (0xcc / 255.0, 0x00 / 255.0, 0x00 / 255.0);
+                context.add_class ("level-low");
+            } else if (percent > 66) {
+                context.add_class ("level-high");
             }
-            cr.fill ();
+
+            context.render_background (cr, x_bar, y, perc_w, h);
 
             context.restore ();
         }
