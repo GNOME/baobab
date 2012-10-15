@@ -593,8 +593,17 @@ namespace Baobab {
                     }
                     return;
                 } catch (Error e) {
-                    var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());
-                    message (primary, e.message, Gtk.MessageType.WARNING);
+                    Gtk.TreeIter iter;
+                    Scanner.State state;
+                    scanner.get_iter_first (out iter);
+                    scanner.get (iter, Scanner.Columns.STATE, out state);
+                    if (state == Scanner.State.ERROR) {
+                        var primary = _("Could not scan folder \"%s\"").printf (scanner.directory.get_parse_name ());
+                        message (primary, e.message, Gtk.MessageType.ERROR);
+                    } else {
+                        var primary = _("Could not scan some of the folders contained in \"%s\"").printf (scanner.directory.get_parse_name ());
+                        message (primary, e.message, Gtk.MessageType.WARNING);
+                    }
                 }
 
                 // Use allocated size if available, where available is defined as
