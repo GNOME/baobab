@@ -125,7 +125,7 @@ namespace Baobab {
             // Home page toolbar
             var toolbar = builder.get_object ("home-toolbar") as Gd.MainToolbar;
             home_toolbar = toolbar;
-            var button_box = builder.get_object ("scan-button-box") as Gtk.ButtonBox;
+            var button_box = builder.get_object ("scan-button-box") as Gtk.Box;
             scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
             toolbar.add_widget (button_box, true);
             toolbar.show_all ();
