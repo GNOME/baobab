@@ -1,10 +1,5 @@
 NULL =
 
-imagesdir = $(datadir)/baobab/pixmaps
-images_DATA = \
-	shot.png \
-	$(NULL)
-
 public_icons_themes = \
 	hicolor \
 	$(NULL)
@@ -24,7 +19,6 @@ noinst_DATA = \
 
 EXTRA_DIST = \
 	$(public_icons) \
-	$(images_DATA) \
 	$(noinst_DATA) \
 	$(NULL)
 
