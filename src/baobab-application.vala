@@ -22,29 +22,6 @@
 
 namespace Baobab {
 
-    const string CSS_DATA = ".cell.baobab-level-cell.fill-block,
-.cell.baobab-level-cell.fill-block:selected,
-.cell.baobab-level-cell.fill-block:selected:hover {
-    background-color: #edd400;
-}
-
-.cell.baobab-level-cell.fill-block.level-low,
-.cell.baobab-level-cell.fill-block.level-low:hover {
-    background-color: #73d216;
-}
-
-.cell.baobab-level-cell.fill-block.level-high,
-.cell.baobab-level-cell.fill-block.level-high:hover {
-    background-color: #cc0000;
-}
-
-.cell.baobab-level-cell.fill-block:backdrop,
-.cell.baobab-level-cell.fill-block:hover:backdrop,
-.cell.baobab-level-cell.fill-block.level-low:backdrop,
-.cell.baobab-level-cell.fill-block.level-high:backdrop {
-    background-color: @theme_unfocused_text_color;
-}";
-
     public class Application : Gtk.Application {
         static Application baobab;
 
@@ -99,10 +76,6 @@ namespace Baobab {
             base.startup ();
 
             baobab = this;
-
-            var css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_data (CSS_DATA, -1);
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             // Settings
             ui_settings = new Settings ("org.gnome.baobab.ui");
