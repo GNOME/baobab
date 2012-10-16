@@ -6,22 +6,18 @@ SUBDIRS =  libgd src data pixmaps help po
 EXTRA_DIST = COPYING.docs
 
 MAINTAINERCLEANFILES = 		\
+	ABOUT-NLS		\
 	aclocal.m4		\
 	config.guess		\
 	config.h.in		\
+	config.rpath		\
 	config.sub		\
 	depcomp			\
 	INSTALL			\
 	install-sh		\
 	ltmain.sh		\
 	missing			\
-	m4/gnome-doc-utils.m4	\
-	m4/intltool.m4		\
-	m4/libtool.m4		\
-	m4/lt~obsolete.m4	\
-	m4/ltoptions.m4		\
-	m4/ltsugar.m4		\
-	m4/ltversion.m4		\
+	m4			\
 	omf.make		\
 	xmldocs.make		\
 	po/Makefile.in.in	\
