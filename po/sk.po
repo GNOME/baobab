@@ -1,26 +1,27 @@
-# Slovak translation for gnome-utils.
-# Copyright (C) 2000, 2001, 2002, 2003, 2005, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-utils package.
-# Stanislav Višňovský <visnovsky@nenya.ms.mff.cuni.cz>, 2000, 2001, 2002.
+# Slovak translation for baobab.
+# Copyright (C) 2000-2003, 2005, 2008-2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the baobab package.
+# Stanislav Višňovský <visnovsky@nenya.ms.mff.cuni.cz>, 2000-2002.
 # Stanislav Višňovský <visnovsky@kde.org>, 2003.
 # Stanislav Višňovský <visnov@suse.cz>, 2003.
 # Ivan Noris <vix@vazka.sk>, 2005.
-# Pavol Klačanský <pavol@klacansky.com>, 2008, 2009, 2010, 2011, 2012.
+# Pavol Klačanský <pavol@klacansky.com>, 2008-2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-14 16:30+0000\n"
-"PO-Revision-Date: 2012-03-31 17:21+0100\n"
+"POT-Creation-Date: 2012-10-16 22:35+0000\n"
+"PO-Revision-Date: 2012-10-15 21:26+0100\n"
 "Last-Translator: Pavol Klačanský <pavol@klacansky.com>\n"
 "Language-Team: slovenčina <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:164
 msgid "Disk Usage Analyzer"
@@ -46,30 +47,27 @@ msgstr "Aktívny graf"
 msgid "Which type of chart should be displayed."
 msgstr "Ktorý typ grafu má byť zobrazený."
 
-#: ../src/baobab-application.vala:53
+#: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Vypíše informáciu o verzii a skončí"
 
-#: ../src/baobab-application.vala:131
-#, fuzzy
-#| msgid "Disk Usage Analyzer"
+#: ../src/baobab-application.vala:104
 msgid "- Disk Usage Analyzer"
-msgstr "Analyzátor využitia disku"
+msgstr " - analyzátor využitia disku"
 
 #: ../src/baobab-cellrenderers.vala:100
-#, fuzzy, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
+#, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] "%5d položiek"
-msgstr[1] "%5d položka"
-msgstr[2] "%5d položky"
+msgstr[0] "%d položiek"
+msgstr[1] "%d položka"
+msgstr[2] "%d položky"
 
 #: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Maximálna hĺbka"
 
+# desc
 #: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Maximálna hĺbka vykresľovaná v grafe od koreňa"
@@ -78,69 +76,61 @@ msgstr "Maximálna hĺbka vykresľovaná v grafe od koreňa"
 msgid "Chart model"
 msgstr "Model grafu"
 
+# desc
 #: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
-msgstr "Nastaviť model grafu"
+msgstr "Nastavuje model grafu"
 
 #: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Koreňový uzol grafu"
 
+# desc
 #: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
-msgstr "Nastaviť koreňový uzol z modelu"
+msgstr "Nastavuje koreňový uzol modelu"
 
 #: ../src/baobab-chart.c:898
-#, fuzzy
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
-msgstr "Presunúť do rodičovského priečinka"
+msgstr "_Presunúť do rodičovského priečinka"
 
-# PM: zväčšiť 
 #: ../src/baobab-chart.c:902
-#, fuzzy
-#| msgid "Zoom in"
 msgid "Zoom _in"
-msgstr "Priblížiť"
+msgstr "_Zväčšiť"
 
-# PM: zmenšiť
 #: ../src/baobab-chart.c:906
-#, fuzzy
-#| msgid "Zoom out"
 msgid "Zoom _out"
-msgstr "Oddialiť"
+msgstr "Z_menšiť"
 
 #: ../src/baobab-location.vala:77
-#, fuzzy
-#| msgid "Scan home folder"
 msgid "Home folder"
-msgstr "Prehľadať domovský priečinok"
+msgstr "Domovský priečinok"
 
 #: ../src/baobab-location.vala:119
 msgid "Main volume"
-msgstr ""
+msgstr "Hlavný zväzok"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Prehľadať priečinok"
-
-#: ../src/baobab-main-window.ui.h:2
 msgid "Scan Folder"
 msgstr "Prehľadať priečinok"
 
-#: ../src/baobab-main-window.ui.h:3
-#, fuzzy
-#| msgid "Scan Remote Folder"
-msgid "Scan a remote folder"
-msgstr "Prehľadať vzdialený priečinok"
+# tooltip
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan a folder"
+msgstr "Analyzuje priečinok"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:3
 msgid "Scan Remote Folder"
 msgstr "Prehľadať vzdialený priečinok"
 
+# tooltip
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan a remote folder"
+msgstr "Analyzuje vzdialený priečinok"
+
 #: ../src/baobab-main-window.ui.h:5
 msgid "Close"
-msgstr ""
+msgstr "Zavrieť"
 
 #: ../src/baobab-main-window.ui.h:6
 msgid "Folder"
@@ -159,16 +149,12 @@ msgid "Contents"
 msgstr "Obsah"
 
 #: ../src/baobab-main-window.ui.h:10
-#, fuzzy
-#| msgid "View as Rings Chart"
 msgid "Rings Chart"
-msgstr "Zobraziť ako kruhový graf"
+msgstr "Kruhový graf"
 
 #: ../src/baobab-main-window.ui.h:11
-#, fuzzy
-#| msgid "View as Treemap Chart"
 msgid "Treemap Chart"
-msgstr "Zobraziť ako stĺpcový graf"
+msgstr "Stĺpcový graf"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "_Open Folder"
@@ -176,11 +162,11 @@ msgstr "_Otvoriť priečinok"
 
 #: ../src/baobab-main-window.ui.h:13
 msgid "_Copy Path to Clipboard"
-msgstr ""
+msgstr "_Kopírovať cestu do schránky"
 
 #: ../src/baobab-main-window.ui.h:14
 msgid "Mo_ve to Trash"
-msgstr "Presunúť do _koša"
+msgstr "Presunúť do K_oša"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -188,31 +174,27 @@ msgstr "_Pomocník"
 
 #: ../src/baobab-menu.ui.h:2
 msgid "_About"
-msgstr ""
+msgstr "_O programe"
 
 #: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
-msgstr ""
+msgstr "U_končiť"
 
 #: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
 msgstr "_Analyzátor"
 
 #: ../src/baobab-menu.ui.h:5
-#, fuzzy
-#| msgid "Scan Home"
 msgid "_Scan Home"
-msgstr "Prehľadať domovský priečinok"
+msgstr "Analyzovať domov_ský priečinok"
 
 #: ../src/baobab-menu.ui.h:6
 msgid "Scan F_older…"
-msgstr "Prehľadať _priečinok…"
+msgstr "Analyzovať _priečinok…"
 
 #: ../src/baobab-menu.ui.h:7
-#, fuzzy
-#| msgid "S_can Remote Folder…"
 msgid "Scan Remote Fo_lder…"
-msgstr "P_rehľadať vzdialený priečinok…"
+msgstr "Analyzovať _vzdialený priečinok…"
 
 #: ../src/baobab-menu.ui.h:8
 msgid "_View"
@@ -220,7 +202,7 @@ msgstr "_Zobraziť"
 
 #: ../src/baobab-menu.ui.h:9
 msgid "_Reload"
-msgstr ""
+msgstr "_Znovu načítať"
 
 #: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
@@ -232,13 +214,11 @@ msgstr "_Zabaliť všetky"
 
 #: ../src/baobab-window.vala:206
 msgid "Select Folder"
-msgstr "Vyberte priečinok"
+msgstr "Výber priečinka"
 
 #: ../src/baobab-window.vala:256
-#, fuzzy
-#| msgid "Could not analyze disk usage."
 msgid "Could not analyze volume."
-msgstr "Nepodarilo sa analyzovať využitie disku."
+msgstr "Nepodarilo sa analyzovať zväzok."
 
 #: ../src/baobab-window.vala:306
 msgid "Baobab"
@@ -258,6 +238,7 @@ msgstr ""
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
+"Nepodarilo sa analyzovať priečinok „%s“, alebo niektoré jeho podpriečinky."
 
 #. || is_virtual_filesystem ()
 #: ../src/baobab-window.vala:575 ../src/baobab-window.vala:581
@@ -268,303 +249,3 @@ msgstr "„%s“ nie je platný priečinok"
 #: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
 msgid "Could not analyze disk usage."
 msgstr "Nepodarilo sa analyzovať využitie disku."
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Nastavenia analyzátora využitia disku"
-
-#~| msgid "Select _devices to include in filesystem scan:"
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr ""
-#~ "Vyberte _zariadenia, ktoré budú zahrnuté do prehľadávania súborového "
-#~ "systému:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Sledovať zmeny vo vašom domovskom priečinku"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Sledovať domovský priečinok"
-
-# * https://bugzilla.gnome.org/show_bug.cgi?id=617554
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "Či majú byť sledované akékoľvek zmeny v domovskom priečinku."
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Lišta nástrojov je viditeľná"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Či má byť lišta nástrojov viditeľná v hlavnom okne."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Stavová lišta je viditeľná"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr "Či má byť stavová lišta viditeľná v dolnej časti hlavného okna."
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Prehľadať _domovský priečinok"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Prehľadať _súborový systém"
-
-#~ msgid "_Edit"
-#~ msgstr "_Upraviť"
-
-#~ msgid "_Toolbar"
-#~ msgstr "Lišta nás_trojov"
-
-#~ msgid "St_atusbar"
-#~ msgstr "_Stavová lišta"
-
-#~ msgid "All_ocated Space"
-#~ msgstr "Využité miest_o"
-
-#~ msgid "_Contents"
-#~ msgstr "Ob_sah"
-
-#~| msgid "Rescan your home folder?"
-#~ msgid "Scan your home folder"
-#~ msgstr "Prehľadať váš domovský priečinok"
-
-#~| msgid "Scan filesystem"
-#~ msgid "Scan the file system"
-#~ msgstr "Prehľadať súborový systém"
-
-#~| msgid "Scan Filesystem"
-#~ msgid "Scan File System"
-#~ msgstr "Prehľadať súborový systém"
-
-#~| msgid "Scan a remote folder"
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Prehľadať vzdialený priečinok alebo súborový systém"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Zastaviť prehľadávanie"
-
-#~ msgid "Refresh"
-#~ msgstr "Obnoviť"
-
-#~| msgid "Scanning..."
-#~ msgid "Scanning…"
-#~ msgstr "Prehľadáva sa…"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Celková kapacita súborového systému:"
-
-#~ msgid "used:"
-#~ msgstr "využitých:"
-
-#~ msgid "available:"
-#~ msgstr "dostupných:"
-
-#~| msgid "Calculating percentage bars..."
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Počítajú sa percentuálne tabuľky…"
-
-#~ msgid "Ready"
-#~ msgstr "Pripravený"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Celková kapacita súborového systému"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Celkové využitie súborového systému"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "obsahuje pevné odkazy pre:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Nepodarilo sa inicializovať sledovanie"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Zmeny vášho domovského priečinka nebudú sledované."
-
-#~ msgid "Show version"
-#~ msgstr "Zobraziť verziu"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[ADRESÁR]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Príliš veľa parametrov. Môže byť zadaný len jeden adresár."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Nepodarilo sa zistiť žiadny prípojný bod."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "Využitie disku nemôže byť analyzované, ak neexistujú prípojné body."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Uložiť snímku obrazovky"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "Nemožno vytvoriť obrázok pixbuf!"
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Uložiť obrázok"
-
-#~ msgid "_Image type:"
-#~ msgstr "_Typ obrázku:"
-
-#~ msgid "Scan"
-#~ msgstr "Prehľadať"
-
-#~ msgid "Device"
-#~ msgstr "Zariadenie"
-
-#~ msgid "Mount Point"
-#~ msgstr "Prípojný bod"
-
-#~| msgid "Filesystem Type"
-#~ msgid "File System Type"
-#~ msgstr "Typ súborového systému"
-
-#~ msgid "Total Size"
-#~ msgstr "Celková veľkosť"
-
-#~ msgid "Available"
-#~ msgstr "Dostupné"
-
-#~ msgid "Cannot scan location \"%s\""
-#~ msgstr "Nemožno prehľadať umiestnenie \"%s\""
-
-#~ msgid "Custom Location"
-#~ msgstr "Vlastné umiestnenie"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "Verejné FTP"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (s prihlásením)"
-
-#~ msgid "Windows share"
-#~ msgstr "Zdieľanie z Windows"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "Bezpečné WebDAV (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr "Nemožno pripojiť k serveru. Musíte zadať jeho názov."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Zadajte, prosím, názov a skúste to znovu."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Umiestnenie (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Server:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Nepovinné informácie:"
-
-#~ msgid "_Share:"
-#~ msgstr "_Zdieľanie:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Port:"
-
-#~ msgid "_Folder:"
-#~ msgstr "P_riečinok:"
-
-#~ msgid "_User Name:"
-#~ msgstr "Po_užívateľské meno:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "Názov _domény:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Pripojiť sa k serveru"
-
-#~ msgid "Service _type:"
-#~ msgstr "_Typ služby:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Prehľadať"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Znovu prehľadať domovský priečinok?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "Obsah vášho domovského priečinka sa zmenil. Na aktualizovanie podrobností "
-#~ "o využití disku zvoľte znovu prehľadať."
-
-#~ msgid "_Rescan"
-#~ msgstr "Znovu p_rehľadať"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "Zo_braziť skryté priečinky"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Nemožno skontrolovať vynechaný priečinok!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Nepodarilo sa otvoriť priečinok \"%s\""
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr ""
-#~ "Nemáte nainštalovaný prehliadač, ktorý dokáže zobraziť tento priečinok."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "Nepodarilo sa presunúť \"%s\" do Koša"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "Nepodarilo sa presunúť súbor do Koša"
-
-#~ msgid "Details: %s"
-#~ msgstr "Podrobnosti: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "Nastala chyba pri zobrazovaní pomocníka."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Tento program je slobodný softvér; môžete ho ďalej šíriť a/alebo "
-#~ "upravovať podľa ustanovení Všeobecnej verejnej licencie GNU tak, ako bola "
-#~ "vydaná organizáciou Free Software Foundation, a to buď verzie 2 tejto "
-#~ "licencie, alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Tento program je rozširovaný v nádeji, že bude užitočný, avšak BEZ "
-#~ "AKEJKOĽVEK ZÁRUKY. Neposkytujú sa ani odvodené záruky OBCHODOVATEĽNOSTI "
-#~ "alebo VHODNOSTI PRE URČITÝ ÚČEL. Ďalšie podrobnosti hľadajte vo "
-#~ "Všeobecnej verejnej licencii GNU."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Kópiu Všeobecnej verejnej licencie GNU ste mali dostať spolu s týmto "
-#~ "programom; ak sa tak nestalo, napíšte na Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-
-#~ msgid "The document does not exist."
-#~ msgstr "Dokument neexistuje."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "Priečinok neexistuje."
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "Prehľadať _vzdialený priečinok..."
-
-#~ msgid "Scan F_older..."
-#~ msgstr "Prehľadať _priečinok..."
