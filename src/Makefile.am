@@ -1,13 +1,7 @@
 NULL =
 
 AM_CPPFLAGS = \
-	-DPREFIX=\""$(prefix)"\" 				\
 	-DGETTEXT_PACKAGE=\""$(GETTEXT_PACKAGE)"\" 		\
-	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
-	-DLIBDIR=\""$(libdir)"\"				\
-	-DDATADIR=\""$(datadir)"\"				\
-	-DPKGDATADIR=\""$(datadir)/baobab"\"			\
-	-DBAOBAB_PIX_DIR=\""$(datadir)/baobab/pixmaps/"\" 	\
 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 	\
 	$(NULL)
 
