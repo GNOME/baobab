@@ -23,6 +23,8 @@ int main (string[] args) {
     Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
     Intl.textdomain (Config.GETTEXT_PACKAGE);
 
+    GtkClutter.init (ref args);
+
     var baobab = new Baobab.Application ();
     return baobab.run (args);
 }

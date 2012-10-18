@@ -12,6 +12,7 @@ BUILT_SOURCES = baobab-resources.c
 baobab_VALAFLAGS = \
 	--vapidir=$(top_srcdir)/libgd	\
 	--pkg gtk+-3.0		\
+	--pkg clutter-gtk-1.0	\
 	--pkg gio-2.0		\
 	--pkg gio-unix-2.0	\
 	--pkg gd-1.0
@@ -20,7 +21,9 @@ noinst_HEADERS = \
 	baobab-chart.h			\
 	baobab-treemap.h		\
 	baobab-ringschart.h		\
-	egg-list-box.h
+	egg-list-box.h			\
+	cc-notebook.h			\
+	$(NULL)
 
 VALA_SOURCES = \
 	baobab-application.vala		\
@@ -40,10 +43,12 @@ baobab_SOURCES = \
 	baobab.vapi			\
 	config.vapi			\
 	egglistbox.vapi			\
+	ccnotebook.vapi			\
 	baobab-chart.c			\
 	baobab-treemap.c		\
 	baobab-ringschart.c		\
 	egg-list-box.c			\
+	cc-notebook.c			\
 	$(BUILT_SOURCES)
 
 baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies baobab.gresource.xml)
