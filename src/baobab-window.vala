@@ -24,7 +24,9 @@ namespace Baobab {
 
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
-        Gtk.Notebook main_notebook;
+        Cc.Notebook main_notebook;
+        Gtk.Grid home_page;
+        Gtk.Grid result_page;
         Gd.MainToolbar home_toolbar;
         Gd.MainToolbar result_toolbar;
         Gtk.InfoBar infobar;
@@ -109,7 +111,9 @@ namespace Baobab {
             }
 
             // Cache some objects from the builder.
-            main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
+            main_notebook = builder.get_object ("main-notebook") as Cc.Notebook;
+            home_page = builder.get_object ("home-page") as Gtk.Grid;
+            result_page = builder.get_object ("result-page") as Gtk.Grid;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
@@ -496,13 +500,13 @@ namespace Baobab {
             if (page == UIPage.HOME) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
+                main_notebook.select_page (home_page, true);
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 result_toolbar.set_labels (active_location.name, null);
+                main_notebook.select_page (result_page, true);
             }
-
-            main_notebook.page = page;
         }
 
         void first_row_has_child (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
