@@ -1,61 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
-  <object class="GtkBox" id="scan-button-box">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="vexpand">True</property>
-    <property name="homogeneous">True</property>
-    <style>
-      <class name="linked"/>
-    </style>
-    <child>
-      <object class="GtkButton" id="scan-folder-button">
-        <property name="label" translatable="yes">Scan Folder</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="receives_default">False</property>
-        <property name="has_tooltip">True</property>
-        <property name="tooltip_markup" translatable="yes">Scan a folder</property>
-        <property name="tooltip_text" translatable="yes">Scan a folder</property>
-        <property name="use_action_appearance">False</property>
-        <property name="vexpand">True</property>
-        <property name="action_name">win.scan-folder</property>
-        <property name="use_underline">True</property>
-        <style>
-          <class name="raised"/>
-        </style>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkButton" id="scan-remote-button">
-        <property name="label" translatable="yes">Scan Remote Folder</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="receives_default">False</property>
-        <property name="has_tooltip">True</property>
-        <property name="tooltip_markup" translatable="yes">Scan a remote folder</property>
-        <property name="tooltip_text" translatable="yes">Scan a remote folder</property>
-        <property name="use_action_appearance">False</property>
-        <property name="vexpand">True</property>
-        <property name="action_name">win.scan-remote</property>
-        <property name="use_underline">True</property>
-        <style>
-          <class name="raised"/>
-        </style>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
-    </child>
-  </object>
+  <menu id="winmenu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Scan Folder…</attribute>
+        <attribute name="action">win.scan-folder</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Scan Remote Folder…</attribute>
+        <attribute name="action">win.scan-remote</attribute>
+      </item>
+    </section>
+  </menu>
   <object class="GtkGrid" id="window-contents">
     <property name="visible">True</property>
     <property name="orientation">vertical</property>

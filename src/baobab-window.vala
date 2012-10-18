@@ -27,7 +27,6 @@ namespace Baobab {
         Gtk.Notebook main_notebook;
         Gd.MainToolbar home_toolbar;
         Gd.MainToolbar result_toolbar;
-        Gtk.Button scan_remote;
         Gtk.InfoBar infobar;
         Gtk.Label infobar_primary;
         Gtk.Label infobar_secondary;
@@ -122,12 +121,14 @@ namespace Baobab {
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
 
+            var menu_model = builder.get_object ("winmenu") as MenuModel;
+
             // Home page toolbar
             var toolbar = builder.get_object ("home-toolbar") as Gd.MainToolbar;
             home_toolbar = toolbar;
-            var button_box = builder.get_object ("scan-button-box") as Gtk.Box;
-            scan_remote = builder.get_object ("scan-remote-button") as Gtk.Button;
-            toolbar.add_widget (button_box, true);
+            var menu_button = toolbar.add_menu ("emblem-system-symbolic", null, false) as Gtk.MenuButton;
+            menu_button.set_menu_model (menu_model);
+            toolbar.set_labels (_("Devices and locations"), null);
             toolbar.show_all ();
 
             // Result page toolbar
@@ -143,7 +144,8 @@ namespace Baobab {
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
 
-            scan_remote.visible = ConnectServer.available ();
+            var action = lookup_action ("scan-remote") as SimpleAction;
+            action.set_enabled (ConnectServer.available ());
 
             setup_treeview (builder);
 
