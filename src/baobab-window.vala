@@ -27,6 +27,7 @@ namespace Baobab {
         Cc.Notebook main_notebook;
         Gtk.Grid home_page;
         Gtk.Grid result_page;
+        CrossFadeNotebook toolbar_notebook;
         Gd.MainToolbar home_toolbar;
         Gd.MainToolbar result_toolbar;
         Gtk.InfoBar infobar;
@@ -112,6 +113,7 @@ namespace Baobab {
 
             // Cache some objects from the builder.
             main_notebook = builder.get_object ("main-notebook") as Cc.Notebook;
+            toolbar_notebook = builder.get_object ("toolbar-notebook") as CrossFadeNotebook;
             home_page = builder.get_object ("home-page") as Gtk.Grid;
             result_page = builder.get_object ("result-page") as Gtk.Grid;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
@@ -492,20 +494,19 @@ namespace Baobab {
         }
 
         void set_ui_state (UIPage page, bool busy) {
-            home_toolbar.visible = (page == UIPage.HOME);
-            result_toolbar.visible = (page == UIPage.RESULT);
-
             set_busy (busy);
 
             if (page == UIPage.HOME) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
                 main_notebook.select_page (home_page, true);
+                toolbar_notebook.select_page (home_toolbar);
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 result_toolbar.set_labels (active_location.name, null);
                 main_notebook.select_page (result_page, true);
+                toolbar_notebook.select_page (result_toolbar);
             }
         }
 

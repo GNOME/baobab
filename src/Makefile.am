@@ -29,6 +29,7 @@ VALA_SOURCES = \
 	baobab-application.vala		\
 	baobab-cellrenderers.vala	\
 	baobab-connect-server.vala	\
+	baobab-cross-fade-notebook.vala	\
 	baobab-location.vala		\
 	baobab-location-list.vala	\
 	baobab-location-widget.vala	\

@@ -17,25 +17,32 @@
     <property name="visible">True</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GdMainToolbar" id="home-toolbar">
+      <object class="BaobabCrossFadeNotebook" id="toolbar-notebook">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="vexpand">False</property>
-        <style>
-          <class name="menubar"/>
-          <class name="baobab-toolbar"/>
-        </style>
-      </object>
-    </child>
-    <child>
-      <object class="GdMainToolbar" id="result-toolbar">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="vexpand">False</property>
-        <style>
-          <class name="menubar"/>
-          <class name="baobab-toolbar"/>
-        </style>
+        <child>
+          <object class="GdMainToolbar" id="home-toolbar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="vexpand">False</property>
+            <property name="hexpand">True</property>
+            <style>
+              <class name="menubar"/>
+              <class name="baobab-toolbar"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GdMainToolbar" id="result-toolbar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="vexpand">False</property>
+            <property name="hexpand">True</property>
+            <style>
+              <class name="menubar"/>
+              <class name="baobab-toolbar"/>
+            </style>
+          </object>
+        </child>
       </object>
     </child>
     <child>

@@ -6,3 +6,7 @@ namespace GLib2 {
 		public void* join ();
 	}
 }
+
+namespace GtkClutter {
+	public void embed_set_use_layout_size (Embed embed, bool use_layout_size);
+}
