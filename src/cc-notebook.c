@@ -377,12 +377,21 @@ cc_notebook_new (void)
 }
 
 static void
+remove_transition_on_complete (ClutterTransition *transition,
+                               gpointer           user_data)
+{
+        ClutterActor *actor = CLUTTER_ACTOR (user_data);
+        clutter_actor_remove_transition (actor, "scroll-to");
+}
+
+static void
 _cc_notebook_select_page (CcNotebook *self,
 			  GtkWidget  *widget,
 			  int         index,
 			  gboolean    animate)
 {
         ClutterPoint pos;
+        ClutterTransition *transition;
 
         g_return_if_fail (CC_IS_NOTEBOOK (self));
         g_return_if_fail (GTK_IS_WIDGET (widget));
@@ -404,6 +413,12 @@ _cc_notebook_select_page (CcNotebook *self,
         g_debug ("Scrolling to (%lf,%lf) %s animation in page selection", pos.x, pos.y,
 		 animate ? "with" : "without");
         clutter_scroll_actor_scroll_to_point (CLUTTER_SCROLL_ACTOR (self->priv->scroll), &pos);
+
+        transition = clutter_actor_get_transition (self->priv->scroll, "scroll-to");
+        if (transition != NULL) {
+                g_signal_connect (transition, "completed",
+                                  G_CALLBACK (remove_transition_on_complete), self->priv->scroll);
+        }
 
 	clutter_actor_restore_easing_state (self->priv->scroll);
 
