@@ -162,9 +162,30 @@ namespace Baobab {
             drag_data_received.connect (on_drag_data_received);
             enable_drop ();
 
+            // Setup window geometry saving
+            Gdk.WindowState window_state = (Gdk.WindowState) ui_settings.get_int ("window-state");
+            if (Gdk.WindowState.MAXIMIZED in window_state) {
+                maximize ();
+            }
+
+            int width, height;
+            ui_settings.get ("window-size", "(ii)", out width, out height);
+            resize (width, height);
+
+            window_state_event.connect ((event) => {
+                ui_settings.set_int ("window-state", event.new_window_state);
+                return false;
+            });
+
+            configure_event.connect ((event) => {
+                if (!(Gdk.WindowState.MAXIMIZED in get_window ().get_state ())) {
+                    ui_settings.set ("window-size", "(ii)", event.width, event.height);
+                }
+                return false;
+            });
+
             add (builder.get_object ("window-contents") as Gtk.Widget);
             title = _("Disk Usage Analyzer");
-            set_default_size (960, 600);
             set_hide_titlebar_when_maximized (true);
 
             active_location = null;

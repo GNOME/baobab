@@ -35,7 +35,6 @@ namespace Baobab {
             { "quit", on_quit_activate }
         };
 
-        Settings desktop_settings;
         Settings prefs_settings;
         Settings ui_settings;
 
@@ -80,7 +79,8 @@ namespace Baobab {
             // Settings
             ui_settings = new Settings ("org.gnome.baobab.ui");
             prefs_settings = new Settings ("org.gnome.baobab.preferences");
-            desktop_settings = new Settings ("org.gnome.desktop.interface");
+
+            ui_settings.delay ();
 
             // Menus: in gnome shell we just use the app menu, since the remaining
             // items are too few to look ok in a menubar and they are not essential
@@ -125,15 +125,15 @@ namespace Baobab {
             return base.local_command_line (ref arguments, out exit_status);
         }
 
+        protected override void shutdown () {
+            ui_settings.apply ();
+            base.shutdown ();
+        }
+
         public Application () {
             Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
 
             add_action_entries (action_entries, this);
-        }
-
-        public static Settings get_desktop_settings () {
-            var app = baobab;
-            return app.desktop_settings;
         }
 
         public static Settings get_prefs_settings () {
