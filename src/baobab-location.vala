@@ -116,6 +116,10 @@ namespace Baobab {
             try {
                 name = get_hostname ();
             } catch (Error e) {
+                name = null;
+            }
+
+            if (name == null) {
                 name = _("Main volume");
             }
 
