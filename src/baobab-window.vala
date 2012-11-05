@@ -296,7 +296,8 @@ namespace Baobab {
                 "Paolo Borelli <pborelli@gnome.com>",
                 "Stefano Facchini <stefano.facchini@gmail.com>",
                 "Benoît Dejean <benoit@placenet.org>",
-                "Igalia (rings-chart and treemap widget) <www.igalia.com>"
+                "Igalia (rings-chart and treemap widget) <www.igalia.com>",
+                null
             };
 
             const string copyright = "Copyright \xc2\xa9 2005-2011 Fabio Marzocca, Paolo Borelli, Benoît Dejean, Igalia\n" +
