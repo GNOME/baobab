@@ -101,7 +101,11 @@ namespace Baobab {
             baobab = this;
 
             var css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_data (CSS_DATA, -1);
+            try {
+                css_provider.load_from_data (CSS_DATA, -1);
+            } catch (Error e) {
+                error ("loading css: %s", e.message);
+            }
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             // Settings
