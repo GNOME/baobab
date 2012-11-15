@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-20 10:46+0530\n"
-"PO-Revision-Date: 2012-09-02 11:30+0530\n"
+"POT-Creation-Date: 2012-11-15 16:18+0530\n"
+"PO-Revision-Date: 2012-11-15 16:25+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -22,7 +22,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -35,9 +36,13 @@ msgstr ""
 msgid "Check folder sizes and available disk space"
 msgstr "அடைவு அளவு மற்றும் கிடைக்கக்கூடிய வட்டு இடைவெளி ஆகியவற்றை சரிபார் "
 
-#: ../data/baobab.desktop.in.in.h:2 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:2 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "வட்டு பயன்பாடு ஆராய்வி"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "கிடங்கு;இடம்;சுத்தகரிப்பு"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "A list of URIs for partitions to be excluded from scanning."
@@ -52,8 +57,24 @@ msgid "Excluded partitions URIs"
 msgstr "சேர்க்கப்படாத  பகிர்வுகளின் யூஆர்ஐ"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
+msgid "The GdkWindowState of the window"
+msgstr "சாளரத்தின் ஜிடிகே சாளர நிலை"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "The initial size of the window"
+msgstr "சாளரத்தின் ஆரம்ப அளவு"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "Which type of chart should be displayed."
 msgstr "எந்த மாதிரி விளக்க அட்டவணை தெரிய வேண்டும்?"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window size"
+msgstr "சாளரத்தின் அளவு"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "Window state"
+msgstr "சாளர நிலை"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
@@ -63,7 +84,7 @@ msgstr "பதிப்புத் தகவலை அச்சிட்டு�
 msgid "- Disk Usage Analyzer"
 msgstr "- வட்டு பயன்பாடு ஆராய்வி"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -106,11 +127,11 @@ msgstr "_i அணுகிப்பார்"
 msgid "Zoom _out"
 msgstr "_o விலகிப்பார்"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "இல்ல அடைவு"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "பிரதான ஒலியளவு"
 
@@ -131,91 +152,85 @@ msgid "Mo_ve to Trash"
 msgstr "(_v)குப்பைக்கு நகர்த்து"
 
 #: ../src/baobab-main-window.ui.h:5
-msgid "Reload"
-msgstr "மீண்டும் ஏற்று"
-
-#: ../src/baobab-main-window.ui.h:6
 msgid "Rings Chart"
 msgstr "வட்டங்கள் வரைபடம்"
 
-#: ../src/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "அடைவினை வருடு"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Scan Remote Folder"
-msgstr "தொலை அடைவினை வருடவும்"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Scan a folder"
-msgstr "ஒரு அடைவினை வருடு"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Scan a remote folder"
-msgstr "தொலை அடைவினை வருடவும்"
-
-#: ../src/baobab-main-window.ui.h:11 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "அனைத்து இடங்களையும் காட்டுக"
-
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "அளவு"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:7
 msgid "Treemap Chart"
 msgstr "மரபட வரைபடம்"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:8
 msgid "Usage"
 msgstr "பயன்பாடு"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:9
 msgid "_Copy Path to Clipboard"
 msgstr "பாதையை ஒட்டுப்பலகைக்கு நகலெடு (_C)"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
-msgstr "_த கோப்பை திறக்கவும்"
+msgstr "_O கோப்பை திறக்கவும்"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "சாதனங்களும் இருப்பிடங்களும்"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "அடைவை தேர்வு செய்"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "தொகுதியை ஆராய முடியவில்லை"
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "வட்டு பயன்பாட்டினை ஆராயும் ஒரு வரைகலை கருவி"
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr "மொழிபெயர்பாளர் நன்றிகள்"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "ரத்துசெய்"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:580
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "\"%s\" என்ற கோப்புறை அல்லது அதில் உள்ள சில கோப்புறைகளை ஸ்கேன் செய்ய முடியவில்லை."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" செல்லுபடியாகும் அடைவு இல்லை."
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
 msgid "Could not analyze disk usage."
 msgstr "வட்டு பயன்பாட்டினை ஆராய முடியவில்லை"
+
+#~ msgid "Reload"
+#~ msgstr "மீண்டும் ஏற்று"
+
+#~ msgid "Scan Folder"
+#~ msgstr "அடைவினை வருடு"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "தொலை அடைவினை வருடவும்"
+
+#~ msgid "Scan a folder"
+#~ msgstr "ஒரு அடைவினை வருடு"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "தொலை அடைவினை வருடவும்"
+
+#~ msgid "Cancel"
+#~ msgstr "ரத்துசெய்"
 
 #~ msgid "label"
 #~ msgstr "அடையாளம்"
@@ -400,9 +415,6 @@ msgstr "வட்டு பயன்பாட்டினை ஆராய மு
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (அனுமதியுடன்)"
-
-#~ msgid "Windows share"
-#~ msgstr "விண்டோஸ் பகிர்வு"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
