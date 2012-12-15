@@ -1,11 +1,8 @@
 # Galician translation of baobab.
 # Copyright (C) 2000-2001 Jesús Bravo Álvarez.
 # Copyright (C) 1999 Ruben Lopez Gomez.
-#
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://www.trasno.net
-#
-#
 # Jesús Bravo Álvarez <jba@pobox.com>, 2000-2001.
 # Ruben Lopez Gomez <ryu@mundivia.es>, 1999. (logview from gnome-admin).
 # Ignacio Casal Quinteiro <adorador_del_heavy@hotmail.com>, 2004.
@@ -16,22 +13,24 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
+# Fran Dieguez <frandieguez@gnome.org>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-04 23:15+0200\n"
-"PO-Revision-Date: 2012-09-02 12:54+0200\n"
-"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
-"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
+"POT-Creation-Date: 2012-12-15 20:41+0100\n"
+"PO-Revision-Date: 2012-12-15 20:43+0200\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
@@ -39,30 +38,41 @@ msgstr "Analizador do uso do disco"
 msgid "Check folder sizes and available disk space"
 msgstr "Verificar o tamaño dos cartafoles e o espazo dispoñíbel no disco"
 
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "almacenamento;espazo;limpeza;"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Monitorizar o cartafol persoal"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr ""
-"Indica se calquera modificación no cartafol persoal se debe monitorizar."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URIs de particións excluídas"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Unha lista de URI de particións que serán excluidas da análise."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Gráfico activo"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Que tipo de gráfica debería mostrarse."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Tamaño da xanela"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "O tamaño inicial da xanela"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Estado da xanela"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "O GdkWindowState da xanela"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
@@ -72,7 +82,7 @@ msgstr "Mostrar a información da versión e saír"
 msgid "- Disk Usage Analyzer"
 msgstr "- Analizador do uso do disco"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -115,79 +125,59 @@ msgstr "Ampl_iar"
 msgid "Zoom _out"
 msgstr "Red_ucir"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Cartafol persoal"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Volume principal"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Analizar un cartafol"
+msgid "Scan Folder…"
+msgstr "Analizar cartafol…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Analizar cartafol"
+msgid "Scan Remote Folder…"
+msgstr "Analizar cartafol remoto…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Analizar un cartafol remoto"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Analizar cartafol remoto"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Mostrar todas as localizacións"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Recargar"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "etiqueta"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Pechar"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Cartafol"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Uso"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Contidos"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Gráfico de aneis"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Gráfico de árbore"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Abrir cartafol"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar ruta ao portapapeis"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "Mov_er ao lixo"
 
@@ -224,42 +214,38 @@ msgid "_View"
 msgstr "_Ver"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Deter"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Recargar"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "Espazo _ocupado"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Expandir todo"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "_Contraer todo"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "Dispositivos e localizacións"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Seleccionar cartafol"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Non foi posíbel analizar o volume."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
@@ -274,25 +260,55 @@ msgstr ""
 "Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno."
 "net>, 1999-2012"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:580
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Non foi posíbel analizar o cartafol «%s» ou algún dos seus subcartafois."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
 msgid "Could not analyze disk usage."
 msgstr "Non foi posíbel analizar o uso do disco."
+
+#~ msgid "Monitor Home"
+#~ msgstr "Monitorizar o cartafol persoal"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr ""
+#~ "Indica se calquera modificación no cartafol persoal se debe monitorizar."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Analizar un cartafol"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Analizar cartafol"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Analizar un cartafol remoto"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Analizar cartafol remoto"
+
+#~ msgid "Reload"
+#~ msgstr "Recargar"
+
+#~ msgid "label"
+#~ msgstr "etiqueta"
+
+#~ msgid "_Stop"
+#~ msgstr "_Deter"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "Espazo _ocupado"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
 #~ msgid "Scan"
 #~ msgstr "Análise"
@@ -460,9 +476,6 @@ msgstr "Non foi posíbel analizar o uso do disco."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (con rexistro)"
-
-#~ msgid "Windows share"
-#~ msgstr "Ficheiros compartidos con Windows"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
