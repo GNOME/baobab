@@ -19,20 +19,20 @@ msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-14 17:27+0000\n"
-"PO-Revision-Date: 2012-08-17 10:45+0400\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"POT-Creation-Date: 2012-12-16 19:27+0000\n"
+"PO-Revision-Date: 2012-12-17 09:50+0400\n"
+"Last-Translator: Aleksej Kabanov <ak099@mail.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "10<=4 && (n%100<10 || n%100>=20) ? 1: 2);\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
@@ -40,29 +40,41 @@ msgstr "Анализатор использования дисков"
 msgid "Check folder sizes and available disk space"
 msgstr "Изучение размера папок и свободного места на дисках"
 
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "накопитель;пространство;очистка;"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Следить за домашней папкой"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Наблюдать ли за изменениями в домашнем каталоге."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Исключённые разделы"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Список разделов, которые не будут сканироваться."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Текущая диаграмма"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Какой тип диаграммы показывать."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Размер окна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Исходный размер окна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Состояние окна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "GdkWindowState окна"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
@@ -72,7 +84,7 @@ msgstr "Показать информацию о версии и выйти"
 msgid "- Disk Usage Analyzer"
 msgstr "— Анализатор использования дисков"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -116,88 +128,59 @@ msgstr "_Увеличить"
 msgid "Zoom _out"
 msgstr "У_меньшить"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Домашняя папка"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Основной том"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Сканировать папку"
+msgid "Scan Folder…"
+msgstr "Сканировать папку…"
 
-# Это надпись на кнопке на панели инструментов. Необходимо ручное выравнивание.
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr ""
-"Сканировать\n"
-"     папку"
+msgid "Scan Remote Folder…"
+msgstr "Сканировать удалённую папку…"
 
-# Это надпись на кнопке на панели инструментов. Необходимо ручное выравнивание.
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr ""
-"Сканировать\n"
-" удалённую папку"
-
-# Это надпись на кнопке на панели инструментов. Необходимо ручное выравнивание.
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr ""
-"    Сканировать\n"
-" удалённую папку"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Показать все местоположения"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Обновить"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "метка"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Закрыть"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Использование"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Размер"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Содержимое"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Круговая диаграмма"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Древовидная карта"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "Откр_ыть папку"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "Скопировать путь в _буфер обмена"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "У_далить в корзину"
 
@@ -237,42 +220,38 @@ msgid "_View"
 msgstr "_Вид"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "Ос_тановить"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Обновить"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "З_анятое место"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Развернуть всё"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "Св_ернуть всё"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "Устройства и местоположения"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Выберите папку"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Не удалось проанализировать том."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графическое средство для анализа использования дисков."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Валёк Филлипов\n"
@@ -283,11 +262,7 @@ msgstr ""
 "Василий Фаронов <qvvx@yandex.ru>\n"
 "Станислав Соловей <whats_up@tut.by>, 2012"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Отменить"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:580
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
@@ -295,11 +270,20 @@ msgstr ""
 "ней папок."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
 msgid "Could not analyze disk usage."
 msgstr "Не удалось проанализировать использование дисков."
+
+#~ msgid "Monitor Home"
+#~ msgstr "Следить за домашней папкой"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Наблюдать ли за изменениями в домашнем каталоге."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Сканировать папку"
