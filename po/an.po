@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: baobab gnome-3-6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-09 07:05+0000\n"
-"PO-Revision-Date: 2012-12-11 13:22+0100\n"
+"POT-Creation-Date: 2012-12-16 19:27+0000\n"
+"PO-Revision-Date: 2012-12-16 20:33+0100\n"
 "Last-Translator: Jorge Pérez Pérez <jorgtum@gmail.com>\n"
 "Language-Team: Aragonese <softaragones@googlegroups.com>\n"
 "Language: an\n"
@@ -19,13 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:164
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Analizador d'uso de disco"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Compreba la grandaria d'as carpetas y lo espacio disponible en disco"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "almacenamiento;espacio;limpieza;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -43,11 +47,27 @@ msgstr "Grafico activo"
 msgid "Which type of chart should be displayed."
 msgstr "Qué tipo de grafico se debe amostrar."
 
-#: ../src/baobab-application.vala:53
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Grandaria d'a finestra"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "A grandaria inicial d'a \tfinestra"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Estau d'a finestra"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "O GdkWindowState d'a finestra"
+
+#: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Amostrar información d'a versión y salir"
 
-#: ../src/baobab-application.vala:135
+#: ../src/baobab-application.vala:104
 msgid "- Disk Usage Analyzer"
 msgstr "- Analizador d'uso de disco"
 
@@ -103,58 +123,50 @@ msgid "Main volume"
 msgstr "Volumen prencipal"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder"
-msgstr "Analisar carpeta"
+msgid "Scan Folder…"
+msgstr "Analisar carpeta?"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan a folder"
-msgstr "Analisar una carpeta"
+msgid "Scan Remote Folder…"
+msgstr "Analisar carpeta remota?"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan Remote Folder"
-msgstr "Analisar carpeta remota"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan a remote folder"
-msgstr "Analisar una carpeta remota"
-
-#: ../src/baobab-main-window.ui.h:5
 msgid "Close"
 msgstr "Zarrar"
 
-#: ../src/baobab-main-window.ui.h:6
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/baobab-main-window.ui.h:7
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Emplego"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Mida"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Contenius"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Grafico d'anillos"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Grafico d'arbol"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Ubrir carpeta"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar a ruta en o portafuellas"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver ta la papelera"
 
@@ -202,37 +214,53 @@ msgstr "D_esplegar-lo tot"
 msgid "_Collapse All"
 msgstr "_Plegar-lo tot"
 
-#: ../src/baobab-window.vala:206
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "Dispositivos y ubicacions"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Selecciona la carpeta"
 
-#: ../src/baobab-window.vala:256
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "No se pudo analisar o volumen."
 
-#: ../src/baobab-window.vala:307
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una ferramienta grafica ta analisar l'emplego d'o disco."
 
-#: ../src/baobab-window.vala:315
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr "Jorge Pérez Pérez <jorgtum@gmail.com>"
 
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:580
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "No se pudo analisar a carpeta «%s» u bella d'as suyas subcarpetas."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» no ye una carpeta valida"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analisar l'emplego d'o disco."
+
+#~ msgid "Scan Folder"
+#~ msgstr "Analisar carpeta"
+
+#~ msgid "Scan a folder"
+#~ msgstr "Analisar una carpeta"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Analisar carpeta remota"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Analisar una carpeta remota"
