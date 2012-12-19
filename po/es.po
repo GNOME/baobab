@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-04 10:01+0000\n"
-"PO-Revision-Date: 2012-08-07 19:56+0200\n"
+"POT-Creation-Date: 2012-10-27 22:11+0000\n"
+"PO-Revision-Date: 2012-12-19 11:02+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -26,9 +26,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Gtranslator 2.91.5\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:158
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
@@ -36,41 +36,53 @@ msgstr "Analizador de uso de disco"
 msgid "Check folder sizes and available disk space"
 msgstr "Compruebe el tamaño de las carpetas y el espacio disponible en disco"
 
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "almacenamiento;espacio;limpieza;"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Monitorizar carpeta personal"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr ""
-"Indica si cualquier cambio en la carpeta personal debe ser monitorizado."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URI de las particiones excluidas"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Una lista de URI para las particiones que excluir del análisis."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Gráfico activo"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Qué tipo de gráfico se debe mostrar."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#| msgid "Windows share"
+msgid "Window size"
+msgstr "Tamaño de la ventana"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "El tamaño inicial de la ventana"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#| msgid "Windows share"
+msgid "Window state"
+msgstr "Estado de la ventana"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "El GdkWindowState de la ventana"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
 #: ../src/baobab-application.vala:104
-#| msgid "Disk Usage Analyzer"
 msgid "- Disk Usage Analyzer"
 msgstr "- Analizador de uso de disco"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -113,79 +125,61 @@ msgstr "Ampliar"
 msgid "Zoom _out"
 msgstr "Reducir"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Carpeta personal"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Volumen principal"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Analizar una carpeta"
+#| msgid "Scan F_older…"
+msgid "Scan Folder…"
+msgstr "Analizar carpeta…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Analizar carpeta"
+#| msgid "Scan Remote Fo_lder…"
+msgid "Scan Remote Folder…"
+msgstr "Analizar carpeta remota…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Analizar una carpeta remota"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Analizar carpeta remota"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:469
-msgid "Show all locations"
-msgstr "Mostrar todas las ubicaciones"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Recargar"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "etiqueta"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Uso"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Contenido"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Gráfico de anillos"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Gráfico de árbol"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Abrir carpeta"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar la ruta al portapapeles"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver a la papelera"
 
@@ -222,42 +216,39 @@ msgid "_View"
 msgstr "_Ver"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Detener"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Recargar"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "Espacio _ocupado"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Expandir todo"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "_Contraer todo"
 
-#: ../src/baobab-window.vala:200
+#: ../src/baobab-window.vala:131
+#| msgid "Show all locations"
+msgid "Devices and locations"
+msgstr "Dispositivos y ubicaciones"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Seleccione la carpeta"
 
-#: ../src/baobab-window.vala:245
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "No se pudo analizar el volumen."
 
-#: ../src/baobab-window.vala:297
+#: ../src/baobab-window.vala:329
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:300
+#: ../src/baobab-window.vala:332
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una herramienta gráfica para analizar el uso del disco."
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:337
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012\n"
@@ -270,25 +261,55 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: ../src/baobab-window.vala:460
-#| msgid "Cancel Scan"
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../src/baobab-window.vala:550
+#: ../src/baobab-window.vala:579
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "No se pudo analizar la carpeta «%s» o alguna de sus subcarpetas."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:567 ../src/baobab-window.vala:573
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
-#: ../src/baobab-window.vala:568 ../src/baobab-window.vala:574
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analizar el uso del disco."
+
+#~ msgid "Monitor Home"
+#~ msgstr "Monitorizar carpeta personal"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr ""
+#~ "Indica si cualquier cambio en la carpeta personal debe ser monitorizado."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Analizar una carpeta"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Analizar carpeta"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Analizar una carpeta remota"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Analizar carpeta remota"
+
+#~ msgid "Reload"
+#~ msgstr "Recargar"
+
+#~ msgid "label"
+#~ msgstr "etiqueta"
+
+#~ msgid "_Stop"
+#~ msgstr "_Detener"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "Espacio _ocupado"
+
+#~| msgid "Cancel Scan"
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "La barra de herramientas es visible"
@@ -455,9 +476,6 @@ msgstr "No se pudo analizar el uso del disco."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (con entrada)"
-
-#~ msgid "Windows share"
-#~ msgstr "Compartición Windows"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
