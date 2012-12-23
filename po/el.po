@@ -1,9 +1,8 @@
 # translation of gnome-utils.gnome-2-26.po to Ελληνικά
 # gnome-utils Greek translation.
 # Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2009 Free Software Foundation, Inc.
-#
-#    385 translated messages, 127 fuzzy translations, 188 untranslated messages.
-#    Finished! now, 700 messages fully translated.
+# 385 translated messages, 127 fuzzy translations, 188 untranslated messages.
+# Finished! now, 700 messages fully translated.
 # simos: 780 messages, visual verification, 14Feb2001 (sgpbea).
 # simos: 483 messages, 30Oct2002, translation review.
 # kostas: 483 messages, 30Oct2002, completed translation for GNOME2.
@@ -16,10 +15,10 @@
 # Fotis Tsamis <ftsamis@gmail.com>, 2009.
 # Sterios Prosiniklis <steriosprosiniklis@gmail.com>, 2009.
 # spyros:
-#    translated around 500 messages, in 2000.
+# translated around 500 messages, in 2000.
 # simos:
-#    updated this:
-#    One more update, now 701 total messages.
+# updated this:
+# One more update, now 701 total messages.
 # kostas: 26 Dec2002, updated translation for Gnome 2.1x
 # kostas: 03Aug2003, update translation for 2.4
 # Nikos: 13Oct2003, review translation for 2.4
@@ -28,29 +27,35 @@
 # Nikos: 19Feb2004 update translation
 # Kostas: 14Jan2006 update for 2.14
 # Simos Xenitellis <simos.lists@googlemail.com>, 2010.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-26\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-17 08:53+0000\n"
-"PO-Revision-Date: 2012-10-23 01:17+0200\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
-"Language-Team: Greek <team@lists.gnome.gr>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
+"&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-10-27 22:11+0000\n"
+"PO-Revision-Date: 2012-12-23 18:31+0300\n"
+"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:164
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Αναλυτής χρήσης δίσκου"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Έλεγχος μεγέθους φακέλων και διαθέσιμου χώρου στο δίσκο"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "αποθήκευση·χώρος·καθαρισμός·"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -68,11 +73,29 @@ msgstr "Ενεργό διάγραμμα"
 msgid "Which type of chart should be displayed."
 msgstr "Ποιος τύπος διαγράμματος θα εμφανιστεί."
 
-#: ../src/baobab-application.vala:53
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#| msgid "Windows share"
+msgid "Window size"
+msgstr "Μέγεθος παραθύρου"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Το αρχικό μέγεθος του παραθύρου"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#| msgid "Windows share"
+msgid "Window state"
+msgstr "Κατάσταση παραθύρου"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "Η GdkWindowState του παραθύρου"
+
+#: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
-#: ../src/baobab-application.vala:131
+#: ../src/baobab-application.vala:104
 msgid "- Disk Usage Analyzer"
 msgstr "- Αναλυτής χρήσης δίσκου"
 
@@ -123,63 +146,57 @@ msgstr "Σμίκρυ_νση"
 msgid "Home folder"
 msgstr "Προσωπικός φάκελος"
 
-#: ../src/baobab-location.vala:119
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Κύριος τόμος"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder"
-msgstr "Σάρωση φακέλου"
+#| msgid "Scan F_older…"
+msgid "Scan Folder…"
+msgstr "Σάρωση φακέλου…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan a folder"
-msgstr "Σάρωση ενός φακέλου"
+#| msgid "Scan Remote Fo_lder…"
+msgid "Scan Remote Folder…"
+msgstr "Σάρωση απομακρυσμένου φακέλου…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan Remote Folder"
-msgstr "Σάρωση απομακρυσμένου φακέλου"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan a remote folder"
-msgstr "Σάρωση ενός απομακρυσμένου φακέλου"
-
-#: ../src/baobab-main-window.ui.h:5
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: ../src/baobab-main-window.ui.h:6
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Φάκελος"
 
-#: ../src/baobab-main-window.ui.h:7
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Χρήση"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Διάγραμμα δακτυλίων"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Διάγραμμα δέντρου"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "Ά_νοιγμα φακέλου "
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "Αντι_γραφή διαδρομής στο πρόχειρο"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "_Μετακίνηση στα απορρίμματα"
 
@@ -227,50 +244,65 @@ msgstr "Α_νάπτυξη όλων"
 msgid "_Collapse All"
 msgstr "Σύμπτυξη ό_λων"
 
-#: ../src/baobab-window.vala:206
+#: ../src/baobab-window.vala:131
+#| msgid "Show all locations"
+msgid "Devices and locations"
+msgstr "Συσκευές και τοποθεσίες"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Επιλογή φακέλου"
 
-#: ../src/baobab-window.vala:256
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Αδυναμία ανάλυσης τόμου."
 
-#: ../src/baobab-window.vala:306
+#: ../src/baobab-window.vala:329
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:309
+#: ../src/baobab-window.vala:332
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ένα γραφικό εργαλείο για την ανάλυση χρήσης του δίσκου."
 
-#: ../src/baobab-window.vala:314
+#: ../src/baobab-window.vala:337
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
+" Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
 " Σπύρος Παπαδημητρίου <spapadim+@cs.cmu.edu>\n"
 " Συμεών (σίμος) Ξενιτέλλης <simos@hellug.gr>\n"
 " Κώστας Παπαδήμας <pkst@gnome.org>\n"
 " Νίκος Χαρωνιτάκης <nikosx@gmail.com>\n"
 "Για περισσότερα δείτε http://www.gnome.gr/"
 
-#: ../src/baobab-window.vala:556
+#: ../src/baobab-window.vala:579
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Αδυναμία σάρωσης του φακέλου \"%s\" ή μερικών από τους φακέλους που περιέχει."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:575 ../src/baobab-window.vala:581
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "Το \"%s\" δεν είναι έγκυρος φάκελος"
 
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "Αδυναμία ανάλυσης χρήσης του δίσκου."
 
-#~ msgid "Show all locations"
-#~ msgstr "Εμφάνιση όλων των τοποθεσιών"
+#~ msgid "Scan Folder"
+#~ msgstr "Σάρωση φακέλου"
+
+#~ msgid "Scan a folder"
+#~ msgstr "Σάρωση ενός φακέλου"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Σάρωση απομακρυσμένου φακέλου"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Σάρωση ενός απομακρυσμένου φακέλου"
 
 #~ msgid "Reload"
 #~ msgstr "Επαναφόρτωση"
@@ -450,9 +482,6 @@ msgstr "Αδυναμία ανάλυσης χρήσης του δίσκου."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (με σύνδεση)"
-
-#~ msgid "Windows share"
-#~ msgstr "Κοινόχρηστο Windows"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
