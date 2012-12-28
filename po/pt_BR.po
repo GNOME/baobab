@@ -26,9 +26,9 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-12 15:46+0000\n"
-"PO-Revision-Date: 2012-09-07 22:57-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2012-12-12 23:11+0000\n"
+"PO-Revision-Date: 2012-12-26 13:08-0300\n"
+"Last-Translator: Florencio Neves <florencioneves@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -39,13 +39,13 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: Brazil\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:164
 msgid "Disk Usage Analyzer"
-msgstr "Analisador do uso do disco"
+msgstr "Analisador de uso de disco"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
-msgstr "Verifique o tamanho das pastas e espaço disponível no disco"
+msgstr "Verifique o tamanho de pastas e o espaço disponível em disco"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -57,21 +57,21 @@ msgstr "Uma lista de URIs das partições a serem excluídas da varredura."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
-msgstr "Ativar gráfico"
+msgstr "Gráfico ativo"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Qual tipo de gráfico deveria ser exibido."
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:53
 msgid "Print version information and exit"
 msgstr "Imprimir informações da versão e sair"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:135
 msgid "- Disk Usage Analyzer"
-msgstr "- analisador do uso do disco"
+msgstr "- analisador de uso de disco"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -84,7 +84,7 @@ msgstr "Profundidade máxima"
 
 #: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
-msgstr "A profundidade máxima a desenhar no gráfico a partir da raiz"
+msgstr "A profundidade máxima mostrada no gráfico a partir da raiz"
 
 #: ../src/baobab-chart.c:196
 msgid "Chart model"
@@ -114,75 +114,68 @@ msgstr "Amp_liar"
 msgid "Zoom _out"
 msgstr "Redu_zir"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Pasta pessoal"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Volume principal"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Varre uma pasta"
-
-#: ../src/baobab-main-window.ui.h:2
 msgid "Scan Folder"
 msgstr "Varrer pasta"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Varrer uma pasta remota"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan a folder"
+msgstr "Varre uma pasta"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:3
 msgid "Scan Remote Folder"
 msgstr "Varrer pasta remota"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Mostrar todas as localizações"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Scan a remote folder"
+msgstr "Varre uma pasta remota"
 
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Recarregar"
-
-#: ../src/baobab-main-window.ui.h:7
+#: ../src/baobab-main-window.ui.h:5
 msgid "Close"
 msgstr "Fechar"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:6
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:7
 msgid "Usage"
 msgstr "Utilização"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:8
 msgid "Size"
 msgstr "Tamanho"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:9
 msgid "Contents"
 msgstr "Conteúdo"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:10
 msgid "Rings Chart"
-msgstr "Gráficos de anéis"
+msgstr "Gráfico de anéis"
 
-#: ../src/baobab-main-window.ui.h:13
+# Após sugestões, mantido: "Gráfico treemap". Este termo é encontrado em sites brasileiros, o que leva a crer que o usuário terá maior facilidade em reconhecer este termo.
+#: ../src/baobab-main-window.ui.h:11
 msgid "Treemap Chart"
-msgstr "Gráficos de mapa em árvore (Treemap)"
+msgstr "Gráfico Treemap"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Open Folder"
 msgstr "_Abrir pasta"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:13
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar caminho para a área de transferência"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:14
 msgid "Mo_ve to Trash"
 msgstr "_Mover para a lixeira"
 
@@ -219,42 +212,34 @@ msgid "_View"
 msgstr "_Ver"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Parar"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Recarregar"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "_Espaço alocado"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "Expan_dir tudo"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
-msgstr "En_colher todos"
+msgstr "Re_colher todos"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:206
 msgid "Select Folder"
 msgstr "Selecione uma pasta"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:256
 msgid "Could not analyze volume."
 msgstr "Não foi possível analisar o volume."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:307
 msgid "Baobab"
 msgstr "Baobá"
 
-#: ../src/baobab-window.vala:305
-msgid "A graphical tool to analyze disk usage."
-msgstr "Uma ferramenta gráfica para analisar o uso do disco."
-
 #: ../src/baobab-window.vala:310
+msgid "A graphical tool to analyze disk usage."
+msgstr "Uma ferramenta gráfica para analisar o uso de disco."
+
+#: ../src/baobab-window.vala:315
 msgid "translator-credits"
 msgstr ""
 "Alexandre Hautequest <hquest@fesppr.br>\n"
@@ -273,19 +258,14 @@ msgstr ""
 "Krix Apolinário <krixapolinario@gmail.com>\n"
 "Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
 "Rodrigo Padula de Oliveira <contato@rodrigopadula.com>\n"
-"André Gondim <andregondim@ubuntu.com>\n"
+"André Gondim <In memoriam>\n"
 "Enrico Nicoletto <liverig@gmail.com>"
-
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Cancelar"
 
 #: ../src/baobab-window.vala:557
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
-"Não foi possível varrer a pasta \"%s\" ou algumas das pastas as quais ela "
-"contém."
+"Não foi possível varrer a pasta \"%s\" ou algumas das pastas nela contidas."
 
 #. || is_virtual_filesystem ()
 #: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
@@ -295,7 +275,22 @@ msgstr "\"%s\" não é uma pasta válida"
 
 #: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
 msgid "Could not analyze disk usage."
-msgstr "Não foi possível analisar o uso do disco."
+msgstr "Não foi possível analisar o uso de disco."
+
+#~ msgid "Show all locations"
+#~ msgstr "Mostrar todas as localizações"
+
+#~ msgid "Reload"
+#~ msgstr "Recarregar"
+
+#~ msgid "_Stop"
+#~ msgstr "_Parar"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "_Espaço alocado"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
 #~ msgid "label"
 #~ msgstr "rótulo"
