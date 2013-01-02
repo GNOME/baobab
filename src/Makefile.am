@@ -10,7 +10,7 @@ bin_PROGRAMS = baobab
 BUILT_SOURCES = baobab-resources.c
 
 baobab_VALAFLAGS = \
-	--vapidir=$(top_srcdir)/libgd	\
+	--vapidir=$(top_builddir)/libgd	\
 	--pkg gtk+-3.0		\
 	--pkg gio-2.0		\
 	--pkg gio-unix-2.0	\
@@ -46,8 +46,8 @@ baobab_SOURCES = \
 	egg-list-box.c			\
 	$(BUILT_SOURCES)
 
-baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies baobab.gresource.xml)
-	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source baobab.gresource.xml
+baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir=$(srcdir) $(srcdir)/baobab.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $<
 
 AM_CFLAGS = \
 	$(BAOBAB_CFLAGS)		\
