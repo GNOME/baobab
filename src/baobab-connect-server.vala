@@ -23,7 +23,8 @@ namespace Baobab {
     class ConnectServer : Object {
         const string[] argv = {
             "nautilus-connect-server",
-            "--print-uri"
+            "--print-uri",
+            null
         };
 
         public signal void selected(string? uri);
