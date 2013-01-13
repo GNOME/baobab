@@ -799,9 +799,22 @@ egg_list_box_real_motion_notify_event (GtkWidget *widget,
 {
   EggListBox *list_box = EGG_LIST_BOX (widget);
   EggListBoxChildInfo *child;
+  GdkWindow *window, *event_window;
+  gint relative_y;
+  gdouble parent_y;
 
+  window = gtk_widget_get_window (GTK_WIDGET (list_box));
+  event_window = event->window;
+  relative_y = event->y;
 
-  child = egg_list_box_find_child_at_y (list_box, event->y);
+  while ((event_window != NULL) && (event_window != window))
+    {
+      gdk_window_coords_to_parent (event_window, 0, relative_y, NULL, &parent_y);
+      relative_y = parent_y;
+      event_window = gdk_window_get_effective_parent (event_window);
+    }
+
+  child = egg_list_box_find_child_at_y (list_box, relative_y);
   egg_list_box_update_prelight (list_box, child);
   egg_list_box_update_active (list_box, child);
 
@@ -967,13 +980,11 @@ egg_list_box_real_focus (GtkWidget* widget, GtkDirectionType direction)
 	{
 	  switch (direction)
 	    {
-	    case GTK_DIR_DOWN:
-	    case GTK_DIR_TAB_FORWARD:
-	      next_focus_child = egg_list_box_get_first_visible (list_box);
-	      break;
 	    case GTK_DIR_UP:
 	    case GTK_DIR_TAB_BACKWARD:
-	      next_focus_child = egg_list_box_get_last_visible (list_box);
+	      next_focus_child = priv->selected_child;
+	      if (next_focus_child == NULL)
+		next_focus_child = egg_list_box_get_last_visible (list_box);
 	      break;
 	    default:
 	      next_focus_child = priv->selected_child;
@@ -1048,6 +1059,7 @@ egg_list_box_real_draw (GtkWidget* widget, cairo_t* cr)
   GtkStateFlags state;
   ChildFlags flags[3], *found;
   gint flags_length;
+  gint focus_pad;
   int i;
 
   gtk_widget_get_allocation (GTK_WIDGET (list_box), &allocation);
@@ -1084,7 +1096,13 @@ egg_list_box_real_draw (GtkWidget* widget, cairo_t* cr)
     }
 
   if (gtk_widget_has_visible_focus (GTK_WIDGET (list_box)) && priv->cursor_child != NULL)
-    gtk_render_focus (context, cr, 0, priv->cursor_child->y, allocation.width, priv->cursor_child->height);
+    {
+      gtk_style_context_get_style (context,
+                                   "focus-padding", &focus_pad,
+                                   NULL);
+      gtk_render_focus (context, cr, focus_pad, priv->cursor_child->y + focus_pad,
+                        allocation.width - 2 * focus_pad, priv->cursor_child->height - 2 * focus_pad);
+    }
 
   GTK_WIDGET_CLASS (egg_list_box_parent_class)->draw ((GtkWidget*) G_TYPE_CHECK_INSTANCE_CAST (list_box, GTK_TYPE_CONTAINER, GtkContainer), cr);
 
