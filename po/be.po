@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: baobab.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-20 14:51+0000\n"
+"POT-Creation-Date: 2012-10-27 22:11+0000\n"
 "PO-Revision-Date: 2012-09-07 19:10+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
@@ -18,13 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Аналіз дыскавай прасторы"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Праверка памеру папак і выкарыстання дыскавай прасторы"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "сховішча;дыск;прастора;ачыстка;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -42,6 +46,22 @@ msgstr "Актыўная дыяграма"
 msgid "Which type of chart should be displayed."
 msgstr "Тып паказанай дыяграмы."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Памер акна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Пачатковы памер акна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Становішча акна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "Уласцівасць GdkWindowState акна"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Вывесці інфармацыю аб версіі праграмы і выйсці"
@@ -50,7 +70,7 @@ msgstr "Вывесці інфармацыю аб версіі праграмы �
 msgid "- Disk Usage Analyzer"
 msgstr "- Прылада для аналізу дыскавай прасторы"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -94,79 +114,59 @@ msgstr "Па_вялічыць"
 msgid "Zoom _out"
 msgstr "З_меншыць"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Дамашняя папка"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Галоўны дыскавы том"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Даследаваць папку"
+msgid "Scan Folder…"
+msgstr "Даследаваць папку..."
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Даследаваць папку"
+msgid "Scan Remote Folder…"
+msgstr "Даследаваць аддаленую папку..."
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Даследаваць аддаленую папку"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Даследаваць аддаленую папку"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Паказаць усе месцапалажэнні"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Перачытаць"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "надпіс"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Закрыць"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Выкарыстанне"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Памер"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Змест"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Кругавая дыяграма"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Іерархічная карта"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Адкрыць папку"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Скапіраваць сцежку ў буфер абмену"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "Пера_мясціць у сметніцу"
 
@@ -203,63 +203,56 @@ msgid "_View"
 msgstr "_Від"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Спыніць"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "Пера_чытаць"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "_Выдзеленая прастора"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Разгарнуць усё"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "_Згарнуць усё"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "Прыстасаванні і месцапалажэнні"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Выбар папкі"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Не ўдалося даследаваць дыскавы том."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:329
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:332
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графічная прылада для даследавання выкарыстання дыскавай прасторы."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:337
 msgid "translator-credits"
 msgstr ""
 "Vital Khilko <dojlid@mova.org>\n"
 "Ales Nyakhaychyk <nab@mail.by>\n"
 "Ihar Hrachyshka <ihar.hrachyshka@gmail.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Скасаваць"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:579
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Не ўдалося даследаваць папку \"%s\" ці некаторыя з яе падпапак."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" не з'яўляецца папкай"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "Не ўдалося даследаваць выкарыстанне дыскавай прасторы."
+
