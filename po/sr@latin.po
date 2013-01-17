@@ -1,12 +1,12 @@
 # Miloš Popović <gpopac@gmail.com>, 2011.
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2012.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-04 10:01+0000\n"
-"PO-Revision-Date: 2012-08-05 09:31+0200\n"
+"POT-Creation-Date: 2012-10-27 22:11+0000\n"
+"PO-Revision-Date: 2013-01-17 11:19+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -17,37 +17,49 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:158
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
-msgstr "Analizer iskorišćenosti diska"
+msgstr "Ispitivač iskorišćenosti diska"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Proverite veličine fascikli i slobodan prostor na disku"
 
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "smeštaj;skladištenje;prostor;čišćenje;"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "Nadgleda ličnu fasciklu"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Da li treba nadgledati izmene korisničkog direktorijuma."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Putanje izdvojenih particija"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Spisak adresa particija koje će biti izdvojene iz pretraživanja."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "Aktivni grafikon"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Vrsta grafika koji će biti prikazan."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Veličina prozora"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Početna veličina prozora"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Stanje prozora"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "Stanje prozora Gdk prozora"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
@@ -57,7 +69,7 @@ msgstr "Ispisuje podatke o izdanju i izlazi"
 msgid "- Disk Usage Analyzer"
 msgstr "— Analizer iskorišćenosti diska"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -102,79 +114,61 @@ msgstr "U_većaj"
 msgid "Zoom _out"
 msgstr "U_manji"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Lična fascikla"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Glavni disk"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Pregledajte fasciklu"
+#| msgid "Scan F_older…"
+msgid "Scan Folder…"
+msgstr "Pregledaj fasciklu…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Fascikla"
+#| msgid "Scan Remote Fo_lder…"
+msgid "Scan Remote Folder…"
+msgstr "Pregledaj udaljenu fasciklu…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Pregledajte udaljenu fasciklu"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Udaljena fascikla"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:469
-msgid "Show all locations"
-msgstr "Prikaži sva mesta"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Osveži"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "natpis"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Zatvori"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Fascikla"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Upotreba"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Veličina"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Sadržaji"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Prikaži prstenove"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Prikaži stablo"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Otvori fasciklu"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Umnoži putanju u ostavu"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "Premesti u _smeće"
 
@@ -192,7 +186,7 @@ msgstr "_Izađi"
 
 #: ../src/baobab-menu.ui.h:4
 msgid "_Analyzer"
-msgstr "_Analizator"
+msgstr "_Ispitivač"
 
 #: ../src/baobab-menu.ui.h:5
 msgid "_Scan Home"
@@ -211,89 +205,56 @@ msgid "_View"
 msgstr "_Pregled"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Zaustavi"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Osveži"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "_Zauzet prostor"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Razgranaj sve"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "_Sažmi sve"
 
-#: ../src/baobab-window.vala:200
+#: ../src/baobab-window.vala:131
+#| msgid "Show all locations"
+msgid "Devices and locations"
+msgstr "Uređaji i mesta"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Izaberite fasciklu"
 
-#: ../src/baobab-window.vala:245
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Ne mogu da analiziram disk."
 
-#: ../src/baobab-window.vala:297
+#: ../src/baobab-window.vala:329
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:300
+#: ../src/baobab-window.vala:332
 msgid "A graphical tool to analyze disk usage."
-msgstr "Grafički alat za analizu iskorišenosti diska."
+msgstr "Grafički alat za ispitivanje iskorišenosti diska."
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:337
 msgid "translator-credits"
-msgstr "  Miroslav Nikolić <mirosavnikoic@rocketmailcom>"
+msgstr ""
+"  Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
+"\n"
+"http://prevod.org — prevod na srpski jezik"
 
-#: ../src/baobab-window.vala:460
-#| msgid "Cancel Scan"
-msgid "Cancel"
-msgstr "Otkaži"
-
-#: ../src/baobab-window.vala:550
+#: ../src/baobab-window.vala:579
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Ne mogu da pregledam fasciklu „%s“ ili neku od fascikli koje sadrži."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:567 ../src/baobab-window.vala:573
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ nije ispravna fascikla"
 
-#: ../src/baobab-window.vala:568 ../src/baobab-window.vala:574
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "Ne mogu da analiziram iskorišćenost diska."
-
-#~ msgid "Scan"
-#~ msgstr "Pregledaj"
-
-#~ msgid "Mount and Scan"
-#~ msgstr "Prikači i pregledaj"
-
-#~ msgid "All locations"
-#~ msgstr "Sva mesta"
-
-#~ msgid "_All Locations"
-#~ msgstr "Sva _mesta"
-
-#~ msgid "All Locations"
-#~ msgstr "Sva mesta"
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Traka alata je vidljiva"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Da li traka alata treba da bude vidljiva u glavnom prozoru."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Traka stanja je vidljiva"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr "Da li traka stanja treba da bude vidljiva u glavnom prozoru."
