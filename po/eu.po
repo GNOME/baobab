@@ -2,577 +2,557 @@
 # Copyright (C) 2005, 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 # Mikel Olasagasti <hey_neken@mundurat.net>, 2005.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007, 2013.
 # Julen Ruiz Aizpuru <julenx@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-03 16:45+0100\n"
-"PO-Revision-Date: 2012-03-03 16:46+0100\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
-"Language-Team: Basque <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2013-01-31 12:51+0100\n"
+"PO-Revision-Date: 2013-01-06 00:23+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.4\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Egiaztatu karpeten tamainak eta diskoan dagoen leku erabilgarria"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Disko-erabileraren analizatzailea"
 
-#
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Disko-erabileraren analizatzailearen hobespenak"
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "Egiaztatu karpeten tamainak eta diskoan dagoen leku erabilgarria"
 
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in file system scan:"
-msgstr "Hautatu _gailuak fitxategi-sistemaren eskaneatzean sartzeko:"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Monitorizatu zure etxeko karpetako aldaketak"
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "biltegia;lekua;garbitu;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Partizioen URI-zerrenda eskaneatzetik kanpo uzteko."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr "Aktibatu diagrama"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "Kanpoan utzitako partizioen URIak"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Partizioen URI-zerrenda eskaneatzetik kanpo uzteko."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "Aktibatu diagrama"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr "Monitorizatu karpeta nagusia"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Statusbar is Visible"
-msgstr "Egoera-barra ikusgai dago"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Tresna-barra ikusgai dago"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr "Etxea direktorioko edozein aldaketa monitorizatu behar den edo ez."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Leiho nagusiko beheko egoera-barra ikusgai dagoen edo ez."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr "Leiho nagusiko tresna-barra ikusgai dagoen edo ez"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
 msgid "Which type of chart should be displayed."
 msgstr "Zer diagrama mota bistaratuko den."
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Esleitutako _lekua"
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Leihoaren tamaina"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Freskatu"
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Leihoaren hasierako tamaina"
 
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder…"
-msgstr "_Eskaneatu urruneko karpeta..."
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Leihoaren egoera"
 
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older…"
-msgstr "Eskaneatu _karpeta..."
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "Leihoaren GdkWindowState"
 
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan File System"
-msgstr "Eskaneatu fitxategi-sistema"
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Erakutsi bertsioaren informazioa eta irten"
 
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Eskaneatu karpeta"
+#: ../src/baobab-application.vala:104
+msgid "- Disk Usage Analyzer"
+msgstr "- Disko-erabileraren analizatzailea"
 
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Eskaneatu karpeta nagusia"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Eskaneatu urruneko karpeta"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Eskaneatu _fitxategi-sistema"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Eskaneatu _etxeko karpeta"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Eskaneatu karpeta bat"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder or file system"
-msgstr "Eskaneatu urruneko karpeta edo fitxategi-sistema bat"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan the file system"
-msgstr "Eskaneatu fitxategi-sistema"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan your home folder"
-msgstr "Eskaneatu zure karpeta nagusia"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "_Egoera-barra"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Gelditu eskaneatzea"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Aztertzailea"
-
-#
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "Tolestu _dena"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_Edukia"
-
-#
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Editatu"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "_Zabaldu dena"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "_Laguntza"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "_Tresna-barra"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_Ikusi"
-
-#: ../src/baobab.c:130 ../src/baobab.c:404
-msgid "Scanning…"
-msgstr "Eskaneatzen..."
-
-#: ../src/baobab.c:176
-msgid "Total filesystem capacity:"
-msgstr "Fitxategi-sistemaren gehiengo edukiera:"
-
-#: ../src/baobab.c:177
-msgid "used:"
-msgstr "erabilita:"
-
-#: ../src/baobab.c:178
-msgid "available:"
-msgstr "erabilgarri:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:267 ../src/baobab.c:324 ../src/callbacks.c:264
-msgid "Calculating percentage bars…"
-msgstr "Portzentai barrak kalkulatzen…"
-
-#: ../src/baobab.c:278 ../src/baobab.c:1226 ../src/callbacks.c:268
-msgid "Ready"
-msgstr "Prest"
-
-#: ../src/baobab.c:437
-msgid "Total filesystem capacity"
-msgstr "Fitxategi-sistemaren edukiera guztia"
-
-#: ../src/baobab.c:459
-msgid "Total filesystem usage"
-msgstr "Fitxategi-sistemaren erabilpen guztia"
-
-#: ../src/baobab.c:500
-msgid "contains hardlinks for:"
-msgstr "honen esteka-gogorra dauka:"
-
-#: ../src/baobab.c:509
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "Elementu %5d"
-msgstr[1] "%5d elementu"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "Elementu %d"
+msgstr[1] "%d elementu"
 
-#: ../src/baobab.c:614
-msgid "Could not initialize monitoring"
-msgstr "Ezin izan da monitorizazioa hasieratu"
-
-#: ../src/baobab.c:615
-msgid "Changes to your home folder will not be monitored."
-msgstr "Etxea karpetako aldaketak ez dira monitorizatuko."
-
-#: ../src/baobab.c:1050
-msgid "View as Rings Chart"
-msgstr "Ikusi diagrama eraztun gisa"
-
-#: ../src/baobab.c:1052
-msgid "View as Treemap Chart"
-msgstr "Ikusi diagrama zuhaitz-mapa gisa"
-
-#: ../src/baobab.c:1151
-msgid "Show version"
-msgstr "Erakutsi bertsioa"
-
-#: ../src/baobab.c:1152
-msgid "[DIRECTORY]"
-msgstr "[DIREKTORIOA]"
-
-#: ../src/baobab.c:1182
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Argumentu gehiegi. Soilik direktorio bat zehaz daiteke."
-
-#: ../src/baobab.c:1199
-msgid "Could not detect any mount point."
-msgstr "Ezin izan da muntatze-punturik detektatu."
-
-#: ../src/baobab.c:1201
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Muntatze-punturik gabe ezin da diskoaren erabilera analizatu."
-
-#: ../src/baobab-chart.c:188
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Gehiengo sakonera"
 
-#: ../src/baobab-chart.c:189
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "Diagramaren marrazkiaren gehiengo sakonera (errotik hasiz)"
 
-#: ../src/baobab-chart.c:198
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Diagrama modeloa"
 
-#: ../src/baobab-chart.c:199
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Ezarri diagramaren modeloa"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Diagramaren erroko nodoa"
 
-#: ../src/baobab-chart.c:207
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Modeloaren erroko nodoa ezartzen du"
 
-#: ../src/baobab-chart.c:905
-msgid "Move to parent folder"
-msgstr "Eraman karpeta gurasora"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Eraman karpeta gurasora"
 
-#: ../src/baobab-chart.c:909
-msgid "Zoom in"
-msgstr "Handiagotu"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "_Handiagotu"
 
-#: ../src/baobab-chart.c:913
-msgid "Zoom out"
-msgstr "Txikiagotu"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "_Txikiagotu"
 
-#: ../src/baobab-chart.c:917
-msgid "Save screenshot"
-msgstr "Gorde pantaila-argazkia"
+#: ../src/baobab-location.vala:77
+msgid "Home folder"
+msgstr "Karpeta nagusia"
 
-#: ../src/baobab-chart.c:1776
-msgid "Cannot create pixbuf image!"
-msgstr "Ezin da pixbuf irudia sortu."
+#: ../src/baobab-location.vala:123
+msgid "Main volume"
+msgstr "Bolumen nagusia"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1784
-msgid "Save Snapshot"
-msgstr "Gorde pantaila-argazkia"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan Folder…"
+msgstr "Eskaneatu karpeta…"
 
-#: ../src/baobab-chart.c:1811
-msgid "_Image type:"
-msgstr "_Irudi-mota:"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Remote Folder…"
+msgstr "Eskaneatu urruneko karpeta…"
 
-#: ../src/baobab-prefs.c:173
-msgid "Scan"
-msgstr "Eskaneatu"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Close"
+msgstr "Itxi"
 
-#: ../src/baobab-prefs.c:181
-msgid "Device"
-msgstr "Gailua"
-
-#: ../src/baobab-prefs.c:189
-msgid "Mount Point"
-msgstr "Muntatze-puntua"
-
-#: ../src/baobab-prefs.c:197
-msgid "File System Type"
-msgstr "Fitxategi-sistema mota"
-
-#: ../src/baobab-prefs.c:205
-msgid "Total Size"
-msgstr "Tamaina osoa"
-
-#: ../src/baobab-prefs.c:214
-msgid "Available"
-msgstr "Eskuragarri"
-
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "Ezin da '%s' kokalekua eskaneatu"
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Helbide pertsonalizatua"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP publikoa"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (pasahitzarekin)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Windows-ek partekatua"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV segurua (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
-"Ezin da zerbitzariarekin konektatu. Zerbitzari baten izena idatzi behar duzu."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Idazti izena eta saiatu berriro."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Helbidea (URLa):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Zerbitzaria:"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Aukerako informazioa:"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Partekatu:"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Ataka:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "Kar_peta:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "_Erabiltzaile-izena:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "_Domeinu-izena:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Konektatu zerbitzariarekin"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Zerbitzu _mota:"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Eskaneatu"
-
-#: ../src/baobab-treeview.c:83
-msgid "Rescan your home folder?"
-msgstr "Eskaneatu etxeko karpeta?"
-
-#: ../src/baobab-treeview.c:84
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"Etxeko karpetaren edukia aldatu egin da. Hautatu berreskaneatzea diskoaren "
-"erabileraren xehetasunak eguneratzeko."
-
-#: ../src/baobab-treeview.c:85
-msgid "_Rescan"
-msgstr "_Berreskaneatu"
-
-#: ../src/baobab-treeview.c:223
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Karpeta"
 
-#: ../src/baobab-treeview.c:245
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Erabilera"
 
-#: ../src/baobab-treeview.c:259
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Tamaina"
 
-#: ../src/baobab-treeview.c:275
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Edukia"
 
-#: ../src/baobab-utils.c:73
-msgid "Select Folder"
-msgstr "Hautatu karpeta"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Rings Chart"
+msgstr "Eraztun-diagrama"
 
-#. add extra widget
-#: ../src/baobab-utils.c:85
-msgid "_Show hidden folders"
-msgstr "Erakutsi e_zkutuko karpetak"
+#: ../src/baobab-main-window.ui.h:9
+msgid "Treemap Chart"
+msgstr "Diagrama zuhaitz-mapa"
 
-#: ../src/baobab-utils.c:264
-msgid "Cannot check an excluded folder!"
-msgstr "Ezin da kanpoan utzitako karpeta begiratu."
-
-#: ../src/baobab-utils.c:288
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "%s ez da baliozko karpeta"
-
-#: ../src/baobab-utils.c:291
-msgid "Could not analyze disk usage."
-msgstr "Ezin izan da diskoaren erabilera analizatu."
-
-#: ../src/baobab-utils.c:327
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Ireki karpeta"
 
-#: ../src/baobab-utils.c:333
+#: ../src/baobab-main-window.ui.h:11
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopiatu bide-izena arbelean"
+
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "_Bota zakarrontzira"
 
-#: ../src/baobab-utils.c:363
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Ezin izan da \"%s\" karpeta ireki"
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Laguntza"
 
-#: ../src/baobab-utils.c:366
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "Ez dago karpeta bistaratzeko ikustaile-programarik instalatuta."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "Honi _buruz"
 
-#: ../src/baobab-utils.c:434
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Ezin izan da \"%s\" zakarrontzira bota"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "I_rten"
 
-#: ../src/baobab-utils.c:442
-msgid "Could not move file to the Trash"
-msgstr "Ezin izan da fitxategia zakarrontzira bota"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "_Aztertzailea"
 
-#: ../src/baobab-utils.c:444
-#, c-format
-msgid "Details: %s"
-msgstr "Xehetasunak: %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "_Eskaneatu karpeta nagusia"
 
-#: ../src/baobab-utils.c:480
-msgid "There was an error displaying help."
-msgstr "Errorea gertatu da laguntza bistaratzean."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "Eskaneatu _karpeta..."
 
-#: ../src/callbacks.c:75
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Programa hau software librea da; birbana eta/edo alda dezakezu Software "
-"Foundation-ek argitaratutako GNU Lizentzia Publiko Orokorraren 2. bertsioan, "
-"edo (nahiago baduzu) beste berriago batean, jasotako baldintzak betez gero."
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "Eskaneatu _urruneko karpeta…"
 
-#: ../src/callbacks.c:80
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Egunkari-ikustailea erabilgarria izango delakoan banatzen da, baina, INOLAKO "
-"BERMERIK GABE; era berean, ez da bermatzen beraren EGOKITASUNA "
-"MERKATURATZEKO edo HELBURU PARTIKULARRETARAKO ERABILTZEKO. Argibide gehiago "
-"nahi izanez gero, ikus GNU Lizentzia Publiko Orokorra."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "_Ikusi"
 
-#: ../src/callbacks.c:85
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Programa honekin batera GNU Lizentzia Publiko Orokorraren kopia bat jasoko "
-"zenuen; hala ez bada, idatzi hona: Free SoftwareFoundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Reload"
+msgstr "_Birkargatu"
 
-#: ../src/callbacks.c:100
+#: ../src/baobab-menu.ui.h:10
+msgid "_Expand All"
+msgstr "_Zabaldu dena"
+
+#
+#: ../src/baobab-menu.ui.h:11
+msgid "_Collapse All"
+msgstr "Tolestu _dena"
+
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "Gailu eta kokalekuak"
+
+#: ../src/baobab-window.vala:229
+msgid "Select Folder"
+msgstr "Hautatu karpeta"
+
+#: ../src/baobab-window.vala:279
+msgid "Could not analyze volume."
+msgstr "Ezin izan da bolumena analizatu."
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Diskoen erabilera analizatzeko tresna grafiko bat."
 
-#: ../src/callbacks.c:109
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Mikel Olasagasti Uranga <hey_neken@mundurat.net>\n"
-"Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Julen Ruiz Aizpuru <julenx@gmail.com>"
 
-#: ../src/callbacks.c:207
-msgid "The document does not exist."
-msgstr "Dokumentua ez da existitzen."
+#: ../src/baobab-window.vala:580
+#, c-format
+msgid "Could not scan folder '%s' or some of the folders it contains."
+msgstr "Ezin izan da '%s' karpeta edo honen azpikarpetaren bat eskaneatu."
 
-#: ../src/callbacks.c:288
-msgid "The folder does not exist."
-msgstr "Karpeta ez da existitzen."
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#, c-format
+msgid "'%s' is not a valid folder"
+msgstr "'%s' ez da baliozko karpeta"
+
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+msgid "Could not analyze disk usage."
+msgstr "Ezin izan da diskoaren erabilera analizatu."
+
+#
+#~ msgid "Disk Usage Analyzer Preferences"
+#~ msgstr "Disko-erabileraren analizatzailearen hobespenak"
+
+#~ msgid "Select _devices to include in file system scan:"
+#~ msgstr "Hautatu _gailuak fitxategi-sistemaren eskaneatzean sartzeko:"
+
+#~ msgid "_Monitor changes to your home folder"
+#~ msgstr "_Monitorizatu zure etxeko karpetako aldaketak"
+
+#~ msgid "Monitor Home"
+#~ msgstr "Monitorizatu karpeta nagusia"
+
+#~ msgid "Statusbar is Visible"
+#~ msgstr "Egoera-barra ikusgai dago"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "Tresna-barra ikusgai dago"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "Etxea direktorioko edozein aldaketa monitorizatu behar den edo ez."
+
+#~ msgid ""
+#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgstr "Leiho nagusiko beheko egoera-barra ikusgai dagoen edo ez."
+
+#~ msgid "Whether the toolbar should be visible in main window."
+#~ msgstr "Leiho nagusiko tresna-barra ikusgai dagoen edo ez"
+
+#~ msgid "All_ocated Space"
+#~ msgstr "Esleitutako _lekua"
+
+#~ msgid "Refresh"
+#~ msgstr "Freskatu"
+
+#~ msgid "Scan File System"
+#~ msgstr "Eskaneatu fitxategi-sistema"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Eskaneatu karpeta"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Eskaneatu urruneko karpeta"
+
+#~ msgid "Scan _Filesystem"
+#~ msgstr "Eskaneatu _fitxategi-sistema"
+
+#~ msgid "Scan _Home Folder"
+#~ msgstr "Eskaneatu _etxeko karpeta"
+
+#~ msgid "Scan a folder"
+#~ msgstr "Eskaneatu karpeta bat"
+
+#~ msgid "Scan a remote folder or file system"
+#~ msgstr "Eskaneatu urruneko karpeta edo fitxategi-sistema bat"
+
+#~ msgid "Scan the file system"
+#~ msgstr "Eskaneatu fitxategi-sistema"
+
+#~ msgid "Scan your home folder"
+#~ msgstr "Eskaneatu zure karpeta nagusia"
+
+#~ msgid "St_atusbar"
+#~ msgstr "_Egoera-barra"
+
+#~ msgid "Stop scanning"
+#~ msgstr "Gelditu eskaneatzea"
+
+#~ msgid "_Contents"
+#~ msgstr "_Edukia"
+
+#
+#~ msgid "_Edit"
+#~ msgstr "_Editatu"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Tresna-barra"
+
+#~ msgid "Scanning…"
+#~ msgstr "Eskaneatzen..."
+
+#~ msgid "Total filesystem capacity:"
+#~ msgstr "Fitxategi-sistemaren gehiengo edukiera:"
+
+#~ msgid "used:"
+#~ msgstr "erabilita:"
+
+#~ msgid "available:"
+#~ msgstr "erabilgarri:"
+
+#~ msgid "Calculating percentage bars…"
+#~ msgstr "Portzentai barrak kalkulatzen…"
+
+#~ msgid "Ready"
+#~ msgstr "Prest"
+
+#~ msgid "Total filesystem capacity"
+#~ msgstr "Fitxategi-sistemaren edukiera guztia"
+
+#~ msgid "Total filesystem usage"
+#~ msgstr "Fitxategi-sistemaren erabilpen guztia"
+
+#~ msgid "contains hardlinks for:"
+#~ msgstr "honen esteka-gogorra dauka:"
+
+#~ msgid "Could not initialize monitoring"
+#~ msgstr "Ezin izan da monitorizazioa hasieratu"
+
+#~ msgid "Changes to your home folder will not be monitored."
+#~ msgstr "Etxea karpetako aldaketak ez dira monitorizatuko."
+
+#~ msgid "Show version"
+#~ msgstr "Erakutsi bertsioa"
+
+#~ msgid "[DIRECTORY]"
+#~ msgstr "[DIREKTORIOA]"
+
+#~ msgid "Too many arguments. Only one directory can be specified."
+#~ msgstr "Argumentu gehiegi. Soilik direktorio bat zehaz daiteke."
+
+#~ msgid "Could not detect any mount point."
+#~ msgstr "Ezin izan da muntatze-punturik detektatu."
+
+#~ msgid "Without mount points disk usage cannot be analyzed."
+#~ msgstr "Muntatze-punturik gabe ezin da diskoaren erabilera analizatu."
+
+#~ msgid "Save screenshot"
+#~ msgstr "Gorde pantaila-argazkia"
+
+#~ msgid "Cannot create pixbuf image!"
+#~ msgstr "Ezin da pixbuf irudia sortu."
+
+#~ msgid "Save Snapshot"
+#~ msgstr "Gorde pantaila-argazkia"
+
+#~ msgid "_Image type:"
+#~ msgstr "_Irudi-mota:"
+
+#~ msgid "Scan"
+#~ msgstr "Eskaneatu"
+
+#~ msgid "Device"
+#~ msgstr "Gailua"
+
+#~ msgid "Mount Point"
+#~ msgstr "Muntatze-puntua"
+
+#~ msgid "File System Type"
+#~ msgstr "Fitxategi-sistema mota"
+
+#~ msgid "Total Size"
+#~ msgstr "Tamaina osoa"
+
+#~ msgid "Available"
+#~ msgstr "Eskuragarri"
+
+#~ msgid "Cannot scan location '%s'"
+#~ msgstr "Ezin da '%s' kokalekua eskaneatu"
+
+#~ msgid "Custom Location"
+#~ msgstr "Helbide pertsonalizatua"
+
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Public FTP"
+#~ msgstr "FTP publikoa"
+
+#~ msgid "FTP (with login)"
+#~ msgstr "FTP (pasahitzarekin)"
+
+#~ msgid "WebDAV (HTTP)"
+#~ msgstr "WebDAV (HTTP)"
+
+#~ msgid "Secure WebDAV (HTTPS)"
+#~ msgstr "WebDAV segurua (HTTPS)"
+
+#~ msgid "Cannot Connect to Server. You must enter a name for the server."
+#~ msgstr ""
+#~ "Ezin da zerbitzariarekin konektatu. Zerbitzari baten izena idatzi behar "
+#~ "duzu."
+
+#~ msgid "Please enter a name and try again."
+#~ msgstr "Idazti izena eta saiatu berriro."
+
+#~ msgid "_Location (URI):"
+#~ msgstr "_Helbidea (URLa):"
+
+#~ msgid "_Server:"
+#~ msgstr "_Zerbitzaria:"
+
+#~ msgid "Optional information:"
+#~ msgstr "Aukerako informazioa:"
+
+#~ msgid "_Share:"
+#~ msgstr "_Partekatu:"
+
+#~ msgid "_Port:"
+#~ msgstr "_Ataka:"
+
+#~ msgid "_Folder:"
+#~ msgstr "Kar_peta:"
+
+#~ msgid "_User Name:"
+#~ msgstr "_Erabiltzaile-izena:"
+
+#~ msgid "_Domain Name:"
+#~ msgstr "_Domeinu-izena:"
+
+#~ msgid "Connect to Server"
+#~ msgstr "Konektatu zerbitzariarekin"
+
+#~ msgid "Service _type:"
+#~ msgstr "Zerbitzu _mota:"
+
+#~ msgid "_Scan"
+#~ msgstr "_Eskaneatu"
+
+#~ msgid "Rescan your home folder?"
+#~ msgstr "Eskaneatu etxeko karpeta?"
+
+#~ msgid ""
+#~ "The content of your home folder has changed. Select rescan to update the "
+#~ "disk usage details."
+#~ msgstr ""
+#~ "Etxeko karpetaren edukia aldatu egin da. Hautatu berreskaneatzea "
+#~ "diskoaren erabileraren xehetasunak eguneratzeko."
+
+#~ msgid "_Rescan"
+#~ msgstr "_Berreskaneatu"
+
+#~ msgid "_Show hidden folders"
+#~ msgstr "Erakutsi e_zkutuko karpetak"
+
+#~ msgid "Cannot check an excluded folder!"
+#~ msgstr "Ezin da kanpoan utzitako karpeta begiratu."
+
+#~ msgid "Could not open folder '%s'"
+#~ msgstr "Ezin izan da '%s' karpeta ireki"
+
+#~ msgid "There is no installed viewer capable of displaying the folder."
+#~ msgstr "Ez dago karpeta bistaratzeko ikustaile-programarik instalatuta."
+
+#~ msgid "Could not move '%s' to the Trash"
+#~ msgstr "Ezin izan da '%s' zakarrontzira bota"
+
+#~ msgid "Could not move file to the Trash"
+#~ msgstr "Ezin izan da fitxategia zakarrontzira bota"
+
+#~ msgid "Details: %s"
+#~ msgstr "Xehetasunak: %s"
+
+#~ msgid "There was an error displaying help."
+#~ msgstr "Errorea gertatu da laguntza bistaratzean."
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Programa hau software librea da; birbana eta/edo alda dezakezu Software "
+#~ "Foundation-ek argitaratutako GNU Lizentzia Publiko Orokorraren 2. "
+#~ "bertsioan, edo (nahiago baduzu) beste berriago batean, jasotako "
+#~ "baldintzak betez gero."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details."
+#~ msgstr ""
+#~ "Egunkari-ikustailea erabilgarria izango delakoan banatzen da, baina, "
+#~ "INOLAKO BERMERIK GABE; era berean, ez da bermatzen beraren EGOKITASUNA "
+#~ "MERKATURATZEKO edo HELBURU PARTIKULARRETARAKO ERABILTZEKO. Argibide "
+#~ "gehiago nahi izanez gero, ikus GNU Lizentzia Publiko Orokorra."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program; if not, write to the Free Software Foundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr ""
+#~ "Programa honekin batera GNU Lizentzia Publiko Orokorraren kopia bat "
+#~ "jasoko zenuen; hala ez bada, idatzi hona: Free SoftwareFoundation, Inc., "
+#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+
+#~ msgid "The document does not exist."
+#~ msgstr "Dokumentua ez da existitzen."
+
+#~ msgid "The folder does not exist."
+#~ msgstr "Karpeta ez da existitzen."
 
 #~ msgid "S_can Remote Folder..."
 #~ msgstr "Eskaneatu _urruneko karpeta..."
 
 #~ msgid "Scan F_older..."
 #~ msgstr "Eskaneatu _karpeta..."
-
-#~ msgid "Scan home folder"
-#~ msgstr "Eskaneatu etxeko karpeta"
