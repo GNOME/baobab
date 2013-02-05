@@ -1,34 +1,39 @@
 # translation of gnome-utils.master.ml.po to
 # This file is distributed under the same license as the gnome-utils package.
 # Copyright (C) 2003-2009 gnome-utils' COPYRIGHT HOLDER.
-#
 # FSF-India <locale@gnu.org.in>, 2003.
 # Ani Peter <apeter@redhat.com>, 2006, 2007, 2008.
 # Santhosh Thottingal <santhosh.thottingal@gmail.com>, 2007.
 # Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2007, 2009, 2012.
+# Anish A <aneesh.nl@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.ml\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-11 16:34+0000\n"
-"PO-Revision-Date: 2012-09-13 14:57+0000\n"
-"Last-Translator: \n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-02-03 22:42+0000\n"
+"PO-Revision-Date: 2013-02-06 01:11+0530\n"
+"Last-Translator: Anish A <aneesh.nl@gmail.com>\n"
+"Language-Team: Swatantra Malayalam Computing\n"
 "Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "ഡിസ്ക് ഉപയോഗ വിശകലനി"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "ഫോള്‍ഡറിന്റെ വ്യാപ്തിയും ഡിസ്കില്‍ ലഭ്യമായ സ്ഥലവും പരിശോധിയ്ക്കുക"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -46,19 +51,32 @@ msgstr "സജീവ പട്ടിക"
 msgid "Which type of chart should be displayed."
 msgstr "ഏതു് തരം പട്ടികയാണു് കാണിയ്ക്കേണ്ടതു്."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "ജാലക വലിപ്പം"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "ജാലകത്തിന്റെ പ്രാരംഭ വലിപ്പം"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "ജാലകത്തിന്റെ നില"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "ജാലകത്തിന്റെ GdkWindowState"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "പതിപ്പു് വിവരം പ്രിന്റ് ചെയ്തു് പുറത്തു് കടക്കുക"
 
 #: ../src/baobab-application.vala:104
-#| msgid "Disk Usage Analyzer"
 msgid "- Disk Usage Analyzer"
 msgstr "- ഡിസ്ക് ഉപയോഗ വിശകലനി"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d വസ്തു"
@@ -89,94 +107,70 @@ msgid "Set the root node from the model"
 msgstr "മോഡലില്‍ നിന്നും റൂട്ട് നോഡ് ക്രമികരിക്കുക"
 
 #: ../src/baobab-chart.c:898
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
 msgstr "പേരന്റ് ഫോള്‍ഡറിലേക്കു് നീക്കു_ക"
 
 #: ../src/baobab-chart.c:902
-#| msgid "Zoom in"
 msgid "Zoom _in"
 msgstr "ചെറുതാക്കു_ക"
 
 #: ../src/baobab-chart.c:906
-#| msgid "Zoom out"
 msgid "Zoom _out"
 msgstr "_വലുതാക്കുക"
 
-#: ../src/baobab-location.vala:52
-#| msgid "Scan home folder"
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "തട്ടകം"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "പ്രധാന വോള്യം"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "ഒരു ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക"
+msgid "Scan Folder…"
+msgstr "അറ പരിശോധിയ്ക്കക…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക"
+msgid "Scan Remote Folder…"
+msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക…"
 
 #: ../src/baobab-main-window.ui.h:3
-#| msgid "Scan Remote Folder"
-msgid "Scan a remote folder"
-msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-#| msgid "Cannot scan location \"%s\""
-msgid "Show all locations"
-msgstr "എല്ലാ സ്ഥാനങ്ങളും കാണിയ്ക്കുക"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "വീണ്ടും ലഭ്യമാക്കുക"
-
-#: ../src/baobab-main-window.ui.h:7
 msgid "Close"
 msgstr "അടയ്ക്കുക"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "ഫോള്‍ഡര്‍"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "ഉപയോഗം"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "വലിപ്പം"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "ഉളളടക്കം"
 
-#: ../src/baobab-main-window.ui.h:12
-#| msgid "View as Rings Chart"
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "റിംഗ്സ് ചാര്‍ട്ട്"
 
-#: ../src/baobab-main-window.ui.h:13
-#| msgid "View as Treemap Chart"
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "ട്രീമാപ്പ് ചാര്‍ട്ട്"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "ഫോള്‍ഡര്‍ _തുറക്കുക"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "ക്ലിപ്പ്ബോര്‍ഡിലേക്കു് പാഥ് പകര്‍ത്തു_ക"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "ചവറ്റുകുട്ടയിലേക്ക് നീക്കുക"
 
@@ -197,7 +191,6 @@ msgid "_Analyzer"
 msgstr "_വിശകലനി"
 
 #: ../src/baobab-menu.ui.h:5
-#| msgid "Scan Home"
 msgid "_Scan Home"
 msgstr "തട്ടകം _പരിശോധിയ്ക്കുക"
 
@@ -206,7 +199,6 @@ msgid "Scan F_older…"
 msgstr "_ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക…"
 
 #: ../src/baobab-menu.ui.h:7
-#| msgid "S_can Remote Folder…"
 msgid "Scan Remote Fo_lder…"
 msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക…"
 
@@ -215,69 +207,84 @@ msgid "_View"
 msgstr "_കാഴ്ച"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "നിര്‍ത്തു_ക"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "വീണ്ടും _ലഭ്യമാക്കുക"
 
-#: ../src/baobab-menu.ui.h:11
-#| msgid "All_ocated Space"
-msgid "_Allocated Space"
-msgstr "_നല്‍കിയ സ്ഥലം"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "എല്ലാം വികസിപ്പിക്കുക"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "_എല്ലാം കൊളാപ്സ് ചെയ്യുക"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "ഉപകരണങ്ങളും സ്ഥലങ്ങളും"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "ഫോള്‍ഡര്‍ തിരഞ്ഞെടുക്കുക"
 
-#: ../src/baobab-window.vala:250
-#| msgid "Could not analyze disk usage."
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷിക്കുവാന്‍ സാധ്യമായില്ല."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
-msgstr "Baobab"
+msgstr "ബാവോബാബ്"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷിക്കുന്നതിനുളള ഗ്രാഫിക്കല്‍ പ്രയോഗം."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "അനി പീറ്റര്‍ <peter.ani@gmail.com>\n"
-"സന്തോഷ് തോട്ടിങ്ങല്‍ <santhosh.thottingal@gmail.com>"
+"സന്തോഷ് തോട്ടിങ്ങല്‍ <santhosh.thottingal@gmail.com>\n"
+"അനീഷ് എ <aneesh.nl@gmail.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "റദ്ദാക്കുക"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:580
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"\"%s\" ഫോള്‍ഡര്‍ അല്ലെങ്കില്‍ അതിലുള്ള ചില ഫോള്‍ഡറുകള്‍ പരിശോധിയ്ക്കുവാന്‍ "
-"സാധ്യമായില്ല"
+msgstr "\"%s\" ഫോള്‍ഡര്‍ അല്ലെങ്കില്‍ അതിലുള്ള ചില ഫോള്‍ഡറുകള്‍ പരിശോധിയ്ക്കുവാന്‍ സാധ്യമായില്ല"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ഒരു അസാധുവായ ഫോള്‍ഡര്‍ ആണ്."
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
 msgid "Could not analyze disk usage."
 msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷിക്കുവാന്‍ സാധ്യമായില്ല."
+
+#~ msgid "Scan a folder"
+#~ msgstr "ഒരു ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക"
+
+#~ msgid "Scan Folder"
+#~ msgstr "ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക"
+
+#~| msgid "Scan Remote Folder"
+#~ msgid "Scan a remote folder"
+#~ msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക"
+
+#~ msgid "Reload"
+#~ msgstr "വീണ്ടും ലഭ്യമാക്കുക"
+
+#~ msgid "_Stop"
+#~ msgstr "നിര്‍ത്തു_ക"
+
+#~| msgid "All_ocated Space"
+#~ msgid "_Allocated Space"
+#~ msgstr "_നല്‍കിയ സ്ഥലം"
+
+#~ msgid "Cancel"
+#~ msgstr "റദ്ദാക്കുക"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "ഡിസ്ക് ഉപയോഗ വിശകലനിയുടെ മുന്‍ഗണനകള്‍"
@@ -432,9 +439,6 @@ msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷ�
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (ലോഗിന്‍ ഉപയോഗിച്ച്)"
-
-#~ msgid "Windows share"
-#~ msgstr "Windows ഷെയര്‍"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
