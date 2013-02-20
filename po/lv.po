@@ -5,32 +5,37 @@
 # Artis Trops <hornet@navigators.lv>, 2000.
 # sTYLEeX <styleex@inbox.lv>, 2006.
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011.
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-11 00:45+0300\n"
-"PO-Revision-Date: 2012-09-11 00:52+0300\n"
+"POT-Creation-Date: 2013-02-20 12:11+0200\n"
+"PO-Revision-Date: 2013-02-20 12:13+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"Language-Team: Latviešu <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Gtranslator 2.91.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "Diska izmantošanas analizators"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Pārbauda mapju izmērus un pieejamo diska vietu"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "uzkopšana;vieta;krātuve;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -48,6 +53,22 @@ msgstr "Aktīvā diagramma"
 msgid "Which type of chart should be displayed."
 msgstr "Kāda veida diagrammu rādīt."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Loga izmērs"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Loga sākotnējais izmērs"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Loga stāvoklis"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "Loga GdkWindowState"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
@@ -56,7 +77,7 @@ msgstr "Parādīt informāciju par versiju un iziet"
 msgid "- Disk Usage Analyzer"
 msgstr "- Diska izmantošanas analizators"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -101,80 +122,60 @@ msgstr "Tuv_ināt"
 msgid "Zoom _out"
 msgstr "Tā_lināt"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Mājas mape"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Galvenais sējums"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Skenēt mapi"
+msgid "Scan Folder…"
+msgstr "Skenēt mapi…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Skenēt mapi"
+msgid "Scan Remote Folder…"
+msgstr "Skenēt attālinātu mapi…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Skenēt attālinātu mapi"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Skenēt attālinātu mapi"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Rādīt visas vietas"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Pārlādēt"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "etiķete"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Aizvērt"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "Mape"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "Izmantojums"
 
 # mini-utils/guname/info.c:61
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "Izmērs"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "Saturs"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "Gredzenu grafiks"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Skatīt kā koka kartes grafiku"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Atvērt mapi"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopēt ceļu uz starpliktuvi"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "Pār_vietot uz miskasti"
 
@@ -213,66 +214,85 @@ msgid "_View"
 msgstr "_Skats"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Apturēt"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Pārlādēt"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "_Aizpildītā vieta"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "I_zvērst visu"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "_Sakļaut visu"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+msgid "Devices and locations"
+msgstr "Ierīces un vietas"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Izvēlieties mapi"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Nevarēja izanalizēt sējumu."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafisks rīks diska izmantošanas analizēšanai."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Atcelt"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:580
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Nevarēja skanēt mapi “%s” vai kādu no mapēm, kuru tā satur."
 
 # logview/logrtns.c:211 logview/logrtns.c:221
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s” nav derīga mape"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
 msgid "Could not analyze disk usage."
 msgstr "Nevarēja izanalizēt diska izmantojumu."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Skenēt mapi"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Skenēt mapi"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Skenēt attālinātu mapi"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Skenēt attālinātu mapi"
+
+#~ msgid "Reload"
+#~ msgstr "Pārlādēt"
+
+#~ msgid "label"
+#~ msgstr "etiķete"
+
+#~ msgid "_Stop"
+#~ msgstr "_Apturēt"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "_Aizpildītā vieta"
+
+#~ msgid "Cancel"
+#~ msgstr "Atcelt"
 
 # gtt/toolbar.c:190
 #~ msgid "Disk Usage Analyzer Preferences"
@@ -441,9 +461,6 @@ msgstr "Nevarēja izanalizēt diska izmantojumu."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (ar lietotājvārdu)"
-
-#~ msgid "Windows share"
-#~ msgstr "Windows koplietojums"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
