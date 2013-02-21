@@ -24,16 +24,18 @@ namespace Baobab {
 
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
-        Gtk.Notebook main_notebook;
         Gd.MainToolbar home_toolbar;
         Gd.MainToolbar result_toolbar;
+        Gd.Stack main_stack;
+        Gtk.Widget home_page;
+        Gtk.Widget result_page;
         Gtk.InfoBar infobar;
         Gtk.Label infobar_primary;
         Gtk.Label infobar_secondary;
         Gtk.ScrolledWindow location_scroll;
         LocationList location_list;
         Gtk.TreeView treeview;
-        Gtk.Notebook chart_notebook;
+        Gd.Stack chart_stack;
         Chart rings_chart;
         Chart treemap_chart;
         Gtk.Spinner spinner;
@@ -74,17 +76,6 @@ namespace Baobab {
             { "collapse-all", false }
         };
 
-        private enum UIPage {
-            HOME,
-            RESULT
-        }
-
-        private enum ChartPage {
-            RINGS,
-            TREEMAP,
-            SPINNER
-        }
-
         private enum DndTargets {
             URI_LIST
         }
@@ -109,14 +100,16 @@ namespace Baobab {
             }
 
             // Cache some objects from the builder.
-            main_notebook = builder.get_object ("main-notebook") as Gtk.Notebook;
+            main_stack = builder.get_object ("main-stack") as Gd.Stack;
+            home_page = builder.get_object ("home-page") as Gtk.Widget;
+            result_page = builder.get_object ("result-page") as Gtk.Widget;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
             location_scroll = builder.get_object ("location-scrolled-window") as Gtk.ScrolledWindow;
             location_list = builder.get_object ("location-list") as LocationList;
             treeview = builder.get_object ("treeview") as Gtk.TreeView;
-            chart_notebook = builder.get_object ("chart-notebook") as Gtk.Notebook;
+            chart_stack = builder.get_object ("chart-stack") as Gd.Stack;
             rings_chart = builder.get_object ("rings-chart") as Chart;
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
@@ -191,7 +184,7 @@ namespace Baobab {
             active_location = null;
             scan_completed_handler = 0;
 
-            set_ui_state (UIPage.HOME, false);
+            set_ui_state (home_page, false);
 
             show ();
         }
@@ -202,19 +195,19 @@ namespace Baobab {
             }
 
             clear_message ();
-            set_ui_state (UIPage.HOME, false);
+            set_ui_state (home_page, false);
         }
 
         void on_chart_type_changed (SimpleAction action, Variant value) {
             switch (value as string) {
-                case "rings":
-                    chart_notebook.page = ChartPage.RINGS;
-                    break;
-                case "treemap":
-                    chart_notebook.page = ChartPage.TREEMAP;
-                    break;
-                default:
-                    return;
+            case "rings":
+                chart_stack.visible_child = rings_chart;
+                break;
+            case "treemap":
+                chart_stack.visible_child = treemap_chart;
+                break;
+            default:
+                return;
             }
 
             ui_settings.set_value ("active-chart", value);
@@ -487,7 +480,7 @@ namespace Baobab {
                 rings_chart.freeze_updates ();
                 treemap_chart.freeze_updates ();
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
-                chart_notebook.page = ChartPage.SPINNER;
+                chart_stack.visible_child = spinner;
                 spinner.start ();
             } else {
                 enable_drop ();
@@ -509,13 +502,13 @@ namespace Baobab {
             }
         }
 
-        void set_ui_state (UIPage page, bool busy) {
-            home_toolbar.visible = (page == UIPage.HOME);
-            result_toolbar.visible = (page == UIPage.RESULT);
+        void set_ui_state (Gtk.Widget child, bool busy) {
+            home_toolbar.visible = (child == home_page);
+            result_toolbar.visible = (child == result_page);
 
             set_busy (busy);
 
-            if (page == UIPage.HOME) {
+            if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
             } else {
@@ -524,7 +517,7 @@ namespace Baobab {
                 result_toolbar.set_labels (active_location.name, null);
             }
 
-            main_notebook.page = page;
+            main_stack.visible_child = child;
         }
 
         void first_row_has_child (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
@@ -581,11 +574,11 @@ namespace Baobab {
                     message (primary, e.message, Gtk.MessageType.WARNING);
                 }
 
-                set_ui_state (UIPage.RESULT, false);
+                set_ui_state (result_page, false);
             });
 
             clear_message ();
-            set_ui_state (UIPage.RESULT, true);
+            set_ui_state (result_page, true);
 
             scanner.scan (force);
 

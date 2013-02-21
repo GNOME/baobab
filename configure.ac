@@ -53,6 +53,7 @@ LT_INIT([disable-static])
 LIBGD_INIT([
     static
     main-toolbar
+    stack
     vapi
 ])
 
