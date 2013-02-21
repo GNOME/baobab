@@ -3,7 +3,11 @@ NULL =
 
 SUBDIRS =  libgd src data pixmaps help po
 
-EXTRA_DIST = COPYING.docs
+EXTRA_DIST = \
+	COPYING.docs				\
+	egg-list-box/egg-list-box.h		\
+	egg-list-box/egg-list-box-accessible.h	\
+	egg-list-box/egglistbox.vapi
 
 MAINTAINERCLEANFILES = 		\
 	ABOUT-NLS		\
