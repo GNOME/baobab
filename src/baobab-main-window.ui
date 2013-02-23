@@ -17,25 +17,57 @@
     <property name="visible">True</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GdMainToolbar" id="home-toolbar">
+      <object class="GdHeaderBar" id="header-bar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="vexpand">False</property>
+        <property name="title" translatable="yes">Devices and locations</property>
         <style>
           <class name="menubar"/>
           <class name="baobab-toolbar"/>
         </style>
+        <child>
+          <object class="GdHeaderMenuButton" id="menu-button">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="symbolic-icon-name">emblem-system-symbolic</property>
+            <property name="menu-model">winmenu</property>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+          </packing>
+        </child>
       </object>
     </child>
     <child>
-      <object class="GdMainToolbar" id="result-toolbar">
+      <object class="GdHeaderBar" id="result-header-bar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="vexpand">False</property>
         <style>
           <class name="menubar"/>
           <class name="baobab-toolbar"/>
         </style>
+        <child>
+          <object class="GdHeaderSimpleButton" id="back-button">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="symbolic-icon-name">go-previous-symbolic</property>
+            <property name="action_name">win.show-home-page</property>
+          </object>
+          <packing>
+            <property name="pack_type">start</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GdHeaderSimpleButton" id="reload-button">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="symbolic-icon-name">view-refresh-symbolic</property>
+            <property name="action_name">win.reload</property>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+          </packing>
+        </child>
       </object>
     </child>
     <child>

@@ -24,8 +24,8 @@ namespace Baobab {
 
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
-        Gd.MainToolbar home_toolbar;
-        Gd.MainToolbar result_toolbar;
+        Gd.HeaderBar header_bar;
+        Gd.HeaderBar result_header_bar;
         Gd.Stack main_stack;
         Gtk.Widget home_page;
         Gtk.Widget result_page;
@@ -103,6 +103,8 @@ namespace Baobab {
             main_stack = builder.get_object ("main-stack") as Gd.Stack;
             home_page = builder.get_object ("home-page") as Gtk.Widget;
             result_page = builder.get_object ("result-page") as Gtk.Widget;
+            header_bar = builder.get_object ("header-bar") as Gd.HeaderBar;
+            result_header_bar = builder.get_object ("result-header-bar") as Gd.HeaderBar;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
@@ -114,24 +116,8 @@ namespace Baobab {
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
 
-            var menu_model = builder.get_object ("winmenu") as MenuModel;
-
-            // Home page toolbar
-            var toolbar = builder.get_object ("home-toolbar") as Gd.MainToolbar;
-            home_toolbar = toolbar;
-            var menu_button = toolbar.add_menu ("emblem-system-symbolic", null, false) as Gtk.MenuButton;
-            menu_button.set_menu_model (menu_model);
-            toolbar.set_labels (_("Devices and locations"), null);
-            toolbar.show_all ();
-
-            // Result page toolbar
-            toolbar = builder.get_object ("result-toolbar") as Gd.MainToolbar;
-            result_toolbar = toolbar;
-            var button = toolbar.add_button ("go-previous-symbolic", null, true) as Gtk.Button;
-            button.action_name = "win.show-home-page";
-            button = toolbar.add_button ("view-refresh-symbolic", null, false) as Gtk.Button;
-            button.action_name = "win.reload";
-            toolbar.show_all ();
+            // FIXME: we need to reference at least a GdHeaderMenuButton, or the linker discards it
+            var m =  builder.get_object ("menu-button") as Gd.HeaderMenuButton;
 
             location_list.set_adjustment (location_scroll.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
@@ -503,8 +489,8 @@ namespace Baobab {
         }
 
         void set_ui_state (Gtk.Widget child, bool busy) {
-            home_toolbar.visible = (child == home_page);
-            result_toolbar.visible = (child == result_page);
+            header_bar.visible = (child == home_page);
+            result_header_bar.visible = (child == result_page);
 
             set_busy (busy);
 
@@ -514,7 +500,7 @@ namespace Baobab {
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
-                result_toolbar.set_labels (active_location.name, null);
+                result_header_bar.set_title (active_location.name);
             }
 
             main_stack.visible_child = child;
