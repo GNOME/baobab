@@ -497,10 +497,12 @@ namespace Baobab {
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
+                main_stack.transition_type = Gd.StackTransitionType.SLIDE_RIGHT;
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 result_header_bar.set_title (active_location.name);
+                main_stack.transition_type = Gd.StackTransitionType.SLIDE_LEFT;
             }
 
             main_stack.visible_child = child;
