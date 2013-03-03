@@ -24,24 +24,30 @@ msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-20 14:51+0000\n"
-"PO-Revision-Date: 2012-08-20 08:45+0000\n"
-"Last-Translator: Hedda Peters <hpeters@redhat.com>\n"
+"POT-Creation-Date: 2013-03-03 14:36+0000\n"
+"PO-Revision-Date: 2013-03-03 06:57+0100\n"
+"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-DamnedLies-Scope: partial\n"
+"X-Generator: Poedit 1.5.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:167
 msgid "Disk Usage Analyzer"
 msgstr "Festplattenbelegung analysieren"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Ordnergrößen und freien Festplattenplatz analysieren"
+
+# http://developer.gnome.org/integration-guide/3.6/desktop-files.html.de
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "Speicherplatz;Belegung;Kapazität;Frei;Aufräumen"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -60,6 +66,22 @@ msgstr "Aktives Diagramm"
 msgid "Which type of chart should be displayed."
 msgstr "Legt fest, welcher Diagrammtyp angezeigt werden soll."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Fenstergröße"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Anfängliche Fenstergröße"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Fensterzustand"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "Das GdkWindowState des Fensters"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
@@ -68,7 +90,7 @@ msgstr "Versionsinformationen anzeigen und beenden"
 msgid "- Disk Usage Analyzer"
 msgstr "- Festplattenbelegung analysieren"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -101,10 +123,9 @@ msgstr "Wurzelelement des Diagramms"
 msgid "Set the root node from the model"
 msgstr "Wurzelelement des Modells festlegen"
 
-# CHECK
 #: ../src/baobab-chart.c:898
 msgid "_Move to parent folder"
-msgstr "Zum _Elternordner bewegen"
+msgstr "Eine Ebene höher _gehen"
 
 #: ../src/baobab-chart.c:902
 msgid "Zoom _in"
@@ -114,80 +135,64 @@ msgstr "Ansicht ver_größern"
 msgid "Zoom _out"
 msgstr "Ansicht ver_kleinern"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Persönlicher Ordner"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Hauptdatenträger"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Einen Ordner einlesen"
+msgid "Scan Folder…"
+msgstr "Ordner analysieren …"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Ordner einlesen"
+msgid "Scan Remote Folder…"
+msgstr "_Entfernten Ordner analysieren …"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Einen entfernten Ordner einlesen …"
+msgid "Devices and locations"
+msgstr "Geräte und Orte"
 
 #: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Entfernten Ordner einlesen …"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Alle Orte anzeigen"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Neu laden"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "Kennung"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Schließen"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "Ordner"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "Verbrauch"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "Größe"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "Inhalt"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:9
 msgid "Rings Chart"
 msgstr "Kreisdiagramm"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:10
 msgid "Treemap Chart"
 msgstr "Kacheldiagramm"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "_Ordner öffnen"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Copy Path to Clipboard"
 msgstr "Pfad in Zwischenablage _kopieren"
 
 # Nautilus-Konsistenz beachten!
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "In den _Müll verschieben"
 
@@ -210,57 +215,49 @@ msgstr "_Aktionen"
 
 #: ../src/baobab-menu.ui.h:5
 msgid "_Scan Home"
-msgstr "_Persönlichen Ordner einlesen"
+msgstr "_Persönlichen Ordner analysieren"
 
 #: ../src/baobab-menu.ui.h:6
 msgid "Scan F_older…"
-msgstr "_Ordner einlesen …"
+msgstr "_Ordner analysieren …"
 
 #: ../src/baobab-menu.ui.h:7
 msgid "Scan Remote Fo_lder…"
-msgstr "_Entfernten Ordner einlesen …"
+msgstr "_Entfernten Ordner analysieren …"
 
 #: ../src/baobab-menu.ui.h:8
 msgid "_View"
 msgstr "_Ansicht"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Stopp"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Neu laden"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "_Belegter Speicherplatz"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "Alles aus_klappen"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "Alles ein_klappen"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:208
 msgid "Select Folder"
 msgstr "Ordner auswählen"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Datenträger konnte nicht analysiert werden."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ein grafisches Werkzeug zur Analyse der Festplattenbelegung."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -278,11 +275,7 @@ msgstr ""
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Hedda Peters <hpeters@redhat.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:561
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
@@ -290,14 +283,41 @@ msgstr ""
 "werden."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:580 ../src/baobab-window.vala:586
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "»%s« ist kein gültiger Ordner"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:581 ../src/baobab-window.vala:587
 msgid "Could not analyze disk usage."
 msgstr "Festplattenbelegung konnte nicht analysiert werden."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Einen Ordner einlesen"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Ordner einlesen"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Einen entfernten Ordner einlesen …"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Entfernten Ordner einlesen …"
+
+#~ msgid "Reload"
+#~ msgstr "Neu laden"
+
+#~ msgid "label"
+#~ msgstr "Kennung"
+
+#~ msgid "_Stop"
+#~ msgstr "_Stopp"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "_Belegter Speicherplatz"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
 
 #~ msgid "Monitor Home"
 #~ msgstr "Persönlichen Ordner überwachen"
@@ -460,9 +480,6 @@ msgstr "Festplattenbelegung konnte nicht analysiert werden."
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (mit Zugangsbeschränkung)"
 
-#~ msgid "Windows share"
-#~ msgstr "Windows-Freigabe"
-
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
 
@@ -497,99 +514,3 @@ msgstr "Festplattenbelegung konnte nicht analysiert werden."
 
 #~ msgid "_User Name:"
 #~ msgstr "_Benutzername:"
-
-# CHECK
-#~ msgid "_Domain Name:"
-#~ msgstr "_Domänenname:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Mit Server verbinden"
-
-#~ msgid "Service _type:"
-#~ msgstr "Dienste-_Typ:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Einlesen"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Persönlichen Ordner erneut einlesen?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "Der Inhalt Ihres persönlichen Ordners wurde geändert. Wählen Sie »Erneut "
-#~ "einlesen« um die Anzeige des verbrauchten Speicherplatzes zu "
-#~ "aktualisieren."
-
-#~ msgid "_Rescan"
-#~ msgstr "_Erneut einlesen"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "_Verborgene Ordner anzeigen"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Ein ausgeschlossener Ordner kann nicht eingelesen werden!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Der Ordner »%s« konnte nicht geöffnet werden"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr ""
-#~ "Kein installierter Betrachter ist in der Lage, das Dokument anzuzeigen."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "»%s« konnte nicht in den Müll verschoben werden"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "Datei konnte nicht in den Müll verschoben werden"
-
-#~ msgid "Details: %s"
-#~ msgstr "Details: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "Beim Anzeigen der Hilfe ist ein Fehler aufgetreten."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Dieses Programm ist freie Software. Sie können es unter den Bedingungen "
-#~ "der GNU General Public License, wie von der Free Software Foundation "
-#~ "veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version "
-#~ "2 der Lizenz oder (nach Ihrer Option) jeder späteren Version. "
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, dass es "
-#~ "Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die "
-#~ "implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN "
-#~ "BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Sie sollten ein Exemplar der GNU General Public License zusammen mit "
-#~ "diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free "
-#~ "Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, "
-#~ "USA."
-
-#~ msgid "The document does not exist."
-#~ msgstr "Das Dokument existiert nicht."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "Der Ordner existiert nicht."
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "_Entfernten Ordner einlesen …"
-
-#~ msgid "Scan F_older..."
-#~ msgstr "_Ordner einlesen …"
