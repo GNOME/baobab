@@ -2,7 +2,7 @@ dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
 
 AC_INIT([baobab],
-        [3.7.90],
+        [3.7.91],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=baobab],
         [baobab])
 
@@ -44,7 +44,7 @@ AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 YELP_HELP_INIT
 
 PKG_CHECK_MODULES(BAOBAB, [
-    gtk+-3.0 >= 3.7.10
+    gtk+-3.0 >= 3.7.12
     gio-2.0 >= 2.30.0
 ])
 
