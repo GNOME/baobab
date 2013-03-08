@@ -49,6 +49,7 @@ namespace Baobab {
         }
 
         private const GLib.ActionEntry[] action_entries = {
+            { "gear-menu", on_show_gear_menu_activate , null, "false", null},
             { "show-home-page", on_show_home_page_activate },
             { "active-chart", radio_activate, "s", "'rings'", on_chart_type_changed },
             { "scan-home", on_scan_home_activate },
@@ -173,6 +174,11 @@ namespace Baobab {
             set_ui_state (home_page, false);
 
             show ();
+        }
+
+        void on_show_gear_menu_activate (SimpleAction action) {
+            var state = action.get_state ().get_boolean ();
+            action.set_state (new Variant.boolean (!state));
         }
 
         void on_show_home_page_activate () {

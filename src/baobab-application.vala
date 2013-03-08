@@ -98,6 +98,8 @@ namespace Baobab {
                 var menubar = builder.get_object ("menubar") as MenuModel;
                 set_menubar (menubar);
             }
+
+            add_accelerator ("F10", "win.gear-menu", null);
         }
 
         protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
