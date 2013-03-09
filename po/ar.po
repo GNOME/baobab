@@ -4,14 +4,14 @@
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
 # Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012, 2013.
 # Anas Afif Emad <anas.e87@gmail.com, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-16.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-12 12:22+0200\n"
-"PO-Revision-Date: 2012-08-12 12:22+0200\n"
+"POT-Creation-Date: 2013-03-10 00:10+0200\n"
+"PO-Revision-Date: 2013-03-10 00:12+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.0\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:168
 msgid "Disk Usage Analyzer"
 msgstr "محلّل استخدام القرص"
 
@@ -31,39 +31,51 @@ msgstr "محلّل استخدام القرص"
 msgid "Check folder sizes and available disk space"
 msgstr "افحص حجم المجلدات والمساحة المتوفرة"
 
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "تخزين;مساحة;تنظيف;"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "راقب المنزل"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "إذا وجب مراقبة أي تغيّرات على الدليل المنزلي."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "الأقسام المستنثاة"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "قائمة التقسيمات المستثناة من الفحص."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "الرسم البياني النشط"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "أي نوع من الرسوم البيانية يُعرض."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "حجم النافذة"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "حجم النافذة الأولي"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "حالة النافذة"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr ""
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "اكتب رقم الإصدار ثم اخرج"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:106
 msgid "- Disk Usage Analyzer"
 msgstr "- محلّل استخدام القرص"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -110,79 +122,63 @@ msgstr "_قرّب"
 msgid "Zoom _out"
 msgstr "ب_عّد"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "مجلّد المنزل"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "الجزء الرئيسي"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "افحص مجلّدا"
+msgid "Scan Folder…"
+msgstr "افحص مجلّدًا…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "افحص المجلّد"
+msgid "Scan Remote Folder…"
+msgstr "افحص مجلّدا بعيدا…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "افحص مجلّدا بعيدا"
+msgid "Devices and locations"
+msgstr "الأجهزة و الأماكن"
 
 #: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "افحص مجلّدا بعيدا"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:473
-msgid "Show all locations"
-msgstr "اعرض كل الأماكن"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "أعد التحميل"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "العنوان"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "أغلق"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "مجلد"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "الاستخدام"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "الحجم"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "المحتويات"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:9
 msgid "Rings Chart"
 msgstr "رسم بياني حلقي"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:10
 msgid "Treemap Chart"
 msgstr "رسم بياني شجري"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "ا_فتح المجلّد"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Copy Path to Clipboard"
 msgstr "ان_سخ المسار إلى الحافظة"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "ا_نقل للمهملات"
 
@@ -219,42 +215,34 @@ msgid "_View"
 msgstr "_عرض"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "أو_قف"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "أ_عد التحميل"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "ال_مساحة المحصّصة"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_مدّد الكل"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "قلّص ال_كل"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:214
 msgid "Select Folder"
 msgstr "اختر مجلدا"
 
-#: ../src/baobab-window.vala:249
+#: ../src/baobab-window.vala:264
 msgid "Could not analyze volume."
 msgstr "تعذّر تحليل الجزء."
 
-#: ../src/baobab-window.vala:301
+#: ../src/baobab-window.vala:315
 msgid "Baobab"
 msgstr "بوباب"
 
-#: ../src/baobab-window.vala:304
+#: ../src/baobab-window.vala:318
 msgid "A graphical tool to analyze disk usage."
 msgstr "أداة رسوميّة لتحليل استعمال القرص."
 
-#: ../src/baobab-window.vala:309
+#: ../src/baobab-window.vala:323
 msgid "translator-credits"
 msgstr ""
 "فريق عربآيز للترجمة http://www.arabeyes.org:\n"
@@ -263,24 +251,53 @@ msgstr ""
 "خالد حسني <khaledhosny@eglug.org>\n"
 "أنس عفيف عماد <anas.e87@gmail.com>"
 
-#: ../src/baobab-window.vala:464
-msgid "Cancel"
-msgstr "ألغِ"
-
-#: ../src/baobab-window.vala:558
+#: ../src/baobab-window.vala:567
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "تعذّر فحص المجلد \"%s\" أو أحد المجلدات التي يحتويها."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:575 ../src/baobab-window.vala:581
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ليس مجلّدا سليما"
 
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:587 ../src/baobab-window.vala:593
 msgid "Could not analyze disk usage."
 msgstr "تعذّر تحليل استعمال القرص."
+
+#~ msgid "Monitor Home"
+#~ msgstr "راقب المنزل"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "إذا وجب مراقبة أي تغيّرات على الدليل المنزلي."
+
+#~ msgid "Scan a folder"
+#~ msgstr "افحص مجلّدا"
+
+#~ msgid "Scan Folder"
+#~ msgstr "افحص المجلّد"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "افحص مجلّدا بعيدا"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "افحص مجلّدا بعيدا"
+
+#~ msgid "Reload"
+#~ msgstr "أعد التحميل"
+
+#~ msgid "label"
+#~ msgstr "العنوان"
+
+#~ msgid "_Stop"
+#~ msgstr "أو_قف"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "ال_مساحة المحصّصة"
+
+#~ msgid "Cancel"
+#~ msgstr "ألغِ"
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "شريط الأدوات مرئي"
@@ -441,9 +458,6 @@ msgstr "تعذّر تحليل استعمال القرص."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "‏FTP (مع تسجيل دخول)"
-
-#~ msgid "Windows share"
-#~ msgstr "مشاركة ويندوز"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
