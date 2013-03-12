@@ -1,15 +1,15 @@
 # gnome-utils's Portuguese translation
-# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 gnome-utils
+# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 gnome-utils
 # Distributed under the same licence as the gnome-utils package
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-#
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.6\n"
+"Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-29 00:27+0100\n"
-"PO-Revision-Date: 2012-08-29 00:35+0000\n"
+"POT-Creation-Date: 2013-03-12 01:05+0000\n"
+"PO-Revision-Date: 2013-03-12 01:00+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
@@ -18,13 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:168
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de Utilização do Disco"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Verificar o tamanho das pastas e o espaço disponível em disco"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "armazenamento;espaço;limpar;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -36,21 +40,37 @@ msgstr "A lista de URIs de partições a serem excluída da análise."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
-msgstr "Gráfico Activo"
+msgstr "Gráfico Ativo"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Que tipo de gráfico deverá ser apresentado."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Tamanho da janela"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "O tamanho inicial da janela"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Estado da janela"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "O GdkWindowState da janela"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Imprimir informação de versão e sair"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:106
 msgid "- Disk Usage Analyzer"
 msgstr "- Analisador de Utilização do Disco"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -93,79 +113,63 @@ msgstr "_Aumentar o zoom"
 msgid "Zoom _out"
 msgstr "_Reduzir o zoom"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Pasta pessoal"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Unidade principal"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Analisar uma pasta"
+msgid "Scan Folder…"
+msgstr "Analisar Pasta…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Analisar a Pasta"
+msgid "Scan Remote Folder…"
+msgstr "Analisar Pasta Remota…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Analisar uma pasta remota"
+msgid "Devices and locations"
+msgstr "Dispositivos e localizações"
 
 #: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Analisar a Pasta Remota"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Apresentar todas as localizações"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Reler"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "etiqueta"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Fechar"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "Utilização"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "Tamanho"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "Conteúdo"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:9
 msgid "Rings Chart"
 msgstr "Gráfico de Aneis"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:10
 msgid "Treemap Chart"
 msgstr "Gráfico de Mapa de Grafos"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "Abrir _Pasta"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar Caminho para a Área de Transferência"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver para o Lixo"
 
@@ -202,70 +206,85 @@ msgid "_View"
 msgstr "_Ver"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Parar"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Reler"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "Espaço _Alocado"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Expandir Todas"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "Re_colher Todas"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:214
 msgid "Select Folder"
-msgstr "Seleccione uma Pasta"
+msgstr "Selecione uma Pasta"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:264
 msgid "Could not analyze volume."
 msgstr "Incapaz de analisar a unidade."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:315
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:318
 msgid "A graphical tool to analyze disk usage."
 msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:323
 msgid "translator-credits"
 msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:567
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Incapaz de analisar a pasta \"%s\" ou algumas das pastas contidas."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" não é uma pasta válida"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:587 ../src/baobab-window.vala:593
 msgid "Could not analyze disk usage."
 msgstr "Incapaz de analisar a utilização do disco."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Analisar uma pasta"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Analisar a Pasta"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Analisar uma pasta remota"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Analisar a Pasta Remota"
+
+#~ msgid "Reload"
+#~ msgstr "Reler"
+
+#~ msgid "label"
+#~ msgstr "etiqueta"
+
+#~ msgid "_Stop"
+#~ msgstr "_Parar"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "Espaço _Alocado"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Preferências do Analisador de Utilização de Disco"
 
 #~ msgid "Select _devices to include in file system scan:"
 #~ msgstr ""
-#~ "Seleccionar _dispositivos a incluir na análise do sistema de ficheiros:"
+#~ "Selecionar _dispositivos a incluir na análise do sistema de ficheiros:"
 
 #~ msgid "_Monitor changes to your home folder"
 #~ msgstr "_Monitorizar alterações à sua pasta pessoal"
@@ -275,8 +294,7 @@ msgstr "Incapaz de analisar a utilização do disco."
 
 #~ msgid "Whether any change to the home directory should be monitored."
 #~ msgstr ""
-#~ "Se qualquer alteração ao directório pessoal deverá ou não ser "
-#~ "monitorizada."
+#~ "Se qualquer alteração ao diretório pessoal deverá ou não ser monitorizada."
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "Barra de Ferramentas é Visível"
@@ -328,7 +346,7 @@ msgstr "Incapaz de analisar a utilização do disco."
 #~ msgstr "Parar a análise"
 
 #~ msgid "Refresh"
-#~ msgstr "Actualizar"
+#~ msgstr "Atualizar"
 
 #~ msgid "Scanning…"
 #~ msgstr "A analisar…"
@@ -367,13 +385,13 @@ msgstr "Incapaz de analisar a utilização do disco."
 #~ msgstr "Apresentar a versão"
 
 #~ msgid "[DIRECTORY]"
-#~ msgstr "[DIRECTÓRIO]"
+#~ msgstr "[DIRETÓRIO]"
 
 #~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Demasiados argumentos. Apenas pode ser especificado um directório."
+#~ msgstr "Demasiados argumentos. Apenas pode ser especificado um diretório."
 
 #~ msgid "Could not detect any mount point."
-#~ msgstr "Incapaz de detectar um qualquer ponto de montagem."
+#~ msgstr "Incapaz de detetar um qualquer ponto de montagem."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr ""
@@ -420,9 +438,6 @@ msgstr "Incapaz de analisar a utilização do disco."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (autenticado)"
-
-#~ msgid "Windows share"
-#~ msgstr "Partilha Windows"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
@@ -478,8 +493,8 @@ msgstr "Incapaz de analisar a utilização do disco."
 #~ "The content of your home folder has changed. Select rescan to update the "
 #~ "disk usage details."
 #~ msgstr ""
-#~ "O conteúdo da sua pasta pessoal foi alterado. Seleccione analisar "
-#~ "novamente para actualizar os detalhes de utilização de disco."
+#~ "O conteúdo da sua pasta pessoal foi alterado. Selecione analisar "
+#~ "novamente para atualizar os detalhes de utilização de disco."
 
 #~ msgid "_Rescan"
 #~ msgstr "_Analisar Novamente"
