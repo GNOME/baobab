@@ -88,7 +88,9 @@ namespace Baobab {
         public Window (Application app) {
             Object (application: app);
 
-            busy_cursor = new Gdk.Cursor (Gdk.CursorType.WATCH);
+            if (busy_cursor == null) {
+                busy_cursor = new Gdk.Cursor (Gdk.CursorType.WATCH);
+            }
 
             add_action_entries (action_entries, this);
 
