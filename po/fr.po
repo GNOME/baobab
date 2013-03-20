@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: gnome-utils HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-20 14:51+0000\n"
+"POT-Creation-Date: 2013-03-16 17:00+0000\n"
 "PO-Revision-Date: 2012-09-01 18:22+0200\n"
 "Last-Translator: Sam Friedmann <sam.friedmann@redhat.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -34,13 +34,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
 msgid "Disk Usage Analyzer"
 msgstr "Analyseur d'utilisation des disques"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Vérifier la taille des dossiers et l'espace disque disponible"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "stockage;espace disque;nettoyage;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -58,15 +62,31 @@ msgstr "Graphique actif"
 msgid "Which type of chart should be displayed."
 msgstr "Indique le type de graphique à afficher."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Taille de la fenêtre"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "La taille initiale de la fenêtre"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "État de la fenêtre"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "L'état GdkWindowState de la fenêtre"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Affiche les informations de version et quitte"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:106
 msgid "- Disk Usage Analyzer"
 msgstr "- Analyseur d'utilisation des disques"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -109,79 +129,63 @@ msgstr "Zoom a_vant"
 msgid "Zoom _out"
 msgstr "Zoom a_rrière"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Dossier personnel"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Volume principal"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Analyser un dossier"
+msgid "Scan Folder…"
+msgstr "Analyser le dossier…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Analyser un dossier"
+msgid "Scan Remote Folder…"
+msgstr "Analyser le dossier distant…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Analyser un dossier distant"
+msgid "Devices and locations"
+msgstr "Périphériques et emplacements"
 
 #: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Analyser un dossier distant"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Afficher tous les emplacements"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Recharger"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "nom"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "Fermer"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "Dossier"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "Utilisation"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "Taille"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "Sommaire"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:9
 msgid "Rings Chart"
 msgstr "Diagramme en anneaux"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:10
 msgid "Treemap Chart"
 msgstr "Carte arborescente"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "_Ouvrir le dossier"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Copy Path to Clipboard"
 msgstr "_Copier le chemin dans le presse-papiers"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "_Mettre à la corbeille"
 
@@ -218,42 +222,34 @@ msgid "_View"
 msgstr "_Affichage"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "_Arrêter"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Recharger"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "Espace all_oué"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "Tout _déplier"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "Tout _réduire"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:216
 msgid "Select Folder"
 msgstr "Sélectionner un dossier"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:266
 msgid "Could not analyze volume."
 msgstr "Impossible d'analyser le volume."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:317
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:320
 msgid "A graphical tool to analyze disk usage."
 msgstr "Un outil graphique pour analyser l'utilisation des disques."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:325
 msgid "translator-credits"
 msgstr ""
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
@@ -265,43 +261,18 @@ msgstr ""
 "Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Alain Lojewski <allomervan@gmail.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Annuler"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Impossible d'analyser le dossier « %s » ou certains de ces sous-dossiers."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "« %s » n'est pas un dossier valide"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
 msgid "Could not analyze disk usage."
 msgstr "Impossible d'analyser l'utilisation du disque."
-
-#~ msgid "Usage unknown"
-#~ msgstr "Utilisation inconnue"
-
-#~ msgid "Scan"
-#~ msgstr "Analyser"
-
-#~ msgid "Mount and scan"
-#~ msgstr "Monter et analyser"
-
-#~ msgid "All locations"
-#~ msgstr "Tous les emplacements"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Arrêter l'analyse"
-
-#~ msgid "_All locations"
-#~ msgstr "_Tous les emplacements"
-
-#~ msgid "_Toolbar"
-#~ msgstr "Barre d'_outils"
