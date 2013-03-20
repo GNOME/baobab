@@ -4,16 +4,16 @@
 #
 # Subhransu Behera <arya_subhransu@yahoo.co.in>, 2006.
 # Manoj Kumar Giri <mgiri@redhat.com>, 2008.
-# Manoj Kumar Giri <mgiri@redhat.com>, 2009, 2010, 2012.
+# Manoj Kumar Giri <mgiri@redhat.com>, 2009, 2010, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.or\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-11 16:34+0000\n"
-"PO-Revision-Date: 2012-09-12 18:57+0530\n"
+"POT-Creation-Date: 2012-10-27 22:11+0000\n"
+"PO-Revision-Date: 2013-03-20 16:49+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
-"Language-Team: Oriya <Translation-team-or@lists.sourceforge.net>\n"
+"Language-Team: Oriya <oriya-it@googlegroups.com>\n"
 "Language: or\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,15 +27,19 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "ଡିସ୍କ ବ୍ଯବହାର ବିଧି ବିଶ୍ଳେଷକ"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "ଫୋଲଡର ର ଆକାର ଏବଂ ଉପଲବ୍ଧ ଡିସ୍କ ସ୍ଥାନ ଯାଞ୍ଚ କରନ୍ତୁ"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -53,19 +57,34 @@ msgstr "ସକ୍ରିୟ ତାଲିକା"
 msgid "Which type of chart should be displayed."
 msgstr "କେଉଁ ପ୍ରକାରର ତାଲିକାକୁ ଦର୍ଶାଇବା ଉଚିତ।"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#| msgid "Windows share"
+msgid "Window size"
+msgstr "ୱିଣ୍ଡୋ ଆକାର"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "ୱିଣ୍ଡୋର ପ୍ରାରମ୍ଭିକ ଆକାର"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#| msgid "Windows share"
+msgid "Window state"
+msgstr "ୱିଣ୍ଡୋର  ସ୍ଥିତି"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "ୱିଣ୍ଡୋର GdkWindowState"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "ସଂସ୍କରଣ ସୂଚନା ମୁଦ୍ରଣ କରି ପ୍ରସ୍ଥାନ କରନ୍ତୁ"
 
 #: ../src/baobab-application.vala:104
-#| msgid "Disk Usage Analyzer"
 msgid "- Disk Usage Analyzer"
 msgstr "- ଡିସ୍କ ବ୍ଯବହାର ବିଧି ବିଶ୍ଳେଷକ"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d ବସ୍ତୁ"
@@ -96,93 +115,72 @@ msgid "Set the root node from the model"
 msgstr "ପ୍ରତିମୂର୍ତ୍ତିରୁ ମୂଳଶାଖାକୁ ସଜାଡନ୍ତୁ"
 
 #: ../src/baobab-chart.c:898
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
 msgstr "ମୂଳ ଫୋଲଡରକୁ ସ୍ଥାନାନ୍ତରିତ ହୁଅନ୍ତୁ (_M)"
 
 #: ../src/baobab-chart.c:902
-#| msgid "Zoom in"
 msgid "Zoom _in"
 msgstr "ବଡ କରନ୍ତୁ (_i)"
 
 #: ../src/baobab-chart.c:906
-#| msgid "Zoom out"
 msgid "Zoom _out"
 msgstr "ସାନ କରନ୍ତୁ (_O)"
 
-#: ../src/baobab-location.vala:52
-#| msgid "Scan home folder"
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "ମୂଳ ଫୋଲଡର"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "ମୂଖ୍ୟ ସ୍ଥାନ"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "ଗୋଟିଏ ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
+#| msgid "Scan F_older…"
+msgid "Scan Folder…"
+msgstr "ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
+#| msgid "Scan Remote Fo_lder…"
+msgid "Scan Remote Folder…"
+msgstr "ଦୂର ଫୋଲଡର୍ କୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "ଗୋଟିଏ ଦୂର ଫୋଲଡର୍ କୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "ଦୂର ଫୋଲଡର୍ କୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-#| msgid "Cannot scan location \"%s\""
-msgid "Show all locations"
-msgstr "ସମସ୍ତ ଅବସ୍ଥାନ ଗୁଡିକୁ ଦର୍ଶାନ୍ତୁ"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "ପୁନର୍ଧାରଣ କରନ୍ତୁ"
-
-#: ../src/baobab-main-window.ui.h:7
 msgid "Close"
 msgstr "ବନ୍ଦକରନ୍ତୁ"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "ଫୋଲଡର୍"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "ବ୍ୟବହାର ବିଧି"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "ଆକାର"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "ସୂଚୀ ପତ୍ର"
 
-#: ../src/baobab-main-window.ui.h:12
-#| msgid "View as Rings Chart"
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "ମୁଦ୍ରିକା ତାଲିକା"
 
-#: ../src/baobab-main-window.ui.h:13
-#| msgid "View as Treemap Chart"
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "Treemap ତାଲିକା"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "ଫୋଲଡର୍ ଖୋଲନ୍ତୁ (_O)"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "ପଥକୁ କ୍ଲିପବୋର୍ଡରେ ନକଲ କରନ୍ତୁ (_C)"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "ଆବର୍ଜନା ପାତ୍ରକୁ ପଠାନ୍ତୁ (_v)"
 
@@ -203,17 +201,14 @@ msgid "_Analyzer"
 msgstr "ବିଶ୍ଳେଷକ (_A)"
 
 #: ../src/baobab-menu.ui.h:5
-#| msgid "Scan Home"
 msgid "_Scan Home"
 msgstr "ମୂଖ୍ୟ ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ (_S)"
 
 #: ../src/baobab-menu.ui.h:6
-#| msgid "Scan Folder"
 msgid "Scan F_older…"
 msgstr "ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ (_o)…"
 
 #: ../src/baobab-menu.ui.h:7
-#| msgid "Scan Remote Folder"
 msgid "Scan Remote Fo_lder…"
 msgstr "ଦୂର ଫୋଲଡର୍ କୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ (_l)…"
 
@@ -222,65 +217,81 @@ msgid "_View"
 msgstr "ଦୃଶ୍ଯ (_V)"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "ଅଟକାନ୍ତୁ (_S)"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "ପୁନର୍ଧାରଣ କରନ୍ତୁ (_R)"
 
-#: ../src/baobab-menu.ui.h:11
-#| msgid "All_ocated Space"
-msgid "_Allocated Space"
-msgstr "ବଣ୍ଟା ଯାଇଥିବା ସ୍ଥାନ (_A)"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "ସମସ୍ତଙ୍କୁ ବଢାନ୍ତୁ (_E)"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "ସମସ୍ତଙ୍କୁ ଅବସନ୍ନ କରି ଦିଅନ୍ତୁ (_C)"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:131
+#| msgid "Show all locations"
+msgid "Devices and locations"
+msgstr "ଉପକରଣ ଏବଂ ଅବସ୍ଥାନଗୁଡିକ"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "ଏ ଫୋଲଡର୍ କୁ ଚୟନ କରନ୍ତୁ"
 
-#: ../src/baobab-window.vala:250
-#| msgid "Could not analyze disk usage."
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "ଡିସ୍କ ସ୍ଥାନକୁ ବିଶ୍ଳେଷଣ କରିପାରିଲା ନାହିଁ।"
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:329
 msgid "Baobab"
 msgstr "ବାଓବାବ୍"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:332
 msgid "A graphical tool to analyze disk usage."
 msgstr "ଡିସ୍କ ବ୍ଯବହାର ବିଧିକୁ ବିଶ୍ଳେଷଣ କରିବା ପାଇଁ ଗୋଟିଏ ଆଲେଖୀକ ଉପକରଣ।"
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:337
 msgid "translator-credits"
 msgstr "ମନୋଜ କୁମାର ଗିରି <mgiri@redhat.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "ବାତିଲ କରନ୍ତୁ"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:579
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "ଫୋଲଡର \"%s\" ତାହା ଧାରଣ କରିଥିବା କିଛି ଫୋଲଡରକୁ କ୍ରମବିକ୍ଷଣ କରିହେଲା ନାହିଁ।"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\"ଟି ଗୋଟିଏ ବୈଧ ଫୋଲଡର ନୁହେଁ"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "ଡିସ୍କ ବ୍ଯବହାର ବିଧିକୁ ବିଶ୍ଳେଷଣ କରିପାରିଲା ନାହିଁ।"
+
+#~ msgid "Scan a folder"
+#~ msgstr "ଗୋଟିଏ ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
+
+#~ msgid "Scan Folder"
+#~ msgstr "ଫୋଲଡରକୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "ଗୋଟିଏ ଦୂର ଫୋଲଡର୍ କୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "ଦୂର ଫୋଲଡର୍ କୁ କ୍ରମବୀକ୍ଷଣ କରନ୍ତୁ"
+
+#~ msgid "Reload"
+#~ msgstr "ପୁନର୍ଧାରଣ କରନ୍ତୁ"
+
+#~ msgid "_Stop"
+#~ msgstr "ଅଟକାନ୍ତୁ (_S)"
+
+#~| msgid "All_ocated Space"
+#~ msgid "_Allocated Space"
+#~ msgstr "ବଣ୍ଟା ଯାଇଥିବା ସ୍ଥାନ (_A)"
+
+#~ msgid "Cancel"
+#~ msgstr "ବାତିଲ କରନ୍ତୁ"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "ଡିସ୍କ ବ୍ଯବହାର ବିଧି ବିଶ୍ଳେଷକଙ୍କ ପସନ୍ଦ"
@@ -434,9 +445,6 @@ msgstr "ଡିସ୍କ ବ୍ଯବହାର ବିଧିକୁ ବିଶ୍ଳ
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (ଲଗଇନ୍ ସହିତ)"
-
-#~ msgid "Windows share"
-#~ msgstr "ୱିଣ୍ଡୋର ସହଭାଗ"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
