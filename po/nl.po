@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-23 23:12+0100\n"
-"PO-Revision-Date: 2013-03-18 10:52+0100\n"
-"Last-Translator: Hannie Dumoleyn <hannie@ubuntu-nl.org>\n"
+"POT-Creation-Date: 2013-03-23 23:13+0100\n"
+"PO-Revision-Date: 2013-03-23 23:14+0100\n"
+"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -25,13 +25,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:164
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
 msgid "Disk Usage Analyzer"
 msgstr "Schijfgebruik"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Mapgroottes en beschikbare schijfruimte bekijken"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "storage;opslag;ruimte;schijfgebruik;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -49,11 +53,27 @@ msgstr "Actieve grafiek"
 msgid "Which type of chart should be displayed."
 msgstr "Welke type grafiek zichtbaar dient te zijn"
 
-#: ../src/baobab-application.vala:53
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Venstergrootte"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Initiële venstergrootte"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Vensterstaat"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "De GdkWindowState van het venster"
+
+#: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Versie-informatie afdrukken en sluiten"
 
-#: ../src/baobab-application.vala:135
+#: ../src/baobab-application.vala:106
 msgid "- Disk Usage Analyzer"
 msgstr "- Schijfgebruikanalyse"
 
@@ -110,59 +130,55 @@ msgid "Main volume"
 msgstr "Hoofdpartitie"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder"
-msgstr "Map scannen"
+msgid "Scan Folder…"
+msgstr "Map scannen…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan a folder"
-msgstr "Een map scannen"
+msgid "Scan Remote Folder…"
+msgstr "Map op afstand scannen…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan Remote Folder"
-msgstr "Externe map scannen"
+msgid "Devices and locations"
+msgstr "Apparaten en locaties"
 
 #: ../src/baobab-main-window.ui.h:4
-msgid "Scan a remote folder"
-msgstr "Een externe map scannen"
-
-#: ../src/baobab-main-window.ui.h:5
 msgid "Close"
 msgstr "Sluiten"
 
-#: ../src/baobab-main-window.ui.h:6
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "Map"
 
-#: ../src/baobab-main-window.ui.h:7
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "Gebruik"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "Grootte"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "Inhoud"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:9
 msgid "Rings Chart"
 msgstr "Ringdiagram"
 
 # Tip van Tino en Vincent (Wouter Bolsterlee)
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Treemap Chart"
 msgstr "Hiërarchisch blokdiagram"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "Map _openen"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Copy Path to Clipboard"
 msgstr "Pad naar klembord _kopiëren"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "_Naar prullenbak verplaatsen"
 
@@ -211,24 +227,24 @@ msgstr "_Alles uitvouwen"
 msgid "_Collapse All"
 msgstr "Alles op_vouwen"
 
-#: ../src/baobab-window.vala:206
+#: ../src/baobab-window.vala:216
 msgid "Select Folder"
 msgstr "Selecteer een map"
 
-#: ../src/baobab-window.vala:256
+#: ../src/baobab-window.vala:266
 msgid "Could not analyze volume."
 msgstr "Kon volumen niet analyseren."
 
-#: ../src/baobab-window.vala:307
+#: ../src/baobab-window.vala:317
 msgid "Baobab"
 msgstr "Baobab"
 
 # schijfgebruik/hardeschijfgebruik
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:320
 msgid "A graphical tool to analyze disk usage."
 msgstr "Een grafisch hulpmiddel om schijfgebruik te analyseren."
 
-#: ../src/baobab-window.vala:315
+#: ../src/baobab-window.vala:325
 msgid "translator-credits"
 msgstr ""
 "Tino Meinen\n"
@@ -239,7 +255,7 @@ msgstr ""
 "\n"
 "Kijk voor meer informatie op http://nl.gnome.org/"
 
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
@@ -247,14 +263,26 @@ msgstr ""
 "scannen."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "‘%s’ is geen geldige map"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
 msgid "Could not analyze disk usage."
 msgstr "Kon schijfgebruik niet analyseren."
+
+#~ msgid "Scan Folder"
+#~ msgstr "Map scannen"
+
+#~ msgid "Scan a folder"
+#~ msgstr "Een map scannen"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Externe map scannen"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Een externe map scannen"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Voorkeuren schijfgebruik"
@@ -419,9 +447,6 @@ msgstr "Kon schijfgebruik niet analyseren."
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (met aanmelden)"
-
-#~ msgid "Windows share"
-#~ msgstr "Windows gedeelde map"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
