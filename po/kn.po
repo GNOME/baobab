@@ -3,24 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Shankar Prasad <svenkate@redhat.com>, 2008, 2009, 2012.
-# Shankar Prasad <svenkate@redhat.co,>, 2012.
+# Shankar Prasad <svenkate@redhat.co,>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.kn\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-04 10:01+0000\n"
-"PO-Revision-Date: 2012-08-08 14:36+0530\n"
-"Last-Translator: Shankar Prasad <svenkate@redhat.co,>\n"
+"POT-Creation-Date: 2012-10-27 22:11+0000\n"
+"PO-Revision-Date: 2013-03-26 00:04+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:158
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
 msgid "Disk Usage Analyzer"
 msgstr "ಡಿಸ್ಕ್‍ ಬಳಕೆಯ ವಿಶ್ಲೇಷಕ"
 
@@ -28,43 +28,54 @@ msgstr "ಡಿಸ್ಕ್‍ ಬಳಕೆಯ ವಿಶ್ಲೇಷಕ"
 msgid "Check folder sizes and available disk space"
 msgstr "ಕಡತಕೋಶದ ಗಾತ್ರಗಳು ಹಾಗು ಲಭ್ಯವಿರುವ ಡಿಸ್ಕಿನ ಜಾಗಕ್ಕಾಗಿ ನೋಡು"
 
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "ಶೇಖರಣೆ;ಸ್ಥಳ;ಸ್ವಚ್ಛಗೊಳಿಸು;"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Monitor Home"
-msgstr "ಮೇಲ್ವಿಚಾರಣೆಯ ನೆಲೆ"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Whether any change to the home directory should be monitored."
-msgstr "ನೆಲೆ ಕೋಶಕ್ಕೆ ಮಾಡಲಾದ ಯಾವುದೆ ಬದಲಾವಣೆಗಳ ಮೇಲ್ವಿಚಾರಣೆ ನಡೆಸಬೇಕೆ."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "ಹೊರತು ಪಡಿಸಲಾದ ವಿಭಾಗಗಳ URIಗಳು"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "ಶೋಧನೆಯಿಂದ ಹೊರತು ಪಡಿಸಬೇಕಿರುವ ವಿಭಾಗಗಳಿಗಾಗಿನ URIಗಳ ಪಟ್ಟಿ."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Active Chart"
 msgstr "ಸಕ್ರಿಯ ನಕ್ಷೆ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "ಯಾವ ಬಗೆಯ ನಕ್ಷೆಯು ಕಾಣಿಸಿಕೊಳ್ಳಬೇಕು."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#| msgid "Windows share"
+msgid "Window size"
+msgstr "ಕಿಟಕಿಯ ಗಾತ್ರ"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "ಕಿಟಕಿಯ ಆರಂಭಿಕ ಗಾತ್ರ"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#| msgid "Windows share"
+msgid "Window state"
+msgstr "ಕಿಟಕಿಯ ಸ್ಥಿತಿ"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "ಕಿಟಕಿಯ GdkWindowState"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "ಆವೃತ್ತಿಯ ಮಾಹಿತಿಯನ್ನು ಮುದ್ರಿಸಿ ನಿರ್ಗಮಿಸು"
 
 #: ../src/baobab-application.vala:104
-#| msgid "Disk Usage Analyzer"
 msgid "- Disk Usage Analyzer"
 msgstr "- ಡಿಸ್ಕ್‍ ಬಳಕೆಯ ವಿಶ್ಲೇಷಕ"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
-#| msgid "%5d item"
-#| msgid_plural "%5d items"
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d ಅಂಶ"
@@ -95,98 +106,72 @@ msgid "Set the root node from the model"
 msgstr "ಮಾದರಿಗಾಗಿ ಮೂಲ ನೋಡ್ ಅನ್ನು ಅಣಿಗೊಳಿಸಿ"
 
 #: ../src/baobab-chart.c:898
-#| msgid "Move to parent folder"
 msgid "_Move to parent folder"
 msgstr "ಮೂಲ ಕಡತಕೋಶಕ್ಕೆ ಜರುಗಿಸು (_M)"
 
 #: ../src/baobab-chart.c:902
-#| msgid "Zoom in"
 msgid "Zoom _in"
 msgstr "ಹಿಗ್ಗಿಸು (_i)"
 
 #: ../src/baobab-chart.c:906
-#| msgid "Zoom out"
 msgid "Zoom _out"
 msgstr "ಕುಗ್ಗಿಸು (_o)"
 
-#: ../src/baobab-location.vala:52
-#| msgid "Scan home folder"
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "ನೆಲೆ ಕಡತಕೋಶ"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "ಪ್ರಮುಖ ಪರಿಮಾಣ"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "ಒಂದು ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
+#| msgid "Scan F_older…"
+msgid "Scan Folder…"
+msgstr "ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
+#| msgid "Scan Remote Fo_lder…"
+msgid "Scan Remote Folder…"
+msgstr "ದೂರಸ್ಥ ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು…"
 
 #: ../src/baobab-main-window.ui.h:3
-#| msgid "Scan Remote Folder"
-msgid "Scan a remote folder"
-msgstr "ದೂರಸ್ಥ ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "ದೂರಸ್ಥ ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:469
-#| msgid "Cannot scan location \"%s\""
-msgid "Show all locations"
-msgstr "ಎಲ್ಲಾ ಸ್ಥಳಗಳನ್ನು ತೋರಿಸು"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "ಮರಳಿ ಲೋಡ್ ಮಾಡು"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "label"
-msgstr "ಗುರುತುಪಟ್ಟಿ"
-
-#: ../src/baobab-main-window.ui.h:8
 msgid "Close"
 msgstr "ಮುಚ್ಚು"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:4
 msgid "Folder"
 msgstr "ಕಡತಕೋಶ"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:5
 msgid "Usage"
 msgstr "ಬಳಕೆ"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:6
 msgid "Size"
 msgstr "ಗಾತ್ರ"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:7
 msgid "Contents"
 msgstr "ಒಳ ವಿಷಯಗಳು"
 
-#: ../src/baobab-main-window.ui.h:13
-#| msgid "View as Rings Chart"
+#: ../src/baobab-main-window.ui.h:8
 msgid "Rings Chart"
 msgstr "ರಿಂಗ್ಸ್‍ ಚಾರ್ಟಾಗಿ ನೋಡು"
 
-#: ../src/baobab-main-window.ui.h:14
-#| msgid "View as Treemap Chart"
+#: ../src/baobab-main-window.ui.h:9
 msgid "Treemap Chart"
 msgstr "ಟ್ರೀಮ್ಯಾಪ್‌ ಚಾರ್ಟ್"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "ಕಡತಕೋಶವನ್ನು ತೆರೆ(_O)"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Copy Path to Clipboard"
 msgstr "ಮಾರ್ಗವನ್ನು ನಕಲುಫಲಕಕ್ಕೆ ಅಂಟಿಸು (~C)"
 
-#: ../src/baobab-main-window.ui.h:17
+#: ../src/baobab-main-window.ui.h:12
 msgid "Mo_ve to Trash"
 msgstr "ಕಸದಬುಟ್ಟಿಗೆ ವರ್ಗಾಯಿಸು(_v)"
 
@@ -207,7 +192,6 @@ msgid "_Analyzer"
 msgstr "ವಿಶ್ಲೇಷಕ(_A)"
 
 #: ../src/baobab-menu.ui.h:5
-#| msgid "Scan Home"
 msgid "_Scan Home"
 msgstr "ನೆಲೆಯನ್ನು ಶೋಧಿಸು (_S)"
 
@@ -216,7 +200,6 @@ msgid "Scan F_older…"
 msgstr "ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು (_o)..."
 
 #: ../src/baobab-menu.ui.h:7
-#| msgid "S_can Remote Folder…"
 msgid "Scan Remote Fo_lder…"
 msgstr "ದೂರದ ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು (_l)…"
 
@@ -225,65 +208,91 @@ msgid "_View"
 msgstr "ನೋಟ(_V)"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "ನಿಲ್ಲಿಸು (_S)"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "ಮರಳಿ ತುಂಬಿಸು (_R)"
 
-#: ../src/baobab-menu.ui.h:11
-#| msgid "All_ocated Space"
-msgid "_Allocated Space"
-msgstr "ನಿಯೋಜಿಸಲಾದ ಸ್ಥಳ (_A)"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "ಎಲ್ಲವನ್ನೂ ಹಿಗ್ಗಿಸು(_E)"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "ಎಲ್ಲವನ್ನೂ ಬೀಳಿಸು(_C)"
 
-#: ../src/baobab-window.vala:200
+#: ../src/baobab-window.vala:131
+#| msgid "Show all locations"
+msgid "Devices and locations"
+msgstr "ಸಾಧನಗಳು ಮತ್ತು ಸ್ಥಳಗಳು"
+
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "ಕಡತಕೋಶವನ್ನು ಆರಿಸಿ"
 
-#: ../src/baobab-window.vala:245
-#| msgid "Could not analyze disk usage."
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "ಪರಿಮಾಣವನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗಿಲ್ಲ."
 
-#: ../src/baobab-window.vala:297
+#: ../src/baobab-window.vala:329
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:300
+#: ../src/baobab-window.vala:332
 msgid "A graphical tool to analyze disk usage."
 msgstr "ಡಿಸ್ಕಿನ ಬಳಕೆಯನ್ನು ವಿಶ್ಲೇಷಿಸುವ ಒಂದು ಚಿತ್ರಾತ್ಮಕ ಉಪಕರಣ."
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:337
 msgid "translator-credits"
 msgstr "ಶಂಕರ್ ಪ್ರಸಾದ್ <svenkate@redhat.com>"
 
-#: ../src/baobab-window.vala:460
-msgid "Cancel"
-msgstr "ರದ್ದುಮಾಡು"
-
-#: ../src/baobab-window.vala:550
+#: ../src/baobab-window.vala:579
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "\"%s\" ಅಥವ ಅದು ಹೊಂದಿರುವ ಕೆಲವು ಕೋಶಗಳನ್ನು ಶೋಧಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:567 ../src/baobab-window.vala:573
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ಒಂದು ಮಾನ್ಯವಾದ ಕಡತಕೋಶವಲ್ಲ"
 
-#: ../src/baobab-window.vala:568 ../src/baobab-window.vala:574
+#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "ಡಿಸ್ಕಿನ ಬಳಕೆಯನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗಿಲ್ಲ."
+
+#~ msgid "Monitor Home"
+#~ msgstr "ಮೇಲ್ವಿಚಾರಣೆಯ ನೆಲೆ"
+
+#~ msgid "Whether any change to the home directory should be monitored."
+#~ msgstr "ನೆಲೆ ಕೋಶಕ್ಕೆ ಮಾಡಲಾದ ಯಾವುದೆ ಬದಲಾವಣೆಗಳ ಮೇಲ್ವಿಚಾರಣೆ ನಡೆಸಬೇಕೆ."
+
+#~ msgid "Scan a folder"
+#~ msgstr "ಒಂದು ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
+
+#~ msgid "Scan Folder"
+#~ msgstr "ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
+
+#~| msgid "Scan Remote Folder"
+#~ msgid "Scan a remote folder"
+#~ msgstr "ದೂರಸ್ಥ ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "ದೂರಸ್ಥ ಕಡತಕೋಶವನ್ನು ಶೋಧಿಸು"
+
+#~ msgid "Reload"
+#~ msgstr "ಮರಳಿ ಲೋಡ್ ಮಾಡು"
+
+#~ msgid "label"
+#~ msgstr "ಗುರುತುಪಟ್ಟಿ"
+
+#~ msgid "_Stop"
+#~ msgstr "ನಿಲ್ಲಿಸು (_S)"
+
+#~| msgid "All_ocated Space"
+#~ msgid "_Allocated Space"
+#~ msgstr "ನಿಯೋಜಿಸಲಾದ ಸ್ಥಳ (_A)"
+
+#~ msgid "Cancel"
+#~ msgstr "ರದ್ದುಮಾಡು"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "ಡಿಸ್ಕ್‌ ಬಳಕೆಯ ವಿಶ್ಲೇಷಕದ ಆದ್ಯತೆಗಳು"
@@ -440,9 +449,6 @@ msgstr "ಡಿಸ್ಕಿನ ಬಳಕೆಯನ್ನು ವಿಶ್ಲೇಷ�
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (ಪ್ರವೇಶದೊಂದಿಗೆ)"
-
-#~ msgid "Windows share"
-#~ msgstr "ವಿಂಡೋಸ್ ಹಂಚಿಕೆ"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
