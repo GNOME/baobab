@@ -5,13 +5,13 @@
 # wanderlust <wanderlust@ukr.net>, 2009.
 # int_ua <xintx.ua@gmail.com>, 2010.
 # Korostil Daniel <ted.korostiled@gmail.com>, 2011, 2012.
-# Daniel Korostil <ted.korostiled@gmail.com>, 2012.
+# Daniel Korostil <ted.korostiled@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-26 10:06+0300\n"
-"PO-Revision-Date: 2012-09-26 10:11+0300\n"
+"POT-Creation-Date: 2013-03-26 15:25+0200\n"
+"PO-Revision-Date: 2013-03-26 15:27+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "Language: uk\n"
@@ -23,13 +23,17 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:162
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
 msgid "Disk Usage Analyzer"
 msgstr "Аналізатор використання диску"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Перевірте розміри тек та дисковий простір"
+
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "пам'ять;місце;очистити;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -47,15 +51,31 @@ msgstr "Активна діаграма"
 msgid "Which type of chart should be displayed."
 msgstr "Тип діаграми, яку буде показано."
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+msgid "Window size"
+msgstr "Розмір вікна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+msgid "The initial size of the window"
+msgstr "Початковий розмір вікна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+msgid "Window state"
+msgstr "Стан вікна"
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+msgid "The GdkWindowState of the window"
+msgstr "GdkWindowState вікна"
+
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Показати версію та вийти"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:106
 msgid "- Disk Usage Analyzer"
 msgstr "— Аналізатор використання дисків"
 
-#: ../src/baobab-cellrenderers.vala:54
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -99,75 +119,63 @@ msgstr "На_близити"
 msgid "Zoom _out"
 msgstr "Від_далити"
 
-#: ../src/baobab-location.vala:52
+#: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Домашня тека"
 
-#: ../src/baobab-location.vala:91
+#: ../src/baobab-location.vala:123
 msgid "Main volume"
 msgstr "Головний том"
 
 #: ../src/baobab-main-window.ui.h:1
-msgid "Scan a folder"
-msgstr "Сканувати теку"
+msgid "Scan Folder…"
+msgstr "Просканувати теку…"
 
 #: ../src/baobab-main-window.ui.h:2
-msgid "Scan Folder"
-msgstr "Сканувати теку"
+msgid "Scan Remote Folder…"
+msgstr "Просканувати віддалену теку…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Scan a remote folder"
-msgstr "Сканувати віддалену теку"
+msgid "Devices and locations"
+msgstr "Пристрої і місця"
 
 #: ../src/baobab-main-window.ui.h:4
-msgid "Scan Remote Folder"
-msgstr "Сканувати віддалену теку"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-window.vala:474
-msgid "Show all locations"
-msgstr "Показати всі адреси"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Reload"
-msgstr "Перезавантажити"
-
-#: ../src/baobab-main-window.ui.h:7
 msgid "Close"
 msgstr "Закрити"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "Тека"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "Використання"
 
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "Розмір"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "Зміст"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:9
 msgid "Rings Chart"
 msgstr "Кільцева діаграма"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:10
 msgid "Treemap Chart"
 msgstr "Дерево"
 
-#: ../src/baobab-main-window.ui.h:14
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "Відкрити _теку"
 
-#: ../src/baobab-main-window.ui.h:15
+#: ../src/baobab-main-window.ui.h:12
 msgid "_Copy Path to Clipboard"
 msgstr "_Скопіювати шлях до кишені"
 
-#: ../src/baobab-main-window.ui.h:16
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "Пере_містити у смітник"
 
@@ -204,66 +212,78 @@ msgid "_View"
 msgstr "П_ерегляд"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Stop"
-msgstr "З_упинити"
-
-#: ../src/baobab-menu.ui.h:10
 msgid "_Reload"
 msgstr "_Оновити"
 
-#: ../src/baobab-menu.ui.h:11
-msgid "_Allocated Space"
-msgstr "_Зайнятий простір"
-
-#: ../src/baobab-menu.ui.h:12
+#: ../src/baobab-menu.ui.h:10
 msgid "_Expand All"
 msgstr "_Розгорнути все"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:11
 msgid "_Collapse All"
 msgstr "З_горнути все"
 
-#: ../src/baobab-window.vala:204
+#: ../src/baobab-window.vala:216
 msgid "Select Folder"
 msgstr "Виберіть теку"
 
-#: ../src/baobab-window.vala:250
+#: ../src/baobab-window.vala:266
 msgid "Could not analyze volume."
 msgstr "Неможливо проаналізувати том."
 
-#: ../src/baobab-window.vala:302
+#: ../src/baobab-window.vala:317
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:305
+#: ../src/baobab-window.vala:320
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графічна утиліта для аналізу використання дисків."
 
-#: ../src/baobab-window.vala:310
+#: ../src/baobab-window.vala:325
 msgid "translator-credits"
 msgstr ""
 "Юрій Сирота <yuriy@beer.com>\n"
 "Максим Дзюманенко <dziumanenko@gmail.com>\n"
 "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: ../src/baobab-window.vala:465
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: ../src/baobab-window.vala:557
+#: ../src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Неможливо просканувати теку «%s» або деякі теки у ній."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:576 ../src/baobab-window.vala:582
+#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" не є правильною текою"
 
-#: ../src/baobab-window.vala:577 ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
 msgid "Could not analyze disk usage."
 msgstr "Не вдалось проаналізувати використання дисків."
+
+#~ msgid "Scan a folder"
+#~ msgstr "Сканувати теку"
+
+#~ msgid "Scan Folder"
+#~ msgstr "Сканувати теку"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "Сканувати віддалену теку"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "Сканувати віддалену теку"
+
+#~ msgid "Reload"
+#~ msgstr "Перезавантажити"
+
+#~ msgid "_Stop"
+#~ msgstr "З_упинити"
+
+#~ msgid "_Allocated Space"
+#~ msgstr "_Зайнятий простір"
+
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Налаштування аналізатора використання диска"
@@ -418,9 +438,6 @@ msgstr "Не вдалось проаналізувати використанн�
 
 #~ msgid "FTP (with login)"
 #~ msgstr "FTP (з реєстрацією)"
-
-#~ msgid "Windows share"
-#~ msgstr "Ресурс Windows"
 
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
