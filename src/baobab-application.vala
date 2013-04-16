@@ -135,6 +135,8 @@ namespace Baobab {
         public Application () {
             Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
 
+            Gd.ensure_types ();
+
             add_action_entries (action_entries, this);
         }
 

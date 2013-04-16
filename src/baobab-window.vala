@@ -119,9 +119,6 @@ namespace Baobab {
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
 
-            // FIXME: we need to reference at least a GdHeaderMenuButton, or the linker discards it
-            var m =  builder.get_object ("menu-button") as Gd.HeaderMenuButton;
-
             location_list.set_adjustment (location_scroll.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
