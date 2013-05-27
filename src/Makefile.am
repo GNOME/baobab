@@ -62,7 +62,7 @@ AM_CFLAGS = \
 	-Wno-unused-variable		\
 	$(NULL)
 
-baobab_LDFLAGS = -export-dynamic -rpath $(libdir)
+baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = \
 	-lm				\
 	$(BAOBAB_LIBS)			\
