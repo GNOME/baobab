@@ -22,24 +22,52 @@
 
 namespace Baobab {
 
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
+        [GtkChild]
         Gtk.HeaderBar header_bar;
+        [GtkChild]
         Gtk.Button back_button;
+        [GtkChild]
         Gtk.Button reload_button;
+        [GtkChild]
         Gtk.MenuButton menu_button;
+        [GtkChild]
         Gtk.Stack main_stack;
+        [GtkChild]
         Gtk.Widget home_page;
+        [GtkChild]
         Gtk.Widget result_page;
+        [GtkChild]
         Gtk.InfoBar infobar;
-        Gtk.Label infobar_primary;
-        Gtk.Label infobar_secondary;
-        Gtk.ScrolledWindow location_scroll;
+        [GtkChild]
+        Gtk.Label infobar_primary_label;
+        [GtkChild]
+        Gtk.Label infobar_secondary_label;
+        [GtkChild]
+        Gtk.Button infobar_close_button;
+        [GtkChild]
+        Gtk.ScrolledWindow location_scrolled_window;
+        [GtkChild]
         LocationList location_list;
+        [GtkChild]
         Gtk.TreeView treeview;
+        [GtkChild]
+        Gtk.Menu treeview_popup_menu;
+        [GtkChild]
+        Gtk.MenuItem treeview_popup_open;
+        [GtkChild]
+        Gtk.MenuItem treeview_popup_copy;
+        [GtkChild]
+        Gtk.MenuItem treeview_popup_trash;
+        [GtkChild]
         Gtk.Stack chart_stack;
+        [GtkChild]
         Chart rings_chart;
+        [GtkChild]
         Chart treemap_chart;
+        [GtkChild]
         Gtk.Spinner spinner;
         Location? active_location;
         ulong scan_completed_handler;
@@ -96,43 +124,15 @@ namespace Baobab {
 
             add_action_entries (action_entries, this);
 
-            // Build ourselves.
-            var builder = new Gtk.Builder ();
-            try {
-                builder.add_from_resource ("/org/gnome/baobab/ui/baobab-main-window.ui");
-            } catch (Error e) {
-                error ("loading main builder file: %s", e.message);
-            }
-
-            // Cache some objects from the builder.
-            main_stack = builder.get_object ("main-stack") as Gtk.Stack;
-            home_page = builder.get_object ("home-page") as Gtk.Widget;
-            result_page = builder.get_object ("result-page") as Gtk.Widget;
-            header_bar = builder.get_object ("header-bar") as Gtk.HeaderBar;
-            back_button = builder.get_object ("back-button") as Gtk.Button;
-            reload_button = builder.get_object ("reload-button") as Gtk.Button;
-            menu_button = builder.get_object ("menu-button") as Gtk.MenuButton;
-            infobar = builder.get_object ("infobar") as Gtk.InfoBar;
-            infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
-            infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
-            location_scroll = builder.get_object ("location-scrolled-window") as Gtk.ScrolledWindow;
-            location_list = builder.get_object ("location-list") as LocationList;
-            treeview = builder.get_object ("treeview") as Gtk.TreeView;
-            chart_stack = builder.get_object ("chart-stack") as Gtk.Stack;
-            rings_chart = builder.get_object ("rings-chart") as Chart;
-            treemap_chart = builder.get_object ("treemap-chart") as Chart;
-            spinner = builder.get_object ("spinner") as Gtk.Spinner;
-
-            location_list.set_adjustment (location_scroll.get_vadjustment ());
+            location_list.set_adjustment (location_scrolled_window.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
 
             var action = lookup_action ("scan-remote") as SimpleAction;
             action.set_enabled (ConnectServer.available ());
 
-            setup_treeview (builder);
+            setup_treeview ();
 
-            var infobar_close_button = builder.get_object ("infobar-close-button") as Gtk.Button;
             infobar_close_button.clicked.connect (() => { clear_message (); });
 
             ui_settings = Application.get_ui_settings ();
@@ -166,10 +166,6 @@ namespace Baobab {
                 }
                 return false;
             });
-
-            add (builder.get_object ("window-contents") as Gtk.Widget);
-            title = _("Disk Usage Analyzer");
-            set_hide_titlebar_when_maximized (true);
 
             active_location = null;
             scan_completed_handler = 0;
@@ -378,25 +374,20 @@ namespace Baobab {
             return true;
         }
 
-        void setup_treeview (Gtk.Builder builder) {
-            var popup = builder.get_object ("treeview-popup-menu") as Gtk.Menu;
-            var open_item = builder.get_object ("treeview-popup-open") as Gtk.MenuItem;
-            var copy_item = builder.get_object ("treeview-popup-copy") as Gtk.MenuItem;
-            var trash_item = builder.get_object ("treeview-popup-trash") as Gtk.MenuItem;
-
+        void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
                 if (((Gdk.Event) (&event)).triggers_context_menu ()) {
-                    return show_treeview_popup (popup, event);
+                    return show_treeview_popup (treeview_popup_menu, event);
                 }
 
                 return false;
             });
 
             treeview.popup_menu.connect (() => {
-                return show_treeview_popup (popup, null);
+                return show_treeview_popup (treeview_popup_menu, null);
             });
 
-            open_item.activate.connect (() => {
+            treeview_popup_open.activate.connect (() => {
                 var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
@@ -416,7 +407,7 @@ namespace Baobab {
                 }
             });
 
-            copy_item.activate.connect (() => {
+            treeview_popup_copy.activate.connect (() => {
                 var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
@@ -428,7 +419,7 @@ namespace Baobab {
                 }
             });
 
-            trash_item.activate.connect (() => {
+            treeview_popup_trash.activate.connect (() => {
                 var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
@@ -457,8 +448,8 @@ namespace Baobab {
 
         void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
             infobar.message_type = type;
-            infobar_primary.set_label ("<b>%s</b>".printf (_(primary_msg)));
-            infobar_secondary.set_label ("<small>%s</small>".printf (_(secondary_msg)));
+            infobar_primary_label.set_label ("<b>%s</b>".printf (_(primary_msg)));
+            infobar_secondary_label.set_label ("<small>%s</small>".printf (_(secondary_msg)));
             infobar.show ();
         }
 
