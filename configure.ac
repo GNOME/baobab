@@ -50,18 +50,12 @@ PKG_CHECK_MODULES(BAOBAB, [
 
 LT_INIT([disable-static])
 
-LIBGD_INIT([
-    static
-    vapi
-])
-
 AC_CONFIG_FILES([
 Makefile
 data/Makefile
 help/Makefile
 pixmaps/Makefile
 src/Makefile
-libgd/Makefile
 po/Makefile.in
 ])
 

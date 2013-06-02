@@ -11,11 +11,9 @@ BUILT_SOURCES = baobab-resources.c
 
 baobab_VALAFLAGS = \
 	--vapidir=$(top_builddir)/egg-list-box	\
-	--vapidir=$(top_builddir)/libgd		\
 	--pkg gtk+-3.0				\
 	--pkg gio-2.0				\
-	--pkg gio-unix-2.0			\
-	--pkg gd-1.0
+	--pkg gio-unix-2.0
 
 noinst_HEADERS = \
 	baobab-chart.h			\
@@ -56,7 +54,6 @@ baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --gen
 AM_CFLAGS = \
 	$(BAOBAB_CFLAGS)		\
 	-I$(top_srcdir)/egg-list-box	\
-	-I$(top_srcdir)/libgd		\
 	-Wall				\
 	-Wno-unused-but-set-variable	\
 	-Wno-unused-variable		\
@@ -66,7 +63,6 @@ baobab_LDFLAGS = -export-dynamic
 baobab_LDADD = \
 	-lm				\
 	$(BAOBAB_LIBS)			\
-	$(top_builddir)/libgd/libgd.la \
 	$(NULL)
 
 MAINTAINERCLEANFILES =	\
