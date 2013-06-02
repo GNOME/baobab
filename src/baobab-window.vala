@@ -115,6 +115,20 @@ namespace Baobab {
             {"text/uri-list", 0, DndTargets.URI_LIST}
         };
 
+        [GtkCallback]
+        private void close_button_clicked(Gtk.Button button)
+        {
+            Gdk.Event event;
+
+            event = new Gdk.Event(Gdk.EventType.DELETE);
+
+            event.any.window = this.get_window();
+            event.any.send_event = 1;
+
+            Gtk.main_do_event(event);
+            event.free();
+        }
+
         public Window (Application app) {
             Object (application: app);
 
