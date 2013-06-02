@@ -44,7 +44,7 @@ AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 YELP_HELP_INIT
 
 PKG_CHECK_MODULES(BAOBAB, [
-    gtk+-3.0 >= 3.8.0
+    gtk+-3.0 >= 3.9.0
     gio-2.0 >= 2.30.0
 ])
 
@@ -53,7 +53,6 @@ LT_INIT([disable-static])
 LIBGD_INIT([
     static
     header-bar
-    stack
     vapi
 ])
 

@@ -26,7 +26,7 @@ namespace Baobab {
         Settings ui_settings;
         Gd.HeaderBar header_bar;
         Gd.HeaderBar result_header_bar;
-        Gd.Stack main_stack;
+        Gtk.Stack main_stack;
         Gtk.Widget home_page;
         Gtk.Widget result_page;
         Gtk.InfoBar infobar;
@@ -35,7 +35,7 @@ namespace Baobab {
         Gtk.ScrolledWindow location_scroll;
         LocationList location_list;
         Gtk.TreeView treeview;
-        Gd.Stack chart_stack;
+        Gtk.Stack chart_stack;
         Chart rings_chart;
         Chart treemap_chart;
         Gtk.Spinner spinner;
@@ -103,7 +103,7 @@ namespace Baobab {
             }
 
             // Cache some objects from the builder.
-            main_stack = builder.get_object ("main-stack") as Gd.Stack;
+            main_stack = builder.get_object ("main-stack") as Gtk.Stack;
             home_page = builder.get_object ("home-page") as Gtk.Widget;
             result_page = builder.get_object ("result-page") as Gtk.Widget;
             header_bar = builder.get_object ("header-bar") as Gd.HeaderBar;
@@ -114,7 +114,7 @@ namespace Baobab {
             location_scroll = builder.get_object ("location-scrolled-window") as Gtk.ScrolledWindow;
             location_list = builder.get_object ("location-list") as LocationList;
             treeview = builder.get_object ("treeview") as Gtk.TreeView;
-            chart_stack = builder.get_object ("chart-stack") as Gd.Stack;
+            chart_stack = builder.get_object ("chart-stack") as Gtk.Stack;
             rings_chart = builder.get_object ("rings-chart") as Chart;
             treemap_chart = builder.get_object ("treemap-chart") as Chart;
             spinner = builder.get_object ("spinner") as Gtk.Spinner;
@@ -502,12 +502,12 @@ namespace Baobab {
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
-                main_stack.transition_type = Gd.StackTransitionType.SLIDE_RIGHT;
+                main_stack.transition_type = Gtk.StackTransitionType.SLIDE_RIGHT;
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 result_header_bar.set_title (active_location.name);
-                main_stack.transition_type = Gd.StackTransitionType.SLIDE_LEFT;
+                main_stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             }
 
             main_stack.visible_child = child;
