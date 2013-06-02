@@ -20,45 +20,8 @@
       <object class="GtkHeaderBar" id="header-bar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="title" translatable="yes">Devices and locations</property>
-        <style>
-          <class name="menubar"/>
-          <class name="baobab-toolbar"/>
-        </style>
-        <child>
-          <object class="GtkMenuButton" id="menu-button">
-            <property name="visible">True</property>
-            <property name="valign">center</property>
-            <property name="menu_model">winmenu</property>
-            <property name="action_name">win.gear-menu</property>
-            <style>
-              <class name="image-button"/>
-            </style>
-            <child>
-              <object class="GtkImage" id="menu-button-image">
-                <property name="visible">True</property>
-                <property name="icon_size">1</property>
-                <property name="icon_name">emblem-system-symbolic</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkHeaderBar" id="result-header-bar">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <style>
-          <class name="menubar"/>
-          <class name="baobab-toolbar"/>
-        </style>
         <child>
           <object class="GtkButton" id="back-button">
-            <property name="visible">True</property>
             <property name="valign">center</property>
             <property name="can_focus">True</property>
             <property name="action_name">win.show-home-page</property>
@@ -79,7 +42,6 @@
         </child>
         <child>
           <object class="GtkButton" id="reload-button">
-            <property name="visible">True</property>
             <property name="valign">center</property>
             <property name="can_focus">True</property>
             <property name="action_name">win.reload</property>
@@ -91,6 +53,26 @@
                 <property name="visible">True</property>
                 <property name="icon_size">1</property>
                 <property name="icon_name">view-refresh-symbolic</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="menu-button">
+            <property name="valign">center</property>
+            <property name="menu_model">winmenu</property>
+            <property name="action_name">win.gear-menu</property>
+            <style>
+              <class name="image-button"/>
+            </style>
+            <child>
+              <object class="GtkImage" id="menu-button-image">
+                <property name="visible">True</property>
+                <property name="icon_size">1</property>
+                <property name="icon_name">emblem-system-symbolic</property>
               </object>
             </child>
           </object>

@@ -25,7 +25,9 @@ namespace Baobab {
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
         Gtk.HeaderBar header_bar;
-        Gtk.HeaderBar result_header_bar;
+        Gtk.Button back_button;
+        Gtk.Button reload_button;
+        Gtk.MenuButton menu_button;
         Gtk.Stack main_stack;
         Gtk.Widget home_page;
         Gtk.Widget result_page;
@@ -107,7 +109,9 @@ namespace Baobab {
             home_page = builder.get_object ("home-page") as Gtk.Widget;
             result_page = builder.get_object ("result-page") as Gtk.Widget;
             header_bar = builder.get_object ("header-bar") as Gtk.HeaderBar;
-            result_header_bar = builder.get_object ("result-header-bar") as Gtk.HeaderBar;
+            back_button = builder.get_object ("back-button") as Gtk.Button;
+            reload_button = builder.get_object ("reload-button") as Gtk.Button;
+            menu_button = builder.get_object ("menu-button") as Gtk.MenuButton;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
@@ -494,19 +498,21 @@ namespace Baobab {
         }
 
         void set_ui_state (Gtk.Widget child, bool busy) {
-            header_bar.visible = (child == home_page);
-            result_header_bar.visible = (child == result_page);
+            menu_button.visible = (child == home_page);
+            reload_button.visible = (child == result_page);
+            back_button.visible = (child == result_page);
 
             set_busy (busy);
 
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
+                header_bar.set_title (_("Devices and locations"));
                 main_stack.transition_type = Gtk.StackTransitionType.SLIDE_RIGHT;
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
-                result_header_bar.set_title (active_location.name);
+                header_bar.set_title (active_location.name);
                 main_stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             }
 
