@@ -52,7 +52,6 @@ LT_INIT([disable-static])
 
 LIBGD_INIT([
     static
-    header-bar
     vapi
 ])
 

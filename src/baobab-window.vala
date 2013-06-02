@@ -24,8 +24,8 @@ namespace Baobab {
 
     public class Window : Gtk.ApplicationWindow {
         Settings ui_settings;
-        Gd.HeaderBar header_bar;
-        Gd.HeaderBar result_header_bar;
+        Gtk.HeaderBar header_bar;
+        Gtk.HeaderBar result_header_bar;
         Gtk.Stack main_stack;
         Gtk.Widget home_page;
         Gtk.Widget result_page;
@@ -106,8 +106,8 @@ namespace Baobab {
             main_stack = builder.get_object ("main-stack") as Gtk.Stack;
             home_page = builder.get_object ("home-page") as Gtk.Widget;
             result_page = builder.get_object ("result-page") as Gtk.Widget;
-            header_bar = builder.get_object ("header-bar") as Gd.HeaderBar;
-            result_header_bar = builder.get_object ("result-header-bar") as Gd.HeaderBar;
+            header_bar = builder.get_object ("header-bar") as Gtk.HeaderBar;
+            result_header_bar = builder.get_object ("result-header-bar") as Gtk.HeaderBar;
             infobar = builder.get_object ("infobar") as Gtk.InfoBar;
             infobar_primary = builder.get_object ("infobar-primary-label") as Gtk.Label;
             infobar_secondary = builder.get_object ("infobar-secondary-label") as Gtk.Label;
