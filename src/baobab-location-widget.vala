@@ -21,10 +21,21 @@
 
 namespace Baobab {
 
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-widget.ui")]
     public class LocationWidget : Gtk.Grid {
         private static Gtk.SizeGroup name_size_group = null;
         private static Gtk.SizeGroup usage_size_group = null;
-        private static Gtk.IconSize icon_size;
+
+        [GtkChild]
+        private Gtk.Image image;
+        [GtkChild]
+        private Gtk.Label name_label;
+        [GtkChild]
+        private Gtk.Label path_label;
+        [GtkChild]
+        private Gtk.Label usage_label;
+        [GtkChild]
+        private Gtk.LevelBar usage_bar;
 
         public Location? location { get; private set; }
 
@@ -32,67 +43,38 @@ namespace Baobab {
             if (name_size_group == null) {
                 name_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
                 usage_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-                icon_size = Gtk.icon_size_register ("baobab", 64, 64);
             }
         }
 
-        public LocationWidget (Location location_) {
-            location = location_;
-
-            orientation = Gtk.Orientation.HORIZONTAL;
-            column_spacing = 12;
-            margin = 6;
+        public LocationWidget (Location l) {
+            location = l;
 
             ensure_size_groups ();
 
-            var image = new Gtk.Image.from_gicon (location.icon, icon_size);
+            image.gicon = location.icon;
             image.set_pixel_size (64);
-            attach (image, 0, 0, 1, 2);
 
             var escaped = GLib.Markup.escape_text (location.name, -1);
-            var label = new Gtk.Label ("<b>%s</b>".printf (escaped));
-            name_size_group.add_widget (label);
-            label.use_markup = true;
-            label.hexpand = true;
-            label.halign = Gtk.Align.START;
-            label.valign = Gtk.Align.END;
-            label.xalign = 0;
-            attach (label, 1, 0, 1, 1);
+            name_label.label = "<b>%s</b>".printf (escaped);
+            name_size_group.add_widget (name_label);
 
             escaped = location.file != null ? GLib.Markup.escape_text (location.file.get_parse_name (), -1) : "";
-            label = new Gtk.Label ("<small>%s</small>".printf (escaped));
-            name_size_group.add_widget (label);
-            label.use_markup = true;
-            label.hexpand = true;
-            label.halign = Gtk.Align.START;
-            label.valign = Gtk.Align.START;
-            label.xalign = 0;
-            label.get_style_context ().add_class ("dim-label");
-            attach (label, 1, 1, 1, 1);
+            path_label.label = "<small>%s</small>".printf (escaped);
+            name_size_group.add_widget (path_label);
 
             if (location.is_volume && location.used != null && location.size != null) {
-                label = new Gtk.Label ("<small>%s / %s</small>".printf (format_size (location.used), format_size (location.size)));
-                usage_size_group.add_widget (label);
-                label.use_markup = true;
-                label.halign = Gtk.Align.END;
-                label.valign = Gtk.Align.END;
-                attach (label, 2, 0, 1, 1);
+                usage_label.label = "<small>%s / %s</small>".printf (format_size (location.used), format_size (location.size));
+                usage_size_group.add_widget (usage_label);
+                usage_label.show ();
 
-                var usagebar = new Gtk.LevelBar ();
-                usage_size_group.add_widget (usagebar);
-                usagebar.set_max_value (location.size);
+                usage_size_group.add_widget (usage_bar);
+                usage_bar.set_max_value (location.size);
+
                 // Set critical color at 90% of the size
-                usagebar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
-                usagebar.set_value (location.used);
-                usagebar.hexpand = true;
-                usagebar.halign = Gtk.Align.FILL;
-                usagebar.valign = Gtk.Align.START;
-                attach (usagebar, 2, 1, 1, 1);
+                usage_bar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
+                usage_bar.set_value (location.used);
+                usage_bar.show ();
             }
-
-            attach (new Gtk.Arrow (Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE), 3, 0, 1, 2);
-
-            show_all ();
         }
     }
 }

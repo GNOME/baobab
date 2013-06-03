@@ -24,53 +24,53 @@ namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
     public class Window : Gtk.ApplicationWindow {
-        Settings ui_settings;
+        private Settings ui_settings;
         [GtkChild]
-        Gtk.HeaderBar header_bar;
+        private Gtk.HeaderBar header_bar;
         [GtkChild]
-        Gtk.Button back_button;
+        private Gtk.Button back_button;
         [GtkChild]
-        Gtk.Button reload_button;
+        private Gtk.Button reload_button;
         [GtkChild]
-        Gtk.MenuButton menu_button;
+        private Gtk.MenuButton menu_button;
         [GtkChild]
-        Gtk.Stack main_stack;
+        private Gtk.Stack main_stack;
         [GtkChild]
-        Gtk.Widget home_page;
+        private Gtk.Widget home_page;
         [GtkChild]
-        Gtk.Widget result_page;
+        private Gtk.Widget result_page;
         [GtkChild]
-        Gtk.InfoBar infobar;
+        private Gtk.InfoBar infobar;
         [GtkChild]
-        Gtk.Label infobar_primary_label;
+        private Gtk.Label infobar_primary_label;
         [GtkChild]
-        Gtk.Label infobar_secondary_label;
+        private Gtk.Label infobar_secondary_label;
         [GtkChild]
-        Gtk.Button infobar_close_button;
+        private Gtk.Button infobar_close_button;
         [GtkChild]
-        Gtk.ScrolledWindow location_scrolled_window;
+        private Gtk.ScrolledWindow location_scrolled_window;
         [GtkChild]
-        LocationList location_list;
+        private LocationList location_list;
         [GtkChild]
-        Gtk.TreeView treeview;
+        private Gtk.TreeView treeview;
         [GtkChild]
-        Gtk.Menu treeview_popup_menu;
+        private Gtk.Menu treeview_popup_menu;
         [GtkChild]
-        Gtk.MenuItem treeview_popup_open;
+        private Gtk.MenuItem treeview_popup_open;
         [GtkChild]
-        Gtk.MenuItem treeview_popup_copy;
+        private Gtk.MenuItem treeview_popup_copy;
         [GtkChild]
-        Gtk.MenuItem treeview_popup_trash;
+        private Gtk.MenuItem treeview_popup_trash;
         [GtkChild]
-        Gtk.Stack chart_stack;
+        private Gtk.Stack chart_stack;
         [GtkChild]
-        Chart rings_chart;
+        private Chart rings_chart;
         [GtkChild]
-        Chart treemap_chart;
+        private Chart treemap_chart;
         [GtkChild]
-        Gtk.Spinner spinner;
-        Location? active_location;
-        ulong scan_completed_handler;
+        private Gtk.Spinner spinner;
+        private Location? active_location;
+        private ulong scan_completed_handler;
 
         static Gdk.Cursor busy_cursor;
 
