@@ -13,7 +13,8 @@ baobab_VALAFLAGS = \
 	--vapidir=$(top_builddir)/egg-list-box	\
 	--pkg gtk+-3.0				\
 	--pkg gio-2.0				\
-	--pkg gio-unix-2.0
+	--pkg gio-unix-2.0			\
+	--gresources=baobab.gresource.xml
 
 noinst_HEADERS = \
 	baobab-chart.h			\
