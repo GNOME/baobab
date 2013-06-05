@@ -126,7 +126,6 @@ namespace Baobab {
             event.any.send_event = 1;
 
             Gtk.main_do_event(event);
-            event.free();
         }
 
         public Window (Application app) {
