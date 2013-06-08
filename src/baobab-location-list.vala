@@ -20,6 +20,63 @@
 
 namespace Baobab {
 
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-row.ui")]
+    private class LocationRow : Gtk.Grid {
+        private static Gtk.SizeGroup name_size_group = null;
+        private static Gtk.SizeGroup usage_size_group = null;
+
+        [GtkChild]
+        private Gtk.Image image;
+        [GtkChild]
+        private Gtk.Label name_label;
+        [GtkChild]
+        private Gtk.Label path_label;
+        [GtkChild]
+        private Gtk.Label usage_label;
+        [GtkChild]
+        private Gtk.LevelBar usage_bar;
+
+        public Location? location { get; private set; }
+
+        void ensure_size_groups () {
+            if (name_size_group == null) {
+                name_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+                usage_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+            }
+        }
+
+        public LocationRow (Location l) {
+            location = l;
+
+            ensure_size_groups ();
+
+            image.gicon = location.icon;
+            image.set_pixel_size (64);
+
+            var escaped = GLib.Markup.escape_text (location.name, -1);
+            name_label.label = "<b>%s</b>".printf (escaped);
+            name_size_group.add_widget (name_label);
+
+            escaped = location.file != null ? GLib.Markup.escape_text (location.file.get_parse_name (), -1) : "";
+            path_label.label = "<small>%s</small>".printf (escaped);
+            name_size_group.add_widget (path_label);
+
+            if (location.is_volume && location.used != null && location.size != null) {
+                usage_label.label = "<small>%s / %s</small>".printf (format_size (location.used), format_size (location.size));
+                usage_size_group.add_widget (usage_label);
+                usage_label.show ();
+
+                usage_size_group.add_widget (usage_bar);
+                usage_bar.set_max_value (location.size);
+
+                // Set critical color at 90% of the size
+                usage_bar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
+                usage_bar.set_value (location.used);
+                usage_bar.show ();
+            }
+        }
+    }
+
     public class LocationList : Egg.ListBox {
         private const int MAX_RECENT_LOCATIONS = 5;
 
@@ -55,7 +112,7 @@ namespace Baobab {
 
         public override void child_activated (Gtk.Widget? widget) {
             if (location_action != null) {
-                var location_widget = widget as LocationWidget;
+                var location_widget = widget as LocationRow;
                 location_action (location_widget.location);
             }
         }
@@ -195,7 +252,7 @@ namespace Baobab {
             this.foreach ((widget) => { widget.destroy (); });
 
             foreach (var location in locations) {
-                add (new LocationWidget (location));
+                add (new LocationRow (location));
             }
 
             show_all ();

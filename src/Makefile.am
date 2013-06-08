@@ -27,7 +27,6 @@ VALA_SOURCES = \
 	baobab-connect-server.vala	\
 	baobab-location.vala		\
 	baobab-location-list.vala	\
-	baobab-location-widget.vala	\
 	baobab-scanner.vala		\
 	baobab-window.vala		\
 	main.vala			\
@@ -73,7 +72,7 @@ MAINTAINERCLEANFILES =	\
 
 EXTRA_DIST = \
 	baobab.gresource.xml \
-	baobab-location-widget.ui \
+	baobab-location-row.ui \
 	baobab-main-window.ui \
 	baobab-menu.ui
 
