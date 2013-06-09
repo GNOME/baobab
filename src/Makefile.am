@@ -16,14 +16,12 @@ baobab_VALAFLAGS = \
 	--pkg gio-unix-2.0			\
 	--gresources=baobab.gresource.xml
 
-noinst_HEADERS = \
-	baobab-chart.h			\
-	baobab-treemap.h		\
-	baobab-ringschart.h
-
 VALA_SOURCES = \
 	baobab-application.vala		\
 	baobab-cellrenderers.vala	\
+	baobab-chart.vala		\
+	baobab-treemap.vala		\
+	baobab-ringschart.vala		\
 	baobab-connect-server.vala	\
 	baobab-location.vala		\
 	baobab-location-list.vala	\
@@ -40,11 +38,7 @@ egg_list_box_sources = \
 baobab_SOURCES = \
 	$(VALA_SOURCES)			\
 	fixes.vapi			\
-	baobab.vapi			\
 	config.vapi			\
-	baobab-chart.c			\
-	baobab-treemap.c		\
-	baobab-ringschart.c		\
 	$(egg_list_box_sources)		\
 	$(BUILT_SOURCES)
 

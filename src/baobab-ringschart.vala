@@ -1,0 +1,399 @@
+/* -*- tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/* Baobab - disk usage analyzer
+ *
+ * Copyright (C) 2008  Igalia
+ * Copyright (C) 2013  Stefano Facchini <stefano.facchini@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301  USA
+ *
+ * Authors of the original code:
+ *   Felipe Erias <femorandeira@igalia.com>
+ *   Pablo Santamaria <psantamaria@igalia.com>
+ *   Jacobo Aragunde <jaragunde@igalia.com>
+ *   Eduardo Lima <elima@igalia.com>
+ *   Mario Sanchez <msanchez@igalia.com>
+ *   Miguel Gomez <magomez@igalia.com>
+ *   Henrique Ferreiro <hferreiro@igalia.com>
+ *   Alejandro Pinheiro <apinheiro@igalia.com>
+ *   Carlos Sanmartin <csanmartin@igalia.com>
+ *   Alejandro Garcia <alex@igalia.com>
+ */
+
+namespace Baobab {
+
+    class RingschartItem : ChartItem {
+        public double min_radius;
+        public double max_radius;
+        public double start_angle;
+        public double angle;
+        public bool continued;
+    }
+
+    public class Ringschart : Chart {
+
+        const int ITEM_BORDER_WIDTH = 1;
+        const int CHART_PADDING = 13;
+        const double ITEM_MIN_ANGLE = 0.03;
+        const double EDGE_ANGLE = 0.004;
+
+        const int SUBFOLDER_TIP_PADDING = 3;
+
+        int subtip_timeout;
+        uint tips_timeout_id = 0;
+        bool drawing_subtips = false;
+        List<ChartItem> subtip_items;
+
+        void subtips_update () {
+            if (drawing_subtips) {
+                queue_draw ();
+            }
+            drawing_subtips = false;
+
+            if (tips_timeout_id != 0) {
+                Source.remove (tips_timeout_id);
+                tips_timeout_id = 0;
+            }
+
+            subtip_items = null;
+
+            if (highlighted_item != null) {
+                tips_timeout_id = Timeout.add (subtip_timeout, () => {
+                    drawing_subtips = true;
+                    queue_draw ();
+                    return false;
+                });
+            }
+        }
+
+        construct {
+            subtip_timeout = Gtk.Settings.get_default ().gtk_tooltip_timeout * 2;
+
+            notify["max-depth"].connect (subtips_update);
+            notify["highlighted-item"].connect (subtips_update);
+        }
+
+        protected override ChartItem create_new_chartitem () {
+            return (new RingschartItem () as ChartItem);
+        }
+
+        protected override void post_draw (Cairo.Context cr) {
+            if (!drawing_subtips) {
+                return;
+            }
+
+            Gtk.Allocation allocation;
+            get_allocation (out allocation);
+
+            var q_width = allocation.width / 2;
+            var q_height = allocation.height / 2;
+            var q_angle = Math.atan2 (q_height, q_width);
+
+            Gdk.Rectangle last_rect = Gdk.Rectangle ();
+
+            foreach (ChartItem item in subtip_items) {
+                RingschartItem ringsitem = item as RingschartItem;
+
+                // get the middle angle
+                var middle_angle = ringsitem.start_angle + ringsitem.angle / 2;
+                // normalize the middle angle (take it to the first quadrant
+                var middle_angle_n = middle_angle;
+                while (middle_angle_n > Math.PI / 2) {
+                    middle_angle_n -= Math.PI;
+                }
+                middle_angle_n = Math.fabs (middle_angle_n);
+
+                // get the pango layout and its enclosing rectangle
+                var layout = create_pango_layout (null);
+                var markup = "<span size=\"small\">" + Markup.escape_text (item.name) + "</span>";
+                layout.set_markup (markup, -1);
+                layout.set_indent (0);
+                layout.set_spacing (0);
+                Pango.Rectangle layout_rect;
+                layout.get_pixel_extents (null, out layout_rect);
+
+                // get the center point of the tooltip rectangle
+                double tip_x, tip_y;
+                if (middle_angle_n < q_angle) {
+                    tip_x = q_width - layout_rect.width / 2 - SUBFOLDER_TIP_PADDING * 2;
+                    tip_y = Math.tan (middle_angle_n) * tip_x;
+                } else {
+                    tip_y = q_height - layout_rect.height / 2 - SUBFOLDER_TIP_PADDING * 2;
+                    tip_x = tip_y / Math.tan (middle_angle_n);
+                }
+
+                // get the tooltip rectangle
+                Cairo.Rectangle tooltip_rect = Cairo.Rectangle ();
+                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2 - SUBFOLDER_TIP_PADDING;
+                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2 - SUBFOLDER_TIP_PADDING;
+                tooltip_rect.width = layout_rect.width + SUBFOLDER_TIP_PADDING * 2;
+                tooltip_rect.height = layout_rect.height + SUBFOLDER_TIP_PADDING * 2;
+
+                // check tooltip's width is not greater than half of the widget
+                if (tooltip_rect.width > q_width) {
+                    continue;
+                }
+
+                // translate tooltip rectangle and edge angles to the original quadrant
+                var a = middle_angle;
+                int i = 0;
+                while (a > Math.PI / 2) {
+                    if (i % 2 == 0) {
+                        tooltip_rect.x = allocation.width - tooltip_rect.x - tooltip_rect.width;
+                    } else {
+                        tooltip_rect.y = allocation.height - tooltip_rect.y - tooltip_rect.height;
+                    }
+                    i++;
+                    a -= Math.PI / 2;
+                }
+
+                // get the Gdk.Rectangle of the tooltip (with a little padding)
+                Gdk.Rectangle _rect = Gdk.Rectangle ();
+                _rect.x = (int) (tooltip_rect.x - 1);
+                _rect.y = (int) (tooltip_rect.y - 1);
+                _rect.width = (int) (tooltip_rect.width + 2);
+                _rect.height = (int) (tooltip_rect.height + 2);
+
+                // check if tooltip overlaps
+                if (!_rect.intersect (last_rect, null)) {
+                    last_rect = _rect;
+
+                    // finally draw the tooltip!
+
+                    // TODO: do not hardcode colors
+
+                    // avoid blurred lines
+                    tooltip_rect.x = (int) Math.floor (tooltip_rect.x) + 0.5;
+                    tooltip_rect.y = (int) Math.floor (tooltip_rect.y) + 0.5;
+
+                    var middle_radius = ringsitem.min_radius + (ringsitem.max_radius - ringsitem.min_radius) / 2;
+                    var sector_center_x = q_width + middle_radius * Math.cos (middle_angle);
+                    var sector_center_y = q_height + middle_radius * Math.sin (middle_angle);
+
+                    // draw line from sector center to tooltip center
+                    cr.set_line_width (1);
+                    cr.move_to (sector_center_x, sector_center_y);
+                    cr.set_source_rgb (0.8275, 0.8431, 0.8118); // tango: #d3d7cf
+                    cr.line_to (tooltip_rect.x + tooltip_rect.width / 2,
+                                tooltip_rect.y + tooltip_rect.height / 2);
+                    cr.stroke ();
+
+                    // draw a tiny circle in sector center
+                    cr.set_source_rgba (1.0, 1.0, 1.0, 0.6666);
+                    cr.arc (sector_center_x, sector_center_y, 1.0, 0, 2 * Math.PI);
+                    cr.stroke ();
+
+                    // draw tooltip box
+                    cr.set_line_width (0.5);
+                    cr.rectangle (tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
+                    cr.set_source_rgb (0.8275, 0.8431, 0.8118);  // tango: #d3d7cf
+                    cr.fill_preserve ();
+                    cr.set_source_rgb (0.5333, 0.5412, 0.5216);  // tango: #888a85
+                    cr.stroke ();
+
+                    // draw the text inside the box
+                    cr.set_source_rgb (0, 0, 0);
+                    cr.move_to (tooltip_rect.x + SUBFOLDER_TIP_PADDING, tooltip_rect.y + SUBFOLDER_TIP_PADDING);
+                    Pango.cairo_show_layout (cr, layout);
+                    cr.set_line_width (1);
+                    cr.stroke ();
+                }
+            }
+        }
+
+        void draw_sector (Cairo.Context cr,
+                          double center_x,
+                          double center_y,
+                          double radius,
+                          double thickness,
+                          double init_angle,
+                          double final_angle,
+                          Gdk.RGBA fill_color,
+                          bool continued,
+                          uint border) {
+            cr.set_line_width (border);
+            if (radius > 0) {
+                cr.arc (center_x, center_y, radius, init_angle, final_angle);
+            }
+            cr.arc_negative (center_x, center_y, radius + thickness, final_angle, init_angle);
+
+            cr.close_path ();
+
+            Gdk.cairo_set_source_rgba (cr, fill_color);
+            cr.fill_preserve ();
+            cr.set_source_rgb (0, 0, 0);
+            cr.stroke ();
+
+            if (continued) {
+                cr.set_line_width (3);
+                cr.arc (center_x, center_y, radius + thickness + 4, init_angle + EDGE_ANGLE, final_angle - EDGE_ANGLE);
+                cr.stroke ();
+            }
+        }
+
+        protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {
+            RingschartItem ringsitem = item as RingschartItem;
+
+            if (drawing_subtips) {
+                if (highlighted_item != null &&
+                    item.parent != null &&
+                    item.parent.data == highlighted_item) {
+                    subtip_items.prepend (item);
+                }
+            }
+
+            var fill_color = get_item_color (ringsitem.start_angle / Math.PI * 99,
+                                             item.depth,
+                                             highlighted);
+
+            Gtk.Allocation allocation;
+            get_allocation (out allocation);
+
+            draw_sector (cr,
+                         allocation.width / 2,
+                         allocation.height / 2,
+                         ringsitem.min_radius,
+                         ringsitem.max_radius - ringsitem.min_radius,
+                         ringsitem.start_angle,
+                         ringsitem.start_angle + ringsitem.angle,
+                         fill_color,
+                         ringsitem.continued,
+                         ITEM_BORDER_WIDTH);
+        }
+
+        protected override void calculate_item_geometry (ChartItem item) {
+            RingschartItem ringsitem = item as RingschartItem;
+
+            ringsitem.continued = false;
+            ringsitem.visible = false;
+
+            Gtk.Allocation allocation;
+            get_allocation (out allocation);
+            var max_radius = int.min (allocation.width / 2, allocation.height / 2) - CHART_PADDING;
+            var thickness = max_radius / (max_depth + 1);
+
+            if (ringsitem.parent == null) {
+                ringsitem.min_radius = 0;
+                ringsitem.max_radius = thickness;
+                ringsitem.start_angle = 0;
+                ringsitem.angle = 2 * Math.PI;
+            } else {
+                var parent = item.parent.data as RingschartItem;
+                ringsitem.min_radius = ringsitem.depth * thickness;
+                if (ringsitem.depth > max_depth) {
+                    return;
+                } else {
+                    ringsitem.max_radius = ringsitem.min_radius + thickness;
+                }
+
+                ringsitem.angle = parent.angle * ringsitem.rel_size / 100;
+                if (ringsitem.angle < ITEM_MIN_ANGLE) {
+                    return;
+                }
+
+                ringsitem.start_angle = parent.start_angle + parent.angle * ringsitem.rel_start / 100;
+                ringsitem.continued = (ringsitem.has_any_child) && (ringsitem.depth == max_depth);
+                parent.has_visible_children = true;
+            }
+
+            ringsitem.visible = true;
+            get_item_rectangle (item);
+        }
+
+        void get_point_min_rect (double cx, double cy, double radius, double angle, ref Gdk.Rectangle r) {
+            double x, y;
+            x = cx + Math.cos (angle) * radius;
+            y = cy + Math.sin (angle) * radius;
+
+            r.x = int.min (r.x, (int)x);
+            r.y = int.min (r.y, (int)y);
+            r.width = int.max (r.width, (int)x);
+            r.height = int.max (r.height, (int)y);
+        }
+
+        protected override void get_item_rectangle (ChartItem item) {
+            RingschartItem ringsitem = item as RingschartItem;
+            Gdk.Rectangle rect = Gdk.Rectangle ();
+            double cx, cy, r1, r2, a1, a2;
+            Gtk.Allocation allocation;
+
+            get_allocation (out allocation);
+            cx = allocation.width / 2;
+            cy = allocation.height / 2;
+            r1 = ringsitem.min_radius;
+            r2 = ringsitem.max_radius;
+            a1 = ringsitem.start_angle;
+            a2 = ringsitem.start_angle + ringsitem.angle;
+
+            rect.x = allocation.width;
+            rect.y = allocation.height;
+            rect.width = 0;
+            rect.height = 0;
+
+            get_point_min_rect (cx, cy, r1, a1, ref rect);
+            get_point_min_rect (cx, cy, r2, a1, ref rect);
+            get_point_min_rect (cx, cy, r1, a2, ref rect);
+            get_point_min_rect (cx, cy, r2, a2, ref rect);
+
+            if ((a1 <= Math.PI / 2) && (a2 >= Math.PI / 2)) {
+                rect.height = (int) double.max (rect.height, cy + Math.sin (Math.PI / 2) * r2);
+            }
+
+            if ((a1 <= Math.PI) && (a2 >= Math.PI)) {
+                rect.x = (int) double.min (rect.x, cx + Math.cos (Math.PI) * r2);
+            }
+
+            if ((a1 <= Math.PI * 1.5) && (a2 >= Math.PI * 1.5)) {
+                rect.y = (int) double.min (rect.y, cy + Math.sin (Math.PI * 1.5) * r2);
+            }
+
+            if ((a1 <= Math.PI * 2) && (a2 >= Math.PI * 2)) {
+                rect.width = (int) double.max (rect.width, cx + Math.cos (Math.PI * 2) * r2);
+            }
+
+            rect.width -= rect.x;
+            rect.height -= rect.y;
+
+            ringsitem.rect = rect;
+        }
+
+        protected override bool is_point_over_item (ChartItem item, double x, double y) {
+            var ringsitem = item as RingschartItem;
+
+            Gtk.Allocation allocation;
+            get_allocation (out allocation);
+
+            x -= allocation.width / 2;
+            y -= allocation.height / 2;
+
+            var radius = Math.sqrt (x * x + y * y);
+            var angle = Math.atan2 (y, x);
+            angle = (angle > 0) ? angle : (angle + 2 * Math.PI);
+
+            return ((radius >= ringsitem.min_radius) &&
+                    (radius <= ringsitem.max_radius) &&
+                    (angle >= ringsitem.start_angle) &&
+                    (angle <= (ringsitem.start_angle + ringsitem.angle)));
+        }
+
+        protected override bool can_zoom_out () {
+            return (max_depth < MAX_DEPTH);
+        }
+
+        protected override bool can_zoom_in () {
+            return (max_depth > MIN_DEPTH);
+        }
+    }
+}

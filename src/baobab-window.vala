@@ -453,8 +453,8 @@ namespace Baobab {
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
                     var path = active_location.scanner.get_path (iter);
-                    rings_chart.set_root (path);
-                    treemap_chart.set_root (path);
+                    rings_chart.root = path;
+                    treemap_chart.root = path;
                 }
             });
         }
@@ -476,15 +476,11 @@ namespace Baobab {
             if (busy) {
                 cursor = busy_cursor;
                 disable_drop ();
-                rings_chart.freeze_updates ();
-                treemap_chart.freeze_updates ();
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
                 chart_stack.visible_child = spinner;
                 spinner.start ();
             } else {
                 enable_drop ();
-                rings_chart.thaw_updates ();
-                treemap_chart.thaw_updates ();
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
                 lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
