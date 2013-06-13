@@ -118,10 +118,10 @@ namespace Baobab {
                                             uint          info_column_,
                                             uint          percentage_column_,
                                             uint          valid_column_,
-                                            Gtk.TreePath? root_) {
+                                            Gtk.TreePath? r) {
             model = m;
-            if (root_ != null) {
-                root = root_;
+            if (r != null) {
+                root = r;
             }
 
             name_column = name_column_;
@@ -136,7 +136,7 @@ namespace Baobab {
             set {
                 if (root_ != null) {
                     var current_root = root_.get_path ();
-                    if (current_root != null && current_root.compare (value) == 0) {
+                    if (current_root != null && value != null && current_root.compare (value) == 0) {
                         return;
                     }
                 } else if (value == null) {
