@@ -1,92 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
-  <template class="BaobabLocationRow" parent="Gtk.Grid">
+  <template class="BaobabLocationRow" parent="Gtk.ListBoxRow">
     <property name="visible">True</property>
-    <property name="orientation">horizontal</property>
-    <property name="column_spacing">12</property>
-    <property name="margin">6</property>
     <child>
-      <object class="GtkImage" id="image">
+      <object class="GtkGrid" id="grid">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="pixel_size">64</property>
+        <property name="orientation">horizontal</property>
+        <property name="column_spacing">12</property>
+        <property name="margin">6</property>
+        <child>
+          <object class="GtkImage" id="image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixel_size">64</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+            <property name="width">1</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="name_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">end</property>
+            <property name="hexpand">True</property>
+            <property name="use_markup">True</property>
+            <property name="xalign">0</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">0</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="path_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">start</property>
+            <property name="hexpand">True</property>
+            <property name="use_markup">True</property>
+            <property name="xalign">0</property>
+            <style>
+              <class name="dim-label"/>
+            </style>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">1</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="usage_label">
+            <property name="visible">False</property>
+            <property name="can_focus">False</property>
+            <property name="no_show_all">True</property>
+            <property name="halign">end</property>
+            <property name="valign">end</property>
+            <property name="use_markup">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">2</property>
+            <property name="top_attach">0</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLevelBar" id="usage_bar">
+            <property name="visible">False</property>
+            <property name="can_focus">False</property>
+            <property name="no_show_all">True</property>
+            <property name="halign">fill</property>
+            <property name="valign">start</property>
+            <property name="hexpand">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">2</property>
+            <property name="top_attach">1</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
       </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">0</property>
-        <property name="width">1</property>
-        <property name="height">2</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="name_label">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="halign">start</property>
-        <property name="valign">end</property>
-        <property name="hexpand">True</property>
-        <property name="use_markup">True</property>
-        <property name="xalign">0</property>
-      </object>
-      <packing>
-        <property name="left_attach">1</property>
-        <property name="top_attach">0</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="path_label">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="halign">start</property>
-        <property name="valign">start</property>
-        <property name="hexpand">True</property>
-        <property name="use_markup">True</property>
-        <property name="xalign">0</property>
-        <style>
-          <class name="dim-label"/>
-        </style>
-      </object>
-      <packing>
-        <property name="left_attach">1</property>
-        <property name="top_attach">1</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="usage_label">
-        <property name="visible">False</property>
-        <property name="can_focus">False</property>
-        <property name="no_show_all">True</property>
-        <property name="halign">end</property>
-        <property name="valign">end</property>
-        <property name="use_markup">True</property>
-      </object>
-      <packing>
-        <property name="left_attach">2</property>
-        <property name="top_attach">0</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLevelBar" id="usage_bar">
-        <property name="visible">False</property>
-        <property name="can_focus">False</property>
-        <property name="no_show_all">True</property>
-        <property name="halign">fill</property>
-        <property name="valign">start</property>
-        <property name="hexpand">True</property>
-      </object>
-      <packing>
-        <property name="left_attach">2</property>
-        <property name="top_attach">1</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
     </child>
   </template>
 </interface>

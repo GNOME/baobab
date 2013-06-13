@@ -21,7 +21,7 @@
 namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-row.ui")]
-    private class LocationRow : Gtk.Grid {
+    private class LocationRow : LocalGtk.ListBoxRow {
         private static Gtk.SizeGroup name_size_group = null;
         private static Gtk.SizeGroup usage_size_group = null;
 
@@ -77,7 +77,7 @@ namespace Baobab {
         }
     }
 
-    public class LocationList : Egg.ListBox {
+    public class LocationList : LocalGtk.ListBox {
         private const int MAX_RECENT_LOCATIONS = 5;
 
         private VolumeMonitor monitor;
@@ -97,22 +97,22 @@ namespace Baobab {
             monitor.volume_added.connect (volume_added);
 
             set_selection_mode (Gtk.SelectionMode.NONE);
-            set_separator_funcs (update_separator);
+            set_header_func (update_header);
 
             populate ();
         }
 
-        void update_separator (ref Gtk.Widget? separator, Gtk.Widget widget, Gtk.Widget? before_widget) {
-            if (before_widget != null && separator == null) {
-                separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        void update_header (LocalGtk.ListBoxRow row, LocalGtk.ListBoxRow? before_row) {
+            if (before_row != null && row.get_header () == null) {
+                row.set_header (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             } else {
-                separator = null;
+                row.set_header (null);
             }
         }
 
-        public override void child_activated (Gtk.Widget? widget) {
+        public override void row_activated (LocalGtk.ListBoxRow row) {
             if (location_action != null) {
-                var location_widget = widget as LocationRow;
+                var location_widget = row as LocationRow;
                 location_action (location_widget.location);
             }
         }
