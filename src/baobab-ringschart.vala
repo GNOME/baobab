@@ -45,11 +45,8 @@ namespace Baobab {
     public class Ringschart : Chart {
 
         const int ITEM_BORDER_WIDTH = 1;
-        const int CHART_PADDING = 13;
         const double ITEM_MIN_ANGLE = 0.03;
         const double EDGE_ANGLE = 0.004;
-
-        const int SUBFOLDER_TIP_PADDING = 3;
 
         int subtip_timeout;
         uint tips_timeout_id = 0;
@@ -94,6 +91,10 @@ namespace Baobab {
                 return;
             }
 
+            var context = get_style_context ();
+            context.save ();
+            context.add_class ("subfolder-tip");
+
             Gtk.Allocation allocation;
             get_allocation (out allocation);
 
@@ -102,6 +103,10 @@ namespace Baobab {
             var q_angle = Math.atan2 (q_height, q_width);
 
             Gdk.Rectangle last_rect = Gdk.Rectangle ();
+
+            var padding = context.get_padding (Gtk.StateFlags.NORMAL);
+            var vpadding = padding.top + padding.bottom;
+            var hpadding = padding.left + padding.right;
 
             foreach (ChartItem item in subtip_items) {
                 RingschartItem ringsitem = item as RingschartItem;
@@ -127,19 +132,19 @@ namespace Baobab {
                 // get the center point of the tooltip rectangle
                 double tip_x, tip_y;
                 if (middle_angle_n < q_angle) {
-                    tip_x = q_width - layout_rect.width / 2 - SUBFOLDER_TIP_PADDING * 2;
+                    tip_x = q_width - layout_rect.width / 2 - hpadding;
                     tip_y = Math.tan (middle_angle_n) * tip_x;
                 } else {
-                    tip_y = q_height - layout_rect.height / 2 - SUBFOLDER_TIP_PADDING * 2;
+                    tip_y = q_height - layout_rect.height / 2 - vpadding;
                     tip_x = tip_y / Math.tan (middle_angle_n);
                 }
 
                 // get the tooltip rectangle
                 Cairo.Rectangle tooltip_rect = Cairo.Rectangle ();
-                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2 - SUBFOLDER_TIP_PADDING;
-                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2 - SUBFOLDER_TIP_PADDING;
-                tooltip_rect.width = layout_rect.width + SUBFOLDER_TIP_PADDING * 2;
-                tooltip_rect.height = layout_rect.height + SUBFOLDER_TIP_PADDING * 2;
+                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2 - padding.left;
+                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2 - padding.top;
+                tooltip_rect.width = layout_rect.width + hpadding;
+                tooltip_rect.height = layout_rect.height + vpadding;
 
                 // check tooltip's width is not greater than half of the widget
                 if (tooltip_rect.width > q_width) {
@@ -172,45 +177,35 @@ namespace Baobab {
 
                     // finally draw the tooltip!
 
-                    // TODO: do not hardcode colors
-
                     // avoid blurred lines
-                    tooltip_rect.x = (int) Math.floor (tooltip_rect.x) + 0.5;
-                    tooltip_rect.y = (int) Math.floor (tooltip_rect.y) + 0.5;
+                    tooltip_rect.x = Math.floor (tooltip_rect.x);
+                    tooltip_rect.y = Math.floor (tooltip_rect.y);
 
                     var middle_radius = ringsitem.min_radius + (ringsitem.max_radius - ringsitem.min_radius) / 2;
                     var sector_center_x = q_width + middle_radius * Math.cos (middle_angle);
                     var sector_center_y = q_height + middle_radius * Math.sin (middle_angle);
 
                     // draw line from sector center to tooltip center
+                    var bg_color = context.get_background_color (Gtk.StateFlags.NORMAL);
                     cr.set_line_width (1);
                     cr.move_to (sector_center_x, sector_center_y);
-                    cr.set_source_rgb (0.8275, 0.8431, 0.8118); // tango: #d3d7cf
+                    Gdk.cairo_set_source_rgba (cr, bg_color);
                     cr.line_to (tooltip_rect.x + tooltip_rect.width / 2,
                                 tooltip_rect.y + tooltip_rect.height / 2);
                     cr.stroke ();
 
                     // draw a tiny circle in sector center
-                    cr.set_source_rgba (1.0, 1.0, 1.0, 0.6666);
                     cr.arc (sector_center_x, sector_center_y, 1.0, 0, 2 * Math.PI);
                     cr.stroke ();
 
                     // draw tooltip box
-                    cr.set_line_width (0.5);
-                    cr.rectangle (tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
-                    cr.set_source_rgb (0.8275, 0.8431, 0.8118);  // tango: #d3d7cf
-                    cr.fill_preserve ();
-                    cr.set_source_rgb (0.5333, 0.5412, 0.5216);  // tango: #888a85
-                    cr.stroke ();
-
-                    // draw the text inside the box
-                    cr.set_source_rgb (0, 0, 0);
-                    cr.move_to (tooltip_rect.x + SUBFOLDER_TIP_PADDING, tooltip_rect.y + SUBFOLDER_TIP_PADDING);
-                    Pango.cairo_show_layout (cr, layout);
-                    cr.set_line_width (1);
-                    cr.stroke ();
+                    context.render_background (cr, tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
+                    context.render_frame (cr, tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
+                    context.render_layout (cr, tooltip_rect.x + padding.left, tooltip_rect.y + padding.top, layout);
                 }
             }
+
+            context.restore ();
         }
 
         void draw_sector (Cairo.Context cr,
@@ -233,7 +228,8 @@ namespace Baobab {
 
             Gdk.cairo_set_source_rgba (cr, fill_color);
             cr.fill_preserve ();
-            cr.set_source_rgb (0, 0, 0);
+            var border_color = get_style_context ().get_border_color (Gtk.StateFlags.NORMAL);
+            Gdk.cairo_set_source_rgba (cr, border_color);
             cr.stroke ();
 
             if (continued) {
@@ -281,7 +277,9 @@ namespace Baobab {
 
             Gtk.Allocation allocation;
             get_allocation (out allocation);
-            var max_radius = int.min (allocation.width / 2, allocation.height / 2) - CHART_PADDING;
+
+            var padding = get_style_context ().get_padding (Gtk.StateFlags.NORMAL);
+            var max_radius = int.min (allocation.width / 2, allocation.height / 2) - padding.left; // Assuming that padding is the same for all sides
             var thickness = max_radius / (max_depth + 1);
 
             if (ringsitem.parent == null) {
