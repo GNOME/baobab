@@ -58,13 +58,14 @@ namespace Baobab {
                              bool show_text) {
             uint border = ITEM_BORDER_WIDTH;
 
-            cr.stroke ();
+            var context = get_style_context ();
 
             cr.set_line_width (border);
             cr.rectangle (x + border, y + border, width - border * 2, height - border * 2);
             Gdk.cairo_set_source_rgba (cr, fill_color);
             cr.fill_preserve ();
-            cr.set_source_rgb (0, 0, 0);
+            var border_color = context.get_border_color (Gtk.StateFlags.NORMAL);
+            Gdk.cairo_set_source_rgba (cr, border_color);
             cr.stroke ();
 
             if (show_text) {
@@ -77,15 +78,14 @@ namespace Baobab {
 
                 if ((rect.width + ITEM_TEXT_PADDING * 2 <= width) &&
                     (rect.height + ITEM_TEXT_PADDING * 2 <= height)) {
-                    cr.move_to (x + width / 2 - rect.width / 2, y + height / 2 - rect.height / 2);
-                    Pango.cairo_show_layout (cr, layout);
+                    context.render_layout (cr, x + width / 2 - rect.width / 2, y + height / 2 - rect.height / 2, layout);
                 }
             }
         }
 
         protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {
             Cairo.Rectangle rect;
-            Gdk.RGBA fill_color = {0};
+            Gdk.RGBA fill_color = Gdk.RGBA ();
             Gtk.Allocation allocation;
             double width = 0, height = 0;
 
