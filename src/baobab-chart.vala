@@ -426,9 +426,6 @@ namespace Baobab {
             }
 
             if (model != null) {
-                cr.set_source_rgb (1, 1, 1);
-                cr.fill_preserve ();
-
                 if (model_changed || items == null) {
                     get_items (root);
                 } else {
