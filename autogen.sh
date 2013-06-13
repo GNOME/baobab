@@ -26,8 +26,6 @@ if test -z $GNOMEDOC; then
     exit 1
 fi
 
-git submodule update --init --recursive
-
 autopoint --force || exit $?
 AUTOPOINT='intltoolize --automake --copy' autoreconf --force --install --verbose
 

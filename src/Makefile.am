@@ -10,7 +10,6 @@ bin_PROGRAMS = baobab
 BUILT_SOURCES = baobab-resources.c
 
 baobab_VALAFLAGS = \
-	--vapidir=$(top_builddir)/egg-list-box	\
 	--pkg gtk+-3.0				\
 	--pkg gio-2.0				\
 	--pkg gio-unix-2.0			\
@@ -30,16 +29,10 @@ VALA_SOURCES = \
 	main.vala			\
 	$(NULL)
 
-egg_list_box_sources = \
-	$(top_builddir)/egg-list-box/egglistbox.vapi	\
-	$(top_builddir)/egg-list-box/egg-list-box.c	\
-	$(top_builddir)/egg-list-box/egg-list-box-accessible.c
-
 baobab_SOURCES = \
 	$(VALA_SOURCES)			\
 	fixes.vapi			\
 	config.vapi			\
-	$(egg_list_box_sources)		\
 	$(BUILT_SOURCES)
 
 baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir=$(srcdir) $(srcdir)/baobab.gresource.xml)
@@ -47,7 +40,6 @@ baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --gen
 
 AM_CFLAGS = \
 	$(BAOBAB_CFLAGS)		\
-	-I$(top_srcdir)/egg-list-box	\
 	-Wall				\
 	-Wno-unused-but-set-variable	\
 	-Wno-unused-variable		\

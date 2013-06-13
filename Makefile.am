@@ -4,10 +4,7 @@ NULL =
 SUBDIRS =  src data pixmaps help po
 
 EXTRA_DIST = \
-	COPYING.docs				\
-	egg-list-box/egg-list-box.h		\
-	egg-list-box/egg-list-box-accessible.h	\
-	egg-list-box/egglistbox.vapi
+	COPYING.docs
 
 MAINTAINERCLEANFILES = 		\
 	ABOUT-NLS		\
