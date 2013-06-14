@@ -186,6 +186,14 @@ namespace Baobab {
                     var sector_center_y = q_height + middle_radius * Math.sin (middle_angle);
 
                     // draw line from sector center to tooltip center
+                    cr.save ();
+
+                    // clip to avoid drawing inside tooltip area (tooltip background
+                    // could be transparent, depending on the theme)
+                    cr.rectangle (0, 0, allocation.width, allocation.height);
+                    cr.rectangle (tooltip_rect.x + tooltip_rect.width, tooltip_rect.y, -tooltip_rect.width, tooltip_rect.height);
+                    cr.clip ();
+
                     var bg_color = context.get_background_color (Gtk.StateFlags.NORMAL);
                     cr.set_line_width (1);
                     cr.move_to (sector_center_x, sector_center_y);
@@ -193,6 +201,8 @@ namespace Baobab {
                     cr.line_to (tooltip_rect.x + tooltip_rect.width / 2,
                                 tooltip_rect.y + tooltip_rect.height / 2);
                     cr.stroke ();
+
+                    cr.restore ();
 
                     // draw a tiny circle in sector center
                     cr.arc (sector_center_x, sector_center_y, 1.0, 0, 2 * Math.PI);
