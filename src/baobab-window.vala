@@ -508,12 +508,10 @@ namespace Baobab {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
                 header_bar.set_title (_("Devices and locations"));
-                main_stack.transition_type = Gtk.StackTransitionType.SLIDE_RIGHT;
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 header_bar.set_title (active_location.name);
-                main_stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             }
 
             main_stack.visible_child = child;
