@@ -238,7 +238,7 @@ namespace Baobab {
 
             Gdk.cairo_set_source_rgba (cr, fill_color);
             cr.fill_preserve ();
-            var border_color = get_style_context ().get_border_color (Gtk.StateFlags.NORMAL);
+            var border_color = get_style_context ().get_background_color (Gtk.StateFlags.NORMAL);
             Gdk.cairo_set_source_rgba (cr, border_color);
             cr.stroke ();
 
