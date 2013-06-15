@@ -219,37 +219,6 @@ namespace Baobab {
             context.restore ();
         }
 
-        void draw_sector (Cairo.Context cr,
-                          double center_x,
-                          double center_y,
-                          double radius,
-                          double thickness,
-                          double init_angle,
-                          double final_angle,
-                          Gdk.RGBA fill_color,
-                          bool continued,
-                          uint border) {
-            cr.set_line_width (border);
-            if (radius > 0) {
-                cr.arc (center_x, center_y, radius, init_angle, final_angle);
-            }
-            cr.arc_negative (center_x, center_y, radius + thickness, final_angle, init_angle);
-
-            cr.close_path ();
-
-            Gdk.cairo_set_source_rgba (cr, fill_color);
-            cr.fill_preserve ();
-            var border_color = get_style_context ().get_background_color (Gtk.StateFlags.NORMAL);
-            Gdk.cairo_set_source_rgba (cr, border_color);
-            cr.stroke ();
-
-            if (continued) {
-                cr.set_line_width (3);
-                cr.arc (center_x, center_y, radius + thickness + 4, init_angle + EDGE_ANGLE, final_angle - EDGE_ANGLE);
-                cr.stroke ();
-            }
-        }
-
         protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {
             RingschartItem ringsitem = item as RingschartItem;
 
@@ -261,23 +230,46 @@ namespace Baobab {
                 }
             }
 
-            var fill_color = get_item_color (ringsitem.start_angle / Math.PI * 99,
-                                             item.depth,
-                                             highlighted);
+            cr.set_line_width (ITEM_BORDER_WIDTH);
 
             Gtk.Allocation allocation;
             get_allocation (out allocation);
 
-            draw_sector (cr,
-                         allocation.width / 2,
-                         allocation.height / 2,
-                         ringsitem.min_radius,
-                         ringsitem.max_radius - ringsitem.min_radius,
-                         ringsitem.start_angle,
-                         ringsitem.start_angle + ringsitem.angle,
-                         fill_color,
-                         ringsitem.continued,
-                         ITEM_BORDER_WIDTH);
+            var context = get_style_context ();
+
+            var border_color = context.get_border_color (Gtk.StateFlags.NORMAL);
+            var bg_color = context.get_background_color (Gtk.StateFlags.NORMAL);
+
+            var center_x = allocation.width / 2;
+            var center_y = allocation.height / 2;
+            var final_angle = ringsitem.start_angle + ringsitem.angle;
+
+            if (item.depth == 0) {
+                cr.arc (center_x, center_y, ringsitem.max_radius + 1, 0, 2 * Math.PI);
+                Gdk.cairo_set_source_rgba (cr, border_color);
+                cr.stroke ();
+            } else {
+                var fill_color = get_item_color (ringsitem.start_angle / Math.PI * 99,
+                                                 item.depth,
+                                                 highlighted);
+
+                cr.arc (center_x, center_y, ringsitem.min_radius, ringsitem.start_angle, final_angle);
+                cr.arc_negative (center_x, center_y, ringsitem.max_radius, final_angle, ringsitem.start_angle);
+
+                cr.close_path ();
+
+                Gdk.cairo_set_source_rgba (cr, fill_color);
+                cr.fill_preserve ();
+                Gdk.cairo_set_source_rgba (cr, bg_color);
+                cr.stroke ();
+
+                if (ringsitem.continued) {
+                    Gdk.cairo_set_source_rgba (cr, border_color);
+                    cr.set_line_width (3);
+                    cr.arc (center_x, center_y, ringsitem.max_radius + 4, ringsitem.start_angle + EDGE_ANGLE, final_angle - EDGE_ANGLE);
+                    cr.stroke ();
+                }
+            }
         }
 
         protected override void calculate_item_geometry (ChartItem item) {
