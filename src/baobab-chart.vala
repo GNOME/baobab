@@ -51,7 +51,7 @@ namespace Baobab {
 
     public abstract class Chart : Gtk.Widget {
 
-        protected const uint MAX_DEPTH = 8;
+        protected const uint MAX_DEPTH = 5;
         protected const uint MIN_DEPTH = 1;
 
         const Gdk.RGBA TANGO_COLORS[] = {{0.94, 0.16, 0.16, 1.0}, /* tango: ef2929 */
