@@ -245,10 +245,6 @@ namespace Baobab {
             var final_angle = ringsitem.start_angle + ringsitem.angle;
 
             if (item.depth == 0) {
-                cr.arc (center_x, center_y, ringsitem.max_radius + 1, 0, 2 * Math.PI);
-                Gdk.cairo_set_source_rgba (cr, border_color);
-                cr.stroke ();
-
                 // draw a label with the size of the folder in the middle
                 // of the central disk
                 var layout = create_pango_layout (null);
@@ -263,6 +259,10 @@ namespace Baobab {
                     context.render_layout (cr, center_x - layout_rect.width / 2, center_y - layout_rect.height / 2, layout);
                     cr.move_to (center_x + ringsitem.max_radius + 1, center_y);
                 }
+
+                cr.arc (center_x, center_y, ringsitem.max_radius + 1, 0, 2 * Math.PI);
+                Gdk.cairo_set_source_rgba (cr, border_color);
+                cr.stroke ();
             } else {
                 var fill_color = get_item_color (ringsitem.start_angle / Math.PI * 99,
                                                  item.depth,
