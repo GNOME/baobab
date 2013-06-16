@@ -80,6 +80,7 @@ namespace Baobab {
 
             notify["max-depth"].connect (subtips_update);
             notify["highlighted-item"].connect (subtips_update);
+            notify["root"].connect (subtips_update);
         }
 
         protected override ChartItem create_new_chartitem () {
