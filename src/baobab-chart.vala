@@ -144,6 +144,8 @@ namespace Baobab {
                 }
                 root_ = (value != null) ? new Gtk.TreeRowReference (model, value) : null;
 
+                highlighted_item = null;
+
                 queue_draw ();
             }
             owned get {
