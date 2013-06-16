@@ -100,6 +100,7 @@ namespace Baobab {
             }
 
             add_accelerator ("F10", "win.gear-menu", null);
+            add_accelerator ("<Primary>r", "win.reload", null);
         }
 
         protected override bool local_command_line ([CCode (array_length = false, array_null_terminated = true)] ref unowned string[] arguments, out int exit_status) {
