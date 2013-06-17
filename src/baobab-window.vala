@@ -146,6 +146,13 @@ namespace Baobab {
 
             setup_treeview ();
 
+            var back_button_image = back_button.get_child () as Gtk.Image;
+            if (get_direction () == Gtk.TextDirection.LTR) {
+                back_button_image.icon_name = "go-previous-symbolic";
+            } else {
+                back_button_image.icon_name = "go-previous-rtl-symbolic";
+            }
+
             infobar_close_button.clicked.connect (() => { clear_message (); });
 
             ui_settings = Application.get_ui_settings ();
