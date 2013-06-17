@@ -97,7 +97,7 @@ namespace Baobab {
             monitor.volume_added.connect (volume_added);
 
             set_selection_mode (Gtk.SelectionMode.NONE);
-            set_header_func (update_header, null);
+            set_header_func (update_header);
 
             populate ();
         }
