@@ -29,7 +29,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[The name of the gettext d
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
-AM_PROG_VALAC([0.17.4])
+AM_PROG_VALAC([0.20.1])
 PKG_PROG_PKG_CONFIG([0.22])
 
 ## don't rerun to this point if we abort
