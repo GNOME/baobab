@@ -29,7 +29,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[The name of the gettext d
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
-AM_PROG_VALAC([0.20.1])
+AM_PROG_VALAC([0.20.1.40])
 PKG_PROG_PKG_CONFIG([0.22])
 
 ## don't rerun to this point if we abort
@@ -44,7 +44,7 @@ AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 YELP_HELP_INIT
 
 PKG_CHECK_MODULES(BAOBAB, [
-    gtk+-3.0 >= 3.9.1
+    gtk+-3.0 >= 3.9.3
     gio-2.0 >= 2.30.0
 ])
 
