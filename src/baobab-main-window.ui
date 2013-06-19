@@ -220,17 +220,12 @@
                     <property name="vexpand">True</property>
                     <property name="hexpand">True</property>
                     <child>
-                      <object class="GtkViewport" id="location_viewport">
+                      <object class="BaobabLocationList" id="location_list">
                         <property name="visible">True</property>
-                        <child>
-                          <object class="BaobabLocationList" id="location_list">
-                            <property name="visible">True</property>
-                            <style>
-                              <class name="view"/>
-                              <class name="content-view"/>
-                            </style>
-                          </object>
-                        </child>
+                        <style>
+                          <class name="view"/>
+                          <class name="content-view"/>
+                        </style>
                       </object>
                     </child>
                   </object>
