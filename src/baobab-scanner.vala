@@ -79,7 +79,7 @@ namespace Baobab {
             }
         }
 
-        GLib2.Thread? thread = null;
+        Thread<void*>? thread = null;
         uint process_result_idle = 0;
 
         HardLink[] hardlinks;
@@ -371,7 +371,7 @@ namespace Baobab {
                 // the thread owns a reference on the Scanner object
                 this.self = this;
 
-                thread = new GLib2.Thread ("scanner", scan_in_thread);
+                thread = new Thread<void*> ("scanner", scan_in_thread);
 
                 process_result_idle = Timeout.add (100, process_results);
             } else {

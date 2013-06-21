@@ -10,6 +10,7 @@ bin_PROGRAMS = baobab
 BUILT_SOURCES = baobab-resources.c
 
 baobab_VALAFLAGS = \
+	--target-glib=2.32			\
 	--pkg gtk+-3.0				\
 	--pkg gio-2.0				\
 	--pkg gio-unix-2.0			\
@@ -31,7 +32,6 @@ VALA_SOURCES = \
 
 baobab_SOURCES = \
 	$(VALA_SOURCES)			\
-	fixes.vapi			\
 	config.vapi			\
 	$(BUILT_SOURCES)
 
