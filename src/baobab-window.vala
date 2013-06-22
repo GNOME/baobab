@@ -468,8 +468,8 @@ namespace Baobab {
 
         void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
             infobar.message_type = type;
-            infobar_primary_label.set_label ("<b>%s</b>".printf (_(primary_msg)));
-            infobar_secondary_label.set_label ("<small>%s</small>".printf (_(secondary_msg)));
+            infobar_primary_label.label = "<b>%s</b>".printf (_(primary_msg));
+            infobar_secondary_label.label = "<small>%s</small>".printf (_(secondary_msg));
             infobar.show ();
         }
 
@@ -495,7 +495,7 @@ namespace Baobab {
 
             var window = get_window ();
             if (window != null) {
-                window.set_cursor (cursor);
+                window.cursor = cursor;
             }
 
             foreach (ActionState action_state in actions_while_scanning) {
@@ -514,11 +514,11 @@ namespace Baobab {
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
-                header_bar.set_title (_("Devices and locations"));
+                header_bar.title = _("Devices and locations");
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
-                header_bar.set_title (active_location.name);
+                header_bar.title = active_location.name;
             }
 
             main_stack.visible_child = child;

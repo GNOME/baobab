@@ -51,7 +51,6 @@ namespace Baobab {
             ensure_size_groups ();
 
             image.gicon = location.icon;
-            image.set_pixel_size (64);
 
             var escaped = GLib.Markup.escape_text (location.name, -1);
             name_label.label = "<b>%s</b>".printf (escaped);
@@ -67,11 +66,11 @@ namespace Baobab {
                 usage_label.show ();
 
                 usage_size_group.add_widget (usage_bar);
-                usage_bar.set_max_value (location.size);
+                usage_bar.max_value = location.size;
 
                 // Set critical color at 90% of the size
                 usage_bar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
-                usage_bar.set_value (location.used);
+                usage_bar.value = location.used;
                 usage_bar.show ();
             }
         }
@@ -96,7 +95,7 @@ namespace Baobab {
             monitor.volume_removed.connect (volume_removed);
             monitor.volume_added.connect (volume_added);
 
-            set_selection_mode (Gtk.SelectionMode.NONE);
+            selection_mode = Gtk.SelectionMode.NONE;
             set_header_func (update_header);
 
             populate ();
