@@ -116,8 +116,7 @@ namespace Baobab {
         };
 
         [GtkCallback]
-        private void close_button_clicked(Gtk.Button button)
-        {
+        private void close_button_clicked(Gtk.Button button) {
             close ();
         }
 
