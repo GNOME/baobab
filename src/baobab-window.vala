@@ -224,8 +224,8 @@ namespace Baobab {
         void on_scan_folder_activate () {
             var file_chooser = new Gtk.FileChooserDialog (_("Select Folder"), this,
                                                           Gtk.FileChooserAction.SELECT_FOLDER,
-                                                          Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL,
-                                                          Gtk.Stock.OPEN, Gtk.ResponseType.ACCEPT);
+                                                          _("_Cancel"), Gtk.ResponseType.CANCEL,
+                                                          _("_Open"), Gtk.ResponseType.ACCEPT);
 
             file_chooser.set_modal (true);
 
