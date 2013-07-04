@@ -1,8 +1,8 @@
 NULL =
 
 AM_CPPFLAGS = \
-	-DGETTEXT_PACKAGE=\""$(GETTEXT_PACKAGE)"\" 		\
-	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 	\
+	-DGETTEXT_PACKAGE=\""$(GETTEXT_PACKAGE)"\"  \
+	-DGNOMELOCALEDIR=\""$(localedir)"\" 	    \
 	$(NULL)
 
 bin_PROGRAMS = baobab
