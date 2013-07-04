@@ -1,15 +1,15 @@
 # Norwegian bokmål translation of baobab.
 # Copyright (C) 1999-2005 Free Software Foundation, Inc.
 #
-# Kjartan Maraas <kmaraas@gnome.org>, 1999-2012.
+# Kjartan Maraas <kmaraas@gnome.org>, 1999-2013.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab 3.7.x\n"
+"Project-Id-Version: baobab 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-05 21:13+0100\n"
-"PO-Revision-Date: 2012-11-05 21:14+0100\n"
+"POT-Creation-Date: 2013-07-04 11:14+0200\n"
+"PO-Revision-Date: 2013-07-04 11:15+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analyse av diskplass"
 
@@ -66,7 +66,7 @@ msgstr "GdkWindowState for vinduet"
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:107
 msgid "- Disk Usage Analyzer"
 msgstr "- Analyse av diskplass"
 
@@ -76,42 +76,6 @@ msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d oppføring"
 msgstr[1] "%d oppføringer"
-
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Maksimal dybde"
-
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Maksimal dybde som tegnes i diagrammet fra roten"
-
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Modell for diagram"
-
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Sett modell for diagram"
-
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Rotnode for diagram"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Sett rot-node fra modellen"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "Flytt til opphavs_mappe"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "Zoom _inn"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Zoom _ut"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
@@ -130,44 +94,44 @@ msgid "Scan Remote Folder…"
 msgstr "Søk i ekstern mappe …"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Lukk"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Mappe"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Bruk"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Størrelse"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Innhold"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Ringdiagram"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Trekartdiagram"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Åpne mappe"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopier sti til utklippstavlen"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5
 msgid "Mo_ve to Trash"
 msgstr "Fl_ytt til papirkurven"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Lukk"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Mappe"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Usage"
+msgstr "Bruk"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Size"
+msgstr "Størrelse"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Contents"
+msgstr "Innhold"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Ringdiagram"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Trekartdiagram"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -213,45 +177,65 @@ msgstr "_Utvid alle"
 msgid "_Collapse All"
 msgstr "S_lå sammen alle"
 
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "Enheter og lokasjoner"
+#: ../src/baobab-menu.ui.h:12
+msgid "_Move to parent folder"
+msgstr "Flytt til opphavs_mappe"
 
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-menu.ui.h:13
+msgid "Zoom _in"
+msgstr "Zoom _inn"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "Zoom _out"
+msgstr "Zoom _ut"
+
+#: ../src/baobab-window.vala:225
 msgid "Select Folder"
 msgstr "Velg mappe"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:227
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: ../src/baobab-window.vala:228
+msgid "_Open"
+msgstr "_Åpne"
+
+#: ../src/baobab-window.vala:275
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere volum."
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:326
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:332
+#: ../src/baobab-window.vala:329
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk verktøy for å analysere diskbruk."
 
-#: ../src/baobab-window.vala:337
+#: ../src/baobab-window.vala:334
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <libbe AT stefansen DOT net>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/baobab-window.vala:579
+#: ../src/baobab-window.vala:509
+msgid "Devices and locations"
+msgstr "Enheter og lokasjoner"
+
+#: ../src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Kunne ikke gjennomsøke mappe «%s» eller noen av mappene den inneholder."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
+#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» er ikke en gyldig mappe"
 
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskbruk"
