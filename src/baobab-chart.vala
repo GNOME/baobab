@@ -101,6 +101,8 @@ namespace Baobab {
                 }
 
                 model_ = value;
+                model_changed = true;
+
                 root = null;
 
                 connect_model_signals (model_);
