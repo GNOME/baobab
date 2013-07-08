@@ -48,7 +48,9 @@ namespace Baobab {
         const double ITEM_MIN_ANGLE = 0.03;
         const double EDGE_ANGLE = 0.004;
 
-        int subtip_timeout;
+        // Twice the GTK+ tooltip timeout
+        const int SUBTIP_TIMEOUT = 1000;
+
         uint tips_timeout_id = 0;
         bool drawing_subtips = false;
         List<ChartItem> subtip_items;
@@ -67,7 +69,7 @@ namespace Baobab {
             subtip_items = null;
 
             if (highlighted_item != null) {
-                tips_timeout_id = Timeout.add (subtip_timeout, () => {
+                tips_timeout_id = Timeout.add (SUBTIP_TIMEOUT, () => {
                     drawing_subtips = true;
                     queue_draw ();
                     return false;
@@ -76,8 +78,6 @@ namespace Baobab {
         }
 
         construct {
-            subtip_timeout = Gtk.Settings.get_default ().gtk_tooltip_timeout * 2;
-
             notify["max-depth"].connect (subtips_update);
             notify["highlighted-item"].connect (subtips_update);
             notify["root"].connect (subtips_update);
