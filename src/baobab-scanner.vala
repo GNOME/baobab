@@ -190,7 +190,7 @@ namespace Baobab {
                                 results.alloc_size += child_results.alloc_size;
                                 results.elements += child_results.elements;
                                 results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
-                                if (child_results.error != null) {
+                                if (child_results.error != null || child_results.child_error) {
                                     results.child_error = true;
                                 }
 
