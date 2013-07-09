@@ -18,14 +18,15 @@
 # Wolfgang Stöggl <c72578@yahoo.de>, 2011.
 # Christian Kirbach <Christian.Kirbach@gmail.com>, 2009, 2011, 2012.
 # Hedda Peters <hpeters@redhat.com>, 2012.
+# Benjamin Steinwender <b@stbe.at>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-03 14:36+0000\n"
-"PO-Revision-Date: 2013-03-03 06:57+0100\n"
+"POT-Creation-Date: 2013-07-04 20:45+0000\n"
+"PO-Revision-Date: 2013-07-05 13:32+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: \n"
@@ -36,7 +37,7 @@ msgstr ""
 "X-DamnedLies-Scope: partial\n"
 "X-Generator: Poedit 1.5.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:167
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Festplattenbelegung analysieren"
 
@@ -86,7 +87,7 @@ msgstr "Das GdkWindowState des Fensters"
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:107
 msgid "- Disk Usage Analyzer"
 msgstr "- Festplattenbelegung analysieren"
 
@@ -96,44 +97,6 @@ msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d Objekt"
 msgstr[1] "%d Objekte"
-
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Maximale Tiefe"
-
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr ""
-"Die maximale Tiefe ausgehend vom Wurzelelement, die im Diagramm dargestellt "
-"wird"
-
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Diagramm-Modell"
-
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Modell des Diagramms festlegen"
-
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Wurzelelement des Diagramms"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Wurzelelement des Modells festlegen"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "Eine Ebene höher _gehen"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "Ansicht ver_größern"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Ansicht ver_kleinern"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
@@ -152,49 +115,45 @@ msgid "Scan Remote Folder…"
 msgstr "_Entfernten Ordner analysieren …"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Devices and locations"
-msgstr "Geräte und Orte"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Close"
-msgstr "Schließen"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Folder"
-msgstr "Ordner"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Usage"
-msgstr "Verbrauch"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Size"
-msgstr "Größe"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Contents"
-msgstr "Inhalt"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Rings Chart"
-msgstr "Kreisdiagramm"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Treemap Chart"
-msgstr "Kacheldiagramm"
-
-#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "_Ordner öffnen"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:4
 msgid "_Copy Path to Clipboard"
 msgstr "Pfad in Zwischenablage _kopieren"
 
 # Nautilus-Konsistenz beachten!
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:5
 msgid "Mo_ve to Trash"
 msgstr "In den _Papierkorb verschieben"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Schließen"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Ordner"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Usage"
+msgstr "Verbrauch"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Size"
+msgstr "Größe"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Contents"
+msgstr "Inhalt"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Kreisdiagramm"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Kacheldiagramm"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -241,23 +200,43 @@ msgstr "Alles aus_klappen"
 msgid "_Collapse All"
 msgstr "Alles ein_klappen"
 
-#: ../src/baobab-window.vala:208
+#: ../src/baobab-menu.ui.h:12
+msgid "_Move to parent folder"
+msgstr "Eine Ebene höher _gehen"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "Zoom _in"
+msgstr "Ansicht ver_größern"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "Zoom _out"
+msgstr "Ansicht ver_kleinern"
+
+#: ../src/baobab-window.vala:225
 msgid "Select Folder"
 msgstr "Ordner auswählen"
 
-#: ../src/baobab-window.vala:258
+#: ../src/baobab-window.vala:227
+msgid "_Cancel"
+msgstr "_Abbrechen"
+
+#: ../src/baobab-window.vala:228
+msgid "_Open"
+msgstr "_Öffnen"
+
+#: ../src/baobab-window.vala:275
 msgid "Could not analyze volume."
 msgstr "Datenträger konnte nicht analysiert werden."
 
-#: ../src/baobab-window.vala:309
+#: ../src/baobab-window.vala:326
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:312
+#: ../src/baobab-window.vala:329
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ein grafisches Werkzeug zur Analyse der Festplattenbelegung."
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:334
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -275,7 +254,11 @@ msgstr ""
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Hedda Peters <hpeters@redhat.com>"
 
-#: ../src/baobab-window.vala:561
+#: ../src/baobab-window.vala:509
+msgid "Devices and locations"
+msgstr "Geräte und Orte"
+
+#: ../src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
@@ -283,14 +266,34 @@ msgstr ""
 "werden."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:580 ../src/baobab-window.vala:586
+#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "»%s« ist kein gültiger Ordner"
 
-#: ../src/baobab-window.vala:581 ../src/baobab-window.vala:587
+#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
 msgid "Could not analyze disk usage."
 msgstr "Festplattenbelegung konnte nicht analysiert werden."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Maximale Tiefe"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr ""
+#~ "Die maximale Tiefe ausgehend vom Wurzelelement, die im Diagramm "
+#~ "dargestellt wird"
+
+#~ msgid "Chart model"
+#~ msgstr "Diagramm-Modell"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "Modell des Diagramms festlegen"
+
+#~ msgid "Chart root node"
+#~ msgstr "Wurzelelement des Diagramms"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "Wurzelelement des Modells festlegen"
 
 #~ msgid "Scan a folder"
 #~ msgstr "Einen Ordner einlesen"
@@ -315,9 +318,6 @@ msgstr "Festplattenbelegung konnte nicht analysiert werden."
 
 #~ msgid "_Allocated Space"
 #~ msgstr "_Belegter Speicherplatz"
-
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"
 
 #~ msgid "Monitor Home"
 #~ msgstr "Persönlichen Ordner überwachen"
