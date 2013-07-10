@@ -54,6 +54,8 @@ namespace Baobab {
         [GtkChild]
         private Gtk.TreeView treeview;
         [GtkChild]
+        private CellRendererSize size_column_size_renderer;
+        [GtkChild]
         private Gtk.Menu treeview_popup_menu;
         [GtkChild]
         private Gtk.MenuItem treeview_popup_open;
@@ -531,22 +533,18 @@ namespace Baobab {
             }
         }
 
-        void set_model (Gtk.TreeModel model) {
-            treeview.model = model;
-
-            expand_first_row ();
-
+        void set_chart_model (Gtk.TreeModel model, bool show_allocated_size) {
             model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
             model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
             treemap_chart.set_model_with_columns (model,
                                                   Scanner.Columns.DISPLAY_NAME,
-                                                  Scanner.Columns.ALLOC_SIZE,
+                                                  show_allocated_size ? Scanner.Columns.ALLOC_SIZE : Scanner.Columns.SIZE,
                                                   Scanner.Columns.PARSE_NAME,
                                                   Scanner.Columns.PERCENT,
                                                   Scanner.Columns.ELEMENTS, null);
             rings_chart.set_model_with_columns (model,
                                                 Scanner.Columns.DISPLAY_NAME,
-                                                Scanner.Columns.ALLOC_SIZE,
+                                                show_allocated_size ? Scanner.Columns.ALLOC_SIZE : Scanner.Columns.SIZE,
                                                 Scanner.Columns.PARSE_NAME,
                                                 Scanner.Columns.PERCENT,
                                                 Scanner.Columns.ELEMENTS, null);
@@ -570,6 +568,16 @@ namespace Baobab {
                     message (primary, e.message, Gtk.MessageType.WARNING);
                 }
 
+                // Use allocated size if available, where available is defined as
+                // alloc_size > 0 for the root element
+                Gtk.TreeIter iter;
+                scanner.get_iter_first (out iter);
+                uint64 alloc_size;
+                scanner.get (iter, Scanner.Columns.ALLOC_SIZE, out alloc_size, -1);
+                bool show_allocated_size = alloc_size > 0;
+                size_column_size_renderer.show_allocated_size = show_allocated_size;
+                set_chart_model (active_location.scanner, show_allocated_size);
+
                 set_ui_state (result_page, false);
             });
 
@@ -578,7 +586,8 @@ namespace Baobab {
 
             scanner.scan (force);
 
-            set_model (active_location.scanner);
+            treeview.model = scanner;
+            expand_first_row ();
         }
 
         public void scan_directory (File directory) {
