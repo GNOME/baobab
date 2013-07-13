@@ -1,563 +1,393 @@
-# Chinese simplified translation of baobab master
-# Copyright (C) 2009, 2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-utils package.
-# Sun G11n <gnome_int_l10n@ireland.sun.com> 2002
-# Wang Li <charlesw1234@163.com>, 2001
-# Xiong Jiang <jxiong@offtopic.org>, 2003
-# Funda Wang <fundawang@linux.net.cn>, 2003-2005
-# Hinker <hinkerliu@gmail.com>, 2009.
-# chiachen <luojiazhen@gmail.com>, 2011.
-# Aron Xu <happyaron.xu@gmail.com>, 2009, 2011.
-# Wylmer Wang <wantinghard@gmail.com>, 2012.
-# Cheng Lu <chenglu1990@gmail.com>, 2012.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-31 17:16+0000\n"
-"PO-Revision-Date: 2013-04-02 12:42+0800\n"
+"Project-Id-Version: baobab.gnome-2-26\n"
+"POT-Creation-Date: 2013-04-19 21:37+0000\n"
+"PO-Revision-Date: 2013-05-06 14:09+0800\n"
 "Last-Translator: tuhaihe <1132321739qq@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <i18n-zh@googlegroups.com>\n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
-msgid "Disk Usage Analyzer"
-msgstr "磁盘使用分析器"
-
-#: ../data/baobab.desktop.in.in.h:2
-msgid "Check folder sizes and available disk space"
-msgstr "检查文件夹大小和可用磁盘空间"
-
-#: ../data/baobab.desktop.in.in.h:3
-msgid "storage;space;cleanup;"
-msgstr "storage;space;cleanup;存储;空间;清理;磁盘使用;"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Excluded partitions URIs"
-msgstr "排除的分区 URI"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "列出要在扫描中排除的分区 URI。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
-msgid "Active Chart"
-msgstr "活动的图表"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Which type of chart should be displayed."
-msgstr "应该显示哪个类型的图表。"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-msgid "Window size"
-msgstr "窗口大小"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "The initial size of the window"
-msgstr "窗口的初始大小"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Window state"
-msgstr "窗口状态"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "The GdkWindowState of the window"
-msgstr "窗口的 GdkWindowState 状态"
-
-#: ../src/baobab-application.vala:30
-msgid "Print version information and exit"
-msgstr "打印版本信息并退出"
-
-#: ../src/baobab-application.vala:106
-msgid "- Disk Usage Analyzer"
-msgstr "- 磁盘使用分析器"
-
-#: ../src/baobab-cellrenderers.vala:100
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d 项"
-
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "最大深度"
-
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "从图表根节点开始可绘制的最大深度"
-
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "图表模型"
-
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "设置图表模型"
-
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "图表根节点"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "设置模型根节点"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "移动到父文件夹(_M)"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "放大(_I)"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "缩小(_O)"
-
-#: ../src/baobab-location.vala:77
-msgid "Home folder"
-msgstr "主文件夹"
-
-#: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "主卷"
-
-#: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder…"
-msgstr "扫描文件夹..."
-
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "扫描远程文件夹..."
-
-#: ../src/baobab-main-window.ui.h:3
-msgid "Devices and locations"
-msgstr "设备与位置"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Close"
-msgstr "关闭"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Folder"
-msgstr "文件夹"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Usage"
-msgstr "用量"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Size"
-msgstr "大小"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Contents"
-msgstr "内容"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Rings Chart"
-msgstr "查看为圆环图"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Treemap Chart"
-msgstr "查看为树形图"
-
-#: ../src/baobab-main-window.ui.h:11
-msgid "_Open Folder"
-msgstr "打开文件夹(_O)"
-
-#: ../src/baobab-main-window.ui.h:12
-msgid "_Copy Path to Clipboard"
-msgstr "复制路径到剪贴板(_C)"
-
-#: ../src/baobab-main-window.ui.h:13
-msgid "Mo_ve to Trash"
-msgstr "移动到回收站(_V)"
-
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "帮助(_H)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "关于(_A)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "退出(_Q)"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "分析器(_A)"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "扫描主文件夹(_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "扫描文件夹(_O)..."
-
-#: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "扫描远程文件夹(_L)..."
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "查看(_V)"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "重新载入(_R)"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "全部展开(_E)"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "全部折叠(_C)"
-
-#: ../src/baobab-window.vala:216
-msgid "Select Folder"
-msgstr "选择文件夹"
-
-#: ../src/baobab-window.vala:266
-msgid "Could not analyze volume."
-msgstr "无法分析卷。"
-
-#: ../src/baobab-window.vala:317
-msgid "Baobab"
-msgstr "Baobab"
-
-#: ../src/baobab-window.vala:320
-msgid "A graphical tool to analyze disk usage."
-msgstr "一款分析磁盘使用情况的图形工具。"
-
-#: ../src/baobab-window.vala:325
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Wang Li <charlesw1234@163.com>\n"
-"Funda Wang <fundawang@linux.net.cn>\n"
-"Cheng Lu<chenglu1990@gmail.com>\n"
-"tuhaihe <1132321739qq@gmail.com>, 2013"
-
-#: ../src/baobab-window.vala:569
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "无法扫描“%s”文件夹或者它所包含的文件夹"
-
-#. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "“%s”不是有效的文件夹"
-
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
-msgid "Could not analyze disk usage."
-msgstr "无法分析磁盘使用情况。"
-
-#~ msgid "Scan a folder"
-#~ msgstr "扫描文件夹"
-
-#~ msgid "Scan Folder"
-#~ msgstr "扫描文件夹"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "扫描远程文件夹"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "扫描远程文件夹"
-
-#~ msgid "Reload"
-#~ msgstr "重新载入"
-
-#~ msgid "_Stop"
-#~ msgstr "停止(_S)"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "分配的空间(_A)"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgid "label"
-#~ msgstr "标签"
-
-#~ msgid "Monitor Home"
-#~ msgstr "监视主文件夹"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "是否应该监视对主目录的任何更改。"
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "工具栏可见"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "主窗口中的工具栏是否可见。"
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "状态栏可见"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr "主窗口底部的状态栏是否可见。"
-
-#~ msgid "Usage unknown"
-#~ msgstr "用量未知"
-
-#~ msgid "Scan"
-#~ msgstr "扫描"
-
-#~ msgid "Mount and scan"
-#~ msgstr "挂载并扫描"
-
-#~ msgid "All locations"
-#~ msgstr "所有位置"
-
-#~ msgid "Stop scanning"
-#~ msgstr "停止扫描"
-
-#~ msgid "_All locations"
-#~ msgstr "所有位置(_A)"
-
-#~ msgid "_Toolbar"
-#~ msgstr "工具栏(_T)"
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "磁盘使用分析器首选项"
-
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr "选择文件系统扫描中要扫描的设备(_D)："
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "监视主目录(_M)"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "扫描文件系统(_F)"
-
-#~ msgid "St_atusbar"
-#~ msgstr "状态栏(_A)"
-
-#~ msgid "_Contents"
-#~ msgstr "目录(_C)"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "扫描您的主文件夹吗"
-
-#~ msgid "Scan the file system"
-#~ msgstr "扫描文件系统"
-
-#~ msgid "Scan File System"
-#~ msgstr "扫描文件系统"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "扫描文件系统中的远程文件夹"
-
-#~ msgid "Refresh"
-#~ msgstr "刷新"
-
-#~ msgid "Scanning…"
-#~ msgstr "正在扫描..."
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "总计文件系统容量："
-
-#~ msgid "used:"
-#~ msgstr "已用："
-
-#~ msgid "available:"
-#~ msgstr "可用："
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "正在计算百分比条..."
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "文件系统总容量"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "文件系统总用量"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "包含硬链接："
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "无法初始化监视"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "对主目录的更改无法监视。"
-
-#~ msgid "Show version"
-#~ msgstr "显示版本号"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[目录]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "参数太多，只可以指定一个目录。"
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "无法检测到任何挂载点。"
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "没有挂载点，无法分析磁盘使用情况。"
-
-#~ msgid "Save screenshot"
-#~ msgstr "保存抓图"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "无法创建像素图图像！"
-
-#~ msgid "Save Snapshot"
-#~ msgstr "保存抓图"
-
-#~ msgid "_Image type:"
-#~ msgstr "图像类型(_I)："
-
-#~ msgid "Device"
-#~ msgstr "设备"
-
-#~ msgid "Mount Point"
-#~ msgstr "挂载点"
-
-#~ msgid "File System Type"
-#~ msgstr "文件系统类型"
-
-#~ msgid "Total Size"
-#~ msgstr "总大小"
-
-#~ msgid "Available"
-#~ msgstr "可用"
-
-#~ msgid "Custom Location"
-#~ msgstr "自定义位置"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "公共 FTP"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (需登录)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "安全 WebDAV (HTTP)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr "无法连接到服务器。您必须输入服务器的名称。"
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "请输入名称然后再试一次。"
-
-#~ msgid "_Location (URI):"
-#~ msgstr "位置(URI)(_L)："
-
-#~ msgid "_Server:"
-#~ msgstr "服务器(_S)："
-
-#~ msgid "Optional information:"
-#~ msgstr "可选信息："
-
-#~ msgid "_Share:"
-#~ msgstr "共享(_S)："
-
-#~ msgid "_Port:"
-#~ msgstr "端口(_P)："
-
-#~ msgid "_Folder:"
-#~ msgstr "文件夹(_F)："
-
-#~ msgid "_User Name:"
-#~ msgstr "用户名(_U)："
-
-#~ msgid "_Domain Name:"
-#~ msgstr "域名(_D)："
-
-#~ msgid "Connect to Server"
-#~ msgstr "连接到服务器"
-
-#~ msgid "Service _type:"
-#~ msgstr "服务类型(_T)："
-
-#~ msgid "_Scan"
-#~ msgstr "扫描(_S)"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "重新扫描您的主文件夹吗？"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr "您主目录的内容已经更改。选择重新扫描可以更新磁盘使用细节。"
-
-#~ msgid "_Rescan"
-#~ msgstr "重新扫描(_R)"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "显示隐藏文件夹(_S)"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "无法检查被排除的文件夹！"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "无法打开文件夹“%s”"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "没有安装能显示文件夹的查看器。"
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "无法将“%s”移动到回收站"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "无法将文件移动到回收站"
-
-#~ msgid "Details: %s"
-#~ msgstr "细节：%s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "显示帮助时出错。"
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "本程序是自由软件；您可以在自由软件基金会发布的 GNU 通用公共许可证的条款下"
-#~ "重新分发和(或)修改它；您可以选择使用 GPL 第二版，或(按照您的意愿)任何更新"
-#~ "的版本。"
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "发行本程序是希望它有所作用，但没有任何担保；没有任何暗示的担保或因某一特别"
-#~ "目的而适用。更多细节请参见 GNU 通用公共许可证。"
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "你应该已经随本程序一起收到一份 GNU 通用公共许可证副本；如果没有，你可以写"
-#~ "信给 \"\"the Free Software Foundation, Inc., 51 Franklin Street, Fifth "
-#~ "Floor, Boston, \"\"MA 02110-1301, USA \""
-
-#~ msgid "The document does not exist."
-#~ msgstr "文档不存在。"
-
-#~ msgid "The folder does not exist."
-#~ msgstr "文件夹不存在。"
+"TeliuTe <teliute@163.com>, 2009.\n"
+"tuhaihe <1132321739qq@gmail.com>, 2012"
+
+#: C/index.page:10(credit/name) C/introduction.page:12(credit/name)
+#: C/pref-view-chart.page:12(credit/name)
+#: C/scan-file-system.page:11(credit/name) C/scan-folder.page:12(credit/name)
+#: C/scan-home.page:12(credit/name) C/scan-remote.page:12(credit/name)
+msgid "Julita Inca"
+msgstr "Julita Inca"
+
+#: C/index.page:14(credit/name) C/introduction.page:16(credit/name)
+#: C/pref.page:11(credit/name) C/pref-view-chart.page:20(credit/name)
+#: C/pref-view-menu.page:10(credit/name)
+#: C/scan-file-system.page:15(credit/name) C/scan-folder.page:20(credit/name)
+#: C/scan-home.page:16(credit/name) C/scan-remote.page:20(credit/name)
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#: C/index.page:18(info/desc)
+msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
+msgstr "<app>磁盘使用分析器</app>，一款图形化的存储设备扫描器。"
+
+#: C/index.page:23(page/title)
+msgid "Disk Usage Analyzer"
+msgstr "磁盘使用情况分析器"
+
+#: C/index.page:26(section/title)
+msgid "Scan storage devices"
+msgstr "扫描存储设备"
+
+#: C/index.page:30(section/title)
+msgid "Views and preferences"
+msgstr "查看和首选项"
+
+#: C/introduction.page:20(credit/name) C/pref-view-chart.page:16(credit/name)
+#: C/scan-file-system.page:19(credit/name) C/scan-folder.page:16(credit/name)
+#: C/scan-home.page:20(credit/name) C/scan-remote.page:16(credit/name)
+msgid "Michael Hill"
+msgstr "Michael Hill"
+
+#: C/introduction.page:24(info/desc)
+msgid ""
+"<app>Disk Usage Analyzer</app>, also referred to as <app>baobab</app>, "
+"graphically represents your use of storage space."
+msgstr ""
+"<app>磁盘使用分析器</app>，也称作 <app>baobab</app>，图形化地展示您的存储空间"
+"使用情况。"
+
+#: C/introduction.page:29(page/title)
+msgid "Introduction"
+msgstr "介绍"
+
+#: C/introduction.page:31(page/p)
+msgid ""
+"<app>Disk Usage Analyzer</app> is a graphical, menu-driven application for "
+"analysing storage device usage. It can be used to scan multiple local or "
+"remote storage device (including hard disks, SSDs, USB sticks, digital "
+"cameras and memory cards). <app>Disk Usage Analyzer</app> can scan either "
+"the <link xref=\"scan-file-system\">whole file system</link> tree, <link "
+"xref=\"scan-home\">your <file>Home</file> directory</link>, a <link xref="
+"\"scan-folder\">specific user-requested directory</link> or <link xref="
+"\"scan-remote\">a remote folder</link>."
+msgstr ""
+"<app>磁盘使用分析器</app>是一款图形化、菜单化操作的应用程序，用来分析存储设备"
+"的使用情况。它可以用来扫描多个本地或远程存储设备(包括硬盘、固态硬盘、U 盘、数"
+"码相机和存储卡)。<app>磁盘使用分析器</app>可以扫描<link xref=\"scan-file-"
+"system\">整个文件系统</link>树、<link xref=\"scan-home\">您的<file>主目录</"
+"file></link>、<link xref=\"scan-folder\">用户请求的特定目录</link>或<link "
+"xref=\"scan-remote\">远程文件夹</link>。"
+
+#: C/pref.page:15(info/desc)
+msgid "Skip specific devices and partitions when scanning the file system."
+msgstr "当扫描文件系统时跳过指定的设备和分区。"
+
+#: C/pref.page:19(page/title)
+msgid "Disable scanning of individual storage devices and partitions"
+msgstr "禁止对单个存储设备和分区的扫描"
+
+#: C/pref.page:21(page/p)
+msgid ""
+"<app>Disk Usage Analyzer</app> allows you to scan only the partitions and "
+"storage devices that you have selected in the <gui>Preferences</gui> dialog. "
+"By default, all devices and partitions are selected, but the application "
+"will store your preferences when you close it."
+msgstr ""
+"<app>磁盘使用分析器</app>允许您只扫描在<gui>首选项</gui>对话框中选中的分区和"
+"存储设备。默认情况下，所有的设备和分区都被选中，但当您关闭对话框时应用程序将"
+"保存您的偏好设置。"
+
+#: C/pref.page:28(item/p)
+msgid "Select <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq>"
+msgstr "选择 <guiseq><gui>编辑</gui><gui>首选项</gui></guiseq>"
+
+#: C/pref.page:31(item/p)
+msgid ""
+"Select the storage devices and partitions that you want to scan, or deselect "
+"those that you do not wish to scan"
+msgstr "选择您想要扫描的存储设备和分区，或不选您不希望扫描的存储设备和分区"
+
+#: C/pref.page:35(item/p)
+msgid "Click <gui>Close</gui> to save your preferences"
+msgstr "点击 <gui>关闭</gui> 保存您的首选项"
+
+#: C/pref.page:40(note/p)
+msgid ""
+"The first item in the list, which is mounted on <file>/</file>, cannot be "
+"deselected"
+msgstr "列表中的第一项，挂载在 <file>/</file> 上，不能取消选择"
+
+#: C/pref-view-chart.page:24(info/desc)
+msgid "Display the results as a ring chart or a treemap chart."
+msgstr "以圆环图或树形图显示结果。"
+
+#: C/pref-view-chart.page:28(page/title)
+msgid "Different chart views"
+msgstr "不同的图表视图"
+
+#: C/pref-view-chart.page:30(page/p)
+msgid ""
+"By default, the scan results show each subfolder as the section of a ring, "
+"comprising an angle proportional to the size of the relevant folder. Sub-"
+"folders are shown in different colors."
+msgstr ""
+"默认情况下，扫描结果以扇形显示每个子目录，其角度与相关文件夹的大小对应。子文"
+"件夹以不同颜色标示。"
+
+#: C/pref-view-chart.page:33(page/p)
+msgid ""
+"Move your mouse over the rings chart displays more details about the "
+"subfolders."
+msgstr "将您的鼠标移到圆环图上会显示关于该子文件夹的更多细节。"
+
+#: C/pref-view-chart.page:35(page/p)
+msgid ""
+"Chart visibility can be changed to <gui>Treemap View</gui> using the drop-"
+"down list at the top of the chart on the right-hand side. The tree layout "
+"displays the folders as proportionately sized boxes."
+msgstr ""
+"使用右手边图表顶部的下拉菜单，可将图表视图更改为 <gui>树形图</gui>。树形图用"
+"相应大小的方框来显示文件夹。"
+
+#: C/pref-view-menu.page:14(info/desc)
+msgid "Hide or show the toolbar and the status bar."
+msgstr "隐藏或显示工具栏和状态栏。"
+
+#: C/pref-view-menu.page:18(page/title)
+msgid "Toolbar and statusbar"
+msgstr "工具栏和状态栏"
+
+#: C/pref-view-menu.page:20(page/p)
+msgid ""
+"The <gui>Toolbar</gui> provides shortcuts to the various scan actions, while "
+"the <gui>Statusbar</gui> provides the status of the application (for "
+"example, <gui>Ready</gui> and <gui>Scanning…</gui>)."
+msgstr ""
+"<gui>工具栏</gui> 为各种扫描动作提供快捷方式，而 <gui>状态栏</gui> 提供应用程"
+"序的状态(例如，<gui>就绪</gui> 和 <gui>正在扫描…</gui>)。"
+
+#: C/pref-view-menu.page:26(item/p)
+msgid ""
+"Select <guiseq><gui>View</gui><gui>Toolbar</gui></guiseq> from the menu and "
+"enable or disable the option"
+msgstr ""
+"从菜单选择 <guiseq><gui>查看</gui><gui>工具栏</gui></guiseq>，可启用或禁用该"
+"选项"
+
+#: C/pref-view-menu.page:30(item/p)
+msgid ""
+"Select <guiseq><gui>View</gui><gui>Statusbar</gui></guiseq> from the menu "
+"and enable or disable the option"
+msgstr ""
+"从菜单选择 <guiseq><gui>查看</gui><gui>状态栏</gui></guiseq>，可启用或禁用该"
+"选项"
+
+#: C/scan-file-system.page:23(info/desc)
+msgid "Scan all internal and removable storage devices."
+msgstr "扫描所有内置和可移除的存储设备。"
+
+#: C/scan-file-system.page:27(page/title)
+msgid "Scan the file system"
+msgstr "扫描文件系统"
+
+#: C/scan-file-system.page:29(page/p)
+msgid "To find out how much space your file system takes up:"
+msgstr "要想弄清楚您的文件系统占用了多大空间："
+
+#: C/scan-file-system.page:33(item/p)
+msgid ""
+"Select <guiseq><gui>Analyzer</gui><gui>Scan File System</gui></guiseq> from "
+"the menu"
+msgstr "从菜单选择 <guiseq><gui>分析器</gui><gui>扫描文件系统</gui></guiseq>"
+
+#: C/scan-file-system.page:38(page/p)
+msgid ""
+"Your file system includes all internal and removable storage devices which "
+"are mounted when the respective folder is scanned."
+msgstr ""
+"您的文件系统包括所有内置和可移除的存储设备，当扫描对应的文件夹时后者需挂载。"
+
+#: C/scan-file-system.page:42(note/p)
+msgid ""
+"If the file system that you are trying to scan is large, it may take a few "
+"minutes for the scan to complete."
+msgstr "如果您要尝试扫描的文件系统很大，完成扫描可能会花费几分钟。"
+
+#: C/scan-file-system.page:44(note/p) C/scan-folder.page:49(note/p)
+#: C/scan-home.page:44(note/p)
+msgid ""
+"Select <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> to cancel the "
+"current scan, or <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq> to "
+"repeat the last scan."
+msgstr ""
+"选择 <guiseq><gui>分析器</gui><gui>停止</gui></guiseq> 可取消当前扫描，或选"
+"择 <guiseq><gui>分析器</gui><gui>刷新</gui></guiseq> 重复上次扫描。"
+
+#: C/scan-file-system.page:49(page/p) C/scan-folder.page:54(page/p)
+msgid ""
+"The results may be useful in deciding which folders can be <link href=\"help:"
+"file-roller\">archived</link>, <link href=\"help:gnome-help/files-delete"
+"\">deleted</link> or <link href=\"help:gnome-help/files-copy\">moved</link> "
+"to free up space. You can also use the results to estimate how much space "
+"would be needed for a <link href=\"help:gnome-help/backup-how\">backup</"
+"link> of specific folders."
+msgstr ""
+"该结果在确定哪些文件夹可以 <link href=\"help:file-roller\">归档</link>、"
+"<link href=\"help:gnome-help/files-delete\">删除</link> 或 <link href=\"help:"
+"gnome-help/files-copy\">移动</link> 来腾出空间时可能有用。您也可以用这些结果"
+"来估计 <link href=\"help:gnome-help/backup-how\">备份</link> 特定文件夹需要多"
+"少空间。"
+
+#: C/scan-file-system.page:56(page/p) C/scan-folder.page:61(page/p)
+#: C/scan-home.page:57(page/p) C/scan-remote.page:99(note/p)
+msgid ""
+"Right-click on any folder and select <gui>Open Folder</gui> to launch the "
+"<app>Files</app> application, or <gui>Move to Trash</gui> to move your "
+"folder to <file>Trash</file>."
+msgstr ""
+"右击任何文件夹，选择 <gui>打开文件夹</gui> 启用 <app>文件</app> 应用程序，或"
+"选择 <gui>移动到回收站</gui> 将您的文件夹移动到 <file>回收站</file>。"
+
+#: C/scan-folder.page:24(info/desc)
+msgid "Scan a local folder, including all subfolders."
+msgstr "扫描本地文件夹，包括所有的子文件夹。"
+
+#: C/scan-folder.page:28(page/title)
+msgid "Scan a folder"
+msgstr "扫描文件夹"
+
+#: C/scan-folder.page:30(page/p)
+msgid ""
+"Scans of individual folders are faster than those of the whole file system, "
+"so they may be more efficient if you want information only about a specific "
+"part of your file system."
+msgstr ""
+"单个文件夹的扫描要比整个文件系统的扫描快得多，所以如果您只想要关于文件系统某"
+"个特定部分的信息，这可能效率更高。"
+
+#: C/scan-folder.page:36(item/p)
+msgid ""
+"Select <guiseq><gui>Analyzer</gui><gui>Scan Folder…</gui></guiseq> from the "
+"menu"
+msgstr "从菜单选择 <guiseq><gui>分析器</gui><gui>扫描文件夹…</gui></guiseq>"
+
+#: C/scan-folder.page:40(item/p)
+msgid ""
+"Use the file browser to navigate around your file system and select the "
+"desired folder"
+msgstr "使用文件浏览器来浏览您的文件系统，并选择希望分析的文件夹"
+
+#: C/scan-folder.page:44(item/p)
+msgid "Click <gui>Open</gui> to commence scanning"
+msgstr "点击 <gui>打开</gui> 开始扫描"
+
+#: C/scan-home.page:24(info/desc)
+msgid ""
+"Scan all of your personal files that are on your internal storage device."
+msgstr "扫描您内部存储设备上的所有个人文件。"
+
+#: C/scan-home.page:28(page/title)
+msgid "Scan your <file>Home</file> folder"
+msgstr "扫描您的 <file>主目录</file>"
+
+#: C/scan-home.page:30(page/p)
+msgid ""
+"The <file>Home</file> folder is where most files are located for the average "
+"user because default settings are often set to save or copy files into "
+"subdirectories within it. This includes downloads from the internet, "
+"documents which you work on and photos from your camera. Normally, one "
+"<file>Home</file> folder exists for each user on the computer."
+msgstr ""
+"<file>主目录</file>是普通用户存放大部分文件的地方，因为默认设置经常被设为将文"
+"件保存或复制到主目录下的子目录里。包括网络下载、工作文档和相机里面的照片。通"
+"常，计算机上的每位用户都有自己的 <file>主目录</file>。"
+
+#: C/scan-home.page:38(item/p)
+msgid ""
+"Select <guiseq><gui>Analyzer</gui><gui>Scan Home Folder</gui></guiseq> from "
+"the menu"
+msgstr "从菜单选择 <guiseq><gui>分析器</gui><gui>扫描主目录</gui></guiseq>"
+
+#: C/scan-home.page:49(page/p)
+msgid ""
+"The results may be useful in deciding which folders can be <link href=\"help:"
+"file-roller\">archived</link>, <link href=\"help:gnome-help/files-delete"
+"\">deleted</link> or <link href=\"help:gnome-help/files-copy\">moved</link> "
+"to free up space. You can also use the results to estimate how much space "
+"would be needed for a <link href=\"help:gnome-help/backup-how\">backup</"
+"link> of your <file>Home</file> folder."
+msgstr ""
+"该结果在确定哪些文件夹可以 <link href=\"help:file-roller\">归档</link>、"
+"<link href=\"help:gnome-help/files-delete\">删除</link> 或 <link href=\"help:"
+"gnome-help/files-copy\">移动</link> 来腾出空间时可能有用。您也可以用这些结果"
+"来估计 <link href=\"help:gnome-help/backup-how\">备份</link> 您的 <file>主</"
+"file> 文件夹需要多少空间。"
+
+# among others 没有翻译
+#: C/scan-home.page:62(note/p)
+msgid ""
+"The default subdirectories usually include <file>Desktop</file>, "
+"<file>Documents</file>, <file>Downloads</file>, <file>Pictures</file> and "
+"<file>Music</file>, among others. Some of these will already exist when "
+"GNOME is installed; others will be created by applications when they are "
+"needed."
+msgstr ""
+"默认子目录通常包括 <file>桌面</file>、<file>文档</file>、<file>下载</file>、"
+"<file>图片</file> 和 <file>音乐</file>等。部分子目录在安装 GNOME 时已经存在；"
+"其他子目录会在需要时由应用程序创建。"
+
+#: C/scan-remote.page:24(info/desc)
+msgid "Scan a folder remotely from your computer."
+msgstr "从您的电脑上远程扫描文件夹。"
+
+#: C/scan-remote.page:28(page/title)
+msgid "Scan a remote folder"
+msgstr "扫描远程文件夹"
+
+#: C/scan-remote.page:30(page/p)
+msgid ""
+"<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
+"remotely. To scan the whole file system or any specific folder remotely:"
+msgstr ""
+"<app>磁盘使用分析器</app> 可以扫描能够远程访问的存储设备。要远程扫描整个文件"
+"系统或任何指定的文件夹："
+
+#: C/scan-remote.page:36(item/p)
+msgid ""
+"Select <guiseq><gui>Analyzer</gui> <gui>Scan Remote Folder…</gui></guiseq> "
+"from the menu"
+msgstr ""
+"从菜单选择 <guiseq><gui>分析器</gui> <gui>扫描远程文件夹…</gui></guiseq>"
+
+#: C/scan-remote.page:40(item/p)
+msgid "Choose the protocol that you wish to use"
+msgstr "选择您希望使用的协议"
+
+#: C/scan-remote.page:81(item/p)
+msgid ""
+"Enter in the IP address of the remote storage device into the <gui>Server</"
+"gui> field or the URI, depending on the protocol that you are using."
+msgstr ""
+"将远程存储设备的 IP 地址填入 <gui>服务器</gui> 区域或位置(URI)处，这决定于您"
+"使用的协议。"
+
+#: C/scan-remote.page:88(item/p)
+msgid ""
+"Click <gui>Scan</gui> to continue; you may be asked for more details, like a "
+"password and username, before the scan will commence."
+msgstr ""
+"点击 <gui>扫描</gui> 继续；在扫描开始前，您可能会被询问更多细节，比如密码和用"
+"户名。"
+
+#: C/scan-remote.page:94(note/p)
+msgid ""
+"Scanning over the network may be slower than scanning a local file system."
+msgstr "通过网络扫描可能比扫描本地文件系统速度慢些。"
