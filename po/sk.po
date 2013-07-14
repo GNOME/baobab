@@ -5,15 +5,15 @@
 # Stanislav Višňovský <visnovsky@kde.org>, 2003.
 # Stanislav Višňovský <visnov@suse.cz>, 2003.
 # Ivan Noris <vix@vazka.sk>, 2005.
-# Pavol Klačanský <pavol@klacansky.com>, 2008-2012.
+# Pavol Klačanský <pavol@klacansky.com>, 2008-2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-11-22 09:47+0000\n"
-"PO-Revision-Date: 2012-11-28 15:02+0000\n"
+"POT-Creation-Date: 2013-07-13 01:26+0000\n"
+"PO-Revision-Date: 2013-07-14 12:04+0100\n"
 "Last-Translator: Pavol Klačanský <pavol@klacansky.com>\n"
 "Language-Team: slovenčina <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využitia disku"
 
@@ -72,7 +72,7 @@ msgstr "Hodnota vlastnosti GdkWindowState okna"
 msgid "Print version information and exit"
 msgstr "Vypíše informáciu o verzii a skončí"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:107
 msgid "- Disk Usage Analyzer"
 msgstr " - analyzátor využitia disku"
 
@@ -83,45 +83,6 @@ msgid_plural "%d items"
 msgstr[0] "%d položiek"
 msgstr[1] "%d položka"
 msgstr[2] "%d položky"
-
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Maximálna hĺbka"
-
-# desc
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Maximálna hĺbka vykresľovaná v grafe od koreňa"
-
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Model grafu"
-
-# desc
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Nastavuje model grafu"
-
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Koreňový uzol grafu"
-
-# desc
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Nastavuje koreňový uzol modelu"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Presunúť do rodičovského priečinka"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "_Zväčšiť"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Z_menšiť"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
@@ -140,44 +101,44 @@ msgid "Scan Remote Folder…"
 msgstr "Analyzovať vzdialený priečinok…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Zavrieť"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Priečinok"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Využitie"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Veľkosť"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Obsah"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Kruhový graf"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Stĺpcový graf"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "_Open Folder"
 msgstr "_Otvoriť priečinok"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopírovať cestu do schránky"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5
 msgid "Mo_ve to Trash"
 msgstr "Presunúť do K_oša"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Zavrieť"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Priečinok"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Usage"
+msgstr "Využitie"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Size"
+msgstr "Veľkosť"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Contents"
+msgstr "Obsah"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Kruhový graf"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Stĺpcový graf"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -223,44 +184,85 @@ msgstr "_Rozbaliť všetky"
 msgid "_Collapse All"
 msgstr "_Zabaliť všetky"
 
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "Zariadenia a umiestnenia"
+#: ../src/baobab-menu.ui.h:12
+msgid "_Move to parent folder"
+msgstr "_Presunúť do rodičovského priečinka"
 
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-menu.ui.h:13
+msgid "Zoom _in"
+msgstr "_Zväčšiť"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "Zoom _out"
+msgstr "Z_menšiť"
+
+#: ../src/baobab-window.vala:227
 msgid "Select Folder"
 msgstr "Výber priečinka"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:229
+msgid "_Cancel"
+msgstr "_Zrušiť"
+
+#: ../src/baobab-window.vala:230
+msgid "_Open"
+msgstr "_Otvoriť"
+
+#: ../src/baobab-window.vala:277
 msgid "Could not analyze volume."
 msgstr "Nepodarilo sa analyzovať zväzok."
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:328
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:331
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj na analýzu využitia disku."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:336
 msgid "translator-credits"
 msgstr ""
 "Stanislav Višňovský, Ivan Noris\n"
 "Pavol Klačanský <pavol@klacansky.com>"
 
-#: ../src/baobab-window.vala:580
+#: ../src/baobab-window.vala:511
+msgid "Devices and locations"
+msgstr "Zariadenia a umiestnenia"
+
+#: ../src/baobab-window.vala:567
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Nepodarilo sa analyzovať priečinok „%s“, alebo niektoré jeho podpriečinky."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:597 ../src/baobab-window.vala:603
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ nie je platný priečinok"
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 msgid "Could not analyze disk usage."
 msgstr "Nepodarilo sa analyzovať využitie disku."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Maximálna hĺbka"
+
+# desc
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "Maximálna hĺbka vykresľovaná v grafe od koreňa"
+
+#~ msgid "Chart model"
+#~ msgstr "Model grafu"
+
+# desc
+#~ msgid "Set the model of the chart"
+#~ msgstr "Nastavuje model grafu"
+
+#~ msgid "Chart root node"
+#~ msgstr "Koreňový uzol grafu"
+
+# desc
+#~ msgid "Set the root node from the model"
+#~ msgstr "Nastavuje koreňový uzol modelu"
