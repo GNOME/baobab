@@ -18,6 +18,6 @@ HELP_FILES = \
 	scan-remote.page
 
 # List of translations
-HELP_LINGUAS = ca de el es fr gl hu id ru sl zh_CN
+HELP_LINGUAS = ca cs de el es fr gl hu id ru sl zh_CN
 
 -include $(top_srcdir)/git.mk
