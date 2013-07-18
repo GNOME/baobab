@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-16 17:00+0000\n"
-"PO-Revision-Date: 2013-05-31 13:25+0500\n"
+"POT-Creation-Date: 2013-07-03 21:05+0000\n"
+"PO-Revision-Date: 2013-07-18 16:40+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
 "Language: Tajik\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=1;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Таҳлилгари истифодаи диск"
 
@@ -67,7 +67,7 @@ msgstr "Вазъияти GdkWindowState-и равзана"
 msgid "Print version information and exit"
 msgstr "Иттилооти версияро намоиш диҳед ва бароед"
 
-#: ../src/baobab-application.vala:106
+#: ../src/baobab-application.vala:107
 msgid "- Disk Usage Analyzer"
 msgstr "- Таҳлилгари истифодаи диск"
 
@@ -77,42 +77,6 @@ msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d объект"
 msgstr[1] "%d объект"
-
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Қаъри ҳадди аксар"
-
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Қаъри ҳадди аксари диаграмма аз реша"
-
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Намунаи диаграмма"
-
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Танзим кардани намунаи диаграмма"
-
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Гиреҳи решаи диаграмма"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Танзим кардани гиреҳи реша аз намуна"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Интиқол додан ба ҷузвдони асосӣ"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "Бузург _кардани андоза"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Хурд _кардани андоза"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
@@ -131,48 +95,44 @@ msgid "Scan Remote Folder…"
 msgstr "Скан кардани ҷузвдони дурдаст…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Devices and locations"
-msgstr "Дастгоҳҳо ва ҷойгиршавиҳо"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Close"
-msgstr "Пӯшидан"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Folder"
-msgstr "Ҷузвдон"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Usage"
-msgstr "Истифодабарӣ"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Size"
-msgstr "Андоза"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Contents"
-msgstr "Мундариҷа"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Rings Chart"
-msgstr "Диаграммаи ҳалқавӣ"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Treemap Chart"
-msgstr "Диаграммаи шохдор"
-
-#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "_Кушодани ҷузвдон"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:4
 msgid "_Copy Path to Clipboard"
 msgstr "_Нусха бардоштани масир ба ҳофизаи муваққатӣ"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:5
 msgid "Mo_ve to Trash"
 msgstr "_Интиқол додан ба сабад"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Пӯшидан"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Ҷузвдон"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Usage"
+msgstr "Истифодабарӣ"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Size"
+msgstr "Андоза"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Contents"
+msgstr "Мундариҷа"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Диаграммаи ҳалқавӣ"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Диаграммаи шохдор"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -218,25 +178,49 @@ msgstr "_Ҳамаро паҳн кардан"
 msgid "_Collapse All"
 msgstr "_Ҳамаро печондан"
 
-#: ../src/baobab-window.vala:216
+#: ../src/baobab-menu.ui.h:12
+msgid "_Move to parent folder"
+msgstr "_Интиқол додан ба ҷузвдони асосӣ"
+
+#: ../src/baobab-menu.ui.h:13
+msgid "Zoom _in"
+msgstr "Бузург _кардани андоза"
+
+#: ../src/baobab-menu.ui.h:14
+msgid "Zoom _out"
+msgstr "Хурд _кардани андоза"
+
+#: ../src/baobab-window.vala:225
 msgid "Select Folder"
 msgstr "Интихоб кардани ҷузвдон"
 
-#: ../src/baobab-window.vala:266
+#: ../src/baobab-window.vala:227
+msgid "_Cancel"
+msgstr "_Бекор кардан"
+
+#: ../src/baobab-window.vala:228
+msgid "_Open"
+msgstr "_Кушодан"
+
+#: ../src/baobab-window.vala:275
 msgid "Could not analyze volume."
 msgstr "Иттилооти ҳаҷм таҳлил карда нашуд."
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:326
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:320
+#: ../src/baobab-window.vala:329
 msgid "A graphical tool to analyze disk usage."
 msgstr "Абзори графикӣ барои таҳлили истифодаи диск."
 
-#: ../src/baobab-window.vala:325
+#: ../src/baobab-window.vala:334
 msgid "translator-credits"
 msgstr "Victor Ibragimov"
+
+#: ../src/baobab-window.vala:509
+msgid "Devices and locations"
+msgstr "Дастгоҳҳо ва ҷойгиршавиҳо"
 
 #: ../src/baobab-window.vala:569
 #, c-format
@@ -252,3 +236,21 @@ msgstr "\"%s\" ҷузвдони беэътибор аст"
 #: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
 msgid "Could not analyze disk usage."
 msgstr "Иттилооти истифодабарии диск таҳлил карда нашуд."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Қаъри ҳадди аксар"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "Қаъри ҳадди аксари диаграмма аз реша"
+
+#~ msgid "Chart model"
+#~ msgstr "Намунаи диаграмма"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "Танзим кардани намунаи диаграмма"
+
+#~ msgid "Chart root node"
+#~ msgstr "Гиреҳи решаи диаграмма"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "Танзим кардани гиреҳи реша аз намуна"
