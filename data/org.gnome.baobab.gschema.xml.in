@@ -12,6 +12,10 @@
   </schema>
   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.ui" path="/org/gnome/baobab/ui/">
     <key name="active-chart" type="s">
+      <choices>
+        <choice value='rings'/>
+        <choice value='treemap'/>
+      </choices>
       <default>'rings'</default>
       <_summary>Active Chart</_summary>
       <_description>Which type of chart should be displayed.</_description>
