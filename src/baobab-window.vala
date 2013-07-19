@@ -306,7 +306,7 @@ namespace Baobab {
             try {
                 Gtk.show_uri (get_screen (), "help:baobab", Gtk.get_current_event_time ());
             } catch (Error e) {
-                warning ("Failed to show help: %s", e.message);
+                message (_("Failed to show help"), e.message, Gtk.MessageType.WARNING);
             }
         }
 
@@ -416,7 +416,7 @@ namespace Baobab {
                         files.append (file);
                         appinfo.launch(files, null);
                     } catch (Error e) {
-                        warning ("Failed open file with application: %s", e.message);
+                        message (_("Failed to open file"), e.message, Gtk.MessageType.ERROR);
                     }
                 }
             });
@@ -444,7 +444,7 @@ namespace Baobab {
                         file.trash ();
                         active_location.scanner.remove (ref iter);
                     } catch (Error e) {
-                        warning ("Failed to move file to the trash: %s", e.message);
+                        message (_("Failed to move file to the trash"), e.message, Gtk.MessageType.ERROR);
                     }
                 }
             });
