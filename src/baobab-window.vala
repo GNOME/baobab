@@ -54,6 +54,8 @@ namespace Baobab {
         [GtkChild]
         private Gtk.TreeView treeview;
         [GtkChild]
+        private Gtk.TreeViewColumn size_column;
+        [GtkChild]
         private CellRendererSize size_column_size_renderer;
         [GtkChild]
         private Gtk.Menu treeview_popup_menu;
@@ -588,6 +590,7 @@ namespace Baobab {
                 scanner.get (iter, Scanner.Columns.ALLOC_SIZE, out alloc_size, -1);
                 bool show_allocated_size = alloc_size > 0;
                 size_column_size_renderer.show_allocated_size = show_allocated_size;
+                size_column.sort_column_id = show_allocated_size ? Scanner.Columns.ALLOC_SIZE : Scanner.Columns.SIZE;
                 set_chart_model (active_location.scanner, show_allocated_size);
 
                 set_ui_state (result_page, false);
