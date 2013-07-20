@@ -22,8 +22,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-03 21:05+0000\n"
-"PO-Revision-Date: 2013-07-04 22:44+0200\n"
+"POT-Creation-Date: 2013-07-19 21:11+0000\n"
+"PO-Revision-Date: 2013-07-20 23:21+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -81,7 +81,7 @@ msgstr "Stav GdkWindowState okna"
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
-#: ../src/baobab-application.vala:107
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "– Analyzátor využití disku"
 
@@ -162,74 +162,46 @@ msgid "_Quit"
 msgstr "U_končit"
 
 #: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analyzátor"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "Analyzovat domov_skou složku"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Analyzovat sl_ožku…"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Analyzovat vzdálenou s_ložku…"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Zobrazit"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "Znov_u načíst"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "Rozbalit vš_e"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "S_balit vše"
-
-#: ../src/baobab-menu.ui.h:12
 msgid "_Move to parent folder"
 msgstr "_Přejít do nadřazené složky"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:5
 msgid "Zoom _in"
 msgstr "Př_iblížit"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:6
 msgid "Zoom _out"
 msgstr "_Oddálit"
 
-#: ../src/baobab-window.vala:225
+#: ../src/baobab-window.vala:227
 msgid "Select Folder"
 msgstr "Výběr složky"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:229
 msgid "_Cancel"
 msgstr "_Zrušit"
 
-#: ../src/baobab-window.vala:228
+#: ../src/baobab-window.vala:230
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: ../src/baobab-window.vala:275
+#: ../src/baobab-window.vala:277
 msgid "Could not analyze volume."
 msgstr "Nelze analyzovat svazek."
 
-#: ../src/baobab-window.vala:326
+#: ../src/baobab-window.vala:309
+msgid "Failed to show help"
+msgstr "Selhalo zobrazení nápovědy"
+
+#: ../src/baobab-window.vala:328
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:331
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj pro analýzu využití disku."
 
-#: ../src/baobab-window.vala:334
+#: ../src/baobab-window.vala:336
 msgid "translator-credits"
 msgstr ""
 "David Šauer <davids@penguin.cz>\n"
@@ -244,21 +216,29 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/baobab-window.vala:509
+#: ../src/baobab-window.vala:419
+msgid "Failed to open file"
+msgstr "Selhalo otevření souboru"
+
+#: ../src/baobab-window.vala:447
+msgid "Failed to move file to the trash"
+msgstr "Selhal přesun souboru do koše"
+
+#: ../src/baobab-window.vala:511
 msgid "Devices and locations"
 msgstr "Zařízení a umístění"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:567
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Nelze analyzovat složku „%s“ nebo některé v ní obsažené složky."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:597 ../src/baobab-window.vala:603
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ není platná složka"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
 msgid "Could not analyze disk usage."
 msgstr "Nelze analyzovat využití disku."
