@@ -20,16 +20,6 @@
 
 namespace Baobab {
 
-    public class CellRendererPercent : Gtk.CellRendererText {
-        public Scanner.State state { set; get; }
-
-        public double percent {
-            set {
-                text = (state != Scanner.State.ERROR ? "%.1f %%".printf (value) : "");
-            }
-        }
-    }
-
     public class CellRendererName : Gtk.CellRendererText {
         public Scanner.State state { set; get; }
 

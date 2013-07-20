@@ -258,22 +258,6 @@
                             <property name="reorderable">True</property>
                             <property name="sort_column_id">0</property>
                             <child>
-                              <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
-                              <attributes>
-                                <attribute name="name">0</attribute>
-                                <attribute name="state">6</attribute>
-                              </attributes>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkTreeViewColumn" id="usage_column">
-                            <property name="resizable">True</property>
-                            <property name="sizing">grow-only</property>
-                            <property name="title" translatable="yes">Usage</property>
-                            <property name="reorderable">True</property>
-                            <property name="sort_column_id">2</property>
-                            <child>
                               <object class="BaobabCellRendererProgress" id="usage_column_bar_renderer">
                                 <property name="xpad">4</property>
                                 <property name="ypad">4</property>
@@ -284,11 +268,9 @@
                               </attributes>
                             </child>
                             <child>
-                              <object class="BaobabCellRendererPercent" id="usage_column_percent_renderer">
-                                <property name="xalign">1.0</property>
-                              </object>
+                              <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
                               <attributes>
-                                <attribute name="percent">2</attribute>
+                                <attribute name="name">0</attribute>
                                 <attribute name="state">6</attribute>
                               </attributes>
                             </child>
