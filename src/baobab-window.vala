@@ -398,9 +398,11 @@ namespace Baobab {
                 var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, 0, null);
                 var content = info.get_content_type ();
                 var appinfo = AppInfo.get_default_for_type (content, true);
+                var context = get_display ().get_app_launch_context ();
+                context.set_timestamp (Gtk.get_current_event_time ());
                 var files = new List<File>();
                 files.append (file);
-                appinfo.launch(files, null);
+                appinfo.launch(files, context);
             } catch (Error e) {
                 message (_("Failed to open file"), e.message, Gtk.MessageType.ERROR);
             }
