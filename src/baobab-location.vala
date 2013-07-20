@@ -120,7 +120,7 @@ namespace Baobab {
             }
 
             if (name == null) {
-                name = _("Main volume");
+                name = _("Computer");
             }
 
             file = File.new_for_path ("/");
