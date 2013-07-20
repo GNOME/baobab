@@ -35,15 +35,16 @@ namespace Baobab {
 
         public string name {
             set {
+                var escaped = Markup.escape_text (value);
                 switch (state) {
                 case Scanner.State.ERROR:
-                    markup = "<b>%s</b>".printf (value);
+                    markup = "<b>%s</b>".printf (escaped);
                     break;
                 case Scanner.State.CHILD_ERROR:
-                    markup = "<b>%s</b>".printf (value);
+                    markup = "<b>%s</b>".printf (escaped);
                     break;
                 default:
-                    markup = value;
+                    markup = escaped;
                     break;
                 }
             }
