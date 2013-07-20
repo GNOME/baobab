@@ -388,6 +388,42 @@ namespace Baobab {
             return true;
         }
 
+        public void open_item (Gtk.TreeIter iter) {
+            string parse_name;
+            active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+            var file = File.parse_name (parse_name);
+            try {
+                var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, 0, null);
+                var content = info.get_content_type ();
+                var appinfo = AppInfo.get_default_for_type (content, true);
+                var files = new List<File>();
+                files.append (file);
+                appinfo.launch(files, null);
+            } catch (Error e) {
+                message (_("Failed to open file"), e.message, Gtk.MessageType.ERROR);
+            }
+        }
+
+        public void copy_path (Gtk.TreeIter iter) {
+            string parse_name;
+            active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+            var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
+            clipboard.set_text (parse_name, -1);
+            clipboard.store ();
+        }
+
+        public void trash_file (Gtk.TreeIter iter) {
+            string parse_name;
+            active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+            var file = File.parse_name (parse_name);
+            try {
+                file.trash ();
+                active_location.scanner.remove (ref iter);
+            } catch (Error e) {
+                message (_("Failed to move file to the trash"), e.message, Gtk.MessageType.ERROR);
+            }
+        }
+
         void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
                 if (((Gdk.Event) (&event)).triggers_context_menu ()) {
@@ -405,19 +441,7 @@ namespace Baobab {
                 var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
-                    string parse_name;
-                    active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
-                    var file = File.parse_name (parse_name);
-                    try {
-                        var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, 0, null);
-                        var content = info.get_content_type ();
-                        var appinfo = AppInfo.get_default_for_type (content, true);
-                        var files = new List<File>();
-                        files.append (file);
-                        appinfo.launch(files, null);
-                    } catch (Error e) {
-                        message (_("Failed to open file"), e.message, Gtk.MessageType.ERROR);
-                    }
+                    open_item (iter);
                 }
             });
 
@@ -425,11 +449,7 @@ namespace Baobab {
                 var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
-                    string parse_name;
-                    active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
-                    var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
-                    clipboard.set_text (parse_name, -1);
-                    clipboard.store ();
+                    copy_path (iter);
                 }
             });
 
@@ -437,15 +457,7 @@ namespace Baobab {
                 var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
                 if (selection.get_selected (null, out iter)) {
-                    string parse_name;
-                    active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
-                    var file = File.parse_name (parse_name);
-                    try {
-                        file.trash ();
-                        active_location.scanner.remove (ref iter);
-                    } catch (Error e) {
-                        message (_("Failed to move file to the trash"), e.message, Gtk.MessageType.ERROR);
-                    }
+                    trash_file (iter);
                 }
             });
 

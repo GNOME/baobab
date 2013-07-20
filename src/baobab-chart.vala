@@ -205,6 +205,9 @@ namespace Baobab {
         SimpleActionGroup action_group;
 
         const ActionEntry[] action_entries = {
+            { "open-file", open_file },
+            { "copy-path", copy_path },
+            { "trash-file", trash_file },
             { "move-up", move_up_root },
             { "zoom-in", zoom_in },
             { "zoom-out", zoom_out }
@@ -279,7 +282,9 @@ namespace Baobab {
         }
 
         public override bool leave_notify_event (Gdk.EventCrossing event) {
-            highlighted_item = null;
+            if (!context_menu.visible) {
+                highlighted_item = null;
+            }
 
             return false;
         }
@@ -554,6 +559,18 @@ namespace Baobab {
             return false;
         }
 
+        public void open_file () {
+            (get_toplevel () as Window).open_item (highlighted_item.iter);
+        }
+
+        public void copy_path () {
+            (get_toplevel () as Window).copy_path (highlighted_item.iter);
+        }
+
+        public void trash_file () {
+            (get_toplevel () as Window).trash_file (highlighted_item.iter);
+        }
+
         public void move_up_root () {
             Gtk.TreeIter iter, parent_iter;
 
@@ -595,6 +612,14 @@ namespace Baobab {
 
         void show_popup_menu (Gdk.EventButton? event) {
             ensure_context_menu ();
+
+            var enable = highlighted_item != null;
+            var action = action_group.lookup_action ("open-file") as SimpleAction;
+            action.set_enabled (enable);
+            action = action_group.lookup_action ("copy-path") as SimpleAction;
+            action.set_enabled (enable);
+            action = action_group.lookup_action ("trash-file") as SimpleAction;
+            action.set_enabled (enable);
 
             if (event != null) {
                 context_menu.popup (null, null, null, event.button, event.time);

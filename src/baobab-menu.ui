@@ -24,6 +24,20 @@
   <menu id="chartmenu">
     <section>
       <item>
+        <attribute name="label" translatable="yes">_Open Folder</attribute>
+        <attribute name="action">chart.open-file</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Copy Path to Clipboard</attribute>
+        <attribute name="action">chart.copy-path</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Mo_ve to Trash</attribute>
+        <attribute name="action">chart.trash-file</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
         <attribute name="label" translatable="yes">_Move to parent folder</attribute>
         <attribute name="action">chart.move-up</attribute>
       </item>
