@@ -217,6 +217,8 @@ namespace Baobab {
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
             insert_action_group ("chart", action_group);
+
+            build_context_menu ();
         }
 
         public override void realize () {
@@ -593,7 +595,7 @@ namespace Baobab {
             }
         }
 
-        void ensure_context_menu () {
+        void build_context_menu () {
             if (context_menu != null) {
                 return;
             }
@@ -611,8 +613,6 @@ namespace Baobab {
         }
 
         void show_popup_menu (Gdk.EventButton? event) {
-            ensure_context_menu ();
-
             var enable = highlighted_item != null;
             var action = action_group.lookup_action ("open-file") as SimpleAction;
             action.set_enabled (enable);
