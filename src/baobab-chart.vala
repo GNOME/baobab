@@ -260,6 +260,15 @@ namespace Baobab {
             }
         }
 
+        public void set_highlighted (Gtk.TreeIter iter) {
+            foreach (var item in items) {
+                if (item.iter == iter) {
+                    highlighted_item = item;
+                    break;
+                }
+            }
+        }
+
         public override bool motion_notify_event (Gdk.EventMotion event) {
             bool found = false;
 
