@@ -266,14 +266,14 @@
                               </object>
                               <attributes>
                                 <attribute name="value">2</attribute>
-                                <attribute name="state">6</attribute>
+                                <attribute name="state">7</attribute>
                               </attributes>
                             </child>
                             <child>
                               <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
                               <attributes>
                                 <attribute name="name">0</attribute>
-                                <attribute name="state">6</attribute>
+                                <attribute name="state">7</attribute>
                               </attributes>
                             </child>
                           </object>
@@ -293,7 +293,7 @@
                               <attributes>
                                 <attribute name="size">3</attribute>
                                 <attribute name="alloc-size">4</attribute>
-                                <attribute name="state">6</attribute>
+                                <attribute name="state">7</attribute>
                               </attributes>
                             </child>
                           </object>
@@ -304,14 +304,31 @@
                             <property name="sizing">grow-only</property>
                             <property name="title" translatable="yes">Contents</property>
                             <property name="reorderable">True</property>
-                            <property name="sort_column_id">5</property>
+                            <property name="sort_column_id">6</property>
                             <child>
                               <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
                                 <property name="xalign">1.0</property>
                               </object>
                               <attributes>
-                                <attribute name="items">5</attribute>
-                                <attribute name="state">6</attribute>
+                                <attribute name="items">6</attribute>
+                                <attribute name="state">7</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkTreeViewColumn" id="time_modified_column">
+                            <property name="resizable">True</property>
+                            <property name="sizing">grow-only</property>
+                            <property name="title" translatable="yes">Modified</property>
+                            <property name="reorderable">True</property>
+                            <property name="sort_column_id">5</property>
+                            <child>
+                              <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
+                                <property name="xalign">1.0</property>
+                              </object>
+                              <attributes>
+                                <attribute name="time">5</attribute>
                               </attributes>
                             </child>
                           </object>

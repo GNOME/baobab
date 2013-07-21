@@ -35,6 +35,7 @@ namespace Baobab {
             PERCENT,
             SIZE,
             ALLOC_SIZE,
+            TIME_MODIFIED,
             ELEMENTS,
             STATE,
             ERROR,
@@ -64,6 +65,7 @@ namespace Baobab {
             FileAttribute.STANDARD_TYPE + "," +
             FileAttribute.STANDARD_SIZE +  "," +
             FileAttribute.STANDARD_ALLOCATED_SIZE + "," +
+            FileAttribute.TIME_MODIFIED + "," +
             FileAttribute.UNIX_NLINK + "," +
             FileAttribute.UNIX_INODE + "," +
             FileAttribute.UNIX_DEVICE + "," +
@@ -145,6 +147,7 @@ namespace Baobab {
             // read from the main thread only after dispatch
             internal uint64 size;
             internal uint64 alloc_size;
+            internal uint64 time_modified;
             internal int elements;
             internal double percent;
             internal int max_depth;
@@ -167,6 +170,8 @@ namespace Baobab {
             results.display_name = info.get_display_name ();
             results.parse_name = directory.get_parse_name ();
             results.parent = parent;
+
+            results.time_modified = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
 
             results.size = info.get_size ();
             if (info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
@@ -194,6 +199,10 @@ namespace Baobab {
                                     results.child_error = true;
                                 }
 
+                                if (results.time_modified < child_results.time_modified) {
+                                    results.time_modified = child_results.time_modified;
+                                }
+
                                 results_array.results += (owned) child_results;
                             }
                             break;
@@ -217,6 +226,11 @@ namespace Baobab {
                                 results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
                             }
                             results.elements++;
+
+                            var child_time = child_info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+                            if (results.time_modified < child_time) {
+                                results.time_modified = child_time;
+                            }
                             break;
 
                         default:
@@ -274,7 +288,8 @@ namespace Baobab {
             set (results.iter,
                  Columns.STATE,        State.SCANNING,
                  Columns.DISPLAY_NAME, results.display_name,
-                 Columns.PARSE_NAME,   results.parse_name);
+                 Columns.PARSE_NAME,   results.parse_name,
+                 Columns.TIME_MODIFIED,results.time_modified);
             results.iter_is_set = true;
         }
 
@@ -402,6 +417,7 @@ namespace Baobab {
                 typeof (double),  // PERCENT
                 typeof (uint64),  // SIZE
                 typeof (uint64),  // ALLOC_SIZE
+                typeof (uint64),  // TIME_MODIFIED
                 typeof (int),     // ELEMENTS
                 typeof (State),   // STATE
                 typeof (Error)    // ERROR (if STATE is ERROR)

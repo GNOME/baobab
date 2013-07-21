@@ -93,6 +93,33 @@ namespace Baobab {
         }
     }
 
+    public class CellRendererTime : Gtk.CellRendererText {
+        public uint64 time {
+            set {
+                if (value == 0) {
+                    text = _("Unknown");
+                    return;
+                }
+
+                var dt = new DateTime.from_unix_local ((int64)value);
+                var now = new DateTime.now_local ();
+                var ts = now.difference (dt);
+                if (ts < TimeSpan.DAY) {
+                    text = _("Today");
+                } else if (ts < 31 * TimeSpan.DAY) {
+                    var days = (ulong) (ts / TimeSpan.DAY);
+                    text = ngettext ("%d day", "%d days", days).printf (days);
+                } else if (ts < 365 * TimeSpan.DAY) {
+                    var months = (ulong) (ts / (31 * TimeSpan.DAY));
+                    text = ngettext ("%d month", "%d months", months).printf (months);
+                } else {
+                    var years = (ulong) (ts / (365 * TimeSpan.DAY));
+                    text = ngettext ("%d year", "%d years", years).printf (years);
+                }
+            }
+        }
+    }
+
     public class CellRendererProgress : Gtk.CellRendererProgress {
         public Scanner.State state { set; get; }
 
