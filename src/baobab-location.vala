@@ -88,7 +88,7 @@ namespace Baobab {
 
             make_this_home_location ();
 
-            scanner = new Scanner (file, ScanFlags.NONE);
+            scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
         public static Location get_home_location () {
