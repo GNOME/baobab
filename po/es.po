@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-03 21:05+0000\n"
-"PO-Revision-Date: 2013-07-08 11:01+0200\n"
+"POT-Creation-Date: 2013-07-21 09:34+0000\n"
+"PO-Revision-Date: 2013-07-22 12:51+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -76,11 +76,11 @@ msgstr "El GdkWindowState de la ventana"
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
-#: ../src/baobab-application.vala:107
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Analizador de uso de disco"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -103,15 +103,15 @@ msgstr "Analizar carpeta…"
 msgid "Scan Remote Folder…"
 msgstr "Analizar carpeta remota…"
 
-#: ../src/baobab-main-window.ui.h:3
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Abrir carpeta"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar la ruta al portapapeles"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver a la papelera"
 
@@ -124,22 +124,18 @@ msgid "Folder"
 msgstr "Carpeta"
 
 #: ../src/baobab-main-window.ui.h:9
-msgid "Usage"
-msgstr "Uso"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
 msgstr "Contenido"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:11
 msgid "Rings Chart"
 msgstr "Gráfico de anillos"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:12
 msgid "Treemap Chart"
 msgstr "Gráfico de árbol"
 
@@ -155,76 +151,47 @@ msgstr "A_cerca de"
 msgid "_Quit"
 msgstr "_Salir"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analizador"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Analizar carpeta personal"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Analizar _carpeta…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Analizar carpeta _remota…"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Ver"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Recargar"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Expandir todo"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Contraer todo"
-
-#: ../src/baobab-menu.ui.h:12
 msgid "_Move to parent folder"
 msgstr "_Mover a la carpeta padre"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
 msgstr "Ampliar"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:9
 msgid "Zoom _out"
 msgstr "Reducir"
 
-#: ../src/baobab-window.vala:225
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Seleccione la carpeta"
 
-#: ../src/baobab-window.vala:227
-#| msgid "Cancel"
+#: ../src/baobab-window.vala:231
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:228
+#: ../src/baobab-window.vala:232
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../src/baobab-window.vala:275
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "No se pudo analizar el volumen."
 
-#: ../src/baobab-window.vala:326
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Falló al mostrar la ayuda"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una herramienta gráfica para analizar el uso del disco."
 
-#: ../src/baobab-window.vala:334
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012\n"
@@ -237,24 +204,60 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: ../src/baobab-window.vala:509
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Falló al abrir el archivo"
+
+#: ../src/baobab-window.vala:427
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "Falló al mover el archivo a la papelera"
+
+#: ../src/baobab-window.vala:527
 msgid "Devices and locations"
 msgstr "Dispositivos y ubicaciones"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "No se pudo analizar la carpeta «%s» o alguna de sus subcarpetas."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:614 ../src/baobab-window.vala:620
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:615 ../src/baobab-window.vala:621
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analizar el uso del disco."
+
+#~ msgid "Usage"
+#~ msgstr "Uso"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Analizador"
+
+#~ msgid "_Scan Home"
+#~ msgstr "_Analizar carpeta personal"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "Analizar _carpeta…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "Analizar carpeta _remota…"
+
+#~ msgid "_View"
+#~ msgstr "_Ver"
+
+#~ msgid "_Reload"
+#~ msgstr "_Recargar"
+
+#~ msgid "_Expand All"
+#~ msgstr "_Expandir todo"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_Contraer todo"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidad máxima"
@@ -545,9 +548,6 @@ msgstr "No se pudo analizar el uso del disco."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "No se ha podido mover «%s» a la papelera"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "No se pudo mover el archivo a la papelera"
 
 #~ msgid "Details: %s"
 #~ msgstr "Detalles: %s"
