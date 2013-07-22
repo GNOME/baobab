@@ -566,8 +566,6 @@ namespace Baobab {
         }
 
         void set_chart_model (Gtk.TreeModel model, bool show_allocated_size) {
-            model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
-            model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
             treemap_chart.set_model_with_columns (model,
                                                   Scanner.Columns.DISPLAY_NAME,
                                                   show_allocated_size ? Scanner.Columns.ALLOC_SIZE : Scanner.Columns.SIZE,

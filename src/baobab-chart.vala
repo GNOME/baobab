@@ -52,7 +52,6 @@ namespace Baobab {
     public abstract class Chart : Gtk.Widget {
 
         protected const uint MAX_DEPTH = 5;
-        protected const uint MIN_DEPTH = 1;
 
         const Gdk.RGBA TANGO_COLORS[] = {{0.94, 0.16, 0.16, 1.0}, /* tango: ef2929 */
                                          {0.68, 0.49, 0.66, 1.0}, /* tango: ad7fa8 */
@@ -72,22 +71,6 @@ namespace Baobab {
         Gtk.Menu context_menu = null;
 
         List<ChartItem> items;
-
-        uint max_depth_ = MAX_DEPTH;
-        public uint max_depth {
-            set {
-                var m = value.clamp (MIN_DEPTH, MAX_DEPTH);
-                if (max_depth_ == m) {
-                    return;
-                }
-                max_depth_ = m;
-                model_changed = true;
-                queue_draw ();
-            }
-            get {
-                return max_depth_;
-            }
-        }
 
         Gtk.TreeModel model_;
         public Gtk.TreeModel model {
@@ -197,9 +180,6 @@ namespace Baobab {
 
         protected abstract void get_item_rectangle (ChartItem item);
 
-        protected abstract bool can_zoom_in ();
-        protected abstract bool can_zoom_out ();
-
         protected abstract ChartItem create_new_chartitem ();
 
         SimpleActionGroup action_group;
@@ -209,8 +189,6 @@ namespace Baobab {
             { "copy-path", copy_path },
             { "trash-file", trash_file },
             { "move-up", move_up_root },
-            { "zoom-in", zoom_in },
-            { "zoom-out", zoom_out }
         };
 
         construct {
@@ -357,7 +335,7 @@ namespace Baobab {
                     continue;
                 }
 
-                if ((item.has_any_child) && (item.depth < max_depth + 1)) {
+                if ((item.has_any_child) && (item.depth < MAX_DEPTH + 1)) {
                     rel_start = 0;
                     do {
                         model.get (child_iter, percentage_column, out size, -1);
@@ -384,7 +362,7 @@ namespace Baobab {
                 if (Gdk.cairo_get_clip_rectangle (cr, out clip) &&
                     item.visible &&
                     clip.intersect (item.rect, null) &&
-                    (item.depth <= max_depth)) {
+                    (item.depth <= MAX_DEPTH)) {
                     bool highlighted = (item == highlighted_item);
                     draw_item (cr, item, highlighted);
                 }
@@ -403,7 +381,7 @@ namespace Baobab {
             var root_depth = root.get_depth ();
             var node_depth = path.get_depth ();
 
-            if (((node_depth - root_depth) <= max_depth) &&
+            if (((node_depth - root_depth) <= MAX_DEPTH) &&
                 (root.is_ancestor (path) ||
                  root.compare (path) == 0)) {
                 queue_draw ();
@@ -550,26 +528,6 @@ namespace Baobab {
             return false;
         }
 
-        protected override bool scroll_event (Gdk.EventScroll event) {
-            Gdk.EventMotion *e = (Gdk.EventMotion *) (&event);
-            switch (event.direction) {
-            case Gdk.ScrollDirection.LEFT:
-            case Gdk.ScrollDirection.UP:
-                zoom_out ();
-                motion_notify_event (*e);
-                break;
-            case Gdk.ScrollDirection.RIGHT:
-            case Gdk.ScrollDirection.DOWN:
-                zoom_in ();
-                motion_notify_event (*e);
-                break;
-            case Gdk.ScrollDirection.SMOOTH:
-                break;
-            }
-
-            return false;
-        }
-
         public void open_file () {
             (get_toplevel () as Window).open_item (highlighted_item.iter);
         }
@@ -589,18 +547,6 @@ namespace Baobab {
             if (model.iter_parent (out parent_iter, iter)) {
                 root = model.get_path (parent_iter);
                 item_activated (parent_iter);
-            }
-        }
-
-        public void zoom_in () {
-            if (can_zoom_in ()) {
-                max_depth--;
-            }
-       }
-
-        public void zoom_out () {
-            if (can_zoom_out ()) {
-                max_depth++;
             }
         }
 

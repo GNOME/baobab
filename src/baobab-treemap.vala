@@ -161,7 +161,7 @@ namespace Baobab {
 
             get_item_rectangle (item);
 
-            if (item.depth == max_depth + 1) {
+            if (item.depth == MAX_DEPTH + 1) {
                 more_visible_children = true;
             } else {
                 max_visible_depth = uint.max (max_visible_depth, item.depth);
@@ -187,14 +187,6 @@ namespace Baobab {
             var rect = item.rect;
             return ((x >= rect.x) && (x <= (rect.x + rect.width)) &&
                     (y >= rect.y) && (y <= (rect.y + rect.height)));
-        }
-
-        protected override bool can_zoom_out () {
-            return more_visible_children;
-        }
-
-        protected override bool can_zoom_in () {
-            return (max_visible_depth > 1);
         }
     }
 }

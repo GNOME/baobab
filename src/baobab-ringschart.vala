@@ -78,7 +78,6 @@ namespace Baobab {
         }
 
         construct {
-            notify["max-depth"].connect (subtips_update);
             notify["highlighted-item"].connect (subtips_update);
             notify["root"].connect (subtips_update);
         }
@@ -298,7 +297,7 @@ namespace Baobab {
 
             var padding = get_style_context ().get_padding (Gtk.StateFlags.NORMAL);
             var max_radius = int.min (allocation.width / 2, allocation.height / 2) - padding.left; // Assuming that padding is the same for all sides
-            var thickness = max_radius / (max_depth + 1);
+            var thickness = max_radius / (MAX_DEPTH + 1);
 
             if (ringsitem.parent == null) {
                 ringsitem.min_radius = 0;
@@ -308,7 +307,7 @@ namespace Baobab {
             } else {
                 var parent = item.parent.data as RingschartItem;
                 ringsitem.min_radius = ringsitem.depth * thickness;
-                if (ringsitem.depth > max_depth) {
+                if (ringsitem.depth > MAX_DEPTH) {
                     return;
                 } else {
                     ringsitem.max_radius = ringsitem.min_radius + thickness;
@@ -320,7 +319,7 @@ namespace Baobab {
                 }
 
                 ringsitem.start_angle = parent.start_angle + parent.angle * ringsitem.rel_start / 100;
-                ringsitem.continued = (ringsitem.has_any_child) && (ringsitem.depth == max_depth);
+                ringsitem.continued = (ringsitem.has_any_child) && (ringsitem.depth == MAX_DEPTH);
                 parent.has_visible_children = true;
             }
 
@@ -402,14 +401,6 @@ namespace Baobab {
                     (radius <= ringsitem.max_radius) &&
                     (angle >= ringsitem.start_angle) &&
                     (angle <= (ringsitem.start_angle + ringsitem.angle)));
-        }
-
-        protected override bool can_zoom_out () {
-            return (max_depth < MAX_DEPTH);
-        }
-
-        protected override bool can_zoom_in () {
-            return (max_depth > MIN_DEPTH);
         }
     }
 }
