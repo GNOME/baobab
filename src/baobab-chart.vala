@@ -264,23 +264,21 @@ namespace Baobab {
             }
         }
 
-        public override bool motion_notify_event (Gdk.EventMotion event) {
-            bool found = false;
-
+        bool highlight_item_at_point (double x, double y) {
             for (unowned List<ChartItem> node = items.last (); node != null; node = node.prev) {
                 var item = node.data;
-                if (item.visible && is_point_over_item (item, event.x, event.y)) {
+                if (item.visible && is_point_over_item (item, x, y)) {
                     highlighted_item = item;
-                    has_tooltip = true;
-                    found = true;
-                    break;
+                    return true;
                 }
             }
 
-            if (!found) {
-                highlighted_item = null;
-                has_tooltip = false;
-            }
+            highlighted_item = null;
+            return false;
+        }
+
+        public override bool motion_notify_event (Gdk.EventMotion event) {
+            has_tooltip = highlight_item_at_point (event.x, event.y);
 
             Gdk.Event.request_motions (event);
 
@@ -524,8 +522,8 @@ namespace Baobab {
                 }
 
                 switch (event.button) {
-                case 1:
-                    if (highlighted_item != null) {
+                case Gdk.BUTTON_PRIMARY:
+                    if (highlight_item_at_point (event.x, event.y)) {
                         var path = model.get_path (highlighted_item.iter);
                         if (root.compare (path) == 0) {
                             move_up_root ();
@@ -534,7 +532,7 @@ namespace Baobab {
                         }
                     }
                     break;
-                case 2:
+                case Gdk.BUTTON_MIDDLE:
                     move_up_root ();
                     break;
                 }
