@@ -136,6 +136,10 @@ namespace Baobab {
         Gtk.TreeRowReference? root_;
         public Gtk.TreePath? root {
             set {
+                if (model == null) {
+                    return;
+                }
+
                 if (root_ != null) {
                     var current_root = root_.get_path ();
                     if (current_root != null && value != null && current_root.compare (value) == 0) {
