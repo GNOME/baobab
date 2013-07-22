@@ -10,8 +10,6 @@ AC_CONFIG_HEADERS(config.h)
 AC_CONFIG_SRCDIR(src/main.vala)
 AC_CONFIG_MACRO_DIR([m4])
 
-AC_CANONICAL_TARGET
-
 AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip -Wno-portability])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
@@ -48,8 +46,6 @@ PKG_CHECK_MODULES(BAOBAB, [
     glib-2.0 >= 2.32.0
     gio-2.0 >= 2.30.0
 ])
-
-LT_INIT([disable-static])
 
 AC_CONFIG_FILES([
 Makefile
