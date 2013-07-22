@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-03 21:05+0000\n"
-"PO-Revision-Date: 2013-07-18 16:40+0500\n"
+"POT-Creation-Date: 2013-07-21 09:34+0000\n"
+"PO-Revision-Date: 2013-07-22 17:15+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
 "Language: Tajik\n"
@@ -67,11 +67,11 @@ msgstr "Вазъияти GdkWindowState-и равзана"
 msgid "Print version information and exit"
 msgstr "Иттилооти версияро намоиш диҳед ва бароед"
 
-#: ../src/baobab-application.vala:107
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Таҳлилгари истифодаи диск"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -94,15 +94,15 @@ msgstr "Скан кардани ҷузвдон…"
 msgid "Scan Remote Folder…"
 msgstr "Скан кардани ҷузвдони дурдаст…"
 
-#: ../src/baobab-main-window.ui.h:3
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Кушодани ҷузвдон"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Нусха бардоштани масир ба ҳофизаи муваққатӣ"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "_Интиқол додан ба сабад"
 
@@ -115,22 +115,18 @@ msgid "Folder"
 msgstr "Ҷузвдон"
 
 #: ../src/baobab-main-window.ui.h:9
-msgid "Usage"
-msgstr "Истифодабарӣ"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Андоза"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
 msgstr "Мундариҷа"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:11
 msgid "Rings Chart"
 msgstr "Диаграммаи ҳалқавӣ"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:12
 msgid "Treemap Chart"
 msgstr "Диаграммаи шохдор"
 
@@ -146,96 +142,103 @@ msgstr "_Дар бораи"
 msgid "_Quit"
 msgstr "_Баромад"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Таҳлилгар"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Скан кардани ҷузвдони асосӣ…"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "_Скан кардани ҷузвдон…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "_Скан кардани ҷузвдони дурдаст…"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Намоиш"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Аз нав бор кардан"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Ҳамаро паҳн кардан"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Ҳамаро печондан"
-
-#: ../src/baobab-menu.ui.h:12
 msgid "_Move to parent folder"
 msgstr "_Интиқол додан ба ҷузвдони асосӣ"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
 msgstr "Бузург _кардани андоза"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:9
 msgid "Zoom _out"
 msgstr "Хурд _кардани андоза"
 
-#: ../src/baobab-window.vala:225
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Интихоб кардани ҷузвдон"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Cancel"
 msgstr "_Бекор кардан"
 
-#: ../src/baobab-window.vala:228
+#: ../src/baobab-window.vala:232
 msgid "_Open"
 msgstr "_Кушодан"
 
-#: ../src/baobab-window.vala:275
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Иттилооти ҳаҷм таҳлил карда нашуд."
 
-#: ../src/baobab-window.vala:326
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Намоиши кӯмак қатъ шудааст"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Абзори графикӣ барои таҳлили истифодаи диск."
 
-#: ../src/baobab-window.vala:334
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr "Victor Ibragimov"
 
-#: ../src/baobab-window.vala:509
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Кушодани файл қатъ шудааст"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Интиқоли файл ба сабад қатъ шудааст"
+
+#: ../src/baobab-window.vala:527
 msgid "Devices and locations"
 msgstr "Дастгоҳҳо ва ҷойгиршавиҳо"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Ҷузвдони \"%s\" ё баъзе аз зерҷузвдонҳои он сакан карда нашуданд."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:614 ../src/baobab-window.vala:620
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ҷузвдони беэътибор аст"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:615 ../src/baobab-window.vala:621
 msgid "Could not analyze disk usage."
 msgstr "Иттилооти истифодабарии диск таҳлил карда нашуд."
+
+#~ msgid "Usage"
+#~ msgstr "Истифодабарӣ"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Таҳлилгар"
+
+#~ msgid "_Scan Home"
+#~ msgstr "_Скан кардани ҷузвдони асосӣ…"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "_Скан кардани ҷузвдон…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "_Скан кардани ҷузвдони дурдаст…"
+
+#~ msgid "_View"
+#~ msgstr "_Намоиш"
+
+#~ msgid "_Reload"
+#~ msgstr "_Аз нав бор кардан"
+
+#~ msgid "_Expand All"
+#~ msgstr "_Ҳамаро паҳн кардан"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_Ҳамаро печондан"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Қаъри ҳадди аксар"
