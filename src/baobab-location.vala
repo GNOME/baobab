@@ -145,7 +145,7 @@ namespace Baobab {
             scanner = new Scanner (file, ScanFlags.NONE);
         }
 
-        public Location.for_file (File file_) {
+        public Location.for_file (File file_, ScanFlags flags) {
             is_volume = false;
             file = file_;
             get_file_info ();
@@ -160,7 +160,7 @@ namespace Baobab {
 
             get_fs_usage ();
 
-            scanner = new Scanner (file, ScanFlags.NONE);
+            scanner = new Scanner (file, flags);
         }
 
         public void update () {

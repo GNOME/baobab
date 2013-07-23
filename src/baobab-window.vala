@@ -231,11 +231,16 @@ namespace Baobab {
                                                           _("_Cancel"), Gtk.ResponseType.CANCEL,
                                                           _("_Open"), Gtk.ResponseType.ACCEPT);
 
-            file_chooser.set_modal (true);
+            file_chooser.create_folders = false;
+            file_chooser.modal = true;
+
+            var check_button = new Gtk.CheckButton.with_label (_("Recursively analyze mount points"));
+            file_chooser.extra_widget = check_button;
 
             file_chooser.response.connect ((response) => {
                 if (response == Gtk.ResponseType.ACCEPT) {
-                    scan_directory (file_chooser.get_file ());
+                    var flags = check_button.active ? ScanFlags.NONE : ScanFlags.EXCLUDE_MOUNTS;
+                    scan_directory (file_chooser.get_file (), flags);
                 }
                 file_chooser.destroy ();
             });
@@ -607,8 +612,8 @@ namespace Baobab {
             expand_first_row ();
         }
 
-        public void scan_directory (File directory) {
-            var location = new Location.for_file (directory);
+        public void scan_directory (File directory, ScanFlags flags=ScanFlags.NONE) {
+            var location = new Location.for_file (directory, flags);
 
             if (location.info == null) {
                 var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
