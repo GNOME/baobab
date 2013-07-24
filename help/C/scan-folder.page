@@ -4,9 +4,10 @@
       id="scan-folder">
 
   <info>
+    <link type="guide" xref="index#scan"/>
     <revision version="0.1" date="2011-12-19" status="stub"/>
     <revision pkgversion="3.4" date="2012-02-20" status="review"/>
-    <link type="guide" xref="index#scan"/>
+    <revision pkgversion="3.8" date="2013-07-20" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -33,33 +34,21 @@
 
   <steps>
     <item>
-      <p>Select <guiseq><gui>Analyzer</gui><gui>Scan Folder…</gui></guiseq>
-      from the menu</p>
+      <p>Press the button in the top-right of the main window and select
+      <gui style="menuitem">Scan Folder…</gui>.</p>
     </item>
     <item>
-      <p>Use the file browser to navigate around your file system and select
-      the desired folder</p>
+      <p>A file chooser dialog will open. Choose the folder which you want to
+      scan.</p>
     </item>
     <item>
-      <p>Click <gui>Open</gui> to commence scanning</p>
+      <p>Click <gui>Open</gui> to start the scan.</p>
     </item>
   </steps>
 
-  <note style="tip">
-    <p>Select <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> to cancel the
-    current scan, or <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq> to
-    repeat the last scan.</p>
-  </note>
-
-  <p>The results may be useful in deciding which folders can be
-  <link href="help:file-roller">archived</link>,
-  <link href="help:gnome-help/files-delete">deleted</link> or
-  <link href="help:gnome-help/files-copy">moved</link> to free up space. You can
-  also use the results to estimate how much space would be needed for a
-  <link href="help:gnome-help/backup-how">backup</link> of specific folders.</p>
-
-  <p>Right-click on any folder and select <gui>Open Folder</gui> to launch the
-  <app>Files</app> application, or <gui>Move to Trash</gui> to move your folder
-  to <file>Trash</file>.</p>
+  <p>The folder which you just scanned will now be added to your list of
+  <gui>Devices and locations</gui>. If the folder is renamed or deleted, it
+  will be removed from the list when you next restart <app>Disk Useagge
+  Analyzer</app>.</p>
 
 </page>

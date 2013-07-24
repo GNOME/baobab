@@ -4,9 +4,10 @@
       id="scan-remote">
 
   <info>
+    <link type="guide" xref="index#scan"/>
     <revision version="0.1" date="2011-12-19" status="stub"/>
     <revision pkgversion="3.4" date="2012-02-20" status="review"/>
-    <link type="guide" xref="index#scan" group="#last"/>
+    <revision pkgversion="3.10" date="2013-07-20" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -33,60 +34,17 @@
 
   <steps>
     <item>
-      <p>Select <guiseq><gui>Analyzer</gui>
-      <gui>Scan Remote Folder…</gui></guiseq> from the menu</p>
+      <p>Press the button in the top-right of the main window and select
+      <gui style="menuitem">Scan Remote Folder…</gui>.</p>
     </item>
     <item>
-      <p>Choose the protocol that you wish to use</p>
-<!--      <p>Choose one of following protocols, depends of what you want to do:</p>
-      <terms>
-        <item>
-          <title><link xref="ssh">SSH</link></title>
-	  <p>Secure Shell offers you a secure connection because you need to
-	  login with a username and password.</p>
-        </item>
-        <item>
-          <title><link xref="ftp">FTP (with login)</link></title>
-	  <p>File Transfer Protocol with login is reliable because a user
-	  account is required.</p>
-        </item>
-        <item>
-          <title><link xref="windows-share">Windows Share</link></title>
-          <p>Scan between Windows and Linux machines.</p>
-        </item>
-        <item>
-          <title><link xref="web-dav">WebDAV (HTTP)</link></title>
-	  <p>Web-based Distributed Authoring and Versioning methods of
-	  Hypertext Transfer Protocol HTTP scan folders that are stored on
-	  World Wide Web servers.</p>
-        </item>
-        <item>
-          <title><link xref="web-dav">Secure WebDAV (HTTPS)</link></title>
-	  <p>Secure WebDAV,ensures encryption while you are transfering
-	  data.</p>
-        </item>
-
-  <comment>
-    <cite date="2011-12-28" href="mailto:mdhillca@gmail.com">Michael Hill</cite>
-    <p>Custom Location needs a better explanation.</p>
-  </comment>
-        <item>
-          <title><link xref="custom-location">Custom Location</link></title>
-	  <p>Custom Location enables you to access a particular function from
-	  the folder manager.</p>
-        </item>
-      </terms>-->
+      <p>Enter the URL into the <gui>Server Address</gui> field. It will
+      normally have a protocol, followed by a colon and two slashes, telook
+      different depending on the protocol that you are using.</p>
     </item>
     <item>
-      <p>Enter in the IP address of the remote storage device into the
-      <gui>Server</gui> field or the URI, depending on the protocol that you
-      are using.</p>
-<!--      <p>If you are not so sure about the information you have to write into
-      <gui>Port</gui> and <gui>Folder</gui>, left in blank.</p>-->
-    </item>
-    <item>
-      <p>Click <gui>Scan</gui> to continue; you may be asked for more details,
-      like a password and username, before the scan will commence.</p>
+      <p>Click <gui>Connect</gui> to continue; you may be asked for more
+      details, like a password and username, before the scan will commence.</p>
     </item>
   </steps>
 
@@ -95,10 +53,9 @@
     system.</p>
   </note>
 
-  <note>
-    <p>Right-click on any folder and select <gui>Open Folder</gui> to launch
-    the <app>Files</app> application, or <gui>Move to Trash</gui> to move your
-    folder to <file>Trash</file>.</p>
-  </note>
+  <p>You can also select a recently used server instead of entering a new URL.
+  If you enter a URL which is not valid, you will not be able to press
+  <gui>Continue</gui>, but if the URL is valid, but incorrect, the connection
+  will fail without warnings.</p>
 
 </page>
