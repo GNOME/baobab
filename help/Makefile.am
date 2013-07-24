@@ -9,9 +9,7 @@ HELP_MEDIA =
 HELP_FILES = \
 	index.page \
 	introduction.page \
-	pref.page \
 	pref-view-chart.page \
-	pref-view-menu.page \
 	scan-file-system.page \
 	scan-folder.page \
 	scan-home.page \
