@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-21 09:34+0000\n"
-"PO-Revision-Date: 2013-07-22 12:51+0200\n"
+"POT-Creation-Date: 2013-07-24 09:41+0000\n"
+"PO-Revision-Date: 2013-07-25 12:15+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -87,13 +87,43 @@ msgid_plural "%d items"
 msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
+#: ../src/baobab-cellrenderers.vala:100
+#| msgid "Usage unknown"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Hoy"
+
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "hace %d día"
+msgstr[1] "hace %d días"
+
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "hace %d mes"
+msgstr[1] "hace %d meses"
+
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "hace %d año"
+msgstr[1] "hace %d años"
+
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Carpeta personal"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Volumen principal"
+msgid "Computer"
+msgstr "Equipo"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -132,10 +162,14 @@ msgid "Contents"
 msgstr "Contenido"
 
 #: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Modificado"
+
+#: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
 msgstr "Gráfico de anillos"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
 msgstr "Gráfico de árbol"
 
@@ -175,23 +209,27 @@ msgstr "_Cancelar"
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:237
+msgid "Recursively analyze mount points"
+msgstr "Analizar recursivamente los puntos de montaje"
+
+#: ../src/baobab-window.vala:284
 msgid "Could not analyze volume."
 msgstr "No se pudo analizar el volumen."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:316
 msgid "Failed to show help"
 msgstr "Falló al mostrar la ayuda"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:335
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:338
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una herramienta gráfica para analizar el uso del disco."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:343
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012\n"
@@ -204,33 +242,35 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:412
 msgid "Failed to open file"
 msgstr "Falló al abrir el archivo"
 
-#: ../src/baobab-window.vala:427
-#| msgid "Could not move file to the Trash"
+#: ../src/baobab-window.vala:432
 msgid "Failed to move file to the trash"
 msgstr "Falló al mover el archivo a la papelera"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:532
 msgid "Devices and locations"
 msgstr "Dispositivos y ubicaciones"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:588
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "No se pudo analizar la carpeta «%s» o alguna de sus subcarpetas."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:614 ../src/baobab-window.vala:620
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
-#: ../src/baobab-window.vala:615 ../src/baobab-window.vala:621
+#: ../src/baobab-window.vala:620 ../src/baobab-window.vala:626
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analizar el uso del disco."
+
+#~ msgid "Main volume"
+#~ msgstr "Volumen principal"
 
 #~ msgid "Usage"
 #~ msgstr "Uso"
@@ -342,9 +382,6 @@ msgstr "No se pudo analizar el uso del disco."
 #~| msgid "All locations"
 #~ msgid "All Locations"
 #~ msgstr "Todas las ubicaciones"
-
-#~ msgid "Usage unknown"
-#~ msgstr "Uso desconocido"
 
 #~ msgid "Stop scanning"
 #~ msgstr "Detener el análisis"
