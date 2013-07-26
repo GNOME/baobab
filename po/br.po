@@ -1,574 +1,272 @@
 # Breton translation for gnome-utils
 # Copyright (c) 2009-2010 Rosetta Contributors and Canonical Ltd 2009
 # This file is distributed under the same license as the gnome-utils package.
-# Denis <denisarnuad@yahoo.fr>, 2009.
+# Denis <denisarnuad@yahoo.fr>, 2009-2013.
 # Alan Monfort <alan.monfort@free.fr>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:28-0400\n"
-"PO-Revision-Date: 2010-07-11 09:06+0000\n"
-"Last-Translator: Alan <Unknown>\n"
-"Language-Team: Brenux <brenux@free.fr>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-05-24 19:46+0000\n"
+"PO-Revision-Date: 2013-06-26 15:38+0000\n"
+"Last-Translator: Denis <Unknown>\n"
+"Language-Team: Drouizig <drouizig@drouizig.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Launchpad-Export-Date: 2013-07-26 15:48+0000\n"
+"X-Generator: Launchpad (build 16700)\n"
+"Language: \n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Gwiriañ mentoù an teuliadoù ha plas hegerz war ar gantennad"
-
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:167
 msgid "Disk Usage Analyzer"
 msgstr "Dezranner arver ar c'hantennoù"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Gwellvezioù dezranner arver ar c'hantennoù"
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "Gwiriañ mentoù an teuliadoù ha plas hegerz war ar gantennad"
 
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
-msgstr ""
-"Diuzañ an trobarzhelloù da enlakaat e c'hwilervadur ar reizhiad restroù :"
-
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "_Teurel evezh ouzh kemmoù en ho teuliad personel"
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "kadaviñ;egor;naetaat"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Ur roll URIoù evit ar parzhioù a vo ezlakaet diouzh ar c'hwilervañ."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
 msgid "Excluded partitions URIs"
 msgstr "URIoù ar parzhioù ezlakaet"
 
+#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Ur roll URIoù evit ar parzhioù a vo ezlakaet diouzh ar c'hwilervañ."
+
+#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+msgid "Active Chart"
+msgstr "Gwel oberiat"
+
 #: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
-msgstr ""
+msgid "Which type of chart should be displayed."
+msgstr "Rizh ar gwel da vezañ skrammet"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#, fuzzy
-msgid "Statusbar is Visible"
-msgstr "Hewel eo ar varrenn-stad"
+msgid "Window size"
+msgstr "Ment ar prenestr"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr "Hewel eo ar varrenn-ostilhoù"
+msgid "The initial size of the window"
+msgstr "Ment a-gent ar prenestr"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr ""
-"Menegiñ a ra hag eñ e vo taolet evezh war ar c'hemmoù d'ar c'harvlec'hiad "
-"personel."
+msgid "Window state"
+msgstr "Stad ar prenestr"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr "Menegiñ a ra hag eñ e vo hewel ar varrenn stad eus ar prenestr pennañ."
+msgid "The GdkWindowState of the window"
+msgstr "Stad GdkWindow ar prenestr"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr ""
-"Menegiñ a ra hag eñ e vo hewel ar varrennad ostilhoù er prenestr pennañ."
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
+msgstr "Moullañ titouroù an handelv ha kuitaat"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
-#, fuzzy
-msgid "Which type of chart should be displayed."
-msgstr "Menegiñ a ra hag-eñ e tlefe bezañ hewel ar varrenn gostez"
+#: ../src/baobab-application.vala:106
+msgid "- Disk Usage Analyzer"
+msgstr "- Dezranner arver ar kantennoù"
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Derann_añ an egor"
-
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Azgrenaat"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "C'hwil_ervañ un teuliad a-bell..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "C'hwilervañ an _teuliad..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "C'hwilervañ ar reizhiad restroù"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "C'hwilervañ an teuliad"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "C'hwilervañ an teuliad personel"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "C'hwilervañ un teuliad a-bell"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "C'hwilervañ ar r_eizhiad restroù"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "C'hwilervañ an teuliad personel"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "C'hwilervañ un teuliad"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "C'hwilervañ un teuliad a-bell"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "C'hwilervañ ar reizhiad restroù"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "C'hwilervañ an teuliad personel"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "Barrennad ar st_ad"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Arsaviñ ar c'hwilervañ"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "Dezr_anner"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "Bi_hanaat an holl"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "Endal_c'hadoù"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Embann"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "_Ast_enn an holl"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "_Skoazell"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "Barrenn _Ostilhoù"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "G_welout"
-
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "O c'hwilervañ..."
-
-#: ../src/baobab.c:182
-msgid "Total filesystem capacity:"
-msgstr "Barr kadaviñ hollek ar reizhiad restroù :"
-
-#: ../src/baobab.c:183
-msgid "used:"
-msgstr "arveret :"
-
-#: ../src/baobab.c:184
-msgid "available:"
-msgstr "hegerz :"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
-msgstr "O jediñ barrennoù an dregantad..."
-
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
-msgid "Ready"
-msgstr "Prest"
-
-#: ../src/baobab.c:421
-msgid "Total filesystem capacity"
-msgstr "Barr kadaviñ hollek ar reizhiad restroù"
-
-#: ../src/baobab.c:443
-msgid "Total filesystem usage"
-msgstr "Arver hollek ar reizhiad restroù"
-
-#: ../src/baobab.c:484
-msgid "contains hardlinks for:"
-msgstr "a endalc'h ereoù kreñv evit :"
-
-#: ../src/baobab.c:493
+#: ../src/baobab-cellrenderers.vala:100
 #, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "%5d elfenn"
-msgstr[1] "%5d elfenn"
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d elfenn"
+msgstr[1] "%d elfenn"
 
-#: ../src/baobab.c:620
-msgid "Could not initialize monitoring"
-msgstr "N'hall ket deraouekaat an eveshaat"
-
-#: ../src/baobab.c:621
-msgid "Changes to your home folder will not be monitored."
-msgstr "Ne vo ket gwiriet ar c'hemmoù d'ho teuliad personel."
-
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "Mont d'an teuliad kar"
-
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "Zoum brasaat"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "Zoum bihanaat"
-
-#: ../src/baobab.c:957
-msgid "Save screenshot"
-msgstr "Enrollañ ar skrammad"
-
-#: ../src/baobab.c:1143
-msgid "View as Rings Chart"
-msgstr "Gwelout evel un diervad dre walenn"
-
-#: ../src/baobab.c:1145
-msgid "View as Treemap Chart"
-msgstr "Gwelout evel un diervad dre wezennad"
-
-#: ../src/baobab.c:1250
-msgid "Show version"
-msgstr "Diskouez an handelv"
-
-#: ../src/baobab.c:1251
-msgid "[DIRECTORY]"
-msgstr "[KAVLEC'HIAD]"
-
-#: ../src/baobab.c:1281
-msgid "Too many arguments. Only one directory can be specified."
-msgstr "Re a arguzennoù. Ur c'havlec'hiad hepken a vez erspizet."
-
-#: ../src/baobab.c:1298
-msgid "Could not detect any mount point."
-msgstr "N'hall ket dinoiñ poentoù sevel ebet"
-
-#: ../src/baobab.c:1300
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr "Hep poentoù sevel n'eus ket tro da zielfennañ arver ur gantennad."
-
-#: ../src/baobab-chart.c:205
+#: ../src/baobab-chart.c:186
 msgid "Maximum depth"
 msgstr "Donder uc'hek"
 
-#: ../src/baobab-chart.c:206
+#: ../src/baobab-chart.c:187
 msgid "The maximum depth drawn in the chart from the root"
 msgstr "An donder uc'hek treset war an diervad diouzh ar wrizhienn"
 
-#: ../src/baobab-chart.c:215
+#: ../src/baobab-chart.c:196
 msgid "Chart model"
 msgstr "Patrom an diervad"
 
-#: ../src/baobab-chart.c:216
+#: ../src/baobab-chart.c:197
 msgid "Set the model of the chart"
 msgstr "Arventennañ patrom an diervad"
 
-#: ../src/baobab-chart.c:223
+#: ../src/baobab-chart.c:204
 msgid "Chart root node"
 msgstr "Klom gwrizhienn an diervad"
 
-#: ../src/baobab-chart.c:224
+#: ../src/baobab-chart.c:205
 msgid "Set the root node from the model"
 msgstr "Arventennañ klom gwrizhienn an diervad"
 
-#: ../src/baobab-chart.c:1690
-msgid "Cannot create pixbuf image!"
-msgstr "N'hall ket krouiñ ur skeudenn mod pixbuf !"
+#: ../src/baobab-chart.c:898
+msgid "_Move to parent folder"
+msgstr "_Kaz d'ar teuliad kerent"
 
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
-msgid "Save Snapshot"
-msgstr "Enrollañ al luc'hskeudenn"
+#: ../src/baobab-chart.c:902
+msgid "Zoom _in"
+msgstr "Zoum_añ"
 
-#: ../src/baobab-chart.c:1727
-msgid "_Image type:"
-msgstr "_Rizh skeudenn :"
+#: ../src/baobab-chart.c:906
+msgid "Zoom _out"
+msgstr "Bi_hanaat"
 
-#: ../src/baobab-prefs.c:172
-msgid "Scan"
-msgstr "C'hwilervañ"
+#: ../src/baobab-location.vala:77
+msgid "Home folder"
+msgstr "Teuliad ar gêr"
 
-#: ../src/baobab-prefs.c:179
-msgid "Device"
-msgstr "Trobarzhell"
+#: ../src/baobab-location.vala:123
+msgid "Main volume"
+msgstr "Pennkantenn"
 
-#: ../src/baobab-prefs.c:187
-msgid "Mount Point"
-msgstr "Poent ar savadenn"
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan Folder…"
+msgstr "Furchal teulioù..."
 
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
-msgstr "Rizh ar reizhiad restroù"
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Remote Folder…"
+msgstr "Furchal teulioù a-bell..."
 
-#: ../src/baobab-prefs.c:203
-msgid "Total Size"
-msgstr "Ment klok"
+#: ../src/baobab-main-window.ui.h:3
+msgid "Devices and locations"
+msgstr "Trobarzhelloù ha lec'hiadurioù"
 
-#: ../src/baobab-prefs.c:212
-msgid "Available"
-msgstr "Hegerz"
+#: ../src/baobab-main-window.ui.h:4
+msgid "Close"
+msgstr "Serriñ"
 
-#: ../src/baobab-remote-connect-dialog.c:77
-#, c-format
-msgid "Cannot scan location \"%s\""
-msgstr "N'hall ket c'hwilervañ lec'hiadur \"%s\""
-
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Lec'hiadur personelaet"
-
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
-
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP foran"
-
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (gant kennask)"
-
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Rannañ gant Windows"
-
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
-
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV diarvar (HTTPS)"
-
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
-"N'hall ket kennaskañ ouzh an dafariad. Ret eo deoc'h enankañ un anv evit an "
-"dafariad."
-
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr "Roit un anv ha klaskit en-dro mar plij."
-
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Lec'hiadur (URI):"
-
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Dafariad :"
-
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Titouroù dibarzhel :"
-
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Rannañ :"
-
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Porzh :"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Teuliad :"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "Anv an arveriad :"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Anv an domani :"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr "Kennaskañ ouzh an dafariad"
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr "Ri_zh gwazerezh :"
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_C'hwilervañ"
-
-#: ../src/baobab-treeview.c:82
-msgid "Rescan your home folder?"
-msgstr "Adc'hwilervañ ho teuliad personel ?"
-
-#: ../src/baobab-treeview.c:83
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-"Kemmet en deus endalc'had ho kavlec'hiad personel. Diuzit adc'hwilervañ a-"
-"benn hizivaat munudoù arver ar gantennad."
-
-#: ../src/baobab-treeview.c:84
-msgid "_Rescan"
-msgstr "C'hwilervañ _en-dro"
-
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-main-window.ui.h:5
 msgid "Folder"
 msgstr "Teuliad"
 
-#: ../src/baobab-treeview.c:244
+#: ../src/baobab-main-window.ui.h:6
 msgid "Usage"
 msgstr "Arver"
 
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-main-window.ui.h:7
 msgid "Size"
 msgstr "Ment"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-main-window.ui.h:8
 msgid "Contents"
 msgstr "Endalc'hadoù"
 
-#: ../src/baobab-utils.c:72
-msgid "Select Folder"
-msgstr "Diuzañ un teuliad"
+#: ../src/baobab-main-window.ui.h:9
+msgid "Rings Chart"
+msgstr "Evel ur walenn"
 
-#. add extra widget
-#: ../src/baobab-utils.c:84
-msgid "_Show hidden folders"
-msgstr "Di_skouez an teuliadoù kuzh"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Treemap Chart"
+msgstr "Evel ur wezenn"
 
-#: ../src/baobab-utils.c:263
-msgid "Cannot check an excluded folder!"
-msgstr "N'hall ket gwiriañ un teuliad ezlakaet !"
-
-#: ../src/baobab-utils.c:287
-#, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" n'eo ket un teuliad talvoudek"
-
-#: ../src/baobab-utils.c:290
-msgid "Could not analyze disk usage."
-msgstr "N'hall ket dezrannañ arver ar c'hantenn."
-
-#: ../src/baobab-utils.c:326
+#: ../src/baobab-main-window.ui.h:11
 msgid "_Open Folder"
 msgstr "_Digeriñ un teuliad"
 
-#: ../src/baobab-utils.c:332
+#: ../src/baobab-main-window.ui.h:12
+msgid "_Copy Path to Clipboard"
+msgstr "Eilañ an treug d'ar golver"
+
+#: ../src/baobab-main-window.ui.h:13
 msgid "Mo_ve to Trash"
 msgstr "Ka_s d'al Lastez"
 
-#: ../src/baobab-utils.c:362
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "N'hall ket digeriñ an teuliad \"%s\""
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "_Skoazell"
 
-#: ../src/baobab-utils.c:365
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr "N'eus gweler staliet ebet gouest da skrammañ an teuliad."
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "Diw_ar-benn"
 
-#: ../src/baobab-utils.c:433
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "N'hall ket kas \"%s\" d'al lastez"
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Kuitaat"
 
-#: ../src/baobab-utils.c:441
-msgid "Could not move file to the Trash"
-msgstr "N'hall ket kas ar restr d'al lastez"
+#: ../src/baobab-menu.ui.h:4
+msgid "_Analyzer"
+msgstr "Dezr_anner"
 
-#: ../src/baobab-utils.c:443
-#, c-format
-msgid "Details: %s"
-msgstr "Munudoù : %s"
+#: ../src/baobab-menu.ui.h:5
+msgid "_Scan Home"
+msgstr "C'hwilerviñ Teuliad ar gêr"
 
-#: ../src/baobab-utils.c:479
-msgid "There was an error displaying help."
-msgstr "Bez e oa ur fazi en ur ziskouez ar skoazell."
+#: ../src/baobab-menu.ui.h:6
+msgid "Scan F_older…"
+msgstr "C'hwilerviñ an teuliad..."
 
-#: ../src/callbacks.c:76
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Ur meziant digor eo ar goulev-mañ ; dasparzhet pe/ha daskemmet e vez dindan "
-"termenoù al Lañvaz Foran Hollek GNU evel ma'z eo bet embannet gant "
-"Diazezadenn ar Meziantoù Digor ; da lâret eo handelv 2 eus al lañvaz pe "
-"(evel ma plij deoc'h) ne vern pe handelv nevesoc'h."
+#: ../src/baobab-menu.ui.h:7
+msgid "Scan Remote Fo_lder…"
+msgstr "C'hwilerviñ an teuliad a-bell..."
 
-#: ../src/callbacks.c:81
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Dasparzhet eo ar meziant-mañ gant ar spi e vo talvoudus met GANT GWARANT "
-"EBET ; hep ar gwarant enpleg a-fet TALVOUDEGEZH KENWERZHEL pe VARREGEZH EVIT "
-"UR PAL PERSONEL. Taolit ur sell war Lañvaz Foran Hollek GNU evit gouzout "
-"hiroc'h."
+#: ../src/baobab-menu.ui.h:8
+msgid "_View"
+msgstr "G_welout"
 
-#: ../src/callbacks.c:86
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Moarvat hoc'h eus bet un eilad eus al Lañvaz Foran Hollek GNU gant File-"
-"Roller ; ma n'hoc'h eus ket bet,skrivit da : Free Software Foundation, Inc., "
-"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
+#: ../src/baobab-menu.ui.h:9
+msgid "_Reload"
+msgstr "A_dkargañ"
 
-#: ../src/callbacks.c:101
+#: ../src/baobab-menu.ui.h:10
+msgid "_Expand All"
+msgstr "_Ast_enn an holl"
+
+#: ../src/baobab-menu.ui.h:11
+msgid "_Collapse All"
+msgstr "Bi_hanaat an holl"
+
+#: ../src/baobab-window.vala:213
+msgid "Select Folder"
+msgstr "Diuzañ un teuliad"
+
+#: ../src/baobab-window.vala:263
+msgid "Could not analyze volume."
+msgstr "N'haller ket dezrannañ ar gantenn."
+
+#: ../src/baobab-window.vala:314
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/callbacks.c:102
+#: ../src/baobab-window.vala:317
 msgid "A graphical tool to analyze disk usage."
 msgstr "Un arload kevregat da zezrannañ arver ar gantennad."
 
-#: ../src/callbacks.c:110
+#: ../src/baobab-window.vala:322
 msgid "translator-credits"
 msgstr ""
 "Denis\n"
 "\n"
 "Launchpad Contributions:\n"
-"  Alan https://launchpad.net/~alan-monfort\n"
 "  Denis https://launchpad.net/~bibar\n"
-"  Robert Ancell https://launchpad.net/~robert-ancell"
+"  Martin Pitt https://launchpad.net/~pitti"
 
-#: ../src/callbacks.c:208
-msgid "The document does not exist."
-msgstr "An teul n'eus ket anezhañ."
+#: ../src/baobab-window.vala:566
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr "N'haller ket furchal an teuliad \"%s\" pe teuliadoù a zo ennañ."
 
-#: ../src/callbacks.c:289
-msgid "The folder does not exist."
-msgstr "An teuliad n'eus ket anezhañ."
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
+#, c-format
+msgid "\"%s\" is not a valid folder"
+msgstr "\"%s\" n'eo ket un teuliad talvoudek"
+
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
+msgid "Could not analyze disk usage."
+msgstr "N'hall ket dezrannañ arver ar c'hantenn."
+
+#~ msgid "Scan Folder"
+#~ msgstr "C'hwilervañ an teuliad"
+
+#~ msgid "Scan Remote Folder"
+#~ msgstr "C'hwilervañ un teuliad a-bell"
+
+#~ msgid "Scan a folder"
+#~ msgstr "C'hwilervañ un teuliad"
+
+#~ msgid "Scan a remote folder"
+#~ msgstr "C'hwilervañ un teuliad a-bell"
