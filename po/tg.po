@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-21 09:34+0000\n"
-"PO-Revision-Date: 2013-07-22 17:15+0500\n"
+"POT-Creation-Date: 2013-07-24 09:41+0000\n"
+"PO-Revision-Date: 2013-07-26 16:00-0000\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
 "Language: Tajik\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=1;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -29,7 +29,7 @@ msgstr "Санҷиши андозаи ҷузвдонҳо ва фазои дис�
 
 #: ../data/baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
-msgstr "захирагоҳ;фазо;пок кардан;"
+msgstr "захирагоҳ;фазо;поксозӣ;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -78,13 +78,42 @@ msgid_plural "%d items"
 msgstr[0] "%d объект"
 msgstr[1] "%d объект"
 
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Номаълум"
+
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Имрӯз"
+
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d рӯз"
+msgstr[1] "%d рӯз"
+
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d моҳ"
+msgstr[1] "%d моҳ"
+
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d сол"
+msgstr[1] "%d сол"
+
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Ҷузвдони асосӣ"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Баландии садои асосӣ"
+msgid "Computer"
+msgstr "Компютер"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -123,10 +152,14 @@ msgid "Contents"
 msgstr "Мундариҷа"
 
 #: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Тағйирёфта"
+
+#: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
 msgstr "Диаграммаи ҳалқавӣ"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
 msgstr "Диаграммаи шохдор"
 
@@ -166,52 +199,59 @@ msgstr "_Бекор кардан"
 msgid "_Open"
 msgstr "_Кушодан"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:237
+msgid "Recursively analyze mount points"
+msgstr "Таҳлили бозгаштии нуқтаҳои васл"
+
+#: ../src/baobab-window.vala:284
 msgid "Could not analyze volume."
 msgstr "Иттилооти ҳаҷм таҳлил карда нашуд."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:316
 msgid "Failed to show help"
 msgstr "Намоиши кӯмак қатъ шудааст"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:335
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:338
 msgid "A graphical tool to analyze disk usage."
 msgstr "Абзори графикӣ барои таҳлили истифодаи диск."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:343
 msgid "translator-credits"
 msgstr "Victor Ibragimov"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:412
 msgid "Failed to open file"
 msgstr "Кушодани файл қатъ шудааст"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:432
 msgid "Failed to move file to the trash"
 msgstr "Интиқоли файл ба сабад қатъ шудааст"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:532
 msgid "Devices and locations"
 msgstr "Дастгоҳҳо ва ҷойгиршавиҳо"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:588
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Ҷузвдони \"%s\" ё баъзе аз зерҷузвдонҳои он сакан карда нашуданд."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:614 ../src/baobab-window.vala:620
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ҷузвдони беэътибор аст"
 
-#: ../src/baobab-window.vala:615 ../src/baobab-window.vala:621
+#: ../src/baobab-window.vala:620 ../src/baobab-window.vala:626
 msgid "Could not analyze disk usage."
 msgstr "Иттилооти истифодабарии диск таҳлил карда нашуд."
+
+#~ msgid "Main volume"
+#~ msgstr "Баландии садои асосӣ"
 
 #~ msgid "Usage"
 #~ msgstr "Истифодабарӣ"
