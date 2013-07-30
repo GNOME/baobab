@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-04 11:14+0200\n"
-"PO-Revision-Date: 2013-07-04 11:15+0200\n"
+"POT-Creation-Date: 2013-07-30 19:52+0200\n"
+"PO-Revision-Date: 2013-07-30 19:53+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -66,24 +66,53 @@ msgstr "GdkWindowState for vinduet"
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
-#: ../src/baobab-application.vala:107
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Analyse av diskplass"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d oppføring"
 msgstr[1] "%d oppføringer"
 
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Ukjent"
+
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "I dag"
+
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dag"
+msgstr[1] "%d dager"
+
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d måned"
+msgstr[1] "%d måneder"
+
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d år"
+msgstr[1] "%d år"
+
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Hovedvolum"
+msgid "Computer"
+msgstr "Datamaskin"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -93,15 +122,15 @@ msgstr "Søk i mappe …"
 msgid "Scan Remote Folder…"
 msgstr "Søk i ekstern mappe …"
 
-#: ../src/baobab-main-window.ui.h:3
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Åpne mappe"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopier sti til utklippstavlen"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Fl_ytt til papirkurven"
 
@@ -114,16 +143,16 @@ msgid "Folder"
 msgstr "Mappe"
 
 #: ../src/baobab-main-window.ui.h:9
-msgid "Usage"
-msgstr "Bruk"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Størrelse"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
 msgstr "Innhold"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Endret"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
@@ -145,97 +174,81 @@ msgstr "_Om"
 msgid "_Quit"
 msgstr "A_vslutt"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analyse"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Søk gjennom hjemmemappe"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Søk i _mappe …"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Søk i e_kstern mappe …"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Vis"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Last på nytt"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Utvid alle"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "S_lå sammen alle"
-
-#: ../src/baobab-menu.ui.h:12
 msgid "_Move to parent folder"
 msgstr "Flytt til opphavs_mappe"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
 msgstr "Zoom _inn"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:9
 msgid "Zoom _out"
 msgstr "Zoom _ut"
 
-#: ../src/baobab-window.vala:225
+#: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Velg mappe"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Cancel"
 msgstr "A_vbryt"
 
-#: ../src/baobab-window.vala:228
+#: ../src/baobab-window.vala:232
 msgid "_Open"
 msgstr "_Åpne"
 
-#: ../src/baobab-window.vala:275
+#: ../src/baobab-window.vala:237
+msgid "Recursively analyze mount points"
+msgstr "Analyser monteringspunkter rekursivt"
+
+#: ../src/baobab-window.vala:284
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere volum."
 
-#: ../src/baobab-window.vala:326
+#: ../src/baobab-window.vala:316
+msgid "Failed to show help"
+msgstr "Klarte ikke å vise hjelp"
+
+#: ../src/baobab-window.vala:335
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:338
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk verktøy for å analysere diskbruk."
 
-#: ../src/baobab-window.vala:334
+#: ../src/baobab-window.vala:343
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <libbe AT stefansen DOT net>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/baobab-window.vala:509
+#: ../src/baobab-window.vala:412
+msgid "Failed to open file"
+msgstr "Klarte ikke å åpne fil"
+
+#: ../src/baobab-window.vala:432
+msgid "Failed to move file to the trash"
+msgstr "Klarte ikke å flytte filen til papirkurven"
+
+#: ../src/baobab-window.vala:532
 msgid "Devices and locations"
 msgstr "Enheter og lokasjoner"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:588
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Kunne ikke gjennomsøke mappe «%s» eller noen av mappene den inneholder."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» er ikke en gyldig mappe"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:620 ../src/baobab-window.vala:626
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskbruk"
