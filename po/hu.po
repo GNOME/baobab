@@ -7,7 +7,7 @@
 # Andras Timar <timar at gnome dot hu>, 2001, 2002, 2003.
 # Gabor Sari <saga at gnome dot hu>, 2003, 2004.
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Mate ORY <orymate at gmail d0t com>, 2006.
 # Lukács Bence <lukacs.bence1 at gmail dot com>, 2012.
 # Balázs Úr <urbalazs at gmail dot com>, 2012.
@@ -16,18 +16,18 @@ msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-27 22:11+0000\n"
-"PO-Revision-Date: 2012-12-31 18:22+0100\n"
-"Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"POT-Creation-Date: 2013-07-24 09:41+0000\n"
+"PO-Revision-Date: 2013-08-04 10:13+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Lemezhasználat-elemző"
 
@@ -56,7 +56,6 @@ msgid "Which type of chart should be displayed."
 msgstr "Melyik diagramtípus legyen látható."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#| msgid "Windows share"
 msgid "Window size"
 msgstr "Ablakméret"
 
@@ -65,7 +64,6 @@ msgid "The initial size of the window"
 msgstr "Az ablak kezdeti mérete"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-#| msgid "Windows share"
 msgid "Window state"
 msgstr "Ablakállapot"
 
@@ -77,110 +75,102 @@ msgstr "Az ablak GdkWindowState állapota"
 msgid "Print version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "– Lemezhasználat-elemző"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d elem"
 msgstr[1] "%d elem"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Legnagyobb mélység"
+#: ../src/baobab-cellrenderers.vala:100
+#| msgid "Usage unknown"
+msgid "Unknown"
+msgstr "Ismeretlen"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "A diagramon a gyökértől megrajzolandó legnagyobb mélység"
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Ma"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Diagram típusa"
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d nap"
+msgstr[1] "%d nap"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "A diagram típusának beállítása"
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d hónap"
+msgstr[1] "%d hónap"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Diagram gyökércsomópontja"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "A típus gyökércsomópontjának beállítása"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "Á_thelyezés a szülőmappába"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "_Nagyítás"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "_Kicsinyítés"
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d év"
+msgstr[1] "%d év"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Saját mappa"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Fő kötet"
+msgid "Computer"
+msgstr "Számítógép"
 
 #: ../src/baobab-main-window.ui.h:1
-#| msgid "Scan F_older…"
 msgid "Scan Folder…"
 msgstr "Mappa vizsgálata…"
 
 #: ../src/baobab-main-window.ui.h:2
-#| msgid "Scan Remote Fo_lder…"
 msgid "Scan Remote Folder…"
 msgstr "Távoli mappa vizsgálata…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Bezárás"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Mappa"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Használat"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Méret"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Tartalom"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Gyűrűdiagram"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Fadiagram"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "Mappa _megnyitása"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "Út_vonal másolása a vágólapra"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Át_helyezés a Kukába"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Bezárás"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Mappa"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Méret"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Tartalom"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Módosítva"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Gyűrűdiagram"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Fadiagram"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -194,60 +184,52 @@ msgstr "_Névjegy"
 msgid "_Quit"
 msgstr "_Kilépés"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Elemző"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "Saját mappa vizsgálata"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Ma_ppa vizsgálata…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "_Távoli mappa vizsgálata..."
+msgid "_Move to parent folder"
+msgstr "Á_thelyezés a szülőmappába"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Nézet"
+msgid "Zoom _in"
+msgstr "_Nagyítás"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "Új_ratöltés"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "Összes _kibontása"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "Összes össze_csukása"
-
-#: ../src/baobab-window.vala:131
-#| msgid "Show all locations"
-msgid "Devices and locations"
-msgstr "Eszközök és helyek"
+msgid "Zoom _out"
+msgstr "_Kicsinyítés"
 
 #: ../src/baobab-window.vala:229
 msgid "Select Folder"
 msgstr "Mappa kiválasztása"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:231
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "Mé_gse"
+
+#: ../src/baobab-window.vala:232
+msgid "_Open"
+msgstr "_Megnyitás"
+
+#: ../src/baobab-window.vala:237
+msgid "Recursively analyze mount points"
+msgstr "Csatolási pontok rekurzív elemzése"
+
+#: ../src/baobab-window.vala:284
 msgid "Could not analyze volume."
 msgstr "A kötet nem elemezhető."
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:316
+msgid "Failed to show help"
+msgstr "A súgó megjelenítése meghiúsult"
+
+#: ../src/baobab-window.vala:335
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:332
+#: ../src/baobab-window.vala:338
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafikus lemezhasználat-elemző eszköz."
 
-#: ../src/baobab-window.vala:337
+#: ../src/baobab-window.vala:343
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -259,20 +241,81 @@ msgstr ""
 "Sári Gábor <saga at gnome dot hu>\n"
 "Tímár András <timar at gnome dot hu>"
 
-#: ../src/baobab-window.vala:579
+#: ../src/baobab-window.vala:412
+msgid "Failed to open file"
+msgstr "A fájl megnyitása meghiúsult"
+
+#: ../src/baobab-window.vala:432
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "A fájl nem helyezhető át a Kukába"
+
+#: ../src/baobab-window.vala:532
+msgid "Devices and locations"
+msgstr "Eszközök és helyek"
+
+#: ../src/baobab-window.vala:588
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "„%s” mappa, vagy néhány almappájának vizsgálata nem sikerült."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s” nem érvényes mappa"
 
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:620 ../src/baobab-window.vala:626
 msgid "Could not analyze disk usage."
 msgstr "A lemezhasználat nem elemezhető."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Legnagyobb mélység"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "A diagramon a gyökértől megrajzolandó legnagyobb mélység"
+
+#~ msgid "Chart model"
+#~ msgstr "Diagram típusa"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "A diagram típusának beállítása"
+
+#~ msgid "Chart root node"
+#~ msgstr "Diagram gyökércsomópontja"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "A típus gyökércsomópontjának beállítása"
+
+#~ msgid "Main volume"
+#~ msgstr "Fő kötet"
+
+#~ msgid "Usage"
+#~ msgstr "Használat"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Elemző"
+
+#~ msgid "_Scan Home"
+#~ msgstr "Saját mappa vizsgálata"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "Ma_ppa vizsgálata…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "_Távoli mappa vizsgálata..."
+
+#~ msgid "_View"
+#~ msgstr "_Nézet"
+
+#~ msgid "_Reload"
+#~ msgstr "Új_ratöltés"
+
+#~ msgid "_Expand All"
+#~ msgstr "Összes _kibontása"
+
+#~ msgid "_Collapse All"
+#~ msgstr "Összes össze_csukása"
 
 #~ msgid "Scan a folder"
 #~ msgstr "Egy mappa vizsgálata"
@@ -297,10 +340,6 @@ msgstr "A lemezhasználat nem elemezhető."
 
 #~ msgid "_Allocated Space"
 #~ msgstr "_Lefoglalt terület"
-
-#~| msgid "Cancel Scan"
-#~ msgid "Cancel"
-#~ msgstr "Mégse"
 
 #~ msgid "Monitor Home"
 #~ msgstr "Saját mappa figyelése"
@@ -338,9 +377,6 @@ msgstr "A lemezhasználat nem elemezhető."
 #~| msgid "All locations"
 #~ msgid "All Locations"
 #~ msgstr "Összes hely"
-
-#~ msgid "Usage unknown"
-#~ msgstr "Használat ismeretlen"
 
 #~ msgid "Stop scanning"
 #~ msgstr "Vizsgálat leállítása"
@@ -552,9 +588,6 @@ msgstr "A lemezhasználat nem elemezhető."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "„%s” nem helyezhető át a Kukába"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "A fájl nem helyezhető át a Kukába"
 
 #~ msgid "Details: %s"
 #~ msgstr "Részletek: %s"
