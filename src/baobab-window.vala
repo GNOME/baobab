@@ -119,11 +119,6 @@ namespace Baobab {
             {"text/uri-list", 0, DndTargets.URI_LIST}
         };
 
-        [GtkCallback]
-        private void close_button_clicked(Gtk.Button button) {
-            close ();
-        }
-
         public Window (Application app) {
             Object (application: app);
 
