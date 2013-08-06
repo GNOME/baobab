@@ -27,16 +27,16 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-10 13:58+0000\n"
-"PO-Revision-Date: 2013-07-10 13:10-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2013-08-05 15:20+0000\n"
+"PO-Revision-Date: 2013-07-30 06:29-0300\n"
+"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -86,24 +86,53 @@ msgstr "O GdkWindowState da janela"
 msgid "Print version information and exit"
 msgstr "Exibe informações da versão e sai"
 
-#: ../src/baobab-application.vala:107
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- analisador de uso de disco"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d item"
 msgstr[1] "%d itens"
 
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Hoje"
+
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dia"
+msgstr[1] "%d dias"
+
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d mês"
+msgstr[1] "%d meses"
+
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d ano"
+msgstr[1] "%d anos"
+
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Pasta pessoal"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Volume principal"
+msgid "Computer"
+msgstr "Computador"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -113,15 +142,15 @@ msgstr "Varrer pasta…"
 msgid "Scan Remote Folder…"
 msgstr "Varrer pasta remota…"
 
-#: ../src/baobab-main-window.ui.h:3
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Abrir pasta"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar caminho para a área de transferência"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "_Mover para a lixeira"
 
@@ -134,16 +163,16 @@ msgid "Folder"
 msgstr "Pasta"
 
 #: ../src/baobab-main-window.ui.h:9
-msgid "Usage"
-msgstr "Utilização"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Tamanho"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
 msgstr "Conteúdo"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Modificado"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
@@ -166,75 +195,51 @@ msgstr "_Sobre"
 msgid "_Quit"
 msgstr "Sa_ir"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analisador"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Varrer pasta pessoal"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Varrer _pasta…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Varrer pasta remo_ta…"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Ver"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Recarregar"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "Expan_dir tudo"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "Re_colher todos"
-
-#: ../src/baobab-menu.ui.h:12
 msgid "_Move to parent folder"
 msgstr "_Mover para pasta pai"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
 msgstr "Amp_liar"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:9
 msgid "Zoom _out"
 msgstr "Redu_zir"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Selecione uma pasta"
 
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:226
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:230
+#: ../src/baobab-window.vala:227
 msgid "_Open"
 msgstr "A_brir"
 
-#: ../src/baobab-window.vala:277
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Analisar recursivamente os pontos de montagem"
+
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Não foi possível analisar o volume."
 
-#: ../src/baobab-window.vala:328
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Falha ao mostrar a ajuda"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobá"
 
-#: ../src/baobab-window.vala:331
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Uma ferramenta gráfica para analisar o uso de disco."
 
-#: ../src/baobab-window.vala:336
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Alexandre Hautequest <hquest@fesppr.br>\n"
@@ -254,27 +259,66 @@ msgstr ""
 "Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
 "Rodrigo Padula de Oliveira <contato@rodrigopadula.com>\n"
 "André Gondim <In memoriam>\n"
-"Enrico Nicoletto <liverig@gmail.com>"
+"Enrico Nicoletto <liverig@gmail.com>\n"
+"Rafael Fontenelle <rafael.f.f1@gmail.com>"
 
-#: ../src/baobab-window.vala:511
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Falha ao abrir o arquivo"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Falha ao mover arquivo para a lixeira"
+
+#: ../src/baobab-window.vala:527
 msgid "Devices and locations"
 msgstr "Dispositivos e localizações"
 
-#: ../src/baobab-window.vala:567
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Não foi possível varrer a pasta \"%s\" ou algumas das pastas nela contidas."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:597 ../src/baobab-window.vala:603
+#: ../src/baobab-window.vala:614 ../src/baobab-window.vala:620
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" não é uma pasta válida"
 
-#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
+#: ../src/baobab-window.vala:615 ../src/baobab-window.vala:621
 msgid "Could not analyze disk usage."
 msgstr "Não foi possível analisar o uso de disco."
+
+#~ msgid "Main volume"
+#~ msgstr "Volume principal"
+
+#~ msgid "Usage"
+#~ msgstr "Utilização"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Analisador"
+
+#~ msgid "_Scan Home"
+#~ msgstr "_Varrer pasta pessoal"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "Varrer _pasta…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "Varrer pasta remo_ta…"
+
+#~ msgid "_View"
+#~ msgstr "_Ver"
+
+#~ msgid "_Reload"
+#~ msgstr "_Recarregar"
+
+#~ msgid "_Expand All"
+#~ msgstr "Expan_dir tudo"
+
+#~ msgid "_Collapse All"
+#~ msgstr "Re_colher todos"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidade máxima"
