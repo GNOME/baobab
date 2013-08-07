@@ -10,7 +10,7 @@ AC_CONFIG_HEADERS(config.h)
 AC_CONFIG_SRCDIR(src/main.vala)
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip -Wno-portability])
+AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip -Wno-portability foreign])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
 
