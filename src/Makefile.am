@@ -14,7 +14,8 @@ baobab_VALAFLAGS = \
 	--pkg gtk+-3.0				\
 	--pkg gio-2.0				\
 	--pkg gio-unix-2.0			\
-	--gresources=baobab.gresource.xml
+	--gresources=baobab.gresource.xml	\
+	$(NULL)
 
 VALA_SOURCES = \
 	baobab-application.vala		\
@@ -33,7 +34,8 @@ VALA_SOURCES = \
 baobab_SOURCES = \
 	$(VALA_SOURCES)			\
 	config.vapi			\
-	$(BUILT_SOURCES)
+	$(BUILT_SOURCES)		\
+	$(NULL)
 
 baobab-resources.c: baobab.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir=$(srcdir) $(srcdir)/baobab.gresource.xml)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $<
@@ -54,12 +56,14 @@ baobab_LDADD = \
 MAINTAINERCLEANFILES =	\
 	*.stamp				\
 	$(VALA_SOURCES:.vala=.c)	\
-	$(BUILT_SOURCES)
+	$(BUILT_SOURCES)		\
+	$(NULL)
 
 EXTRA_DIST = \
-	baobab.gresource.xml \
-	baobab-location-row.ui \
-	baobab-main-window.ui \
-	baobab-menu.ui
+	baobab.gresource.xml 	\
+	baobab-location-row.ui 	\
+	baobab-main-window.ui 	\
+	baobab-menu.ui		\
+	$(NULL)
 
 -include $(top_srcdir)/git.mk
