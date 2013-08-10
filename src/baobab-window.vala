@@ -596,6 +596,10 @@ namespace Baobab {
                 set_chart_model (active_location.scanner, show_allocated_size);
 
                 set_ui_state (result_page, false);
+
+                if (!show_allocated_size) {
+                    message (_("Could not detect occupied disk sizes."), _("Apparent sizes are shown instead."), Gtk.MessageType.INFO);
+                }
             });
 
             clear_message ();
