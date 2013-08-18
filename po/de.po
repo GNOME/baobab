@@ -25,17 +25,16 @@ msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-04 20:45+0000\n"
-"PO-Revision-Date: 2013-07-05 13:32+0100\n"
+"POT-Creation-Date: 2013-08-10 13:40+0000\n"
+"PO-Revision-Date: 2013-08-18 19:30+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-DamnedLies-Scope: partial\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -87,24 +86,53 @@ msgstr "Das GdkWindowState des Fensters"
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
 
-#: ../src/baobab-application.vala:107
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Festplattenbelegung analysieren"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d Objekt"
 msgstr[1] "%d Objekte"
 
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Heute"
+
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d Tag"
+msgstr[1] "%d Tage"
+
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d Monat"
+msgstr[1] "%d Monate"
+
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d Jahr"
+msgstr[1] "%d Jahre"
+
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Persönlicher Ordner"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Hauptdatenträger"
+msgid "Computer"
+msgstr "Rechner"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -114,16 +142,16 @@ msgstr "Ordner analysieren …"
 msgid "Scan Remote Folder…"
 msgstr "_Entfernten Ordner analysieren …"
 
-#: ../src/baobab-main-window.ui.h:3
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Ordner öffnen"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "Pfad in Zwischenablage _kopieren"
 
 # Nautilus-Konsistenz beachten!
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "In den _Papierkorb verschieben"
 
@@ -136,16 +164,16 @@ msgid "Folder"
 msgstr "Ordner"
 
 #: ../src/baobab-main-window.ui.h:9
-msgid "Usage"
-msgstr "Verbrauch"
-
-#: ../src/baobab-main-window.ui.h:10
 msgid "Size"
 msgstr "Größe"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
 msgstr "Inhalt"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Geändert"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
@@ -167,76 +195,51 @@ msgstr "_Info"
 msgid "_Quit"
 msgstr "_Beenden"
 
-# CHECK
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Aktionen"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Persönlichen Ordner analysieren"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "_Ordner analysieren …"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "_Entfernten Ordner analysieren …"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Ansicht"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Neu laden"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "Alles aus_klappen"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "Alles ein_klappen"
-
-#: ../src/baobab-menu.ui.h:12
 msgid "_Move to parent folder"
 msgstr "Eine Ebene höher _gehen"
 
-#: ../src/baobab-menu.ui.h:13
+#: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
 msgstr "Ansicht ver_größern"
 
-#: ../src/baobab-menu.ui.h:14
+#: ../src/baobab-menu.ui.h:9
 msgid "Zoom _out"
 msgstr "Ansicht ver_kleinern"
 
-#: ../src/baobab-window.vala:225
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Ordner auswählen"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:226
 msgid "_Cancel"
 msgstr "_Abbrechen"
 
-#: ../src/baobab-window.vala:228
+#: ../src/baobab-window.vala:227
 msgid "_Open"
 msgstr "_Öffnen"
 
-#: ../src/baobab-window.vala:275
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Einhängepunkte rekursiv analysieren"
+
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Datenträger konnte nicht analysiert werden."
 
-#: ../src/baobab-window.vala:326
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Konnte Hilfe nicht anzeigen"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ein grafisches Werkzeug zur Analyse der Festplattenbelegung."
 
-#: ../src/baobab-window.vala:334
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -254,263 +257,46 @@ msgstr ""
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Hedda Peters <hpeters@redhat.com>"
 
-#: ../src/baobab-window.vala:509
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Konnte Datei nicht öffnen"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Konnte Datei nicht in den Papierkorb verschieben"
+
+#: ../src/baobab-window.vala:527
 msgid "Devices and locations"
 msgstr "Geräte und Orte"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Ordner »%s« oder darin enthaltene Unterordner konnten nicht eingelesen "
 "werden."
 
+#: ../src/baobab-window.vala:601
+#| msgid "Could not analyze disk usage."
+msgid "Could not detect occupied disk sizes."
+msgstr "Festplattenbelegung konnte nicht erkannt werden."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Scheinbare Größen werden angezeigt."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "»%s« ist kein gültiger Ordner"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Festplattenbelegung konnte nicht analysiert werden."
 
-#~ msgid "Maximum depth"
-#~ msgstr "Maximale Tiefe"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr ""
-#~ "Die maximale Tiefe ausgehend vom Wurzelelement, die im Diagramm "
-#~ "dargestellt wird"
-
-#~ msgid "Chart model"
-#~ msgstr "Diagramm-Modell"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Modell des Diagramms festlegen"
-
-#~ msgid "Chart root node"
-#~ msgstr "Wurzelelement des Diagramms"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Wurzelelement des Modells festlegen"
-
-#~ msgid "Scan a folder"
-#~ msgstr "Einen Ordner einlesen"
-
-#~ msgid "Scan Folder"
-#~ msgstr "Ordner einlesen"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Einen entfernten Ordner einlesen …"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "Entfernten Ordner einlesen …"
-
-#~ msgid "Reload"
-#~ msgstr "Neu laden"
-
-#~ msgid "label"
-#~ msgstr "Kennung"
-
-#~ msgid "_Stop"
-#~ msgstr "_Stopp"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "_Belegter Speicherplatz"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Persönlichen Ordner überwachen"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr ""
-#~ "Legt fest, ob der persönliche Ordner auf Änderungen überwacht werden soll."
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr ""
-#~ "Legen Sie die _Laufwerke fest, die beim Einlesen des Dateisystems "
-#~ "berücksichtigt werden sollen:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Persönlichen Ordner auf Änderungen überwachen"
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Werkzeugleiste anzeigen"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Legt fest, ob die Werkzeugleiste im Hauptfenster angezeigt wird."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Statusleiste ist sichtbar"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr ""
-#~ "Legt fest, ob die Statusleiste am unteren Rand des Hauptfensters "
-#~ "angezeigt wird."
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "_Persönlichen Ordner einlesen"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "_Dateisystem einlesen"
-
-#~ msgid "_Edit"
-#~ msgstr "_Bearbeiten"
-
-#~ msgid "_Toolbar"
-#~ msgstr "_Werkzeugleiste"
-
-#~ msgid "St_atusbar"
-#~ msgstr "S_tatusleiste"
-
-#~ msgid "_Contents"
-#~ msgstr "_Inhalt"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "Persönlichen Ordner einlesen"
-
-#~ msgid "Scan the file system"
-#~ msgstr "Das Dateisystem einlesen"
-
-#~ msgid "Scan File System"
-#~ msgstr "Dateisystem einlesen"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Einen entfernten Ordner oder Dateisystemeinlesen"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Einlesen abbrechen"
-
-#~ msgid "Refresh"
-#~ msgstr "Aktualisieren"
-
-#~ msgid "Scanning…"
-#~ msgstr "Einlesen läuft …"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Speicherkapazität des Dateisystems:"
-
-#~ msgid "used:"
-#~ msgstr "belegt:"
-
-#~ msgid "available:"
-#~ msgstr "frei:"
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Prozentuale Anzeigen werden berechnet …"
-
-#~ msgid "Ready"
-#~ msgstr "Fertig"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Gesamte Speicherkapazität des Dateisystems"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Gesamte Belegung des Dateisystems"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "enthält harte Verknüpfungen für:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Überwachung konnte nicht initialisiert werden"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Ihr persönlicher Ordner wird nicht auf Änderungen überwacht."
-
-#~ msgid "Show version"
-#~ msgstr "Version anzeigen"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[ORDNER]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Zu viele Argumente. Es kann nur ein Ordner angegeben werden."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Es konnte kein Einhängepunkt gefunden werden."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr ""
-#~ "Ohne einen Einhängepunkt kann die Festplattenbelegung nicht analysiert "
-#~ "werden."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Bildschirmfoto speichern"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "Pixbuf-Bild konnte nicht erstellt werden."
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Bildschirmfoto speichern"
-
-#~ msgid "_Image type:"
-#~ msgstr "_Bildtyp:"
-
-#~ msgid "Scan"
-#~ msgstr "Einlesen"
-
-#~ msgid "Device"
-#~ msgstr "Gerät"
-
-#~ msgid "Mount Point"
-#~ msgstr "Einhängepunkt"
-
-#~ msgid "File System Type"
-#~ msgstr "Dateisystemtyp"
-
-#~ msgid "Total Size"
-#~ msgstr "Gesamtgröße"
-
-#~ msgid "Available"
-#~ msgstr "Frei"
-
-#~ msgid "Custom Location"
-#~ msgstr "Benutzerdefinierter Ort"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "Öffentlicher FTP"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (mit Zugangsbeschränkung)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "Sicheres WebDAV (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr ""
-#~ "Keine Verbindung zum Server. Sie müssen einen Namen für den Server "
-#~ "eingeben."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Bitte geben Sie einen Namen ein und versuchen es erneut."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Ort (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Server:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Optionale Informationen:"
-
-#~ msgid "_Share:"
-#~ msgstr "_Freigabe:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Port:"
-
-#~ msgid "_Folder:"
-#~ msgstr "_Ordner:"
-
-#~ msgid "_User Name:"
-#~ msgstr "_Benutzername:"
+#~ msgid "Main volume"
+#~ msgstr "Hauptdatenträger"
+
+#~ msgid "Usage"
+#~ msgstr "Verbrauch"
