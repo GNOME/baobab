@@ -9,14 +9,14 @@
 # Wadim Dziedzic <wdziedzic@aviary.pl>, 2007.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2008.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2012.
-# Aviary.pl <gnomepl@aviary.pl>, 2007-2012.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2013.
+# Aviary.pl <gnomepl@aviary.pl>, 2007-2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-16 04:19+0100\n"
-"PO-Revision-Date: 2012-12-16 04:20+0100\n"
+"POT-Creation-Date: 2013-08-19 22:54+0200\n"
+"PO-Revision-Date: 2013-08-19 22:55+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analizator wykorzystania dysku"
 
@@ -76,11 +76,11 @@ msgstr "Wartość GdkWindowState okna"
 msgid "Print version information and exit"
 msgstr "Wyświetla informacje o wersji i kończy działanie"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- analizator wykorzystania dysku"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -88,49 +88,45 @@ msgstr[0] "%d element"
 msgstr[1] "%d elementy"
 msgstr[2] "%d elementów"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Maksymalna głębokość"
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Nieznane"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Maksymalna głębokość rysowana na wykresie z węzła głównego"
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Dzisiaj"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Model wykresu"
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dzień"
+msgstr[1] "%d dni"
+msgstr[2] "%d dni"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Ustawia model wykresu"
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d miesiąc"
+msgstr[1] "%d miesiące"
+msgstr[2] "%d miesięcy"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Węzeł główny wykresu"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Ustawia węzeł główny z modelu"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Przenieś do katalogu nadrzędnego"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "P_owiększ"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Po_mniejsz"
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d rok"
+msgstr[1] "%d lata"
+msgstr[2] "%d lat"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Katalog domowy"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Główny wolumin"
+msgid "Computer"
+msgstr "Komputer"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -140,45 +136,45 @@ msgstr "Skanuj katalog…"
 msgid "Scan Remote Folder…"
 msgstr "Skanuj zdalny katalog…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Zamknij"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Katalog"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Użycie"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Rozmiar"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Zawartość"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Wykres pierścieniowy"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Wykres drzewa"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "O_twórz katalog"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "S_kopiuj ścieżkę do schowka"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Przenieś do k_osza"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Zamknij"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Katalog"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Rozmiar"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Zawartość"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Zmodyfikowany"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Wykres pierścieniowy"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Wykres drzewa"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -192,49 +188,41 @@ msgstr "_O programie"
 msgid "_Quit"
 msgstr "Za_kończ"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analiza"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Skanuj katalog domowy"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Skanuj k_atalog…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "S_kanuj zdalny katalog…"
+msgid "_Move to parent folder"
+msgstr "_Przejdź do katalogu nadrzędnego"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Widok"
+msgid "Zoom _in"
+msgstr "P_owiększ"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Wczytaj ponownie"
+msgid "Zoom _out"
+msgstr "Po_mniejsz"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "R_ozwiń wszystko"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Zwiń wszystko"
-
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "Urządzenia i położenia"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Wybór katalogu"
+
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "_Anuluj"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Otwórz"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Rekursywne analizowanie punktów montowania"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Nie można analizować woluminu."
+
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Wyświetlenie pomocy się nie powiodło"
 
 #: ../src/baobab-window.vala:330
 msgid "Baobab"
@@ -252,21 +240,41 @@ msgstr ""
 "Wadim Dziedzic <wdziedzic@aviary.pl>, 2007\n"
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2008\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2012\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2007-2012"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2013\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2007-2013"
 
-#: ../src/baobab-window.vala:580
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Otwarcie pliku się nie powiodło"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Przeniesienie pliku do kosza się nie powiodło"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Urządzenia i położenia"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Nie można skanować katalogu \"%s\" lub niektórych katalogów w nim zawartych."
 
+#: ../src/baobab-window.vala:601
+msgid "Could not detect occupied disk sizes."
+msgstr "Nie można wykryć zajętych rozmiarów na dysku."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Widoczne rozmiary zostaną wyświetlone zamiast tego."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" nie jest prawidłowym katalogiem"
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Nie można zanalizować wykorzystania dysku."
