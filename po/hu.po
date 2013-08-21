@@ -10,22 +10,22 @@
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Mate ORY <orymate at gmail d0t com>, 2006.
 # Lukács Bence <lukacs.bence1 at gmail dot com>, 2012.
-# Balázs Úr <urbalazs at gmail dot com>, 2012.
+# Balázs Úr <urbalazs at gmail dot com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-07-24 09:41+0000\n"
-"PO-Revision-Date: 2013-08-04 10:13+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"POT-Creation-Date: 2013-08-12 13:41+0000\n"
+"PO-Revision-Date: 2013-08-21 18:24+0200\n"
+"Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -87,7 +87,6 @@ msgstr[0] "%d elem"
 msgstr[1] "%d elem"
 
 #: ../src/baobab-cellrenderers.vala:100
-#| msgid "Usage unknown"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
@@ -196,40 +195,39 @@ msgstr "_Nagyítás"
 msgid "Zoom _out"
 msgstr "_Kicsinyítés"
 
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Mappa kiválasztása"
 
-#: ../src/baobab-window.vala:231
-#| msgid "Cancel"
+#: ../src/baobab-window.vala:226
 msgid "_Cancel"
 msgstr "Mé_gse"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:227
 msgid "_Open"
 msgstr "_Megnyitás"
 
-#: ../src/baobab-window.vala:237
+#: ../src/baobab-window.vala:232
 msgid "Recursively analyze mount points"
 msgstr "Csatolási pontok rekurzív elemzése"
 
-#: ../src/baobab-window.vala:284
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "A kötet nem elemezhető."
 
-#: ../src/baobab-window.vala:316
+#: ../src/baobab-window.vala:311
 msgid "Failed to show help"
 msgstr "A súgó megjelenítése meghiúsult"
 
-#: ../src/baobab-window.vala:335
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafikus lemezhasználat-elemző eszköz."
 
-#: ../src/baobab-window.vala:343
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -241,31 +239,39 @@ msgstr ""
 "Sári Gábor <saga at gnome dot hu>\n"
 "Tímár András <timar at gnome dot hu>"
 
-#: ../src/baobab-window.vala:412
+#: ../src/baobab-window.vala:407
 msgid "Failed to open file"
 msgstr "A fájl megnyitása meghiúsult"
 
-#: ../src/baobab-window.vala:432
-#| msgid "Could not move file to the Trash"
+#: ../src/baobab-window.vala:427
 msgid "Failed to move file to the trash"
 msgstr "A fájl nem helyezhető át a Kukába"
 
-#: ../src/baobab-window.vala:532
+#: ../src/baobab-window.vala:527
 msgid "Devices and locations"
 msgstr "Eszközök és helyek"
 
-#: ../src/baobab-window.vala:588
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "„%s” mappa, vagy néhány almappájának vizsgálata nem sikerült."
 
+#: ../src/baobab-window.vala:601
+#| msgid "Could not detect any mount point."
+msgid "Could not detect occupied disk sizes."
+msgstr "Nem észlelhetők foglalt lemezméretek."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Helyette a látszólagos méretek vannak megjelenítve."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s” nem érvényes mappa"
 
-#: ../src/baobab-window.vala:620 ../src/baobab-window.vala:626
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "A lemezhasználat nem elemezhető."
 
@@ -465,9 +471,6 @@ msgstr "A lemezhasználat nem elemezhető."
 
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "Túl sok paraméter. Csak egy könyvtár adható meg."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Nem észlelhetők csatolási pontok."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "Csatolási pontok nélkül a lemezhasználat nem elemezhető."
