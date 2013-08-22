@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-27 22:11+0000\n"
-"PO-Revision-Date: 2013-03-11 16:51+0700\n"
+"POT-Creation-Date: 2013-08-12 13:41+0000\n"
+"PO-Revision-Date: 2013-08-22 12:20+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id_ID\n"
@@ -20,9 +20,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Penganalisa Penggunaan Disk"
 
@@ -70,109 +70,97 @@ msgstr "GdkWindowState dari jendela"
 msgid "Print version information and exit"
 msgstr "Menampilkan informasi versi dan keluar"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Penganalisa Penggunaan Diska"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d butir"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Kedalaman maksimum"
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Tak diketahui"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Kedalaman maksimum penggambaran bagan dari akar"
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Hari ini"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Model bagan"
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d hari"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Tata model bagan"
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d bulan"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Titik akar diagram"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Tata titik akar dari model"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Pindahkan ke folder induk"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "Per_besar"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Per_kecil"
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d tahun"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Folder rumah"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Volume utama"
+msgid "Computer"
+msgstr "Komputer"
 
 #: ../src/baobab-main-window.ui.h:1
-#| msgid "Scan F_older…"
 msgid "Scan Folder…"
 msgstr "Pindai Folder…"
 
 #: ../src/baobab-main-window.ui.h:2
-#| msgid "Scan Remote Fo_lder…"
 msgid "Scan Remote Folder…"
 msgstr "Pindai Folder Jauh…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Tutup"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Folder"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Cara pakai"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Ukuran"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Isi"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Bagan Cincin"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Bagan Peta Pohon"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "Buka F_older"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Salin Lokasi ke Papan Klip"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Buang ke _Tong Sampah"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Tutup"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Folder"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Ukuran"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Isi"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Diubah"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Bagan Cincin"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Bagan Peta Pohon"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -186,79 +174,90 @@ msgstr "Tent_ang"
 msgid "_Quit"
 msgstr "_Keluar"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "Peng_analisa"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Pindai Home"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Pindai F_older…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Pindai Fo_lder Jauh…"
+msgid "_Move to parent folder"
+msgstr "_Pindahkan ke folder induk"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Tilikan"
+msgid "Zoom _in"
+msgstr "Per_besar"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "Muat _Ulang"
+msgid "Zoom _out"
+msgstr "Per_kecil"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "K_embangkan Semua"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Lipat Semua"
-
-#: ../src/baobab-window.vala:131
-#| msgid "Show all locations"
-msgid "Devices and locations"
-msgstr "Perangkat dan lokasi"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Pilih Folder"
+
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "_Batal"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Buka"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Analisis secara rekursif titik kait"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Tak bisa menganalisa volume."
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Gagal menampilkan bantuan"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:332
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Alat grafis untuk menganalisa penggunaan disk."
 
-#: ../src/baobab-window.vala:337
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
-"Andika Triwidada <andika@gmail.com>, 2010, 2011, 2012.\n"
+"Andika Triwidada <andika@gmail.com>, 2010, 2011, 2012, 2013.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012."
 
-#: ../src/baobab-window.vala:579
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Gagal membuka berkas"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Gagal memindah berkas ke tong sampah"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Perangkat dan lokasi"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Tak bisa memindai folder \"%s\" atau beberapa folder yang dikandungnya."
 
+#: ../src/baobab-window.vala:601
+msgid "Could not detect occupied disk sizes."
+msgstr "Tak bisa mendeteksi ukuran disk yang ditempati."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Ukuran yang nampak saja yang ditampilkan sebagai gantinya."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" bukan folder yang valid"
 
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Tak bisa menganalisa penggunaan disk."
