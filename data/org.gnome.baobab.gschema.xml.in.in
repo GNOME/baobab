@@ -1,16 +1,16 @@
-<schemalist>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab" path="/org/gnome/baobab/">
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.gnome.baobab" path="/org/gnome/baobab/">
     <child name="preferences" schema="org.gnome.baobab.preferences"/>
     <child name="ui" schema="org.gnome.baobab.ui"/>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.preferences" path="/org/gnome/baobab/preferences/">
+  <schema id="org.gnome.baobab.preferences" path="/org/gnome/baobab/preferences/">
     <key name="excluded-uris" type="as">
       <default>[]</default>
       <_summary>Excluded partitions URIs</_summary>
       <_description>A list of URIs for partitions to be excluded from scanning.</_description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.baobab.ui" path="/org/gnome/baobab/ui/">
+  <schema id="org.gnome.baobab.ui" path="/org/gnome/baobab/ui/">
     <key name="active-chart" type="s">
       <choices>
         <choice value='rings'/>

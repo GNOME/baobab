@@ -50,6 +50,7 @@ PKG_CHECK_MODULES(BAOBAB, [
 AC_CONFIG_FILES([
 Makefile
 data/Makefile
+data/org.gnome.baobab.gschema.xml.in
 help/Makefile
 pixmaps/Makefile
 src/Makefile
