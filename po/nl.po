@@ -13,10 +13,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.nl\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-23 23:13+0100\n"
-"PO-Revision-Date: 2013-03-23 23:14+0100\n"
-"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-08-12 13:41+0000\n"
+"PO-Revision-Date: 2013-08-31 16:57+0200\n"
+"Last-Translator: Hannie Dumoleyn <hannie@ubuntu-nl.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Schijfgebruik"
 
@@ -73,61 +74,53 @@ msgstr "De GdkWindowState van het venster"
 msgid "Print version information and exit"
 msgstr "Versie-informatie afdrukken en sluiten"
 
-#: ../src/baobab-application.vala:106
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Schijfgebruikanalyse"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d item"
 msgstr[1] "%d items"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Maximumdiepte"
+#: ../src/baobab-cellrenderers.vala:100
+msgid "Unknown"
+msgstr "Onbekend"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "De maximumdiepte in het ringdiagram vanaf de root"
+#: ../src/baobab-cellrenderers.vala:108
+msgid "Today"
+msgstr "Vandaag"
 
-# Vrij vertaald (Wouter Bolsterlee)
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Diagrammodel"
+#: ../src/baobab-cellrenderers.vala:111
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dag"
+msgstr[1] "%d dagen"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Model van het ringdiagram instellen"
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d maand"
+msgstr[1] "%d maanden"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Root-node van ringdiagram"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Stel de root-node in van het model"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Naar bovenliggende map verplaatsen"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "_Inzoomen"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "_Uitzoomen"
+#: ../src/baobab-cellrenderers.vala:117
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d jaar"
+msgstr[1] "%d jaar"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Persoonlijke map"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Hoofdpartitie"
+msgid "Computer"
+msgstr "Computer"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -137,50 +130,46 @@ msgstr "Map scannen…"
 msgid "Scan Remote Folder…"
 msgstr "Map op afstand scannen…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Devices and locations"
-msgstr "Apparaten en locaties"
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+msgid "_Open Folder"
+msgstr "Map _openen"
 
-#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+msgid "_Copy Path to Clipboard"
+msgstr "Pad naar klembord _kopiëren"
+
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+msgid "Mo_ve to Trash"
+msgstr "_Naar prullenbak verplaatsen"
+
+#: ../src/baobab-main-window.ui.h:7
 msgid "Close"
 msgstr "Sluiten"
 
-#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "Map"
 
-#: ../src/baobab-main-window.ui.h:6
-msgid "Usage"
-msgstr "Gebruik"
-
-#: ../src/baobab-main-window.ui.h:7
+#: ../src/baobab-main-window.ui.h:9
 msgid "Size"
 msgstr "Grootte"
 
-#: ../src/baobab-main-window.ui.h:8
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
 msgstr "Inhoud"
 
-#: ../src/baobab-main-window.ui.h:9
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Gewijzigd"
+
+#: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
 msgstr "Ringdiagram"
 
 # Tip van Tino en Vincent (Wouter Bolsterlee)
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
 msgstr "Hiërarchisch blokdiagram"
-
-#: ../src/baobab-main-window.ui.h:11
-msgid "_Open Folder"
-msgstr "Map _openen"
-
-#: ../src/baobab-main-window.ui.h:12
-msgid "_Copy Path to Clipboard"
-msgstr "Pad naar klembord _kopiëren"
-
-#: ../src/baobab-main-window.ui.h:13
-msgid "Mo_ve to Trash"
-msgstr "_Naar prullenbak verplaatsen"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -194,57 +183,52 @@ msgstr "I_nfo"
 msgid "_Quit"
 msgstr "_Afsluiten"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analyseren"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Persoonlijke map scannen"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "_Map scannen…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "_Externe map scannen…"
+msgid "_Move to parent folder"
+msgstr "_Naar bovenliggende map verplaatsen"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "Beel_d"
+msgid "Zoom _in"
+msgstr "_Inzoomen"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Herladen"
+msgid "Zoom _out"
+msgstr "_Uitzoomen"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Alles uitvouwen"
-
-# opvouwen/invouwen (vergelijk uitvouwen)
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "Alles op_vouwen"
-
-#: ../src/baobab-window.vala:216
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
-msgstr "Selecteer een map"
+msgstr "Map selecteren"
 
-#: ../src/baobab-window.vala:266
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Openen"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Koppelpunten recursief analyseren"
+
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Kon volumen niet analyseren."
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Tonen van hulp mislukt"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
 # schijfgebruik/hardeschijfgebruik
-#: ../src/baobab-window.vala:320
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Een grafisch hulpmiddel om schijfgebruik te analyseren."
 
-#: ../src/baobab-window.vala:325
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Tino Meinen\n"
@@ -255,22 +239,94 @@ msgstr ""
 "\n"
 "Kijk voor meer informatie op http://nl.gnome.org/"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Openen van bestand mislukt"
+
+#: ../src/baobab-window.vala:427
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "Kon bestand niet naar de prullenbak verplaatsen"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Apparaten en locaties"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Kon map ‘%s’, of sommige van de mappen die zich daarin bevinden, niet "
 "scannen."
 
+#: ../src/baobab-window.vala:601
+#| msgid "Could not detect any mount point."
+msgid "Could not detect occupied disk sizes."
+msgstr "Kon bezette schijfgroottes niet detecteren."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "In plaats hiervan worden schijnbare groottes getoond."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "‘%s’ is geen geldige map"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Kon schijfgebruik niet analyseren."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Maximumdiepte"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "De maximumdiepte in het ringdiagram vanaf de root"
+
+# Vrij vertaald (Wouter Bolsterlee)
+#~ msgid "Chart model"
+#~ msgstr "Diagrammodel"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "Model van het ringdiagram instellen"
+
+#~ msgid "Chart root node"
+#~ msgstr "Root-node van ringdiagram"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "Stel de root-node in van het model"
+
+#~ msgid "Main volume"
+#~ msgstr "Hoofdpartitie"
+
+#~ msgid "Usage"
+#~ msgstr "Gebruik"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Analyseren"
+
+#~ msgid "_Scan Home"
+#~ msgstr "_Persoonlijke map scannen"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "_Map scannen…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "_Externe map scannen…"
+
+#~ msgid "_View"
+#~ msgstr "Beel_d"
+
+#~ msgid "_Reload"
+#~ msgstr "_Herladen"
+
+#~ msgid "_Expand All"
+#~ msgstr "_Alles uitvouwen"
+
+# opvouwen/invouwen (vergelijk uitvouwen)
+#~ msgid "_Collapse All"
+#~ msgstr "Alles op_vouwen"
 
 #~ msgid "Scan Folder"
 #~ msgstr "Map scannen"
@@ -400,9 +456,6 @@ msgstr "Kon schijfgebruik niet analyseren."
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "Te veel argumenten. Er kan slechts één map worden opgegeven."
 
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Kon geen koppelpunten vinden."
-
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "Zonder koppelpunten kan het schijfgebruik niet worden bekeken."
 
@@ -524,9 +577,6 @@ msgstr "Kon schijfgebruik niet analyseren."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "Kon ‘%s’ niet naar de prullenbak verplaatsen"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "Kon bestand niet naar de prullenbak verplaatsen"
 
 #~ msgid "Details: %s"
 #~ msgstr "Details: %s"
