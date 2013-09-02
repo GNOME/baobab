@@ -1,7 +1,10 @@
+NULL =
+
 baobabicondir = $(datadir)/icons/hicolor/scalable/actions/
 baobabicon_DATA = \
 	view-ringschart-symbolic.svg	\
-	view-treemap-symbolic.svg
+	view-treemap-symbolic.svg	\
+	$(NULL)
 
 baobabappdir = $(datadir)/applications
 baobabapp_in_files = baobab.desktop.in
@@ -11,6 +14,9 @@ $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
 	sed -e "s|\@VERSION\@|@VERSION@|" $< > $@
 
 @INTLTOOL_DESKTOP_RULE@
+
+appdatadir = $(datadir)/appdata
+appdata_DATA = baobab.appdata.xml
 
 gsettingsschema_in_files = org.gnome.baobab.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
@@ -26,11 +32,15 @@ EXTRA_DIST = 				\
 	baobab.desktop.in.in		\
 	$(gsettingsschema_in_files)	\
 	$(man_MANS)			\
-	$(baobabicon_DATA)
+	$(baobabicon_DATA)		\
+	baobab.appdata.xml.in		\
+	$(NULL)
 
 CLEANFILES =	 			\
 	$(baobabapp_in_files)		\
 	$(baobabapp_DATA)		\
-	$(gsettings_SCHEMAS)
+	$(gsettings_SCHEMAS)		\
+	$(appdata_DATA)			\
+	$(NULL)
 
 -include $(top_srcdir)/git.mk
