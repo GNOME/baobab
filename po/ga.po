@@ -1,569 +1,287 @@
-# Irish translations for gnome-utils package.
-# Copyright (C) 1999-2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-utils package.
+# Irish translations for baobab package.
+# Copyright (C) 1999-2013 Free Software Foundation, Inc.
+# This file is distributed under the same license as the baobab package.
 # Seán O'Ceallaigh <s_oceallaigh@yahoo.com>, 1999.
 # Paul Duffy <dubhthach@frink.nuigalway.ie>, 2003
 # Alastair McKinstry <mckinstry@computer.org>, 2004.
-# Seán de Búrca <leftmostcat@gmail.com>, 2007-2009.
+# Seán de Búrca <leftmostcat@gmail.com>, 2007-2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils.master\n"
+"Project-Id-Version: baobab.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 14:29-0400\n"
-"PO-Revision-Date: 2009-08-12 15:49-0600\n"
+"POT-Creation-Date: 2013-09-02 21:51-0600\n"
+"PO-Revision-Date: 2013-09-02 21:58-0600\n"
 "Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n"
-"%10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
 
-#: ../data/baobab.desktop.in.in.h:1
-msgid "Check folder sizes and available disk space"
-msgstr "Seiceáil méideanna fillteán agus spás diosca le fáil"
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
 
-#: ../data/baobab.desktop.in.in.h:2 ../data/baobab-main-window.ui.h:2
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Anailíseoir Úsáid Diosca"
 
-#: ../data/baobab-preferences-dialog.ui.h:1
-msgid "Disk Usage Analyzer Preferences"
-msgstr "Sainroghanna Anailíseoir Úsáid Diosca"
+#: ../data/baobab.desktop.in.in.h:2
+msgid "Check folder sizes and available disk space"
+msgstr "Seiceáil méideanna fillteán agus spás diosca le fáil"
 
-#: ../data/baobab-preferences-dialog.ui.h:2
-msgid "Select _devices to include in filesystem scan:"
-msgstr "Roghnaigh _gléasanna le cur san áireamh do scanadh an chórais comhad:"
+#: ../data/baobab.desktop.in.in.h:3
+msgid "storage;space;cleanup;"
+msgstr "stóras;spás;glanadh;"
 
-#: ../data/baobab-preferences-dialog.ui.h:3
-msgid "_Monitor changes to your home folder"
-msgstr "Déan _monatóireacht ar athruithe d'fhillteáin baile"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "Active Chart"
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr ""
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
-msgid "Monitor Home"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr ""
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#, fuzzy
-msgid "Statusbar is Visible"
-msgstr "Barra _Stádais"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+msgid "Active Chart"
+msgstr "Cairt Ghníomhach"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
-msgid "Toolbar is Visible"
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Whether any change to the home directory should be monitored."
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "Whether the status bar at the bottom of main window should be visible."
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:9
-msgid "Whether the toolbar should be visible in main window."
-msgstr ""
-
-#: ../data/org.gnome.baobab.gschema.xml.in.h:10
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr ""
 
-#: ../data/baobab-main-window.ui.h:1
-msgid "All_ocated Space"
-msgstr "Spás _Dáilte"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+msgid "Window size"
+msgstr "Méid na fuinneoige"
 
-#: ../data/baobab-main-window.ui.h:3
-msgid "Refresh"
-msgstr "Athnuaigh"
-
-#: ../data/baobab-main-window.ui.h:4
-msgid "S_can Remote Folder..."
-msgstr "Scan Fillteán C_ianda..."
-
-#: ../data/baobab-main-window.ui.h:5
-msgid "Scan F_older..."
-msgstr "Scan _Fillteán..."
-
-#: ../data/baobab-main-window.ui.h:6
-msgid "Scan Filesystem"
-msgstr "Scan Córas Comhad"
-
-#: ../data/baobab-main-window.ui.h:7
-msgid "Scan Folder"
-msgstr "Scan Fillteán"
-
-#: ../data/baobab-main-window.ui.h:8
-msgid "Scan Home"
-msgstr "Scan Baile"
-
-#: ../data/baobab-main-window.ui.h:9
-msgid "Scan Remote Folder"
-msgstr "Scan Fillteán Cianda"
-
-#: ../data/baobab-main-window.ui.h:10
-msgid "Scan _Filesystem"
-msgstr "Scan _Córas Comhad"
-
-#: ../data/baobab-main-window.ui.h:11
-msgid "Scan _Home Folder"
-msgstr "Scan Fillteán _Baile"
-
-#: ../data/baobab-main-window.ui.h:12
-msgid "Scan a folder"
-msgstr "Scan fillteán"
-
-#: ../data/baobab-main-window.ui.h:13
-msgid "Scan a remote folder"
-msgstr "Scan fillteán cianda"
-
-#: ../data/baobab-main-window.ui.h:14
-msgid "Scan filesystem"
-msgstr "Scan córas comhad"
-
-#: ../data/baobab-main-window.ui.h:15
-msgid "Scan home folder"
-msgstr "Scan fillteán baile"
-
-#: ../data/baobab-main-window.ui.h:16
-msgid "St_atusbar"
-msgstr "Barra S_tádais"
-
-#: ../data/baobab-main-window.ui.h:17
-msgid "Stop scanning"
-msgstr "Stad scanadh"
-
-#: ../data/baobab-main-window.ui.h:18
-msgid "_Analyzer"
-msgstr "_Anailíseoir"
-
-#: ../data/baobab-main-window.ui.h:19
-msgid "_Collapse All"
-msgstr "L_aghdaigh Uile"
-
-#: ../data/baobab-main-window.ui.h:20
-msgid "_Contents"
-msgstr "_Inneachar"
-
-#: ../data/baobab-main-window.ui.h:21
-msgid "_Edit"
-msgstr "_Eagar"
-
-#: ../data/baobab-main-window.ui.h:22
-msgid "_Expand All"
-msgstr "_Leathnaigh Uile"
-
-#: ../data/baobab-main-window.ui.h:23
-msgid "_Help"
-msgstr "Cab_hair"
-
-#: ../data/baobab-main-window.ui.h:24
-msgid "_Toolbar"
-msgstr "Barra _Uirlisí"
-
-#: ../data/baobab-main-window.ui.h:25
-msgid "_View"
-msgstr "_Amharc"
-
-#: ../src/baobab.c:136 ../src/baobab.c:388
-msgid "Scanning..."
-msgstr "Á scanadh..."
-
-#: ../src/baobab.c:182
-msgid "Total filesystem capacity:"
-msgstr "Toilleadh an chórais comhad iomlán:"
-
-#: ../src/baobab.c:183
-msgid "used:"
-msgstr "úsáidte:"
-
-#: ../src/baobab.c:184
-msgid "available:"
-msgstr "ar fáil:"
-
-#. set statusbar, percentage and allocated/normal size
-#: ../src/baobab.c:273 ../src/baobab.c:330 ../src/callbacks.c:265
-msgid "Calculating percentage bars..."
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+msgid "The initial size of the window"
 msgstr ""
 
-#: ../src/baobab.c:284 ../src/baobab.c:1325 ../src/callbacks.c:269
-msgid "Ready"
-msgstr "Réidh"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+msgid "Window state"
+msgstr "Staid na fuinneoige"
 
-#: ../src/baobab.c:421
-msgid "Total filesystem capacity"
-msgstr "Toilleadh an chórais comhad iomlán"
-
-#: ../src/baobab.c:443
-msgid "Total filesystem usage"
-msgstr "Úsáid an chórais comhad iomlán"
-
-#: ../src/baobab.c:484
-msgid "contains hardlinks for:"
-msgstr "tá crua-naisc ann ar:"
-
-#: ../src/baobab.c:493
-#, fuzzy, c-format
-msgid "%5d item"
-msgid_plural "%5d items"
-msgstr[0] "% 5d mhír"
-msgstr[1] "% 5d mhír"
-msgstr[2] "% 5d mhír"
-msgstr[3] "% 5d mír"
-msgstr[4] "% 5d mír"
-
-#: ../src/baobab.c:620
-msgid "Could not initialize monitoring"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+msgid "The GdkWindowState of the window"
 msgstr ""
 
-#: ../src/baobab.c:621
-msgid "Changes to your home folder will not be monitored."
+#: ../src/baobab-application.vala:30
+msgid "Print version information and exit"
 msgstr ""
 
-#: ../src/baobab.c:945
-msgid "Move to parent folder"
-msgstr "Bog go máthairfhillteán"
+#: ../src/baobab-application.vala:99
+msgid "- Disk Usage Analyzer"
+msgstr "- Anailíseoir Úsáid Diosca"
 
-#: ../src/baobab.c:949
-msgid "Zoom in"
-msgstr "Súmáil isteach"
-
-#: ../src/baobab.c:953
-msgid "Zoom out"
-msgstr "Súmáil amach"
-
-#: ../src/baobab.c:957
-#, fuzzy
-msgid "Save screenshot"
-msgstr "Sábháil Scáilghraf"
-
-#: ../src/baobab.c:1143
-msgid "View as Rings Chart"
-msgstr "Amharc mar Chairt Fháinní"
-
-#: ../src/baobab.c:1145
-msgid "View as Treemap Chart"
-msgstr "Amharc mar Chairt Mhapa Crainn"
-
-#: ../src/baobab.c:1250
-msgid "Show version"
-msgstr "Taispeáin leagan"
-
-#: ../src/baobab.c:1251
-msgid "[DIRECTORY]"
-msgstr "[COMHADLANN]"
-
-#: ../src/baobab.c:1281
-msgid "Too many arguments. Only one directory can be specified."
-msgstr ""
-
-#: ../src/baobab.c:1298
-msgid "Could not detect any mount point."
-msgstr "Níorbh fhéidir aon phointe fheistithe a bhrath."
-
-#: ../src/baobab.c:1300
-msgid "Without mount points disk usage cannot be analyzed."
-msgstr ""
-
-#: ../src/baobab-chart.c:205
-msgid "Maximum depth"
-msgstr ""
-
-#: ../src/baobab-chart.c:206
-msgid "The maximum depth drawn in the chart from the root"
-msgstr ""
-
-#: ../src/baobab-chart.c:215
-msgid "Chart model"
-msgstr ""
-
-#: ../src/baobab-chart.c:216
-msgid "Set the model of the chart"
-msgstr ""
-
-#: ../src/baobab-chart.c:223
-msgid "Chart root node"
-msgstr ""
-
-#: ../src/baobab-chart.c:224
-msgid "Set the root node from the model"
-msgstr ""
-
-#: ../src/baobab-chart.c:1690
-msgid "Cannot create pixbuf image!"
-msgstr ""
-
-#. Popup the File chooser dialog
-#: ../src/baobab-chart.c:1700
-msgid "Save Snapshot"
-msgstr "Sábháil Alaghraf"
-
-#: ../src/baobab-chart.c:1727
-msgid "_Image type:"
-msgstr "Cineál í_omhá:"
-
-#: ../src/baobab-prefs.c:172
-msgid "Scan"
-msgstr "Scan"
-
-#: ../src/baobab-prefs.c:179
-msgid "Device"
-msgstr "Gléas"
-
-#: ../src/baobab-prefs.c:187
-msgid "Mount Point"
-msgstr "Pointe Feistithe"
-
-#: ../src/baobab-prefs.c:195
-msgid "Filesystem Type"
-msgstr "Cineál an Chórais Comhad"
-
-#: ../src/baobab-prefs.c:203
-msgid "Total Size"
-msgstr "Méid Iomlán"
-
-#: ../src/baobab-prefs.c:212
-msgid "Available"
-msgstr "Ar Fáil"
-
-#: ../src/baobab-remote-connect-dialog.c:77
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
-msgid "Cannot scan location \"%s\""
-msgstr ""
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d mhír"
+msgstr[1] "%d mhír"
+msgstr[2] "%d mhír"
+msgstr[3] "%d mír"
+msgstr[4] "%d mír"
 
-#: ../src/baobab-remote-connect-dialog.c:175
-msgid "Custom Location"
-msgstr "Suíomh Saincheaptha"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "Anaithnid"
 
-#: ../src/baobab-remote-connect-dialog.c:177
-msgid "SSH"
-msgstr "SSH"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "Inniu"
 
-#: ../src/baobab-remote-connect-dialog.c:180
-msgid "Public FTP"
-msgstr "FTP Poiblí"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d lá"
+msgstr[1] "%d lá"
+msgstr[2] "%d lá"
+msgstr[3] "%d lá"
+msgstr[4] "%d lá"
 
-#: ../src/baobab-remote-connect-dialog.c:182
-msgid "FTP (with login)"
-msgstr "FTP (le logáil isteach)"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d mhí"
+msgstr[1] "%d mhí"
+msgstr[2] "%d mhí"
+msgstr[3] "%d mí"
+msgstr[4] "%d mí"
 
-#: ../src/baobab-remote-connect-dialog.c:185
-msgid "Windows share"
-msgstr "Comhroinnt Windows"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d bhliain"
+msgstr[1] "%d bhliain"
+msgstr[2] "%d bhliana"
+msgstr[3] "%d mbliana"
+msgstr[4] "%d bliain"
 
-#: ../src/baobab-remote-connect-dialog.c:187
-msgid "WebDAV (HTTP)"
-msgstr "WebDAV (HTTP)"
+#: ../src/baobab-location.vala:77
+msgid "Home folder"
+msgstr "Fillteán baile"
 
-#: ../src/baobab-remote-connect-dialog.c:189
-msgid "Secure WebDAV (HTTPS)"
-msgstr "WebDAV Daingean (HTTPS)"
+#: ../src/baobab-location.vala:123
+msgid "Computer"
+msgstr "Ríomhaire"
 
-#: ../src/baobab-remote-connect-dialog.c:249
-msgid "Cannot Connect to Server. You must enter a name for the server."
-msgstr ""
+#: ../src/baobab-main-window.ui.h:1
+msgid "Scan Folder…"
+msgstr "Scan Fillteán…"
 
-#: ../src/baobab-remote-connect-dialog.c:252
-msgid "Please enter a name and try again."
-msgstr ""
+#: ../src/baobab-main-window.ui.h:2
+msgid "Scan Remote Folder…"
+msgstr "Scan Fillteán Cianda…"
 
-#: ../src/baobab-remote-connect-dialog.c:441
-msgid "_Location (URI):"
-msgstr "_Suíomh (URI):"
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+msgid "_Open Folder"
+msgstr "_Oscail Fillteán"
 
-#: ../src/baobab-remote-connect-dialog.c:463
-msgid "_Server:"
-msgstr "_Freastalaí:"
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+msgid "_Copy Path to Clipboard"
+msgstr "_Cóipeáil Conair go dtí an Gearrthaisce"
 
-#: ../src/baobab-remote-connect-dialog.c:482
-msgid "Optional information:"
-msgstr "Eolas roghnach:"
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+msgid "Mo_ve to Trash"
+msgstr "_Bog go Bruscar"
 
-#: ../src/baobab-remote-connect-dialog.c:494
-msgid "_Share:"
-msgstr "_Comhroinn:"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Dún"
 
-#: ../src/baobab-remote-connect-dialog.c:515
-msgid "_Port:"
-msgstr "_Port:"
-
-#: ../src/baobab-remote-connect-dialog.c:535
-msgid "_Folder:"
-msgstr "_Fillteán:"
-
-#: ../src/baobab-remote-connect-dialog.c:555
-msgid "_User Name:"
-msgstr "Ainm Ú_sáideora:"
-
-#: ../src/baobab-remote-connect-dialog.c:576
-msgid "_Domain Name:"
-msgstr "Ai_nm Fearainn:"
-
-#: ../src/baobab-remote-connect-dialog.c:643
-msgid "Connect to Server"
-msgstr ""
-
-#: ../src/baobab-remote-connect-dialog.c:659
-msgid "Service _type:"
-msgstr ""
-
-#: ../src/baobab-remote-connect-dialog.c:778
-msgid "_Scan"
-msgstr "_Scan"
-
-#: ../src/baobab-treeview.c:82
-msgid "Rescan your home folder?"
-msgstr ""
-
-#: ../src/baobab-treeview.c:83
-msgid ""
-"The content of your home folder has changed. Select rescan to update the "
-"disk usage details."
-msgstr ""
-
-#: ../src/baobab-treeview.c:84
-msgid "_Rescan"
-msgstr "_Athscan"
-
-#: ../src/baobab-treeview.c:222
+#: ../src/baobab-main-window.ui.h:8
 msgid "Folder"
 msgstr "Fillteán"
 
-#: ../src/baobab-treeview.c:244
-msgid "Usage"
-msgstr "Úsáid"
-
-#: ../src/baobab-treeview.c:258
+#: ../src/baobab-main-window.ui.h:9
 msgid "Size"
 msgstr "Méid"
 
-#: ../src/baobab-treeview.c:274
+#: ../src/baobab-main-window.ui.h:10
 msgid "Contents"
-msgstr "Ábhair"
+msgstr "Ábhar"
 
-#: ../src/baobab-utils.c:72
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Athraithe"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Cairt Fháinní"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Cairt Mhapa Crainn"
+
+#: ../src/baobab-menu.ui.h:1
+msgid "_Help"
+msgstr "Cab_hair"
+
+#: ../src/baobab-menu.ui.h:2
+msgid "_About"
+msgstr "_Maidir Leis Seo"
+
+#: ../src/baobab-menu.ui.h:3
+msgid "_Quit"
+msgstr "_Scoir"
+
+#: ../src/baobab-menu.ui.h:7
+msgid "_Move to parent folder"
+msgstr "_Bog go máthairfhillteán"
+
+#: ../src/baobab-menu.ui.h:8
+msgid "Zoom _in"
+msgstr "Súmáil _isteach"
+
+#: ../src/baobab-menu.ui.h:9
+msgid "Zoom _out"
+msgstr "Súmáil _amach"
+
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Roghnaigh Fillteán"
 
-#. add extra widget
-#: ../src/baobab-utils.c:84
-msgid "_Show hidden folders"
-msgstr "_Taispeáin fillteáin folaithe"
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "_Cealaigh"
 
-#: ../src/baobab-utils.c:263
-msgid "Cannot check an excluded folder!"
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Oscail"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
 msgstr ""
 
-#: ../src/baobab-utils.c:287
+#: ../src/baobab-window.vala:279
+msgid "Could not analyze volume."
+msgstr ""
+
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Theip ar thaispeáint chabhrach"
+
+#: ../src/baobab-window.vala:330
+msgid "Baobab"
+msgstr "Baobab"
+
+#: ../src/baobab-window.vala:333
+msgid "A graphical tool to analyze disk usage."
+msgstr "Uirlis ghrafach chun úsáid diosca a anailísiú."
+
+#: ../src/baobab-window.vala:338
+msgid "translator-credits"
+msgstr "Seán de Búrca <leftmostcat@gmail.com>"
+
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Theip ar oscailt chomhaid"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Theip ar bhogadh an chomhaid go dtí an bruscar"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Gléasanna agus suíomhanna"
+
+#: ../src/baobab-window.vala:583
+#, c-format
+msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgstr ""
+"Níorbh fhéidir an fillteán \"%s\" nó cuid de na fillteán atá ann a scanadh."
+
+#: ../src/baobab-window.vala:601
+#, fuzzy
+msgid "Could not detect occupied disk sizes."
+msgstr "Níorbh fhéidir aon phointe fheistithe a bhrath."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr ""
+
+#. || is_virtual_filesystem ()
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "Ní fillteán bailí é \"%s\""
 
-#: ../src/baobab-utils.c:290
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr ""
-
-#: ../src/baobab-utils.c:326
-msgid "_Open Folder"
-msgstr "_Oscail Fillteán"
-
-#: ../src/baobab-utils.c:332
-msgid "Mo_ve to Trash"
-msgstr "_Bog go Bruscar"
-
-#: ../src/baobab-utils.c:362
-#, c-format
-msgid "Could not open folder \"%s\""
-msgstr "Níorbh fhéidir fillteán \"%s\" a oscailt"
-
-#: ../src/baobab-utils.c:365
-msgid "There is no installed viewer capable of displaying the folder."
-msgstr ""
-
-#: ../src/baobab-utils.c:433
-#, c-format
-msgid "Could not move \"%s\" to the Trash"
-msgstr "Níorbh fhéidir \"%s\" a bhogadh go dtí an Bruscar"
-
-#: ../src/baobab-utils.c:441
-msgid "Could not move file to the Trash"
-msgstr "Níorbh fhéidir comhad a bhogadh go dtí an Bruscar"
-
-#: ../src/baobab-utils.c:443
-#, c-format
-msgid "Details: %s"
-msgstr "Mionsonraí: %s"
-
-#: ../src/baobab-utils.c:479
-msgid "There was an error displaying help."
-msgstr "Tharla earráid agus cabhair á taispeáint."
-
-#: ../src/callbacks.c:76
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
-msgstr ""
-"Is bogearraí saor é an clár seo; is féidir leat é a athdháileadh nó a athrú "
-"faoi théarmaí an GNU General Public License mar foilsíodh é ag an Free "
-"Software Foundation; leagan 2 an License, nó (de do rogha) aon leagan níos "
-"déanaí."
-
-#: ../src/callbacks.c:81
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details."
-msgstr ""
-"Dáileadh an clár seo le súil go mbeidh sé úsáideach, ach GAN AON BHARÁNTA; "
-"gan an baránta intuigthe INDÍOLTÓIREACHTA nó OIRIÚNACHTA D'FHEIDHM ÁIRITHE "
-"fiú. Féach an GNU General Public License le haghaidh tuilleadh mionsonraí."
-
-#: ../src/callbacks.c:86
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-msgstr ""
-"Ba chóir go bhfuair tú cóip an GNU General Public License in éineacht leis "
-"an gclár seo; mura bhfuair tú é, scríobh chuig an Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA."
-
-#: ../src/callbacks.c:101
-msgid "Baobab"
-msgstr "Baobab"
-
-#: ../src/callbacks.c:102
-msgid "A graphical tool to analyze disk usage."
-msgstr "Uirlis ghrafach chun úsáid diosca a anailísiú."
-
-#: ../src/callbacks.c:110
-msgid "translator-credits"
-msgstr ""
-"Seán Ó Ceallaigh <s_oceallaigh@yahoo.com>\n"
-"Paul Duffy <dubhthach@frink.nuigalway.ie>\n"
-"Alastair McKinstry <mckinstry@computer.org>\n"
-"Seán de Búrca <leftmostcat@gmail.com>"
-
-#: ../src/callbacks.c:208
-msgid "The document does not exist."
-msgstr "Níl an cháipéis ann."
-
-#: ../src/callbacks.c:289
-msgid "The folder does not exist."
-msgstr "Níl an fillteán ann."
