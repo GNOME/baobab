@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils-2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-27 22:11+0000\n"
-"PO-Revision-Date: 2013-01-17 11:19+0200\n"
+"POT-Creation-Date: 2013-09-02 21:04+0000\n"
+"PO-Revision-Date: 2013-09-06 21:51+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -17,7 +17,17 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Jednostavan program koji može da pregleda kako posebne fascikle (mesne ili "
+"udaljene) tako i volumene i da da grafički prikaz koji sadrži veličinu svakog "
+"direktorijuma ili procenat."
+
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Ispitivač iskorišćenosti diska"
 
@@ -29,35 +39,35 @@ msgstr "Proverite veličine fascikli i slobodan prostor na disku"
 msgid "storage;space;cleanup;"
 msgstr "smeštaj;skladištenje;prostor;čišćenje;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "Putanje izdvojenih particija"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Spisak adresa particija koje će biti izdvojene iz pretraživanja."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Aktivni grafikon"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Vrsta grafika koji će biti prikazan."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Veličina prozora"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "Početna veličina prozora"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Stanje prozora"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "Stanje prozora Gdk prozora"
 
@@ -65,11 +75,11 @@ msgstr "Stanje prozora Gdk prozora"
 msgid "Print version information and exit"
 msgstr "Ispisuje podatke o izdanju i izlazi"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "— Analizer iskorišćenosti diska"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -78,99 +88,101 @@ msgstr[1] "%d stavke"
 msgstr[2] "%d stavki"
 msgstr[3] "Jedna stavka"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Najveća dubina"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "Nepoznato"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Najveća dubina koja se iscrtava u grafikonu počev od korena"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "Danas"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Model grafikona"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dan"
+msgstr[1] "%d dana"
+msgstr[2] "%d dana"
+msgstr[3] "jedan dan"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Podešava model grafikona"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d mesec"
+msgstr[1] "%d meseca"
+msgstr[2] "%d meseci"
+msgstr[3] "jedan mesec"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Korenski čvor grafikona"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Podešava koreni čvor iz modela"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Premesti u fasciklu iznad"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "U_većaj"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "U_manji"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d godine"
+msgstr[1] "%d godine"
+msgstr[2] "%d godina"
+msgstr[3] "jedne godine"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Lična fascikla"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Glavni disk"
+msgid "Computer"
+msgstr "Računar"
 
 #: ../src/baobab-main-window.ui.h:1
-#| msgid "Scan F_older…"
 msgid "Scan Folder…"
 msgstr "Pregledaj fasciklu…"
 
 #: ../src/baobab-main-window.ui.h:2
-#| msgid "Scan Remote Fo_lder…"
 msgid "Scan Remote Folder…"
 msgstr "Pregledaj udaljenu fasciklu…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Zatvori"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Fascikla"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Upotreba"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Veličina"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Sadržaji"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Prikaži prstenove"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Prikaži stablo"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Otvori fasciklu"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Umnoži putanju u ostavu"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Premesti u _smeće"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Zatvori"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Fascikla"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Veličina"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Sadržaji"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Izmenjen"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Prikaži prstenove"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Prikaži stablo"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -184,77 +196,89 @@ msgstr "_O programu"
 msgid "_Quit"
 msgstr "_Izađi"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Ispitivač"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "Lična _facikla"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Pregledaj _fasciklu…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Pregledaj _udaljenu fasciklu…"
+msgid "_Move to parent folder"
+msgstr "_Premesti u fasciklu iznad"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Pregled"
+msgid "Zoom _in"
+msgstr "U_većaj"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Osveži"
+msgid "Zoom _out"
+msgstr "U_manji"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Razgranaj sve"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Sažmi sve"
-
-#: ../src/baobab-window.vala:131
-#| msgid "Show all locations"
-msgid "Devices and locations"
-msgstr "Uređaji i mesta"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Izaberite fasciklu"
+
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "_Otkaži"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Otvori"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Dubinski analiziraj tačke kačenja"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Ne mogu da analiziram disk."
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Nisam uspeo da prikažem pomoć"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:332
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafički alat za ispitivanje iskorišenosti diska."
 
-#: ../src/baobab-window.vala:337
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "  Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "\n"
 "http://prevod.org — prevod na srpski jezik"
 
-#: ../src/baobab-window.vala:579
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Nisam uspeo da otvorim datoteku"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Nisam uspeo da premestim datoteku u smeće"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Uređaji i mesta"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Ne mogu da pregledam fasciklu „%s“ ili neku od fascikli koje sadrži."
 
+#: ../src/baobab-window.vala:601
+#| msgid "Could not analyze disk usage."
+msgid "Could not detect occupied disk sizes."
+msgstr "Ne mogu da otkrijem zauzetu veličinu diska."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Umesto toga su prikazane približne veličine."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ nije ispravna fascikla"
 
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Ne mogu da analiziram iskorišćenost diska."
