@@ -17,22 +17,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-16 19:27+0000\n"
-"PO-Revision-Date: 2012-12-17 09:50+0400\n"
-"Last-Translator: Aleksej Kabanov <ak099@mail.ru>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-09-05 12:30+0000\n"
+"PO-Revision-Date: 2013-09-07 13:25+0300\n"
+"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "10<=4 && (n%100<10 || n%100>=20) ? 1: 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.appdata.xml.in.h:1
+msgid "A simple application which can scan either specific folders (local or remote) or volumes and give a graphical representation including each directory size or percentage."
+msgstr "Простое приложение, которое может сканировать отдельные папки (локальные или удалённые) или тома и выводить графическое представление, включающее размеры каждого каталога или процентное соотношение."
+
+#: ../data/baobab.desktop.in.in.h:1
+#: ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
@@ -44,35 +47,35 @@ msgstr "Изучение размера папок и свободного ме�
 msgid "storage;space;cleanup;"
 msgstr "накопитель;пространство;очистка;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "Исключённые разделы"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Список разделов, которые не будут сканироваться."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Текущая диаграмма"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Какой тип диаграммы показывать."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Размер окна"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "Исходный размер окна"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Состояние окна"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState окна"
 
@@ -80,11 +83,11 @@ msgstr "GdkWindowState окна"
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "— Анализатор использования дисков"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -92,49 +95,50 @@ msgstr[0] "%d объект"
 msgstr[1] "%d объекта"
 msgstr[2] "%d объектов"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Максимальная глубина"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "Неизвестный"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Максимальная глубина колец, показываемых в диаграмме от корня"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "Сегодня"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Модель диаграммы"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d день"
+msgstr[1] "%d дня"
+msgstr[2] "%d дней"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Указать модель диаграммы"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d месяц"
+msgstr[1] "%d месяца"
+msgstr[2] "%d месяцев"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Корневой узел диаграммы"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Выбрать корневой узел диаграммы"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "П_ерейти к папке на уровень выше"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "_Увеличить"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "У_меньшить"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d год"
+msgstr[1] "%d года"
+msgstr[2] "%d лет"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Домашняя папка"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Основной том"
+msgid "Computer"
+msgstr "Компьютер"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -145,44 +149,47 @@ msgid "Scan Remote Folder…"
 msgstr "Сканировать удалённую папку…"
 
 #: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Закрыть"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Папка"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Использование"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Размер"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Содержимое"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Круговая диаграмма"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Древовидная карта"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "Откр_ыть папку"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4
+#: ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "Скопировать путь в _буфер обмена"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5
+#: ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "У_далить в корзину"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Папка"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Размер"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Содержимое"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Изменён"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Круговая диаграмма"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Древовидная карта"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -196,52 +203,41 @@ msgstr "_О программе"
 msgid "_Quit"
 msgstr "_Выйти"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Анализатор"
-
-# Это надпись на кнопке на панели инструментов. Необходимо ручное выравнивание.
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr ""
-"С_канировать\n"
-" домашнюю папку"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Сканировать _папку…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Сканировать _удалённую папку…"
+msgid "_Move to parent folder"
+msgstr "П_ерейти к папке на уровень выше"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Вид"
+msgid "Zoom _in"
+msgstr "_Увеличить"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Обновить"
+msgid "Zoom _out"
+msgstr "У_меньшить"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Развернуть всё"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "Св_ернуть всё"
-
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "Устройства и местоположения"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Выберите папку"
+
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "О_тмена"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Открыть"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Рекурсивно анализировать точки монтирования"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Не удалось проанализировать том."
+
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Не удалось открыть справку"
 
 #: ../src/baobab-window.vala:330
 msgid "Baobab"
@@ -262,28 +258,39 @@ msgstr ""
 "Василий Фаронов <qvvx@yandex.ru>\n"
 "Станислав Соловей <whats_up@tut.by>, 2012"
 
-#: ../src/baobab-window.vala:580
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Не удалось открыть файл"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "Не удалось переместить файл в корзину"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Устройства и местоположения"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Не удалось выполнить сканирование папки «%s» или некоторых содержащихся в "
-"ней папок."
+msgstr "Не удалось выполнить сканирование папки «%s» или некоторых содержащихся в ней папок."
+
+#: ../src/baobab-window.vala:601
+msgid "Could not detect occupied disk sizes."
+msgstr "Не удалось определить размер используемого пространства диска."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Показаны предполагаемые размеры."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:618
+#: ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+#: ../src/baobab-window.vala:619
+#: ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Не удалось проанализировать использование дисков."
-
-#~ msgid "Monitor Home"
-#~ msgstr "Следить за домашней папкой"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "Наблюдать ли за изменениями в домашнем каталоге."
-
-#~ msgid "Scan a folder"
-#~ msgstr "Сканировать папку"
