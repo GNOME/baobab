@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-10 13:40+0000\n"
-"PO-Revision-Date: 2013-08-11 00:12+0500\n"
+"POT-Creation-Date: 2013-09-02 21:04+0000\n"
+"PO-Revision-Date: 2013-09-08 16:36+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
 "Language: Tajik\n"
@@ -18,6 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=1;\n"
 "X-Generator: Poedit 1.5.7\n"
+
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Ин барномаи оддиест, ки метавонад ҷузвдонҳои муайян (маҳаллӣ ё дурдаст) ё "
+"ҳаҷмҳоро скан кунад ва намоиши графикии онҳоро, аз ҷумла андоза ва фоизи ҳар "
+"як ҷузвдонро нишон диҳад."
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -31,35 +41,35 @@ msgstr "Санҷиши андозаи ҷузвдонҳо ва фазои дис�
 msgid "storage;space;cleanup;"
 msgstr "захирагоҳ;фазо;поксозӣ;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "URI-ҳои қисмбандиҳои истисношуда"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Рӯйхати URI-ҳо барои истисно кардани қисмбандиҳо аз сканкунӣ."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Диаграммаи фаъол"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Кадом намуди диаграмма бояд намоиш дода шавад."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Андозаи равзана"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "Андозаи ибтидоии равзана"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Вазъияти равзана"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "Вазъияти GdkWindowState-и равзана"
 
@@ -78,29 +88,34 @@ msgid_plural "%d items"
 msgstr[0] "%d объект"
 msgstr[1] "%d объект"
 
-#: ../src/baobab-cellrenderers.vala:100
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
 msgid "Unknown"
 msgstr "Номаълум"
 
-#: ../src/baobab-cellrenderers.vala:108
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Имрӯз"
 
-#: ../src/baobab-cellrenderers.vala:111
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d рӯз"
 msgstr[1] "%d рӯз"
 
-#: ../src/baobab-cellrenderers.vala:114
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
 msgstr[0] "%d моҳ"
 msgstr[1] "%d моҳ"
 
-#: ../src/baobab-cellrenderers.vala:117
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
@@ -241,7 +256,6 @@ msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Ҷузвдони \"%s\" ё баъзе аз зерҷузвдонҳои он сакан карда нашуданд."
 
 #: ../src/baobab-window.vala:601
-#| msgid "Could not analyze disk usage."
 msgid "Could not detect occupied disk sizes."
 msgstr "Андозаҳои диски истифодашуда муайян карда нашудаанд."
 
