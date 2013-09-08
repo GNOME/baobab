@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-12 00:56+0200\n"
-"PO-Revision-Date: 2013-08-12 00:57+0200\n"
+"POT-Creation-Date: 2013-09-08 11:23+0200\n"
+"PO-Revision-Date: 2013-09-08 11:24+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -17,6 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr "Et enkelt program som enten søker gjennom spesifikke mapper (lokale eller eksterne) eller volumer og gir en grafisk representasjon av disse inklusive katalogstørrelse og prosentvis størrelse."
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -30,35 +37,35 @@ msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
 msgid "storage;space;cleanup;"
 msgstr "lagring;plass;rydding;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "URIer til ekskluderte partisjoner"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "En liste med URIer til partisjoner som skal ekskluderes fra søket."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Aktivt plott"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Type plott som skal vises."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Vindusstørrelse"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "Utgangsstørrelse på vinduet"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Vindutilstand"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState for vinduet"
 
@@ -77,29 +84,34 @@ msgid_plural "%d items"
 msgstr[0] "%d oppføring"
 msgstr[1] "%d oppføringer"
 
-#: ../src/baobab-cellrenderers.vala:100
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
 msgid "Unknown"
 msgstr "Ukjent"
 
-#: ../src/baobab-cellrenderers.vala:108
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "I dag"
 
-#: ../src/baobab-cellrenderers.vala:111
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d dag"
 msgstr[1] "%d dager"
 
-#: ../src/baobab-cellrenderers.vala:114
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
 msgstr[0] "%d måned"
 msgstr[1] "%d måneder"
 
-#: ../src/baobab-cellrenderers.vala:117
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
