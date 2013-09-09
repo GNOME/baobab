@@ -1,5 +1,5 @@
 # Slovak translation for baobab.
-# Copyright (C) 2000-2003, 2005, 2008-2012 Free Software Foundation, Inc.
+# Copyright (C) 2000-2003, 2005, 2008-201333ree Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 # Stanislav Višňovský <visnovsky@nenya.ms.mff.cuni.cz>, 2000-2002.
 # Stanislav Višňovský <visnovsky@kde.org>, 2003.
@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-10 13:40+0000\n"
-"PO-Revision-Date: 2013-07-21 16:00+0100\n"
+"POT-Creation-Date: 2013-09-02 21:04+0000\n"
+"PO-Revision-Date: 2013-09-02 10:58+0100\n"
 "Last-Translator: Pavol Klačanský <pavol@klacansky.com>\n"
 "Language-Team: slovenčina <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -22,6 +22,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Generator: Poedit 1.5.4\n"
+
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Jednoduchá aplikácia, ktorá prehľadá zväzky alebo konkrátne priečinky (miestne aleob vzdialené)"
+"a poskytne grafické zobrazenie jednotlivých adresárov podľa veľkosti alebo v percentách."
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -35,36 +44,36 @@ msgstr "Skontrolujte veľkosti priečinkov a dostupné miesto na disku"
 msgid "storage;space;cleanup;"
 msgstr "úložisko;miesto;premazanie;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "URI vynechaných oddielov"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Zoznam URI pre oddiely, ktoré budú vynechané z prehľadávania."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Aktívny graf"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Ktorý typ grafu má byť zobrazený."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Veľkosť okna"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "Počiatočná veľkosť okna"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Stav okna"
 
 # MČ: Nebolo by vhodnejšie skôr „Hodnota vlastnosti Gdk...“, aby tam to stav nebolo vlastne dva krát? Keďže je to popis ku predchádzajúcemu reťazcu, tak tam ten preklad pojmu „state“ nechýba. Myslím si.
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "Hodnota vlastnosti GdkWindowState okna"
 
@@ -84,37 +93,48 @@ msgstr[0] "%d položiek"
 msgstr[1] "%d položka"
 msgstr[2] "%d položky"
 
-#: ../src/baobab-cellrenderers.vala:100
+# * https://bugzilla.gnome.org/show_bug.cgi?id=706559
+# Zmeneny, stlpec v treeview
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámy"
 
-#: ../src/baobab-cellrenderers.vala:108
+# Zmeneny, stlpec v treeview
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
-#: ../src/baobab-cellrenderers.vala:111
+# Zmeneny, stlpec v treeview
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d dní"
+msgstr[1] "%d deň"
+msgstr[2] "%d dni"
 
-#: ../src/baobab-cellrenderers.vala:114
+# Zmeneny, stlpec v treeview
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d mesiacov"
+msgstr[1] "%d mesiac"
+msgstr[2] "%d mesiace"
 
-#: ../src/baobab-cellrenderers.vala:117
+# Zmeneny, stlpec v treeview
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d rokov"
+msgstr[1] "%d rok"
+msgstr[2] "%d roky"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
@@ -122,7 +142,7 @@ msgstr "Domovský priečinok"
 
 #: ../src/baobab-location.vala:123
 msgid "Computer"
-msgstr ""
+msgstr "Počítač"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -162,7 +182,7 @@ msgstr "Obsah"
 
 #: ../src/baobab-main-window.ui.h:11
 msgid "Modified"
-msgstr ""
+msgstr "Zmenený"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
@@ -210,7 +230,7 @@ msgstr "_Otvoriť"
 
 #: ../src/baobab-window.vala:232
 msgid "Recursively analyze mount points"
-msgstr ""
+msgstr "Rekurzívne analyzovať prípojné body"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
@@ -252,15 +272,17 @@ msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "Nepodarilo sa analyzovať priečinok „%s“, alebo niektoré jeho podpriečinky."
 
+# MČ: nie skôr „obsadenosť“, ale nie som si istý, či je to v tomto prípade vhodnejšie.?
+# PK: podla mna nie
+# title
 #: ../src/baobab-window.vala:601
-#, fuzzy
-#| msgid "Could not analyze disk usage."
 msgid "Could not detect occupied disk sizes."
-msgstr "Nepodarilo sa analyzovať využitie disku."
+msgstr "Nepodarilo sa zistiť využitie disku."
 
+# message
 #: ../src/baobab-window.vala:601
 msgid "Apparent sizes are shown instead."
-msgstr ""
+msgstr "Namiesto toho sa zobrazili zdanlivé veľkosti."
 
 #. || is_virtual_filesystem ()
 #: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
@@ -271,54 +293,3 @@ msgstr "„%s“ nie je platný priečinok"
 #: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Nepodarilo sa analyzovať využitie disku."
-
-#~ msgid "Main volume"
-#~ msgstr "Hlavný zväzok"
-
-#~ msgid "Usage"
-#~ msgstr "Využitie"
-
-#~ msgid "_Analyzer"
-#~ msgstr "_Analyzátor"
-
-#~ msgid "_Scan Home"
-#~ msgstr "Analyzovať domov_ský priečinok"
-
-#~ msgid "Scan F_older…"
-#~ msgstr "Analyzovať _priečinok…"
-
-#~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "Analyzovať _vzdialený priečinok…"
-
-#~ msgid "_View"
-#~ msgstr "_Zobraziť"
-
-#~ msgid "_Reload"
-#~ msgstr "_Znovu načítať"
-
-#~ msgid "_Expand All"
-#~ msgstr "_Rozbaliť všetky"
-
-#~ msgid "_Collapse All"
-#~ msgstr "_Zabaliť všetky"
-
-#~ msgid "Maximum depth"
-#~ msgstr "Maximálna hĺbka"
-
-# desc
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "Maximálna hĺbka vykresľovaná v grafe od koreňa"
-
-#~ msgid "Chart model"
-#~ msgstr "Model grafu"
-
-# desc
-#~ msgid "Set the model of the chart"
-#~ msgstr "Nastavuje model grafu"
-
-#~ msgid "Chart root node"
-#~ msgstr "Koreňový uzol grafu"
-
-# desc
-#~ msgid "Set the root node from the model"
-#~ msgstr "Nastavuje koreňový uzol modelu"
