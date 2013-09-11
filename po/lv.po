@@ -1,6 +1,7 @@
 # translation of lv.po to Latvian
 # gnome-utils for Latvian
 # Copyright (C) 2000, 2006, 2007, 2009 Free Software Foundation, Inc.
+#
 # Pēeris Krišjāis <peterisk@apollo.lv>, 2000.
 # Artis Trops <hornet@navigators.lv>, 2000.
 # sTYLEeX <styleex@inbox.lv>, 2006.
@@ -8,24 +9,34 @@
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-20 12:11+0200\n"
-"PO-Revision-Date: 2013-02-20 12:13+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-09-02 21:04+0000\n"
+"PO-Revision-Date: 2013-09-11 23:09+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latviešu <lata-l10n@googlegroups.com>\n"
+"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Vienkārša lietotne, kas var skenēt noteiktas mapes (lokālas vai attālinātas) "
+"un sējumus, un dod grafisku attēlojumu, kas iekļauj katras mapes izmēru un "
+"procentus."
+
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Diska izmantošanas analizators"
 
@@ -37,35 +48,35 @@ msgstr "Pārbauda mapju izmērus un pieejamo diska vietu"
 msgid "storage;space;cleanup;"
 msgstr "uzkopšana;vieta;krātuve;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "Neiekļauto nodalījumu URI"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Nodalījumu URI saraksts, kas netiks iekļautas skenēšanā."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Aktīvā diagramma"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Kāda veida diagrammu rādīt."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Loga izmērs"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "Loga sākotnējais izmērs"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Loga stāvoklis"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "Loga GdkWindowState"
 
@@ -73,11 +84,11 @@ msgstr "Loga GdkWindowState"
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Diska izmantošanas analizators"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -85,50 +96,50 @@ msgstr[0] "%d vienums"
 msgstr[1] "%d vienumi"
 msgstr[2] "%d vienumu"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Maksimālais dziļums"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "Nezināms"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Maksimālais zīmēšanas dziļums grafikos sākot no saknes"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "Šodien"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Grafika modelis"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dienas"
+msgstr[1] "%d dienām"
+msgstr[2] "%d dienām"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Iestatīt grafika modeli"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d mēneša"
+msgstr[1] "%d mēnešiem"
+msgstr[2] "%d mēnešiem"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Grafika saknes mezgls"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Iestatīt saknes mezglu no modeļa"
-
-# gdictsrc/gdict-app.c:278
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "Pāriet uz vecāka _mapi"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "Tuv_ināt"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "Tā_lināt"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d gada"
+msgstr[1] "%d gadiem"
+msgstr[2] "%d gadiem"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Mājas mape"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Galvenais sējums"
+msgid "Computer"
+msgstr "Dators"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -138,46 +149,46 @@ msgstr "Skenēt mapi…"
 msgid "Scan Remote Folder…"
 msgstr "Skenēt attālinātu mapi…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "Aizvērt"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "Mape"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "Izmantojums"
-
-# mini-utils/guname/info.c:61
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "Izmērs"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "Saturs"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "Gredzenu grafiks"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "Skatīt kā koka kartes grafiku"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_Atvērt mapi"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopēt ceļu uz starpliktuvi"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Pār_vietot uz miskasti"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Aizvērt"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Mape"
+
+# mini-utils/guname/info.c:61
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Izmērs"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Saturs"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Mainīts"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Gredzenu grafiks"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Skatīt kā koka kartes grafiku"
 
 # gcharmap/src/interface.c:208 gnome-find/gnome-find.c:89
 # gstripchart/gstripchart.c:1784 gstripchart/gstripchart.c:2071
@@ -193,49 +204,43 @@ msgstr "P_ar"
 msgid "_Quit"
 msgstr "_Iziet"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analizators"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Skenēt mājas mapi"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Skenēt _mapi…"
-
+# gdictsrc/gdict-app.c:278
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Skenēt attā_linātu mapi…"
+msgid "_Move to parent folder"
+msgstr "Pāriet uz vecāka _mapi"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Skats"
+msgid "Zoom _in"
+msgstr "Tuv_ināt"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Pārlādēt"
+msgid "Zoom _out"
+msgstr "Tā_lināt"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "I_zvērst visu"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Sakļaut visu"
-
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "Ierīces un vietas"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Izvēlieties mapi"
+
+#: ../src/baobab-window.vala:226
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "At_celt"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Atvērt"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Rekursīvi analizēt montēšanas punktus"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "Nevarēja izanalizēt sējumu."
+
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "Neizdevās parādīt palīdzību"
 
 #: ../src/baobab-window.vala:330
 msgid "Baobab"
@@ -251,21 +256,91 @@ msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/baobab-window.vala:580
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "Neizdevās atvērt datni"
+
+#: ../src/baobab-window.vala:427
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "Neizdevās pārvietot datni uz miskasti"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Ierīces un vietas"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Nevarēja skanēt mapi “%s” vai kādu no mapēm, kuru tā satur."
 
+#: ../src/baobab-window.vala:601
+#| msgid "Could not detect any mount point."
+msgid "Could not detect occupied disk sizes."
+msgstr "Neizdevās noteikt aizņemto disku izmērus."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "Tā vietā tiek rādīti saskatāmie izmēri."
+
 # logview/logrtns.c:211 logview/logrtns.c:221
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s” nav derīga mape"
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Nevarēja izanalizēt diska izmantojumu."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Maksimālais dziļums"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "Maksimālais zīmēšanas dziļums grafikos sākot no saknes"
+
+#~ msgid "Chart model"
+#~ msgstr "Grafika modelis"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "Iestatīt grafika modeli"
+
+#~ msgid "Chart root node"
+#~ msgstr "Grafika saknes mezgls"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "Iestatīt saknes mezglu no modeļa"
+
+#~ msgid "Main volume"
+#~ msgstr "Galvenais sējums"
+
+#~ msgid "Usage"
+#~ msgstr "Izmantojums"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_Analizators"
+
+#~ msgid "_Scan Home"
+#~ msgstr "_Skenēt mājas mapi"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "Skenēt _mapi…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "Skenēt attā_linātu mapi…"
+
+#~ msgid "_View"
+#~ msgstr "_Skats"
+
+#~ msgid "_Reload"
+#~ msgstr "_Pārlādēt"
+
+#~ msgid "_Expand All"
+#~ msgstr "I_zvērst visu"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_Sakļaut visu"
 
 #~ msgid "Scan a folder"
 #~ msgstr "Skenēt mapi"
@@ -290,9 +365,6 @@ msgstr "Nevarēja izanalizēt diska izmantojumu."
 
 #~ msgid "_Allocated Space"
 #~ msgstr "_Aizpildītā vieta"
-
-#~ msgid "Cancel"
-#~ msgstr "Atcelt"
 
 # gtt/toolbar.c:190
 #~ msgid "Disk Usage Analyzer Preferences"
@@ -411,9 +483,6 @@ msgstr "Nevarēja izanalizēt diska izmantojumu."
 
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "Pārāk daudz parametru. Var norādīt tikai vienu mapi."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Nevar noteikt nevienu montēšanas punktu."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "Bez montēšanas punktiem diska izmantojumu nevar analizēt."
@@ -538,9 +607,6 @@ msgstr "Nevarēja izanalizēt diska izmantojumu."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "Nevar pārvietot “%s” uz miskasti"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "Nevar pārvietot datni uz miskasti"
 
 #~ msgid "Details: %s"
 #~ msgstr "Sīkāka informācija: %s"
