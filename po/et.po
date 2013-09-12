@@ -10,15 +10,15 @@
 # Tõivo Leedjärv <toivo linux ee>, 2002.
 # Ivar Smolin <okul linux ee>, 2005–2011.
 # Priit Laes <amd store20 com>, 2005.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2012.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils MASTER\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-17 07:43+0000\n"
-"PO-Revision-Date: 2012-12-18 17:53+0300\n"
+"POT-Creation-Date: 2013-09-11 10:45+0000\n"
+"PO-Revision-Date: 2013-09-11 22:39+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
 "Language: et\n"
@@ -26,6 +26,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Lihtne rakendus, mis skaneerib kaustu (kohalikke või mitte) või terveid "
+"partitsioone ning kuvab kataloogide suuruse graafiliselt või protentuaalselt."
 
 msgid "Disk Usage Analyzer"
 msgstr "Kettakasutuse analüsaator"
@@ -72,65 +81,46 @@ msgid_plural "%d items"
 msgstr[0] "%d kirje"
 msgstr[1] "%d kirjet"
 
-msgid "Maximum depth"
-msgstr "Suurim sügavus"
+#. Translators: when the last modified time is unknown
+msgid "Unknown"
+msgstr "Pole teada"
 
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "Suurim diagrammile joonistatud tasemete arv alates juurikast"
+#. Translators: when the last modified time is today
+msgid "Today"
+msgstr "Täna"
 
-msgid "Chart model"
-msgstr "Diagrammi mudel"
+#. Translators: when the last modified time is "days" days ago
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d päev"
+msgstr[1] "%d päeva"
 
-msgid "Set the model of the chart"
-msgstr "Diagrammi mudeli määramine"
+#. Translators: when the last modified time is "months" months ago
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d kuu"
+msgstr[1] "%d kuud"
 
-msgid "Chart root node"
-msgstr "Diagrammi juurpunkt"
-
-msgid "Set the root node from the model"
-msgstr "Mudeli juurpunkti määramine"
-
-msgid "_Move to parent folder"
-msgstr "_Tõsta ülemisse kataloogi"
-
-msgid "Zoom _in"
-msgstr "_Suurenda"
-
-msgid "Zoom _out"
-msgstr "_Vähenda"
+#. Translators: when the last modified time is "years" years ago
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d aasta"
+msgstr[1] "%d aastat"
 
 msgid "Home folder"
 msgstr "Kodukataloog"
 
-msgid "Main volume"
-msgstr "Peaköide"
+msgid "Computer"
+msgstr "Arvuti"
 
 msgid "Scan Folder…"
 msgstr "Kataloogi läbivaatus…"
 
 msgid "Scan Remote Folder…"
 msgstr "Võrgukataloogi läbivaatus…"
-
-msgid "Close"
-msgstr "Sulge"
-
-msgid "Folder"
-msgstr "Kataloog"
-
-msgid "Usage"
-msgstr "Kasutus"
-
-msgid "Size"
-msgstr "Suurus"
-
-msgid "Contents"
-msgstr "Sisu"
-
-msgid "Rings Chart"
-msgstr "Ringdiagramm"
-
-msgid "Treemap Chart"
-msgstr "Puudiagramm"
 
 msgid "_Open Folder"
 msgstr "_Ava kataloog"
@@ -141,6 +131,27 @@ msgstr "_Asukoha kopeerimine lõikepuhvrisse"
 msgid "Mo_ve to Trash"
 msgstr "Tõsta _prügikasti"
 
+msgid "Close"
+msgstr "Sulge"
+
+msgid "Folder"
+msgstr "Kataloog"
+
+msgid "Size"
+msgstr "Suurus"
+
+msgid "Contents"
+msgstr "Sisu"
+
+msgid "Modified"
+msgstr "Muudeti"
+
+msgid "Rings Chart"
+msgstr "Ringdiagramm"
+
+msgid "Treemap Chart"
+msgstr "Puudiagramm"
+
 msgid "_Help"
 msgstr "A_bi"
 
@@ -150,38 +161,32 @@ msgstr "_Lähemalt"
 msgid "_Quit"
 msgstr "_Lõpeta"
 
-msgid "_Analyzer"
-msgstr "A_nalüsaator"
+msgid "_Move to parent folder"
+msgstr "_Tõsta ülemisse kataloogi"
 
-msgid "_Scan Home"
-msgstr "_Kodukataloogi läbivaatus"
+msgid "Zoom _in"
+msgstr "_Suurenda"
 
-msgid "Scan F_older…"
-msgstr "_Kataloogi läbivaatus…"
-
-msgid "Scan Remote Fo_lder…"
-msgstr "_Võrgukataloogi läbivaatus…"
-
-msgid "_View"
-msgstr "_Vaade"
-
-msgid "_Reload"
-msgstr "_Laadi uuesti"
-
-msgid "_Expand All"
-msgstr "_Laienda kõik"
-
-msgid "_Collapse All"
-msgstr "_Ahenda kõik"
-
-msgid "Devices and locations"
-msgstr "Seadmed ja asukohad"
+msgid "Zoom _out"
+msgstr "_Vähenda"
 
 msgid "Select Folder"
 msgstr "Kataloogi valimine"
 
+msgid "_Cancel"
+msgstr "_Loobu"
+
+msgid "_Open"
+msgstr "_Ava"
+
+msgid "Recursively analyze mount points"
+msgstr "Haakepunktide rekursiivne analüüs"
+
 msgid "Could not analyze volume."
 msgstr "Köidet pole võimalik analüüsida."
+
+msgid "Failed to show help"
+msgstr "Abi kuvamine nurjus"
 
 msgid "Baobab"
 msgstr "Baobab"
@@ -197,9 +202,24 @@ msgstr ""
 "Priit Laes <amd store20 com>, 2005.\n"
 "Mattias Põldaru <mahfiaz@gmail.com>, 2012."
 
+msgid "Failed to open file"
+msgstr "Faili avamine nurjus"
+
+msgid "Failed to move file to the trash"
+msgstr "Faili viskamine prügikasti nurjus"
+
+msgid "Devices and locations"
+msgstr "Seadmed ja asukohad"
+
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr "Kataloogi \"%s\" või mõnd sisalduvat kataloogi pole võimalik skannida"
+
+msgid "Could not detect occupied disk sizes."
+msgstr "Hõivatud ketaste suuruseid polnud võimalik tuvastada."
+
+msgid "Apparent sizes are shown instead."
+msgstr "Kuvatakse hoopis näivaid suuruseid."
 
 #. || is_virtual_filesystem ()
 #, c-format
@@ -208,6 +228,54 @@ msgstr "\"%s\" ei ole korrektne kataloog"
 
 msgid "Could not analyze disk usage."
 msgstr "Kettakasutust pole võimalik analüüsida."
+
+#~ msgid "Maximum depth"
+#~ msgstr "Suurim sügavus"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "Suurim diagrammile joonistatud tasemete arv alates juurikast"
+
+#~ msgid "Chart model"
+#~ msgstr "Diagrammi mudel"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "Diagrammi mudeli määramine"
+
+#~ msgid "Chart root node"
+#~ msgstr "Diagrammi juurpunkt"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "Mudeli juurpunkti määramine"
+
+#~ msgid "Main volume"
+#~ msgstr "Peaköide"
+
+#~ msgid "Usage"
+#~ msgstr "Kasutus"
+
+#~ msgid "_Analyzer"
+#~ msgstr "A_nalüsaator"
+
+#~ msgid "_Scan Home"
+#~ msgstr "_Kodukataloogi läbivaatus"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "_Kataloogi läbivaatus…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "_Võrgukataloogi läbivaatus…"
+
+#~ msgid "_View"
+#~ msgstr "_Vaade"
+
+#~ msgid "_Reload"
+#~ msgstr "_Laadi uuesti"
+
+#~ msgid "_Expand All"
+#~ msgstr "_Laienda kõik"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_Ahenda kõik"
 
 #~ msgid "Scan a folder"
 #~ msgstr "Kataloogi läbivaatus"
@@ -229,9 +297,6 @@ msgstr "Kettakasutust pole võimalik analüüsida."
 
 #~ msgid "_Allocated Space"
 #~ msgstr "_Eraldatud ruum"
-
-#~ msgid "Cancel"
-#~ msgstr "Loobu"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Kettakasutuse analüsaatori eelistused"
@@ -336,9 +401,6 @@ msgstr "Kettakasutust pole võimalik analüüsida."
 
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "Liiga palju argumente. Ainult üks kataloog võib olla määratud."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "Ühtegi ühendamispunkti pole võimalik tuvastada."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "Ilme ühendamispunktideta pole võimalik kettakasutust analüüsida."
@@ -457,9 +519,6 @@ msgstr "Kettakasutust pole võimalik analüüsida."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "\"%s\" pole võimalik prügikasti visata."
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "Faili pole võimalik prügikasti visata"
 
 #~ msgid "Details: %s"
 #~ msgstr "Üksikasjad: %s"
