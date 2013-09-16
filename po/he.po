@@ -13,21 +13,31 @@
 # Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2003, 2005.
 # Yuval Tanny, 2005.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2013.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-19 09:24+0300\n"
-"PO-Revision-Date: 2013-08-19 09:25+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <he@li.org>\n"
+"POT-Creation-Date: 2013-09-16 22:18+0300\n"
+"PO-Revision-Date: 2013-09-16 22:27+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n>2||n==0) ? 1 :2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n>2||n==0) ? 1 :2\n"
+
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"יישום פשוט אשר יכול לסרוק או תיקיות מסוימות (מקומיות או מרוחקות) או התקנים "
+"ונותן ייצוג גרפי הכולל גודל או שיעור אחוזי כל תיקייה."
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
@@ -41,35 +51,35 @@ msgstr "בדיקת גדלי התיקיות והמקום פנוי בכונן"
 msgid "storage;space;cleanup;"
 msgstr "אחסון;מקום;שטח;נפח;ניקוי;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "Exluded partitions uris"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "A list of uri for partitions to be excluded from scanning."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Active Chart"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Which type of chart should be displayed."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Window size"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "The initial size of the window"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Window state"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "The GdkWindowState of the window"
 
@@ -89,15 +99,18 @@ msgstr[0] "פריט אחד"
 msgstr[1] "%d פריטים"
 msgstr[2] "2 פריטים"
 
-#: ../src/baobab-cellrenderers.vala:100
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
 msgid "Unknown"
 msgstr "בלתי ידוע"
 
-#: ../src/baobab-cellrenderers.vala:108
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "היום"
 
-#: ../src/baobab-cellrenderers.vala:111
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -105,7 +118,8 @@ msgstr[0] "יום אחד"
 msgstr[1] "%d ימים"
 msgstr[2] "יומיים"
 
-#: ../src/baobab-cellrenderers.vala:114
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -113,7 +127,8 @@ msgstr[0] "חודש אחד"
 msgstr[1] "%d חודשים"
 msgstr[2] "חודשיים"
 
-#: ../src/baobab-cellrenderers.vala:117
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
