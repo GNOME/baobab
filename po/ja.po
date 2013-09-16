@@ -11,7 +11,7 @@
 # Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009, 2010.
 # Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2010, 2011.
 # Takayoshi OKANO <kano@na.rim.or.jp>, 2011.
-# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2012.
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012, 2013.
 # Shuuji Takahashi <shuuji3@gmail.com>, 2012.
 # Noriko Mizumoto <noriko@fedoraproject.org>, 2012.
 #
@@ -19,9 +19,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-04-10 10:24+0000\n"
+"POT-Creation-Date: 2013-09-02 21:04+0000\n"
 "PO-Revision-Date: 2013-04-16 00:09+0000\n"
-"Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -29,9 +29,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
+#: ../data/baobab.appdata.xml.in.h:1
+msgid "A simple application which can scan either specific folders (local or remote) or volumes and give a graphical representation including each directory size or percentage."
+msgstr "フォルダー (ローカルまたはリモート) あるいはボリュームをスキャンして、各ディレクトリのサイズや使用率をグラフィカルに表示できるシンプルなアプリケーションです。"
+
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
-msgstr "ディスク使用量の解析"
+msgstr "ディスク使用量アナライザー"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
@@ -39,101 +43,92 @@ msgstr "フォルダーと利用可能なディスク容量をチェックしま
 
 #: ../data/baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
-msgstr ""
+msgstr "storage;space;cleanup;ストレージ;スペース;空間;容量;使用量;クリーンアップ;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "対象外となるパーティションの URI"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "スキャンを実行しないパーティションの URI を要素とするリストです。"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "アクティブなチャート"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "表示すべきチャートの種類を設定します。"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#, fuzzy
-#| msgid "Windows share"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
-msgstr "Windows 共有"
+msgstr "ウィンドウのサイズ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
-msgstr ""
+msgstr "ウィンドウの初期サイズです。"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-#, fuzzy
-#| msgid "Windows share"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
-msgstr "Windows 共有"
+msgstr "ウィンドウの状態"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
-msgstr ""
+msgstr "GdkWindowState で示される、ウィンドウの状態です。"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
-#: ../src/baobab-application.vala:106
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- ディスク使用量の解析"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 個のアイテム"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "深さの最大値"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "不明"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "描画できるチャートの深さです (ルートからの)"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "今日"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "チャートのモデル"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d 日前"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "チャートのモデルをセットします"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d か月前"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "チャートのルート"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "チャートのルートにするフォルダーを選択します"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "親フォルダーへ移動する(_M)"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "拡大する(_I)"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "縮小する(_O)"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d 年前"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "ホームフォルダー"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "メインボリューム"
+msgid "Computer"
+msgstr "コンピューター"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -143,49 +138,45 @@ msgstr "フォルダーのスキャン…"
 msgid "Scan Remote Folder…"
 msgstr "リモートフォルダーのスキャン…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Devices and locations"
-msgstr "デバイスと場所"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Close"
-msgstr "閉じる"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Folder"
-msgstr "フォルダー"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Usage"
-msgstr "使用量"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Size"
-msgstr "サイズ"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Contents"
-msgstr "内容"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Rings Chart"
-msgstr "リングチャート"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Treemap Chart"
-msgstr "ツリーマップチャート"
-
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "フォルダーを開く(_O)"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "パスをクリップボードにコピーする(_C)"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "閉じる"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "フォルダー"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "サイズ"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "内容"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "更新日"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "リングチャート"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "ツリーマップチャート"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -199,55 +190,51 @@ msgstr "このアプリケーションについて(_A)"
 msgid "_Quit"
 msgstr "終了(_Q)"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "解析(_A)"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "ホームのスキャン(_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "フォルダーのスキャン(_O)…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "リモートフォルダーのスキャン(_L)…"
+msgid "_Move to parent folder"
+msgstr "親フォルダーへ移動する(_M)"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "表示(_V)"
+msgid "Zoom _in"
+msgstr "拡大する(_I)"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "再読み込み(_R)"
+msgid "Zoom _out"
+msgstr "縮小する(_O)"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "すべて展開する(_E)"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "すべて畳む(_C)"
-
-#: ../src/baobab-window.vala:216
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "フォルダーの選択"
 
-#: ../src/baobab-window.vala:266
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "キャンセル(_C)"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "開く(_O)"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "マウントポイントを再帰的に解析"
+
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "ボリュームを解析できませんでした。"
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "ヘルプの表示に失敗しました"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:320
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
 
-#: ../src/baobab-window.vala:325
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -258,24 +245,92 @@ msgstr ""
 "草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
 "Eiichiro ITANI <emu@ceres.dti.ne.jp>\n"
 "やまねひでき <henrich@debian.or.jp>\n"
-"松澤 二郎 <jmatsuzawa@src.gnome.org>\n"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "高橋 宗史 <shuuji3@gmail.com>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "ファイルを開くのに失敗しました"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "ファイルをゴミ箱に移動するのに失敗しました"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "デバイスと場所"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "フォルダー \"%s\"、または、そのサブフォルダーをスキャンできませんでした。"
+msgstr "フォルダー \"%s\"、または、そのサブフォルダーのいくつかをスキャンできませんでした。"
+
+#: ../src/baobab-window.vala:601
+msgid "Could not detect occupied disk sizes."
+msgstr "割り当てディスクサイズを検出できませんでした。"
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "実サイズを代わりに表示します。"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" はフォルダーとして妥当ではありません"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "ディスクの使用量を解析できませんでした。"
+
+#~ msgid "Maximum depth"
+#~ msgstr "深さの最大値"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "描画できるチャートの深さです (ルートからの)"
+
+#~ msgid "Chart model"
+#~ msgstr "チャートのモデル"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "チャートのモデルをセットします"
+
+#~ msgid "Chart root node"
+#~ msgstr "チャートのルート"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "チャートのルートにするフォルダーを選択します"
+
+#~ msgid "Main volume"
+#~ msgstr "メインボリューム"
+
+#~ msgid "Usage"
+#~ msgstr "使用量"
+
+#~ msgid "_Analyzer"
+#~ msgstr "解析(_A)"
+
+#~ msgid "_Scan Home"
+#~ msgstr "ホームのスキャン(_S)"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "フォルダーのスキャン(_O)…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "リモートフォルダーのスキャン(_L)…"
+
+#~ msgid "_View"
+#~ msgstr "表示(_V)"
+
+#~ msgid "_Reload"
+#~ msgstr "再読み込み(_R)"
+
+#~ msgid "_Expand All"
+#~ msgstr "すべて展開する(_E)"
+
+#~ msgid "_Collapse All"
+#~ msgstr "すべて畳む(_C)"
 
 #~ msgid "Scan a folder"
 #~ msgstr "フォルダーをスキャンします"
@@ -298,9 +353,6 @@ msgstr "ディスクの使用量を解析できませんでした。"
 #~ msgid "_Allocated Space"
 #~ msgstr "使用量の分布(_A)"
 
-#~ msgid "Cancel"
-#~ msgstr "取り消し"
-
 #~ msgid "label"
 #~ msgstr "ラベル"
 
@@ -321,9 +373,6 @@ msgstr "ディスクの使用量を解析できませんでした。"
 
 #~ msgid "Whether the status bar at the bottom of main window should be visible."
 #~ msgstr "メインウィンドウの下にステータスバーを表示するかどうかを設定します。"
-
-#~ msgid "Usage unknown"
-#~ msgstr "使用量不明"
 
 #~ msgid "Scan"
 #~ msgstr "スキャン"
@@ -430,9 +479,6 @@ msgstr "ディスクの使用量を解析できませんでした。"
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "引数が多すぎます。ディレクトリを 1 つだけ指定可能です。"
 
-#~ msgid "Could not detect any mount point."
-#~ msgstr "1 つもマウントポイントを検出できませんでした。"
-
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "マウントポイントの無いディスクの容量は解析できません。"
 
@@ -531,9 +577,6 @@ msgstr "ディスクの使用量を解析できませんでした。"
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "\"%s\" をゴミ箱に移動できませんでした"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "ファイルをゴミ箱に移動できませんでした"
 
 #~ msgid "Details: %s"
 #~ msgstr "詳細: %s"
