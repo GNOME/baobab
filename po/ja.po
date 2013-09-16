@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-04-10 10:24+0000\n"
+"POT-Creation-Date: 2013-08-12 13:41+0000\n"
 "PO-Revision-Date: 2013-04-16 00:09+0000\n"
 "Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -29,9 +29,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:170
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:167
 msgid "Disk Usage Analyzer"
-msgstr "ディスク使用量の解析"
+msgstr "ディスク使用量アナライザー"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
@@ -39,7 +39,7 @@ msgstr "フォルダーと利用可能なディスク容量をチェックしま
 
 #: ../data/baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
-msgstr ""
+msgstr "storage;space;cleanup;ストレージ;スペース;空間;容量;使用量;クリーンアップ;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:1
 msgid "Excluded partitions URIs"
@@ -58,24 +58,20 @@ msgid "Which type of chart should be displayed."
 msgstr "表示すべきチャートの種類を設定します。"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#, fuzzy
-#| msgid "Windows share"
 msgid "Window size"
-msgstr "Windows 共有"
+msgstr "ウィンドウのサイズ"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:6
 msgid "The initial size of the window"
-msgstr ""
+msgstr "ウィンドウの初期サイズです。"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:7
-#, fuzzy
-#| msgid "Windows share"
 msgid "Window state"
-msgstr "Windows 共有"
+msgstr "ウィンドウの状態"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.h:8
 msgid "The GdkWindowState of the window"
-msgstr ""
+msgstr "GdkWindowState で示される、ウィンドウの状態です。"
 
 #: ../src/baobab-application.vala:30
 msgid "Print version information and exit"
@@ -231,23 +227,23 @@ msgstr "すべて展開する(_E)"
 msgid "_Collapse All"
 msgstr "すべて畳む(_C)"
 
-#: ../src/baobab-window.vala:216
+#: ../src/baobab-window.vala:213
 msgid "Select Folder"
 msgstr "フォルダーの選択"
 
-#: ../src/baobab-window.vala:266
+#: ../src/baobab-window.vala:263
 msgid "Could not analyze volume."
 msgstr "ボリュームを解析できませんでした。"
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:314
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:320
+#: ../src/baobab-window.vala:317
 msgid "A graphical tool to analyze disk usage."
 msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
 
-#: ../src/baobab-window.vala:325
+#: ../src/baobab-window.vala:322
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -258,22 +254,22 @@ msgstr ""
 "草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
 "Eiichiro ITANI <emu@ceres.dti.ne.jp>\n"
 "やまねひでき <henrich@debian.or.jp>\n"
-"松澤 二郎 <jmatsuzawa@src.gnome.org>\n"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "高橋 宗史 <shuuji3@gmail.com>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
-#: ../src/baobab-window.vala:569
+#: ../src/baobab-window.vala:566
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "フォルダー \"%s\"、または、そのサブフォルダーをスキャンできませんでした。"
+msgstr "フォルダー \"%s\"、または、そのサブフォルダーのいくつかをスキャンできませんでした。"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:588 ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" はフォルダーとして妥当ではありません"
 
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "ディスクの使用量を解析できませんでした。"
 
