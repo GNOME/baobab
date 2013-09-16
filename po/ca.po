@@ -6,15 +6,16 @@
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2006, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2006, 2008, 2012.
 # Joan Duran <jodufi@gmail.com>, 2008-2013.
+# Josep Sanchez Mesegue <papapep@gmx.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-08 08:06+0000\n"
-"PO-Revision-Date: 2013-03-08 08:12+0100\n"
-"Last-Translator: Joan Duran <jodufi@gmail.com>\n"
+"POT-Creation-Date: 2013-09-16 00:05+0000\n"
+"PO-Revision-Date: 2013-09-16 18:16+0100\n"
+"Last-Translator: Josep Sanchez Mesegue <papapep@gmx.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +23,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:168
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Un programa senzill que escaneja tant carpetes específiques (locals o remotes) "
+"com volums i en fa una representació gràfica, incloent la mida o percentatge "
+"de cada directori."
+
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analitzador de l'ús dels discs"
 
@@ -34,35 +45,35 @@ msgstr "Comprova la mida de les carpetes i l'espai disponible al disc"
 msgid "storage;space;cleanup;"
 msgstr "emmagatzemament;espai;neteja;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "URI de les particions excloses"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Una llista d'URI de les particions que s'exclouran durant l'escaneig."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "Diagrama actiu"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "Quin tipus de diagrama s'hauria de mostrar."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "Mida de la finestra"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "La mida inicial de la finestra"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "Estat de la finestra"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "El GdkWindowState de la finestra"
 
@@ -70,60 +81,58 @@ msgstr "El GdkWindowState de la finestra"
 msgid "Print version information and exit"
 msgstr "Mostra la informació de la versió i surt"
 
-#: ../src/baobab-application.vala:106
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- Analitzador de l'ús dels discs"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d element"
 msgstr[1] "%d elements"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "Profunditat màxima"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "Desconegut"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "La profunditat màxima dibuixada del diagrama a partir de l'arrel"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "Avui"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "Model de diagrama"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dia"
+msgstr[1] "%d dies"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "Estableix el model del diagrama"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d mes"
+msgstr[1] "%d mesos"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "Node arrel del diagrama"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "Estableix el node arrel del diagrama d'anells"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_Vés a la carpeta pare"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "_Amplia"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "_Redueix"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d any"
+msgstr[1] "%d anys"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "Carpeta d'usuari"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "Volum principal"
+msgid "Computer"
+msgstr "Ordinador"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -133,49 +142,45 @@ msgstr "Escaneja una carpeta…"
 msgid "Scan Remote Folder…"
 msgstr "Escaneja una carpeta remota…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Devices and locations"
-msgstr "Dispositius i ubicacions"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Close"
-msgstr "Tanca"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Folder"
-msgstr "Carpeta"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Usage"
-msgstr "Ús"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Size"
-msgstr "Mida"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Contents"
-msgstr "Continguts"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Rings Chart"
-msgstr "Diagrama d'anells"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Treemap Chart"
-msgstr "Diagrama de mapa d'arbre"
-
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "O_bre la carpeta"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Copia el camí al porta-retalls"
 
-#: ../src/baobab-main-window.ui.h:13
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Mo_u a la paperera"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "Tanca"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "Carpeta"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "Mida"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "Continguts"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "Modificat"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "Diagrama d'anells"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "Diagrama de mapa d'arbre"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -189,55 +194,51 @@ msgstr "_Quant a"
 msgid "_Quit"
 msgstr "_Surt"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_Analitzador"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "_Escaneja la carpeta d'usuari"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "Escaneja una _carpeta…"
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "Escaneja una carpeta _remota…"
+msgid "_Move to parent folder"
+msgstr "_Vés a la carpeta pare"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_Mostra"
+msgid "Zoom _in"
+msgstr "_Amplia"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "_Torna a carregar"
+msgid "Zoom _out"
+msgstr "_Redueix"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_Expandeix-ho tot"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_Redueix-ho tot"
-
-#: ../src/baobab-window.vala:214
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "Seleccioneu una carpeta"
 
-#: ../src/baobab-window.vala:264
+#: ../src/baobab-window.vala:226
+msgid "_Cancel"
+msgstr "_Cancel·la"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "_Obre"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "Analitza recursivament els punts de muntatge"
+
+#: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "No s'ha pogut analitzar el volum."
 
-#: ../src/baobab-window.vala:315
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "S'ha produït un error en mostrar l'ajuda"
+
+#: ../src/baobab-window.vala:330
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:318
+#: ../src/baobab-window.vala:333
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una eina gràfica per analitzar la utilització dels discs."
 
-#: ../src/baobab-window.vala:323
+#: ../src/baobab-window.vala:338
 msgid "translator-credits"
 msgstr ""
 "Softcatalà <info@softcatala.org>\n"
@@ -246,328 +247,38 @@ msgstr ""
 "Gil Forcada <gilforcada@guifi.net>\n"
 "Joan Duran <jodufi@gmail.com>"
 
-#: ../src/baobab-window.vala:567
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "S'ha produït un error en obrir el fitxer"
+
+#: ../src/baobab-window.vala:427
+msgid "Failed to move file to the trash"
+msgstr "S'ha produït un error en moure el fitxer a la paperera"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "Dispositius i ubicacions"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgstr ""
 "No s'ha pogut escanejar la carpeta «%s» o alguna de les carpetes que conté."
 
+#: ../src/baobab-window.vala:601
+msgid "Could not detect occupied disk sizes."
+msgstr "No s'ha pogut detectar l'espai ocupat del disc."
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "En el seu lloc es mostren les mides aparents."
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» no és una carpeta vàlida"
 
-#: ../src/baobab-window.vala:587 ../src/baobab-window.vala:593
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "No s'ha pogut analitzar l'ús del disc."
-
-#~ msgid "Scan a folder"
-#~ msgstr "Escaneja una carpeta"
-
-#~ msgid "Scan Folder"
-#~ msgstr "Escaneja una carpeta"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Escaneja una carpeta remota"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "Escaneja una carpeta remota"
-
-#~ msgid "Reload"
-#~ msgstr "Torna a carregar"
-
-#~ msgid "_Stop"
-#~ msgstr "_Atura"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "E_spai ubicat"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·a"
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Preferències de l'analitzador d'utilització del disc"
-
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr ""
-#~ "Seleccioneu els _dispositius a incloure en l'escaneig del sistema de "
-#~ "fitxers:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "Fes un _seguiment dels canvis a la carpeta d'usuari"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Fes un seguiment de la carpeta d'usuari"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr ""
-#~ "Si s'ha de fer un seguiment de qualsevol canvi a la carpeta d'usuari."
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "La barra d'eines és visible"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Si la barra d'eines s'ha de veure a la finestra principal."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "La barra d'estat és visible"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr ""
-#~ "Si la barra d'estat a baix de tot de la finestra principal s'ha de veure."
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Escaneja la carpeta d'_usuari"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Escaneja el sistema de _fitxers"
-
-#~ msgid "_Edit"
-#~ msgstr "_Edita"
-
-#~ msgid "_Toolbar"
-#~ msgstr "Barra d'_eines"
-
-#~ msgid "St_atusbar"
-#~ msgstr "_Barra d'estat"
-
-#~ msgid "_Contents"
-#~ msgstr "_Continguts"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "Escaneja la carpeta d'usuari"
-
-#~ msgid "Scan the file system"
-#~ msgstr "Escaneja el sistema de fitxers"
-
-#~ msgid "Scan File System"
-#~ msgstr "Escaneja el sistema de fitxers"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Escaneja una carpeta o un sistema de fitxers remot"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Atura l'escaneig"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualitza"
-
-#~ msgid "Scanning…"
-#~ msgstr "S'està escanejant…"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Capacitat total del sistema de fitxers:"
-
-#~ msgid "used:"
-#~ msgstr "utilitzat:"
-
-#~ msgid "available:"
-#~ msgstr "disponible:"
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "S'estan calculant les barres de percentatge…"
-
-#~ msgid "Ready"
-#~ msgstr "A punt"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Capacitat total del sistema de fitxers"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Utilització total del sistema de fitxers"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "conté enllaços forts per a:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "No s'ha pogut inicialitzar el seguiment"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "No es farà un seguiment dels canvis a la carpeta d'usuari."
-
-#~ msgid "Show version"
-#~ msgstr "Mostra la versió"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[DIRECTORI]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Hi ha masses paràmetres. Només es pot especificar un directori."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "No s'ha pogut detectar cap punt de muntatge."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr ""
-#~ "No es pot analitzar la utilització del disc sense els punts de muntatge."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Desa la captura de pantalla"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "No s'ha pogut crear la imatge pixbuf."
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Desa la captura"
-
-#~ msgid "_Image type:"
-#~ msgstr "Tipus d'_imatge:"
-
-#~ msgid "Scan"
-#~ msgstr "Escaneja"
-
-#~ msgid "Device"
-#~ msgstr "Dispositiu"
-
-#~ msgid "Mount Point"
-#~ msgstr "Punt de muntatge"
-
-#~ msgid "File System Type"
-#~ msgstr "Tipus de sistema de fitxers"
-
-#~ msgid "Total Size"
-#~ msgstr "Mida total"
-
-#~ msgid "Available"
-#~ msgstr "Disponible"
-
-#~ msgid "Custom Location"
-#~ msgstr "Ubicació personalitzada"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "FTP públic"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (amb autenticació)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "WebDAV segur (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr ""
-#~ "No es pot connectar al servidor. Heu d'introduir un nom per al servidor."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Introduïu un nom i torneu-ho a provar."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Ubicació (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Servidor:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Informació opcional:"
-
-#~ msgid "_Share:"
-#~ msgstr "_Compartit:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Port:"
-
-#~ msgid "_Folder:"
-#~ msgstr "C_arpeta:"
-
-#~ msgid "_User Name:"
-#~ msgstr "_Nom d'usuari:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "Nom del _domini:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Connecta al servidor"
-
-#~ msgid "Service _type:"
-#~ msgstr "_Tipus de servei:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Escaneja"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Voleu tornar a escanejar la carpeta d'usuari?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "El contingut de la vostra carpeta d'usuari ha canviat. Seleccioneu tornar "
-#~ "a escanejar per actualitzar els detalls d'ús."
-
-#~ msgid "_Rescan"
-#~ msgstr "_Torna a escanejar"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "_Mostra les carpetes ocultes"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "No es pot comprovar una carpeta exclosa."
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "No s'ha pogut obrir la carpeta «%s»"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "No hi ha cap visualitzador instal·lat capaç de mostrar la carpeta."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "No s'ha pogut moure «%s» a la paperera"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "No s'ha pogut moure el fitxer a la paperera"
-
-#~ msgid "Details: %s"
-#~ msgstr "Detalls: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "S'ha produït un error en mostrar l'ajuda."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Aquest programa és programari lliure; podeu redistribuir-lo i/o modificar-"
-#~ "lo sota els termes de la Llicència Pública General GNU tal com ha estat "
-#~ "publicada per la Free Software Foundation; ja sigui la versió 2 de la "
-#~ "Llicència o bé (si ho preferiu) qualsevol altra versió posterior."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Aquest programa es distribueix amb l'expectativa que serà útil, però "
-#~ "SENSE CAP GARANTIA; ni tan sols la garantia implícita de COMERCIABILITAT "
-#~ "o ADEQUACIÓ PER UN PROPÒSIT PARTICULAR. Vegeu la Llicència Pública "
-#~ "General GNU per obtenir-ne més detalls."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Hauríeu d'haver rebut una còpia de la Llicència Pública General GNU "
-#~ "juntament amb aquest programa; en cas contrari, escriviu a la  Free "
-#~ "Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  "
-#~ "02110-1301  USA"
-
-#~ msgid "The document does not exist."
-#~ msgstr "El document no existeix."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "La carpeta no existeix."
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "Escaneja una carpeta _remota..."
-
-#~ msgid "Scan F_older..."
-#~ msgstr "_Escaneja una carpeta..."
