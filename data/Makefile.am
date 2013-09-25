@@ -16,7 +16,8 @@ $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
 @INTLTOOL_DESKTOP_RULE@
 
 appdatadir = $(datadir)/appdata
-appdata_DATA = baobab.appdata.xml
+appdata_in_files = baobab.appdata.xml.in
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 
 gsettingsschema_in_files = org.gnome.baobab.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
@@ -33,7 +34,7 @@ EXTRA_DIST = 				\
 	$(gsettingsschema_in_files)	\
 	$(man_MANS)			\
 	$(baobabicon_DATA)		\
-	baobab.appdata.xml.in		\
+	$(appdata_in_files)		\
 	$(NULL)
 
 CLEANFILES =	 			\
