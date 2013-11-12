@@ -12,27 +12,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.ta\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-02 14:11+0530\n"
-"PO-Revision-Date: 2012-12-02 14:17+0530\n"
-"Last-Translator: Dr.T.Vasudevan <drtvasudevan@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-09-27 20:53+0000\n"
+"PO-Revision-Date: 2013-11-12 17:00+0530\n"
+"Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
 "Language-Team: American English <gnome-tamil-translation@googlegroups.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n;\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"குறிப்பிட்ட கோப்புறைகள் (உள்ளமை அல்லது தொலைநிலை) அல்லது தொகுதிகளை வருடி ஒவ்வொரு "
+"கோப்பகத்தின் அளவுகள் அல்லது சதவீதத்தினை வரைவியல் வடிவில் வழங்கும் ஒரு எளிய பயன்பாடு."
+
+#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "வட்டு பயன்பாடு ஆராய்வி"
 
@@ -44,35 +46,35 @@ msgstr "அடைவு அளவு மற்றும் கிடைக்க
 msgid "storage;space;cleanup;"
 msgstr "கிடங்கு;இடம்;சுத்தகரிப்பு;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "சேர்க்கப்படாத  பகிர்வுகளின் யூஆர்ஐ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "வருடலில் இருந்து தவிர்க்க வேண்டிய பகிர்வுகளின் யூஆர்ஐ பட்டியல்"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "செயலில் உள்ள விளக்க அட்டவணை"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "எந்த மாதிரி விளக்க அட்டவணை தெரிய வேண்டும்?"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "சாளரத்தின் அளவு"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "சாளரத்தின் ஆரம்ப அளவு"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "சாளர நிலை"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "சாளரத்தின் ஜிடிகே சாளர நிலை"
 
@@ -80,60 +82,58 @@ msgstr "சாளரத்தின் ஜிடிகே சாளர நில
 msgid "Print version information and exit"
 msgstr "பதிப்புத் தகவலை அச்சிட்டுவிட்டு வெளியேறு"
 
-#: ../src/baobab-application.vala:104
+#: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
 msgstr "- வட்டு பயன்பாடு ஆராய்வி"
 
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d உருப்படி"
 msgstr[1] "%d உருப்படிகள்"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "அதிகபட்ச ஆழம்"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "தெரியாத"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "வரைபடத்தில் மூலத்தில் இருந்து வரையப்படும் அதிகபட்ச ஆழம்."
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "இன்று"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "வரைபட மாதிரி"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d நாள்"
+msgstr[1] "%d நாட்கள்"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "வரைபட மாதிரியை அமை"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d மாதம்"
+msgstr[1] "%d மாதங்கள்"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "வரைபட மூல முடிச்சு"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "வளையங்கள் வரைபட மூல முடிச்சை அமை"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "_M தாய் அடைவுக்கு நகர்த்தவும்"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "_i அணுகிப்பார்"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "_o விலகிப்பார்"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d ஆண்டு"
+msgstr[1] "%d ஆண்டுகள்"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "இல்ல அடைவு"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "பிரதான ஒலியளவு"
+msgid "Computer"
+msgstr "கணினி"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -143,45 +143,45 @@ msgstr "அடைவினை வருடு..."
 msgid "Scan Remote Folder…"
 msgstr "தொலை அடைவினை வருடவும்..."
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "மூடு"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "கோப்புறை"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "பயன்பாடு"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "அளவு"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "உள்ளடக்கம்"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "வட்டங்கள் வரைபடம்"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "மரபட வரைபடம்"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "_O கோப்பை திறக்கவும்"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "பாதையை ஒட்டுப்பலகைக்கு நகலெடு (_C)"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "(_v)குப்பைக்கு நகர்த்து"
+
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "மூடு"
+
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "கோப்புறை"
+
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "அளவு"
+
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "உள்ளடக்கம்"
+
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "மாற்றியமைக்கப்பட்டது"
+
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "வட்டங்கள் வரைபடம்"
+
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "மரபட வரைபடம்"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -195,49 +195,42 @@ msgstr "அறிமுகம் (_A)"
 msgid "_Quit"
 msgstr "வெளியேறு (_Q)"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "ஆராய்வி (_A)"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "இல்லத்தினை வருடு (_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "_o அடைவினை வருடு..."
-
 #: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "தொலை அடைவினை வருடவும்... (_l)"
+msgid "_Move to parent folder"
+msgstr "_M தாய் அடைவுக்கு நகர்த்தவும்"
 
 #: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "பார்வை (_V)"
+msgid "Zoom _in"
+msgstr "_i அணுகிப்பார்"
 
 #: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "மீளேற்று (_R) "
+msgid "Zoom _out"
+msgstr "_o விலகிப்பார்"
 
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "_வ எல்லாவற்றையும் விரிவாக்கு"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_ச எல்லாவற்றையும் சுருக்குக"
-
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "சாதனங்களும் இருப்பிடங்களும்"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:224
 msgid "Select Folder"
 msgstr "அடைவை தேர்வு செய்"
+
+#: ../src/baobab-window.vala:226
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "ரத்துசெய் (_C)"
+
+#: ../src/baobab-window.vala:227
+msgid "_Open"
+msgstr "திற (_O)"
+
+#: ../src/baobab-window.vala:232
+msgid "Recursively analyze mount points"
+msgstr "தொடர்ச்சியாக மவுன்ட் புள்ளிகளை பகுப்பாய்வு செய்"
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
 msgstr "தொகுதியை ஆராய முடியவில்லை"
+
+#: ../src/baobab-window.vala:311
+msgid "Failed to show help"
+msgstr "உதவியைக் காண்பிப்பதில் தோல்வியடைந்தது"
 
 #: ../src/baobab-window.vala:330
 msgid "Baobab"
@@ -251,22 +244,90 @@ msgstr "வட்டு பயன்பாட்டினை ஆராயும�
 msgid "translator-credits"
 msgstr "மொழிபெயர்பாளர் நன்றிகள்"
 
-#: ../src/baobab-window.vala:580
+#: ../src/baobab-window.vala:407
+msgid "Failed to open file"
+msgstr "கோப்பைத் திறப்பதில் தோல்வியடைந்தது"
+
+#: ../src/baobab-window.vala:427
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "கோப்பை குப்பைக்கு நகர்த்துவதில் தோல்வியடைந்தது"
+
+#: ../src/baobab-window.vala:527
+msgid "Devices and locations"
+msgstr "சாதனங்களும் இருப்பிடங்களும்"
+
+#: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"\"%s\" என்ற கோப்புறை அல்லது அதில் உள்ள சில கோப்புறைகளை ஸ்கேன் செய்ய "
-"முடியவில்லை."
+msgstr "\"%s\" என்ற கோப்புறை அல்லது அதில் உள்ள சில கோப்புறைகளை ஸ்கேன் செய்ய முடியவில்லை."
+
+#: ../src/baobab-window.vala:601
+#| msgid "Could not detect any mount point."
+msgid "Could not detect occupied disk sizes."
+msgstr "பயன்படுத்தப்பட்டுள்ள வட்டு அளவுகளைக் கண்டறிய முடியவில்லை"
+
+#: ../src/baobab-window.vala:601
+msgid "Apparent sizes are shown instead."
+msgstr "அதற்கு பதிலாக தோன்றக்கூடிய அளவுகள் காண்பிக்கப்படுகின்றன."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" செல்லுபடியாகும் அடைவு இல்லை."
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "வட்டு பயன்பாட்டினை ஆராய முடியவில்லை"
+
+#~ msgid "Maximum depth"
+#~ msgstr "அதிகபட்ச ஆழம்"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "வரைபடத்தில் மூலத்தில் இருந்து வரையப்படும் அதிகபட்ச ஆழம்."
+
+#~ msgid "Chart model"
+#~ msgstr "வரைபட மாதிரி"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "வரைபட மாதிரியை அமை"
+
+#~ msgid "Chart root node"
+#~ msgstr "வரைபட மூல முடிச்சு"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "வளையங்கள் வரைபட மூல முடிச்சை அமை"
+
+#~ msgid "Main volume"
+#~ msgstr "பிரதான ஒலியளவு"
+
+#~ msgid "Usage"
+#~ msgstr "பயன்பாடு"
+
+#~ msgid "_Analyzer"
+#~ msgstr "ஆராய்வி (_A)"
+
+#~ msgid "_Scan Home"
+#~ msgstr "இல்லத்தினை வருடு (_S)"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "_o அடைவினை வருடு..."
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "தொலை அடைவினை வருடவும்... (_l)"
+
+#~ msgid "_View"
+#~ msgstr "பார்வை (_V)"
+
+#~ msgid "_Reload"
+#~ msgstr "மீளேற்று (_R) "
+
+#~ msgid "_Expand All"
+#~ msgstr "_வ எல்லாவற்றையும் விரிவாக்கு"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_ச எல்லாவற்றையும் சுருக்குக"
 
 #~ msgid "Scan Folder"
 #~ msgstr "அடைவினை வருடு"
@@ -279,9 +340,6 @@ msgstr "வட்டு பயன்பாட்டினை ஆராய மு
 
 #~ msgid "Scan a remote folder"
 #~ msgstr "தொலை அடைவினை வருடவும்"
-
-#~ msgid "Cancel"
-#~ msgstr "ரத்துசெய்"
 
 #~ msgid "label"
 #~ msgstr "அடையாளம்"
@@ -394,9 +452,6 @@ msgstr "வட்டு பயன்பாட்டினை ஆராய மு
 
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "மிக அதிக தரவுகள். ஒரே ஒரு அடைவைத்தான் குறிப்பிடலாம்."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "எந்த ஏற்றப்புள்ளியையும் கண்டுபிடிக்க முடியவில்லை"
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "ஏற்றப்புள்ளிகள் இல்லாமல் வட்டு பயன்பாடை ஆராய இயலாது"
@@ -516,9 +571,6 @@ msgstr "வட்டு பயன்பாட்டினை ஆராய மு
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "\"%s\" ஐ குப்பைக்கு நகர்த்த முடியவில்லை"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "கோப்பை குப்பைக்கு நகர்த்த முடியவில்லை"
 
 #~ msgid "Details: %s"
 #~ msgstr "விவரங்கள்: %s"
