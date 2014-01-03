@@ -47,7 +47,7 @@ AM_CFLAGS = \
 	-Wno-unused-variable		\
 	$(NULL)
 
-baobab_LDFLAGS = -export-dynamic
+baobab_LDFLAGS = -rdynamic
 baobab_LDADD = \
 	-lm				\
 	$(BAOBAB_LIBS)			\
