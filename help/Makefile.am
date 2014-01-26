@@ -10,6 +10,8 @@ HELP_FILES = \
 	index.page \
 	introduction.page \
 	pref-view-chart.page \
+	problem-permissions.page \
+	problem-slow-scan.page \
 	scan-file-system.page \
 	scan-folder.page \
 	scan-home.page \

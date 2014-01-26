@@ -1,0 +1,40 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic" style="task"
+      id="problem-permissions">
+  <info>
+    <link type="guide" xref="index#problems"/>
+    <revision pkgversion="3.10" date="2014-01-25" status="stub"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2014</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <desc>I see a <gui>Could not scan /… or some of the folders it
+    contains</gui> error message when scanning.</desc>
+
+  </info>
+
+  <title>Error when scanning</title>
+
+  <p>When scanning you might see a message <gui>Could not scan /… or some of the
+  folders it contains</gui> at the top of <app>Disk Usage Analyzer</app> window.
+  This error appears because you don't have the required permissions to access
+  some files due to restrictions set on the target system. The files you can't
+  access won't be used to compute the <link xref="views">chart</link>
+  representing the disk usage, hence the result reported may be wrong.</p>
+
+  <p>Not having access to all files and directories is perfectly common thought
+  so there is nothing you can do about this error.</p>
+
+  <note style="info"><p><app>Disk Usage Analyzer</app> uses command
+  <cmd>du</cmd> to create the detailled view of the use of storage, and needs
+  you have read permission on files and execute permission of directories.</p>
+
+  <p>On the other hand, filesystem disk usage on the use command <cmd>df</cmd>
+  for disk utilisation on the main window which relies on the filesystem and not
+  on file permissions.</p></note>
+</page>
