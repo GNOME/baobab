@@ -9,6 +9,7 @@ HELP_MEDIA =
 HELP_FILES = \
 	index.page \
 	introduction.page \
+	legal.xml \
 	pref-view-chart.page \
 	problem-permissions.page \
 	problem-slow-scan.page \
