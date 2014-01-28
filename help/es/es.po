@@ -2,14 +2,14 @@
 # Montse Fernández Dopacio <mfernandez@igalia.com>, 2006.
 # translation of baobab manual into spanish
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 11:20+0000\n"
-"PO-Revision-Date: 2013-07-26 11:26+0200\n"
+"POT-Creation-Date: 2014-01-27 23:53+0000\n"
+"PO-Revision-Date: 2014-01-28 11:30+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -27,45 +27,55 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2008.\n"
 "Montse Fernández Dopacio <mfernandez@igalia.com>, 2006."
 
-#: C/index.page:10(credit/name) C/introduction.page:13(credit/name)
-#: C/pref-view-chart.page:13(credit/name)
-#: C/scan-file-system.page:12(credit/name) C/scan-folder.page:13(credit/name)
-#: C/scan-home.page:13(credit/name) C/scan-remote.page:13(credit/name)
+#. (itstool) path: credit/name
+#: C/index.page:10 C/introduction.page:13 C/pref-view-chart.page:13
+#: C/scan-file-system.page:12 C/scan-folder.page:13 C/scan-home.page:13
+#: C/scan-remote.page:13
 msgid "Julita Inca"
 msgstr "Julita Inca"
 
-#: C/index.page:14(credit/name) C/introduction.page:17(credit/name)
-#: C/pref-view-chart.page:21(credit/name)
-#: C/scan-file-system.page:16(credit/name) C/scan-folder.page:21(credit/name)
-#: C/scan-home.page:17(credit/name) C/scan-remote.page:21(credit/name)
+#. (itstool) path: credit/name
+#: C/index.page:14 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
+#: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
-#: C/index.page:18(info/desc)
+#. (itstool) path: info/desc
+#: C/index.page:20
 msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
 msgstr ""
 "<app>Analizador de uso del disco</app> un analizador gráfico de dispositivos "
 "de almacenamiento."
 
-#: C/index.page:23(page/title)
+#. (itstool) path: page/title
+#: C/index.page:25
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
-#: C/index.page:26(section/title)
+#. (itstool) path: section/title
+#: C/index.page:28
 msgid "Scan"
 msgstr "analizar"
 
-#: C/index.page:30(section/title)
+#. (itstool) path: section/title
+#: C/index.page:32
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: C/introduction.page:21(credit/name) C/pref-view-chart.page:17(credit/name)
-#: C/scan-file-system.page:20(credit/name) C/scan-folder.page:17(credit/name)
-#: C/scan-home.page:21(credit/name) C/scan-remote.page:17(credit/name)
+#. (itstool) path: section/title
+#: C/index.page:36
+msgid "Common problems and questions"
+msgstr "Problemas comunes y preguntas"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:21 C/pref-view-chart.page:17 C/scan-file-system.page:20
+#: C/scan-folder.page:17 C/scan-home.page:21 C/scan-remote.page:17
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
-#: C/introduction.page:25(info/desc)
+#. (itstool) path: info/desc
+#: C/introduction.page:27
 msgid ""
 "<app>Disk Usage Analyzer</app> is an application which shows you your use of "
 "storage space using graphs."
@@ -73,11 +83,13 @@ msgstr ""
 "<app>Analizador de uso del disco</app> es una aplicación que representa "
 "gráficamente el uso del espacio de almacenamiento."
 
-#: C/introduction.page:29(page/title)
+#. (itstool) path: page/title
+#: C/introduction.page:31
 msgid "Introduction"
 msgstr "Introducción"
 
-#: C/introduction.page:31(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> is a graphical application for analysing "
 "storage device usage. It can be used to scan multiple local or remote "
@@ -97,7 +109,8 @@ msgstr ""
 "folder\">carpeta especificada por el usuario</link> o <link xref=\"scan-"
 "remote\">una carpeta remota</link>."
 
-#: C/introduction.page:40(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:42
 msgid ""
 "The results may be useful in deciding which folders can be <link href=\"help:"
 "file-roller\">archived</link>, <link href=\"help:gnome-help/files-delete"
@@ -113,15 +126,28 @@ msgstr ""
 "estimar cuánto espacio sería necesario para hacer una <link href=\"help:"
 "gnome-help/backup-how\">copia de respaldo</link> de ciertas carpetas."
 
-#: C/pref-view-chart.page:25(info/desc)
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons de Atribución-Compartir Igual 3.0 sin soporte"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/pref-view-chart.page:25
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr "Mostrar los resultados como un gráfico de anillo o como un árbol"
 
-#: C/pref-view-chart.page:29(page/title)
+#. (itstool) path: page/title
+#: C/pref-view-chart.page:29
 msgid "Different chart views"
 msgstr "Diferentes vistas de gráficos"
 
-#: C/pref-view-chart.page:31(page/p)
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:31
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -133,7 +159,8 @@ msgstr ""
 "tamaño de la carpeta. Las subcarpetas se muestran en colores diferentes, "
 "como capas adicionales del anillo."
 
-#: C/pref-view-chart.page:35(page/p)
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:35
 msgid ""
 "Move your mouse over the rings chart displays more details about the folder "
 "and subfolders."
@@ -141,7 +168,8 @@ msgstr ""
 "Al mover el ratón sobre el gráfico de anillo se muestran más detalles sobre "
 "las carpetas y las subcarpetas."
 
-#: C/pref-view-chart.page:37(page/p)
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:37
 msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
@@ -152,7 +180,8 @@ msgstr ""
 "la derecha. La disposición del árbol muestra las carpetas como cajas "
 "proporcionales a su tamaño."
 
-#: C/pref-view-chart.page:40(page/p)
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:40
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -160,15 +189,125 @@ msgstr ""
 "También puede pulsar sobre un anillo o una caja para hacer que sea el punto "
 "inicial del cuadro."
 
-#: C/scan-file-system.page:24(info/desc)
+#. (itstool) path: credit/name
+#: C/problem-permissions.page:9 C/problem-slow-scan.page:10
+msgid "Baptiste Mille-Mathias"
+msgstr "Baptiste Mille-Mathias"
+
+#. (itstool) path: credit/years
+#: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+msgid "2014"
+msgstr "2014"
+
+#. (itstool) path: info/desc
+#: C/problem-permissions.page:16
+msgid ""
+"I see a <gui>Could not scan /… or some of the folders it contains</gui> "
+"error message when scanning."
+msgstr ""
+"Sale el mensaje de error <gui>No se pudo analizar /… o alguna de las "
+"carpetas que contiene</gui> al analizar."
+
+#. (itstool) path: page/title
+#: C/problem-permissions.page:21
+msgid "Error when scanning"
+msgstr "Error al escanear"
+
+#. (itstool) path: page/p
+#: C/problem-permissions.page:23
+msgid ""
+"When scanning you might see a message <gui>Could not scan /… or some of the "
+"folders it contains</gui> at the top of <app>Disk Usage Analyzer</app> "
+"window. This error appears because you don't have the required permissions "
+"to access some files due to restrictions set on the target system. The files "
+"you can't access won't be used to compute the <link xref=\"views\">chart</"
+"link> representing the disk usage, hence the result reported may be wrong."
+msgstr ""
+"Al analizar puede ver el mensaje <gui>No se pudo analizar /… o alguna de las "
+"carpetas que contiene</gui> en la parte superior de la ventana del "
+"<app>Analizador de uso del disco</app>. Este error aparece porque no tiene "
+"los permisos necesarios para acceder a algunos archivos debido a "
+"restricciones en el sistema objetivo. Los archivos a los que no puede "
+"acceder no se tendrán en cuenta en el <link xref=\"views\">gráfico</link> "
+"que representa el uso del disco, por lo que el resultado final puede no ser "
+"correcto."
+
+#. (itstool) path: page/p
+#: C/problem-permissions.page:30
+msgid ""
+"Not having access to all files and directories is perfectly common thought "
+"so there is nothing you can do about this error."
+msgstr ""
+"No tener acceso a todos los archivos y carpetas es perfectamente normal y no "
+"hay nada que pueda hacer para solventar este error."
+
+#. (itstool) path: note/p
+#: C/problem-permissions.page:33
+msgid ""
+"<app>Disk Usage Analyzer</app> uses command <cmd>du</cmd> to create the "
+"detailled view of the use of storage, and needs you have read permission on "
+"files and execute permission of directories."
+msgstr ""
+"El <app>Analizador de uso del disco</app> usa el comando <cmd>du</cmd> para "
+"crear una vista detallada del uso del almacenamiento, y necesita que tenga "
+"permisos de lectura y de ejecución sobre las carpetas."
+
+#. (itstool) path: note/p
+#: C/problem-permissions.page:37
+msgid ""
+"On the other hand, filesystem disk usage on the use command <cmd>df</cmd> "
+"for disk utilisation on the main window which relies on the filesystem and "
+"not on file permissions."
+msgstr ""
+"Por otro lado, el uso del sistema de archivos se conoce con el comando "
+"<cmd>df</cmd> sobre el sistema de archivos de la ventana principal, y no "
+"sobre los permisos de los archivos."
+
+#. (itstool) path: info/desc
+#: C/problem-slow-scan.page:17
+msgid "Scanning a folder or a remote location is slow."
+msgstr "Analizar una carpeta en una ubicación remota es lento."
+
+#. (itstool) path: page/title
+#: C/problem-slow-scan.page:20
+msgid "Scanning is slow"
+msgstr "El análisis es lento"
+
+#. (itstool) path: page/p
+#: C/problem-slow-scan.page:22
+msgid ""
+"The speed required to scan a folder or a remote location depends on the "
+"speed of the media you're scanning. For instance a mechanical hard drive "
+"will be slower than a SSD, and scanning a remote directory over Internet "
+"will generally take longer than scanning a folder over a local network."
+msgstr ""
+"La velocidad requerida para analizar una carpeta en una ubicación remota "
+"depende de la velocidad del medio que esté analizando. Por ejemplo, un disco "
+"duro mecánico será más lento que uno SSD, y analizar una carpeta remota a "
+"través de Internet normalmente tardará más que analizar una carpeta en la "
+"red local."
+
+#. (itstool) path: page/p
+#: C/problem-slow-scan.page:27
+msgid ""
+"The speed also depends on the depth of the directory structure and the "
+"number of files stored."
+msgstr ""
+"La velocidad también depende de la profundidad de la estructura de carpetas "
+"y del número de archivos almacenados."
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:24
 msgid "Scan your internal storage devices."
 msgstr "Analizar los dispositivos de almacenamiento internos."
 
-#: C/scan-file-system.page:28(page/title)
+#. (itstool) path: page/title
+#: C/scan-file-system.page:28
 msgid "Scan the file system"
 msgstr "Analizar el sistema de archivos"
 
-#: C/scan-file-system.page:30(page/p)
+#. (itstool) path: page/p
+#: C/scan-file-system.page:30
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices and locations</gui>. All of the folders that you have "
@@ -180,7 +319,8 @@ msgstr ""
 "su equipo a las que tenga permiso para acceder. Es normal que no tenga "
 "permisos para analizar algunas carpetas del equipo"
 
-#: C/scan-file-system.page:36(note/p)
+#. (itstool) path: note/p
+#: C/scan-file-system.page:36
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -191,15 +331,18 @@ msgstr ""
 "botón en la esquina superior izquierda de la pantalla para volver a la lista "
 "de dispositivos."
 
-#: C/scan-folder.page:25(info/desc)
+#. (itstool) path: info/desc
+#: C/scan-folder.page:25
 msgid "Scan a local folder, including all subfolders."
 msgstr "Analizar una carpeta local, incluyendo todas su subcarpetas."
 
-#: C/scan-folder.page:29(page/title)
+#. (itstool) path: page/title
+#: C/scan-folder.page:29
 msgid "Scan a folder"
 msgstr "Analizar una carpeta"
 
-#: C/scan-folder.page:31(page/p)
+#. (itstool) path: page/p
+#: C/scan-folder.page:31
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
@@ -209,7 +352,8 @@ msgstr ""
 "sistema completo, por lo que puede resultar más eficiente si sólo quiere "
 "información de una parte concreta del sistema de archivos."
 
-#: C/scan-folder.page:37(item/p)
+#. (itstool) path: item/p
+#: C/scan-folder.page:37
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -217,18 +361,21 @@ msgstr ""
 "Pulse el botón el la parte superior derecha de la ventana principal y "
 "selecciona <gui style=\"menuitem\">Analizar carpeta…</gui>."
 
-#: C/scan-folder.page:41(item/p)
+#. (itstool) path: item/p
+#: C/scan-folder.page:41
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
 "Aparecerá un diálogo selector de archivos. Elija la carpeta que quiere "
 "analizar."
 
-#: C/scan-folder.page:45(item/p)
+#. (itstool) path: item/p
+#: C/scan-folder.page:45
 msgid "Click <gui>Open</gui> to start the scan."
 msgstr "Pulse <gui>Abrir</gui> para comenzar el análisis."
 
-#: C/scan-folder.page:49(page/p)
+#. (itstool) path: page/p
+#: C/scan-folder.page:49
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
@@ -239,15 +386,18 @@ msgstr ""
 "y ubicaciones</gui>. Si se renombra o elimina la carpeta, se quitará de la "
 "lista cuando reinicie el <gui>Analizador de uso del disco</gui>."
 
-#: C/scan-home.page:25(info/desc)
+#. (itstool) path: info/desc
+#: C/scan-home.page:25
 msgid "Scan all of your personal files that are on your computer."
 msgstr "Analizar todos los archivos personales que tenga en su equipo."
 
-#: C/scan-home.page:29(page/title)
+#. (itstool) path: page/title
+#: C/scan-home.page:29
 msgid "Scan your <file>Home</file> folder"
 msgstr "Analizar su carpeta <file>personal</file>"
 
-#: C/scan-home.page:31(page/p)
+#. (itstool) path: page/p
+#: C/scan-home.page:31
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -261,7 +411,8 @@ msgstr ""
 "documentos en los que trabaja y fotos de la cámara digital. Normalmente, "
 "existe una carpeta <file>personal</file> por cada usuario del equipo."
 
-#: C/scan-home.page:39(item/p)
+#. (itstool) path: item/p
+#: C/scan-home.page:39
 msgid ""
 "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
 "locations</gui>."
@@ -269,15 +420,18 @@ msgstr ""
 "Seleccione su <gui>Carpeta personal</gui> en la lista de <gui>Dispositivos y "
 "ubicaciones</gui>."
 
-#: C/scan-remote.page:25(info/desc)
+#. (itstool) path: info/desc
+#: C/scan-remote.page:25
 msgid "Scan a folder remotely from your computer."
 msgstr "Analizar una carpeta remota desde su equipo."
 
-#: C/scan-remote.page:29(page/title)
+#. (itstool) path: page/title
+#: C/scan-remote.page:29
 msgid "Scan a remote folder"
 msgstr "Analizar una carpeta remota"
 
-#: C/scan-remote.page:31(page/p)
+#. (itstool) path: page/p
+#: C/scan-remote.page:31
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -286,7 +440,8 @@ msgstr ""
 "accesible de manera remota. Para escanear el sistema de archivos completo o "
 "cualquier carpeta remota específica:"
 
-#: C/scan-remote.page:37(item/p)
+#. (itstool) path: item/p
+#: C/scan-remote.page:37
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Remote Folder…</gui>."
@@ -294,17 +449,25 @@ msgstr ""
 "Pulse el botón en la parte superior derecha de la ventana principal y elija "
 "<gui style=\"menuitem\">Analizar carpeta remota…</gui>."
 
-#: C/scan-remote.page:41(item/p)
+#. (itstool) path: item/p
+#: C/scan-remote.page:41
+#| msgid ""
+#| "Enter the URL into the <gui>Server Address</gui> field. It will normally "
+#| "have a protocol, followed by a colon and two slashes, that looks "
+#| "different depending on the protocol that you are using."
 msgid ""
 "Enter the URL into the <gui>Server Address</gui> field. It will normally "
 "have a protocol, followed by a colon and two slashes, that looks different "
-"depending on the protocol that you are using."
+"depending on the <link xref=\"help:gnome-help/nautilus-connect#types"
+"\">protocol</link> that you are using."
 msgstr ""
 "Introduzca el URL en el campo <gui>Dirección del servidor</gui>. Normalmente "
 "tendrá un protocolo, seguido de dos puntos y dos barras, diferente en "
-"función del tipo de protocolo que esté usando."
+"función del <link xref=\"help:gnome-help/nautilus-connect#types\">protocolo</"
+"link> que esté usando."
 
-#: C/scan-remote.page:46(item/p)
+#. (itstool) path: item/p
+#: C/scan-remote.page:48
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -312,14 +475,16 @@ msgstr ""
 "Pulse <gui>Conectar</gui> para continuar; se le preguntarán más detalles, "
 "como un nombre de usuario y una contraseña antes de que comience el análisis."
 
-#: C/scan-remote.page:52(note/p)
+#. (itstool) path: note/p
+#: C/scan-remote.page:54
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
 "Analizar a través de la red puede ser más lento que analizar un sistema de "
 "archivos local."
 
-#: C/scan-remote.page:56(page/p)
+#. (itstool) path: page/p
+#: C/scan-remote.page:58
 msgid ""
 "You can also select a recently used server instead of entering a new URL. If "
 "you enter a URL which is not valid, you will not be able to press "
