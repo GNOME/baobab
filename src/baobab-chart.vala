@@ -516,7 +516,7 @@ namespace Baobab {
 
         protected override bool button_press_event (Gdk.EventButton event) {
             if (event.type == Gdk.EventType.BUTTON_PRESS) {
-                if (((Gdk.Event) (&event)).triggers_context_menu ()) {
+                if (event.triggers_context_menu ()) {
                     show_popup_menu (event);
                     return true;
                 }
@@ -544,17 +544,17 @@ namespace Baobab {
         }
 
         protected override bool scroll_event (Gdk.EventScroll event) {
-            Gdk.EventMotion *e = (Gdk.EventMotion *) (&event);
+            Gdk.EventMotion e = (Gdk.EventMotion) event;
             switch (event.direction) {
             case Gdk.ScrollDirection.LEFT:
             case Gdk.ScrollDirection.UP:
                 zoom_out ();
-                motion_notify_event (*e);
+                motion_notify_event (e);
                 break;
             case Gdk.ScrollDirection.RIGHT:
             case Gdk.ScrollDirection.DOWN:
                 zoom_in ();
-                motion_notify_event (*e);
+                motion_notify_event (e);
                 break;
             case Gdk.ScrollDirection.SMOOTH:
                 break;
