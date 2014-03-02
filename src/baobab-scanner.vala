@@ -388,7 +388,13 @@ namespace Baobab {
 
                 thread = new Thread<void*> ("scanner", scan_in_thread);
 
-                process_result_idle = Timeout.add (100, process_results);
+                process_result_idle = Timeout.add (100, () => {
+                        bool res = process_results();
+                        if (!res) {
+                            process_result_idle = 0;
+                        }
+                        return res;
+                    });
             } else {
                 completed ();
             }
