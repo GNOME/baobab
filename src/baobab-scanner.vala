@@ -369,6 +369,8 @@ namespace Baobab {
                 tmp = results_queue.try_pop ();
             }
 
+            hardlinks = null;
+
             base.clear ();
 
             cancellable.reset ();
