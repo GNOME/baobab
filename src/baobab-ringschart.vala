@@ -71,6 +71,7 @@ namespace Baobab {
             if (highlighted_item != null) {
                 tips_timeout_id = Timeout.add (SUBTIP_TIMEOUT, () => {
                     drawing_subtips = true;
+                    tips_timeout_id = 0;
                     queue_draw ();
                     return false;
                 });
