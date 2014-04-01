@@ -149,6 +149,9 @@ namespace Baobab {
             ui_settings = Application.get_ui_settings ();
             lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 
+            chart_stack.notify["visible-child-name"].connect (on_chart_stack_child_changed);
+            chart_stack.destroy.connect (() => { chart_stack.notify.disconnect (on_chart_stack_child_changed); });
+
             rings_chart.item_activated.connect (on_chart_item_activated);
             treemap_chart.item_activated.connect (on_chart_item_activated);
 
@@ -184,6 +187,12 @@ namespace Baobab {
             set_ui_state (home_page, false);
 
             show ();
+        }
+
+        void on_chart_stack_child_changed () {
+            if (chart_stack.visible_child_name != null) {
+                lookup_action ("active-chart").change_state (chart_stack.visible_child_name);
+            }
         }
 
         void on_show_gear_menu_activate (SimpleAction action) {
