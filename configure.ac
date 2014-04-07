@@ -43,7 +43,7 @@ YELP_HELP_INIT
 
 PKG_CHECK_MODULES(BAOBAB, [
     gtk+-3.0 >= 3.9.10
-    glib-2.0 >= 2.37.5
+    glib-2.0 >= 2.39.90
     gio-2.0 >= 2.30.0
 ])
 
