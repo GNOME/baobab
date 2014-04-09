@@ -7,7 +7,7 @@ baobabicon_DATA = \
 	$(NULL)
 
 baobabappdir = $(datadir)/applications
-baobabapp_in_files = baobab.desktop.in
+baobabapp_in_files = org.gnome.baobab.desktop.in
 baobabapp_DATA = $(baobabapp_in_files:.desktop.in=.desktop)
 
 $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
@@ -18,6 +18,15 @@ $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
 appdatadir = $(datadir)/appdata
 appdata_in_files = baobab.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+
+dbusservicedir = $(datadir)/dbus-1/services
+dbusservice_DATA = org.gnome.baobab.service
+
+org.gnome.baobab.service: Makefile
+	$(AM_V_GEN) (echo '[D-BUS Service]'; \
+		     echo 'Name=org.gnome.baobab'; \
+		     echo 'Exec=${bindir}/baobab --gapplication-service') > $@.tmp && \
+		     mv $@.tmp $@
 
 gsettingsschema_in_files = org.gnome.baobab.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
@@ -30,7 +39,7 @@ gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 man_MANS = baobab.1
 
 EXTRA_DIST = 				\
-	baobab.desktop.in.in		\
+	org.gnome.baobab.desktop.in.in	\
 	$(gsettingsschema_in_files)	\
 	$(man_MANS)			\
 	$(baobabicon_DATA)		\
