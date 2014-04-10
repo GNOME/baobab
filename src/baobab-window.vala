@@ -40,13 +40,11 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Widget result_page;
         [GtkChild]
-        private Gtk.InfoBar infobar;
+        private Gtk.Revealer info_revealer;
         [GtkChild]
-        private Gtk.Label infobar_primary_label;
+        private Gtk.Label info_label;
         [GtkChild]
-        private Gtk.Label infobar_secondary_label;
-        [GtkChild]
-        private Gtk.Button infobar_close_button;
+        private Gtk.Button info_dismiss_button;
         [GtkChild]
         private Gtk.ScrolledWindow location_scrolled_window;
         [GtkChild]
@@ -144,7 +142,7 @@ namespace Baobab {
                 back_button_image.icon_name = "go-previous-rtl-symbolic";
             }
 
-            infobar_close_button.clicked.connect (() => { clear_message (); });
+            info_dismiss_button.clicked.connect (() => { clear_message (); });
 
             ui_settings = Application.get_ui_settings ();
             lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
@@ -285,7 +283,7 @@ namespace Baobab {
                         location.mount_volume.end (res);
                         scan_active_location (false);
                     } catch (Error e) {
-                        message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
+                        message (_("Could not analyze volume."), e.message);
                     }
                 });
             } else {
@@ -317,7 +315,7 @@ namespace Baobab {
             try {
                 Gtk.show_uri (get_screen (), "help:baobab", Gtk.get_current_event_time ());
             } catch (Error e) {
-                message (_("Failed to show help"), e.message, Gtk.MessageType.WARNING);
+                message (_("Failed to show help"), e.message);
             }
         }
 
@@ -413,7 +411,7 @@ namespace Baobab {
                 files.append (file);
                 appinfo.launch(files, context);
             } catch (Error e) {
-                message (_("Failed to open file"), e.message, Gtk.MessageType.ERROR);
+                message (_("Failed to open file"), e.message);
             }
         }
 
@@ -433,7 +431,7 @@ namespace Baobab {
                 file.trash ();
                 active_location.scanner.remove (ref iter);
             } catch (Error e) {
-                message (_("Failed to move file to the trash"), e.message, Gtk.MessageType.ERROR);
+                message (_("Failed to move file to the trash"), e.message);
             }
         }
 
@@ -485,15 +483,13 @@ namespace Baobab {
             });
         }
 
-        void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
-            infobar.message_type = type;
-            infobar_primary_label.label = "<b>%s</b>".printf (_(primary_msg));
-            infobar_secondary_label.label = "<small>%s</small>".printf (_(secondary_msg));
-            infobar.show ();
+        void message (string primary_msg, string secondary_msg) {
+            info_label.set_markup ("<b>%s</b>\n<small>%s</small>".printf (_(primary_msg), _(secondary_msg)));
+            info_revealer.reveal_child = true;
         }
 
         void clear_message () {
-            infobar.hide ();
+            info_revealer.reveal_child = false;
         }
 
         void set_busy (bool busy) {
@@ -590,7 +586,7 @@ namespace Baobab {
                     return;
                 } catch (Error e) {
                     var primary = _("Could not scan folder \"%s\" or some of the folders it contains.").printf (scanner.directory.get_parse_name ());
-                    message (primary, e.message, Gtk.MessageType.WARNING);
+                    message (primary, e.message);
                 }
 
                 // Use allocated size if available, where available is defined as
@@ -607,7 +603,7 @@ namespace Baobab {
                 set_ui_state (result_page, false);
 
                 if (!show_allocated_size) {
-                    message (_("Could not detect occupied disk sizes."), _("Apparent sizes are shown instead."), Gtk.MessageType.INFO);
+                    message (_("Could not detect occupied disk sizes."), _("Apparent sizes are shown instead."));
                 }
             });
 
@@ -625,13 +621,13 @@ namespace Baobab {
 
             if (location.info == null) {
                 var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
-                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
+                message (primary, _("Could not analyze disk usage."));
                 return;
             }
 
             if (location.info.get_file_type () != FileType.DIRECTORY/* || is_virtual_filesystem ()*/) {
                 var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
-                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
+                message (primary, _("Could not analyze disk usage."));
                 return;
             }
 

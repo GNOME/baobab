@@ -118,64 +118,48 @@
       </object>
     </child>
     <child>
-      <object class="GtkGrid" id="window_contents">
+      <object class="GtkOverlay" id="overlay">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkInfoBar" id="infobar">
-            <property name="visible">False</property>
-            <child internal-child="content_area">
-              <object class="GtkBox" id="infobar_content_area">
+        <child type="overlay">
+          <object class="GtkRevealer" id="info_revealer">
+            <property name="visible">True</property>
+            <property name="halign">center</property>
+            <property name="valign">start</property>
+            <child>
+              <object class="GtkFrame" id="info_frame">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="border_width">8</property>
-                <property name="orientation">vertical</property>
-                <property name="spacing">16</property>
-                <property name="hexpand">True</property>
+                <style>
+                  <class name="app-notification"/>
+                </style>
                 <child>
-                  <object class="GtkLabel" id="infobar_primary_label">
+                  <object class="GtkBox" id="info_box">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="selectable">True</property>
-                    <property name="use-markup">True</property>
-                    <property name="halign">GTK_ALIGN_START</property>
-                    <property name="wrap">True</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="infobar_secondary_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="selectable">True</property>
-                    <property name="use-markup">True</property>
-                    <property name="halign">GTK_ALIGN_START</property>
-                    <property name="wrap">True</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-              </object>
-            </child>
-            <child internal-child="action_area">
-              <object class="GtkButtonBox" id="infobar_action_area">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="border_width">5</property>
-                <property name="orientation">vertical</property>
-                <property name="spacing">6</property>
-                <property name="layout_style">end</property>
-                <child>
-                  <object class="GtkButton" id="infobar_close_button">
-                    <property name="visible">True</property>
-                    <property name="label" translatable="yes">Close</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <property name="margin-start">10</property>
+                    <property name="margin-end">10</property>
+                    <property name="spacing">20</property>
+                    <child>
+                      <object class="GtkLabel" id="info_label">
+                        <property name="visible">True</property>
+                        <property name="hexpand">True</property>
+                        <property name="halign">start</property>
+                        <property name="label">NEWS!</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="info_dismiss_button">
+                        <property name="visible">True</property>
+                        <property name="relief">none</property>
+                        <child>
+                          <object class="GtkImage" id="info_dismiss_image">
+                            <property name="visible">True</property>
+                            <property name="icon-name">window-close-symbolic</property>
+                            <property name="icon-size">0</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -183,185 +167,197 @@
           </object>
         </child>
         <child>
-          <object class="GtkStack" id="main_stack">
+          <object class="GtkGrid" id="window_contents">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="transition_type">slide-left-right</property>
+            <property name="orientation">vertical</property>
             <child>
-              <object class="GtkGrid" id="home_page">
-                <property name="can_focus">False</property>
-                <property name="visible">True</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkScrolledWindow" id="location_scrolled_window">
-                    <property name="visible">True</property>
-                    <property name="vexpand">True</property>
-                    <property name="hexpand">True</property>
-                    <child>
-                      <object class="BaobabLocationList" id="location_list">
-                        <property name="visible">True</property>
-                        <style>
-                          <class name="view"/>
-                          <class name="content-view"/>
-                        </style>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-               </object>
-            </child>
-            <child>
-              <object class="GtkGrid" id="result_page">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <child>
-                  <object class="GtkScrolledWindow" id="scrolled_window">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="shadow_type">in</property>
-                    <property name="hexpand">True</property>
-                    <child>
-                      <object class="GtkTreeView" id="treeview">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <child internal-child="selection">
-                          <object class="GtkTreeSelection" id="treeview_selection1"/>
-                        </child>
-                        <child>
-                          <object class="GtkTreeViewColumn" id="folder_column">
-                            <property name="resizable">True</property>
-                            <property name="sizing">grow-only</property>
-                            <property name="title" translatable="yes">Folder</property>
-                            <property name="expand">True</property>
-                            <property name="reorderable">True</property>
-                            <property name="sort_column_id">0</property>
-                            <child>
-                              <object class="BaobabCellRendererProgress" id="usage_column_bar_renderer">
-                                <property name="xpad">4</property>
-                                <property name="ypad">4</property>
-                              </object>
-                              <attributes>
-                                <attribute name="value">2</attribute>
-                                <attribute name="state">7</attribute>
-                              </attributes>
-                            </child>
-                            <child>
-                              <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
-                              <attributes>
-                                <attribute name="name">0</attribute>
-                                <attribute name="state">7</attribute>
-                              </attributes>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkTreeViewColumn" id="size_column">
-                            <property name="resizable">True</property>
-                            <property name="sizing">grow-only</property>
-                            <property name="title" translatable="yes">Size</property>
-                            <property name="reorderable">True</property>
-                            <property name="sort_column_id">4</property>
-                            <child>
-                              <object class="BaobabCellRendererSize" id="size_column_size_renderer">
-                                <property name="xalign">1.0</property>
-                                <property name="show-allocated-size">True</property>
-                              </object>
-                              <attributes>
-                                <attribute name="size">3</attribute>
-                                <attribute name="alloc-size">4</attribute>
-                                <attribute name="state">7</attribute>
-                              </attributes>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkTreeViewColumn" id="contents_column">
-                            <property name="resizable">True</property>
-                            <property name="sizing">grow-only</property>
-                            <property name="title" translatable="yes">Contents</property>
-                            <property name="reorderable">True</property>
-                            <property name="sort_column_id">6</property>
-                            <child>
-                              <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
-                                <property name="xalign">1.0</property>
-                              </object>
-                              <attributes>
-                                <attribute name="items">6</attribute>
-                                <attribute name="state">7</attribute>
-                              </attributes>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkTreeViewColumn" id="time_modified_column">
-                            <property name="resizable">True</property>
-                            <property name="sizing">grow-only</property>
-                            <property name="title" translatable="yes">Modified</property>
-                            <property name="reorderable">True</property>
-                            <property name="sort_column_id">5</property>
-                            <child>
-                              <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
-                                <property name="xalign">1.0</property>
-                              </object>
-                              <attributes>
-                                <attribute name="time">5</attribute>
-                              </attributes>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkGrid" id="chart_grid">
+              <object class="GtkInfoBar" id="infobar">
+                <property name="visible">False</property>
+                <child internal-child="content_area">
+                  <object class="GtkBox" id="infobar_content_area">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="border_width">8</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">16</property>
                     <property name="hexpand">True</property>
-                    <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkStack" id="chart_stack">
+                      <object class="GtkLabel" id="infobar_primary_label">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="transition_type">crossfade</property>
+                        <property name="selectable">True</property>
+                        <property name="use-markup">True</property>
+                        <property name="halign">GTK_ALIGN_START</property>
+                        <property name="wrap">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="infobar_secondary_label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="selectable">True</property>
+                        <property name="use-markup">True</property>
+                        <property name="halign">GTK_ALIGN_START</property>
+                        <property name="wrap">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child internal-child="action_area">
+                  <object class="GtkButtonBox" id="infobar_action_area">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="border_width">5</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">6</property>
+                    <property name="layout_style">end</property>
+                    <child>
+                      <object class="GtkButton" id="infobar_close_button">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Close</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStack" id="main_stack">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="transition_type">slide-left-right</property>
+                <child>
+                  <object class="GtkGrid" id="home_page">
+                    <property name="can_focus">False</property>
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkScrolledWindow" id="location_scrolled_window">
+                        <property name="visible">True</property>
+                        <property name="vexpand">True</property>
+                        <property name="hexpand">True</property>
                         <child>
-                          <object class="BaobabRingschart" id="rings_chart">
+                          <object class="BaobabLocationList" id="location_list">
                             <property name="visible">True</property>
-                            <property name="hexpand">True</property>
-                            <property name="vexpand">True</property>
+                            <style>
+                              <class name="view"/>
+                              <class name="content-view"/>
+                            </style>
                           </object>
-                          <packing>
-                            <property name="name">rings</property>
-                            <property name="title" translatable="yes">Rings Chart</property>
-                            <property name="icon_name">view-ringschart-symbolic</property>
-                          </packing>
                         </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkGrid" id="result_page">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkScrolledWindow" id="scrolled_window">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="shadow_type">in</property>
+                        <property name="hexpand">True</property>
                         <child>
-                          <object class="BaobabTreemap" id="treemap_chart">
+                          <object class="GtkTreeView" id="treeview">
                             <property name="visible">True</property>
-                            <property name="hexpand">True</property>
-                            <property name="vexpand">True</property>
-                          </object>
-                          <packing>
-                            <property name="name">treemap</property>
-                            <property name="title" translatable="yes">Treemap Chart</property>
-                            <property name="icon_name">view-treemap-symbolic</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkSpinner" id="spinner">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="width_request">128</property>
-                            <property name="height_request">128</property>
-                            <property name="halign">GTK_ALIGN_CENTER</property>
-                            <property name="valign">GTK_ALIGN_CENTER</property>
+                            <property name="can_focus">True</property>
+                            <child internal-child="selection">
+                              <object class="GtkTreeSelection" id="treeview_selection1"/>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="folder_column">
+                                <property name="resizable">True</property>
+                                <property name="sizing">grow-only</property>
+                                <property name="title" translatable="yes">Folder</property>
+                                <property name="expand">True</property>
+                                <property name="reorderable">True</property>
+                                <property name="sort_column_id">0</property>
+                                <child>
+                                  <object class="BaobabCellRendererProgress" id="usage_column_bar_renderer">
+                                    <property name="xpad">4</property>
+                                    <property name="ypad">4</property>
+                                  </object>
+                                  <attributes>
+                                    <attribute name="value">2</attribute>
+                                    <attribute name="state">7</attribute>
+                                  </attributes>
+                                </child>
+                                <child>
+                                  <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
+                                  <attributes>
+                                    <attribute name="name">0</attribute>
+                                    <attribute name="state">7</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="size_column">
+                                <property name="resizable">True</property>
+                                <property name="sizing">grow-only</property>
+                                <property name="title" translatable="yes">Size</property>
+                                <property name="reorderable">True</property>
+                                <property name="sort_column_id">4</property>
+                                <child>
+                                  <object class="BaobabCellRendererSize" id="size_column_size_renderer">
+                                    <property name="xalign">1.0</property>
+                                    <property name="show-allocated-size">True</property>
+                                  </object>
+                                  <attributes>
+                                    <attribute name="size">3</attribute>
+                                    <attribute name="alloc-size">4</attribute>
+                                    <attribute name="state">7</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="contents_column">
+                                <property name="resizable">True</property>
+                                <property name="sizing">grow-only</property>
+                                <property name="title" translatable="yes">Contents</property>
+                                <property name="reorderable">True</property>
+                                <property name="sort_column_id">6</property>
+                                <child>
+                                  <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
+                                    <property name="xalign">1.0</property>
+                                  </object>
+                                  <attributes>
+                                    <attribute name="items">6</attribute>
+                                    <attribute name="state">7</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="time_modified_column">
+                                <property name="resizable">True</property>
+                                <property name="sizing">grow-only</property>
+                                <property name="title" translatable="yes">Modified</property>
+                                <property name="reorderable">True</property>
+                                <property name="sort_column_id">5</property>
+                                <child>
+                                  <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
+                                    <property name="xalign">1.0</property>
+                                  </object>
+                                  <attributes>
+                                    <attribute name="time">5</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
                           </object>
                         </child>
                       </object>
@@ -373,28 +369,83 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkStackSwitcher" id="chart_stack_switcher">
+                      <object class="GtkGrid" id="chart_grid">
                         <property name="visible">True</property>
-                        <property name="margin_right">20</property>
-                        <property name="margin_top">6</property>
-                        <property name="margin_bottom">6</property>
-                        <property name="halign">end</property>
-                        <property name="stack">chart_stack</property>
+                        <property name="can_focus">False</property>
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                        <child>
+                          <object class="GtkStack" id="chart_stack">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="transition_type">crossfade</property>
+                            <child>
+                              <object class="BaobabRingschart" id="rings_chart">
+                                <property name="visible">True</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
+                              </object>
+                              <packing>
+                                <property name="name">rings</property>
+                                <property name="title" translatable="yes">Rings Chart</property>
+                                <property name="icon_name">view-ringschart-symbolic</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="BaobabTreemap" id="treemap_chart">
+                                <property name="visible">True</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
+                              </object>
+                              <packing>
+                                <property name="name">treemap</property>
+                                <property name="title" translatable="yes">Treemap Chart</property>
+                                <property name="icon_name">view-treemap-symbolic</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkSpinner" id="spinner">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="width_request">128</property>
+                                <property name="height_request">128</property>
+                                <property name="halign">GTK_ALIGN_CENTER</property>
+                                <property name="valign">GTK_ALIGN_CENTER</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">0</property>
+                            <property name="width">1</property>
+                            <property name="height">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkStackSwitcher" id="chart_stack_switcher">
+                            <property name="visible">True</property>
+                            <property name="margin_right">20</property>
+                            <property name="margin_top">6</property>
+                            <property name="margin_bottom">6</property>
+                            <property name="halign">end</property>
+                            <property name="stack">chart_stack</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">1</property>
+                            <property name="width">1</property>
+                            <property name="height">1</property>
+                          </packing>
+                        </child>
                       </object>
                       <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">1</property>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
                 </child>
               </object>
             </child>
