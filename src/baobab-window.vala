@@ -68,6 +68,8 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Stack chart_stack;
         [GtkChild]
+        private Gtk.StackSwitcher chart_stack_switcher;
+        [GtkChild]
         private Chart rings_chart;
         [GtkChild]
         private Chart treemap_chart;
@@ -503,6 +505,7 @@ namespace Baobab {
                 cursor = busy_cursor;
                 disable_drop ();
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
+                chart_stack_switcher.sensitive = false;
                 chart_stack.visible_child = spinner;
                 spinner.start ();
             } else {
@@ -510,6 +513,7 @@ namespace Baobab {
                 (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
                 lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
+                chart_stack_switcher.sensitive = true;
             }
 
             var window = get_window ();
