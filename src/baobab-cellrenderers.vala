@@ -25,7 +25,7 @@ namespace Baobab {
 
         public string name {
             set {
-                var escaped = Markup.escape_text (value);
+                var escaped = (value != null) ? Markup.escape_text (value) : null;
                 switch (state) {
                 case Scanner.State.ERROR:
                     markup = "<b>%s</b>".printf (escaped);
