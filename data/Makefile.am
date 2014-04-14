@@ -51,6 +51,7 @@ CLEANFILES =	 			\
 	$(baobabapp_DATA)		\
 	$(gsettings_SCHEMAS)		\
 	$(appdata_DATA)			\
+	org.gnome.baobab.service	\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk
