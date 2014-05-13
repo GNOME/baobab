@@ -90,8 +90,8 @@ namespace Baobab {
             var app_menu = builder.get_object ("appmenu") as MenuModel;
             set_app_menu (app_menu);
 
-            add_accelerator ("F10", "win.gear-menu", null);
-            add_accelerator ("<Primary>r", "win.reload", null);
+            set_accels_for_action ("win.gear-menu", { "F10" });
+            set_accels_for_action ("win.reload", { "<Primary>r" });
         }
 
         protected override int handle_local_options (GLib.VariantDict options) {
