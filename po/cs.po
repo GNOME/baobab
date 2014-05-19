@@ -22,8 +22,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-02 21:04+0000\n"
-"PO-Revision-Date: 2013-09-05 12:18+0200\n"
+"POT-Creation-Date: 2014-05-19 12:12+0000\n"
+"PO-Revision-Date: 2014-05-19 14:56+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -43,15 +43,15 @@ msgstr ""
 "vzdálené) nebo svazky a poskytnout jejich grafické ztvárnění, včetně udaje o "
 "velikosti a procentním podílu každé složky."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využití disku"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Zkontrolovat velikost složek a dostupné místo na disku"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "úložiště;místo;prostor;vyčistit;uvolnit;"
 
@@ -87,13 +87,9 @@ msgstr "Stav okna"
 msgid "The GdkWindowState of the window"
 msgstr "Stav GdkWindowState okna"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "– Analyzátor využití disku"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -220,39 +216,39 @@ msgstr "Př_iblížit"
 msgid "Zoom _out"
 msgstr "_Oddálit"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:235
 msgid "Select Folder"
 msgstr "Výběr složky"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:237
 msgid "_Cancel"
 msgstr "_Zrušit"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:238
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:243
 msgid "Recursively analyze mount points"
 msgstr "Při analýze se zanořovat do přípojných bodů"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:290
 msgid "Could not analyze volume."
 msgstr "Nelze analyzovat svazek."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:322
 msgid "Failed to show help"
 msgstr "Selhalo zobrazení nápovědy"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:341
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:344
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj pro analýzu využití disku."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:349
 msgid "translator-credits"
 msgstr ""
 "David Šauer <davids@penguin.cz>\n"
@@ -267,37 +263,42 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:418
 msgid "Failed to open file"
 msgstr "Selhalo otevření souboru"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:438
 msgid "Failed to move file to the trash"
 msgstr "Selhal přesun souboru do koše"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:540
 msgid "Devices and locations"
 msgstr "Zařízení a umístění"
 
-#: ../src/baobab-window.vala:583
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Nelze analyzovat složku „%s“ nebo některé v ní obsažené složky."
-
 #: ../src/baobab-window.vala:601
+#, c-format
+msgid "Could not scan folder \"%s\""
+msgstr "Nelze analyzovat složku „%s“"
+
+#: ../src/baobab-window.vala:604
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Nelze analyzovat některé složky v „%s“"
+
+#: ../src/baobab-window.vala:623
 msgid "Could not detect occupied disk sizes."
 msgstr "Nelze zjistit velikost zabraného místa na disku."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:623
 msgid "Apparent sizes are shown instead."
 msgstr "Místo toho je zobrazena zdánlivá velikost."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:640 ../src/baobab-window.vala:646
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ není platná složka"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:641 ../src/baobab-window.vala:647
 msgid "Could not analyze disk usage."
 msgstr "Nelze analyzovat využití disku."
