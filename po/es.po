@@ -10,23 +10,23 @@
 # Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999.
 # Manuel de Vega Barreiro <barreiro@arrakis.es> 2000-2001.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-02 21:04+0000\n"
-"PO-Revision-Date: 2013-09-03 16:08+0200\n"
+"POT-Creation-Date: 2014-05-20 14:50+0000\n"
+"PO-Revision-Date: 2014-05-20 18:45+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.5\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/baobab.appdata.xml.in.h:1
 msgid ""
@@ -38,15 +38,15 @@ msgstr ""
 "remotas) o volúmenes y mostrar una representación gráfica del tamaño o el "
 "porcentaje de cada carpeta."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Compruebe el tamaño de las carpetas y el espacio disponible en disco"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "almacenamiento;espacio;limpieza;"
 
@@ -82,13 +82,9 @@ msgstr "Estado de la ventana"
 msgid "The GdkWindowState of the window"
 msgstr "El GdkWindowState de la ventana"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Analizador de uso de disco"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -211,39 +207,39 @@ msgstr "Ampliar"
 msgid "Zoom _out"
 msgstr "Reducir"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:235
 msgid "Select Folder"
 msgstr "Seleccione la carpeta"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:237
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:238
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:243
 msgid "Recursively analyze mount points"
 msgstr "Analizar recursivamente los puntos de montaje"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:290
 msgid "Could not analyze volume."
 msgstr "No se pudo analizar el volumen."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:322
 msgid "Failed to show help"
 msgstr "Falló al mostrar la ayuda"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:341
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:344
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una herramienta gráfica para analizar el uso del disco."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:349
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012\n"
@@ -256,40 +252,50 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:418
 msgid "Failed to open file"
 msgstr "Falló al abrir el archivo"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:438
 msgid "Failed to move file to the trash"
 msgstr "Falló al mover el archivo a la papelera"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:540
 msgid "Devices and locations"
 msgstr "Dispositivos y ubicaciones"
 
-#: ../src/baobab-window.vala:583
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "No se pudo analizar la carpeta «%s» o alguna de sus subcarpetas."
-
 #: ../src/baobab-window.vala:601
+#, c-format
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "No se pudo analizar la carpeta «%s»"
+
+#: ../src/baobab-window.vala:604
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "No se pudieron analizar algunas de las carpetas de «%s»."
+
+#: ../src/baobab-window.vala:623
 msgid "Could not detect occupied disk sizes."
 msgstr "No se pudo detectar el espacio de disco ocupado."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:623
 msgid "Apparent sizes are shown instead."
 msgstr "Se muestran el tamaño aparente en su lugar."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:640 ../src/baobab-window.vala:646
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:641 ../src/baobab-window.vala:647
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analizar el uso del disco."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Analizador de uso de disco"
 
 #~ msgid "Main volume"
 #~ msgstr "Volumen principal"
@@ -595,9 +601,6 @@ msgstr "No se pudo analizar el uso del disco."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "No se puede comprobar la carpeta excluida."
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "No se ha podido abrir la carpeta «%s»"
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "No hay instalado ningún visor capaz de mostrar la carpeta."
