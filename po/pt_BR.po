@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of baobab.
-# Copyright (C) 1999-2013 the baobab authors.
+# Copyright (C) 1999-2014 the baobab authors.
 # This file is distributed under the same license as the baobab package.
 # Alexandre Hautequest <hquest@fesppr.br>, 1999.
 # Ariel Bressan da Silva <ariel@conectiva.com.br>, 2000.
@@ -19,24 +19,25 @@
 # Rodrigo Padula de Oliveira <contato@rodrigopadula.com>, 2011.
 # André Gondim <andregondim@ubuntu.com>, 2011.
 # Jonh Wendell <jwendell@gnome.org>, 2012.
-# Enrico Nicoletto <liverig@gmail.com>, 2012, 2013.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2014.
+# Enrico Nicoletto <liverig@gmail.com>, 2012, 2013, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-18 14:24+0000\n"
-"PO-Revision-Date: 2014-01-21 14:53-0300\n"
-"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
+"POT-Creation-Date: 2014-05-21 02:51+0000\n"
+"PO-Revision-Date: 2014-05-21 09:30-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: ../data/baobab.appdata.xml.in.h:1
 msgid ""
@@ -48,15 +49,15 @@ msgstr ""
 "locais ou remotas) quanto volumes e fornece uma representação gráfica "
 "incluindo cada tamanho ou porcentagem de diretórios."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de uso de disco"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Verifique o tamanho de pastas e o espaço disponível em disco"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "armazenamento;espaço;limpeza;"
 
@@ -92,13 +93,9 @@ msgstr "Estado da janela"
 msgid "The GdkWindowState of the window"
 msgstr "O GdkWindowState da janela"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Exibe informações da versão e sai"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- analisador de uso de disco"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -222,39 +219,39 @@ msgstr "Amp_liar"
 msgid "Zoom _out"
 msgstr "Redu_zir"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:235
 msgid "Select Folder"
 msgstr "Selecione uma pasta"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:237
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:238
 msgid "_Open"
 msgstr "A_brir"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:243
 msgid "Recursively analyze mount points"
 msgstr "Analisar recursivamente os pontos de montagem"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:290
 msgid "Could not analyze volume."
 msgstr "Não foi possível analisar o volume."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:322
 msgid "Failed to show help"
 msgstr "Falha ao mostrar a ajuda"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:341
 msgid "Baobab"
 msgstr "Baobá"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:344
 msgid "A graphical tool to analyze disk usage."
 msgstr "Uma ferramenta gráfica para analisar o uso de disco."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:349
 msgid "translator-credits"
 msgstr ""
 "Alexandre Hautequest <hquest@fesppr.br>\n"
@@ -277,41 +274,50 @@ msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Rafael Fontenelle <rafael.f.f1@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:418
 msgid "Failed to open file"
 msgstr "Falha ao abrir o arquivo"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:438
 msgid "Failed to move file to the trash"
 msgstr "Falha ao mover arquivo para a lixeira"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:540
 msgid "Devices and locations"
 msgstr "Dispositivos e localizações"
 
-#: ../src/baobab-window.vala:583
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Não foi possível varrer a pasta \"%s\" ou algumas das pastas nela contidas."
-
 #: ../src/baobab-window.vala:601
+#, c-format
+#| msgid "Could not analyze volume."
+msgid "Could not scan folder \"%s\""
+msgstr "Não foi possível varrer a pasta \"%s\""
+
+#: ../src/baobab-window.vala:604
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Não foi possível varrer algumas das pastas contidas em \"%s\""
+
+#: ../src/baobab-window.vala:623
 msgid "Could not detect occupied disk sizes."
 msgstr "Não foi possível detectar tamanhos de disco ocupados."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:623
 msgid "Apparent sizes are shown instead."
 msgstr "Tamanhos aparentes são mostrados, em vez disso."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:640 ../src/baobab-window.vala:646
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" não é uma pasta válida"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:641 ../src/baobab-window.vala:647
 msgid "Could not analyze disk usage."
 msgstr "Não foi possível analisar o uso de disco."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- analisador de uso de disco"
 
 #~ msgid "Main volume"
 #~ msgstr "Volume principal"
