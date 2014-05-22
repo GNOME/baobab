@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gnome-utils package.
 #
 # Mohammad DAMT <mdamt@bisnisweb.com>, 2003-2005.
-# Andika Triwidada <andika@gmail.com>, 2010-2013.
+# Andika Triwidada <andika@gmail.com>, 2010-2014.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-02 21:04+0000\n"
-"PO-Revision-Date: 2013-09-11 17:41+0700\n"
+"POT-Creation-Date: 2014-05-22 02:50+0000\n"
+"PO-Revision-Date: 2014-05-22 16:25+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id_ID\n"
@@ -32,15 +32,15 @@ msgstr ""
 "atau volume dan memberikan suatu representasi grafis termasuk ukuran atau "
 "persentase setiap direktori."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Penganalisa Penggunaan Disk"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Periksa ukuran folder dan ruang disk yang tersedia"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "penyimpanan;ruang;pembersihan;"
 
@@ -76,13 +76,9 @@ msgstr "Keadaan jendela"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState dari jendela"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Menampilkan informasi versi dan keluar"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Penganalisa Penggunaan Diska"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -201,39 +197,39 @@ msgstr "Per_besar"
 msgid "Zoom _out"
 msgstr "Per_kecil"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Pilih Folder"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Buka"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Analisis secara rekursif titik kait"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Tak bisa menganalisa volume."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Gagal menampilkan bantuan"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Alat grafis untuk menganalisa penggunaan disk."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
@@ -241,38 +237,42 @@ msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2010, 2011, 2012, 2013.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012."
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Gagal membuka berkas"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Gagal memindah berkas ke tong sampah"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Perangkat dan lokasi"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Tak bisa memindai folder \"%s\" atau beberapa folder yang dikandungnya."
+msgid "Could not scan folder \"%s\""
+msgstr "Tak bisa memindai folder “%s”"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Tak bisa memindai beberapa folder yang dikandung dalam “%s”"
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Tak bisa mendeteksi ukuran disk yang ditempati."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Ukuran yang nampak saja yang ditampilkan sebagai gantinya."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" bukan folder yang valid"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Tak bisa menganalisa penggunaan disk."
