@@ -6,15 +6,15 @@
 # Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006, 2009, 2010.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008.
-# Aurimas Černius <aurisc4@gmail.com>, 2013.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-02 21:04+0000\n"
-"PO-Revision-Date: 2013-09-04 00:09+0300\n"
+"POT-Creation-Date: 2014-05-25 14:51+0000\n"
+"PO-Revision-Date: 2014-05-25 21:51+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -35,15 +35,15 @@ msgstr ""
 "arba nutolusius), arba tomus bei pateikti grafinį vaizdą, įtraukiantį "
 "kiekvieno aplanko dydį arba procentinę dalį."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Disko naudojimo analizatorius"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Tikrinti aplankų dydžius ir laisvą vietą"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "saugykla;vieta;išvalymas;"
 
@@ -79,13 +79,9 @@ msgstr "Lango būsena"
 msgid "The GdkWindowState of the window"
 msgstr "Lango GdkWindowState"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Disko naudojimo analizatorius"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -212,39 +208,39 @@ msgstr "Pri_traukti"
 msgid "Zoom _out"
 msgstr "_Atitolinti"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Pasirinkite aplanką"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "At_sisakyti"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Atverti"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Rekursyviai analizuoti prijungimo taškus"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Nepavyko analizuoti tomo."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Nepavyko parodyti pagalbos"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobabas"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafinis įrankis disko naudojimo analizavimui."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Paskutinysis vertėjas:\n"
@@ -256,37 +252,45 @@ msgstr ""
 "Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Gediminas Paulauskas <menesis@chatsubo.lt>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Nepavyko atverti failo"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Nepavyko perkelti failo į šiukšlinę"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Įrenginiai ir vietos"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Nepavyko skaityti aplanko „%s“ arba kai kurių jo turimų aplankų."
+#| msgid "Could not analyze volume."
+msgid "Could not scan folder \"%s\""
+msgstr "Nepavyko perskaityti aplanko „%s“"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Nepavyko perskaityti kai kurių aplankų iš „%s“."
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Nepavyko aptikti užimtų diskų dydžių."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Vietoj to rodomi numanomi dydžiai."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ nėra tinkamas aplankas"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Grafinis įrankis disko naudojimo analizavimui."
+
