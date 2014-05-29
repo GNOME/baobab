@@ -7,15 +7,15 @@
 # Deniz Koçak <lenduha@gmail.com>, 2005.
 # İlker DAĞLI <ilker@ilkerdagli.info>, 2011.
 # Rıdvan CAN <ridvan@linuxdeneyimi.com>, 2003.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2013.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-02 21:04+0000\n"
-"PO-Revision-Date: 2013-09-01 01:17+0300\n"
+"POT-Creation-Date: 2014-05-28 14:51+0000\n"
+"PO-Revision-Date: 2014-05-29 03:02+0300\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -31,16 +31,18 @@ msgid ""
 "remote) or volumes and give a graphical representation including each "
 "directory size or percentage."
 msgstr ""
+"Belirli klasörleri ya da birimleri tarayabilen ve herbir dizinin boyutu veya "
+"yüzde oranını içeren çizgesel bir temsil sunan basit bir uygulama."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Disk Kullanımı Analizcisi"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Klasör boyutlarını ve mevcut boş disk alanını kontrol et"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "depolama;alan;temizlik;"
 
@@ -76,13 +78,9 @@ msgstr "Pencere durumu"
 msgid "The GdkWindowState of the window"
 msgstr "Pencerenin GdkWindowState'i"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Disk Kullanımı Analizcisi"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -201,78 +199,88 @@ msgstr "Yakınlaşt_ır"
 msgid "Zoom _out"
 msgstr "Uzakla_ştır"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Bir Klasör Seçin"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Aç"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Bağlama noktalarını özyinelemeli olarak analiz et"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Birim analiz edilemedi."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Yardım görüntüleme başarısız oldu"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Disk kullanımını analiz etmek için grafiksel bir araç."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr>\n"
 "Muhammet Kara <muhammetk@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Dosya açma başarısız oldu"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Dosyanın çöpe taşınması başarısız oldu"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Aygıtlar ve konumlar"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "\"%s\" klasörü ya da içerdiği klasörlerden bazıları taranamadı."
+#| msgid "Could not analyze volume."
+msgid "Could not scan folder \"%s\""
+msgstr "\"%s\" klasörü taranamadı"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "\"%s\" içindeki klasörlerden bazıları taranamadı"
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Dolu disk boyutları saptanamadı."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Onun yerine, görünür boyutlar gösterilmektedir."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" geçerli bir klasör değil"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Disk kullanımını analiz edilemedi."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Disk Kullanımı Analizcisi"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Azami derinlik"
