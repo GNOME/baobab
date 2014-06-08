@@ -1,15 +1,15 @@
 # Norwegian bokmål translation of baobab.
 # Copyright (C) 1999-2005 Free Software Foundation, Inc.
 #
-# Kjartan Maraas <kmaraas@gnome.org>, 1999-2013.
+# Kjartan Maraas <kmaraas@gnome.org>, 1999-2014.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab 3.9.x\n"
+"Project-Id-Version: baobab 3.13.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-08 11:23+0200\n"
-"PO-Revision-Date: 2013-09-08 11:24+0200\n"
+"POT-Creation-Date: 2014-06-08 10:46+0200\n"
+"PO-Revision-Date: 2014-06-08 10:48+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -23,17 +23,20 @@ msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
 "directory size or percentage."
-msgstr "Et enkelt program som enten søker gjennom spesifikke mapper (lokale eller eksterne) eller volumer og gir en grafisk representasjon av disse inklusive katalogstørrelse og prosentvis størrelse."
+msgstr ""
+"Et enkelt program som enten søker gjennom spesifikke mapper (lokale eller "
+"eksterne) eller volumer og gir en grafisk representasjon av disse inklusive "
+"katalogstørrelse og prosentvis størrelse."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analyse av diskplass"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "lagring;plass;rydding;"
 
@@ -69,13 +72,9 @@ msgstr "Vindutilstand"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState for vinduet"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Analyse av diskplass"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -198,77 +197,81 @@ msgstr "Zoom _inn"
 msgid "Zoom _out"
 msgstr "Zoom _ut"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Velg mappe"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "A_vbryt"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Åpne"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Analyser monteringspunkter rekursivt"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere volum."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Klarte ikke å vise hjelp"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk verktøy for å analysere diskbruk."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <libbe AT stefansen DOT net>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Klarte ikke å åpne fil"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Klarte ikke å flytte filen til papirkurven"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Enheter og lokasjoner"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Kunne ikke gjennomsøke mappe «%s» eller noen av mappene den inneholder."
+msgid "Could not scan folder \"%s\""
+msgstr "Kunne ikke gjennomsøke mappe «%s»"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Kunne ikke gjennomsøke noen av mappene i «%s»"
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Kunne ikke finne eksakte verdier for diskbruk."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Tilsynelatende størrelser vises i stedet."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» er ikke en gyldig mappe"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskbruk"
