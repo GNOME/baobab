@@ -11,14 +11,15 @@
 # Mate ORY <orymate at gmail d0t com>, 2006.
 # Lukács Bence <lukacs.bence1 at gmail dot com>, 2012.
 # Balázs Úr <urbalazs at gmail dot com>, 2012, 2013.
+# Balázs Úr <urbalazs@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-02 21:04+0000\n"
-"PO-Revision-Date: 2013-09-03 19:24+0200\n"
-"Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
+"POT-Creation-Date: 2014-06-22 02:51+0000\n"
+"PO-Revision-Date: 2014-06-22 12:13+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -37,15 +38,15 @@ msgstr ""
 "köteteket képes átvizsgálni és minden könyvtárméretet vagy százalékos "
 "megjelenítést tartalmazó grafikus ábrázolást nyújt."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Lemezhasználat-elemző"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Mappaméretek és elérhető lemezterület vizsgálata"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "tároló;lemezterület;takarítás;"
 
@@ -81,13 +82,9 @@ msgstr "Ablakállapot"
 msgid "The GdkWindowState of the window"
 msgstr "Az ablak GdkWindowState állapota"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "– Lemezhasználat-elemző"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -199,8 +196,9 @@ msgid "_Quit"
 msgstr "_Kilépés"
 
 #: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "Á_thelyezés a szülőmappába"
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "Ugrás a _szülőmappába"
 
 #: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
@@ -210,39 +208,39 @@ msgstr "_Nagyítás"
 msgid "Zoom _out"
 msgstr "_Kicsinyítés"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Mappa kiválasztása"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "Mé_gse"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Megnyitás"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Csatolási pontok rekurzív elemzése"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "A kötet nem elemezhető."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "A súgó megjelenítése meghiúsult"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafikus lemezhasználat-elemző eszköz."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -254,40 +252,50 @@ msgstr ""
 "Sári Gábor <saga at gnome dot hu>\n"
 "Tímár András <timar at gnome dot hu>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "A fájl megnyitása meghiúsult"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "A fájl nem helyezhető át a Kukába"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Eszközök és helyek"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "„%s” mappa, vagy néhány almappájának vizsgálata nem sikerült."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "Nem vizsgálható a(z) „%s” mappa"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "„%s” mappa néhány almappájának vizsgálata nem sikerült"
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Nem észlelhetők foglalt lemezméretek."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Helyette a látszólagos méretek vannak megjelenítve."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s” nem érvényes mappa"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "A lemezhasználat nem elemezhető."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "– Lemezhasználat-elemző"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Legnagyobb mélység"
@@ -594,9 +602,6 @@ msgstr "A lemezhasználat nem elemezhető."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "A kihagyott mappa nem vizsgálható"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Nem nyitható meg a(z) „%s” mappa"
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr ""
