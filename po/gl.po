@@ -13,13 +13,13 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013.
+# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-03 13:02+0200\n"
-"PO-Revision-Date: 2013-09-03 13:03+0200\n"
+"POT-Creation-Date: 2014-07-01 21:54+0200\n"
+"PO-Revision-Date: 2014-07-01 21:55+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -40,15 +40,15 @@ msgstr ""
 "remotos) ou volumes e fornecer unha representación gráfica incluíndo o "
 "tamaño ou porcentaxe para cada cartafol"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Verificar o tamaño dos cartafoles e o espazo dispoñíbel no disco"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "almacenamento;espazo;limpeza;"
 
@@ -84,13 +84,9 @@ msgstr "Estado da xanela"
 msgid "The GdkWindowState of the window"
 msgstr "O GdkWindowState da xanela"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Mostrar a información da versión e saír"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Analizador do uso do disco"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -202,8 +198,8 @@ msgid "_Quit"
 msgstr "_Saír"
 
 #: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Mover a un cartafol pai"
+msgid "Go to _parent folder"
+msgstr "Ir ao un cartafol _pai"
 
 #: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
@@ -213,88 +209,95 @@ msgstr "Ampl_iar"
 msgid "Zoom _out"
 msgstr "Red_ucir"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Seleccionar cartafol"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Analizar recursivamente os puntos de montaxe"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Non foi posíbel analizar o volume."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Produciuse un fallo ao mostrar a axuda"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
-"Fran Diéguez <frandieguez@gnome.org>, 2009-2013\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2009-2014\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
 "Antón Méixome <meixome@mancomun.org>, 2009\n"
-"Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
-"org>, 2009\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre "
+"<g11n@mancomun.org>, 2009\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009\n"
 "Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2004, 2005, 2006, 2007, 2008\n"
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000, 2001\n"
 "Ruben Lopez Gomez <ryu@mundivia.es>, 1999\n"
-"Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno."
-"net>, 1999-2012"
+"Proxecto Trasno - Tradución de software libre ao galego "
+"<proxecto@trasno.net>, 1999-2012"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Produciuse un fallo ao abrir o ficheiro"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Produciuse un fallo ao mover o ficheiro ao lixo"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Dispositivos e localizacións"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Non foi posíbel analizar o cartafol «%s» ou algún dos seus subcartafois."
+msgid "Could not scan folder \"%s\""
+msgstr "Non foi posíbel analizar o cartafol «%s»"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Non foi posíbel analizar algúns dos cartafoles dentro de «%s»."
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Non foi posíbel detectar ningún espazo ocupado de disco."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "No lugar móstranse os tamaños aparentes."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Non foi posíbel analizar o uso do disco."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Analizador do uso do disco"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidade máxima"
@@ -600,9 +603,6 @@ msgstr "Non foi posíbel analizar o uso do disco."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "Non é posíbel comprobar un cartafol excluído!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Non foi posíbel abrir o cartafol «%s»"
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "Non hai instalado ningún visualizador capaz de mostrar o cartafol."
