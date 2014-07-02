@@ -16,7 +16,7 @@ $(baobabapp_in_files): $(baobabapp_in_files:.desktop.in=.desktop.in.in)
 @INTLTOOL_DESKTOP_RULE@
 
 appdatadir = $(datadir)/appdata
-appdata_in_files = baobab.appdata.xml.in
+appdata_in_files = org.gnome.baobab.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 
 dbusservicedir = $(datadir)/dbus-1/services
