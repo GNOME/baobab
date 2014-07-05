@@ -61,6 +61,7 @@ MAINTAINERCLEANFILES =	\
 
 EXTRA_DIST = \
 	baobab.gresource.xml 	\
+	baobab.css		\
 	baobab-location-row.ui 	\
 	baobab-main-window.ui 	\
 	baobab-menu.ui		\

@@ -75,6 +75,16 @@ namespace Baobab {
 
             baobab = this;
 
+            // Load custom CSS
+            var css_provider = new Gtk.CssProvider ();
+            var css_file = File.new_for_uri ("resource:///org/gnome/baobab/ui/baobab.css");
+            try {
+              css_provider.load_from_file (css_file);
+            } catch (Error e) {
+                warning ("loading css: %s", e.message);
+            }
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
             // Settings
             ui_settings = new Settings ("org.gnome.baobab.ui");
             prefs_settings = new Settings ("org.gnome.baobab.preferences");
