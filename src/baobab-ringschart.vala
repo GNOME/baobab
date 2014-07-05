@@ -96,6 +96,7 @@ namespace Baobab {
             var context = get_style_context ();
             context.save ();
             context.add_class ("subfolder-tip");
+            context.add_class ("tooltip");
 
             Gtk.Allocation allocation;
             get_allocation (out allocation);
@@ -237,6 +238,8 @@ namespace Baobab {
             get_allocation (out allocation);
 
             var context = get_style_context ();
+            context.save ();
+            context.add_class ("ringschart-item");
 
             var border_color = context.get_border_color (Gtk.StateFlags.NORMAL);
             var bg_color = context.get_background_color (Gtk.StateFlags.NORMAL);
@@ -286,6 +289,8 @@ namespace Baobab {
                     cr.stroke ();
                 }
             }
+
+            context.restore ();
         }
 
         protected override void calculate_item_geometry (ChartItem item) {

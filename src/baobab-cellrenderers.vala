@@ -156,6 +156,12 @@ namespace Baobab {
             w -= border.left + border.right;
             h -= border.top + border.bottom;
 
+            border = context.get_padding (Gtk.StateFlags.NORMAL);
+            x += border.left;
+            y += border.top;
+            w -= border.left + border.right;
+            h -= border.top + border.bottom;
+
             var percent = value;
             var perc_w = (w * percent) / 100;
             var x_bar = x;

@@ -6,6 +6,7 @@
     border-width: 1px;
     border-radius: 3px;
     border-style: solid;
+    padding: 1px;
     background-color: white;
 }
 
@@ -65,18 +66,14 @@ BaobabWindow GtkInfoBar.error {
 }
 
 BaobabRingschart {
-    background-color: @theme_bg_color;
     padding: 13px 13px 13px 13px;
 }
 
+.ringschart-item {
+    background-color: @theme_bg_color;
+}
+
 BaobabRingschart.subfolder-tip {
-    border-radius: 3px;
-    border-style: none;
     padding: 3px 3px 3px 3px;
-
-    background-color: alpha(@theme_tooltip_bg_color, 0.90);
-    color: @theme_tooltip_fg_color;
-
-    text-shadow: 1px 1px black;
 }
 
