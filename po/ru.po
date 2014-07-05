@@ -17,33 +17,40 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-05 12:30+0000\n"
-"PO-Revision-Date: 2013-09-07 13:25+0300\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-07-05 14:50+0000\n"
+"PO-Revision-Date: 2014-07-05 23:12+0400\n"
+"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "10<=4 && (n%100<10 || n%100>=20) ? 1: 2);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.5\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
-msgid "A simple application which can scan either specific folders (local or remote) or volumes and give a graphical representation including each directory size or percentage."
-msgstr "Простое приложение, которое может сканировать отдельные папки (локальные или удалённые) или тома и выводить графическое представление, включающее размеры каждого каталога или процентное соотношение."
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Простое приложение, которое может сканировать отдельные папки (локальные или "
+"удалённые) или тома и выводить графическое представление, включающее размеры "
+"каждого каталога или процентное соотношение."
 
-#: ../data/baobab.desktop.in.in.h:1
-#: ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Изучение размера папок и свободного места на дисках"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "накопитель;пространство;очистка;"
 
@@ -53,7 +60,7 @@ msgstr "Исключённые разделы"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Список разделов, которые не будут сканироваться."
+msgstr "Список разделов (URI), которые не будут сканироваться."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
@@ -79,13 +86,9 @@ msgstr "Состояние окна"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState окна"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "— Анализатор использования дисков"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -148,18 +151,15 @@ msgstr "Сканировать папку…"
 msgid "Scan Remote Folder…"
 msgstr "Сканировать удалённую папку…"
 
-#: ../src/baobab-main-window.ui.h:3
-#: ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
 msgstr "Откр_ыть папку"
 
-#: ../src/baobab-main-window.ui.h:4
-#: ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "Скопировать путь в _буфер обмена"
 
-#: ../src/baobab-main-window.ui.h:5
-#: ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "У_далить в корзину"
 
@@ -189,7 +189,7 @@ msgstr "Круговая диаграмма"
 
 #: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
-msgstr "Древовидная карта"
+msgstr "Древовидная диаграмма"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
@@ -197,15 +197,16 @@ msgstr "_Справка"
 
 #: ../src/baobab-menu.ui.h:2
 msgid "_About"
-msgstr "_О программе"
+msgstr "_О приложении"
 
 #: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
 msgstr "_Выйти"
 
 #: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "П_ерейти к папке на уровень выше"
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "П_ерейти к родительской папке"
 
 #: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
@@ -215,39 +216,39 @@ msgstr "_Увеличить"
 msgid "Zoom _out"
 msgstr "У_меньшить"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Выберите папку"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "О_тмена"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Открыть"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно анализировать точки монтирования"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Не удалось проанализировать том."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Не удалось открыть справку"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графическое средство для анализа использования дисков."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Валёк Филлипов\n"
@@ -258,39 +259,47 @@ msgstr ""
 "Василий Фаронов <qvvx@yandex.ru>\n"
 "Станислав Соловей <whats_up@tut.by>, 2012"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Не удалось открыть файл"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Не удалось переместить файл в корзину"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Устройства и местоположения"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Не удалось выполнить сканирование папки «%s» или некоторых содержащихся в ней папок."
+#| msgid "Could not analyze volume."
+msgid "Could not scan folder \"%s\""
+msgstr "Не удалось просканировать папку «%s»"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:597
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Не удалось просканировать некоторые папки, содержащиеся в «%s»"
+
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Не удалось определить размер используемого пространства диска."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Показаны предполагаемые размеры."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618
-#: ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
-#: ../src/baobab-window.vala:619
-#: ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Не удалось проанализировать использование дисков."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "— Анализатор использования дисков"
