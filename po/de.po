@@ -18,24 +18,24 @@
 # Wolfgang Stöggl <c72578@yahoo.de>, 2011.
 # Christian Kirbach <Christian.Kirbach@gmail.com>, 2009, 2011, 2012.
 # Hedda Peters <hpeters@redhat.com>, 2012.
-# Benjamin Steinwender <b@stbe.at>, 2013.
+# Benjamin Steinwender <b@stbe.at>, 2013-2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-08 14:11+0000\n"
-"PO-Revision-Date: 2013-09-08 19:55+0100\n"
+"POT-Creation-Date: 2014-06-27 02:51+0000\n"
+"PO-Revision-Date: 2014-06-27 12:16+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
-"Language: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-DamnedLies-Scope: partial\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: ../data/baobab.appdata.xml.in.h:1
 msgid ""
@@ -47,16 +47,16 @@ msgstr ""
 "Netzwerkordner) oder Laufwerke untersuchen kann und die Speicherplatznutzung "
 "grafisch darstellt."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Festplattenbelegung analysieren"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Ordnergrößen und freien Festplattenplatz analysieren"
 
 # http://developer.gnome.org/integration-guide/3.6/desktop-files.html.de
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "Speicherplatz;Belegung;Kapazität;Frei;Aufräumen;"
 
@@ -67,7 +67,7 @@ msgstr "Adressen der ausgeschlossenen Partitionen"
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr ""
-"Eine Liste von Adressen der Partitionen, die nicht eingelesen werden sollen."
+"Eine Liste von Adressen der Partitionen, die nicht analysiert werden sollen."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
@@ -93,13 +93,9 @@ msgstr "Fensterzustand"
 msgid "The GdkWindowState of the window"
 msgstr "Das GdkWindowState des Fensters"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:29
 msgid "Print version information and exit"
 msgstr "Versionsinformationen anzeigen und beenden"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Festplattenbelegung analysieren"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -212,7 +208,7 @@ msgid "_Quit"
 msgstr "_Beenden"
 
 #: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
+msgid "Go to _parent folder"
 msgstr "Eine Ebene höher _gehen"
 
 #: ../src/baobab-menu.ui.h:8
@@ -223,39 +219,39 @@ msgstr "Ansicht ver_größern"
 msgid "Zoom _out"
 msgstr "Ansicht ver_kleinern"
 
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:228
 msgid "Select Folder"
 msgstr "Ordner auswählen"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:230
 msgid "_Cancel"
 msgstr "_Abbrechen"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:231
 msgid "_Open"
 msgstr "_Öffnen"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:236
 msgid "Recursively analyze mount points"
 msgstr "Einhängepunkte rekursiv analysieren"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:283
 msgid "Could not analyze volume."
 msgstr "Datenträger konnte nicht analysiert werden."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:315
 msgid "Failed to show help"
 msgstr "Konnte Hilfe nicht anzeigen"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:334
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:337
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ein grafisches Werkzeug zur Analyse der Festplattenbelegung."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:342
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -271,44 +267,53 @@ msgstr ""
 "Nathan-J. Hirschauer <nathanhirschauer@verfriemelt.org>\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
-"Hedda Peters <hpeters@redhat.com>"
+"Hedda Peters <hpeters@redhat.com>\n"
+"Benjamin Steinwender <b@stbe.at>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:411
 msgid "Failed to open file"
 msgstr "Konnte Datei nicht öffnen"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:431
 msgid "Failed to move file to the trash"
 msgstr "Konnte Datei nicht in den Papierkorb verschieben"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:533
 msgid "Devices and locations"
 msgstr "Geräte und Orte"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:594
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan folder \"%s\""
+msgstr "Ordner »%s« konnte nicht analysiert werden."
+
+#: ../src/baobab-window.vala:597
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
 msgstr ""
-"Ordner »%s« oder darin enthaltene Unterordner konnten nicht eingelesen "
+"Ordner »%s« oder darin enthaltene Unterordner konnten nicht analysiert "
 "werden."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Could not detect occupied disk sizes."
 msgstr "Festplattenbelegung konnte nicht erkannt werden."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:616
 msgid "Apparent sizes are shown instead."
 msgstr "Scheinbare Größen werden angezeigt."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "»%s« ist kein gültiger Ordner"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
 msgid "Could not analyze disk usage."
 msgstr "Festplattenbelegung konnte nicht analysiert werden."
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Festplattenbelegung analysieren"
 
 #~ msgid "Main volume"
 #~ msgstr "Hauptdatenträger"
