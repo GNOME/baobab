@@ -49,7 +49,7 @@ namespace Baobab {
         public unowned List<ChartItem> parent;
     }
 
-    public abstract class Chart : Gtk.Widget {
+    public abstract class Chart : Gtk.DrawingArea {
 
         protected const uint MAX_DEPTH = 5;
         protected const uint MIN_DEPTH = 1;
@@ -218,6 +218,8 @@ namespace Baobab {
         };
 
         construct {
+            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.SCROLL_MASK);
+
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
             insert_action_group ("chart", action_group);
@@ -225,42 +227,12 @@ namespace Baobab {
             build_context_menu ();
         }
 
-        public override void realize () {
-            Gtk.Allocation allocation;
-            get_allocation (out allocation);
-            set_realized (true);
-
-            Gdk.WindowAttr attributes = {};
-            attributes.window_type = Gdk.WindowType.CHILD;
-            attributes.x = allocation.x;
-            attributes.y = allocation.y;
-            attributes.width = allocation.width;
-            attributes.height = allocation.height;
-            attributes.wclass = Gdk.WindowWindowClass.INPUT_OUTPUT;
-            //attributes.visual = gtk_widget_get_visual (widget);
-            attributes.event_mask = this.get_events () | Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.POINTER_MOTION_HINT_MASK | Gdk.EventMask.SCROLL_MASK;
-
-            var window = new Gdk.Window (get_parent_window (), attributes, Gdk.WindowAttributesType.X | Gdk.WindowAttributesType.Y);
-
-            set_window (window);
-            window.set_user_data (this);
-
-            get_style_context ().set_background (window);
-        }
-
         public override void size_allocate (Gtk.Allocation allocation) {
-            set_allocation (allocation);
-            if (get_realized ()) {
-                get_window ().move_resize (allocation.x,
-                                           allocation.y,
-                                           allocation.width,
-                                           allocation.height);
-
-                foreach (ChartItem item in items) {
-                    item.has_visible_children = false;
-                    item.visible = false;
-                    calculate_item_geometry (item);
-                }
+            base.size_allocate (allocation);
+            foreach (ChartItem item in items) {
+                item.has_visible_children = false;
+                item.visible = false;
+                calculate_item_geometry (item);
             }
         }
 
