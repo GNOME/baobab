@@ -238,11 +238,8 @@ namespace Baobab {
             get_allocation (out allocation);
 
             var context = get_style_context ();
-            context.save ();
-            context.add_class ("ringschart-item");
 
             var border_color = context.get_border_color (Gtk.StateFlags.NORMAL);
-            var bg_color = context.get_background_color (Gtk.StateFlags.NORMAL);
 
             var center_x = allocation.width / 2;
             var center_y = allocation.height / 2;
@@ -279,8 +276,11 @@ namespace Baobab {
 
                 Gdk.cairo_set_source_rgba (cr, fill_color);
                 cr.fill_preserve ();
-                Gdk.cairo_set_source_rgba (cr, bg_color);
+
+                cr.set_operator (Cairo.Operator.CLEAR);
                 cr.stroke ();
+
+                cr.set_operator (Cairo.Operator.OVER);
 
                 if (ringsitem.continued) {
                     Gdk.cairo_set_source_rgba (cr, border_color);
@@ -289,8 +289,6 @@ namespace Baobab {
                     cr.stroke ();
                 }
             }
-
-            context.restore ();
         }
 
         protected override void calculate_item_geometry (ChartItem item) {
