@@ -77,7 +77,7 @@ namespace Baobab {
 
             // Load custom CSS
             var css_provider = new Gtk.CssProvider ();
-            var css_file = File.new_for_uri ("resource:///org/gnome/baobab/ui/baobab.css");
+            var css_file = File.new_for_uri ("resource:///org/gnome/baobab/baobab.css");
             try {
               css_provider.load_from_file (css_file);
             } catch (Error e) {
@@ -90,15 +90,6 @@ namespace Baobab {
             prefs_settings = new Settings ("org.gnome.baobab.preferences");
 
             ui_settings.delay ();
-
-            var builder = new Gtk.Builder ();
-            try {
-                builder.add_from_resource ("/org/gnome/baobab/ui/baobab-menu.ui");
-            } catch (Error e) {
-                error ("loading menu builder file: %s", e.message);
-            }
-            var app_menu = builder.get_object ("appmenu") as MenuModel;
-            set_app_menu (app_menu);
 
             set_accels_for_action ("win.gear-menu", { "F10" });
             set_accels_for_action ("win.reload", { "<Primary>r" });

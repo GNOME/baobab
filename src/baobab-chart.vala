@@ -588,7 +588,7 @@ namespace Baobab {
 
             var builder = new Gtk.Builder ();
             try {
-                builder.add_from_resource ("/org/gnome/baobab/ui/baobab-menu.ui");
+                builder.add_from_resource ("/org/gnome/baobab/gtk/menus.ui");
             } catch (Error e) {
                 error ("loading context menu from resources: %s", e.message);
             }
