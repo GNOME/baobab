@@ -14,7 +14,7 @@ baobab_VALAFLAGS = \
 	--pkg gtk+-3.0				\
 	--pkg gio-2.0				\
 	--pkg gio-unix-2.0			\
-	--gresources=$(srcdir)/resources/baobab.gresource.xml	\
+	--gresources=baobab.gresource.xml	\
 	$(NULL)
 
 VALA_SOURCES = \
@@ -37,9 +37,9 @@ baobab_SOURCES = \
 	$(BUILT_SOURCES)		\
 	$(NULL)
 
-resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir=$(srcdir)/resources $(srcdir)/resources/baobab.gresource.xml)
-baobab-resources.c: $(srcdir)/resources/baobab.gresource.xml $(resource_files)
-	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/resources --generate-source $<
+resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir=$(srcdir) $(srcdir)/baobab.gresource.xml)
+baobab-resources.c: baobab.gresource.xml $(resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $<
 
 AM_CFLAGS = \
 	$(BAOBAB_CFLAGS)		\
@@ -61,7 +61,7 @@ MAINTAINERCLEANFILES =	\
 	$(NULL)
 
 EXTRA_DIST = \
-	resources/baobab.gresource.xml	\
+	baobab.gresource.xml	\
 	$(resource_files)		\
 	$(NULL)
 
