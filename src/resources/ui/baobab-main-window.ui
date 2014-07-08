@@ -100,16 +100,10 @@
             <property name="valign">center</property>
             <property name="menu_model">winmenu</property>
             <property name="action_name">win.gear-menu</property>
+            <property name="direction">none</property>
             <style>
               <class name="image-button"/>
             </style>
-            <child>
-              <object class="GtkImage" id="menu_button_image">
-                <property name="visible">True</property>
-                <property name="icon_size">1</property>
-                <property name="icon_name">emblem-system-symbolic</property>
-              </object>
-            </child>
           </object>
           <packing>
             <property name="pack_type">end</property>
