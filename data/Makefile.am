@@ -1,11 +1,5 @@
 NULL =
 
-baobabicondir = $(datadir)/icons/hicolor/scalable/actions/
-baobabicon_DATA = \
-	view-ringschart-symbolic.svg	\
-	view-treemap-symbolic.svg	\
-	$(NULL)
-
 baobabappdir = $(datadir)/applications
 baobabapp_in_files = org.gnome.baobab.desktop.in
 baobabapp_DATA = $(baobabapp_in_files:.desktop.in=.desktop)
