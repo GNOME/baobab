@@ -366,13 +366,14 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkStackSwitcher" id="chart_stack_switcher">
-                        <property name="visible">True</property>
-                        <property name="margin_end">20</property>
-                        <property name="margin_top">6</property>
-                        <property name="margin_bottom">6</property>
-                        <property name="halign">end</property>
-                        <property name="stack">chart_stack</property>
+                      <object class="GtkActionBar" id="chart_action_bar">
+                      <property name="visible">True</property>
+                        <child type="center">
+                          <object class="GtkStackSwitcher" id="chart_stack_switcher">
+                            <property name="visible">True</property>
+                            <property name="stack">chart_stack</property>
+                          </object>
+                        </child>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
