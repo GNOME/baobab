@@ -434,7 +434,7 @@ namespace Baobab {
 
         void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
-                if (((Gdk.Event) (&event)).triggers_context_menu ()) {
+                if (event.triggers_context_menu ()) {
                     return show_treeview_popup (treeview_popup_menu, event);
                 }
 
