@@ -23,7 +23,6 @@
 namespace Baobab {
 
     public class Application : Gtk.Application {
-        static Application baobab;
 
         const OptionEntry[] option_entries = {
             { "version", 'v', 0, OptionArg.NONE, null, N_("Print version information and exit"), null },
@@ -34,8 +33,8 @@ namespace Baobab {
             { "quit", on_quit_activate }
         };
 
-        Settings prefs_settings;
-        Settings ui_settings;
+        public Settings prefs_settings { get; private set; }
+        public Settings ui_settings { get; private set; }
 
         protected override void activate () {
             new Window (this);
@@ -48,9 +47,11 @@ namespace Baobab {
             }
         }
 
-        public static HashTable<File, unowned File> get_excluded_locations () {
-            var app = baobab;
+        public static new Application get_default () {
+            return (Application) GLib.Application.get_default ();
+        }
 
+        public HashTable<File, unowned File> get_excluded_locations () {
             var excluded_locations = new HashTable<File, unowned File> (File.hash, File.equal);
             excluded_locations.add (File.new_for_path ("/proc"));
             excluded_locations.add (File.new_for_path ("/sys"));
@@ -60,7 +61,7 @@ namespace Baobab {
             excluded_locations.add (home.get_child (".gvfs"));
 
             var root = File.new_for_path ("/");
-            foreach (var uri in app.prefs_settings.get_value ("excluded-uris")) {
+            foreach (var uri in prefs_settings.get_value ("excluded-uris")) {
                 var file = File.new_for_uri ((string) uri);
                 if (!file.equal (root)) {
                     excluded_locations.add (file);
@@ -72,8 +73,6 @@ namespace Baobab {
 
         protected override void startup () {
             base.startup ();
-
-            baobab = this;
 
             // Load custom CSS
             var css_provider = new Gtk.CssProvider ();
@@ -114,16 +113,6 @@ namespace Baobab {
 
             add_main_option_entries (option_entries);
             add_action_entries (action_entries, this);
-        }
-
-        public static Settings get_prefs_settings () {
-            var app = baobab;
-            return app.prefs_settings;
-        }
-
-        public static Settings get_ui_settings () {
-            var app = baobab;
-            return app.ui_settings;
         }
 
         void on_quit_activate () {

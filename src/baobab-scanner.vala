@@ -432,7 +432,7 @@ namespace Baobab {
             });
             set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 
-            excluded_locations = Application.get_excluded_locations ();
+            excluded_locations = Application.get_default ().get_excluded_locations ();
 
             if (ScanFlags.EXCLUDE_MOUNTS in flags) {
                 foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {

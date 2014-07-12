@@ -128,6 +128,8 @@ namespace Baobab {
                 busy_cursor = new Gdk.Cursor (Gdk.CursorType.WATCH);
             }
 
+            ui_settings = Application.get_default ().ui_settings;
+
             add_action_entries (action_entries, this);
 
             location_list.set_adjustment (location_scrolled_window.get_vadjustment ());
@@ -141,7 +143,6 @@ namespace Baobab {
 
             infobar_close_button.clicked.connect (() => { clear_message (); });
 
-            ui_settings = Application.get_ui_settings ();
             lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
 
             chart_stack.notify["visible-child-name"].connect (on_chart_stack_child_changed);
