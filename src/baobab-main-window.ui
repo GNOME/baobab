@@ -319,33 +319,38 @@
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkStack" id="chart_stack">
+                      <object class="GtkStack" id="spinner_stack">
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="transition_type">crossfade</property>
                         <child>
-                          <object class="BaobabRingschart" id="rings_chart">
+                          <object class="GtkStack" id="chart_stack">
                             <property name="visible">True</property>
-                            <property name="hexpand">True</property>
-                            <property name="vexpand">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="transition_type">crossfade</property>
+                            <child>
+                              <object class="BaobabRingschart" id="rings_chart">
+                                <property name="visible">True</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
+                              </object>
+                              <packing>
+                                <property name="name">rings</property>
+                                <property name="title" translatable="yes">Rings Chart</property>
+                                <property name="icon_name">view-ringschart-symbolic</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="BaobabTreemap" id="treemap_chart">
+                                <property name="visible">True</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
+                              </object>
+                              <packing>
+                                <property name="name">treemap</property>
+                                <property name="title" translatable="yes">Treemap Chart</property>
+                                <property name="icon_name">view-treemap-symbolic</property>
+                              </packing>
+                            </child>
                           </object>
-                          <packing>
-                            <property name="name">rings</property>
-                            <property name="title" translatable="yes">Rings Chart</property>
-                            <property name="icon_name">view-ringschart-symbolic</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="BaobabTreemap" id="treemap_chart">
-                            <property name="visible">True</property>
-                            <property name="hexpand">True</property>
-                            <property name="vexpand">True</property>
-                          </object>
-                          <packing>
-                            <property name="name">treemap</property>
-                            <property name="title" translatable="yes">Treemap Chart</property>
-                            <property name="icon_name">view-treemap-symbolic</property>
-                          </packing>
                         </child>
                         <child>
                           <object class="GtkSpinner" id="spinner">

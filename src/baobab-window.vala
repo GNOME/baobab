@@ -68,6 +68,8 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Stack chart_stack;
         [GtkChild]
+        private Gtk.Stack spinner_stack;
+        [GtkChild]
         private Gtk.StackSwitcher chart_stack_switcher;
         [GtkChild]
         private Chart rings_chart;
@@ -80,14 +82,9 @@ namespace Baobab {
 
         static Gdk.Cursor busy_cursor;
 
-        void radio_activate (SimpleAction action, Variant? parameter) {
-            action.change_state (parameter);
-        }
-
         private const GLib.ActionEntry[] action_entries = {
             { "gear-menu", on_show_gear_menu_activate , null, "false", null},
             { "show-home-page", on_show_home_page_activate },
-            { "active-chart", radio_activate, "s", "'rings'", on_chart_type_changed },
             { "scan-home", on_scan_home_activate },
             { "scan-folder", on_scan_folder_activate },
             { "scan-remote", on_scan_remote_activate },
@@ -131,22 +128,21 @@ namespace Baobab {
             ui_settings = Application.get_default ().ui_settings;
 
             add_action_entries (action_entries, this);
+            var action = ui_settings.create_action ("active-chart");
+            add_action (action);
 
             location_list.set_adjustment (location_scrolled_window.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
 
-            var action = lookup_action ("scan-remote") as SimpleAction;
-            action.set_enabled (ConnectServer.available ());
+            (lookup_action ("scan-remote") as SimpleAction).set_enabled (ConnectServer.available ());
 
             setup_treeview ();
 
             infobar_close_button.clicked.connect (() => { clear_message (); });
 
-            lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
-
-            chart_stack.notify["visible-child-name"].connect (on_chart_stack_child_changed);
-            chart_stack.destroy.connect (() => { chart_stack.notify.disconnect (on_chart_stack_child_changed); });
+            ui_settings.bind ("active-chart", chart_stack, "visible-child-name", SettingsBindFlags.DEFAULT);
+            chart_stack.destroy.connect (() => { Settings.unbind (chart_stack, "visible-child-name"); });
 
             rings_chart.item_activated.connect (on_chart_item_activated);
             treemap_chart.item_activated.connect (on_chart_item_activated);
@@ -185,12 +181,6 @@ namespace Baobab {
             show ();
         }
 
-        void on_chart_stack_child_changed () {
-            if (chart_stack.visible_child_name != null) {
-                lookup_action ("active-chart").change_state (chart_stack.visible_child_name);
-            }
-        }
-
         void on_show_gear_menu_activate (SimpleAction action) {
             var state = action.get_state ().get_boolean ();
             action.set_state (new Variant.boolean (!state));
@@ -203,22 +193,6 @@ namespace Baobab {
 
             clear_message ();
             set_ui_state (home_page, false);
-        }
-
-        void on_chart_type_changed (SimpleAction action, Variant value) {
-            switch (value as string) {
-            case "rings":
-                chart_stack.visible_child = rings_chart;
-                break;
-            case "treemap":
-                chart_stack.visible_child = treemap_chart;
-                break;
-            default:
-                return;
-            }
-
-            ui_settings.set_value ("active-chart", value);
-            action.set_state (value);
         }
 
         void on_scan_home_activate () {
@@ -498,15 +472,13 @@ namespace Baobab {
             if (busy) {
                 cursor = busy_cursor;
                 disable_drop ();
-                (lookup_action ("active-chart") as SimpleAction).set_enabled (false);
                 chart_stack_switcher.sensitive = false;
-                chart_stack.visible_child = spinner;
+                spinner_stack.visible_child = spinner;
                 spinner.start ();
             } else {
                 enable_drop ();
-                (lookup_action ("active-chart") as SimpleAction).set_enabled (true);
                 spinner.stop ();
-                lookup_action ("active-chart").change_state (ui_settings.get_value ("active-chart"));
+                spinner_stack.visible_child = chart_stack;
                 chart_stack_switcher.sensitive = true;
             }
 
