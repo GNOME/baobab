@@ -582,18 +582,7 @@ namespace Baobab {
         }
 
         void build_context_menu () {
-            if (context_menu != null) {
-                return;
-            }
-
-            var builder = new Gtk.Builder ();
-            try {
-                builder.add_from_resource ("/org/gnome/baobab/gtk/menus.ui");
-            } catch (Error e) {
-                error ("loading context menu from resources: %s", e.message);
-            }
-
-            var menu_model = builder.get_object ("chartmenu") as MenuModel;
+            var menu_model = Application.get_default ().get_menu_by_id ("chartmenu");
             context_menu = new Gtk.Menu.from_model (menu_model);
             context_menu.attach_to_widget (this, null);
         }
