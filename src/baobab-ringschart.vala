@@ -129,6 +129,8 @@ namespace Baobab {
                 layout.set_markup (markup, -1);
                 layout.set_indent (0);
                 layout.set_spacing (0);
+                layout.set_width (Pango.SCALE * q_width / 2);
+                layout.set_ellipsize (Pango.EllipsizeMode.END);
                 Pango.Rectangle layout_rect;
                 layout.get_pixel_extents (null, out layout_rect);
 
@@ -148,11 +150,6 @@ namespace Baobab {
                 tooltip_rect.y = q_height + tip_y - layout_rect.height / 2 - padding.top;
                 tooltip_rect.width = layout_rect.width + hpadding;
                 tooltip_rect.height = layout_rect.height + vpadding;
-
-                // check tooltip's width is not greater than half of the widget
-                if (tooltip_rect.width > q_width) {
-                    continue;
-                }
 
                 // translate tooltip rectangle and edge angles to the original quadrant
                 var a = middle_angle;
@@ -228,7 +225,7 @@ namespace Baobab {
                 if (highlighted_item != null &&
                     item.parent != null &&
                     item.parent.data == highlighted_item) {
-                    subtip_items.prepend (item);
+                    subtip_items.append (item);
                 }
             }
 
