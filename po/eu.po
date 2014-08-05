@@ -1,18 +1,19 @@
-# translation of eu.po to Basque
+# Basqur translation for Baobab
 # Copyright (C) 2005, 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 #
+#
 # Mikel Olasagasti <hey_neken@mundurat.net>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2012, 2013.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2012, 2013, 2014.
 # Julen Ruiz Aizpuru <julenx@gmail.com>, 2011.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-16 21:08+0200\n"
-"PO-Revision-Date: 2013-09-16 21:16+0200\n"
+"Project-Id-Version: baobab master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-08-05 12:07+0200\n"
+"PO-Revision-Date: 2014-07-28 19:02+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
@@ -23,7 +24,7 @@ msgstr ""
 "X-Generator: Lokalize 1.4\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -31,18 +32,17 @@ msgid ""
 msgstr ""
 "Aplikazio xume bat bai lokaleko bai urruneko karpeta edo bolumen zehatzak "
 "azter ditzakeenak eta adierazpen grafiko bat (direktorioaren tamaina edo "
-"ehunekoa barne) "
-"eman dezakeena."
+"ehunekoa barne) eman dezakeena."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Disko-erabileraren analizatzailea"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Egiaztatu karpeten tamainak eta diskoan dagoen leku erabilgarria"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "biltegia;lekua;garbitu;"
 
@@ -78,13 +78,9 @@ msgstr "Leihoaren egoera"
 msgid "The GdkWindowState of the window"
 msgstr "Leihoaren GdkWindowState"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Erakutsi bertsioaren informazioa eta irten"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Disko-erabileraren analizatzailea"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -143,15 +139,15 @@ msgstr "Eskaneatu karpeta…"
 msgid "Scan Remote Folder…"
 msgstr "Eskaneatu urruneko karpeta…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "_Ireki karpeta"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopiatu bide-izena arbelean"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "_Bota zakarrontzira"
 
@@ -183,103 +179,111 @@ msgstr "Eraztun-diagrama"
 msgid "Treemap Chart"
 msgstr "Diagrama zuhaitz-mapa"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Laguntza"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "Honi _buruz"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "I_rten"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Eraman karpeta gurasora"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_Handiagotu"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_Txikiagotu"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Hautatu karpeta"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Utzi"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Ireki"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Aztertu errekurtsiboki muntatze-puntuak"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Ezin izan da bolumena analizatu."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Huts egin du laguntza erakustean"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Diskoen erabilera analizatzeko tresna grafiko bat."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Mikel Olasagasti Uranga <hey_neken@mundurat.net>\n"
 "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Julen Ruiz Aizpuru <julenx@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Huts egin du fitxategia irekitzean"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Huts egin du fitxategia zakarrontzira botatzean"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Gailu eta kokalekuak"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Ezin izan da '%s' karpeta edo honen azpikarpetaren bat eskaneatu."
+msgid "Could not scan folder \"%s\""
+msgstr "Ezin izan da '%s' karpeta aztertu"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Ezin izan dira '%s'(e)ko  azpikarpeta batzuk aztertu."
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Ezin izan da betetako disko tamainarik detektatu."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Itxurazko tamainak erakutsiko dira horren ordez,"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "'%s' ez da baliozko karpeta"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Ezin izan da diskoaren erabilera analizatu."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_Laguntza"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "Honi _buruz"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "I_rten"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "Joan karpeta _gurasora"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "_Handiagotu"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "_Txikiagotu"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Disko-erabileraren analizatzailea"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Gehiengo sakonera"
@@ -563,9 +567,6 @@ msgstr "Ezin izan da diskoaren erabilera analizatu."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "Ezin da kanpoan utzitako karpeta begiratu."
-
-#~ msgid "Could not open folder '%s'"
-#~ msgstr "Ezin izan da '%s' karpeta ireki"
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "Ez dago karpeta bistaratzeko ikustaile-programarik instalatuta."
