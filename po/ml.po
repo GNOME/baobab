@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gnome-utils.master.ml\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-02-03 22:42+0000\n"
+"POT-Creation-Date: 2014-09-02 02:51+0000\n"
 "PO-Revision-Date: 2013-02-06 01:11+0530\n"
 "Last-Translator: Anish A <aneesh.nl@gmail.com>\n"
 "Language-Team: Swatantra Malayalam Computing\n"
@@ -23,108 +23,109 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "ഡിസ്ക് ഉപയോഗ വിശകലനി"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "ഫോള്‍ഡറിന്റെ വ്യാപ്തിയും ഡിസ്കില്‍ ലഭ്യമായ സ്ഥലവും പരിശോധിയ്ക്കുക"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "ഉള്‍‌പ്പെടുത്താത്ത ഭാഗങ്ങളുടെ യുആര്‍ഐകള്‍"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "പരിശോധന ആവശ്യമില്ലാത്ത ഭാഗങ്ങളുടെ യുആര്‍ഐ പട്ടിക."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "സജീവ പട്ടിക"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "ഏതു് തരം പട്ടികയാണു് കാണിയ്ക്കേണ്ടതു്."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "ജാലക വലിപ്പം"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "ജാലകത്തിന്റെ പ്രാരംഭ വലിപ്പം"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "ജാലകത്തിന്റെ നില"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "ജാലകത്തിന്റെ GdkWindowState"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "പതിപ്പു് വിവരം പ്രിന്റ് ചെയ്തു് പുറത്തു് കടക്കുക"
 
-#: ../src/baobab-application.vala:104
-msgid "- Disk Usage Analyzer"
-msgstr "- ഡിസ്ക് ഉപയോഗ വിശകലനി"
-
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d വസ്തു"
 msgstr[1] "%5d ഇനങ്ങള്‍"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "ഏറ്റവും അറുതല്‍ വ്യാപ്തി"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr ""
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "ചാര്‍ട്ടില്‍ റൂട്ടില്‍ നിന്നും ഏറ്റവും കൂടിയ എത്ര ആഴത്തിലുള്ളവ വരയ്ക്കണം"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr ""
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "ചാര്‍ട്ട് മാതൃക"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "ചാര്‍ട്ടിനുളള മാതൃക ക്രമികരിക്കുക"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "ചാര്‍ട്ട് റൂട്ട് നോഡ്"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "മോഡലില്‍ നിന്നും റൂട്ട് നോഡ് ക്രമികരിക്കുക"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "പേരന്റ് ഫോള്‍ഡറിലേക്കു് നീക്കു_ക"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "ചെറുതാക്കു_ക"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "_വലുതാക്കുക"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "തട്ടകം"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "പ്രധാന വോള്യം"
+msgid "Computer"
+msgstr ""
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
@@ -134,131 +135,209 @@ msgstr "അറ പരിശോധിയ്ക്കക…"
 msgid "Scan Remote Folder…"
 msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "അടയ്ക്കുക"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "ഫോള്‍ഡര്‍"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "ഉപയോഗം"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "വലിപ്പം"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "ഉളളടക്കം"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "റിംഗ്സ് ചാര്‍ട്ട്"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "ട്രീമാപ്പ് ചാര്‍ട്ട്"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "ഫോള്‍ഡര്‍ _തുറക്കുക"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "ക്ലിപ്പ്ബോര്‍ഡിലേക്കു് പാഥ് പകര്‍ത്തു_ക"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "ചവറ്റുകുട്ടയിലേക്ക് നീക്കുക"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "സഹായം"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "അടയ്ക്കുക"
 
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "സം_ബന്ധിച്ചു്"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "ഫോള്‍ഡര്‍"
 
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "പു_റത്തു് കടക്കുക"
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "വലിപ്പം"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "_വിശകലനി"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "ഉളളടക്കം"
 
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "തട്ടകം _പരിശോധിയ്ക്കുക"
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "മാറ്റം വരുത്തിയിരിയ്ക്കുന്നു"
 
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "_ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക…"
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "റിംഗ്സ് ചാര്‍ട്ട്"
 
-#: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക…"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "ട്രീമാപ്പ് ചാര്‍ട്ട്"
 
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "_കാഴ്ച"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "വീണ്ടും _ലഭ്യമാക്കുക"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "എല്ലാം വികസിപ്പിക്കുക"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "_എല്ലാം കൊളാപ്സ് ചെയ്യുക"
-
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "ഉപകരണങ്ങളും സ്ഥലങ്ങളും"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "ഫോള്‍ഡര്‍ തിരഞ്ഞെടുക്കുക"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:205
+#, fuzzy
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "റദ്ദാക്കുക"
+
+#: ../src/baobab-window.vala:206
+msgid "_Open"
+msgstr "തു_റക്കുക"
+
+#: ../src/baobab-window.vala:211
+msgid "Recursively analyze mount points"
+msgstr "മൌണ്ട് പോയിന്റുകള്‍ ആവര്‍ത്തിച്ച് നിരീക്ഷിയ്ക്കുക"
+
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷിക്കുവാന്‍ സാധ്യമായില്ല."
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:290
+msgid "Failed to show help"
+msgstr "സഹായം കാണിയ്ക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
+
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "ബാവോബാബ്"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷിക്കുന്നതിനുളള ഗ്രാഫിക്കല്‍ പ്രയോഗം."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "അനി പീറ്റര്‍ <peter.ani@gmail.com>\n"
 "സന്തോഷ് തോട്ടിങ്ങല്‍ <santhosh.thottingal@gmail.com>\n"
 "അനീഷ് എ <aneesh.nl@gmail.com>"
 
-#: ../src/baobab-window.vala:580
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
+#: ../src/baobab-window.vala:386
+msgid "Failed to open file"
+msgstr "ഫയല്‍ തുറക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
+
+#: ../src/baobab-window.vala:406
+#, fuzzy
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "ഫയല്‍ ചവറ്റുകുട്ടയിലേക്ക് നീക്കുവാന്‍ സാധ്യമായില്ല"
+
+#: ../src/baobab-window.vala:506
+msgid "Devices and locations"
+msgstr "ഉപകരണങ്ങളും സ്ഥലങ്ങളും"
+
+#: ../src/baobab-window.vala:567
+#, fuzzy, c-format
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "\"%s\" ഫോള്‍ഡര്‍ തുറക്കുവാന്‍ സാധ്യമായില്ല"
+
+#: ../src/baobab-window.vala:570
+#, fuzzy, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "\"%s\" ഫോള്‍ഡര്‍ അല്ലെങ്കില്‍ അതിലുള്ള ചില ഫോള്‍ഡറുകള്‍ പരിശോധിയ്ക്കുവാന്‍ സാധ്യമായില്ല"
 
+#: ../src/baobab-window.vala:589
+#, fuzzy
+#| msgid "Could not detect any mount point."
+msgid "Could not detect occupied disk sizes."
+msgstr "ചേര്‍ക്കാനുള്ള സ്ഥാനമൊന്നും കണ്ടുപിടിച്ചില്ല."
+
+#: ../src/baobab-window.vala:589
+msgid "Apparent sizes are shown instead."
+msgstr "പ്രത്യക്ഷമായ വ്യാപ്തികള്‍ കാണിയ്ക്കുന്നു"
+
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ഒരു അസാധുവായ ഫോള്‍ഡര്‍ ആണ്."
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷിക്കുവാന്‍ സാധ്യമായില്ല."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_സഹായം"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "സം_ബന്ധിച്ചു്"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "പു_റത്തു് കടക്കുക"
+
+#: ../src/menus.ui.h:7
+
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "പേരന്റ് ഫോള്‍ഡറിലേക്കു് നീക്കു_ക"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "ചെറുതാക്കു_ക"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "_വലുതാക്കുക"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- ഡിസ്ക് ഉപയോഗ വിശകലനി"
+
+#~ msgid "Maximum depth"
+#~ msgstr "ഏറ്റവും അറുതല്‍ വ്യാപ്തി"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "ചാര്‍ട്ടില്‍ റൂട്ടില്‍ നിന്നും ഏറ്റവും കൂടിയ എത്ര ആഴത്തിലുള്ളവ വരയ്ക്കണം"
+
+#~ msgid "Chart model"
+#~ msgstr "ചാര്‍ട്ട് മാതൃക"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "ചാര്‍ട്ടിനുളള മാതൃക ക്രമികരിക്കുക"
+
+#~ msgid "Chart root node"
+#~ msgstr "ചാര്‍ട്ട് റൂട്ട് നോഡ്"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "മോഡലില്‍ നിന്നും റൂട്ട് നോഡ് ക്രമികരിക്കുക"
+
+#~ msgid "Main volume"
+#~ msgstr "പ്രധാന വോള്യം"
+
+#~ msgid "Usage"
+#~ msgstr "ഉപയോഗം"
+
+#~ msgid "_Analyzer"
+#~ msgstr "_വിശകലനി"
+
+#~ msgid "_Scan Home"
+#~ msgstr "തട്ടകം _പരിശോധിയ്ക്കുക"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "_ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "ദൂരെയുള്ള ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കുക…"
+
+#~ msgid "_View"
+#~ msgstr "_കാഴ്ച"
+
+#~ msgid "_Reload"
+#~ msgstr "വീണ്ടും _ലഭ്യമാക്കുക"
+
+#~ msgid "_Expand All"
+#~ msgstr "എല്ലാം വികസിപ്പിക്കുക"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_എല്ലാം കൊളാപ്സ് ചെയ്യുക"
 
 #~ msgid "Scan a folder"
 #~ msgstr "ഒരു ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കക"
@@ -282,9 +361,6 @@ msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷ�
 #~| msgid "All_ocated Space"
 #~ msgid "_Allocated Space"
 #~ msgstr "_നല്‍കിയ സ്ഥലം"
-
-#~ msgid "Cancel"
-#~ msgstr "റദ്ദാക്കുക"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "ഡിസ്ക് ഉപയോഗ വിശകലനിയുടെ മുന്‍ഗണനകള്‍"
@@ -391,9 +467,6 @@ msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷ�
 
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "അനവധി ആര്‍ഗ്യുമെന്റുകള്‍. ഒരു ഡയറക്ടറി മാത്രമേ നല്‍കുവാന്‍ പാടുള്ളൂ."
-
-#~ msgid "Could not detect any mount point."
-#~ msgstr "ചേര്‍ക്കാനുള്ള സ്ഥാനമൊന്നും കണ്ടുപിടിച്ചില്ല."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "ചേര്‍ക്കാനുള്ള സ്ഥാനങ്ങള്‍ പറയാതെ ഡിസ്ക്കിന്റെ ഉപയോഗം വിശകലനം ചെയ്യാന്‍ സാധ്യമല്ല."
@@ -504,17 +577,11 @@ msgstr "ഡിസ്കിന്റെ ഉപയോഗം നിരീക്ഷ�
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "ഒഴിവാക്കിയ ഫോള്‍ഡര്‍ പരിശോധിയ്ക്കാന്‍ സാധ്യമല്ല!"
 
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "\"%s\" ഫോള്‍ഡര്‍ തുറക്കുവാന്‍ സാധ്യമായില്ല"
-
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "ഫോള്‍ഡര്‍ ദൃശ്യമാക്കുന്നതിനുളള പ്രയോഗം (വ്യൂവര്‍) ഇന്‍‌സ്റ്റാള്‍ ചെയ്തിട്ടില്ല."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "\"%s\" ചവറ്റുകുട്ടയിലേക്ക് നീക്കുവാന്‍ സാധ്യമായില്ല. "
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "ഫയല്‍ ചവറ്റുകുട്ടയിലേക്ക് നീക്കുവാന്‍ സാധ്യമായില്ല"
 
 #~ msgid "Details: %s"
 #~ msgstr "വിശദീകരണം: %s"
