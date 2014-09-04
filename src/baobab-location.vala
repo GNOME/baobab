@@ -125,7 +125,7 @@ namespace Baobab {
 
             file = File.new_for_path ("/");
             get_file_info ();
-            icon = new ThemedIcon ("drive-harddisk-system");
+            icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system");
 
             get_fs_usage ();
 
