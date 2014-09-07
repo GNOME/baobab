@@ -14,15 +14,15 @@
 # Ilkka Tuohela <hile@iki.fi>, 2005-2009.
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
 # Tommi Vainikainen <thv@iki.fi>, 2009-2011.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-04 07:58+0000\n"
-"PO-Revision-Date: 2013-09-07 19:03+0300\n"
+"POT-Creation-Date: 2014-09-06 02:51+0000\n"
+"PO-Revision-Date: 2014-09-06 13:16+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -33,7 +33,7 @@ msgstr ""
 "X-POT-Import-Date: 2012-03-05 15:05:01+0000\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -43,15 +43,15 @@ msgstr ""
 "etä- ja paikalliskansioita sekä taltioita, ja luoda graafinen esitys "
 "kansioiden käyttämästä tilasta ja prosenttiosuuksista."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Levynkäytön analysointi"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Tarkista kansioiden koko ja käytettävissä oleva levytila"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;tila;tilankäyttö;levytila;"
 
@@ -87,13 +87,9 @@ msgstr "Ikkunan tila"
 msgid "The GdkWindowState of the window"
 msgstr "Ikkunan GdkWindowState"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja sulkeudu"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Levynkäytön analysointi"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -152,15 +148,15 @@ msgstr "Kartoita kansio…"
 msgid "Scan Remote Folder…"
 msgstr "Kartoita etäkansio…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "Avaa _kansio"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopioi polku leikepöydälle"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "_Siirrä roskakoriin"
 
@@ -192,63 +188,39 @@ msgstr "Ympyräkaavio"
 msgid "Treemap Chart"
 msgstr "Puukaavio"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "O_hje"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_Tietoja"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Lopeta"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Siirry ylempään kansioon"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "L_ähennä"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "L_oitonna"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Valitse kansio"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Analysoi liitoskohdat rekursiivisesti"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Levynkäyttöä ei voitu analysoida."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Ohjeen näyttäminen epäonnistui"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Graafinen työkalu levytilan käytön analysointiin."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Jiri Grönroos, 2012-2013\n"
@@ -262,40 +234,75 @@ msgstr ""
 "\n"
 "http://gnome.fi/"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Tiedoston avaaminen epäonnistui"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Tiedoston siirtäminen roskakoriin epäonnistui"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Laitteet ja sijainnit"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Kansion \"%s\" tai joidenkin sen alikansioiden kartoitus epäonnistui."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "Kansiota ”%s” ei voi kartoittaa"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Kohteen \"%s\" joidenkin kansioiden kartoitus epäonnistui"
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Varattujen levyjen kokoa ei voitu selvittää."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Näytetään sen sijaan näennäiskokoja."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "”%s” ei ole kelvollinen kansio"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Levynkäyttöä ei voitu analysoida."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "O_hje"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_Tietoja"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "_Lopeta"
+
+#: ../src/menus.ui.h:7
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "_Siirry ylätason kansioon"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "L_ähennä"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "L_oitonna"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Levynkäytön analysointi"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Enimmäissyvyys"
@@ -583,9 +590,6 @@ msgstr "Levynkäyttöä ei voitu analysoida."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "Ohitettua kansiota ei voi tarkistaa!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Kansiota ”%s” ei voi avata"
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "Kansion näyttämistä varten ei löydy asennettua katselinta."
