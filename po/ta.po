@@ -8,41 +8,44 @@
 # Felix <ifelix@redhat.com>, 2006.
 # Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009, 2011, 2012.
 # I. Felix <ifelix@redhat.com>, 2009.
-# Shantha kumar <shkumar@redhat.com>, 2012.
+# Shantha kumar <shkumar@redhat.com>, 2012, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master.ta\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-27 20:53+0000\n"
-"PO-Revision-Date: 2013-11-12 17:00+0530\n"
+"POT-Creation-Date: 2014-09-15 02:51+0000\n"
+"PO-Revision-Date: 2014-09-15 15:40+0630\n"
 "Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
-"Language-Team: American English <gnome-tamil-translation@googlegroups.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\\n;\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n"
+";\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
 "directory size or percentage."
 msgstr ""
-"குறிப்பிட்ட கோப்புறைகள் (உள்ளமை அல்லது தொலைநிலை) அல்லது தொகுதிகளை வருடி ஒவ்வொரு "
-"கோப்பகத்தின் அளவுகள் அல்லது சதவீதத்தினை வரைவியல் வடிவில் வழங்கும் ஒரு எளிய பயன்பாடு."
+"குறிப்பிட்ட கோப்புறைகள் (உள்ளமை அல்லது தொலைநிலை) அல்லது தொகுதிகளை வருடி "
+"ஒவ்வொரு "
+"கோப்பகத்தின் அளவுகள் அல்லது சதவீதத்தினை வரைவியல் வடிவில் வழங்கும் ஒரு எளிய "
+"பயன்பாடு."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "வட்டு பயன்பாடு ஆராய்வி"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "அடைவு அளவு மற்றும் கிடைக்கக்கூடிய வட்டு இடைவெளி ஆகியவற்றை சரிபார் "
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "கிடங்கு;இடம்;சுத்தகரிப்பு;"
 
@@ -78,13 +81,9 @@ msgstr "சாளர நிலை"
 msgid "The GdkWindowState of the window"
 msgstr "சாளரத்தின் ஜிடிகே சாளர நிலை"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "பதிப்புத் தகவலை அச்சிட்டுவிட்டு வெளியேறு"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- வட்டு பயன்பாடு ஆராய்வி"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -143,15 +142,15 @@ msgstr "அடைவினை வருடு..."
 msgid "Scan Remote Folder…"
 msgstr "தொலை அடைவினை வருடவும்..."
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "_O கோப்பை திறக்கவும்"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "பாதையை ஒட்டுப்பலகைக்கு நகலெடு (_C)"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "(_v)குப்பைக்கு நகர்த்து"
 
@@ -183,103 +182,111 @@ msgstr "வட்டங்கள் வரைபடம்"
 msgid "Treemap Chart"
 msgstr "மரபட வரைபடம்"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "உதவி (_H)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "அறிமுகம் (_A)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "வெளியேறு (_Q)"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_M தாய் அடைவுக்கு நகர்த்தவும்"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_i அணுகிப்பார்"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_o விலகிப்பார்"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "அடைவை தேர்வு செய்"
 
-#: ../src/baobab-window.vala:226
-#| msgid "Cancel"
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "ரத்துசெய் (_C)"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "திற (_O)"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "தொடர்ச்சியாக மவுன்ட் புள்ளிகளை பகுப்பாய்வு செய்"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "தொகுதியை ஆராய முடியவில்லை"
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "உதவியைக் காண்பிப்பதில் தோல்வியடைந்தது"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "வட்டு பயன்பாட்டினை ஆராயும் ஒரு வரைகலை கருவி"
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr "மொழிபெயர்பாளர் நன்றிகள்"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "கோப்பைத் திறப்பதில் தோல்வியடைந்தது"
 
-#: ../src/baobab-window.vala:427
-#| msgid "Could not move file to the Trash"
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "கோப்பை குப்பைக்கு நகர்த்துவதில் தோல்வியடைந்தது"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "சாதனங்களும் இருப்பிடங்களும்"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "\"%s\" என்ற கோப்புறை அல்லது அதில் உள்ள சில கோப்புறைகளை ஸ்கேன் செய்ய முடியவில்லை."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "கோப்புறை \"%s\" ஐ ஸ்கேன் செய்ய முடியவில்லை"
 
-#: ../src/baobab-window.vala:601
-#| msgid "Could not detect any mount point."
+#: ../src/baobab-window.vala:570
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "\"%s\" இல் உள்ள சில கோப்புறைகளை ஸ்கேன் செய்ய முடியவில்லை."
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "பயன்படுத்தப்பட்டுள்ள வட்டு அளவுகளைக் கண்டறிய முடியவில்லை"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "அதற்கு பதிலாக தோன்றக்கூடிய அளவுகள் காண்பிக்கப்படுகின்றன."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" செல்லுபடியாகும் அடைவு இல்லை."
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "வட்டு பயன்பாட்டினை ஆராய முடியவில்லை"
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "உதவி (_H)"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "அறிமுகம் (_A)"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "வெளியேறு (_Q)"
+
+#: ../src/menus.ui.h:7
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "தாய் கோப்புறைக்குச் செல் (_p)"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "_i அணுகிப்பார்"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "_o விலகிப்பார்"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- வட்டு பயன்பாடு ஆராய்வி"
 
 #~ msgid "Maximum depth"
 #~ msgstr "அதிகபட்ச ஆழம்"
@@ -562,9 +569,6 @@ msgstr "வட்டு பயன்பாட்டினை ஆராய மு
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "ஒரு நீக்கப்பட்ட அடைவை நீக்க முடியாது!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "அடைவை திறக்க இயலவில்லை \"%s\"."
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "இந்த ஆவணத்தை காட்டக்கூடிய காட்சி மென்பொருள் எதுவும் நிறுவப்படவில்லை"
