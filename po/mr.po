@@ -4,14 +4,14 @@
 #
 # sandeep shedmake <sandeep.shedmake@gmail.com>, 2007.
 # Sandeep Shedmake <sshedmak@redhat.com>, 2008, 2009.
-# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2012, 2013.
+# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-27 22:11+0000\n"
-"PO-Revision-Date: 2013-03-18 11:56+0530\n"
+"POT-Creation-Date: 2014-09-16 02:51+0000\n"
+"PO-Revision-Date: 2014-09-16 12:19+0530\n"
 "Last-Translator: Sandeep Shedmake <sshedmak@redhat.com>\n"
 "Language-Team: Marathi <fedora-trans-mr@redhat.com>\n"
 "Language: mr\n"
@@ -29,246 +29,319 @@ msgstr ""
 "\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"सोपे ॲप्लिकेशन जे एकतर विशेष फोल्डर्स (स्थानीय किंवा रिमोट) किंवा वॉल्युम्स "
+"असू शकते आणि ग्राफिकल प्रस्तुतिकरण दाखवते, प्रत्येक डिरेक्ट्री आकार किंवा "
+"टक्केवारी समाविष्टीत."
+
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "डीस्क वापर विश्लेषक"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "फोल्डर आकार व उपलब्ध डीस्क जागा तपासा"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "स्टोरेज;स्पेस;क्लिनअप;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
 msgstr "वगळलेले विभाजनचे URIs"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "स्कॅनिंग पासून वगळण्याजोगी विभाजनकरीता URI ची सूची."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
 msgstr "ॲक्टिव्ह चार्ट"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
 msgstr "कोणत्या प्रकारचे चार्ट दाखवायला हवे."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
-#| msgid "Windows share"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
 msgstr "पटल आकार"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
 msgid "The initial size of the window"
 msgstr "पटलचे सुरूवातीचे आकार"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-#| msgid "Windows share"
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
 msgid "Window state"
 msgstr "पटल स्तर"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
+#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
 msgid "The GdkWindowState of the window"
 msgstr "पटलाचे GdkWindowState"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "आवृत्ती माहिती छपाई करा व बाहेर पडा"
 
-#: ../src/baobab-application.vala:104
-msgid "- Disk Usage Analyzer"
-msgstr "- डिस्क-वापर विश्लेषक"
-
-#: ../src/baobab-cellrenderers.vala:100
+#: ../src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d घटक"
 msgstr[1] "% 5d वस्तू"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "कमाल खोलता"
+#. Translators: when the last modified time is unknown
+#: ../src/baobab-cellrenderers.vala:101
+msgid "Unknown"
+msgstr "अपरिचीत"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "रूट पासून रींग चार्ट स्वरूपात काढलेली कमाल खोलता"
+#. Translators: when the last modified time is today
+#: ../src/baobab-cellrenderers.vala:110
+msgid "Today"
+msgstr "आज"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "चार्ट प्रारूप"
+#. Translators: when the last modified time is "days" days ago
+#: ../src/baobab-cellrenderers.vala:114
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d दिवस"
+msgstr[1] "%d दिवस"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "चार्टचे प्रारूप निश्चित करा"
+#. Translators: when the last modified time is "months" months ago
+#: ../src/baobab-cellrenderers.vala:118
+#, c-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d महिना"
+msgstr[1] "%d महिने"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "चार्ट रूट नोड"
-
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "प्रारूप पासून रूट नोड निश्चित करीत आहे"
-
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "पॅरेंट फोल्डरकडे स्थानांतरीता करा (_M)"
-
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "मोठे करा (_i)"
-
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "लहान करा (_o)"
+#. Translators: when the last modified time is "years" years ago
+#: ../src/baobab-cellrenderers.vala:122
+#, c-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d वर्ष"
+msgstr[1] "%d वर्षे"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "होम फोल्डर"
 
 #: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "आवाज वाढवा"
+msgid "Computer"
+msgstr "संगणक"
 
 #: ../src/baobab-main-window.ui.h:1
-#| msgid "Scan F_older…"
 msgid "Scan Folder…"
 msgstr "फोल्डर स्कॅन करा..."
 
 #: ../src/baobab-main-window.ui.h:2
-#| msgid "Scan Remote Fo_lder…"
 msgid "Scan Remote Folder…"
 msgstr "रिमोट फोल्डर स्कॅन करा…"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "बंद करा"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "फोल्डर"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "वापर"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "आकार"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "विषयसूची"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "रिंग्स् चार्ट"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "ट्रीमॅप चार्ट"
-
-#: ../src/baobab-main-window.ui.h:10
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "फोल्डर उघडा (_O)"
 
-#: ../src/baobab-main-window.ui.h:11
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "क्लिपबोर्डवर मार्गाचे प्रत बनवा (_C)"
 
-#: ../src/baobab-main-window.ui.h:12
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "कचरापेटीत हलवा (_v)"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "मदत (_H)"
+#: ../src/baobab-main-window.ui.h:7
+msgid "Close"
+msgstr "बंद करा"
 
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "विषयी (_A)"
+#: ../src/baobab-main-window.ui.h:8
+msgid "Folder"
+msgstr "फोल्डर"
 
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "बाहेर पडा (_Q)"
+#: ../src/baobab-main-window.ui.h:9
+msgid "Size"
+msgstr "आकार"
 
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "विश्लेषक (_A)"
+#: ../src/baobab-main-window.ui.h:10
+msgid "Contents"
+msgstr "विषयसूची"
 
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "होम स्कॅन करा (_S)"
+#: ../src/baobab-main-window.ui.h:11
+msgid "Modified"
+msgstr "संपादित"
 
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "फोल्डर स्कॅन करा (_o)..."
+#: ../src/baobab-main-window.ui.h:12
+msgid "Rings Chart"
+msgstr "रिंग्स् चार्ट"
 
-#: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "रिमोट फोल्डर स्कॅन करा (_l)…"
+#: ../src/baobab-main-window.ui.h:13
+msgid "Treemap Chart"
+msgstr "ट्रीमॅप चार्ट"
 
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "दृश्य (_V)"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "पुनःलोड करा (_R)"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "सर्व विस्तारीत कराविस्तार करा (_E)"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "सर्व नष्ट करा (_C)"
-
-#: ../src/baobab-window.vala:131
-#| msgid "Show all locations"
-msgid "Devices and locations"
-msgstr "साधने व स्थळ"
-
-#: ../src/baobab-window.vala:229
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "फोल्डर निवडा"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:205
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "रद्द करा (_C)"
+
+#: ../src/baobab-window.vala:206
+msgid "_Open"
+msgstr "उघडा (_O)"
+
+#: ../src/baobab-window.vala:211
+msgid "Recursively analyze mount points"
+msgstr "माऊंट पॉइंट्स पुन्हा विश्लेषीत करा"
+
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "आवाज विश्लेषीत करणे अशक्य."
 
-#: ../src/baobab-window.vala:329
+#: ../src/baobab-window.vala:290
+msgid "Failed to show help"
+msgstr "मदत दाखवण्यास अपयशी"
+
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:332
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "डीस्क वापरचे विश्लेषण करण्याकरीता चित्रलेख साधन."
 
-#: ../src/baobab-window.vala:337
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "संदिप शेडमाके <sandeep.shedmake@gmail.com>, 2007, 2008, 2009; संदिप शेडमाके "
 "<sshedmak@gmail.com>, 2009."
 
-#: ../src/baobab-window.vala:579
+#: ../src/baobab-window.vala:386
+msgid "Failed to open file"
+msgstr "फाइल खुले करण्यास अपयशी"
+
+#: ../src/baobab-window.vala:406
+#| msgid "Could not move file to the Trash"
+msgid "Failed to move file to the trash"
+msgstr "फाइलला कचरापेटीत हलवण्यास अपयशी"
+
+#: ../src/baobab-window.vala:506
+msgid "Devices and locations"
+msgstr "साधने व स्थळ"
+
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "फोल्डर \"%s\" किंवा समाविष्टीत काहिक फोल्डर्स् स्कॅन करणे अशक्य."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "फोल्डर \"%s\" स्कॅन करणे अशक्य"
+
+#: ../src/baobab-window.vala:570
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "\"%s\" मधील समाविष्टीत फोल्डर्स स्कॅन करणे अशक्य"
+
+#: ../src/baobab-window.vala:589
+#| msgid "Could not detect any mount point."
+msgid "Could not detect occupied disk sizes."
+msgstr "व्याप्त केलेले डिस्क आकार आढळले नाही."
+
+#: ../src/baobab-window.vala:589
+msgid "Apparent sizes are shown instead."
+msgstr "त्याऐवजी स्पष्ट आकार दाखवले जातात."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:598 ../src/baobab-window.vala:604
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ही वैध फोल्डर नाही"
 
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "डीस्क वापर विश्लेषीत करू शकले नाही."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "मदत (_H)"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "विषयी (_A)"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "बाहेर पडा (_Q)"
+
+#: ../src/menus.ui.h:7
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "पॅरेंट फोल्डरकडे जा (_p)"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "मोठे करा (_i)"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "लहान करा (_o)"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- डिस्क-वापर विश्लेषक"
+
+#~ msgid "Maximum depth"
+#~ msgstr "कमाल खोलता"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "रूट पासून रींग चार्ट स्वरूपात काढलेली कमाल खोलता"
+
+#~ msgid "Chart model"
+#~ msgstr "चार्ट प्रारूप"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "चार्टचे प्रारूप निश्चित करा"
+
+#~ msgid "Chart root node"
+#~ msgstr "चार्ट रूट नोड"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "प्रारूप पासून रूट नोड निश्चित करीत आहे"
+
+#~ msgid "Main volume"
+#~ msgstr "आवाज वाढवा"
+
+#~ msgid "Usage"
+#~ msgstr "वापर"
+
+#~ msgid "_Analyzer"
+#~ msgstr "विश्लेषक (_A)"
+
+#~ msgid "_Scan Home"
+#~ msgstr "होम स्कॅन करा (_S)"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "फोल्डर स्कॅन करा (_o)..."
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "रिमोट फोल्डर स्कॅन करा (_l)…"
+
+#~ msgid "_View"
+#~ msgstr "दृश्य (_V)"
+
+#~ msgid "_Reload"
+#~ msgstr "पुनःलोड करा (_R)"
+
+#~ msgid "_Expand All"
+#~ msgstr "सर्व विस्तारीत कराविस्तार करा (_E)"
+
+#~ msgid "_Collapse All"
+#~ msgstr "सर्व नष्ट करा (_C)"
 
 #~ msgid "Monitor Home"
 #~ msgstr "होम नियंत्रीत करा"
@@ -300,9 +373,6 @@ msgstr "डीस्क वापर विश्लेषीत करू श�
 #~| msgid "All_ocated Space"
 #~ msgid "_Allocated Space"
 #~ msgstr "वाटप केलेली जागा (_A)"
-
-#~ msgid "Cancel"
-#~ msgstr "रद्द करा"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "डीस्क वापर विश्लेषक प्राधान्यता"
@@ -409,9 +479,6 @@ msgstr "डीस्क वापर विश्लेषीत करू श�
 #~ msgid "Too many arguments. Only one directory can be specified."
 #~ msgstr "एकापेक्षा जास्त बाब आढळलेत. फक्त एकच डिरेक्ट्री आढळली."
 
-#~ msgid "Could not detect any mount point."
-#~ msgstr "कोणतेही आरोहन केंद्र आढळले नाही."
-
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "माउन्ट पॉईन्ट विना डीस्क वापरचे विश्लेषण केले जाऊ शकत नाही."
 
@@ -517,17 +584,11 @@ msgstr "डीस्क वापर विश्लेषीत करू श�
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "वगळलेले फोल्डर तपासणे शक्य नाही!"
 
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "\"%s\" फोल्डर उघडू शकले नाही"
-
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "फोल्डर दर्शविण्याकरीता प्रतिष्ठापीत दर्शिका उपलब्ध नाही."
 
 #~ msgid "Could not move \"%s\" to the Trash"
 #~ msgstr "\"%s\" कचरापेटीत हलवू शकले नाही"
-
-#~ msgid "Could not move file to the Trash"
-#~ msgstr "कचरापेटीत हलवू शकत नाही"
 
 #~ msgid "Details: %s"
 #~ msgstr "तपशील: %s"
