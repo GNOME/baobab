@@ -1,5 +1,5 @@
 # Danish Translation of gnome-utils.
-# Copyright (C) 2013 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-utils package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
 # Kim Schulz <kim@schulz.dk>, 1999.
@@ -8,8 +8,8 @@
 # Ole Laursen <olau@hardworking.dk>, 2001, 02, 03, 04.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008, 2012.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14.
 #
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-16 23:09+0200\n"
-"PO-Revision-Date: 2013-09-16 23:04+0200\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"POT-Creation-Date: 2014-09-16 21:09+0200\n"
+"PO-Revision-Date: 2014-09-12 01:16+0200\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -42,15 +42,15 @@ msgstr ""
 "fjerne) eller diskenheder og frembringe en grafisk repræsentation, som "
 "inkluderer hver enkelt mappes størrelse og procentdel."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Diskforbrugsanalyse"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Kontrollér mappestørrelser og tilgængelig diskplads"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "lager;plads;oprydning;"
 
@@ -86,13 +86,9 @@ msgstr "Vinduestilstand"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState for vinduet"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Vis versionsinformation og afslut"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Diskforbrugsanalyse"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -151,15 +147,15 @@ msgstr "Skan mappe…"
 msgid "Scan Remote Folder…"
 msgstr "Skan fjernmappe…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "_Åbn mappe"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopiér sti til udklipsholder"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "F_lyt til papirkurv"
 
@@ -191,63 +187,39 @@ msgstr "Ringdiagram"
 msgid "Treemap Chart"
 msgstr "Træafbildning"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Hjælp"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_Om"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Afslut"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Gå til mappen et niveau over"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "For_stør"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "For_mindsk"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Markér mappe"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Annullér"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Åbn"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Analysér monteringspunkter rekursivt"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere diskenhed."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Kunne ikke vise hjælp"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk værktøj til at analysere diskforbrug."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Birger Langkjer\n"
@@ -263,41 +235,72 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Kunne ikke åbne fil"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Kunne ikke flytte fil til papirkurven"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Enheder og steder"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Kunne ikke skanne mappen \"%s\" eller nogle af de mapper den indeholder."
+msgid "Could not scan folder \"%s\""
+msgstr "Kunne ikke skanne mappen \"%s\""
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Kunne ikke skanne visse af mapperne indeholdt i \"%s\""
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Kunne ikke detektere opbrugte diskstørrelser."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Tilsyneladende størrelser vises i stedet."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" er ikke en gyldig mappe"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskforbrug."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_Om"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "_Afslut"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "Gå til mappen et _niveau over"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "For_stør"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "For_mindsk"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Diskforbrugsanalyse"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Maksimal dybde"
