@@ -10,14 +10,15 @@
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2008.
 # Piotr Drąg <piotrdrag@gmail.com>, 2010-2013.
-# Aviary.pl <gnomepl@aviary.pl>, 2007-2013.
+# Paweł Żołnowski <pawel@zolnowski.name>, 2014.
+# Aviary.pl <gnomepl@aviary.pl>, 2007-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-04 02:08+0200\n"
-"PO-Revision-Date: 2013-09-04 02:09+0200\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"POT-Creation-Date: 2014-09-18 00:34+0200\n"
+"PO-Revision-Date: 2014-09-17 20:44+0100\n"
+"Last-Translator: Paweł Żołnowski <pawel@zolnowski.name>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -28,25 +29,25 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
 "directory size or percentage."
 msgstr ""
 "Prosty program, który może skanować podane katalogi (lokalne lub zdalne) lub "
-"woluminy i podawać ich graficzną reprezentację, w tym takie dane, jak rozmiar "
-"katalogów i ich procentowe wykorzystanie."
+"woluminy i podawać ich graficzną reprezentację, w tym takie dane, jak "
+"rozmiar katalogów i ich procentowe wykorzystanie."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analizator wykorzystania dysku"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Wyświetlanie rozmiaru katalogów i dostępnego miejsca na dysku"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "pamięć masowa;miejsce;przestrzeń;czyszczenie;"
 
@@ -82,13 +83,9 @@ msgstr "Stan okna"
 msgid "The GdkWindowState of the window"
 msgstr "Wartość GdkWindowState okna"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Wyświetla informacje o wersji i kończy działanie"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- analizator wykorzystania dysku"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -151,15 +148,15 @@ msgstr "Skanuj katalog…"
 msgid "Scan Remote Folder…"
 msgstr "Skanuj zdalny katalog…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "O_twórz katalog"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "S_kopiuj ścieżkę do schowka"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Przenieś do k_osza"
 
@@ -191,63 +188,39 @@ msgstr "Wykres pierścieniowy"
 msgid "Treemap Chart"
 msgstr "Wykres drzewa"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "Pomo_c"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_O programie"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "Za_kończ"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Przejdź do katalogu nadrzędnego"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "P_owiększ"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "Po_mniejsz"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Wybór katalogu"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Otwórz"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Rekursywne analizowanie punktów montowania"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Nie można analizować woluminu."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Wyświetlenie pomocy się nie powiodło"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Graficzne narzędzie do analizy wykorzystania dysku."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1999-2003\n"
@@ -256,40 +229,69 @@ msgstr ""
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2008\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2010-2013\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2007-2013"
+"Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2007-2014"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Otwarcie pliku się nie powiodło"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Przeniesienie pliku do kosza się nie powiodło"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Urządzenia i położenia"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Nie można skanować katalogu \"%s\" lub niektórych katalogów w nim zawartych."
+msgid "Could not scan folder \"%s\""
+msgstr "Nie można skanować katalogu \"%s\""
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Nie można skanować niektórych katalogów zawartych w \"%s\""
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Nie można wykryć zajętych rozmiarów na dysku."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Widoczne rozmiary zostaną wyświetlone zamiast tego."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" nie jest prawidłowym katalogiem"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Nie można zanalizować wykorzystania dysku."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "Pomo_c"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_O programie"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "Za_kończ"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "_Przejdź do katalogu nadrzędnego"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "P_owiększ"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "Po_mniejsz"
