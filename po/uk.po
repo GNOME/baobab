@@ -5,13 +5,14 @@
 # wanderlust <wanderlust@ukr.net>, 2009.
 # int_ua <xintx.ua@gmail.com>, 2010.
 # Korostil Daniel <ted.korostiled@gmail.com>, 2011, 2012.
-# Daniel Korostil <ted.korostiled@gmail.com>, 2012, 2013.
+# Daniel Korostil <ted.korostiled@gmail.com>, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-21 13:45+0300\n"
-"PO-Revision-Date: 2013-09-21 13:52+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
+"&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-09-18 02:51+0000\n"
+"PO-Revision-Date: 2014-09-18 17:29+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "Language: uk\n"
@@ -23,7 +24,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -32,15 +33,15 @@ msgstr ""
 "Проста програма, яка може сканувати як певні теки (локальні та віддалені), "
 "так і томи, показувати графічно розмір або відсотки кожної теки. "
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Аналізатор використання диску"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Перевірте розміри тек та дисковий простір"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "пам'ять;місце;очистити;"
 
@@ -76,13 +77,9 @@ msgstr "Стан вікна"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState вікна"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Показати версію та вийти"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "— Аналізатор використання дисків"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -145,15 +142,15 @@ msgstr "Просканувати теку…"
 msgid "Scan Remote Folder…"
 msgstr "Просканувати віддалену теку…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "Відкрити _теку"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Скопіювати шлях до кишені"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Пере_містити у смітник"
 
@@ -185,103 +182,114 @@ msgstr "Кільцева діаграма"
 msgid "Treemap Chart"
 msgstr "Дерево"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Довідка"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_Про програму"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "Ви_йти"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Перейти до теки більш високого рівня"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "На_близити"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "Від_далити"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Виберіть теку"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Відкрити"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно аналізувати точки монтуванн"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Неможливо проаналізувати том."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Не вдалося показати довідку"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графічна утиліта для аналізу використання дисків."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Юрій Сирота <yuriy@beer.com>\n"
 "Максим Дзюманенко <dziumanenko@gmail.com>\n"
 "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Не вдалося відкрити файл"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Не вдалося перенести файл у смітник"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Пристрої і місця"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Неможливо просканувати теку «%s» або деякі теки у ній."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "Неможливо просканувати теку «%s»"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Неможливо просканувати деякі теки у «%s»."
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Неможливо виявити займані розміри диска."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Показано натомість очевидний розмір."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" не є правильною текою"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Не вдалось проаналізувати використання дисків."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_Довідка"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_Про програму"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "Ви_йти"
+
+#: ../src/menus.ui.h:7
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "Перейти до _верхньої теки"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "На_близити"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "Від_далити"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "— Аналізатор використання дисків"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Максимальна глибина"
@@ -566,9 +574,6 @@ msgstr "Не вдалось проаналізувати використанн�
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "Не можу перевірити виключену теку!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Не вдалось відкрити теку \"%s\""
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "Немає програми здатної показати цю теку."
