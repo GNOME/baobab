@@ -19,9 +19,9 @@ msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-18 14:24+0000\n"
-"PO-Revision-Date: 2013-12-22 23:37+0800\n"
-"Last-Translator: Tong Hui <tonghuix@gmail.com>\n"
+"POT-Creation-Date: 2014-08-17 02:51+0000\n"
+"PO-Revision-Date: 2014-08-17 22:20+0800\n"
+"Last-Translator: irisgyq <gouyingqiyanxuan321@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -39,15 +39,15 @@ msgstr ""
 "一款简单的应用程序，可扫描指定文件夹(本地或远程)或卷，并生成包括目录大小或百"
 "分比的图示。"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "磁盘使用情况分析器"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "检查文件夹大小和可用磁盘空间"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;存储;空间;清理;磁盘使用;"
 
@@ -83,13 +83,9 @@ msgstr "窗口状态"
 msgid "The GdkWindowState of the window"
 msgstr "窗口的 GdkWindowState 状态"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- 磁盘使用情况分析器"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -144,15 +140,15 @@ msgstr "扫描文件夹..."
 msgid "Scan Remote Folder…"
 msgstr "扫描远程文件夹..."
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "打开文件夹(_o)"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "复制路径到剪贴版(_C)"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "移到回收站(_V)"
 
@@ -184,63 +180,39 @@ msgstr "环形图"
 msgid "Treemap Chart"
 msgstr "矩形树状结构图"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "帮助(_H)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "关于(_A)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "退出(_Q)"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "移到上级文件夹(_M)"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "放大(_I)"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "缩小(_O)"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "选择文件夹"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "打开(_O)"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "递归分析挂载点"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "无法分析卷。"
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "无法显示帮助"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "一款分析磁盘使用情况的图形工具。"
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Wang Li <charlesw1234@163.com>\n"
@@ -251,40 +223,72 @@ msgstr ""
 "Terence Ng <pheotiman@gmail.com>\n"
 "eterhalhui <www.eternalhui@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "无法打开文件"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "无法将文件移至回收站"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "设备与位置"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "无法扫描“%s”文件夹或者它所包含的某些文件夹。"
+msgid "Could not scan folder \"%s\""
+msgstr "无法扫描文件夹 “%s\""
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "无法扫描“%s”所包含的某些文件夹。"
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "无法检测已占用的磁盘大小。"
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "将转而显示推断的大小。"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s”不是有效的文件夹"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "无法分析磁盘使用情况。"
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "关于(_A)"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "退出(_Q)"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "转到上级文件夹(_P)"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "放大(_I)"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "缩小(_O)"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- 磁盘使用情况分析器"
 
 #~ msgid "Main volume"
 #~ msgstr "主卷"
