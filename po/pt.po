@@ -8,10 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-22 21:54+0100\n"
-"PO-Revision-Date: 2013-09-22 18:20-0100\n"
-"Last-Translator: António Lima <amrlima@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-10-02 02:54+0000\n"
+"PO-Revision-Date: 2014-10-02 10:31+0100\n"
+"Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -30,15 +31,15 @@ msgstr ""
 "remotas) ou volumes e fornecer uma representação gráfica que inclui o "
 "tamanho de cada diretório ou percentagem."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de Utilização do Disco"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Verificar o tamanho das pastas e o espaço disponível em disco"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "armazenamento;espaço;limpar;"
 
@@ -74,13 +75,9 @@ msgstr "Estado da janela"
 msgid "The GdkWindowState of the window"
 msgstr "O GdkWindowState da janela"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Imprimir informação de versão e sair"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Analisador de Utilização do Disco"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -139,15 +136,15 @@ msgstr "Analisar Pasta…"
 msgid "Scan Remote Folder…"
 msgstr "Analisar Pasta Remota…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "Abrir _Pasta"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar Caminho para a Área de Transferência"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver para o Lixo"
 
@@ -179,100 +176,111 @@ msgstr "Gráfico de Aneis"
 msgid "Treemap Chart"
 msgstr "Gráfico de Mapa de Grafos"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "So_bre"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Sair"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Mover para a pasta pai"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_Aumentar o zoom"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_Reduzir o zoom"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Selecione uma Pasta"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Analisar pontos de montagem recursivamente "
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Incapaz de analisar a unidade."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Falha ao apresentar a ajuda"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Falha ao abrir ficheiro"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Falha ao mover ficheiro para o lixo"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Dispositivos e localizações"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Incapaz de analisar a pasta \"%s\" ou algumas das pastas contidas."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "Impossível analisar a pasta \"%s\""
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Impossível analisar algumas das pastas contidas em  \"%s\"."
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Incapaz de detetar tamanho ocupado do disco."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Tamanhos aparentes são apresentados alternativamente."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" não é uma pasta válida"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Incapaz de analisar a utilização do disco."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_Ajuda"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "So_bre"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "_Sair"
+
+#: ../src/menus.ui.h:7
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "Ir para a pasta _pai"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "_Aumentar o zoom"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "_Reduzir o zoom"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Analisador de Utilização do Disco"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidade máxima"
@@ -568,9 +576,6 @@ msgstr "Incapaz de analisar a utilização do disco."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "Incapaz de verificar uma pasta excluída!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Incapaz de abrir a pasta \"%s\""
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr ""
