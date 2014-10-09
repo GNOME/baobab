@@ -7,15 +7,16 @@
 # Sara Khalatbari <sara@bamdad.org>, 2005.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005, 2006.
 # Sanaz shahrokni <sanaz.shahrokni@gmail.com>, 2006.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012, 2013.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012, 2013, 2014.
 # alibagheri <alijobemail@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-27 20:53+0000\n"
-"PO-Revision-Date: 2013-10-08 19:31+0330\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-10-06 14:54+0000\n"
+"PO-Revision-Date: 2014-10-10 01:09+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -24,21 +25,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
-msgid "A simple application which can scan either specific folders (local or remote) or volumes and give a graphical representation including each directory size or percentage."
-msgstr "یک برنامه ساده که می‌تواند هم پوشه‌های مشخصی (محلی و یا دوردست) و هم جلدها را پایش کند و یک نمایش گرافیکی شامل حجم شاخه‌ها یا درصد آنها را ارایه کند."
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"یک برنامه ساده که می‌تواند هم پوشه‌های مشخصی (محلی و یا دوردست) و هم جلدها را "
+"پایش کند و یک نمایش گرافیکی شامل حجم شاخه‌ها یا درصد آنها را ارایه کند."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "تحلیل‌گر فضای مصرفی دیسک"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "بررسی اندازه پوشه‌ها و فضای دیسک در دسترس"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;ذخیره;فضا;پاکسازی;"
 
@@ -74,13 +80,9 @@ msgstr "وضعیت پنجره"
 msgid "The GdkWindowState of the window"
 msgstr "‫GdkWindowState پنجره"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "چاپ اطلاعات نسخه و خروج"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- تحلیل‌گر فضای مصرفی دیسک"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -135,15 +137,15 @@ msgstr "پویش پوشه..."
 msgid "Scan Remote Folder…"
 msgstr "پویش پوشه دوردست..."
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "با_ز کردن پوشه"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_رونوشت از مسیر"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "_انداختن در زباله‌دان"
 
@@ -175,63 +177,39 @@ msgstr "نمودار حلقه‌ای"
 msgid "Treemap Chart"
 msgstr "نمودار درختی"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_راهنما"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_درباره"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_خروج"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_انتقال به پوشه‌ی والد"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_بزرگ‌نمایی"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_کوچک‌نمایی"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "یک پوشه انتخاب کنید"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_لغو"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_باز کردن"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "نقطه‌های سوار کردن را به‌طور بازگشتی پایش کن"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "پویش جلد امکان‌پذیر نبود."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "نمایش راهنما شکست خورد"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "بائوباب"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "یک ابزار گرافیکی برای تحلیل فضای مصرفی دیسک."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
@@ -241,41 +219,72 @@ msgstr ""
 "میلاد زکریا <meelad@farsiweb.info>\n"
 "ساناز شاه‌رکنی <sanaz.shahrokni@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "باز کردن پرونده شکست خورد"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "انتقال پرونده به زباله‌دان شکست خورد"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "دستگاه‌ها و محل‌ها"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "نمی‌توان پوشه «%s» و یا تعدادی از پوشه‌های درونش را پایش کرد."
+msgid "Could not scan folder \"%s\""
+msgstr "پویش جلد «%s» امکان‌پذیر نبود"
 
-#: ../src/baobab-window.vala:601
-#| msgid "Could not analyze disk usage."
+#: ../src/baobab-window.vala:570
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "نمی‌توان تعدادی از پوشه‌های درون «%s» را پایش کرد"
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "نمی‌توان اندازه‌ی مشغول دیسک‌ها را پیدا کرد."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "در عوض اندازه‌ی ظاهری نمایش داده می‌شود."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "پوشه‌ی «%s» معتبر نیست"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "تحلیل فضای مصرفی دیسک ممکن نیست."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_راهنما"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_درباره"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "_خروج"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "به پوشه _والد برو"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "_بزرگ‌نمایی"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "_کوچک‌نمایی"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- تحلیل‌گر فضای مصرفی دیسک"
 
 #~ msgid "Maximum depth"
 #~ msgstr "بیشینه عمق"
