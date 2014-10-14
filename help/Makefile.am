@@ -16,7 +16,7 @@ HELP_FILES = \
 	scan-remote.page
 
 # List of figures to be included
-HELP_MEDIA =
+HELP_MEDIA = \
 	media/hicolor_apps_48x48_baobab.png
 
 # List of translations
