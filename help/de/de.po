@@ -4,15 +4,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"POT-Creation-Date: 2014-03-20 15:53+0000\n"
-"PO-Revision-Date: 2014-03-22 18:38+0100\n"
+"POT-Creation-Date: 2014-10-14 07:28+0000\n"
+"PO-Revision-Date: 2014-10-15 21:16+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.9\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -22,44 +22,56 @@ msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2012, 2013\n"
 "Christian Kirbach <christian.kirbach@gmail.com>, 2013, 2014"
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Disk Usage Analyzer help"
+msgstr "Hilfe zur Festplattenbelegungsanalyse"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "link"
+msgid "Disk Usage Analyzer"
+msgstr "Festplattenbelegungsanalyse"
+
 #. (itstool) path: credit/name
-#: C/index.page:10 C/introduction.page:13 C/pref-view-chart.page:13
+#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
 #: C/scan-file-system.page:12 C/scan-folder.page:13 C/scan-home.page:13
 #: C/scan-remote.page:13
 msgid "Julita Inca"
 msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
-#: C/index.page:14 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
 #: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
 #: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
 #. (itstool) path: info/desc
-#: C/index.page:20
-msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
+#: C/index.page:24
+msgid "<app>Disk Usage Analyzer</app> is a graphical storage device scanner."
 msgstr ""
-"Die <app>Festplattenbelegungsanalyse</app>, ein grafische Anwendung zum "
-"Einlesen von Speichergeräten."
+"Die <app>Festplattenbelegungsanalyse</app> ist eine grafische Anwendung zum "
+"Untersuchen von Speichergeräten."
 
 #. (itstool) path: page/title
-#: C/index.page:25
-msgid "Disk Usage Analyzer"
-msgstr "Festplattenbelegungsanalyse"
+#: C/index.page:29
+msgid "<_:media-1/> Disk Usage Analyzer"
+msgstr "<_:media-1/>  Festplattenbelegungsanalyse"
 
 #. (itstool) path: section/title
-#: C/index.page:28
+#: C/index.page:35
 msgid "Scan"
 msgstr "Einlesen"
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:39
 msgid "Preferences"
 msgstr "Einstellungen"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:43
 msgid "Common problems and questions"
 msgstr "Häufige Probleme und Fragen"
 
@@ -197,13 +209,13 @@ msgstr "2014"
 
 #. (itstool) path: info/desc
 #: C/problem-permissions.page:16
-#, fuzzy
 msgid ""
 "I see a <gui>Could not scan /… or some of the folders it contains</gui> "
 "error message when scanning."
 msgstr ""
-"Beim Einlesen erscheint eine Nachricht der Form <gui>Einlesen war nicht "
-"möglich /… oder einige der enthaltenen Ordner</gui>."
+"Beim Einlesen erscheint eine Nachricht der Form <gui>Ordner konnte nicht "
+"analysiert werden /… oder darin enthaltene Unterordner konnten nicht "
+"analysiert werden</gui>."
 
 #. (itstool) path: page/title
 #: C/problem-permissions.page:21
@@ -217,9 +229,19 @@ msgid ""
 "folders it contains</gui> at the top of <app>Disk Usage Analyzer</app> "
 "window. This error appears because you don't have the required permissions "
 "to access some files due to restrictions set on the target system. The files "
-"you can't access won't be used to compute the <link xref=\"views\">chart</"
-"link> representing the disk usage, hence the result reported may be wrong."
+"you can't access won't be used to compute the <link xref=\"pref-view-chart"
+"\">chart</link> representing the disk usage, hence the result reported may "
+"be wrong."
 msgstr ""
+"Beim Einlesen kann eine Nachricht der Form <gui>Ordner konnte nicht "
+"analysiert werden /… oder darin enthaltene Unterordner konnten nicht "
+"analysiert werden</gui> oben im Fenster der "
+"<app>Festplattenbelegungsanalyse</app> erscheinen. Dieser Fehler gibt an, "
+"dass Sie aufgrund von Beschränkungen auf dem Zielsystem nicht die "
+"notwendigen Berechtigungen zum Zugriff auf einige Dateien haben. Die Dateien "
+"ohne Zugriffsberechtigung werden nicht in die Berechnung des <link xref="
+"\"pref-view-chart\">Diagramms</link> der Festplattenbelegung einbezogen. Der "
+"Ergebnisbericht kann dann falsch sein."
 
 #. (itstool) path: page/p
 #: C/problem-permissions.page:30
