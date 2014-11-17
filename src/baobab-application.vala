@@ -43,7 +43,7 @@ namespace Baobab {
         protected override void open (File[] files, string hint) {
             foreach (var file in files) {
                 var window = new Window (this);
-                window.scan_directory (file);
+                window.scan_directory (file, ScanFlags.EXCLUDE_MOUNTS);
             }
         }
 
