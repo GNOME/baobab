@@ -10,6 +10,7 @@ HELP_FILES = \
 	pref-view-chart.page \
 	problem-permissions.page \
 	problem-slow-scan.page \
+	question-open-folder.page \
 	question-trash.page \
 	scan-file-system.page \
 	scan-folder.page \
