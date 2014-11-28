@@ -1,18 +1,19 @@
 # German translation of the baobab manual.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2012, 2013.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2012, 2013, 2014.
+# Benjamin Steinwender <b@stbe.at>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"POT-Creation-Date: 2014-10-14 07:28+0000\n"
-"PO-Revision-Date: 2014-10-15 21:16+0100\n"
-"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
+"POT-Creation-Date: 2014-11-28 15:54+0000\n"
+"PO-Revision-Date: 2014-11-28 23:02+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -20,7 +21,8 @@ msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2012, 2013\n"
-"Christian Kirbach <christian.kirbach@gmail.com>, 2013, 2014"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2013, 2014\n"
+"Benjamin Steinwender <b@stbe.at>, 2014"
 
 #. (itstool) path: info/title
 #: C/index.page:7
@@ -43,6 +45,7 @@ msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
 #: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
 #: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
@@ -145,17 +148,17 @@ msgid "This work is licensed under a <_:link-1/>."
 msgstr "Dieses Werk wird unter einer <_:link-1/> verbreitet."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:25
+#: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
-msgstr "Die Ergebnisse als Kreisdiagramm oder als Kacheldiagramm betrachten"
+msgstr "Die Ergebnisse als Kreisdiagramm oder als Kacheldiagramm betrachten."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:29
+#: C/pref-view-chart.page:31
 msgid "Different chart views"
 msgstr "Verschiedene Diagrammdarstellungen"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:33
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -168,7 +171,7 @@ msgstr ""
 "zusätzliche Schalen um den inneren Ring herum dargestellt."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:35
+#: C/pref-view-chart.page:37
 msgid ""
 "Move your mouse over the rings chart displays more details about the folder "
 "and subfolders."
@@ -177,7 +180,7 @@ msgstr ""
 "Unterordner anzeigen zu lassen."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:39
 msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
@@ -189,7 +192,7 @@ msgstr ""
 "Kästen dar."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:40
+#: C/pref-view-chart.page:42
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -204,6 +207,7 @@ msgstr "Baptiste Mille-Mathias"
 
 #. (itstool) path: credit/years
 #: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+#: C/question-open-folder.page:13 C/question-trash.page:13
 msgid "2014"
 msgstr "2014"
 
@@ -249,8 +253,8 @@ msgid ""
 "Not having access to all files and directories is perfectly common thought "
 "so there is nothing you can do about this error."
 msgstr ""
-"Fehlende Berechtigungen für einige Dateien und Ordner ist absolut normal und "
-"sinnvoll. Sie können an diesem Problem nichts ändern."
+"Fehlende Berechtigungen für einige Dateien und Ordner sind absolut normal "
+"und sinnvoll. Sie können an diesem Problem nichts ändern."
 
 #. (itstool) path: note/p
 #: C/problem-permissions.page:33
@@ -310,30 +314,102 @@ msgstr ""
 "Anzahl der gespeicherten Dateien ab."
 
 #. (itstool) path: info/desc
-#: C/scan-file-system.page:24
+#: C/question-open-folder.page:18
+msgid "Open a folder in a file browser such as <app>Files</app>."
+msgstr ""
+"Einen Ordner in einem Dateibetrachter öffnen, zum Beispiel <app>Dateien</"
+"app>."
+
+#. (itstool) path: page/title
+#: C/question-open-folder.page:21
+msgid "How do I open a folder?"
+msgstr "Wie öffne ich einen Ordner?"
+
+#. (itstool) path: page/p
+#: C/question-open-folder.page:23
+msgid ""
+"You can open a folder in your default file browser, such as <app>Files</"
+"app>. This can be useful if you want to quickly find out which files are in "
+"that folder."
+msgstr ""
+"Sie können einen Ordner in Ihrem voreingestellten Dateibetrachter öffnen, "
+"wie beispielsweise <app>Dateien</app>. Dies ist sinnvoll, wenn Sie schnell "
+"herausfinden wollen, welche Dateien sich in diesem Ordner befinden."
+
+#. (itstool) path: item/p
+#: C/question-open-folder.page:29
+msgid ""
+"Right-click on the folder that you want to open and select <gui>Open Folder</"
+"gui>."
+msgstr ""
+"Klicken Sie mit der rechten Maustaste auf den Ordner, den Sie öffnen wollen, "
+"und wählen Sie <gui>Ordner öffnen</gui>."
+
+#. (itstool) path: info/desc
+#: C/question-trash.page:18
+msgid "Move unwanted folders to <file>Trash</file>."
+msgstr ""
+"Nicht mehr benötigte Ordner in den <file>Papierkorb</file> verschieben."
+
+#. (itstool) path: page/title
+#: C/question-trash.page:21
+msgid "How do I delete a folder?"
+msgstr "Wie lösche ich einen Ordner?"
+
+#. (itstool) path: page/p
+#: C/question-trash.page:23
+msgid ""
+"You can clear out some space from your computer or a remote file system "
+"using <app>Disk Useage Analyzer</app> by moving folders to <file>Trash</"
+"file> and deleting them."
+msgstr ""
+"Sie können mit der <app>Festplattenbelegungsanalyse</app> Platz auf Ihrem "
+"Rechner oder auf einem entfernten Dateisystem schaffen, indem Sie Ordner in "
+"den <file>Papierkorb</file> verschieben und diese löschen."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:29
+msgid ""
+"Right-click on the folder that you want to delete and select <gui>Move to "
+"Trash</gui>."
+msgstr ""
+"Klicken Sie mit der rechten Maustaste auf den Ordner, den Sie löschen "
+"wollen, und wählen Sie <gui>In den Papierkorb verschieben</gui>."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:33
+msgid ""
+"Open a file browser such as <app>Files</app> and empty the <file>Trash</"
+"file>."
+msgstr ""
+"Öffnen Sie einen Dateibetrachter, wie beispielsweise <app>Dateien</app> und "
+"leeren Sie den <file>Papierkorb</file>."
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:26
 msgid "Scan your internal storage devices."
 msgstr "Ihre internen Datenträger einlesen."
 
 #. (itstool) path: page/title
-#: C/scan-file-system.page:28
+#: C/scan-file-system.page:30
 msgid "Scan the file system"
 msgstr "Das Dateisystem einlesen"
 
 #. (itstool) path: page/p
-#: C/scan-file-system.page:30
+#: C/scan-file-system.page:32
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices and locations</gui>. All of the folders that you have "
 "permission to access on your computer will be scanned. It is quite common "
 "for you to not have permissions to scan some directories on your computer."
 msgstr ""
-"Wählen Sie zum Einlesen Ihres Rechners den Namen Ihres rechners aus der "
-"Liste der <gui>Geräte und Orte</gui>. Alle Ordner, auf die Sie "
+"Wählen Sie zum Einlesen Ihres Rechners den Namen Ihres Rechners aus der "
+"Liste der <gui>Geräte und Orte</gui>. Alle Ordner, für die Sie "
 "Zugriffsrechte besitzen, werden eingelesen. Es ist üblich, dass Sie für "
 "einige Ordner Ihres Rechners keine Leseberechtigung haben."
 
 #. (itstool) path: note/p
-#: C/scan-file-system.page:36
+#: C/scan-file-system.page:38
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -345,17 +421,17 @@ msgstr ""
 "zurückzukehren."
 
 #. (itstool) path: info/desc
-#: C/scan-folder.page:25
+#: C/scan-folder.page:27
 msgid "Scan a local folder, including all subfolders."
 msgstr "Einen lokalen Ordner einschließlich dessen Unterordnern einlesen."
 
 #. (itstool) path: page/title
-#: C/scan-folder.page:29
+#: C/scan-folder.page:31
 msgid "Scan a folder"
 msgstr "Einen Ordner einlesen"
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:31
+#: C/scan-folder.page:33
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
@@ -366,7 +442,7 @@ msgstr ""
 "bestimmten Teil Ihres Dateisystems benötigen."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:37
+#: C/scan-folder.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -375,7 +451,7 @@ msgstr ""
 "wählen Sie <gui style=\"menuitem\">Ordner einlesen …</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:41
+#: C/scan-folder.page:43
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
@@ -383,12 +459,12 @@ msgstr ""
 "einlesen möchten."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:45
+#: C/scan-folder.page:47
 msgid "Click <gui>Open</gui> to start the scan."
-msgstr "Klicken Sie auf <gui>Öffnen</gui>, um mit dem Einlesen zu beginnen"
+msgstr "Klicken Sie auf <gui>Öffnen</gui>, um mit dem Einlesen zu beginnen."
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:49
+#: C/scan-folder.page:51
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
@@ -397,22 +473,22 @@ msgid ""
 msgstr ""
 "Der Ordner, den Sie soeben eingelesen haben, wird nun zu Ihrer Liste der "
 "<gui>Geräte und Orte</gui> hinzugefügt. Wenn der Ordner umbenannt oder "
-"gelöscht wird, so wird er beim nächsten Start von "
+"gelöscht wird, so wird er beim nächsten Start der "
 "<app>Festplattenbelegungsanalyse</app> aus der Liste entfernt."
 
 #. (itstool) path: info/desc
-#: C/scan-home.page:25
+#: C/scan-home.page:27
 msgid "Scan all of your personal files that are on your computer."
 msgstr ""
-"Alle ihre persönlichen Dateien einlesen, die sich auf Ihrem Rechner befinden."
+"Alle Ihre persönlichen Dateien einlesen, die sich auf Ihrem Rechner befinden."
 
 #. (itstool) path: page/title
-#: C/scan-home.page:29
+#: C/scan-home.page:31
 msgid "Scan your <file>Home</file> folder"
 msgstr "Ihren persönlichen Ordner einlesen"
 
 #. (itstool) path: page/p
-#: C/scan-home.page:31
+#: C/scan-home.page:33
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -420,34 +496,34 @@ msgid ""
 "documents which you work on and photos from your camera. Normally, one "
 "<file>Home</file> folder exists for each user on the computer."
 msgstr ""
-"In Ihrem <file>persönlichen Ordner</file> werden die meisten Dateien des "
+"In Ihrem <file>Persönlichen Ordner</file> werden die meisten Dateien des "
 "gewöhnlichen Benutzers gespeichert, weil die Standardeinstellungen zumeist "
 "bewirken, dass Dateien innerhalb des persönlichen Ordners in Unterordnern "
 "gespeichert werden. Das betrifft Downloads aus dem Internet, Dokumente, an "
 "denen Sie arbeiten und Fotos von Ihrer Kamera. Normalerweise ist für jeden "
-"Benutzer eines Rechners ein <file>persönlichen Ordner</file> vorhanden."
+"Benutzer eines Rechners ein <file>Persönlichen Ordner</file> vorhanden."
 
 #. (itstool) path: item/p
-#: C/scan-home.page:39
+#: C/scan-home.page:41
 msgid ""
 "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
 "locations</gui>."
 msgstr ""
-"Wählen Sie Ihren <gui>persönlichen Ordner</gui> aus der Liste der "
+"Wählen Sie Ihren <gui>Persönlichen Ordner</gui> aus der Liste der "
 "<gui>Geräte und Orte</gui>."
 
 #. (itstool) path: info/desc
-#: C/scan-remote.page:25
+#: C/scan-remote.page:27
 msgid "Scan a folder remotely from your computer."
 msgstr "Einen nicht auf Ihrem lokalen Rechner befindlichen Ordner einlesen."
 
 #. (itstool) path: page/title
-#: C/scan-remote.page:29
+#: C/scan-remote.page:31
 msgid "Scan a remote folder"
 msgstr "Einen entfernten Ordner einlesen"
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:31
+#: C/scan-remote.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -457,16 +533,16 @@ msgstr ""
 "ein:"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:37
+#: C/scan-remote.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Remote Folder…</gui>."
 msgstr ""
-"Klicken Sie auf den Knopf oben rechts im Hauptfensters und wählen Sie <gui "
+"Klicken Sie auf den Knopf oben rechts im Hauptfenster und wählen Sie <gui "
 "style=\"menuitem\">Entfernten Ordner einlesen …</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:41
+#: C/scan-remote.page:43
 msgid ""
 "Enter the URL into the <gui>Server Address</gui> field. It will normally "
 "have a protocol, followed by a colon and two slashes, that looks different "
@@ -479,7 +555,7 @@ msgstr ""
 "help/nautilus-connect#types\">Protokoll</link> ab."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:48
+#: C/scan-remote.page:50
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -489,7 +565,7 @@ msgstr ""
 "Passwort, bevor der Einlesevorgang beginnt."
 
 #. (itstool) path: note/p
-#: C/scan-remote.page:54
+#: C/scan-remote.page:56
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
@@ -497,16 +573,16 @@ msgstr ""
 "Dateisystems."
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:58
+#: C/scan-remote.page:60
 msgid ""
 "You can also select a recently used server instead of entering a new URL. If "
 "you enter a URL which is not valid, you will not be able to press "
 "<gui>Continue</gui>, but if the URL is valid, but incorrect, the connection "
 "will fail without warnings."
 msgstr ""
-"Sie können auch einen zuletzt verwendeten Server wählen anstatt eine neue "
+"Sie können auch einen zuletzt verwendeten Server wählen, anstatt eine neue "
 "Adresse einzutippen. Wenn Sie eine ungültige Adresse eingeben, können Sie "
-"nicht auf <gui>Fortsetzen</gui> klicken. Wenn die Adresse zwar gültig aber "
+"nicht auf <gui>Fortsetzen</gui> klicken. Wenn die Adresse zwar gültig, aber "
 "nicht richtig ist, so wird die Verbindung ohne Warnungen fehlschlagen."
 
 #~ msgid "Scan storage devices"
