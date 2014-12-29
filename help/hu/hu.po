@@ -9,16 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-10-06 14:54+0000\n"
-"PO-Revision-Date: 2014-10-08 01:15+0200\n"
+"POT-Creation-Date: 2014-12-29 03:54+0000\n"
+"PO-Revision-Date: 2014-12-29 11:18+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
-"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
+"Language-Team: Hungarian <openscope at gmail dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-03-04 15:16+0000\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -31,14 +31,12 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:7
-#| msgid "Disk Usage Analyzer"
 msgctxt "text"
 msgid "Disk Usage Analyzer help"
 msgstr "Lemezhasználat-elemző súgója"
 
 #. (itstool) path: info/title
 #: C/index.page:8
-#| msgid "Disk Usage Analyzer"
 msgctxt "link"
 msgid "Disk Usage Analyzer"
 msgstr "Lemezhasználat-elemző"
@@ -52,6 +50,7 @@ msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
 #: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
 #: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
@@ -59,13 +58,11 @@ msgstr "Ekaterina Gerasimova"
 
 #. (itstool) path: info/desc
 #: C/index.page:24
-#| msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
 msgid "<app>Disk Usage Analyzer</app> is a graphical storage device scanner."
 msgstr "A <app>Lemezhasználat-elemző</app> egy grafikus háttértároló-vizsgáló."
 
 #. (itstool) path: page/title
 #: C/index.page:29
-#| msgid "Disk Usage Analyzer"
 msgid "<_:media-1/> Disk Usage Analyzer"
 msgstr "<_:media-1/> Lemezhasználat-elemző"
 
@@ -152,17 +149,17 @@ msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:25
+#: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr "Az eredmények megjelenítése gyűrűdiagramként vagy fadiagramként."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:29
+#: C/pref-view-chart.page:31
 msgid "Different chart views"
 msgstr "Különböző diagramnézetek"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:33
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -174,7 +171,7 @@ msgstr ""
 "különböző színekkel jelennek meg, a belső gyűrű körüli további rétegekként."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:35
+#: C/pref-view-chart.page:37
 msgid ""
 "Move your mouse over the rings chart displays more details about the folder "
 "and subfolders."
@@ -183,7 +180,7 @@ msgstr ""
 "a gyűrűdiagram részei fölé."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:39
 msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
@@ -194,7 +191,7 @@ msgstr ""
 "a mappákat a méretükkel arányos négyzetekkel jeleníti meg."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:40
+#: C/pref-view-chart.page:42
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -208,6 +205,7 @@ msgstr "Baptiste Mille-Mathias"
 
 #. (itstool) path: credit/years
 #: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+#: C/question-open-folder.page:13 C/question-trash.page:13
 msgid "2014"
 msgstr "2014"
 
@@ -310,17 +308,85 @@ msgstr ""
 "fájlok számától is."
 
 #. (itstool) path: info/desc
-#: C/scan-file-system.page:24
+#: C/question-open-folder.page:18
+msgid "Open a folder in a file browser such as <app>Files</app>."
+msgstr "Mappa megnyitása a <app>Fájlok</app> fájlböngészőben."
+
+#. (itstool) path: page/title
+#: C/question-open-folder.page:21
+msgid "How do I open a folder?"
+msgstr "Hogyan nyithatok meg mappákat?"
+
+#. (itstool) path: page/p
+#: C/question-open-folder.page:23
+msgid ""
+"You can open a folder in your default file browser, such as <app>Files</"
+"app>. This can be useful if you want to quickly find out which files are in "
+"that folder."
+msgstr ""
+"A mappákat megnyithatja az alapértelmezett fájlböngészőben, például a <app>"
+"Fájlokban</app>. Ez akkor hasznos, ha gyorsan meg szeretné tudni, milyen "
+"fájlok vannak egy adott mappában."
+
+#. (itstool) path: item/p
+#: C/question-open-folder.page:29
+msgid ""
+"Right-click on the folder that you want to open and select <gui>Open Folder</"
+"gui>."
+msgstr ""
+"Kattintson a jobb egérgombbal a megnyitni kívánt mappára, és válassza a <gui>"
+"Mappa megnyitása</gui> menüpontot."
+
+#. (itstool) path: info/desc
+#: C/question-trash.page:18
+msgid "Move unwanted folders to <file>Trash</file>."
+msgstr "Fölösleges mappák áthelyezése a <file>Kukába</file>."
+
+#. (itstool) path: page/title
+#: C/question-trash.page:21
+msgid "How do I delete a folder?"
+msgstr "Hogyan törölhetek mappákat?"
+
+#. (itstool) path: page/p
+#: C/question-trash.page:23
+msgid ""
+"You can clear out some space from your computer or a remote file system "
+"using <app>Disk Usage Analyzer</app> by moving folders to <file>Trash</file> "
+"and deleting them."
+msgstr ""
+"Felszabadíthat némi helyet a számítógépén vagy távoli fájlrendszeren a <app>"
+"Lemezhasználat-elemző</app> segítségével a mappák áthelyezésével a <file>"
+"Kukába</file>, majd a törlésükkel."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:29
+msgid ""
+"Right-click on the folder that you want to delete and select <gui>Move to "
+"Trash</gui>."
+msgstr ""
+"Kattintson a jobb egérgombbal a törölni kívánt mappára, és válassza az <gui>"
+"Áthelyezés a Kukába</gui> menüpontot."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:33
+msgid ""
+"Open a file browser such as <app>Files</app> and empty the <file>Trash</"
+"file>."
+msgstr ""
+"Nyissa meg a <file>Fájlok<file> fájlböngészőt, és ürítse a <app>Kukát</app>."
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:26
 msgid "Scan your internal storage devices."
 msgstr "A belső háttértárolók vizsgálata."
 
 #. (itstool) path: page/title
-#: C/scan-file-system.page:28
+#: C/scan-file-system.page:30
 msgid "Scan the file system"
 msgstr "A fájlrendszer vizsgálata"
 
 #. (itstool) path: page/p
-#: C/scan-file-system.page:30
+#: C/scan-file-system.page:32
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices and locations</gui>. All of the folders that you have "
@@ -333,7 +399,7 @@ msgstr ""
 "könyvtárak megvizsgálására nincs jogosultsága a számítógépén."
 
 #. (itstool) path: note/p
-#: C/scan-file-system.page:36
+#: C/scan-file-system.page:38
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -344,17 +410,17 @@ msgstr ""
 "sarkában lévő gombot az eszközök listájához való visszatéréshez."
 
 #. (itstool) path: info/desc
-#: C/scan-folder.page:25
+#: C/scan-folder.page:27
 msgid "Scan a local folder, including all subfolders."
 msgstr "Helyi mappa és almappáinak vizsgálata."
 
 #. (itstool) path: page/title
-#: C/scan-folder.page:29
+#: C/scan-folder.page:31
 msgid "Scan a folder"
 msgstr "Egy mappa vizsgálata"
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:31
+#: C/scan-folder.page:33
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
@@ -365,7 +431,7 @@ msgstr ""
 "részéről szeretne információt szerezni."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:37
+#: C/scan-folder.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -374,19 +440,19 @@ msgstr ""
 "style=\"menuitem\">Mappa vizsgálata</gui> menüpontot."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:41
+#: C/scan-folder.page:43
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
 "Megnyílik egy fájlválasztó ablak. Válassza ki a megvizsgálni kívánt mappát."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:45
+#: C/scan-folder.page:47
 msgid "Click <gui>Open</gui> to start the scan."
 msgstr "Kattintson a <gui>Megnyitás</gui> menüpontra a vizsgálat elkezdéséhez."
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:49
+#: C/scan-folder.page:51
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
@@ -398,17 +464,17 @@ msgstr ""
 "<app>Lemezhasználat-elemző</app> következő indításakor el lesz távolítva."
 
 #. (itstool) path: info/desc
-#: C/scan-home.page:25
+#: C/scan-home.page:27
 msgid "Scan all of your personal files that are on your computer."
 msgstr "Vizsgálja meg a számítógépén lévő összes személyes fájlját."
 
 #. (itstool) path: page/title
-#: C/scan-home.page:29
+#: C/scan-home.page:31
 msgid "Scan your <file>Home</file> folder"
 msgstr "A <file>saját</file> mappájának vizsgálata."
 
 #. (itstool) path: page/p
-#: C/scan-home.page:31
+#: C/scan-home.page:33
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -424,7 +490,7 @@ msgstr ""
 "számítógépen."
 
 #. (itstool) path: item/p
-#: C/scan-home.page:39
+#: C/scan-home.page:41
 msgid ""
 "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
 "locations</gui>."
@@ -433,17 +499,17 @@ msgstr ""
 "gui> listából."
 
 #. (itstool) path: info/desc
-#: C/scan-remote.page:25
+#: C/scan-remote.page:27
 msgid "Scan a folder remotely from your computer."
 msgstr "Távoli mappa vizsgálata a számítógépéről."
 
 #. (itstool) path: page/title
-#: C/scan-remote.page:29
+#: C/scan-remote.page:31
 msgid "Scan a remote folder"
 msgstr "Távoli mappa vizsgálata"
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:31
+#: C/scan-remote.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -452,7 +518,7 @@ msgstr ""
 "vizsgálni. Az egész fájlrendszer vagy egy adott mappa távoli vizsgálatához:"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:37
+#: C/scan-remote.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Remote Folder…</gui>."
@@ -461,7 +527,7 @@ msgstr ""
 "style=\"menuitem\">Távoli mappa vizsgálata</gui> menüpontot."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:41
+#: C/scan-remote.page:43
 msgid ""
 "Enter the URL into the <gui>Server Address</gui> field. It will normally "
 "have a protocol, followed by a colon and two slashes, that looks different "
@@ -474,7 +540,7 @@ msgstr ""
 "link> függően."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:48
+#: C/scan-remote.page:50
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -483,7 +549,7 @@ msgstr ""
 "megkezdődése előtt további adatok megadása is szükséges lehet."
 
 #. (itstool) path: note/p
-#: C/scan-remote.page:54
+#: C/scan-remote.page:56
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
@@ -491,7 +557,7 @@ msgstr ""
 "vizsgálata."
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:58
+#: C/scan-remote.page:60
 msgid ""
 "You can also select a recently used server instead of entering a new URL. If "
 "you enter a URL which is not valid, you will not be able to press "
