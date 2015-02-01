@@ -3,34 +3,46 @@
 # This file is distributed under the same license as the baobab package.
 # Kevin SCHAEFER <lugubrili@hotmail.com>, 2009.
 # Michael MORONI <haikara90@gmail.com >, 2009.
-# Tiffany Antopolski <tiffany.antopolski@gmail.com>, 2012.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012.
-# Ryan Lortie <desrt@desrt.ca>, 2013.
+# Tiffany ANTOPOLSKI <tiffany.antopolski@gmail.com>, 2012.
+# Ryan LORTIE <desrt@desrt.ca>, 2013.
+# Daniel PUENTES <blatberk@openmailbox.org>, 2015.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-29 13:34+0200\n"
-"PO-Revision-Date: 2013-08-29 14:05+0200\n"
-"Last-Translator: Ryan Lortie <desrt@desrt.ca>\n"
+"POT-Creation-Date: 2015-01-31 15:54+0000\n"
+"PO-Revision-Date: 2015-02-01 04:30+0100\n"
+"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
 "Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
+msgid ""
+"A simple application which can scan either specific folders (local or "
+"remote) or volumes and give a graphical representation including each "
+"directory size or percentage."
+msgstr ""
+"Simpla aplikaĵo, kiu povas skani aŭ specifajn dosierujojn aŭ datumportilojn, "
+"kaj doni grafikan prezenton, kiu havas enhavas ĉiun dosierujo-grandon aŭ "
+"elcenton."
+
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "Diskuzada analizilo"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "Kontroli dosierujajn grandojn kaj disponeblan diskmemoron"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "spaco;diskospaco;purigi;senrubigi;"
 
@@ -66,13 +78,9 @@ msgstr "Fenestra stato"
 msgid "The GdkWindowState of the window"
 msgstr "La GdkWindowState de la fenestro"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
-msgstr "Montri versia informo kaj ĉesi"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- Diskuzada analizilo"
+msgstr "Montri versian informon kaj ĉesi"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -117,7 +125,7 @@ msgstr[1] "%d jaroj"
 
 #: ../src/baobab-location.vala:77
 msgid "Home folder"
-msgstr "_Hejmdosjerujo"
+msgstr "Hejmdosjerujo"
 
 #: ../src/baobab-location.vala:123
 msgid "Computer"
@@ -131,15 +139,15 @@ msgstr "Skani dosierujon…"
 msgid "Scan Remote Folder…"
 msgstr "Skani foran dosierujon…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "Malfermi d_osierujon"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopii vojon al tondejo"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "Mo_vi rubujen"
 
@@ -171,108 +179,116 @@ msgstr "Ringa diagramo"
 msgid "Treemap Chart"
 msgstr "Arbomapa diagramo"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Helpo"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_Pri"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Ĉesi"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "_Movi al gepatra dosierujo"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_Zomi"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_Malzomi"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Elekti dosierujon"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "_Nuligi"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Malfermi"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Rikure analizi surmetingojn"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Ne povis analizi portilon."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
-msgstr "Fiaski montri helpon"
+msgstr "Malsukcesis montri helpon"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobabo"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafika ilo por analizi diskuzadon."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
-"  KevinSchaefer https://launchpad.net/~lugubrili\n"
-"  Kristjan SCHMIDT https://launchpad.net/~kristjan-eo\n"
-"  Michael Moroni https://launchpad.net/~airon90\n"
-"GNOME Contributions:\n"
-"  Tiffany ANTOPOLSKI\n"
-"  Ryan Lortie"
+"Kevin SCHAEFER\n"
+"Michael MORONITiffany ANTOPOLSKI\n"
+"Ryan LORTIE\n"
+"Kristjan SCHMIDT\n"
+"Daniel PUENTES"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
-msgstr "Fiaskis malfermi dosieron"
+msgstr "Malsukcesis malfermi dosieron"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
-msgstr "Fiaskis movi dosieron al la rubujo"
+msgstr "Malsukcesis movi dosieron al la rubujo"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Aparatoj kaj lokoj"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:567
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr ""
-"Ne povis skani dosierujon \"%s\" aŭ kelkajn dosierujojn kiun ĝi enhavas."
+#| msgid "Could not open folder \"%s\""
+msgid "Could not scan folder \"%s\""
+msgstr "Ne eblis skani la dosierujon \"%s\""
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:570
+#, c-format
+#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "Ne povis skani kelkajn dosierujon kiuj estas en \"%s\""
+
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Ne povis detekti efektivan diskan uzadon."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Ŝajnaj grandoj montratas anstataŭ."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ne estas valida dosierujo"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Ne povis analizi diskon uzadon."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_Helpo"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_Pri"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "_Ĉesi"
+
+#: ../src/menus.ui.h:7
+#| msgid "_Move to parent folder"
+msgid "Go to _parent folder"
+msgstr "Iri al ge_patra dosierujo"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "_Zomi"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "_Malzomi"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- Diskuzada analizilo"
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Agordoj por diskuzada analizilo"
@@ -475,9 +491,6 @@ msgstr "Ne povis analizi diskon uzadon."
 
 #~ msgid "_Show hidden folders"
 #~ msgstr "_Montri kaŝitajn doserujojn"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "Ne eblis malfermi dosierujon \"%s\""
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "Ne enhavas vidigilon kapabla vidigi ĉi dosierujon."
