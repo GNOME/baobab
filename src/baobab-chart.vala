@@ -426,19 +426,7 @@ namespace Baobab {
                     }
                 }
 
-                // Here we use an intermediate offscreen surface because in this way draw_chart()
-                // can obtain transparent pixels just by painting with CAIRO_OPERATOR_CLEAR,
-                // instead of relying on the knowledge of the background color as defined by the theme.
-                Gtk.Allocation allocation;
-                get_allocation (out allocation);
-
-                var source = new Cairo.ImageSurface (Cairo.Format.ARGB32, allocation.width, allocation.height);
-                var source_cr = new Cairo.Context (source);
-
-                draw_chart (source_cr);
-
-                cr.set_source_surface (source, 0, 0);
-                cr.paint ();
+                draw_chart (cr);
             }
 
             return false;
