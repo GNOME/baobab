@@ -26,6 +26,8 @@ namespace Baobab {
     public class Window : Gtk.ApplicationWindow {
         private Settings ui_settings;
         [GtkChild]
+        private Gtk.Box vbox;
+        [GtkChild]
         private Gtk.HeaderBar header_bar;
         [GtkChild]
         private Gtk.Button back_button;
@@ -165,6 +167,19 @@ namespace Baobab {
 
             active_location = null;
             scan_completed_handler = 0;
+
+            var desktop = Environment.get_variable ("XDG_CURRENT_DESKTOP");
+
+            if (desktop == null || !desktop.contains("Unity"))
+            {
+                this.set_titlebar (header_bar);
+            }
+            else
+            {
+                header_bar.show_close_button = false;
+                header_bar.get_style_context().remove_class("titlebar");
+                vbox.pack_start(header_bar,  false, false, 0);
+            }
 
             set_ui_state (home_page, false);
 
