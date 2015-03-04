@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab-help fr\n"
-"POT-Creation-Date: 2014-03-24 03:53+0000\n"
+"POT-Creation-Date: 2014-10-06 14:54+0000\n"
 "PO-Revision-Date: 2014-03-21 11:10+0100\n"
 "Last-Translator: Marc-André Lureau <marcandre.lureau@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -36,44 +36,59 @@ msgstr ""
 "Fievez Yoann <yoann.fievez@gmail.com>, 2013\n"
 "Julien Hardelin <jhardlin@orange.fr>, 2013"
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Disk Usage Analyzer help"
+msgstr "Aide de l'analyseur d'utilisation des disques"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+#, fuzzy
+#| msgid "Disk Usage Analyzer"
+msgctxt "link"
+msgid "Disk Usage Analyzer"
+msgstr "Analyseur d'utilisation des disques"
+
 #. (itstool) path: credit/name
-#: C/index.page:10 C/introduction.page:13 C/pref-view-chart.page:13
+#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
 #: C/scan-file-system.page:12 C/scan-folder.page:13 C/scan-home.page:13
 #: C/scan-remote.page:13
 msgid "Julita Inca"
 msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
-#: C/index.page:14 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
 #: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
 #. (itstool) path: info/desc
-#: C/index.page:20
-msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
+#: C/index.page:24
+msgid "<app>Disk Usage Analyzer</app> is a graphical storage device scanner."
 msgstr ""
-"<app>Analyseur d'utilisation des disques</app>, un analyseur graphique de "
+"<app>Analyseur d'utilisation des disques</app> est un analyseur graphique de "
 "périphériques de stockage."
 
 #. (itstool) path: page/title
-#: C/index.page:25
-msgid "Disk Usage Analyzer"
-msgstr "Analyseur d'utilisation des disques"
+#: C/index.page:29
+msgid "<_:media-1/> Disk Usage Analyzer"
+msgstr "<_:media-1/> Analyseur d'utilisation des disques"
 
 #. (itstool) path: section/title
-#: C/index.page:28
+#: C/index.page:35
 msgid "Scan"
 msgstr "Analyser"
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:39
 msgid "Preferences"
 msgstr "Préférences"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:43
 msgid "Common problems and questions"
 msgstr "Problèmes et questions fréquemment posés"
 
@@ -149,19 +164,19 @@ msgid "This work is licensed under a <_:link-1/>."
 msgstr "Cette œuvre est distribuée sous licence <_:link-1/>."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:25
+#: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr ""
 "Afficher les résultats sous la forme d'un diagramme en anneaux ou d'une "
 "carte arborescente."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:29
+#: C/pref-view-chart.page:31
 msgid "Different chart views"
 msgstr "Différents modes d'affichage graphique"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:33
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -174,7 +189,7 @@ msgstr ""
 "comme des couches supplémentaires autour de l'anneau intérieur."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:35
+#: C/pref-view-chart.page:37
 msgid ""
 "Move your mouse over the rings chart displays more details about the folder "
 "and subfolders."
@@ -183,7 +198,7 @@ msgstr ""
 "de détails à propos du dossier et des sous-dossiers."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:39
 msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
@@ -195,7 +210,7 @@ msgstr ""
 "proportionnelles à leur taille."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:40
+#: C/pref-view-chart.page:42
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -210,6 +225,7 @@ msgstr "Baptiste Mille-Mathias"
 
 #. (itstool) path: credit/years
 #: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+#: C/question-open-folder.page:13 C/question-trash.page:13
 msgid "2014"
 msgstr "2014"
 
@@ -243,8 +259,8 @@ msgstr ""
 "Cette erreur survient lorsque vous n'avez pas les permissions d'accéder à "
 "certains fichiers, à cause des restrictions du système. Les fichiers "
 "auxquels vous ne pouvez accéder ne seront pas pris en compte lors du calcul "
-"du <link xref=\"pref-view-chart\">graphique</link> de l'utilisation du disque, les "
-"résultats donnés peuvent ainsi être faussés."
+"du <link xref=\"pref-view-chart\">graphique</link> de l'utilisation du "
+"disque, les résultats donnés peuvent ainsi être faussés."
 
 #. (itstool) path: page/p
 #: C/problem-permissions.page:30
@@ -311,17 +327,74 @@ msgstr ""
 "du nombre de fichiers."
 
 #. (itstool) path: info/desc
-#: C/scan-file-system.page:24
+#: C/question-open-folder.page:18
+msgid "Open a folder in a file browser such as <app>Files</app>."
+msgstr ""
+
+#. (itstool) path: page/title
+#: C/question-open-folder.page:21
+msgid "How do I open a folder?"
+msgstr ""
+
+#. (itstool) path: page/p
+#: C/question-open-folder.page:23
+msgid ""
+"You can open a folder in your default file browser, such as <app>Files</"
+"app>. This can be useful if you want to quickly find out which files are in "
+"that folder."
+msgstr ""
+
+#. (itstool) path: item/p
+#: C/question-open-folder.page:29
+msgid ""
+"Right-click on the folder that you want to open and select <gui>Open Folder</"
+"gui>."
+msgstr ""
+
+#. (itstool) path: info/desc
+#: C/question-trash.page:18
+msgid "Move unwanted folders to <file>Trash</file>."
+msgstr ""
+
+#. (itstool) path: page/title
+#: C/question-trash.page:21
+msgid "How do I delete a folder?"
+msgstr ""
+
+#. (itstool) path: page/p
+#: C/question-trash.page:23
+msgid ""
+"You can clear out some space from your computer or a remote file system "
+"using <app>Disk Usage Analyzer</app> by moving folders to <file>Trash</file> "
+"and deleting them."
+msgstr ""
+
+#. (itstool) path: item/p
+#: C/question-trash.page:29
+msgid ""
+"Right-click on the folder that you want to delete and select <gui>Move to "
+"Trash</gui>."
+msgstr ""
+
+#. (itstool) path: item/p
+#: C/question-trash.page:33
+msgid ""
+"Open a file browser such as <app>Files</app> and empty the <file>Trash</"
+"file>."
+msgstr ""
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:26
 msgid "Scan your internal storage devices."
 msgstr "Analyser vos périphériques de stockage internes."
 
 #. (itstool) path: page/title
-#: C/scan-file-system.page:28
+#: C/scan-file-system.page:30
 msgid "Scan the file system"
 msgstr "Analyse du système de fichiers"
 
 #. (itstool) path: page/p
-#: C/scan-file-system.page:30
+#: C/scan-file-system.page:32
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices and locations</gui>. All of the folders that you have "
@@ -334,7 +407,7 @@ msgstr ""
 "d'analyser certains dossiers sur votre ordinateur."
 
 #. (itstool) path: note/p
-#: C/scan-file-system.page:36
+#: C/scan-file-system.page:38
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -346,17 +419,17 @@ msgstr ""
 "à la liste des périphériques."
 
 #. (itstool) path: info/desc
-#: C/scan-folder.page:25
+#: C/scan-folder.page:27
 msgid "Scan a local folder, including all subfolders."
 msgstr "Analyser un dossier local, y compris tous les sous-dossiers."
 
 #. (itstool) path: page/title
-#: C/scan-folder.page:29
+#: C/scan-folder.page:31
 msgid "Scan a folder"
 msgstr "Analyse d'un dossier"
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:31
+#: C/scan-folder.page:33
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
@@ -368,7 +441,7 @@ msgstr ""
 "système de fichiers."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:37
+#: C/scan-folder.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -377,7 +450,7 @@ msgstr ""
 "sélectionnez <gui style=\"menuitem\">Analyser le dossier…</gui>.\""
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:41
+#: C/scan-folder.page:43
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
@@ -385,12 +458,12 @@ msgstr ""
 "dossier à analyser."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:45
+#: C/scan-folder.page:47
 msgid "Click <gui>Open</gui> to start the scan."
 msgstr "Cliquez sur <gui>Ouvrir</gui> pour commencer l'analyse."
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:49
+#: C/scan-folder.page:51
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
@@ -403,17 +476,17 @@ msgstr ""
 "l'<app>analyseur d'utilisation des disques</app>."
 
 #. (itstool) path: info/desc
-#: C/scan-home.page:25
+#: C/scan-home.page:27
 msgid "Scan all of your personal files that are on your computer."
 msgstr "Analyser tous vos fichiers personnels sur votre ordinateur."
 
 #. (itstool) path: page/title
-#: C/scan-home.page:29
+#: C/scan-home.page:31
 msgid "Scan your <file>Home</file> folder"
 msgstr "Analyse de votre <file>dossier personnel</file>"
 
 #. (itstool) path: page/p
-#: C/scan-home.page:31
+#: C/scan-home.page:33
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -429,7 +502,7 @@ msgstr ""
 "utilisateur de l'ordinateur possède un <file>dossier personnel</file>."
 
 #. (itstool) path: item/p
-#: C/scan-home.page:39
+#: C/scan-home.page:41
 msgid ""
 "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
 "locations</gui>."
@@ -438,17 +511,17 @@ msgstr ""
 "<gui>Périphériques et emplacements</gui>."
 
 #. (itstool) path: info/desc
-#: C/scan-remote.page:25
+#: C/scan-remote.page:27
 msgid "Scan a folder remotely from your computer."
 msgstr "Analyser un dossier distant à partir de votre ordinateur."
 
 #. (itstool) path: page/title
-#: C/scan-remote.page:29
+#: C/scan-remote.page:31
 msgid "Scan a remote folder"
 msgstr "Analyse d'un dossier distant"
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:31
+#: C/scan-remote.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -458,7 +531,7 @@ msgstr ""
 "un système de fichiers complet ou un dossier spécifique :"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:37
+#: C/scan-remote.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Remote Folder…</gui>."
@@ -467,7 +540,7 @@ msgstr ""
 "sélectionnez <gui style=\"menuitem\">Analyser le dossier distant…</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:41
+#: C/scan-remote.page:43
 msgid ""
 "Enter the URL into the <gui>Server Address</gui> field. It will normally "
 "have a protocol, followed by a colon and two slashes, that looks different "
@@ -480,7 +553,7 @@ msgstr ""
 "\">protocole</link>"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:48
+#: C/scan-remote.page:50
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -490,7 +563,7 @@ msgstr ""
 "de passe et un nom d'utilisateur."
 
 #. (itstool) path: note/p
-#: C/scan-remote.page:54
+#: C/scan-remote.page:56
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
@@ -498,7 +571,7 @@ msgstr ""
 "fichier local."
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:58
+#: C/scan-remote.page:60
 msgid ""
 "You can also select a recently used server instead of entering a new URL. If "
 "you enter a URL which is not valid, you will not be able to press "
@@ -509,184 +582,3 @@ msgstr ""
 "lieu de saisir une nouvelle URL. Si vous saisissez une URL invalide, vous ne "
 "pourrez pas cliquer sur <gui>Continuer</gui>. Si l'URL est valide, mais "
 "incorrecte, la connexion échouera sans avertissements."
-
-#~ msgid "Scan storage devices"
-#~ msgstr "Analyse de périphériques de stockage"
-
-#~ msgid "Skip specific devices and partitions when scanning the file system."
-#~ msgstr ""
-#~ "Ignorer certaines partitions et certains périphériques de stockage lors "
-#~ "de l'analyse du système de fichiers."
-
-#~ msgid "Disable scanning of individual storage devices and partitions"
-#~ msgstr ""
-#~ "Désactivation de l'analyse de partitions et de périphériques de stockage "
-#~ "particuliers"
-
-#~ msgid ""
-#~ "<app>Disk Usage Analyzer</app> allows you to scan only the partitions and "
-#~ "storage devices that you have selected in the <gui>Preferences</gui> "
-#~ "dialog. By default, all devices and partitions are selected, but the "
-#~ "application will store your preferences when you close it."
-#~ msgstr ""
-#~ "L'<app>analyseur d'utilisation des disques</app> vous permet d'analyser "
-#~ "seulement les partitions et périphériques de stockage que vous avez "
-#~ "sélectionnés dans la boîte de dialogue des <gui>Préférences</gui>. Par "
-#~ "défaut, tous les périphériques et toutes partitions sont sélectionnés. "
-#~ "L'application enregistre vos préférences lorsque vous la quittez."
-
-#~ msgid "Select <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq>"
-#~ msgstr ""
-#~ "Choisissez <guiseq><gui>Édition</gui><gui>Préférences</gui></guiseq>."
-
-#~ msgid ""
-#~ "Select the storage devices and partitions that you want to scan, or "
-#~ "deselect those that you do not wish to scan"
-#~ msgstr ""
-#~ "Sélectionnez les partitions et périphériques de stockage que vous désirez "
-#~ "analyser et décochez les autres."
-
-#~ msgid "Click <gui>Close</gui> to save your preferences"
-#~ msgstr "Cliquez sur <gui>Fermer</gui> pour enregistrer vos préférences."
-
-#~ msgid ""
-#~ "The first item in the list, which is mounted on <file>/</file>, cannot be "
-#~ "deselected"
-#~ msgstr ""
-#~ "Le premier élément de la liste, qui est monté sur <file>/</file> (la "
-#~ "racine de votre système de fichiers), ne peut pas être désactivé."
-
-#~ msgid "Hide or show the toolbar and the status bar."
-#~ msgstr "Afficher ou masquer la barre d'outils et barre d'état."
-
-#~ msgid "Toolbar and statusbar"
-#~ msgstr "Barre d'outils et barre d'état"
-
-#~ msgid ""
-#~ "The <gui>Toolbar</gui> provides shortcuts to the various scan actions, "
-#~ "while the <gui>Statusbar</gui> provides the status of the application "
-#~ "(for example, <gui>Ready</gui> and <gui>Scanning…</gui>)."
-#~ msgstr ""
-#~ "La <gui>barre d'outils</gui> fournit des raccourcis aux diverses actions "
-#~ "d'analyse tandis que la <gui>barre d'état</gui> fournit l'état de "
-#~ "l'application (par exemple, <gui>Prêt</gui> et <gui>Analyse en cours...</"
-#~ "gui>)."
-
-#~ msgid ""
-#~ "Select <guiseq><gui>View</gui><gui>Toolbar</gui></guiseq> from the menu "
-#~ "and enable or disable the option"
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Affichage</gui><gui>Barre d'outils</gui></"
-#~ "guiseq> dans le menu pour activer ou désactiver l'option"
-
-#~ msgid ""
-#~ "Select <guiseq><gui>View</gui><gui>Statusbar</gui></guiseq> from the menu "
-#~ "and enable or disable the option"
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Affichage</gui><gui>Barre d'état</gui></guiseq> "
-#~ "dans le menu pour activer ou désactiver l'option"
-
-#~ msgid "To find out how much space your file system takes up:"
-#~ msgstr "Pour savoir combien de place votre système de fichiers prend :"
-
-#~ msgid ""
-#~ "Select <guiseq><gui>Analyzer</gui><gui>Scan File System</gui></guiseq> "
-#~ "from the menu"
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Analyse</gui><gui>Analyser le système de "
-#~ "fichiers</gui></guiseq> dans le menu."
-
-#~ msgid ""
-#~ "Your file system includes all internal and removable storage devices "
-#~ "which are mounted when the respective folder is scanned."
-#~ msgstr ""
-#~ "Votre système de fichiers inclut tous les périphériques de stockage "
-#~ "internes ou amovibles qui sont montés lorsque le dossier correspondant "
-#~ "est analysé."
-
-#~ msgid ""
-#~ "Select <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> to cancel the "
-#~ "current scan, or <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq> "
-#~ "to repeat the last scan."
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Analyse</gui><gui>Arrêter</gui></guiseq> pour "
-#~ "annuler l'analyse en cours ou <guiseq><gui>Analyse</gui><gui>Actualiser</"
-#~ "gui></guiseq> pour mettre à jour la dernière analyse."
-
-#~ msgid ""
-#~ "Right-click on any folder and select <gui>Open Folder</gui> to launch the "
-#~ "<app>Files</app> application, or <gui>Move to Trash</gui> to move your "
-#~ "folder to <file>Trash</file>."
-#~ msgstr ""
-#~ "Faites un clic-droit sur un des dossiers et sélectionnez <gui>Ouvrir le "
-#~ "dossier</gui> pour lancer l'application <app>Fichiers</app> ou "
-#~ "<gui>Mettre à la corbeille</gui> pour déplacer le dossier dans la "
-#~ "<file>Corbeille</file>."
-
-#~ msgid ""
-#~ "Select <guiseq><gui>Analyzer</gui><gui>Scan Folder…</gui></guiseq> from "
-#~ "the menu"
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Analyse</gui><gui>Analyser un dossier...</gui></"
-#~ "guiseq> dans le menu."
-
-#~ msgid ""
-#~ "Use the file browser to navigate around your file system and select the "
-#~ "desired folder"
-#~ msgstr ""
-#~ "Utilisez le navigateur de fichiers pour parcourir votre système de "
-#~ "fichiers et sélectionner le dossier souhaité."
-
-#~ msgid ""
-#~ "Select <guiseq><gui>Analyzer</gui><gui>Scan Home Folder</gui></guiseq> "
-#~ "from the menu"
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Analyse</gui><gui>Analyser le dossier "
-#~ "personnel</gui></guiseq> dans le menu."
-
-#~ msgid ""
-#~ "The results may be useful in deciding which folders can be <link href="
-#~ "\"help:file-roller\">archived</link>, <link href=\"help:gnome-help/files-"
-#~ "delete\">deleted</link> or <link href=\"help:gnome-help/files-copy"
-#~ "\">moved</link> to free up space. You can also use the results to "
-#~ "estimate how much space would be needed for a <link href=\"help:gnome-"
-#~ "help/backup-how\">backup</link> of your <file>Home</file> folder."
-#~ msgstr ""
-#~ "Les résultats peuvent être utiles pour décider quels dossiers peuvent "
-#~ "être <link href=\"help:file-roller\">archivés</link>, <link href=\"help:"
-#~ "gnome-help/files-delete\">supprimés</link > ou <link href=\"help:gnome-"
-#~ "help/files-copy\">déplacés</link> pour libérer de l'espace. Vous pouvez "
-#~ "aussi utiliser les résultats pour estimer l'espace nécessaire pour faire "
-#~ "une <link href=\"help:gnome-help/backup-how\">sauvegarde</link> de votre "
-#~ "dossier personnel."
-
-#~ msgid ""
-#~ "The default subdirectories usually include <file>Desktop</file>, "
-#~ "<file>Documents</file>, <file>Downloads</file>, <file>Pictures</file> and "
-#~ "<file>Music</file>, among others. Some of these will already exist when "
-#~ "GNOME is installed; others will be created by applications when they are "
-#~ "needed."
-#~ msgstr ""
-#~ "Les sous-répertoires par défaut comprennent habituellement <file>Bureau</"
-#~ "file>, <file>Documents</file>, <file>Téléchargements</file>, "
-#~ "<file>Photos</file> et <file>Musique</file>, entre autres. Certains "
-#~ "existent déjà dès l'installation de GNOME, d'autres sont créés par les "
-#~ "applications si besoin."
-
-#~ msgid ""
-#~ "Select <guiseq><gui>Analyzer</gui> <gui>Scan Remote Folder…</gui></"
-#~ "guiseq> from the menu"
-#~ msgstr ""
-#~ "Sélectionnez <guiseq><gui>Analyse</gui><gui>Analyser un dossier distant…</"
-#~ "gui></guiseq> dans le menu."
-
-#~ msgid "Choose the protocol that you wish to use"
-#~ msgstr "Sélectionnez le type de service que vous voulez utiliser."
-
-#~ msgid ""
-#~ "Enter in the IP address of the remote storage device into the "
-#~ "<gui>Server</gui> field or the URI, depending on the protocol that you "
-#~ "are using."
-#~ msgstr ""
-#~ "Saisissez l'adresse IP du périphérique de stockage distant dans le champ "
-#~ "<gui>Serveur</gui> ou bien l'URI en fonction du type de service choisi."
