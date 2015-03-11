@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-07-05 14:50+0000\n"
+"POT-Creation-Date: 2015-03-11 03:54+0000\n"
 "PO-Revision-Date: 2014-07-05 23:12+0400\n"
 "Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
@@ -86,7 +86,7 @@ msgstr "Состояние окна"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState окна"
 
-#: ../src/baobab-application.vala:29
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
@@ -101,7 +101,7 @@ msgstr[2] "%d объектов"
 #. Translators: when the last modified time is unknown
 #: ../src/baobab-cellrenderers.vala:101
 msgid "Unknown"
-msgstr "Неизвестный"
+msgstr "Неизвестно"
 
 #. Translators: when the last modified time is today
 #: ../src/baobab-cellrenderers.vala:110
@@ -151,15 +151,15 @@ msgstr "Сканировать папку…"
 msgid "Scan Remote Folder…"
 msgstr "Сканировать удалённую папку…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "Откр_ыть папку"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "Скопировать путь в _буфер обмена"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "У_далить в корзину"
 
@@ -181,7 +181,7 @@ msgstr "Содержимое"
 
 #: ../src/baobab-main-window.ui.h:11
 msgid "Modified"
-msgstr "Изменён"
+msgstr "Последнее изменение"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
@@ -191,64 +191,39 @@ msgstr "Круговая диаграмма"
 msgid "Treemap Chart"
 msgstr "Древовидная диаграмма"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Справка"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_О приложении"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Выйти"
-
-#: ../src/baobab-menu.ui.h:7
-#| msgid "_Move to parent folder"
-msgid "Go to _parent folder"
-msgstr "П_ерейти к родительской папке"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_Увеличить"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "У_меньшить"
-
-#: ../src/baobab-window.vala:228
+#: ../src/baobab-window.vala:203
 msgid "Select Folder"
 msgstr "Выберите папку"
 
-#: ../src/baobab-window.vala:230
+#: ../src/baobab-window.vala:205
 msgid "_Cancel"
 msgstr "О_тмена"
 
-#: ../src/baobab-window.vala:231
+#: ../src/baobab-window.vala:206
 msgid "_Open"
 msgstr "_Открыть"
 
-#: ../src/baobab-window.vala:236
+#: ../src/baobab-window.vala:211
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно анализировать точки монтирования"
 
-#: ../src/baobab-window.vala:283
+#: ../src/baobab-window.vala:258
 msgid "Could not analyze volume."
 msgstr "Не удалось проанализировать том."
 
-#: ../src/baobab-window.vala:315
+#: ../src/baobab-window.vala:290
 msgid "Failed to show help"
 msgstr "Не удалось открыть справку"
 
-#: ../src/baobab-window.vala:334
+#: ../src/baobab-window.vala:309
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:337
+#: ../src/baobab-window.vala:312
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графическое средство для анализа использования дисков."
 
-#: ../src/baobab-window.vala:342
+#: ../src/baobab-window.vala:317
 msgid "translator-credits"
 msgstr ""
 "Валёк Филлипов\n"
@@ -259,44 +234,66 @@ msgstr ""
 "Василий Фаронов <qvvx@yandex.ru>\n"
 "Станислав Соловей <whats_up@tut.by>, 2012"
 
-#: ../src/baobab-window.vala:411
+#: ../src/baobab-window.vala:386
 msgid "Failed to open file"
 msgstr "Не удалось открыть файл"
 
-#: ../src/baobab-window.vala:431
+#: ../src/baobab-window.vala:406
 msgid "Failed to move file to the trash"
 msgstr "Не удалось переместить файл в корзину"
 
-#: ../src/baobab-window.vala:533
+#: ../src/baobab-window.vala:506
 msgid "Devices and locations"
 msgstr "Устройства и местоположения"
 
-#: ../src/baobab-window.vala:594
+#: ../src/baobab-window.vala:567
 #, c-format
-#| msgid "Could not analyze volume."
 msgid "Could not scan folder \"%s\""
 msgstr "Не удалось просканировать папку «%s»"
 
-#: ../src/baobab-window.vala:597
+#: ../src/baobab-window.vala:570
 #, c-format
-#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Не удалось просканировать некоторые папки, содержащиеся в «%s»"
 
-#: ../src/baobab-window.vala:616
+#: ../src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Не удалось определить размер используемого пространства диска."
 
-#: ../src/baobab-window.vala:616
+#: ../src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Показаны предполагаемые размеры."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
+#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
-#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
+#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
 msgid "Could not analyze disk usage."
 msgstr "Не удалось проанализировать использование дисков."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "_Справка"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "О _приложении"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "_Завершить"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "Перейти к _родительской папке"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "У_величить"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "У_меньшить"
