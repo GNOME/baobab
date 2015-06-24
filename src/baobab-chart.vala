@@ -547,6 +547,13 @@ namespace Baobab {
             (get_toplevel () as Window).trash_file (highlighted_item.iter);
         }
 
+        protected bool can_move_up_root () {
+            Gtk.TreeIter iter, parent_iter;
+
+            model.get_iter (out iter, root);
+            return model.iter_parent (out parent_iter, iter);
+        }
+
         public void move_up_root () {
             Gtk.TreeIter iter, parent_iter;
 
@@ -583,6 +590,14 @@ namespace Baobab {
             action.set_enabled (enable);
             action = action_group.lookup_action ("trash-file") as SimpleAction;
             action.set_enabled (enable);
+
+            action = action_group.lookup_action ("move-up") as SimpleAction;
+            action.set_enabled (can_move_up_root ());
+
+            action = action_group.lookup_action ("zoom-in") as SimpleAction;
+            action.set_enabled (can_zoom_in ());
+            action = action_group.lookup_action ("zoom-out") as SimpleAction;
+            action.set_enabled (can_zoom_out ());
 
             if (event != null) {
                 context_menu.popup (null, null, null, event.button, event.time);
