@@ -190,7 +190,7 @@ namespace Baobab {
         }
 
         protected override bool can_zoom_out () {
-            return more_visible_children;
+            return (max_depth < MAX_DEPTH) && more_visible_children;
         }
 
         protected override bool can_zoom_in () {
