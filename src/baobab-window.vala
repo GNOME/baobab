@@ -410,7 +410,11 @@ namespace Baobab {
         void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
                 if (event.triggers_context_menu ()) {
-                    return show_treeview_popup (treeview_popup_menu, event);
+                    Gtk.TreePath path;
+                    if (treeview.get_path_at_pos ((int)event.x, (int)event.y, out path, null, null, null)) {
+                        treeview.get_selection ().select_path (path);
+                        return show_treeview_popup (treeview_popup_menu, event);
+                    }
                 }
 
                 return false;
