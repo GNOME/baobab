@@ -142,7 +142,7 @@ namespace Baobab {
                 get_fs_usage ();
             }
 
-            scanner = new Scanner (file, ScanFlags.NONE);
+            scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
         public Location.for_file (File file_, ScanFlags flags) {
