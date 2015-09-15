@@ -85,7 +85,6 @@ namespace Baobab {
         private const GLib.ActionEntry[] action_entries = {
             { "gear-menu", on_show_gear_menu_activate , null, "false", null},
             { "show-home-page", on_show_home_page_activate },
-            { "scan-home", on_scan_home_activate },
             { "scan-folder", on_scan_folder_activate },
             { "scan-remote", on_scan_remote_activate },
             { "reload", on_reload_activate },
@@ -102,7 +101,6 @@ namespace Baobab {
         }
 
         private const ActionState[] actions_while_scanning = {
-            { "scan-home", false },
             { "scan-folder", false },
             { "scan-remote", false },
             { "show-allocated", false },
@@ -193,10 +191,6 @@ namespace Baobab {
 
             clear_message ();
             set_ui_state (home_page, false);
-        }
-
-        void on_scan_home_activate () {
-            scan_directory (File.new_for_path (GLib.Environment.get_home_dir ()));
         }
 
         void on_scan_folder_activate () {
