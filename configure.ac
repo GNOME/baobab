@@ -2,7 +2,7 @@ dnl -*- mode: m4 -*-
 AC_PREREQ(2.63)
 
 AC_INIT([baobab],
-        [3.17.90],
+        [3.18.0],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=baobab],
         [baobab])
 
