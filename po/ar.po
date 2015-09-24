@@ -4,14 +4,14 @@
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
 # Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012, 2013.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012, 2013, 2015.
 # Anas Afif Emad <anas.e87@gmail.com, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-16.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-16 18:34+0200\n"
-"PO-Revision-Date: 2013-09-16 18:40+0200\n"
+"POT-Creation-Date: 2015-09-24 04:28+0200\n"
+"PO-Revision-Date: 2015-09-24 04:29+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -20,27 +20,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Virtaal 0.7.1-rc1\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: ../data/org.gnome.baobab.appdata.xml.in.h:1
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
 "directory size or percentage."
 msgstr ""
-"تطبيق بسيط يتيح لك فحص مجلدات معينة (محلية أو بعيدة) أو أقراص التخزين، "
-"و يعرض تمثيل رسومي لحجم أو نسبة كل مجلد."
+"تطبيق بسيط يتيح لك فحص مجلدات معينة (محلية أو بعيدة) أو أقراص التخزين، و "
+"يعرض تمثيل رسومي لحجم أو نسبة كل مجلد."
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
 msgstr "محلّل استخدام القرص"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: ../data/org.gnome.baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
 msgstr "افحص حجم المجلدات والمساحة المتوفرة"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: ../data/org.gnome.baobab.desktop.in.in.h:3
 msgid "storage;space;cleanup;"
 msgstr "تخزين;مساحة;تنظيف;"
 
@@ -76,13 +76,9 @@ msgstr "حالة النافذة"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState الخاصة بالنافذة"
 
-#: ../src/baobab-application.vala:30
+#: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "اكتب رقم الإصدار ثم اخرج"
-
-#: ../src/baobab-application.vala:99
-msgid "- Disk Usage Analyzer"
-msgstr "- محلّل استخدام القرص"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -157,15 +153,15 @@ msgstr "افحص مجلّدًا…"
 msgid "Scan Remote Folder…"
 msgstr "افحص مجلّدا بعيدا…"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
 msgid "_Open Folder"
 msgstr "ا_فتح المجلّد"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
 msgid "_Copy Path to Clipboard"
 msgstr "ان_سخ المسار إلى الحافظة"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
 msgid "Mo_ve to Trash"
 msgstr "ا_نقل للمهملات"
 
@@ -197,63 +193,39 @@ msgstr "رسم بياني حلقي"
 msgid "Treemap Chart"
 msgstr "رسم بياني شجري"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "م_ساعدة"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_عن"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "أ_نهِ"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "_Move to parent folder"
-msgstr "ا_نقل للمجلد الأصل"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_قرّب"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "ب_عّد"
-
-#: ../src/baobab-window.vala:224
+#: ../src/baobab-window.vala:197
 msgid "Select Folder"
 msgstr "اختر مجلدا"
 
-#: ../src/baobab-window.vala:226
+#: ../src/baobab-window.vala:199
 msgid "_Cancel"
 msgstr "أ_لغِ"
 
-#: ../src/baobab-window.vala:227
+#: ../src/baobab-window.vala:200
 msgid "_Open"
 msgstr "ا_فتح"
 
-#: ../src/baobab-window.vala:232
+#: ../src/baobab-window.vala:205
 msgid "Recursively analyze mount points"
 msgstr "حلل نقاط الضم تتابعيًا"
 
-#: ../src/baobab-window.vala:279
+#: ../src/baobab-window.vala:252
 msgid "Could not analyze volume."
 msgstr "تعذّر تحليل الجزء."
 
-#: ../src/baobab-window.vala:311
+#: ../src/baobab-window.vala:284
 msgid "Failed to show help"
 msgstr "تعذّر عرض المساعدة"
 
-#: ../src/baobab-window.vala:330
+#: ../src/baobab-window.vala:303
 msgid "Baobab"
 msgstr "بوباب"
 
-#: ../src/baobab-window.vala:333
+#: ../src/baobab-window.vala:306
 msgid "A graphical tool to analyze disk usage."
 msgstr "أداة رسوميّة لتحليل استعمال القرص."
 
-#: ../src/baobab-window.vala:338
+#: ../src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "فريق عربآيز للترجمة http://www.arabeyes.org:\n"
@@ -262,40 +234,72 @@ msgstr ""
 "خالد حسني <khaledhosny@eglug.org>\n"
 "أنس عفيف عماد <anas.e87@gmail.com>"
 
-#: ../src/baobab-window.vala:407
+#: ../src/baobab-window.vala:380
 msgid "Failed to open file"
 msgstr "تعذّر فتح الملف"
 
-#: ../src/baobab-window.vala:427
+#: ../src/baobab-window.vala:400
 msgid "Failed to move file to the trash"
 msgstr "تعذّر نقل الملف إلى المهملات"
 
-#: ../src/baobab-window.vala:527
+#: ../src/baobab-window.vala:504
 msgid "Devices and locations"
 msgstr "الأجهزة و الأماكن"
 
-#: ../src/baobab-window.vala:583
+#: ../src/baobab-window.vala:565
 #, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "تعذّر فحص المجلد \"%s\" أو أحد المجلدات التي يحتويها."
+msgid "Could not scan folder \"%s\""
+msgstr "تعذّر فحص المجلّد \"%s\""
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:568
+#, c-format
+msgid "Could not scan some of the folders contained in \"%s\""
+msgstr "تعذّر فحص بعض المجلدات الموجودة داخل \"%s\""
+
+#: ../src/baobab-window.vala:587
 msgid "Could not detect occupied disk sizes."
 msgstr "تعذّر تحديد المساحة المستخدمة من القرص."
 
-#: ../src/baobab-window.vala:601
+#: ../src/baobab-window.vala:587
 msgid "Apparent sizes are shown instead."
 msgstr "ستُعرض الأحجام الظاهرة بدلًا منها."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
+#: ../src/baobab-window.vala:604 ../src/baobab-window.vala:610
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" ليس مجلّدا سليما"
 
-#: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
+#: ../src/baobab-window.vala:605 ../src/baobab-window.vala:611
 msgid "Could not analyze disk usage."
 msgstr "تعذّر تحليل استعمال القرص."
+
+#: ../src/menus.ui.h:1
+msgid "_Help"
+msgstr "م_ساعدة"
+
+#: ../src/menus.ui.h:2
+msgid "_About"
+msgstr "_عن"
+
+#: ../src/menus.ui.h:3
+msgid "_Quit"
+msgstr "أ_نهِ"
+
+#: ../src/menus.ui.h:7
+msgid "Go to _parent folder"
+msgstr "اذهب للمجلد الأ_م"
+
+#: ../src/menus.ui.h:8
+msgid "Zoom _in"
+msgstr "_قرّب"
+
+#: ../src/menus.ui.h:9
+msgid "Zoom _out"
+msgstr "ب_عّد"
+
+#~ msgid "- Disk Usage Analyzer"
+#~ msgstr "- محلّل استخدام القرص"
 
 #~ msgid "Maximum depth"
 #~ msgstr "العمق الأقصى"
@@ -591,9 +595,6 @@ msgstr "تعذّر تحليل استعمال القرص."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "لا يمكن فحص مجلد مستبعد!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "تعذّر فتح المجلّد \"%s\""
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "لا يوجد عارض مثبّت قادر على عرض المجلّد."
