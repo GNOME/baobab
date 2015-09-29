@@ -23,7 +23,6 @@ VALA_SOURCES = \
 	baobab-chart.vala		\
 	baobab-treemap.vala		\
 	baobab-ringschart.vala		\
-	baobab-connect-server.vala	\
 	baobab-location.vala		\
 	baobab-location-list.vala	\
 	baobab-scanner.vala		\

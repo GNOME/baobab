@@ -86,7 +86,6 @@ namespace Baobab {
             { "gear-menu", on_show_gear_menu_activate , null, "false", null},
             { "show-home-page", on_show_home_page_activate },
             { "scan-folder", on_scan_folder_activate },
-            { "scan-remote", on_scan_remote_activate },
             { "reload", on_reload_activate },
             { "show-allocated", on_show_allocated },
             { "expand-all", on_expand_all },
@@ -102,7 +101,6 @@ namespace Baobab {
 
         private const ActionState[] actions_while_scanning = {
             { "scan-folder", false },
-            { "scan-remote", false },
             { "show-allocated", false },
             { "expand-all", false },
             { "collapse-all", false }
@@ -132,8 +130,6 @@ namespace Baobab {
             location_list.set_adjustment (location_scrolled_window.get_vadjustment ());
             location_list.set_action (on_scan_location_activate);
             location_list.update ();
-
-            (lookup_action ("scan-remote") as SimpleAction).set_enabled (ConnectServer.available ());
 
             setup_treeview ();
 
@@ -199,6 +195,7 @@ namespace Baobab {
                                                           _("_Cancel"), Gtk.ResponseType.CANCEL,
                                                           _("_Open"), Gtk.ResponseType.ACCEPT);
 
+            file_chooser.local_only = false;
             file_chooser.create_folders = false;
             file_chooser.modal = true;
 
@@ -214,18 +211,6 @@ namespace Baobab {
             });
 
             file_chooser.show ();
-        }
-
-        void on_scan_remote_activate () {
-            var connect_server = new ConnectServer ();
-
-            connect_server.selected.connect ((uri) => {
-                if (uri != null) {
-                    scan_directory (File.new_for_uri (uri));
-                }
-            });
-
-            connect_server.show ();
         }
 
         void set_active_location (Location location) {
