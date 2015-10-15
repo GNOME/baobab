@@ -3,14 +3,16 @@
 # Distributed under the same licence as the gnome-utils package
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# António Lima <amrlima@gmail.com>, 2013.
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
+# António Lima <amrlima@gmail.com>, 2013, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-22 21:54+0100\n"
-"PO-Revision-Date: 2013-09-22 18:20-0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-09-29 03:00+0000\n"
+"PO-Revision-Date: 2015-10-15 06:25+0100\n"
 "Last-Translator: António Lima <amrlima@gmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
@@ -18,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/baobab.appdata.xml.in.h:1
 msgid ""
@@ -28,11 +30,11 @@ msgid ""
 msgstr ""
 "Uma aplicação simples que pode analisar pastas específicas (locais ou "
 "remotas) ou volumes e fornecer uma representação gráfica que inclui o "
-"tamanho de cada diretório ou percentagem."
+"tamanho ou percentagem de cada pasta."
 
 #: ../data/baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
 msgid "Disk Usage Analyzer"
-msgstr "Analisador de Utilização do Disco"
+msgstr "Analisador de utilização do disco"
 
 #: ../data/baobab.desktop.in.in.h:2
 msgid "Check folder sizes and available disk space"
@@ -44,19 +46,19 @@ msgstr "armazenamento;espaço;limpar;"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
 msgid "Excluded partitions URIs"
-msgstr "URIs da partições excluídas"
+msgstr "URIs de partições excluídas"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
 msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "A lista de URIs de partições a serem excluída da análise."
+msgstr "A lista de URIs de partições a serem excluídas da análise."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
 msgid "Active Chart"
-msgstr "Gráfico Ativo"
+msgstr "Gráfico ativo"
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
 msgid "Which type of chart should be displayed."
-msgstr "Que tipo de gráfico deverá ser apresentado."
+msgstr "Que tipo de gráfico deverá ser mostrado."
 
 #: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
 msgid "Window size"
@@ -80,7 +82,7 @@ msgstr "Imprimir informação de versão e sair"
 
 #: ../src/baobab-application.vala:99
 msgid "- Disk Usage Analyzer"
-msgstr "- Analisador de Utilização do Disco"
+msgstr "- analisador de utilização do disco"
 
 #: ../src/baobab-cellrenderers.vala:91
 #, c-format
@@ -133,11 +135,11 @@ msgstr "Computador"
 
 #: ../src/baobab-main-window.ui.h:1
 msgid "Scan Folder…"
-msgstr "Analisar Pasta…"
+msgstr "Analisar pasta…"
 
 #: ../src/baobab-main-window.ui.h:2
 msgid "Scan Remote Folder…"
-msgstr "Analisar Pasta Remota…"
+msgstr "Analisar pasta remota…"
 
 #: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
 msgid "_Open Folder"
@@ -145,11 +147,11 @@ msgstr "Abrir _Pasta"
 
 #: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
 msgid "_Copy Path to Clipboard"
-msgstr "_Copiar Caminho para a Área de Transferência"
+msgstr "_Copiar caminho para a área de transferência"
 
 #: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
 msgid "Mo_ve to Trash"
-msgstr "Mo_ver para o Lixo"
+msgstr "Mo_Ver para o lixo"
 
 #: ../src/baobab-main-window.ui.h:7
 msgid "Close"
@@ -173,19 +175,19 @@ msgstr "Modificado"
 
 #: ../src/baobab-main-window.ui.h:12
 msgid "Rings Chart"
-msgstr "Gráfico de Aneis"
+msgstr "Gráfico de anéis"
 
 #: ../src/baobab-main-window.ui.h:13
 msgid "Treemap Chart"
-msgstr "Gráfico de Mapa de Grafos"
+msgstr "Gráfico de árvore"
 
 #: ../src/baobab-menu.ui.h:1
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "A_Juda"
 
 #: ../src/baobab-menu.ui.h:2
 msgid "_About"
-msgstr "So_bre"
+msgstr "_Sobre"
 
 #: ../src/baobab-menu.ui.h:3
 msgid "_Quit"
@@ -193,19 +195,19 @@ msgstr "_Sair"
 
 #: ../src/baobab-menu.ui.h:7
 msgid "_Move to parent folder"
-msgstr "_Mover para a pasta pai"
+msgstr "_Mover para a pasta-mãe"
 
 #: ../src/baobab-menu.ui.h:8
 msgid "Zoom _in"
-msgstr "_Aumentar o zoom"
+msgstr "_Ampliar"
 
 #: ../src/baobab-menu.ui.h:9
 msgid "Zoom _out"
-msgstr "_Reduzir o zoom"
+msgstr "_Reduzir"
 
 #: ../src/baobab-window.vala:224
 msgid "Select Folder"
-msgstr "Selecione uma Pasta"
+msgstr "Selecione uma pasta"
 
 #: ../src/baobab-window.vala:226
 msgid "_Cancel"
@@ -221,11 +223,11 @@ msgstr "Analisar pontos de montagem recursivamente "
 
 #: ../src/baobab-window.vala:279
 msgid "Could not analyze volume."
-msgstr "Incapaz de analisar a unidade."
+msgstr "Impossível analisar o volume."
 
 #: ../src/baobab-window.vala:311
 msgid "Failed to show help"
-msgstr "Falha ao apresentar a ajuda"
+msgstr "Falha ao mostrar a ajuda"
 
 #: ../src/baobab-window.vala:330
 msgid "Baobab"
@@ -237,7 +239,9 @@ msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
 
 #: ../src/baobab-window.vala:338
 msgid "translator-credits"
-msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
+msgstr ""
+"Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"Pedro Albuquerque73@openmailbox.org"
 
 #: ../src/baobab-window.vala:407
 msgid "Failed to open file"
@@ -254,15 +258,15 @@ msgstr "Dispositivos e localizações"
 #: ../src/baobab-window.vala:583
 #, c-format
 msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "Incapaz de analisar a pasta \"%s\" ou algumas das pastas contidas."
+msgstr "Impossível analisar a pasta \"%s\" ou algumas das pastas contidas."
 
 #: ../src/baobab-window.vala:601
 msgid "Could not detect occupied disk sizes."
-msgstr "Incapaz de detetar tamanho ocupado do disco."
+msgstr "Impossível detetar tamanho ocupado do disco."
 
 #: ../src/baobab-window.vala:601
 msgid "Apparent sizes are shown instead."
-msgstr "Tamanhos aparentes são apresentados alternativamente."
+msgstr "Tamanhos aparentes são mostrados alternativamente."
 
 #. || is_virtual_filesystem ()
 #: ../src/baobab-window.vala:618 ../src/baobab-window.vala:624
@@ -272,7 +276,7 @@ msgstr "\"%s\" não é uma pasta válida"
 
 #: ../src/baobab-window.vala:619 ../src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
-msgstr "Incapaz de analisar a utilização do disco."
+msgstr "Impossível analisar a utilização do disco."
 
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidade máxima"
