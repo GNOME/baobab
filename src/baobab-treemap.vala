@@ -59,12 +59,14 @@ namespace Baobab {
             uint border = ITEM_BORDER_WIDTH;
 
             var context = get_style_context ();
+            context.save ();
+            context.set_state (Gtk.StateFlags.NORMAL);
 
             cr.set_line_width (border);
             cr.rectangle (x + border, y + border, width - border * 2, height - border * 2);
             Gdk.cairo_set_source_rgba (cr, fill_color);
             cr.fill_preserve ();
-            var border_color = context.get_border_color (Gtk.StateFlags.NORMAL);
+            var border_color = context.get_border_color (context.get_state ());
             Gdk.cairo_set_source_rgba (cr, border_color);
             cr.stroke ();
 
@@ -81,6 +83,8 @@ namespace Baobab {
                     context.render_layout (cr, x + width / 2 - rect.width / 2, y + height / 2 - rect.height / 2, layout);
                 }
             }
+
+            context.restore ();
         }
 
         protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {
