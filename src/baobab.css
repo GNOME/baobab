@@ -53,25 +53,26 @@
     color: @theme_unfocused_text_color;
 }
 
-BaobabWindow.background GtkStack > GtkGrid > GtkScrolledWindow.frame {
+window.background stack > grid > scrolledwindow.frame {
     border-radius: 0;
     border-width: 0 1px 0 0;
 }
 
-BaobabWindow GtkInfoBar.warning,
-BaobabWindow GtkInfoBar.error {
+window infobar.warning,
+window infobar.error {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: @borders;
 }
 
-BaobabRingschart {
+ringschart {
     padding: 13px 13px 13px 13px;
 }
 
-BaobabRingschart.subfolder-tip {
+ringschart.subfolder-tip {
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
     padding: 3px 3px 3px 3px;
 }
 

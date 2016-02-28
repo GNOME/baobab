@@ -78,6 +78,10 @@ namespace Baobab {
             }
         }
 
+        static construct {
+            set_css_name ("ringschart");
+        }
+
         construct {
             notify["max-depth"].connect (subtips_update);
             notify["highlighted-item"].connect (subtips_update);
@@ -97,7 +101,6 @@ namespace Baobab {
             var context_state = context.get_state ();
             context.save ();
             context.add_class ("subfolder-tip");
-            context.add_class ("tooltip");
 
             Gtk.Allocation allocation;
             get_allocation (out allocation);
