@@ -440,8 +440,8 @@ namespace Baobab {
 
         void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
             infobar.message_type = type;
-            infobar_primary_label.label = "<b>%s</b>".printf (_(primary_msg));
-            infobar_secondary_label.label = "<small>%s</small>".printf (_(secondary_msg));
+            infobar_primary_label.label = "<b>%s</b>".printf (primary_msg);
+            infobar_secondary_label.label = "<small>%s</small>".printf (secondary_msg);
             infobar.show ();
         }
 
