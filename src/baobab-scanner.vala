@@ -85,7 +85,7 @@ namespace Baobab {
         uint process_result_idle = 0;
 
         HardLink[] hardlinks;
-        HashTable<File, unowned File> excluded_locations;
+        GenericSet<File> excluded_locations;
 
         bool successful = false;
 
