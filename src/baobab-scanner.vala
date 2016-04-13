@@ -243,7 +243,11 @@ namespace Baobab {
             }
 
             foreach (unowned Results child_results in results_array.results) {
-                child_results.percent = 100 * ((double) child_results.size) / ((double) results.size);
+                if (results.size > 0) {
+                    child_results.percent = 100 * ((double) child_results.size) / ((double) results.size);
+                } else {
+                    child_results.percent = 0;
+                }
             }
 
             // No early exit: in order to avoid a potential crash, we absolutely *must* push this onto the
