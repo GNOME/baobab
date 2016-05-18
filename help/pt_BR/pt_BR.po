@@ -1,43 +1,45 @@
 # Brazilian Portuguese translation for baobab-help.
-# Copyright (C) 2013 baobab's COPYRIGHT HOLDER
+# Copyright (C) 2016 baobab's COPYRIGHT HOLDER
 # This file is distributed under the same license as the baobab package
 # Ricardo Franco <ricardo_krieg@yahoo.com.br>, 2010.
-# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014.
+# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2016.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013, 2014.
+# Felipe Braga <fbobraga@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Baobab\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-06 14:54+0000\n"
-"PO-Revision-Date: 2014-10-10 13:22-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2015-05-01 14:56+0000\n"
+"PO-Revision-Date: 2016-05-18 09:19-0300\n"
+"Last-Translator: Felipe Braga <fbobraga@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Project-Style: gnome\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Ricardo Franco <ricardo_krieg@yahoo.com.br>, 2010\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com>, 2013, 2014"
+"Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2016\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com>, 2013, 2014\n"
+"Felipe Braga <fbobraga@gmail.com>, 2015"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-#| msgid "Disk Usage Analyzer"
 msgctxt "text"
 msgid "Disk Usage Analyzer help"
 msgstr "Ajudo do analisador de uso de disco"
 
 #. (itstool) path: info/title
 #: C/index.page:8
-#| msgid "Disk Usage Analyzer"
 msgctxt "link"
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de uso de disco"
@@ -51,6 +53,7 @@ msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
 #: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
 #: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
@@ -58,7 +61,6 @@ msgstr "Ekaterina Gerasimova"
 
 #. (itstool) path: info/desc
 #: C/index.page:24
-#| msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
 msgid "<app>Disk Usage Analyzer</app> is a graphical storage device scanner."
 msgstr ""
 "O <app>Analisador de uso de disco</app> é um varredor gráfico de dispositivo "
@@ -66,7 +68,6 @@ msgstr ""
 
 #. (itstool) path: page/title
 #: C/index.page:29
-#| msgid "Disk Usage Analyzer"
 msgid "<_:media-1/> Disk Usage Analyzer"
 msgstr "<_:media-1/> Analisador de uso de disco"
 
@@ -98,7 +99,7 @@ msgid ""
 "storage space using graphs."
 msgstr ""
 "O <app>Analisador de uso de disco</app> é um aplicativo que mostra a você o "
-"uso do seu espaço de armazenamento usando gráficos."
+"uso de seus dispositivos de armazenamento usando gráficos."
 
 #. (itstool) path: page/title
 #: C/introduction.page:31
@@ -155,17 +156,17 @@ msgid "This work is licensed under a <_:link-1/>."
 msgstr "Essa obra está licenciada sob uma <_:link-1/>."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:25
+#: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
-msgstr "Exibe os resultados como um gráfico de anéis ou um gráfico treemap."
+msgstr "Exibir os resultados como um gráfico de anéis ou um gráfico treemap."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:29
+#: C/pref-view-chart.page:31
 msgid "Different chart views"
 msgstr "Diferentes visões de gráficos"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:33
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -178,7 +179,7 @@ msgstr ""
 "adicionais em volta do anel central."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:35
+#: C/pref-view-chart.page:37
 msgid ""
 "Move your mouse over the rings chart displays more details about the folder "
 "and subfolders."
@@ -187,7 +188,7 @@ msgstr ""
 "as subpastas."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:39
 msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
@@ -198,7 +199,7 @@ msgstr ""
 "pastas como caixas de tamanhos proporcionais."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:40
+#: C/pref-view-chart.page:42
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -213,6 +214,7 @@ msgstr "Baptiste Mille-Mathias"
 
 #. (itstool) path: credit/years
 #: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+#: C/question-open-folder.page:13 C/question-trash.page:13
 msgid "2014"
 msgstr "2014"
 
@@ -263,7 +265,7 @@ msgstr ""
 #: C/problem-permissions.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> uses command <cmd>du</cmd> to create the "
-"detailled view of the use of storage, and needs you have read permission on "
+"detailed view of the use of storage, and needs you have read permission on "
 "files and execute permission of directories."
 msgstr ""
 "O <app>Analisador de uso de disco</app> usa comando <cmd>du</cmd> para criar "
@@ -315,17 +317,88 @@ msgstr ""
 "número dos arquivos armazenados."
 
 #. (itstool) path: info/desc
-#: C/scan-file-system.page:24
+#: C/question-open-folder.page:18
+msgid "Open a folder in a file browser such as <app>Files</app>."
+msgstr ""
+"Abre uma pasta em um navegador de arquivos, como o <app>Arquivos</app>."
+
+#. (itstool) path: page/title
+#: C/question-open-folder.page:21
+msgid "How do I open a folder?"
+msgstr "Como eu abro uma pasta?"
+
+#. (itstool) path: page/p
+#: C/question-open-folder.page:23
+msgid ""
+"You can open a folder in your default file browser, such as <app>Files</"
+"app>. This can be useful if you want to quickly find out which files are in "
+"that folder."
+msgstr ""
+"Você pode abrir uma pasta em seu navegador de arquivos padrão, como o "
+"<app>Arquivos</app>. Isto pode ser útil se você quiser ver rapidamente os "
+"arquivos que estão na pasta."
+
+#. (itstool) path: item/p
+#: C/question-open-folder.page:29
+msgid ""
+"Right-click on the folder that you want to open and select <gui>Open Folder</"
+"gui>."
+msgstr ""
+"Clique com o botão direito do mouse sobre a pasta que você deseja abrir e "
+"selecione <gui>Abrir pasta</gui>."
+
+#. (itstool) path: info/desc
+#: C/question-trash.page:18
+msgid "Move unwanted folders to <file>Trash</file>."
+msgstr "Mova pastas indesejadas para a <file>Lixeira</file>."
+
+#. (itstool) path: page/title
+#: C/question-trash.page:21
+msgid "How do I delete a folder?"
+msgstr "Como eu apago uma pasta?"
+
+#. (itstool) path: page/p
+#: C/question-trash.page:23
+msgid ""
+"You can clear out some space from your computer or a remote file system "
+"using <app>Disk Usage Analyzer</app> by moving folders to <file>Trash</file> "
+"and deleting them."
+msgstr ""
+"Você pode liberar algum espaço do seu computador ou de um sistema de "
+"arquivos remoto usando o <app>Analisador de uso de disco</app>, ao mover as "
+"pastas que não são mais necessárias para a <file>Lixeira</file> e excluindo-"
+"as."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:29
+msgid ""
+"Right-click on the folder that you want to delete and select <gui>Move to "
+"Trash</gui>."
+msgstr ""
+"Clique com o botão direito do mouse sobre a pasta que você deseja excluir e "
+"selecione <gui>Mover para a lixeira</gui>."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:33
+msgid ""
+"Open a file browser such as <app>Files</app> and empty the <file>Trash</"
+"file>."
+msgstr ""
+"Abra um navegador de arquivos, como o <app>Arquivos</app>, e esvazie a "
+"<file>Lixeira</file>."
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:26
 msgid "Scan your internal storage devices."
 msgstr "Varre todos os dispositivos de armazenamento internos."
 
 #. (itstool) path: page/title
-#: C/scan-file-system.page:28
+#: C/scan-file-system.page:30
 msgid "Scan the file system"
 msgstr "Varrendo o sistema de arquivos"
 
 #. (itstool) path: page/p
-#: C/scan-file-system.page:30
+#: C/scan-file-system.page:32
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices and locations</gui>. All of the folders that you have "
@@ -338,7 +411,7 @@ msgstr ""
 "você não ter permissões para varre alguns diretórios no seu computador."
 
 #. (itstool) path: note/p
-#: C/scan-file-system.page:36
+#: C/scan-file-system.page:38
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -350,28 +423,28 @@ msgstr ""
 "dispositivos."
 
 #. (itstool) path: info/desc
-#: C/scan-folder.page:25
+#: C/scan-folder.page:27
 msgid "Scan a local folder, including all subfolders."
 msgstr "Varre uma pasta local, incluindo todas as subpastas."
 
 #. (itstool) path: page/title
-#: C/scan-folder.page:29
+#: C/scan-folder.page:31
 msgid "Scan a folder"
-msgstr "Vendo um pasta"
+msgstr "Varrendo uma pasta"
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:31
+#: C/scan-folder.page:33
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
 "part of your file system."
 msgstr ""
-"As varreduras de pastas individuais são mais rápidas do que o sistema de "
-"arquivos completo. Então, elas podem ser mais eficiente se você deseja "
-"informação de apenas sobre uma parte específica do seu sistema de arquivos."
+"As varreduras de pastas individuais são mais rápidas do que do sistema de "
+"arquivos completo, então, pode ser mais eficiente varrer apenas uma parte "
+"específica do seu sistema de arquivos em busca de informações."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:37
+#: C/scan-folder.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -380,7 +453,7 @@ msgstr ""
 "<gui style=\"menuitem\">Varrer pasta…</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:41
+#: C/scan-folder.page:43
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
@@ -388,12 +461,12 @@ msgstr ""
 "varrer."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:45
+#: C/scan-folder.page:47
 msgid "Click <gui>Open</gui> to start the scan."
 msgstr "Clique em <gui>Abrir</gui> para começar a varredura."
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:49
+#: C/scan-folder.page:51
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
@@ -406,17 +479,17 @@ msgstr ""
 "de uso de disco</app>."
 
 #. (itstool) path: info/desc
-#: C/scan-home.page:25
+#: C/scan-home.page:27
 msgid "Scan all of your personal files that are on your computer."
 msgstr "Varre todos os seus arquivos pessoais que estão no seu computador."
 
 #. (itstool) path: page/title
-#: C/scan-home.page:29
+#: C/scan-home.page:31
 msgid "Scan your <file>Home</file> folder"
 msgstr "Varrendo sua <file>Pasta pessoal</file>"
 
 #. (itstool) path: page/p
-#: C/scan-home.page:31
+#: C/scan-home.page:33
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -432,7 +505,7 @@ msgstr ""
 "existe para cada usuário no computador."
 
 #. (itstool) path: item/p
-#: C/scan-home.page:39
+#: C/scan-home.page:41
 msgid ""
 "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
 "locations</gui>."
@@ -441,17 +514,17 @@ msgstr ""
 "localizações</gui>."
 
 #. (itstool) path: info/desc
-#: C/scan-remote.page:25
+#: C/scan-remote.page:27
 msgid "Scan a folder remotely from your computer."
 msgstr "Varre de uma pasta remotamente do seu computador."
 
 #. (itstool) path: page/title
-#: C/scan-remote.page:29
+#: C/scan-remote.page:31
 msgid "Scan a remote folder"
 msgstr "Varrendo uma pasta remota"
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:31
+#: C/scan-remote.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -461,7 +534,7 @@ msgstr ""
 "arquivos completo ou qualquer outra pasta específica remotamente:"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:37
+#: C/scan-remote.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Remote Folder…</gui>."
@@ -470,7 +543,7 @@ msgstr ""
 "<gui style=\"menuitem\">Varrer pasta remota…</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:41
+#: C/scan-remote.page:43
 msgid ""
 "Enter the URL into the <gui>Server Address</gui> field. It will normally "
 "have a protocol, followed by a colon and two slashes, that looks different "
@@ -483,7 +556,7 @@ msgstr ""
 "\">protocolo</link> que você está usando."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:48
+#: C/scan-remote.page:50
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -492,7 +565,7 @@ msgstr ""
 "mais informações, como uma senha ou um usuário, antes da varredura começar."
 
 #. (itstool) path: note/p
-#: C/scan-remote.page:54
+#: C/scan-remote.page:56
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
@@ -500,7 +573,7 @@ msgstr ""
 "arquivos local."
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:58
+#: C/scan-remote.page:60
 msgid ""
 "You can also select a recently used server instead of entering a new URL. If "
 "you enter a URL which is not valid, you will not be able to press "
