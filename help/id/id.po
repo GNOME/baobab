@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab master\n"
-"POT-Creation-Date: 2014-10-25 02:53+0000\n"
-"PO-Revision-Date: 2014-10-25 16:07+0700\n"
+"Project-Id-Version: baobab gnome-3-20\n"
+"POT-Creation-Date: 2016-05-22 11:59+0000\n"
+"PO-Revision-Date: 2016-06-20 02:50+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -43,6 +43,7 @@ msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
 #: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
 #: C/scan-remote.page:21
 msgid "Ekaterina Gerasimova"
@@ -144,17 +145,17 @@ msgid "This work is licensed under a <_:link-1/>."
 msgstr "Karya ini dilisensikan di bawah <_:link-1/>."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:25
+#: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr "Tampilkan hasil sebagai bagan cincin atau bagan peta pohon."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:29
+#: C/pref-view-chart.page:31
 msgid "Different chart views"
 msgstr "Tilikan bagan lain"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:33
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -167,7 +168,7 @@ msgstr ""
 "lapisan tambahan di sekeliling lingkaran dalam."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:35
+#: C/pref-view-chart.page:37
 msgid ""
 "Move your mouse over the rings chart displays more details about the folder "
 "and subfolders."
@@ -176,7 +177,7 @@ msgstr ""
 "rincian tentang folder dan subfolder."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:39
 msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
@@ -187,7 +188,7 @@ msgstr ""
 "sebagai kotak-kotak dengan ukuran sebanding."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:40
+#: C/pref-view-chart.page:42
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -202,6 +203,7 @@ msgstr "Baptiste Mille-Mathias"
 
 #. (itstool) path: credit/years
 #: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+#: C/question-open-folder.page:13 C/question-trash.page:13
 msgid "2014"
 msgstr "2014"
 
@@ -252,11 +254,11 @@ msgstr ""
 #: C/problem-permissions.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> uses command <cmd>du</cmd> to create the "
-"detailled view of the use of storage, and needs you have read permission on "
+"detailed view of the use of storage, and needs you have read permission on "
 "files and execute permission of directories."
 msgstr ""
 "<app>Penganalisis Penggunaan Disk</app> memakai perintah <cmd>du</cmd> untuk "
-"membuat tilikan terrinci dari pemakaian penyimpanan, dan perlu agar Anda "
+"membuat tilikan terrinci dari pemakaian penyimpanan, dan memerlukan Anda "
 "punya hak baca pada berkas dan hak eksekusi pada direktori."
 
 #. (itstool) path: note/p
@@ -304,17 +306,85 @@ msgstr ""
 "berkas yang disimpan."
 
 #. (itstool) path: info/desc
-#: C/scan-file-system.page:24
+#: C/question-open-folder.page:18
+msgid "Open a folder in a file browser such as <app>Files</app>."
+msgstr "Buka sebuah folder dalam peramban berkas seperti <app>Files</app>."
+
+#. (itstool) path: page/title
+#: C/question-open-folder.page:21
+msgid "How do I open a folder?"
+msgstr "Bagaimana saya membuka suatu folder?"
+
+#. (itstool) path: page/p
+#: C/question-open-folder.page:23
+msgid ""
+"You can open a folder in your default file browser, such as <app>Files</"
+"app>. This can be useful if you want to quickly find out which files are in "
+"that folder."
+msgstr ""
+"Anda dapat membuka sebuah folder dalam peramban berkas baku Anda, seperti "
+"<app>Files</app>. Ini bisa berguna bila Anda ingin dengan cepat mencari "
+"berkas mana yang ada dalam folder itu."
+
+#. (itstool) path: item/p
+#: C/question-open-folder.page:29
+msgid ""
+"Right-click on the folder that you want to open and select <gui>Open Folder</"
+"gui>."
+msgstr ""
+"Klik kanan pada folder yang ingin Anda buka dan pilih <gui>Buka Folder</gui>."
+
+#. (itstool) path: info/desc
+#: C/question-trash.page:18
+msgid "Move unwanted folders to <file>Trash</file>."
+msgstr "Pindahkan folder yang tak diinginkan ke <file>Tong Sampah</file>."
+
+#. (itstool) path: page/title
+#: C/question-trash.page:21
+msgid "How do I delete a folder?"
+msgstr "Bagaimana saya menghapus sebuah folder?"
+
+#. (itstool) path: page/p
+#: C/question-trash.page:23
+msgid ""
+"You can clear out some space from your computer or a remote file system "
+"using <app>Disk Usage Analyzer</app> by moving folders to <file>Trash</file> "
+"and deleting them."
+msgstr ""
+"Anda dapat mengosongkan sebagian ruang dari komputer Anda atau sistem berkas "
+"jauh memakai <app>Penganalisis Penggunaan Disk</app> dengan memindahkan "
+"folder ke <file>Tong Sampah</file> dan menghapus mereka."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:29
+msgid ""
+"Right-click on the folder that you want to delete and select <gui>Move to "
+"Trash</gui>."
+msgstr ""
+"Klik kanan pada folder yang ingin Anda hapus dan pilih <gui>Pindahkan ke "
+"Tong Sampah</gui>."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:33
+msgid ""
+"Open a file browser such as <app>Files</app> and empty the <file>Trash</"
+"file>."
+msgstr ""
+"Buka suatu peramban berkas seperti <app>Files</app> dan kosongkan <file>Tong "
+"Sampah</file>."
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:26
 msgid "Scan your internal storage devices."
 msgstr "Pindai perangkat penyimpanan internal Anda."
 
 #. (itstool) path: page/title
-#: C/scan-file-system.page:28
+#: C/scan-file-system.page:30
 msgid "Scan the file system"
 msgstr "Pindai sistem berkas"
 
 #. (itstool) path: page/p
-#: C/scan-file-system.page:30
+#: C/scan-file-system.page:32
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices and locations</gui>. All of the folders that you have "
@@ -327,7 +397,7 @@ msgstr ""
 "memindai beberapa direktori pada komputer Anda."
 
 #. (itstool) path: note/p
-#: C/scan-file-system.page:36
+#: C/scan-file-system.page:38
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -338,17 +408,17 @@ msgstr ""
 "di pojok kiri atas layar untuk kembali ke daftar perangkat."
 
 #. (itstool) path: info/desc
-#: C/scan-folder.page:25
+#: C/scan-folder.page:27
 msgid "Scan a local folder, including all subfolders."
 msgstr "Pindai folder lokal, termasuk semua subfolder."
 
 #. (itstool) path: page/title
-#: C/scan-folder.page:29
+#: C/scan-folder.page:31
 msgid "Scan a folder"
 msgstr "Pindai suatu folder"
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:31
+#: C/scan-folder.page:33
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
@@ -359,7 +429,7 @@ msgstr ""
 "bagian khusus dari sistem berkas Anda."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:37
+#: C/scan-folder.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -368,7 +438,7 @@ msgstr ""
 "\">Pindai Folder…</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:41
+#: C/scan-folder.page:43
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
@@ -376,12 +446,12 @@ msgstr ""
 "pindai."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:45
+#: C/scan-folder.page:47
 msgid "Click <gui>Open</gui> to start the scan."
 msgstr "Klik <gui>Buka</gui> untuk memulai pemindaian."
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:49
+#: C/scan-folder.page:51
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
@@ -394,17 +464,17 @@ msgstr ""
 "Pemakaian Disk</app>."
 
 #. (itstool) path: info/desc
-#: C/scan-home.page:25
+#: C/scan-home.page:27
 msgid "Scan all of your personal files that are on your computer."
 msgstr "Pindai semua berkas pribadi Anda yang ada pada komputer Anda."
 
 #. (itstool) path: page/title
-#: C/scan-home.page:29
+#: C/scan-home.page:31
 msgid "Scan your <file>Home</file> folder"
 msgstr "Pindai folder <file>Rumah</file> Anda"
 
 #. (itstool) path: page/p
-#: C/scan-home.page:31
+#: C/scan-home.page:33
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -420,7 +490,7 @@ msgstr ""
 "komputer."
 
 #. (itstool) path: item/p
-#: C/scan-home.page:39
+#: C/scan-home.page:41
 msgid ""
 "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
 "locations</gui>."
@@ -429,17 +499,17 @@ msgstr ""
 "gui>."
 
 #. (itstool) path: info/desc
-#: C/scan-remote.page:25
+#: C/scan-remote.page:27
 msgid "Scan a folder remotely from your computer."
 msgstr "Pindai folder jarak jauh dari komputer Anda."
 
 #. (itstool) path: page/title
-#: C/scan-remote.page:29
+#: C/scan-remote.page:31
 msgid "Scan a remote folder"
 msgstr "Pindai folder jauh"
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:31
+#: C/scan-remote.page:33
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -449,7 +519,7 @@ msgstr ""
 "folder tertentu dari jauh:"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:37
+#: C/scan-remote.page:39
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Remote Folder…</gui>."
@@ -458,7 +528,7 @@ msgstr ""
 "\">Pindai Folder Remote…</gui>."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:41
+#: C/scan-remote.page:43
 msgid ""
 "Enter the URL into the <gui>Server Address</gui> field. It will normally "
 "have a protocol, followed by a colon and two slashes, that looks different "
@@ -471,7 +541,7 @@ msgstr ""
 "\">protokol</link> yang Anda pakai."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:48
+#: C/scan-remote.page:50
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -480,7 +550,7 @@ msgstr ""
 "rincian, seperti sandi dan nama pengguna, sebelum pemindaian dilaksanakan."
 
 #. (itstool) path: note/p
-#: C/scan-remote.page:54
+#: C/scan-remote.page:56
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
@@ -488,7 +558,7 @@ msgstr ""
 "berkas lokal."
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:58
+#: C/scan-remote.page:60
 msgid ""
 "You can also select a recently used server instead of entering a new URL. If "
 "you enter a URL which is not valid, you will not be able to press "
