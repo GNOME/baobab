@@ -187,12 +187,26 @@
                     <property name="visible">True</property>
                     <property name="vexpand">True</property>
                     <property name="hexpand">True</property>
+                    <property name="hscrollbar-policy">never</property>
                     <child>
-                      <object class="BaobabLocationList" id="location_list">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
-                        <style>
-                          <class name="view"/>
-                        </style>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">32</property>
+                        <property name="margin">32</property>
+                        <property name="border-width">12</property>
+                        <property name="halign">center</property>
+                        <property name="width-request">700</property>
+                        <child>
+                          <object class="BaobabLocalLocationList" id="local_location_list">
+                            <property name="visible">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="BaobabRemoteLocationList" id="remote_location_list">
+                            <property name="visible">True</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>

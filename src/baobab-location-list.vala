@@ -29,7 +29,9 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Label path_label;
         [GtkChild]
-        private Gtk.Label usage_label;
+        private Gtk.Label available_label;
+        [GtkChild]
+        private Gtk.Label total_size_label;
         [GtkChild]
         private Gtk.LevelBar usage_bar;
 
@@ -44,31 +46,51 @@ namespace Baobab {
             name_label.label = "<b>%s</b>".printf (escaped);
 
             escaped = location.file != null ? GLib.Markup.escape_text (location.file.get_parse_name (), -1) : "";
-            path_label.label = "<small>%s</small>".printf (escaped);
+            path_label.label = escaped;
 
-            if (location.is_volume && location.used != null && location.size != null) {
-                usage_label.label = "<small>%s / %s</small>".printf (format_size (location.used), format_size (location.size));
-                usage_label.show ();
+            // assume for local mounts the end of the mount path is the
+            // relevant information, and for remote mounts the beginning is
+            // more important
+            path_label.ellipsize = location.is_remote ? Pango.EllipsizeMode.END : Pango.EllipsizeMode.START;
 
-                usage_bar.max_value = location.size;
+            if (location.is_volume || location.is_main_volume) {
+                if (location.size != null) {
+                    total_size_label.label = "%s Total".printf (format_size (location.size));
+                    total_size_label.show ();
 
-                // Set critical color at 90% of the size
-                usage_bar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
-                usage_bar.value = location.used;
-                usage_bar.show ();
+                    if (location.used != null) {
+                        available_label.label = "%s Available".printf (format_size (location.size - location.used));
+
+                        usage_bar.max_value = location.size;
+
+                        // Set critical color at 90% of the size
+                        usage_bar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
+                        usage_bar.value = location.used;
+                        usage_bar.show ();
+                    } else {
+                        available_label.label = "Unknown";
+                    }
+                }
+
+                if (location.used != null) {
+                    // useful for some remote mounts where we don't know the
+                    // size but do have a usage figure
+                    available_label.label = "%s Used".printf (format_size (location.used));
+                }
+
+                available_label.show ();
             }
         }
     }
 
-    public class LocationList : Gtk.ListBox {
+    public class LocationList : Object {
         private const int MAX_RECENT_LOCATIONS = 5;
 
         private VolumeMonitor monitor;
 
         private List<Location> locations = null;
 
-        public delegate void LocationAction (Location l);
-        private LocationAction? location_action;
+        public signal void update ();
 
         construct {
             monitor = VolumeMonitor.get ();
@@ -79,38 +101,24 @@ namespace Baobab {
             monitor.volume_removed.connect (volume_removed);
             monitor.volume_added.connect (volume_added);
 
-            selection_mode = Gtk.SelectionMode.NONE;
-            set_header_func (update_header);
-
             populate ();
         }
 
-        void update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before_row) {
-            if (before_row != null && row.get_header () == null) {
-                row.set_header (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-            } else {
-                row.set_header (null);
-            }
+        public void append (Location location) {
+            locations.append(location);
         }
 
-        public override void row_activated (Gtk.ListBoxRow row) {
-            if (location_action != null) {
-                var location_widget = row as LocationRow;
-                location_action (location_widget.location);
-            }
+        public void @foreach (Func<Location> func) {
+            locations.foreach (func);
         }
 
-        bool already_present (File file) {
+        public bool already_present (File file) {
             foreach (var l in locations) {
                 if (l.file != null && l.file.equal (file)) {
                     return true;
                 }
             }
             return false;
-        }
-
-        void append_to_volumes (Location location) {
-            locations.insert_before (locations.find (Location.get_home_location ()), location);
         }
 
         void volume_changed (Volume volume) {
@@ -129,7 +137,7 @@ namespace Baobab {
         }
 
         void volume_added (Volume volume) {
-            append_to_volumes (new Location.from_volume (volume));
+            append (new Location.from_volume (volume));
             update ();
         }
 
@@ -151,7 +159,7 @@ namespace Baobab {
             var volume = mount.get_volume ();
             if (volume == null) {
                 if (!already_present (mount.get_root ())) {
-                    append_to_volumes (new Location.from_mount (mount));
+                    append (new Location.from_mount (mount));
                 }
             } else {
                 foreach (var location in locations) {
@@ -166,27 +174,16 @@ namespace Baobab {
         }
 
         void populate () {
-            locations.append (new Location.for_main_volume ());
+            append (new Location.for_home_folder ());
+            append (new Location.for_main_volume ());
 
             foreach (var volume in monitor.get_volumes ()) {
-                var location = new Location.from_volume (volume);
-                if (!location.is_home) {
-                    locations.append (location);
-                }
+                volume_added (volume);
             }
 
             foreach (var mount in monitor.get_mounts ()) {
-                if (mount.get_volume () == null) {
-                    var location = new Location.from_mount (mount);
-                    if (!location.is_home) {
-                        locations.append (location);
-                    }
-                } else {
-                    // Already added as volume
-                }
+                mount_added (mount);
             }
-
-            locations.append (Location.get_home_location ());
 
             Gtk.RecentManager recent_manager = Gtk.RecentManager.get_default ();
             List<Gtk.RecentInfo> recent_items = recent_manager.get_items ();
@@ -212,10 +209,65 @@ namespace Baobab {
             recent_items.reverse ();
 
             foreach (var info in recent_items) {
-                locations.append (new Location.for_recent_info (info));
+                append (new Location.for_recent_info (info));
             }
 
             update ();
+        }
+    }
+
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-list.ui")]
+    public abstract class BaseLocationListWidget : Gtk.Box {
+        [GtkChild]
+        private Gtk.Label label_widget;
+        [GtkChild]
+        private Gtk.ListBox list;
+
+        public abstract string label { get; }
+
+        private LocationList locations = null;
+        public void set_locations (LocationList locations) {
+            this.locations = locations;
+            locations.update.connect (update);
+        }
+
+        public delegate void LocationAction (Location l);
+        private LocationAction? location_action;
+
+        construct {
+            label_widget.label = _(label);
+            list.selection_mode = Gtk.SelectionMode.NONE;
+            list.set_header_func (update_header);
+            list.row_activated.connect (row_activated);
+        }
+
+        public abstract bool allow_display (Location location);
+
+        public override void show_all () {
+            base.show_all (); // set children to visible
+
+            if (list.get_children ().length () == 0) {
+                visible = false;
+            }
+        }
+
+        public void set_adjustment (Gtk.Adjustment adj) {
+            list.set_adjustment (adj);
+        }
+
+        void update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before_row) {
+            if (before_row != null && row.get_header () == null) {
+                row.set_header (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            } else {
+                row.set_header (null);
+            }
+        }
+
+        void row_activated (Gtk.ListBoxRow row) {
+            if (location_action != null) {
+                var location_widget = row as LocationRow;
+                location_action (location_widget.location);
+            }
         }
 
         public void set_action (owned LocationAction? action) {
@@ -223,11 +275,13 @@ namespace Baobab {
         }
 
         public void update () {
-            this.foreach ((widget) => { widget.destroy (); });
+            list.foreach ((widget) => { widget.destroy (); });
 
-            foreach (var location in locations) {
-                add (new LocationRow (location));
-            }
+            locations.foreach((location) => {
+                if (allow_display (location)) {
+                    list.add (new LocationRow (location));
+                }
+            });
 
             show_all ();
         }
@@ -237,7 +291,7 @@ namespace Baobab {
                 return;
             }
 
-            if (!already_present (location.file)) {
+            if (!locations.already_present (location.file)) {
                 locations.append (location);
             }
 
@@ -255,6 +309,20 @@ namespace Baobab {
             groups[1] = null;
             data.groups = groups;
             Gtk.RecentManager.get_default ().add_full (location.file.get_uri (), data);
+        }
+    }
+
+    public class LocalLocationList : BaseLocationListWidget {
+        public override string label { get { return "This Computer"; } }
+        public override bool allow_display (Location location) {
+            return !location.is_remote;
+        }
+    }
+
+    public class RemoteLocationList : BaseLocationListWidget {
+        public override string label { get { return "Remote Locations"; } }
+        public override bool allow_display (Location location) {
+            return location.is_remote;
         }
     }
 }

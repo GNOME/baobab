@@ -41,13 +41,10 @@ namespace Baobab {
         public Volume? volume { get; private set; }
         public Mount? mount { get; private set; }
 
-        public Scanner? scanner { get; private set; }
+        public bool is_main_volume { get; private set; default = false; }
+        public bool is_remote { get; private set; default = false; }
 
-        public bool is_home {
-            get {
-                return home_location == this;
-            }
-        }
+        public Scanner? scanner { get; private set; }
 
         private static const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
@@ -57,8 +54,6 @@ namespace Baobab {
             FileAttribute.STANDARD_DISPLAY_NAME + "," +
             FileAttribute.STANDARD_ICON + "," +
             FileAttribute.STANDARD_TYPE;
-
-        private static Location? home_location = null;
 
         string get_hostname () throws Error {
             HostnameIface hostname_iface;
@@ -76,11 +71,9 @@ namespace Baobab {
         void make_this_home_location () {
             name = _("Home folder");
             icon = new ThemedIcon ("user-home");
-
-            home_location = this;
         }
 
-        Location.for_home_folder () {
+        public Location.for_home_folder () {
             is_volume = false;
             file = File.new_for_path (GLib.Environment.get_home_dir ());
             get_file_info ();
@@ -89,14 +82,6 @@ namespace Baobab {
             make_this_home_location ();
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
-        }
-
-        public static Location get_home_location () {
-            if (home_location == null) {
-                home_location = new Location.for_home_folder ();
-            }
-
-            return home_location;
         }
 
         public Location.from_volume (Volume volume_) {
@@ -126,6 +111,7 @@ namespace Baobab {
             file = File.new_for_path ("/");
             get_file_info ();
             icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system");
+            is_main_volume = true;
 
             get_fs_usage ();
 
@@ -170,6 +156,8 @@ namespace Baobab {
         void update_volume_info () {
             mount = volume.get_mount ();
 
+            is_remote = volume.get_identifier (VolumeIdentifier.CLASS) == "network";
+
             if (mount != null) {
                 fill_from_mount ();
             } else {
@@ -188,6 +176,11 @@ namespace Baobab {
             icon = mount.get_icon ();
             file = mount.get_root ();
             get_file_info ();
+
+            // a little hacky, but it gets around all those null returns
+            if ("folder-remote" in icon.to_string() && !is_volume) {
+                is_remote = true;
+            }
 
             if (file != null && file.equal (File.new_for_path (Environment.get_home_dir ()))) {
                 make_this_home_location ();
@@ -223,6 +216,12 @@ namespace Baobab {
                     reserved = size - free - used;
                 }
             } catch (Error e) {
+            }
+            // this can happen sometimes with remote mounts. The result, if
+            // unchecked, is a uint64 underflow and the drive being presented
+            // with 18.4 EB free
+            if (size != null && used != null && used > size) {
+                size = null;
             }
         }
 

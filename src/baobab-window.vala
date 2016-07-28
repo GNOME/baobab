@@ -50,7 +50,9 @@ namespace Baobab {
         [GtkChild]
         private Gtk.ScrolledWindow location_scrolled_window;
         [GtkChild]
-        private LocationList location_list;
+        private LocalLocationList local_location_list;
+        [GtkChild]
+        private RemoteLocationList remote_location_list;
         [GtkChild]
         private Gtk.TreeView treeview;
         [GtkChild]
@@ -127,9 +129,13 @@ namespace Baobab {
             var action = ui_settings.create_action ("active-chart");
             add_action (action);
 
-            location_list.set_adjustment (location_scrolled_window.get_vadjustment ());
-            location_list.set_action (on_scan_location_activate);
-            location_list.update ();
+            var locations = new LocationList();
+            foreach (BaseLocationListWidget location_list in new BaseLocationListWidget[] {local_location_list, remote_location_list}) {
+                location_list.set_locations (locations);
+                location_list.set_adjustment (location_scrolled_window.get_vadjustment ());
+                location_list.set_action (on_scan_location_activate);
+                location_list.update ();
+            }
 
             setup_treeview ();
 
@@ -222,7 +228,10 @@ namespace Baobab {
             active_location = location;
 
             // Update the timestamp for GtkRecentManager
-            location_list.add_location (location);
+            if (location.is_remote)
+                remote_location_list.add_location (location);
+            else
+                local_location_list.add_location (location);
         }
 
         void on_scan_location_activate (Location location) {
@@ -486,7 +495,7 @@ namespace Baobab {
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
-                header_bar.title = _("Devices and locations");
+                header_bar.title = _("Devices & Locations");
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
