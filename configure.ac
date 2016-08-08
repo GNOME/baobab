@@ -14,11 +14,8 @@ AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip -Wno-portability foreign])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
 
-# i18n stuff
-IT_PROG_INTLTOOL(0.40.0)
-
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.17])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST([GETTEXT_PACKAGE])
@@ -50,7 +47,7 @@ PKG_CHECK_MODULES(BAOBAB, [
 AC_CONFIG_FILES([
 Makefile
 data/Makefile
-data/org.gnome.baobab.gschema.xml.in
+data/org.gnome.baobab.gschema.xml
 help/Makefile
 pixmaps/Makefile
 src/Makefile

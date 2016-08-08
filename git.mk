@@ -1,4 +1,5 @@
-# git.mk
+# git.mk, a small Makefile to autogenerate .gitignore files
+# for autotools-based projects.
 #
 # Copyright 2009, Red Hat, Inc.
 # Copyright 2010,2011,2012,2013 Behdad Esfahbod
@@ -9,7 +10,8 @@
 # notice and this notice are preserved.
 #
 # The latest version of this file can be downloaded from:
-#   https://raw.github.com/behdad/git.mk/master/git.mk
+GIT_MK_URL = https://raw.githubusercontent.com/behdad/git.mk/master/git.mk
+#
 # Bugs, etc, should be reported upstream at:
 #   https://github.com/behdad/git.mk
 #
@@ -45,7 +47,8 @@
 # build dir.
 #
 # This file knows how to handle autoconf, automake, libtool, gtk-doc,
-# gnome-doc-utils, yelp.m4, mallard, intltool, gsettings, dejagnu.
+# gnome-doc-utils, yelp.m4, mallard, intltool, gsettings, dejagnu, appdata,
+# appstream.
 #
 # This makefile provides the following targets:
 #
@@ -77,39 +80,47 @@ GITIGNORE_MAINTAINERCLEANFILES_TOPLEVEL = \
 	$(srcdir)/aclocal.m4 \
 	$(srcdir)/autoscan.log \
 	$(srcdir)/configure.scan \
-	`AUX_DIR=$(srcdir)/$$($(AUTOCONF) --trace 'AC_CONFIG_AUX_DIR:$$1' $(srcdir)/configure.ac); \
+	`AUX_DIR=$(srcdir)/$$(cd $(top_srcdir); $(AUTOCONF) --trace 'AC_CONFIG_AUX_DIR:$$1' ./configure.ac); \
 	 test "x$$AUX_DIR" = "x$(srcdir)/" && AUX_DIR=$(srcdir); \
 	 for x in \
 		ar-lib \
 		compile \
 		config.guess \
+		config.rpath \
 		config.sub \
 		depcomp \
 		install-sh \
 		ltmain.sh \
 		missing \
 		mkinstalldirs \
+		test-driver \
+		ylwrap \
 	 ; do echo "$$AUX_DIR/$$x"; done` \
-	`$(AUTOCONF) --trace 'AC_CONFIG_HEADERS:$$1' $(srcdir)/configure.ac | \
+	`cd $(top_srcdir); $(AUTOCONF) --trace 'AC_CONFIG_HEADERS:$$1' ./configure.ac | \
 	head -n 1 | while read f; do echo "$(srcdir)/$$f.in"; done`
 #
 # All modules should also be fine including the following variable, which
 # removes automake-generated Makefile.in files:
 GITIGNORE_MAINTAINERCLEANFILES_MAKEFILE_IN = \
-	`$(AUTOCONF) --trace 'AC_CONFIG_FILES:$$1' $(srcdir)/configure.ac | \
+	`cd $(top_srcdir); $(AUTOCONF) --trace 'AC_CONFIG_FILES:$$1' ./configure.ac | \
 	while read f; do \
 	  case $$f in Makefile|*/Makefile) \
 	    test -f "$(srcdir)/$$f.am" && echo "$(srcdir)/$$f.in";; esac; \
 	done`
 #
-# Modules that use libtool /and/ use  AC_CONFIG_MACRO_DIR([m4]) may also
-# include this:
+# Modules that use libtool and use  AC_CONFIG_MACRO_DIR() may also include this,
+# though it's harmless to include regardless.
 GITIGNORE_MAINTAINERCLEANFILES_M4_LIBTOOL = \
-	$(srcdir)/m4/libtool.m4 \
-	$(srcdir)/m4/ltoptions.m4 \
-	$(srcdir)/m4/ltsugar.m4 \
-	$(srcdir)/m4/ltversion.m4 \
-	$(srcdir)/m4/lt~obsolete.m4
+	`MACRO_DIR=$(srcdir)/$$(cd $(top_srcdir); $(AUTOCONF) --trace 'AC_CONFIG_MACRO_DIR:$$1' ./configure.ac); \
+	 if test "x$$MACRO_DIR" != "x$(srcdir)/"; then \
+		for x in \
+			libtool.m4 \
+			ltoptions.m4 \
+			ltsugar.m4 \
+			ltversion.m4 \
+			lt~obsolete.m4 \
+		; do echo "$$MACRO_DIR/$$x"; done; \
+	 fi`
 
 
 
@@ -141,7 +152,10 @@ git-mk-install:
 			fi; \
 	fi; done; test -z "$$any_failed"
 
-.PHONY: git-all git-mk-install
+git-mk-update:
+	wget $(GIT_MK_URL) -O $(top_srcdir)/git.mk
+
+.PHONY: git-all git-mk-install git-mk-update
 
 
 
@@ -158,8 +172,24 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 				$(DOC_MODULE)-decl.txt \
 				tmpl/$(DOC_MODULE)-unused.sgml \
 				"tmpl/*.bak" \
+				$(REPORT_FILES) \
+				$(DOC_MODULE).pdf \
 				xml html \
 			; do echo "/$$x"; done; \
+			FLAVOR=$$(cd $(top_srcdir); $(AUTOCONF) --trace 'GTK_DOC_CHECK:$$2' ./configure.ac); \
+			case $$FLAVOR in *no-tmpl*) echo /tmpl;; esac; \
+			if echo "$(SCAN_OPTIONS)" | grep -q "\-\-rebuild-types"; then \
+				echo "/$(DOC_MODULE).types"; \
+			fi; \
+			if echo "$(SCAN_OPTIONS)" | grep -q "\-\-rebuild-sections"; then \
+				echo "/$(DOC_MODULE)-sections.txt"; \
+			fi; \
+			if test "$(abs_srcdir)" != "$(abs_builddir)" ; then \
+				for x in \
+					$(SETUP_FILES) \
+					$(DOC_MODULE).types \
+				; do echo "/$$x"; done; \
+			fi; \
 		fi; \
 		if test "x$(DOC_MODULE)$(DOC_ID)" = x -o "x$(DOC_LINGUAS)" = x; then :; else \
 			for lc in $(DOC_LINGUAS); do \
@@ -194,8 +224,19 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 				$(gsettings__enum_file) \
 			; do echo "/$$x"; done; \
 		fi; \
+		if test "x$(appdata_XML)" = x; then :; else \
+			for x in \
+				$(appdata_XML:.xml=.valid) \
+			; do echo "/$$x"; done; \
+		fi; \
+		if test "x$(appstream_XML)" = x; then :; else \
+			for x in \
+				$(appstream_XML:.xml=.valid) \
+			; do echo "/$$x"; done; \
+		fi; \
 		if test -f $(srcdir)/po/Makefile.in.in; then \
 			for x in \
+				ABOUT-NLS \
 				po/Makefile.in.in \
 				po/Makefile.in.in~ \
 				po/Makefile.in \
@@ -204,6 +245,7 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 				po/POTFILES \
 				po/Rules-quot \
 				po/stamp-it \
+				po/stamp-po \
 				po/.intltool-merge-cache \
 				"po/*.gmo" \
 				"po/*.header" \
@@ -235,7 +277,7 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 		if test "x$(am__dirstamp)" = x; then :; else \
 			echo "$(am__dirstamp)"; \
 		fi; \
-		if test "x$(LTCOMPILE)" = x; then :; else \
+		if test "x$(findstring libtool,$(LTCOMPILE))" = x -a "x$(findstring libtool,$(LTCXXCOMPILE))" = x -a "x$(GTKDOC_RUN)" = x; then :; else \
 			for x in \
 				"*.lo" \
 				".libs" "_libs" \
@@ -250,7 +292,12 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 			$(LTLIBRARIES) $(check_LTLIBRARIES) $(EXTRA_LTLIBRARIES) \
 			so_locations \
 			$(MOSTLYCLEANFILES) \
-			"*.$(OBJEXT)" \
+			$(TEST_LOGS) \
+			$(TEST_LOGS:.log=.trs) \
+			$(TEST_SUITE_LOG) \
+			$(TESTS:=.test) \
+			"*.gcda" \
+			"*.gcno" \
 			$(DISTCLEANFILES) \
 			$(am__CONFIG_DISTCLEAN_FILES) \
 			$(CONFIG_CLEAN_FILES) \
@@ -258,11 +305,10 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 			"*.tab.c" \
 			$(MAINTAINERCLEANFILES) \
 			$(BUILT_SOURCES) \
-			$(DEPDIR) \
 			$(patsubst %.vala,%.c,$(filter %.vala,$(SOURCES))) \
 			$(filter %_vala.stamp,$(DIST_COMMON)) \
 			$(filter %.vapi,$(DIST_COMMON)) \
-			$(patsubst %.vapi,%.h,$(filter %.vapi,$(DIST_COMMON))) \
+			$(filter $(addprefix %,$(notdir $(patsubst %.vapi,%.h,$(filter %.vapi,$(DIST_COMMON))))),$(DIST_COMMON)) \
 			Makefile \
 			Makefile.in \
 			"*.orig" \
@@ -272,6 +318,10 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk
 			".*.sw[nop]" \
 			".dirstamp" \
 		; do echo "/$$x"; done; \
+		for x in \
+			"*.$(OBJEXT)" \
+			$(DEPDIR) \
+		; do echo "$$x"; done; \
 	} | \
 	sed "s@^/`echo "$(srcdir)" | sed 's/\(.\)/[\1]/g'`/@/@" | \
 	sed 's@/[.]/@/@g' | \
