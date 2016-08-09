@@ -18,9 +18,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD.he\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-18 00:30+0300\n"
-"PO-Revision-Date: 2014-06-18 00:31+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab\n"
+"POT-Creation-Date: 2016-08-09 21:21+0300\n"
+"PO-Revision-Date: 2016-08-09 21:21+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -30,7 +31,7 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n>2||n==0) ? 1 : 2;\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
+#: data/org.gnome.baobab.appdata.xml.in:6
 msgid ""
 "A simple application which can scan either specific folders (local or "
 "remote) or volumes and give a graphical representation including each "
@@ -39,55 +40,59 @@ msgstr ""
 "יישום פשוט אשר יכול לסרוק או תיקיות מסוימות (מקומיות או מרוחקות) או התקנים "
 "ונותן ייצוג גרפי הכולל גודל או שיעור אחוזי כל תיקייה."
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: data/org.gnome.baobab.desktop.in.in:3 src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "מנתח השימוש בכונן"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "בדיקת גדלי התיקיות והמקום פנוי בכונן"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr "אחסון;מקום;שטח;נפח;ניקוי;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+#: data/org.gnome.baobab.desktop.in.in:10
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "Exluded partitions uris"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "A list of uri for partitions to be excluded from scanning."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Active Chart"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Which type of chart should be displayed."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Window size"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "The initial size of the window"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Window state"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "The GdkWindowState of the window"
 
-#: ../src/baobab-application.vala:29
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "הצגת פרטי הגרסה ויציאה"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -95,18 +100,15 @@ msgstr[0] "פריט אחד"
 msgstr[1] "%d פריטים"
 msgstr[2] "2 פריטים"
 
-#. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101
 msgid "Unknown"
 msgstr "בלתי ידוע"
 
-#. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "היום"
 
-#. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -114,8 +116,7 @@ msgstr[0] "יום אחד"
 msgstr[1] "%d ימים"
 msgstr[2] "יומיים"
 
-#. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -123,8 +124,7 @@ msgstr[0] "חודש אחד"
 msgstr[1] "%d חודשים"
 msgstr[2] "חודשיים"
 
-#. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
@@ -132,119 +132,91 @@ msgstr[0] "שנה אחת"
 msgstr[1] "%d שנים"
 msgstr[2] "שנתיים"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location.vala:77
 msgid "Home folder"
 msgstr "תיקיית הבית"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:123
 msgid "Computer"
 msgstr "מחשב"
 
-#: ../src/baobab-main-window.ui.h:1
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "סריקת תיקייה…"
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "סריקת תיקייה מרוחקת…"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "_פתיחת תיקייה"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: src/baobab-main-window.ui:29 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "העתקת ה_נתיב ללוח הגזירים"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: src/baobab-main-window.ui:38 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "ה_עברה לאשפה"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:168
 msgid "Close"
 msgstr "סגירה"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:223
 msgid "Folder"
 msgstr "תיקייה"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:250
 msgid "Size"
 msgstr "גודל"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:270
 msgid "Contents"
 msgstr "תכנים"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:288
 msgid "Modified"
 msgstr "מועד השינוי"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:333
 msgid "Rings Chart"
 msgstr "הצגה כתרשים טבעות"
 
-#: ../src/baobab-main-window.ui.h:13
+#: src/baobab-main-window.ui:345
 msgid "Treemap Chart"
 msgstr "הצגה כתרשים מפת עץ"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "ע_זרה"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "על _אודות"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "י_ציאה"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "Go to _parent folder"
-msgstr "מעבר ל_תיקיית ההורה"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "הת_קרבות"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "הת_רחקות"
-
-#: ../src/baobab-window.vala:228
+#: src/baobab-window.vala:193
 msgid "Select Folder"
 msgstr "בחירת תיקייה"
 
-#: ../src/baobab-window.vala:230
+#: src/baobab-window.vala:195
 msgid "_Cancel"
 msgstr "_ביטול"
 
-#: ../src/baobab-window.vala:231
+#: src/baobab-window.vala:196
 msgid "_Open"
 msgstr "_פתיחה"
 
-#: ../src/baobab-window.vala:236
+#: src/baobab-window.vala:202
 msgid "Recursively analyze mount points"
 msgstr "ניתוח רקורסיבי של נקודות העיגון"
 
-#: ../src/baobab-window.vala:283
+#: src/baobab-window.vala:237
 msgid "Could not analyze volume."
 msgstr "לא ניתן לנתח את הכרך."
 
-#: ../src/baobab-window.vala:315
+#: src/baobab-window.vala:269
 msgid "Failed to show help"
 msgstr "הצגת העזרה נכשלה"
 
-#: ../src/baobab-window.vala:334
+#: src/baobab-window.vala:288
 msgid "Baobab"
 msgstr "‏Baobab"
 
-#: ../src/baobab-window.vala:337
+#: src/baobab-window.vala:291
 msgid "A graphical tool to analyze disk usage."
 msgstr "כלי גרפי לניתוח השימוש בכונן."
 
-#: ../src/baobab-window.vala:342
+#: src/baobab-window.vala:296
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -257,45 +229,71 @@ msgstr ""
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../src/baobab-window.vala:411
+#: src/baobab-window.vala:365
 msgid "Failed to open file"
 msgstr "פתיחת הקובץ נכשלה"
 
-#: ../src/baobab-window.vala:431
+#: src/baobab-window.vala:385
 msgid "Failed to move file to the trash"
 msgstr "העברת הקבצים לאשפה נכשלה"
 
-#: ../src/baobab-window.vala:533
+#: src/baobab-window.vala:489
 msgid "Devices and locations"
 msgstr "התקנים ומיקומים"
 
-#: ../src/baobab-window.vala:594
+#: src/baobab-window.vala:550
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "לא ניתן לסרוק את התיקייה „%s”"
 
-#: ../src/baobab-window.vala:597
+#: src/baobab-window.vala:553
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "לא ניתן לסרוק חלק מהתיקיות שהתיקייה „%s“ מכילה."
 
-#: ../src/baobab-window.vala:616
+#: src/baobab-window.vala:572
 msgid "Could not detect occupied disk sizes."
 msgstr "לא ניתן לזהות את החלקים התפוסים של הכוננים."
 
-#: ../src/baobab-window.vala:616
+#: src/baobab-window.vala:572
 msgid "Apparent sizes are shown instead."
 msgstr "הגדלים הנראים לעין מוצגים במקום."
 
-#. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
+#: src/baobab-window.vala:589 src/baobab-window.vala:595
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" אינה תיקייה תקינה"
 
-#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
+#: src/baobab-window.vala:590 src/baobab-window.vala:596
 msgid "Could not analyze disk usage."
 msgstr "לא ניתן לנתח את השימוש בכונן."
+
+#: src/menus.ui:7
+msgid "_Help"
+msgstr "ע_זרה"
+
+#: src/menus.ui:12
+msgid "_About"
+msgstr "על _אודות"
+
+#: src/menus.ui:16
+msgid "_Quit"
+msgstr "י_ציאה"
+
+#: src/menus.ui:39
+msgid "Go to _parent folder"
+msgstr "מעבר ל_תיקיית ההורה"
+
+#: src/menus.ui:45
+msgid "Zoom _in"
+msgstr "הת_קרבות"
+
+#: src/menus.ui:49
+msgid "Zoom _out"
+msgstr "הת_רחקות"
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "סריקת תיקייה מרוחקת…"
 
 #~ msgid "- Disk Usage Analyzer"
 #~ msgstr "- מנתח השימוש בכונן"
