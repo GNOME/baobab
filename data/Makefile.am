@@ -11,11 +11,11 @@ $(baobabapp_DATA): $(baobabapp_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 
-appdatadir = $(datadir)/appdata
-appdata_in_files = org.gnome.baobab.appdata.xml.in
-appdata_XML = $(appdata_in_files:.appdata.xml.in=.appdata.xml)
+appstream_in_files = org.gnome.baobab.appdata.xml.in
+appstream_XML = $(appstream_in_files:.appdata.xml.in=.appdata.xml)
+@APPSTREAM_XML_RULES@
 
-$(appdata_XML): $(appdata_in_files)
+$(appstream_XML): $(appstream_in_files)
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 dbusservicedir = $(datadir)/dbus-1/services
@@ -38,14 +38,14 @@ EXTRA_DIST = 				\
 	$(gsettingsschema_in_files)	\
 	$(man_MANS)			\
 	$(baobabicon_DATA)		\
-	$(appdata_in_files)		\
+	$(appstream_in_files)		\
 	$(NULL)
 
 CLEANFILES =	 			\
 	$(baobabapp_in_files)		\
 	$(baobabapp_DATA)		\
 	$(gsettings_SCHEMAS)		\
-	$(appdata_XML)			\
+	$(appstream_XML)		\
 	org.gnome.baobab.service	\
 	$(NULL)
 
