@@ -55,11 +55,10 @@ namespace Baobab {
 
             if (location.is_volume || location.is_main_volume) {
                 if (location.size != null) {
-                    total_size_label.label = "%s Total".printf (format_size (location.size));
-                    total_size_label.show ();
+                    total_size_label.label = _("%s Total").printf (format_size (location.size));
 
                     if (location.used != null) {
-                        available_label.label = "%s Available".printf (format_size (location.size - location.used));
+                        available_label.label = _("%s Available").printf (format_size (location.size - location.used));
 
                         usage_bar.max_value = location.size;
 
@@ -68,29 +67,34 @@ namespace Baobab {
                         usage_bar.value = location.used;
                         usage_bar.show ();
                     } else {
-                        available_label.label = "Unknown";
+                        available_label.label = _("Unknown");
                     }
-                }
-
-                if (location.used != null) {
+                } else if (location.used != null) {
                     // useful for some remote mounts where we don't know the
                     // size but do have a usage figure
-                    available_label.label = "%s Used".printf (format_size (location.used));
+                    available_label.label = _("%s Used").printf (format_size (location.used));
                 }
-
-                available_label.show ();
             }
         }
     }
 
-    public class LocationList : Object {
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-list.ui")]
+    public class LocationList : Gtk.Box {
+        [GtkChild]
+        private Gtk.ListBox local_list_box;
+        [GtkChild]
+        private Gtk.ListBox remote_list_box;
+        [GtkChild]
+        private Gtk.Box remote_box;
+
+        public delegate void LocationAction (Location l);
+        private LocationAction? location_action;
+
         private const int MAX_RECENT_LOCATIONS = 5;
 
         private VolumeMonitor monitor;
 
         private List<Location> locations = null;
-
-        public signal void update ();
 
         construct {
             monitor = VolumeMonitor.get ();
@@ -101,18 +105,16 @@ namespace Baobab {
             monitor.volume_removed.connect (volume_removed);
             monitor.volume_added.connect (volume_added);
 
+            local_list_box.set_header_func (update_header);
+            local_list_box.row_activated.connect (row_activated);
+
+            remote_list_box.set_header_func (update_header);
+            remote_list_box.row_activated.connect (row_activated);
+
             populate ();
         }
 
-        public void append (Location location) {
-            locations.append(location);
-        }
-
-        public void @foreach (Func<Location> func) {
-            locations.foreach (func);
-        }
-
-        public bool already_present (File file) {
+        bool already_present (File file) {
             foreach (var l in locations) {
                 if (l.file != null && l.file.equal (file)) {
                     return true;
@@ -137,7 +139,7 @@ namespace Baobab {
         }
 
         void volume_added (Volume volume) {
-            append (new Location.from_volume (volume));
+            locations.append (new Location.from_volume (volume));
             update ();
         }
 
@@ -159,7 +161,7 @@ namespace Baobab {
             var volume = mount.get_volume ();
             if (volume == null) {
                 if (!already_present (mount.get_root ())) {
-                    append (new Location.from_mount (mount));
+                    locations.append (new Location.from_mount (mount));
                 }
             } else {
                 foreach (var location in locations) {
@@ -174,8 +176,8 @@ namespace Baobab {
         }
 
         void populate () {
-            append (new Location.for_home_folder ());
-            append (new Location.for_main_volume ());
+            locations.append (new Location.for_home_folder ());
+            locations.append (new Location.for_main_volume ());
 
             foreach (var volume in monitor.get_volumes ()) {
                 volume_added (volume);
@@ -209,50 +211,10 @@ namespace Baobab {
             recent_items.reverse ();
 
             foreach (var info in recent_items) {
-                append (new Location.for_recent_info (info));
+                locations.append (new Location.for_recent_info (info));
             }
 
             update ();
-        }
-    }
-
-    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-list.ui")]
-    public abstract class BaseLocationListWidget : Gtk.Box {
-        [GtkChild]
-        private Gtk.Label label_widget;
-        [GtkChild]
-        private Gtk.ListBox list;
-
-        public abstract string label { get; }
-
-        private LocationList locations = null;
-        public void set_locations (LocationList locations) {
-            this.locations = locations;
-            locations.update.connect (update);
-        }
-
-        public delegate void LocationAction (Location l);
-        private LocationAction? location_action;
-
-        construct {
-            label_widget.label = _(label);
-            list.selection_mode = Gtk.SelectionMode.NONE;
-            list.set_header_func (update_header);
-            list.row_activated.connect (row_activated);
-        }
-
-        public abstract bool allow_display (Location location);
-
-        public override void show_all () {
-            base.show_all (); // set children to visible
-
-            if (list.get_children ().length () == 0) {
-                visible = false;
-            }
-        }
-
-        public void set_adjustment (Gtk.Adjustment adj) {
-            list.set_adjustment (adj);
         }
 
         void update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before_row) {
@@ -275,15 +237,19 @@ namespace Baobab {
         }
 
         public void update () {
-            list.foreach ((widget) => { widget.destroy (); });
+            local_list_box.foreach ((widget) => { widget.destroy (); });
+            remote_list_box.foreach ((widget) => { widget.destroy (); });
 
-            locations.foreach((location) => {
-                if (allow_display (location)) {
-                    list.add (new LocationRow (location));
+            remote_box.visible = false;
+
+            foreach (var location in locations) {
+                if (location.is_remote) {
+                    remote_list_box.add (new LocationRow (location));
+                    remote_box.visible = true;
+                } else {
+                    local_list_box.add (new LocationRow (location));
                 }
-            });
-
-            show_all ();
+            }
         }
 
         public void add_location (Location location) {
@@ -291,7 +257,7 @@ namespace Baobab {
                 return;
             }
 
-            if (!locations.already_present (location.file)) {
+            if (!already_present (location.file)) {
                 locations.append (location);
             }
 
@@ -309,20 +275,6 @@ namespace Baobab {
             groups[1] = null;
             data.groups = groups;
             Gtk.RecentManager.get_default ().add_full (location.file.get_uri (), data);
-        }
-    }
-
-    public class LocalLocationList : BaseLocationListWidget {
-        public override string label { get { return "This Computer"; } }
-        public override bool allow_display (Location location) {
-            return !location.is_remote;
-        }
-    }
-
-    public class RemoteLocationList : BaseLocationListWidget {
-        public override string label { get { return "Remote Locations"; } }
-        public override bool allow_display (Location location) {
-            return location.is_remote;
         }
     }
 }

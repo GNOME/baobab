@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
-  <template class="BaobabBaseLocationListWidget" parent="GtkBox">
+  <template class="BaobabLocationList" parent="GtkBox">
     <property name="visible">True</property>
     <property name="orientation">vertical</property>
-    <property name="spacing">6</property>
+    <property name="spacing">32</property>
+    <property name="margin">32</property>
     <child>
-      <object class="GtkLabel" id="label_widget">
+      <object class="GtkBox" id="local_box">
         <property name="visible">True</property>
-        <property name="halign">start</property>
-        <style>
-          <class name="dim-label"/>
-        </style>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="local_label">
+            <property name="visible">True</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">This Computer</property>
+            <style>
+              <class name="dim-label"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkListBox" id="local_list_box">
+                <property name="visible">True</property>
+                <property name="selection_mode">none</property>
+                <style>
+                  <class name="view"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
       </object>
     </child>
     <child>
-      <object class="GtkFrame">
+      <object class="GtkBox" id="remote_box">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkListBox" id="list">
+          <object class="GtkLabel" id="remote_label">
             <property name="visible">True</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Remote Locations</property>
             <style>
-              <class name="view"/>
+              <class name="dim-label"/>
             </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkListBox" id="remote_list_box">
+                <property name="visible">True</property>
+                <property name="selection_mode">none</property>
+                <style>
+                  <class name="view"/>
+                </style>
+              </object>
+            </child>
           </object>
         </child>
       </object>
