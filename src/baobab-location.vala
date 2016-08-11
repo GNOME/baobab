@@ -46,11 +46,11 @@ namespace Baobab {
 
         public Scanner? scanner { get; private set; }
 
-        private static const string FS_ATTRIBUTES =
+        private const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
             FileAttribute.FILESYSTEM_USED;
 
-        private static const string FILE_ATTRIBUTES =
+        private const string FILE_ATTRIBUTES =
             FileAttribute.STANDARD_DISPLAY_NAME + "," +
             FileAttribute.STANDARD_ICON + "," +
             FileAttribute.STANDARD_TYPE;

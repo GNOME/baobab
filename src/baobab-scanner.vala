@@ -59,7 +59,7 @@ namespace Baobab {
 
         public signal void completed();
 
-        static const string ATTRIBUTES =
+        const string ATTRIBUTES =
             FileAttribute.STANDARD_NAME + "," +
             FileAttribute.STANDARD_DISPLAY_NAME + "," +
             FileAttribute.STANDARD_TYPE + "," +
