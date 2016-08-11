@@ -177,11 +177,6 @@ namespace Baobab {
             file = mount.get_root ();
             get_file_info ();
 
-            // a little hacky, but it gets around all those null returns
-            if ("folder-remote" in icon.to_string() && !is_volume) {
-                is_remote = true;
-            }
-
             if (file != null && file.equal (File.new_for_path (Environment.get_home_dir ()))) {
                 make_this_home_location ();
             }
