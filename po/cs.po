@@ -22,10 +22,10 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 08:41+0000\n"
-"PO-Revision-Date: 2016-08-10 18:30+0200\n"
+"POT-Creation-Date: 2016-08-13 00:15+0000\n"
+"PO-Revision-Date: 2016-08-13 23:29+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: čeština <gnome-cs-list@gnome.org>>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,7 +116,7 @@ msgstr[1] "%d položky"
 msgstr[2] "%d položek"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "neznámo kdy"
 
@@ -152,11 +152,37 @@ msgstr[0] "před %d rokem"
 msgstr[1] "před %d roky"
 msgstr[2] "před %d roky"
 
-#: src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+#| msgid "Computer"
+msgid "This Computer"
+msgstr "Tento počítač"
+
+#: src/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Vzdálené umístění"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "Celkem %s"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "K dispozici %s"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "Použito %s"
+
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Domovská složka"
 
-#: src/baobab-location.vala:123
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Počítač"
 
@@ -180,63 +206,63 @@ msgstr "_Přesunout do koše"
 msgid "Close"
 msgstr "Zavřít"
 
-#: src/baobab-main-window.ui:223
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Složka"
 
-#: src/baobab-main-window.ui:250
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Velikost"
 
-#: src/baobab-main-window.ui:270
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Obsah"
 
-#: src/baobab-main-window.ui:288
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Změněno"
 
-#: src/baobab-main-window.ui:333
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Kruhový diagram"
 
-#: src/baobab-main-window.ui:345
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
 msgstr "Stromová mapa"
 
-#: src/baobab-window.vala:193
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Výběr složky"
 
-#: src/baobab-window.vala:195
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Zrušit"
 
-#: src/baobab-window.vala:196
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: src/baobab-window.vala:202
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Při analýze se zanořovat do přípojných bodů"
 
-#: src/baobab-window.vala:237
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Nelze analyzovat svazek."
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Selhalo zobrazení nápovědy"
 
-#: src/baobab-window.vala:288
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj pro analýzu využití disku."
 
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "David Šauer <davids@penguin.cz>\n"
@@ -251,43 +277,44 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: src/baobab-window.vala:365
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Selhalo otevření souboru"
 
-#: src/baobab-window.vala:385
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Selhal přesun souboru do koše"
 
-#: src/baobab-window.vala:489
-msgid "Devices and locations"
+#: src/baobab-window.vala:485
+#| msgid "Devices and locations"
+msgid "Devices & Locations"
 msgstr "Zařízení a umístění"
 
-#: src/baobab-window.vala:550
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Nelze analyzovat složku „%s“"
 
-#: src/baobab-window.vala:553
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Nelze analyzovat některé složky v „%s“"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Nelze zjistit velikost zabraného místa na disku."
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Místo toho je zobrazena zdánlivá velikost."
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:589 src/baobab-window.vala:595
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ není platná složka"
 
-#: src/baobab-window.vala:590 src/baobab-window.vala:596
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Nelze analyzovat využití disku."
 
