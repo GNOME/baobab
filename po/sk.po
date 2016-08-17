@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-12 15:11+0000\n"
-"PO-Revision-Date: 2016-08-12 17:55+0200\n"
+"POT-Creation-Date: 2016-08-13 00:15+0000\n"
+"PO-Revision-Date: 2016-08-17 08:52+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: slovenčina <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -109,7 +109,7 @@ msgstr[2] "%d položky"
 # * https://bugzilla.gnome.org/show_bug.cgi?id=706559
 # Zmeneny, stlpec v treeview
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Neznámy"
 
@@ -149,14 +149,6 @@ msgstr[0] "%d rokov"
 msgstr[1] "%d rok"
 msgstr[2] "%d roky"
 
-#: src/baobab-location.vala:72
-msgid "Home folder"
-msgstr "Domovský priečinok"
-
-#: src/baobab-location.vala:108
-msgid "Computer"
-msgstr "Počítač"
-
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
 msgstr "Tento počítač"
@@ -164,6 +156,31 @@ msgstr "Tento počítač"
 #: src/baobab-location-list.ui:47
 msgid "Remote Locations"
 msgstr "Vzdialené umiestnenia"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "Celkom: %s"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "Dostupné: %s"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "Využité: %s"
+
+#: src/baobab-location.vala:72
+msgid "Home folder"
+msgstr "Domovský priečinok"
+
+#: src/baobab-location.vala:108
+msgid "Computer"
+msgstr "Počítač"
 
 #: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
