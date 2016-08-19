@@ -1,5 +1,5 @@
-# Hungarian translation of baobab.
-# Copyright (C) 1999 - 2006, 2007, 2008, 2009, 2010, 2011, 2012 Free Software Foundation, Inc.
+# Hungarian translation for baobab.
+# Copyright (C) 1999-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000.
@@ -10,15 +10,14 @@
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Mate ORY <orymate at gmail d0t com>, 2006.
 # Lukács Bence <lukacs.bence1 at gmail dot com>, 2012.
-# Balázs Úr <urbalazs at gmail dot com>, 2012, 2013.
-# Balázs Úr <urbalazs@gmail.com>, 2014.
+# Balázs Úr <urbalazs at gmail dot com>, 2012, 2013, 2014, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-22 02:51+0000\n"
-"PO-Revision-Date: 2014-06-22 12:13+0200\n"
+"POT-Creation-Date: 2016-08-13 00:15+0000\n"
+"PO-Revision-Date: 2016-08-19 22:57+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
@@ -28,65 +27,82 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Egy egyszerű alkalmazás, amely adott (helyi vagy távoli) mappákat vagy "
-"köteteket képes átvizsgálni és minden könyvtárméretet vagy százalékos "
-"megjelenítést tartalmazó grafikus ábrázolást nyújt."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "Lemezhasználat-elemző"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Mappaméretek és elérhető lemezterület vizsgálata"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr ""
+"Egy egyszerű alkalmazás a lemezhasználat és az elérhető hely ellenőrzés alatt "
+"tartásához."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"A lemezhasználat-elemző képes megvizsgálni bizonyos mappákat, "
+"tárolóeszközöket és online fiókokat. Mind fa, mind grafikus ábrázolást "
+"szolgáltat az egyes mappák méretének megjelenítéséhez, megkönnyítve annak "
+"azonosítását, hogy hol vész el a lemezterület."
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr "tároló;lemezterület;takarítás;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+#| msgid "Baobab"
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "Kihagyott partíciók URI-címei"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "A vizsgálatból kihagyandó partíciók URI-címeinek listája."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Aktív diagram"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Melyik diagramtípus legyen látható."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Ablakméret"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "Az ablak kezdeti mérete"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Ablakállapot"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "Az ablak GdkWindowState állapota"
 
-#: ../src/baobab-application.vala:29
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -94,17 +110,17 @@ msgstr[0] "%d elem"
 msgstr[1] "%d elem"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Ismeretlen"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Ma"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -112,7 +128,7 @@ msgstr[0] "%d nap"
 msgstr[1] "%d nap"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -120,127 +136,126 @@ msgstr[0] "%d hónap"
 msgstr[1] "%d hónap"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d év"
 msgstr[1] "%d év"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+#| msgid "Computer"
+msgid "This Computer"
+msgstr "Ez a számítógép"
+
+#: src/baobab-location-list.ui:47
+#| msgid "All Locations"
+msgid "Remote Locations"
+msgstr "Távoli helyek"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "%s összesen"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+#| msgid "Available"
+msgid "%s Available"
+msgstr "%s elérhető"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "%s használt"
+
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Saját mappa"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Számítógép"
 
-#: ../src/baobab-main-window.ui.h:1
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Mappa vizsgálata…"
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Távoli mappa vizsgálata…"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "Mappa _megnyitása"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: src/baobab-main-window.ui:29 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "Út_vonal másolása a vágólapra"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: src/baobab-main-window.ui:38 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "Át_helyezés a Kukába"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:168
 msgid "Close"
 msgstr "Bezárás"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Mappa"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Méret"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Tartalom"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Módosítva"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Gyűrűdiagram"
 
-#: ../src/baobab-main-window.ui.h:13
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
 msgstr "Fadiagram"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Súgó"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_Névjegy"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Kilépés"
-
-#: ../src/baobab-menu.ui.h:7
-#| msgid "_Move to parent folder"
-msgid "Go to _parent folder"
-msgstr "Ugrás a _szülőmappába"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "_Nagyítás"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_Kicsinyítés"
-
-#: ../src/baobab-window.vala:228
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Mappa kiválasztása"
 
-#: ../src/baobab-window.vala:230
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "Mé_gse"
 
-#: ../src/baobab-window.vala:231
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Megnyitás"
 
-#: ../src/baobab-window.vala:236
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Csatolási pontok rekurzív elemzése"
 
-#: ../src/baobab-window.vala:283
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "A kötet nem elemezhető."
 
-#: ../src/baobab-window.vala:315
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "A súgó megjelenítése meghiúsult"
 
-#: ../src/baobab-window.vala:334
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:337
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafikus lemezhasználat-elemző eszköz."
 
-#: ../src/baobab-window.vala:342
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -252,47 +267,82 @@ msgstr ""
 "Sári Gábor <saga at gnome dot hu>\n"
 "Tímár András <timar at gnome dot hu>"
 
-#: ../src/baobab-window.vala:411
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "A fájl megnyitása meghiúsult"
 
-#: ../src/baobab-window.vala:431
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "A fájl nem helyezhető át a Kukába"
 
-#: ../src/baobab-window.vala:533
-msgid "Devices and locations"
+#: src/baobab-window.vala:485
+#| msgid "Devices and locations"
+msgid "Devices & Locations"
 msgstr "Eszközök és helyek"
 
-#: ../src/baobab-window.vala:594
+#: src/baobab-window.vala:546
 #, c-format
-#| msgid "Could not open folder \"%s\""
 msgid "Could not scan folder \"%s\""
 msgstr "Nem vizsgálható a(z) „%s” mappa"
 
-#: ../src/baobab-window.vala:597
+#: src/baobab-window.vala:549
 #, c-format
-#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "„%s” mappa néhány almappájának vizsgálata nem sikerült"
 
-#: ../src/baobab-window.vala:616
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Nem észlelhetők foglalt lemezméretek."
 
-#: ../src/baobab-window.vala:616
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Helyette a látszólagos méretek vannak megjelenítve."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s” nem érvényes mappa"
 
-#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "A lemezhasználat nem elemezhető."
+
+#: src/menus.ui:7
+msgid "_Help"
+msgstr "_Súgó"
+
+#: src/menus.ui:12
+msgid "_About"
+msgstr "_Névjegy"
+
+#: src/menus.ui:16
+msgid "_Quit"
+msgstr "_Kilépés"
+
+#: src/menus.ui:39
+msgid "Go to _parent folder"
+msgstr "Ugrás a _szülőmappába"
+
+#: src/menus.ui:45
+msgid "Zoom _in"
+msgstr "_Nagyítás"
+
+#: src/menus.ui:49
+msgid "Zoom _out"
+msgstr "_Kicsinyítés"
+
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Egy egyszerű alkalmazás, amely adott (helyi vagy távoli) mappákat vagy "
+#~ "köteteket képes átvizsgálni és minden könyvtárméretet vagy százalékos "
+#~ "megjelenítést tartalmazó grafikus ábrázolást nyújt."
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "Távoli mappa vizsgálata…"
 
 #~ msgid "- Disk Usage Analyzer"
 #~ msgstr "– Lemezhasználat-elemző"
@@ -401,10 +451,6 @@ msgstr "A lemezhasználat nem elemezhető."
 #~| msgid "_All locations"
 #~ msgid "_All Locations"
 #~ msgstr "Összes _hely"
-
-#~| msgid "All locations"
-#~ msgid "All Locations"
-#~ msgstr "Összes hely"
 
 #~ msgid "Stop scanning"
 #~ msgstr "Vizsgálat leállítása"
@@ -521,9 +567,6 @@ msgstr "A lemezhasználat nem elemezhető."
 
 #~ msgid "Total Size"
 #~ msgstr "Teljes méret"
-
-#~ msgid "Available"
-#~ msgstr "Elérhető"
 
 #~ msgid "Custom Location"
 #~ msgstr "Egyéni hely"
