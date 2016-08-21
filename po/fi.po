@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-10 08:41+0000\n"
-"PO-Revision-Date: 2016-08-12 16:37+0300\n"
+"POT-Creation-Date: 2016-08-13 00:15+0000\n"
+"PO-Revision-Date: 2016-08-21 12:46+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -68,7 +68,6 @@ msgstr "storage;space;cleanup;tila;tilankäyttö;levytila;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -116,7 +115,7 @@ msgstr[0] "%d kohde"
 msgstr[1] "%d kohdetta"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Tuntematon"
 
@@ -149,11 +148,39 @@ msgid_plural "%d years"
 msgstr[0] "%d vuosi sitten"
 msgstr[1] "%d vuotta sitten"
 
-#: src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+#| msgid "Computer"
+msgid "This Computer"
+msgstr "Tämä tietokone"
+
+#: src/baobab-location-list.ui:47
+#| msgid "Custom Location"
+msgid "Remote Locations"
+msgstr "Etäsijainnit"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "%s yhteensä"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+#| msgid "Available"
+msgid "%s Available"
+msgstr "%s käytettävissä"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "%s käytetty"
+
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Kotikansio"
 
-#: src/baobab-location.vala:123
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Tietokone"
 
@@ -177,63 +204,63 @@ msgstr "_Siirrä roskakoriin"
 msgid "Close"
 msgstr "Sulje"
 
-#: src/baobab-main-window.ui:223
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Kansio"
 
-#: src/baobab-main-window.ui:250
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Koko"
 
-#: src/baobab-main-window.ui:270
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Sisältö"
 
-#: src/baobab-main-window.ui:288
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Muokattu"
 
-#: src/baobab-main-window.ui:333
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Ympyräkaavio"
 
-#: src/baobab-main-window.ui:345
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
 msgstr "Puukaavio"
 
-#: src/baobab-window.vala:193
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Valitse kansio"
 
-#: src/baobab-window.vala:195
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: src/baobab-window.vala:196
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Avaa"
 
-#: src/baobab-window.vala:202
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Analysoi liitoskohdat rekursiivisesti"
 
-#: src/baobab-window.vala:237
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Levynkäyttöä ei voitu analysoida."
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Ohjeen näyttäminen epäonnistui"
 
-#: src/baobab-window.vala:288
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Graafinen työkalu levytilan käytön analysointiin."
 
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Jiri Grönroos, 2012-2016\n"
@@ -247,43 +274,44 @@ msgstr ""
 "\n"
 "https://l10n.gnome.org/teams/fi/"
 
-#: src/baobab-window.vala:365
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Tiedoston avaaminen epäonnistui"
 
-#: src/baobab-window.vala:385
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Tiedoston siirtäminen roskakoriin epäonnistui"
 
-#: src/baobab-window.vala:489
-msgid "Devices and locations"
+#: src/baobab-window.vala:485
+#| msgid "Devices and locations"
+msgid "Devices & Locations"
 msgstr "Laitteet ja sijainnit"
 
-#: src/baobab-window.vala:550
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Kansiota ”%s” ei voi kartoittaa"
 
-#: src/baobab-window.vala:553
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Kohteen \"%s\" joidenkin kansioiden kartoitus epäonnistui"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Varattujen levyjen kokoa ei voitu selvittää."
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Näytetään sen sijaan näennäiskokoja."
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:589 src/baobab-window.vala:595
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "”%s” ei ole kelvollinen kansio"
 
-#: src/baobab-window.vala:590 src/baobab-window.vala:596
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Levynkäyttöä ei voitu analysoida."
 
@@ -532,12 +560,6 @@ msgstr "L_oitonna"
 
 #~ msgid "Total Size"
 #~ msgstr "Kokonaiskoko"
-
-#~ msgid "Available"
-#~ msgstr "Käytettävissä"
-
-#~ msgid "Custom Location"
-#~ msgstr "Oma sijainti"
 
 #~ msgid "SSH"
 #~ msgstr "SSH"
