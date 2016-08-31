@@ -22,6 +22,6 @@ HELP_MEDIA = \
 	media/hicolor_apps_48x48_baobab.png
 
 # List of translations
-HELP_LINGUAS = ca cs de el es fi fr gl hu id it ko pt_BR ru sl zh_CN
+HELP_LINGUAS = ca cs de el es fi fr gl hu id it ko pt pt_BR ru sl zh_CN
 
 -include $(top_srcdir)/git.mk
