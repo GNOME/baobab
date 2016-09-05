@@ -6,15 +6,15 @@
 # Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006, 2009, 2010.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008.
-# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-22 02:51+0000\n"
-"PO-Revision-Date: 2014-06-22 15:59+0300\n"
+"POT-Creation-Date: 2016-08-13 00:15+0000\n"
+"PO-Revision-Date: 2016-09-05 18:11+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -23,67 +23,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../data/baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Paprasta programa, kuri gali perskaityti arba pavienius aplankus (vietinius "
-"arba nutolusius), arba tomus bei pateikti grafinį vaizdą, įtraukiantį "
-"kiekvieno aplanko dydį arba procentinę dalį."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "Disko naudojimo analizatorius"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Tikrinti aplankų dydžius ir laisvą vietą"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr "Paprasta programa disko naudojimui bei prieinamai vietai valdyti."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"Disko naudojimo analizatorius gali perskaityti nurodytus aplankus, saugyklos "
+"įrenginius bei internetines paskyras. Jis pateikia medžio bei grafinę "
+"reprezentaciją, parodančią kiekvieno aplanko dydį, taip padedant greičiau "
+"surasti, kur yra švaistoma disko vieta."
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr "saugykla;vieta;išvalymas;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+#| msgid "Baobab"
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "Išskirtų skirsnių URI"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Neskaitytinų skirsnių URI sąrašas"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Aktyvi diagrama"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Kokio tipo diagrama turi būti rodoma."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Lango dydis"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "Pradinis lango dydis"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Lango būsena"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "Lango GdkWindowState"
 
-#: ../src/baobab-application.vala:29
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Atspausdinti versijos informaciją ir išeiti"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -92,17 +107,17 @@ msgstr[1] "%d elementai"
 msgstr[2] "%d elementų"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Nežinoma"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Šiandien"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -111,7 +126,7 @@ msgstr[1] "%d dienos"
 msgstr[2] "%d dienų"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -120,7 +135,7 @@ msgstr[1] "%d mėnuo"
 msgstr[2] "%d mėnesių"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
@@ -128,120 +143,117 @@ msgstr[0] "%d metai"
 msgstr[1] "%d metai"
 msgstr[2] "%d metų"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+#| msgid "Computer"
+msgid "This Computer"
+msgstr "Šis kompiuteris"
+
+#: src/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Nutolusios vietos"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "Iš viso %s"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "Prieinama %s"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "Naudojama %s"
+
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Namų aplankas"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Kompiuteris"
 
-#: ../src/baobab-main-window.ui.h:1
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Skaityti aplanką..."
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Skaityti nutolusį aplanką..."
-
-#: ../src/baobab-main-window.ui.h:3 ../src/baobab-menu.ui.h:4
+#: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "Atverti a_planką"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/baobab-menu.ui.h:5
+#: src/baobab-main-window.ui:29 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopijuoti kelią į iškarpinę"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/baobab-menu.ui.h:6
+#: src/baobab-main-window.ui:38 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "Per_kelti į Šiukšlinę"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:168
 msgid "Close"
 msgstr "Užverti"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Aplankas"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Dydis"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Turinys"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Pakeistas"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Žiedinę diagrama"
 
-#: ../src/baobab-main-window.ui.h:13
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
 msgstr "Medžio diagrama"
 
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "_Žinynas"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "_Apie"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "_Išeiti"
-
-#: ../src/baobab-menu.ui.h:7
-#| msgid "_Move to parent folder"
-msgid "Go to _parent folder"
-msgstr "_Eiti į tėvinį aplanką"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "Zoom _in"
-msgstr "Pri_traukti"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "Zoom _out"
-msgstr "_Atitolinti"
-
-#: ../src/baobab-window.vala:228
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Pasirinkite aplanką"
 
-#: ../src/baobab-window.vala:230
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "At_sisakyti"
 
-#: ../src/baobab-window.vala:231
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Atverti"
 
-#: ../src/baobab-window.vala:236
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Rekursyviai analizuoti prijungimo taškus"
 
-#: ../src/baobab-window.vala:283
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Nepavyko analizuoti tomo."
 
-#: ../src/baobab-window.vala:315
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Nepavyko parodyti pagalbos"
 
-#: ../src/baobab-window.vala:334
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobabas"
 
-#: ../src/baobab-window.vala:337
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafinis įrankis disko naudojimo analizavimui."
 
-#: ../src/baobab-window.vala:342
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Paskutinysis vertėjas:\n"
@@ -253,42 +265,79 @@ msgstr ""
 "Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Gediminas Paulauskas <menesis@chatsubo.lt>"
 
-#: ../src/baobab-window.vala:411
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Nepavyko atverti failo"
 
-#: ../src/baobab-window.vala:431
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Nepavyko perkelti failo į šiukšlinę"
 
-#: ../src/baobab-window.vala:533
-msgid "Devices and locations"
+#: src/baobab-window.vala:485
+#| msgid "Devices and locations"
+msgid "Devices & Locations"
 msgstr "Įrenginiai ir vietos"
 
-#: ../src/baobab-window.vala:594
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Nepavyko perskaityti aplanko „%s“"
 
-#: ../src/baobab-window.vala:597
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Nepavyko perskaityti kai kurių aplankų iš „%s“."
 
-#: ../src/baobab-window.vala:616
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Nepavyko aptikti užimtų diskų dydžių."
 
-#: ../src/baobab-window.vala:616
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Vietoj to rodomi numanomi dydžiai."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:633 ../src/baobab-window.vala:639
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "„%s“ nėra tinkamas aplankas"
 
-#: ../src/baobab-window.vala:634 ../src/baobab-window.vala:640
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Grafinis įrankis disko naudojimo analizavimui."
+
+#: src/menus.ui:7
+msgid "_Help"
+msgstr "_Žinynas"
+
+#: src/menus.ui:12
+msgid "_About"
+msgstr "_Apie"
+
+#: src/menus.ui:16
+msgid "_Quit"
+msgstr "_Išeiti"
+
+#: src/menus.ui:39
+msgid "Go to _parent folder"
+msgstr "_Eiti į tėvinį aplanką"
+
+#: src/menus.ui:45
+msgid "Zoom _in"
+msgstr "Pri_traukti"
+
+#: src/menus.ui:49
+msgid "Zoom _out"
+msgstr "_Atitolinti"
+
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Paprasta programa, kuri gali perskaityti arba pavienius aplankus "
+#~ "(vietinius arba nutolusius), arba tomus bei pateikti grafinį vaizdą, "
+#~ "įtraukiantį kiekvieno aplanko dydį arba procentinę dalį."
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "Skaityti nutolusį aplanką..."
