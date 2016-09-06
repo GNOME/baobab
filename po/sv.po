@@ -1,88 +1,103 @@
 # Swedish messages for gnome-utils.
-# Copyright (C) 2000-2014 Free Software Foundation, Inc.
+# Copyright © 2000-2016 Free Software Foundation, Inc.
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Andreas Hyden <a.hyden@cyberpoint.se>.
 # Christian Rose <menthos@menthos.com>, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014.
-#
-# $Id: sv.po,v 1.161 2006/12/11 21:18:20 dnylande Exp $
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-27 15:54+0000\n"
-"PO-Revision-Date: 2014-08-27 06:39+0100\n"
-"Last-Translator: Mattias Eriksson <snaggen@gmail.com>\n"
+"POT-Creation-Date: 2016-08-13 00:15+0000\n"
+"PO-Revision-Date: 2016-08-21 01:33+0200\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.8\n"
 
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Ett enkelt program som kan söka av antingen specifika mappar (lokala eller "
-"fjärr) eller volymer och ger en grafisk representation med varje mapps "
-"storlek eller procentandel."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "Diskanvändningsanalysator"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Kontrollera mappstorlekar och tillgängligt diskutrymme"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr ""
+"Ett enkelt program för att hålla koll på din diskanvändning och tillgängligt "
+"utrymme."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"Diskanvändningsanalysator kan läsa av specifika mappar, lagringsenheter och "
+"nätkonton. Det tillhandahåller både en trädrepresentation och en grafisk "
+"representation som visar storleken för varje mapp, vilket gör det enkelt att "
+"identifiera var diskutrymme går till spillo."
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr "lagring;utrymme;rensning;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+#| msgid "Baobab"
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "Undantagna partitions-URI:er"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "En lista över URI:er för partitioner som ska undantas från avsökning."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Aktivt diagram"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Vilken typ av diagram som ska visas."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Fönsterstorlek"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "Fönstrets ursprungliga storlek"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Fönstertillstånd"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "Fönstrets GdkWindowState-tillstånd"
 
-#: ../src/baobab-application.vala:28
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -90,17 +105,17 @@ msgstr[0] "%d objekt"
 msgstr[1] "%d objekt"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Okänt"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Idag"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -108,7 +123,7 @@ msgstr[0] "%d dag"
 msgstr[1] "%d dagar"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -116,102 +131,123 @@ msgstr[0] "%d månad"
 msgstr[1] "%d månader"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d år"
 msgstr[1] "%d år"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Den här datorn"
+
+#: src/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Fjärrplatser"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "%s totalt"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "%s tillgängligt"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "%s använt"
+
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Hemmapp"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Dator"
 
-#: ../src/baobab-main-window.ui.h:1
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Sök av mapp…"
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Sök av fjärrmapp…"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
+#: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "_Öppna mapp"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
+#: src/baobab-main-window.ui:29 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopiera sökväg till urklipp"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
+#: src/baobab-main-window.ui:38 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "_Flytta till papperskorgen"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:168
 msgid "Close"
 msgstr "Stäng"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Mapp"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Storlek"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Innehåll"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Ändrad"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Ringdiagram"
 
-#: ../src/baobab-main-window.ui.h:13
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
 msgstr "Trädkartsdiagram"
 
-#: ../src/baobab-window.vala:203
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Välj mapp"
 
-#: ../src/baobab-window.vala:205
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: ../src/baobab-window.vala:206
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Öppna"
 
-#: ../src/baobab-window.vala:211
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Analysera monteringspunkter rekursivt"
 
-#: ../src/baobab-window.vala:258
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Kunde inte analysera volymen."
 
-#: ../src/baobab-window.vala:290
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Kunde inte visa hjälp"
 
-#: ../src/baobab-window.vala:309
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:312
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Ett grafiskt verktyg för att analysera diskanvändning."
 
-#: ../src/baobab-window.vala:317
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -223,67 +259,78 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: ../src/baobab-window.vala:386
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Kunde inte öppna fil"
 
-#: ../src/baobab-window.vala:406
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Kunde inte flytta filen till papperskorgen"
 
-#: ../src/baobab-window.vala:506
-msgid "Devices and locations"
+#: src/baobab-window.vala:485
+msgid "Devices & Locations"
 msgstr "Enheter och platser"
 
-#: ../src/baobab-window.vala:567
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Kunde inte söka av mappen ”%s”"
 
-#: ../src/baobab-window.vala:570
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Kunde inte söka av några av mapparna i ”%s”"
 
-#: ../src/baobab-window.vala:589
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Kunde inte avgöra använda diskstorlekar."
 
-#: ../src/baobab-window.vala:589
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Visar istället skenbara storlekar."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "”%s” är inte en giltig mapp"
 
-#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Kunde inte analysera diskanvändningen."
 
-#: ../src/menus.ui.h:1
+#: src/menus.ui:7
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../src/menus.ui.h:2
+#: src/menus.ui:12
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/menus.ui.h:3
+#: src/menus.ui:16
 msgid "_Quit"
 msgstr "_Avsluta"
 
-#: ../src/menus.ui.h:7
+#: src/menus.ui:39
 msgid "Go to _parent folder"
 msgstr "_Gå till föräldramapp"
 
-#: ../src/menus.ui.h:8
+#: src/menus.ui:45
 msgid "Zoom _in"
 msgstr "Zooma _in"
 
-#: ../src/menus.ui.h:9
+#: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "Zooma _ut"
 
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Ett enkelt program som kan söka av antingen specifika mappar (lokala "
+#~ "eller fjärr) eller volymer och ger en grafisk representation med varje "
+#~ "mapps storlek eller procentandel."
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "Sök av fjärrmapp…"
