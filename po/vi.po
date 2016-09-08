@@ -1,17 +1,18 @@
 # Vietnamese Translation for GNOME baobab.
-# Copyright © 2014 GNOME i18n Project for Vietnamese.
+# Bản dịch tiếng Việt dành cho baobab.
+# Copyright © 2016 GNOME i18n Project for Vietnamese.
 # This file is distributed under the same license as the baobab package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002,2007,2011-2012.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2014.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2014, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-17 03:53+0000\n"
-"PO-Revision-Date: 2014-11-17 13:56+0700\n"
+"POT-Creation-Date: 2016-09-06 19:34+0000\n"
+"PO-Revision-Date: 2016-09-08 08:01+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
 "Language: vi\n"
@@ -19,263 +20,307 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.8\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Công cụ đơn giản để mà có thể quét hoặc là các thư mục cụ thể (trên máy hoặc "
-"trên mạng) hoặc là các phân vùng và đưa ra biểu diễn bằng đồ họa bao gồm "
-"kích thước của từng thư mục hay tỷ lệ phần trăm."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "Bộ phân tích đĩa"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Kiểm tra kích cỡ của thư mục và chỗ trống trên đĩa"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr ""
+"Một ứng dụng đơn giản để giúp bạn kiểm soát dung lượng đĩa tiêu dùng và còn "
+"lại."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"Bộ phân tích tiêu dùng đĩa có thể quét các thư mục, thiết bị lưu trữ và các "
+"tài khoản trực tuyến cụ thể. Nó cung cấp cả cây và hiển thị biểu diễn dạng "
+"đồ họa của kích thước của từng thư mục, làm cho nó dễ dàng chỉ ra chỗ đĩa "
+"nào đang bị lãng phí."
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;kho;chứa;đĩa;trống;dọn;xóa;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+# Name: don't translate / Tên: đừng dịch
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "URI phân vùng bị loại trừ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr ""
 "Danh sách các địa chỉ URI của phân vùng cần loại trừ khỏi tiến trình quét."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Biểu đồ hoạt động"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Hiện loại biểu đồ nào."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Kích cỡ cửa sổ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "Cỡ khởi tạo của cửa sổ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Trạng thái cửa sổ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState của cửa sổ"
 
-#: ../src/baobab-application.vala:28
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Hiển thị thông tin phiên bản rồi thoát"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%5d mục"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Không rõ"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Hôm nay"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d ngày"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
 msgstr[0] "%d tháng"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d năm"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Máy tính này"
+
+#: src/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Vị trí trên mạng"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "Tổng %s"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "%s Sẵn dùng"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "Đã dùng %s"
+
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Thư mục cá nhân"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Máy tính"
 
-#: ../src/baobab-main-window.ui.h:1
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Quét thư mục…"
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Quét thư mục trên máy chủ…"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
+#: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "_Mở thư mục"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
+#: src/baobab-main-window.ui:29 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Chép đường dẫn vào clipboard"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
+#: src/baobab-main-window.ui:38 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "Chuyển vào thùng rác"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:168
 msgid "Close"
 msgstr "Đóng"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Cỡ"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Nội dung"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Đã sửa đổi"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Biểu đồ hình nhẫn"
 
-#: ../src/baobab-main-window.ui.h:13
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
-msgstr "Biểu đồ cây"
+msgstr "Biểu đồ dạng cây"
 
-#: ../src/baobab-window.vala:203
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Chọn thư mục"
 
-#: ../src/baobab-window.vala:205
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "T_hôi"
 
-#: ../src/baobab-window.vala:206
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Mở"
 
-#: ../src/baobab-window.vala:211
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Phân tích điểm gắn một cách đệ quy"
 
-#: ../src/baobab-window.vala:258
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Không thể phân tích phân vùng đĩa."
 
-#: ../src/baobab-window.vala:290
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Gặp lỗi khi hiển thị trợ giúp"
 
 # Name: don't translate / Tên: đừng dịch
-#: ../src/baobab-window.vala:309
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:312
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Công cụ đồ họa để phân tích cách sử dụng đĩa."
 
-#: ../src/baobab-window.vala:317
+#: src/baobab-window.vala:292
 msgid "translator-credits"
-msgstr ""
-"Nhóm Việt hóa GNOME (https://l10n.gnome.org/teams/vi/)\n"
-"Launchpad Contributions:\n"
-"Hai Lang https://launchpad.net/~hailangvn\n"
-"Lê Hoàng Phương https://launchpad.net/~herophuong93\n"
-"Lê Kiến Trúc https://launchpad.net/~le-kien-truc\n"
-"Ngô Chin https://launchpad.net/~ndtrung4419"
+msgstr "Nhóm Việt hóa GNOME <gnome-vi-list@gnome.org>"
 
-#: ../src/baobab-window.vala:386
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Gặp lỗi khi mở tập tin"
 
-#: ../src/baobab-window.vala:406
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Gặp lỗi khi bỏ tập tin vào thùng rác"
 
-#: ../src/baobab-window.vala:506
-msgid "Devices and locations"
-msgstr "Thiết bị và vị trí"
+#: src/baobab-window.vala:485
+msgid "Devices & Locations"
+msgstr "Thiết bị & Vị trí"
 
-#: ../src/baobab-window.vala:567
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Không thể quét thư mục \"%s\""
 
-#: ../src/baobab-window.vala:570
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Không thể quét một số thư mục nằm trong \"%s\""
 
-#: ../src/baobab-window.vala:589
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Không thể dò tìm kích cỡ đĩa bị hỏng."
 
-#: ../src/baobab-window.vala:589
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Cỡ bề ngoài được hiển thị để thay thế."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "“%s” không phải là thư mục hợp lệ"
 
-#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Không thể phân tích về cách sử dụng đĩa."
 
-#: ../src/menus.ui.h:1
+#: src/menus.ui:7
 msgid "_Help"
 msgstr "T_rợ giúp"
 
-#: ../src/menus.ui.h:2
+#: src/menus.ui:12
 msgid "_About"
 msgstr "_Giới thiệu"
 
-#: ../src/menus.ui.h:3
+#: src/menus.ui:16
 msgid "_Quit"
 msgstr "_Thoát"
 
-#: ../src/menus.ui.h:7
+#: src/menus.ui:39
 msgid "Go to _parent folder"
 msgstr "_Chuyển lên thư mục cha"
 
-#: ../src/menus.ui.h:8
+#: src/menus.ui:45
 msgid "Zoom _in"
 msgstr "_Phóng to"
 
-#: ../src/menus.ui.h:9
+#: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "Th_u nhỏ"
+
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Công cụ đơn giản để mà có thể quét hoặc là các thư mục cụ thể (trên máy "
+#~ "hoặc trên mạng) hoặc là các phân vùng và đưa ra biểu diễn bằng đồ họa bao "
+#~ "gồm kích thước của từng thư mục hay tỷ lệ phần trăm."
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "Quét thư mục trên máy chủ…"
