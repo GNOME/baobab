@@ -17,9 +17,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-08 23:57+0200\n"
-"PO-Revision-Date: 2016-09-08 23:58+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&"
+"keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-09-08 21:59+0000\n"
+"PO-Revision-Date: 2016-09-11 00:25+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician\n"
 "Language: gl\n"
@@ -30,11 +31,82 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../src/baobab-application.vala:28
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
+msgid "Disk Usage Analyzer"
+msgstr "Analizador do uso do disco"
+
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
+msgid "Check folder sizes and available disk space"
+msgstr "Verificar o tamaño dos cartafoles e o espazo dispoñíbel no disco"
+
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr ""
+"Un aplicativo simple para manter o seu uso de disco e espazo dispoñíbel "
+"baixo control."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"O Analizador de uso do disto pode analizar cartafoles específicos, "
+"dispositivos de almacenamento e contas en liña. Fornece unha representación "
+"gráfica e en árbore que mostra o tamaño de cada cartafol, facendo máis doado "
+"identificar onde se está ocupando o espazo en disco."
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
+msgid "storage;space;cleanup;"
+msgstr "almacenamento;espazo;limpeza;"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+#| msgid "Baobab"
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
+msgid "Excluded partitions URIs"
+msgstr "URIs de particións excluídas"
+
+#: data/org.gnome.baobab.gschema.xml.in:10
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "Unha lista de URI de particións que serán excluidas da análise."
+
+#: data/org.gnome.baobab.gschema.xml.in:20
+msgid "Active Chart"
+msgstr "Gráfico activo"
+
+#: data/org.gnome.baobab.gschema.xml.in:21
+msgid "Which type of chart should be displayed."
+msgstr "Que tipo de gráfica debería mostrarse."
+
+#: data/org.gnome.baobab.gschema.xml.in:25
+msgid "Window size"
+msgstr "Tamaño da xanela"
+
+#: data/org.gnome.baobab.gschema.xml.in:26
+msgid "The initial size of the window"
+msgstr "O tamaño inicial da xanela"
+
+#: data/org.gnome.baobab.gschema.xml.in:30
+msgid "Window state"
+msgstr "Estado da xanela"
+
+#: data/org.gnome.baobab.gschema.xml.in:31
+msgid "The GdkWindowState of the window"
+msgstr "O GdkWindowState da xanela"
+
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Mostrar a información da versión e saír"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -42,17 +114,17 @@ msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101 ../src/baobab-location-list.vala:70
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Descoñecido"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Hoxe"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%d day"
 msgid_plural "%d days"
@@ -60,7 +132,7 @@ msgstr[0] "%d día"
 msgstr[1] "%d días"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -68,124 +140,202 @@ msgstr[0] "%d mes"
 msgstr[1] "%d meses"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
 msgstr[0] "%d ano"
 msgstr[1] "%d anos"
 
-#: ../src/baobab-location-list.vala:58
+#: src/baobab-location-list.ui:17
+#| msgid "Computer"
+msgid "This Computer"
+msgstr "Este computador"
+
+#: src/baobab-location-list.ui:47
+#| msgid "All Locations"
+msgid "Remote Locations"
+msgstr "Localizacións remotas"
+
+#: src/baobab-location-list.vala:58
 #, c-format
 msgid "%s Total"
 msgstr "%s total"
 
-#: ../src/baobab-location-list.vala:61
+#: src/baobab-location-list.vala:61
 #, c-format
 msgid "%s Available"
 msgstr "%s dispoñíbel"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: ../src/baobab-location-list.vala:75
+#: src/baobab-location-list.vala:75
 #, c-format
 msgid "%s Used"
 msgstr "%s usado"
 
-#: ../src/baobab-location.vala:72
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Cartafol persoal"
 
-#: ../src/baobab-location.vala:108
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Computador"
 
-#: ../src/baobab-window.vala:189
+#: src/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Analizar cartafol…"
+
+#: src/baobab-main-window.ui:20 src/menus.ui:25
+msgid "_Open Folder"
+msgstr "_Abrir cartafol"
+
+#: src/baobab-main-window.ui:29 src/menus.ui:29
+msgid "_Copy Path to Clipboard"
+msgstr "_Copiar ruta ao portapapeis"
+
+#: src/baobab-main-window.ui:38 src/menus.ui:33
+msgid "Mo_ve to Trash"
+msgstr "Mov_er ao lixo"
+
+#: src/baobab-main-window.ui:168
+msgid "Close"
+msgstr "Pechar"
+
+#: src/baobab-main-window.ui:224
+msgid "Folder"
+msgstr "Cartafol"
+
+#: src/baobab-main-window.ui:251
+msgid "Size"
+msgstr "Tamaño"
+
+#: src/baobab-main-window.ui:271
+msgid "Contents"
+msgstr "Contidos"
+
+#: src/baobab-main-window.ui:289
+msgid "Modified"
+msgstr "Modificado"
+
+#: src/baobab-main-window.ui:334
+msgid "Rings Chart"
+msgstr "Gráfico de aneis"
+
+#: src/baobab-main-window.ui:346
+msgid "Treemap Chart"
+msgstr "Gráfico de árbore"
+
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Seleccionar cartafol"
 
-#: ../src/baobab-window.vala:191
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../src/baobab-window.vala:192
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../src/baobab-window.vala:198
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Analizar recursivamente os puntos de montaxe"
 
-#: ../src/baobab-window.vala:233
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Non foi posíbel analizar o volume."
 
-#: ../src/baobab-window.vala:265
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Produciuse un fallo ao mostrar a axuda"
 
-#: ../src/baobab-window.vala:284
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:287
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 
-#: ../src/baobab-window.vala:292
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Fran Diéguez <frandieguez@gnome.org>, 2009-2016\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
 "Antón Méixome <meixome@mancomun.org>, 2009\n"
-"Mancomún - Centro de Referencia e Servizos de Software Libre "
-"<g11n@mancomun.org>, 2009\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
+"org>, 2009\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009\n"
 "Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2004, 2005, 2006, 2007, 2008\n"
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000, 2001\n"
 "Ruben Lopez Gomez <ryu@mundivia.es>, 1999\n"
-"Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno.net>"
-", 1999-2012"
+"Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno."
+"net>, 1999-2012"
 
-#: ../src/baobab-window.vala:361
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Produciuse un fallo ao abrir o ficheiro"
 
-#: ../src/baobab-window.vala:381
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Produciuse un fallo ao mover o ficheiro ao lixo"
 
-#: ../src/baobab-window.vala:485
+#: src/baobab-window.vala:485
 msgid "Devices & Locations"
 msgstr "Dispositivos e localizacións"
 
-#: ../src/baobab-window.vala:546
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Non foi posíbel analizar o cartafol «%s»"
 
-#: ../src/baobab-window.vala:549
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Non foi posíbel analizar algúns dos cartafoles dentro de «%s»."
 
-#: ../src/baobab-window.vala:568
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Non foi posíbel detectar ningún espazo ocupado de disco."
 
-#: ../src/baobab-window.vala:568
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "No lugar móstranse os tamaños aparentes."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
 
-#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Non foi posíbel analizar o uso do disco."
+
+#: src/menus.ui:7
+msgid "_Help"
+msgstr "A_xuda"
+
+#: src/menus.ui:12
+msgid "_About"
+msgstr "_Sobre"
+
+#: src/menus.ui:16
+msgid "_Quit"
+msgstr "_Saír"
+
+#: src/menus.ui:39
+msgid "Go to _parent folder"
+msgstr "Ir ao un cartafol _pai"
+
+#: src/menus.ui:45
+msgid "Zoom _in"
+msgstr "Ampl_iar"
+
+#: src/menus.ui:49
+msgid "Zoom _out"
+msgstr "Red_ucir"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
@@ -196,92 +346,8 @@ msgstr "Non foi posíbel analizar o uso do disco."
 #~ "ou remotos) ou volumes e fornecer unha representación gráfica incluíndo o "
 #~ "tamaño ou porcentaxe para cada cartafol"
 
-#~ msgid "Disk Usage Analyzer"
-#~ msgstr "Analizador do uso do disco"
-
-#~ msgid "Check folder sizes and available disk space"
-#~ msgstr "Verificar o tamaño dos cartafoles e o espazo dispoñíbel no disco"
-
-#~ msgid "storage;space;cleanup;"
-#~ msgstr "almacenamento;espazo;limpeza;"
-
-#~ msgid "Excluded partitions URIs"
-#~ msgstr "URIs de particións excluídas"
-
-#~ msgid "A list of URIs for partitions to be excluded from scanning."
-#~ msgstr "Unha lista de URI de particións que serán excluidas da análise."
-
-#~ msgid "Active Chart"
-#~ msgstr "Gráfico activo"
-
-#~ msgid "Which type of chart should be displayed."
-#~ msgstr "Que tipo de gráfica debería mostrarse."
-
-#~ msgid "Window size"
-#~ msgstr "Tamaño da xanela"
-
-#~ msgid "The initial size of the window"
-#~ msgstr "O tamaño inicial da xanela"
-
-#~ msgid "Window state"
-#~ msgstr "Estado da xanela"
-
-#~ msgid "The GdkWindowState of the window"
-#~ msgstr "O GdkWindowState da xanela"
-
-#~ msgid "Scan Folder…"
-#~ msgstr "Analizar cartafol…"
-
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Analizar cartafol remoto…"
-
-#~ msgid "_Open Folder"
-#~ msgstr "_Abrir cartafol"
-
-#~ msgid "_Copy Path to Clipboard"
-#~ msgstr "_Copiar ruta ao portapapeis"
-
-#~ msgid "Mo_ve to Trash"
-#~ msgstr "Mov_er ao lixo"
-
-#~ msgid "Close"
-#~ msgstr "Pechar"
-
-#~ msgid "Folder"
-#~ msgstr "Cartafol"
-
-#~ msgid "Size"
-#~ msgstr "Tamaño"
-
-#~ msgid "Contents"
-#~ msgstr "Contidos"
-
-#~ msgid "Modified"
-#~ msgstr "Modificado"
-
-#~ msgid "Rings Chart"
-#~ msgstr "Gráfico de aneis"
-
-#~ msgid "Treemap Chart"
-#~ msgstr "Gráfico de árbore"
-
-#~ msgid "_Help"
-#~ msgstr "A_xuda"
-
-#~ msgid "_About"
-#~ msgstr "_Sobre"
-
-#~ msgid "_Quit"
-#~ msgstr "_Saír"
-
-#~ msgid "Go to _parent folder"
-#~ msgstr "Ir ao un cartafol _pai"
-
-#~ msgid "Zoom _in"
-#~ msgstr "Ampl_iar"
-
-#~ msgid "Zoom _out"
-#~ msgstr "Red_ucir"
 
 #~ msgid "- Disk Usage Analyzer"
 #~ msgstr "- Analizador do uso do disco"
@@ -376,9 +442,6 @@ msgstr "Non foi posíbel analizar o uso do disco."
 
 #~ msgid "_All Locations"
 #~ msgstr "_Todas as localizacións"
-
-#~ msgid "All Locations"
-#~ msgstr "Todas as localizacións"
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "A barra de ferramentas é visíbel"
