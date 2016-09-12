@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 05:07+0100\n"
-"PO-Revision-Date: 2016-03-20 05:06+0100\n"
+"POT-Creation-Date: 2016-09-12 02:02+0200\n"
+"PO-Revision-Date: 2016-09-08 03:04+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -31,60 +31,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Et simpelt program som kan skanne enten specifikke mapper (lokale eller "
-"fjerne) eller diskenheder og frembringe en grafisk repræsentation, som "
-"inkluderer hver enkelt mappes størrelse og procentdel."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:5
-msgid "Disk Usage Analyzer"
-msgstr "Diskforbrugsanalyse"
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
-msgid "Check folder sizes and available disk space"
-msgstr "Kontrollér mappestørrelser og tilgængelig diskplads"
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
-msgid "storage;space;cleanup;"
-msgstr "lager;plads;oprydning;"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
-msgid "Excluded partitions URIs"
-msgstr "URI'er for ekskluderede partitioner"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "En liste af URI'er for partitioner, der ekskluderes fra scanning."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
-msgid "Active Chart"
-msgstr "Aktivt diagram"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
-msgid "Which type of chart should be displayed."
-msgstr "Typen af diagram, der skal vises."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
-msgid "Window size"
-msgstr "Vinduesstørrelse"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
-msgid "The initial size of the window"
-msgstr "Startstørrelsen for vinduet"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
-msgid "Window state"
-msgstr "Vinduestilstand"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
-msgid "The GdkWindowState of the window"
-msgstr "GdkWindowState for vinduet"
 
 #: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
@@ -98,7 +44,7 @@ msgstr[0] "%d objekt"
 msgstr[1] "%d objekter"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: ../src/baobab-cellrenderers.vala:101 ../src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Ukendt"
 
@@ -131,91 +77,64 @@ msgid_plural "%d years"
 msgstr[0] "%d år"
 msgstr[1] "%d år"
 
-#: ../src/baobab-location.vala:77
+#: ../src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "%s i alt"
+
+#: ../src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "%s tilgængelig"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: ../src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "%s brugt"
+
+#: ../src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
-#: ../src/baobab-location.vala:123
+#: ../src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Computer"
 
-#: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder…"
-msgstr "Skan mappe…"
-
-#: ../src/baobab-main-window.ui.h:2 ../src/menus.ui.h:4
-msgid "_Open Folder"
-msgstr "_Åbn mappe"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:5
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopiér sti til udklipsholder"
-
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:6
-msgid "Mo_ve to Trash"
-msgstr "F_lyt til papirkurv"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Close"
-msgstr "Luk"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Folder"
-msgstr "Mappe"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Size"
-msgstr "Størrelse"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Contents"
-msgstr "Indhold"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Modified"
-msgstr "Ændret"
-
-#: ../src/baobab-main-window.ui.h:11
-msgid "Rings Chart"
-msgstr "Ringdiagram"
-
-#: ../src/baobab-main-window.ui.h:12
-msgid "Treemap Chart"
-msgstr "Trækortdiagram"
-
-#: ../src/baobab-window.vala:193
+#: ../src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Markér mappe"
 
-#: ../src/baobab-window.vala:195
+#: ../src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Annullér"
 
-#: ../src/baobab-window.vala:196
+#: ../src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Åbn"
 
-#: ../src/baobab-window.vala:202
+#: ../src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Analysér monteringspunkter rekursivt"
 
-#: ../src/baobab-window.vala:237
+#: ../src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere diskenhed."
 
-#: ../src/baobab-window.vala:269
+#: ../src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Kunne ikke vise hjælp"
 
-#: ../src/baobab-window.vala:288
+#: ../src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:291
+#: ../src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk værktøj til at analysere diskforbrug."
 
-#: ../src/baobab-window.vala:296
+#: ../src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Birger Langkjer\n"
@@ -231,69 +150,163 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/baobab-window.vala:365
+#: ../src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Kunne ikke åbne fil"
 
-#: ../src/baobab-window.vala:385
+#: ../src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Kunne ikke flytte fil til papirkurven"
 
-#: ../src/baobab-window.vala:489
-msgid "Devices and locations"
-msgstr "Enheder og steder"
+#: ../src/baobab-window.vala:485
+msgid "Devices & Locations"
+msgstr "Enheder & steder"
 
-#: ../src/baobab-window.vala:550
+#: ../src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Kunne ikke skanne mappen \"%s\""
 
-#: ../src/baobab-window.vala:553
+#: ../src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Kunne ikke skanne visse af mapperne i \"%s\""
 
-#: ../src/baobab-window.vala:572
+#: ../src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Kunne ikke detektere opbrugte diskstørrelser."
 
-#: ../src/baobab-window.vala:572
+#: ../src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Tilsyneladende størrelser vises i stedet."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "\"%s\" er ikke en gyldig mappe"
 
-#: ../src/baobab-window.vala:590 ../src/baobab-window.vala:596
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskforbrug."
 
-#: ../src/menus.ui.h:1
-msgid "_Help"
-msgstr "_Hjælp"
+#~ msgid "Disk Usage Analyzer"
+#~ msgstr "Diskforbrugsanalyse"
 
-#: ../src/menus.ui.h:2
-msgid "_About"
-msgstr "_Om"
+#~ msgid "Check folder sizes and available disk space"
+#~ msgstr "Kontrollér mappestørrelser og tilgængelig diskplads"
 
-#: ../src/menus.ui.h:3
-msgid "_Quit"
-msgstr "_Afslut"
+#~ msgid ""
+#~ "A simple application to keep your disk usage and available space under "
+#~ "control."
+#~ msgstr "Et simpelt program til at holde styr på diskforbrug og -plads."
 
-#: ../src/menus.ui.h:7
-msgid "Go to _parent folder"
-msgstr "Gå til mappen et _niveau over"
+#~ msgid ""
+#~ "Disk Usage Analyzer can scan specific folders, storage devices and online "
+#~ "accounts. It provides both a tree and a graphical representation showing "
+#~ "the size of each folder, making it easy to identify where disk space is "
+#~ "wasted."
+#~ msgstr ""
+#~ "Diskforbrugsanalyse kan skanne givne mapper, lagerenheder og onlinekonti. "
+#~ "Programmet tilbyder både en træbaseret og en grafisk repræsentation, som "
+#~ "viser størrelsen af hver mappe, så det bliver let at se hvor diskplads "
+#~ "spildes."
 
-#: ../src/menus.ui.h:8
-msgid "Zoom _in"
-msgstr "For_stør"
+#~ msgid "storage;space;cleanup;"
+#~ msgstr "lager;plads;oprydning;"
 
-#: ../src/menus.ui.h:9
-msgid "Zoom _out"
-msgstr "For_mindsk"
+#~ msgid "baobab"
+#~ msgstr "baobab"
+
+#~ msgid "Excluded partitions URIs"
+#~ msgstr "URI'er for ekskluderede partitioner"
+
+#~ msgid "A list of URIs for partitions to be excluded from scanning."
+#~ msgstr "En liste af URI'er for partitioner, der ekskluderes fra scanning."
+
+#~ msgid "Active Chart"
+#~ msgstr "Aktivt diagram"
+
+#~ msgid "Which type of chart should be displayed."
+#~ msgstr "Typen af diagram, der skal vises."
+
+#~ msgid "Window size"
+#~ msgstr "Vinduesstørrelse"
+
+#~ msgid "The initial size of the window"
+#~ msgstr "Startstørrelsen for vinduet"
+
+#~ msgid "Window state"
+#~ msgstr "Vinduestilstand"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "GdkWindowState for vinduet"
+
+#~ msgid "This Computer"
+#~ msgstr "Denne computer"
+
+#~ msgid "Remote Locations"
+#~ msgstr "Fjernsteder"
+
+#~ msgid "Scan Folder…"
+#~ msgstr "Skan mappe…"
+
+#~ msgid "_Open Folder"
+#~ msgstr "_Åbn mappe"
+
+#~ msgid "_Copy Path to Clipboard"
+#~ msgstr "_Kopiér sti til udklipsholder"
+
+#~ msgid "Mo_ve to Trash"
+#~ msgstr "F_lyt til papirkurv"
+
+#~ msgid "Close"
+#~ msgstr "Luk"
+
+#~ msgid "Folder"
+#~ msgstr "Mappe"
+
+#~ msgid "Size"
+#~ msgstr "Størrelse"
+
+#~ msgid "Contents"
+#~ msgstr "Indhold"
+
+#~ msgid "Modified"
+#~ msgstr "Ændret"
+
+#~ msgid "Rings Chart"
+#~ msgstr "Ringdiagram"
+
+#~ msgid "Treemap Chart"
+#~ msgstr "Trækortdiagram"
+
+#~ msgid "_Help"
+#~ msgstr "_Hjælp"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "_Quit"
+#~ msgstr "_Afslut"
+
+#~ msgid "Go to _parent folder"
+#~ msgstr "Gå til mappen et _niveau over"
+
+#~ msgid "Zoom _in"
+#~ msgstr "For_stør"
+
+#~ msgid "Zoom _out"
+#~ msgstr "For_mindsk"
+
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Et simpelt program som kan skanne enten specifikke mapper (lokale eller "
+#~ "fjerne) eller diskenheder og frembringe en grafisk repræsentation, som "
+#~ "inkluderer hver enkelt mappes størrelse og procentdel."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Skan fjernmappe…"
