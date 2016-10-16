@@ -2,77 +2,22 @@
 # Copyright (C) 1999-2005 Free Software Foundation, Inc.
 #
 # Åka Sikrom <a4NOSPAMPLEASETHANKYOU@hush.com>, 2014.
-# Kjartan Maraas <kmaraas@gnome.org>, 1999-2014.
+# Kjartan Maraas <kmaraas@gnome.org>, 1999-2016.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab 3.13.x\n"
+"Project-Id-Version: baobab 3.22.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-21 13:51+0200\n"
-"PO-Revision-Date: 2014-07-21 13:52+0200\n"
-"Last-Translator: Åka Sikrom <a4NOSPAMPLEASETHANKYOU@hush.com>\n"
+"POT-Creation-Date: 2016-10-16 11:54+0200\n"
+"PO-Revision-Date: 2016-10-16 11:55+0200\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Et enkelt program som enten søker gjennom spesifikke mapper (lokale eller "
-"eksterne) eller volumer og gir en grafisk representasjon av disse inklusive "
-"katalogstørrelse og prosentvis størrelse."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
-msgid "Disk Usage Analyzer"
-msgstr "Analyse av diskplass"
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
-msgid "Check folder sizes and available disk space"
-msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
-msgid "storage;space;cleanup;"
-msgstr "lagring;plass;rydding;"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
-msgid "Excluded partitions URIs"
-msgstr "Nettadresser til ekskluderte partisjoner"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr ""
-"En liste over nettadresser til partisjoner som skal ekskluderes fra søket."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
-msgid "Active Chart"
-msgstr "Aktivt plott"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
-msgid "Which type of chart should be displayed."
-msgstr "Hvilken type diagram som skal vises."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
-msgid "Window size"
-msgstr "Vindusstørrelse"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
-msgid "The initial size of the window"
-msgstr "Utgangsstørrelse på vinduet"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
-msgid "Window state"
-msgstr "Vindutilstand"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
-msgid "The GdkWindowState of the window"
-msgstr "GdkWindowState for vinduet"
 
 #: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
@@ -86,7 +31,7 @@ msgstr[0] "%d oppføring"
 msgstr[1] "%d oppføringer"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: ../src/baobab-cellrenderers.vala:101 ../src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Ukjent"
 
@@ -119,161 +64,203 @@ msgid_plural "%d years"
 msgstr[0] "%d år"
 msgstr[1] "%d år"
 
-#: ../src/baobab-location.vala:77
+#: ../src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "%s totalt"
+
+#: ../src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "%s tilgjengelig"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: ../src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "%s brukt"
+
+#: ../src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
-#: ../src/baobab-location.vala:123
+#: ../src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Datamaskin"
 
-#: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder…"
-msgstr "Søk i mappe …"
-
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Søk i ekstern mappe …"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
-msgid "_Open Folder"
-msgstr "_Åpne mappe"
-
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopier sti til utklippstavle"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
-msgid "Mo_ve to Trash"
-msgstr "Fl_ytt til papirkurven"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Close"
-msgstr "Lukk"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Folder"
-msgstr "Mappe"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Size"
-msgstr "Størrelse"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Contents"
-msgstr "Innhold"
-
-#: ../src/baobab-main-window.ui.h:11
-msgid "Modified"
-msgstr "Endret"
-
-#: ../src/baobab-main-window.ui.h:12
-msgid "Rings Chart"
-msgstr "Ringdiagram"
-
-#: ../src/baobab-main-window.ui.h:13
-msgid "Treemap Chart"
-msgstr "Trekartdiagram"
-
-#: ../src/baobab-window.vala:203
+#: ../src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Velg mappe"
 
-#: ../src/baobab-window.vala:205
+#: ../src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "A_vbryt"
 
-#: ../src/baobab-window.vala:206
+#: ../src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Åpne"
 
-#: ../src/baobab-window.vala:211
+#: ../src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Analyser monteringspunkter rekursivt"
 
-#: ../src/baobab-window.vala:258
+#: ../src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Klarte ikke å analysere volum."
 
-#: ../src/baobab-window.vala:290
+#: ../src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Klarte ikke å vise hjelp"
 
-#: ../src/baobab-window.vala:309
+#: ../src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:312
+#: ../src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk verktøy for å analysere diskbruk."
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <libbe AT stefansen DOT net>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/baobab-window.vala:386
+#: ../src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Klarte ikke å åpne fil"
 
-#: ../src/baobab-window.vala:406
+#: ../src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Klarte ikke å flytte filen til papirkurven"
 
-#: ../src/baobab-window.vala:506
-msgid "Devices and locations"
+#: ../src/baobab-window.vala:485
+msgid "Devices & Locations"
 msgstr "Enheter og lokasjoner"
 
-#: ../src/baobab-window.vala:567
+#: ../src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder \"%s\""
 msgstr "Klarte ikke å gjennomsøke mappe «%s»"
 
-#: ../src/baobab-window.vala:570
+#: ../src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in \"%s\""
 msgstr "Klarte ikke å gjennomsøke noen av mappene i «%s»"
 
-#: ../src/baobab-window.vala:589
+#: ../src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Klarte ikke å finne eksakte verdier for diskbruk."
 
-#: ../src/baobab-window.vala:589
+#: ../src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Tilsynelatende størrelser vises i stedet."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
+#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
 #, c-format
 msgid "\"%s\" is not a valid folder"
 msgstr "«%s» er en ugyldig mappe"
 
-#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Klarte ikke å analysere diskbruk"
 
-#: ../src/menus.ui.h:1
-msgid "_Help"
-msgstr "_Hjelp"
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Et enkelt program som enten søker gjennom spesifikke mapper (lokale eller "
+#~ "eksterne) eller volumer og gir en grafisk representasjon av disse "
+#~ "inklusive katalogstørrelse og prosentvis størrelse."
 
-#: ../src/menus.ui.h:2
-msgid "_About"
-msgstr "_Om"
+#~ msgid "Disk Usage Analyzer"
+#~ msgstr "Analyse av diskplass"
 
-#: ../src/menus.ui.h:3
-msgid "_Quit"
-msgstr "A_vslutt"
+#~ msgid "Check folder sizes and available disk space"
+#~ msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
 
-#: ../src/menus.ui.h:7
-msgid "Go to _parent folder"
-msgstr "Gå til forelder_mappe"
+#~ msgid "storage;space;cleanup;"
+#~ msgstr "lagring;plass;rydding;"
 
-#: ../src/menus.ui.h:8
-msgid "Zoom _in"
-msgstr "Zoom _inn"
+#~ msgid "Excluded partitions URIs"
+#~ msgstr "Nettadresser til ekskluderte partisjoner"
 
-#: ../src/menus.ui.h:9
-msgid "Zoom _out"
-msgstr "Zoom _ut"
+#~ msgid "A list of URIs for partitions to be excluded from scanning."
+#~ msgstr ""
+#~ "En liste over nettadresser til partisjoner som skal ekskluderes fra søket."
+
+#~ msgid "Active Chart"
+#~ msgstr "Aktivt plott"
+
+#~ msgid "Which type of chart should be displayed."
+#~ msgstr "Hvilken type diagram som skal vises."
+
+#~ msgid "Window size"
+#~ msgstr "Vindusstørrelse"
+
+#~ msgid "The initial size of the window"
+#~ msgstr "Utgangsstørrelse på vinduet"
+
+#~ msgid "Window state"
+#~ msgstr "Vindutilstand"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "GdkWindowState for vinduet"
+
+#~ msgid "Scan Folder…"
+#~ msgstr "Søk i mappe …"
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "Søk i ekstern mappe …"
+
+#~ msgid "_Open Folder"
+#~ msgstr "_Åpne mappe"
+
+#~ msgid "_Copy Path to Clipboard"
+#~ msgstr "_Kopier sti til utklippstavle"
+
+#~ msgid "Mo_ve to Trash"
+#~ msgstr "Fl_ytt til papirkurven"
+
+#~ msgid "Close"
+#~ msgstr "Lukk"
+
+#~ msgid "Folder"
+#~ msgstr "Mappe"
+
+#~ msgid "Size"
+#~ msgstr "Størrelse"
+
+#~ msgid "Contents"
+#~ msgstr "Innhold"
+
+#~ msgid "Modified"
+#~ msgstr "Endret"
+
+#~ msgid "Rings Chart"
+#~ msgstr "Ringdiagram"
+
+#~ msgid "Treemap Chart"
+#~ msgstr "Trekartdiagram"
+
+#~ msgid "_Help"
+#~ msgstr "_Hjelp"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "_Quit"
+#~ msgstr "A_vslutt"
+
+#~ msgid "Go to _parent folder"
+#~ msgstr "Gå til forelder_mappe"
+
+#~ msgid "Zoom _in"
+#~ msgstr "Zoom _inn"
+
+#~ msgid "Zoom _out"
+#~ msgstr "Zoom _ut"
