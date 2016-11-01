@@ -111,15 +111,15 @@ namespace Baobab {
                 } else if (ts < 31 * TimeSpan.DAY) {
                     var days = (ulong) (ts / TimeSpan.DAY);
                     // Translators: when the last modified time is "days" days ago
-                    text = ngettext ("%d day", "%d days", days).printf (days);
+                    text = ngettext ("%lu day", "%lu days", days).printf (days);
                 } else if (ts < 365 * TimeSpan.DAY) {
                     var months = (ulong) (ts / (31 * TimeSpan.DAY));
                     // Translators: when the last modified time is "months" months ago
-                    text = ngettext ("%d month", "%d months", months).printf (months);
+                    text = ngettext ("%lu month", "%lu months", months).printf (months);
                 } else {
                     var years = (ulong) (ts / (365 * TimeSpan.DAY));
                     // Translators: when the last modified time is "years" years ago
-                    text = ngettext ("%d year", "%d years", years).printf (years);
+                    text = ngettext ("%lu year", "%lu years", years).printf (years);
                 }
             }
         }
