@@ -543,10 +543,10 @@ namespace Baobab {
                     scanner.get_iter_first (out iter);
                     scanner.get (iter, Scanner.Columns.STATE, out state);
                     if (state == Scanner.State.ERROR) {
-                        var primary = _("Could not scan folder \"%s\"").printf (scanner.directory.get_parse_name ());
+                        var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
                         message (primary, e.message, Gtk.MessageType.ERROR);
                     } else {
-                        var primary = _("Could not scan some of the folders contained in \"%s\"").printf (scanner.directory.get_parse_name ());
+                        var primary = _("Could not scan some of the folders contained in “%s”").printf (scanner.directory.get_parse_name ());
                         message (primary, e.message, Gtk.MessageType.WARNING);
                     }
                 }
@@ -582,13 +582,13 @@ namespace Baobab {
             var location = new Location.for_file (directory, flags);
 
             if (location.info == null) {
-                var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
+                var primary = _("“%s” is not a valid folder").printf (directory.get_parse_name ());
                 message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
                 return;
             }
 
             if (location.info.get_file_type () != FileType.DIRECTORY/* || is_virtual_filesystem ()*/) {
-                var primary = _("\"%s\" is not a valid folder").printf (directory.get_parse_name ());
+                var primary = _("“%s” is not a valid folder").printf (directory.get_parse_name ());
                 message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
                 return;
             }
