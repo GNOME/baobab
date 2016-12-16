@@ -2,22 +2,23 @@
 # Copyright (C) 2012 baobab's COPYRIGHT HOLDER
 # This file is distributed under the same license as the baobab package.
 # TmTFx <f.t.public@gmail.com>, 2012.
+# Fabio Tomat <f.t.public@gmail.com>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab gnome-3-6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-03 00:14+0000\n"
-"PO-Revision-Date: 2016-11-03 17:23+0100\n"
+"POT-Creation-Date: 2016-11-16 12:24+0000\n"
+"PO-Revision-Date: 2016-12-16 09:34+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
-"Language-Team: Friulian <fur@li.org>\n"
+"Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
 #: src/baobab-main-window.ui:44
@@ -114,29 +115,29 @@ msgstr "Vuê"
 # p.e. %lu dîs indaûr
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
-#, fuzzy, c-format
+#, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
-msgstr[0] "%lu dì"
-msgstr[1] "%lu dîs"
+msgstr[0] "%lu dì indaûr"
+msgstr[1] "%lu dîs indaûr"
 
 # meti indaûr?
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
-#, fuzzy, c-format
+#, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
-msgstr[0] "%lu mês"
-msgstr[1] "%lu mês"
+msgstr[0] "%lu mês indaûr"
+msgstr[1] "%lu mês indaûr"
 
 # meti indaûr?
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
-#, fuzzy, c-format
+#, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
-msgstr[0] "%lu an"
-msgstr[1] "%lu agns"
+msgstr[0] "%lu an indaûr"
+msgstr[1] "%lu agns indaûr"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -265,13 +266,15 @@ msgstr "Dispositîfs e posizions"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "No rivi a analizâ le cartele \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
+msgstr "Impussibil analizâ la cartele “%s”"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "No rivi a analizâ cualchi cartele dentri \"%s\""
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Impussibil analizâ cualchi cartele dentri “%s”"
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -284,8 +287,9 @@ msgstr "Vegnin mostradis lis dimensions ipotetichis."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" no je une cartele valide"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
+msgstr "“%s” no je une cartele valide"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
