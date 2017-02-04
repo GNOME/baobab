@@ -14,15 +14,15 @@
 # Ilkka Tuohela <hile@iki.fi>, 2005-2009.
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
 # Tommi Vainikainen <thv@iki.fi>, 2009-2011.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014, 2016.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-12 13:44+0000\n"
-"PO-Revision-Date: 2016-12-16 22:23+0200\n"
+"POT-Creation-Date: 2017-02-02 22:08+0000\n"
+"PO-Revision-Date: 2017-02-04 20:07+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -60,6 +60,10 @@ msgstr ""
 "tallennuslaitteita ja verkkotilejä. Se näyttää puumaisen ja graafisen "
 "esityksen jokaisen kansion sisällöstä ja tilan käytöstä. Sovelluksen avulla "
 "näet helposti, mitkä kansiot vievät eniten tilaa."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "Gnome-projekti"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -127,8 +131,6 @@ msgstr "Tänään"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-#| msgid "%d day"
-#| msgid_plural "%d days"
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu päivä sitten"
@@ -137,8 +139,6 @@ msgstr[1] "%lu päivää sitten"
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-#| msgid "%d month"
-#| msgid_plural "%d months"
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu kuukausi sitten"
@@ -147,8 +147,6 @@ msgstr[1] "%lu kuukautta sitten"
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-#| msgid "%d year"
-#| msgid_plural "%d years"
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu vuosi sitten"
@@ -266,7 +264,7 @@ msgstr "Graafinen työkalu levytilan käytön analysointiin."
 #: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
-"Jiri Grönroos, 2012-2016\n"
+"Jiri Grönroos, 2012-2017\n"
 "Tommi Vainikainen, 2009-2011\n"
 "Timo Jyrinki, 2008\n"
 "Ilkka Tuohela, 2005-2009\n"
@@ -291,13 +289,11 @@ msgstr "Laitteet ja sijainnit"
 
 #: src/baobab-window.vala:546
 #, c-format
-#| msgid "Could not scan folder \"%s\""
 msgid "Could not scan folder “%s”"
 msgstr "Kansiota ”%s” ei voi kartoittaa"
 
 #: src/baobab-window.vala:549
 #, c-format
-#| msgid "Could not scan some of the folders contained in \"%s\""
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Kohteen \"%s\" joidenkin kansioiden kartoitus epäonnistui"
 
@@ -312,7 +308,6 @@ msgstr "Näytetään sen sijaan näennäiskokoja."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-#| msgid "\"%s\" is not a valid folder"
 msgid "“%s” is not a valid folder"
 msgstr "”%s” ei ole kelvollinen kansio"
 
