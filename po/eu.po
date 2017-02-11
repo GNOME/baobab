@@ -5,23 +5,23 @@
 #
 # Mikel Olasagasti <hey_neken@mundurat.net>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2012, 2013, 2014, 2016.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2012, 2013, 2014, 2016, 2017.
 # Julen Ruiz Aizpuru <julenx@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
-"&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-09-20 12:30+0100\n"
-"Last-Translator: dooteo <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-01-18 21:40+0000\n"
+"PO-Revision-Date: 2017-02-11 20:55+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 1.5\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
@@ -38,8 +38,8 @@ msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"Diskoaren erabilpena eta leku librea kontrol pean "
-"mantentzeko aplikazio xume bat."
+"Diskoaren erabilpena eta leku librea kontrol pean mantentzeko aplikazio xume "
+"bat."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -47,13 +47,14 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"Diskoaren erabilpenaren aztertzaileak karpeta zehatzak, biltegiratze-gailuak"
-" eta "
-"lineako kontuak analiza ditzake. karpeta bakoitzaren tamaina erakusten"
-" dituzten "
-"zuhaitzak eta adierazpen grafikoak eskaintzen ditu, diskoaren zer leku"
-" xahutzen "
-"den modu erraz baten identifikatzeko."
+"Diskoaren erabilpenaren aztertzaileak karpeta zehatzak, biltegiratze-gailuak "
+"eta lineako kontuak analiza ditzake. karpeta bakoitzaren tamaina erakusten "
+"dituzten zuhaitzak eta adierazpen grafikoak eskaintzen ditu, diskoaren zer "
+"leku xahutzen den modu erraz baten identifikatzeko."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME proiektua"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -62,7 +63,6 @@ msgstr "biltegia;lekua;garbitu;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -122,34 +122,38 @@ msgstr "Gaur"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "Duela egun %d"
-msgstr[1] "Duela %d egun"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "Duela egun %lu"
+msgstr[1] "Duela %lu egun"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "Duela hilabete %d"
-msgstr[1] "Duela %d hilabete"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "Duela hilabete %lu"
+msgstr[1] "Duela %lu hilabete"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "Duela urte %d"
-msgstr[1] "Duela %d urte"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "Duela urte %lu"
+msgstr[1] "Duela %lu urte"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "Ordenagailu hau"
 
 #: src/baobab-location-list.ui:47
-#| msgid "Custom Location"
 msgid "Remote Locations"
 msgstr "Urruneko kokalekuak"
 
@@ -160,7 +164,6 @@ msgstr "%s guztira"
 
 #: src/baobab-location-list.vala:61
 #, c-format
-#| msgid "Available"
 msgid "%s Available"
 msgstr "%s erabilgarri"
 
@@ -271,19 +274,20 @@ msgid "Failed to move file to the trash"
 msgstr "Huts egin du fitxategia zakarrontzira botatzean"
 
 #: src/baobab-window.vala:485
-#| msgid "Devices and locations"
 msgid "Devices & Locations"
 msgstr "Gailuak eta kokalekuak"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "Ezin izan da '%s' karpeta aztertu"
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
+msgstr "Ezin izan da ”%s” karpeta aztertu"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Ezin izan dira '%s'(e)ko  azpikarpeta batzuk aztertu."
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Ezin izan dira ”%s”(e)ko  azpikarpeta batzuk aztertu."
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -296,8 +300,9 @@ msgstr "Itxurazko tamainak erakutsiko dira horren ordez,"
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "'%s' ez da baliozko karpeta"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
+msgstr "”%s” ez da baliozko karpeta"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
