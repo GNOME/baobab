@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-08-18 11:47+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2017-01-18 21:40+0000\n"
+"PO-Revision-Date: 2017-01-24 13:56+0700\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -20,15 +20,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.11\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6
-#: data/org.gnome.baobab.desktop.in.in:3 src/baobab-main-window.ui:44
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "Penganalisa Penggunaan Disk"
 
-#: data/org.gnome.baobab.appdata.xml.in:7
-#: data/org.gnome.baobab.desktop.in.in:4
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Periksa ukuran folder dan ruang disk yang tersedia"
 
@@ -50,6 +49,10 @@ msgstr ""
 "penyimpanan, dan akun daring. Ini menyediakan representasi pohon dan grafis "
 "yang menampilkan ukuran setiap folder, membuat mudah mengidentifikasi di "
 "mana ruang disk disia-siakan."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "Proyek GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -116,23 +119,23 @@ msgstr "Hari ini"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d hari"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu hari"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d bulan"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu bulan"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d tahun"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu tahun"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -249,7 +252,8 @@ msgstr ""
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Andika Triwidada <andika@gmail.com>, 2010, 2011, 2012, 2013.\n"
-"Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012."
+"Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012.\n"
+"Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017."
 
 #: src/baobab-window.vala:361
 msgid "Failed to open file"
@@ -265,13 +269,13 @@ msgstr "Perangkat & Lokasi"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "Tak bisa memindai folder “%s”"
+msgid "Could not scan folder “%s”"
+msgstr "Tidak dapat memindai folder “%s”"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Tak bisa memindai beberapa folder yang dikandung dalam “%s”"
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Tidak dapat memindai beberapa folder yang terkandung dalam “%s”"
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -284,7 +288,7 @@ msgstr "Ukuran yang nampak saja yang ditampilkan sebagai gantinya."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "\"%s\" bukan folder yang valid"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
