@@ -21,9 +21,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-09-12 00:02+0000\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-01-18 21:40+0000\n"
 "PO-Revision-Date: 2016-09-08 03:04+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -58,6 +58,10 @@ msgstr ""
 "Programmet tilbyder både en træbaseret og en grafisk repræsentation, som "
 "viser størrelsen af hver mappe, så det bliver let at se hvor diskplads "
 "spildes."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -124,25 +128,31 @@ msgstr "I dag"
 
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
-#, c-format
-msgid "%d day"
-msgid_plural "%d days"
+#, c-format, fuzzy
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
 msgstr[0] "%d dag"
 msgstr[1] "%d dage"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
-#, c-format
-msgid "%d month"
-msgid_plural "%d months"
+#, c-format, fuzzy
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
 msgstr[0] "%d måned"
 msgstr[1] "%d måneder"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
-#, c-format
-msgid "%d year"
-msgid_plural "%d years"
+#, c-format, fuzzy
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
 msgstr[0] "%d år"
 msgstr[1] "%d år"
 
@@ -181,7 +191,7 @@ msgstr "Computer"
 
 #: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
-msgstr "Skan mappe…"
+msgstr "Skan mappe …"
 
 #: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
@@ -285,12 +295,12 @@ msgstr "Enheder & steder"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Kunne ikke skanne mappen \"%s\""
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Kunne ikke skanne visse af mapperne i \"%s\""
 
 #: src/baobab-window.vala:568
@@ -304,7 +314,7 @@ msgstr "Tilsyneladende størrelser vises i stedet."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "\"%s\" er ikke en gyldig mappe"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
@@ -345,7 +355,7 @@ msgstr "For_mindsk"
 #~ "inkluderer hver enkelt mappes størrelse og procentdel."
 
 #~ msgid "Scan Remote Folder…"
-#~ msgstr "Skan fjernmappe…"
+#~ msgstr "Skan fjernmappe …"
 
 #~ msgid "- Disk Usage Analyzer"
 #~ msgstr "- Diskforbrugsanalyse"
@@ -374,7 +384,7 @@ msgstr "For_mindsk"
 #~ msgid "Usage"
 #~ msgstr "Forbrug"
 
-# Dette er menupunktet længst til venstre i menubaren
+#~ # Dette er menupunktet længst til venstre i menubaren
 #~ msgid "_Analyzer"
 #~ msgstr "_Analyse"
 
@@ -382,10 +392,10 @@ msgstr "For_mindsk"
 #~ msgstr "_Skan hjemmemappe"
 
 #~ msgid "Scan F_older…"
-#~ msgstr "Skan _mappe…"
+#~ msgstr "Skan _mappe …"
 
 #~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "S_kan fjernmappe…"
+#~ msgstr "S_kan fjernmappe …"
 
 #~ msgid "_View"
 #~ msgstr "_Vis"
@@ -398,3 +408,4 @@ msgstr "For_mindsk"
 
 #~ msgid "_Collapse All"
 #~ msgstr "_Sammenfold alle"
+
