@@ -2,16 +2,15 @@
 # Copyright (C) 1999-2005 Free Software Foundation, Inc.
 #
 # Åka Sikrom <a4NOSPAMPLEASETHANKYOU@hush.com>, 2014.
-# Kjartan Maraas <kmaraas@gnome.org>, 1999-2016.
+# Kjartan Maraas <kmaraas@gnome.org>, 1999-2017.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab 3.22.x\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab\n"
-"POT-Creation-Date: 2016-10-23 22:56+0200\n"
-"PO-Revision-Date: 2016-10-16 11:55+0200\n"
+"Project-Id-Version: baobab 3.23.x\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-02-13 06:46+0000\n"
+"PO-Revision-Date: 2017-02-18 10:45+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -33,14 +32,18 @@ msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
-msgstr ""
+msgstr "Et enkelt program for å holde kontroll på diskbruk og tilgjengelig plass."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
-msgstr ""
+msgstr "Analyse av diskbruk kan gjennomsøke spesifikke mapper, lagringsenheter og kontoer på nettet. Den viser størrelse på hver mappe i et tre eller grafisk, hvilket gjør det enkelt å identifisere hvor diskplassen blir brukt."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -49,9 +52,8 @@ msgstr "lagring;plass;rydding;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#, fuzzy
 msgid "baobab"
-msgstr "Baobab"
+msgstr "baobab"
 
 #: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
@@ -110,36 +112,34 @@ msgstr "I dag"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d dag"
-msgstr[1] "%d dager"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu dag"
+msgstr[1] "%lu dager"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d måned"
-msgstr[1] "%d måneder"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu måned"
+msgstr[1] "%lu måneder"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d år"
-msgstr[1] "%d år"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu år"
+msgstr[1] "%lu år"
 
 #: src/baobab-location-list.ui:17
-#, fuzzy
 msgid "This Computer"
-msgstr "Datamaskin"
+msgstr "Denne datamaskinen"
 
 #: src/baobab-location-list.ui:47
-#, fuzzy
 msgid "Remote Locations"
-msgstr "Enheter og lokasjoner"
+msgstr "Eksterne lokasjoner"
 
 #: src/baobab-location-list.vala:58
 #, c-format
@@ -263,12 +263,12 @@ msgstr "Enheter og lokasjoner"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Klarte ikke å gjennomsøke mappe «%s»"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Klarte ikke å gjennomsøke noen av mappene i «%s»"
 
 #: src/baobab-window.vala:568
@@ -282,8 +282,8 @@ msgstr "Tilsynelatende størrelser vises i stedet."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "«%s» er en ugyldig mappe"
+msgid "“%s” is not a valid folder"
+msgstr "«%s» er ikke en gyldig mappe"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
@@ -312,15 +312,3 @@ msgstr "Zoom _inn"
 #: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "Zoom _ut"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "Et enkelt program som enten søker gjennom spesifikke mapper (lokale eller "
-#~ "eksterne) eller volumer og gir en grafisk representasjon av disse "
-#~ "inklusive katalogstørrelse og prosentvis størrelse."
-
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Søk i ekstern mappe …"
