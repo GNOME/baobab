@@ -187,6 +187,12 @@ namespace Baobab {
                 mount_added (mount);
             }
 
+            populate_recent ();
+
+            update ();
+        }
+
+        void populate_recent () {
             Gtk.RecentManager recent_manager = Gtk.RecentManager.get_default ();
             List<Gtk.RecentInfo> recent_items = recent_manager.get_items ();
 
@@ -213,8 +219,6 @@ namespace Baobab {
             foreach (var info in recent_items) {
                 locations.append (new Location.for_recent_info (info));
             }
-
-            update ();
         }
 
         void update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before_row) {
@@ -257,12 +261,6 @@ namespace Baobab {
                 return;
             }
 
-            if (!already_present (location.file)) {
-                locations.append (location);
-            }
-
-            update ();
-
             // Add to recent files
             Gtk.RecentData data = Gtk.RecentData ();
             data.display_name = null;
@@ -275,6 +273,19 @@ namespace Baobab {
             groups[1] = null;
             data.groups = groups;
             Gtk.RecentManager.get_default ().add_full (location.file.get_uri (), data);
+
+            // Reload recent locations
+            unowned List<Location> iter = locations;
+            while (iter != null) {
+                unowned List<Location> next = iter.next;
+                if (iter.data.is_recent) {
+                    locations.remove_link (iter);
+                }
+                iter = next;
+            }
+            populate_recent ();
+
+            update ();
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Baobab {
 
         public bool is_main_volume { get; private set; default = false; }
         public bool is_remote { get; private set; default = false; }
+        public bool is_recent { get; private set; default = false; }
 
         public Scanner? scanner { get; private set; }
 
@@ -120,6 +121,7 @@ namespace Baobab {
 
         public Location.for_recent_info (Gtk.RecentInfo recent_info) {
             is_volume = false; // we assume recent locations are just folders
+            is_recent = true;
             file = File.new_for_uri (recent_info.get_uri ());
             name = recent_info.get_display_name ();
             icon = recent_info.get_gicon ();
