@@ -33,18 +33,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-26\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-09-12 10:44+0300\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"POT-Creation-Date: 2017-02-23 16:28+0000\n"
+"PO-Revision-Date: 2017-02-22 19:39+0200\n"
+"Last-Translator: Yannis Koutsoukos <giankoyt@gmail.com>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
@@ -82,7 +82,6 @@ msgstr "αποθήκευση;χώρος;καθαρισμός;storage;space;clean
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -143,26 +142,26 @@ msgstr "Σήμερα"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d ημέρα"
-msgstr[1] "%d ημέρες"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu ημέρα"
+msgstr[1] "%lu ημέρες"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d μήνας"
-msgstr[1] "%d μήνες"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu μήνας"
+msgstr[1] "%lu μήνες"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d έτος"
-msgstr[1] "%d έτη"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu έτος"
+msgstr[1] "%lu έτη"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -179,7 +178,6 @@ msgstr "%s σύνολο"
 
 #: src/baobab-location-list.vala:61
 #, c-format
-#| msgid "Available"
 msgid "%s Available"
 msgstr "%s διαθέσιμο"
 
@@ -190,11 +188,11 @@ msgstr "%s διαθέσιμο"
 msgid "%s Used"
 msgstr "%s χρησιμοποιείται"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Προσωπικός φάκελος"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Υπολογιστής"
 
@@ -303,12 +301,12 @@ msgstr "Συσκευές & τοποθεσίες"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Αδυναμία σάρωσης φακέλου \"%s\""
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Αδυναμία σάρωσης μερικών από τους φακέλους που περιέχονται στο \"%s\""
 
 #: src/baobab-window.vala:568
@@ -322,8 +320,8 @@ msgstr "Προφανή μεγέθη εμφανίζονται αντ' αυτού.
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "Το \"%s\" δεν είναι έγκυρος φάκελος"
+msgid "“%s” is not a valid folder"
+msgstr " \"%s\" δεν είναι έγκυρος φάκελος"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
@@ -352,6 +350,9 @@ msgstr "Μεγέ_θυνση "
 #: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "Σμίκρυ_νση"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "Το έργο του GNOME"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
