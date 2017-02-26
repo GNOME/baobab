@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of baobab.
-# Copyright (C) 1999-2016 the baobab authors.
+# Copyright (C) 1999-2017 the baobab authors.
 # This file is distributed under the same license as the baobab package.
 # Alexandre Hautequest <hquest@fesppr.br>, 1999.
 # Ariel Bressan da Silva <ariel@conectiva.com.br>, 2000.
@@ -19,26 +19,26 @@
 # Rodrigo Padula de Oliveira <contato@rodrigopadula.com>, 2011.
 # André Gondim <andregondim@ubuntu.com>, 2011.
 # Jonh Wendell <jwendell@gnome.org>, 2012.
-# Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2014.
 # Gustavo Marques <gutodisse@gmail.com>, 2016.
 # Enrico Nicoletto <liverig@gmail.com>, 2012, 2013, 2014, 2016.
-#
+# Rafael Fontenelle <rafaelff@gnome.org>, 2013, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-01 18:54+0000\n"
-"PO-Revision-Date: 2016-11-01 22:30-0200\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
+"&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-02-23 16:28+0000\n"
+"PO-Revision-Date: 2017-02-25 22:21-0200\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Virtaal 1.0.0-beta1\n"
+"X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
 #: src/baobab-main-window.ui:44
@@ -180,11 +180,11 @@ msgstr "%s disponível"
 msgid "%s Used"
 msgstr "%s em uso"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Pasta pessoal"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Computador"
 
@@ -286,7 +286,7 @@ msgstr ""
 "Rodrigo Padula de Oliveira <contato@rodrigopadula.com>\n"
 "André Gondim (In memoriam)<In memoriam>\n"
 "Enrico Nicoletto <liverig@gmail.com>\n"
-"Rafael Fontenelle <rafael.f.f1@gmail.com>"
+"Rafael Fontenelle <rafaelff@gmail.com>"
 
 #: src/baobab-window.vala:361
 msgid "Failed to open file"
@@ -302,13 +302,15 @@ msgstr "Dispositivos & localizações"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "Não foi possível varrer a pasta \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
+msgstr "Não foi possível varrer a pasta “%s”"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Não foi possível varrer algumas das pastas contidas em \"%s\""
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Não foi possível varrer algumas das pastas contidas em “%s”"
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -321,8 +323,9 @@ msgstr "Tamanhos aparentes são mostrados, em vez disso."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" não é uma pasta válida"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
+msgstr "“%s” não é uma pasta válida"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
