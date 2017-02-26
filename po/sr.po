@@ -1,14 +1,14 @@
 # Милош Поповић <gpopac@gmail.com>, 2011.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2016.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&"
 "keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-08-27 22:01+0200\n"
+"POT-Creation-Date: 2017-02-13 06:46+0000\n"
+"PO-Revision-Date: 2017-02-21 06:16+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: српски <gnome-sr@googlegroups.org>\n"
+"Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,6 +44,10 @@ msgstr ""
 "уређаје и налоге на мрежи. Обезбеђује представљање и у виду стабла и у виду "
 "графика показујући величину сваке фасцикле, олакшавајући откривање "
 "изгубљеног простора на диску."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "Гномов пројекат"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -113,35 +117,40 @@ msgstr "Данас"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d дан"
-msgstr[1] "%d дана"
-msgstr[2] "%d дана"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu дан"
+msgstr[1] "%lu дана"
+msgstr[2] "%lu дана"
 msgstr[3] "један дан"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d месец"
-msgstr[1] "%d месеца"
-msgstr[2] "%d месеци"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu месец"
+msgstr[1] "%lu месеца"
+msgstr[2] "%lu месеци"
 msgstr[3] "један месец"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d године"
-msgstr[1] "%d године"
-msgstr[2] "%d година"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu године"
+msgstr[1] "%lu године"
+msgstr[2] "%lu година"
 msgstr[3] "једне године"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "На овом рачунару"
 
@@ -266,18 +275,19 @@ msgid "Failed to move file to the trash"
 msgstr "Нисам успео да преместим датотеку у смеће"
 
 #: src/baobab-window.vala:485
-#| msgid "Devices and locations"
 msgid "Devices & Locations"
 msgstr "Уређаји и места"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Не могу да анализирам диск „%s“"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Не могу да прегледам неке фасцикле садржане у „%s“"
 
 #: src/baobab-window.vala:568
@@ -291,7 +301,8 @@ msgstr "Уместо тога су приказане приближне вел�
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "„%s“ није исправна фасцикла"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
