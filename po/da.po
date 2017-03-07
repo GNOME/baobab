@@ -1,5 +1,5 @@
 # Danish Translation of gnome-utils.
-# Copyright (C) 2013, 2014, 2016 Free Software Foundation, Inc.
+# Copyright (C) 2013-2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-utils package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
 # Kim Schulz <kim@schulz.dk>, 1999.
@@ -10,6 +10,7 @@
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008, 2012.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14, 16.
+# Joe Hansen <joedalton2@yahoo.dk>, 2017.
 #
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
@@ -21,10 +22,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-18 21:40+0000\n"
-"PO-Revision-Date: 2016-09-08 03:04+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-02-28 18:49+0000\n"
+"PO-Revision-Date: 2017-03-05 03:04+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -61,7 +62,7 @@ msgstr ""
 
 #: data/org.gnome.baobab.appdata.xml.in:34
 msgid "The GNOME Project"
-msgstr ""
+msgstr "GNOME-projektet"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -128,33 +129,27 @@ msgstr "I dag"
 
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
-#, c-format, fuzzy
-#| msgid "%d day"
-#| msgid_plural "%d days"
+#, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
-msgstr[0] "%d dag"
-msgstr[1] "%d dage"
+msgstr[0] "%lu dag"
+msgstr[1] "%lu dage"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
-#, c-format, fuzzy
-#| msgid "%d month"
-#| msgid_plural "%d months"
+#, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
-msgstr[0] "%d måned"
-msgstr[1] "%d måneder"
+msgstr[0] "%lu måned"
+msgstr[1] "%lu måneder"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
-#, c-format, fuzzy
-#| msgid "%d year"
-#| msgid_plural "%d years"
+#, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
-msgstr[0] "%d år"
-msgstr[1] "%d år"
+msgstr[0] "%lu år"
+msgstr[1] "%lu år"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -181,11 +176,11 @@ msgstr "%s tilgængelig"
 msgid "%s Used"
 msgstr "%s brugt"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Computer"
 
@@ -344,68 +339,4 @@ msgstr "For_stør"
 #: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "For_mindsk"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "Et simpelt program som kan skanne enten specifikke mapper (lokale eller "
-#~ "fjerne) eller diskenheder og frembringe en grafisk repræsentation, som "
-#~ "inkluderer hver enkelt mappes størrelse og procentdel."
-
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Skan fjernmappe …"
-
-#~ msgid "- Disk Usage Analyzer"
-#~ msgstr "- Diskforbrugsanalyse"
-
-#~ msgid "Maximum depth"
-#~ msgstr "Maksimal dybde"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "Maksimal dybde der tegnes i diagrammet fra roden"
-
-#~ msgid "Chart model"
-#~ msgstr "Diagrammodel"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Angiv modellen for diagrammet"
-
-#~ msgid "Chart root node"
-#~ msgstr "Rodpunkt for diagrammet"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Sæt rodpunktet fra modellen"
-
-#~ msgid "Main volume"
-#~ msgstr "Primære diskenhed"
-
-#~ msgid "Usage"
-#~ msgstr "Forbrug"
-
-#~ # Dette er menupunktet længst til venstre i menubaren
-#~ msgid "_Analyzer"
-#~ msgstr "_Analyse"
-
-#~ msgid "_Scan Home"
-#~ msgstr "_Skan hjemmemappe"
-
-#~ msgid "Scan F_older…"
-#~ msgstr "Skan _mappe …"
-
-#~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "S_kan fjernmappe …"
-
-#~ msgid "_View"
-#~ msgstr "_Vis"
-
-#~ msgid "_Reload"
-#~ msgstr "_Genindlæs"
-
-#~ msgid "_Expand All"
-#~ msgstr "_Udfold alle"
-
-#~ msgid "_Collapse All"
-#~ msgstr "_Sammenfold alle"
 
