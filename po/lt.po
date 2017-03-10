@@ -11,11 +11,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-09-05 18:11+0300\n"
-"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
+"POT-Creation-Date: 2017-03-06 20:18+0000\n"
+"PO-Revision-Date: 2017-03-06 23:37+0200\n"
+"Last-Translator: Moo\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
 #: src/baobab-main-window.ui:44
@@ -51,6 +51,10 @@ msgstr ""
 "reprezentaciją, parodančią kiekvieno aplanko dydį, taip padedant greičiau "
 "surasti, kur yra švaistoma disko vieta."
 
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME projektas"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
@@ -58,7 +62,6 @@ msgstr "saugykla;vieta;išvalymas;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -119,32 +122,31 @@ msgstr "Šiandien"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d diena"
-msgstr[1] "%d dienos"
-msgstr[2] "%d dienų"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu diena"
+msgstr[1] "%lu dienos"
+msgstr[2] "%lu dienų"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d mėnuo"
-msgstr[1] "%d mėnuo"
-msgstr[2] "%d mėnesių"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu mėnesis"
+msgstr[1] "%lu mėnesiai"
+msgstr[2] "%lu mėnesių"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d metai"
-msgstr[1] "%d metai"
-msgstr[2] "%d metų"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu metai"
+msgstr[1] "%lu metai"
+msgstr[2] "%lu metų"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "Šis kompiuteris"
 
@@ -169,11 +171,11 @@ msgstr "Prieinama %s"
 msgid "%s Used"
 msgstr "Naudojama %s"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Namų aplankas"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Kompiuteris"
 
@@ -274,18 +276,17 @@ msgid "Failed to move file to the trash"
 msgstr "Nepavyko perkelti failo į šiukšlinę"
 
 #: src/baobab-window.vala:485
-#| msgid "Devices and locations"
 msgid "Devices & Locations"
 msgstr "Įrenginiai ir vietos"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Nepavyko perskaityti aplanko „%s“"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Nepavyko perskaityti kai kurių aplankų iš „%s“."
 
 #: src/baobab-window.vala:568
@@ -299,7 +300,7 @@ msgstr "Vietoj to rodomi numanomi dydžiai."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "„%s“ nėra tinkamas aplankas"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
