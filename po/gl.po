@@ -13,22 +13,23 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014, 2016.
+# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014, 2016, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&"
-"keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-09-08 21:59+0000\n"
-"PO-Revision-Date: 2016-09-11 00:25+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-02-28 18:49+0000\n"
+"PO-Revision-Date: 2017-03-11 03:53+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: Galician\n"
+"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
@@ -59,6 +60,10 @@ msgstr ""
 "gráfica e en árbore que mostra o tamaño de cada cartafol, facendo máis doado "
 "identificar onde se está ocupando o espazo en disco."
 
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "O Proxecto GNOME"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
@@ -66,7 +71,6 @@ msgstr "almacenamento;espazo;limpeza;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -126,34 +130,38 @@ msgstr "Hoxe"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d día"
-msgstr[1] "%d días"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu día"
+msgstr[1] "%lu días"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d mes"
-msgstr[1] "%d meses"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu mes"
+msgstr[1] "%lu meses"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d ano"
-msgstr[1] "%d anos"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu ano"
+msgstr[1] "%lu anos"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "Este computador"
 
 #: src/baobab-location-list.ui:47
-#| msgid "All Locations"
 msgid "Remote Locations"
 msgstr "Localizacións remotas"
 
@@ -174,11 +182,11 @@ msgstr "%s dispoñíbel"
 msgid "%s Used"
 msgstr "%s usado"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Cartafol persoal"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Computador"
 
@@ -261,7 +269,7 @@ msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 #: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
-"Fran Diéguez <frandieguez@gnome.org>, 2009-2016\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2009-2017\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
 "Antón Méixome <meixome@mancomun.org>, 2009\n"
 "Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
@@ -287,12 +295,14 @@ msgstr "Dispositivos e localizacións"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Non foi posíbel analizar o cartafol «%s»"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Non foi posíbel analizar algúns dos cartafoles dentro de «%s»."
 
 #: src/baobab-window.vala:568
@@ -306,7 +316,8 @@ msgstr "No lugar móstranse os tamaños aparentes."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
