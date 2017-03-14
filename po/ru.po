@@ -17,11 +17,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-12 13:44+0000\n"
-"PO-Revision-Date: 2016-12-15 09:06+0300\n"
-"Last-Translator: Aleksey Kabanov <ak099@mail.ru>\n"
+"POT-Creation-Date: 2017-03-07 11:51+0000\n"
+"PO-Revision-Date: 2017-03-14 21:18+0400\n"
+"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "10<=4 && (n%100<10 || n%100>=20) ? 1: 2);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6
 #: data/org.gnome.baobab.desktop.in.in:3 src/baobab-main-window.ui:44
@@ -60,6 +60,10 @@ msgstr ""
 "устройства хранения и сетевые учётные записи. Обеспечивает графическое "
 "представление и представление в виде дерева, показывающее размер каждой "
 "папки, что позволяет легко определить, где теряется дисковое пространство."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "Проект GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -128,8 +132,6 @@ msgstr "Сегодня"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-#| msgid "%d day"
-#| msgid_plural "%d days"
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu день"
@@ -139,8 +141,6 @@ msgstr[2] "%lu дней"
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-#| msgid "%d month"
-#| msgid_plural "%d months"
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu месяц"
@@ -150,8 +150,6 @@ msgstr[2] "%lu месяцев"
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-#| msgid "%d year"
-#| msgid_plural "%d years"
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu год"
@@ -183,11 +181,11 @@ msgstr "%s доступно"
 msgid "%s Used"
 msgstr "%s использовано"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Домашняя папка"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Компьютер"
 
@@ -287,13 +285,11 @@ msgstr "Устройства и местоположения"
 
 #: src/baobab-window.vala:546
 #, c-format
-#| msgid "Could not scan folder \"%s\""
 msgid "Could not scan folder “%s”"
 msgstr "Не удалось просканировать папку «%s»"
 
 #: src/baobab-window.vala:549
 #, c-format
-#| msgid "Could not scan some of the folders contained in \"%s\""
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Не удалось просканировать некоторые папки, содержащиеся в «%s»"
 
@@ -308,7 +304,6 @@ msgstr "Показаны предполагаемые размеры."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-#| msgid "\"%s\" is not a valid folder"
 msgid "“%s” is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
