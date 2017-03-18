@@ -8,14 +8,14 @@
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013, 2014, 2016.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013, 2014, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-08-28 18:31+0200\n"
+"POT-Creation-Date: 2017-02-28 18:49+0000\n"
+"PO-Revision-Date: 2017-03-18 21:58+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -40,8 +40,8 @@ msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"Vienkārša lietotne, kas palīdz uzraudzīt disku izmantojumu un brīvi pieejamo"
-" vietas apjomu."
+"Vienkārša lietotne, kas palīdz uzraudzīt disku izmantojumu un brīvi pieejamo "
+"vietas apjomu."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -49,9 +49,14 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"Disku izmantojuma analizators var skenēt noteiktas mapes, krātuvju ierīces un"
-" tiešsaistes kontus. Tas sniedz gan koka skatu, gan grafiku, kas rāda katras"
-" mapes izmēru. Tādējādi ir vieglāk noteikt, kur diska vieta tiek izniekota."
+"Disku izmantojuma analizators var skenēt noteiktas mapes, krātuvju ierīces "
+"un tiešsaistes kontus. Tas sniedz gan koka skatu, gan grafiku, kas rāda "
+"katras mapes izmēru. Tādējādi ir vieglāk noteikt, kur diska vieta tiek "
+"izniekota."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME projekts"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -60,7 +65,6 @@ msgstr "uzkopšana;vieta;krātuve;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -121,37 +125,41 @@ msgstr "Šodien"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d dienas"
-msgstr[1] "%d dienām"
-msgstr[2] "%d dienām"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu dienas"
+msgstr[1] "%lu dienām"
+msgstr[2] "%lu dienām"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d mēneša"
-msgstr[1] "%d mēnešiem"
-msgstr[2] "%d mēnešiem"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu mēneša"
+msgstr[1] "%lu mēnešiem"
+msgstr[2] "%lu mēnešiem"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d gada"
-msgstr[1] "%d gadiem"
-msgstr[2] "%d gadiem"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu gada"
+msgstr[1] "%lu gadiem"
+msgstr[2] "%lu gadiem"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "Šajā datorā"
 
 #: src/baobab-location-list.ui:47
-#| msgid "Custom Location"
 msgid "Remote Locations"
 msgstr "Attālinātās vietās"
 
@@ -162,7 +170,6 @@ msgstr "%s kopā"
 
 #: src/baobab-location-list.vala:61
 #, c-format
-#| msgid "Available"
 msgid "%s Available"
 msgstr "%s pieejams"
 
@@ -173,11 +180,11 @@ msgstr "%s pieejams"
 msgid "%s Used"
 msgstr "%s izmantots"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Mājas mape"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Dators"
 
@@ -273,19 +280,20 @@ msgid "Failed to move file to the trash"
 msgstr "Neizdevās pārvietot datni uz miskasti"
 
 #: src/baobab-window.vala:485
-#| msgid "Devices and locations"
 msgid "Devices & Locations"
 msgstr "Ierīces un vietas"
 
 # logview/logrtns.c:202
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Nevarēja skenēt mapi “%s”"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Nevarēja skanēt dažas no mapēm, kas atradās iekš “%s”"
 
 #: src/baobab-window.vala:568
@@ -300,7 +308,8 @@ msgstr "Tā vietā tiek rādīti saskatāmie izmēri."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "“%s” nav derīga mape"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
