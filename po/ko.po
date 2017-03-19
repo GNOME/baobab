@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the gnome-util package.
 #
 # update by Young-Ho, Cha <ganadist@chollian.net>, 2001
-# Seong-ho Cho <shcho@gnome.org>, 2012, 2016.
+# Seong-ho Cho <shcho@gnome.org>, 2012, 2016-2017
 # Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2011, 2013-2014.
 #
 # 새로 번역하시는 분은 아래 translator-credits에 추가하세요.
@@ -13,10 +13,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-09-07 22:04+0900\n"
+"POT-Creation-Date: 2017-03-07 11:51+0000\n"
+"PO-Revision-Date: 2017-03-17 23:46+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -50,6 +50,10 @@ msgstr ""
 "디스크 사용량 분석은 특정 폴더, 저장 장치, 온라인 계정을 검사할 수 있습니다. "
 "각 폴더를 트리 방식 및 그래픽으로 나타내어 디스크 공간을 낭비하는 영역을 쉽"
 "게 찾아볼 수 있게 합니다."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "그놈 프로젝트"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -116,23 +120,23 @@ msgstr "오늘"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d일"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu일"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d달"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu달"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d년"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu년"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -159,11 +163,11 @@ msgstr "남은 용량: %s"
 msgid "%s Used"
 msgstr "사용 용량: %s"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "내 폴더"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "컴퓨터"
 
@@ -264,13 +268,13 @@ msgstr "장치 및 위치"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "\"%s\" 폴더를 검사할 수 없습니다"
+msgid "Could not scan folder “%s”"
+msgstr "“%s” 폴더를 검사할 수 없습니다"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "\"%s\" 안에 들어 있는 폴더 중에 검사할 수 없는 폴더가 있습니다"
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "“%s” 안에 들어 있는 폴더 일부를 검사할 수 없습니다"
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -283,8 +287,8 @@ msgstr "겉보기 크기를 대신 표시합니다."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\"은(는) 올바른 폴더가 아닙니다"
+msgid "“%s” is not a valid folder"
+msgstr "“%s”은(는) 올바른 폴더가 아닙니다"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
