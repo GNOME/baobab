@@ -10,15 +10,15 @@
 # Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999.
 # Manuel de Vega Barreiro <barreiro@arrakis.es> 2000-2001.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-12 13:44+0000\n"
-"PO-Revision-Date: 2016-12-20 15:25+0100\n"
+"POT-Creation-Date: 2017-03-07 11:51+0000\n"
+"PO-Revision-Date: 2017-03-22 10:07+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -56,6 +56,10 @@ msgstr ""
 "dispositivos de almacenamiento y cuentas en línea. Proporciona tanto una "
 "vista de árbol como una representación gráfica del tamaño de cada carpeta, "
 "simplificando la identificación de dónde se consume el espacio."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "El Proyecto GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -123,8 +127,6 @@ msgstr "Hoy"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-#| msgid "%d day"
-#| msgid_plural "%d days"
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu día"
@@ -133,8 +135,6 @@ msgstr[1] "%lu días"
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-#| msgid "%d month"
-#| msgid_plural "%d months"
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu mes"
@@ -143,8 +143,6 @@ msgstr[1] "%lu meses"
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-#| msgid "%d year"
-#| msgid_plural "%d years"
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu año"
@@ -175,11 +173,11 @@ msgstr "%s disponible"
 msgid "%s Used"
 msgstr "%s usado"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Carpeta personal"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Equipo"
 
@@ -286,13 +284,11 @@ msgstr "Dispositivos y ubicaciones"
 
 #: src/baobab-window.vala:546
 #, c-format
-#| msgid "Could not scan folder \"%s\""
 msgid "Could not scan folder “%s”"
 msgstr "No se pudo analizar la carpeta «%s»"
 
 #: src/baobab-window.vala:549
 #, c-format
-#| msgid "Could not scan some of the folders contained in \"%s\""
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "No se pudieron analizar algunas de las carpetas de «%s»."
 
@@ -307,7 +303,6 @@ msgstr "Se muestran el tamaño aparente en su lugar."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-#| msgid "\"%s\" is not a valid folder"
 msgid "“%s” is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
