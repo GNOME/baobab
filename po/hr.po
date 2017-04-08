@@ -4,20 +4,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils 0\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=baobab\n"
-"POT-Creation-Date: 2016-09-18 18:51+0200\n"
-"PO-Revision-Date: 2016-09-11 23:30+0000\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-02-28 18:49+0000\n"
+"PO-Revision-Date: 2017-04-08 22:54+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2016-09-22 19:56+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
-"Language: hr\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
 #: src/baobab-main-window.ui:44
@@ -46,6 +46,10 @@ msgstr ""
 "pohrane i mrežne račune. Omogućuje prikaz u stablu i grafičku reprezentaciju "
 "koja prikazuje veličinu pojedine mape, čineći jednostavnije otkrivanje "
 "iskorištenog prostora."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME projekt"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -114,29 +118,29 @@ msgstr "Danas"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d dan"
-msgstr[1] "%d dana"
-msgstr[2] "%d dana"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu dan"
+msgstr[1] "%lu dana"
+msgstr[2] "%lu dana"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d mjesec"
-msgstr[1] "%d mjeseca"
-msgstr[2] "%d mjeseca"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu mjesec"
+msgstr[1] "%lu mjeseca"
+msgstr[2] "%lu mjeseca"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d godina"
-msgstr[1] "%d godine"
-msgstr[2] "%d godina"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu godina"
+msgstr[1] "%lu godine"
+msgstr[2] "%lu godina"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -163,11 +167,11 @@ msgstr "%s dostupno"
 msgid "%s Used"
 msgstr "%s iskorišteno"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Osobna mapa"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Računalo"
 
@@ -270,13 +274,13 @@ msgstr "Uređaji i lokacije"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Nemoguće pretraživanje \"%s\" mape"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Neuspjelo pretraživanje određenih mapa sadržanih u \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Nemoguće pretraživanje određenih mapa sadržanih u \"%s\""
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -289,8 +293,8 @@ msgstr "Umjesto je prikazana prividna veličina."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "%s\" nije valjana mapa"
+msgid "“%s” is not a valid folder"
+msgstr "\"%s\" nije valjana mapa"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
@@ -329,5 +333,5 @@ msgstr "Smanji_"
 #~ "directory size or percentage."
 #~ msgstr ""
 #~ "Jednostavna aplikacija koja može pretraživati određene mape (lokalne ili "
-#~ "udaljene) ili uređaje i prikazati grafičku prezentaciju uključujući veličinu "
-#~ "ili postotak svakog direktorija."
+#~ "udaljene) ili uređaje i prikazati grafičku prezentaciju uključujući "
+#~ "veličinu ili postotak svakog direktorija."
