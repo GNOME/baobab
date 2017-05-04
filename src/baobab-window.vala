@@ -185,6 +185,13 @@ namespace Baobab {
 
             set_ui_state (home_page, false);
 
+            button_press_event.connect ( (event) => {
+                if (event.button == 8) {
+                    lookup_action ("show-home-page").activate (null);
+                }
+                return false;
+            });
+
             show ();
         }
 
