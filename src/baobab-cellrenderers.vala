@@ -40,7 +40,7 @@ namespace Baobab {
             }
         }
 
-        protected override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
+        protected override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             var context = widget.get_style_context ();
 
             context.save ();
@@ -54,7 +54,7 @@ namespace Baobab {
                 break;
             }
 
-            base.render (cr, widget, background_area, cell_area, flags);
+            base.snapshot (snapshot, widget, background_area, cell_area, flags);
 
             context.restore ();
         }
@@ -128,7 +128,7 @@ namespace Baobab {
     public class CellRendererProgress : Gtk.CellRendererProgress {
         public Scanner.State state { set; get; }
 
-        public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
+        public override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             if (state == Scanner.State.ERROR) {
                 return;
             }
@@ -147,16 +147,16 @@ namespace Baobab {
             context.save ();
             context.add_class ("baobab-level-cell");
 
-            context.render_background (cr, x, y, w, h);
-            context.render_frame (cr, x, y, w, h);
+            snapshot.render_background (context, x, y, w, h);
+            snapshot.render_frame (context, x, y, w, h);
 
-            var border = context.get_border (Gtk.StateFlags.NORMAL);
+            var border = context.get_border ();
             x += border.left;
             y += border.top;
             w -= border.left + border.right;
             h -= border.top + border.bottom;
 
-            border = context.get_padding (Gtk.StateFlags.NORMAL);
+            border = context.get_padding ();
             x += border.left;
             y += border.top;
             w -= border.left + border.right;
@@ -177,7 +177,7 @@ namespace Baobab {
                 context.add_class ("level-high");
             }
 
-            context.render_background (cr, x_bar, y, perc_w, h);
+            snapshot.render_background (context, x_bar, y, perc_w, h);
 
             context.restore ();
         }

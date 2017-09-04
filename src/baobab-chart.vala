@@ -218,8 +218,6 @@ namespace Baobab {
         };
 
         construct {
-            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.SCROLL_MASK);
-
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
             insert_action_group ("chart", action_group);
@@ -227,8 +225,8 @@ namespace Baobab {
             build_context_menu ();
         }
 
-        public override void size_allocate (Gtk.Allocation allocation) {
-            base.size_allocate (allocation);
+        public override void size_allocate (Gtk.Allocation allocation, int baseline, out Gtk.Allocation clip) {
+            base.size_allocate (allocation, baseline, out clip);
             foreach (ChartItem item in items) {
                 item.has_visible_children = false;
                 item.visible = false;
@@ -250,9 +248,11 @@ namespace Baobab {
         }
 
         public override bool motion_notify_event (Gdk.EventMotion event) {
-            has_tooltip = highlight_item_at_point (event.x, event.y);
+            double x, y;
+            event.get_coords(out x, out y);
+            has_tooltip = highlight_item_at_point (x, y);
 
-            Gdk.Event.request_motions (event);
+            //Gdk.Event.request_motions (event);
 
             return false;
         }
@@ -487,15 +487,20 @@ namespace Baobab {
         }
 
         protected override bool button_press_event (Gdk.EventButton event) {
-            if (event.type == Gdk.EventType.BUTTON_PRESS) {
+            if (event.get_event_type () == Gdk.EventType.BUTTON_PRESS) {
                 if (event.triggers_context_menu ()) {
                     show_popup_menu (event);
                     return true;
                 }
 
-                switch (event.button) {
+                uint button;
+                double x, y;
+                event.get_button (out button);
+                event.get_coords (out x, out y);
+
+                switch (button) {
                 case Gdk.BUTTON_PRIMARY:
-                    if (highlight_item_at_point (event.x, event.y)) {
+                    if (highlight_item_at_point (x, y)) {
                         var path = model.get_path (highlighted_item.iter);
                         if (root.compare (path) == 0) {
                             move_up_root ();
@@ -517,7 +522,9 @@ namespace Baobab {
 
         protected override bool scroll_event (Gdk.EventScroll event) {
             Gdk.EventMotion e = (Gdk.EventMotion) event;
-            switch (event.direction) {
+            Gdk.ScrollDirection direction;
+            event.get_scroll_direction (out direction);
+            switch (direction) {
             case Gdk.ScrollDirection.LEFT:
             case Gdk.ScrollDirection.UP:
                 zoom_out ();
@@ -582,7 +589,7 @@ namespace Baobab {
             context_menu.attach_to_widget (this, null);
         }
 
-        void show_popup_menu (Gdk.EventButton? event) {
+        void show_popup_menu (Gdk.EventButton event) {
             var enable = highlighted_item != null;
             var action = action_group.lookup_action ("open-file") as SimpleAction;
             action.set_enabled (enable);
@@ -599,11 +606,7 @@ namespace Baobab {
             action = action_group.lookup_action ("zoom-out") as SimpleAction;
             action.set_enabled (can_zoom_out ());
 
-            if (event != null) {
-                context_menu.popup (null, null, null, event.button, event.time);
-            } else {
-                context_menu.popup (null, null, null, 0, Gtk.get_current_event_time ());
-            }
+            context_menu.popup_at_pointer (event);
         }
 
         void connect_model_signals (Gtk.TreeModel m) {

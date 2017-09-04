@@ -153,7 +153,7 @@ namespace Baobab {
             resize (width, height);
 
             window_state_event.connect ((event) => {
-                ui_settings.set_int ("window-state", event.new_window_state);
+                //ui_settings.set_int ("window-state", event.new_window_state);
                 return false;
             });
 
@@ -179,7 +179,7 @@ namespace Baobab {
             } else {
                 header_bar.show_close_button = false;
                 header_bar.get_style_context ().remove_class ("titlebar");
-                vbox.pack_start (header_bar, false, false, 0);
+                vbox.pack_start (header_bar);
             }
 
             set_ui_state (home_page, false);
@@ -280,7 +280,7 @@ namespace Baobab {
 
         void on_help_activate () {
             try {
-                Gtk.show_uri (get_screen (), "help:baobab", Gtk.get_current_event_time ());
+                Gtk.show_uri_on_window (this, "help:baobab", Gtk.get_current_event_time ());
             } catch (Error e) {
                 message (_("Failed to show help"), e.message, Gtk.MessageType.WARNING);
             }
@@ -354,16 +354,6 @@ namespace Baobab {
             Gtk.drag_dest_unset (this);
         }
 
-        bool show_treeview_popup (Gtk.Menu popup, Gdk.EventButton? event) {
-            if (event != null) {
-                popup.popup (null, null, null, event.button, event.time);
-            } else {
-                popup.popup (null, null, null, 0, Gtk.get_current_event_time ());
-                popup.select_first (false);
-            }
-            return true;
-        }
-
         public void open_item (Gtk.TreeIter iter) {
             string parse_name;
             active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
@@ -406,9 +396,12 @@ namespace Baobab {
             treeview.button_press_event.connect ((event) => {
                 if (event.triggers_context_menu ()) {
                     Gtk.TreePath path;
-                    if (treeview.get_path_at_pos ((int)event.x, (int)event.y, out path, null, null, null)) {
+                    double x, y;
+                    event.get_coords (out x, out y);
+                    if (treeview.get_path_at_pos ((int)x, (int)y, out path, null, null, null)) {
                         treeview.get_selection ().select_path (path);
-                        return show_treeview_popup (treeview_popup_menu, event);
+                        treeview_popup_menu.popup_at_pointer (event);
+                        return true;
                     }
                 }
 
@@ -416,7 +409,8 @@ namespace Baobab {
             });
 
             treeview.popup_menu.connect (() => {
-                return show_treeview_popup (treeview_popup_menu, null);
+                treeview_popup_menu.popup_at_pointer (null);
+                return true;
             });
 
             treeview_popup_open.activate.connect (() => {

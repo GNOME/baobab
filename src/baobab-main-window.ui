@@ -6,7 +6,6 @@
     <property name="can_focus">False</property>
     <child>
       <object class="GtkMenuItem" id="treeview_popup_open">
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">_Open Folder</property>
@@ -15,7 +14,6 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="treeview_popup_copy">
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">_Copy Path to Clipboard</property>
@@ -24,7 +22,6 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="treeview_popup_trash">
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">Mo_ve to Trash</property>
@@ -107,7 +104,6 @@
                 <object class="GtkBox" id="infobar_content_area">
                   <property name="visible">True</property>
                   <property name="can_focus">False</property>
-                  <property name="border_width">8</property>
                   <property name="orientation">vertical</property>
                   <property name="spacing">16</property>
                   <property name="hexpand">True</property>
@@ -120,11 +116,6 @@
                       <property name="halign">GTK_ALIGN_START</property>
                       <property name="wrap">True</property>
                     </object>
-                    <packing>
-                      <property name="expand">False</property>
-                      <property name="fill">True</property>
-                      <property name="position">0</property>
-                    </packing>
                   </child>
                   <child>
                     <object class="GtkLabel" id="infobar_secondary_label">
@@ -135,11 +126,6 @@
                       <property name="halign">GTK_ALIGN_START</property>
                       <property name="wrap">True</property>
                     </object>
-                    <packing>
-                      <property name="expand">False</property>
-                      <property name="fill">True</property>
-                      <property name="position">1</property>
-                    </packing>
                   </child>
                 </object>
               </child>
@@ -147,7 +133,6 @@
                 <object class="GtkButtonBox" id="infobar_action_area">
                   <property name="visible">True</property>
                   <property name="can_focus">False</property>
-                  <property name="border_width">5</property>
                   <property name="orientation">vertical</property>
                   <property name="spacing">6</property>
                   <property name="layout_style">end</property>

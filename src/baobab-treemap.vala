@@ -66,7 +66,7 @@ namespace Baobab {
             cr.rectangle (x + border, y + border, width - border * 2, height - border * 2);
             Gdk.cairo_set_source_rgba (cr, fill_color);
             cr.fill_preserve ();
-            var border_color = context.get_border_color (context.get_state ());
+            var border_color = context.get_border_color ();
             Gdk.cairo_set_source_rgba (cr, border_color);
             cr.stroke ();
 
