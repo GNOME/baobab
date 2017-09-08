@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-02 16:19+0000\n"
-"PO-Revision-Date: 2017-01-09 17:04+0000\n"
+"POT-Creation-Date: 2017-06-28 17:36+0000\n"
+"PO-Revision-Date: 2017-09-08 05:40+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -44,6 +44,10 @@ msgstr ""
 "á netinu. Hægt er að birta bæði greinasýn og myndræna framsetningu fyrir "
 "stærð hverrar möppu, sem auðveldar að finna hvar geymsluplássi er sóað."
 
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME verkefnið"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
@@ -51,7 +55,6 @@ msgstr "gögn;geymsla;pláss;hreinsun;tiltekt;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -111,29 +114,34 @@ msgstr "Í dag"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d dagur"
-msgstr[1] "%d dagar"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu dagur"
+msgstr[1] "%lu dagar"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d mánuður"
-msgstr[1] "%d mánuðir"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu mánuður"
+msgstr[1] "%lu mánuðir"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d ár"
-msgstr[1] "%d ár"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu ár"
+msgstr[1] "%lu ár"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "Þessi tölva"
 
@@ -158,11 +166,11 @@ msgstr "%s tiltækt"
 msgid "%s Used"
 msgstr "%s notað"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Heimamappa"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Tölvan"
 
@@ -255,19 +263,20 @@ msgid "Failed to move file to the trash"
 msgstr "Mistókst að henda skránni í ruslið"
 
 #: src/baobab-window.vala:485
-#| msgid "Devices and locations"
 msgid "Devices & Locations"
 msgstr "Tæki og staðsetningar"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Gat ekki skoðað möppuna „%s“"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Gat ekki skoðað sumar möppurnar á „%s“"
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Gat ekki skoðað sumar möppurnar inni í „%s“"
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -280,7 +289,8 @@ msgstr "Sýndarstærðir eru birtar í staðinn."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "„%s“ er ekki gild mappa"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
