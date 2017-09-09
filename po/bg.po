@@ -2,6 +2,7 @@
 # Copyright (C) 2002, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Copyright (C) 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # Copyright (C) 2011, 2012, 2013, 2014 Free Software Foundation, Inc.
+# Copyright (C) 2017 Free Software Foundation, Inc.
 # Borislav Aleksandrov <B.Aleksandrov@cnsys.bg>, 2002.
 # Vladimir Petkov <kaladan@gmail.com>, 2004, 2005.
 # Peter Slavov <pslavov@i-space.org>, 2004.
@@ -10,76 +11,21 @@
 # Alexander Shopov <ash@kambanaria.org>, 2006, 2007, 2008, 2009, 2011, 2012, 2013.
 # Krasimir Chonov <mk2616@abv.bg>, 2011.
 # Ivaylo Valkov <ivaylo@e-valkov.org>, 2014.
-#
+# Lyubomir Vasilev <lyubomirv@abv.bg>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-07 17:48+0300\n"
-"PO-Revision-Date: 2014-09-07 17:48+0300\n"
-"Last-Translator: Ivaylo Valkov <ivaylo@e-valkov.org>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-09-09 09:49+0300\n"
+"PO-Revision-Date: 2017-09-09 09:47+0300\n"
+"Last-Translator: Lyubomir Vasilev <lyubomirv@abv.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Малка програма за графично изобразяване на размерите и процентното "
-"използване на свободно пространство за различни ресурси. Може да претърсва "
-"папки (местни и отдалечени) и томове."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
-msgid "Disk Usage Analyzer"
-msgstr "Анализатор на ползването на диска"
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
-msgid "Check folder sizes and available disk space"
-msgstr "Проверка на размерите на папките и свободното пространство на диска"
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
-msgid "storage;space;cleanup;"
-msgstr ""
-"пространство;обем;размер;свободно;заето;изчистване;освобождаване;storage;"
-"space;cleanup;"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
-msgid "Excluded partitions URIs"
-msgstr "Адреси на пропускани дялове"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Списък с адреси на дялове, които да се пропускат при претърсване."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
-msgid "Active Chart"
-msgstr "Активна графика"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
-msgid "Which type of chart should be displayed."
-msgstr "Кой тип графика да се ползва."
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
-msgid "Window size"
-msgstr "Размер на прозореца"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
-msgid "The initial size of the window"
-msgstr "Първоначален размер на прозореца"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
-msgid "Window state"
-msgstr "Състояние на прозореца"
-
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
-msgid "The GdkWindowState of the window"
-msgstr "Състоянието GdkWindowState на прозореца"
 
 #: ../src/baobab-application.vala:28
 msgid "Print version information and exit"
@@ -93,7 +39,7 @@ msgstr[0] "%d обект"
 msgstr[1] "%d обекта"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: ../src/baobab-cellrenderers.vala:101 ../src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "Неизвестно"
 
@@ -105,116 +51,85 @@ msgstr "Днес"
 #. Translators: when the last modified time is "days" days ago
 #: ../src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d ден"
-msgstr[1] "%d дни"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu ден"
+msgstr[1] "%lu дни"
 
 #. Translators: when the last modified time is "months" months ago
 #: ../src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d месец"
-msgstr[1] "%d месеца"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu месец"
+msgstr[1] "%lu месеца"
 
 #. Translators: when the last modified time is "years" years ago
 #: ../src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d година"
-msgstr[1] "%d години"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu година"
+msgstr[1] "%lu години"
 
-#: ../src/baobab-location.vala:77
+#: ../src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "Общо: %s"
+
+#: ../src/baobab-location-list.vala:61
+#, c-format
+msgid "%s Available"
+msgstr "Свободно: %s"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: ../src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "Използвано: %s"
+
+#: ../src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Домашна папка"
 
-#: ../src/baobab-location.vala:123
+#: ../src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Този компютър"
 
-#: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder…"
-msgstr "Претърсване на папка…"
-
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Претърсване на отдалечена папка…"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
-msgid "_Open Folder"
-msgstr "_Отваряне на папка"
-
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
-msgid "_Copy Path to Clipboard"
-msgstr "_Копиране на пътя в буфера за обмен"
-
-#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
-msgid "Mo_ve to Trash"
-msgstr "П_реместване в кошчето"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Close"
-msgstr "Затваряне"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Folder"
-msgstr "Папка"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Size"
-msgstr "Размер"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "Contents"
-msgstr "Ръководство"
-
-#: ../src/baobab-main-window.ui.h:11
-msgid "Modified"
-msgstr "Променен"
-
-#: ../src/baobab-main-window.ui.h:12
-msgid "Rings Chart"
-msgstr "Пръстеновидна графика"
-
-#: ../src/baobab-main-window.ui.h:13
-msgid "Treemap Chart"
-msgstr "Дървовидна графика"
-
-#: ../src/baobab-window.vala:203
+#: ../src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Избор на папка"
 
-#: ../src/baobab-window.vala:205
+#: ../src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Отказ"
 
-#: ../src/baobab-window.vala:206
+#: ../src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Отваряне"
 
-#: ../src/baobab-window.vala:211
+#: ../src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно анализиране на точките на монтиране"
 
-#: ../src/baobab-window.vala:258
+#: ../src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Неуспешен анализ на използването на файловата система."
 
-#: ../src/baobab-window.vala:290
+#: ../src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Неуспешно показване на помощта"
 
-#: ../src/baobab-window.vala:309
+#: ../src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:312
+#: ../src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
-msgstr "Графичен инструмент за анализиране на ползването на диска"
+msgstr "Графичен инструмент за анализиране на ползването на диска."
 
-#: ../src/baobab-window.vala:317
+#: ../src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Владимир „Kaladan“ Петков <vpetkov@gmail.com>\n"
@@ -222,6 +137,7 @@ msgstr ""
 "Петър „Peshka“ Славов <pslavov@i-space.org>\n"
 "Явор Доганов <yavor@doganov.org>\n"
 "Александър Шопов <ash@kambanaria.org>\n"
+"Любомир Василев <lyubomirv@abv.bg>\n"
 "\n"
 "Проектът за превод на GNOME има нужда от подкрепа.\n"
 "Научете повече за нас на <a href=\"http://gnome.cult.bg\">http://gnome.cult."
@@ -229,66 +145,42 @@ msgstr ""
 "Докладвайте за грешки на <a href=\"http://gnome.cult.bg/bugs\">http://gnome."
 "cult.bg/bugs</a>"
 
-#: ../src/baobab-window.vala:386
+#: ../src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Неуспешно отваряне на файла"
 
-#: ../src/baobab-window.vala:406
+#: ../src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Неуспешно преместване на файла в кошчето"
 
-#: ../src/baobab-window.vala:506
-msgid "Devices and locations"
+#: ../src/baobab-window.vala:485
+msgid "Devices & Locations"
 msgstr "Устройства и местоположения"
 
-#: ../src/baobab-window.vala:567
+#: ../src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "Папката „%s“ не може да бъде претърсена."
+msgid "Could not scan folder “%s”"
+msgstr "Папката „%s“ не може да бъде претърсена"
 
-#: ../src/baobab-window.vala:570
+#: ../src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Някоя от подпапките на „%s“ не може да бъде претърсена."
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Някои от подпапките на „%s“ не може да бъдат претърсени"
 
-#: ../src/baobab-window.vala:589
+#: ../src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Неуспешно анализиране на използването на диска."
 
-#: ../src/baobab-window.vala:589
+#: ../src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Показани са ориентировъчни размери."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
+#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "„%s“ не е валидна папка"
 
-#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
+#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Неуспешно анализиране на използването на диска."
-
-#: ../src/menus.ui.h:1
-msgid "_Help"
-msgstr "Помо_щ"
-
-#: ../src/menus.ui.h:2
-msgid "_About"
-msgstr "_Относно"
-
-#: ../src/menus.ui.h:3
-msgid "_Quit"
-msgstr "_Спиране на програмата"
-
-#: ../src/menus.ui.h:7
-msgid "Go to _parent folder"
-msgstr "Към _горната папка"
-
-#: ../src/menus.ui.h:8
-msgid "Zoom _in"
-msgstr "_Увеличаване"
-
-#: ../src/menus.ui.h:9
-msgid "Zoom _out"
-msgstr "_Намаляване"
