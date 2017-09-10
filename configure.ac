@@ -17,7 +17,7 @@ AM_SILENT_RULES([yes])
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
-AM_PROG_VALAC([0.25.1])
+AM_PROG_VALAC([0.38.0.11])
 PKG_PROG_PKG_CONFIG([0.22])
 
 ## don't rerun to this point if we abort
