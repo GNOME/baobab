@@ -13,21 +13,22 @@
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2010–2011, 2013, 2014, 2016.
 # Erwin Poeze <donnut@outlook.com>, 2013.
 # Justin van Steijn <justin50@live.nl>, 2016.
+# Nathan Follens <nthn@unseen.is>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab.master.nl\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-31 17:06+0000\n"
-"PO-Revision-Date: 2016-09-15 11:22+0200\n"
-"Last-Translator: Hannie Dumoleyn <hannie@ubuntu-nl.org>\n"
+"POT-Creation-Date: 2017-04-27 14:11+0000\n"
+"PO-Revision-Date: 2017-04-27 20:15+0200\n"
+"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
 #: src/baobab-main-window.ui:44
@@ -56,6 +57,10 @@ msgstr ""
 "scannen. Het laat zowel een boomstructuur als een grafische weergave zien "
 "met de grootte van elke map, wat het gemakkelijk maakt om te zien waar veel "
 "schijfruimte wordt gebruikt."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "Het Gnome-project"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -124,26 +129,26 @@ msgstr "Vandaag"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d dag"
-msgstr[1] "%d dagen"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu dag"
+msgstr[1] "%lu dagen"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d maand"
-msgstr[1] "%d maanden"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu maand"
+msgstr[1] "%lu maanden"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d jaar"
-msgstr[1] "%d jaar"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu jaar"
+msgstr[1] "%lu jaar"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -170,11 +175,11 @@ msgstr "%s beschikbaar"
 msgid "%s Used"
 msgstr "%s gebruikt"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Persoonlijke map"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Computer"
 
@@ -266,6 +271,7 @@ msgstr ""
 "Hannie Dumoleyn\n"
 "Erwin Poeze\n"
 "Justin van Steijn\n"
+"Nathan Follens\n"
 "\n"
 "Kijk voor meer informatie op http://nl.gnome.org/"
 
@@ -283,12 +289,12 @@ msgstr "Apparaten & locaties"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Scannen van map ‘%s’ is mislukt"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Sommige van de mappen in ‘%s’ konden niet worden gescand"
 
 #: src/baobab-window.vala:568
@@ -302,7 +308,7 @@ msgstr "In plaats hiervan worden schijnbare groottes getoond."
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "‘%s’ is geen geldige map"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
