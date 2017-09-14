@@ -1,88 +1,105 @@
 # Esperanto translation for baobab.
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 # Kevin SCHAEFER <lugubrili@hotmail.com>, 2009.
 # Michael MORONI <haikara90@gmail.com >, 2009.
 # Tiffany ANTOPOLSKI <tiffany.antopolski@gmail.com>, 2012.
 # Ryan LORTIE <desrt@desrt.ca>, 2013.
 # Daniel PUENTES <blatberk@openmailbox.org>, 2015.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012, 2015.
-#
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012, 2015, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-31 15:54+0000\n"
-"PO-Revision-Date: 2015-02-01 04:30+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
+"&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-06-28 17:36+0000\n"
+"PO-Revision-Date: 2017-09-14 21:36+0200\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
-"Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
+"Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"Simpla aplikaĵo, kiu povas skani aŭ specifajn dosierujojn aŭ datumportilojn, "
-"kaj doni grafikan prezenton, kiu havas enhavas ĉiun dosierujo-grandon aŭ "
-"elcenton."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:6
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
 msgid "Disk Usage Analyzer"
 msgstr "Diskuzada analizilo"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Kontroli dosierujajn grandojn kaj disponeblan diskmemoron"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+#, fuzzy
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr ""
+"Facila aplikaĵo por kontroli la uzadon de via disko kaj diponeblan spacon."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "La GNOME-projekto"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr "spaco;diskospaco;purigi;senrubigi;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+#| msgid "Baobab"
+msgid "baobab"
+msgstr "baobabo"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "Eksigitaj subdiskaj URI-oj"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Listo de URI-oj por subdiskoj eksigitaj de skani."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Aktiva Diagramo"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Kia diagramo devus montriĝi."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Fenestra grando"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "La komenca grando de la fenestro"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Fenestra stato"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "La GdkWindowState de la fenestro"
 
-#: ../src/baobab-application.vala:28
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Montri versian informon kaj ĉesi"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -90,128 +107,158 @@ msgstr[0] "%d elemento"
 msgstr[1] "%d elementoj"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
-msgstr "Nesciata"
+msgstr "Nekonate"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Hodiaŭ"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d tago"
-msgstr[1] "%d tagoj"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu tago"
+msgstr[1] "%lu tagoj"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d moneto"
-msgstr[1] "%d monetoj"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu monato"
+msgstr[1] "%lu monatoj"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d jaro"
-msgstr[1] "%d jaroj"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu jaro"
+msgstr[1] "%lu jaroj"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+#| msgid "Computer"
+msgid "This Computer"
+msgstr "Ĉi tiu komputilo"
+
+#: src/baobab-location-list.ui:47
+#| msgid "Custom Location"
+msgid "Remote Locations"
+msgstr "Foraj lokoj"
+
+#: src/baobab-location-list.vala:58
+#, c-format
+msgid "%s Total"
+msgstr "%s entute"
+
+#: src/baobab-location-list.vala:61
+#, c-format
+#| msgid "Available"
+msgid "%s Available"
+msgstr "%s disponeble"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:75
+#, c-format
+msgid "%s Used"
+msgstr "%s uzate"
+
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Hejmdosjerujo"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Komputilo"
 
-#: ../src/baobab-main-window.ui.h:1
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Skani dosierujon…"
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "Skani foran dosierujon…"
-
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:4
+#: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "Malfermi d_osierujon"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:5
+#: src/baobab-main-window.ui:29 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopii vojon al tondejo"
 
-#: ../src/baobab-main-window.ui.h:5 ../src/menus.ui.h:6
+#: src/baobab-main-window.ui:38 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "Mo_vi rubujen"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:168
 msgid "Close"
 msgstr "Malfermi"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:224
 msgid "Folder"
 msgstr "Dosierujo"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:251
 msgid "Size"
 msgstr "Grando"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:271
 msgid "Contents"
 msgstr "Enhavoj"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:289
 msgid "Modified"
 msgstr "Ŝanĝita"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:334
 msgid "Rings Chart"
 msgstr "Ringa diagramo"
 
-#: ../src/baobab-main-window.ui.h:13
+#: src/baobab-main-window.ui:346
 msgid "Treemap Chart"
 msgstr "Arbomapa diagramo"
 
-#: ../src/baobab-window.vala:203
+#: src/baobab-window.vala:189
 msgid "Select Folder"
 msgstr "Elekti dosierujon"
 
-#: ../src/baobab-window.vala:205
+#: src/baobab-window.vala:191
 msgid "_Cancel"
 msgstr "_Nuligi"
 
-#: ../src/baobab-window.vala:206
+#: src/baobab-window.vala:192
 msgid "_Open"
 msgstr "_Malfermi"
 
-#: ../src/baobab-window.vala:211
+#: src/baobab-window.vala:198
 msgid "Recursively analyze mount points"
 msgstr "Rikure analizi surmetingojn"
 
-#: ../src/baobab-window.vala:258
+#: src/baobab-window.vala:233
 msgid "Could not analyze volume."
 msgstr "Ne povis analizi portilon."
 
-#: ../src/baobab-window.vala:290
+#: src/baobab-window.vala:265
 msgid "Failed to show help"
 msgstr "Malsukcesis montri helpon"
 
-#: ../src/baobab-window.vala:309
+#: src/baobab-window.vala:284
 msgid "Baobab"
 msgstr "Baobabo"
 
-#: ../src/baobab-window.vala:312
+#: src/baobab-window.vala:287
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafika ilo por analizi diskuzadon."
 
-#: ../src/baobab-window.vala:317
+#: src/baobab-window.vala:292
 msgid "translator-credits"
 msgstr ""
 "Kevin SCHAEFER\n"
@@ -221,72 +268,85 @@ msgstr ""
 "Kristjan SCHMIDT\n"
 "Daniel PUENTES"
 
-#: ../src/baobab-window.vala:386
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Malsukcesis malfermi dosieron"
 
-#: ../src/baobab-window.vala:406
+#: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Malsukcesis movi dosieron al la rubujo"
 
-#: ../src/baobab-window.vala:506
-msgid "Devices and locations"
-msgstr "Aparatoj kaj lokoj"
+#: src/baobab-window.vala:485
+#| msgid "Devices and locations"
+msgid "Devices & Locations"
+msgstr "Aparatoj & lokoj"
 
-#: ../src/baobab-window.vala:567
+#: src/baobab-window.vala:546
 #, c-format
-#| msgid "Could not open folder \"%s\""
-msgid "Could not scan folder \"%s\""
-msgstr "Ne eblis skani la dosierujon \"%s\""
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
+msgstr "Ne eblis skani la dosierujon “%s”"
 
-#: ../src/baobab-window.vala:570
+#: src/baobab-window.vala:549
 #, c-format
-#| msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Ne povis skani kelkajn dosierujon kiuj estas en \"%s\""
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Ne eblis skani kelkajn dosierujon kiuj estas en “%s”"
 
-#: ../src/baobab-window.vala:589
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Ne povis detekti efektivan diskan uzadon."
 
-#: ../src/baobab-window.vala:589
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Ŝajnaj grandoj montratas anstataŭ."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:606 ../src/baobab-window.vala:612
+#: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "\"%s\" ne estas valida dosierujo"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
+msgstr "“%s” ne estas valida dosierujo"
 
-#: ../src/baobab-window.vala:607 ../src/baobab-window.vala:613
+#: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
 msgstr "Ne povis analizi diskon uzadon."
 
-#: ../src/menus.ui.h:1
+#: src/menus.ui:7
 msgid "_Help"
 msgstr "_Helpo"
 
-#: ../src/menus.ui.h:2
+#: src/menus.ui:12
 msgid "_About"
 msgstr "_Pri"
 
-#: ../src/menus.ui.h:3
+#: src/menus.ui:16
 msgid "_Quit"
-msgstr "_Ĉesi"
+msgstr "Ĉ_esi"
 
-#: ../src/menus.ui.h:7
-#| msgid "_Move to parent folder"
+#: src/menus.ui:39
 msgid "Go to _parent folder"
 msgstr "Iri al ge_patra dosierujo"
 
-#: ../src/menus.ui.h:8
+#: src/menus.ui:45
 msgid "Zoom _in"
 msgstr "_Zomi"
 
-#: ../src/menus.ui.h:9
+#: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "_Malzomi"
+
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "Simpla aplikaĵo, kiu povas skani aŭ specifajn dosierujojn aŭ "
+#~ "datumportilojn, kaj doni grafikan prezenton, kiu havas enhavas ĉiun "
+#~ "dosierujo-grandon aŭ elcenton."
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "Skani foran dosierujon…"
 
 #~ msgid "- Disk Usage Analyzer"
 #~ msgstr "- Diskuzada analizilo"
@@ -304,14 +364,14 @@ msgstr "_Malzomi"
 #~ msgstr "Ilobreto estas videble"
 
 #~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Ĉu la ilbreto estu videbla en la ĉefa fenestro?"
+#~ msgstr "Ĉu la ilobreto estu videbla en la ĉefa fenestro?"
 
 #~ msgid "Statusbar is Visible"
 #~ msgstr "Statobreto estas videble"
 
 #~ msgid ""
 #~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr "Ĉu la stata breto ĉe la malsupro de la ĉefa fenestro estu videbla?"
+#~ msgstr "Ĉu la statobreto ĉe la malsupro de la ĉefa fenestro estu videbla?"
 
 #~ msgid "_Analyzer"
 #~ msgstr "_Analizilo"
@@ -418,14 +478,8 @@ msgstr "_Malzomi"
 #~ msgid "Total Size"
 #~ msgstr "Tuta grando"
 
-#~ msgid "Available"
-#~ msgstr "Disponeble"
-
 #~ msgid "Cannot scan location \"%s\""
 #~ msgstr "Ne eblas skani lokon \"%s\""
-
-#~ msgid "Custom Location"
-#~ msgstr "Propra loko"
 
 #~ msgid "SSH"
 #~ msgstr "SSH"
