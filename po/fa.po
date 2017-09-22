@@ -7,16 +7,16 @@
 # Sara Khalatbari <sara@bamdad.org>, 2005.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005, 2006.
 # Sanaz shahrokni <sanaz.shahrokni@gmail.com>, 2006.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012, 2013, 2014.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012, 2013, 2014, 2017.
 # alibagheri <alijobemail@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 00:15+0000\n"
-"PO-Revision-Date: 2016-09-13 10:53+0430\n"
+"POT-Creation-Date: 2017-07-28 10:57+0000\n"
+"PO-Revision-Date: 2017-09-22 23:45+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
 #: src/baobab-main-window.ui:44
@@ -38,8 +38,7 @@ msgstr "بررسی اندازه پوشه‌ها و فضای دیسک در دست
 
 #: data/org.gnome.baobab.appdata.xml.in:9
 msgid ""
-"A simple application to keep your disk usage and available space under "
-"control."
+"A simple application to keep your disk usage and available space under control."
 msgstr ""
 "یک برنامه ساده که بوسیله آن می‌توانید استفاده از دیسک و میزان فضای موجود آن را "
 "تحت کنترل خود داشته باشید."
@@ -54,6 +53,10 @@ msgstr ""
 "حساب‌های برخط را پایش کند. همزمان یک ساختار درختی و نمایش گرافیکی از اندازه هر "
 "کدام از پوشه‌ها نمایش می‌دهد که امکان شناسایی قسمت‌هایی که فضای دیسک را اشغال "
 "کرده‌اند را فراهم می‌کند."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "پروژه گنوم"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in.in:6
@@ -120,23 +123,23 @@ msgstr "امروز"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%Id روز"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu روز"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%Id ماه"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu ماه"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%Id سال"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu سال"
 
 #: src/baobab-location-list.ui:17
 msgid "This Computer"
@@ -163,17 +166,17 @@ msgstr "%s در دسترس"
 msgid "%s Used"
 msgstr "%s استفاده شده"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "پوشه‌ی خانه"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "رایانه"
 
 #: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
-msgstr "پویش پوشه..."
+msgstr "پویش پوشه…"
 
 #: src/baobab-main-window.ui:20 src/menus.ui:25
 msgid "_Open Folder"
@@ -271,12 +274,12 @@ msgstr "دستگاه‌ها و محل‌ها"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "پویش جلد «%s» امکان‌پذیر نبود"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
 msgstr "نمی‌توان تعدادی از پوشه‌های درون «%s» را پایش کرد"
 
 #: src/baobab-window.vala:568
@@ -290,7 +293,7 @@ msgstr "در عوض اندازه‌ی ظاهری نمایش داده می‌شو
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "پوشه‌ی «%s» معتبر نیست"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
@@ -326,8 +329,8 @@ msgstr "_کوچک‌نمایی"
 #~ "remote) or volumes and give a graphical representation including each "
 #~ "directory size or percentage."
 #~ msgstr ""
-#~ "یک برنامه ساده که می‌تواند هم پوشه‌های مشخصی (محلی و یا دوردست) و هم جلدها "
-#~ "را پایش کند و یک نمایش گرافیکی شامل حجم شاخه‌ها یا درصد آنها را ارایه کند."
+#~ "یک برنامه ساده که می‌تواند هم پوشه‌های مشخصی (محلی و یا دوردست) و هم جلدها را "
+#~ "پایش کند و یک نمایش گرافیکی شامل حجم شاخه‌ها یا درصد آنها را ارایه کند."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "پویش پوشه دوردست..."
