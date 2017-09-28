@@ -452,11 +452,11 @@ namespace Baobab {
             infobar.message_type = type;
             infobar_primary_label.label = "<b>%s</b>".printf (primary_msg);
             infobar_secondary_label.label = "<small>%s</small>".printf (secondary_msg);
-            infobar.show ();
+            infobar.set_revealed (true);
         }
 
         void clear_message () {
-            infobar.hide ();
+            infobar.set_revealed (false);
         }
 
         void set_busy (bool busy) {

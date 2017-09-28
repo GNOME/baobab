@@ -223,6 +223,7 @@ namespace Baobab {
             insert_action_group ("chart", action_group);
 
             build_context_menu ();
+            set_draw_func (draw_func);
         }
 
         public override void size_allocate (Gtk.Allocation allocation, int baseline, out Gtk.Allocation clip) {
@@ -410,10 +411,10 @@ namespace Baobab {
             update_draw (path);
         }
 
-        public override bool draw (Cairo.Context cr) {
+        public void draw_func (Gtk.DrawingArea area, Cairo.Context cr, int width, int height) {
             if (name_column == percentage_column) {
                 // Columns not set
-                return false;
+                return;
             }
 
             if (model != null) {
@@ -428,8 +429,6 @@ namespace Baobab {
 
                 draw_chart (cr);
             }
-
-            return false;
         }
 
         Gdk.RGBA interpolate_colors (Gdk.RGBA colora, Gdk.RGBA colorb, double percentage) {

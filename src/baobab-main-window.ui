@@ -2,11 +2,9 @@
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkMenu" id="treeview_popup_menu">
-    <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
       <object class="GtkMenuItem" id="treeview_popup_open">
-        <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">_Open Folder</property>
         <property name="use_underline">True</property>
@@ -14,7 +12,6 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="treeview_popup_copy">
-        <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">_Copy Path to Clipboard</property>
         <property name="use_underline">True</property>
@@ -22,7 +19,6 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="treeview_popup_trash">
-        <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">Mo_ve to Trash</property>
         <property name="use_underline">True</property>
@@ -30,7 +26,6 @@
     </child>
   </object>
   <object class="GtkHeaderBar" id="header_bar">
-    <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="show_close_button">True</property>
     <style>
@@ -55,7 +50,6 @@
         </style>
         <child>
           <object class="GtkImage" id="back_button_image">
-            <property name="visible">True</property>
             <property name="icon_name">go-previous-symbolic</property>
             <property name="icon_size">1</property>
           </object>
@@ -75,7 +69,6 @@
         </style>
         <child>
           <object class="GtkImage" id="reload_button_image">
-            <property name="visible">True</property>
             <property name="icon_size">1</property>
             <property name="icon_name">view-refresh-symbolic</property>
           </object>
@@ -92,24 +85,20 @@
     <child>
       <object class="GtkBox" id="vbox">
       <property name="orientation">vertical</property>
-      <property name="visible">True</property>
       <child>
         <object class="GtkGrid" id="window_contents">
-          <property name="visible">True</property>
           <property name="orientation">vertical</property>
           <child>
             <object class="GtkInfoBar" id="infobar">
-              <property name="visible">False</property>
+              <property name="revealed">False</property>
               <child internal-child="content_area">
                 <object class="GtkBox" id="infobar_content_area">
-                  <property name="visible">True</property>
                   <property name="can_focus">False</property>
                   <property name="orientation">vertical</property>
                   <property name="spacing">16</property>
                   <property name="hexpand">True</property>
                   <child>
                     <object class="GtkLabel" id="infobar_primary_label">
-                      <property name="visible">True</property>
                       <property name="can_focus">True</property>
                       <property name="selectable">True</property>
                       <property name="use-markup">True</property>
@@ -119,7 +108,6 @@
                   </child>
                   <child>
                     <object class="GtkLabel" id="infobar_secondary_label">
-                      <property name="visible">True</property>
                       <property name="can_focus">True</property>
                       <property name="selectable">True</property>
                       <property name="use-markup">True</property>
@@ -131,14 +119,12 @@
               </child>
               <child internal-child="action_area">
                 <object class="GtkButtonBox" id="infobar_action_area">
-                  <property name="visible">True</property>
                   <property name="can_focus">False</property>
                   <property name="orientation">vertical</property>
                   <property name="spacing">6</property>
                   <property name="layout_style">end</property>
                   <child>
                     <object class="GtkButton" id="infobar_close_button">
-                      <property name="visible">True</property>
                       <property name="label" translatable="yes">Close</property>
                     </object>
                   </child>
@@ -148,17 +134,14 @@
           </child>
           <child>
             <object class="GtkStack" id="main_stack">
-              <property name="visible">True</property>
               <property name="can_focus">False</property>
               <property name="transition_type">slide-left-right</property>
               <child>
                 <object class="GtkGrid" id="home_page">
                   <property name="can_focus">False</property>
-                  <property name="visible">True</property>
                   <property name="orientation">vertical</property>
                   <child>
                     <object class="GtkScrolledWindow" id="location_scrolled_window">
-                      <property name="visible">True</property>
                       <property name="vexpand">True</property>
                       <property name="hexpand">True</property>
                       <property name="hscrollbar-policy">never</property>
@@ -174,18 +157,15 @@
               </child>
               <child>
                 <object class="GtkGrid" id="result_page">
-                  <property name="visible">True</property>
                   <property name="can_focus">False</property>
                   <property name="column_homogeneous">True</property>
                   <child>
                     <object class="GtkScrolledWindow" id="scrolled_window">
-                      <property name="visible">True</property>
                       <property name="can_focus">True</property>
                       <property name="shadow_type">in</property>
                       <property name="hexpand">True</property>
                       <child>
                         <object class="GtkTreeView" id="treeview">
-                          <property name="visible">True</property>
                           <property name="can_focus">True</property>
                           <child internal-child="selection">
                             <object class="GtkTreeSelection" id="treeview_selection1"/>
@@ -284,21 +264,17 @@
                   </child>
                   <child>
                     <object class="GtkGrid" id="chart_grid">
-                      <property name="visible">True</property>
                       <property name="can_focus">False</property>
                       <property name="hexpand">True</property>
                       <property name="vexpand">True</property>
                       <child>
                         <object class="GtkStack" id="spinner_stack">
-                          <property name="visible">True</property>
                           <child>
                             <object class="GtkStack" id="chart_stack">
-                              <property name="visible">True</property>
                               <property name="can_focus">True</property>
                               <property name="transition_type">crossfade</property>
                               <child>
                                 <object class="BaobabRingschart" id="rings_chart">
-                                  <property name="visible">True</property>
                                   <property name="hexpand">True</property>
                                   <property name="vexpand">True</property>
                                 </object>
@@ -310,7 +286,6 @@
                               </child>
                               <child>
                                 <object class="BaobabTreemap" id="treemap_chart">
-                                  <property name="visible">True</property>
                                   <property name="hexpand">True</property>
                                   <property name="vexpand">True</property>
                                 </object>
@@ -324,7 +299,6 @@
                           </child>
                           <child>
                             <object class="GtkSpinner" id="spinner">
-                              <property name="visible">True</property>
                               <property name="can_focus">False</property>
                               <property name="width_request">128</property>
                               <property name="height_request">128</property>
@@ -342,10 +316,8 @@
                       </child>
                       <child>
                         <object class="GtkActionBar" id="chart_action_bar">
-                        <property name="visible">True</property>
                           <child type="center">
                             <object class="GtkStackSwitcher" id="chart_stack_switcher">
-                              <property name="visible">True</property>
                               <property name="stack">chart_stack</property>
                             </object>
                           </child>
