@@ -33,9 +33,6 @@ namespace Baobab {
             { "quit", on_quit_activate }
         };
 
-        public Settings prefs_settings { get; private set; }
-        public Settings ui_settings { get; private set; }
-
         protected override void activate () {
             new Window (this);
         }
@@ -61,6 +58,7 @@ namespace Baobab {
             excluded_locations.add (home.get_child (".gvfs"));
 
             var root = File.new_for_path ("/");
+            var prefs_settings = new Settings ("org.gnome.baobab.preferences");
             foreach (var uri in prefs_settings.get_value ("excluded-uris")) {
                 var file = File.new_for_uri ((string) uri);
                 if (!file.equal (root)) {
@@ -84,12 +82,6 @@ namespace Baobab {
             }
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            // Settings
-            ui_settings = new Settings ("org.gnome.baobab.ui");
-            prefs_settings = new Settings ("org.gnome.baobab.preferences");
-
-            ui_settings.delay ();
-
             set_accels_for_action ("win.gear-menu", { "F10" });
             set_accels_for_action ("win.reload", { "<Primary>r" });
         }
@@ -101,11 +93,6 @@ namespace Baobab {
             }
 
             return -1; 
-        }
-
-        protected override void shutdown () {
-            ui_settings.apply ();
-            base.shutdown ();
         }
 
         public Application () {
