@@ -24,7 +24,6 @@ namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
     public class Window : Gtk.ApplicationWindow {
-        private Settings ui_settings;
         [GtkChild]
         private Gtk.HeaderBar header_bar;
         [GtkChild]
@@ -119,7 +118,8 @@ namespace Baobab {
                 busy_cursor = new Gdk.Cursor.for_display (get_display(), Gdk.CursorType.WATCH);
             }
 
-            ui_settings = Application.get_default ().ui_settings;
+            var ui_settings = new Settings ("org.gnome.baobab.ui");
+            ui_settings.delay ();
 
             add_action_entries (action_entries, this);
             var action = ui_settings.create_action ("active-chart");
@@ -158,9 +158,14 @@ namespace Baobab {
 
             configure_event.connect ((event) => {
                 if (!(Gdk.WindowState.MAXIMIZED in get_window ().get_state ())) {
-                    ui_settings.set ("window-size", "(ii)", event.width, event.height);
+                    get_size (out width, out height);
+                    ui_settings.set ("window-size", "(ii)", width, height);
                 }
                 return false;
+            });
+
+            destroy.connect (() => {
+                ui_settings.apply ();
             });
 
             active_location = null;
