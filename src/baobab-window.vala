@@ -170,15 +170,12 @@ namespace Baobab {
 
             var desktop = Environment.get_variable ("XDG_CURRENT_DESKTOP");
 
-            if (desktop == null || !desktop.contains("Unity"))
-            {
+            if (desktop == null || !desktop.contains ("Unity")) {
                 this.set_titlebar (header_bar);
-            }
-            else
-            {
+            } else {
                 header_bar.show_close_button = false;
-                header_bar.get_style_context().remove_class("titlebar");
-                vbox.pack_start(header_bar,  false, false, 0);
+                header_bar.get_style_context ().remove_class ("titlebar");
+                vbox.pack_start (header_bar, false, false, 0);
             }
 
             set_ui_state (home_page, false);
