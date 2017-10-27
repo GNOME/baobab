@@ -185,11 +185,13 @@ namespace Baobab {
 
             set_ui_state (home_page, false);
 
-            button_press_event.connect ( (event) => {
+            button_press_event.connect ((event) => {
+                // mouse back button
                 if (event.button == 8) {
                     lookup_action ("show-home-page").activate (null);
+                    return Gdk.EVENT_STOP;
                 }
-                return false;
+                return Gdk.EVENT_PROPAGATE;
             });
 
             show ();
