@@ -200,7 +200,11 @@ namespace Baobab {
             }
         }
 
-        void get_fs_usage () {
+        public void get_fs_usage () {
+            if (file == null) {
+                return;
+            }
+
             size = null;
             used = null;
             reserved = null;

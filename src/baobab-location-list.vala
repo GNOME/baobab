@@ -39,7 +39,11 @@ namespace Baobab {
 
         public LocationRow (Location l) {
             location = l;
+            update ();
+        }
 
+        public void update () {
+            location.get_fs_usage ();
             image.gicon = location.icon;
 
             var escaped = GLib.Markup.escape_text (location.name, -1);
@@ -111,7 +115,17 @@ namespace Baobab {
             remote_list_box.set_header_func (update_header);
             remote_list_box.row_activated.connect (row_activated);
 
+            Timeout.add_seconds(3, (() => {
+                update_existing ();
+                return Source.CONTINUE;
+            }));
+
             populate ();
+        }
+
+        void update_existing () {
+            local_list_box.foreach ((widget) => { ((LocationRow)widget).update (); });
+            remote_list_box.foreach ((widget) => { ((LocationRow)widget).update (); });
         }
 
         bool already_present (File file) {
