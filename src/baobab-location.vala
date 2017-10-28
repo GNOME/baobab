@@ -96,6 +96,10 @@ namespace Baobab {
         public Location.from_mount (Mount mount_) {
             mount = mount_;
             fill_from_mount ();
+
+            var uri_scheme = Uri.parse_scheme (file.get_uri ());
+            string[] remote_schemes = { "sftp", "ssh" };
+            is_remote = (uri_scheme in remote_schemes);
         }
 
         public Location.for_main_volume () {
