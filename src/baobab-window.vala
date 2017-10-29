@@ -185,8 +185,10 @@ namespace Baobab {
             set_ui_state (home_page, false);
 
             button_press_event.connect ((event) => {
+                uint button;
+                event.get_button(out button);
                 // mouse back button
-                if (event.button == 8) {
+                if (button == 8) {
                     lookup_action ("show-home-page").activate (null);
                     return Gdk.EVENT_STOP;
                 }
