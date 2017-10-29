@@ -47,6 +47,8 @@ namespace Baobab {
         const int ITEM_BORDER_WIDTH = 1;
         const double ITEM_MIN_ANGLE = 0.03;
         const double EDGE_ANGLE = 0.004;
+        const int CONTINUATION_BORDER_WIDTH = 2;
+        const int CONTINUATION_MARGIN = 4;
 
         // Twice the GTK+ tooltip timeout
         const int SUBTIP_TIMEOUT = 1000;
@@ -107,6 +109,10 @@ namespace Baobab {
 
             Gdk.Rectangle last_rect = Gdk.Rectangle ();
 
+            var padding = context.get_padding ();
+            var vpadding = padding.top + padding.bottom;
+            var hpadding = padding.left + padding.right;
+
             foreach (ChartItem item in subtip_items) {
                 RingschartItem ringsitem = item as RingschartItem;
 
@@ -133,19 +139,19 @@ namespace Baobab {
                 // get the center point of the tooltip rectangle
                 double tip_x, tip_y;
                 if (middle_angle_n < q_angle) {
-                    tip_x = q_width - layout_rect.width / 2;
+                    tip_x = q_width - (layout_rect.width + hpadding) / 2;
                     tip_y = Math.tan (middle_angle_n) * tip_x;
                 } else {
-                    tip_y = q_height - layout_rect.height / 2;
+                    tip_y = q_height - (layout_rect.height + vpadding) / 2;
                     tip_x = tip_y / Math.tan (middle_angle_n);
                 }
 
                 // get the tooltip rectangle
                 Cairo.Rectangle tooltip_rect = Cairo.Rectangle ();
-                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2;
-                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2;
-                tooltip_rect.width = layout_rect.width;
-                tooltip_rect.height = layout_rect.height;
+                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2 - padding.left;
+                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2 - padding.top;
+                tooltip_rect.width = layout_rect.width + hpadding;
+                tooltip_rect.height = layout_rect.height + vpadding;
 
                 // translate tooltip rectangle and edge angles to the original quadrant
                 var a = middle_angle;
@@ -159,6 +165,8 @@ namespace Baobab {
                     i++;
                     a -= Math.PI / 2;
                 }
+
+                tooltip_rect.x = tooltip_rect.x.clamp (0, width - tooltip_rect.width);
 
                 // get the Gdk.Rectangle of the tooltip (with a little padding)
                 Gdk.Rectangle _rect = Gdk.Rectangle ();
@@ -190,7 +198,8 @@ namespace Baobab {
                     cr.rectangle (tooltip_rect.x + tooltip_rect.width, tooltip_rect.y, -tooltip_rect.width, tooltip_rect.height);
                     cr.clip ();
 
-                    var bg_color = context.get_background_color ();
+                    Gdk.RGBA bg_color;
+                    context.lookup_color("tooltip_bg_color", out bg_color);
                     cr.set_line_width (1);
                     cr.move_to (sector_center_x, sector_center_y);
                     Gdk.cairo_set_source_rgba (cr, bg_color);
@@ -207,7 +216,7 @@ namespace Baobab {
                     // draw tooltip box
                     context.render_background (cr, tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
                     context.render_frame (cr, tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
-                    context.render_layout (cr, tooltip_rect.x, tooltip_rect.y, layout);
+                    context.render_layout (cr, tooltip_rect.x + padding.left, tooltip_rect.y + padding.top, layout);
                 }
             }
 
@@ -228,12 +237,10 @@ namespace Baobab {
             cr.set_line_width (ITEM_BORDER_WIDTH);
 
             var context = get_style_context ();
-            context.save ();
 
-            var toplevel_context = get_toplevel ().get_style_context ();
-
-            var border_color = context.get_border_color ();
-            var bg_color = toplevel_context.get_background_color ();
+            var fg_color = context.get_color ();
+            Gdk.RGBA bg_color;
+            context.lookup_color("theme_bg_color", out bg_color);
 
             var center_x = width / 2;
             var center_y = height / 2;
@@ -256,7 +263,7 @@ namespace Baobab {
                 }
 
                 cr.arc (center_x, center_y, ringsitem.max_radius + 1, 0, 2 * Math.PI);
-                Gdk.cairo_set_source_rgba (cr, border_color);
+                Gdk.cairo_set_source_rgba (cr, fg_color);
                 cr.stroke ();
             } else {
                 var fill_color = get_item_color (ringsitem.start_angle / Math.PI * 99,
@@ -274,14 +281,12 @@ namespace Baobab {
                 cr.stroke ();
 
                 if (ringsitem.continued) {
-                    Gdk.cairo_set_source_rgba (cr, border_color);
-                    cr.set_line_width (3);
-                    cr.arc (center_x, center_y, ringsitem.max_radius + 4, ringsitem.start_angle + EDGE_ANGLE, final_angle - EDGE_ANGLE);
+                    Gdk.cairo_set_source_rgba (cr, fg_color);
+                    cr.set_line_width (CONTINUATION_BORDER_WIDTH);
+                    cr.arc (center_x, center_y, ringsitem.max_radius + CONTINUATION_MARGIN, ringsitem.start_angle + EDGE_ANGLE, final_angle - EDGE_ANGLE);
                     cr.stroke ();
                 }
             }
-
-            context.restore ();
         }
 
         protected override void calculate_item_geometry (ChartItem item) {
@@ -290,9 +295,7 @@ namespace Baobab {
             ringsitem.continued = false;
             ringsitem.visible = false;
 
-            var context = get_style_context ();
-
-            var max_radius = int.min (width / 2, height / 2);
+            var max_radius = int.min (width / 2, height / 2) - CONTINUATION_BORDER_WIDTH - CONTINUATION_MARGIN;
 
             var thickness = max_radius / (max_depth + 1);
 

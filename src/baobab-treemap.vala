@@ -44,6 +44,10 @@ namespace Baobab {
         uint max_visible_depth;
         bool more_visible_children;
 
+        static construct {
+            set_css_name ("treemap");
+        }
+
         protected override ChartItem create_new_chartitem () {
             return (new TreemapItem () as ChartItem);
         }
@@ -59,16 +63,13 @@ namespace Baobab {
             uint border = ITEM_BORDER_WIDTH;
 
             var context = get_style_context ();
-            context.save ();
-            context.set_state (Gtk.StateFlags.NORMAL);
 
             cr.set_line_width (border);
             cr.rectangle (x + border, y + border, r_width - border * 2, r_height - border * 2);
             Gdk.cairo_set_source_rgba (cr, fill_color);
-            cr.fill_preserve ();
-            var border_color = context.get_border_color ();
-            Gdk.cairo_set_source_rgba (cr, border_color);
-            cr.stroke ();
+            cr.fill ();
+
+            context.render_frame (cr, x + 0.5, y + 0.5, r_width - 1, r_height - 1);
 
             if (show_text) {
                 var layout = create_pango_layout (null);
@@ -83,8 +84,6 @@ namespace Baobab {
                     context.render_layout (cr, x + r_width / 2 - rect.width / 2, y + r_height / 2 - rect.height / 2, layout);
                 }
             }
-
-            context.restore ();
         }
 
         protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {

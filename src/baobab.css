@@ -65,14 +65,18 @@ window infobar.error {
     border-bottom-color: @borders;
 }
 
+@define-color tooltip_bg_color rgba(0, 0, 0, 0.8);
 ringschart {
-    padding: 13px 13px 13px 13px;
+    padding: 13px;
 }
 
 ringschart.subfolder-tip {
     color: white;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: @tooltip_bg_color;
     border-radius: 3px;
-    padding: 3px 3px 3px 3px;
+    padding: 6px;
 }
 
+treemap {
+    border: solid 1px black;
+}
