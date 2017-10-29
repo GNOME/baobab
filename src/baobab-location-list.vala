@@ -77,6 +77,8 @@ namespace Baobab {
                     // useful for some remote mounts where we don't know the
                     // size but do have a usage figure
                     available_label.label = _("%s Used").printf (format_size (location.used));
+                } else if (location.mount == null && location.volume.can_mount ()) {
+                    available_label.label = _("Unmounted");
                 }
             }
         }
