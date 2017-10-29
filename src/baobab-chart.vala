@@ -72,6 +72,12 @@ namespace Baobab {
         Gtk.Menu context_menu = null;
 
         List<ChartItem> items;
+        bool need_recalculate_geometry = true;
+
+        double total_delta_y = 0;
+
+        protected int width;
+        protected int height;
 
         uint max_depth_ = MAX_DEPTH;
         public uint max_depth {
@@ -174,10 +180,12 @@ namespace Baobab {
                 }
 
                 if (highlighted_item_ != null) {
-                    get_window ().invalidate_rect (highlighted_item_.rect, true);
+                    queue_draw ();
+                    //get_window ().invalidate_rect (highlighted_item_.rect, true);
                 }
                 if (value != null) {
-                    get_window ().invalidate_rect (value.rect, true);
+                    queue_draw ();
+                    //get_window ().invalidate_rect (value.rect, true);
                 }
 
                 highlighted_item_ = value;
@@ -228,11 +236,13 @@ namespace Baobab {
 
         public override void size_allocate (Gtk.Allocation allocation, int baseline, out Gtk.Allocation clip) {
             base.size_allocate (allocation, baseline, out clip);
-            foreach (ChartItem item in items) {
+            need_recalculate_geometry = true;
+            /*foreach (ChartItem item in items) {
                 item.has_visible_children = false;
                 item.visible = false;
                 calculate_item_geometry (item);
             }
+            */
         }
 
         bool highlight_item_at_point (double x, double y) {
@@ -411,15 +421,19 @@ namespace Baobab {
             update_draw (path);
         }
 
-        public void draw_func (Gtk.DrawingArea area, Cairo.Context cr, int width, int height) {
+        public void draw_func (Gtk.DrawingArea area, Cairo.Context cr, int w, int h) {
             if (name_column == percentage_column) {
                 // Columns not set
                 return;
             }
 
+            width = w;
+            height = h;
+
             if (model != null) {
-                if (model_changed || items == null) {
+                if (model_changed || items == null || need_recalculate_geometry) {
                     get_items (root);
+                    need_recalculate_geometry = false;
                 } else {
                     var current_path = model.get_path (items.data.iter);
                     if (root.compare (current_path) != 0) {
@@ -522,20 +536,34 @@ namespace Baobab {
         protected override bool scroll_event (Gdk.EventScroll event) {
             Gdk.EventMotion e = (Gdk.EventMotion) event;
             Gdk.ScrollDirection direction;
-            event.get_scroll_direction (out direction);
-            switch (direction) {
-            case Gdk.ScrollDirection.LEFT:
-            case Gdk.ScrollDirection.UP:
-                zoom_out ();
-                motion_notify_event (e);
-                break;
-            case Gdk.ScrollDirection.RIGHT:
-            case Gdk.ScrollDirection.DOWN:
-                zoom_in ();
-                motion_notify_event (e);
-                break;
-            case Gdk.ScrollDirection.SMOOTH:
-                break;
+            double delta_x, delta_y;
+
+            if (event.get_scroll_direction (out direction)) {
+                switch (direction) {
+                case Gdk.ScrollDirection.LEFT:
+                case Gdk.ScrollDirection.UP:
+                    zoom_out ();
+                    motion_notify_event (e);
+                    break;
+                case Gdk.ScrollDirection.RIGHT:
+                case Gdk.ScrollDirection.DOWN:
+                    zoom_in ();
+                    motion_notify_event (e);
+                    break;
+                case Gdk.ScrollDirection.SMOOTH:
+                    break;
+                }
+            } else if (event.get_scroll_deltas (out delta_x, out delta_y)) {
+                total_delta_y += delta_y;
+                if (total_delta_y > 1) {
+                    zoom_in ();
+                    motion_notify_event (e);
+                    total_delta_y = 0;
+                } else if (total_delta_y < -1) {
+                    zoom_out ();
+                    motion_notify_event (e);
+                    total_delta_y = 0;
+                }
             }
 
             return false;

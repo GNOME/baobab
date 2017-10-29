@@ -101,18 +101,11 @@ namespace Baobab {
             context.save ();
             context.add_class ("subfolder-tip");
 
-            Gtk.Allocation allocation;
-            get_allocation (out allocation);
-
-            var q_width = allocation.width / 2;
-            var q_height = allocation.height / 2;
+            var q_width = width / 2;
+            var q_height = height / 2;
             var q_angle = Math.atan2 (q_height, q_width);
 
             Gdk.Rectangle last_rect = Gdk.Rectangle ();
-
-            var padding = context.get_padding ();
-            var vpadding = padding.top + padding.bottom;
-            var hpadding = padding.left + padding.right;
 
             foreach (ChartItem item in subtip_items) {
                 RingschartItem ringsitem = item as RingschartItem;
@@ -140,28 +133,28 @@ namespace Baobab {
                 // get the center point of the tooltip rectangle
                 double tip_x, tip_y;
                 if (middle_angle_n < q_angle) {
-                    tip_x = q_width - layout_rect.width / 2 - hpadding;
+                    tip_x = q_width - layout_rect.width / 2;
                     tip_y = Math.tan (middle_angle_n) * tip_x;
                 } else {
-                    tip_y = q_height - layout_rect.height / 2 - vpadding;
+                    tip_y = q_height - layout_rect.height / 2;
                     tip_x = tip_y / Math.tan (middle_angle_n);
                 }
 
                 // get the tooltip rectangle
                 Cairo.Rectangle tooltip_rect = Cairo.Rectangle ();
-                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2 - padding.left;
-                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2 - padding.top;
-                tooltip_rect.width = layout_rect.width + hpadding;
-                tooltip_rect.height = layout_rect.height + vpadding;
+                tooltip_rect.x = q_width + tip_x - layout_rect.width / 2;
+                tooltip_rect.y = q_height + tip_y - layout_rect.height / 2;
+                tooltip_rect.width = layout_rect.width;
+                tooltip_rect.height = layout_rect.height;
 
                 // translate tooltip rectangle and edge angles to the original quadrant
                 var a = middle_angle;
                 int i = 0;
                 while (a > Math.PI / 2) {
                     if (i % 2 == 0) {
-                        tooltip_rect.x = allocation.width - tooltip_rect.x - tooltip_rect.width;
+                        tooltip_rect.x = width - tooltip_rect.x - tooltip_rect.width;
                     } else {
-                        tooltip_rect.y = allocation.height - tooltip_rect.y - tooltip_rect.height;
+                        tooltip_rect.y = height - tooltip_rect.y - tooltip_rect.height;
                     }
                     i++;
                     a -= Math.PI / 2;
@@ -193,7 +186,7 @@ namespace Baobab {
 
                     // clip to avoid drawing inside tooltip area (tooltip background
                     // could be transparent, depending on the theme)
-                    cr.rectangle (0, 0, allocation.width, allocation.height);
+                    cr.rectangle (0, 0, width, height);
                     cr.rectangle (tooltip_rect.x + tooltip_rect.width, tooltip_rect.y, -tooltip_rect.width, tooltip_rect.height);
                     cr.clip ();
 
@@ -214,7 +207,7 @@ namespace Baobab {
                     // draw tooltip box
                     context.render_background (cr, tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
                     context.render_frame (cr, tooltip_rect.x, tooltip_rect.y, tooltip_rect.width, tooltip_rect.height);
-                    context.render_layout (cr, tooltip_rect.x + padding.left, tooltip_rect.y + padding.top, layout);
+                    context.render_layout (cr, tooltip_rect.x, tooltip_rect.y, layout);
                 }
             }
 
@@ -234,9 +227,6 @@ namespace Baobab {
 
             cr.set_line_width (ITEM_BORDER_WIDTH);
 
-            Gtk.Allocation allocation;
-            get_allocation (out allocation);
-
             var context = get_style_context ();
             context.save ();
 
@@ -245,8 +235,8 @@ namespace Baobab {
             var border_color = context.get_border_color ();
             var bg_color = toplevel_context.get_background_color ();
 
-            var center_x = allocation.width / 2;
-            var center_y = allocation.height / 2;
+            var center_x = width / 2;
+            var center_y = height / 2;
             var final_angle = ringsitem.start_angle + ringsitem.angle;
 
             if (item.depth == 0) {
@@ -300,13 +290,10 @@ namespace Baobab {
             ringsitem.continued = false;
             ringsitem.visible = false;
 
-            Gtk.Allocation allocation;
-            get_allocation (out allocation);
-
             var context = get_style_context ();
 
-            var padding = context.get_padding ();
-            var max_radius = int.min (allocation.width / 2, allocation.height / 2) - padding.left; // Assuming that padding is the same for all sides
+            var max_radius = int.min (width / 2, height / 2);
+
             var thickness = max_radius / (max_depth + 1);
 
             if (ringsitem.parent == null) {
@@ -355,15 +342,15 @@ namespace Baobab {
             Gtk.Allocation allocation;
 
             get_allocation (out allocation);
-            cx = allocation.width / 2;
-            cy = allocation.height / 2;
+            cx = width / 2;
+            cy = height / 2;
             r1 = ringsitem.min_radius;
             r2 = ringsitem.max_radius;
             a1 = ringsitem.start_angle;
             a2 = ringsitem.start_angle + ringsitem.angle;
 
-            rect.x = allocation.width;
-            rect.y = allocation.height;
+            rect.x = width;
+            rect.y = height;
             rect.width = 0;
             rect.height = 0;
 
@@ -397,11 +384,8 @@ namespace Baobab {
         protected override bool is_point_over_item (ChartItem item, double x, double y) {
             var ringsitem = item as RingschartItem;
 
-            Gtk.Allocation allocation;
-            get_allocation (out allocation);
-
-            x -= allocation.width / 2;
-            y -= allocation.height / 2;
+            x -= width / 2;
+            y -= height / 2;
 
             var radius = Math.sqrt (x * x + y * y);
             var angle = Math.atan2 (y, x);

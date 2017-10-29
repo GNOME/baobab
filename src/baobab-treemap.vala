@@ -51,8 +51,8 @@ namespace Baobab {
         void draw_rectangle (Cairo.Context cr,
                              double x,
                              double y,
-                             double width,
-                             double height,
+                             double r_width,
+                             double r_height,
                              Gdk.RGBA fill_color,
                              string text,
                              bool show_text) {
@@ -63,7 +63,7 @@ namespace Baobab {
             context.set_state (Gtk.StateFlags.NORMAL);
 
             cr.set_line_width (border);
-            cr.rectangle (x + border, y + border, width - border * 2, height - border * 2);
+            cr.rectangle (x + border, y + border, r_width - border * 2, r_height - border * 2);
             Gdk.cairo_set_source_rgba (cr, fill_color);
             cr.fill_preserve ();
             var border_color = context.get_border_color ();
@@ -78,9 +78,9 @@ namespace Baobab {
                 Pango.Rectangle rect;
                 layout.get_pixel_extents (null, out rect);
 
-                if ((rect.width + ITEM_TEXT_PADDING * 2 <= width) &&
-                    (rect.height + ITEM_TEXT_PADDING * 2 <= height)) {
-                    context.render_layout (cr, x + width / 2 - rect.width / 2, y + height / 2 - rect.height / 2, layout);
+                if ((rect.width + ITEM_TEXT_PADDING * 2 <= r_width) &&
+                    (rect.height + ITEM_TEXT_PADDING * 2 <= r_height)) {
+                    context.render_layout (cr, x + r_width / 2 - rect.width / 2, y + r_height / 2 - rect.height / 2, layout);
                 }
             }
 
@@ -90,25 +90,23 @@ namespace Baobab {
         protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {
             Cairo.Rectangle rect;
             Gdk.RGBA fill_color = Gdk.RGBA ();
-            Gtk.Allocation allocation;
-            double width = 0, height = 0;
+            double r_width = 0, r_height = 0;
 
             rect = (item as TreemapItem).cr_rect;
-            get_allocation (out allocation);
 
             if ((item.depth % 2) != 0) {
-                fill_color = get_item_color (rect.x / allocation.width * 200,
+                fill_color = get_item_color (rect.x / width * 200,
                                              item.depth, highlighted);
-                width = rect.width - ITEM_PADDING;
-                height = rect.height;
+                r_width = rect.width - ITEM_PADDING;
+                r_height = rect.height;
             } else {
-                fill_color = get_item_color (rect.y / allocation.height * 200,
+                fill_color = get_item_color (rect.y / height * 200,
                                              item.depth, highlighted);
-                width = rect.width;
-                height = rect.height - ITEM_PADDING;
+                r_width = rect.width;
+                r_height = rect.height - ITEM_PADDING;
             }
 
-            draw_rectangle (cr, rect.x, rect.y, width, height, fill_color, item.name, (!item.has_visible_children));
+            draw_rectangle (cr, rect.x, rect.y, r_width, r_height, fill_color, item.name, (!item.has_visible_children));
         }
 
         protected override void calculate_item_geometry (ChartItem item) {
@@ -122,30 +120,28 @@ namespace Baobab {
 
             item.visible = false;
             if (item.parent == null) {
-                Gtk.Allocation allocation;
-                get_allocation (out allocation);
                 p_area.x = -ITEM_PADDING / 2;
                 p_area.y = -ITEM_PADDING / 2;
-                p_area.width = allocation.width + ITEM_PADDING * 2;
-                p_area.height = allocation.height + ITEM_PADDING * 2;
+                p_area.width = width + ITEM_PADDING * 2;
+                p_area.height = height + ITEM_PADDING * 2;
             } else {
                 p_area = (item.parent.data as TreemapItem).cr_rect;
             }
 
             if (item.depth % 2 != 0) {
-                var width = p_area.width - ITEM_PADDING;
+                var r_width = p_area.width - ITEM_PADDING;
 
-                treemapitem.cr_rect.x = p_area.x + (item.rel_start * width / 100) + ITEM_PADDING;
+                treemapitem.cr_rect.x = p_area.x + (item.rel_start * r_width / 100) + ITEM_PADDING;
                 treemapitem.cr_rect.y = p_area.y + ITEM_PADDING;
-                treemapitem.cr_rect.width = width * item.rel_size / 100;
+                treemapitem.cr_rect.width = r_width * item.rel_size / 100;
                 treemapitem.cr_rect.height = p_area.height - ITEM_PADDING * 3;
             } else {
-                var height = p_area.height - ITEM_PADDING;
+                var r_height = p_area.height - ITEM_PADDING;
 
                 treemapitem.cr_rect.x = p_area.x + ITEM_PADDING;
-                treemapitem.cr_rect.y = p_area.y + (item.rel_start * height / 100) + ITEM_PADDING;
+                treemapitem.cr_rect.y = p_area.y + (item.rel_start * r_height / 100) + ITEM_PADDING;
                 treemapitem.cr_rect.width = p_area.width - ITEM_PADDING * 3;
-                treemapitem.cr_rect.height = height * item.rel_size / 100;
+                treemapitem.cr_rect.height = r_height * item.rel_size / 100;
             }
             if ((treemapitem.cr_rect.width - ITEM_PADDING < ITEM_MIN_WIDTH) ||
                 (treemapitem.cr_rect.height - ITEM_PADDING < ITEM_MIN_HEIGHT)) {
