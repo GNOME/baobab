@@ -29,11 +29,11 @@ namespace Baobab {
         [GtkChild]
         private Gtk.HeaderBar header_bar;
         [GtkChild]
+        private Gtk.Button scan_button;
+        [GtkChild]
         private Gtk.Button back_button;
         [GtkChild]
         private Gtk.Button reload_button;
-        [GtkChild]
-        private Gtk.MenuButton menu_button;
         [GtkChild]
         private Gtk.Stack main_stack;
         [GtkChild]
@@ -82,7 +82,6 @@ namespace Baobab {
         static Gdk.Cursor busy_cursor;
 
         private const GLib.ActionEntry[] action_entries = {
-            { "gear-menu", on_show_gear_menu_activate , null, "false", null},
             { "show-home-page", on_show_home_page_activate },
             { "scan-folder", on_scan_folder_activate },
             { "reload", on_reload_activate },
@@ -195,11 +194,6 @@ namespace Baobab {
             });
 
             show ();
-        }
-
-        void on_show_gear_menu_activate (SimpleAction action) {
-            var state = action.get_state ().get_boolean ();
-            action.set_state (new Variant.boolean (!state));
         }
 
         void on_show_home_page_activate () {
@@ -499,7 +493,7 @@ namespace Baobab {
         }
 
         void set_ui_state (Gtk.Widget child, bool busy) {
-            menu_button.visible = (child == home_page);
+            scan_button.visible = (child == home_page);
             reload_button.visible = (child == result_page);
             back_button.visible = (child == result_page);
 

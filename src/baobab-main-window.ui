@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
-  <menu id="winmenu">
-    <section>
-      <item>
-        <attribute name="label" translatable="yes">Scan Folder…</attribute>
-        <attribute name="action">win.scan-folder</attribute>
-      </item>
-    </section>
-  </menu>
   <object class="GtkMenu" id="treeview_popup_menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -48,6 +40,15 @@
       <class name="titlebar"/>
     </style>
     <child>
+      <object class="GtkButton" id="scan_button">
+        <property name="action_name">win.scan-folder</property>
+        <property name="label" translatable="yes">Scan Folder…</property>
+      </object>
+      <packing>
+        <property name="pack_type">start</property>
+      </packing>
+    </child>
+    <child>
       <object class="GtkButton" id="back_button">
         <property name="valign">center</property>
         <property name="can_focus">True</property>
@@ -82,20 +83,6 @@
             <property name="icon_name">view-refresh-symbolic</property>
           </object>
         </child>
-      </object>
-      <packing>
-        <property name="pack_type">end</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkMenuButton" id="menu_button">
-        <property name="valign">center</property>
-        <property name="menu_model">winmenu</property>
-        <property name="action_name">win.gear-menu</property>
-        <property name="direction">none</property>
-        <style>
-          <class name="image-button"/>
-        </style>
       </object>
       <packing>
         <property name="pack_type">end</property>
