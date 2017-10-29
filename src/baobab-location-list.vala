@@ -49,17 +49,22 @@ namespace Baobab {
             var escaped = GLib.Markup.escape_text (location.name, -1);
             name_label.label = "<b>%s</b>".printf (escaped);
 
-            escaped = location.file != null ? GLib.Markup.escape_text (location.file.get_parse_name (), -1) : "";
-            path_label.label = escaped;
+            path_label.hide();
+            if (location.file != null) {
+                path_label.label = GLib.Markup.escape_text (location.file.get_parse_name (), -1);
+                path_label.show();
+            }
 
             // assume for local mounts the end of the mount path is the
             // relevant information, and for remote mounts the beginning is
             // more important
             path_label.ellipsize = location.is_remote ? Pango.EllipsizeMode.END : Pango.EllipsizeMode.START;
 
+            total_size_label.hide();
             if (location.is_volume || location.is_main_volume) {
                 if (location.size != null) {
                     total_size_label.label = _("%s Total").printf (format_size (location.size));
+                    total_size_label.show();
 
                     if (location.used != null) {
                         available_label.label = _("%s Available").printf (format_size (location.size - location.used));
