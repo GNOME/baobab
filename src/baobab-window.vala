@@ -153,7 +153,9 @@ namespace Baobab {
             resize (width, height);
 
             window_state_event.connect ((event) => {
-                //ui_settings.set_int ("window-state", event.new_window_state);
+                Gdk.WindowState old_state, new_state;
+                event.get_window_state (out old_state, out new_state);
+                ui_settings.set_int ("window-state", new_state);
                 return false;
             });
 
