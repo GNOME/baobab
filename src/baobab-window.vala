@@ -116,7 +116,7 @@ namespace Baobab {
             Object (application: app);
 
             if (busy_cursor == null) {
-                busy_cursor = new Gdk.Cursor.for_display (get_display(), Gdk.CursorType.WATCH);
+                busy_cursor = new Gdk.Cursor.from_name (get_display(), "wait");
             }
 
             var ui_settings = new Settings ("org.gnome.baobab.ui");
