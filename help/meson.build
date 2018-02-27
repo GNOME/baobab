@@ -27,6 +27,7 @@ help_linguas = [
   'fi',
   'fr',
   'gl',
+  'hr',
   'hu',
   'id',
   'it',
