@@ -1,14 +1,14 @@
 # Scottish Gaelic translation for baobab.
 # Copyright (C) 2014 baobab's COPYRIGHT HOLDER
 # This file is distributed under the same license as the baobab package.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2017.
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2017, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
-"&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-18 21:43+0000\n"
-"PO-Revision-Date: 2017-03-07 11:49+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=baoba"
+"b&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-09-16 17:38+0000\n"
+"PO-Revision-Date: 2018-03-01 11:13+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -27,7 +27,7 @@ msgstr "Sgrùdair cleachdadh nan diosga"
 
 #: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
 msgid "Check folder sizes and available disk space"
-msgstr "Thoir sùil air meud nam pasganan 's an rum shaor air an diosga"
+msgstr "Thoir sùil air meud nam pasganan ’s an rum shaor air an diosga"
 
 #: data/org.gnome.baobab.appdata.xml.in:9
 msgid ""
@@ -42,10 +42,10 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"'S urrainn dha Sgrùdair cleachdadh nan diosga pasganan sònraichte, uidheaman "
+"’S urrainn dha Sgrùdair cleachdadh nan diosga pasganan sònraichte, uidheaman "
 "stòrais agus cunntasan air loidhne a sganadh. Bheir e an dà chuid sealladh "
 "craoibhe is riochdachadh grafaigeach dhut a sheallas meud gach pasgain ach "
-"am faic thu gun duilgheadas càit a bheil àite 'ga chaitheamh air an diosga."
+"am faic thu gun duilgheadas càit a bheil àite ’ga chaitheamh air an diosga."
 
 #: data/org.gnome.baobab.appdata.xml.in:34
 msgid "The GNOME Project"
@@ -55,12 +55,10 @@ msgstr "Pròiseact GNOME"
 #: data/org.gnome.baobab.desktop.in.in:6
 msgid "storage;space;cleanup;"
 msgstr ""
-"storage;space;cleanup;stòras;rum;àite;glanadh;sgioblachadh;sgioblaich;diosga"
-";"
+"storage;space;cleanup;stòras;rum;àite;glanadh;sgioblachadh;sgioblaich;diosga;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in.in:10
-#| msgid "Baobab"
 msgid "baobab"
 msgstr "baobab"
 
@@ -122,35 +120,40 @@ msgstr "An-diugh"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d latha"
-msgstr[1] "%d latha"
-msgstr[2] "%d làithean"
-msgstr[3] "%d latha"
+#| msgid "%d day"
+#| msgid_plural "%d days"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu latha"
+msgstr[1] "%lu latha"
+msgstr[2] "%lu làithean"
+msgstr[3] "%lu latha"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d mhìos"
-msgstr[1] "%d mhìos"
-msgstr[2] "%d mìosan"
-msgstr[3] "%d mìos"
+#| msgid "%d month"
+#| msgid_plural "%d months"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu mhìos"
+msgstr[1] "%lu mhìos"
+msgstr[2] "%lu mìosan"
+msgstr[3] "%lu mìos"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d bhliadhna"
-msgstr[1] "%d bhliadhna"
-msgstr[2] "%d bliadhnaichean"
-msgstr[3] "%d bliadhna"
+#| msgid "%d year"
+#| msgid_plural "%d years"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu bhliadhna"
+msgstr[1] "%lu bhliadhna"
+msgstr[2] "%lu bliadhnaichean"
+msgstr[3] "%lu bliadhna"
 
 #: src/baobab-location-list.ui:17
-#| msgid "Computer"
 msgid "This Computer"
 msgstr "An coimpiutair seo"
 
@@ -173,13 +176,13 @@ msgstr "%s ri fhaighinn"
 #: src/baobab-location-list.vala:75
 #, c-format
 msgid "%s Used"
-msgstr "%s 'ga chleachdadh"
+msgstr "%s ’ga chleachdadh"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Pasgan dachaigh"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "Coimpiutair"
 
@@ -245,11 +248,11 @@ msgstr "Sgrùdaich puingean munntachaidh gu ath-chùrsach"
 
 #: src/baobab-window.vala:233
 msgid "Could not analyze volume."
-msgstr "Cha b' urrainn dhuinn an draibh a sgrùdadh."
+msgstr "Cha b’ urrainn dhuinn an draibh a sgrùdadh."
 
 #: src/baobab-window.vala:265
 msgid "Failed to show help"
-msgstr "Cha deach leinn a' chobhair a shealltainn"
+msgstr "Cha deach leinn a’ chobhair a shealltainn"
 
 #: src/baobab-window.vala:284
 msgid "Baobab"
@@ -265,26 +268,27 @@ msgstr "GunChleoc fios@foramnagaidhlig.net"
 
 #: src/baobab-window.vala:361
 msgid "Failed to open file"
-msgstr "Dh'fhàillig le fosgladh an fhaidhle"
+msgstr "Dh’fhàillig le fosgladh an fhaidhle"
 
 #: src/baobab-window.vala:381
 msgid "Failed to move file to the trash"
 msgstr "Cha deach leinn am faidhle a ghluasad dhan sgudal"
 
 #: src/baobab-window.vala:485
-#| msgid "Devices and locations"
 msgid "Devices & Locations"
 msgstr "Uidheaman ⁊ ionadan"
 
 #: src/baobab-window.vala:546
 #, c-format
-msgid "Could not scan folder \"%s\""
-msgstr "Cha deach leinn am pasgan \"%s\" a sgrùdadh"
+#| msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
+msgstr "Cha deach leinn am pasgan “%s” a sgrùdadh"
 
 #: src/baobab-window.vala:549
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Cha deach leinn a h-uile pasgan am broinn \"%s\" a sgrùdadh"
+#| msgid "Could not scan some of the folders contained in \"%s\""
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Cha deach leinn a h-uile pasgan am broinn “%s” a sgrùdadh"
 
 #: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
@@ -292,17 +296,18 @@ msgstr "Cha deach leinn mothachadh air meud an ruim air gach diosga."
 
 #: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
-msgstr "Theud na meudan so-fhaicsinneach a shealltainn 'nan àite."
+msgstr "Theud na meudan so-fhaicsinneach a shealltainn ’nan àite."
 
 #. || is_virtual_filesystem ()
 #: src/baobab-window.vala:585 src/baobab-window.vala:591
 #, c-format
-msgid "\"%s\" is not a valid folder"
-msgstr "Chan eil \"%s\" 'na phasgan dligheach"
+#| msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
+msgstr "Chan eil “%s” ’na phasgan dligheach"
 
 #: src/baobab-window.vala:586 src/baobab-window.vala:592
 msgid "Could not analyze disk usage."
-msgstr "Cha b' urrainn dhuinn cleachdadh an draibh a sgrùdadh."
+msgstr "Cha b’ urrainn dhuinn cleachdadh an draibh a sgrùdadh."
 
 #: src/menus.ui:7
 msgid "_Help"
