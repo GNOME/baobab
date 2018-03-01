@@ -18,40 +18,40 @@
 # Bruno Brouard <annoa.b@gmail.com>, 2011-12.
 # Alain Lojewski <allomervan@gmail.com>, 2012.
 # Sam Friedmann <sam.friedmann@redhat.com>, 2012.
-# Charles Monzat <superboa@hotmail.fr>, 2017.
+# Charles Monzat <superboa@hotmail.fr>, 2017, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-28 18:49+0000\n"
-"PO-Revision-Date: 2017-03-06 20:16+0100\n"
-"Last-Translator: Guillaume Bernard <contact.guib@laposte.net>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2018-02-20 22:25+0000\n"
+"PO-Revision-Date: 2018-03-01 12:24+0100\n"
+"Last-Translator: Charles Monzat <superboa@hotmail.fr>\n"
+"Language-Team: français <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
-#: src/baobab-main-window.ui:44
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: src/baobab-main-window.ui:93
 msgid "Disk Usage Analyzer"
-msgstr "Analyseur d'utilisation des disques"
+msgstr "Analyseur d’utilisation des disques"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
-msgstr "Vérifier la taille des dossiers et l'espace disque disponible"
+msgstr "Vérifier la taille des dossiers et l’espace disque disponible"
 
 #: data/org.gnome.baobab.appdata.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"Une application simple pour garder sous contrôle l'utilisation de ses "
-"disques et l'espace disponible."
+"Une application simple pour garder sous contrôle l’utilisation de ses "
+"disques et l’espace disponible."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -59,10 +59,10 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"L'Analyseur d'utilisation des disques peut analyser des dossiers, des "
+"L’Analyseur d’utilisation des disques peut analyser des dossiers, des "
 "périphériques de stockage ou des comptes en ligne spécifiques. Il propose "
 "des représentations arborescentes et graphiques montrant la taille de chaque "
-"dossier, pour faciliter la détection des endroits où l'espace disque est "
+"dossier, pour faciliter la détection des endroits où l’espace disque est "
 "gaspillé."
 
 #: data/org.gnome.baobab.appdata.xml.in:34
@@ -70,12 +70,12 @@ msgid "The GNOME Project"
 msgstr "Le projet GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in.in:6
+#: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "stockage;espace disque;nettoyage;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in.in:10
+#: data/org.gnome.baobab.desktop.in:10
 msgid "baobab"
 msgstr "baobab"
 
@@ -85,7 +85,7 @@ msgstr "URI des partitions exclues"
 
 #: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Une liste d'URI des partitions à exclure de l'analyse."
+msgstr "Une liste d’URI des partitions à exclure de l’analyse."
 
 #: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
@@ -109,7 +109,7 @@ msgstr "État de la fenêtre"
 
 #: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
-msgstr "L'état GdkWindowState de la fenêtre"
+msgstr "L’état GdkWindowState de la fenêtre"
 
 #: src/baobab-application.vala:28
 msgid "Print version information and exit"
@@ -123,14 +123,14 @@ msgstr[0] "%d élément"
 msgstr[1] "%d éléments"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
 msgid "Unknown"
 msgstr "Inconnue"
 
 #. Translators: when the last modified time is today
 #: src/baobab-cellrenderers.vala:110
 msgid "Today"
-msgstr "Aujourd'hui."
+msgstr "Aujourd’hui"
 
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:114
@@ -164,108 +164,112 @@ msgstr "Cet ordinateur"
 msgid "Remote Locations"
 msgstr "Emplacements distants"
 
-#: src/baobab-location-list.vala:58
+#: src/baobab-location-list.vala:66
 #, c-format
 msgid "%s Total"
 msgstr "Total de %s"
 
-#: src/baobab-location-list.vala:61
+#: src/baobab-location-list.vala:70
 #, c-format
 msgid "%s Available"
 msgstr "%s disponibles"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:75
+#: src/baobab-location-list.vala:84
 #, c-format
 msgid "%s Used"
 msgstr "%s utilisés"
+
+#: src/baobab-location-list.vala:86
+msgid "Unmounted"
+msgstr "Démonté"
 
 #: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Dossier personnel"
 
-#: src/baobab-location.vala:109
+#: src/baobab-location.vala:113
 msgid "Computer"
 msgstr "Ordinateur"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Analyser le dossier…"
-
-#: src/baobab-main-window.ui:20 src/menus.ui:25
+#: src/baobab-main-window.ui:12 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "_Ouvrir le dossier"
 
-#: src/baobab-main-window.ui:29 src/menus.ui:29
+#: src/baobab-main-window.ui:21 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Copier le chemin dans le presse-papiers"
 
-#: src/baobab-main-window.ui:38 src/menus.ui:33
+#: src/baobab-main-window.ui:30 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "_Mettre à la corbeille"
 
-#: src/baobab-main-window.ui:168
+#: src/baobab-main-window.ui:45
+msgid "Scan Folder…"
+msgstr "Analyser le dossier…"
+
+#: src/baobab-main-window.ui:157
 msgid "Close"
 msgstr "Fermer"
 
-#: src/baobab-main-window.ui:224
+#: src/baobab-main-window.ui:212
 msgid "Folder"
 msgstr "Dossier"
 
-#: src/baobab-main-window.ui:251
+#: src/baobab-main-window.ui:239
 msgid "Size"
 msgstr "Taille"
 
-#: src/baobab-main-window.ui:271
+#: src/baobab-main-window.ui:259
 msgid "Contents"
 msgstr "Sommaire"
 
-#: src/baobab-main-window.ui:289
+#: src/baobab-main-window.ui:277
 msgid "Modified"
 msgstr "Modifié"
 
-#: src/baobab-main-window.ui:334
+#: src/baobab-main-window.ui:322
 msgid "Rings Chart"
 msgstr "Diagramme en anneaux"
 
-#: src/baobab-main-window.ui:346
+#: src/baobab-main-window.ui:334
 msgid "Treemap Chart"
 msgstr "Carte arborescente"
 
-#: src/baobab-window.vala:189
+#: src/baobab-window.vala:209
 msgid "Select Folder"
 msgstr "Sélectionner un dossier"
 
-#: src/baobab-window.vala:191
+#: src/baobab-window.vala:211
 msgid "_Cancel"
 msgstr "_Annuler"
 
-#: src/baobab-window.vala:192
+#: src/baobab-window.vala:212
 msgid "_Open"
 msgstr "_Ouvrir"
 
-#: src/baobab-window.vala:198
+#: src/baobab-window.vala:218
 msgid "Recursively analyze mount points"
 msgstr "Analyser récursivement les points de montage"
 
-#: src/baobab-window.vala:233
+#: src/baobab-window.vala:253
 msgid "Could not analyze volume."
-msgstr "Impossible d'analyser le volume."
+msgstr "Impossible d’analyser le volume."
 
-#: src/baobab-window.vala:265
+#: src/baobab-window.vala:285
 msgid "Failed to show help"
-msgstr "Impossible d'afficher l'aide"
+msgstr "Impossible d’afficher l’aide"
 
-#: src/baobab-window.vala:284
+#: src/baobab-window.vala:304
 msgid "Baobab"
 msgstr "Baobab"
 
-#: src/baobab-window.vala:287
+#: src/baobab-window.vala:307
 msgid "A graphical tool to analyze disk usage."
-msgstr "Un outil graphique pour analyser l'utilisation des disques."
+msgstr "Un outil graphique pour analyser l’utilisation des disques."
 
-#: src/baobab-window.vala:292
+#: src/baobab-window.vala:312
 msgid "translator-credits"
 msgstr ""
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
@@ -277,45 +281,45 @@ msgstr ""
 "Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Alain Lojewski <allomervan@gmail.com>"
 
-#: src/baobab-window.vala:361
-msgid "Failed to open file"
-msgstr "Impossible d'ouvrir le fichier"
-
 #: src/baobab-window.vala:381
+msgid "Failed to open file"
+msgstr "Impossible d’ouvrir le fichier"
+
+#: src/baobab-window.vala:401
 msgid "Failed to move file to the trash"
 msgstr "Impossible de déplacer le fichier vers la corbeille"
 
-#: src/baobab-window.vala:485
+#: src/baobab-window.vala:505
 msgid "Devices & Locations"
 msgstr "Périphériques et emplacements"
 
-#: src/baobab-window.vala:546
+#: src/baobab-window.vala:566
 #, c-format
 msgid "Could not scan folder “%s”"
-msgstr "Impossible d'analyser le dossier « %s »"
+msgstr "Impossible d’analyser le dossier « %s »"
 
-#: src/baobab-window.vala:549
+#: src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Impossible d'analyser certains dossiers contenus dans « %s »"
+msgstr "Impossible d’analyser certains dossiers contenus dans « %s »"
 
-#: src/baobab-window.vala:568
+#: src/baobab-window.vala:588
 msgid "Could not detect occupied disk sizes."
 msgstr "Impossible de détecter les tailles des espaces occupés."
 
-#: src/baobab-window.vala:568
+#: src/baobab-window.vala:588
 msgid "Apparent sizes are shown instead."
 msgstr "Les tailles apparentes sont affichés à la place."
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:585 src/baobab-window.vala:591
+#: src/baobab-window.vala:605 src/baobab-window.vala:611
 #, c-format
 msgid "“%s” is not a valid folder"
-msgstr "« %s » n'est pas un dossier valide"
+msgstr "« %s » n’est pas un dossier valide"
 
-#: src/baobab-window.vala:586 src/baobab-window.vala:592
+#: src/baobab-window.vala:606 src/baobab-window.vala:612
 msgid "Could not analyze disk usage."
-msgstr "Impossible d'analyser l'utilisation du disque."
+msgstr "Impossible d’analyser l’utilisation du disque."
 
 #: src/menus.ui:7
 msgid "_Help"
