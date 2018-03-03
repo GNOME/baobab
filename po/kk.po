@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-13 06:46+0000\n"
-"PO-Revision-Date: 2017-02-16 13:17+0500\n"
+"POT-Creation-Date: 2018-02-20 22:25+0000\n"
+"PO-Revision-Date: 2018-03-03 20:19+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
-#: src/baobab-main-window.ui:44
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: src/baobab-main-window.ui:93
 msgid "Disk Usage Analyzer"
 msgstr "Диск қолдануын анализдеушісі"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Бумалар өлшемдерін және дисктердегі қолжетерлік орынды тексеру"
 
@@ -52,12 +52,12 @@ msgid "The GNOME Project"
 msgstr "GNOME жобасы"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in.in:6
+#: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;сақтауыш;орын;тазарту;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in.in:10
+#: data/org.gnome.baobab.desktop.in:10
 msgid "baobab"
 msgstr "baobab"
 
@@ -104,7 +104,7 @@ msgid_plural "%d items"
 msgstr[0] "%d нәрсе"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
 msgid "Unknown"
 msgstr "Белгісіз"
 
@@ -142,148 +142,152 @@ msgstr "Бұл компьютер"
 msgid "Remote Locations"
 msgstr "Қашықтағы орналасулар"
 
-#: src/baobab-location-list.vala:58
+#: src/baobab-location-list.vala:66
 #, c-format
 msgid "%s Total"
 msgstr "%s барлығы"
 
-#: src/baobab-location-list.vala:61
+#: src/baobab-location-list.vala:70
 #, c-format
 msgid "%s Available"
 msgstr "%s қолжетерлік"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:75
+#: src/baobab-location-list.vala:84
 #, c-format
 msgid "%s Used"
 msgstr "%s қолданылуда"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location-list.vala:86
+msgid "Unmounted"
+msgstr "Тіркелмеген"
+
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Үй бумасы"
 
-#: src/baobab-location.vala:108
+#: src/baobab-location.vala:113
 msgid "Computer"
 msgstr "Компьютер"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Буманы сканерлеу…"
-
-#: src/baobab-main-window.ui:20 src/menus.ui:25
+#: src/baobab-main-window.ui:12 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "Буманы а_шу"
 
-#: src/baobab-main-window.ui:29 src/menus.ui:29
+#: src/baobab-main-window.ui:21 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Жолды алмасу буферіне көшіріп алу"
 
-#: src/baobab-main-window.ui:38 src/menus.ui:33
+#: src/baobab-main-window.ui:30 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "Қоқ_ыс шелегіне тастау"
 
-#: src/baobab-main-window.ui:168
+#: src/baobab-main-window.ui:45
+msgid "Scan Folder…"
+msgstr "Буманы сканерлеу…"
+
+#: src/baobab-main-window.ui:157
 msgid "Close"
 msgstr "Жабу"
 
-#: src/baobab-main-window.ui:224
+#: src/baobab-main-window.ui:212
 msgid "Folder"
 msgstr "Бума"
 
-#: src/baobab-main-window.ui:251
+#: src/baobab-main-window.ui:239
 msgid "Size"
 msgstr "Өлшемі"
 
-#: src/baobab-main-window.ui:271
+#: src/baobab-main-window.ui:259
 msgid "Contents"
 msgstr "Құрамасы"
 
-#: src/baobab-main-window.ui:289
+#: src/baobab-main-window.ui:277
 msgid "Modified"
 msgstr "Өзгертілген"
 
-#: src/baobab-main-window.ui:334
+#: src/baobab-main-window.ui:322
 msgid "Rings Chart"
 msgstr "Сақиналы график"
 
-#: src/baobab-main-window.ui:346
+#: src/baobab-main-window.ui:334
 msgid "Treemap Chart"
 msgstr "Ағаш тектес график"
 
-#: src/baobab-window.vala:189
+#: src/baobab-window.vala:209
 msgid "Select Folder"
 msgstr "Буманы таңдау"
 
-#: src/baobab-window.vala:191
+#: src/baobab-window.vala:211
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
-#: src/baobab-window.vala:192
+#: src/baobab-window.vala:212
 msgid "_Open"
 msgstr "А_шу"
 
-#: src/baobab-window.vala:198
+#: src/baobab-window.vala:218
 msgid "Recursively analyze mount points"
 msgstr "Тіркеу нүктелерін рекурсивті анализдеу"
 
-#: src/baobab-window.vala:233
+#: src/baobab-window.vala:253
 msgid "Could not analyze volume."
 msgstr "Томды анализдеу мүмкін емес."
 
-#: src/baobab-window.vala:265
+#: src/baobab-window.vala:285
 msgid "Failed to show help"
 msgstr "Көмекті көрсету сәтсіз аяқталды"
 
-#: src/baobab-window.vala:284
+#: src/baobab-window.vala:304
 msgid "Baobab"
 msgstr "Baobab"
 
-#: src/baobab-window.vala:287
+#: src/baobab-window.vala:307
 msgid "A graphical tool to analyze disk usage."
 msgstr "Диск қолдануын анализдеу үшін графикалық қолданба."
 
-#: src/baobab-window.vala:292
+#: src/baobab-window.vala:312
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:381
 msgid "Failed to open file"
 msgstr "Файлды ашу сәтсіз аяқталды"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:401
 msgid "Failed to move file to the trash"
 msgstr "Файлды қоқыс шелегіне тастау сәтсіз аяқталды"
 
-#: src/baobab-window.vala:485
+#: src/baobab-window.vala:505
 msgid "Devices & Locations"
 msgstr "Құрылғылар және орналасулар"
 
-#: src/baobab-window.vala:546
+#: src/baobab-window.vala:566
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "\"%s\" бумасын сканерлеу мүмкін емес"
 
-#: src/baobab-window.vala:549
+#: src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "\"%s\" бумасының ішіндегі бірнеше буманы сканерлеу мүмкін емес"
 
-#: src/baobab-window.vala:568
+#: src/baobab-window.vala:588
 msgid "Could not detect occupied disk sizes."
 msgstr "Қолданудағы диск өлшемдерін анықтау мүмкін емес."
 
-#: src/baobab-window.vala:568
+#: src/baobab-window.vala:588
 msgid "Apparent sizes are shown instead."
 msgstr "Орнына көрінетін өлшемдері көрсетіледі."
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:585 src/baobab-window.vala:591
+#: src/baobab-window.vala:605 src/baobab-window.vala:611
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" дұрыс бума емес"
 
-#: src/baobab-window.vala:586 src/baobab-window.vala:592
+#: src/baobab-window.vala:606 src/baobab-window.vala:612
 msgid "Could not analyze disk usage."
 msgstr "Диск қолдануын анализдеу мүмкін емес."
 
