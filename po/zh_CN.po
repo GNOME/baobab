@@ -1,6 +1,6 @@
-# Chinese simplified translation of baobab master
-# Copyright (C) 2009, 2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-utils package.
+# Chinese (China) translation for baobab.
+# Copyright (C) 2001-2017 baobab's COPYRIGHT HOLDER
+# This file is distributed under the same license as the baobab package.
 # Wang Li <charlesw1234@163.com>, 2001
 # Sun G11n <gnome_int_l10n@ireland.sun.com> 2002
 # Xiong Jiang <jxiong@offtopic.org>, 2003
@@ -13,15 +13,16 @@
 # Terence Ng <pheotiman@gmail.com>, 2013.
 # TeliuTe <teliute@163.com>, 2009.
 # tuhaihe <1132321739qq@gmail.com>, 2012, 2013.
-# Dingzhong Chen <wsxy162@gmail.com>, 2016.
+# Dingzhong Chen <wsxy162@gmail.com>, 2016, 2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-10 17:55+0800\n"
-"PO-Revision-Date: 2017-01-11 20:56+0800\n"
-"Last-Translator: Jeff Bai <jeffbai@aosc.xyz>\n"
+"Project-Id-Version: baobab 3.26\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-10-05 11:31+0000\n"
+"PO-Revision-Date: 2017-03-08 00:31+0800\n"
+"Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -30,105 +31,228 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.11\n"
 
-#: ../src/baobab-application.vala:28
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
+#: src/baobab-main-window.ui:44
+msgid "Disk Usage Analyzer"
+msgstr "磁盘使用情况分析器"
+
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
+msgid "Check folder sizes and available disk space"
+msgstr "检查文件夹大小和可用磁盘空间"
+
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr "一个简单的应用程序，保持你的磁盘盘使用情况和可用空间处于控制。"
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"磁盘使用情况分析器可以扫描指定的文件夹、存储设备和在线账号。它同时提供了树形"
+"和图形展示来显示每个文件夹的大小，因此可以很容易的识别出哪里的磁盘空间被浪费"
+"了。"
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in.in:6
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;存储;空间;清理;磁盘使用;"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in.in:10
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
+msgid "Excluded partitions URIs"
+msgstr "排除的分区 URI"
+
+#: data/org.gnome.baobab.gschema.xml.in:10
+msgid "A list of URIs for partitions to be excluded from scanning."
+msgstr "将被排除扫描的分区 URI 列表。"
+
+#: data/org.gnome.baobab.gschema.xml.in:20
+msgid "Active Chart"
+msgstr "活动图"
+
+#: data/org.gnome.baobab.gschema.xml.in:21
+msgid "Which type of chart should be displayed."
+msgstr "显示哪种类型的图表。"
+
+#: data/org.gnome.baobab.gschema.xml.in:25
+msgid "Window size"
+msgstr "窗口大小"
+
+#: data/org.gnome.baobab.gschema.xml.in:26
+msgid "The initial size of the window"
+msgstr "初始窗口大小"
+
+#: data/org.gnome.baobab.gschema.xml.in:30
+msgid "Window state"
+msgstr "窗口状态"
+
+#: data/org.gnome.baobab.gschema.xml.in:31
+msgid "The GdkWindowState of the window"
+msgstr "窗口的 GdkWindowState 状态"
+
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "打印版本信息并退出"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 项"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101 ../src/baobab-location-list.vala:70
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
 msgid "Unknown"
 msgstr "未知"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "今天"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu 天前"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu 月前"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu 年前"
 
-#: ../src/baobab-location-list.vala:58
+#: src/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "此电脑"
+
+#: src/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "远程位置"
+
+#: src/baobab-location-list.vala:58
 #, c-format
 msgid "%s Total"
 msgstr "%s 总共"
 
-#: ../src/baobab-location-list.vala:61
+#: src/baobab-location-list.vala:61
 #, c-format
 msgid "%s Available"
 msgstr "%s 可用"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: ../src/baobab-location-list.vala:75
+#: src/baobab-location-list.vala:75
 #, c-format
 msgid "%s Used"
 msgstr "%s 已用"
 
-#: ../src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "主文件夹"
 
-#: ../src/baobab-location.vala:108
+#: src/baobab-location.vala:109
 msgid "Computer"
 msgstr "电脑"
 
-#: ../src/baobab-window.vala:189
+#: src/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "扫描文件夹…"
+
+#: src/baobab-main-window.ui:20 src/menus.ui:25
+msgid "_Open Folder"
+msgstr "打开文件夹(_O)"
+
+#: src/baobab-main-window.ui:29 src/menus.ui:29
+msgid "_Copy Path to Clipboard"
+msgstr "复制路径到剪贴版(_C)"
+
+#: src/baobab-main-window.ui:38 src/menus.ui:33
+msgid "Mo_ve to Trash"
+msgstr "移到回收站(_V)"
+
+#: src/baobab-main-window.ui:168
+msgid "Close"
+msgstr "关闭"
+
+#: src/baobab-main-window.ui:224
+msgid "Folder"
+msgstr "文件夹"
+
+#: src/baobab-main-window.ui:251
+msgid "Size"
+msgstr "大小"
+
+#: src/baobab-main-window.ui:271
+msgid "Contents"
+msgstr "内容"
+
+#: src/baobab-main-window.ui:289
+msgid "Modified"
+msgstr "已修改"
+
+#: src/baobab-main-window.ui:334
+msgid "Rings Chart"
+msgstr "环形图"
+
+#: src/baobab-main-window.ui:346
+msgid "Treemap Chart"
+msgstr "矩形树状结构图"
+
+#: src/baobab-window.vala:194
 msgid "Select Folder"
 msgstr "选择文件夹"
 
-#: ../src/baobab-window.vala:191
+#: src/baobab-window.vala:196
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: ../src/baobab-window.vala:192
+#: src/baobab-window.vala:197
 msgid "_Open"
 msgstr "打开(_O)"
 
-#: ../src/baobab-window.vala:198
+#: src/baobab-window.vala:203
 msgid "Recursively analyze mount points"
 msgstr "递归分析挂载点"
 
-#: ../src/baobab-window.vala:233
+#: src/baobab-window.vala:238
 msgid "Could not analyze volume."
 msgstr "无法分析卷。"
 
-#: ../src/baobab-window.vala:265
+#: src/baobab-window.vala:270
 msgid "Failed to show help"
 msgstr "无法显示帮助"
 
-#: ../src/baobab-window.vala:284
+#: src/baobab-window.vala:289
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:287
+#: src/baobab-window.vala:292
 msgid "A graphical tool to analyze disk usage."
 msgstr "一款分析磁盘使用情况的图形工具。"
 
-#: ../src/baobab-window.vala:292
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "Wang Li <charlesw1234@163.com>\n"
@@ -138,155 +262,72 @@ msgstr ""
 "tuhaihe <1132321739qq@gmail.com>\n"
 "Terence Ng <pheotiman@gmail.com>\n"
 "eterhalhui <www.eternalhui@gmail.com>\n"
-"Jeff Bai <jeffbai@aosc.xyz>"
+"Jeff Bai <jeffbai@aosc.xyz>\n"
+"Dingzhong Chen <wsxy162@gmail.com>"
 
-#: ../src/baobab-window.vala:361
+#: src/baobab-window.vala:366
 msgid "Failed to open file"
 msgstr "无法打开文件"
 
-#: ../src/baobab-window.vala:381
+#: src/baobab-window.vala:386
 msgid "Failed to move file to the trash"
 msgstr "无法将文件移至回收站"
 
-#: ../src/baobab-window.vala:485
+#: src/baobab-window.vala:490
 msgid "Devices & Locations"
 msgstr "设备与位置"
 
-#: ../src/baobab-window.vala:546
+#: src/baobab-window.vala:551
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "无法扫描文件夹“%s”"
 
-#: ../src/baobab-window.vala:549
+#: src/baobab-window.vala:554
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "无法扫描“%s”所包含的某些文件夹。"
 
-#: ../src/baobab-window.vala:568
+#: src/baobab-window.vala:573
 msgid "Could not detect occupied disk sizes."
 msgstr "无法检测已占用的磁盘大小。"
 
-#: ../src/baobab-window.vala:568
+#: src/baobab-window.vala:573
 msgid "Apparent sizes are shown instead."
 msgstr "将转而显示推断的大小。"
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:585 ../src/baobab-window.vala:591
+#: src/baobab-window.vala:590 src/baobab-window.vala:596
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”不是有效的文件夹"
 
-#: ../src/baobab-window.vala:586 ../src/baobab-window.vala:592
+#: src/baobab-window.vala:591 src/baobab-window.vala:597
 msgid "Could not analyze disk usage."
 msgstr "无法分析磁盘使用情况。"
 
-#~ msgid "Disk Usage Analyzer"
-#~ msgstr "磁盘使用情况分析器"
+#: src/menus.ui:7
+msgid "_Help"
+msgstr "帮助(_H)"
 
-#~ msgid "Check folder sizes and available disk space"
-#~ msgstr "检查文件夹大小和可用磁盘空间"
+#: src/menus.ui:12
+msgid "_About"
+msgstr "关于(_A)"
 
-#~ msgid ""
-#~ "A simple application to keep your disk usage and available space under "
-#~ "control."
-#~ msgstr "一个简单的应用程序，保持你的磁盘盘使用情况和可用空间处于控制。"
+#: src/menus.ui:16
+msgid "_Quit"
+msgstr "退出(_Q)"
 
-#~ msgid ""
-#~ "Disk Usage Analyzer can scan specific folders, storage devices and online "
-#~ "accounts. It provides both a tree and a graphical representation showing "
-#~ "the size of each folder, making it easy to identify where disk space is "
-#~ "wasted."
-#~ msgstr ""
-#~ "磁盘使用情况分析器可以扫描指定的文件夹、存储设备和在线账号。它同时提供了树"
-#~ "形和图形展示来显示每个文件夹的大小，因此可以很容易的识别出哪里的磁盘空间被"
-#~ "浪费了。"
+#: src/menus.ui:39
+msgid "Go to _parent folder"
+msgstr "转到上级文件夹(_P)"
 
-#~ msgid "storage;space;cleanup;"
-#~ msgstr "storage;space;cleanup;存储;空间;清理;磁盘使用;"
+#: src/menus.ui:45
+msgid "Zoom _in"
+msgstr "放大(_I)"
 
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "Excluded partitions URIs"
-#~ msgstr "排除的分区 URI"
-
-#~ msgid "A list of URIs for partitions to be excluded from scanning."
-#~ msgstr "将被排除扫描的分区 URI 列表。"
-
-#~ msgid "Active Chart"
-#~ msgstr "活动图"
-
-#~ msgid "Which type of chart should be displayed."
-#~ msgstr "显示哪种类型的图表。"
-
-#~ msgid "Window size"
-#~ msgstr "窗口大小"
-
-#~ msgid "The initial size of the window"
-#~ msgstr "初始窗口大小"
-
-#~ msgid "Window state"
-#~ msgstr "窗口状态"
-
-#~ msgid "The GdkWindowState of the window"
-#~ msgstr "窗口的 GdkWindowState 状态"
-
-#~ msgid "This Computer"
-#~ msgstr "此电脑"
-
-#~ msgid "Remote Locations"
-#~ msgstr "远程位置"
-
-#~ msgid "Scan Folder…"
-#~ msgstr "扫描文件夹…"
-
-#~ msgid "_Open Folder"
-#~ msgstr "打开文件夹(_O)"
-
-#~ msgid "_Copy Path to Clipboard"
-#~ msgstr "复制路径到剪贴版(_C)"
-
-#~ msgid "Mo_ve to Trash"
-#~ msgstr "移到回收站(_V)"
-
-#~ msgid "Close"
-#~ msgstr "关闭"
-
-#~ msgid "Folder"
-#~ msgstr "文件夹"
-
-#~ msgid "Size"
-#~ msgstr "大小"
-
-#~ msgid "Contents"
-#~ msgstr "内容"
-
-#~ msgid "Modified"
-#~ msgstr "已修改"
-
-#~ msgid "Rings Chart"
-#~ msgstr "环形图"
-
-#~ msgid "Treemap Chart"
-#~ msgstr "矩形树状结构图"
-
-#~ msgid "_Help"
-#~ msgstr "帮助(_H)"
-
-#~ msgid "_About"
-#~ msgstr "关于(_A)"
-
-#~ msgid "_Quit"
-#~ msgstr "退出(_Q)"
-
-#~ msgid "Go to _parent folder"
-#~ msgstr "转到上级文件夹(_P)"
-
-#~ msgid "Zoom _in"
-#~ msgstr "放大(_I)"
-
-#~ msgid "Zoom _out"
-#~ msgstr "缩小(_O)"
+#: src/menus.ui:49
+msgid "Zoom _out"
+msgstr "缩小(_O)"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
