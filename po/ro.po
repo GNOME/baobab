@@ -7,14 +7,14 @@
 # Mugurel Tudor <mugurelu@gnome.ro>, 2002-2004, 2005, 2006.
 # Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2009, 2011.
-# Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015.
+# Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-14.ro\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-29 12:13+0000\n"
-"PO-Revision-Date: 2015-06-22 18:10+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/"
+"enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-03-26 22:33+0000\n"
+"PO-Revision-Date: 2018-04-01 10:50+0200\n"
 "Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
@@ -26,65 +26,85 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/org.gnome.baobab.appdata.xml.in.h:1
-msgid ""
-"A simple application which can scan either specific folders (local or "
-"remote) or volumes and give a graphical representation including each "
-"directory size or percentage."
-msgstr ""
-"O aplicație simplă care poate scana fie dosare specifice (locale sau la "
-"distanță) fie volume și să ofere o reprezentare grafică incluzând "
-"dimensiunea sau procentul fiecărui director."
-
-#: ../data/org.gnome.baobab.desktop.in.in.h:1 ../src/baobab-main-window.ui.h:5
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: src/baobab-main-window.ui:93
 msgid "Disk Usage Analyzer"
 msgstr "Analizatorul utilizării discului"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Verifică dimensiunea dosarului și spațiul disponibil pe disc"
 
-#: ../data/org.gnome.baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under "
+"control."
+msgstr ""
+"O aplicație simplă pentru păstrarea sub control a utilizării discului și a "
+"spațiului disponibil."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"Analizatorul de utilizare a discului poate scana dosare specifice, "
+"dispozitive de stocare și conturi online. Oferă atât o reprezentare "
+"arborescentă cât și una grafică afișând dimensiunea fiecărui dosar, "
+"facilitând identificarea locului unde spațiul pe disc este risipit."
+
+#: data/org.gnome.baobab.appdata.xml.in:34
+msgid "The GNOME Project"
+msgstr "Proiectul GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;spațiu;curăță;depozitare;stocare;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.baobab.desktop.in:10
+msgid "baobab"
+msgstr "baobab"
+
+#: data/org.gnome.baobab.gschema.xml.in:9
 msgid "Excluded partitions URIs"
 msgstr "Exclude URI-urile partițiilor"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:2
+#: data/org.gnome.baobab.gschema.xml.in:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "O listă cu URI-uri pentru partițiile ce vor fi excluse din scanare."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:3
+#: data/org.gnome.baobab.gschema.xml.in:20
 msgid "Active Chart"
 msgstr "Grafic activ"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:4
+#: data/org.gnome.baobab.gschema.xml.in:21
 msgid "Which type of chart should be displayed."
 msgstr "Ce tip de diagramă ar trebui să fie afișat."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:5
+#: data/org.gnome.baobab.gschema.xml.in:25
 msgid "Window size"
 msgstr "Dimensiunea ferestrei"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:6
+#: data/org.gnome.baobab.gschema.xml.in:26
 msgid "The initial size of the window"
 msgstr "Dimensiunea inițială a ferestrei"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:7
+#: data/org.gnome.baobab.gschema.xml.in:30
 msgid "Window state"
 msgstr "Starea ferestrei"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.in.h:8
+#: data/org.gnome.baobab.gschema.xml.in:31
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState a ferestrei"
 
-#: ../src/baobab-application.vala:28
+#: src/baobab-application.vala:28
 msgid "Print version information and exit"
 msgstr "Afișează informații despre versiune și ieși"
 
-#: ../src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:91
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -93,201 +113,240 @@ msgstr[1] "%d elemente"
 msgstr[2] "%d de elemente"
 
 #. Translators: when the last modified time is unknown
-#: ../src/baobab-cellrenderers.vala:101
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
 msgid "Unknown"
 msgstr "Necunoscut"
 
 #. Translators: when the last modified time is today
-#: ../src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:110
 msgid "Today"
 msgstr "Astăzi"
 
 #. Translators: when the last modified time is "days" days ago
-#: ../src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:114
 #, c-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] "%d zi"
-msgstr[1] "%d zile"
-msgstr[2] "%d de zile"
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu zi"
+msgstr[1] "%lu zile"
+msgstr[2] "%lu de zile"
 
 #. Translators: when the last modified time is "months" months ago
-#: ../src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:118
 #, c-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d lună"
-msgstr[1] "%d luni"
-msgstr[2] "%d de luni"
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu lună"
+msgstr[1] "%lu luni"
+msgstr[2] "%lu de luni"
 
 #. Translators: when the last modified time is "years" years ago
-#: ../src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:122
 #, c-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d an"
-msgstr[1] "%d ani"
-msgstr[2] "%d de ani"
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu an"
+msgstr[1] "%lu ani"
+msgstr[2] "%lu de ani"
 
-#: ../src/baobab-location.vala:77
+#: src/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Calculator"
+
+#: src/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Locații la distanță"
+
+#: src/baobab-location-list.vala:66
+#, c-format
+msgid "%s Total"
+msgstr "%s total"
+
+#: src/baobab-location-list.vala:70
+#, c-format
+msgid "%s Available"
+msgstr "%s disponibil"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:84
+#, c-format
+msgid "%s Used"
+msgstr "%s utilizat"
+
+#: src/baobab-location-list.vala:86
+msgid "Unmounted"
+msgstr "Demontat"
+
+#: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Dosarul personal"
 
-#: ../src/baobab-location.vala:123
+#: src/baobab-location.vala:113
 msgid "Computer"
 msgstr "Calculator"
 
-#: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder…"
-msgstr "Scanează dosar…"
-
-#: ../src/baobab-main-window.ui.h:2 ../src/menus.ui.h:4
+#: src/baobab-main-window.ui:12 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "Deschide d_osar"
 
-#: ../src/baobab-main-window.ui.h:3 ../src/menus.ui.h:5
+#: src/baobab-main-window.ui:21 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiază calea în clipboard"
 
-#: ../src/baobab-main-window.ui.h:4 ../src/menus.ui.h:6
+#: src/baobab-main-window.ui:30 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "Mu_tă la coșul de gunoi"
 
-#: ../src/baobab-main-window.ui.h:6
+#: src/baobab-main-window.ui:45
+msgid "Scan Folder…"
+msgstr "Scanează dosar…"
+
+#: src/baobab-main-window.ui:157
 msgid "Close"
 msgstr "Închide"
 
-#: ../src/baobab-main-window.ui.h:7
+#: src/baobab-main-window.ui:212
 msgid "Folder"
 msgstr "Dosar"
 
-#: ../src/baobab-main-window.ui.h:8
+#: src/baobab-main-window.ui:239
 msgid "Size"
 msgstr "Dimensiune"
 
-#: ../src/baobab-main-window.ui.h:9
+#: src/baobab-main-window.ui:259
 msgid "Contents"
 msgstr "Conținut"
 
-#: ../src/baobab-main-window.ui.h:10
+#: src/baobab-main-window.ui:277
 msgid "Modified"
 msgstr "Modificat"
 
-#: ../src/baobab-main-window.ui.h:11
+#: src/baobab-main-window.ui:322
 msgid "Rings Chart"
 msgstr "Grafic inelar"
 
-#: ../src/baobab-main-window.ui.h:12
+#: src/baobab-main-window.ui:334
 msgid "Treemap Chart"
 msgstr "Grafic arborescent"
 
-#: ../src/baobab-window.vala:193
+#: src/baobab-window.vala:209
 msgid "Select Folder"
-msgstr "Alegere dosar"
+msgstr "Selectare dosar"
 
-#: ../src/baobab-window.vala:195
+#: src/baobab-window.vala:211
 msgid "_Cancel"
 msgstr "_Anulează"
 
-#: ../src/baobab-window.vala:196
+#: src/baobab-window.vala:212
 msgid "_Open"
 msgstr "_Deschide"
 
-#: ../src/baobab-window.vala:202
+#: src/baobab-window.vala:218
 msgid "Recursively analyze mount points"
 msgstr "Analizează recursiv punctele de montare"
 
-#: ../src/baobab-window.vala:237
+#: src/baobab-window.vala:253
 msgid "Could not analyze volume."
 msgstr "Nu s-a putut analiza volumul."
 
-#: ../src/baobab-window.vala:269
+#: src/baobab-window.vala:285
 msgid "Failed to show help"
-msgstr "Eșec la afișarea ajutorului"
+msgstr "Afișarea ajutorului a eșuat"
 
-#: ../src/baobab-window.vala:288
+#: src/baobab-window.vala:304
 msgid "Baobab"
 msgstr "Baobab"
 
-#: ../src/baobab-window.vala:291
+#: src/baobab-window.vala:307
 msgid "A graphical tool to analyze disk usage."
 msgstr "O unealtă grafică pentru analizarea utilizări discului."
 
-#: ../src/baobab-window.vala:296
+#: src/baobab-window.vala:312
 msgid "translator-credits"
 msgstr ""
 "Iustin Pop <iusty@geocities.com>\n"
 "Dan Damian <dand@dnttm.ro>\n"
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
+"Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "\n"
 "Contribuții Launchpad:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
 "  Alex Eftimie https://launchpad.net/~alexeftimie\n"
 "  Ionuț Jula https://launchpad.net/~ionutjula"
 
-#: ../src/baobab-window.vala:365
+#: src/baobab-window.vala:381
 msgid "Failed to open file"
-msgstr "Eșec la deschiderea fișierului"
+msgstr "Deschiderea fișierului a eșuat"
 
-#: ../src/baobab-window.vala:385
+#: src/baobab-window.vala:401
 msgid "Failed to move file to the trash"
-msgstr "Eșec la mutarea fișierului la gunoi"
+msgstr "Mutarea fișierului la gunoi a eșuat"
 
-#: ../src/baobab-window.vala:489
-msgid "Devices and locations"
+#: src/baobab-window.vala:505
+msgid "Devices & Locations"
 msgstr "Dispozitive și locații"
 
-#: ../src/baobab-window.vala:550
+#: src/baobab-window.vala:566
 #, c-format
-msgid "Could not scan folder \"%s\""
+msgid "Could not scan folder “%s”"
 msgstr "Nu s-a putut scana dosarul „%s”"
 
-#: ../src/baobab-window.vala:553
+#: src/baobab-window.vala:569
 #, c-format
-msgid "Could not scan some of the folders contained in \"%s\""
-msgstr "Nu s-a putut scana unele dintre dosarele conținute în „%s”"
+msgid "Could not scan some of the folders contained in “%s”"
+msgstr "Nu s-au putut scana unele dintre dosarele conținute în „%s”"
 
-#: ../src/baobab-window.vala:572
+#: src/baobab-window.vala:588
 msgid "Could not detect occupied disk sizes."
-msgstr "Nu s-a putut detecta dimensiunile discului ocupat."
+msgstr "Nu s-au putut detecta dimensiunile discului ocupat."
 
-#: ../src/baobab-window.vala:572
+#: src/baobab-window.vala:588
 msgid "Apparent sizes are shown instead."
 msgstr "Dimensiunile aparente sunt afișate în schimb."
 
 #. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:589 ../src/baobab-window.vala:595
+#: src/baobab-window.vala:605 src/baobab-window.vala:611
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "“%s” is not a valid folder"
 msgstr "„%s” nu este un dosar valid"
 
-#: ../src/baobab-window.vala:590 ../src/baobab-window.vala:596
+#: src/baobab-window.vala:606 src/baobab-window.vala:612
 msgid "Could not analyze disk usage."
 msgstr "Nu s-a putut analiza utilizarea discului."
 
-#: ../src/menus.ui.h:1
+#: src/menus.ui:7
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ../src/menus.ui.h:2
+#: src/menus.ui:12
 msgid "_About"
 msgstr "_Despre"
 
-#: ../src/menus.ui.h:3
+#: src/menus.ui:16
 msgid "_Quit"
 msgstr "_Ieșire"
 
-#: ../src/menus.ui.h:7
+#: src/menus.ui:39
 msgid "Go to _parent folder"
 msgstr "Navighează la dosarul _părinte"
 
-#: ../src/menus.ui.h:8
+#: src/menus.ui:45
 msgid "Zoom _in"
 msgstr "Aprop_ie"
 
-#: ../src/menus.ui.h:9
+#: src/menus.ui:49
 msgid "Zoom _out"
 msgstr "_Depărtează"
+
+#~ msgid ""
+#~ "A simple application which can scan either specific folders (local or "
+#~ "remote) or volumes and give a graphical representation including each "
+#~ "directory size or percentage."
+#~ msgstr ""
+#~ "O aplicație simplă care poate scana fie dosare specifice (locale sau la "
+#~ "distanță) fie volume și să ofere o reprezentare grafică incluzând "
+#~ "dimensiunea sau procentul fiecărui director."
 
 #~| msgid "Scan Remote Folder"
 #~ msgid "Scan Remote Folder…"
@@ -476,14 +535,8 @@ msgstr "_Depărtează"
 #~ msgid "Total Size"
 #~ msgstr "Mărime totală"
 
-#~ msgid "Available"
-#~ msgstr "Disponibil"
-
 #~ msgid "Cannot scan location \"%s\""
 #~ msgstr "Nu s-a putut scana locația „%s”"
-
-#~ msgid "Custom Location"
-#~ msgstr "Locație specificată"
 
 #~ msgid "SSH"
 #~ msgstr "SSH"
