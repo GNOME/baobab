@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: gnome-utils master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-01-31 09:31+0000\n"
-"PO-Revision-Date: 2018-02-06 18:28+0200\n"
+"POT-Creation-Date: 2018-05-19 16:39+0000\n"
+"PO-Revision-Date: 2018-05-19 18:41+0200\n"
 "Last-Translator: Pieter Schalk Schoeman <pieter@sonbesie.co.za>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
 "Language: af\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.7\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in.in:3
-#: src/baobab-main-window.ui:44
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: src/baobab-main-window.ui:93
 msgid "Disk Usage Analyzer"
 msgstr "Skyfgebruik"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in.in:4
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "Kontroleer gidsgroottes en beskikbare skyfspasie"
 
@@ -51,12 +51,12 @@ msgid "The GNOME Project"
 msgstr "Die GNOME Projek"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in.in:6
+#: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "stoor;spasie;skoonmaak;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in.in:10
+#: data/org.gnome.baobab.desktop.in:10
 msgid "baobab"
 msgstr "baobab"
 
@@ -104,7 +104,7 @@ msgstr[0] "%d item"
 msgstr[1] "%d items"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:70
+#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
 msgid "Unknown"
 msgstr "Onbekend"
 
@@ -145,150 +145,154 @@ msgstr "Die rekenaar"
 msgid "Remote Locations"
 msgstr "Afgeleë liggings"
 
-#: src/baobab-location-list.vala:58
+#: src/baobab-location-list.vala:66
 #, c-format
 msgid "%s Total"
 msgstr "%s Totaal"
 
-#: src/baobab-location-list.vala:61
+#: src/baobab-location-list.vala:70
 #, c-format
 msgid "%s Available"
 msgstr "%s Beskikbaar"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:75
+#: src/baobab-location-list.vala:84
 #, c-format
 msgid "%s Used"
 msgstr "%s Gebruik"
+
+#: src/baobab-location-list.vala:86
+msgid "Unmounted"
+msgstr "Ontkoppel"
 
 #: src/baobab-location.vala:73
 msgid "Home folder"
 msgstr "Tuisgids"
 
-#: src/baobab-location.vala:109
+#: src/baobab-location.vala:113
 msgid "Computer"
 msgstr "Rekenaar"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Skandeer gids…"
-
-#: src/baobab-main-window.ui:20 src/menus.ui:25
+#: src/baobab-main-window.ui:12 src/menus.ui:25
 msgid "_Open Folder"
 msgstr "_Open gids"
 
-#: src/baobab-main-window.ui:29 src/menus.ui:29
+#: src/baobab-main-window.ui:21 src/menus.ui:29
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopieer pad na knipbord"
 
-#: src/baobab-main-window.ui:38 src/menus.ui:33
+#: src/baobab-main-window.ui:30 src/menus.ui:33
 msgid "Mo_ve to Trash"
 msgstr "_Skuif na asblik"
 
-#: src/baobab-main-window.ui:168
+#: src/baobab-main-window.ui:45
+msgid "Scan Folder…"
+msgstr "Skandeer gids…"
+
+#: src/baobab-main-window.ui:157
 msgid "Close"
 msgstr "Sluit"
 
-#: src/baobab-main-window.ui:224
+#: src/baobab-main-window.ui:212
 msgid "Folder"
 msgstr "Gids"
 
-#: src/baobab-main-window.ui:251
+#: src/baobab-main-window.ui:239
 msgid "Size"
 msgstr "Grootte"
 
-#: src/baobab-main-window.ui:271
+#: src/baobab-main-window.ui:259
 msgid "Contents"
 msgstr "Inhoud"
 
-#: src/baobab-main-window.ui:289
+#: src/baobab-main-window.ui:277
 msgid "Modified"
 msgstr "Verander"
 
-#: src/baobab-main-window.ui:334
+#: src/baobab-main-window.ui:322
 msgid "Rings Chart"
 msgstr "Ring grafiek"
 
-#: src/baobab-main-window.ui:346
+#: src/baobab-main-window.ui:334
 msgid "Treemap Chart"
 msgstr "Boomkaart grafiek"
 
-#: src/baobab-window.vala:194
+#: src/baobab-window.vala:209
 msgid "Select Folder"
 msgstr "Kies gids"
 
-#: src/baobab-window.vala:196
+#: src/baobab-window.vala:211
 msgid "_Cancel"
 msgstr "_Kanselleer"
 
-#: src/baobab-window.vala:197
+#: src/baobab-window.vala:212
 msgid "_Open"
 msgstr "_Open"
 
-#: src/baobab-window.vala:203
+#: src/baobab-window.vala:218
 msgid "Recursively analyze mount points"
 msgstr "Ontleed hegpunte herhaaldelik"
 
-#: src/baobab-window.vala:238
+#: src/baobab-window.vala:253
 msgid "Could not analyze volume."
 msgstr "Kon nie volume analiseer nie."
 
-#: src/baobab-window.vala:270
+#: src/baobab-window.vala:285
 msgid "Failed to show help"
 msgstr "Kon nie hulp vertoon nie"
 
-#: src/baobab-window.vala:289
+#: src/baobab-window.vala:304
 msgid "Baobab"
 msgstr "Kremetart"
 
-#: src/baobab-window.vala:292
+#: src/baobab-window.vala:307
 msgid "A graphical tool to analyze disk usage."
 msgstr "'n Grafiese program om skyfgebruik mee te analiseer."
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:312
 msgid "translator-credits"
 msgstr ""
 "Friedel Wolff\n"
 "Pieter Schoeman"
 
-#: src/baobab-window.vala:366
+#: src/baobab-window.vala:381
 msgid "Failed to open file"
 msgstr "Kon nie die lêer oopmaak nie"
 
-#: src/baobab-window.vala:386
+#: src/baobab-window.vala:401
 msgid "Failed to move file to the trash"
 msgstr "Kon nie die lêer na die asblik skuif nie"
 
-#: src/baobab-window.vala:490
+#: src/baobab-window.vala:505
 msgid "Devices & Locations"
 msgstr "Toestelle en Liggings"
 
-#: src/baobab-window.vala:551
+#: src/baobab-window.vala:566
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Kon nie gids \"%s\" skandeer nie"
 
-#: src/baobab-window.vala:554
+#: src/baobab-window.vala:569
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Kon nie van die gidse in \"%s\" skandeer nie"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:588
 msgid "Could not detect occupied disk sizes."
 msgstr "Kon nie besette skyfgroottes opspoor nie."
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:588
 msgid "Apparent sizes are shown instead."
 msgstr "In plaas daarvan word skynbare groottes vertoon."
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:590 src/baobab-window.vala:596
+#: src/baobab-window.vala:605 src/baobab-window.vala:611
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" is nie 'n geldige gids nie"
 
-#: src/baobab-window.vala:591 src/baobab-window.vala:597
+#: src/baobab-window.vala:606 src/baobab-window.vala:612
 msgid "Could not analyze disk usage."
 msgstr "Kon nie skyfgebruik analiseer nie."
 
