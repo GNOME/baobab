@@ -22,11 +22,8 @@ appdata_file = i18n.merge_file(
   install_dir: join_paths(get_option('datadir'), 'metainfo'),
 )
 
-gschema_file = i18n.merge_file(
-  input: 'org.gnome.baobab.gschema.xml.in',
-  output: 'org.gnome.baobab.gschema.xml',
-  po_dir: '../po',
-  install: true,
+install_data (
+  'org.gnome.baobab.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
