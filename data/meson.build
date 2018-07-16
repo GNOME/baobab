@@ -1,5 +1,5 @@
 icondir = join_paths(get_option('datadir'), 'icons/hicolor')
-foreach size: ['16x16', '22x22', '32x32', '48x48', '256x256', 'symbolic']
+foreach size: ['16x16', '22x22', '24x24', '32x32', '48x48', '256x256', 'symbolic']
   install_subdir('icons/hicolor/' + size, install_dir: icondir)
 endforeach
 
@@ -22,11 +22,8 @@ appdata_file = i18n.merge_file(
   install_dir: join_paths(get_option('datadir'), 'metainfo'),
 )
 
-gschema_file = i18n.merge_file(
-  input: 'org.gnome.baobab.gschema.xml.in',
-  output: 'org.gnome.baobab.gschema.xml',
-  po_dir: '../po',
-  install: true,
+install_data (
+  'org.gnome.baobab.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
