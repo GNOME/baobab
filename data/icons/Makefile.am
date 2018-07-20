@@ -5,13 +5,8 @@ public_icons_themes = \
 	$(NULL)
 
 public_icons = \
-	hicolor_apps_16x16_baobab.png \
-	hicolor_apps_22x22_baobab.png \
-	hicolor_apps_24x24_baobab.png \
-	hicolor_apps_32x32_baobab.png \
-	hicolor_apps_48x48_baobab.png \
-	hicolor_apps_256x256_baobab.png \
-	hicolor_apps_scalable_baobab-symbolic.svg \
+	hicolor_apps_scalable_baobab.svg \
+	hicolor_apps_symbolic_baobab-symbolic.svg \
 	$(NULL)
 
 noinst_DATA = \
