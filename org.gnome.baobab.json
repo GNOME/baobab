@@ -1,0 +1,59 @@
+{
+    "app-id" : "org.gnome.baobab",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "rename-icon" : "baobab",
+    "copy-icon" : true,
+    "command" : "baobab",
+    "tags" : [
+        "devel"
+    ],
+    "finish-args" : [
+        /* X11 + XShm access */
+        "--share=ipc",
+        "--socket=x11",
+        /* Wayland access */
+        "--socket=wayland",
+        /* Needed for dconf to work */
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        /* Needed to be able to scan files */
+        "--filesystem=host:ro"
+    ],
+    "build-options" : {
+        "cflags" : "-O2 -g",
+        "cxxflags" : "-O2 -g",
+        "env" : {
+        }
+    },
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
+        "/share/aclocal",
+        "/man",
+        "/share/man",
+        "/share/gtk-doc",
+        "*.la",
+        "*.a",
+        "/lib/girepository-1.0",
+        "/share/doc",
+        "/share/gir-1.0"
+    ],
+    "modules" : [
+        {
+            "name" : "baobab",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/baobab.git"
+                }
+            ]
+        }
+    ]
+}
