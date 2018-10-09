@@ -302,7 +302,7 @@ namespace Baobab {
 
             Gtk.show_about_dialog (this,
                                    "program-name", _("Baobab"),
-                                   "logo-icon-name", "baobab",
+                                   "logo-icon-name", "org.gnome.baobab",
                                    "version", Config.VERSION,
                                    "comments", _("A graphical tool to analyze disk usage."),
                                    "copyright", copyright,
