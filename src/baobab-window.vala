@@ -548,14 +548,15 @@ namespace Baobab {
             var scanner = active_location.scanner;
 
             scan_completed_handler = scanner.completed.connect(() => {
+                if (scan_completed_handler > 0) {
+                    scanner.disconnect (scan_completed_handler);
+                    scan_completed_handler = 0;
+                }
+
                 try {
                     scanner.finish();
                 } catch (IOError.CANCELLED e) {
                     // Handle cancellation silently
-                    if (scan_completed_handler > 0) {
-                        scanner.disconnect (scan_completed_handler);
-                        scan_completed_handler = 0;
-                    }
                     return;
                 } catch (Error e) {
                     Gtk.TreeIter iter;
