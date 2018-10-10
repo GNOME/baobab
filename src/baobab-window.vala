@@ -588,6 +588,12 @@ namespace Baobab {
                 if (!show_allocated_size) {
                     message (_("Could not detect occupied disk sizes."), _("Apparent sizes are shown instead."), Gtk.MessageType.INFO);
                 }
+
+                if (!is_active) {
+                    var notification = new Notification(_("Scan completed"));
+                    notification.set_body (_("Completed scan of “%s”").printf (scanner.directory.get_parse_name ()));
+                    get_application ().send_notification ("scan-completed", notification);
+                }
             });
 
             clear_message ();

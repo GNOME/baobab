@@ -48,6 +48,11 @@ namespace Baobab {
         void ensure_window () {
             if (window == null) {
                 window = new Window (this);
+
+                window.focus_in_event.connect (() => {
+                    withdraw_notification ("scan-completed");
+                    return false;
+                });
             }
         }
 
