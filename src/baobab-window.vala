@@ -548,14 +548,15 @@ namespace Baobab {
             var scanner = active_location.scanner;
 
             scan_completed_handler = scanner.completed.connect(() => {
+                if (scan_completed_handler > 0) {
+                    scanner.disconnect (scan_completed_handler);
+                    scan_completed_handler = 0;
+                }
+
                 try {
                     scanner.finish();
                 } catch (IOError.CANCELLED e) {
                     // Handle cancellation silently
-                    if (scan_completed_handler > 0) {
-                        scanner.disconnect (scan_completed_handler);
-                        scan_completed_handler = 0;
-                    }
                     return;
                 } catch (Error e) {
                     Gtk.TreeIter iter;
@@ -586,6 +587,12 @@ namespace Baobab {
 
                 if (!show_allocated_size) {
                     message (_("Could not detect occupied disk sizes."), _("Apparent sizes are shown instead."), Gtk.MessageType.INFO);
+                }
+
+                if (!is_active) {
+                    var notification = new Notification(_("Scan completed"));
+                    notification.set_body (_("Completed scan of “%s”").printf (scanner.directory.get_parse_name ()));
+                    get_application ().send_notification ("scan-completed", notification);
                 }
             });
 

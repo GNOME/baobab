@@ -24,6 +24,8 @@ namespace Baobab {
 
     public class Application : Gtk.Application {
 
+        private Window window;
+
         const OptionEntry[] option_entries = {
             { "version", 'v', 0, OptionArg.NONE, null, N_("Print version information and exit"), null },
             { null }
@@ -34,13 +36,23 @@ namespace Baobab {
         };
 
         protected override void activate () {
-            new Window (this);
+            ensure_window ();
+            window.present ();
         }
 
         protected override void open (File[] files, string hint) {
-            foreach (var file in files) {
-                var window = new Window (this);
-                window.scan_directory (file, ScanFlags.EXCLUDE_MOUNTS);
+            ensure_window ();
+            window.scan_directory (files[0], ScanFlags.EXCLUDE_MOUNTS);
+        }
+
+        void ensure_window () {
+            if (window == null) {
+                window = new Window (this);
+
+                window.focus_in_event.connect (() => {
+                    withdraw_notification ("scan-completed");
+                    return false;
+                });
             }
         }
 
