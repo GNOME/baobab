@@ -94,8 +94,11 @@ namespace Baobab {
             }
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+            set_accels_for_action ("win.show-primary-menu", { "F10" });
             set_accels_for_action ("win.scan-folder", { "<Primary>o" });
             set_accels_for_action ("win.reload", { "<Primary>r" });
+            set_accels_for_action ("win.help", { "F1" });
+            set_accels_for_action ("app.quit", { "<Primary>q" });
         }
 
         protected override int handle_local_options (GLib.VariantDict options) {
