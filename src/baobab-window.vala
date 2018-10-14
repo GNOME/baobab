@@ -421,6 +421,37 @@ namespace Baobab {
                 return false;
             });
 
+            treeview.key_press_event.connect ((event) => {
+                Gtk.TreeIter iter;
+                if (treeview.get_selection().get_selected (null, out iter)) {
+                    Gtk.TreePath path = treeview.model.get_path(iter);
+                    if (event.keyval == Gdk.Key.Right) {
+                        if (!treeview.is_row_expanded(path) && treeview.expand_row(path, false)) {
+                            return true;
+                        }
+                    }
+                    else if (event.keyval == Gdk.Key.Left) {
+                        if (treeview.is_row_expanded(path) && treeview.collapse_row(path)) {
+                            return true;
+                        }
+                        else if (path.up()) {
+                            treeview.set_cursor(path, null, false);
+                            return true;
+                        }
+                    }
+                    else if (event.keyval == Gdk.Key.space) {
+                        if (!treeview.is_row_expanded(path) && treeview.expand_row(path, false)) {
+                            return true;
+                        }
+                        else if (treeview.is_row_expanded(path) && treeview.collapse_row(path)) {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            });
+
             treeview.popup_menu.connect (() => {
                 return show_treeview_popup (treeview_popup_menu, null);
             });
