@@ -34,8 +34,12 @@ namespace Baobab {
         private Gtk.Label total_size_label;
         [GtkChild]
         private Gtk.LevelBar usage_bar;
+        [GtkChild]
+        private Gtk.Button remove_button;
 
         public Location? location { get; private set; }
+
+        public signal void remove_recent ();
 
         public LocationRow (Location l) {
             location = l;
@@ -55,6 +59,13 @@ namespace Baobab {
             // relevant information, and for remote mounts the beginning is
             // more important
             path_label.ellipsize = location.is_remote ? Pango.EllipsizeMode.END : Pango.EllipsizeMode.START;
+
+            if (location.is_recent) {
+                remove_button.show ();
+                remove_button.clicked.connect (() => {
+                    remove_recent ();
+                });
+            }
 
             update_fs_usage_info ();
             location.changed.connect (() => { update_fs_usage_info (); });
@@ -259,11 +270,23 @@ namespace Baobab {
             remote_box.visible = false;
 
             foreach (var location in locations) {
+                var location_row = new LocationRow (location);
+                if (location.is_recent) {
+                    location_row.remove_recent.connect (() => {
+                        try {
+                            Gtk.RecentManager.get_default ().remove_item (location.file.get_uri ());
+                            rebuild_recent_list ();
+                        } catch (Error e) {
+                            warning ("Could not remove recent item: %s".printf(e.message));
+                        }
+                    });
+                }
+
                 if (location.is_remote) {
-                    remote_list_box.add (new LocationRow (location));
+                    remote_list_box.add (location_row);
                     remote_box.visible = true;
                 } else {
-                    local_list_box.add (new LocationRow (location));
+                    local_list_box.add (location_row);
                 }
             }
         }
@@ -286,7 +309,10 @@ namespace Baobab {
             data.groups = groups;
             Gtk.RecentManager.get_default ().add_full (location.file.get_uri (), data);
 
-            // Reload recent locations
+            rebuild_recent_list ();
+        }
+
+        void rebuild_recent_list () {
             unowned List<Location> iter = locations;
             while (iter != null) {
                 unowned List<Location> next = iter.next;

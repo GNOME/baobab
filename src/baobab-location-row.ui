@@ -106,6 +106,29 @@
             <property name="height">1</property>
           </packing>
         </child>
+        <child>
+          <object class="GtkButton" id="remove_button">
+            <property name="valign">center</property>
+            <property name="tooltip_text" translatable="yes">Remove from the list of recent locations</property>
+            <style>
+              <class name="image-button"/>
+              <class name="flat"/>
+              <class name="circular"/>
+            </style>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="icon_name">edit-delete-symbolic</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">0</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
       </object>
     </child>
   </template>
