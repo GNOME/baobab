@@ -9,10 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-10-29 10:32+0000\n"
-"PO-Revision-Date: 2018-01-31 22:57+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2018-10-15 15:31+0000\n"
+"PO-Revision-Date: 2018-12-28 20:08+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,10 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:106
+#: src/baobab-main-window.ui:120
 msgid "Disk Usage Analyzer"
 msgstr "Diskanvändningsanalysator"
 
@@ -61,42 +60,42 @@ msgstr "lagring;utrymme;rensning;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
+msgid "org.gnome.baobab"
+msgstr "org.gnome.baobab"
 
-#: data/org.gnome.baobab.gschema.xml.in:9
+#: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
 msgstr "Undantagna partitions-URI:er"
 
-#: data/org.gnome.baobab.gschema.xml.in:10
+#: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "En lista över URI:er för partitioner som ska undantas från avsökning."
 
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "Aktivt diagram"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "Vilken typ av diagram som ska visas."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "Fönsterstorlek"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "Fönstrets ursprungliga storlek"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
+#: data/org.gnome.baobab.gschema.xml:30
 msgid "Window state"
 msgstr "Fönstertillstånd"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
+#: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
 msgstr "Fönstrets GdkWindowState-tillstånd"
 
-#: src/baobab-application.vala:28
+#: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
@@ -183,43 +182,55 @@ msgstr "Dator"
 msgid "Scan Folder…"
 msgstr "Sök av mapp…"
 
-#: src/baobab-main-window.ui:20 src/menus.ui:25
+#: src/baobab-main-window.ui:13
+msgid "Keyboard _Shortcuts"
+msgstr "Tangentbord_sgenvägar"
+
+#: src/baobab-main-window.ui:17
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: src/baobab-main-window.ui:21
+msgid "_About Disk Usage Analyzer"
+msgstr "_Om Diskanvändningsanalysator"
+
+#: src/baobab-main-window.ui:34 src/menus.ui:7
 msgid "_Open Folder"
 msgstr "_Öppna mapp"
 
-#: src/baobab-main-window.ui:29 src/menus.ui:29
+#: src/baobab-main-window.ui:43 src/menus.ui:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopiera sökväg till urklipp"
 
-#: src/baobab-main-window.ui:38 src/menus.ui:33
+#: src/baobab-main-window.ui:52 src/menus.ui:15
 msgid "Mo_ve to Trash"
 msgstr "_Flytta till papperskorgen"
 
-#: src/baobab-main-window.ui:170
+#: src/baobab-main-window.ui:184
 msgid "Close"
 msgstr "Stäng"
 
-#: src/baobab-main-window.ui:225
+#: src/baobab-main-window.ui:239
 msgid "Folder"
 msgstr "Mapp"
 
-#: src/baobab-main-window.ui:252
+#: src/baobab-main-window.ui:266
 msgid "Size"
 msgstr "Storlek"
 
-#: src/baobab-main-window.ui:272
+#: src/baobab-main-window.ui:286
 msgid "Contents"
 msgstr "Innehåll"
 
-#: src/baobab-main-window.ui:290
+#: src/baobab-main-window.ui:304
 msgid "Modified"
 msgstr "Ändrad"
 
-#: src/baobab-main-window.ui:335
+#: src/baobab-main-window.ui:349
 msgid "Rings Chart"
 msgstr "Ringdiagram"
 
-#: src/baobab-main-window.ui:347
+#: src/baobab-main-window.ui:361
 msgid "Treemap Chart"
 msgstr "Trädkartsdiagram"
 
@@ -279,57 +290,95 @@ msgstr "Kunde inte flytta filen till papperskorgen"
 msgid "Devices & Locations"
 msgstr "Enheter och platser"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:573
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Kunde inte söka av mappen ”%s”"
 
-#: src/baobab-window.vala:575
+#: src/baobab-window.vala:576
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Kunde inte söka av några av mapparna i ”%s”"
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:595
 msgid "Could not detect occupied disk sizes."
 msgstr "Kunde inte avgöra använda diskstorlekar."
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:595
 msgid "Apparent sizes are shown instead."
 msgstr "Visar istället skenbara storlekar."
 
+#: src/baobab-window.vala:599
+msgid "Scan completed"
+msgstr "Sökning slutförd"
+
+#: src/baobab-window.vala:600
+#, c-format
+msgid "Completed scan of “%s”"
+msgstr "Sökning av ”%s” slutförd"
+
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:611 src/baobab-window.vala:617
+#: src/baobab-window.vala:618 src/baobab-window.vala:624
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” är inte en giltig mapp"
 
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:619 src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Kunde inte analysera diskanvändningen."
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "_Hjälp"
+#: src/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allmänt"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "_Om"
+#: src/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Visa/dölj primär meny"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "_Avsluta"
+#: src/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Sök av aktuell plats igen"
 
-#: src/menus.ui:39
+#: src/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Sök av mapp"
+
+#: src/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Visa tangentbordsgenvägar"
+
+#: src/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Gå tillbaka till platslista"
+
+#: src/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avsluta"
+
+#: src/menus.ui:21
 msgid "Go to _parent folder"
 msgstr "_Gå till föräldramapp"
 
-#: src/menus.ui:45
+#: src/menus.ui:27
 msgid "Zoom _in"
 msgstr "Zooma _in"
 
-#: src/menus.ui:49
+#: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "Zooma _ut"
+
+#~ msgid "baobab"
+#~ msgstr "baobab"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
