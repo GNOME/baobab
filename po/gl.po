@@ -13,16 +13,15 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014, 2016, 2017, 2018.
+# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014, 2016, 2017, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=baobab"
-"&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-10-29 10:32+0000\n"
-"PO-Revision-Date: 2018-02-17 14:00+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2018-10-15 15:31+0000\n"
+"PO-Revision-Date: 2019-02-04 23:51+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: Galician\n"
+"Language-Team: Proxecto Trasno <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +31,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:106
+#: src/baobab-main-window.ui:120
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
@@ -70,42 +69,42 @@ msgstr "almacenamento;espazo;limpeza;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
+msgid "org.gnome.baobab"
+msgstr "org.gnome.baobab"
 
-#: data/org.gnome.baobab.gschema.xml.in:9
+#: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
 msgstr "URIs de particións excluídas"
 
-#: data/org.gnome.baobab.gschema.xml.in:10
+#: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Unha lista de URI de particións que serán excluidas da análise."
 
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "Gráfico activo"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "Que tipo de gráfica debería mostrarse."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "Tamaño da xanela"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "O tamaño inicial da xanela"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
+#: data/org.gnome.baobab.gschema.xml:30
 msgid "Window state"
 msgstr "Estado da xanela"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
+#: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
 msgstr "O GdkWindowState da xanela"
 
-#: src/baobab-application.vala:28
+#: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Mostrar a información da versión e saír"
 
@@ -191,43 +190,56 @@ msgstr "Computador"
 msgid "Scan Folder…"
 msgstr "Analizar cartafol…"
 
-#: src/baobab-main-window.ui:20 src/menus.ui:25
+#: src/baobab-main-window.ui:13
+msgid "Keyboard _Shortcuts"
+msgstr "Atallos de _teclado"
+
+#: src/baobab-main-window.ui:17
+msgid "_Help"
+msgstr "A_xuda"
+
+#: src/baobab-main-window.ui:21
+#| msgid "- Disk Usage Analyzer"
+msgid "_About Disk Usage Analyzer"
+msgstr "_Sobre o Analizador do uso do disco"
+
+#: src/baobab-main-window.ui:34 src/menus.ui:7
 msgid "_Open Folder"
 msgstr "_Abrir cartafol"
 
-#: src/baobab-main-window.ui:29 src/menus.ui:29
+#: src/baobab-main-window.ui:43 src/menus.ui:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar ruta ao portapapeis"
 
-#: src/baobab-main-window.ui:38 src/menus.ui:33
+#: src/baobab-main-window.ui:52 src/menus.ui:15
 msgid "Mo_ve to Trash"
 msgstr "Mov_er ao lixo"
 
-#: src/baobab-main-window.ui:170
+#: src/baobab-main-window.ui:184
 msgid "Close"
 msgstr "Pechar"
 
-#: src/baobab-main-window.ui:225
+#: src/baobab-main-window.ui:239
 msgid "Folder"
 msgstr "Cartafol"
 
-#: src/baobab-main-window.ui:252
+#: src/baobab-main-window.ui:266
 msgid "Size"
 msgstr "Tamaño"
 
-#: src/baobab-main-window.ui:272
+#: src/baobab-main-window.ui:286
 msgid "Contents"
 msgstr "Contidos"
 
-#: src/baobab-main-window.ui:290
+#: src/baobab-main-window.ui:304
 msgid "Modified"
 msgstr "Modificado"
 
-#: src/baobab-main-window.ui:335
+#: src/baobab-main-window.ui:349
 msgid "Rings Chart"
 msgstr "Gráfico de aneis"
 
-#: src/baobab-main-window.ui:347
+#: src/baobab-main-window.ui:361
 msgid "Treemap Chart"
 msgstr "Gráfico de árbore"
 
@@ -266,17 +278,17 @@ msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 #: src/baobab-window.vala:318
 msgid "translator-credits"
 msgstr ""
-"Fran Diéguez <frandieguez@gnome.org>, 2009-2017\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2009-2019\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
 "Antón Méixome <meixome@mancomun.org>, 2009\n"
-"Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
-"org>, 2009\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre "
+"<g11n@mancomun.org>, 2009\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009\n"
 "Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2004, 2005, 2006, 2007, 2008\n"
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000, 2001\n"
 "Ruben Lopez Gomez <ryu@mundivia.es>, 1999\n"
-"Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno."
-"net>, 1999-2012"
+"Proxecto Trasno - Tradución de software libre ao galego "
+"<proxecto@trasno.net>, 1999-2012"
 
 #: src/baobab-window.vala:387
 msgid "Failed to open file"
@@ -290,57 +302,99 @@ msgstr "Produciuse un fallo ao mover o ficheiro ao lixo"
 msgid "Devices & Locations"
 msgstr "Dispositivos e localizacións"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:573
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Non foi posíbel analizar o cartafol «%s»"
 
-#: src/baobab-window.vala:575
+#: src/baobab-window.vala:576
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Non foi posíbel analizar algúns dos cartafoles dentro de «%s»."
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:595
 msgid "Could not detect occupied disk sizes."
 msgstr "Non foi posíbel detectar ningún espazo ocupado de disco."
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:595
 msgid "Apparent sizes are shown instead."
 msgstr "No lugar móstranse os tamaños aparentes."
 
+#: src/baobab-window.vala:599
+#| msgid "_Scan Home"
+msgid "Scan completed"
+msgstr "Análise completado"
+
+#: src/baobab-window.vala:600
+#, c-format
+#| msgid "Could not scan folder “%s”"
+msgid "Completed scan of “%s”"
+msgstr "Análise de «%s» completado"
+
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:611 src/baobab-window.vala:617
+#: src/baobab-window.vala:618 src/baobab-window.vala:624
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
 
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:619 src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Non foi posíbel analizar o uso do disco."
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "A_xuda"
+#: src/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Xeral"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "_Sobre"
+#: src/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Mostrar / Ocultar o menú primario"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "_Saír"
+#: src/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Reanalizar a localización actual "
 
-#: src/menus.ui:39
+#: src/help-overlay.ui:32
+#| msgid "Scan a folder"
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Analizar cartafol"
+
+#: src/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Mostrar atallos de teclado"
+
+#: src/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Ir atrás na lista de localización"
+
+#: src/help-overlay.ui:52
+#| msgid "_Quit"
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Saír"
+
+#: src/menus.ui:21
 msgid "Go to _parent folder"
 msgstr "Ir ao un cartafol _pai"
 
-#: src/menus.ui:45
+#: src/menus.ui:27
 msgid "Zoom _in"
 msgstr "Ampl_iar"
 
-#: src/menus.ui:49
+#: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "Red_ucir"
+
+#~ msgid "baobab"
+#~ msgstr "baobab"
+
+#~ msgid "_About"
+#~ msgstr "_Sobre"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
@@ -353,9 +407,6 @@ msgstr "Red_ucir"
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Analizar cartafol remoto…"
-
-#~ msgid "- Disk Usage Analyzer"
-#~ msgstr "- Analizador do uso do disco"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidade máxima"
@@ -384,9 +435,6 @@ msgstr "Red_ucir"
 #~ msgid "_Analyzer"
 #~ msgstr "_Analizador"
 
-#~ msgid "_Scan Home"
-#~ msgstr "_Analizar cartafol persoal"
-
 #~ msgid "Scan F_older…"
 #~ msgstr "Analizar _cartafol…"
 
@@ -411,9 +459,6 @@ msgstr "Red_ucir"
 #~ msgid "Whether any change to the home directory should be monitored."
 #~ msgstr ""
 #~ "Indica se calquera modificación no cartafol persoal se debe monitorizar."
-
-#~ msgid "Scan a folder"
-#~ msgstr "Analizar un cartafol"
 
 #~ msgid "Scan Folder"
 #~ msgstr "Analizar cartafol"
