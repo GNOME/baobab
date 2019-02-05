@@ -19,10 +19,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-10-29 10:32+0000\n"
-"PO-Revision-Date: 2018-01-07 18:08+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2018-10-15 15:31+0000\n"
+"PO-Revision-Date: 2019-02-05 22:14+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -31,10 +30,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-03-05 15:05:01+0000\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:106
+#: src/baobab-main-window.ui:120
 msgid "Disk Usage Analyzer"
 msgstr "Levynkäytön analysointi"
 
@@ -68,46 +67,46 @@ msgstr "Gnome-projekti"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
-msgstr "storage;space;cleanup;tila;tilankäyttö;levytila;"
+msgstr "storage;space;cleanup;tila;tilankäyttö;levytila;tallennustila;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
+msgid "org.gnome.baobab"
+msgstr "org.gnome.baobab"
 
-#: data/org.gnome.baobab.gschema.xml.in:9
+#: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
 msgstr "Ohitettujen osioiden URIt"
 
-#: data/org.gnome.baobab.gschema.xml.in:10
+#: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Luettelo osioiden URI:sta, joita ei huomioida kartoitettaessa."
 
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "Aktiivinen kaavio"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "Minkä tyyppinen kaavio näytetään."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "Ikkunan koko"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "Ikkunan alustava koko"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
+#: data/org.gnome.baobab.gschema.xml:30
 msgid "Window state"
 msgstr "Ikkunan tila"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
+#: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
 msgstr "Ikkunan GdkWindowState"
 
-#: src/baobab-application.vala:28
+#: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Tulosta versiotiedot ja sulkeudu"
 
@@ -193,43 +192,55 @@ msgstr "Tietokone"
 msgid "Scan Folder…"
 msgstr "Kartoita kansio…"
 
-#: src/baobab-main-window.ui:20 src/menus.ui:25
+#: src/baobab-main-window.ui:13
+msgid "Keyboard _Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: src/baobab-main-window.ui:17
+msgid "_Help"
+msgstr "O_hje"
+
+#: src/baobab-main-window.ui:21
+msgid "_About Disk Usage Analyzer"
+msgstr "_Tietoja - Levynkäytön analysointi"
+
+#: src/baobab-main-window.ui:34 src/menus.ui:7
 msgid "_Open Folder"
 msgstr "Avaa _kansio"
 
-#: src/baobab-main-window.ui:29 src/menus.ui:29
+#: src/baobab-main-window.ui:43 src/menus.ui:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopioi polku leikepöydälle"
 
-#: src/baobab-main-window.ui:38 src/menus.ui:33
+#: src/baobab-main-window.ui:52 src/menus.ui:15
 msgid "Mo_ve to Trash"
 msgstr "_Siirrä roskakoriin"
 
-#: src/baobab-main-window.ui:170
+#: src/baobab-main-window.ui:184
 msgid "Close"
 msgstr "Sulje"
 
-#: src/baobab-main-window.ui:225
+#: src/baobab-main-window.ui:239
 msgid "Folder"
 msgstr "Kansio"
 
-#: src/baobab-main-window.ui:252
+#: src/baobab-main-window.ui:266
 msgid "Size"
 msgstr "Koko"
 
-#: src/baobab-main-window.ui:272
+#: src/baobab-main-window.ui:286
 msgid "Contents"
 msgstr "Sisältö"
 
-#: src/baobab-main-window.ui:290
+#: src/baobab-main-window.ui:304
 msgid "Modified"
 msgstr "Muokattu"
 
-#: src/baobab-main-window.ui:335
+#: src/baobab-main-window.ui:349
 msgid "Rings Chart"
 msgstr "Ympyräkaavio"
 
-#: src/baobab-main-window.ui:347
+#: src/baobab-main-window.ui:361
 msgid "Treemap Chart"
 msgstr "Puukaavio"
 
@@ -268,7 +279,7 @@ msgstr "Graafinen työkalu levytilan käytön analysointiin."
 #: src/baobab-window.vala:318
 msgid "translator-credits"
 msgstr ""
-"Jiri Grönroos, 2012-2018\n"
+"Jiri Grönroos, 2012-2019\n"
 "Tommi Vainikainen, 2009-2011\n"
 "Timo Jyrinki, 2008\n"
 "Ilkka Tuohela, 2005-2009\n"
@@ -291,57 +302,95 @@ msgstr "Tiedoston siirtäminen roskakoriin epäonnistui"
 msgid "Devices & Locations"
 msgstr "Laitteet ja sijainnit"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:573
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Kansiota ”%s” ei voi kartoittaa"
 
-#: src/baobab-window.vala:575
+#: src/baobab-window.vala:576
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Kohteen \"%s\" joidenkin kansioiden kartoitus epäonnistui"
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:595
 msgid "Could not detect occupied disk sizes."
 msgstr "Varattujen levyjen kokoa ei voitu selvittää."
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:595
 msgid "Apparent sizes are shown instead."
 msgstr "Näytetään sen sijaan näennäiskokoja."
 
+#: src/baobab-window.vala:599
+msgid "Scan completed"
+msgstr "Kartoitus valmistui"
+
+#: src/baobab-window.vala:600
+#, c-format
+msgid "Completed scan of “%s”"
+msgstr "Kohteen ”%s” kartoitus suoritettu"
+
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:611 src/baobab-window.vala:617
+#: src/baobab-window.vala:618 src/baobab-window.vala:624
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” ei ole kelvollinen kansio"
 
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:619 src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Levynkäyttöä ei voitu analysoida."
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "O_hje"
+#: src/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Yleiset"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "_Tietoja"
+#: src/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Näytä/piilota ensisijainen valikko"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "_Lopeta"
+#: src/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Kartoita uudelleen nykyinen sijainti"
 
-#: src/menus.ui:39
+#: src/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Kartoita kansio"
+
+#: src/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Näytä pikanäppäimet"
+
+#: src/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Siirry takaisin sijaintiluetteloon"
+
+#: src/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Lopeta"
+
+#: src/menus.ui:21
 msgid "Go to _parent folder"
 msgstr "_Siirry ylätason kansioon"
 
-#: src/menus.ui:45
+#: src/menus.ui:27
 msgid "Zoom _in"
 msgstr "L_ähennä"
 
-#: src/menus.ui:49
+#: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "L_oitonna"
+
+#~ msgid "baobab"
+#~ msgstr "baobab"
+
+#~ msgid "_About"
+#~ msgstr "_Tietoja"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
@@ -354,9 +403,6 @@ msgstr "L_oitonna"
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Kartoita etäkansio…"
-
-#~ msgid "- Disk Usage Analyzer"
-#~ msgstr "- Levynkäytön analysointi"
 
 #~ msgid "Maximum depth"
 #~ msgstr "Enimmäissyvyys"
@@ -385,9 +431,6 @@ msgstr "L_oitonna"
 #~ msgid "_Analyzer"
 #~ msgstr "_Analysointi"
 
-#~ msgid "_Scan Home"
-#~ msgstr "_Kartoita kotikansio"
-
 #~ msgid "Scan F_older…"
 #~ msgstr "Kartoita k_ansio…"
 
@@ -405,9 +448,6 @@ msgstr "L_oitonna"
 
 #~ msgid "_Collapse All"
 #~ msgstr "_Kutista kaikki"
-
-#~ msgid "Scan a folder"
-#~ msgstr "Kartoita kansio"
 
 #~ msgid "Scan Folder"
 #~ msgstr "Kartoita kansio"
