@@ -6,10 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-02-20 22:25+0000\n"
-"PO-Revision-Date: 2018-03-03 20:19+0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2018-10-15 15:31+0000\n"
+"PO-Revision-Date: 2019-02-16 19:07+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -17,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:93
+#: src/baobab-main-window.ui:120
 msgid "Disk Usage Analyzer"
 msgstr "Диск қолдануын анализдеушісі"
 
@@ -58,42 +57,42 @@ msgstr "storage;space;cleanup;сақтауыш;орын;тазарту;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
+msgid "org.gnome.baobab"
+msgstr "org.gnome.baobab"
 
-#: data/org.gnome.baobab.gschema.xml.in:9
+#: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
 msgstr "Есепке алынбайтын бөлімдер URI-лары"
 
-#: data/org.gnome.baobab.gschema.xml.in:10
+#: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Сканерлеуден тыс қалдыру үшін бөлімдер URI тізімі."
 
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "Белсенді график"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "Графиктің қай түрі көрсетілуі тиіс."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "Терезе өлшемі"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "Терезенің бастапқы өлшемі"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
+#: data/org.gnome.baobab.gschema.xml:30
 msgid "Window state"
 msgstr "Терезе күйі"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
+#: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
 msgstr "Терезенің GdkWindowState күйі"
 
-#: src/baobab-application.vala:28
+#: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару және шығу"
 
@@ -171,149 +170,199 @@ msgstr "Үй бумасы"
 msgid "Computer"
 msgstr "Компьютер"
 
-#: src/baobab-main-window.ui:12 src/menus.ui:25
-msgid "_Open Folder"
-msgstr "Буманы а_шу"
-
-#: src/baobab-main-window.ui:21 src/menus.ui:29
-msgid "_Copy Path to Clipboard"
-msgstr "_Жолды алмасу буферіне көшіріп алу"
-
-#: src/baobab-main-window.ui:30 src/menus.ui:33
-msgid "Mo_ve to Trash"
-msgstr "Қоқ_ыс шелегіне тастау"
-
-#: src/baobab-main-window.ui:45
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Буманы сканерлеу…"
 
-#: src/baobab-main-window.ui:157
+#: src/baobab-main-window.ui:13
+msgid "Keyboard _Shortcuts"
+msgstr "П_ернетақта жарлықтары"
+
+#: src/baobab-main-window.ui:17
+msgid "_Help"
+msgstr "Кө_мек"
+
+#: src/baobab-main-window.ui:21
+msgid "_About Disk Usage Analyzer"
+msgstr "Диск қолдануын анализдеушісі тур_алы"
+
+#: src/baobab-main-window.ui:34 src/menus.ui:7
+msgid "_Open Folder"
+msgstr "Буманы а_шу"
+
+#: src/baobab-main-window.ui:43 src/menus.ui:11
+msgid "_Copy Path to Clipboard"
+msgstr "_Жолды алмасу буферіне көшіріп алу"
+
+#: src/baobab-main-window.ui:52 src/menus.ui:15
+msgid "Mo_ve to Trash"
+msgstr "Қоқ_ыс шелегіне тастау"
+
+#: src/baobab-main-window.ui:184
 msgid "Close"
 msgstr "Жабу"
 
-#: src/baobab-main-window.ui:212
+#: src/baobab-main-window.ui:239
 msgid "Folder"
 msgstr "Бума"
 
-#: src/baobab-main-window.ui:239
+#: src/baobab-main-window.ui:266
 msgid "Size"
 msgstr "Өлшемі"
 
-#: src/baobab-main-window.ui:259
+#: src/baobab-main-window.ui:286
 msgid "Contents"
 msgstr "Құрамасы"
 
-#: src/baobab-main-window.ui:277
+#: src/baobab-main-window.ui:304
 msgid "Modified"
 msgstr "Өзгертілген"
 
-#: src/baobab-main-window.ui:322
+#: src/baobab-main-window.ui:349
 msgid "Rings Chart"
 msgstr "Сақиналы график"
 
-#: src/baobab-main-window.ui:334
+#: src/baobab-main-window.ui:361
 msgid "Treemap Chart"
 msgstr "Ағаш тектес график"
 
-#: src/baobab-window.vala:209
+#: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "Буманы таңдау"
 
-#: src/baobab-window.vala:211
+#: src/baobab-window.vala:217
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:218
 msgid "_Open"
 msgstr "А_шу"
 
-#: src/baobab-window.vala:218
+#: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Тіркеу нүктелерін рекурсивті анализдеу"
 
-#: src/baobab-window.vala:253
+#: src/baobab-window.vala:259
 msgid "Could not analyze volume."
 msgstr "Томды анализдеу мүмкін емес."
 
-#: src/baobab-window.vala:285
+#: src/baobab-window.vala:291
 msgid "Failed to show help"
 msgstr "Көмекті көрсету сәтсіз аяқталды"
 
-#: src/baobab-window.vala:304
+#: src/baobab-window.vala:310
 msgid "Baobab"
 msgstr "Baobab"
 
-#: src/baobab-window.vala:307
+#: src/baobab-window.vala:313
 msgid "A graphical tool to analyze disk usage."
 msgstr "Диск қолдануын анализдеу үшін графикалық қолданба."
 
-#: src/baobab-window.vala:312
+#: src/baobab-window.vala:318
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:387
 msgid "Failed to open file"
 msgstr "Файлды ашу сәтсіз аяқталды"
 
-#: src/baobab-window.vala:401
+#: src/baobab-window.vala:407
 msgid "Failed to move file to the trash"
 msgstr "Файлды қоқыс шелегіне тастау сәтсіз аяқталды"
 
-#: src/baobab-window.vala:505
+#: src/baobab-window.vala:511
 msgid "Devices & Locations"
 msgstr "Құрылғылар және орналасулар"
 
-#: src/baobab-window.vala:566
+#: src/baobab-window.vala:573
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "\"%s\" бумасын сканерлеу мүмкін емес"
 
-#: src/baobab-window.vala:569
+#: src/baobab-window.vala:576
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "\"%s\" бумасының ішіндегі бірнеше буманы сканерлеу мүмкін емес"
 
-#: src/baobab-window.vala:588
+#: src/baobab-window.vala:595
 msgid "Could not detect occupied disk sizes."
 msgstr "Қолданудағы диск өлшемдерін анықтау мүмкін емес."
 
-#: src/baobab-window.vala:588
+#: src/baobab-window.vala:595
 msgid "Apparent sizes are shown instead."
 msgstr "Орнына көрінетін өлшемдері көрсетіледі."
 
+#: src/baobab-window.vala:599
+msgid "Scan completed"
+msgstr "Сканерлеу аяқталды"
+
+#: src/baobab-window.vala:600
+#, c-format
+msgid "Completed scan of “%s”"
+msgstr "\"%s\" бумасын сканерлеу аяқталды"
+
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:605 src/baobab-window.vala:611
+#: src/baobab-window.vala:618 src/baobab-window.vala:624
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" дұрыс бума емес"
 
-#: src/baobab-window.vala:606 src/baobab-window.vala:612
+#: src/baobab-window.vala:619 src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Диск қолдануын анализдеу мүмкін емес."
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "Кө_мек"
+#: src/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Жал_пы"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "Осы тур_алы"
+#: src/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Басты мәзірді көрсету/жасыру"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "_Шығу"
+#: src/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Ағымдағы орналасуды қайта сканерлеу"
 
-#: src/menus.ui:39
+#: src/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Буманы сканерлеу"
+
+#: src/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Пернетақта жарлықтарын көрсету"
+
+#: src/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Орналасулар тізіміне оралу"
+
+#: src/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Шығу"
+
+#: src/menus.ui:21
 msgid "Go to _parent folder"
 msgstr "Аталық бумасына ө_ту"
 
-#: src/menus.ui:45
+#: src/menus.ui:27
 msgid "Zoom _in"
 msgstr "Ү_лкейту"
 
-#: src/menus.ui:49
+#: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "Кі_шірейту"
+
+#~ msgid "baobab"
+#~ msgstr "baobab"
+
+#~ msgid "_About"
+#~ msgstr "Осы тур_алы"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
@@ -326,6 +375,3 @@ msgstr "Кі_шірейту"
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Қашықтағы буманы сканерлеу…"
-
-#~ msgid "- Disk Usage Analyzer"
-#~ msgstr "- Диск қолдануын анализдеушісі"
