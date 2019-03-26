@@ -4,10 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils 0\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-02-20 22:25+0000\n"
-"PO-Revision-Date: 2018-02-27 15:40+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2019-03-24 19:41+0000\n"
+"PO-Revision-Date: 2019-03-26 16:25+0100\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "Language: hr\n"
@@ -20,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:93
+#: src/baobab-main-window.ui:120
 msgid "Disk Usage Analyzer"
 msgstr "Analizator iskoristivosti diska"
 
@@ -56,44 +55,39 @@ msgstr "GNOME projekt"
 msgid "storage;space;cleanup;"
 msgstr "pohrana;prostor;čišćenje;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
-
-#: data/org.gnome.baobab.gschema.xml.in:9
+#: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
 msgstr "Izuzeti URI-iji particija"
 
-#: data/org.gnome.baobab.gschema.xml.in:10
+#: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for partitions to be excluded from scanning."
 msgstr "Popisi URI-ja prticija koji će biti izuzeti iz pretraživanja."
 
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "Aktivan dijagram"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "Koja vrsta dijagrama će biti prikazana."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "Veličina prozora"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "Početna veličina prozora"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
+#: data/org.gnome.baobab.gschema.xml:30
 msgid "Window state"
 msgstr "Stanje prozora"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
+#: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState prozora"
 
-#: src/baobab-application.vala:28
+#: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Ispiši podatke o inačici i izađi"
 
@@ -179,83 +173,95 @@ msgstr "Osobna mapa"
 msgid "Computer"
 msgstr "Računalo"
 
-#: src/baobab-main-window.ui:12 src/menus.ui:25
-msgid "_Open Folder"
-msgstr "_Otvori mapu"
-
-#: src/baobab-main-window.ui:21 src/menus.ui:29
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopiraj putanju u međuspremnik"
-
-#: src/baobab-main-window.ui:30 src/menus.ui:33
-msgid "Mo_ve to Trash"
-msgstr "Pr_emjesti u smeće"
-
-#: src/baobab-main-window.ui:45
+#: src/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Pretraži mapu…"
 
-#: src/baobab-main-window.ui:157
+#: src/baobab-main-window.ui:13
+msgid "Keyboard _Shortcuts"
+msgstr "Prečaci _tipkovnice"
+
+#: src/baobab-main-window.ui:17
+msgid "_Help"
+msgstr "_Priručnik"
+
+#: src/baobab-main-window.ui:21
+msgid "_About Disk Usage Analyzer"
+msgstr "_O Analizatoru iskoristivosti diska"
+
+#: src/baobab-main-window.ui:34 src/menus.ui:7
+msgid "_Open Folder"
+msgstr "_Otvori mapu"
+
+#: src/baobab-main-window.ui:43 src/menus.ui:11
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopiraj putanju u međuspremnik"
+
+#: src/baobab-main-window.ui:52 src/menus.ui:15
+msgid "Mo_ve to Trash"
+msgstr "Pr_emjesti u smeće"
+
+#: src/baobab-main-window.ui:184
 msgid "Close"
 msgstr "Zatvori"
 
-#: src/baobab-main-window.ui:212
+#: src/baobab-main-window.ui:239
 msgid "Folder"
 msgstr "Mapa"
 
-#: src/baobab-main-window.ui:239
+#: src/baobab-main-window.ui:266
 msgid "Size"
 msgstr "Veličina"
 
-#: src/baobab-main-window.ui:259
+#: src/baobab-main-window.ui:286
 msgid "Contents"
 msgstr "Sadržaj"
 
-#: src/baobab-main-window.ui:277
+#: src/baobab-main-window.ui:304
 msgid "Modified"
 msgstr "Promijenjeno"
 
-#: src/baobab-main-window.ui:322
+#: src/baobab-main-window.ui:349
 msgid "Rings Chart"
 msgstr "Prstenovi dijagrama"
 
-#: src/baobab-main-window.ui:334
+#: src/baobab-main-window.ui:361
 msgid "Treemap Chart"
 msgstr "Dijagram prikaza stabla"
 
-#: src/baobab-window.vala:209
+#: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "Odaberi mapu"
 
-#: src/baobab-window.vala:211
+#: src/baobab-window.vala:217
 msgid "_Cancel"
 msgstr "_Odustani"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:218
 msgid "_Open"
 msgstr "_Otvori"
 
-#: src/baobab-window.vala:218
+#: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Rekurzivno analiziraj točke montiranja"
 
-#: src/baobab-window.vala:253
+#: src/baobab-window.vala:259
 msgid "Could not analyze volume."
 msgstr "Nemoguća analiza uređaja."
 
-#: src/baobab-window.vala:285
+#: src/baobab-window.vala:291
 msgid "Failed to show help"
 msgstr "Neuspjeli prikaz pomoći"
 
-#: src/baobab-window.vala:304
+#: src/baobab-window.vala:310
 msgid "Baobab"
 msgstr "Baobab"
 
-#: src/baobab-window.vala:307
+#: src/baobab-window.vala:313
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafički alat za analizu iskoristivosti diska."
 
-#: src/baobab-window.vala:312
+#: src/baobab-window.vala:318
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -264,69 +270,107 @@ msgstr ""
 "  gogo https://launchpad.net/~trebelnik-stefina\n"
 "  zvacet https://launchpad.net/~ivicakolic"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:387
 msgid "Failed to open file"
 msgstr "Neuspjelo otvaranje datoteke"
 
-#: src/baobab-window.vala:401
+#: src/baobab-window.vala:407
 msgid "Failed to move file to the trash"
 msgstr "Neuspjelo premještanje datoteke u smeće"
 
-#: src/baobab-window.vala:505
+#: src/baobab-window.vala:511
 msgid "Devices & Locations"
 msgstr "Uređaji i lokacije"
 
-#: src/baobab-window.vala:566
+#: src/baobab-window.vala:573
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nemoguće pretraživanje \"%s\" mape"
 
-#: src/baobab-window.vala:569
+#: src/baobab-window.vala:576
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Nemoguće pretraživanje određenih mapa sadržanih u \"%s\""
 
-#: src/baobab-window.vala:588
+#: src/baobab-window.vala:595
 msgid "Could not detect occupied disk sizes."
 msgstr "Nemoguće otkrivanje zauzetih veličina diska."
 
-#: src/baobab-window.vala:588
+#: src/baobab-window.vala:595
 msgid "Apparent sizes are shown instead."
 msgstr "Umjesto je prikazana prividna veličina."
 
+#: src/baobab-window.vala:599
+msgid "Scan completed"
+msgstr "Pretraživanje završeno"
+
+#: src/baobab-window.vala:600
+#, c-format
+msgid "Completed scan of “%s”"
+msgstr "Pretraživanje završeno za “%s”"
+
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:605 src/baobab-window.vala:611
+#: src/baobab-window.vala:618 src/baobab-window.vala:624
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" nije valjana mapa"
 
-#: src/baobab-window.vala:606 src/baobab-window.vala:612
+#: src/baobab-window.vala:619 src/baobab-window.vala:625
 msgid "Could not analyze disk usage."
 msgstr "Nemoguća analiza iskoristivosti diska."
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "_Priručnik"
+#: src/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Općenito"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "_O programu"
+#: src/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Prikaži / Sakrij glavni izbornik"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "_Zatvori"
+#: src/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Ponovno pretraži trenutnu lokaciju"
 
-#: src/menus.ui:39
+#: src/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Pretraži mapu"
+
+#: src/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Pogledajte prečace tipkovnice"
+
+#: src/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Idi natrag na popis lokacija"
+
+#: src/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Zatvori"
+
+#: src/menus.ui:21
 msgid "Go to _parent folder"
 msgstr "Idi u _sadržajnu mapu"
 
-#: src/menus.ui:45
+#: src/menus.ui:27
 msgid "Zoom _in"
 msgstr "Uvećaj_"
 
-#: src/menus.ui:49
+#: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "Smanji_"
+
+#~ msgid "baobab"
+#~ msgstr "baobab"
+
+#~ msgid "_About"
+#~ msgstr "_O programu"
 
 #~ msgid "Devices and locations"
 #~ msgstr "Uređaji i lokacije"
