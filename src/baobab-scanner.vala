@@ -440,7 +440,44 @@ namespace Baobab {
 
             if (ScanFlags.EXCLUDE_MOUNTS in flags) {
                 foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {
-                    excluded_locations.add (File.new_for_path (mount.get_mount_path ()));
+                    File excluded_dir;
+                    File mount_dir = File.new_for_path (mount.get_mount_path ());
+                    if (mount.get_fs_type () == "ecryptfs") {
+                        // finding directory containing encrypted data
+                        File encrypted_data_dir = File.new_for_path (mount.get_device_path ());
+                        try {
+                            // follow symlinks
+                            FileInfo encrypted_data_dir_info = encrypted_data_dir.query_info ("standard::is-symlink,standard::symlink-target", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+                            while (encrypted_data_dir_info.get_attribute_boolean ("standard::is-symlink")) {
+                                encrypted_data_dir = File.new_for_path (encrypted_data_dir_info.get_attribute_byte_string ("standard::symlink-target"));
+                                encrypted_data_dir_info = encrypted_data_dir.query_info ("standard::is-symlink,standard::symlink-target", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+                            }
+                            // check if both decrypted and encrypted data are inside the search directory
+                            // otherwise we might be showing neither the encrypted nor the decrypted version
+                            ushort is_parent_checks = 0;
+                            for (File check_dir = mount_dir; check_dir != null; check_dir = check_dir.get_parent ()) {
+                                if (check_dir.has_parent (directory)) { is_parent_checks++; break; }
+                            }
+                            for (File check_dir = encrypted_data_dir; check_dir != null; check_dir = check_dir.get_parent ()) {
+                                if (check_dir.has_parent (directory)) { is_parent_checks++; break; }
+                            }
+                            if (is_parent_checks == 2) {
+                                // decrypted data inside directory
+                                excluded_dir = encrypted_data_dir;
+                            } else {
+                                // decrypted data outside directory, reverting to default
+                                excluded_dir = mount_dir;
+                            }
+                        } catch (Error e)
+                        {
+                            // something went wrong, presumably while following the symlinks, reverting to default
+                            excluded_dir = mount_dir;
+                        }
+                    } else {
+                        // default behaviour: excluding mount point
+                        excluded_dir = mount_dir;
+                    }
+                    excluded_locations.add (excluded_dir);
                 }
             }
 
