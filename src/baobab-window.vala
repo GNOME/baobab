@@ -311,6 +311,7 @@ namespace Baobab {
                                    "logo-icon-name", "org.gnome.baobab",
                                    "version", Config.VERSION,
                                    "comments", _("A graphical tool to analyze disk usage."),
+                                   "website", "https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer",
                                    "copyright", copyright,
                                    "license-type", Gtk.License.GPL_2_0,
                                    "wrap-license", false,
