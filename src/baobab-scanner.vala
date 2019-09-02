@@ -231,6 +231,20 @@ namespace Baobab {
                             if (results.time_modified < child_time) {
                                 results.time_modified = child_time;
                             }
+
+                            if (Baobab.show_files) {
+                                var file_results = new Results ();
+                                file_results.parent = results;
+                                file_results.display_name = child_info.get_display_name ();
+                                file_results.parse_name = child_info.get_name ();
+                                file_results.size = child_info.get_size ();
+                                file_results.alloc_size = child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                                file_results.time_modified = child_info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+                                file_results.elements = 1;
+
+                                results_array.results += (owned) file_results;
+                            }
+
                             break;
 
                         default:
