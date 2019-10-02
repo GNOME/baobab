@@ -307,10 +307,11 @@ namespace Baobab {
                                      "Copyright \xc2\xa9 2011-2012 Ryan Lortie, Paolo Borelli, Stefano Facchini\n";
 
             Gtk.show_about_dialog (this,
-                                   "program-name", _("Baobab"),
+                                   "program-name", _("Disk Usage Analyzer"),
                                    "logo-icon-name", "org.gnome.baobab",
                                    "version", Config.VERSION,
                                    "comments", _("A graphical tool to analyze disk usage."),
+                                   "website", "https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer",
                                    "copyright", copyright,
                                    "license-type", Gtk.License.GPL_2_0,
                                    "wrap-license", false,
