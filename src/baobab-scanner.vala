@@ -89,6 +89,11 @@ namespace Baobab {
 
         bool successful = false;
 
+        ResultsArray? results = null;
+        uint64 results_idx = 0;
+
+        bool overtime = false;
+
         /* General overview:
          *
          * We cannot directly modify the treemodel from the worker thread, so we have to have a way to dispatch
@@ -231,6 +236,20 @@ namespace Baobab {
                             if (results.time_modified < child_time) {
                                 results.time_modified = child_time;
                             }
+
+                            if (Baobab.show_files) {
+                                var file_results = new Results ();
+                                file_results.parent = results;
+                                file_results.display_name = child_info.get_display_name ();
+                                file_results.parse_name = child_info.get_name ();
+                                file_results.size = child_info.get_size ();
+                                file_results.alloc_size = child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                                file_results.time_modified = child_info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+                                file_results.elements = 1;
+
+                                results_array.results += (owned) file_results;
+                            }
+
                             break;
 
                         default:
@@ -298,57 +317,73 @@ namespace Baobab {
         }
 
         bool process_results () {
-            while (true) {
-                var results_array = results_queue.try_pop ();
+            var time = GLib.get_monotonic_time ();
 
-                if (results_array == null) {
-                    break;
+            while (true) {
+                if (this.results == null) {
+                    this.results = results_queue.try_pop ();
+
+                    if (this.results == null) {
+                        break;
+                    }
                 }
 
-                foreach (unowned Results results in results_array.results) {
-                    ensure_iter_exists (results);
+                while (this.results_idx < this.results.results.length) {
+//                    stdout.printf("idx=%lld,l=%d\n", this.results_idx, this.results.results.length);
+                    unowned Results result = this.results.results[this.results_idx++];
+                    ensure_iter_exists (result);
 
                     State state;
-                    if (results.child_error) {
+                    if (result.child_error) {
                         state = State.CHILD_ERROR;
-                    } else if (results.error != null) {
+                    } else if (result.error != null) {
                         state = State.ERROR;
                     } else {
                         state = State.DONE;
                     }
 
-                    set (results.iter,
-                         Columns.SIZE,       results.size,
-                         Columns.ALLOC_SIZE, results.alloc_size,
-                         Columns.PERCENT,    results.percent,
-                         Columns.ELEMENTS,   results.elements,
+                    set (result.iter,
+                         Columns.SIZE,       result.size,
+                         Columns.ALLOC_SIZE, result.alloc_size,
+                         Columns.PERCENT,    result.percent,
+                         Columns.ELEMENTS,   result.elements,
                          Columns.STATE,      state,
-                         Columns.ERROR,      results.error);
+                         Columns.ERROR,      result.error);
 
-                    if (results.max_depth > max_depth) {
-                        max_depth = results.max_depth;
+                    if (result.max_depth > max_depth) {
+                        max_depth = result.max_depth;
                     }
 
                     // If the user cancelled abort the scan and
                     // report CANCELLED as the error, otherwise
                     // consider the error not fatal and report the
                     // first error we encountered
-                    if (results.error != null) {
-                        if (results.error is IOError.CANCELLED) {
-                            scan_error = results.error;
+                    if (result.error != null) {
+                        if (result.error is IOError.CANCELLED) {
+                            scan_error = result.error;
                             completed ();
                             return false;
                         } else if (scan_error == null) {
-                            scan_error = results.error;
+                            scan_error = result.error;
                         }
                     }
 
-                    if (results.parent == null) {
+                    if (result.parent == null) {
                         successful = true;
                         completed ();
                         return false;
                     }
+
+                    // return and set overtime flag if we've spent more than
+                    // 100ms in here
+                    if (GLib.get_monotonic_time () > time + (100 * 1000)) {
+                        this.overtime = true;
+                        return true;
+                    }
                 }
+
+                this.results = null;
+                this.results_idx = 0;
             }
 
             return this.self != null;
@@ -395,11 +430,18 @@ namespace Baobab {
                 thread = new Thread<void*> ("scanner", scan_in_thread);
 
                 process_result_idle = Timeout.add (100, () => {
-                        bool res = process_results();
-                        if (!res) {
-                            process_result_idle = 0;
+                        // return immediately if we took too long in the last
+                        // iteration, so the main thread can do UI work
+                        if (this.overtime) {
+                            this.overtime = false;
+                            return true;
+                        } else {
+                            bool res = process_results ();
+                            if (!res) {
+                                process_result_idle = 0;
+                            }
+                            return res;
                         }
-                        return res;
                     });
             } else {
                 completed ();
