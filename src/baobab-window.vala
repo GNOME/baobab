@@ -21,6 +21,7 @@
  */
 
 namespace Baobab {
+    public bool show_files = false;
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
     public class Window : Gtk.ApplicationWindow {
@@ -126,6 +127,14 @@ namespace Baobab {
             add_action_entries (action_entries, this);
             var action = ui_settings.create_action ("active-chart");
             add_action (action);
+
+            SimpleAction show_files_action = new SimpleAction.stateful ("show-files", null, Baobab.show_files);
+            show_files_action.activate.connect (() => {
+                    Baobab.show_files = !Baobab.show_files;
+                    show_files_action.set_state(Baobab.show_files);
+                    this.on_reload_activate();
+                });
+            this.add_action (show_files_action);
 
             location_list.set_action (on_scan_location_activate);
 
