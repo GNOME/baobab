@@ -18,20 +18,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2018-10-15 15:31+0000\n"
-"PO-Revision-Date: 2019-02-04 23:51+0200\n"
-"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"POT-Creation-Date: 2019-10-13 14:24+0000\n"
+"PO-Revision-Date: 2019-12-27 13:30+0100\n"
+"Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: src/baobab-main-window.ui:120 src/baobab-window.vala:310
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
@@ -44,7 +44,7 @@ msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"Un aplicativo simple para manter o seu uso de disco e espazo dispoñíbel "
+"Unha aplicación simple para manter o seu uso de disco e espazo dispoñíbel "
 "baixo control."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
@@ -66,11 +66,6 @@ msgstr "O Proxecto GNOME"
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "almacenamento;espazo;limpeza;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "org.gnome.baobab"
-msgstr "org.gnome.baobab"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
@@ -199,7 +194,6 @@ msgid "_Help"
 msgstr "A_xuda"
 
 #: src/baobab-main-window.ui:21
-#| msgid "- Disk Usage Analyzer"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Sobre o Analizador do uso do disco"
 
@@ -267,77 +261,71 @@ msgstr "Non foi posíbel analizar o volume."
 msgid "Failed to show help"
 msgstr "Produciuse un fallo ao mostrar a axuda"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
 #: src/baobab-window.vala:313
 msgid "A graphical tool to analyze disk usage."
 msgstr "Unha ferramenta gráfica para analizar o uso do disco."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:319
 msgid "translator-credits"
 msgstr ""
-"Fran Diéguez <frandieguez@gnome.org>, 2009-2019\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2009-2020\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
 "Antón Méixome <meixome@mancomun.org>, 2009\n"
-"Mancomún - Centro de Referencia e Servizos de Software Libre "
-"<g11n@mancomun.org>, 2009\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
+"org>, 2009\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009\n"
 "Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2004, 2005, 2006, 2007, 2008\n"
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000, 2001\n"
 "Ruben Lopez Gomez <ryu@mundivia.es>, 1999\n"
-"Proxecto Trasno - Tradución de software libre ao galego "
-"<proxecto@trasno.net>, 1999-2012"
+"Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno."
+"net>, 1999-2012"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:388
 msgid "Failed to open file"
 msgstr "Produciuse un fallo ao abrir o ficheiro"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:408
 msgid "Failed to move file to the trash"
 msgstr "Produciuse un fallo ao mover o ficheiro ao lixo"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:512
 msgid "Devices & Locations"
 msgstr "Dispositivos e localizacións"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:574
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Non foi posíbel analizar o cartafol «%s»"
 
-#: src/baobab-window.vala:576
+#: src/baobab-window.vala:577
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Non foi posíbel analizar algúns dos cartafoles dentro de «%s»."
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:596
 msgid "Could not detect occupied disk sizes."
 msgstr "Non foi posíbel detectar ningún espazo ocupado de disco."
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:596
 msgid "Apparent sizes are shown instead."
 msgstr "No lugar móstranse os tamaños aparentes."
 
-#: src/baobab-window.vala:599
-#| msgid "_Scan Home"
+#: src/baobab-window.vala:600
 msgid "Scan completed"
 msgstr "Análise completado"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:601
 #, c-format
-#| msgid "Could not scan folder “%s”"
 msgid "Completed scan of “%s”"
 msgstr "Análise de «%s» completado"
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:619 src/baobab-window.vala:625
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:620 src/baobab-window.vala:626
 msgid "Could not analyze disk usage."
 msgstr "Non foi posíbel analizar o uso do disco."
 
@@ -354,10 +342,9 @@ msgstr "Mostrar / Ocultar o menú primario"
 #: src/help-overlay.ui:25
 msgctxt "shortcut window"
 msgid "Rescan current location"
-msgstr "Reanalizar a localización actual "
+msgstr "Reanalizar a localización actual"
 
 #: src/help-overlay.ui:32
-#| msgid "Scan a folder"
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analizar cartafol"
@@ -373,7 +360,6 @@ msgid "Go back to location list"
 msgstr "Ir atrás na lista de localización"
 
 #: src/help-overlay.ui:52
-#| msgid "_Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Saír"
@@ -389,369 +375,3 @@ msgstr "Ampl_iar"
 #: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "Red_ucir"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "_Sobre"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "Un aplicativo simple co que pode analizar cartafoles específicos (locales "
-#~ "ou remotos) ou volumes e fornecer unha representación gráfica incluíndo o "
-#~ "tamaño ou porcentaxe para cada cartafol"
-
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Analizar cartafol remoto…"
-
-#~ msgid "Maximum depth"
-#~ msgstr "Profundidade máxima"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "A profundidade máxima da gráfica debuxada a partir da raíz"
-
-#~ msgid "Chart model"
-#~ msgstr "Modelo de gráfica"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Definir o modelo de gráfica"
-
-#~ msgid "Chart root node"
-#~ msgstr "Nodo raíz da gráfica"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Definir o nodo raíz do modelo"
-
-#~ msgid "Main volume"
-#~ msgstr "Volume principal"
-
-#~ msgid "Usage"
-#~ msgstr "Uso"
-
-#~ msgid "_Analyzer"
-#~ msgstr "_Analizador"
-
-#~ msgid "Scan F_older…"
-#~ msgstr "Analizar _cartafol…"
-
-#~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "Analizar cartafol _remoto…"
-
-#~ msgid "_View"
-#~ msgstr "_Ver"
-
-#~ msgid "_Reload"
-#~ msgstr "_Recargar"
-
-#~ msgid "_Expand All"
-#~ msgstr "_Expandir todo"
-
-#~ msgid "_Collapse All"
-#~ msgstr "_Contraer todo"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Monitorizar o cartafol persoal"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr ""
-#~ "Indica se calquera modificación no cartafol persoal se debe monitorizar."
-
-#~ msgid "Scan Folder"
-#~ msgstr "Analizar cartafol"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Analizar un cartafol remoto"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "Analizar cartafol remoto"
-
-#~ msgid "Reload"
-#~ msgstr "Recargar"
-
-#~ msgid "label"
-#~ msgstr "etiqueta"
-
-#~ msgid "_Stop"
-#~ msgstr "_Deter"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "Espazo _ocupado"
-
-#~ msgid "Scan"
-#~ msgstr "Análise"
-
-#~ msgid "Mount and Scan"
-#~ msgstr "Montar e analizar"
-
-#~ msgid "All locations"
-#~ msgstr "Todas as localizacións"
-
-#~ msgid "_All Locations"
-#~ msgstr "_Todas as localizacións"
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "A barra de ferramentas é visíbel"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr ""
-#~ "Indica se a barra de ferramentas debería ser visíbel na xanela principal."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "A barra de estado é visíbel"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr ""
-#~ "Indica se a barra de estado na parte inferior da xanela principal debería "
-#~ "ser visíbel."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Gardar a captura de pantalla"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "Non é posíbel crear a imaxe pixbuf!"
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Gardar a foto instantánea"
-
-#~ msgid "_Image type:"
-#~ msgstr "Tipo de _imaxe:"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Deter a análise"
-
-#~ msgid "_Toolbar"
-#~ msgstr "Barra de _ferramentas"
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Preferencias do analizador do uso do disco"
-
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr ""
-#~ "Seleccione os _dispositivos a incluír no exame do sistema de ficheiros:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Monitorizar os cambios no cartafol persoal"
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Analizar o cartafol _persoal"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Examinar o sistema de _ficheiros"
-
-#~ msgid "_Edit"
-#~ msgstr "_Editar"
-
-#~ msgid "St_atusbar"
-#~ msgstr "B_arra de estado"
-
-#~ msgid "_Contents"
-#~ msgstr "_Contidos"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "Inspeccionar o seu cartafol persoal"
-
-#~ msgid "Scan the file system"
-#~ msgstr "Inspeccionar o sistema de ficheiros"
-
-#~ msgid "Scan File System"
-#~ msgstr "Inspeccionar o sistema de ficheiros"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Inspeccionar un cartafol remoto ou sistema de ficheiros"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualizar"
-
-#~ msgid "Scanning…"
-#~ msgstr "Inspeccionando…"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Capacidade total do sistema de ficheiros:"
-
-#~ msgid "used:"
-#~ msgstr "usado:"
-
-#~ msgid "available:"
-#~ msgstr "dispoñíbel:"
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Calculando barras de porcentaxes…"
-
-#~ msgid "Ready"
-#~ msgstr "Listo"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Capacidade total do sistema de ficheiros"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Uso total do sistema de ficheiros"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "contén ligazóns duras para:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Non foi posíbel inicializar a monitorización"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Non se monitorizarán os cambios no seu cartafol persoal."
-
-#~ msgid "Show version"
-#~ msgstr "Mostrar a versión"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[DIRECTORY]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Demasiados argumentos. Só se pode especificar un cartafol."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "Sen puntos de montaxe non é posíbel analizar o uso do disco."
-
-#~ msgid "Device"
-#~ msgstr "Dispositivo"
-
-#~ msgid "Mount Point"
-#~ msgstr "Punto de montaxe"
-
-#~ msgid "File System Type"
-#~ msgstr "Tipo de sistema de ficheiros"
-
-#~ msgid "Total Size"
-#~ msgstr "Tamaño total"
-
-#~ msgid "Custom Location"
-#~ msgstr "Localización personalizada"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "FTP público"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (con rexistro)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "WebDAV seguro (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr ""
-#~ "Non é posíbel conectar co servidor. Introduza un nome para o servidor."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Introduza un nome e ténteo de novo."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Localización (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Servidor:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Información opcional:"
-
-#~ msgid "_Share:"
-#~ msgstr "C_ompartir:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Porto:"
-
-#~ msgid "_Folder:"
-#~ msgstr "Carta_fol:"
-
-#~ msgid "_User Name:"
-#~ msgstr "Nome de _usuario:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "Nome do _dominio:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Conectar co servidor"
-
-#~ msgid "Service _type:"
-#~ msgstr "_Tipo de servizo:"
-
-#~ msgid "_Scan"
-#~ msgstr "A_nalizar"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Quere analizar de novo o seu cartafol persoal?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "O contido do seu cartafol persoal cambiou. Seleccione Analizar de novo "
-#~ "para actualizar os detalles de uso do disco."
-
-#~ msgid "_Rescan"
-#~ msgstr "Analiza_r de novo"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "Mo_strar os cartafoles ocultos"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Non é posíbel comprobar un cartafol excluído!"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "Non hai instalado ningún visualizador capaz de mostrar o cartafol."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "Non foi posíbel mover «%s» ao lixo"
-
-#~ msgid "Details: %s"
-#~ msgstr "Detalles: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "Produciuse un erro ao mostrar a axuda."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Este programa é software libre; pode redistribuílo ou modificalo baixo as "
-#~ "condicións da Licenza pública xeral GNU, tal como a publica a Free "
-#~ "Software Foundation; tanto na versión 2 da Licenza como (segundo o seu "
-#~ "criterio) en calquera versión posterior."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Este programa distribúese coa intención de que sexa útil, mais SEN "
-#~ "NINGUNHA GARANTIA, nin sequera a garantía implícita de VALOR COMERCIAL ou "
-#~ "ADECUACIÓN A UN FIN ESPECÍFICO. Consulte a Licenza pública xeral de GNU "
-#~ "para máis información."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Debeu recibir unha copia da Licenza pública xeral GNU xunto con este "
-#~ "programa. De non ser así, escriba á Free Software Foundation, Inc., 51 "
-#~ "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-
-#~ msgid "The document does not exist."
-#~ msgstr "O documento non existe."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "O cartafol non existe."
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "Anali_zar cartafol remoto…"
-
-#~ msgid "Scan F_older..."
-#~ msgstr "Analizar cartaf_ol…"
