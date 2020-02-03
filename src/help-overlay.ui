@@ -14,6 +14,13 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">true</property>
+                <property name="accelerator">F1</property>
+                <property name="title" translatable="yes" context="shortcut window">Show help</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
                 <property name="accelerator">F10</property>
                 <property name="title" translatable="yes" context="shortcut window">Show / Hide primary menu</property>
               </object>
@@ -21,10 +28,30 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">true</property>
-                <property name="accelerator">&lt;Primary&gt;r</property>
-                <property name="title" translatable="yes" context="shortcut window">Rescan current location</property>
+                <property name="title" translatable="yes" context="shortcut window">Quit</property>
+                <property name="accelerator">&lt;Primary&gt;Q</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="title" translatable="yes" context="shortcut window">Show Keyboard Shortcuts</property>
+                <property name="accelerator">&lt;Primary&gt;question</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">true</property>
+                <property name="accelerator">&lt;Alt&gt;Left</property>
+                <property name="title" translatable="yes" context="shortcut window">Go back to location list</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">true</property>
+            <property name="title" translatable="yes" context="shortcut window">Scanning</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">true</property>
@@ -35,22 +62,8 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">true</property>
-                <property name="title" translatable="yes" context="shortcut window">Show Keyboard Shortcuts</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;question</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="visible">true</property>
-                <property name="accelerator">&lt;Alt&gt;Left</property>
-                <property name="title" translatable="yes" context="shortcut window">Go back to location list</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="visible">true</property>
-                <property name="title" translatable="yes" context="shortcut window">Quit</property>
-                <property name="accelerator">&lt;Primary&gt;q</property>
+                <property name="accelerator">&lt;Primary&gt;r</property>
+                <property name="title" translatable="yes" context="shortcut window">Rescan current location</property>
               </object>
             </child>
           </object>
