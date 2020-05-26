@@ -2,7 +2,7 @@ project(
   'baobab', ['vala', 'c'],
   version: '3.34.0',
   license: 'GPL2+',
-  meson_version: '>= 0.41.0',
+  meson_version: '>= 0.50.0',
 )
 
 gnome = import('gnome')
