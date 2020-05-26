@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2019-10-19 10:33+0000\n"
-"PO-Revision-Date: 2020-03-14 21:30+0200\n"
+"POT-Creation-Date: 2020-05-26 16:52+0000\n"
+"PO-Revision-Date: 2020-05-26 20:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-doc@kde.org>\n"
 "Language: uk\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
 "=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.03.70\n"
+"X-Generator: Lokalize 20.07.70\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
@@ -191,7 +191,6 @@ msgid "_Help"
 msgstr "_Довідка"
 
 #: src/baobab-main-window.ui:21
-#| msgid "- Disk Usage Analyzer"
 msgid "_About Disk Usage Analyzer"
 msgstr "Про «Аналізатор використання дисків»"
 
@@ -301,13 +300,11 @@ msgid "Apparent sizes are shown instead."
 msgstr "Натомість показано очевидні розміри."
 
 #: src/baobab-window.vala:593
-#| msgid "_Scan Home"
 msgid "Scan completed"
 msgstr "Сканування завершено"
 
 #: src/baobab-window.vala:594
 #, c-format
-#| msgid "Could not scan folder “%s”"
 msgid "Completed scan of “%s”"
 msgstr "Завершено сканування «%s»"
 
@@ -328,19 +325,18 @@ msgstr "Загальні"
 
 #: src/help-overlay.ui:18
 msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Показати або приховати головне меню"
+msgid "Show help"
+msgstr "Показати довідку"
 
 #: src/help-overlay.ui:25
 msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Повторно сканувати поточне місце"
+msgid "Show / Hide primary menu"
+msgstr "Показати або приховати головне меню"
 
-#: src/help-overlay.ui:32
-#| msgid "Scan a folder"
+#: src/help-overlay.ui:31
 msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Сканувати теку"
+msgid "Quit"
+msgstr "Вийти"
 
 #: src/help-overlay.ui:38
 msgctxt "shortcut window"
@@ -352,11 +348,20 @@ msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Повернутися до списку місць"
 
-#: src/help-overlay.ui:52
-#| msgid "_Quit"
+#: src/help-overlay.ui:54
 msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Вийти"
+msgid "Scanning"
+msgstr "Сканування"
+
+#: src/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Сканувати теку"
+
+#: src/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Повторно сканувати поточне місце"
 
 #: src/menus.ui:21
 msgid "Go to _parent folder"
