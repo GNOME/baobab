@@ -8,20 +8,18 @@
         "devel"
     ],
     "finish-args" : [
-        /* X11 + XShm access */
         "--share=ipc",
         "--socket=x11",
-        /* Wayland access */
         "--socket=wayland",
-        /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf",
         "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf",
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
-        /* Needed to be able to scan files */
         "--filesystem=host:ro",
-        /* Access to other apps' files */
-        "--filesystem=~/.var/app:ro"
+        "--filesystem=~/.var/app:ro",
+        "--talk-name=org.gtk.vfs.*",
+        "--system-talk-name=org.freedesktop.hostname1",
+        "--share=network"
     ],
     "build-options" : {
         "cflags" : "-O2 -g",
