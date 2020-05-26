@@ -7,7 +7,7 @@ project(
 
 gnome = import('gnome')
 i18n = import('i18n')
-python3 = import('python3')
+python = import('python')
 
 glib = dependency('glib-2.0', version: '>=2.44')
 gio = dependency('gio-2.0', version: '>=2.44')
@@ -27,7 +27,7 @@ conf.set_quoted('GNOMELOCALEDIR', join_paths(get_option('prefix'), get_option('l
 configure_file(output: 'config.h', configuration: conf)
 config_h_dir = include_directories('.')
 
-meson.add_install_script(python3.find_python().path(),
+meson.add_install_script(python.find_installation('python3').path(),
   join_paths(meson.source_root(), 'build-aux', 'post-install.py'))
 
 subdir('data')
