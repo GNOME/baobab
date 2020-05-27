@@ -31,7 +31,6 @@ namespace Baobab {
         public string name { get; private set; }
         public File? file { get; private set; }
         public FileInfo? info { get; private set; }
-        public bool is_volume { get; private set; default = true; }
 
         public uint64? size { get; private set; }
         public uint64? used { get; private set; }
@@ -46,6 +45,10 @@ namespace Baobab {
         public bool is_recent { get; private set; default = false; }
 
         public Scanner? scanner { get; private set; }
+
+        public signal void changed ();
+
+        private bool querying_fs = false;
 
         private const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
@@ -75,12 +78,12 @@ namespace Baobab {
         }
 
         public Location.for_home_folder () {
-            is_volume = false;
             file = File.new_for_path (GLib.Environment.get_home_dir ());
             get_file_info ();
-            get_fs_usage ();
 
             make_this_home_location ();
+
+            start_fs_usage_timeout ();
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
@@ -118,27 +121,21 @@ namespace Baobab {
             icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system");
             is_main_volume = true;
 
-            get_fs_usage ();
+            start_fs_usage_timeout ();
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
         public Location.for_recent_info (Gtk.RecentInfo recent_info) {
-            is_volume = false; // we assume recent locations are just folders
             is_recent = true;
             file = File.new_for_uri (recent_info.get_uri ());
             name = recent_info.get_display_name ();
             icon = recent_info.get_gicon ();
 
-            if (recent_info.is_local ()) {
-                get_fs_usage ();
-            }
-
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
         public Location.for_file (File file_, ScanFlags flags) {
-            is_volume = false;
             file = file_;
             get_file_info ();
 
@@ -149,8 +146,6 @@ namespace Baobab {
                 name = file_.get_parse_name ();
                 icon = null;
             }
-
-            get_fs_usage ();
 
             scanner = new Scanner (file, flags);
         }
@@ -187,7 +182,7 @@ namespace Baobab {
                 make_this_home_location ();
             }
 
-            get_fs_usage ();
+            start_fs_usage_timeout ();
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
@@ -200,34 +195,53 @@ namespace Baobab {
             }
         }
 
-        public void get_fs_usage () {
-            if (file == null) {
+        void start_fs_usage_timeout () {
+            queue_query_fs_usage ();
+            Timeout.add_seconds(2, (() => {
+                queue_query_fs_usage ();
+                return Source.CONTINUE;
+            }));
+        }
+
+        void queue_query_fs_usage () {
+            if (querying_fs || file == null) {
                 return;
             }
 
-            size = null;
-            used = null;
-            reserved = null;
-            try {
-                var info = file.query_filesystem_info (FS_ATTRIBUTES, null);
-                if (info.has_attribute (FileAttribute.FILESYSTEM_SIZE)) {
-                    size = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_SIZE);
-                }
-                if (info.has_attribute (FileAttribute.FILESYSTEM_USED)) {
-                    used = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_USED);
-                }
-                if (size != null && used != null && info.has_attribute (FileAttribute.FILESYSTEM_FREE)) {
-                    var free = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_FREE);
-                    reserved = size - free - used;
-                }
-            } catch (Error e) {
-            }
-            // this can happen sometimes with remote mounts. The result, if
-            // unchecked, is a uint64 underflow and the drive being presented
-            // with 18.4 EB free
-            if (size != null && used != null && used > size) {
+            querying_fs = true;
+
+            file.query_filesystem_info_async (FS_ATTRIBUTES, Priority.DEFAULT, null, (obj, res) => {
+                querying_fs = false;
+
                 size = null;
-            }
+                used = null;
+                reserved = null;
+
+                try {
+                    var info = file.query_filesystem_info_async.end (res);
+                    if (info.has_attribute (FileAttribute.FILESYSTEM_SIZE)) {
+                        size = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_SIZE);
+                    }
+                    if (info.has_attribute (FileAttribute.FILESYSTEM_USED)) {
+                        used = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_USED);
+                    }
+                    if (size != null && used != null && info.has_attribute (FileAttribute.FILESYSTEM_FREE)) {
+                        var free = info.get_attribute_uint64 (FileAttribute.FILESYSTEM_FREE);
+                        reserved = size - free - used;
+                    }
+
+                    // this can happen sometimes with remote mounts. The result, if
+                    // unchecked, is a uint64 underflow and the drive being presented
+                    // with 18.4 EB free
+                    if (size != null && used != null && used > size) {
+                        size = null;
+                    }
+
+                    changed ();
+                } catch (Error e) {
+                }
+
+            });
         }
 
         public async void mount_volume () throws Error {
