@@ -101,7 +101,7 @@ namespace Baobab {
             fill_from_mount ();
 
             var uri_scheme = Uri.parse_scheme (file.get_uri ());
-            string[] remote_schemes = { "sftp", "ssh" };
+            string[] remote_schemes = { "ftp", "sftp", "ssh", "smb", "google-drive" };
             is_remote = (uri_scheme in remote_schemes);
         }
 
