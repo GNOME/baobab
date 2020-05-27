@@ -39,11 +39,7 @@ namespace Baobab {
 
         public LocationRow (Location l) {
             location = l;
-            update ();
-        }
 
-        public void update () {
-            location.get_fs_usage ();
             image.gicon = location.icon;
 
             var escaped = GLib.Markup.escape_text (location.name, -1);
@@ -51,7 +47,7 @@ namespace Baobab {
 
             path_label.hide();
             if (location.file != null) {
-                path_label.label = GLib.Markup.escape_text (location.file.get_parse_name (), -1);
+                path_label.label = Markup.escape_text (location.file.get_parse_name (), -1);
                 path_label.show();
             }
 
@@ -60,8 +56,13 @@ namespace Baobab {
             // more important
             path_label.ellipsize = location.is_remote ? Pango.EllipsizeMode.END : Pango.EllipsizeMode.START;
 
+            update_fs_usage_info ();
+            location.changed.connect (() => { update_fs_usage_info (); });
+        }
+
+        void update_fs_usage_info () {
             total_size_label.hide();
-            if (location.is_volume || location.is_main_volume) {
+            if (location.volume != null || location.mount != null || location.is_main_volume) {
                 if (location.size != null) {
                     total_size_label.label = _("%s Total").printf (format_size (location.size));
                     total_size_label.show();
@@ -82,7 +83,7 @@ namespace Baobab {
                     // useful for some remote mounts where we don't know the
                     // size but do have a usage figure
                     available_label.label = _("%s Used").printf (format_size (location.used));
-                } else if (location.mount == null && location.volume.can_mount ()) {
+                } else if (location.volume != null && location.mount == null && location.volume.can_mount ()) {
                     available_label.label = _("Unmounted");
                 }
             }
@@ -122,17 +123,7 @@ namespace Baobab {
             remote_list_box.set_header_func (update_header);
             remote_list_box.row_activated.connect (row_activated);
 
-            Timeout.add_seconds(3, (() => {
-                update_existing ();
-                return Source.CONTINUE;
-            }));
-
             populate ();
-        }
-
-        void update_existing () {
-            local_list_box.foreach ((widget) => { ((LocationRow)widget).update (); });
-            remote_list_box.foreach ((widget) => { ((LocationRow)widget).update (); });
         }
 
         bool already_present (File file) {
