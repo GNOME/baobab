@@ -93,7 +93,7 @@ namespace Baobab {
             Gtk.Allocation allocation;
             double width = 0, height = 0;
 
-            rect = (item as TreemapItem).cr_rect;
+            rect = ((TreemapItem) item).cr_rect;
             get_allocation (out allocation);
 
             if ((item.depth % 2) != 0) {
@@ -112,7 +112,7 @@ namespace Baobab {
         }
 
         protected override void calculate_item_geometry (ChartItem item) {
-            TreemapItem treemapitem = item as TreemapItem;
+            TreemapItem treemapitem = (TreemapItem) item;
             Cairo.Rectangle p_area = Cairo.Rectangle ();
 
             if (item.depth == 0) {
@@ -129,7 +129,7 @@ namespace Baobab {
                 p_area.width = allocation.width + ITEM_PADDING * 2;
                 p_area.height = allocation.height + ITEM_PADDING * 2;
             } else {
-                p_area = (item.parent.data as TreemapItem).cr_rect;
+                p_area = ((TreemapItem) item.parent.data).cr_rect;
             }
 
             if (item.depth % 2 != 0) {
@@ -173,7 +173,7 @@ namespace Baobab {
         }
 
         protected override void get_item_rectangle (ChartItem item) {
-            var crect = (item as TreemapItem).cr_rect;
+            var crect = ((TreemapItem) item).cr_rect;
 
             item.rect.x = (int) crect.x;
             item.rect.y = (int) crect.y;

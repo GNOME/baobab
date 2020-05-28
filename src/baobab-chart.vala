@@ -536,15 +536,15 @@ namespace Baobab {
         }
 
         public void open_file () {
-            (get_toplevel () as Window).open_item (highlighted_item.iter);
+            ((Window) get_toplevel ()).open_item (highlighted_item.iter);
         }
 
         public void copy_path () {
-            (get_toplevel () as Window).copy_path (highlighted_item.iter);
+            ((Window) get_toplevel ()).copy_path (highlighted_item.iter);
         }
 
         public void trash_file () {
-            (get_toplevel () as Window).trash_file (highlighted_item.iter);
+            ((Window) get_toplevel ()).trash_file (highlighted_item.iter);
         }
 
         protected bool can_move_up_root () {

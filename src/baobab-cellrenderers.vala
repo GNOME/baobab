@@ -52,6 +52,8 @@ namespace Baobab {
             case Scanner.State.CHILD_ERROR:
                 context.add_class ("baobab-cell-warning");
                 break;
+            default:
+                break;
             }
 
             base.render (cr, widget, background_area, cell_area, flags);
