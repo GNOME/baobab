@@ -226,8 +226,6 @@ namespace Baobab {
                 last.next = null;
             }
 
-            recent_items.reverse ();
-
             foreach (var info in recent_items) {
                 locations.append (new Location.for_recent_info (info));
             }
