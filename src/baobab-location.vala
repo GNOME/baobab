@@ -30,7 +30,6 @@ namespace Baobab {
     public class Location {
         public string name { get; private set; }
         public File? file { get; private set; }
-        public FileInfo? info { get; private set; }
 
         public uint64? size { get; private set; }
         public uint64? used { get; private set; }
@@ -54,11 +53,6 @@ namespace Baobab {
             FileAttribute.FILESYSTEM_SIZE + "," +
             FileAttribute.FILESYSTEM_USED;
 
-        private const string FILE_ATTRIBUTES =
-            FileAttribute.STANDARD_DISPLAY_NAME + "," +
-            FileAttribute.STANDARD_ICON + "," +
-            FileAttribute.STANDARD_TYPE;
-
         string get_hostname () throws Error {
             HostnameIface hostname_iface;
             hostname_iface = Bus.get_proxy_sync (BusType.SYSTEM,
@@ -79,7 +73,6 @@ namespace Baobab {
 
         public Location.for_home_folder () {
             file = File.new_for_path (GLib.Environment.get_home_dir ());
-            get_file_info ();
 
             make_this_home_location ();
 
@@ -117,7 +110,6 @@ namespace Baobab {
             }
 
             file = File.new_for_path ("/");
-            get_file_info ();
             icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system");
             is_main_volume = true;
 
@@ -137,15 +129,6 @@ namespace Baobab {
 
         public Location.for_file (File file_, ScanFlags flags) {
             file = file_;
-            get_file_info ();
-
-            if (info != null) {
-                name = info.get_display_name ();
-                icon = info.get_icon ();
-            } else {
-                name = file_.get_parse_name ();
-                icon = null;
-            }
 
             scanner = new Scanner (file, flags);
         }
@@ -165,7 +148,6 @@ namespace Baobab {
                 name = volume.get_name ();
                 icon = volume.get_icon ();
                 file = null;
-                info = null;
                 size = null;
                 used = null;
                 scanner = null;
@@ -176,7 +158,6 @@ namespace Baobab {
             name = mount.get_name ();
             icon = mount.get_icon ();
             file = mount.get_root ();
-            get_file_info ();
 
             if (file != null && file.equal (File.new_for_path (Environment.get_home_dir ()))) {
                 make_this_home_location ();
@@ -185,14 +166,6 @@ namespace Baobab {
             start_fs_usage_timeout ();
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
-        }
-
-        void get_file_info () {
-            try {
-                info = file.query_info (FILE_ATTRIBUTES, FileQueryInfoFlags.NONE, null);
-            } catch (Error e) {
-                info = null;
-            }
         }
 
         void start_fs_usage_timeout () {

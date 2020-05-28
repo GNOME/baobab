@@ -606,20 +606,19 @@ namespace Baobab {
         }
 
         public void scan_directory (File directory, ScanFlags flags=ScanFlags.NONE) {
+            FileInfo info = null;
+            try {
+                info = directory.query_info (FileAttribute.STANDARD_TYPE, FileQueryInfoFlags.NONE, null);
+            } catch (Error e) {
+            }
+
+            if (info == null || info.get_file_type () != FileType.DIRECTORY) {
+                var primary = _("“%s” is not a valid folder").printf (directory.get_parse_name ());
+                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
+                return;
+            }
+
             var location = new Location.for_file (directory, flags);
-
-            if (location.info == null) {
-                var primary = _("“%s” is not a valid folder").printf (directory.get_parse_name ());
-                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
-                return;
-            }
-
-            if (location.info.get_file_type () != FileType.DIRECTORY/* || is_virtual_filesystem ()*/) {
-                var primary = _("“%s” is not a valid folder").printf (directory.get_parse_name ());
-                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
-                return;
-            }
-
             set_active_location (location);
             scan_active_location (false);
         }
