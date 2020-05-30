@@ -148,6 +148,25 @@ namespace Baobab {
         }
 
         void volume_changed (Volume volume) {
+            foreach (var location in locations) {
+                if (location.volume == volume) {
+                    location.update_volume_info ();
+                }
+            }
+
+            // Collect duplicated mounts
+            var mount = volume.get_mount ();
+            if (mount == null) {
+                return;
+            }
+            foreach (var location in locations) {
+                // We can't just check location.mount == mount because there could be multiple GMounts with the same root...
+                var same_mount = location.mount != null && location.mount.get_root ().equal (mount.get_root ());
+                if (same_mount && location.volume != volume) {
+                    locations.remove(location);
+                }
+            }
+
             update ();
         }
 
@@ -164,6 +183,10 @@ namespace Baobab {
 
         void volume_added (Volume volume) {
             locations.append (new Location.from_volume (volume));
+            volume.changed.connect (() => {
+                volume_changed (volume);
+            });
+
             update ();
         }
 
@@ -171,8 +194,13 @@ namespace Baobab {
         }
 
         void mount_removed (Mount mount) {
+            var volume = mount.get_volume ();
+            if (volume != null) {
+                volume_changed (volume);
+            }
+
             foreach (var location in locations) {
-                if (location.mount == mount) {
+                if (location.mount == mount && location.volume == null) {
                     locations.remove (location);
                     break;
                 }
@@ -188,12 +216,7 @@ namespace Baobab {
                     locations.append (new Location.from_mount (mount));
                 }
             } else {
-                foreach (var location in locations) {
-                    if (location.volume == volume) {
-                        location.update ();
-                        break;
-                    }
-                }
+                volume_changed (volume);
             }
 
             update ();

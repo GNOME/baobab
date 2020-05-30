@@ -81,9 +81,6 @@ namespace Baobab {
 
         public Location.from_volume (Volume volume_) {
             volume = volume_;
-            volume.changed.connect((vol) => {
-                update_volume_info ();
-            });
             update_volume_info ();
         }
 
@@ -129,11 +126,7 @@ namespace Baobab {
             scanner = new Scanner (file, flags);
         }
 
-        public void update () {
-            update_volume_info ();
-        }
-
-        void update_volume_info () {
+        public void update_volume_info () {
             mount = volume.get_mount ();
 
             is_remote = volume.get_identifier (VolumeIdentifier.CLASS) == "network";
@@ -148,6 +141,8 @@ namespace Baobab {
                 used = null;
                 scanner = null;
             }
+
+            changed ();
         }
 
         void fill_from_mount () {
