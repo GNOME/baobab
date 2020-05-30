@@ -215,17 +215,17 @@ namespace Baobab {
             var file_chooser = new Gtk.FileChooserDialog (_("Select Folder"), this,
                                                           Gtk.FileChooserAction.SELECT_FOLDER,
                                                           _("_Cancel"), Gtk.ResponseType.CANCEL,
-                                                          _("_Open"), Gtk.ResponseType.ACCEPT);
+                                                          _("_Open"), Gtk.ResponseType.OK);
 
             file_chooser.local_only = false;
-            file_chooser.create_folders = false;
             file_chooser.modal = true;
+            file_chooser.set_default_response (Gtk.ResponseType.OK);
 
             var check_button = new Gtk.CheckButton.with_label (_("Recursively analyze mount points"));
             file_chooser.extra_widget = check_button;
 
             file_chooser.response.connect ((response) => {
-                if (response == Gtk.ResponseType.ACCEPT) {
+                if (response == Gtk.ResponseType.OK) {
                     var flags = check_button.active ? ScanFlags.NONE : ScanFlags.EXCLUDE_MOUNTS;
                     scan_directory (file_chooser.get_file (), flags);
                 }
