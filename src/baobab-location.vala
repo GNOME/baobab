@@ -76,8 +76,6 @@ namespace Baobab {
 
             make_this_home_location ();
 
-            start_fs_usage_timeout ();
-
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
@@ -112,8 +110,6 @@ namespace Baobab {
             file = File.new_for_path ("/");
             icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system");
             is_main_volume = true;
-
-            start_fs_usage_timeout ();
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
@@ -163,27 +159,17 @@ namespace Baobab {
                 make_this_home_location ();
             }
 
-            start_fs_usage_timeout ();
-
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
 
-        void start_fs_usage_timeout () {
-            queue_query_fs_usage ();
-            Timeout.add_seconds(2, (() => {
-                queue_query_fs_usage ();
-                return Source.CONTINUE;
-            }));
-        }
-
-        void queue_query_fs_usage () {
+        public void queue_query_fs_usage () {
             if (querying_fs || file == null) {
                 return;
             }
 
             querying_fs = true;
 
-            file.query_filesystem_info_async (FS_ATTRIBUTES, Priority.DEFAULT, null, (obj, res) => {
+            file.query_filesystem_info_async.begin (FS_ATTRIBUTES, Priority.DEFAULT, null, (obj, res) => {
                 querying_fs = false;
 
                 size = null;

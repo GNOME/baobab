@@ -124,6 +124,18 @@ namespace Baobab {
             remote_list_box.row_activated.connect (row_activated);
 
             populate ();
+
+            queue_query_fs_usage ();
+            Timeout.add_seconds(2, (() => {
+                queue_query_fs_usage ();
+                return Source.CONTINUE;
+            }));
+        }
+
+        void queue_query_fs_usage () {
+            foreach (var location in locations) {
+                location.queue_query_fs_usage ();
+            }
         }
 
         bool already_present (File file) {
