@@ -5,12 +5,13 @@
 # Mohammad DAMT <mdamt@bisnisweb.com>, 2003-2005.
 # Andika Triwidada <andika@gmail.com>, 2010-2014.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2019-01-02 23:08+0000\n"
-"PO-Revision-Date: 2019-01-26 21:43+0700\n"
+"POT-Creation-Date: 2020-05-26 16:52+0000\n"
+"PO-Revision-Date: 2020-05-31 13:25+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -19,10 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= n!=1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: src/baobab-main-window.ui:120 src/baobab-window.vala:310
 msgid "Disk Usage Analyzer"
 msgstr "Penganalisa Penggunaan Disk"
 
@@ -57,11 +58,6 @@ msgstr "Proyek GNOME"
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "penyimpanan;ruang;pembersihan;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "org.gnome.baobab"
-msgstr "org.gnome.baobab"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
@@ -257,69 +253,65 @@ msgstr "Tak bisa menganalisa volume."
 msgid "Failed to show help"
 msgstr "Gagal menampilkan bantuan"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
 #: src/baobab-window.vala:313
 msgid "A graphical tool to analyze disk usage."
 msgstr "Alat grafis untuk menganalisa penggunaan disk."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:319
 msgid "translator-credits"
 msgstr ""
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Andika Triwidada <andika@gmail.com>, 2010, 2011, 2012, 2013.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020."
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:381
 msgid "Failed to open file"
 msgstr "Gagal membuka berkas"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:401
 msgid "Failed to move file to the trash"
 msgstr "Gagal memindah berkas ke tong sampah"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:505
 msgid "Devices & Locations"
 msgstr "Perangkat & Lokasi"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:567
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Tidak dapat memindai folder “%s”"
 
-#: src/baobab-window.vala:576
+#: src/baobab-window.vala:570
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Tidak dapat memindai beberapa folder yang terkandung dalam “%s”"
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:589
 msgid "Could not detect occupied disk sizes."
 msgstr "Tak bisa mendeteksi ukuran disk yang ditempati."
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:589
 msgid "Apparent sizes are shown instead."
 msgstr "Ukuran yang nampak saja yang ditampilkan sebagai gantinya."
 
-#: src/baobab-window.vala:599
+#: src/baobab-window.vala:593
 msgid "Scan completed"
 msgstr "Pindaian selesai"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:594
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Pemindaian selesai dari “%s”"
 
 #. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:612 src/baobab-window.vala:618
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" bukan folder yang valid"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:613 src/baobab-window.vala:619
 msgid "Could not analyze disk usage."
 msgstr "Tak bisa menganalisa penggunaan disk."
 
@@ -330,18 +322,18 @@ msgstr "Umum"
 
 #: src/help-overlay.ui:18
 msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Tampilkan / Sembunyikan menu primer"
+msgid "Show help"
+msgstr "Tampilkan bantuan"
 
 #: src/help-overlay.ui:25
 msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Pindai ulang lokasi saat ini"
+msgid "Show / Hide primary menu"
+msgstr "Tampilkan / Sembunyikan menu primer"
 
-#: src/help-overlay.ui:32
+#: src/help-overlay.ui:31
 msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Pindai folder"
+msgid "Quit"
+msgstr "Keluar"
 
 #: src/help-overlay.ui:38
 msgctxt "shortcut window"
@@ -353,10 +345,20 @@ msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Kembali ke daftar lokasi"
 
-#: src/help-overlay.ui:52
+#: src/help-overlay.ui:54
 msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Keluar"
+msgid "Scanning"
+msgstr "Memindai"
+
+#: src/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Pindai folder"
+
+#: src/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Pindai ulang lokasi saat ini"
 
 #: src/menus.ui:21
 msgid "Go to _parent folder"
@@ -369,6 +371,12 @@ msgstr "Per_besar"
 #: src/menus.ui:31
 msgid "Zoom _out"
 msgstr "Per_kecil"
+
+#~ msgid "org.gnome.baobab"
+#~ msgstr "org.gnome.baobab"
+
+#~ msgid "Baobab"
+#~ msgstr "Baobab"
 
 #~ msgid "baobab"
 #~ msgstr "baobab"
