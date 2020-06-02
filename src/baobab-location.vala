@@ -127,15 +127,18 @@ namespace Baobab {
         }
 
         public void update_volume_info () {
-            mount = volume.get_mount ();
-
             is_remote = volume.get_identifier (VolumeIdentifier.CLASS) == "network";
 
-            if (mount != null) {
-                fill_from_mount ();
+            var new_mount = volume.get_mount ();
+            if (new_mount != null) {
+                if (new_mount != mount) {
+                    mount = new_mount;
+                    fill_from_mount ();
+                }
             } else {
                 name = volume.get_name ();
                 icon = volume.get_icon ();
+                mount = null;
                 file = null;
                 size = null;
                 used = null;
