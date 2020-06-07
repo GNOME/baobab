@@ -183,9 +183,7 @@ namespace Baobab {
             results.time_modified = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
 
             results.size = info.get_size ();
-            if (info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
-                results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
-            }
+            results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
             results.elements = 1;
             results.error = null;
             results.child_error = false;
@@ -231,9 +229,7 @@ namespace Baobab {
                             }
 
                             results.size += child_info.get_size ();
-                            if (child_info.has_attribute (FileAttribute.STANDARD_ALLOCATED_SIZE)) {
-                                results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
-                            }
+                            results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
                             results.elements++;
 
                             var child_time = child_info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
