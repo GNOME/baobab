@@ -71,20 +71,29 @@ namespace Baobab {
             FileAttribute.UNIX_DEVICE + "," +
             FileAttribute.ACCESS_CAN_READ;
 
-        struct HardLink {
-            uint64 inode;
-            uint32 device;
+        [Compact]
+        class HardLink {
+            internal uint64 inode;
+            internal uint32 device;
 
             public HardLink (FileInfo info) {
                 this.inode = info.get_attribute_uint64 (FileAttribute.UNIX_INODE);
                 this.device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
+            }
+
+            public uint hash () {
+                return direct_hash ((void*) this.inode) ^ direct_hash ((void*) this.device);
+            }
+
+            public bool equal (HardLink other) {
+                return this.inode == other.inode && this.device == other.device;
             }
         }
 
         Thread<void*>? thread = null;
         uint process_result_idle = 0;
 
-        HardLink[] hardlinks;
+        GenericSet<HardLink> hardlinks;
         GenericSet<File> excluded_locations;
 
         bool successful = false;
@@ -210,14 +219,14 @@ namespace Baobab {
                         case FileType.REGULAR:
                             if (child_info.has_attribute (FileAttribute.UNIX_NLINK)) {
                                 if (child_info.get_attribute_uint32 (FileAttribute.UNIX_NLINK) > 1) {
-                                    var hl = HardLink (child_info);
+                                    var hl = new HardLink (child_info);
 
                                     // check if we've already encountered this file
                                     if (hl in hardlinks) {
                                         continue;
                                     }
 
-                                    hardlinks += hl;
+                                    hardlinks.add ((owned) hl);
                                 }
                             }
 
@@ -373,7 +382,7 @@ namespace Baobab {
                 tmp = results_queue.try_pop ();
             }
 
-            hardlinks = null;
+            hardlinks = new GenericSet<HardLink> (HardLink.hash, HardLink.equal);
 
             base.clear ();
 
