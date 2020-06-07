@@ -168,6 +168,7 @@ namespace Baobab {
             internal unowned Results? parent;
             internal string name;
             internal string display_name;
+            internal FileType file_type;
 
             // written in the worker thread before dispatch
             // read from the main thread only after dispatch
@@ -183,6 +184,31 @@ namespace Baobab {
             // accessed only by the main thread
             internal Gtk.TreeIter iter;
             internal bool iter_is_set;
+
+            public Results (FileInfo info, Results? parent_results) {
+                parent = parent_results;
+                name = info.get_name ();
+                var info_display_name = info.get_display_name ();
+                if (name == null || info_display_name != Filename.display_name (name)) {
+                    display_name = info_display_name;
+                }
+                file_type = info.get_file_type ();
+                size = info.get_size ();
+                alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                time_modified = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+                elements = 1;
+                error = null;
+                child_error = false;
+            }
+
+            public void update_with_child (Results child) {
+                size         += child.size;
+                alloc_size   += child.alloc_size;
+                elements     += child.elements;
+                max_depth     = int.max (max_depth, child.max_depth + 1);
+                child_error  |= child.child_error || (child.error != null);
+                time_modified = uint64.max (time_modified, child.time_modified);
+            }
         }
 
         Results? add_directory (File directory, FileInfo info, Results? parent = null) {
@@ -194,21 +220,7 @@ namespace Baobab {
                 return null;
             }
 
-            var results = new Results ();
-            results.name = info.get_name ();
-            var display_name = info.get_display_name ();
-            if (results.name == null || display_name != Filename.display_name (results.name)) {
-                results.display_name = display_name;
-            }
-            results.parent = parent;
-
-            results.time_modified = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
-
-            results.size = info.get_size ();
-            results.alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
-            results.elements = 1;
-            results.error = null;
-            results.child_error = false;
+            var results = new Results (info, parent);
 
             try {
                 var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, cancellable);
@@ -220,18 +232,7 @@ namespace Baobab {
                             var child_results = add_directory (child, child_info, results);
 
                             if (child_results != null) {
-                                results.size += child_results.size;
-                                results.alloc_size += child_results.alloc_size;
-                                results.elements += child_results.elements;
-                                results.max_depth = int.max (results.max_depth, child_results.max_depth + 1);
-                                if (child_results.error != null || child_results.child_error) {
-                                    results.child_error = true;
-                                }
-
-                                if (results.time_modified < child_results.time_modified) {
-                                    results.time_modified = child_results.time_modified;
-                                }
-
+                                results.update_with_child (child_results);
                                 results_array.results += (owned) child_results;
                             }
                             break;
@@ -248,16 +249,12 @@ namespace Baobab {
 
                                     hardlinks.add ((owned) hl);
                                 }
+
                             }
 
-                            results.size += child_info.get_size ();
-                            results.alloc_size += child_info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
-                            results.elements++;
-
-                            var child_time = child_info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
-                            if (results.time_modified < child_time) {
-                                results.time_modified = child_time;
-                            }
+                            var child_results = new Results (child_info, results);
+                            results.update_with_child (child_results);
+                            results_array.results += (owned) child_results;
                             break;
 
                         default:
@@ -317,14 +314,14 @@ namespace Baobab {
             }
 
             prepend (out results.iter, parent_iter);
-            set (results.iter,
-                 Columns.STATE,        State.SCANNING,
-                 Columns.NAME,         results.name,
-                 Columns.TIME_MODIFIED,results.time_modified);
+            set (results.iter, Columns.NAME, results.name);
 
+            // To save some memory, we only create these columns if they are needed
             if (results.display_name != null) {
-                 set (results.iter,
-                      Columns.DISPLAY_NAME, results.display_name);
+                 set (results.iter, Columns.DISPLAY_NAME, results.display_name);
+            }
+            if (results.file_type == FileType.DIRECTORY) {
+                set (results.iter, Columns.STATE, State.SCANNING);
             }
 
             results.iter_is_set = true;
@@ -351,11 +348,17 @@ namespace Baobab {
                     }
 
                     set (results.iter,
-                         Columns.SIZE,       results.size,
-                         Columns.ALLOC_SIZE, results.alloc_size,
-                         Columns.PERCENT,    results.percent,
-                         Columns.ELEMENTS,   results.elements,
-                         Columns.STATE,      state);
+                         Columns.PERCENT,       results.percent,
+                         Columns.SIZE,          results.size,
+                         Columns.ALLOC_SIZE,    results.alloc_size,
+                         Columns.TIME_MODIFIED, results.time_modified);
+
+                    // To save some memory, we only create these columns if they are needed
+                    if (results.file_type == FileType.DIRECTORY) {
+                        set (results.iter,
+                             Columns.ELEMENTS, results.elements,
+                             Columns.STATE,    state);
+                    }
 
                     if (results.max_depth > max_depth) {
                         max_depth = results.max_depth;
