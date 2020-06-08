@@ -356,9 +356,7 @@ namespace Baobab {
         }
 
         public void open_item (Gtk.TreeIter iter) {
-            string parse_name;
-            active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
-            var file = File.parse_name (parse_name);
+            var file = active_location.scanner.get_file (iter);
             try {
                 AppInfo.launch_default_for_uri (file.get_uri (), null);
             } catch (Error e) {
@@ -367,17 +365,14 @@ namespace Baobab {
         }
 
         public void copy_path (Gtk.TreeIter iter) {
-            string parse_name;
-            active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
+            var parse_name = active_location.scanner.get_file (iter).get_parse_name ();
             var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
             clipboard.set_text (parse_name, -1);
             clipboard.store ();
         }
 
         public void trash_file (Gtk.TreeIter iter) {
-            string parse_name;
-            active_location.scanner.get (iter, Scanner.Columns.PARSE_NAME, out parse_name);
-            var file = File.parse_name (parse_name);
+            var file = active_location.scanner.get_file (iter);
             try {
                 file.trash ();
                 active_location.scanner.remove (ref iter);
@@ -515,15 +510,15 @@ namespace Baobab {
             model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
             model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
             treemap_chart.set_model_with_columns (model,
+                                                  Scanner.Columns.NAME,
                                                   Scanner.Columns.DISPLAY_NAME,
                                                   show_allocated_size ? Scanner.Columns.ALLOC_SIZE : Scanner.Columns.SIZE,
-                                                  Scanner.Columns.PARSE_NAME,
                                                   Scanner.Columns.PERCENT,
                                                   Scanner.Columns.ELEMENTS, null);
             rings_chart.set_model_with_columns (model,
+                                                Scanner.Columns.NAME,
                                                 Scanner.Columns.DISPLAY_NAME,
                                                 show_allocated_size ? Scanner.Columns.ALLOC_SIZE : Scanner.Columns.SIZE,
-                                                Scanner.Columns.PARSE_NAME,
                                                 Scanner.Columns.PERCENT,
                                                 Scanner.Columns.ELEMENTS, null);
         }

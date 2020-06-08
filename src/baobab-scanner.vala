@@ -30,8 +30,8 @@ namespace Baobab {
 
     public class Scanner : Gtk.TreeStore {
         public enum Columns {
+            NAME,
             DISPLAY_NAME,
-            PARSE_NAME,
             PERCENT,
             SIZE,
             ALLOC_SIZE,
@@ -58,6 +58,25 @@ namespace Baobab {
         public int max_depth { get; protected set; }
 
         public signal void completed();
+
+        public File get_file (Gtk.TreeIter iter) {
+            List<string> names = null;
+            Gtk.TreeIter child = {0};
+
+            do {
+                string name;
+                get (iter, Columns.NAME, out name);
+                names.prepend (name);
+                child = iter;
+            } while (iter_parent (out iter, child));
+
+            var file = directory;
+            foreach (var name in names.next) {
+                file = file.get_child (name);
+            }
+
+            return file;
+        }
 
         const string ATTRIBUTES =
             FileAttribute.STANDARD_NAME + "," +
@@ -150,8 +169,8 @@ namespace Baobab {
             // written in the worker thread on creation
             // read from the main thread at any time
             internal unowned Results? parent;
+            internal string name;
             internal string display_name;
-            internal string parse_name;
 
             // written in the worker thread before dispatch
             // read from the main thread only after dispatch
@@ -179,8 +198,11 @@ namespace Baobab {
             }
 
             var results = new Results ();
-            results.display_name = info.get_display_name ();
-            results.parse_name = directory.get_parse_name ();
+            results.name = info.get_name ();
+            var display_name = info.get_display_name ();
+            if (results.name == null || display_name != Filename.display_name (results.name)) {
+                results.display_name = display_name;
+            }
             results.parent = parent;
 
             results.time_modified = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
@@ -300,8 +322,8 @@ namespace Baobab {
             prepend (out results.iter, parent_iter);
             set (results.iter,
                  Columns.STATE,        State.SCANNING,
+                 Columns.NAME,         results.name,
                  Columns.DISPLAY_NAME, results.display_name,
-                 Columns.PARSE_NAME,   results.parse_name,
                  Columns.TIME_MODIFIED,results.time_modified);
             results.iter_is_set = true;
         }
@@ -436,8 +458,8 @@ namespace Baobab {
             cancellable = new Cancellable();
             scan_error = null;
             set_column_types (new Type[] {
-                typeof (string),  // DIR_NAME
-                typeof (string),  // PARSE_NAME
+                typeof (string),  // NAME
+                typeof (string),  // DISPLAY_NAME
                 typeof (double),  // PERCENT
                 typeof (uint64),  // SIZE
                 typeof (uint64),  // ALLOC_SIZE

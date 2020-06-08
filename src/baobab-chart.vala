@@ -62,8 +62,8 @@ namespace Baobab {
                                          {0.99, 0.68, 0.25, 1.0}}; /* tango: fcaf3e */
 
         uint name_column;
+        uint display_name_column;
         uint size_column;
-        uint info_column;
         uint percentage_column;
         uint valid_column;
 
@@ -116,8 +116,8 @@ namespace Baobab {
 
         public void set_model_with_columns (Gtk.TreeModel m,
                                             uint          name_column_,
+                                            uint          display_name_column_,
                                             uint          size_column_,
-                                            uint          info_column_,
                                             uint          percentage_column_,
                                             uint          valid_column_,
                                             Gtk.TreePath? r) {
@@ -127,8 +127,8 @@ namespace Baobab {
             }
 
             name_column = name_column_;
+            display_name_column = display_name_column_;
             size_column = size_column_;
-            info_column = info_column_;
             percentage_column = percentage_column_;
             valid_column = valid_column_;
         }
@@ -267,11 +267,17 @@ namespace Baobab {
 
         unowned List<ChartItem> add_item (uint depth, double rel_start, double rel_size, Gtk.TreeIter iter) {
             string name;
+            string display_name;
             uint64 size;
-            model.get (iter, name_column, out name, size_column, out size, -1);
+            model.get (iter, name_column, out name, display_name_column, out display_name, size_column, out size);
 
             var item = create_new_chartitem ();
-            item.name = name;
+            item.name = "";
+            if (display_name != null) {
+                item.name = display_name;
+            } else if (name != null) {
+                item.name = Filename.display_name (name);
+            }
             item.size = format_size (size);
             item.depth = depth;
             item.rel_start = rel_start;

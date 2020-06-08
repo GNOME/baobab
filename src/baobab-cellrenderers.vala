@@ -23,9 +23,16 @@ namespace Baobab {
     public class CellRendererName : Gtk.CellRendererText {
         public Scanner.State state { set; get; }
 
+        public string display_name { set; get; }
+
         public string name {
             set {
-                var escaped = (value != null) ? Markup.escape_text (value) : null;
+                string escaped = null;
+                if (display_name != null) {
+                    escaped = Markup.escape_text (display_name);
+                } else if (value != null) {
+                    escaped = Markup.escape_text (Filename.display_name (value));
+                }
                 switch (state) {
                 case Scanner.State.ERROR:
                     markup = "<b>%s</b>".printf (escaped);
