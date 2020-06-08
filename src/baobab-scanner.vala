@@ -297,7 +297,7 @@ namespace Baobab {
                 parent_iter = null;
             }
 
-            append (out results.iter, parent_iter);
+            prepend (out results.iter, parent_iter);
             set (results.iter,
                  Columns.STATE,        State.SCANNING,
                  Columns.DISPLAY_NAME, results.display_name,
@@ -385,6 +385,7 @@ namespace Baobab {
             hardlinks = new GenericSet<HardLink> (HardLink.hash, HardLink.equal);
 
             base.clear ();
+            set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.DESCENDING);
 
             cancellable.reset ();
             scan_error = null;
@@ -422,6 +423,8 @@ namespace Baobab {
         }
 
         public void finish () throws Error {
+            set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
+
             if (scan_error != null) {
                 throw scan_error;
             }
@@ -443,7 +446,6 @@ namespace Baobab {
                 typeof (State),   // STATE
                 typeof (Error)    // ERROR (if STATE is ERROR)
             });
-            set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 
             excluded_locations = Application.get_default ().get_excluded_locations ();
 
