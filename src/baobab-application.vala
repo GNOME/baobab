@@ -86,12 +86,7 @@ namespace Baobab {
 
             // Load custom CSS
             var css_provider = new Gtk.CssProvider ();
-            var css_file = File.new_for_uri ("resource:///org/gnome/baobab/baobab.css");
-            try {
-              css_provider.load_from_file (css_file);
-            } catch (Error e) {
-                warning ("loading css: %s", e.message);
-            }
+            css_provider.load_from_resource ("/org/gnome/baobab/baobab.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             set_accels_for_action ("win.show-home-page", { "<Alt>Left" });
