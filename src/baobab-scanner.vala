@@ -38,14 +38,11 @@ namespace Baobab {
             TIME_MODIFIED,
             ELEMENTS,
             STATE,
-            ERROR,
             COLUMNS
         }
 
         public enum State {
             SCANNING,
-            CANCELLED,
-            NEED_PERCENT,
             ERROR,
             CHILD_ERROR,
             DONE
@@ -353,8 +350,7 @@ namespace Baobab {
                          Columns.ALLOC_SIZE, results.alloc_size,
                          Columns.PERCENT,    results.percent,
                          Columns.ELEMENTS,   results.elements,
-                         Columns.STATE,      state,
-                         Columns.ERROR,      results.error);
+                         Columns.STATE,      state);
 
                     if (results.max_depth > max_depth) {
                         max_depth = results.max_depth;
@@ -465,8 +461,7 @@ namespace Baobab {
                 typeof (uint64),  // ALLOC_SIZE
                 typeof (uint64),  // TIME_MODIFIED
                 typeof (int),     // ELEMENTS
-                typeof (State),   // STATE
-                typeof (Error)    // ERROR (if STATE is ERROR)
+                typeof (State)    // STATE
             });
 
             excluded_locations = Application.get_default ().get_excluded_locations ();
