@@ -31,11 +31,11 @@ namespace Baobab {
     public class Scanner : Gtk.TreeStore {
         public enum Columns {
             NAME,
-            DISPLAY_NAME,
             PERCENT,
             SIZE,
             ALLOC_SIZE,
             TIME_MODIFIED,
+            DISPLAY_NAME,
             ELEMENTS,
             STATE,
             COLUMNS
@@ -320,8 +320,13 @@ namespace Baobab {
             set (results.iter,
                  Columns.STATE,        State.SCANNING,
                  Columns.NAME,         results.name,
-                 Columns.DISPLAY_NAME, results.display_name,
                  Columns.TIME_MODIFIED,results.time_modified);
+
+            if (results.display_name != null) {
+                 set (results.iter,
+                      Columns.DISPLAY_NAME, results.display_name);
+            }
+
             results.iter_is_set = true;
         }
 
@@ -455,11 +460,11 @@ namespace Baobab {
             scan_error = null;
             set_column_types (new Type[] {
                 typeof (string),  // NAME
-                typeof (string),  // DISPLAY_NAME
                 typeof (double),  // PERCENT
                 typeof (uint64),  // SIZE
                 typeof (uint64),  // ALLOC_SIZE
                 typeof (uint64),  // TIME_MODIFIED
+                typeof (string),  // DISPLAY_NAME
                 typeof (int),     // ELEMENTS
                 typeof (State)    // STATE
             });

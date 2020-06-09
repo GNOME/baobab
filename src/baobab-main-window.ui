@@ -250,7 +250,7 @@
                                   <property name="ypad">4</property>
                                 </object>
                                 <attributes>
-                                  <attribute name="value">2</attribute>
+                                  <attribute name="value">1</attribute>
                                   <attribute name="state">7</attribute>
                                 </attributes>
                               </child>
@@ -258,7 +258,7 @@
                                 <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
                                 <attributes>
                                   <attribute name="name">0</attribute>
-                                  <attribute name="display_name">1</attribute>
+                                  <attribute name="display_name">5</attribute>
                                   <attribute name="state">7</attribute>
                                 </attributes>
                               </child>
@@ -270,15 +270,15 @@
                               <property name="sizing">grow-only</property>
                               <property name="title" translatable="yes">Size</property>
                               <property name="reorderable">True</property>
-                              <property name="sort_column_id">4</property>
+                              <property name="sort_column_id">3</property>
                               <child>
                                 <object class="BaobabCellRendererSize" id="size_column_size_renderer">
                                   <property name="xalign">1.0</property>
                                   <property name="show-allocated-size">True</property>
                                 </object>
                                 <attributes>
-                                  <attribute name="size">3</attribute>
-                                  <attribute name="alloc-size">4</attribute>
+                                  <attribute name="size">2</attribute>
+                                  <attribute name="alloc-size">3</attribute>
                                   <attribute name="state">7</attribute>
                                 </attributes>
                               </child>
@@ -308,13 +308,13 @@
                               <property name="sizing">grow-only</property>
                               <property name="title" translatable="yes">Modified</property>
                               <property name="reorderable">True</property>
-                              <property name="sort_column_id">5</property>
+                              <property name="sort_column_id">4</property>
                               <child>
                                 <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
                                   <property name="xalign">1.0</property>
                                 </object>
                                 <attributes>
-                                  <attribute name="time">5</attribute>
+                                  <attribute name="time">4</attribute>
                                 </attributes>
                               </child>
                             </object>
