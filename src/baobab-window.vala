@@ -86,9 +86,6 @@ namespace Baobab {
             { "show-home-page", on_show_home_page_activate },
             { "scan-folder", on_scan_folder_activate },
             { "reload", on_reload_activate },
-            { "show-allocated", on_show_allocated },
-            { "expand-all", on_expand_all },
-            { "collapse-all", on_collapse_all },
             { "help", on_help_activate },
             { "about", on_about_activate }
         };
@@ -100,9 +97,6 @@ namespace Baobab {
 
         private const ActionState[] actions_while_scanning = {
             { "scan-folder", false },
-            { "show-allocated", false },
-            { "expand-all", false },
-            { "collapse-all", false }
         };
 
         private enum DndTargets {
@@ -271,17 +265,6 @@ namespace Baobab {
                 }
                 scan_active_location (true);
             }
-        }
-
-        void on_show_allocated () {
-        }
-
-        void on_expand_all () {
-            treeview.expand_all ();
-        }
-
-        void on_collapse_all () {
-            treeview.collapse_all ();
         }
 
         void on_help_activate () {
