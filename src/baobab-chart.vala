@@ -599,11 +599,7 @@ namespace Baobab {
             action = action_group.lookup_action ("zoom-out") as SimpleAction;
             action.set_enabled (can_zoom_out ());
 
-            if (event != null) {
-                context_menu.popup (null, null, null, event.button, event.time);
-            } else {
-                context_menu.popup (null, null, null, 0, Gtk.get_current_event_time ());
-            }
+            context_menu.popup_at_pointer (event);
         }
 
         void connect_model_signals (Gtk.TreeModel m) {

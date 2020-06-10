@@ -363,12 +363,12 @@ namespace Baobab {
 
         bool show_treeview_popup (Gtk.Menu popup, Gdk.EventButton? event) {
             if (event != null) {
-                popup.popup (null, null, null, event.button, event.time);
+                popup.popup_at_pointer (event);
             } else {
-                popup.popup (null, null, null, 0, Gtk.get_current_event_time ());
+                popup.popup_at_widget (treeview, Gdk.Gravity.CENTER, Gdk.Gravity.CENTER);
                 popup.select_first (false);
             }
-            return true;
+            return Gdk.EVENT_STOP;
         }
 
         public void open_item (Gtk.TreeIter iter) {
