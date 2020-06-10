@@ -86,6 +86,7 @@ namespace Baobab {
             { "show-home-page", on_show_home_page_activate },
             { "scan-folder", on_scan_folder_activate },
             { "reload", on_reload_activate },
+            { "clear-recent", on_clear_recent },
             { "help", on_help_activate },
             { "about", on_about_activate }
         };
@@ -265,6 +266,10 @@ namespace Baobab {
                 }
                 scan_active_location (true);
             }
+        }
+
+        void on_clear_recent () {
+            location_list.clear_recent ();
         }
 
         void on_help_activate () {

@@ -320,15 +320,28 @@ namespace Baobab {
             Gtk.RecentManager.get_default ().add_full (location.file.get_uri (), data);
 
             // Reload recent locations
+            clear_recent (false);
+            populate_recent ();
+
+            update ();
+        }
+
+        public void clear_recent (bool remove_from_recent_manager = true) {
             unowned List<Location> iter = locations;
             while (iter != null) {
                 unowned List<Location> next = iter.next;
                 if (iter.data.is_recent) {
-                    locations.remove_link (iter);
+                    try {
+                        if (remove_from_recent_manager) {
+                            Gtk.RecentManager.get_default ().remove_item (iter.data.file.get_uri ());
+                        }
+                        locations.remove_link (iter);
+                    } catch (Error e) {
+                        warning ("Attempting to remove an item from recent locations, but failed: %s", e.message);
+                    }
                 }
                 iter = next;
             }
-            populate_recent ();
 
             update ();
         }
