@@ -34,6 +34,10 @@ namespace Baobab {
 
     public class Treemap : Chart {
 
+        static construct {
+            set_css_name ("treemap");
+        }
+
         const int ITEM_BORDER_WIDTH = 1;
         const int ITEM_PADDING = 6;
         const int ITEM_TEXT_PADDING = 3;
@@ -59,16 +63,12 @@ namespace Baobab {
             uint border = ITEM_BORDER_WIDTH;
 
             var context = get_style_context ();
-            context.save ();
-            context.set_state (Gtk.StateFlags.NORMAL);
 
             cr.set_line_width (border);
             cr.rectangle (x + border, y + border, width - border * 2, height - border * 2);
             Gdk.cairo_set_source_rgba (cr, fill_color);
-            cr.fill_preserve ();
-            var border_color = context.get_border_color (context.get_state ());
-            Gdk.cairo_set_source_rgba (cr, border_color);
-            cr.stroke ();
+            cr.fill ();
+            context.render_frame (cr, x + 0.5, y + 0.5, width - 1, height - 1);
 
             if (show_text) {
                 var layout = create_pango_layout (null);
@@ -83,8 +83,6 @@ namespace Baobab {
                     context.render_layout (cr, x + width / 2 - rect.width / 2, y + height / 2 - rect.height / 2, layout);
                 }
             }
-
-            context.restore ();
         }
 
         protected override void draw_item (Cairo.Context cr, ChartItem item, bool highlighted) {

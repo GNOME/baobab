@@ -198,7 +198,8 @@ namespace Baobab {
                     cr.rectangle (tooltip_rect.x + tooltip_rect.width, tooltip_rect.y, -tooltip_rect.width, tooltip_rect.height);
                     cr.clip ();
 
-                    var bg_color = context.get_background_color (context_state);
+                    Gdk.RGBA bg_color;
+                    context.lookup_color ("tooltip_bg_color", out bg_color);
                     cr.set_line_width (1);
                     cr.move_to (sector_center_x, sector_center_y);
                     Gdk.cairo_set_source_rgba (cr, bg_color);
@@ -239,14 +240,14 @@ namespace Baobab {
             get_allocation (out allocation);
 
             var context = get_style_context ();
-            var context_state = context.get_state ();
             context.save ();
 
             var toplevel_context = get_toplevel ().get_style_context ();
-            var toplevel_context_state = toplevel_context.get_state ();
 
-            var border_color = context.get_border_color (context_state);
-            var bg_color = toplevel_context.get_background_color (toplevel_context_state);
+            Gdk.RGBA border_color;
+            context.lookup_color ("chart_borders", out border_color);
+            Gdk.RGBA bg_color;
+            toplevel_context.lookup_color ("theme_bg_color", out bg_color);
 
             var center_x = allocation.width / 2;
             var center_y = allocation.height / 2;
