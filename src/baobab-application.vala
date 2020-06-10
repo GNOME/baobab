@@ -62,20 +62,11 @@ namespace Baobab {
 
         public GenericSet<File> get_excluded_locations () {
             var excluded_locations = new GenericSet<File> (File.hash, File.equal);
-            excluded_locations.add (File.new_for_path ("/proc"));
-            excluded_locations.add (File.new_for_path ("/sys"));
-            excluded_locations.add (File.new_for_path ("/selinux"));
 
-            var home = File.new_for_path (Environment.get_home_dir ());
-            excluded_locations.add (home.get_child (".gvfs"));
-
-            var root = File.new_for_path ("/");
             var prefs_settings = new Settings ("org.gnome.baobab.preferences");
-            foreach (var uri in prefs_settings.get_value ("excluded-uris")) {
-                var file = File.new_for_uri ((string) uri);
-                if (!file.equal (root)) {
-                    excluded_locations.add (file);
-                }
+            foreach (var uri in prefs_settings.get_strv ("excluded-uris")) {
+                var file = File.new_for_uri (uri);
+                excluded_locations.add (file);
             }
 
             return excluded_locations;

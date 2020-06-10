@@ -95,6 +95,7 @@ namespace Baobab {
 
         GenericSet<HardLink> hardlinks;
         GenericSet<File> excluded_locations;
+        uint32 unix_device = 0;
 
         bool successful = false;
 
@@ -171,7 +172,9 @@ namespace Baobab {
         Results? add_directory (File directory, FileInfo info, Results? parent = null) {
             var results_array = new ResultsArray ();
 
-            if (directory in excluded_locations) {
+            var current_unix_device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
+            if (directory in excluded_locations ||
+                (ScanFlags.EXCLUDE_MOUNTS in scan_flags && current_unix_device != unix_device)) {
                 return null;
             }
 
@@ -267,6 +270,7 @@ namespace Baobab {
             try {
                 var array = new ResultsArray ();
                 var info = directory.query_info (ATTRIBUTES, 0, cancellable);
+                unix_device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
                 var results = add_directory (directory, info);
                 results.percent = 100.0;
                 array.results += (owned) results;
@@ -442,14 +446,6 @@ namespace Baobab {
             set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
 
             excluded_locations = Application.get_default ().get_excluded_locations ();
-
-            if (ScanFlags.EXCLUDE_MOUNTS in flags) {
-                foreach (unowned UnixMountEntry mount in UnixMountEntry.get (null)) {
-                    excluded_locations.add (File.new_for_path (mount.get_mount_path ()));
-                }
-            }
-
-            excluded_locations.remove (directory);
 
             results_queue = new AsyncQueue<ResultsArray> ();
         }
