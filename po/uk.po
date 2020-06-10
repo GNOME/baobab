@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-05-26 16:52+0000\n"
-"PO-Revision-Date: 2020-05-26 20:24+0300\n"
+"POT-Creation-Date: 2020-06-10 16:07+0000\n"
+"PO-Revision-Date: 2020-06-10 20:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-doc@kde.org>\n"
 "Language: uk\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120 src/baobab-window.vala:310
+#: src/baobab-main-window.ui:124 src/baobab-window.vala:298
 msgid "Disk Usage Analyzer"
 msgstr "Аналізатор використання диска"
 
@@ -96,7 +96,7 @@ msgstr "GdkWindowState вікна"
 msgid "Print version information and exit"
 msgstr "Показати версію та вийти"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:93
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -105,17 +105,17 @@ msgstr[1] "%d об'єкти"
 msgstr[2] "%d об'єктів"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:103 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Невідомо"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:112
 msgid "Today"
 msgstr "Сьогодні"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:116
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -124,7 +124,7 @@ msgstr[1] "%lu дні"
 msgstr[2] "%lu днів"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:120
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -133,7 +133,7 @@ msgstr[1] "%lu місяці"
 msgstr[2] "%lu місяців"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:124
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -149,32 +149,32 @@ msgstr "Цей комп'ютер"
 msgid "Remote Locations"
 msgstr "Віддалена адреса"
 
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s всього"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s доступно"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s вжито"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Демонтовано"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:70
 msgid "Home folder"
 msgstr "Домашня тека"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:104
 msgid "Computer"
 msgstr "Комп'ютер"
 
@@ -182,139 +182,144 @@ msgstr "Комп'ютер"
 msgid "Scan Folder…"
 msgstr "Просканувати теку…"
 
-#: src/baobab-main-window.ui:13
+#: src/baobab-main-window.ui:11
+#| msgctxt "shortcut window"
+#| msgid "Rescan current location"
+msgid "Clear list of recent locations"
+msgstr "Спорожнити список нещодавніх місць"
+
+#: src/baobab-main-window.ui:17
 msgid "Keyboard _Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/baobab-main-window.ui:17
+#: src/baobab-main-window.ui:21
 msgid "_Help"
 msgstr "_Довідка"
 
-#: src/baobab-main-window.ui:21
+#: src/baobab-main-window.ui:25
 msgid "_About Disk Usage Analyzer"
 msgstr "Про «Аналізатор використання дисків»"
 
-#: src/baobab-main-window.ui:34 src/menus.ui:7
+#: src/baobab-main-window.ui:38 src/menus.ui:7
 msgid "_Open Folder"
 msgstr "Відкрити _теку"
 
-#: src/baobab-main-window.ui:43 src/menus.ui:11
+#: src/baobab-main-window.ui:47 src/menus.ui:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Скопіювати шлях до кишені"
 
-#: src/baobab-main-window.ui:52 src/menus.ui:15
+#: src/baobab-main-window.ui:56 src/menus.ui:15
 msgid "Mo_ve to Trash"
 msgstr "Пере_містити у смітник"
 
-#: src/baobab-main-window.ui:184
+#: src/baobab-main-window.ui:188
 msgid "Close"
 msgstr "Закрити"
 
-#: src/baobab-main-window.ui:239
+#: src/baobab-main-window.ui:243
 msgid "Folder"
 msgstr "Тека"
 
-#: src/baobab-main-window.ui:266
+#: src/baobab-main-window.ui:270
 msgid "Size"
 msgstr "Розмір"
 
-#: src/baobab-main-window.ui:286
+#: src/baobab-main-window.ui:290
 msgid "Contents"
 msgstr "Зміст"
 
-#: src/baobab-main-window.ui:304
+#: src/baobab-main-window.ui:308
 msgid "Modified"
 msgstr "Змінено"
 
-#: src/baobab-main-window.ui:349
+#: src/baobab-main-window.ui:353
 msgid "Rings Chart"
 msgstr "Кільцева діаграма"
 
-#: src/baobab-main-window.ui:361
+#: src/baobab-main-window.ui:365
 msgid "Treemap Chart"
 msgstr "Дерево"
 
-#: src/baobab-window.vala:215
+#: src/baobab-window.vala:210
 msgid "Select Folder"
 msgstr "Виберіть теку"
 
-#: src/baobab-window.vala:217
+#: src/baobab-window.vala:212
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: src/baobab-window.vala:218
+#: src/baobab-window.vala:213
 msgid "_Open"
 msgstr "_Відкрити"
 
-#: src/baobab-window.vala:224
+#: src/baobab-window.vala:219
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно аналізувати точки монтування"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:254
 msgid "Could not analyze volume."
 msgstr "Неможливо проаналізувати том."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:279
 msgid "Failed to show help"
 msgstr "Не вдалося показати довідку"
 
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:301
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графічна утиліта для аналізу використання дисків."
 
-#: src/baobab-window.vala:319
+#: src/baobab-window.vala:307
 msgid "translator-credits"
 msgstr ""
 "Юрій Сирота <yuriy@beer.com>\n"
 "Максим Дзюманенко <dziumanenko@gmail.com>\n"
 "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:369
 msgid "Failed to open file"
 msgstr "Не вдалося відкрити файл"
 
-#: src/baobab-window.vala:401
+#: src/baobab-window.vala:389
 msgid "Failed to move file to the trash"
 msgstr "Не вдалося перенести файл у смітник"
 
-#: src/baobab-window.vala:505
+#: src/baobab-window.vala:493
 msgid "Devices & Locations"
 msgstr "Пристрої і місця"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:555
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Неможливо просканувати теку «%s»"
 
-#: src/baobab-window.vala:570
+#: src/baobab-window.vala:558
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Неможливо просканувати деякі теки у «%s»."
 
-#: src/baobab-window.vala:589
+#: src/baobab-window.vala:577
 msgid "Could not detect occupied disk sizes."
 msgstr "Неможливо виявити займані розміри диска."
 
-#: src/baobab-window.vala:589
+#: src/baobab-window.vala:577
 msgid "Apparent sizes are shown instead."
 msgstr "Натомість показано очевидні розміри."
 
-#: src/baobab-window.vala:593
+#: src/baobab-window.vala:581
 msgid "Scan completed"
 msgstr "Сканування завершено"
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:582
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Завершено сканування «%s»"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:604
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» не є дійсною текою"
 
-#: src/baobab-window.vala:613 src/baobab-window.vala:619
+#: src/baobab-window.vala:605
 msgid "Could not analyze disk usage."
 msgstr "Не вдалось проаналізувати використання дисків."
 
