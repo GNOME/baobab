@@ -245,18 +245,14 @@ namespace Baobab {
         void on_scan_location_activate (Location location) {
             set_active_location (location);
 
-            if (location.volume != null) {
-                location.mount_volume.begin ((location_, res) => {
-                    try {
-                        location.mount_volume.end (res);
-                        scan_active_location (false);
-                    } catch (Error e) {
-                        message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
-                    }
-                });
-            } else {
-                scan_active_location (false);
-            }
+            location.mount_volume.begin ((location_, res) => {
+                try {
+                    location.mount_volume.end (res);
+                    scan_active_location (false);
+                } catch (Error e) {
+                    message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
+                }
+            });
         }
 
         void on_reload_activate () {
