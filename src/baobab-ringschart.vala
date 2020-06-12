@@ -240,14 +240,11 @@ namespace Baobab {
             get_allocation (out allocation);
 
             var context = get_style_context ();
-            context.save ();
-
-            var toplevel_context = get_toplevel ().get_style_context ();
 
             Gdk.RGBA border_color;
-            context.lookup_color ("chart_borders", out border_color);
             Gdk.RGBA bg_color;
-            toplevel_context.lookup_color ("theme_bg_color", out bg_color);
+            context.lookup_color ("chart_borders", out border_color);
+            context.lookup_color ("theme_bg_color", out bg_color);
 
             var center_x = allocation.width / 2;
             var center_y = allocation.height / 2;
@@ -294,8 +291,6 @@ namespace Baobab {
                     cr.stroke ();
                 }
             }
-
-            context.restore ();
         }
 
         protected override void calculate_item_geometry (ChartItem item) {

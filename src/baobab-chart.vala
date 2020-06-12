@@ -54,12 +54,8 @@ namespace Baobab {
         protected const uint MAX_DEPTH = 5;
         protected const uint MIN_DEPTH = 1;
 
-        const Gdk.RGBA TANGO_COLORS[] = {{0.94, 0.16, 0.16, 1.0}, /* tango: ef2929 */
-                                         {0.68, 0.49, 0.66, 1.0}, /* tango: ad7fa8 */
-                                         {0.45, 0.62, 0.82, 1.0}, /* tango: 729fcf */
-                                         {0.54, 0.89, 0.20, 1.0}, /* tango: 8ae234 */
-                                         {0.91, 0.73, 0.43, 1.0}, /* tango: e9b96e */
-                                         {0.99, 0.68, 0.25, 1.0}}; /* tango: fcaf3e */
+        // Keep in sync with colors defined in CSS
+        const int NUM_TANGO_COLORS = 6;
 
         uint name_column;
         uint display_name_column;
@@ -456,23 +452,25 @@ namespace Baobab {
         }
 
         protected Gdk.RGBA get_item_color (double rel_position, uint depth, bool highlighted) {
-            const Gdk.RGBA level_color = {0.83, 0.84, 0.82, 1.0};
-            const Gdk.RGBA level_color_hi = {0.88, 0.89, 0.87, 1.0};
-
+            var context = get_style_context ();
 
             var color = Gdk.RGBA ();
 
             double intensity = 1 - (((depth - 1) * 0.3) / MAX_DEPTH);
 
             if (depth == 0) {
-                color = level_color;
+                context.lookup_color ("level_color", out color);
             } else {
-                int color_number = (int) (rel_position / (100.0/3));
-                int next_color_number = (color_number + 1) % 6;
+                Gdk.RGBA color_a, color_b;
 
-                color = interpolate_colors (TANGO_COLORS[color_number],
-                                            TANGO_COLORS[next_color_number],
-                                            (rel_position - color_number * 100/3) / (100/3));
+                int color_number = (int) (rel_position / (100.0/3));
+                int next_color_number = (color_number + 1) % NUM_TANGO_COLORS;
+
+                context.lookup_color ("tango_color_" + color_number.to_string (), out color_a);
+                context.lookup_color ("tango_color_" + next_color_number.to_string (), out color_b);
+
+                color = interpolate_colors (color_a, color_b, (rel_position - color_number * 100/3) / (100/3));
+
                 color.red *= intensity;
                 color.green *= intensity;
                 color.blue *= intensity;
@@ -480,7 +478,7 @@ namespace Baobab {
 
             if (highlighted) {
                 if (depth == 0) {
-                    color = level_color_hi;
+                    context.lookup_color ("level_color_hi", out color);
                 } else {
                     double maximum = double.max (color.red, double.max (color.green, color.blue));
                     color.red /= maximum;
