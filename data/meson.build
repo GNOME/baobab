@@ -3,6 +3,9 @@ foreach size: ['scalable', 'symbolic']
   install_subdir('icons/hicolor/' + size, install_dir: icondir)
 endforeach
 
+resource_files = files('baobab.gresource.xml')
+resources = gnome.compile_resources('org.gnome.baobab', resource_files, c_name: 'resources')
+
 install_man ('baobab.1')
 
 desktop_file = i18n.merge_file(

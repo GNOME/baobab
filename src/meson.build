@@ -1,6 +1,3 @@
-resource_files = files('baobab.gresource.xml')
-resources = gnome.compile_resources('org.gnome.baobab', resource_files, c_name: 'resources')
-
 vapi_sources = [
   'config.vapi',
 ]
