@@ -31,7 +31,7 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Button back_button;
         [GtkChild]
-        private Gtk.Button reload_button;
+        private Gtk.Box rescan_box;
         [GtkChild]
         private Gtk.MenuButton menu_button;
         [GtkChild]
@@ -81,7 +81,8 @@ namespace Baobab {
             { "show-primary-menu", on_show_primary_menu_activate, null, "false", null },
             { "show-home-page", on_show_home_page_activate },
             { "scan-folder", on_scan_folder_activate },
-            { "reload", on_reload_activate },
+            { "rescan", on_rescan_activate },
+            { "rescan_as_admin", on_rescan_as_admin_activate },
             { "clear-recent", on_clear_recent },
             { "help", on_help_activate },
             { "about", on_about_activate }
@@ -251,13 +252,12 @@ namespace Baobab {
             });
         }
 
-        void on_reload_activate () {
-            if (active_location != null) {
-                if (active_location.scanner != null) {
-                    active_location.scanner.cancel ();
-                }
-                scan_active_location (true);
-            }
+        void on_rescan_activate () {
+            scan_active_location (true);
+        }
+
+        void on_rescan_as_admin_activate () {
+            scan_active_location (true, true);
         }
 
         void on_clear_recent () {
@@ -469,18 +469,15 @@ namespace Baobab {
 
         void set_ui_state (Gtk.Widget child, bool busy) {
             menu_button.visible = (child == home_page);
-            reload_button.visible = (child == result_page);
+            rescan_box.visible = (child == result_page);
             back_button.visible = (child == result_page);
 
             set_busy (busy);
 
             if (child == home_page) {
-                var action = lookup_action ("reload") as SimpleAction;
-                action.set_enabled (false);
                 header_bar.title = _("Devices & Locations");
+                active_location = null;
             } else {
-                var action = lookup_action ("reload") as SimpleAction;
-                action.set_enabled (true);
                 header_bar.title = active_location.name;
             }
 
@@ -509,8 +506,16 @@ namespace Baobab {
             treemap_chart.model = model;
         }
 
-        void scan_active_location (bool force) {
+        void scan_active_location (bool force, bool scan_as_admin=false) {
+            if (active_location == null) {
+                return;
+            }
+
             var scanner = active_location.scanner;
+
+            if (scanner != null) {
+                scanner.cancel ();
+            }
 
             scan_completed_handler = scanner.completed.connect(() => {
                 if (scan_completed_handler > 0) {
@@ -523,18 +528,11 @@ namespace Baobab {
                 } catch (IOError.CANCELLED e) {
                     // Handle cancellation silently
                     return;
+                } catch (IOError.PERMISSION_DENIED e) {
+                    // Do nothing
                 } catch (Error e) {
-                    Gtk.TreeIter iter;
-                    Scanner.State state;
-                    scanner.get_iter_first (out iter);
-                    scanner.get (iter, Scanner.Columns.STATE, out state);
-                    if (state == Scanner.State.ERROR) {
-                        var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
-                        message (primary, e.message, Gtk.MessageType.ERROR);
-                    } else {
-                        var primary = _("Could not scan some of the folders contained in “%s”").printf (scanner.directory.get_parse_name ());
-                        message (primary, e.message, Gtk.MessageType.WARNING);
-                    }
+                    var primary = _("An error occured while scanning “%s”").printf (scanner.directory.get_parse_name ());
+                    message (primary, e.message, Gtk.MessageType.ERROR);
                 }
 
                 set_chart_model (active_location.scanner);
@@ -555,7 +553,7 @@ namespace Baobab {
             clear_message ();
             set_ui_state (result_page, true);
 
-            scanner.scan (force);
+            scanner.scan (force, scan_as_admin);
 
             treeview.model = scanner;
             expand_first_row ();

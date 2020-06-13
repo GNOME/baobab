@@ -27,6 +27,16 @@
       </item>
     </section>
   </menu>
+  <menu id="rescan_menu">
+    <item>
+      <attribute name="label" translatable="yes">Rescan</attribute>
+      <attribute name="action">win.rescan</attribute>
+    </item>
+    <item>
+      <attribute name="label" translatable="yes">Rescan as administrator…</attribute>
+      <attribute name="action">win.rescan_as_admin</attribute>
+    </item>
+  </menu>
   <object class="GtkMenu" id="treeview_popup_menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -86,18 +96,34 @@
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="reload_button">
-        <property name="valign">center</property>
-        <property name="can_focus">True</property>
-        <property name="action_name">win.reload</property>
+      <object class="GtkBox" id="rescan_box">
         <style>
-          <class name="image-button"/>
+          <class name="linked"/>
         </style>
         <child>
-          <object class="GtkImage" id="reload_button_image">
+          <object class="GtkButton" id="rescan_button">
             <property name="visible">True</property>
-            <property name="icon_size">1</property>
-            <property name="icon_name">view-refresh-symbolic</property>
+            <property name="valign">center</property>
+            <property name="can_focus">True</property>
+            <property name="action_name">win.rescan</property>
+            <style>
+              <class name="image-button"/>
+            </style>
+            <child>
+              <object class="GtkImage" id="reload_button_image">
+                <property name="visible">True</property>
+                <property name="icon_size">1</property>
+                <property name="icon_name">view-refresh-symbolic</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="rescan_menu_button">
+            <property name="visible">True</property>
+            <property name="valign">center</property>
+            <property name="menu_model">rescan_menu</property>
+            <property name="can_focus">True</property>
           </object>
         </child>
       </object>

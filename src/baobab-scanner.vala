@@ -86,7 +86,11 @@ namespace Baobab {
             FileAttribute.UNIX_NLINK + "," +
             FileAttribute.UNIX_INODE + "," +
             FileAttribute.UNIX_DEVICE + "," +
+            FileAttribute.ACCESS_CAN_EXECUTE + "," +
             FileAttribute.ACCESS_CAN_READ;
+
+        bool scan_as_admin = false;
+        bool auth_failed = false;
 
         [Compact]
         class HardLink {
@@ -265,9 +269,21 @@ namespace Baobab {
 
             var results = new Results (info, parent);
 
+            File admin_directory = directory;
+            bool try_admin_access = scan_as_admin &&
+                                    !(info.get_attribute_boolean (FileAttribute.ACCESS_CAN_READ) &&
+                                      info.get_attribute_boolean (FileAttribute.ACCESS_CAN_EXECUTE)) &&
+                                    !auth_failed;
+            if (try_admin_access) {
+                admin_directory = File.new_for_uri ("admin://" + directory.get_path ());
+            }
+
             try {
-                add_children (directory, results, results_array);
+                add_children (admin_directory, results, results_array);
             } catch (Error e) {
+                if (e is IOError.PERMISSION_DENIED) {
+                    auth_failed = true;
+                }
                 results.error = e;
             }
 
@@ -285,6 +301,25 @@ namespace Baobab {
             results_queue.push ((owned) results_array);
 
             return results;
+        }
+
+        void mount_enclosing_volume_sync (File file) {
+            var loop = new MainLoop ();
+
+            var operation = new Gtk.MountOperation (null);
+            file.mount_enclosing_volume.begin (MountMountFlags.NONE, operation, cancellable, (obj, res) => {
+                try {
+                    file.mount_enclosing_volume.end (res);
+                } catch (IOError.ALREADY_MOUNTED e) {
+                    // We can ignore this one
+                } catch (Error e) {
+                    scan_error = e;
+                }
+
+                loop.quit ();
+            });
+
+            loop.run ();
         }
 
         void* scan_in_thread () {
@@ -424,15 +459,28 @@ namespace Baobab {
 
             cancellable.reset ();
             scan_error = null;
+            auth_failed = false;
         }
 
-        public void scan (bool force) {
+        public void scan (bool force, bool scan_as_admin) {
             if (force) {
                 successful = false;
             }
 
+            this.scan_as_admin = scan_as_admin;
+
             if (!successful) {
                 cancel_and_reset ();
+
+                if (scan_as_admin) {
+                    var admin_directory = File.new_for_uri ("admin://" + directory.get_path ());
+                    mount_enclosing_volume_sync (admin_directory);
+                }
+
+                if (scan_error != null) {
+                    completed ();
+                    return;
+                }
 
                 // the thread owns a reference on the Scanner object
                 this.self = this;
