@@ -75,21 +75,9 @@ namespace Baobab {
 
         public new uint64 size {
             set {
-                if (!show_allocated_size) {
-                    text = (state != Scanner.State.ERROR ? format_size (value) : "");
-                }
+                text = (state != Scanner.State.ERROR ? format_size (value) : "");
             }
         }
-
-        public uint64 alloc_size {
-            set {
-                if (show_allocated_size) {
-                    text = (state != Scanner.State.ERROR ? format_size (value) : "");
-                }
-            }
-        }
-
-        public bool show_allocated_size { private get; set; }
     }
 
     public class CellRendererItems : Gtk.CellRendererText {

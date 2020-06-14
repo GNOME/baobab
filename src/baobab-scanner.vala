@@ -33,7 +33,6 @@ namespace Baobab {
             NAME,
             PERCENT,
             SIZE,
-            ALLOC_SIZE,
             TIME_MODIFIED,
             DISPLAY_NAME,
             ELEMENTS,
@@ -51,6 +50,8 @@ namespace Baobab {
         public File directory { get; private set; }
 
         public ScanFlags scan_flags { get; private set; }
+
+        public bool show_allocated_size { get; private set; }
 
         public int max_depth { get; protected set; }
 
@@ -173,7 +174,6 @@ namespace Baobab {
             // written in the worker thread before dispatch
             // read from the main thread only after dispatch
             internal uint64 size;
-            internal uint64 alloc_size;
             internal uint64 time_modified;
             internal int elements;
             internal double percent;
@@ -193,8 +193,10 @@ namespace Baobab {
                     display_name = info_display_name;
                 }
                 file_type = info.get_file_type ();
-                size = info.get_size ();
-                alloc_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);
+                if (size == 0) {
+                    size = info.get_size ();
+                }
                 time_modified = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
                 elements = 1;
                 error = null;
@@ -203,7 +205,6 @@ namespace Baobab {
 
             public void update_with_child (Results child) {
                 size         += child.size;
-                alloc_size   += child.alloc_size;
                 elements     += child.elements;
                 max_depth     = int.max (max_depth, child.max_depth + 1);
                 child_error  |= child.child_error || (child.error != null);
@@ -286,6 +287,11 @@ namespace Baobab {
             try {
                 var array = new ResultsArray ();
                 var info = directory.query_info (ATTRIBUTES, 0, cancellable);
+
+                // Use allocated size if available, where availability is defined as allocated size > 0
+                // for the root element. This is consistent with how we attribute sizes in the Results structure
+                show_allocated_size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE) > 0;
+
                 unix_device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
                 var results = add_directory (directory, info);
                 results.percent = 100.0;
@@ -350,7 +356,6 @@ namespace Baobab {
                     set (results.iter,
                          Columns.PERCENT,       results.percent,
                          Columns.SIZE,          results.size,
-                         Columns.ALLOC_SIZE,    results.alloc_size,
                          Columns.TIME_MODIFIED, results.time_modified);
 
                     // To save some memory, we only create these columns if they are needed
@@ -465,7 +470,6 @@ namespace Baobab {
                 typeof (string),  // NAME
                 typeof (double),  // PERCENT
                 typeof (uint64),  // SIZE
-                typeof (uint64),  // ALLOC_SIZE
                 typeof (uint64),  // TIME_MODIFIED
                 typeof (string),  // DISPLAY_NAME
                 typeof (int),     // ELEMENTS

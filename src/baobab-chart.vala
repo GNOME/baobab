@@ -57,12 +57,6 @@ namespace Baobab {
         // Keep in sync with colors defined in CSS
         const int NUM_TANGO_COLORS = 6;
 
-        uint name_column;
-        uint display_name_column;
-        uint size_column;
-        uint percentage_column;
-        uint valid_column;
-
         bool model_changed;
 
         Gtk.Menu context_menu = null;
@@ -108,25 +102,6 @@ namespace Baobab {
             get {
                 return model_;
             }
-        }
-
-        public void set_model_with_columns (Gtk.TreeModel m,
-                                            uint          name_column_,
-                                            uint          display_name_column_,
-                                            uint          size_column_,
-                                            uint          percentage_column_,
-                                            uint          valid_column_,
-                                            Gtk.TreePath? r) {
-            model = m;
-            if (r != null) {
-                root = r;
-            }
-
-            name_column = name_column_;
-            display_name_column = display_name_column_;
-            size_column = size_column_;
-            percentage_column = percentage_column_;
-            valid_column = valid_column_;
         }
 
         Gtk.TreeRowReference? root_;
@@ -265,7 +240,10 @@ namespace Baobab {
             string name;
             string display_name;
             uint64 size;
-            model.get (iter, name_column, out name, display_name_column, out display_name, size_column, out size);
+            model.get (iter,
+                       Scanner.Columns.NAME, out name,
+                       Scanner.Columns.DISPLAY_NAME, out display_name,
+                       Scanner.Columns.SIZE, out size);
 
             var item = create_new_chartitem ();
             item.name = "";
@@ -293,7 +271,7 @@ namespace Baobab {
         void get_items (Gtk.TreePath root_path) {
             unowned List<ChartItem> node = null;
             Gtk.TreeIter initial_iter = {0};
-            double size;
+            double percent;
             Gtk.TreePath model_root_path;
             Gtk.TreeIter model_root_iter;
             Gtk.TreeIter child_iter = {0};
@@ -309,7 +287,7 @@ namespace Baobab {
 
             model_root_path = new Gtk.TreePath.first ();
             model.get_iter (out model_root_iter, model_root_path);
-            model.get (model_root_iter, percentage_column, out size, -1);
+            model.get (model_root_iter, Scanner.Columns.PERCENT, out percent);
 
             node = add_item (0, 0, 100, initial_iter);
 
@@ -327,11 +305,11 @@ namespace Baobab {
                 if ((item.has_any_child) && (item.depth < max_depth + 1)) {
                     rel_start = 0;
                     do {
-                        model.get (child_iter, percentage_column, out size, -1);
-                        child_node = add_item (item.depth + 1, rel_start, size, child_iter);
+                        model.get (child_iter, Scanner.Columns.PERCENT, out percent);
+                        child_node = add_item (item.depth + 1, rel_start, percent, child_iter);
                         var child = child_node.data;
                         child.parent = node;
-                        rel_start += size;
+                        rel_start += percent;
                     } while (model.iter_next (ref child_iter));
                 }
 
@@ -413,11 +391,6 @@ namespace Baobab {
         }
 
         public override bool draw (Cairo.Context cr) {
-            if (name_column == percentage_column) {
-                // Columns not set
-                return false;
-            }
-
             if (model != null) {
                 if (model_changed || items == null) {
                     get_items (root);
