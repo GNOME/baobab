@@ -11,14 +11,14 @@
 # Furkan Ahmet KARA <furkanahmetkara.fk@gmail.com>, 2017.
 # Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>, 2017.
 # Doğa Deniz Arıcı <bluegreenbrain@gmail.com>, 2018.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2018.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2018-10-15 15:31+0000\n"
-"PO-Revision-Date: 2018-12-23 09:07+0300\n"
+"POT-Creation-Date: 2020-06-13 10:28+0000\n"
+"PO-Revision-Date: 2020-06-14 10:16+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -29,9 +29,9 @@ msgstr ""
 "X-Generator: Gtranslator 3.30.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:294
 msgid "Disk Usage Analyzer"
-msgstr "Disk Kullanımı Analizcisi"
+msgstr "Disk Kullanımı İnceleyici"
 
 #: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
@@ -43,7 +43,7 @@ msgid ""
 "control."
 msgstr ""
 "Disk kullanımınızı ve kullanılabilir alanınızı denetim altında tutmak için "
-"basit bir uygulama."
+"basit uygulama."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -51,9 +51,9 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"Disk Kullanımı Analizcisi belirli klasörleri, depolama aygıtlarını ve çevrim "
-"içi hesapları tarayabilir. Ayrıca, her klasörün boyutunun ağaç ve grafik "
-"gösterimini bir arada sunar, disk alanının nerede boşa harcandığını "
+"Disk Kullanımı İnceleyici belirli klasörleri, depolama aygıtlarını ve çevrim "
+"içi hesapları tarayabilir. Ayrıca, her klasör boyutunun ağaç ve grafik "
+"gösterimini sunar, disk alanının nerede boşa harcandığını "
 "saptamayı kolaylaştırır."
 
 #: data/org.gnome.baobab.appdata.xml.in:34
@@ -63,12 +63,7 @@ msgstr "GNOME Projesi"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
-msgstr "depolama;biriktirme;boşluk;alan;temizlik;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "org.gnome.baobab"
-msgstr "org.gnome.baobab"
+msgstr "depolama;biriktirme;saklama;boşluk;alan;temizlik;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded partitions URIs"
@@ -100,280 +95,292 @@ msgstr "Pencere durumu"
 
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
-msgstr "Pencerenin GdkWindowState'i"
+msgstr "Pencerenin GdkWindowState’i"
+
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Genel"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Yardımı göster"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Ana menüyü göster / gizle"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Klavye Kısayollarını göster"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Konum listesine geri dön"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Tarama"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Klasörü tara"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Geçerli konumu yeniden tara"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:38
+msgid "_Open Folder"
+msgstr "Klasör _Aç"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:47
+msgid "_Copy Path to Clipboard"
+msgstr "Yolu Panoya _Kopyala"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:56
+msgid "Mo_ve to Trash"
+msgstr "Çöpe _Taşı"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "_Üst klasöre git"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "_Yakınlaştır"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "_Uzaklaştır"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Bu Bilgisayar"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Uzak Konumlar"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Klasörü Tara…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear list of recent locations"
+msgstr "Son konumlar listesini temizle"
+
+#: data/ui/baobab-main-window.ui:17
+msgid "Keyboard _Shortcuts"
+msgstr "Klavye _Kısayolları"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "_Help"
+msgstr "_Yardım"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_About Disk Usage Analyzer"
+msgstr "Disk Kullanımı İnceleyici _Hakkında"
+
+#: data/ui/baobab-main-window.ui:188
+msgid "Close"
+msgstr "Kapat"
+
+#: data/ui/baobab-main-window.ui:243
+msgid "Folder"
+msgstr "Klasör"
+
+#: data/ui/baobab-main-window.ui:271
+msgid "Size"
+msgstr "Boyut"
+
+#: data/ui/baobab-main-window.ui:291
+msgid "Contents"
+msgstr "İçindekiler"
+
+#: data/ui/baobab-main-window.ui:309
+msgid "Modified"
+msgstr "Değiştirildi"
+
+#: data/ui/baobab-main-window.ui:354
+msgid "Rings Chart"
+msgstr "Halka Çizelgesi"
+
+#: data/ui/baobab-main-window.ui:366
+msgid "Treemap Chart"
+msgstr "Ağaç Haritası Çizelgesi"
 
 #: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:100
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d öge"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:110 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:119
 msgid "Today"
 msgstr "Bugün"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:123
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu gün"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:127
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu ay"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:131
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu yıl"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Bu Bilgisayar"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Uzak Konumlar"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "Toplam %s"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s Kullanılabilir"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s Kullanılıyor"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Bağlanmamış"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:70
 msgid "Home folder"
 msgstr "Başlangıç klasörü"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:104
 msgid "Computer"
 msgstr "Bilgisayar"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Klasörü Tara…"
-
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "Klavye _Kısayolları"
-
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Yardım"
-
-#: src/baobab-main-window.ui:21
-#| msgid "Disk Usage Analyzer"
-msgid "_About Disk Usage Analyzer"
-msgstr "Disk Kullanımı Analizcisi _Hakkında"
-
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "_Klasör Aç"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "Yolu Panoya _Kopyala"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "Çöpe _Taşı"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Kapat"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Klasör"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Boyut"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "İçindekiler"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Değiştirildi"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Halka Çizelgesi"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Ağaç Haritası Çizelgesi"
-
-#: src/baobab-window.vala:215
+#: src/baobab-window.vala:210
 msgid "Select Folder"
 msgstr "Klasör Seç"
 
-#: src/baobab-window.vala:217
+#: src/baobab-window.vala:212
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
-#: src/baobab-window.vala:218
+#: src/baobab-window.vala:213
 msgid "_Open"
 msgstr "_Aç"
 
-#: src/baobab-window.vala:224
+#: src/baobab-window.vala:219
 msgid "Recursively analyze mount points"
-msgstr "Bağlama noktalarını özyinelemeli olarak analiz et"
+msgstr "Bağlama noktalarını özyinelemeli incele"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:253
 msgid "Could not analyze volume."
-msgstr "Birim analiz edilemedi."
+msgstr "Birim incelenemedi."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:275
 msgid "Failed to show help"
 msgstr "Yardım görüntüleme başarısız oldu"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:297
 msgid "A graphical tool to analyze disk usage."
-msgstr "Disk kullanımını analiz etmek için grafiksel bir araç."
+msgstr "Disk kullanımını incelemek için grafiksel araç."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:303
 msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr>\n"
 "Muhammet Kara <muhammetk@gmail.com>\n"
 "Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>"
+"Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:363
 msgid "Failed to open file"
 msgstr "Dosya açma başarısız oldu"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:380
 msgid "Failed to move file to the trash"
 msgstr "Dosyanın çöpe taşınması başarısız oldu"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:484
 msgid "Devices & Locations"
 msgstr "Aygıtlar ve Konumlar"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:546
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "“%s” klasörü taranamadı"
 
-#: src/baobab-window.vala:576
+#: src/baobab-window.vala:549
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "“%s” içindeki klasörlerden bazıları taranamadı"
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:568
 msgid "Could not detect occupied disk sizes."
 msgstr "Dolu disk boyutları saptanamadı."
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:568
 msgid "Apparent sizes are shown instead."
 msgstr "Onun yerine görünür boyutlar gösterilmektedir."
 
-#: src/baobab-window.vala:599
+#: src/baobab-window.vala:572
 msgid "Scan completed"
 msgstr "Tarama tamamlandı"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:573
 #, c-format
-#| msgid "Could not scan folder “%s”"
 msgid "Completed scan of “%s”"
 msgstr "“%s” taraması tamamlandı"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:595
 #, c-format
 msgid "“%s” is not a valid folder"
-msgstr "“%s” geçerli bir klasör değil"
+msgstr "“%s” geçerli klasör değil"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:596
 msgid "Could not analyze disk usage."
-msgstr "Disk kullanımını analiz edilemedi."
+msgstr "Disk kullanımı incelenemedi."
 
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Genel"
+#~ msgid "org.gnome.baobab"
+#~ msgstr "org.gnome.baobab"
 
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Ana menüyü göster / gizle"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Geçerli konumu yeniden tara"
-
-#: src/help-overlay.ui:32
-#| msgid "Scan Folder…"
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Klasörü tara"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Klavye Kısayollarını göster"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Konum listesine geri dön"
-
-#: src/help-overlay.ui:52
-#| msgid "_Quit"
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Çık"
-
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "_Üst klasöre git"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "Yakınlaşt_ır"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "Uzakla_ştır"
+#~ msgid "Baobab"
+#~ msgstr "Baobab"
 
 #~ msgid "baobab"
 #~ msgstr "baobab"
