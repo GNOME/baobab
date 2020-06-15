@@ -212,6 +212,48 @@ namespace Baobab {
             }
         }
 
+        void add_children (File directory, Results results, ResultsArray results_array) throws Error {
+            var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, cancellable);
+            FileInfo? child_info;
+            while ((child_info = children.next_file (cancellable)) != null) {
+                switch (child_info.get_file_type ()) {
+                    case FileType.DIRECTORY:
+                        var child = directory.get_child (child_info.get_name ());
+                        var child_results = add_directory (child, child_info, results);
+
+                        if (child_results != null) {
+                            results.update_with_child (child_results);
+                            results_array.results += (owned) child_results;
+                        }
+                        break;
+
+                    case FileType.REGULAR:
+                        if (child_info.has_attribute (FileAttribute.UNIX_NLINK)) {
+                            if (child_info.get_attribute_uint32 (FileAttribute.UNIX_NLINK) > 1) {
+                                var hl = new HardLink (child_info);
+
+                                // check if we've already encountered this file
+                                if (hl in hardlinks) {
+                                    continue;
+                                }
+
+                                hardlinks.add ((owned) hl);
+                            }
+
+                        }
+
+                        var child_results = new Results (child_info, results);
+                        results.update_with_child (child_results);
+                        results_array.results += (owned) child_results;
+                        break;
+
+                    default:
+                        // ignore other types (symlinks, sockets, devices, etc)
+                        break;
+                }
+            }
+        }
+
         Results? add_directory (File directory, FileInfo info, Results? parent = null) {
             var results_array = new ResultsArray ();
 
@@ -224,45 +266,7 @@ namespace Baobab {
             var results = new Results (info, parent);
 
             try {
-                var children = directory.enumerate_children (ATTRIBUTES, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, cancellable);
-                FileInfo? child_info;
-                while ((child_info = children.next_file (cancellable)) != null) {
-                    switch (child_info.get_file_type ()) {
-                        case FileType.DIRECTORY:
-                            var child = directory.get_child (child_info.get_name ());
-                            var child_results = add_directory (child, child_info, results);
-
-                            if (child_results != null) {
-                                results.update_with_child (child_results);
-                                results_array.results += (owned) child_results;
-                            }
-                            break;
-
-                        case FileType.REGULAR:
-                            if (child_info.has_attribute (FileAttribute.UNIX_NLINK)) {
-                                if (child_info.get_attribute_uint32 (FileAttribute.UNIX_NLINK) > 1) {
-                                    var hl = new HardLink (child_info);
-
-                                    // check if we've already encountered this file
-                                    if (hl in hardlinks) {
-                                        continue;
-                                    }
-
-                                    hardlinks.add ((owned) hl);
-                                }
-
-                            }
-
-                            var child_results = new Results (child_info, results);
-                            results.update_with_child (child_results);
-                            results_array.results += (owned) child_results;
-                            break;
-
-                        default:
-                            // ignore other types (symlinks, sockets, devices, etc)
-                            break;
-                    }
-                }
+                add_children (directory, results, results_array);
             } catch (Error e) {
                 results.error = e;
             }
