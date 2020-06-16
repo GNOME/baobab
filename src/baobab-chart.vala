@@ -430,10 +430,9 @@ namespace Baobab {
             return color;
         }
 
-        protected Gdk.RGBA get_item_color (ChartItem item, double rel_position, bool highlighted) {
-            var context = get_style_context ();
-
+        Gdk.RGBA get_base_color (ChartItem item, double rel_position) {
             var color = Gdk.RGBA ();
+            var context = get_style_context ();
 
             double intensity = 1 - (((item.depth - 1) * 0.3) / MAX_DEPTH);
 
@@ -454,6 +453,13 @@ namespace Baobab {
                 color.green *= intensity;
                 color.blue *= intensity;
             }
+
+            return color;
+        }
+
+        protected Gdk.RGBA get_item_color (ChartItem item, double rel_position, bool highlighted) {
+            var color = get_base_color (item, rel_position);
+            var context = get_style_context ();
 
             if (highlighted) {
                 if (item.depth == 0) {
