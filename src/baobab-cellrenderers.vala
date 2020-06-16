@@ -139,6 +139,15 @@ namespace Baobab {
     public class CellRendererProgress : Gtk.CellRendererProgress {
         public Scanner.State state { set; get; }
 
+        public Scanner.Color color { set; get; }
+
+        const string CSS_TEMPLATE = """
+            .cell.baobab-level-cell.fill-block { background: %s; }
+            .cell.baobab-level-cell.fill-block:backdrop,
+            .cell.baobab-level-cell.fill-block:hover:backdrop {
+                background-color: @theme_unfocused_text_color;
+            }""";
+
         public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             if (state == Scanner.State.ERROR) {
                 return;
@@ -161,34 +170,39 @@ namespace Baobab {
             context.render_background (cr, x, y, w, h);
             context.render_frame (cr, x, y, w, h);
 
-            var border = context.get_border (Gtk.StateFlags.NORMAL);
-            x += border.left;
-            y += border.top;
-            w -= border.left + border.right;
-            h -= border.top + border.bottom;
+            if (color != null) {
+                var border = context.get_border (Gtk.StateFlags.NORMAL);
+                x += border.left;
+                y += border.top;
+                w -= border.left + border.right;
+                h -= border.top + border.bottom;
 
-            border = context.get_padding (Gtk.StateFlags.NORMAL);
-            x += border.left;
-            y += border.top;
-            w -= border.left + border.right;
-            h -= border.top + border.bottom;
+                border = context.get_padding (Gtk.StateFlags.NORMAL);
+                x += border.left;
+                y += border.top;
+                w -= border.left + border.right;
+                h -= border.top + border.bottom;
 
-            var percent = value;
-            var perc_w = (w * percent) / 100;
-            var x_bar = x;
-            if (widget.get_direction () == Gtk.TextDirection.RTL) {
-                x_bar += w - perc_w;
+                var percent = value;
+                var perc_w = (w * percent) / 100;
+                var x_bar = x;
+                if (widget.get_direction () == Gtk.TextDirection.RTL) {
+                    x_bar += w - perc_w;
+                }
+
+                context.add_class ("fill-block");
+
+                var provider = new Gtk.CssProvider ();
+                try {
+                    provider.load_from_data (CSS_TEMPLATE.printf (color.color.to_string ()));
+                } catch {
+                }
+                context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                context.render_background (cr, x_bar, y, perc_w, h);
+
+                context.remove_provider (provider);
             }
-
-            context.add_class ("fill-block");
-
-            if (percent <= 33) {
-                context.add_class ("level-low");
-            } else if (percent > 66) {
-                context.add_class ("level-high");
-            }
-
-            context.render_background (cr, x_bar, y, perc_w, h);
 
             context.restore ();
         }
