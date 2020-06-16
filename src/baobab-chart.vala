@@ -361,13 +361,6 @@ namespace Baobab {
             }
         }
 
-        void row_changed (Gtk.TreeModel model,
-                          Gtk.TreePath path,
-                          Gtk.TreeIter iter) {
-            model_changed = true;
-            update_draw (path);
-        }
-
         void row_inserted (Gtk.TreeModel model,
                            Gtk.TreePath path,
                            Gtk.TreeIter iter) {
@@ -377,13 +370,6 @@ namespace Baobab {
 
         void row_deleted (Gtk.TreeModel model,
                           Gtk.TreePath path) {
-            model_changed = true;
-            update_draw (path);
-        }
-
-        void row_has_child_toggled (Gtk.TreeModel model,
-                                    Gtk.TreePath path,
-                                    Gtk.TreeIter iter) {
             model_changed = true;
             update_draw (path);
         }
@@ -431,6 +417,7 @@ namespace Baobab {
         }
 
         Gdk.RGBA get_base_color (ChartItem item, double rel_position) {
+            Scanner.Color scanner_color;
             var color = Gdk.RGBA ();
             var context = get_style_context ();
 
@@ -453,6 +440,10 @@ namespace Baobab {
                 color.green *= intensity;
                 color.blue *= intensity;
             }
+
+            scanner_color = new Scanner.Color ();
+            scanner_color.color = color;
+            model.set (item.iter, Scanner.Columns.COLOR, scanner_color);
 
             return color;
         }
@@ -592,17 +583,13 @@ namespace Baobab {
         }
 
         void connect_model_signals (Gtk.TreeModel m) {
-            m.row_changed.connect (row_changed);
             m.row_inserted.connect (row_inserted);
-            m.row_has_child_toggled.connect (row_has_child_toggled);
             m.row_deleted.connect (row_deleted);
             m.rows_reordered.connect (rows_reordered);
         }
 
         void disconnect_model_signals (Gtk.TreeModel m) {
-            m.row_changed.disconnect (row_changed);
             m.row_inserted.disconnect (row_inserted);
-            m.row_has_child_toggled.disconnect (row_has_child_toggled);
             m.row_deleted.disconnect (row_deleted);
             m.rows_reordered.disconnect (rows_reordered);
         }

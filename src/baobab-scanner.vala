@@ -37,7 +37,7 @@ namespace Baobab {
             DISPLAY_NAME,
             ELEMENTS,
             STATE,
-            COLUMNS
+            COLOR,
         }
 
         public enum State {
@@ -45,6 +45,10 @@ namespace Baobab {
             ERROR,
             CHILD_ERROR,
             DONE
+        }
+
+        public class Color : Object {
+            public Gdk.RGBA color;
         }
 
         public File directory { get; private set; }
@@ -476,7 +480,8 @@ namespace Baobab {
                 typeof (uint64),  // TIME_MODIFIED
                 typeof (string),  // DISPLAY_NAME
                 typeof (int),     // ELEMENTS
-                typeof (State)    // STATE
+                typeof (State),   // STATE
+                typeof (Color),   // COLOR
             });
 
             excluded_locations = Application.get_default ().get_excluded_locations ();
