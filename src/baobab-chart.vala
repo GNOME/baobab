@@ -430,14 +430,14 @@ namespace Baobab {
             return color;
         }
 
-        protected Gdk.RGBA get_item_color (double rel_position, uint depth, bool highlighted) {
+        protected Gdk.RGBA get_item_color (ChartItem item, double rel_position, bool highlighted) {
             var context = get_style_context ();
 
             var color = Gdk.RGBA ();
 
-            double intensity = 1 - (((depth - 1) * 0.3) / MAX_DEPTH);
+            double intensity = 1 - (((item.depth - 1) * 0.3) / MAX_DEPTH);
 
-            if (depth == 0) {
+            if (item.depth == 0) {
                 context.lookup_color ("level_color", out color);
             } else {
                 Gdk.RGBA color_a, color_b;
@@ -456,7 +456,7 @@ namespace Baobab {
             }
 
             if (highlighted) {
-                if (depth == 0) {
+                if (item.depth == 0) {
                     context.lookup_color ("level_color_hi", out color);
                 } else {
                     double maximum = double.max (color.red, double.max (color.green, color.blue));

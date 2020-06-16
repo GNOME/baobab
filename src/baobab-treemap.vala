@@ -95,13 +95,11 @@ namespace Baobab {
             get_allocation (out allocation);
 
             if ((item.depth % 2) != 0) {
-                fill_color = get_item_color (rect.x / allocation.width * 200,
-                                             item.depth, highlighted);
+                fill_color = get_item_color (item, rect.x / allocation.width * 200, highlighted);
                 width = rect.width - ITEM_PADDING;
                 height = rect.height;
             } else {
-                fill_color = get_item_color (rect.y / allocation.height * 200,
-                                             item.depth, highlighted);
+                fill_color = get_item_color (item, rect.y / allocation.height * 200, highlighted);
                 width = rect.width;
                 height = rect.height - ITEM_PADDING;
             }

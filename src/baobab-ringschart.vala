@@ -270,9 +270,7 @@ namespace Baobab {
                 Gdk.cairo_set_source_rgba (cr, border_color);
                 cr.stroke ();
             } else {
-                var fill_color = get_item_color (ringsitem.start_angle / Math.PI * 99,
-                                                 item.depth,
-                                                 highlighted);
+                var fill_color = get_item_color (item, ringsitem.start_angle / Math.PI * 99, highlighted);
 
                 cr.arc (center_x, center_y, ringsitem.min_radius, ringsitem.start_angle, final_angle);
                 cr.arc_negative (center_x, center_y, ringsitem.max_radius, final_angle, ringsitem.start_angle);
