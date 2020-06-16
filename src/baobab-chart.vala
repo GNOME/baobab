@@ -92,8 +92,8 @@ namespace Baobab {
             }
         }
 
-        Gtk.TreeModel model_;
-        protected Gtk.TreeModel model {
+        Scanner model_;
+        protected Scanner model {
             set {
                 if (model_ == value) {
                     return;
