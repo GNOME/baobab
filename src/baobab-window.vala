@@ -72,8 +72,9 @@ namespace Baobab {
         private Chart treemap_chart;
         [GtkChild]
         private Gtk.Spinner spinner;
-        private Location? active_location;
-        private ulong scan_completed_handler;
+
+        private Location? active_location = null;
+        private ulong scan_completed_handler = 0;
 
         static Gdk.Cursor busy_cursor;
 
@@ -118,7 +119,7 @@ namespace Baobab {
             var action = ui_settings.create_action ("active-chart");
             add_action (action);
 
-            location_list.set_action (on_scan_location_activate);
+            location_list.location_activated.connect (location_activated);
 
             setup_treeview ();
 
@@ -161,9 +162,6 @@ namespace Baobab {
                 ui_settings.apply ();
             });
 
-            active_location = null;
-            scan_completed_handler = 0;
-
             var desktop = Environment.get_variable ("XDG_CURRENT_DESKTOP");
 
             if (desktop == null || !desktop.contains ("Unity")) {
@@ -194,10 +192,7 @@ namespace Baobab {
         }
 
         void on_show_home_page_activate () {
-            if (active_location != null && active_location.scanner != null) {
-                active_location.scanner.cancel ();
-            }
-
+            cancel_scan ();
             clear_message ();
             set_ui_state (home_page, false);
         }
@@ -226,25 +221,23 @@ namespace Baobab {
             file_chooser.show ();
         }
 
-        void set_active_location (Location location) {
-            if (scan_completed_handler > 0) {
-                active_location.scanner.disconnect (scan_completed_handler);
-                scan_completed_handler = 0;
-            }
+        void scan_location (Location location, bool force = false) {
+            cancel_scan ();
 
             active_location = location;
 
             // Update the timestamp for GtkRecentManager
             location_list.add_location (location);
+
+            treeview.model = location.scanner;
+            scan_active_location (force);
         }
 
-        void on_scan_location_activate (Location location) {
-            set_active_location (location);
-
+        void location_activated (Location location) {
             location.mount_volume.begin ((location_, res) => {
                 try {
                     location.mount_volume.end (res);
-                    scan_active_location (false);
+                    scan_location (location);
                 } catch (Error e) {
                     message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
                 }
@@ -252,11 +245,17 @@ namespace Baobab {
         }
 
         void on_reload_activate () {
-            if (active_location != null) {
-                if (active_location.scanner != null) {
-                    active_location.scanner.cancel ();
-                }
-                scan_active_location (true);
+            scan_location (active_location, true);
+        }
+
+        void cancel_scan () {
+            if (active_location != null && active_location.scanner != null) {
+                active_location.scanner.cancel ();
+            }
+
+            if (scan_completed_handler > 0) {
+                active_location.scanner.disconnect (scan_completed_handler);
+                scan_completed_handler = 0;
             }
         }
 
@@ -502,11 +501,9 @@ namespace Baobab {
             }
         }
 
-        void set_chart_model (Gtk.TreeModel model) {
-            model.bind_property ("max-depth", rings_chart, "max-depth", BindingFlags.SYNC_CREATE);
-            model.bind_property ("max-depth", treemap_chart, "max-depth", BindingFlags.SYNC_CREATE);
-            rings_chart.model = model;
-            treemap_chart.model = model;
+        void set_chart_location (Location location) {
+            rings_chart.location = location;
+            treemap_chart.location = location;
         }
 
         void scan_active_location (bool force) {
@@ -537,7 +534,7 @@ namespace Baobab {
                     }
                 }
 
-                set_chart_model (active_location.scanner);
+                set_chart_location (active_location);
 
                 set_ui_state (result_page, false);
 
@@ -557,7 +554,6 @@ namespace Baobab {
 
             scanner.scan (force);
 
-            treeview.model = scanner;
             expand_first_row ();
         }
 
@@ -575,8 +571,7 @@ namespace Baobab {
             }
 
             var location = new Location.for_file (directory, flags);
-            set_active_location (location);
-            scan_active_location (false);
+            scan_location (location);
         }
     }
 }
