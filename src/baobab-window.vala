@@ -596,48 +596,52 @@ namespace Baobab {
             treemap_chart.location = location;
         }
 
+        void scanner_completed () {
+            var scanner = active_location.scanner;
+
+            if (scan_completed_handler > 0) {
+                scanner.disconnect (scan_completed_handler);
+                scan_completed_handler = 0;
+            }
+
+            try {
+                scanner.finish();
+            } catch (IOError.CANCELLED e) {
+                // Handle cancellation silently
+                return;
+            } catch (Error e) {
+                Gtk.TreeIter iter;
+                Scanner.State state;
+                scanner.get_iter_first (out iter);
+                scanner.get (iter, Scanner.Columns.STATE, out state);
+                if (state == Scanner.State.ERROR) {
+                    var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
+                    message (primary, e.message, Gtk.MessageType.ERROR);
+                } else {
+                    var primary = _("Could not scan some of the folders contained in “%s”").printf (scanner.directory.get_parse_name ());
+                    message (primary, e.message, Gtk.MessageType.WARNING);
+                }
+            }
+
+            set_chart_location (active_location);
+
+            set_ui_state (result_page, false);
+
+            if (!scanner.show_allocated_size) {
+                message (_("Could not always detect occupied disk sizes."), _("Apparent sizes may be shown instead."), Gtk.MessageType.INFO);
+            }
+
+            if (!is_active) {
+                var notification = new Notification(_("Scan completed"));
+                notification.set_body (_("Completed scan of “%s”").printf (scanner.directory.get_parse_name ()));
+                get_application ().send_notification ("scan-completed", notification);
+            }
+        }
+
         void scan_active_location (bool force) {
             var scanner = active_location.scanner;
 
-            scan_completed_handler = scanner.completed.connect(() => {
-                if (scan_completed_handler > 0) {
-                    scanner.disconnect (scan_completed_handler);
-                    scan_completed_handler = 0;
-                }
-
-                try {
-                    scanner.finish();
-                } catch (IOError.CANCELLED e) {
-                    // Handle cancellation silently
-                    return;
-                } catch (Error e) {
-                    Gtk.TreeIter iter;
-                    Scanner.State state;
-                    scanner.get_iter_first (out iter);
-                    scanner.get (iter, Scanner.Columns.STATE, out state);
-                    if (state == Scanner.State.ERROR) {
-                        var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
-                        message (primary, e.message, Gtk.MessageType.ERROR);
-                    } else {
-                        var primary = _("Could not scan some of the folders contained in “%s”").printf (scanner.directory.get_parse_name ());
-                        message (primary, e.message, Gtk.MessageType.WARNING);
-                    }
-                }
-
-                set_chart_location (active_location);
-
-                set_ui_state (result_page, false);
-
-                if (!scanner.show_allocated_size) {
-                    message (_("Could not always detect occupied disk sizes."), _("Apparent sizes may be shown instead."), Gtk.MessageType.INFO);
-                }
-
-                if (!is_active) {
-                    var notification = new Notification(_("Scan completed"));
-                    notification.set_body (_("Completed scan of “%s”").printf (scanner.directory.get_parse_name ()));
-                    get_application ().send_notification ("scan-completed", notification);
-                }
-            });
+            scan_completed_handler = scanner.completed.connect (scanner_completed);
 
             clear_message ();
             set_ui_state (result_page, true);
