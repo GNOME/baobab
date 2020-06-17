@@ -283,21 +283,6 @@ namespace Baobab {
             file_chooser.show ();
         }
 
-        void scan_location (Location location, bool force = false) {
-            cancel_scan ();
-
-            active_location = location;
-
-            pathbar.location = location;
-            folder_display.location = location;
-
-            // Update the timestamp for GtkRecentManager
-            location_list.add_location (location);
-
-            treeview.model = null;
-            scan_active_location (force);
-        }
-
         void location_activated (Location location) {
             location.mount_volume.begin ((location_, res) => {
                 try {
@@ -638,9 +623,20 @@ namespace Baobab {
             }
         }
 
-        void scan_active_location (bool force) {
-            var scanner = active_location.scanner;
+        void scan_location (Location location, bool force = false) {
+            cancel_scan ();
 
+            active_location = location;
+
+            pathbar.location = location;
+            folder_display.location = location;
+
+            // Update the timestamp for GtkRecentManager
+            location_list.add_location (location);
+
+            treeview.model = null;
+
+            var scanner = active_location.scanner;
             scan_completed_handler = scanner.completed.connect (scanner_completed);
 
             clear_message ();
