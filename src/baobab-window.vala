@@ -83,6 +83,8 @@ namespace Baobab {
         [GtkChild]
         private Gtk.HeaderBar header_bar;
         [GtkChild]
+        private Pathbar pathbar;
+        [GtkChild]
         private Gtk.Button back_button;
         [GtkChild]
         private Gtk.Button reload_button;
@@ -282,6 +284,7 @@ namespace Baobab {
 
             active_location = location;
 
+            pathbar.location = location;
             folder_display.location = location;
 
             // Update the timestamp for GtkRecentManager
@@ -483,6 +486,7 @@ namespace Baobab {
                     rings_chart.root = path;
                     treemap_chart.root = path;
                     folder_display.path = path;
+                    pathbar.path = path;
                 }
             });
         }
@@ -536,10 +540,12 @@ namespace Baobab {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
                 header_bar.title = _("Devices & Locations");
+                header_bar.custom_title = null;
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 header_bar.title = active_location.name;
+                header_bar.custom_title = pathbar;
             }
 
             main_stack.visible_child = child;
