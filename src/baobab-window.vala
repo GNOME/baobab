@@ -37,7 +37,11 @@ namespace Baobab {
         public Location location {
             set {
                 location_ = value;
-                //folder_name.label = location_.name;
+
+                folder_name.label = location_.name;
+                folder_size.label = "";
+                folder_elements.label = "";
+                folder_time.label = "";
             }
 
             get {

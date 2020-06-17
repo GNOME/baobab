@@ -33,7 +33,17 @@ namespace Baobab {
     public class Pathbar : Gtk.Box {
         public signal void item_activated (Gtk.TreePath path);
 
-        public Location location { set; get; }
+        Location location_;
+        public Location location {
+            set {
+                location_ = value;
+                path = new Gtk.TreePath.first ();
+            }
+
+            get {
+                return location_;
+            }
+        }
 
         public new Gtk.TreePath path {
             set {
