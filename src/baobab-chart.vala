@@ -63,6 +63,19 @@ namespace Baobab {
 
         List<ChartItem> items;
 
+        Location location_;
+        public Location location {
+            set {
+                location_ = value;
+                model = location_.scanner;
+                model.bind_property ("max-depth", this, "max-depth", BindingFlags.SYNC_CREATE);
+            }
+
+            get {
+                return location_;
+            }
+        }
+
         uint max_depth_ = MAX_DEPTH;
         public uint max_depth {
             set {
@@ -80,7 +93,7 @@ namespace Baobab {
         }
 
         Gtk.TreeModel model_;
-        public Gtk.TreeModel model {
+        protected Gtk.TreeModel model {
             set {
                 if (model_ == value) {
                     return;

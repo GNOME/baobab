@@ -99,8 +99,7 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Box remote_box;
 
-        public delegate void LocationAction (Location l);
-        private LocationAction? location_action;
+        public signal void location_activated (Location location);
 
         private const int MAX_RECENT_LOCATIONS = 5;
 
@@ -275,14 +274,8 @@ namespace Baobab {
         }
 
         void row_activated (Gtk.ListBoxRow row) {
-            if (location_action != null) {
-                var location_widget = row as LocationRow;
-                location_action (location_widget.location);
-            }
-        }
-
-        public void set_action (owned LocationAction? action) {
-            location_action = (owned)action;
+            var location_widget = row as LocationRow;
+            location_activated (location_widget.location);
         }
 
         public void update () {
