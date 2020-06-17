@@ -123,6 +123,13 @@ namespace Baobab {
         public Location.for_file (File file_, ScanFlags flags) {
             file = file_;
 
+            try {
+                var info = file.query_info (FileAttribute.STANDARD_DISPLAY_NAME, FileQueryInfoFlags.NONE, null);
+                name = info.get_display_name ();
+            } catch {
+                name = Filename.display_name (file.get_parse_name ());
+            }
+
             scanner = new Scanner (file, flags);
         }
 
