@@ -51,7 +51,6 @@ namespace Baobab {
 
         public new Gtk.TreePath path {
             set {
-                print("current_path=%s\n", value.to_string());
                 Gtk.TreeIter iter;
                 location.scanner.get_iter (out iter, value);
 
@@ -192,6 +191,7 @@ namespace Baobab {
 
             rings_chart.item_activated.connect (on_chart_item_activated);
             treemap_chart.item_activated.connect (on_chart_item_activated);
+            pathbar.item_activated.connect (on_pathbar_item_activated);
 
             // Setup drag-n-drop
             drag_data_received.connect (on_drag_data_received);
@@ -294,7 +294,7 @@ namespace Baobab {
             // Update the timestamp for GtkRecentManager
             location_list.add_location (location);
 
-            treeview.model = location.scanner;
+            treeview.model = null;
             scan_active_location (force);
         }
 
@@ -366,12 +366,11 @@ namespace Baobab {
 
         void on_chart_item_activated (Chart chart, Gtk.TreeIter iter) {
             var path = active_location.scanner.get_path (iter);
+            reroot_treeview (path);
+        }
 
-            if (!treeview.is_row_expanded (path)) {
-                treeview.expand_to_path (path);
-            }
-
-            treeview.set_cursor (path, null, false);
+        void on_pathbar_item_activated (Pathbar pathbar, Gtk.TreePath path) {
+            reroot_treeview (path);
         }
 
         void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
@@ -441,6 +440,18 @@ namespace Baobab {
             }
         }
 
+        bool get_selected_iter (out Gtk.TreeIter iter) {
+            Gtk.TreeIter filter_iter;
+
+            var selection = treeview.get_selection ();
+            var result = selection.get_selected (null, out filter_iter);
+
+            var filter = (Gtk.TreeModelFilter) treeview.model;
+            filter.convert_iter_to_child_iter (out iter, filter_iter);
+
+            return result;
+        }
+
         void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
                 if (event.triggers_context_menu ()) {
@@ -459,40 +470,42 @@ namespace Baobab {
             });
 
             treeview_popup_open.activate.connect (() => {
-                var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
-                if (selection.get_selected (null, out iter)) {
+                if (get_selected_iter (out iter)) {
                     open_item (iter);
                 }
             });
 
             treeview_popup_copy.activate.connect (() => {
-                var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
-                if (selection.get_selected (null, out iter)) {
+                if (get_selected_iter (out iter)) {
                     copy_path (iter);
                 }
             });
 
             treeview_popup_trash.activate.connect (() => {
-                var selection = treeview.get_selection ();
                 Gtk.TreeIter iter;
-                if (selection.get_selected (null, out iter)) {
+                if (get_selected_iter (out iter)) {
                     trash_file (iter);
                 }
             });
 
-            var selection = treeview.get_selection ();
-            selection.changed.connect (() => {
-                Gtk.TreeIter iter;
-                if (selection.get_selected (null, out iter)) {
-                    var path = active_location.scanner.get_path (iter);
-                    rings_chart.root = path;
-                    treemap_chart.root = path;
-                    folder_display.path = path;
-                    pathbar.path = path;
-                }
+            treeview.row_activated.connect ((filter_path, column) => {
+                var filter = (Gtk.TreeModelFilter) treeview.model;
+                var path = filter.convert_path_to_child_path (filter_path);
+                reroot_treeview (path);
+                treeview.set_cursor (new Gtk.TreePath.first (), null, false);
             });
+        }
+
+        void reroot_treeview (Gtk.TreePath path) {
+            rings_chart.root = path;
+            treemap_chart.root = path;
+            folder_display.path = path;
+            pathbar.path = path;
+
+            var filter = new Gtk.TreeModelFilter (active_location.scanner, path);
+            treeview.model = filter;
         }
 
         void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
@@ -555,18 +568,18 @@ namespace Baobab {
             main_stack.visible_child = child;
         }
 
-        void first_row_has_child (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
-            model.row_has_child_toggled.disconnect (first_row_has_child);
-            treeview.expand_row (path, false);
+        void scanner_has_first_row (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
+            model.row_has_child_toggled.disconnect (scanner_has_first_row);
+            reroot_treeview (path);
         }
 
-        void expand_first_row () {
+        void reroot_when_scanner_not_empty () {
             Gtk.TreeIter first;
 
-            if (treeview.model.get_iter_first (out first) && treeview.model.iter_has_child (first)) {
-                treeview.expand_row (treeview.model.get_path (first), false);
+            if (active_location.scanner.get_iter_first (out first)) {
+                reroot_treeview (new Gtk.TreePath.first ());
             } else {
-                treeview.model.row_has_child_toggled.connect (first_row_has_child);
+                active_location.scanner.row_has_child_toggled.connect (scanner_has_first_row);
             }
         }
 
@@ -622,8 +635,7 @@ namespace Baobab {
             set_ui_state (result_page, true);
 
             scanner.scan (force);
-
-            expand_first_row ();
+            reroot_when_scanner_not_empty ();
         }
 
         public void scan_directory (File directory, ScanFlags flags=ScanFlags.NONE) {
