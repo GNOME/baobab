@@ -609,8 +609,10 @@ namespace Baobab {
             }
 
             set_chart_location (active_location);
-
             set_ui_state (result_page, false);
+
+            // Make sure to update the folder display after the scan
+            folder_display.path = new Gtk.TreePath.first ();
 
             if (!scanner.show_allocated_size) {
                 message (_("Could not always detect occupied disk sizes."), _("Apparent sizes may be shown instead."), Gtk.MessageType.INFO);
