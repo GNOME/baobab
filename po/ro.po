@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-14.ro\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-05-26 16:52+0000\n"
-"PO-Revision-Date: 2020-06-02 21:41+0200\n"
-"Last-Translator: Florentina Mușat <florentina.musat.28 [at] gmail [dot] "
-"com>\n"
+"POT-Creation-Date: 2020-06-14 12:53+0000\n"
+"PO-Revision-Date: 2020-06-17 19:15+0300\n"
+"Last-Translator: Florentina Mușat <florentina [dot] musat [dot] 28 [at] "
+"gmail [dot] com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120 src/baobab-window.vala:310
+#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:290
 msgid "Disk Usage Analyzer"
 msgstr "Analizatorul utilizării discului"
 
@@ -95,11 +95,136 @@ msgstr "Starea ferestrei"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState a ferestrei"
 
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Generale"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Arată ajutorul"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Arată / ascunde meniul principal"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ieșire"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Arată scurtăturile de tastatură"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Înapoi la lista de locații"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Scanare"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Scanează dosarul"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Rescanează locația curentă"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:38
+msgid "_Open Folder"
+msgstr "Deschide d_osar"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:47
+msgid "_Copy Path to Clipboard"
+msgstr "_Copiază calea în clipboard"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:56
+msgid "Mo_ve to Trash"
+msgstr "Mu_tă la coșul de gunoi"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "Navighează la dosarul _părinte"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "Aprop_ie"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "_Depărtează"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Calculator"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Locații la distanță"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Scanează dosar…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear list of recent locations"
+msgstr "Curăță lista locațiilor recente"
+
+#: data/ui/baobab-main-window.ui:17
+msgid "Keyboard _Shortcuts"
+msgstr "_Scurtături de tastatură"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "_Help"
+msgstr "_Ajutor"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_About Disk Usage Analyzer"
+msgstr "_Despre analizatorul utilizării discului"
+
+#: data/ui/baobab-main-window.ui:188
+msgid "Close"
+msgstr "Închide"
+
+#: data/ui/baobab-main-window.ui:243
+msgid "Folder"
+msgstr "Dosar"
+
+#: data/ui/baobab-main-window.ui:271
+msgid "Size"
+msgstr "Dimensiune"
+
+#: data/ui/baobab-main-window.ui:289
+msgid "Contents"
+msgstr "Conținut"
+
+#: data/ui/baobab-main-window.ui:307
+msgid "Modified"
+msgstr "Modificat"
+
+#: data/ui/baobab-main-window.ui:352
+msgid "Rings Chart"
+msgstr "Grafic inelar"
+
+#: data/ui/baobab-main-window.ui:364
+msgid "Treemap Chart"
+msgstr "Grafic arborescent"
+
 #: src/baobab-application.vala:30
 msgid "Print version information and exit"
 msgstr "Afișează informații despre versiune și ieși"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:88
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -108,17 +233,17 @@ msgstr[1] "%d elemente"
 msgstr[2] "%d de elemente"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:98 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Necunoscut"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:107
 msgid "Today"
 msgstr "Astăzi"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:111
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -127,7 +252,7 @@ msgstr[1] "%lu zile"
 msgstr[2] "%lu de zile"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:115
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -136,7 +261,7 @@ msgstr[1] "%lu luni"
 msgstr[2] "%lu de luni"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:119
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -144,245 +269,124 @@ msgstr[0] "%lu an"
 msgstr[1] "%lu ani"
 msgstr[2] "%lu de ani"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Calculator"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Locații la distanță"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s total"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s disponibil"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s utilizat"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Demontat"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:70
 msgid "Home folder"
 msgstr "Dosarul personal"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:104
 msgid "Computer"
 msgstr "Calculator"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Scanează dosar…"
-
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "_Scurtături de tastatură"
-
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Ajutor"
-
-#: src/baobab-main-window.ui:21
-msgid "_About Disk Usage Analyzer"
-msgstr "_Despre analizatorul utilizării discului"
-
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "Deschide d_osar"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_Copiază calea în clipboard"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "Mu_tă la coșul de gunoi"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Închide"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Dosar"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Dimensiune"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "Conținut"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Modificat"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Grafic inelar"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Grafic arborescent"
-
-#: src/baobab-window.vala:215
+#: src/baobab-window.vala:206
 msgid "Select Folder"
 msgstr "Selectare dosar"
 
-#: src/baobab-window.vala:217
+#: src/baobab-window.vala:208
 msgid "_Cancel"
 msgstr "_Anulează"
 
-#: src/baobab-window.vala:218
+#: src/baobab-window.vala:209
 msgid "_Open"
 msgstr "_Deschide"
 
-#: src/baobab-window.vala:224
+#: src/baobab-window.vala:215
 msgid "Recursively analyze mount points"
 msgstr "Analizează recursiv punctele de montare"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:249
 msgid "Could not analyze volume."
 msgstr "Nu s-a putut analiza volumul."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:271
 msgid "Failed to show help"
 msgstr "Afișarea ajutorului a eșuat"
 
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:293
 msgid "A graphical tool to analyze disk usage."
 msgstr "O unealtă grafică pentru analizarea utilizări discului."
 
-#: src/baobab-window.vala:319
+#: src/baobab-window.vala:299
 msgid "translator-credits"
 msgstr ""
 "Iustin Pop <iusty@geocities.com>\n"
 "Dan Damian <dand@dnttm.ro>\n"
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
-"Florentina Mușat <florentina.musat.28 [at] gmail [dot] com>, 2019\n"
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
+"2019-2020\n"
 "\n"
 "Contribuții Launchpad:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
 "  Alex Eftimie https://launchpad.net/~alexeftimie\n"
 "  Ionuț Jula https://launchpad.net/~ionutjula"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:359
 msgid "Failed to open file"
 msgstr "Deschiderea fișierului a eșuat"
 
-#: src/baobab-window.vala:401
+#: src/baobab-window.vala:376
 msgid "Failed to move file to the trash"
 msgstr "Mutarea fișierului la gunoi a eșuat"
 
-#: src/baobab-window.vala:505
+#: src/baobab-window.vala:480
 msgid "Devices & Locations"
 msgstr "Dispozitive și locații"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:532
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nu s-a putut scana dosarul „%s”"
 
-#: src/baobab-window.vala:570
+#: src/baobab-window.vala:535
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Nu s-au putut scana unele dintre dosarele conținute în „%s”"
 
-#: src/baobab-window.vala:589
-msgid "Could not detect occupied disk sizes."
-msgstr "Nu s-au putut detecta dimensiunile discului ocupat."
+#: src/baobab-window.vala:545
+msgid "Could not always detect occupied disk sizes."
+msgstr "Nu se pot detecta întotdeauna dimensiunile discului ocupate."
 
-#: src/baobab-window.vala:589
-msgid "Apparent sizes are shown instead."
-msgstr "Dimensiunile aparente sunt afișate în schimb."
+#: src/baobab-window.vala:545
+msgid "Apparent sizes may be shown instead."
+msgstr "Dimensiunile aparente pot fi arătate în schimb."
 
-#: src/baobab-window.vala:593
+#: src/baobab-window.vala:549
 msgid "Scan completed"
 msgstr "Scanare completă"
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:550
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "S-a completat scanarea lui „%s”"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:572
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s” nu este un dosar valid"
 
-#: src/baobab-window.vala:613 src/baobab-window.vala:619
+#: src/baobab-window.vala:573
 msgid "Could not analyze disk usage."
 msgstr "Nu s-a putut analiza utilizarea discului."
-
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Generale"
-
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Arată ajutorul"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Arată / ascunde meniul principal"
-
-#: src/help-overlay.ui:31
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Ieșire"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Arată scurtăturile de tastatură"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Înapoi la lista de locații"
-
-#: src/help-overlay.ui:54
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "Scanare"
-
-#: src/help-overlay.ui:59
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Scanează dosarul"
-
-#: src/help-overlay.ui:66
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Rescanează locația curentă"
-
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Navighează la dosarul _părinte"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "Aprop_ie"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "_Depărtează"
 
 #~ msgid "org.gnome.baobab"
 #~ msgstr "org.gnome.baobab"
