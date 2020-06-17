@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <template class="BaobabPathButton" parent="GtkButton">
+    <property name="visible">True</property>
+    <child>
+      <object class="GtkLabel" id="label">
+        <property name="visible">True</property>
+        <property name="ellipsize">middle</property>
+        <property name="max_width_chars">15</property>
+      </object>
+    </child>
+  </template>
+</interface>
