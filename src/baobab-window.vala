@@ -493,19 +493,27 @@ namespace Baobab {
             treeview.row_activated.connect ((filter_path, column) => {
                 var filter = (Gtk.TreeModelFilter) treeview.model;
                 var path = filter.convert_path_to_child_path (filter_path);
-                reroot_treeview (path);
-                treeview.set_cursor (new Gtk.TreePath.first (), null, false);
+                reroot_treeview (path, true);
             });
         }
 
-        void reroot_treeview (Gtk.TreePath path) {
+        void reroot_treeview (Gtk.TreePath path, bool select_first = false) {
+            Gtk.TreeIter iter;
+            active_location.scanner.get_iter (out iter, path);
+            if (!active_location.scanner.iter_has_child (iter)) {
+                return;
+            }
+
             rings_chart.root = path;
             treemap_chart.root = path;
             folder_display.path = path;
             pathbar.path = path;
 
-            var filter = new Gtk.TreeModelFilter (active_location.scanner, path);
-            treeview.model = filter;
+            treeview.model = new Gtk.TreeModelFilter (active_location.scanner, path);
+
+            if (select_first) {
+                treeview.set_cursor (new Gtk.TreePath.first (), null, false);
+            }
         }
 
         void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
