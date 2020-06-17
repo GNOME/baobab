@@ -171,9 +171,7 @@ namespace Baobab {
             }
         }
 
-        public virtual signal void item_activated (Gtk.TreeIter iter) {
-            root = model.get_path (iter);
-        }
+        public signal void item_activated (Gtk.TreeIter iter);
 
         protected virtual void post_draw  (Cairo.Context cr) {
         }
