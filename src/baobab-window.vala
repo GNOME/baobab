@@ -22,6 +22,60 @@
 
 namespace Baobab {
 
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-folder-display.ui")]
+    public class FolderDisplay : Gtk.Grid {
+        [GtkChild]
+        private Gtk.Label folder_name;
+        [GtkChild]
+        private Gtk.Label folder_size;
+        [GtkChild]
+        private Gtk.Label folder_elements;
+        [GtkChild]
+        private Gtk.Label folder_time;
+
+        Location location_;
+        public Location location {
+            set {
+                location_ = value;
+                //folder_name.label = location_.name;
+            }
+
+            get {
+                return location_;
+            }
+        }
+
+        public new Gtk.TreePath path {
+            set {
+                print("current_path=%s\n", value.to_string());
+                Gtk.TreeIter iter;
+                location.scanner.get_iter (out iter, value);
+
+                string name;
+                string display_name;
+                uint64 size;
+                int elements;
+                uint64 time;
+
+                location.scanner.get (iter,
+                           Scanner.Columns.NAME, out name,
+                           Scanner.Columns.DISPLAY_NAME, out display_name,
+                           Scanner.Columns.SIZE, out size,
+                           Scanner.Columns.ELEMENTS, out elements,
+                           Scanner.Columns.TIME_MODIFIED, out time);
+
+                if (value.get_depth () == 1) {
+                    folder_name.label = location.name;
+                } else {
+                    folder_name.label = display_name != null ? display_name : name;
+                }
+                folder_size.label = format_size (size);
+                folder_elements.label = "%d items".printf (elements);
+                folder_time.label = new DateTime.from_unix_local ((int64) time).format ("%F");
+            }
+        }
+    }
+
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
     public class Window : Gtk.ApplicationWindow {
         [GtkChild]
@@ -50,6 +104,8 @@ namespace Baobab {
         private Gtk.Button infobar_close_button;
         [GtkChild]
         private LocationList location_list;
+        [GtkChild]
+        private FolderDisplay folder_display;
         [GtkChild]
         private Gtk.TreeView treeview;
         [GtkChild]
@@ -225,6 +281,8 @@ namespace Baobab {
             cancel_scan ();
 
             active_location = location;
+
+            folder_display.location = location;
 
             // Update the timestamp for GtkRecentManager
             location_list.add_location (location);
@@ -424,6 +482,7 @@ namespace Baobab {
                     var path = active_location.scanner.get_path (iter);
                     rings_chart.root = path;
                     treemap_chart.root = path;
+                    folder_display.path = path;
                 }
             });
         }
