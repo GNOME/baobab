@@ -373,18 +373,9 @@ namespace Baobab {
                         max_depth = results.max_depth;
                     }
 
-                    // If the user cancelled abort the scan and
-                    // report CANCELLED as the error, otherwise
-                    // consider the error not fatal and report the
-                    // first error we encountered
-                    if (results.error != null) {
-                        if (results.error is IOError.CANCELLED) {
-                            scan_error = results.error;
-                            completed ();
-                            return false;
-                        } else if (scan_error == null) {
-                            scan_error = results.error;
-                        }
+                    // Report the first error we encountered
+                    if (results.error != null && scan_error == null) {
+                        scan_error = results.error;
                     }
 
                     if (results.parent == null) {
@@ -454,7 +445,9 @@ namespace Baobab {
         public void cancel () {
             if (!successful) {
                 cancel_and_reset ();
+                scan_error = new IOError.CANCELLED ("Scan was cancelled");
             }
+            completed ();
         }
 
         public void finish () throws Error {
