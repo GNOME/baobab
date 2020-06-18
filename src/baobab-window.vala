@@ -319,6 +319,8 @@ namespace Baobab {
                 active_location.scanner.disconnect (scan_completed_handler);
                 scan_completed_handler = 0;
             }
+
+            active_location = null;
         }
 
         void on_clear_recent () {
