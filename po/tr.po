@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-06-13 10:28+0000\n"
-"PO-Revision-Date: 2020-06-14 10:16+0300\n"
+"POT-Creation-Date: 2020-06-14 12:53+0000\n"
+"PO-Revision-Date: 2020-06-18 14:07+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -26,10 +26,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:294
+#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:290
 msgid "Disk Usage Analyzer"
 msgstr "Disk Kullanımı İnceleyici"
 
@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Disk Kullanımı İnceleyici belirli klasörleri, depolama aygıtlarını ve çevrim "
 "içi hesapları tarayabilir. Ayrıca, her klasör boyutunun ağaç ve grafik "
-"gösterimini sunar, disk alanının nerede boşa harcandığını "
-"saptamayı kolaylaştırır."
+"gösterimini sunar, disk alanının nerede boşa harcandığını saptamayı "
+"kolaylaştırır."
 
 #: data/org.gnome.baobab.appdata.xml.in:34
 msgid "The GNOME Project"
@@ -206,19 +206,19 @@ msgstr "Klasör"
 msgid "Size"
 msgstr "Boyut"
 
-#: data/ui/baobab-main-window.ui:291
+#: data/ui/baobab-main-window.ui:289
 msgid "Contents"
 msgstr "İçindekiler"
 
-#: data/ui/baobab-main-window.ui:309
+#: data/ui/baobab-main-window.ui:307
 msgid "Modified"
 msgstr "Değiştirildi"
 
-#: data/ui/baobab-main-window.ui:354
+#: data/ui/baobab-main-window.ui:352
 msgid "Rings Chart"
 msgstr "Halka Çizelgesi"
 
-#: data/ui/baobab-main-window.ui:366
+#: data/ui/baobab-main-window.ui:364
 msgid "Treemap Chart"
 msgstr "Ağaç Haritası Çizelgesi"
 
@@ -226,38 +226,38 @@ msgstr "Ağaç Haritası Çizelgesi"
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
 
-#: src/baobab-cellrenderers.vala:100
+#: src/baobab-cellrenderers.vala:88
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d öge"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:110 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:98 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:119
+#: src/baobab-cellrenderers.vala:107
 msgid "Today"
 msgstr "Bugün"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:123
+#: src/baobab-cellrenderers.vala:111
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu gün"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:127
+#: src/baobab-cellrenderers.vala:115
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu ay"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:131
+#: src/baobab-cellrenderers.vala:119
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -292,87 +292,87 @@ msgstr "Başlangıç klasörü"
 msgid "Computer"
 msgstr "Bilgisayar"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:206
 msgid "Select Folder"
 msgstr "Klasör Seç"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:208
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
-#: src/baobab-window.vala:213
+#: src/baobab-window.vala:209
 msgid "_Open"
 msgstr "_Aç"
 
-#: src/baobab-window.vala:219
+#: src/baobab-window.vala:215
 msgid "Recursively analyze mount points"
 msgstr "Bağlama noktalarını özyinelemeli incele"
 
-#: src/baobab-window.vala:253
+#: src/baobab-window.vala:249
 msgid "Could not analyze volume."
 msgstr "Birim incelenemedi."
 
-#: src/baobab-window.vala:275
+#: src/baobab-window.vala:271
 msgid "Failed to show help"
 msgstr "Yardım görüntüleme başarısız oldu"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:293
 msgid "A graphical tool to analyze disk usage."
 msgstr "Disk kullanımını incelemek için grafiksel araç."
 
-#: src/baobab-window.vala:303
+#: src/baobab-window.vala:299
 msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr>\n"
 "Muhammet Kara <muhammetk@gmail.com>\n"
-"Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>"
+"Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/baobab-window.vala:363
+#: src/baobab-window.vala:359
 msgid "Failed to open file"
 msgstr "Dosya açma başarısız oldu"
 
-#: src/baobab-window.vala:380
+#: src/baobab-window.vala:376
 msgid "Failed to move file to the trash"
 msgstr "Dosyanın çöpe taşınması başarısız oldu"
 
-#: src/baobab-window.vala:484
+#: src/baobab-window.vala:480
 msgid "Devices & Locations"
 msgstr "Aygıtlar ve Konumlar"
 
-#: src/baobab-window.vala:546
+#: src/baobab-window.vala:532
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "“%s” klasörü taranamadı"
 
-#: src/baobab-window.vala:549
+#: src/baobab-window.vala:535
 #, c-format
 msgid "Could not scan some of the folders contained in “%s”"
 msgstr "“%s” içindeki klasörlerden bazıları taranamadı"
 
-#: src/baobab-window.vala:568
-msgid "Could not detect occupied disk sizes."
-msgstr "Dolu disk boyutları saptanamadı."
+#: src/baobab-window.vala:545
+msgid "Could not always detect occupied disk sizes."
+msgstr "Dolu disk boyutları her zaman saptanamaz."
 
-#: src/baobab-window.vala:568
-msgid "Apparent sizes are shown instead."
-msgstr "Onun yerine görünür boyutlar gösterilmektedir."
+#: src/baobab-window.vala:545
+msgid "Apparent sizes may be shown instead."
+msgstr "Bunun yerine belirgin boyutlar gösterilebilir."
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:549
 msgid "Scan completed"
 msgstr "Tarama tamamlandı"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:550
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” taraması tamamlandı"
 
-#: src/baobab-window.vala:595
+#: src/baobab-window.vala:572
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” geçerli klasör değil"
 
-#: src/baobab-window.vala:596
+#: src/baobab-window.vala:573
 msgid "Could not analyze disk usage."
 msgstr "Disk kullanımı incelenemedi."
 
