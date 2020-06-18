@@ -110,6 +110,8 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Widget home_page;
         [GtkChild]
+        private Gtk.Widget scanning_page;
+        [GtkChild]
         private Gtk.Widget result_page;
         [GtkChild]
         private Gtk.InfoBar infobar;
@@ -556,26 +558,33 @@ namespace Baobab {
         void set_ui_state (Gtk.Widget child, bool busy) {
             menu_button.visible = (child == home_page);
             reload_button.visible = (child == result_page);
-            back_button.visible = (child == result_page);
+            back_button.visible = (child == result_page) || (child == scanning_page);
 
             set_busy (busy);
 
+            header_bar.custom_title = null;
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
                 header_bar.title = _("Devices & Locations");
-                header_bar.custom_title = null;
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 header_bar.title = active_location.name;
-                header_bar.custom_title = pathbar;
+                if (child == result_page) {
+                    header_bar.custom_title = pathbar;
+                }
             }
 
+            if (child == scanning_page || child == result_page) {
+                main_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            } else {
+                main_stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+            }
             main_stack.visible_child = child;
         }
 
-        void scanner_has_first_row (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
+        /*void scanner_has_first_row (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
             model.row_has_child_toggled.disconnect (scanner_has_first_row);
             reroot_treeview (path);
         }
@@ -588,7 +597,7 @@ namespace Baobab {
             } else {
                 active_location.scanner.row_has_child_toggled.connect (scanner_has_first_row);
             }
-        }
+        }*/
 
         void set_chart_location (Location location) {
             rings_chart.location = location;
@@ -622,6 +631,7 @@ namespace Baobab {
                 }
             }
 
+            reroot_treeview (new Gtk.TreePath.first ());
             set_chart_location (active_location);
             set_ui_state (result_page, false);
 
@@ -656,10 +666,9 @@ namespace Baobab {
             scan_completed_handler = scanner.completed.connect (scanner_completed);
 
             clear_message ();
-            set_ui_state (result_page, true);
+            set_ui_state (scanning_page, true);
 
             scanner.scan (force);
-            reroot_when_scanner_not_empty ();
         }
 
         public void scan_directory (File directory, ScanFlags flags=ScanFlags.NONE) {
