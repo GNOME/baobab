@@ -24,8 +24,14 @@ namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-folder-display.ui")]
     public class FolderDisplay : Gtk.Grid {
+        static construct {
+            set_css_name ("folder-display");
+        }
+
         [GtkChild]
-        private Gtk.Label folder_name;
+        private Gtk.Label folder_name_primary;
+        [GtkChild]
+        private Gtk.Label folder_name_secondary;
         [GtkChild]
         private Gtk.Label folder_size;
         [GtkChild]
@@ -38,7 +44,7 @@ namespace Baobab {
             set {
                 location_ = value;
 
-                folder_name.label = location_.name;
+                set_name_from_location ();
                 folder_size.label = "";
                 folder_elements.label = "";
                 folder_time.label = "";
@@ -68,14 +74,20 @@ namespace Baobab {
                            Scanner.Columns.TIME_MODIFIED, out time);
 
                 if (value.get_depth () == 1) {
-                    folder_name.label = location.name;
+                    set_name_from_location ();
                 } else {
-                    folder_name.label = format_name (display_name, name);
+                    folder_name_primary.label = format_name (display_name, name);
+                    folder_name_secondary.label = "";
                 }
                 folder_size.label = format_size (size);
                 folder_elements.label = format_items (elements);
                 folder_time.label = format_time_approximate (time);
             }
+        }
+
+        void set_name_from_location () {
+            folder_name_primary.label = location.name;
+            folder_name_secondary.label = location.file.get_parse_name ();
         }
     }
 
