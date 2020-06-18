@@ -124,6 +124,8 @@ namespace Baobab {
         [GtkChild]
         private LocationList location_list;
         [GtkChild]
+        private Gtk.Label scanning_progress_label;
+        [GtkChild]
         private FolderDisplay folder_display;
         [GtkChild]
         private Gtk.TreeView treeview;
@@ -150,6 +152,7 @@ namespace Baobab {
 
         private Location? active_location = null;
         private ulong scan_completed_handler = 0;
+        private uint scanning_progress_id = 0;
 
         static Gdk.Cursor busy_cursor;
 
@@ -612,6 +615,11 @@ namespace Baobab {
                 scan_completed_handler = 0;
             }
 
+            if (scanning_progress_id > 0) {
+                Source.remove (scanning_progress_id);
+                scanning_progress_id = 0;
+            }
+
             try {
                 scanner.finish();
             } catch (IOError.CANCELLED e) {
@@ -667,6 +675,11 @@ namespace Baobab {
 
             clear_message ();
             set_ui_state (scanning_page, true);
+
+            scanning_progress_id = Timeout.add (100, () => {
+                scanning_progress_label.label = format_size (scanner.total_size);
+                return Source.CONTINUE;
+            });
 
             scanner.scan (force);
         }
