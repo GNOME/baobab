@@ -377,12 +377,8 @@ namespace Baobab {
                         max_depth = results.max_depth;
                     }
 
-                    // Report the first error we encountered
-                    if (results.error != null && scan_error == null) {
-                        scan_error = results.error;
-                    }
-
                     if (results.parent == null) {
+                        scan_error = results.error;
                         successful = true;
                         completed ();
                         return false;
