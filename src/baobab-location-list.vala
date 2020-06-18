@@ -42,12 +42,12 @@ namespace Baobab {
 
             image.gicon = location.icon;
 
-            var escaped = GLib.Markup.escape_text (location.name, -1);
+            var escaped = Markup.escape_text (location.name);
             name_label.label = "<b>%s</b>".printf (escaped);
 
             path_label.hide();
             if (location.file != null) {
-                path_label.label = Markup.escape_text (location.file.get_parse_name (), -1);
+                path_label.label = Markup.escape_text (location.file.get_parse_name ());
                 path_label.show();
             }
 

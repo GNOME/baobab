@@ -6,12 +6,15 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkLabel">
+      <object class="GtkLabel" id="folder_name_primary">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="halign">start</property>
         <property name="hexpand">True</property>
-        <property name="label" translatable="yes">Current Folder</property>
+        <property name="ellipsize">end</property>
+        <style>
+          <class name="folder-display-header"/>
+        </style>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -22,7 +25,12 @@
       <object class="GtkLabel">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
         <property name="label" translatable="yes">Size</property>
+        <style>
+          <class name="dim-label"/>
+          <class name="folder-display-header"/>
+        </style>
       </object>
       <packing>
         <property name="left_attach">1</property>
@@ -33,7 +41,12 @@
       <object class="GtkLabel">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
         <property name="label" translatable="yes">Contents</property>
+        <style>
+          <class name="dim-label"/>
+          <class name="folder-display-header"/>
+        </style>
       </object>
       <packing>
         <property name="left_attach">2</property>
@@ -41,11 +54,15 @@
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="folder_name">
+      <object class="GtkLabel" id="folder_name_secondary">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="halign">start</property>
         <property name="hexpand">True</property>
+        <property name="ellipsize">end</property>
+        <style>
+          <class name="dim-label"/>
+        </style>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -56,6 +73,7 @@
       <object class="GtkLabel" id="folder_size">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
       </object>
       <packing>
         <property name="left_attach">1</property>
@@ -66,6 +84,7 @@
       <object class="GtkLabel" id="folder_elements">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
       </object>
       <packing>
         <property name="left_attach">2</property>
@@ -76,7 +95,12 @@
       <object class="GtkLabel">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
         <property name="label" translatable="yes">Modified</property>
+        <style>
+          <class name="dim-label"/>
+          <class name="folder-display-header"/>
+        </style>
       </object>
       <packing>
         <property name="left_attach">3</property>
@@ -87,6 +111,7 @@
       <object class="GtkLabel" id="folder_time">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
       </object>
       <packing>
         <property name="left_attach">3</property>
