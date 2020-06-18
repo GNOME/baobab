@@ -70,11 +70,11 @@ namespace Baobab {
                 if (value.get_depth () == 1) {
                     folder_name.label = location.name;
                 } else {
-                    folder_name.label = display_name != null ? display_name : name;
+                    folder_name.label = format_name (display_name, name);
                 }
                 folder_size.label = format_size (size);
-                folder_elements.label = "%d items".printf (elements);
-                folder_time.label = new DateTime.from_unix_local ((int64) time).format ("%F");
+                folder_elements.label = format_items (elements);
+                folder_time.label = format_time_approximate (time);
             }
         }
     }

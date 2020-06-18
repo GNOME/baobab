@@ -257,12 +257,7 @@ namespace Baobab {
                        Scanner.Columns.SIZE, out size);
 
             var item = create_new_chartitem ();
-            item.name = "";
-            if (display_name != null) {
-                item.name = display_name;
-            } else if (name != null) {
-                item.name = Filename.display_name (name);
-            }
+            item.name = format_name (display_name, name);
             item.size = format_size (size);
             item.depth = depth;
             item.rel_start = rel_start;
