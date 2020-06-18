@@ -153,6 +153,7 @@ namespace Baobab {
         private Location? active_location = null;
         private ulong scan_completed_handler = 0;
         private uint scanning_progress_id = 0;
+        private uint scanning_page_timeout_id = 0;
 
         static Gdk.Cursor busy_cursor;
 
@@ -323,6 +324,11 @@ namespace Baobab {
             if (scan_completed_handler > 0) {
                 active_location.scanner.disconnect (scan_completed_handler);
                 scan_completed_handler = 0;
+            }
+
+            if (scanning_page_timeout_id > 0) {
+                Source.remove (scanning_page_timeout_id);
+                scanning_page_timeout_id = 0;
             }
 
             active_location = null;
@@ -620,23 +626,20 @@ namespace Baobab {
                 scanning_progress_id = 0;
             }
 
+            if (scanning_page_timeout_id > 0) {
+                Source.remove (scanning_page_timeout_id);
+                scanning_page_timeout_id = 0;
+            }
+
             try {
                 scanner.finish();
             } catch (IOError.CANCELLED e) {
                 // Handle cancellation silently
                 return;
             } catch (Error e) {
-                Gtk.TreeIter iter;
-                Scanner.State state;
-                scanner.get_iter_first (out iter);
-                scanner.get (iter, Scanner.Columns.STATE, out state);
-                if (state == Scanner.State.ERROR) {
-                    var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
-                    message (primary, e.message, Gtk.MessageType.ERROR);
-                } else {
-                    var primary = _("Could not scan some of the folders contained in “%s”").printf (scanner.directory.get_parse_name ());
-                    message (primary, e.message, Gtk.MessageType.WARNING);
-                }
+                var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
+                message (primary, e.message, Gtk.MessageType.ERROR);
+                return;
             }
 
             reroot_treeview (new Gtk.TreePath.first ());
@@ -674,7 +677,12 @@ namespace Baobab {
             scan_completed_handler = scanner.completed.connect (scanner_completed);
 
             clear_message ();
-            set_ui_state (scanning_page, true);
+
+            scanning_page_timeout_id = Timeout.add (200, () => {
+                scanning_page_timeout_id = 0;
+                set_ui_state (scanning_page, true);
+                return Source.REMOVE;
+            });
 
             scanning_progress_id = Timeout.add (100, () => {
                 scanning_progress_label.label = format_size (scanner.total_size);
