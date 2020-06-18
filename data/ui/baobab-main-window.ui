@@ -198,7 +198,6 @@
             <object class="GtkStack" id="main_stack">
               <property name="visible">True</property>
               <property name="can_focus">False</property>
-              <property name="transition_type">slide-left-right</property>
               <child>
                 <object class="GtkGrid" id="home_page">
                   <property name="can_focus">False</property>
@@ -219,6 +218,20 @@
                     </object>
                   </child>
                  </object>
+              </child>
+              <child>
+                <object class="GtkGrid" id="scanning_page">
+                  <property name="visible">True</property>
+                  <property name="orientation">vertical</property>
+                  <property name="halign">center</property>
+                  <property name="valign">center</property>
+                  <child>
+                    <object class="GtkLabel" id="scanning_label">
+                      <property name="visible">True</property>
+                      <property name="label">Scanning…</property>
+                    </object>
+                  </child>
+                </object>
               </child>
               <child>
                 <object class="GtkGrid" id="result_page">
