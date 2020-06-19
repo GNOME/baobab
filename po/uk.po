@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-06-14 12:53+0000\n"
-"PO-Revision-Date: 2020-06-14 16:23+0300\n"
+"POT-Creation-Date: 2020-06-18 20:22+0000\n"
+"PO-Revision-Date: 2020-06-19 08:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-doc@kde.org>\n"
 "Language: uk\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:290
+#: data/ui/baobab-main-window.ui:126 src/baobab-window.vala:290
 msgid "Disk Usage Analyzer"
 msgstr "Аналізатор використання диска"
 
@@ -189,31 +189,43 @@ msgstr "_Довідка"
 msgid "_About Disk Usage Analyzer"
 msgstr "Про «Аналізатор використання дисків»"
 
-#: data/ui/baobab-main-window.ui:188
+#: data/ui/baobab-main-window.ui:73
+#| msgctxt "shortcut window"
+#| msgid "Go back to location list"
+msgid "Go back to location list"
+msgstr "Повернутися до списку місць"
+
+#: data/ui/baobab-main-window.ui:94
+#| msgctxt "shortcut window"
+#| msgid "Rescan current location"
+msgid "Rescan current location"
+msgstr "Повторно сканувати поточне місце"
+
+#: data/ui/baobab-main-window.ui:190
 msgid "Close"
 msgstr "Закрити"
 
-#: data/ui/baobab-main-window.ui:243
+#: data/ui/baobab-main-window.ui:245
 msgid "Folder"
 msgstr "Тека"
 
-#: data/ui/baobab-main-window.ui:271
+#: data/ui/baobab-main-window.ui:273
 msgid "Size"
 msgstr "Розмір"
 
-#: data/ui/baobab-main-window.ui:289
+#: data/ui/baobab-main-window.ui:291
 msgid "Contents"
 msgstr "Зміст"
 
-#: data/ui/baobab-main-window.ui:307
+#: data/ui/baobab-main-window.ui:309
 msgid "Modified"
 msgstr "Змінено"
 
-#: data/ui/baobab-main-window.ui:352
+#: data/ui/baobab-main-window.ui:354
 msgid "Rings Chart"
 msgstr "Кільцева діаграма"
 
-#: data/ui/baobab-main-window.ui:364
+#: data/ui/baobab-main-window.ui:366
 msgid "Treemap Chart"
 msgstr "Дерево"
 
@@ -353,12 +365,10 @@ msgid "Could not scan some of the folders contained in “%s”"
 msgstr "Неможливо просканувати деякі теки у «%s»."
 
 #: src/baobab-window.vala:545
-#| msgid "Could not detect occupied disk sizes."
 msgid "Could not always detect occupied disk sizes."
 msgstr "Неможливо завжди виявляти займані розміри на диску."
 
 #: src/baobab-window.vala:545
-#| msgid "Apparent sizes are shown instead."
 msgid "Apparent sizes may be shown instead."
 msgstr "Натомість може бути показано видимі розміри."
 
