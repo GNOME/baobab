@@ -26,7 +26,11 @@ namespace Baobab {
 
         private Window window;
 
+        static bool one_file_system;
+
         const OptionEntry[] option_entries = {
+            { "one-file-system", 'x', 0, OptionArg.NONE, ref one_file_system,
+              N_("Skip directories on different file systems. Ignored if DIRECTORY is not specified."), null },
             { "version", 'v', 0, OptionArg.NONE, null, N_("Print version information and exit"), null },
             { null }
         };
@@ -42,7 +46,9 @@ namespace Baobab {
 
         protected override void open (File[] files, string hint) {
             ensure_window ();
-            window.scan_directory (files[0], ScanFlags.EXCLUDE_MOUNTS);
+
+            var scan_flags = one_file_system ? ScanFlags.EXCLUDE_MOUNTS : ScanFlags.NONE;
+            window.scan_directory (files[0], scan_flags);
         }
 
         void ensure_window () {
@@ -101,6 +107,8 @@ namespace Baobab {
             Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
 
             add_main_option_entries (option_entries);
+            set_option_context_parameter_string ("[DIRECTORY]");
+
             add_action_entries (action_entries, this);
         }
 
