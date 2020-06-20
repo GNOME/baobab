@@ -141,6 +141,7 @@ namespace Baobab {
             rings_chart.item_activated.connect (on_chart_item_activated);
             treemap_chart.item_activated.connect (on_chart_item_activated);
             pathbar.item_activated.connect (on_pathbar_item_activated);
+            folder_display.activated.connect (on_folder_display_activated);
 
             // Setup drag-n-drop
             drag_data_received.connect (on_drag_data_received);
@@ -312,6 +313,14 @@ namespace Baobab {
 
         void on_pathbar_item_activated (Pathbar pathbar, Gtk.TreePath path) {
             reroot_treeview (path);
+        }
+
+        void on_folder_display_activated () {
+            var path = folder_display.path;
+            if (path.get_depth () > 1) {
+                path.up ();
+                reroot_treeview (path);
+            }
         }
 
         void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
