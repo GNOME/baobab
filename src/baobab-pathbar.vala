@@ -31,6 +31,10 @@ namespace Baobab {
     }
 
     public class Pathbar : Gtk.Box {
+        static construct {
+            set_css_name ("pathbar");
+        }
+
         public signal void item_activated (Gtk.TreePath path);
 
         Location location_;
