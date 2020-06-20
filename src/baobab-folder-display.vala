@@ -20,7 +20,7 @@
 namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-folder-display.ui")]
-    public class FolderDisplay : Gtk.Grid {
+    public class FolderDisplay : Gtk.Button {
         static construct {
             set_css_name ("folder-display");
         }
@@ -35,6 +35,12 @@ namespace Baobab {
         private Gtk.Label folder_elements;
         [GtkChild]
         private Gtk.Label folder_time;
+
+        construct {
+            clicked.connect (() => { activated ();});
+        }
+
+        public signal void activated ();
 
         Location location_;
         public Location location {
@@ -52,8 +58,11 @@ namespace Baobab {
             }
         }
 
+        Gtk.TreePath path_;
         public new Gtk.TreePath path {
             set {
+                path_ = value;
+
                 Gtk.TreeIter iter;
                 location.scanner.get_iter (out iter, value);
 
@@ -79,6 +88,9 @@ namespace Baobab {
                 folder_size.label = format_size (size);
                 folder_elements.label = format_items (elements);
                 folder_time.label = format_time_approximate (time);
+            }
+            get {
+                return path_;
             }
         }
 
