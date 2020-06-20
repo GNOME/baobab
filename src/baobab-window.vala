@@ -391,15 +391,32 @@ namespace Baobab {
         }
 
         bool get_selected_iter (out Gtk.TreeIter iter) {
-            Gtk.TreeIter filter_iter;
+            Gtk.TreeIter wrapper_iter;
 
             var selection = treeview.get_selection ();
-            var result = selection.get_selected (null, out filter_iter);
+            var result = selection.get_selected (null, out wrapper_iter);
 
-            var filter = (Gtk.TreeModelFilter) treeview.model;
-            filter.convert_iter_to_child_iter (out iter, filter_iter);
+            convert_iter_to_child_iter (out iter, wrapper_iter);
 
             return result;
+        }
+
+        void convert_iter_to_child_iter (out Gtk.TreeIter child_iter, Gtk.TreeIter iter) {
+            Gtk.TreeIter filter_iter;
+
+            var sort = (Gtk.TreeModelSort) treeview.model;
+            sort.convert_iter_to_child_iter (out filter_iter, iter);
+
+            var filter = (Gtk.TreeModelFilter) sort.model;
+            filter.convert_iter_to_child_iter (out child_iter, filter_iter);
+        }
+
+        Gtk.TreePath convert_path_to_child_path (Gtk.TreePath path) {
+            var sort = (Gtk.TreeModelSort) treeview.model;
+            var filter_path = sort.convert_path_to_child_path (path);
+
+            var filter = (Gtk.TreeModelFilter) sort.model;
+            return filter.convert_path_to_child_path (filter_path);
         }
 
         void setup_treeview () {
@@ -440,9 +457,8 @@ namespace Baobab {
                 }
             });
 
-            treeview.row_activated.connect ((filter_path, column) => {
-                var filter = (Gtk.TreeModelFilter) treeview.model;
-                var path = filter.convert_path_to_child_path (filter_path);
+            treeview.row_activated.connect ((wrapper_path, column) => {
+                var path = convert_path_to_child_path (wrapper_path);
                 reroot_treeview (path, true);
             });
         }
@@ -459,7 +475,8 @@ namespace Baobab {
             folder_display.path = path;
             pathbar.path = path;
 
-            treeview.model = new Gtk.TreeModelFilter (active_location.scanner, path);
+            var filter = new Gtk.TreeModelFilter (active_location.scanner, path);
+            treeview.model = new Gtk.TreeModelSort.with_model (filter);
 
             if (select_first) {
                 treeview.set_cursor (new Gtk.TreePath.first (), null, false);
