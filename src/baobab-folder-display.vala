@@ -20,24 +20,19 @@
 namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-folder-display.ui")]
-    public class FolderDisplay : Gtk.Button {
-        static construct {
-            set_css_name ("folder-display");
-        }
-
+    public class FolderDisplay : Gtk.TreeView {
         [GtkChild]
-        private Gtk.Label folder_name_primary;
+        public Gtk.TreeViewColumn folder_column;
         [GtkChild]
-        private Gtk.Label folder_name_secondary;
+        public Gtk.TreeViewColumn size_column;
         [GtkChild]
-        private Gtk.Label folder_size;
+        public Gtk.TreeViewColumn contents_column;
         [GtkChild]
-        private Gtk.Label folder_elements;
-        [GtkChild]
-        private Gtk.Label folder_time;
+        public Gtk.TreeViewColumn time_modified_column;
 
         construct {
-            clicked.connect (() => { activated ();});
+            row_activated.connect (() => { activated (); });
+            model = create_model ();
         }
 
         public signal void activated ();
@@ -47,10 +42,10 @@ namespace Baobab {
             set {
                 location_ = value;
 
-                set_name_from_location ();
-                folder_size.label = "";
-                folder_elements.label = "";
-                folder_time.label = "";
+                var list_store = (Gtk.ListStore) model;
+                list_store.clear ();
+                list_store.insert_with_values (null, -1,
+                           Scanner.Columns.NAME, location.name);
             }
 
             get {
@@ -71,32 +66,48 @@ namespace Baobab {
                 uint64 size;
                 int elements;
                 uint64 time;
+                Scanner.State state;
 
                 location.scanner.get (iter,
                            Scanner.Columns.NAME, out name,
                            Scanner.Columns.DISPLAY_NAME, out display_name,
                            Scanner.Columns.SIZE, out size,
                            Scanner.Columns.ELEMENTS, out elements,
-                           Scanner.Columns.TIME_MODIFIED, out time);
+                           Scanner.Columns.TIME_MODIFIED, out time,
+                           Scanner.Columns.STATE, out state);
 
                 if (value.get_depth () == 1) {
-                    set_name_from_location ();
-                } else {
-                    folder_name_primary.label = format_name (display_name, name);
-                    folder_name_secondary.label = "";
+                    name = location.name;
                 }
-                folder_size.label = format_size (size);
-                folder_elements.label = format_items (elements);
-                folder_time.label = format_time_approximate (time);
+
+                var list_store = (Gtk.ListStore) model;
+                list_store.clear ();
+                list_store.insert_with_values (null, -1,
+                           Scanner.Columns.NAME, name,
+                           Scanner.Columns.DISPLAY_NAME, display_name,
+                           Scanner.Columns.SIZE, size,
+                           Scanner.Columns.ELEMENTS, elements,
+                           Scanner.Columns.TIME_MODIFIED, time,
+                           Scanner.Columns.STATE, state);
             }
             get {
                 return path_;
             }
         }
 
-        void set_name_from_location () {
-            folder_name_primary.label = location.name;
-            folder_name_secondary.label = location.file.get_parse_name ();
+        Gtk.ListStore create_model () {
+            var list_store = new Gtk.ListStore.newv (new Type[] {
+                typeof (string),  // NAME
+                typeof (double),  // PERCENT
+                typeof (uint64),  // SIZE
+                typeof (uint64),  // TIME_MODIFIED
+                typeof (string),  // DISPLAY_NAME
+                typeof (int),     // ELEMENTS
+                typeof (Scanner.State)    // STATE
+            });
+            list_store.set_sort_column_id (Scanner.Columns.SIZE, Gtk.SortType.DESCENDING);
+
+            return list_store;
         }
     }
 }

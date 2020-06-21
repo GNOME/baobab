@@ -244,7 +244,12 @@
                   <property name="can_focus">False</property>
                   <property name="column_homogeneous">True</property>
                   <child>
-                    <object class="BaobabFolderDisplay" id="folder_display"/>
+                    <object class="GtkFrame" id="folder_display_frame">
+                      <property name="visible">true</property>
+                      <child>
+                        <object class="BaobabFolderDisplay" id="folder_display"/>
+                      </child>
+                    </object>
                     <packing>
                       <property name="left_attach">0</property>
                       <property name="top_attach">0</property>
@@ -264,6 +269,7 @@
                         <object class="GtkTreeView" id="treeview">
                           <property name="visible">True</property>
                           <property name="can_focus">True</property>
+                          <property name="headers_visible">false</property>
                           <property name="activate_on_single_click">True</property>
                           <child internal-child="selection">
                             <object class="GtkTreeSelection" id="treeview_selection1"/>

@@ -69,6 +69,12 @@ namespace Baobab {
         [GtkChild]
         private Gtk.MenuItem treeview_popup_trash;
         [GtkChild]
+        private Gtk.TreeViewColumn size_column;
+        [GtkChild]
+        private Gtk.TreeViewColumn contents_column;
+        [GtkChild]
+        private Gtk.TreeViewColumn time_modified_column;
+        [GtkChild]
         private Gtk.Stack chart_stack;
         [GtkChild]
         private Gtk.Stack spinner_stack;
@@ -461,7 +467,32 @@ namespace Baobab {
                 var path = convert_path_to_child_path (wrapper_path);
                 reroot_treeview (path, true);
             });
+
+            var folder_display_model = (Gtk.TreeSortable) folder_display.model;
+            folder_display_model.sort_column_changed.connect (reset_treeview_sorting);
+
+            folder_display.size_column.notify["width"].connect (copy_treeview_column_sizes);
+            folder_display.contents_column.notify["width"].connect (copy_treeview_column_sizes);
+            folder_display.time_modified_column.notify["width"].connect (copy_treeview_column_sizes);
         }
+
+        void copy_treeview_column_sizes () {
+            size_column.min_width = folder_display.size_column.width;
+            contents_column.min_width = folder_display.contents_column.width;
+            time_modified_column.min_width = folder_display.time_modified_column.width;
+        }
+
+        void reset_treeview_sorting () {
+            int id;
+            Gtk.SortType sort_type;
+
+            var folder_display_model = (Gtk.TreeSortable) folder_display.model;
+            var treeview_model = (Gtk.TreeSortable) treeview.model;
+
+            folder_display_model.get_sort_column_id (out id, out sort_type);
+            treeview_model.set_sort_column_id (id, sort_type);
+        }
+
 
         void reroot_treeview (Gtk.TreePath path, bool select_first = false) {
             Gtk.TreeIter iter;
@@ -477,6 +508,7 @@ namespace Baobab {
 
             var filter = new Gtk.TreeModelFilter (active_location.scanner, path);
             treeview.model = new Gtk.TreeModelSort.with_model (filter);
+            reset_treeview_sorting ();
 
             if (select_first) {
                 treeview.set_cursor (new Gtk.TreePath.first (), null, false);
@@ -605,6 +637,7 @@ namespace Baobab {
 
             // Make sure to update the folder display after the scan
             folder_display.path = new Gtk.TreePath.first ();
+            copy_treeview_column_sizes ();
 
             if (!scanner.show_allocated_size) {
                 message (_("Could not always detect occupied disk sizes."), _("Apparent sizes may be shown instead."), Gtk.MessageType.INFO);

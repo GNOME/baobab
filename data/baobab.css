@@ -54,9 +54,13 @@
     color: @theme_unfocused_text_color;
 }
 
+window.background stack > grid > frame border,
 window.background stack > grid > scrolledwindow.frame {
-    border-radius: 0;
     border-width: 0 1px 0 0;
+}
+
+window.background stack treeview:hover:not(:selected) {
+    background: @theme_bg_color;
 }
 
 pathbar button {
@@ -70,29 +74,6 @@ pathbar {
 	border: solid 1px @borders;
 	border-radius: 3px;
 	background: @theme_bg_color;
-}
-
-folder-display {
-    background: white;
-    border-color: @borders;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-}
-
-folder-display:hover {
-    background: @theme_bg_color;
-}
-
-folder-display label {
-    padding: 6px;
-}
-
-.folder-display-header {
-    font-weight: bold;
-}
-
-treeview:hover:not(:selected) {
-    background: @theme_bg_color;
 }
 
 window infobar.warning,
