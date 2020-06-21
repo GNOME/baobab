@@ -11,6 +11,7 @@
 }
 
 .cell.baobab-level-cell.fill-block,
+.cell.baobab-level-cell.fill-block:hover,
 .cell.baobab-level-cell.fill-block:selected,
 .cell.baobab-level-cell.fill-block:selected:hover {
     background-color: #edd400;
@@ -79,8 +80,7 @@ folder-display {
 }
 
 folder-display:hover {
-    color: @theme_selected_fg_color;
-    background: @theme_selected_bg_color;
+    background: @theme_bg_color;
 }
 
 folder-display label {
@@ -91,6 +91,9 @@ folder-display label {
     font-weight: bold;
 }
 
+treeview:hover:not(:selected) {
+    background: @theme_bg_color;
+}
 
 window infobar.warning,
 window infobar.error {
