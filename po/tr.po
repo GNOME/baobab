@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-06-14 12:53+0000\n"
-"PO-Revision-Date: 2020-06-18 14:07+0300\n"
+"POT-Creation-Date: 2020-06-20 15:26+0000\n"
+"PO-Revision-Date: 2020-06-23 00:36+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:290
+#: data/ui/baobab-main-window.ui:126 src/baobab-window.vala:290
 msgid "Disk Usage Analyzer"
 msgstr "Disk Kullanımı İnceleyici"
 
@@ -56,7 +56,11 @@ msgstr ""
 "gösterimini sunar, disk alanının nerede boşa harcandığını saptamayı "
 "kolaylaştırır."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+msgid "Devices and Locations"
+msgstr "Aygıtlar ve Konumlar"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "GNOME Projesi"
 
@@ -194,35 +198,51 @@ msgstr "_Yardım"
 msgid "_About Disk Usage Analyzer"
 msgstr "Disk Kullanımı İnceleyici _Hakkında"
 
-#: data/ui/baobab-main-window.ui:188
+#: data/ui/baobab-main-window.ui:73
+msgid "Go back to location list"
+msgstr "Konum listesine geri dön"
+
+#: data/ui/baobab-main-window.ui:94
+msgid "Rescan current location"
+msgstr "Geçerli konumu yeniden tara"
+
+#: data/ui/baobab-main-window.ui:190
 msgid "Close"
 msgstr "Kapat"
 
-#: data/ui/baobab-main-window.ui:243
+#: data/ui/baobab-main-window.ui:245
 msgid "Folder"
 msgstr "Klasör"
 
-#: data/ui/baobab-main-window.ui:271
+#: data/ui/baobab-main-window.ui:273
 msgid "Size"
 msgstr "Boyut"
 
-#: data/ui/baobab-main-window.ui:289
+#: data/ui/baobab-main-window.ui:291
 msgid "Contents"
 msgstr "İçindekiler"
 
-#: data/ui/baobab-main-window.ui:307
+#: data/ui/baobab-main-window.ui:309
 msgid "Modified"
 msgstr "Değiştirildi"
 
-#: data/ui/baobab-main-window.ui:352
+#: data/ui/baobab-main-window.ui:354
 msgid "Rings Chart"
 msgstr "Halka Çizelgesi"
 
-#: data/ui/baobab-main-window.ui:364
+#: data/ui/baobab-main-window.ui:366
 msgid "Treemap Chart"
 msgstr "Ağaç Haritası Çizelgesi"
 
-#: src/baobab-application.vala:30
+#: src/baobab-application.vala:33
+msgid ""
+"Skip directories on different file systems. Ignored if DIRECTORY is not "
+"specified."
+msgstr ""
+"Farklı dosya sistemlerindeki dizinleri atla. Eğer DİZİN belirtilmediyse "
+"göz ardı edilir."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
 
