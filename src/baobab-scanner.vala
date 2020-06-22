@@ -53,6 +53,7 @@ namespace Baobab {
 
         public bool show_allocated_size { get; private set; }
 
+        // Used for progress reporting, should be updated whenever a new Results object is created
         public uint64 total_size { get; private set; }
 
         public int max_depth { get; protected set; }
