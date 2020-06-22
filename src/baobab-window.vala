@@ -628,6 +628,7 @@ namespace Baobab {
             } catch (Error e) {
                 var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
                 message (primary, e.message, Gtk.MessageType.ERROR);
+                set_ui_state (home_page, false);
                 return;
             }
 
@@ -668,7 +669,7 @@ namespace Baobab {
 
             clear_message ();
 
-            scanning_page_timeout_id = Timeout.add (200, () => {
+            scanning_page_timeout_id = Timeout.add (500, () => {
                 scanning_page_timeout_id = 0;
                 set_ui_state (scanning_page, true);
                 return Source.REMOVE;
