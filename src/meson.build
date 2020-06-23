@@ -10,6 +10,7 @@ baobab_vala_sources = [
   'baobab-location-list.vala',
   'baobab-location.vala',
   'baobab-pathbar.vala',
+  'baobab-preferences-dialog.vala',
   'baobab-ringschart.vala',
   'baobab-scanner.vala',
   'baobab-treemap.vala',

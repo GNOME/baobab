@@ -425,6 +425,8 @@ namespace Baobab {
             scan_error = null;
             total_size = 0;
             total_elements = 0;
+
+            excluded_locations = Application.get_default ().get_excluded_locations ();
         }
 
         public void scan (bool force) {
@@ -482,8 +484,6 @@ namespace Baobab {
                 typeof (int),     // ELEMENTS
                 typeof (State)    // STATE
             });
-
-            excluded_locations = Application.get_default ().get_excluded_locations ();
 
             results_queue = new AsyncQueue<ResultsArray> ();
         }

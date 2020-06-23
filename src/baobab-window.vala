@@ -95,6 +95,7 @@ namespace Baobab {
             { "scan-folder", on_scan_folder_activate },
             { "reload", on_reload_activate },
             { "clear-recent", on_clear_recent },
+            { "show-preferences", on_show_preferences },
             { "help", on_help_activate },
             { "about", on_about_activate }
         };
@@ -266,6 +267,13 @@ namespace Baobab {
 
         void on_clear_recent () {
             location_list.clear_recent ();
+        }
+
+        void on_show_preferences () {
+            var dialog = new PreferencesDialog ();
+            dialog.modal = true;
+            dialog.set_transient_for (this);
+            dialog.show ();
         }
 
         void on_help_activate () {
