@@ -26,11 +26,11 @@ namespace Baobab {
 
         private Window window;
 
-        static bool one_file_system;
+        static bool all_file_systems;
 
         const OptionEntry[] option_entries = {
-            { "one-file-system", 'x', 0, OptionArg.NONE, ref one_file_system,
-              N_("Skip directories on different file systems. Ignored if DIRECTORY is not specified."), null },
+            { "all-file-systems", 'a', 0, OptionArg.NONE, ref all_file_systems,
+              N_("Do not skip directories on different file systems. Ignored if DIRECTORY is not specified."), null },
             { "version", 'v', 0, OptionArg.NONE, null, N_("Print version information and exit"), null },
             { null }
         };
@@ -47,7 +47,7 @@ namespace Baobab {
         protected override void open (File[] files, string hint) {
             ensure_window ();
 
-            var scan_flags = one_file_system ? ScanFlags.EXCLUDE_MOUNTS : ScanFlags.NONE;
+            var scan_flags = all_file_systems ? ScanFlags.NONE : ScanFlags.EXCLUDE_MOUNTS;
             window.scan_directory (files[0], scan_flags);
         }
 
