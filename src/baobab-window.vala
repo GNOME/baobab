@@ -240,11 +240,13 @@ namespace Baobab {
         }
 
         void location_activated (Location location) {
+            set_busy (true);
             location.mount_volume.begin ((location_, res) => {
                 try {
                     location.mount_volume.end (res);
                     scan_location (location);
                 } catch (Error e) {
+                    set_busy (false);
                     message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
                 }
             });
