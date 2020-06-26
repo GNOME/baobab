@@ -29,6 +29,8 @@ namespace Baobab {
         public Gtk.TreeViewColumn contents_column;
         [GtkChild]
         public Gtk.TreeViewColumn time_modified_column;
+        [GtkChild]
+        private Gtk.CellRendererPixbuf folder_column_icon_renderer;
 
         construct {
             row_activated.connect (() => { activated (); });
@@ -78,6 +80,9 @@ namespace Baobab {
 
                 if (value.get_depth () == 1) {
                     name = location.name;
+                    folder_column_icon_renderer.visible = false;
+                } else {
+                    folder_column_icon_renderer.visible = true;
                 }
 
                 var list_store = (Gtk.ListStore) model;

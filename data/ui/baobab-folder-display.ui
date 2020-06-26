@@ -18,6 +18,11 @@
         <property name="reorderable">True</property>
         <property name="sort_column_id">0</property>
         <child>
+          <object class="GtkCellRendererPixbuf" id="folder_column_icon_renderer">
+            <property name="icon_name">pan-up-symbolic</property>
+          </object>
+        </child>
+        <child>
           <object class="BaobabCellRendererName" id="folder_column_text_renderer">
             <property name="ellipsize">end</property>
           </object>
