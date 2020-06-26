@@ -315,7 +315,7 @@ namespace Baobab {
 
         void on_folder_display_activated () {
             var path = folder_display.path;
-            if (path.get_depth () > 1) {
+            if (path != null && path.get_depth () > 1) {
                 path.up ();
                 reroot_treeview (path);
             }

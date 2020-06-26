@@ -56,6 +56,8 @@ namespace Baobab {
                 list_store.insert_with_values (null, -1,
                            Scanner.Columns.NAME, location.name);
 
+                folder_column_icon_renderer.visible = false;
+
                 location_progress_handler = location_.progress.connect (() => {
                     Gtk.TreeIter iter;
                     list_store.get_iter_first (out iter);
