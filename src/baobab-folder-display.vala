@@ -58,9 +58,11 @@ namespace Baobab {
 
                 location_progress_handler = location_.progress.connect (() => {
                     Gtk.TreeIter iter;
-                    list_store.set (iter, Scanner.Columns.SIZE, location_.scanner.total_size);
+                    list_store.get_iter_first (out iter);
+                    list_store.set (iter,
+                            Scanner.Columns.SIZE, location_.scanner.total_size,
+                            Scanner.Columns.ELEMENTS, location_.scanner.total_elements);
                 });
-
             }
 
             get {
