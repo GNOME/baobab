@@ -39,15 +39,28 @@ namespace Baobab {
 
         public signal void activated ();
 
+        private ulong location_progress_handler;
+
         Location location_;
         public Location location {
             set {
+                if (location_progress_handler > 0) {
+                    SignalHandler.disconnect (location_, location_progress_handler);
+                    location_progress_handler = 0;
+                }
+
                 location_ = value;
 
                 var list_store = (Gtk.ListStore) model;
                 list_store.clear ();
                 list_store.insert_with_values (null, -1,
                            Scanner.Columns.NAME, location.name);
+
+                location_progress_handler = location_.progress.connect (() => {
+                    Gtk.TreeIter iter;
+                    list_store.set (iter, Scanner.Columns.SIZE, location_.scanner.total_size);
+                });
+
             }
 
             get {

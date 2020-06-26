@@ -41,8 +41,6 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Widget home_page;
         [GtkChild]
-        private Gtk.Widget scanning_page;
-        [GtkChild]
         private Gtk.Widget result_page;
         [GtkChild]
         private Gtk.InfoBar infobar;
@@ -54,8 +52,6 @@ namespace Baobab {
         private Gtk.Button infobar_close_button;
         [GtkChild]
         private LocationList location_list;
-        [GtkChild]
-        private Gtk.Label scanning_progress_label;
         [GtkChild]
         private FolderDisplay folder_display;
         [GtkChild]
@@ -90,7 +86,6 @@ namespace Baobab {
         private Location? active_location = null;
         private ulong scan_completed_handler = 0;
         private uint scanning_progress_id = 0;
-        private uint scanning_page_timeout_id = 0;
 
         static Gdk.Cursor busy_cursor;
 
@@ -264,11 +259,6 @@ namespace Baobab {
             if (scan_completed_handler > 0) {
                 active_location.scanner.disconnect (scan_completed_handler);
                 scan_completed_handler = 0;
-            }
-
-            if (scanning_page_timeout_id > 0) {
-                Source.remove (scanning_page_timeout_id);
-                scanning_page_timeout_id = 0;
             }
 
             active_location = null;
@@ -558,7 +548,7 @@ namespace Baobab {
         void set_ui_state (Gtk.Widget child, bool busy) {
             menu_button.visible = (child == home_page);
             reload_button.visible = (child == result_page);
-            back_button.visible = (child == result_page) || (child == scanning_page);
+            back_button.visible = (child == result_page);
 
             set_busy (busy);
 
@@ -576,11 +566,6 @@ namespace Baobab {
                 }
             }
 
-            if (child == scanning_page || child == result_page) {
-                main_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            } else {
-                main_stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-            }
             main_stack.visible_child = child;
         }
 
@@ -615,11 +600,6 @@ namespace Baobab {
             if (scanning_progress_id > 0) {
                 Source.remove (scanning_progress_id);
                 scanning_progress_id = 0;
-            }
-
-            if (scanning_page_timeout_id > 0) {
-                Source.remove (scanning_page_timeout_id);
-                scanning_page_timeout_id = 0;
             }
 
             try {
@@ -666,22 +646,17 @@ namespace Baobab {
 
             treeview.model = null;
 
-            var scanner = active_location.scanner;
+            var scanner = location.scanner;
             scan_completed_handler = scanner.completed.connect (scanner_completed);
 
             clear_message ();
 
-            scanning_page_timeout_id = Timeout.add (500, () => {
-                scanning_page_timeout_id = 0;
-                set_ui_state (scanning_page, true);
-                return Source.REMOVE;
-            });
-
-            scanning_progress_id = Timeout.add (100, () => {
-                scanning_progress_label.label = format_size (scanner.total_size);
+            scanning_progress_id = Timeout.add (500, () => {
+                location.progress ();
                 return Source.CONTINUE;
             });
 
+            set_ui_state (result_page, true);
             scanner.scan (force);
         }
 

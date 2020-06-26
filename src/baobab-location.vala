@@ -46,6 +46,7 @@ namespace Baobab {
         public Scanner? scanner { get; private set; }
 
         public signal void changed ();
+        public signal void progress ();
 
         private bool querying_fs = false;
 
