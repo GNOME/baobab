@@ -54,7 +54,12 @@
     color: @theme_unfocused_text_color;
 }
 
-window.background stack > grid > frame border,
+/* FolderDisplay */
+window.background stack > grid > frame border {
+    border-width: 0 1px 1px 0;
+}
+
+/* regular TreeView */
 window.background stack > grid > scrolledwindow.frame {
     border-width: 0 1px 0 0;
 }
