@@ -55,7 +55,7 @@ namespace Baobab {
         protected const uint MIN_DEPTH = 1;
 
         // Keep in sync with colors defined in CSS
-        const int NUM_TANGO_COLORS = 6;
+        const int NUM_COLORS = 7;
 
         bool model_changed;
 
@@ -437,10 +437,10 @@ namespace Baobab {
                 Gdk.RGBA color_a, color_b;
 
                 int color_number = (int) (rel_position / (100.0/3));
-                int next_color_number = (color_number + 1) % NUM_TANGO_COLORS;
+                int next_color_number = (color_number + 1) % NUM_COLORS;
 
-                context.lookup_color ("tango_color_" + color_number.to_string (), out color_a);
-                context.lookup_color ("tango_color_" + next_color_number.to_string (), out color_b);
+                context.lookup_color ("color_" + color_number.to_string (), out color_a);
+                context.lookup_color ("color_" + next_color_number.to_string (), out color_b);
 
                 color = interpolate_colors (color_a, color_b, (rel_position - color_number * 100/3) / (100/3));
 
