@@ -23,9 +23,17 @@ namespace Baobab {
     public class PathButton : Gtk.Button {
         [GtkChild]
         new Gtk.Label label;
+        [GtkChild]
+        Gtk.Image icon;
 
-        public PathButton (string name) {
+        public PathButton (string name, Icon? gicon) {
             label.label = name;
+
+            icon.hide ();
+            if (gicon != null) {
+                icon.gicon = gicon;
+                icon.show ();
+            }
         }
 
     }
@@ -79,9 +87,11 @@ namespace Baobab {
 
         PathButton make_button (Gtk.TreePath path) {
             string label;
+            Icon? gicon = null;
 
             if (path.get_depth () == 1) {
                 label = location.name;
+                gicon = location.symbolic_icon;
             } else {
                 Gtk.TreeIter iter;
                 string name;
@@ -93,7 +103,7 @@ namespace Baobab {
                 label = display_name != null ? display_name : name;
             }
 
-            var button = new PathButton (label);
+            var button = new PathButton (label, gicon);
             button.clicked.connect (() => {
                 item_activated (path);
             });

@@ -35,6 +35,7 @@ namespace Baobab {
         public uint64? used { get; private set; }
         public uint64? reserved { get; private set; }
         public Icon? icon { get; private set; }
+        public Icon? symbolic_icon { get; private set; }
 
         public Volume? volume { get; private set; }
         public Mount? mount { get; private set; }
@@ -70,6 +71,7 @@ namespace Baobab {
         void make_this_home_location () {
             name = _("Home folder");
             icon = new ThemedIcon ("user-home");
+            symbolic_icon = new ThemedIcon ("user-home-symbolic");
         }
 
         public Location.for_home_folder () {
@@ -107,6 +109,7 @@ namespace Baobab {
 
             file = File.new_for_path ("/");
             icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system");
+            symbolic_icon = new ThemedIcon.with_default_fallbacks ("drive-harddisk-system-symbolic");
             is_main_volume = true;
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
@@ -117,6 +120,7 @@ namespace Baobab {
             file = File.new_for_uri (recent_info.get_uri ());
             name = recent_info.get_display_name ();
             icon = recent_info.get_gicon ();
+            symbolic_icon = new ThemedIcon ("folder-symbolic");
 
             scanner = new Scanner (file, ScanFlags.EXCLUDE_MOUNTS);
         }
@@ -146,6 +150,7 @@ namespace Baobab {
             } else {
                 name = volume.get_name ();
                 icon = volume.get_icon ();
+                symbolic_icon = volume.get_symbolic_icon ();
                 mount = null;
                 file = null;
                 size = null;
@@ -159,6 +164,7 @@ namespace Baobab {
         void fill_from_mount () {
             name = mount.get_name ();
             icon = mount.get_icon ();
+            symbolic_icon = mount.get_symbolic_icon ();
             file = mount.get_root ();
 
             if (file != null && file.equal (File.new_for_path (Environment.get_home_dir ()))) {
