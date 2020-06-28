@@ -55,7 +55,7 @@ namespace Baobab {
         protected const uint MIN_DEPTH = 1;
 
         // Keep in sync with colors defined in CSS
-        const int NUM_COLORS = 7;
+        const int NUM_COLORS = 6;
 
         bool model_changed;
 
