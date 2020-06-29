@@ -33,10 +33,6 @@ baobab_c_args = [
   '-include', 'config.h'
 ]
 
-baobab_link_args = [
-  '-rdynamic'
-]
-
 baobab_dependencies = [
   glib,
   gio,
@@ -50,6 +46,6 @@ executable('baobab', baobab_sources,
   vala_args: baobab_vala_args,
   c_args: baobab_c_args,
   dependencies: baobab_dependencies,
-  link_args: baobab_link_args,
+  export_dynamic: true,
   install: true
 )
