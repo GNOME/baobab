@@ -40,7 +40,6 @@ baobab_link_args = [
 baobab_dependencies = [
   glib,
   gio,
-  gio_unix,
   gobject,
   gtk,
   math
