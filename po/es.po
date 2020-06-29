@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-06-14 12:53+0000\n"
-"PO-Revision-Date: 2020-06-16 09:38+0200\n"
+"POT-Creation-Date: 2020-06-28 18:31+0000\n"
+"PO-Revision-Date: 2020-06-29 12:07+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:124 src/baobab-window.vala:290
+#: data/ui/baobab-main-window.ui:126 src/baobab-window.vala:290
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
@@ -55,7 +55,12 @@ msgstr ""
 "vista de árbol como una representación gráfica del tamaño de cada carpeta, "
 "simplificando la identificación de dónde se consume el espacio."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+#| msgid "Devices & Locations"
+msgid "Devices and Locations"
+msgstr "Dispositivos y ubicaciones"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "El Proyecto GNOME"
 
@@ -193,35 +198,55 @@ msgstr "Ay_uda"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Acerca del analizador de uso de disco"
 
-#: data/ui/baobab-main-window.ui:188
+#: data/ui/baobab-main-window.ui:73
+#| msgctxt "shortcut window"
+#| msgid "Go back to location list"
+msgid "Go back to location list"
+msgstr "Volver a la lista de ubicaciones"
+
+#: data/ui/baobab-main-window.ui:94
+#| msgctxt "shortcut window"
+#| msgid "Rescan current location"
+msgid "Rescan current location"
+msgstr "Volver a analizar la ubicación actual"
+
+#: data/ui/baobab-main-window.ui:190
 msgid "Close"
 msgstr "Cerrar"
 
-#: data/ui/baobab-main-window.ui:243
+#: data/ui/baobab-main-window.ui:245
 msgid "Folder"
 msgstr "Carpeta"
 
-#: data/ui/baobab-main-window.ui:271
+#: data/ui/baobab-main-window.ui:273
 msgid "Size"
 msgstr "Tamaño"
 
-#: data/ui/baobab-main-window.ui:289
+#: data/ui/baobab-main-window.ui:291
 msgid "Contents"
 msgstr "Contenido"
 
-#: data/ui/baobab-main-window.ui:307
+#: data/ui/baobab-main-window.ui:309
 msgid "Modified"
 msgstr "Modificado"
 
-#: data/ui/baobab-main-window.ui:352
+#: data/ui/baobab-main-window.ui:354
 msgid "Rings Chart"
 msgstr "Gráfico de anillos"
 
-#: data/ui/baobab-main-window.ui:364
+#: data/ui/baobab-main-window.ui:366
 msgid "Treemap Chart"
 msgstr "Gráfico de árbol"
 
-#: src/baobab-application.vala:30
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"No omitir carpetas en diferentes sistemas de archivos. Ignorado si DIRECTORY "
+"no se especifica"
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
@@ -359,12 +384,10 @@ msgid "Could not scan some of the folders contained in “%s”"
 msgstr "No se pudieron analizar algunas de las carpetas de «%s»."
 
 #: src/baobab-window.vala:545
-#| msgid "Could not detect occupied disk sizes."
 msgid "Could not always detect occupied disk sizes."
 msgstr "No se pudo detectar el espacio de disco ocupado."
 
 #: src/baobab-window.vala:545
-#| msgid "Apparent sizes are shown instead."
 msgid "Apparent sizes may be shown instead."
 msgstr "Se muestra el tamaño aparente en su lugar."
 
