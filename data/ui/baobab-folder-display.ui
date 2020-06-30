@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.0 -->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <template class="BaobabFolderDisplay" parent="GtkTreeView">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="activate_on_single_click">True</property>
+    <child internal-child="selection">
+      <object class="GtkTreeSelection" id="treeview_selection">
+        <property name="mode">none</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTreeViewColumn" id="folder_column">
+        <property name="title" translatable="yes">Folder</property>
+        <property name="expand">True</property>
+        <property name="reorderable">True</property>
+        <property name="sort_column_id">0</property>
+        <child>
+          <object class="GtkCellRendererPixbuf" id="folder_column_icon_renderer">
+            <property name="icon_name">pan-up-symbolic</property>
+          </object>
+        </child>
+        <child>
+          <object class="BaobabCellRendererName" id="folder_column_text_renderer">
+            <property name="ellipsize">end</property>
+          </object>
+          <attributes>
+            <attribute name="name">0</attribute>
+            <attribute name="display_name">4</attribute>
+            <attribute name="state">6</attribute>
+          </attributes>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTreeViewColumn" id="size_column">
+        <property name="title" translatable="yes">Size</property>
+        <property name="reorderable">True</property>
+        <property name="sort_column_id">2</property>
+        <child>
+          <object class="BaobabCellRendererSize" id="size_column_size_renderer">
+            <property name="xalign">1.0</property>
+          </object>
+          <attributes>
+            <attribute name="size">2</attribute>
+            <attribute name="state">6</attribute>
+          </attributes>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTreeViewColumn" id="contents_column">
+        <property name="title" translatable="yes">Contents</property>
+        <property name="reorderable">True</property>
+        <property name="sort_column_id">5</property>
+        <child>
+          <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
+            <property name="xalign">1.0</property>
+          </object>
+          <attributes>
+            <attribute name="items">5</attribute>
+            <attribute name="state">6</attribute>
+          </attributes>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTreeViewColumn" id="time_modified_column">
+        <property name="title" translatable="yes">Modified</property>
+        <property name="reorderable">True</property>
+        <property name="sort_column_id">3</property>
+        <child>
+          <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
+            <property name="xalign">1.0</property>
+          </object>
+          <attributes>
+            <attribute name="time">3</attribute>
+          </attributes>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

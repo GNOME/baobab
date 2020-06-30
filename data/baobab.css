@@ -11,6 +11,7 @@
 }
 
 .cell.baobab-level-cell.fill-block,
+.cell.baobab-level-cell.fill-block:hover,
 .cell.baobab-level-cell.fill-block:selected,
 .cell.baobab-level-cell.fill-block:selected:hover {
     background-color: #edd400;
@@ -53,9 +54,31 @@
     color: @theme_unfocused_text_color;
 }
 
+/* FolderDisplay */
+window.background stack > grid > frame border {
+    border-width: 0 1px 1px 0;
+}
+
+/* regular TreeView */
 window.background stack > grid > scrolledwindow.frame {
-    border-radius: 0;
     border-width: 0 1px 0 0;
+}
+
+window.background stack treeview:hover:not(:selected) {
+    background: @theme_bg_color;
+}
+
+pathbar button {
+	transition: 0;
+	margin: 0;
+	border-width: 0 1px 0 0;
+	border-radius: 0px;
+}
+
+pathbar {
+	border: solid 1px @borders;
+	border-radius: 3px;
+	background: @theme_bg_color;
 }
 
 window infobar.warning,

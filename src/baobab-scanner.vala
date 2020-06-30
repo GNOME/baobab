@@ -53,6 +53,10 @@ namespace Baobab {
 
         public bool show_allocated_size { get; private set; }
 
+        // Used for progress reporting, should be updated whenever a new Results object is created
+        public uint64 total_size { get; private set; }
+        public int total_elements { get; private set; }
+
         public int max_depth { get; protected set; }
 
         public signal void completed();
@@ -243,6 +247,8 @@ namespace Baobab {
                         }
 
                         var child_results = new Results (child_info, results);
+                        total_size += child_results.size;
+                        total_elements++;
                         results.update_with_child (child_results);
                         results_array.results += (owned) child_results;
                         break;
@@ -264,6 +270,8 @@ namespace Baobab {
             }
 
             var results = new Results (info, parent);
+            total_size += results.size;
+            total_elements++;
 
             try {
                 add_children (directory, results, results_array);
@@ -373,21 +381,8 @@ namespace Baobab {
                         max_depth = results.max_depth;
                     }
 
-                    // If the user cancelled abort the scan and
-                    // report CANCELLED as the error, otherwise
-                    // consider the error not fatal and report the
-                    // first error we encountered
-                    if (results.error != null) {
-                        if (results.error is IOError.CANCELLED) {
-                            scan_error = results.error;
-                            completed ();
-                            return false;
-                        } else if (scan_error == null) {
-                            scan_error = results.error;
-                        }
-                    }
-
                     if (results.parent == null) {
+                        scan_error = results.error;
                         successful = true;
                         completed ();
                         return false;
@@ -424,6 +419,8 @@ namespace Baobab {
 
             cancellable.reset ();
             scan_error = null;
+            total_size = 0;
+            total_elements = 0;
         }
 
         public void scan (bool force) {
@@ -454,7 +451,9 @@ namespace Baobab {
         public void cancel () {
             if (!successful) {
                 cancel_and_reset ();
+                scan_error = new IOError.CANCELLED ("Scan was cancelled");
             }
+            completed ();
         }
 
         public void finish () throws Error {

@@ -42,12 +42,12 @@ namespace Baobab {
 
             image.gicon = location.icon;
 
-            var escaped = GLib.Markup.escape_text (location.name, -1);
+            var escaped = Markup.escape_text (location.name);
             name_label.label = "<b>%s</b>".printf (escaped);
 
             path_label.hide();
             if (location.file != null) {
-                path_label.label = Markup.escape_text (location.file.get_parse_name (), -1);
+                path_label.label = Markup.escape_text (location.file.get_parse_name ());
                 path_label.show();
             }
 
@@ -99,8 +99,7 @@ namespace Baobab {
         [GtkChild]
         private Gtk.Box remote_box;
 
-        public delegate void LocationAction (Location l);
-        private LocationAction? location_action;
+        public signal void location_activated (Location location);
 
         private const int MAX_RECENT_LOCATIONS = 5;
 
@@ -275,14 +274,8 @@ namespace Baobab {
         }
 
         void row_activated (Gtk.ListBoxRow row) {
-            if (location_action != null) {
-                var location_widget = row as LocationRow;
-                location_action (location_widget.location);
-            }
-        }
-
-        public void set_action (owned LocationAction? action) {
-            location_action = (owned)action;
+            var location_widget = row as LocationRow;
+            location_activated (location_widget.location);
         }
 
         public void update () {

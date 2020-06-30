@@ -63,6 +63,19 @@ namespace Baobab {
 
         List<ChartItem> items;
 
+        Location location_;
+        public Location location {
+            set {
+                location_ = value;
+                model = location_.scanner;
+                model.bind_property ("max-depth", this, "max-depth", BindingFlags.SYNC_CREATE);
+            }
+
+            get {
+                return location_;
+            }
+        }
+
         uint max_depth_ = MAX_DEPTH;
         public uint max_depth {
             set {
@@ -80,7 +93,7 @@ namespace Baobab {
         }
 
         Gtk.TreeModel model_;
-        public Gtk.TreeModel model {
+        protected Gtk.TreeModel model {
             set {
                 if (model_ == value) {
                     return;
@@ -158,9 +171,7 @@ namespace Baobab {
             }
         }
 
-        public virtual signal void item_activated (Gtk.TreeIter iter) {
-            root = model.get_path (iter);
-        }
+        public signal void item_activated (Gtk.TreeIter iter);
 
         protected virtual void post_draw  (Cairo.Context cr) {
         }
@@ -246,12 +257,7 @@ namespace Baobab {
                        Scanner.Columns.SIZE, out size);
 
             var item = create_new_chartitem ();
-            item.name = "";
-            if (display_name != null) {
-                item.name = display_name;
-            } else if (name != null) {
-                item.name = Filename.display_name (name);
-            }
+            item.name = format_name (display_name, name);
             item.size = format_size (size);
             item.depth = depth;
             item.rel_start = rel_start;

@@ -20,6 +20,48 @@
 
 namespace Baobab {
 
+    public string format_name (string? display_name, string? name) {
+        if (display_name != null) {
+            return display_name;
+        }
+        if (name != null) {
+            return Filename.display_name (name);
+        }
+        return "";
+    }
+
+    public string format_items (int items) {
+        return ngettext ("%d item", "%d items", items).printf (items);
+    }
+
+    public string format_time_approximate (uint64 time) {
+        if (time == 0) {
+            // Translators: when the last modified time is unknown
+            return _("Unknown");
+        }
+
+        var dt = new DateTime.from_unix_local ((int64) time);
+        var now = new DateTime.now_local ();
+        var ts = now.difference (dt);
+        if (ts < TimeSpan.DAY) {
+            // Translators: when the last modified time is today
+            return _("Today");
+        }
+        if (ts < 31 * TimeSpan.DAY) {
+            var days = (ulong) (ts / TimeSpan.DAY);
+            // Translators: when the last modified time is "days" days ago
+            return ngettext ("%lu day", "%lu days", days).printf (days);
+        }
+        if (ts < 365 * TimeSpan.DAY) {
+            var months = (ulong) (ts / (31 * TimeSpan.DAY));
+            // Translators: when the last modified time is "months" months ago
+            return ngettext ("%lu month", "%lu months", months).printf (months);
+        }
+        var years = (ulong) (ts / (365 * TimeSpan.DAY));
+        // Translators: when the last modified time is "years" years ago
+        return ngettext ("%lu year", "%lu years", years).printf (years);
+    }
+
     public class CellRendererName : Gtk.CellRendererText {
         public Scanner.State state { set; get; }
 
@@ -27,12 +69,8 @@ namespace Baobab {
 
         public string name {
             set {
-                string escaped = null;
-                if (display_name != null) {
-                    escaped = Markup.escape_text (display_name);
-                } else if (value != null) {
-                    escaped = Markup.escape_text (Filename.display_name (value));
-                }
+                string escaped = Markup.escape_text (format_name (display_name, value));
+
                 switch (state) {
                 case Scanner.State.ERROR:
                     markup = "<b>%s</b>".printf (escaped);
@@ -85,7 +123,7 @@ namespace Baobab {
 
         public int items {
             set {
-                text = (value >= 0 && state != Scanner.State.ERROR) ? ngettext ("%d item", "%d items", value).printf (value) : "";
+                text = (value >= 0 && state != Scanner.State.ERROR) ? format_items (value) : "";
             }
         }
     }
@@ -93,31 +131,7 @@ namespace Baobab {
     public class CellRendererTime : Gtk.CellRendererText {
         public uint64 time {
             set {
-                if (value == 0) {
-                    // Translators: when the last modified time is unknown
-                    text = _("Unknown");
-                    return;
-                }
-
-                var dt = new DateTime.from_unix_local ((int64)value);
-                var now = new DateTime.now_local ();
-                var ts = now.difference (dt);
-                if (ts < TimeSpan.DAY) {
-                    // Translators: when the last modified time is today
-                    text = _("Today");
-                } else if (ts < 31 * TimeSpan.DAY) {
-                    var days = (ulong) (ts / TimeSpan.DAY);
-                    // Translators: when the last modified time is "days" days ago
-                    text = ngettext ("%lu day", "%lu days", days).printf (days);
-                } else if (ts < 365 * TimeSpan.DAY) {
-                    var months = (ulong) (ts / (31 * TimeSpan.DAY));
-                    // Translators: when the last modified time is "months" months ago
-                    text = ngettext ("%lu month", "%lu months", months).printf (months);
-                } else {
-                    var years = (ulong) (ts / (365 * TimeSpan.DAY));
-                    // Translators: when the last modified time is "years" years ago
-                    text = ngettext ("%lu year", "%lu years", years).printf (years);
-                }
+                text = format_time_approximate (value);
             }
         }
     }

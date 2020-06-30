@@ -226,22 +226,38 @@
                   <property name="can_focus">False</property>
                   <property name="column_homogeneous">True</property>
                   <child>
+                    <object class="GtkFrame" id="folder_display_frame">
+                      <property name="visible">true</property>
+                      <child>
+                        <object class="BaobabFolderDisplay" id="folder_display"/>
+                      </child>
+                    </object>
+                    <packing>
+                      <property name="left_attach">0</property>
+                      <property name="top_attach">0</property>
+                      <property name="width">1</property>
+                      <property name="height">1</property>
+                    </packing>
+                  </child>
+                  <child>
                     <object class="GtkScrolledWindow" id="scrolled_window">
                       <property name="visible">True</property>
                       <property name="can_focus">True</property>
                       <property name="shadow_type">in</property>
                       <property name="hexpand">True</property>
+                      <property name="vexpand">True</property>
+                      <property name="hscrollbar-policy">never</property>
                       <child>
                         <object class="GtkTreeView" id="treeview">
                           <property name="visible">True</property>
                           <property name="can_focus">True</property>
+                          <property name="headers_visible">false</property>
+                          <property name="activate_on_single_click">True</property>
                           <child internal-child="selection">
                             <object class="GtkTreeSelection" id="treeview_selection1"/>
                           </child>
                           <child>
                             <object class="GtkTreeViewColumn" id="folder_column">
-                              <property name="resizable">True</property>
-                              <property name="sizing">grow-only</property>
                               <property name="title" translatable="yes">Folder</property>
                               <property name="expand">True</property>
                               <property name="reorderable">True</property>
@@ -257,7 +273,9 @@
                                 </attributes>
                               </child>
                               <child>
-                                <object class="BaobabCellRendererName" id="folder_column_text_renderer"/>
+                                <object class="BaobabCellRendererName" id="folder_column_text_renderer">
+                                  <property name="ellipsize">end</property>
+                                </object>
                                 <attributes>
                                   <attribute name="name">0</attribute>
                                   <attribute name="display_name">4</attribute>
@@ -268,8 +286,6 @@
                           </child>
                           <child>
                             <object class="GtkTreeViewColumn" id="size_column">
-                              <property name="resizable">True</property>
-                              <property name="sizing">grow-only</property>
                               <property name="title" translatable="yes">Size</property>
                               <property name="reorderable">True</property>
                               <property name="sort_column_id">2</property>
@@ -286,8 +302,6 @@
                           </child>
                           <child>
                             <object class="GtkTreeViewColumn" id="contents_column">
-                              <property name="resizable">True</property>
-                              <property name="sizing">grow-only</property>
                               <property name="title" translatable="yes">Contents</property>
                               <property name="reorderable">True</property>
                               <property name="sort_column_id">5</property>
@@ -304,8 +318,6 @@
                           </child>
                           <child>
                             <object class="GtkTreeViewColumn" id="time_modified_column">
-                              <property name="resizable">True</property>
-                              <property name="sizing">grow-only</property>
                               <property name="title" translatable="yes">Modified</property>
                               <property name="reorderable">True</property>
                               <property name="sort_column_id">3</property>
@@ -324,7 +336,7 @@
                     </object>
                     <packing>
                       <property name="left_attach">0</property>
-                      <property name="top_attach">0</property>
+                      <property name="top_attach">1</property>
                       <property name="width">1</property>
                       <property name="height">1</property>
                     </packing>
@@ -409,7 +421,7 @@
                       <property name="left_attach">1</property>
                       <property name="top_attach">0</property>
                       <property name="width">1</property>
-                      <property name="height">1</property>
+                      <property name="height">2</property>
                     </packing>
                   </child>
                 </object>
@@ -422,7 +434,10 @@
         </packing>
       </child>
     </object>
-
   </child>
   </template>
+  <object class="BaobabPathbar" id="pathbar">
+    <property name="visible">True</property>
+    <property name="width_request">700</property>
+  </object>
 </interface>
