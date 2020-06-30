@@ -314,10 +314,17 @@ namespace Baobab {
         }
 
         void on_folder_display_activated () {
+            go_up_treeview ();
+        }
+
+        void go_up_treeview () {
             var path = folder_display.path;
             if (path != null && path.get_depth () > 1) {
+                var cursor_path = path.copy ();
                 path.up ();
                 reroot_treeview (path);
+                cursor_path = convert_child_path_to_path (cursor_path);
+                treeview.set_cursor (cursor_path, null, false);
             }
         }
 
@@ -417,6 +424,13 @@ namespace Baobab {
             return filter.convert_path_to_child_path (filter_path);
         }
 
+        Gtk.TreePath convert_child_path_to_path (Gtk.TreePath path) {
+            var sort = (Gtk.TreeModelSort) treeview.model;
+            var filter = (Gtk.TreeModelFilter) sort.model;
+            var filter_path = filter.convert_child_path_to_path (path);
+            return sort.convert_child_path_to_path (filter_path);
+        }
+
         void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
                 if (event.triggers_context_menu ()) {
@@ -432,29 +446,28 @@ namespace Baobab {
 
             treeview.key_press_event.connect ((event) => {
                 Gtk.TreeIter iter;
-                if (treeview.get_selection().get_selected (null, out iter)) {
-                    Gtk.TreePath path = treeview.model.get_path(iter);
+                if (treeview.get_selection ().get_selected (null, out iter)) {
+                    Gtk.TreePath path = treeview.model.get_path (iter);
                     if (event.keyval == Gdk.Key.Right) {
-                        if (treeview.expand_row(path, false)) {
+                        if (treeview.expand_row (path, false)) {
                             return true;
                         }
-                    }
-                    else if (event.keyval == Gdk.Key.Left) {
-                        if (treeview.collapse_row(path)) {
+                    } else if (event.keyval == Gdk.Key.Left) {
+                        if (treeview.collapse_row (path)) {
                             return true;
-                        }
-                        else if (path.up()) {
+                        } else if (path.up ()) {
                             treeview.set_cursor(path, null, false);
                             return true;
                         }
-                    }
-                    else if (event.keyval == Gdk.Key.space) {
-                        if (treeview.expand_row(path, false)) {
+                    } else if (event.keyval == Gdk.Key.space) {
+                        if (treeview.expand_row (path, false)) {
+                            return true;
+                        } else if (treeview.collapse_row (path)) {
                             return true;
                         }
-                        else if (treeview.collapse_row(path)) {
-                            return true;
-                        }
+                    } else if (event.keyval == Gdk.Key.Up && event.state == Gdk.ModifierType.MOD1_MASK) {
+                        go_up_treeview ();
+                        return true;
                     }
                 }
 
