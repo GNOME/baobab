@@ -13,6 +13,7 @@ glib = dependency('glib-2.0', version: '>=2.44')
 gio = dependency('gio-2.0', version: '>=2.44')
 gio_unix = dependency('gio-unix-2.0', version: '>=2.44')
 gobject = dependency('gobject-2.0', version: '>=2.44')
+gmodule = dependency('gmodule-2.0', version: '>=2.44')
 gtk = dependency('gtk+-3.0', version: '>=3.20')
 
 cc = meson.get_compiler('c')
