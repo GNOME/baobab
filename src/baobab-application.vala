@@ -66,13 +66,12 @@ namespace Baobab {
             return (Application) GLib.Application.get_default ();
         }
 
-        public GenericSet<File> get_excluded_locations () {
-            var excluded_locations = new GenericSet<File> (File.hash, File.equal);
+        public GenericSet<string> get_excluded_locations () {
+            var excluded_locations = new GenericSet<string> (str_hash, str_equal);
 
             var prefs_settings = new Settings ("org.gnome.baobab.preferences");
             foreach (var uri in prefs_settings.get_strv ("excluded-uris")) {
-                var file = File.new_for_uri (uri);
-                excluded_locations.add (file);
+                excluded_locations.add (uri);
             }
 
             return excluded_locations;

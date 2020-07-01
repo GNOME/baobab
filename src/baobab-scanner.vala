@@ -115,7 +115,7 @@ namespace Baobab {
         uint process_result_idle = 0;
 
         GenericSet<HardLink> hardlinks;
-        GenericSet<File> excluded_locations;
+        GenericSet<string> excluded_locations;
         uint32 unix_device = 0;
 
         bool successful = false;
@@ -264,7 +264,7 @@ namespace Baobab {
             var results_array = new ResultsArray ();
 
             var current_unix_device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
-            if (directory in excluded_locations ||
+            if (directory.get_uri () in excluded_locations ||
                 (ScanFlags.EXCLUDE_MOUNTS in scan_flags && current_unix_device != unix_device)) {
                 return null;
             }
