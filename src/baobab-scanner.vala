@@ -264,12 +264,16 @@ namespace Baobab {
             var results_array = new ResultsArray ();
 
             var current_unix_device = info.get_attribute_uint32 (FileAttribute.UNIX_DEVICE);
-            if (directory.get_uri () in excluded_locations ||
-                (ScanFlags.EXCLUDE_MOUNTS in scan_flags && current_unix_device != unix_device)) {
+            if (ScanFlags.EXCLUDE_MOUNTS in scan_flags && current_unix_device != unix_device) {
                 return null;
             }
 
             var results = new Results (info, parent);
+            if (directory.get_uri () in excluded_locations) {
+                results.error = new IOError.FAILED ("Location is excluded");
+                return results;
+            }
+
             total_size += results.size;
             total_elements++;
 
