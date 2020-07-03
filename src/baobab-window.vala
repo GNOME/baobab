@@ -571,11 +571,13 @@ namespace Baobab {
                 chart_stack_switcher.sensitive = false;
                 spinner_stack.visible_child = spinner;
                 spinner.start ();
+                pathbar.sensitive = false;
             } else {
                 enable_drop ();
                 spinner.stop ();
                 spinner_stack.visible_child = chart_stack;
                 chart_stack_switcher.sensitive = true;
+                pathbar.sensitive = true;
             }
 
             var window = get_window ();
