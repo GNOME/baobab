@@ -68,17 +68,21 @@ window.background stack treeview:hover:not(:selected) {
     background: @theme_bg_color;
 }
 
-pathbar button {
-	transition: 0;
-	margin: 0;
-	border-width: 0 1px 0 0;
-	border-radius: 0px;
+.pathbar {
+    border: solid 1px @borders;
+    border-radius: 3px;
+    background: @theme_bg_color;
 }
 
-pathbar {
-	border: solid 1px @borders;
-	border-radius: 3px;
-	background: @theme_bg_color;
+.pathbar button {
+    margin: 0;
+    border-width: 0 1px 0 0;
+    border-radius: 0px;
+}
+
+.pathbar button:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 window infobar.warning,
