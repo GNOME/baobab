@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-07-02 17:32+0000\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
 "PO-Revision-Date: 2020-07-03 00:43+0200\n"
 "Last-Translator: Gil Forcada Codinachs <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Generator: Gtranslator 3.36.0\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:126 src/baobab-window.vala:294
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Analitzador de l'ús dels discs"
 
@@ -44,8 +44,8 @@ msgstr ""
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
-"accounts. It provides both a tree and a graphical representation showing the "
-"size of each folder, making it easy to identify where disk space is wasted."
+"accounts. It provides both a tree and a graphical representation showing the"
+" size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
 "L'analitzador de l'ús dels discs pot escanejar carpetes específiques i "
 "comptes en línia. Proveeix un arbre i una representació gràfica mostrant la "
@@ -53,7 +53,6 @@ msgstr ""
 "l'espai de disc."
 
 #: data/org.gnome.baobab.appdata.xml.in:23
-#| msgid "Devices & Locations"
 msgid "Devices and Locations"
 msgstr "Dispositius i ubicacions"
 
@@ -61,18 +60,17 @@ msgstr "Dispositius i ubicacions"
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "emmagatzematge;emmagatzemament;espai;neteja;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-#| msgid "Excluded partitions URIs"
 msgid "Excluded locations URIs"
 msgstr "URI de les ubicacions excloses"
 
 #: data/org.gnome.baobab.gschema.xml:10
-#| msgid "A list of URIs for partitions to be excluded from scanning."
 msgid "A list of URIs for locations to be excluded from scanning."
 msgstr "Una llista d'URI de les ubicacions que s'exclouran durant l'escaneig."
 
@@ -145,15 +143,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Torna a escanejar la ubicació actual"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:38
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
 msgid "_Open Folder"
 msgstr "O_bre la carpeta"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:47
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
 msgid "_Copy Path to Clipboard"
 msgstr "_Copia el camí al porta-retalls"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:56
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
 msgid "Mo_ve to Trash"
 msgstr "Mo_u a la paperera"
 
@@ -169,19 +167,19 @@ msgstr "_Amplia"
 msgid "Zoom _out"
 msgstr "_Redueix"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:261
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
 msgid "Folder"
 msgstr "Carpeta"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:289
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
 msgid "Size"
 msgstr "Mida"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:305
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
 msgid "Contents"
 msgstr "Continguts"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:321
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
 msgid "Modified"
 msgstr "Modificat"
 
@@ -193,49 +191,47 @@ msgstr "Aquest ordinador"
 msgid "Remote Locations"
 msgstr "Ubicacions remotes"
 
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "Preferències"
+
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Escaneja una carpeta…"
 
 #: data/ui/baobab-main-window.ui:11
-#| msgctxt "shortcut window"
-#| msgid "Rescan current location"
-msgid "Clear list of recent locations"
-msgstr "Neteja la llista d'ubicacions recents"
+msgid "Clear Recent List"
+msgstr "Neteja la llista recent"
 
-#: data/ui/baobab-main-window.ui:17
+#: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
 msgstr "_Dreceres de teclat"
 
-#: data/ui/baobab-main-window.ui:21
+#: data/ui/baobab-main-window.ui:25
 msgid "_Help"
 msgstr "A_juda"
 
-#: data/ui/baobab-main-window.ui:25
+#: data/ui/baobab-main-window.ui:29
 msgid "_About Disk Usage Analyzer"
 msgstr "_Quant a l'Analitzador de l'ús dels discs"
 
-#: data/ui/baobab-main-window.ui:73
-#| msgctxt "shortcut window"
-#| msgid "Go back to location list"
+#: data/ui/baobab-main-window.ui:77
 msgid "Go back to location list"
 msgstr "Torna a llista d'ubicacions"
 
-#: data/ui/baobab-main-window.ui:94
-#| msgctxt "shortcut window"
-#| msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:98
 msgid "Rescan current location"
 msgstr "Torna a escanejar la ubicació actual"
 
-#: data/ui/baobab-main-window.ui:190
+#: data/ui/baobab-main-window.ui:194
 msgid "Close"
 msgstr "Tanca"
 
-#: data/ui/baobab-main-window.ui:366
+#: data/ui/baobab-main-window.ui:370
 msgid "Rings Chart"
 msgstr "Diagrama d'anells"
 
-#: data/ui/baobab-main-window.ui:378
+#: data/ui/baobab-main-window.ui:382
 msgid "Treemap Chart"
 msgstr "Diagrama de mapa d'arbre"
 
@@ -321,35 +317,48 @@ msgstr "Carpeta d'usuari"
 msgid "Computer"
 msgstr "Ordinador"
 
-#: src/baobab-window.vala:214
-msgid "Select Folder"
-msgstr "Seleccioneu una carpeta"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "Ubicacions a ignorar"
 
-#: src/baobab-window.vala:216
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "Seleccioneu la ubicació a ignorar"
+
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
 msgid "_Cancel"
 msgstr "_Cancel·la"
 
-#: src/baobab-window.vala:217
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
 msgid "_Open"
 msgstr "_Obre"
 
-#: src/baobab-window.vala:223
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr "Afegeix una ubicació…"
+
+#: src/baobab-window.vala:215
+msgid "Select Folder"
+msgstr "Seleccioneu una carpeta"
+
+#: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Analitza recursivament els punts de muntatge"
 
-#: src/baobab-window.vala:245
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "No s'ha pogut analitzar el volum."
 
-#: src/baobab-window.vala:275
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "S'ha produït un error en mostrar l'ajuda"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una eina gràfica per analitzar la utilització dels discs."
 
-#: src/baobab-window.vala:303
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "Softcatalà <info@softcatala.org>\n"
@@ -358,50 +367,51 @@ msgstr ""
 "Gil Forcada <gilforcada@guifi.net>\n"
 "Joan Duran <jodufi@gmail.com>"
 
-#: src/baobab-window.vala:377
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "S'ha produït un error en obrir el fitxer"
 
-#: src/baobab-window.vala:394
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "S'ha produït un error en moure el fitxer a la paperera"
 
-#: src/baobab-window.vala:603
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Dispositius i ubicacions"
 
-#: src/baobab-window.vala:655
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "No s'ha pogut escanejar la carpeta «%s»"
 
-#: src/baobab-window.vala:670
-#| msgid "Could not detect occupied disk sizes."
+#: src/baobab-window.vala:680
 msgid "Could not always detect occupied disk sizes."
 msgstr "No sempre es pot detectar l'espai ocupat del disc."
 
-#: src/baobab-window.vala:670
-#| msgid "Apparent sizes are shown instead."
+#: src/baobab-window.vala:680
 msgid "Apparent sizes may be shown instead."
 msgstr "En el seu lloc es mostren les mides aproximades."
 
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Escaneig completat"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "S'ha completat l'escaneig de «%s»"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» no és una carpeta vàlida"
 
-#: src/baobab-window.vala:716
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "No s'ha pogut analitzar l'ús del disc."
+
+#~ msgid "Clear list of recent locations"
+#~ msgstr "Neteja la llista d'ubicacions recents"
 
 #~ msgid "org.gnome.baobab"
 #~ msgstr "org.gnome.baobab"
