@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-06-20 15:26+0000\n"
-"PO-Revision-Date: 2020-06-23 00:36+0300\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-07-30 01:39+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:126 src/baobab-window.vala:290
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Disk Kullanımı İnceleyici"
 
@@ -70,12 +70,12 @@ msgid "storage;space;cleanup;"
 msgstr "depolama;biriktirme;saklama;boşluk;alan;temizlik;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "Dışlanan bölüm URIʼleri"
+msgid "Excluded locations URIs"
+msgstr "Dışlanan konum URIʼleri"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Tarama işleminden dışlanacak bölüm URIʼlerinin listesi."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "Tarama işleminden dışlanacak konum URIʼlerinin listesi."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -146,15 +146,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Geçerli konumu yeniden tara"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:38
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
 msgid "_Open Folder"
 msgstr "Klasör _Aç"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:47
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
 msgid "_Copy Path to Clipboard"
 msgstr "Yolu Panoya _Kopyala"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:56
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
 msgid "Mo_ve to Trash"
 msgstr "Çöpe _Taşı"
 
@@ -170,6 +170,22 @@ msgstr "_Yakınlaştır"
 msgid "Zoom _out"
 msgstr "_Uzaklaştır"
 
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "Klasör"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "Boyut"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "İçindekiler"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "Değiştirilme"
+
 #: data/ui/baobab-location-list.ui:17
 msgid "This Computer"
 msgstr "Bu Bilgisayar"
@@ -178,106 +194,94 @@ msgstr "Bu Bilgisayar"
 msgid "Remote Locations"
 msgstr "Uzak Konumlar"
 
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "Tercihler"
+
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Klasörü Tara…"
 
 #: data/ui/baobab-main-window.ui:11
-msgid "Clear list of recent locations"
-msgstr "Son konumlar listesini temizle"
+msgid "Clear Recent List"
+msgstr "Son Kullanılanları Temizle"
 
-#: data/ui/baobab-main-window.ui:17
+#: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
 msgstr "Klavye _Kısayolları"
 
-#: data/ui/baobab-main-window.ui:21
+#: data/ui/baobab-main-window.ui:25
 msgid "_Help"
 msgstr "_Yardım"
 
-#: data/ui/baobab-main-window.ui:25
+#: data/ui/baobab-main-window.ui:29
 msgid "_About Disk Usage Analyzer"
 msgstr "Disk Kullanımı İnceleyici _Hakkında"
 
-#: data/ui/baobab-main-window.ui:73
+#: data/ui/baobab-main-window.ui:77
 msgid "Go back to location list"
 msgstr "Konum listesine geri dön"
 
-#: data/ui/baobab-main-window.ui:94
+#: data/ui/baobab-main-window.ui:98
 msgid "Rescan current location"
 msgstr "Geçerli konumu yeniden tara"
 
-#: data/ui/baobab-main-window.ui:190
+#: data/ui/baobab-main-window.ui:194
 msgid "Close"
 msgstr "Kapat"
 
-#: data/ui/baobab-main-window.ui:245
-msgid "Folder"
-msgstr "Klasör"
-
-#: data/ui/baobab-main-window.ui:273
-msgid "Size"
-msgstr "Boyut"
-
-#: data/ui/baobab-main-window.ui:291
-msgid "Contents"
-msgstr "İçindekiler"
-
-#: data/ui/baobab-main-window.ui:309
-msgid "Modified"
-msgstr "Değiştirildi"
-
-#: data/ui/baobab-main-window.ui:354
+#: data/ui/baobab-main-window.ui:370
 msgid "Rings Chart"
 msgstr "Halka Çizelgesi"
 
-#: data/ui/baobab-main-window.ui:366
+#: data/ui/baobab-main-window.ui:382
 msgid "Treemap Chart"
 msgstr "Ağaç Haritası Çizelgesi"
 
 #: src/baobab-application.vala:33
 msgid ""
-"Skip directories on different file systems. Ignored if DIRECTORY is not "
-"specified."
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
 msgstr ""
-"Farklı dosya sistemlerindeki dizinleri atla. Eğer DİZİN belirtilmediyse "
-"göz ardı edilir."
+"Farklı dosya sistemlerindeki dizinleri atlama. Eğer DİZİN belirtilmediyse göz "
+"ardı edilir."
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
 
-#: src/baobab-cellrenderers.vala:88
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d öge"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:98 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:107
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "Bugün"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:111
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu gün"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:115
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu ay"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:119
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -304,43 +308,56 @@ msgstr "%s Kullanılıyor"
 msgid "Unmounted"
 msgstr "Bağlanmamış"
 
-#: src/baobab-location.vala:70
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Başlangıç klasörü"
 
-#: src/baobab-location.vala:104
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Bilgisayar"
 
-#: src/baobab-window.vala:206
-msgid "Select Folder"
-msgstr "Klasör Seç"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "Görmezden gelinecek konumlar"
 
-#: src/baobab-window.vala:208
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "Görmezden Gelinecek Konum Seç"
+
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
-#: src/baobab-window.vala:209
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
 msgid "_Open"
 msgstr "_Aç"
 
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr "Konum ekle…"
+
 #: src/baobab-window.vala:215
+msgid "Select Folder"
+msgstr "Klasör Seç"
+
+#: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Bağlama noktalarını özyinelemeli incele"
 
-#: src/baobab-window.vala:249
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "Birim incelenemedi."
 
-#: src/baobab-window.vala:271
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "Yardım görüntüleme başarısız oldu"
 
-#: src/baobab-window.vala:293
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Disk kullanımını incelemek için grafiksel araç."
 
-#: src/baobab-window.vala:299
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr>\n"
@@ -348,53 +365,54 @@ msgstr ""
 "Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/baobab-window.vala:359
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "Dosya açma başarısız oldu"
 
-#: src/baobab-window.vala:376
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "Dosyanın çöpe taşınması başarısız oldu"
 
-#: src/baobab-window.vala:480
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Aygıtlar ve Konumlar"
 
-#: src/baobab-window.vala:532
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "“%s” klasörü taranamadı"
 
-#: src/baobab-window.vala:535
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "“%s” içindeki klasörlerden bazıları taranamadı"
-
-#: src/baobab-window.vala:545
+#: src/baobab-window.vala:680
 msgid "Could not always detect occupied disk sizes."
 msgstr "Dolu disk boyutları her zaman saptanamaz."
 
-#: src/baobab-window.vala:545
+#: src/baobab-window.vala:680
 msgid "Apparent sizes may be shown instead."
 msgstr "Bunun yerine belirgin boyutlar gösterilebilir."
 
-#: src/baobab-window.vala:549
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Tarama tamamlandı"
 
-#: src/baobab-window.vala:550
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” taraması tamamlandı"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” geçerli klasör değil"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "Disk kullanımı incelenemedi."
+
+#~ msgid "Clear list of recent locations"
+#~ msgstr "Son konumlar listesini temizle"
+
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "“%s” içindeki klasörlerden bazıları taranamadı"
 
 #~ msgid "org.gnome.baobab"
 #~ msgstr "org.gnome.baobab"
