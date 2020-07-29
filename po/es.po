@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-06-28 18:31+0000\n"
-"PO-Revision-Date: 2020-06-29 12:07+0200\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-07-29 08:09+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:126 src/baobab-window.vala:290
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
@@ -56,7 +56,6 @@ msgstr ""
 "simplificando la identificación de dónde se consume el espacio."
 
 #: data/org.gnome.baobab.appdata.xml.in:23
-#| msgid "Devices & Locations"
 msgid "Devices and Locations"
 msgstr "Dispositivos y ubicaciones"
 
@@ -70,12 +69,14 @@ msgid "storage;space;cleanup;"
 msgstr "almacenamiento;espacio;limpieza;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "URI de las particiones excluidas"
+#| msgid "Excluded partitions URIs"
+msgid "Excluded locations URIs"
+msgstr "URI de las ubicaciones excluidas"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Una lista de URI para las particiones que excluir del análisis."
+#| msgid "A list of URIs for partitions to be excluded from scanning."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "Una lista de URI para las ubicaciones que excluir del análisis."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -146,15 +147,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Volver a analizar la ubicación actual"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:38
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
 msgid "_Open Folder"
 msgstr "_Abrir carpeta"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:47
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar la ruta al portapapeles"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:56
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver a la papelera"
 
@@ -170,6 +171,22 @@ msgstr "Ampliar"
 msgid "Zoom _out"
 msgstr "Reducir"
 
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "Carpeta"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "Tamaño"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "Contenido"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "Modificado"
+
 #: data/ui/baobab-location-list.ui:17
 msgid "This Computer"
 msgstr "Este equipo"
@@ -178,63 +195,47 @@ msgstr "Este equipo"
 msgid "Remote Locations"
 msgstr "Ubicaciones remotas"
 
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "Preferencias"
+
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Analizar carpeta…"
 
 #: data/ui/baobab-main-window.ui:11
-msgid "Clear list of recent locations"
-msgstr "Limpiar la lista de ubicaciones recientes"
+msgid "Clear Recent List"
+msgstr "Vaciar lista de recientes"
 
-#: data/ui/baobab-main-window.ui:17
+#: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
 msgstr "_Atajos del teclado"
 
-#: data/ui/baobab-main-window.ui:21
+#: data/ui/baobab-main-window.ui:25
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: data/ui/baobab-main-window.ui:25
+#: data/ui/baobab-main-window.ui:29
 msgid "_About Disk Usage Analyzer"
 msgstr "_Acerca del analizador de uso de disco"
 
-#: data/ui/baobab-main-window.ui:73
-#| msgctxt "shortcut window"
-#| msgid "Go back to location list"
+#: data/ui/baobab-main-window.ui:77
 msgid "Go back to location list"
 msgstr "Volver a la lista de ubicaciones"
 
-#: data/ui/baobab-main-window.ui:94
-#| msgctxt "shortcut window"
-#| msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:98
 msgid "Rescan current location"
 msgstr "Volver a analizar la ubicación actual"
 
-#: data/ui/baobab-main-window.ui:190
+#: data/ui/baobab-main-window.ui:194
 msgid "Close"
 msgstr "Cerrar"
 
-#: data/ui/baobab-main-window.ui:245
-msgid "Folder"
-msgstr "Carpeta"
-
-#: data/ui/baobab-main-window.ui:273
-msgid "Size"
-msgstr "Tamaño"
-
-#: data/ui/baobab-main-window.ui:291
-msgid "Contents"
-msgstr "Contenido"
-
-#: data/ui/baobab-main-window.ui:309
-msgid "Modified"
-msgstr "Modificado"
-
-#: data/ui/baobab-main-window.ui:354
+#: data/ui/baobab-main-window.ui:370
 msgid "Rings Chart"
 msgstr "Gráfico de anillos"
 
-#: data/ui/baobab-main-window.ui:366
+#: data/ui/baobab-main-window.ui:382
 msgid "Treemap Chart"
 msgstr "Gráfico de árbol"
 
@@ -250,7 +251,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
-#: src/baobab-cellrenderers.vala:88
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -258,17 +259,17 @@ msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:98 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Desconocido"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:107
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "Hoy"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:111
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -276,7 +277,7 @@ msgstr[0] "%lu día"
 msgstr[1] "%lu días"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:115
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -284,7 +285,7 @@ msgstr[0] "%lu mes"
 msgstr[1] "%lu meses"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:119
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -312,43 +313,57 @@ msgstr "%s usado"
 msgid "Unmounted"
 msgstr "No montado"
 
-#: src/baobab-location.vala:70
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Carpeta personal"
 
-#: src/baobab-location.vala:104
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Equipo"
 
-#: src/baobab-window.vala:206
-msgid "Select Folder"
-msgstr "Seleccione la carpeta"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "Ubicaciones que ignorar"
 
-#: src/baobab-window.vala:208
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "Seleccionar ubicaciones que ignorar"
+
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: src/baobab-window.vala:209
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
 msgid "_Open"
 msgstr "_Abrir"
 
+#: src/baobab-preferences-dialog.vala:97
+#| msgid "All locations"
+msgid "Add location…"
+msgstr "Añadir ubicación…"
+
 #: src/baobab-window.vala:215
+msgid "Select Folder"
+msgstr "Seleccione la carpeta"
+
+#: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Analizar recursivamente los puntos de montaje"
 
-#: src/baobab-window.vala:249
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "No se pudo analizar el volumen."
 
-#: src/baobab-window.vala:271
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "Falló al mostrar la ayuda"
 
-#: src/baobab-window.vala:293
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Una herramienta gráfica para analizar el uso del disco."
 
-#: src/baobab-window.vala:299
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012 - 2020\n"
@@ -361,53 +376,54 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: src/baobab-window.vala:359
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "Falló al abrir el archivo"
 
-#: src/baobab-window.vala:376
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "Falló al mover el archivo a la papelera"
 
-#: src/baobab-window.vala:480
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Dispositivos y ubicaciones"
 
-#: src/baobab-window.vala:532
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "No se pudo analizar la carpeta «%s»"
 
-#: src/baobab-window.vala:535
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "No se pudieron analizar algunas de las carpetas de «%s»."
-
-#: src/baobab-window.vala:545
+#: src/baobab-window.vala:680
 msgid "Could not always detect occupied disk sizes."
 msgstr "No se pudo detectar el espacio de disco ocupado."
 
-#: src/baobab-window.vala:545
+#: src/baobab-window.vala:680
 msgid "Apparent sizes may be shown instead."
 msgstr "Se muestra el tamaño aparente en su lugar."
 
-#: src/baobab-window.vala:549
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Análisis completado"
 
-#: src/baobab-window.vala:550
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Análisis de «%s» completado"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analizar el uso del disco."
+
+#~ msgid "Clear list of recent locations"
+#~ msgstr "Limpiar la lista de ubicaciones recientes"
+
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "No se pudieron analizar algunas de las carpetas de «%s»."
 
 #~ msgid "org.gnome.baobab"
 #~ msgstr "org.gnome.baobab"
@@ -529,9 +545,6 @@ msgstr "No se pudo analizar el uso del disco."
 #~| msgid "Mount and scan"
 #~ msgid "Mount and Scan"
 #~ msgstr "Montar y analizar"
-
-#~ msgid "All locations"
-#~ msgstr "Todas las ubicaciones"
 
 #~| msgid "_All locations"
 #~ msgid "_All Locations"
