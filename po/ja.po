@@ -1,5 +1,5 @@
 # baobab ja.po.
-# Copyright (C) 1998-2019 gnome-util's COPYRIGHT HOLDER
+# Copyright (C) 1998, 2000-2014, 2019-2020 gnome-util's COPYRIGHT HOLDER
 # Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1998.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
 # Yukihiro Nakai <nakai@gnome.gr.jp>, 2000.
@@ -14,14 +14,15 @@
 # Shuuji Takahashi <shuuji3@gmail.com>, 2012.
 # Noriko Mizumoto <noriko@fedoraproject.org>, 2012.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012, 2013.
-# sicklylife <translation@sicklylife.jp>, 2019.
+# victory <victory.deb@gmail.com>, 2014.
+# sicklylife <translation@sicklylife.jp>, 2019-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
 "POT-Creation-Date: 2020-07-09 10:56+0000\n"
-"PO-Revision-Date: 2019-09-15 20:00+0900\n"
+"PO-Revision-Date: 2020-08-23 23:30+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -44,6 +45,8 @@ msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
+"ディスクの使用量と利用可能な空き領域を管理するためのシンプルなアプリケー"
+"ションです。"
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -51,10 +54,12 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
+"ディスク使用量アナライザーは指定したフォルダー、ストレージデバイス、および"
+"オンラインアカウントをスキャンすることができます。スキャンした各フォルダー"
+"は、ツリー形式とグラフ形式の両方でサイズが表示されるため、ディスクのどの部"
+"分が無駄に使用されているかが簡単に確認できます。"
 
 #: data/org.gnome.baobab.appdata.xml.in:23
-#, fuzzy
-#| msgid "Devices & Locations"
 msgid "Devices and Locations"
 msgstr "デバイスと場所"
 
@@ -69,16 +74,12 @@ msgstr ""
 "storage;space;cleanup;ストレージ;スペース;空間;容量;使用量;クリーンアップ;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-#, fuzzy
-#| msgid "Excluded partitions URIs"
 msgid "Excluded locations URIs"
-msgstr "対象外となるパーティションの URI"
+msgstr "対象外となる場所の URI"
 
 #: data/org.gnome.baobab.gschema.xml:10
-#, fuzzy
-#| msgid "A list of URIs for partitions to be excluded from scanning."
 msgid "A list of URIs for locations to be excluded from scanning."
-msgstr "スキャンを実行しないパーティションの URI を要素とするリストです。"
+msgstr "スキャンを実行しない場所の URI の一覧です。"
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -112,7 +113,7 @@ msgstr "全般"
 #: data/gtk/help-overlay.ui:18
 msgctxt "shortcut window"
 msgid "Show help"
-msgstr ""
+msgstr "ヘルプを表示する"
 
 #: data/gtk/help-overlay.ui:25
 msgctxt "shortcut window"
@@ -137,7 +138,7 @@ msgstr "場所の一覧に戻る"
 #: data/gtk/help-overlay.ui:54
 msgctxt "shortcut window"
 msgid "Scanning"
-msgstr ""
+msgstr "スキャン"
 
 #: data/gtk/help-overlay.ui:59
 msgctxt "shortcut window"
@@ -199,7 +200,7 @@ msgstr "リモートの場所"
 
 #: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
 msgid "Preferences"
-msgstr ""
+msgstr "設定"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -207,7 +208,7 @@ msgstr "フォルダーをスキャン…"
 
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
-msgstr ""
+msgstr "履歴の一覧を消去"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -222,16 +223,10 @@ msgid "_About Disk Usage Analyzer"
 msgstr "ディスク使用量アナライザーについて(_A)"
 
 #: data/ui/baobab-main-window.ui:77
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Go back to location list"
 msgid "Go back to location list"
 msgstr "場所の一覧に戻る"
 
 #: data/ui/baobab-main-window.ui:98
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Rescan current location"
 msgid "Rescan current location"
 msgstr "現在の場所を再スキャンする"
 
@@ -252,6 +247,8 @@ msgid ""
 "Do not skip directories on different file systems. Ignored if DIRECTORY is "
 "not specified."
 msgstr ""
+"異なるファイルシステム上のディレクトリをスキップしない。DIRECTORY を指定し"
+"ていない場合は無視します。"
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
@@ -325,12 +322,12 @@ msgstr "コンピューター"
 
 #: src/baobab-preferences-dialog.vala:51
 msgid "Locations to ignore"
-msgstr ""
+msgstr "無視する場所"
 
 #. The only activatable row is "Add location"
 #: src/baobab-preferences-dialog.vala:59
 msgid "Select Location to Ignore"
-msgstr ""
+msgstr "無視する場所を選択"
 
 #: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
 msgid "_Cancel"
@@ -342,15 +339,15 @@ msgstr "開く(_O)"
 
 #: src/baobab-preferences-dialog.vala:97
 msgid "Add location…"
-msgstr ""
+msgstr "場所を追加…"
 
 #: src/baobab-window.vala:215
 msgid "Select Folder"
-msgstr "フォルダーの選択"
+msgstr "フォルダーを選択"
 
 #: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
-msgstr "マウントポイントを再帰的に解析"
+msgstr "マウントポイントを再帰的に解析する"
 
 #: src/baobab-window.vala:246
 msgid "Could not analyze volume."
@@ -380,17 +377,18 @@ msgstr ""
 "sicklylife <translation@sicklylife.jp>\n"
 "Sun G11n <gnome_int_l10n@ireland.sun.com>\n"
 "Takayoshi OKANO <kano@na.rim.or.jp>\n"
+"victory <victory.deb@gmail.com>\n"
 "Yasumichi Akahoshi <yasumichi@vinelinux.org>\n"
 "Yukihiro Nakai <nakai@gnome.gr.jp>\n"
 "Yuusuke Tahara <tahara@gnome.gr.jp>"
 
 #: src/baobab-window.vala:385
 msgid "Failed to open file"
-msgstr "ファイルを開くのに失敗しました"
+msgstr "ファイルを開けませんでした"
 
 #: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
-msgstr "ファイルをゴミ箱に移動するのに失敗しました"
+msgstr "ファイルをゴミ箱へ移動できませんでした"
 
 #: src/baobab-window.vala:613
 msgid "Devices & Locations"
@@ -399,19 +397,15 @@ msgstr "デバイスと場所"
 #: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
-msgstr "フォルダー“%s”をスキャンできませんでした"
+msgstr "“%s”をスキャンできませんでした"
 
 #: src/baobab-window.vala:680
-#, fuzzy
-#| msgid "Could not detect occupied disk sizes."
 msgid "Could not always detect occupied disk sizes."
-msgstr "割り当てディスクサイズを検出できませんでした。"
+msgstr "割り当てディスクサイズを検出できなかった可能性があります。"
 
 #: src/baobab-window.vala:680
-#, fuzzy
-#| msgid "Apparent sizes are shown instead."
 msgid "Apparent sizes may be shown instead."
-msgstr "実サイズを代わりに表示します。"
+msgstr "実サイズが代わりに表示されるかもしれません。"
 
 #: src/baobab-window.vala:684
 msgid "Scan completed"
@@ -430,15 +424,6 @@ msgstr "“%s”は正常なフォルダーではありません"
 #: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "ディスクの使用量を解析できませんでした。"
-
-#~ msgid "Baobab"
-#~ msgstr "Baobab"
-
-#~ msgid "Could not scan some of the folders contained in “%s”"
-#~ msgstr "“%s”配下にあるフォルダーのいくつかをスキャンできませんでした"
-
-#~ msgid "org.gnome.baobab"
-#~ msgstr "org.gnome.baobab"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
