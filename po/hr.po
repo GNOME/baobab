@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils 0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2019-03-24 19:41+0000\n"
-"PO-Revision-Date: 2019-03-26 16:25+0100\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-08-23 15:29+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "Language: hr\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2016-09-22 19:56+0000\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Analizator iskoristivosti diska"
 
@@ -46,7 +46,11 @@ msgstr ""
 "koja prikazuje veličinu pojedine mape, čineći jednostavnije otkrivanje "
 "iskorištenog prostora."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+msgid "Devices and Locations"
+msgstr "Uređaji i lokacije"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "GNOME projekt"
 
@@ -56,12 +60,12 @@ msgid "storage;space;cleanup;"
 msgstr "pohrana;prostor;čišćenje;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "Izuzeti URI-iji particija"
+msgid "Excluded locations URIs"
+msgstr "Izuzeti URI-iji lokacija"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Popisi URI-ja prticija koji će biti izuzeti iz pretraživanja."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "Popisi URI-ja lokacija koji će biti izuzeti iz pretraživanja."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -87,11 +91,156 @@ msgstr "Stanje prozora"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState prozora"
 
-#: src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Općenito"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Prikaži priručnik"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Prikaži / Sakrij glavni izbornik"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Zatvori"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Pogledajte prečace tipkovnice"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Idi natrag na popis lokacija"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Pretraživanje"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Pretraži mapu"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Ponovno pretraži trenutnu lokaciju"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+msgid "_Open Folder"
+msgstr "_Otvori mapu"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopiraj putanju u međuspremnik"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+msgid "Mo_ve to Trash"
+msgstr "Pr_emjesti u smeće"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "Idi u _sadržajnu mapu"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "Uvećaj_"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "Smanji_"
+
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "Mapa"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "Veličina"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "Sadržaj"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "Promijenjeno"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Ovo računalo"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Udaljene lokacije"
+
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "Osobitosti"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Pretraži mapu…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "Ukloni nedavni popis"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "Prečaci _tipkovnice"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_Priručnik"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "_O Analizatoru iskoristivosti diska"
+
+#: data/ui/baobab-main-window.ui:77
+msgid "Go back to location list"
+msgstr "Idi natrag na popis lokacija"
+
+#: data/ui/baobab-main-window.ui:98
+msgid "Rescan current location"
+msgstr "Ponovno pretraži trenutnu lokaciju"
+
+#: data/ui/baobab-main-window.ui:194
+msgid "Close"
+msgstr "Zatvori"
+
+#: data/ui/baobab-main-window.ui:370
+msgid "Rings Chart"
+msgstr "Prstenovi dijagrama"
+
+#: data/ui/baobab-main-window.ui:382
+msgid "Treemap Chart"
+msgstr "Dijagram prikaza stabla"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"Nemoj preskočiti direktorije na drugačijim datotečnim sustavima. Zanemareno "
+"ako DIREKTORIJ nije naveden."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Ispiši podatke o inačici i izađi"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -100,17 +249,17 @@ msgstr[1] "%d stavke"
 msgstr[2] "%d stavki"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Nepoznato"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "Danas"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -119,7 +268,7 @@ msgstr[1] "%lu dana"
 msgstr[2] "%lu dana"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -128,7 +277,7 @@ msgstr[1] "%lu mjeseca"
 msgstr[2] "%lu mjeseca"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -136,132 +285,77 @@ msgstr[0] "%lu godina"
 msgstr[1] "%lu godine"
 msgstr[2] "%lu godina"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Ovo računalo"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Udaljene lokacije"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s ukupno"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s dostupno"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s iskorišteno"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Nemontirano"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Osobna mapa"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Računalo"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Pretraži mapu…"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "Zanemarene lokacije"
 
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "Prečaci _tipkovnice"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "Odaberi lokaciju za zanemariti"
 
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Priručnik"
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+msgid "_Cancel"
+msgstr "_Odustani"
 
-#: src/baobab-main-window.ui:21
-msgid "_About Disk Usage Analyzer"
-msgstr "_O Analizatoru iskoristivosti diska"
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+msgid "_Open"
+msgstr "_Otvori"
 
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "_Otvori mapu"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopiraj putanju u međuspremnik"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "Pr_emjesti u smeće"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Zatvori"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Mapa"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Veličina"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "Sadržaj"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Promijenjeno"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Prstenovi dijagrama"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Dijagram prikaza stabla"
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr "Dodaj lokaciju…"
 
 #: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "Odaberi mapu"
 
-#: src/baobab-window.vala:217
-msgid "_Cancel"
-msgstr "_Odustani"
-
-#: src/baobab-window.vala:218
-msgid "_Open"
-msgstr "_Otvori"
-
 #: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Rekurzivno analiziraj točke montiranja"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "Nemoguća analiza uređaja."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "Neuspjeli prikaz pomoći"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafički alat za analizu iskoristivosti diska."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -270,110 +364,60 @@ msgstr ""
 "  gogo https://launchpad.net/~trebelnik-stefina\n"
 "  zvacet https://launchpad.net/~ivicakolic"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "Neuspjelo otvaranje datoteke"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "Neuspjelo premještanje datoteke u smeće"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Uređaji i lokacije"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nemoguće pretraživanje \"%s\" mape"
 
-#: src/baobab-window.vala:576
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Nemoguće pretraživanje određenih mapa sadržanih u \"%s\""
+#: src/baobab-window.vala:680
+msgid "Could not always detect occupied disk sizes."
+msgstr "Nemoguće je uvijek otkriti zauzetu veličina diska."
 
-#: src/baobab-window.vala:595
-msgid "Could not detect occupied disk sizes."
-msgstr "Nemoguće otkrivanje zauzetih veličina diska."
+#: src/baobab-window.vala:680
+msgid "Apparent sizes may be shown instead."
+msgstr "Umjesto može biti prikazana prividna veličina."
 
-#: src/baobab-window.vala:595
-msgid "Apparent sizes are shown instead."
-msgstr "Umjesto je prikazana prividna veličina."
-
-#: src/baobab-window.vala:599
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Pretraživanje završeno"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Pretraživanje završeno za “%s”"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" nije valjana mapa"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "Nemoguća analiza iskoristivosti diska."
 
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Općenito"
+#~ msgid "Baobab"
+#~ msgstr "Baobab"
 
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Prikaži / Sakrij glavni izbornik"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Ponovno pretraži trenutnu lokaciju"
-
-#: src/help-overlay.ui:32
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Pretraži mapu"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Pogledajte prečace tipkovnice"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Idi natrag na popis lokacija"
-
-#: src/help-overlay.ui:52
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Zatvori"
-
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Idi u _sadržajnu mapu"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "Uvećaj_"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "Smanji_"
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "Nemoguće pretraživanje određenih mapa sadržanih u \"%s\""
 
 #~ msgid "baobab"
 #~ msgstr "baobab"
 
 #~ msgid "_About"
 #~ msgstr "_O programu"
-
-#~ msgid "Devices and locations"
-#~ msgstr "Uređaji i lokacije"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
