@@ -1,6 +1,6 @@
-# Danish Translation of gnome-utils.
+# Danish Translation for baobab.
 # Copyright (C) 2013-2018 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-utils package.
+# This file is distributed under the same license as the baobab package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
 # Kim Schulz <kim@schulz.dk>, 1999.
 # Birger Langkjer <birger.langkjer@image.dk>, 1999.
@@ -12,6 +12,7 @@
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14, 16, 18.
 # Joe Hansen <joedalton2@yahoo.dk>, 2017.
 # Alan Mortensen <alanmortensen.am@gmail.com>, 2019.
+# scootergrisen, 2020.
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
 #
@@ -21,21 +22,20 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils\n"
+"Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2019-03-24 19:41+0000\n"
-"PO-Revision-Date: 2019-02-13 11:22+0100\n"
-"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-07-30 12:52+0200\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Diskforbrugsanalyse"
 
@@ -60,7 +60,12 @@ msgstr ""
 "viser størrelsen af hver mappe, så det bliver let at se hvor diskplads "
 "spildes."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+#| msgid "Devices & Locations"
+msgid "Devices and Locations"
+msgstr "Enheder og steder"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -70,12 +75,14 @@ msgid "storage;space;cleanup;"
 msgstr "lager;plads;oprydning;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "URI'er for ekskluderede partitioner"
+#| msgid "Excluded partitions URIs"
+msgid "Excluded locations URIs"
+msgstr "Ekskluderede steders URI'er"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "En liste af URI'er for partitioner, der ekskluderes fra scanning."
+#| msgid "A list of URIs for partitions to be excluded from scanning."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "En liste over URI'er for steder der skal ekskluderes fra skanning."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -101,11 +108,160 @@ msgstr "Vinduestilstand"
 msgid "The GdkWindowState of the window"
 msgstr "GdkWindowState for vinduet"
 
-#: src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Generelt"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Vis hjælp"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Vis/skjul primær menu"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Afslut"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Vis tastaturgenveje"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Gå tilbage til placeringslisten"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Skanning"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Skan mappe"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Skan nuværende placering igen"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+msgid "_Open Folder"
+msgstr "_Åbn mappe"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopiér sti til udklipsholder"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+msgid "Mo_ve to Trash"
+msgstr "F_lyt til papirkurv"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "Gå til mappen et _niveau over"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "For_stør"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "For_mindsk"
+
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "Mappe"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "Størrelse"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "Indhold"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "Ændret"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Denne computer"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Fjernsteder"
+
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "Indstillinger"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Skan mappe …"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "Ryd liste over seneste"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "_Tastaturgenveje"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "_Om Diskforbrugsanalyse"
+
+#: data/ui/baobab-main-window.ui:77
+#| msgctxt "shortcut window"
+#| msgid "Go back to location list"
+msgid "Go back to location list"
+msgstr "Gå tilbage til placeringslisten"
+
+#: data/ui/baobab-main-window.ui:98
+#| msgctxt "shortcut window"
+#| msgid "Rescan current location"
+msgid "Rescan current location"
+msgstr "Skan nuværende placering"
+
+#: data/ui/baobab-main-window.ui:194
+msgid "Close"
+msgstr "Luk"
+
+#: data/ui/baobab-main-window.ui:370
+msgid "Rings Chart"
+msgstr "Ringdiagram"
+
+#: data/ui/baobab-main-window.ui:382
+msgid "Treemap Chart"
+msgstr "Trækortdiagram"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"Spring ikke over mapper på andre filsystemer. Ignoreres hvis MAPPE ikke er "
+"angivet."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Vis versionsinformation og afslut"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -113,17 +269,17 @@ msgstr[0] "%d objekt"
 msgstr[1] "%d objekter"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Ukendt"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "I dag"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -131,7 +287,7 @@ msgstr[0] "%lu dag"
 msgstr[1] "%lu dage"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -139,139 +295,84 @@ msgstr[0] "%lu måned"
 msgstr[1] "%lu måneder"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu år"
 msgstr[1] "%lu år"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Denne computer"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Fjernsteder"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s i alt"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s tilgængelig"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s brugt"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Ikke monteret"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Hjemmemappe"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Computer"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Skan mappe …"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "Placeringer som skal ignoreres"
 
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "_Tastaturgenveje"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "Vælg placering som skal ignoreres"
 
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Hjælp"
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+msgid "_Cancel"
+msgstr "_Annullér"
 
-#: src/baobab-main-window.ui:21
-msgid "_About Disk Usage Analyzer"
-msgstr "_Om Diskforbrugsanalyse"
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+msgid "_Open"
+msgstr "_Åbn"
 
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "_Åbn mappe"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopiér sti til udklipsholder"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "F_lyt til papirkurv"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Luk"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Mappe"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Størrelse"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "Indhold"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Ændret"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Ringdiagram"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Trækortdiagram"
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr "Tilføj placering …"
 
 #: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "Markér mappe"
 
-#: src/baobab-window.vala:217
-msgid "_Cancel"
-msgstr "_Annullér"
-
-#: src/baobab-window.vala:218
-msgid "_Open"
-msgstr "_Åbn"
-
 #: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Analysér monteringspunkter rekursivt"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "Kunne ikke analysere diskenhed."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "Kunne ikke vise hjælp"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Et grafisk værktøj til at analysere diskforbrug."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "Birger Langkjer\n"
@@ -289,108 +390,47 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "Kunne ikke åbne fil"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "Kunne ikke flytte fil til papirkurven"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Enheder & steder"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Kunne ikke skanne mappen “%s”"
 
-#: src/baobab-window.vala:576
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Kunne ikke skanne visse af mapperne i “%s”"
+#: src/baobab-window.vala:680
+#| msgid "Could not detect occupied disk sizes."
+msgid "Could not always detect occupied disk sizes."
+msgstr "Kunne ikke altid registrere opbrugte diskstørrelser."
 
-#: src/baobab-window.vala:595
-msgid "Could not detect occupied disk sizes."
-msgstr "Kunne ikke detektere opbrugte diskstørrelser."
+#: src/baobab-window.vala:680
+#| msgid "Apparent sizes are shown instead."
+msgid "Apparent sizes may be shown instead."
+msgstr "Tilsyneladende størrelser kan blive vist i stedet."
 
-#: src/baobab-window.vala:595
-msgid "Apparent sizes are shown instead."
-msgstr "Tilsyneladende størrelser vises i stedet."
-
-#: src/baobab-window.vala:599
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Skanning fuldført"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Fuldførte skanningen af “%s”"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” er ikke en gyldig mappe"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskforbrug."
-
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Generelt"
-
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Vis/skjul primær menu"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Skan aktuelle placering igen"
-
-#: src/help-overlay.ui:32
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Skan mappe"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Vis tastaturgenveje"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Gå tilbage til placeringslisten"
-
-#: src/help-overlay.ui:52
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Afslut"
-
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Gå til mappen et _niveau over"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "For_stør"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "For_mindsk"
-
-#~ msgid "org.gnome.baobab"
-#~ msgstr "org.gnome.baobab"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "_Om"
-
