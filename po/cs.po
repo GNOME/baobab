@@ -15,14 +15,14 @@
 # Petr Kovar <pknbe@volny.cz>, 2008, 2009.
 # Lucas Lommer <llommer@svn.gnome.org>, 2009 (just a small fix).
 # Adrian Guniš <andygun696@gmail.com>, 2008, 2009, 2010.
-# Marek Černocký <marek@manet.cz>, 2010 (just a small fixes), 2011, 2012, 2013, 2014, 2016, 2017, 2018.
+# Marek Černocký <marek@manet.cz>, 2010 (just a small fixes), 2011, 2012, 2013, 2014, 2016, 2017, 2018, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2018-10-15 15:31+0000\n"
-"PO-Revision-Date: 2018-10-18 12:32+0200\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-08-25 13:42+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -33,7 +33,7 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využití disku"
 
@@ -60,7 +60,11 @@ msgstr ""
 "velikosti jednotlivých složek, takže můžete snadno zjistit, co zabírá "
 "největší část místa na disku."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+msgid "Devices and Locations"
+msgstr "Zařízení a umístění"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -69,18 +73,13 @@ msgstr "Projekt GNOME"
 msgid "storage;space;cleanup;"
 msgstr "úložiště;místo;prostor;vyčistit;uvolnit;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "org.gnome.baobab"
-msgstr "org.gnome.baobab"
-
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "Vynechané URI oddílů"
+msgid "Excluded locations URIs"
+msgstr "Vynechané URI umístění"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Seznam URI pro oddíly, které budou vyřazeny z procházení."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "Seznam URI pro umístění, která budou vyřazena z procházení."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -106,11 +105,156 @@ msgstr "Stav okna"
 msgid "The GdkWindowState of the window"
 msgstr "Stav GdkWindowState okna"
 
-#: src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Obecné"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Zobrazit nápovědu"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Zobrazit/skrýt hlavní nabídku"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ukončit"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Zobrazit klávesové zkratky"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Vrátit se na seznam umístění"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Analýza"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Analyzovat složku"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Znovu analyzovat aktuální složku"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+msgid "_Open Folder"
+msgstr "_Otevřít složku"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopírovat cestu do schránky"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+msgid "Mo_ve to Trash"
+msgstr "_Přesunout do koše"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "_Přejít do nadřazené složky"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "Př_iblížit"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "_Oddálit"
+
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "Složka"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "Velikost"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "Obsah"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "Změněno"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Tento počítač"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Vzdálené umístění"
+
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "Předvolby"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Projít složku…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "Vymazat seznam nedávných"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "Kláve_sové zkratky"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "O _aplikaci Analyzátor využití disku"
+
+#: data/ui/baobab-main-window.ui:77
+msgid "Go back to location list"
+msgstr "Vrátit se na seznam umístění"
+
+#: data/ui/baobab-main-window.ui:98
+msgid "Rescan current location"
+msgstr "Znovu analyzovat aktuální složku"
+
+#: data/ui/baobab-main-window.ui:194
+msgid "Close"
+msgstr "Zavřít"
+
+#: data/ui/baobab-main-window.ui:370
+msgid "Rings Chart"
+msgstr "Kruhový diagram"
+
+#: data/ui/baobab-main-window.ui:382
+msgid "Treemap Chart"
+msgstr "Stromová mapa"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"Nepřeskakovat složky na jiných souborových systémech. Ignoruje se, když není "
+"zadána SLOŽKA."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Vypsat informace o verzi a skončit"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -119,17 +263,17 @@ msgstr[1] "%d položky"
 msgstr[2] "%d položek"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "neznámo kdy"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "dnes"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -138,7 +282,7 @@ msgstr[1] "před %lu dny"
 msgstr[2] "před %lu dny"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -147,7 +291,7 @@ msgstr[1] "před %lu měsíci"
 msgstr[2] "před %lu měsíci"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -155,132 +299,77 @@ msgstr[0] "před %lu rokem"
 msgstr[1] "před %lu roky"
 msgstr[2] "před %lu roky"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Tento počítač"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Vzdálené umístění"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "Celkem %s"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "K dispozici %s"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "Použito %s"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Odpojeno"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Domovská složka"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Počítač"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Projít složku…"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "Ignorovaná umístění"
 
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "Kláve_sové zkratky"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "Výběr ignorovaných umístění"
 
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Nápověda"
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+msgid "_Cancel"
+msgstr "_Zrušit"
 
-#: src/baobab-main-window.ui:21
-msgid "_About Disk Usage Analyzer"
-msgstr "O _aplikaci Analyzátor využití disku"
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+msgid "_Open"
+msgstr "_Otevřít"
 
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "_Otevřít složku"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopírovat cestu do schránky"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "_Přesunout do koše"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Zavřít"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Složka"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Velikost"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "Obsah"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Změněno"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Kruhový diagram"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Stromová mapa"
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr "Přidat umístění…"
 
 #: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "Výběr složky"
 
-#: src/baobab-window.vala:217
-msgid "_Cancel"
-msgstr "_Zrušit"
-
-#: src/baobab-window.vala:218
-msgid "_Open"
-msgstr "_Otevřít"
-
 #: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Při analýze se zanořovat do přípojných bodů"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "Nelze analyzovat svazek."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "Selhalo zobrazení nápovědy"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj pro analýzu využití disku."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "David Šauer <davids@penguin.cz>\n"
@@ -295,98 +384,45 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "Selhalo otevření souboru"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "Selhal přesun souboru do koše"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Zařízení a umístění"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nelze analyzovat složku „%s“"
 
-#: src/baobab-window.vala:576
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Nelze analyzovat některé složky v „%s“"
+#: src/baobab-window.vala:680
+msgid "Could not always detect occupied disk sizes."
+msgstr "Nelze vždy zjistit velikost zabraného místa na disku."
 
-#: src/baobab-window.vala:595
-msgid "Could not detect occupied disk sizes."
-msgstr "Nelze zjistit velikost zabraného místa na disku."
+#: src/baobab-window.vala:680
+msgid "Apparent sizes may be shown instead."
+msgstr "Místo toho může být zobrazena zdánlivá velikost."
 
-#: src/baobab-window.vala:595
-msgid "Apparent sizes are shown instead."
-msgstr "Místo toho je zobrazena zdánlivá velikost."
-
-#: src/baobab-window.vala:599
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Analýza je dokončená"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Byla dokončena analýza složky „%s“"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ není platná složka"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "Nelze analyzovat využití disku."
-
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Obecné"
-
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Zobrazit/skrýt hlavní nabídku"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Znovu analyzovat aktuální složku"
-
-#: src/help-overlay.ui:32
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Analyzovat složku"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Zobrazit klávesové zkratky"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Vrátit se na seznam umístění"
-
-#: src/help-overlay.ui:52
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Ukončit"
-
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "_Přejít do nadřazené složky"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "Př_iblížit"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "_Oddálit"
