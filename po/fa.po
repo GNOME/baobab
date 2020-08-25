@@ -7,15 +7,16 @@
 # Sara Khalatbari <sara@bamdad.org>, 2005.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005, 2006.
 # Sanaz shahrokni <sanaz.shahrokni@gmail.com>, 2006.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012, 2013, 2014, 2017.
-# alibagheri <alijobemail@gmail.com>, 2012.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2011-2017.
+# Ali Bagheri <alijobemail@gmail.com>, 2012.
+# Danial Behzadi <dani.behzadi@ubuntu.com>, 2018-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2019-03-24 19:41+0000\n"
-"PO-Revision-Date: 2019-08-17 16:18+0430\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-08-25 15:53+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -24,10 +25,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "تحلیلگر مصرف دیسک"
 
@@ -37,7 +38,8 @@ msgstr "بررسی اندازهٔ شاخه‌ها و فضای دیسک موجو�
 
 #: data/org.gnome.baobab.appdata.xml.in:9
 msgid ""
-"A simple application to keep your disk usage and available space under control."
+"A simple application to keep your disk usage and available space under "
+"control."
 msgstr "برنامه‌ای ساده برای واپایش مصرف و فضای موجود دیسک."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
@@ -47,10 +49,14 @@ msgid ""
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
 "تحلیلگر مصرف دیسک می‌تواند شاخه‌های خاص، دستگاه‌های ذخیره و حساب‌های برخط را "
-"بپوید. این برنامه یک بازنمایی درختی و گرافیکی فراهم می‌کند که اندازهٔ هر شاخه را "
-"برای تسهیل تشخیص مکان هدر رفت فضای دیسک، نشان می‌دهد."
+"بپوید. این برنامه یک بازنمایی درختی و گرافیکی فراهم می‌کند که اندازهٔ هر شاخه "
+"را برای تسهیل تشخیص مکان هدر رفت فضای دیسک، نشان می‌دهد."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+msgid "Devices and Locations"
+msgstr "افزاره‌ها و موقعیت‌ها"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "پروژه گنوم"
 
@@ -60,12 +66,12 @@ msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;ذخیره;فضا;پاکسازی;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "نشانی‌های افرازهای مستثنا"
+msgid "Excluded locations URIs"
+msgstr "نشانی موقعیت‌های مستثنا"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "فهرستی از نشانی‌های افرازهایی که پویش نمی‌شوند."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "فهرستی از نشانی‌های موقعیت‌هایی که پویش نمی‌شوند."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -91,173 +97,263 @@ msgstr "وضعیت پنجره"
 msgid "The GdkWindowState of the window"
 msgstr "‫GdkWindowState پنجره"
 
-#: src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عمومی"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "نمایش راهنما"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "نمایش / نهفتن فهرست اصلی"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "خروج"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "نمایش میان‌برهای صفحه‌کلید"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "بازگشت به فهرست موقعیت‌ها"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "در حال پویش"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "پویش شاخه"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "بازپویش موقعیت جاری"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+msgid "_Open Folder"
+msgstr "_گشودن شاخه"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+msgid "_Copy Path to Clipboard"
+msgstr "_رونوشت از مسیر"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+msgid "Mo_ve to Trash"
+msgstr "_انداختن در زباله‌دان"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "به شاخه _والد برو"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "_بزرگ‌نمایی"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "_کوچک‌نمایی"
+
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "شاخه"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "اندازه"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "محتویات"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "تغییر یافته"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "این رایانه"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "مکان‌های دوردست"
+
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr "ترجیحات"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "پویش شاخه…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "پاک‌سازی فهرست اخیر"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "_میان‌برهای صفحه‌کلید"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_راهنما"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "_دربارهٔ تحلیل‌گر مصرف دیسک"
+
+#: data/ui/baobab-main-window.ui:77
+msgid "Go back to location list"
+msgstr "بازگشت به فهرست موقعیت‌ها"
+
+#: data/ui/baobab-main-window.ui:98
+msgid "Rescan current location"
+msgstr "بازپویش موقعیت جاری"
+
+#: data/ui/baobab-main-window.ui:194
+msgid "Close"
+msgstr "بستن"
+
+#: data/ui/baobab-main-window.ui:370
+msgid "Rings Chart"
+msgstr "نمودار حلقه‌ای"
+
+#: data/ui/baobab-main-window.ui:382
+msgid "Treemap Chart"
+msgstr "نمودار درختی"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"از شاخه‌ها روی سامانه پرونده‌های مختلف پریده نشود. در صورت مشخّص نبودن DIRECTORY "
+"نادیده گرفته می‌شود."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "چاپ اطلاعات نگارش و خروج"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%Id مورد"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "نامشخص"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "امروز"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu روز"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu ماه"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu سال"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "این رایانه"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "مکان‌های دوردست"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s مجموع"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s موجود"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s استفاده‌شده"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "پیاده‌شده"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "شاخهٔ خانه"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "رایانه"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "پویش شاخه…"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr "موقعیت‌های چشم‌پوشی‌شده"
 
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "_میان‌برهای صفحه‌کلید"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr "موقعیت‌ها را برای چشم‌پوشی برگزینید"
 
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_راهنما"
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+msgid "_Cancel"
+msgstr "_لغو"
 
-#: src/baobab-main-window.ui:21
-msgid "_About Disk Usage Analyzer"
-msgstr "_دربارهٔ تحلیل‌گر مصرف دیسک"
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+msgid "_Open"
+msgstr "_گشودن"
 
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "_گشودن شاخه"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_رونوشت از مسیر"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "_انداختن در زباله‌دان"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "بستن"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "شاخه"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "اندازه"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "محتویات"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "تغییر یافته"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "نمودار حلقه‌ای"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "نمودار درختی"
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr "افزودن موقعیت…"
 
 #: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "گزینش شاخه"
 
-#: src/baobab-window.vala:217
-msgid "_Cancel"
-msgstr "_لغو"
-
-#: src/baobab-window.vala:218
-msgid "_Open"
-msgstr "_گشودن"
-
 #: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "تحلیل بازگشتی نقاط اتصال"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "پویش حجم امکان‌پذیر نبود."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "شکست در نمایش راهنما"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "باوباب"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "ابزاری گرافیکی برای تحلیل مصرف دیسک."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
@@ -268,101 +364,54 @@ msgstr ""
 "میلاد زکریا <meelad@farsiweb.info>\n"
 "ساناز شاه‌رکنی <sanaz.shahrokni@gmail.com>"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "شکست در گشودن پرونده"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "شکست در انتقال پرونده به زباله‌دان"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "افزاره‌ها و موقعیت‌ها"
 
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "پویش حجم «%s» امکان‌پذیر نبود"
 
-#: src/baobab-window.vala:576
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "نمی‌توان تعدادی از شاخه‌های درون «%s» را پویید"
+#: src/baobab-window.vala:680
+msgid "Could not always detect occupied disk sizes."
+msgstr "نمی‌توان همیشه اندازه‌های اشغالی دیسک را یافت."
 
-#: src/baobab-window.vala:595
-msgid "Could not detect occupied disk sizes."
-msgstr "نمی‌توان اندازه‌های اشغالی دیسک را یافت."
+#: src/baobab-window.vala:680
+msgid "Apparent sizes may be shown instead."
+msgstr "ممکن است در عوض، اندازه‌های ظاهری نمایش داده شوند."
 
-#: src/baobab-window.vala:595
-msgid "Apparent sizes are shown instead."
-msgstr "در عوض اندازهٔ ظاهری نمایش داده می‌شود."
-
-#: src/baobab-window.vala:599
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "پویش کامل شد"
 
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:685
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "پویش «%s» کامل شد"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "شاخهٔ «%s» معتبر نیست"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "تحلیل مصرف دیسک ممکن نیست."
 
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "عمومی"
+#~ msgid "Baobab"
+#~ msgstr "باوباب"
 
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "نمایش / نهفتن فهرست اصلی"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "بازپویش موقعیت جاری"
-
-#: src/help-overlay.ui:32
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "پویش شاخه"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "نمایش میان‌برهای صفحه‌کلید"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "بازگشت به فهرست موقعیت‌ها"
-
-#: src/help-overlay.ui:52
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "خروج"
-
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "به شاخه _والد برو"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "_بزرگ‌نمایی"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "_کوچک‌نمایی"
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "نمی‌توان تعدادی از شاخه‌های درون «%s» را پویید"
 
 #~ msgid "baobab"
 #~ msgstr "baobab"
@@ -375,8 +424,8 @@ msgstr "_کوچک‌نمایی"
 #~ "remote) or volumes and give a graphical representation including each "
 #~ "directory size or percentage."
 #~ msgstr ""
-#~ "یک برنامه ساده که می‌تواند هم پوشه‌های مشخصی (محلی و یا دوردست) و هم جلدها را "
-#~ "پایش کند و یک نمایش گرافیکی شامل حجم شاخه‌ها یا درصد آنها را ارایه کند."
+#~ "یک برنامه ساده که می‌تواند هم پوشه‌های مشخصی (محلی و یا دوردست) و هم جلدها "
+#~ "را پایش کند و یک نمایش گرافیکی شامل حجم شاخه‌ها یا درصد آنها را ارایه کند."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "پویش پوشه دوردست..."
