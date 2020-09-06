@@ -9,24 +9,25 @@
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013, 2014, 2016, 2017, 2018, 2019.
+# Vika Leimane <vika.leimane@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2018-10-15 15:31+0000\n"
-"PO-Revision-Date: 2019-03-03 14:24+0200\n"
-"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"PO-Revision-Date: 2020-07-03 20:05+0300\n"
+"Last-Translator: Vika Leimane <vika.leimane@gmail.com>\n"
+"Language-Team: lv\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
-" 2);\n"
-"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 20.04.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120
+#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
 msgid "Disk Usage Analyzer"
 msgstr "Diska izmantojuma analizators"
 
@@ -53,7 +54,13 @@ msgstr ""
 "katras mapes izmēru. Tādējādi ir vieglāk noteikt, kur diska vieta tiek "
 "izniekota."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+#, fuzzy
+#| msgid "Devices & Locations"
+msgid "Devices and Locations"
+msgstr "Ierīces un vietas"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "GNOME projekts"
 
@@ -62,17 +69,16 @@ msgstr "GNOME projekts"
 msgid "storage;space;cleanup;"
 msgstr "uzkopšana;vieta;krātuve;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "org.gnome.baobab"
-msgstr "org.gnome.baobab"
-
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
+#, fuzzy
+#| msgid "Excluded partitions URIs"
+msgid "Excluded locations URIs"
 msgstr "Neiekļauto nodalījumu URI"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
+#, fuzzy
+#| msgid "A list of URIs for partitions to be excluded from scanning."
+msgid "A list of URIs for locations to be excluded from scanning."
 msgstr "Nodalījumu URI saraksts, kas netiks iekļautas skenēšanā."
 
 #: data/org.gnome.baobab.gschema.xml:20
@@ -99,11 +105,167 @@ msgstr "Loga stāvoklis"
 msgid "The GdkWindowState of the window"
 msgstr "Loga GdkWindowState"
 
-#: src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Vispārīgi"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Rādīt palīdzību"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Rādīt / slēpt galveno izvēlni"
+
+#: data/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Iziet"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Rādīt tastatūras saīsnes"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Iet atpakaļ uz vietu sarakstu"
+
+# gdictsrc/gdict-app.c:117
+#: data/gtk/help-overlay.ui:54
+#, fuzzy
+#| msgid "Scanning…"
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Skenē…"
+
+#: data/gtk/help-overlay.ui:59
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Skenēt mapi"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Vēlreiz skenēt šo vietu"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+msgid "_Open Folder"
+msgstr "_Atvērt mapi"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopēt ceļu uz starpliktuvi"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+msgid "Mo_ve to Trash"
+msgstr "Pār_vietot uz miskasti"
+
+# gdictsrc/gdict-app.c:278
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "Iet uz vecāka ma_pi"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "Tuv_ināt"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "Tā_lināt"
+
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+msgid "Folder"
+msgstr "Mape"
+
+# mini-utils/guname/info.c:61
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+msgid "Size"
+msgstr "Izmērs"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+msgid "Contents"
+msgstr "Saturs"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+msgid "Modified"
+msgstr "Mainīts"
+
+#: data/ui/baobab-location-list.ui:17
+msgid "This Computer"
+msgstr "Šajā datorā"
+
+#: data/ui/baobab-location-list.ui:47
+msgid "Remote Locations"
+msgstr "Attālinātās vietās"
+
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Skenēt mapi…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr ""
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "Tastatūra_s īsinājumtaustiņi"
+
+# gcharmap/src/interface.c:208 gnome-find/gnome-find.c:89
+# gstripchart/gstripchart.c:1784 gstripchart/gstripchart.c:2071
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_Palīdzība"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "P_ar diska izmantošanas analizatoru"
+
+#: data/ui/baobab-main-window.ui:77
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Go back to location list"
+msgid "Go back to location list"
+msgstr "Iet atpakaļ uz vietu sarakstu"
+
+#: data/ui/baobab-main-window.ui:98
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Rescan current location"
+msgid "Rescan current location"
+msgstr "Vēlreiz skenēt šo vietu"
+
+#: data/ui/baobab-main-window.ui:194
+msgid "Close"
+msgstr "Aizvērt"
+
+#: data/ui/baobab-main-window.ui:370
+msgid "Rings Chart"
+msgstr "Gredzenu grafiks"
+
+#: data/ui/baobab-main-window.ui:382
+msgid "Treemap Chart"
+msgstr "Skatīt kā koka kartes grafiku"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Parādīt informāciju par versiju un iziet"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -112,17 +274,17 @@ msgstr[1] "%d vienumi"
 msgstr[2] "%d vienumu"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Nezināms"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "Šodien"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -131,7 +293,7 @@ msgstr[1] "%lu dienām"
 msgstr[2] "%lu dienām"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -140,7 +302,7 @@ msgstr[1] "%lu mēnešiem"
 msgstr[2] "%lu mēnešiem"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -148,604 +310,129 @@ msgstr[0] "%lu gada"
 msgstr[1] "%lu gadiem"
 msgstr[2] "%lu gadiem"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Šajā datorā"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Attālinātās vietās"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s kopā"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s pieejams"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s izmantots"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Nav montēts"
 
-#: src/baobab-location.vala:73
+#: src/baobab-location.vala:72
 msgid "Home folder"
 msgstr "Mājas mape"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Dators"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Skenēt mapi…"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Locations to ignore"
+msgstr ""
 
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "Tastatūra_s īsinājumtaustiņi"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:59
+msgid "Select Location to Ignore"
+msgstr ""
 
-# gcharmap/src/interface.c:208 gnome-find/gnome-find.c:89
-# gstripchart/gstripchart.c:1784 gstripchart/gstripchart.c:2071
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Palīdzība"
+#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+msgid "_Cancel"
+msgstr "At_celt"
 
-#: src/baobab-main-window.ui:21
-#| msgid "- Disk Usage Analyzer"
-msgid "_About Disk Usage Analyzer"
-msgstr "P_ar diska izmantošanas analizatoru"
+#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+msgid "_Open"
+msgstr "_Atvērt"
 
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "_Atvērt mapi"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopēt ceļu uz starpliktuvi"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "Pār_vietot uz miskasti"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Aizvērt"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Mape"
-
-# mini-utils/guname/info.c:61
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Izmērs"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "Saturs"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Mainīts"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Gredzenu grafiks"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Skatīt kā koka kartes grafiku"
+#: src/baobab-preferences-dialog.vala:97
+msgid "Add location…"
+msgstr ""
 
 #: src/baobab-window.vala:215
 msgid "Select Folder"
 msgstr "Izvēlieties mapi"
 
-#: src/baobab-window.vala:217
-msgid "_Cancel"
-msgstr "At_celt"
-
-#: src/baobab-window.vala:218
-msgid "_Open"
-msgstr "_Atvērt"
-
 #: src/baobab-window.vala:224
 msgid "Recursively analyze mount points"
 msgstr "Rekursīvi analizēt montēšanas punktus"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:246
 msgid "Could not analyze volume."
 msgstr "Nevarēja izanalizēt sējumu."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:283
 msgid "Failed to show help"
 msgstr "Neizdevās parādīt palīdzību"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:305
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafisks rīks diska izmantojuma analizēšanai."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:311
 msgid "translator-credits"
 msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:385
 msgid "Failed to open file"
 msgstr "Neizdevās atvērt datni"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:402
 msgid "Failed to move file to the trash"
 msgstr "Neizdevās pārvietot datni uz miskasti"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:613
 msgid "Devices & Locations"
 msgstr "Ierīces un vietas"
 
 # logview/logrtns.c:202
-#: src/baobab-window.vala:573
+#: src/baobab-window.vala:665
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nevarēja skenēt mapi “%s”"
 
-#: src/baobab-window.vala:576
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Nevarēja skanēt dažas no mapēm, kas atradās iekš “%s”"
-
-#: src/baobab-window.vala:595
-msgid "Could not detect occupied disk sizes."
+#: src/baobab-window.vala:680
+#, fuzzy
+#| msgid "Could not detect occupied disk sizes."
+msgid "Could not always detect occupied disk sizes."
 msgstr "Neizdevās noteikt aizņemto disku izmērus."
 
-#: src/baobab-window.vala:595
-msgid "Apparent sizes are shown instead."
+#: src/baobab-window.vala:680
+#, fuzzy
+#| msgid "Apparent sizes are shown instead."
+msgid "Apparent sizes may be shown instead."
 msgstr "Tā vietā tiek rādīti saskatāmie izmēri."
 
-#: src/baobab-window.vala:599
-#| msgid "_Scan Home"
+#: src/baobab-window.vala:684
 msgid "Scan completed"
 msgstr "Skenēšana pabeigta"
 
 # logview/logrtns.c:202
-#: src/baobab-window.vala:600
+#: src/baobab-window.vala:685
 #, c-format
-#| msgid "Could not scan folder “%s”"
 msgid "Completed scan of “%s”"
 msgstr "“%s” skenēšana pabeigta"
 
 # logview/logrtns.c:211 logview/logrtns.c:221
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:618 src/baobab-window.vala:624
+#: src/baobab-window.vala:725
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” nav derīga mape"
 
-#: src/baobab-window.vala:619 src/baobab-window.vala:625
+#: src/baobab-window.vala:726
 msgid "Could not analyze disk usage."
 msgstr "Nevarēja izanalizēt diska izmantojumu."
 
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Vispārīgi"
-
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Rādīt / slēpt galveno izvēlni"
-
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Vēlreiz skenēt šo vietu"
-
-#: src/help-overlay.ui:32
-#| msgid "Scan a folder"
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Skenēt mapi"
-
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Rādīt tastatūras saīsnes"
-
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Iet atpakaļ uz vietu sarakstu"
-
-#: src/help-overlay.ui:52
-#| msgid "_Quit"
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Iziet"
-
-# gdictsrc/gdict-app.c:278
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Iet uz vecāka ma_pi"
-
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "Tuv_ināt"
-
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "Tā_lināt"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "P_ar"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "Vienkārša lietotne, kas var skenēt noteiktas mapes (lokālas vai "
-#~ "attālinātas) un sējumus, un dod grafisku attēlojumu, kas iekļauj katras "
-#~ "mapes izmēru un procentus."
-
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Skenēt attālinātu mapi…"
-
-#~ msgid "Maximum depth"
-#~ msgstr "Maksimālais dziļums"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "Maksimālais zīmēšanas dziļums grafikos sākot no saknes"
-
-#~ msgid "Chart model"
-#~ msgstr "Grafika modelis"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Iestatīt grafika modeli"
-
-#~ msgid "Chart root node"
-#~ msgstr "Grafika saknes mezgls"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Iestatīt saknes mezglu no modeļa"
-
-#~ msgid "Main volume"
-#~ msgstr "Galvenais sējums"
-
-#~ msgid "Usage"
-#~ msgstr "Izmantojums"
-
-#~ msgid "_Analyzer"
-#~ msgstr "_Analizators"
-
-#~ msgid "Scan F_older…"
-#~ msgstr "Skenēt _mapi…"
-
-#~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "Skenēt attā_linātu mapi…"
-
-#~ msgid "_View"
-#~ msgstr "_Skats"
-
-#~ msgid "_Reload"
-#~ msgstr "_Pārlādēt"
-
-#~ msgid "_Expand All"
-#~ msgstr "I_zvērst visu"
-
-#~ msgid "_Collapse All"
-#~ msgstr "_Sakļaut visu"
-
-#~ msgid "Scan Folder"
-#~ msgstr "Skenēt mapi"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Skenēt attālinātu mapi"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "Skenēt attālinātu mapi"
-
-#~ msgid "Reload"
-#~ msgstr "Pārlādēt"
-
-#~ msgid "label"
-#~ msgstr "etiķete"
-
-#~ msgid "_Stop"
-#~ msgstr "_Apturēt"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "_Aizpildītā vieta"
-
-# gtt/toolbar.c:190
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Diska izmantošanas analizatora iestatījumi"
-
-#~| msgid "Select _devices to include in filesystem scan:"
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr "Izvēlieties ierīces, ko aplūkot, skenējot _datņu sistēmu:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "Novērot _mājas mapes izmaiņas"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Novērto mājas mapi"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "Vai būtu jānovēro izmaiņas mājas mapē."
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Rīkjosla ir redzama"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Vai rīkjoslai jābūt redzamai galvenajā logā."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Statusa josla ir redzama"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr "Vai statusa joslai galvenā loga apakšā jābūt redzamai."
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Skenēt _mājas mapi"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Skenēt _datņu sistēmu"
-
-# logview/actions.c:120
-#~ msgid "_Edit"
-#~ msgstr "R_ediģēt"
-
-#~ msgid "_Toolbar"
-#~ msgstr "_Rīkjosla"
-
-#~ msgid "St_atusbar"
-#~ msgstr "St_atusjosla"
-
-#~ msgid "_Contents"
-#~ msgstr "_Saturs"
-
-#~| msgid "Rescan your home folder?"
-#~ msgid "Scan your home folder"
-#~ msgstr "Skenēt savu mājas mapi"
-
-#~| msgid "Scan filesystem"
-#~ msgid "Scan the file system"
-#~ msgstr "Skenēt datņu sistēmu"
-
-#~| msgid "Scan Filesystem"
-#~ msgid "Scan File System"
-#~ msgstr "Skenēt datņu sistēmu"
-
-#~| msgid "Scan a remote folder"
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Skenēt attālinātu mapi vai datņu sistēmu"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Pārtraukt skenēšanu"
-
-#~ msgid "Refresh"
-#~ msgstr "Atsvaidzināt"
-
-# gdictsrc/gdict-app.c:117
-#~| msgid "Scanning..."
-#~ msgid "Scanning…"
-#~ msgstr "Skenē…"
-
-# mini-utils/guname/moreinfo.c:328
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Kopējā datņu sistēmas ietilpība:"
-
-#~ msgid "used:"
-#~ msgstr "izmantots:"
-
-#~ msgid "available:"
-#~ msgstr "pieejams:"
-
-#~| msgid "Calculating percentage bars..."
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Rēķina procentu stabiņus…"
-
-#~ msgid "Ready"
-#~ msgstr "Gatavs"
-
-# mini-utils/guname/moreinfo.c:328
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Kopējā datņu sistēmas ietilpība"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Kopējais datņu sistēmas izmantojums"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "satur cietās saites priekš:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Nevarēja uzsākt novērošanu"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Jūsu mājas mapes izmaiņas netiks novērotas."
-
-#~ msgid "Show version"
-#~ msgstr "Rādīt versiju"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[MAPE]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Pārāk daudz parametru. Var norādīt tikai vienu mapi."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "Bez montēšanas punktiem diska izmantojumu nevar analizēt."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Saglabāt ekrānuzņēmumu"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "Nevar izveidot pixbuf attēlu!"
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Saglabā momentuzņēmumu"
-
-#~ msgid "_Image type:"
-#~ msgstr "Attēla t_ips:"
-
-#~ msgid "Scan"
-#~ msgstr "Skenēt"
-
-#~ msgid "Device"
-#~ msgstr "Ierīce"
-
-#~ msgid "Mount Point"
-#~ msgstr "Montēšanas punkts"
-
-# mini-utils/guname/moreinfo.c:328
-#~| msgid "Filesystem Type"
-#~ msgid "File System Type"
-#~ msgstr "Datņu sistēmas tips"
-
-#~ msgid "Total Size"
-#~ msgstr "Kopējais izmērs"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "Publisks FTP"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (ar lietotājvārdu)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "Drošs WebDAV (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr "Nevar savienoties ar serveri. Lūdzu, ievadiet servera nosaukumu."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Lūdzu, ievadiet nosaukumu un mēģiniet vēlreiz."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Vieta (URI):"
-
-# gdictsrc/gdict-pref-dialog.c:156
-#~ msgid "_Server:"
-#~ msgstr "_Serveris:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Papildu informācija:"
-
-# gdictsrc/gdict-pref-dialog.c:156
-#~ msgid "_Share:"
-#~ msgstr "_Koplietojums:"
-
-# gdictsrc/gdict-pref-dialog.c:161
-#~ msgid "_Port:"
-#~ msgstr "_Ports:"
-
-#~ msgid "_Folder:"
-#~ msgstr "_Mape:"
-
-#~ msgid "_User Name:"
-#~ msgstr "_Lietotājvārds:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "_Domēna nosaukums:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Savienoties ar serveri"
-
-#~ msgid "Service _type:"
-#~ msgstr "Servisa _tips:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Skenēt"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Atkārtoti skenēt mājas mapi?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "Jūsu mājas mapes saturs ir mainījies. Izvēlieties atkārtotu skanēšanu, "
-#~ "lai atjauninātu diska izmantošanas informāciju."
-
-#~ msgid "_Rescan"
-#~ msgstr "Pā_rskenēt"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "Rādīt _slēptās mapes"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Nevar pārbaudīt izslēgtu mapi!"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "Nav uzinstalēts skatītājs, kas spētu parādīt mapi."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "Nevar pārvietot “%s” uz miskasti"
-
-#~ msgid "Details: %s"
-#~ msgstr "Sīkāka informācija: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "Parādot palīdzību, radās kļūda."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Šī ir brīva programmatūra; jūs varat to brīvi modificēt un/vai izplatīt "
-#~ "saskaņā ar Free Software Foundation GNU Vispārējās publiskās licences 2 "
-#~ "vai kādas brīvi izvēlētas vēlākas versijas noteikumiem."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Šī programma tiek izplatīta ar cerību, ka tā būs noderīga, tā tiek "
-#~ "izplatīta BEZ JEBKĀDAS GARANTIJAS vai DERĪBAS KĀDAM MĒRĶIM. Sīkāku "
-#~ "informāciju meklējiet GNU Vispārējās publiskās licences tekstā."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Jums vajadzēja kopā ar šo programmu saņemt GNU General Public License "
-#~ "kopiju. Ja tas tā nav, tad rakstiet Free Software Foundation, Inc., 51 "
-#~ "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
-
-#~ msgid "The document does not exist."
-#~ msgstr "Dokuments neeksistē."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "Mape neeksistē."
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "S_kenēt attālināts mapes..."
-
-#~ msgid "Scan F_older..."
-#~ msgstr "Skenēt m_api..."
