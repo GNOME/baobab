@@ -7,14 +7,15 @@
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 # Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
 # José Vieira <jvieira33@sapo.pt>, 2020.
+# Juliano de Souza Camargo <julianosc@protonmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-07-09 10:56+0000\n"
-"PO-Revision-Date: 2020-09-06 23:43+0100\n"
-"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
+"POT-Creation-Date: 2020-09-08 12:54+0000\n"
+"PO-Revision-Date: 2020-09-16 17:10-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@protonmail.com>\n"
 "Language-Team: Portuguese <>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +53,6 @@ msgstr ""
 "identificar como o espaço do disco está a ser utilizado."
 
 #: data/org.gnome.baobab.appdata.xml.in:23
-#| msgid "Devices & Locations"
 msgid "Devices and Locations"
 msgstr "Dispositivos e localizações"
 
@@ -66,12 +66,10 @@ msgid "storage;space;cleanup;"
 msgstr "armazenamento;espaço;limpar;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-#| msgid "Excluded partitions URIs"
 msgid "Excluded locations URIs"
 msgstr "URIs de partições excluídas"
 
 #: data/org.gnome.baobab.gschema.xml:10
-#| msgid "A list of URIs for partitions to be excluded from scanning."
 msgid "A list of URIs for locations to be excluded from scanning."
 msgstr "Lista de URIs de partições a serem excluídas da análise."
 
@@ -115,7 +113,6 @@ msgid "Show / Hide primary menu"
 msgstr "Mostrar / Ocultar o menu principal"
 
 #: data/gtk/help-overlay.ui:31
-#| msgid "_Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sair"
@@ -131,13 +128,11 @@ msgid "Go back to location list"
 msgstr "Voltar para a lista de localizações"
 
 #: data/gtk/help-overlay.ui:54
-#| msgid "Scanning…"
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "A analisar…"
 
 #: data/gtk/help-overlay.ui:59
-#| msgid "Scan a folder"
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analisar pasta"
@@ -216,7 +211,6 @@ msgid "_Help"
 msgstr "A_juda"
 
 #: data/ui/baobab-main-window.ui:29
-#| msgid "- Disk Usage Analyzer"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Sobre o Analisador de Utilização do Disco"
 
@@ -272,8 +266,6 @@ msgstr "Hoje"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:53
 #, c-format
-#| msgid "%d day"
-#| msgid_plural "%d days"
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu dia"
@@ -282,8 +274,6 @@ msgstr[1] "%lu dias"
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:58
 #, c-format
-#| msgid "%d month"
-#| msgid_plural "%d months"
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu mês"
@@ -292,8 +282,6 @@ msgstr[1] "%lu meses"
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:62
 #, c-format
-#| msgid "%d year"
-#| msgid_plural "%d years"
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu ano"
@@ -373,7 +361,7 @@ msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
 msgid "translator-credits"
 msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"Pedro Albuquerque <palbuquerque73@gmail.com\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Tiago Santos <tiagofsantos81@sapo.pt>"
 
 #: src/baobab-window.vala:385
@@ -390,22 +378,18 @@ msgstr "Dispositivos e localizações"
 
 #: src/baobab-window.vala:665
 #, c-format
-#| msgid "Could not scan folder \"%s\""
 msgid "Could not scan folder “%s”"
 msgstr "Impossível analisar a pasta \"%s\""
 
 #: src/baobab-window.vala:680
-#| msgid "Could not detect occupied disk sizes."
 msgid "Could not always detect occupied disk sizes."
-msgstr "Nem sempre foi detetado o tamanho dos espaços ocupados no disco."
+msgstr "Nem sempre é detetado o tamanho de espaço ocupado no disco."
 
 #: src/baobab-window.vala:680
-#| msgid "Apparent sizes are shown instead."
 msgid "Apparent sizes may be shown instead."
-msgstr " Em alternativa podem ser mostrados tamanhos plausíveis."
+msgstr "Em alternativa, podem ser mostrados tamanhos aproximados."
 
 #: src/baobab-window.vala:684
-#| msgid "_Scan Home"
 msgid "Scan completed"
 msgstr "Análise concluída"
 
@@ -416,7 +400,6 @@ msgstr "Concluída a análise de “%s”"
 
 #: src/baobab-window.vala:725
 #, c-format
-#| msgid "\"%s\" is not a valid folder"
 msgid "“%s” is not a valid folder"
 msgstr "“%s” não é uma pasta válida"
 
