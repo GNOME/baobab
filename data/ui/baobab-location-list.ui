@@ -21,17 +21,13 @@
           </object>
         </child>
         <child>
-          <object class="GtkFrame">
+          <object class="GtkListBox" id="local_list_box">
             <property name="visible">True</property>
-            <child>
-              <object class="GtkListBox" id="local_list_box">
-                <property name="visible">True</property>
-                <property name="selection_mode">none</property>
-                <style>
-                  <class name="view"/>
-                </style>
-              </object>
-            </child>
+            <property name="selection_mode">none</property>
+            <style>
+              <class name="view"/>
+              <class name="content"/>
+            </style>
           </object>
         </child>
       </object>
@@ -51,17 +47,13 @@
           </object>
         </child>
         <child>
-          <object class="GtkFrame">
+          <object class="GtkListBox" id="remote_list_box">
             <property name="visible">True</property>
-            <child>
-              <object class="GtkListBox" id="remote_list_box">
-                <property name="visible">True</property>
-                <property name="selection_mode">none</property>
-                <style>
-                  <class name="view"/>
-                </style>
-              </object>
-            </child>
+            <property name="selection_mode">none</property>
+            <style>
+              <class name="view"/>
+              <class name="content"/>
+            </style>
           </object>
         </child>
       </object>

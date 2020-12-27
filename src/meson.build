@@ -39,6 +39,7 @@ baobab_dependencies = [
   gio,
   gobject,
   gtk,
+  libhandy,
   math
 ]
 
