@@ -23,11 +23,11 @@
 namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
-    public class Window : Gtk.ApplicationWindow {
+    public class Window : Hdy.ApplicationWindow {
         [GtkChild]
         private Gtk.Box vbox;
         [GtkChild]
-        private Gtk.HeaderBar header_bar;
+        private Hdy.HeaderBar header_bar;
         [GtkChild]
         private Pathbar pathbar;
         [GtkChild]
@@ -175,16 +175,6 @@ namespace Baobab {
             destroy.connect (() => {
                 ui_settings.apply ();
             });
-
-            var desktop = Environment.get_variable ("XDG_CURRENT_DESKTOP");
-
-            if (desktop == null || !desktop.contains ("Unity")) {
-                this.set_titlebar (header_bar);
-            } else {
-                header_bar.show_close_button = false;
-                header_bar.get_style_context ().remove_class ("titlebar");
-                vbox.pack_start (header_bar, false, false, 0);
-            }
 
             set_ui_state (home_page, false);
 
