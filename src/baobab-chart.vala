@@ -218,21 +218,19 @@ namespace Baobab {
             }
         }
 
-        bool highlight_item_at_point (double x, double y) {
+        void highlight_item_at_point (double x, double y) {
             for (unowned List<ChartItem> node = items.last (); node != null; node = node.prev) {
                 var item = node.data;
                 if (item.visible && is_point_over_item (item, x, y)) {
                     highlighted_item = item;
-                    return true;
                 }
             }
 
             highlighted_item = null;
-            return false;
         }
 
         public override bool motion_notify_event (Gdk.EventMotion event) {
-            has_tooltip = highlight_item_at_point (event.x, event.y);
+            highlight_item_at_point (event.x, event.y);
 
             Gdk.Event.request_motions (event);
 
