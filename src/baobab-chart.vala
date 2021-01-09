@@ -200,7 +200,7 @@ namespace Baobab {
         };
 
         construct {
-            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.SCROLL_MASK);
+            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.SCROLL_MASK);
 
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
@@ -463,6 +463,8 @@ namespace Baobab {
 
         protected override bool button_press_event (Gdk.EventButton event) {
             if (event.type == Gdk.EventType.BUTTON_PRESS) {
+                highlight_item_at_point (event.x, event.y);
+
                 if (event.triggers_context_menu ()) {
                     show_popup_menu (event);
                     return true;
@@ -470,7 +472,7 @@ namespace Baobab {
 
                 switch (event.button) {
                 case Gdk.BUTTON_PRIMARY:
-                    if (highlight_item_at_point (event.x, event.y)) {
+                    if (highlighted_item != null) {
                         var path = model.get_path (highlighted_item.iter);
                         if (root.compare (path) == 0) {
                             move_up_root ();
@@ -594,7 +596,7 @@ namespace Baobab {
         }
 
         protected override bool query_tooltip (int x, int y, bool keyboard_tooltip, Gtk.Tooltip tooltip) {
-            if (keyboard_tooltip || !highlight_item_at_point(x,y)) {
+            if (keyboard_tooltip || highlighted_item == null) {
                 return false;
             }
 
