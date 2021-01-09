@@ -239,14 +239,6 @@ namespace Baobab {
             return false;
         }
 
-        public override bool leave_notify_event (Gdk.EventCrossing event) {
-            if (!context_menu.visible) {
-                highlighted_item = null;
-            }
-
-            return false;
-        }
-
         unowned List<ChartItem> add_item (uint depth, double rel_start, double rel_size, Gtk.TreeIter iter) {
             string name;
             string display_name;
