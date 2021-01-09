@@ -602,9 +602,7 @@ namespace Baobab {
         }
 
         protected override bool query_tooltip (int x, int y, bool keyboard_tooltip, Gtk.Tooltip tooltip) {
-            if (highlighted_item == null ||
-                highlighted_item.name == null ||
-                highlighted_item.size == null) {
+            if (keyboard_tooltip || !highlight_item_at_point(x,y)) {
                 return false;
             }
 
