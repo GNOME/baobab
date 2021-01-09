@@ -598,8 +598,6 @@ namespace Baobab {
                 return false;
             }
 
-            tooltip.set_tip_area (highlighted_item.rect);
-
             var markup = highlighted_item.name + "\n" + highlighted_item.size;
             tooltip.set_markup (Markup.escape_text (markup));
 
