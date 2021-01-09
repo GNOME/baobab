@@ -223,6 +223,7 @@ namespace Baobab {
                 var item = node.data;
                 if (item.visible && is_point_over_item (item, x, y)) {
                     highlighted_item = item;
+                    return;
                 }
             }
 
