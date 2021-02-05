@@ -39,20 +39,14 @@ namespace Baobab {
     }
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-preferences-dialog.ui")]
-    public class PreferencesDialog : Gtk.Dialog {
+    public class PreferencesDialog : Hdy.PreferencesWindow {
         [GtkChild]
         private Gtk.ListBox excluded_list_box;
-        [GtkChild]
-        private Gtk.Label locations_label;
 
         private Settings prefs_settings;
 
         construct {
-            locations_label.label = "<b>%s</b>".printf (_("Locations to ignore"));
-
             prefs_settings = new Settings ("org.gnome.baobab.preferences");
-
-            excluded_list_box.set_header_func (update_header);
 
             excluded_list_box.row_activated.connect (() => {
                 // The only activatable row is "Add location"
@@ -94,7 +88,7 @@ namespace Baobab {
                 });
             }
 
-            var label = new Gtk.Label (_("Add location…"));
+            var label = new Gtk.Label (_("Add Location…"));
             label.margin = 12;
             label.show ();
             excluded_list_box.insert (label, -1);
@@ -116,14 +110,6 @@ namespace Baobab {
                 }
             }
             prefs_settings.set_strv ("excluded-uris", uris);
-        }
-
-        void update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before_row) {
-            if (before_row != null && row.get_header () == null) {
-                row.set_header (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-            } else {
-                row.set_header (null);
-            }
         }
     }
 }
