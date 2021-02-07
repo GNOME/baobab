@@ -80,6 +80,8 @@ namespace Baobab {
         protected override void startup () {
             base.startup ();
 
+            Hdy.init ();
+
             // Load custom CSS
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("/org/gnome/baobab/baobab.css");

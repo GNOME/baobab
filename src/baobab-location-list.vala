@@ -116,10 +116,8 @@ namespace Baobab {
             monitor.volume_removed.connect (volume_removed);
             monitor.volume_added.connect (volume_added);
 
-            local_list_box.set_header_func (update_header);
             local_list_box.row_activated.connect (row_activated);
 
-            remote_list_box.set_header_func (update_header);
             remote_list_box.row_activated.connect (row_activated);
 
             populate ();
@@ -262,14 +260,6 @@ namespace Baobab {
 
             foreach (var info in recent_items) {
                 locations.append (new Location.for_recent_info (info));
-            }
-        }
-
-        void update_header (Gtk.ListBoxRow row, Gtk.ListBoxRow? before_row) {
-            if (before_row != null && row.get_header () == null) {
-                row.set_header (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-            } else {
-                row.set_header (null);
             }
         }
 

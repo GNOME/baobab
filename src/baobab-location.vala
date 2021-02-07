@@ -69,7 +69,7 @@ namespace Baobab {
         }
 
         void make_this_home_location () {
-            name = _("Home folder");
+            name = _("Home Folder");
             icon = new ThemedIcon ("user-home");
             symbolic_icon = new ThemedIcon ("user-home-symbolic");
         }

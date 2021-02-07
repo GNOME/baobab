@@ -4,94 +4,115 @@
   <template class="BaobabLocationRow" parent="GtkListBoxRow">
     <property name="visible">True</property>
     <child>
-      <object class="GtkGrid" id="grid">
+      <object class="GtkBox">
         <property name="visible">True</property>
-        <property name="column_spacing">12</property>
-        <property name="margin">6</property>
+        <property name="can_focus">False</property>
+        <property name="margin-top">6</property>
+        <property name="margin-bottom">12</property>
+        <property name="margin-start">12</property>
+        <property name="margin-end">6</property>
+        <property name="spacing">12</property>
         <child>
-          <object class="GtkImage" id="image">
+          <object class="GtkGrid" id="grid">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="pixel_size">64</property>
+            <property name="column_spacing">12</property>
+            <child>
+              <object class="GtkImage" id="image">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixel_size">64</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="name_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">end</property>
+                <property name="hexpand">True</property>
+                <property name="use_markup">True</property>
+                <property name="ellipsize">end</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="path_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <property name="hexpand">True</property>
+                <property name="use_markup">True</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="available_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">end</property>
+                <property name="valign">end</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="total_size_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">end</property>
+                <property name="valign">start</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLevelBar" id="usage_bar">
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <property name="margin_top">6</property>
+                <property name="margin_bottom">6</property>
+                <property name="hexpand">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+                <property name="width">3</property>
+              </packing>
+            </child>
           </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">0</property>
-            <property name="height">2</property>
-          </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="name_label">
+          <object class="GtkImage">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="halign">start</property>
-            <property name="valign">end</property>
-            <property name="hexpand">True</property>
-            <property name="use_markup">True</property>
-            <property name="ellipsize">end</property>
-          </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="path_label">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">start</property>
-            <property name="valign">start</property>
-            <property name="hexpand">True</property>
-            <property name="use_markup">True</property>
+            <property name="icon_name">go-next-symbolic</property>
+            <property name="width_request">36</property>
             <style>
               <class name="dim-label"/>
             </style>
           </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="available_label">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">end</property>
-            <property name="valign">end</property>
-          </object>
-          <packing>
-            <property name="left_attach">2</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="total_size_label">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">end</property>
-            <property name="valign">start</property>
-            <style>
-              <class name="dim-label"/>
-            </style>
-          </object>
-          <packing>
-            <property name="left_attach">2</property>
-            <property name="top_attach">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLevelBar" id="usage_bar">
-            <property name="can_focus">False</property>
-            <property name="valign">start</property>
-            <property name="margin_top">6</property>
-            <property name="margin_bottom">6</property>
-            <property name="hexpand">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">2</property>
-            <property name="width">3</property>
-          </packing>
         </child>
       </object>
     </child>

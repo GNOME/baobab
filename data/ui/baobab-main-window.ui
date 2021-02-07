@@ -11,12 +11,12 @@
         <attribute name="label" translatable="yes">Clear Recent List</attribute>
         <attribute name="action">win.clear-recent</attribute>
       </item>
+    </section>
+    <section>
       <item>
         <attribute name="label" translatable="yes">Preferences</attribute>
         <attribute name="action">win.show-preferences</attribute>
       </item>
-    </section>
-    <section>
       <item>
         <attribute name="label" translatable="yes">Keyboard _Shortcuts</attribute>
         <attribute name="action">win.show-help-overlay</attribute>
@@ -62,77 +62,79 @@
       </object>
     </child>
   </object>
-  <object class="GtkHeaderBar" id="header_bar">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="show_close_button">True</property>
-    <style>
-      <class name="titlebar"/>
-    </style>
-    <child>
-      <object class="GtkButton" id="back_button">
-        <property name="valign">center</property>
-        <property name="can_focus">True</property>
-        <property name="action_name">win.show-home-page</property>
-        <property name="tooltip_text" translatable="yes">Go back to location list</property>
-        <style>
-          <class name="image-button"/>
-        </style>
-        <child>
-          <object class="GtkImage" id="back_button_image">
-            <property name="visible">True</property>
-            <property name="icon_name">go-previous-symbolic</property>
-            <property name="icon_size">1</property>
-          </object>
-        </child>
-      </object>
-      <packing>
-        <property name="pack_type">start</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkButton" id="reload_button">
-        <property name="valign">center</property>
-        <property name="can_focus">True</property>
-        <property name="action_name">win.reload</property>
-        <property name="tooltip_text" translatable="yes">Rescan current location</property>
-        <style>
-          <class name="image-button"/>
-        </style>
-        <child>
-          <object class="GtkImage" id="reload_button_image">
-            <property name="visible">True</property>
-            <property name="icon_size">1</property>
-            <property name="icon_name">view-refresh-symbolic</property>
-          </object>
-        </child>
-      </object>
-      <packing>
-        <property name="pack_type">end</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkMenuButton" id="menu_button">
-        <property name="valign">center</property>
-        <property name="menu_model">primarymenu</property>
-        <property name="action_name">win.show-primary-menu</property>
-        <property name="direction">none</property>
-        <style>
-          <class name="image-button"/>
-        </style>
-      </object>
-      <packing>
-        <property name="pack_type">end</property>
-      </packing>
-    </child>
-  </object>
-  <template class="BaobabWindow" parent="GtkApplicationWindow">
+  <template class="BaobabWindow" parent="HdyApplicationWindow">
     <property name="title" translatable="yes">Disk Usage Analyzer</property>
     <property name="icon_name">baobab</property>
     <child>
       <object class="GtkBox" id="vbox">
       <property name="orientation">vertical</property>
       <property name="visible">True</property>
+      <child>
+        <object class="HdyHeaderBar" id="header_bar">
+          <property name="visible">True</property>
+          <property name="can_focus">False</property>
+          <property name="show_close_button">True</property>
+          <style>
+            <class name="titlebar"/>
+          </style>
+          <child>
+            <object class="GtkButton" id="back_button">
+              <property name="valign">center</property>
+              <property name="can_focus">True</property>
+              <property name="action_name">win.show-home-page</property>
+              <property name="tooltip_text" translatable="yes">Go back to location list</property>
+              <style>
+                <class name="image-button"/>
+              </style>
+              <child>
+                <object class="GtkImage" id="back_button_image">
+                  <property name="visible">True</property>
+                  <property name="icon_name">go-previous-symbolic</property>
+                  <property name="icon_size">1</property>
+                </object>
+              </child>
+            </object>
+            <packing>
+              <property name="pack_type">start</property>
+            </packing>
+          </child>
+          <child>
+            <object class="GtkButton" id="reload_button">
+              <property name="valign">center</property>
+              <property name="can_focus">True</property>
+              <property name="action_name">win.reload</property>
+              <property name="tooltip_text" translatable="yes">Rescan current location</property>
+              <style>
+                <class name="image-button"/>
+              </style>
+              <child>
+                <object class="GtkImage" id="reload_button_image">
+                  <property name="visible">True</property>
+                  <property name="icon_size">1</property>
+                  <property name="icon_name">view-refresh-symbolic</property>
+                </object>
+              </child>
+            </object>
+            <packing>
+              <property name="pack_type">end</property>
+            </packing>
+          </child>
+          <child>
+            <object class="GtkMenuButton" id="menu_button">
+              <property name="valign">center</property>
+              <property name="menu_model">primarymenu</property>
+              <property name="action_name">win.show-primary-menu</property>
+              <property name="direction">none</property>
+              <style>
+                <class name="image-button"/>
+              </style>
+            </object>
+            <packing>
+              <property name="pack_type">end</property>
+            </packing>
+          </child>
+        </object>
+      </child>
       <child>
         <object class="GtkGrid" id="window_contents">
           <property name="visible">True</property>
