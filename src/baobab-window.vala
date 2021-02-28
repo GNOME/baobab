@@ -25,63 +25,63 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
     public class Window : Hdy.ApplicationWindow {
         [GtkChild]
-        private Gtk.Box vbox;
+        private unowned Gtk.Box vbox;
         [GtkChild]
-        private Hdy.HeaderBar header_bar;
+        private unowned Hdy.HeaderBar header_bar;
         [GtkChild]
-        private Pathbar pathbar;
+        private unowned Pathbar pathbar;
         [GtkChild]
-        private Gtk.Button back_button;
+        private unowned Gtk.Button back_button;
         [GtkChild]
-        private Gtk.Button reload_button;
+        private unowned Gtk.Button reload_button;
         [GtkChild]
-        private Gtk.MenuButton menu_button;
+        private unowned Gtk.MenuButton menu_button;
         [GtkChild]
-        private Gtk.Stack main_stack;
+        private unowned Gtk.Stack main_stack;
         [GtkChild]
-        private Gtk.Widget home_page;
+        private unowned Gtk.Widget home_page;
         [GtkChild]
-        private Gtk.Widget result_page;
+        private unowned Gtk.Widget result_page;
         [GtkChild]
-        private Gtk.InfoBar infobar;
+        private unowned Gtk.InfoBar infobar;
         [GtkChild]
-        private Gtk.Label infobar_primary_label;
+        private unowned Gtk.Label infobar_primary_label;
         [GtkChild]
-        private Gtk.Label infobar_secondary_label;
+        private unowned Gtk.Label infobar_secondary_label;
         [GtkChild]
-        private Gtk.Button infobar_close_button;
+        private unowned Gtk.Button infobar_close_button;
         [GtkChild]
-        private LocationList location_list;
+        private unowned LocationList location_list;
         [GtkChild]
-        private FolderDisplay folder_display;
+        private unowned FolderDisplay folder_display;
         [GtkChild]
-        private Gtk.TreeView treeview;
+        private unowned Gtk.TreeView treeview;
         [GtkChild]
-        private Gtk.Menu treeview_popup_menu;
+        private unowned Gtk.Menu treeview_popup_menu;
         [GtkChild]
-        private Gtk.MenuItem treeview_popup_open;
+        private unowned Gtk.MenuItem treeview_popup_open;
         [GtkChild]
-        private Gtk.MenuItem treeview_popup_copy;
+        private unowned Gtk.MenuItem treeview_popup_copy;
         [GtkChild]
-        private Gtk.MenuItem treeview_popup_trash;
+        private unowned Gtk.MenuItem treeview_popup_trash;
         [GtkChild]
-        private Gtk.TreeViewColumn size_column;
+        private unowned Gtk.TreeViewColumn size_column;
         [GtkChild]
-        private Gtk.TreeViewColumn contents_column;
+        private unowned Gtk.TreeViewColumn contents_column;
         [GtkChild]
-        private Gtk.TreeViewColumn time_modified_column;
+        private unowned Gtk.TreeViewColumn time_modified_column;
         [GtkChild]
-        private Gtk.Stack chart_stack;
+        private unowned Gtk.Stack chart_stack;
         [GtkChild]
-        private Gtk.Stack spinner_stack;
+        private unowned Gtk.Stack spinner_stack;
         [GtkChild]
-        private Gtk.StackSwitcher chart_stack_switcher;
+        private unowned Gtk.StackSwitcher chart_stack_switcher;
         [GtkChild]
-        private Chart rings_chart;
+        private unowned Chart rings_chart;
         [GtkChild]
-        private Chart treemap_chart;
+        private unowned Chart treemap_chart;
         [GtkChild]
-        private Gtk.Spinner spinner;
+        private unowned Gtk.Spinner spinner;
 
         private Location? active_location = null;
         private ulong scan_completed_handler = 0;

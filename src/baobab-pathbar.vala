@@ -22,9 +22,9 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-pathbutton.ui")]
     public class PathButton : Gtk.Button {
         [GtkChild]
-        new Gtk.Label label;
+        new unowned Gtk.Label label;
         [GtkChild]
-        Gtk.Image icon;
+        unowned Gtk.Image icon;
 
         public PathButton (string name, Icon? gicon) {
             label.label = name;
