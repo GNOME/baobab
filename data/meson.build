@@ -23,7 +23,17 @@ appdata_file = i18n.merge_file(
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'metainfo'),
-)
+)# Validating app data
+
+appstream_util = find_program('appstream-util', required: false)
+if appstream_util.found()
+  test(
+    'validate-appdata', appstream_util,
+    args: [
+      'validate-relax', '--nonet', appdata_file.full_path()
+    ]
+  )
+endif
 
 install_data (
   'org.gnome.baobab.gschema.xml',
