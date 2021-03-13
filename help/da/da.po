@@ -1,14 +1,14 @@
 # Danish translation for baobab.
 # Copyright (C) 2015 baobab's COPYRIGHT HOLDER
 # This file is distributed under the same license as the baobab package.
-# scootergrisen, 2015.
-#
+# scootergrisen, 2015, 2020.
 # Gennemgået Ask Hjorth Larsen <asklarsen@gmail.com>, 2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"POT-Creation-Date: 2016-03-18 16:01+0000\n"
-"PO-Revision-Date: 2016-09-29 03:31+0200\n"
+"POT-Creation-Date: 2020-12-28 21:39+0000\n"
+"PO-Revision-Date: 2020-12-30 00:00+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -21,10 +21,11 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"scootergrisen, 2015\n"
+"scootergrisen <>, 2015, 2020\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted http://dansk-gruppen.dk\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #. (itstool) path: info/title
 #: C/index.page:7
@@ -36,7 +37,7 @@ msgstr "Hjælp til Diskforbrugsanalyse"
 #: C/index.page:8
 msgctxt "link"
 msgid "Disk Usage Analyzer"
-msgstr "Disforbrugsanalyse"
+msgstr "Diskforbrugsanalyse"
 
 #. (itstool) path: credit/name
 #: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
@@ -89,7 +90,9 @@ msgstr "Michael Hill"
 msgid ""
 "<app>Disk Usage Analyzer</app> is an application which shows you your use of "
 "storage space using graphs."
-msgstr "<app>Diskforbrugsanalyse</app> er et program, der viser dig dit forbrug af lagerplads med grafer."
+msgstr ""
+"<app>Diskforbrugsanalyse</app> er et program, der viser dig dit forbrug af "
+"lagerplads med grafer."
 
 #. (itstool) path: page/title
 #: C/introduction.page:31
@@ -106,7 +109,14 @@ msgid ""
 "\"scan-file-system\">whole file system</link>, <link xref=\"scan-home\">your "
 "<file>Home</file> directory</link>, <link xref=\"scan-folder\">a specified "
 "folder</link> or <link xref=\"scan-remote\">a remote directory</link>."
-msgstr "<app>Diskforbrugsanalyse</app> er et grafisk program til at analysere lagerenhedsforbrug. Det kan bruges til at skanne adskillige lokale eller fjernlagerenheder, herunder harddiske, SSD'er, USB-nøgler, digitale kameraer og hukommelseskort. <app>Disforbrugsanalyse</app> kan enten skanne <link xref=\"scan-file-system\">hele filsystemet</link>, <link xref=\"scan-home\">din <file>Hjem</file>-mappe</link>, <link xref=\"scan-folder\">en angivet mappe</link> eller <link xref=\"scan-remote\">en fjernmappe</link>."
+msgstr ""
+"<app>Diskforbrugsanalyse</app> er et grafisk program til at analysere "
+"forbruget på lagerenheder. Det kan bruges til at skanne adskillige lokale "
+"eller fjernlagerenheder, herunder harddiske, SSD'er, USB-nøgler, digitale "
+"kameraer og hukommelseskort. <app>Diskforbrugsanalyse</app> kan enten skanne "
+"<link xref=\"scan-file-system\">hele filsystemet</link>, <link xref=\"scan-"
+"home\">din <file>Hjem</file>-mappe</link>, <link xref=\"scan-folder\">en "
+"angivet mappe</link> eller <link xref=\"scan-remote\">en fjernmappe</link>."
 
 #. (itstool) path: page/p
 #: C/introduction.page:42
@@ -117,22 +127,18 @@ msgid ""
 "to free up space. You can also use the results to estimate how much space "
 "would be needed for a <link href=\"help:gnome-help/backup-how\">backup</"
 "link> of specific folders."
-msgstr "Resultaterne kan være nyttige til at beslutte hvilke mapper der kan <link href=\"help:file-roller\">arkiveres</link>, <link href=\"help:gnome-help/files-delete\">slettes</link> eller <link href=\"help:gnome-help/files-copy\">flyttes</link>, for at frigøre plads. Du kan også bruge resultaterne til at vurdere hvor meget plads der kræves for at <link href=\"help:gnome-help/backup-how\">sikkerhedskopiere</link> bestemte mapper."
-
-#. (itstool) path: p/link
-#: C/legal.xml:5
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-
-#. (itstool) path: license/p
-#: C/legal.xml:4
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Dette værk er licenseret under <_:link-1/>."
+msgstr ""
+"Resultaterne kan være nyttige til at beslutte hvilke mapper der kan <link "
+"href=\"help:file-roller\">arkiveres</link>, <link href=\"help:gnome-help/"
+"files-delete\">slettes</link> eller <link href=\"help:gnome-help/files-copy"
+"\">flyttes</link>, for at frigøre plads. Du kan også bruge resultaterne til "
+"at vurdere hvor meget plads der kræves for at <link href=\"help:gnome-help/"
+"backup-how\">sikkerhedskopiere</link> bestemte mapper."
 
 #. (itstool) path: info/desc
 #: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
-msgstr "Vis resultaterne som et ringdiagram eller et trækortdiagram."
+msgstr "Vis resultaterne som et cirkeldiagram eller et trækortdiagram."
 
 #. (itstool) path: page/title
 #: C/pref-view-chart.page:31
@@ -146,16 +152,20 @@ msgid ""
 "comprising an angle proportional to the size of the relevant folder. Sub-"
 "folders are shown in different colors, as additional layers around the inner "
 "ring."
-msgstr "Som standard viser skanningsresultaterne hver undermappe som et afsnit af en ring, hvor vinklen er proportional med størrelsen på den relevante mappe. Undermapper vises i forskellige farver, som yderligere lag omkring den indre ring."
+msgstr ""
+"Som standard viser skanningsresultaterne hver undermappe som et afsnit af en "
+"ring, hvor vinklen er proportional med størrelsen på den relevante mappe. "
+"Undermapper vises i forskellige farver, som yderligere lag omkring den indre "
+"cirkel."
 
 #. (itstool) path: page/p
 #: C/pref-view-chart.page:37
 msgid ""
-"Move your mouse over the rings chart displays more details about the folder "
-"and subfolders."
+"Moving your mouse over the rings chart displays more details about the "
+"folder and subfolders."
 msgstr ""
-"Flyt din mus hen over ringdiagrammet for at vise flere detaljer om mappen og "
-"undermapperne."
+"Ved at flytte din mus hen over cirkeldiagrammet vises flere detaljer om "
+"mappen og undermapperne."
 
 #. (itstool) path: page/p
 #: C/pref-view-chart.page:39
@@ -163,7 +173,10 @@ msgid ""
 "Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
 "at the bottom of the chart, on the right-hand side. The tree layout displays "
 "the folders as proportionately sized boxes."
-msgstr "Diagrammets synlighed kan ændres til <gui>Trækortvisning</gui> ved brug af knapperne i bunden af diagrammet, i højre side. Trælayoutet viser forholdsmæssigt mappernes størrelse som bokse."
+msgstr ""
+"Diagrammets synlighed kan ændres til <gui>Trækortvisning</gui> med knapperne "
+"i bunden af diagrammet, i højre side. Trælayoutet viser forholdsmæssigt "
+"mappernes størrelse som bokse."
 
 #. (itstool) path: page/p
 #: C/pref-view-chart.page:42
@@ -171,8 +184,8 @@ msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
 msgstr ""
-"Du kan også klikke på en ring eller boks for at gøre den til startpunkt for "
-"diagrammet."
+"Du kan også klikke på en cirkel eller boks for at gøre den til startpunkt "
+"for diagrammet."
 
 #. (itstool) path: credit/name
 #: C/problem-permissions.page:9 C/problem-slow-scan.page:10
@@ -185,8 +198,6 @@ msgstr "Baptiste Mille-Mathias"
 msgid "2014"
 msgstr "2014"
 
-# scootergrisen: "some of the folders it contains" skal rettes til "some of the folders contained in" i den originale streng
-# scootergrisen: https://bugzilla.gnome.org/show_bug.cgi?id=756295
 #. (itstool) path: info/desc
 #: C/problem-permissions.page:16
 msgid ""
@@ -201,8 +212,6 @@ msgstr ""
 msgid "Error when scanning"
 msgstr "Fejl under skanning"
 
-# scootergrisen: "some of the folders it contains" skal rettes til "some of the folders contained in" i den originale streng
-# scootergrisen: https://bugzilla.gnome.org/show_bug.cgi?id=756295
 #. (itstool) path: page/p
 #: C/problem-permissions.page:23
 msgid ""
@@ -213,16 +222,23 @@ msgid ""
 "you can't access won't be used to compute the <link xref=\"pref-view-chart"
 "\">chart</link> representing the disk usage, hence the result reported may "
 "be wrong."
-msgstr "Under skanning ser du måske meddelelsen <gui>Kunne ikke skanne /… eller visse af mapperne indeholdt i</gui> øverst i vinduet <app>Diskforbrugsanalyse</app>. Denne fejl vises fordi du ikke har de nødvendige adgangsrettigheder til nogle af filerne, på grund af restriktioner på målsystemet. Filerne, du ikke har adgang til, bliver ikke brugt til at udregne <link xref=\"pref-view-chart\">diagrammet</link>, der viser diskforbruget. Resultatet kan derfor være forkert."
+msgstr ""
+"Under skanning ser du måske meddelelsen <gui>Kunne ikke skanne /… eller "
+"visse af mapperne indeholdt i</gui> øverst i vinduet "
+"<app>Diskforbrugsanalyse</app>. Fejlen vises fordi du ikke har de nødvendige "
+"adgangsrettigheder til nogle af filerne, på grund af restriktioner på "
+"målsystemet. Filerne, du ikke har adgang til, bliver ikke brugt til at "
+"udregne <link xref=\"pref-view-chart\">diagrammet</link>, der viser "
+"diskforbruget. Resultatet kan derfor være forkert."
 
 #. (itstool) path: page/p
 #: C/problem-permissions.page:30
 msgid ""
-"Not having access to all files and directories is perfectly common thought "
+"Not having access to all files and directories is perfectly common though, "
 "so there is nothing you can do about this error."
 msgstr ""
 "Det er helt normalt ikke at have adgang til alle filer og mapper, så du kan "
-"ikke gøre noget ved denne fejl."
+"ikke gøre noget ved fejlen."
 
 #. (itstool) path: note/p
 #: C/problem-permissions.page:33
@@ -230,16 +246,19 @@ msgid ""
 "<app>Disk Usage Analyzer</app> uses command <cmd>du</cmd> to create the "
 "detailed view of the use of storage, and needs you have read permission on "
 "files and execute permission of directories."
-msgstr "<app>Diskforbrugsanalyse</app> bruger kommandoen <cmd>du</cmd> til at skabe den detaljerede visning af lagerforbruget, og har brug for læserettigheder til filer og eksekveringsrettigheder til mapper."
+msgstr ""
+"<app>Diskforbrugsanalyse</app> bruger kommandoen <cmd>du</cmd> til at skabe "
+"den detaljerede visning af lagerforbruget, og har brug for læserettigheder "
+"til filer og eksekveringsrettigheder til mapper."
 
-# scootergrisen: jeg forstår ikke hvad der står i den originale streng
 #. (itstool) path: note/p
 #: C/problem-permissions.page:37
 msgid ""
-"On the other hand, filesystem disk usage on the use command <cmd>df</cmd> "
-"for disk utilisation on the main window which relies on the filesystem and "
-"not on file permissions."
-msgstr "Modsat bruges kommandoen <cmd>df</cmd> til at finde filsystemets diskforbrug i hovedvinduet, hvilket afhænger af filsystemet og ikke af filrettigheder."
+"On the other hand, filesystem disk usage uses the command <cmd>df</cmd> "
+"which relies on the filesystem and not on file permissions."
+msgstr ""
+"Modsat bruges kommandoen <cmd>df</cmd> til at finde filsystemets "
+"diskforbrug, hvilket afhænger af filsystemet og ikke af filrettigheder."
 
 #. (itstool) path: info/desc
 #: C/problem-slow-scan.page:17
@@ -254,18 +273,23 @@ msgstr "Skanning går langsomt"
 #. (itstool) path: page/p
 #: C/problem-slow-scan.page:22
 msgid ""
-"The speed required to scan a folder or a remote location depends on the "
-"speed of the media you're scanning. For instance a mechanical hard drive "
-"will be slower than a SSD, and scanning a remote directory over Internet "
-"will generally take longer than scanning a folder over a local network."
-msgstr "Hastigheden som kræves for at skanne en mappe eller et fjernsted afhænger af hastigheden på det medie, du skanner. F.eks. er en mekanisk harddisk langsommere end en SSD, og skanning af en fjernmappe over internettet vil generelt tage længere tid end skanning af en mappe på et lokalt netværk."
+"The time required to scan a folder or a remote location depends on the speed "
+"of the media you're scanning. For instance a mechanical hard drive will be "
+"slower than a SSD, and scanning a remote directory over Internet will "
+"generally take longer than scanning a folder over a local network."
+msgstr ""
+"Tiden, som kræves for at skanne en mappe eller et fjernsted, afhænger af "
+"hastigheden på det medie, du skanner. F.eks. er en mekanisk harddisk "
+"langsommere end en SSD, og skanning af en fjernmappe over internettet vil "
+"generelt tage længere tid end skanning af en mappe på et lokalt netværk."
 
 #. (itstool) path: page/p
 #: C/problem-slow-scan.page:27
 msgid ""
 "The speed also depends on the depth of the directory structure and the "
 "number of files stored."
-msgstr "Hastigheden afhænger også af mappestrukturens dybde og antallet af filer."
+msgstr ""
+"Hastigheden afhænger også af mappestrukturens dybde og antallet af filer."
 
 #. (itstool) path: info/desc
 #: C/question-open-folder.page:18
@@ -283,7 +307,9 @@ msgid ""
 "You can open a folder in your default file browser, such as <app>Files</"
 "app>. This can be useful if you want to quickly find out which files are in "
 "that folder."
-msgstr "Du kan åbne en mappe i din standardfilbrowser, såsom <app>Filer</app>. Dette kan være nyttigt hvis du hurtigt vil se hvilke filer, der er i den mappe."
+msgstr ""
+"Du kan åbne en mappe i din standardfilbrowser, såsom <app>Filer</app>. Det "
+"kan være nyttigt hvis du hurtigt vil se hvilke filer, der er i den mappe."
 
 #. (itstool) path: item/p
 #: C/question-open-folder.page:29
@@ -309,8 +335,8 @@ msgid ""
 "using <app>Disk Usage Analyzer</app> by moving folders to <file>Trash</file> "
 "and deleting them."
 msgstr ""
-"Du kan frigøre noget plads fra din computer eller et fjernfilsystem ved brug "
-"af <app>Diskforbrugsanalyse</app>, ved at flytte mapper til <file>Papirkurv</"
+"Du kan frigøre noget plads fra din computer eller et fjernfilsystem med "
+"<app>Diskforbrugsanalyse</app>, ved at flytte mapper til <file>Papirkurv</"
 "file> og slette dem."
 
 #. (itstool) path: item/p
@@ -318,7 +344,8 @@ msgstr ""
 msgid ""
 "Right-click on the folder that you want to delete and select <gui>Move to "
 "Trash</gui>."
-msgstr "Højreklik på den mappe, du vil slette, og vælg <gui>Flyt til papirkurv</gui>."
+msgstr ""
+"Højreklik på den mappe, du vil slette, og vælg <gui>Flyt til papirkurv</gui>."
 
 #. (itstool) path: item/p
 #: C/question-trash.page:33
@@ -411,7 +438,11 @@ msgid ""
 "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
 "will be removed from the list when you next restart <app>Disk Usage "
 "Analyzer</app>."
-msgstr "Den mappe, du lige har skannet, vil nu blive tilføjet til din liste med <gui>Enheder og steder</gui>. Hvis mappen omdøbes eller slettes, vil den blive fjernet fra listen næste gang du genstarter <app>Diskforbrugsanalyse</app>."
+msgstr ""
+"Den mappe, du lige har skannet, vil nu blive tilføjet til din liste med "
+"<gui>Enheder og steder</gui>. Hvis mappen omdøbes eller slettes, vil den "
+"blive fjernet fra listen næste gang du genstarter <app>Diskforbrugsanalyse</"
+"app>."
 
 #. (itstool) path: info/desc
 #: C/scan-home.page:27
@@ -431,7 +462,12 @@ msgid ""
 "subdirectories within it. This includes downloads from the internet, "
 "documents which you work on and photos from your camera. Normally, one "
 "<file>Home</file> folder exists for each user on the computer."
-msgstr "<file>Hjem</file>-mappen er stedet hvor de fleste brugere har de fleste af deres filer, fordi standardindstillinger ofte er sat til at gemme eller kopiere filer ind i undermapper i den. Dette inkluderer downloads fra internettet, dokumenter, du har arbejdet på, og billeder fra dit kamera. Normalt har hver bruger en <file>Hjem</file>-mappe på computeren."
+msgstr ""
+"<file>Hjem</file>-mappen er stedet hvor de fleste brugere har de fleste af "
+"deres filer, fordi standardindstillinger ofte er sat til at gemme eller "
+"kopiere filer ind i undermapper i den. Det inkluderer downloads fra "
+"internettet, dokumenter, du har arbejdet på, og billeder fra dit kamera. "
+"Normalt har hver bruger en <file>Hjem</file>-mappe på computeren."
 
 #. (itstool) path: item/p
 #: C/scan-home.page:41
@@ -476,9 +512,12 @@ msgid ""
 "have a protocol, followed by a colon and two slashes, that looks different "
 "depending on the <link xref=\"help:gnome-help/nautilus-connect#types"
 "\">protocol</link> that you are using."
-msgstr "Indtast URL'en i feltet <gui>Serveradresse</gui>. Den har normalt en protokol, efterfulgt af et kolon og to skråstreger. URL'en ser forskellig ud afhængig af hvilken <link xref=\"help:gnome-help/nautilus-connect#types\">protokol</link>, du bruger."
+msgstr ""
+"Indtast URL'en i feltet <gui>Serveradresse</gui>. Den har normalt en "
+"protokol, efterfulgt af et kolon og to skråstreger. URL'en ser forskellig ud "
+"afhængig af hvilken <link xref=\"help:gnome-help/nautilus-connect#types"
+"\">protokol</link>, du bruger."
 
-# scootergrisen: i dialogen står "Forbind til server" og på knappen står "Tilslut". Så måske ret så det hedder enten tilslut eller forbind begge steder. Det er vist strenge fra GTK+.
 #. (itstool) path: item/p
 #: C/scan-remote.page:50
 msgid ""
@@ -503,4 +542,19 @@ msgid ""
 "you enter a URL which is not valid, you will not be able to press "
 "<gui>Continue</gui>, but if the URL is valid, but incorrect, the connection "
 "will fail without warnings."
-msgstr "Du kan også vælge en af de senest anvendte servere i stedet for at indtaste en ny URL. Hvis du indtaster en ugyldig URL, kan du ikke trykke på <gui>Fortsæt</gui>, men hvis URL'en er gyldig, men forkert, vil forbindelsen mislykkes uden advarsler."
+msgstr ""
+"Du kan også vælge en af de senest anvendte servere i stedet for at indtaste "
+"en ny URL. Hvis du indtaster en ugyldig URL, kan du ikke trykke på "
+"<gui>Fortsæt</gui>, men hvis URL'en er gyldig, men forkert, vil forbindelsen "
+"mislykkes uden advarsler."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+"Creative Commons Kreditering-Deling på samme vilkår 3.0 Ikke porteret-licens"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Værket er licenseret under en <_:link-1/>."
