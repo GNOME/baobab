@@ -23,17 +23,17 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-row.ui")]
     private class LocationRow : Gtk.ListBoxRow {
         [GtkChild]
-        private Gtk.Image image;
+        private unowned Gtk.Image image;
         [GtkChild]
-        private Gtk.Label name_label;
+        private unowned Gtk.Label name_label;
         [GtkChild]
-        private Gtk.Label path_label;
+        private unowned Gtk.Label path_label;
         [GtkChild]
-        private Gtk.Label available_label;
+        private unowned Gtk.Label available_label;
         [GtkChild]
-        private Gtk.Label total_size_label;
+        private unowned Gtk.Label total_size_label;
         [GtkChild]
-        private Gtk.LevelBar usage_bar;
+        private unowned Gtk.LevelBar usage_bar;
 
         public Location? location { get; private set; }
 
@@ -93,11 +93,11 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-list.ui")]
     public class LocationList : Gtk.Box {
         [GtkChild]
-        private Gtk.ListBox local_list_box;
+        private unowned Gtk.ListBox local_list_box;
         [GtkChild]
-        private Gtk.ListBox remote_list_box;
+        private unowned Gtk.ListBox remote_list_box;
         [GtkChild]
-        private Gtk.Box remote_box;
+        private unowned Gtk.Box remote_box;
 
         public signal void location_activated (Location location);
 

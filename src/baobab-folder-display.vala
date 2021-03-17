@@ -22,15 +22,15 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-folder-display.ui")]
     public class FolderDisplay : Gtk.TreeView {
         [GtkChild]
-        public Gtk.TreeViewColumn folder_column;
+        public unowned Gtk.TreeViewColumn folder_column;
         [GtkChild]
-        public Gtk.TreeViewColumn size_column;
+        public unowned Gtk.TreeViewColumn size_column;
         [GtkChild]
-        public Gtk.TreeViewColumn contents_column;
+        public unowned Gtk.TreeViewColumn contents_column;
         [GtkChild]
-        public Gtk.TreeViewColumn time_modified_column;
+        public unowned Gtk.TreeViewColumn time_modified_column;
         [GtkChild]
-        private Gtk.CellRendererPixbuf folder_column_icon_renderer;
+        private unowned Gtk.CellRendererPixbuf folder_column_icon_renderer;
 
         construct {
             row_activated.connect (() => { activated (); });

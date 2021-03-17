@@ -22,9 +22,9 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-excluded-row.ui")]
     class ExcludedRow : Gtk.ListBoxRow {
         [GtkChild]
-        private Gtk.Label name_label;
+        private unowned Gtk.Label name_label;
         [GtkChild]
-        private Gtk.Button remove_button;
+        private unowned Gtk.Button remove_button;
 
         public signal void removed ();
 
@@ -41,7 +41,7 @@ namespace Baobab {
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-preferences-dialog.ui")]
     public class PreferencesDialog : Hdy.PreferencesWindow {
         [GtkChild]
-        private Gtk.ListBox excluded_list_box;
+        private unowned Gtk.ListBox excluded_list_box;
 
         private Settings prefs_settings;
 
