@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-07-09 10:56+0000\n"
-"PO-Revision-Date: 2020-09-03 07:50+0200\n"
+"POT-Creation-Date: 2021-05-04 09:13+0000\n"
+"PO-Revision-Date: 2021-06-11 15:50+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: slovenčina <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -20,10 +20,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
+#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využitia disku"
 
@@ -165,33 +165,37 @@ msgstr "_Zväčšiť"
 msgid "Zoom _out"
 msgstr "Z_menšiť"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
 msgid "Folder"
 msgstr "Priečinok"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
 msgid "Size"
 msgstr "Veľkosť"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
 msgid "Contents"
 msgstr "Obsah"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
 msgid "Modified"
 msgstr "Zmenený"
 
-#: data/ui/baobab-location-list.ui:17
+#: data/ui/baobab-location-list.ui:18
 msgid "This Computer"
 msgstr "Tento počítač"
 
-#: data/ui/baobab-location-list.ui:47
+#: data/ui/baobab-location-list.ui:45
 msgid "Remote Locations"
 msgstr "Vzdialené umiestnenia"
 
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
 msgid "Preferences"
 msgstr "Predvoľby"
+
+#: data/ui/baobab-preferences-dialog.ui:17
+msgid "Locations to Ignore"
+msgstr "Umiestnenia na ignorovanie"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -214,24 +218,24 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_O aplikácii Analyzátor využitia disku"
 
 # tooltip
-#: data/ui/baobab-main-window.ui:77
+#: data/ui/baobab-main-window.ui:85
 msgid "Go back to location list"
 msgstr "Prejde späť na zoznam umiestnení"
 
 # tooltip
-#: data/ui/baobab-main-window.ui:98
+#: data/ui/baobab-main-window.ui:106
 msgid "Rescan current location"
 msgstr "Opätovne spustí analýzu aktuálneho umiestnenia"
 
-#: data/ui/baobab-main-window.ui:194
+#: data/ui/baobab-main-window.ui:196
 msgid "Close"
 msgstr "Zavrieť"
 
-#: data/ui/baobab-main-window.ui:370
+#: data/ui/baobab-main-window.ui:372
 msgid "Rings Chart"
 msgstr "Kruhový graf"
 
-#: data/ui/baobab-main-window.ui:382
+#: data/ui/baobab-main-window.ui:384
 msgid "Treemap Chart"
 msgstr "Stĺpcový graf"
 
@@ -320,74 +324,70 @@ msgid "Unmounted"
 msgstr "Odpojené"
 
 #: src/baobab-location.vala:72
-msgid "Home folder"
+msgid "Home Folder"
 msgstr "Domovský priečinok"
 
 #: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Počítač"
 
-#: src/baobab-preferences-dialog.vala:51
-msgid "Locations to ignore"
-msgstr "Umiestnenia na ignorovanie"
-
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:59
+#: src/baobab-preferences-dialog.vala:53
 msgid "Select Location to Ignore"
 msgstr "Výber umiestnenia na ignorovanie"
 
-#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
 msgid "_Cancel"
 msgstr "_Zrušiť"
 
-#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
 msgid "_Open"
 msgstr "_Otvoriť"
 
-#: src/baobab-preferences-dialog.vala:97
-msgid "Add location…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "Add Location…"
 msgstr "Pridať umiestnenie…"
 
-#: src/baobab-window.vala:215
+#: src/baobab-window.vala:205
 msgid "Select Folder"
 msgstr "Výber priečinka"
 
-#: src/baobab-window.vala:224
+#: src/baobab-window.vala:214
 msgid "Recursively analyze mount points"
 msgstr "Rekurzívne analyzovať prípojné body"
 
-#: src/baobab-window.vala:246
+#: src/baobab-window.vala:236
 msgid "Could not analyze volume."
 msgstr "Nepodarilo sa analyzovať zväzok."
 
-#: src/baobab-window.vala:283
+#: src/baobab-window.vala:273
 msgid "Failed to show help"
 msgstr "Zlyhalo zobrazenie pomocníka"
 
-#: src/baobab-window.vala:305
+#: src/baobab-window.vala:295
 msgid "A graphical tool to analyze disk usage."
 msgstr "Grafický nástroj na analýzu využitia disku."
 
-#: src/baobab-window.vala:311
+#: src/baobab-window.vala:301
 msgid "translator-credits"
 msgstr ""
 "Stanislav Višňovský, Ivan Noris\n"
 "Pavol Klačanský <pavol@klacansky.com>\n"
 "Dušan Kazik <prescott66@gmail.com>"
 
-#: src/baobab-window.vala:385
+#: src/baobab-window.vala:375
 msgid "Failed to open file"
 msgstr "Zlyhalo otvorenie súboru"
 
-#: src/baobab-window.vala:402
+#: src/baobab-window.vala:392
 msgid "Failed to move file to the trash"
 msgstr "Zlyhalo presunutie súboru do Koša"
 
-#: src/baobab-window.vala:613
+#: src/baobab-window.vala:603
 msgid "Devices & Locations"
 msgstr "Zariadenia a umiestnenia"
 
-#: src/baobab-window.vala:665
+#: src/baobab-window.vala:655
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nepodarilo sa analyzovať priečinok „%s“"
@@ -395,30 +395,30 @@ msgstr "Nepodarilo sa analyzovať priečinok „%s“"
 # MČ: nie skôr „obsadenosť“, ale nie som si istý, či je to v tomto prípade vhodnejšie.?
 # PK: podla mna nie
 # title
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:670
 msgid "Could not always detect occupied disk sizes."
 msgstr "Nepodarilo sa vždy zistiť využitie disku."
 
 # message
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:670
 msgid "Apparent sizes may be shown instead."
 msgstr "Namiesto toho môžu byť zobrazené zdanlivé veľkosti."
 
-#: src/baobab-window.vala:684
+#: src/baobab-window.vala:674
 msgid "Scan completed"
 msgstr "Analýza dokončená"
 
-#: src/baobab-window.vala:685
+#: src/baobab-window.vala:675
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Dokončená analýza priečinku „%s“"
 
-#: src/baobab-window.vala:725
+#: src/baobab-window.vala:715
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ nie je platný priečinok"
 
-#: src/baobab-window.vala:726
+#: src/baobab-window.vala:716
 msgid "Could not analyze disk usage."
 msgstr "Nepodarilo sa analyzovať využitie disku."
 
