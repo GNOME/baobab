@@ -8,6 +8,7 @@
     <revision version="0.1" date="2011-12-19" status="stub"/>
     <revision pkgversion="3.4" date="2012-02-20" status="review"/>
     <revision pkgversion="3.10" date="2013-07-20" status="review"/>
+    <revision pkgversion="40" date="2021-07-13" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -36,19 +37,29 @@
 
   <steps>
     <item>
-      <p>Press the button in the top-right of the main window and select
-      <gui style="menuitem">Scan Remote Folder…</gui>.</p>
+      <p>If you have scanned the remote file system before, select it under
+      <gui>Remote Locations</gui> in the list of <gui>Devices &amp;
+      Locations</gui>.</p>
     </item>
     <item>
-      <p>Enter the URL into the <gui>Server Address</gui> field. It will
-      normally have a protocol, followed by a colon and two slashes, that looks
-      different depending on the <link
+      <p>If you have connected to the remote file system before but not scanned
+      it, select the remote file system from the list.</p>
+    </item>
+    <item>
+      <p>If you have not connected to the remote file system before, enter the
+      URL into the <gui>Enter server address…</gui> field under <gui>Connect to
+      Server</gui>. It will normally have a protocol, followed by a colon and
+      two slashes, that looks different depending on the <link
       xref="help:gnome-help/nautilus-connect#types">protocol</link> that you
       are using.</p>
-    </item>
-    <item>
       <p>Click <gui>Connect</gui> to continue; you may be asked for more
       details, like a password and username, before the scan will commence.</p>
+    </item>
+    <item>
+      <p>Select a folder if you do not want to scan the complete file system.</p>
+    </item>
+    <item>
+      <p>Click <gui>Open</gui> to continue.</p>
     </item>
   </steps>
 
@@ -56,10 +67,5 @@
     <p>Scanning over the network may be slower than scanning a local file
     system.</p>
   </note>
-
-  <p>You can also select a recently used server instead of entering a new URL.
-  If you enter a URL which is not valid, you will not be able to press
-  <gui>Continue</gui>, but if the URL is valid, but incorrect, the connection
-  will fail without warnings.</p>
 
 </page>
