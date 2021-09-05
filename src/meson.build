@@ -49,5 +49,6 @@ executable('baobab', baobab_sources,
   c_args: baobab_c_args,
   dependencies: baobab_dependencies,
   export_dynamic: true,
+  win_subsystem: 'windows',
   install: true
 )
