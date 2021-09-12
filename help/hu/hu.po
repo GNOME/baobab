@@ -1,17 +1,17 @@
 # Hungarian translation for baobab_help.
-# Copyright (C) 2012, 2013, 2014, 2020. Free Software Foundation, Inc.
+# Copyright (C) 2012, 2013, 2014, 2020, 2021. Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab help.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2012, 2013, 2014, 2015, 2017.
 # Bence Lukacs <lukacs.bence1 at gmail dot com>, 2012.
 # Attila Hammer <hammera at pickup dot hu>, 2014.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2020.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2019-09-16 12:10+0000\n"
-"PO-Revision-Date: 2020-02-25 07:59+0100\n"
+"POT-Creation-Date: 2021-07-13 18:36+0000\n"
+"PO-Revision-Date: 2021-09-12 21:10+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-03-04 15:16+0000\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -44,16 +44,16 @@ msgstr "Lemezhasználat-elemző"
 
 #. (itstool) path: credit/name
 #: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
-#: C/scan-file-system.page:12 C/scan-folder.page:13 C/scan-home.page:13
-#: C/scan-remote.page:13
+#: C/scan-file-system.page:13 C/scan-folder.page:14 C/scan-home.page:14
+#: C/scan-remote.page:14
 msgid "Julita Inca"
 msgstr "Julita Inca"
 
 #. (itstool) path: credit/name
 #: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
 #: C/question-open-folder.page:11 C/question-trash.page:11
-#: C/scan-file-system.page:16 C/scan-folder.page:21 C/scan-home.page:17
-#: C/scan-remote.page:21
+#: C/scan-file-system.page:17 C/scan-folder.page:22 C/scan-home.page:18
+#: C/scan-remote.page:22
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
@@ -83,8 +83,8 @@ msgid "Common problems and questions"
 msgstr "Gyakori problémák és kérdések"
 
 #. (itstool) path: credit/name
-#: C/introduction.page:21 C/pref-view-chart.page:17 C/scan-file-system.page:20
-#: C/scan-folder.page:17 C/scan-home.page:21 C/scan-remote.page:17
+#: C/introduction.page:21 C/pref-view-chart.page:17 C/scan-file-system.page:21
+#: C/scan-folder.page:18 C/scan-home.page:22 C/scan-remote.page:18
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
@@ -257,17 +257,13 @@ msgstr ""
 
 #. (itstool) path: note/p
 #: C/problem-permissions.page:37
-#| msgid ""
-#| "On the other hand, filesystem disk usage on the use command <cmd>df</cmd> "
-#| "for disk utilisation on the main window which relies on the filesystem "
-#| "and not on file permissions."
 msgid ""
 "On the other hand, filesystem disk usage uses the command <cmd>df</cmd> "
 "which relies on the filesystem and not on file permissions."
 msgstr ""
-"Ezzel szemben a fájlrendszer-kihasználtsági érték a <cmd>df</cmd> parancsot"
-" használja, amely a fájlrendszertől függ, nem a fájlok jogosultsági"
-" szintjétől."
+"Ezzel szemben a fájlrendszer-kihasználtsági érték a <cmd>df</cmd> parancsot "
+"használja, amely a fájlrendszertől függ, nem a fájlok jogosultsági "
+"szintjétől."
 
 #. (itstool) path: info/desc
 #: C/problem-slow-scan.page:17
@@ -370,20 +366,25 @@ msgstr ""
 "Nyissa meg a <app>Fájlok</app> fájlböngészőt, és ürítse a <file>Kukát</file>."
 
 #. (itstool) path: info/desc
-#: C/scan-file-system.page:26
+#: C/scan-file-system.page:27
 msgid "Scan your internal storage devices."
 msgstr "A belső háttértárolók vizsgálata."
 
 #. (itstool) path: page/title
-#: C/scan-file-system.page:30
+#: C/scan-file-system.page:31
 msgid "Scan the file system"
 msgstr "A fájlrendszer vizsgálata"
 
 #. (itstool) path: page/p
-#: C/scan-file-system.page:32
+#: C/scan-file-system.page:33
+#| msgid ""
+#| "To scan your computer, select the name of your computer from the list of "
+#| "<gui>Devices and locations</gui>. All of the folders that you have "
+#| "permission to access on your computer will be scanned. It is quite common "
+#| "for you to not have permissions to scan some directories on your computer."
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
-"<gui>Devices and locations</gui>. All of the folders that you have "
+"<gui>Devices &amp; Locations</gui>. All of the folders that you have "
 "permission to access on your computer will be scanned. It is quite common "
 "for you to not have permissions to scan some directories on your computer."
 msgstr ""
@@ -393,7 +394,7 @@ msgstr ""
 "könyvtárak megvizsgálására nincs jogosultsága a számítógépén."
 
 #. (itstool) path: note/p
-#: C/scan-file-system.page:38
+#: C/scan-file-system.page:39
 msgid ""
 "If the file system that you are trying to scan is large, it may take a few "
 "minutes for the scan to complete. To cancel the scan, press the button in "
@@ -404,17 +405,17 @@ msgstr ""
 "sarkában lévő gombot az eszközök listájához való visszatéréshez."
 
 #. (itstool) path: info/desc
-#: C/scan-folder.page:27
+#: C/scan-folder.page:28
 msgid "Scan a local folder, including all subfolders."
 msgstr "Helyi mappa és almappáinak vizsgálata."
 
 #. (itstool) path: page/title
-#: C/scan-folder.page:31
+#: C/scan-folder.page:32
 msgid "Scan a folder"
 msgstr "Egy mappa vizsgálata"
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:33
+#: C/scan-folder.page:34
 msgid ""
 "Scans of individual folders are faster than those of the whole file system, "
 "so they may be more efficient if you want information only about a specific "
@@ -425,7 +426,7 @@ msgstr ""
 "részéről szeretne információt szerezni."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:39
+#: C/scan-folder.page:40
 msgid ""
 "Press the button in the top-right of the main window and select <gui style="
 "\"menuitem\">Scan Folder…</gui>."
@@ -434,22 +435,27 @@ msgstr ""
 "style=\"menuitem\">Mappa vizsgálata</gui> menüpontot."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:43
+#: C/scan-folder.page:44
 msgid ""
 "A file chooser dialog will open. Choose the folder which you want to scan."
 msgstr ""
 "Megnyílik egy fájlválasztó ablak. Válassza ki a megvizsgálni kívánt mappát."
 
 #. (itstool) path: item/p
-#: C/scan-folder.page:47
+#: C/scan-folder.page:48
 msgid "Click <gui>Open</gui> to start the scan."
 msgstr "Kattintson a <gui>Megnyitás</gui> menüpontra a vizsgálat elkezdéséhez."
 
 #. (itstool) path: page/p
-#: C/scan-folder.page:51
+#: C/scan-folder.page:52
+#| msgid ""
+#| "The folder which you just scanned will now be added to your list of "
+#| "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
+#| "will be removed from the list when you next restart <app>Disk Usage "
+#| "Analyzer</app>."
 msgid ""
 "The folder which you just scanned will now be added to your list of "
-"<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
+"<gui>Devices &amp; Locations</gui>. If the folder is renamed or deleted, it "
 "will be removed from the list when you next restart <app>Disk Usage "
 "Analyzer</app>."
 msgstr ""
@@ -458,17 +464,17 @@ msgstr ""
 "<app>Lemezhasználat-elemző</app> következő indításakor el lesz távolítva."
 
 #. (itstool) path: info/desc
-#: C/scan-home.page:27
+#: C/scan-home.page:28
 msgid "Scan all of your personal files that are on your computer."
 msgstr "Vizsgálja meg a számítógépén lévő összes személyes fájlját."
 
 #. (itstool) path: page/title
-#: C/scan-home.page:31
+#: C/scan-home.page:32
 msgid "Scan your <file>Home</file> folder"
 msgstr "A <file>saját</file> mappájának vizsgálata."
 
 #. (itstool) path: page/p
-#: C/scan-home.page:33
+#: C/scan-home.page:34
 msgid ""
 "The <file>Home</file> folder is where most files are located for most users "
 "because default settings are often set to save or copy files into "
@@ -484,26 +490,29 @@ msgstr ""
 "számítógépen."
 
 #. (itstool) path: item/p
-#: C/scan-home.page:41
+#: C/scan-home.page:42
+#| msgid ""
+#| "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
+#| "locations</gui>."
 msgid ""
-"Select your <gui>Home folder</gui> in the list of <gui>Devices and "
-"locations</gui>."
+"Select your <gui>Home Folder</gui> in the list of <gui>Devices &amp; "
+"Locations</gui>."
 msgstr ""
 "Válassza ki a <gui>Saját mappa</gui> lehetőséget az <gui>Eszközök és helyek</"
 "gui> listából."
 
 #. (itstool) path: info/desc
-#: C/scan-remote.page:27
+#: C/scan-remote.page:28
 msgid "Scan a folder remotely from your computer."
 msgstr "Távoli mappa vizsgálata a számítógépéről."
 
 #. (itstool) path: page/title
-#: C/scan-remote.page:31
+#: C/scan-remote.page:32
 msgid "Scan a remote folder"
 msgstr "Távoli mappa vizsgálata"
 
 #. (itstool) path: page/p
-#: C/scan-remote.page:33
+#: C/scan-remote.page:34
 msgid ""
 "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
 "remotely. To scan the whole file system or any specific folder remotely:"
@@ -512,29 +521,49 @@ msgstr ""
 "vizsgálni. Az egész fájlrendszer vagy egy adott mappa távoli vizsgálatához:"
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:39
+#: C/scan-remote.page:40
+#| msgid ""
+#| "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
+#| "locations</gui>."
 msgid ""
-"Press the button in the top-right of the main window and select <gui style="
-"\"menuitem\">Scan Remote Folder…</gui>."
+"If you have scanned the remote file system before, select it under "
+"<gui>Remote Locations</gui> in the list of <gui>Devices &amp; Locations</"
+"gui>."
 msgstr ""
-"Nyomja meg a főablak jobb felső sarkában lévő gombot, és válassza a <gui "
-"style=\"menuitem\">Távoli mappa vizsgálata</gui> menüpontot."
+"Ha korábban már ellenőrizte a távoli fájlrendszert, akkor válassza ki a <gui"
+">Távoli helyek</gui> alatt az <gui>Eszközök és helyek</gui> listából."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:43
+#: C/scan-remote.page:45
 msgid ""
-"Enter the URL into the <gui>Server Address</gui> field. It will normally "
-"have a protocol, followed by a colon and two slashes, that looks different "
-"depending on the <link xref=\"help:gnome-help/nautilus-connect#types"
-"\">protocol</link> that you are using."
+"If you have connected to the remote file system before but not scanned it, "
+"select the remote file system from the list."
 msgstr ""
-"Írja be az URL-t a <gui>Kiszolgáló címe</gui> mezőbe. Ez általában egy "
-"protokollból, kettőspontból, két osztásjelből áll. Ez a formátum eltérhet, a "
-"használt <link xref=\"help:gnome-help/nautilus-connect#types\">protokolltól</"
-"link> függően."
+"Ha korábban már kapcsolódott a távoli fájlrendszerhez, de még nem vizsgálta"
+" meg azt, akkor válassza ki a távoli fájlrendszert a listából."
 
 #. (itstool) path: item/p
-#: C/scan-remote.page:50
+#: C/scan-remote.page:49
+#| msgid ""
+#| "Enter the URL into the <gui>Server Address</gui> field. It will normally "
+#| "have a protocol, followed by a colon and two slashes, that looks "
+#| "different depending on the <link xref=\"help:gnome-help/nautilus-"
+#| "connect#types\">protocol</link> that you are using."
+msgid ""
+"If you have not connected to the remote file system before, enter the URL "
+"into the <gui>Enter server address…</gui> field under <gui>Connect to "
+"Server</gui>. It will normally have a protocol, followed by a colon and two "
+"slashes, that looks different depending on the <link xref=\"help:gnome-help/"
+"nautilus-connect#types\">protocol</link> that you are using."
+msgstr ""
+"Ha korábban még nem kapcsolódott a távoli fájlrendszerhez, akkor írja be az"
+" URL-t a <gui>Kiszolgáló címének megadása…</gui> mezőbe a <gui>Kapcsolódás"
+" kiszolgálóhoz</gui> alatt. Ez általában egy protokollból, kettőspontból, két"
+" osztásjelből áll. Ez a formátum eltérhet, a használt <link"
+" xref=\"help:gnome-help/nautilus-connect#types\">protokolltól</link> függően."
+
+#. (itstool) path: item/p
+#: C/scan-remote.page:55
 msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
@@ -542,26 +571,25 @@ msgstr ""
 "Kattintson a <gui>Kapcsolódás</gui> gombra a folytatáshoz; a vizsgálat "
 "megkezdődése előtt további adatok megadása is szükséges lehet."
 
+#. (itstool) path: item/p
+#: C/scan-remote.page:59
+msgid "Select a folder if you do not want to scan the complete file system."
+msgstr ""
+"Válasszon egy mappát, ha nem szeretné a teljes fájlrendszert megvizsgálni."
+
+#. (itstool) path: item/p
+#: C/scan-remote.page:62
+#| msgid "Click <gui>Open</gui> to start the scan."
+msgid "Click <gui>Open</gui> to continue."
+msgstr "Kattintson a <gui>Megnyitás</gui> menüpontra a folytatáshoz."
+
 #. (itstool) path: note/p
-#: C/scan-remote.page:56
+#: C/scan-remote.page:67
 msgid ""
 "Scanning over the network may be slower than scanning a local file system."
 msgstr ""
 "A hálózaton keresztüli vizsgálat lassabb lehet, mint a helyi fájlrendszer "
 "vizsgálata."
-
-#. (itstool) path: page/p
-#: C/scan-remote.page:60
-msgid ""
-"You can also select a recently used server instead of entering a new URL. If "
-"you enter a URL which is not valid, you will not be able to press "
-"<gui>Continue</gui>, but if the URL is valid, but incorrect, the connection "
-"will fail without warnings."
-msgstr ""
-"Kiválaszthat egy nemrég használt kiszolgálót is egy új URL megadása helyett. "
-"Ha érvénytelen URL-címet ad meg, akkor a <gui>Folytatás</gui> gomb nem lesz "
-"elérhető, ha azonban az URL formailag érvényes, de helytelen, akkor a "
-"kapcsolódás figyelmeztetés nélkül meghiúsul."
 
 #. (itstool) path: p/link
 #: C/legal.xml:5
