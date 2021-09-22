@@ -57,13 +57,7 @@ namespace Baobab {
         [GtkChild]
         private unowned Gtk.TreeView treeview;
         [GtkChild]
-        private unowned Gtk.Menu treeview_popup_menu;
-        [GtkChild]
-        private unowned Gtk.MenuItem treeview_popup_open;
-        [GtkChild]
-        private unowned Gtk.MenuItem treeview_popup_copy;
-        [GtkChild]
-        private unowned Gtk.MenuItem treeview_popup_trash;
+        private unowned Gtk.PopoverMenu treeview_popover_menu;
         [GtkChild]
         private unowned Gtk.TreeViewColumn size_column;
         [GtkChild]
@@ -97,7 +91,10 @@ namespace Baobab {
             { "clear-recent", on_clear_recent },
             { "show-preferences", on_show_preferences },
             { "help", on_help_activate },
-            { "about", on_about_activate }
+            { "about", on_about_activate },
+            { "treeview-open-folder", on_treeview_open_folder },
+            { "treeview-copy", on_treeview_copy },
+            { "treeview-trash", on_treeview_trash }
         };
 
         protected struct ActionState {
@@ -133,7 +130,11 @@ namespace Baobab {
 
             location_list.location_activated.connect (location_activated);
 
+            var builder = new Gtk.Builder.from_resource("/org/gnome/baobab/ui/baobab-treeview-menu.ui");
+            GLib.MenuModel treeview_menu = (GLib.MenuModel) builder.get_object ("treeview_menu");
+
             setup_treeview ();
+            treeview_popover_menu.bind_model (treeview_menu, null);
 
             infobar_close_button.clicked.connect (() => { clear_message (); });
 
@@ -352,13 +353,10 @@ namespace Baobab {
             Gtk.drag_dest_unset (this);
         }
 
-        bool show_treeview_popup (Gtk.Menu popup, Gdk.EventButton? event) {
-            if (event != null) {
-                popup.popup_at_pointer (event);
-            } else {
-                popup.popup_at_widget (treeview, Gdk.Gravity.CENTER, Gdk.Gravity.CENTER);
-                popup.select_first (false);
-            }
+        bool show_treeview_popover (Gtk.PopoverMenu popover, int x, int y) {
+            Gdk.Rectangle  rect = { x, y, 0, 0, };
+            popover.set_pointing_to (rect);
+            popover.popup ();
             return Gdk.EVENT_STOP;
         }
 
@@ -424,13 +422,34 @@ namespace Baobab {
             return sort.convert_child_path_to_path (filter_path);
         }
 
+        void on_treeview_open_folder () {
+            Gtk.TreeIter iter;
+            if (get_selected_iter (out iter)) {
+                open_item (iter);
+            }
+        }
+
+        void on_treeview_copy () {
+            Gtk.TreeIter iter;
+            if (get_selected_iter (out iter)) {
+                copy_path (iter);
+            }
+        }
+
+        void on_treeview_trash () {
+            Gtk.TreeIter iter;
+            if (get_selected_iter (out iter)) {
+                trash_file (iter);
+            }
+        }
+
         void setup_treeview () {
             treeview.button_press_event.connect ((event) => {
                 if (event.triggers_context_menu ()) {
                     Gtk.TreePath path;
                     if (treeview.get_path_at_pos ((int)event.x, (int)event.y, out path, null, null, null)) {
                         treeview.get_selection ().select_path (path);
-                        return show_treeview_popup (treeview_popup_menu, event);
+                        return show_treeview_popover (treeview_popover_menu,  (int) event.x, (int) event.y);
                     }
                 }
 
@@ -468,28 +487,11 @@ namespace Baobab {
             });
 
             treeview.popup_menu.connect (() => {
-                return show_treeview_popup (treeview_popup_menu, null);
-            });
-
-            treeview_popup_open.activate.connect (() => {
-                Gtk.TreeIter iter;
-                if (get_selected_iter (out iter)) {
-                    open_item (iter);
-                }
-            });
-
-            treeview_popup_copy.activate.connect (() => {
-                Gtk.TreeIter iter;
-                if (get_selected_iter (out iter)) {
-                    copy_path (iter);
-                }
-            });
-
-            treeview_popup_trash.activate.connect (() => {
-                Gtk.TreeIter iter;
-                if (get_selected_iter (out iter)) {
-                    trash_file (iter);
-                }
+                Gtk.Allocation allocation;
+                treeview.get_allocated_size (out allocation, null);
+                return show_treeview_popover (treeview_popover_menu,
+                                              allocation.width / 2,
+                                              allocation.height / 2);
             });
 
             treeview.row_activated.connect ((wrapper_path, column) => {

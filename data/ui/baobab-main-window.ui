@@ -31,36 +31,10 @@
       </item>
     </section>
   </menu>
-  <object class="GtkMenu" id="treeview_popup_menu">
-    <property name="visible">True</property>
+  <object class="GtkPopoverMenu" id="treeview_popover_menu">
     <property name="can_focus">False</property>
-    <child>
-      <object class="GtkMenuItem" id="treeview_popup_open">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">_Open Folder</property>
-        <property name="use_underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkMenuItem" id="treeview_popup_copy">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">_Copy Path to Clipboard</property>
-        <property name="use_underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkMenuItem" id="treeview_popup_trash">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Mo_ve to Trash</property>
-        <property name="use_underline">True</property>
-      </object>
-    </child>
+    <property name="relative-to">treeview</property>
+    <property name="position">bottom</property>
   </object>
   <template class="BaobabWindow" parent="HdyApplicationWindow">
     <property name="title" translatable="yes">Disk Usage Analyzer</property>
