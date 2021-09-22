@@ -150,8 +150,7 @@ namespace Baobab {
             enable_drop ();
 
             // Setup window geometry saving
-            Gdk.WindowState window_state = (Gdk.WindowState) ui_settings.get_int ("window-state");
-            if (Gdk.WindowState.MAXIMIZED in window_state) {
+            if (ui_settings.get_boolean ("is-maximized")) {
                 maximize ();
             }
 
@@ -159,17 +158,13 @@ namespace Baobab {
             ui_settings.get ("window-size", "(ii)", out width, out height);
             resize (width, height);
 
-            window_state_event.connect ((event) => {
-                ui_settings.set_int ("window-state", event.new_window_state);
-                return false;
-            });
+            ui_settings.bind ("is-maximized", this, "is-maximized", GLib.SettingsBindFlags.SET);
 
-            configure_event.connect ((event) => {
-                if (!(Gdk.WindowState.MAXIMIZED in get_window ().get_state ())) {
+            size_allocate.connect ((_) => {
+                if (!is_maximized) {
                     get_size (out width, out height);
                     ui_settings.set ("window-size", "(ii)", width, height);
                 }
-                return false;
             });
 
             destroy.connect (() => {
