@@ -59,7 +59,7 @@ namespace Baobab {
 
         bool model_changed;
 
-        Gtk.Menu context_menu = null;
+        Gtk.Popover context_menu = null;
 
         Gtk.EventControllerScroll scroll_controller;
         Gtk.EventControllerMotion motion_controller;
@@ -555,8 +555,8 @@ namespace Baobab {
 
         void build_context_menu () {
             var menu_model = Application.get_default ().get_menu_by_id ("chartmenu");
-            context_menu = new Gtk.Menu.from_model (menu_model);
-            context_menu.attach_to_widget (this, null);
+            context_menu = new Gtk.Popover.from_model (this, menu_model);
+            context_menu.set_position (Gtk.PositionType.BOTTOM);
         }
 
         void show_popup_menu (Gdk.EventButton? event) {
@@ -576,7 +576,9 @@ namespace Baobab {
             action = action_group.lookup_action ("zoom-out") as SimpleAction;
             action.set_enabled (can_zoom_out ());
 
-            context_menu.popup_at_pointer (event);
+            Gdk.Rectangle rect = { (int) event.x, (int) event.y, 0, 0 };
+            context_menu.set_pointing_to (rect);
+            context_menu.popup ();
         }
 
         void connect_model_signals (Gtk.TreeModel m) {
