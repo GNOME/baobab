@@ -62,6 +62,7 @@ namespace Baobab {
         Gtk.Menu context_menu = null;
 
         Gtk.EventControllerScroll scroll_controller;
+        Gtk.EventControllerMotion motion_controller;
 
         List<ChartItem> items;
 
@@ -207,6 +208,10 @@ namespace Baobab {
             scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.BOTH_AXES);
             scroll_controller.scroll.connect (scroll_cb);
 
+            motion_controller = new Gtk.EventControllerMotion (this);
+            motion_controller.motion.connect (motion_cb);
+            motion_controller.leave.connect (leave_cb);
+
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
             insert_action_group ("chart", action_group);
@@ -236,20 +241,14 @@ namespace Baobab {
             return false;
         }
 
-        public override bool motion_notify_event (Gdk.EventMotion event) {
-            has_tooltip = highlight_item_at_point (event.x, event.y);
-
-            Gdk.Event.request_motions (event);
-
-            return false;
+        void motion_cb (double x, double y) {
+            has_tooltip = highlight_item_at_point (x, y);
         }
 
-        public override bool leave_notify_event (Gdk.EventCrossing event) {
+        void leave_cb () {
             if (!context_menu.visible) {
                 highlighted_item = null;
             }
-
-            return false;
         }
 
         unowned List<ChartItem> add_item (uint depth, double rel_start, double rel_size, Gtk.TreeIter iter) {
