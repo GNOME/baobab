@@ -61,6 +61,8 @@ namespace Baobab {
 
         Gtk.Menu context_menu = null;
 
+        Gtk.EventControllerScroll scroll_controller;
+
         List<ChartItem> items;
 
         Location location_;
@@ -200,7 +202,10 @@ namespace Baobab {
         };
 
         construct {
-            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK | Gdk.EventMask.SCROLL_MASK);
+            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
+
+            scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.BOTH_AXES);
+            scroll_controller.scroll.connect (scroll_cb);
 
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
@@ -498,24 +503,14 @@ namespace Baobab {
             return false;
         }
 
-        protected override bool scroll_event (Gdk.EventScroll event) {
-            Gdk.EventMotion e = (Gdk.EventMotion) event;
-            switch (event.direction) {
-            case Gdk.ScrollDirection.LEFT:
-            case Gdk.ScrollDirection.UP:
+        void scroll_cb (double dx, double dy) {
+            // Up or to the left
+            if (dx > 0.0 || dy < 0.0) {
                 zoom_out ();
-                motion_notify_event (e);
-                break;
-            case Gdk.ScrollDirection.RIGHT:
-            case Gdk.ScrollDirection.DOWN:
+            // Down or to the right
+            } else if (dx < 0.0 || dy > 0.0) {
                 zoom_in ();
-                motion_notify_event (e);
-                break;
-            case Gdk.ScrollDirection.SMOOTH:
-                break;
             }
-
-            return false;
         }
 
         public void open_file () {
