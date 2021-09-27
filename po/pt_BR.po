@@ -28,8 +28,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-02-07 02:24+0000\n"
-"PO-Revision-Date: 2021-02-06 23:26-0300\n"
+"POT-Creation-Date: 2021-09-22 09:06+0000\n"
+"PO-Revision-Date: 2021-09-27 16:16-0300\n"
 "Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -37,11 +37,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:287
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de uso de disco"
 
@@ -106,12 +106,12 @@ msgid "The initial size of the window"
 msgstr "O tamanho inicial da janela"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "Estado da janela"
+msgid "Window Maximized"
+msgstr "Janela maximizada"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "O GdkWindowState da janela"
+msgid "Whether or not the window is maximized"
+msgstr "Se a janela está maximizada ou não"
 
 #: data/gtk/help-overlay.ui:13
 msgctxt "shortcut window"
@@ -342,11 +342,11 @@ msgstr "Computador"
 msgid "Select Location to Ignore"
 msgstr "Selecionar local para ignorar"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
+#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:202
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
+#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:203
 msgid "_Open"
 msgstr "A_brir"
 
@@ -354,27 +354,27 @@ msgstr "A_brir"
 msgid "Add Location…"
 msgstr "Adicionar local…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:200
 msgid "Select Folder"
 msgstr "Selecione uma pasta"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:209
 msgid "Recursively analyze mount points"
 msgstr "Analisar recursivamente os pontos de montagem"
 
-#: src/baobab-window.vala:236
+#: src/baobab-window.vala:231
 msgid "Could not analyze volume."
 msgstr "Não foi possível analisar o volume."
 
-#: src/baobab-window.vala:273
+#: src/baobab-window.vala:268
 msgid "Failed to show help"
 msgstr "Falha ao mostrar a ajuda"
 
-#: src/baobab-window.vala:295
+#: src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
 msgstr "Uma ferramenta gráfica para analisar o uso de disco."
 
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:296
 msgid "translator-credits"
 msgstr ""
 "Alexandre Hautequest <hquest@fesppr.br>\n"
@@ -397,48 +397,54 @@ msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Rafael Fontenelle <rafaelff@gmail.com>"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:370
 msgid "Failed to open file"
 msgstr "Falha ao abrir o arquivo"
 
-#: src/baobab-window.vala:392
+#: src/baobab-window.vala:387
 msgid "Failed to move file to the trash"
 msgstr "Falha ao mover arquivo para a lixeira"
 
-#: src/baobab-window.vala:603
+#: src/baobab-window.vala:598
 msgid "Devices & Locations"
 msgstr "Dispositivos & locais"
 
-#: src/baobab-window.vala:655
+#: src/baobab-window.vala:650
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Não foi possível varrer a pasta “%s”"
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:665
 msgid "Could not always detect occupied disk sizes."
 msgstr "Nem sempre é possível detectar os tamanhos de disco ocupados."
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:665
 msgid "Apparent sizes may be shown instead."
 msgstr "Tamanhos aparentes podem ser sempre, em vez disso."
 
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:669
 msgid "Scan completed"
 msgstr "Varredura concluída"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:670
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Concluída a varredura de “%s”"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:710
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” não é uma pasta válida"
 
-#: src/baobab-window.vala:716
+#: src/baobab-window.vala:711
 msgid "Could not analyze disk usage."
 msgstr "Não foi possível analisar o uso de disco."
+
+#~ msgid "Window state"
+#~ msgstr "Estado da janela"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "O GdkWindowState da janela"
 
 #~ msgid "org.gnome.baobab"
 #~ msgstr "org.gnome.baobab"
