@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-02-07 02:24+0000\n"
-"PO-Revision-Date: 2021-02-07 08:57+0200\n"
+"POT-Creation-Date: 2021-09-22 09:06+0000\n"
+"PO-Revision-Date: 2021-09-29 16:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-doc@kde.org>\n"
 "Language: uk\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.11.70\n"
+"X-Generator: Lokalize 20.12.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:287
 msgid "Disk Usage Analyzer"
 msgstr "Аналізатор використання диска"
 
@@ -88,12 +88,14 @@ msgid "The initial size of the window"
 msgstr "Початковий розмір вікна"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "Стан вікна"
+#| msgid "Window size"
+msgid "Window Maximized"
+msgstr "Вікно розгорнуто"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "GdkWindowState вікна"
+msgid "Whether or not the window is maximized"
+msgstr ""
+"Чи розгорнуто вікно"
 
 #: data/gtk/help-overlay.ui:13
 msgctxt "shortcut window"
@@ -193,7 +195,6 @@ msgid "Preferences"
 msgstr "Параметри"
 
 #: data/ui/baobab-preferences-dialog.ui:17
-#| msgid "Locations to ignore"
 msgid "Locations to Ignore"
 msgstr "Місця, які слід ігнорувати"
 
@@ -316,7 +317,6 @@ msgid "Unmounted"
 msgstr "Демонтовано"
 
 #: src/baobab-location.vala:72
-#| msgid "Home folder"
 msgid "Home Folder"
 msgstr "Домашня тека"
 
@@ -329,88 +329,93 @@ msgstr "Комп'ютер"
 msgid "Select Location to Ignore"
 msgstr "Виберіть місце, яке слід ігнорувати"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
+#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:202
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
+#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:203
 msgid "_Open"
 msgstr "_Відкрити"
 
 #: src/baobab-preferences-dialog.vala:91
-#| msgid "Add location…"
 msgid "Add Location…"
 msgstr "Додати місце…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:200
 msgid "Select Folder"
 msgstr "Виберіть теку"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:209
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно аналізувати точки монтування"
 
-#: src/baobab-window.vala:236
+#: src/baobab-window.vala:231
 msgid "Could not analyze volume."
 msgstr "Неможливо проаналізувати том."
 
-#: src/baobab-window.vala:273
+#: src/baobab-window.vala:268
 msgid "Failed to show help"
 msgstr "Не вдалося показати довідку"
 
-#: src/baobab-window.vala:295
+#: src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графічна утиліта для аналізу використання дисків."
 
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:296
 msgid "translator-credits"
 msgstr ""
 "Юрій Сирота <yuriy@beer.com>\n"
 "Максим Дзюманенко <dziumanenko@gmail.com>\n"
 "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:370
 msgid "Failed to open file"
 msgstr "Не вдалося відкрити файл"
 
-#: src/baobab-window.vala:392
+#: src/baobab-window.vala:387
 msgid "Failed to move file to the trash"
 msgstr "Не вдалося перенести файл у смітник"
 
-#: src/baobab-window.vala:603
+#: src/baobab-window.vala:598
 msgid "Devices & Locations"
 msgstr "Пристрої і місця"
 
-#: src/baobab-window.vala:655
+#: src/baobab-window.vala:650
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Неможливо просканувати теку «%s»"
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:665
 msgid "Could not always detect occupied disk sizes."
 msgstr "Неможливо завжди виявляти займані розміри на диску."
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:665
 msgid "Apparent sizes may be shown instead."
 msgstr "Натомість може бути показано видимі розміри."
 
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:669
 msgid "Scan completed"
 msgstr "Сканування завершено"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:670
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Завершено сканування «%s»"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:710
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» не є дійсною текою"
 
-#: src/baobab-window.vala:716
+#: src/baobab-window.vala:711
 msgid "Could not analyze disk usage."
 msgstr "Не вдалось проаналізувати використання дисків."
+
+#~ msgid "Window state"
+#~ msgstr "Стан вікна"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "GdkWindowState вікна"
 
 #~ msgid "Clear list of recent locations"
 #~ msgstr "Спорожнити список нещодавніх місць"
