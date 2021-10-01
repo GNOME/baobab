@@ -81,6 +81,7 @@ namespace Baobab {
             base.startup ();
 
             Hdy.init ();
+            Hdy.StyleManager.get_default ().color_scheme = PREFER_LIGHT;
 
             // Load custom CSS
             var css_provider = new Gtk.CssProvider ();

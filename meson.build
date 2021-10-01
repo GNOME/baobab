@@ -28,6 +28,11 @@ config_h_dir = include_directories('.')
 meson.add_install_script(python.find_installation('python3').path(),
   join_paths(meson.source_root(), 'build-aux', 'post-install.py'))
 
+add_project_arguments(
+  '--disable-since-check',
+  language: 'vala'
+)
+
 subdir('data')
 subdir('help')
 subdir('po')
