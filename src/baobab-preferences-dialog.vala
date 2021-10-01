@@ -39,7 +39,7 @@ namespace Baobab {
     }
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-preferences-dialog.ui")]
-    public class PreferencesDialog : Hdy.PreferencesWindow {
+    public class PreferencesDialog : Adw.PreferencesWindow {
         [GtkChild]
         private unowned Gtk.ListBox excluded_list_box;
 
@@ -50,17 +50,14 @@ namespace Baobab {
 
             excluded_list_box.row_activated.connect (() => {
                 // The only activatable row is "Add location"
-                var file_chooser = new Gtk.FileChooserDialog (_("Select Location to Ignore"), this,
+                var file_chooser = new Gtk.FileChooserNative (_("Select Location to Ignore"), this,
                                                              Gtk.FileChooserAction.SELECT_FOLDER,
-                                                              _("_Cancel"), Gtk.ResponseType.CANCEL,
-                                                              _("_Open"), Gtk.ResponseType.OK);
+                                                             null, null);
 
-                file_chooser.local_only = false;
                 file_chooser.modal = true;
-                file_chooser.set_default_response (Gtk.ResponseType.OK);
 
                 file_chooser.response.connect ((response) => {
-                    if (response == Gtk.ResponseType.OK) {
+                    if (response == Gtk.ResponseType.ACCEPT) {
                         var uri = file_chooser.get_file ().get_uri ();
                         add_uri (uri);
                         populate ();
@@ -75,12 +72,14 @@ namespace Baobab {
         }
 
         void populate () {
-            excluded_list_box.foreach ((widget) => { widget.destroy (); });
+            for (Gtk.Widget? child = excluded_list_box.get_first_child (); child != null; child = excluded_list_box.get_first_child ()) {
+                excluded_list_box.remove (child);
+            }
 
             foreach (var uri in prefs_settings.get_strv ("excluded-uris")) {
                 var file = File.new_for_uri (uri);
                 var row = new ExcludedRow (file);
-                excluded_list_box.insert (row, -1);
+                excluded_list_box.append (row);
 
                 row.removed.connect (() => {
                     remove_uri (uri);
@@ -89,9 +88,11 @@ namespace Baobab {
             }
 
             var label = new Gtk.Label (_("Add Location…"));
-            label.margin = 12;
-            label.show ();
-            excluded_list_box.insert (label, -1);
+            label.margin_start = 12;
+            label.margin_end = 12;
+            label.margin_top = 12;
+            label.margin_bottom = 12;
+            excluded_list_box.append (label);
         }
 
         void add_uri (string uri) {

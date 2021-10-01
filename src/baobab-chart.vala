@@ -59,10 +59,13 @@ namespace Baobab {
 
         bool model_changed;
 
-        Gtk.Popover context_menu = null;
+        Gtk.PopoverMenu context_menu = null;
 
         Gtk.EventControllerScroll scroll_controller;
         Gtk.EventControllerMotion motion_controller;
+        Gtk.GestureClick primary_click_gesture;
+        Gtk.GestureClick secondary_click_gesture;
+        Gtk.GestureClick middle_click_gesture;
 
         List<ChartItem> items;
 
@@ -109,7 +112,7 @@ namespace Baobab {
                 model_ = value;
                 model_changed = true;
 
-                root = null;
+                tree_root = null;
 
                 connect_model_signals (model_);
 
@@ -121,7 +124,7 @@ namespace Baobab {
         }
 
         Gtk.TreeRowReference? root_;
-        public Gtk.TreePath? root {
+        public Gtk.TreePath? tree_root {
             set {
                 if (model == null) {
                     return;
@@ -161,10 +164,10 @@ namespace Baobab {
                 }
 
                 if (highlighted_item_ != null) {
-                    get_window ().invalidate_rect (highlighted_item_.rect, true);
+                    queue_draw ();
                 }
                 if (value != null) {
-                    get_window ().invalidate_rect (value.rect, true);
+                    queue_draw ();
                 }
 
                 highlighted_item_ = value;
@@ -203,24 +206,54 @@ namespace Baobab {
         };
 
         construct {
-            add_events (Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
-
-            scroll_controller = new Gtk.EventControllerScroll (this, Gtk.EventControllerScrollFlags.BOTH_AXES);
+            scroll_controller = new Gtk.EventControllerScroll (Gtk.EventControllerScrollFlags.BOTH_AXES);
             scroll_controller.scroll.connect (scroll_cb);
+            add_controller (scroll_controller);
 
-            motion_controller = new Gtk.EventControllerMotion (this);
+            motion_controller = new Gtk.EventControllerMotion ();
             motion_controller.motion.connect (motion_cb);
             motion_controller.leave.connect (leave_cb);
+            add_controller (motion_controller);
+
+            primary_click_gesture = new Gtk.GestureClick ();
+            primary_click_gesture.button = Gdk.BUTTON_PRIMARY;
+            primary_click_gesture.pressed.connect ((_, x, y) => {
+                if (highlight_item_at_point (x, y)) {
+                    var path = model.get_path (highlighted_item.iter);
+                    if (tree_root.compare (path) == 0) {
+                        move_up_root ();
+                    } else {
+                        item_activated (highlighted_item.iter);
+                    }
+                }
+            });
+            add_controller (primary_click_gesture);
+
+            secondary_click_gesture = new Gtk.GestureClick ();
+            secondary_click_gesture.button = Gdk.BUTTON_SECONDARY;
+            secondary_click_gesture.pressed.connect ((_, x, y) => {
+                show_popover_at ((int) x, (int) y);
+            });
+            add_controller (secondary_click_gesture);
+
+            middle_click_gesture = new Gtk.GestureClick ();
+            middle_click_gesture.button = Gdk.BUTTON_MIDDLE;
+            middle_click_gesture.pressed.connect ((_, x, y) => {
+                move_up_root ();
+            });
+            add_controller (middle_click_gesture);
 
             action_group = new SimpleActionGroup ();
             action_group.add_action_entries (action_entries, this);
             insert_action_group ("chart", action_group);
 
             build_context_menu ();
+
+            set_draw_func (draw_func);
         }
 
-        public override void size_allocate (Gtk.Allocation allocation) {
-            base.size_allocate (allocation);
+        public override void size_allocate (int width, int height, int baseline) {
+            base.size_allocate (width, height, baseline);
             foreach (ChartItem item in items) {
                 item.has_visible_children = false;
                 item.visible = false;
@@ -335,11 +368,7 @@ namespace Baobab {
             cr.save ();
 
             foreach (ChartItem item in items) {
-                Gdk.Rectangle clip;
-                if (Gdk.cairo_get_clip_rectangle (cr, out clip) &&
-                    item.visible &&
-                    clip.intersect (item.rect, null) &&
-                    (item.depth <= max_depth)) {
+                if (item.visible && (item.depth <= max_depth)) {
                     bool highlighted = (item == highlighted_item);
                     draw_item (cr, item, highlighted);
                 }
@@ -355,12 +384,12 @@ namespace Baobab {
                 return;
             }
 
-            var root_depth = root.get_depth ();
+            var root_depth = tree_root.get_depth ();
             var node_depth = path.get_depth ();
 
             if (((node_depth - root_depth) <= max_depth) &&
-                (root.is_ancestor (path) ||
-                 root.compare (path) == 0)) {
+                (tree_root.is_ancestor (path) ||
+                 tree_root.compare (path) == 0)) {
                 queue_draw ();
             }
         }
@@ -400,27 +429,25 @@ namespace Baobab {
             update_draw (path);
         }
 
-        public override bool draw (Cairo.Context cr) {
+        void draw_func (Gtk.DrawingArea da, Cairo.Context cr, int width, int height) {
             if (model != null) {
                 if (model_changed || items == null) {
-                    get_items (root);
+                    get_items (tree_root);
                 } else {
                     var current_path = model.get_path (items.data.iter);
-                    if (root.compare (current_path) != 0) {
-                        get_items (root);
+                    if (tree_root.compare (current_path) != 0) {
+                        get_items (tree_root);
                     }
                 }
 
                 draw_chart (cr);
             }
-
-            return false;
         }
 
-        Gdk.RGBA interpolate_colors (Gdk.RGBA colora, Gdk.RGBA colorb, double percentage) {
+        Gdk.RGBA interpolate_colors (Gdk.RGBA colora, Gdk.RGBA colorb, float percentage) {
             var color = Gdk.RGBA ();
 
-            double diff;
+            float diff;
 
             diff = colora.red - colorb.red;
             color.red = colora.red - diff * percentage;
@@ -429,7 +456,7 @@ namespace Baobab {
             diff = colora.blue - colorb.blue;
             color.blue = colora.blue - diff * percentage;
 
-            color.alpha = 1.0;
+            color.alpha = (float) 1.0;
 
             return color;
         }
@@ -439,7 +466,7 @@ namespace Baobab {
 
             var color = Gdk.RGBA ();
 
-            double intensity = 1 - (((depth - 1) * 0.3) / MAX_DEPTH);
+            float intensity = (float) (1 - (((depth - 1) * 0.3) / MAX_DEPTH));
 
             if (depth == 0) {
                 context.lookup_color ("level_color", out color);
@@ -452,7 +479,7 @@ namespace Baobab {
                 context.lookup_color ("color_" + color_number.to_string (), out color_a);
                 context.lookup_color ("color_" + next_color_number.to_string (), out color_b);
 
-                color = interpolate_colors (color_a, color_b, (rel_position - color_number * 100/3) / (100/3));
+                color = interpolate_colors (color_a, color_b, (float) (rel_position - color_number * 100/3) / (100/3));
 
                 color.red *= intensity;
                 color.green *= intensity;
@@ -463,7 +490,7 @@ namespace Baobab {
                 if (depth == 0) {
                     context.lookup_color ("level_color_hi", out color);
                 } else {
-                    double maximum = double.max (color.red, double.max (color.green, color.blue));
+                    float maximum = float.max (color.red, float.max (color.green, color.blue));
                     color.red /= maximum;
                     color.green /= maximum;
                     color.blue /= maximum;
@@ -473,70 +500,45 @@ namespace Baobab {
             return color;
         }
 
-        protected override bool button_press_event (Gdk.EventButton event) {
-            if (event.type == Gdk.EventType.BUTTON_PRESS) {
-                if (event.triggers_context_menu ()) {
-                    show_popup_menu (event);
-                    return true;
-                }
-
-                switch (event.button) {
-                case Gdk.BUTTON_PRIMARY:
-                    if (highlight_item_at_point (event.x, event.y)) {
-                        var path = model.get_path (highlighted_item.iter);
-                        if (root.compare (path) == 0) {
-                            move_up_root ();
-                        } else {
-                            item_activated (highlighted_item.iter);
-                        }
-                    }
-                    break;
-                case Gdk.BUTTON_MIDDLE:
-                    move_up_root ();
-                    break;
-                }
-
+        bool scroll_cb (double dx, double dy) {
+            // Up or to the left
+            if (dx > 0.0 || dy < 0.0) {
+                zoom_out ();
+                return true;
+            // Down or to the right
+            } else if (dx < 0.0 || dy > 0.0) {
+                zoom_in ();
                 return true;
             }
 
             return false;
         }
 
-        void scroll_cb (double dx, double dy) {
-            // Up or to the left
-            if (dx > 0.0 || dy < 0.0) {
-                zoom_out ();
-            // Down or to the right
-            } else if (dx < 0.0 || dy > 0.0) {
-                zoom_in ();
-            }
-        }
-
         public void open_file () {
-            ((Window) get_toplevel ()).open_item (highlighted_item.iter);
+            ((Window) get_root ()).open_item (highlighted_item.iter);
         }
 
         public void copy_path () {
-            ((Window) get_toplevel ()).copy_path (highlighted_item.iter);
+            ((Window) get_root ()).copy_path (highlighted_item.iter);
         }
 
         public void trash_file () {
-            ((Window) get_toplevel ()).trash_file (highlighted_item.iter);
+            ((Window) get_root ()).trash_file (highlighted_item.iter);
         }
 
         protected bool can_move_up_root () {
             Gtk.TreeIter iter, parent_iter;
 
-            model.get_iter (out iter, root);
+            model.get_iter (out iter, tree_root);
             return model.iter_parent (out parent_iter, iter);
         }
 
         public void move_up_root () {
             Gtk.TreeIter iter, parent_iter;
 
-            model.get_iter (out iter, root);
+            model.get_iter (out iter, tree_root);
             if (model.iter_parent (out parent_iter, iter)) {
-                root = model.get_path (parent_iter);
+                tree_root = model.get_path (parent_iter);
                 item_activated (parent_iter);
             }
         }
@@ -555,11 +557,12 @@ namespace Baobab {
 
         void build_context_menu () {
             var menu_model = Application.get_default ().get_menu_by_id ("chartmenu");
-            context_menu = new Gtk.Popover.from_model (this, menu_model);
+            context_menu = new Gtk.PopoverMenu.from_model (menu_model);
+            context_menu.set_parent (this);
             context_menu.set_position (Gtk.PositionType.BOTTOM);
         }
 
-        void show_popup_menu (Gdk.EventButton? event) {
+        void show_popover_at (int x, int y) {
             var enable = highlighted_item != null;
             var action = action_group.lookup_action ("open-file") as SimpleAction;
             action.set_enabled (enable);
@@ -576,7 +579,7 @@ namespace Baobab {
             action = action_group.lookup_action ("zoom-out") as SimpleAction;
             action.set_enabled (can_zoom_out ());
 
-            Gdk.Rectangle rect = { (int) event.x, (int) event.y, 0, 0 };
+            Gdk.Rectangle rect = { x, y, 0, 0 };
             context_menu.set_pointing_to (rect);
             context_menu.popup ();
         }

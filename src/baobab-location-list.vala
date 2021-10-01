@@ -250,7 +250,7 @@ namespace Baobab {
             }
 
             recent_items.sort ((a, b) => {
-                return (int)(b.get_modified () - a.get_modified ());
+                return (int)(b.get_modified ().difference (a.get_modified ()));
             });
 
             unowned List<Gtk.RecentInfo> last = recent_items.nth (MAX_RECENT_LOCATIONS - 1);
@@ -269,17 +269,22 @@ namespace Baobab {
         }
 
         public void update () {
-            local_list_box.foreach ((widget) => { widget.destroy (); });
-            remote_list_box.foreach ((widget) => { widget.destroy (); });
+            for (Gtk.Widget? child = local_list_box.get_first_child (); child != null; child = local_list_box.get_first_child ()) {
+                local_list_box.remove (child);
+            }
+
+            for (Gtk.Widget? child = remote_list_box.get_first_child (); child != null; child = remote_list_box.get_first_child ()) {
+                remote_list_box.remove (child);
+            }
 
             remote_box.visible = false;
 
             foreach (var location in locations) {
                 if (location.is_remote) {
-                    remote_list_box.add (new LocationRow (location));
+                    remote_list_box.append (new LocationRow (location));
                     remote_box.visible = true;
                 } else {
-                    local_list_box.add (new LocationRow (location));
+                    local_list_box.append (new LocationRow (location));
                 }
             }
         }

@@ -85,7 +85,7 @@ namespace Baobab {
             }
         }
 
-        protected override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
+        protected override void snapshot (Gtk.Snapshot snp, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             var context = widget.get_style_context ();
 
             context.save ();
@@ -101,7 +101,7 @@ namespace Baobab {
                 break;
             }
 
-            base.render (cr, widget, background_area, cell_area, flags);
+            base.snapshot (snp, widget, background_area, cell_area, flags);
 
             context.restore ();
         }
@@ -133,64 +133,6 @@ namespace Baobab {
             set {
                 text = format_time_approximate (value);
             }
-        }
-    }
-
-    public class CellRendererProgress : Gtk.CellRendererProgress {
-        public Scanner.State state { set; get; }
-
-        public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
-            if (state == Scanner.State.ERROR) {
-                return;
-            }
-
-            int xpad;
-            int ypad;
-            get_padding (out xpad, out ypad);
-
-            var x = cell_area.x + xpad;
-            var y = cell_area.y + ypad;
-            var w = cell_area.width - xpad * 2;
-            var h = cell_area.height - ypad * 2;
-
-            var context = widget.get_style_context ();
-
-            context.save ();
-            context.add_class ("baobab-level-cell");
-
-            context.render_background (cr, x, y, w, h);
-            context.render_frame (cr, x, y, w, h);
-
-            var border = context.get_border (Gtk.StateFlags.NORMAL);
-            x += border.left;
-            y += border.top;
-            w -= border.left + border.right;
-            h -= border.top + border.bottom;
-
-            border = context.get_padding (Gtk.StateFlags.NORMAL);
-            x += border.left;
-            y += border.top;
-            w -= border.left + border.right;
-            h -= border.top + border.bottom;
-
-            var percent = value;
-            var perc_w = (w * percent) / 100;
-            var x_bar = x;
-            if (widget.get_direction () == Gtk.TextDirection.RTL) {
-                x_bar += w - perc_w;
-            }
-
-            context.add_class ("fill-block");
-
-            if (percent <= 33) {
-                context.add_class ("level-low");
-            } else if (percent > 66) {
-                context.add_class ("level-high");
-            }
-
-            context.render_background (cr, x_bar, y, perc_w, h);
-
-            context.restore ();
         }
     }
 }

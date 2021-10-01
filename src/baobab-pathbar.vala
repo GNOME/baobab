@@ -71,13 +71,15 @@ namespace Baobab {
 
                 buttons.reverse ();
                 foreach (var button in buttons) {
-                    add (button);
+                    append (button);
                 }
             }
         }
 
         void clear () {
-            this.foreach ((widget) => { widget.destroy (); });
+            for (Gtk.Widget? child = get_first_child (); child != null; child = get_first_child ()) {
+                remove (child);
+            }
         }
 
         PathButton make_button (Gtk.TreePath path) {

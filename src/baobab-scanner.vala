@@ -419,7 +419,7 @@ namespace Baobab {
             hardlinks = new GenericSet<HardLink> (HardLink.hash, HardLink.equal);
 
             base.clear ();
-            set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.DESCENDING);
+            set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.DESCENDING);
 
             cancellable.reset ();
             scan_error = null;

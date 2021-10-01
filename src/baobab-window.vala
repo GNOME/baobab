@@ -23,11 +23,17 @@
 namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-main-window.ui")]
-    public class Window : Hdy.ApplicationWindow {
+    public class Window : Adw.ApplicationWindow {
+        [GtkChild]
+        private unowned Gtk.EventControllerFocus focus_controller;
+        [GtkChild]
+        private unowned Gtk.DropTarget drop_target;
+        [GtkChild]
+        private unowned Gtk.GestureClick back_gesture;
         [GtkChild]
         private unowned Gtk.Box vbox;
         [GtkChild]
-        private unowned Hdy.HeaderBar header_bar;
+        private unowned Adw.HeaderBar header_bar;
         [GtkChild]
         private unowned Pathbar pathbar;
         [GtkChild]
@@ -65,6 +71,8 @@ namespace Baobab {
         [GtkChild]
         private unowned Gtk.TreeViewColumn time_modified_column;
         [GtkChild]
+        private unowned Gtk.GestureClick treeview_right_click_gesture;
+        [GtkChild]
         private unowned Gtk.Stack chart_stack;
         [GtkChild]
         private unowned Gtk.Stack spinner_stack;
@@ -78,6 +86,7 @@ namespace Baobab {
         private unowned Gtk.Spinner spinner;
 
         private Location? active_location = null;
+        private bool is_busy = false;
         private ulong scan_completed_handler = 0;
         private uint scanning_progress_id = 0;
 
@@ -92,6 +101,10 @@ namespace Baobab {
             { "show-preferences", on_show_preferences },
             { "help", on_help_activate },
             { "about", on_about_activate },
+            { "show-treeview-popover", on_show_treeview_popover },
+            { "treeview-expand-row", on_treeview_expand_row },
+            { "treeview-collapse-row", on_treeview_collapse_row },
+            { "treeview-go-up", go_up_treeview },
             { "treeview-open-folder", on_treeview_open_folder },
             { "treeview-copy", on_treeview_copy },
             { "treeview-trash", on_treeview_trash }
@@ -106,19 +119,11 @@ namespace Baobab {
             { "scan-folder", false },
         };
 
-        private enum DndTargets {
-            URI_LIST
-        }
-
-        private const Gtk.TargetEntry dnd_target_list[1] = {
-            {"text/uri-list", 0, DndTargets.URI_LIST}
-        };
-
         public Window (Application app) {
             Object (application: app);
 
             if (busy_cursor == null) {
-                busy_cursor = new Gdk.Cursor.from_name (get_display(), "wait");
+                busy_cursor = new Gdk.Cursor.from_name ("wait", null);
             }
 
             var ui_settings = new Settings ("org.gnome.baobab.ui");
@@ -134,7 +139,7 @@ namespace Baobab {
             GLib.MenuModel treeview_menu = (GLib.MenuModel) builder.get_object ("treeview_menu");
 
             setup_treeview ();
-            treeview_popover_menu.bind_model (treeview_menu, null);
+            treeview_popover_menu.set_menu_model (treeview_menu);
 
             infobar_close_button.clicked.connect (() => { clear_message (); });
 
@@ -147,8 +152,9 @@ namespace Baobab {
             folder_display.activated.connect (on_folder_display_activated);
 
             // Setup drag-n-drop
-            drag_data_received.connect (on_drag_data_received);
-            enable_drop ();
+            drop_target.set_gtypes ({typeof (Gdk.FileList)});
+            drop_target.on_drop.connect (on_drop);
+            drop_target.accept.connect (on_drop_target_accept);
 
             // Setup window geometry saving
             if (ui_settings.get_boolean ("is-maximized")) {
@@ -157,33 +163,31 @@ namespace Baobab {
 
             int width, height;
             ui_settings.get ("window-size", "(ii)", out width, out height);
-            resize (width, height);
+            set_default_size (width, height);
 
-            ui_settings.bind ("is-maximized", this, "is-maximized", GLib.SettingsBindFlags.SET);
+            ui_settings.bind ("is-maximized", this, "maximized", GLib.SettingsBindFlags.SET);
 
-            size_allocate.connect ((_) => {
-                if (!is_maximized) {
-                    get_size (out width, out height);
-                    ui_settings.set ("window-size", "(ii)", width, height);
+            close_request.connect (() => {
+                if (!maximized) {
+                    int win_width, win_height;
+                    get_default_size (out win_width, out win_height);
+                    ui_settings.set ("window-size", "(ii)", win_width, win_height);
                 }
-            });
-
-            destroy.connect (() => {
                 ui_settings.apply ();
+                return false;
             });
 
             set_ui_state (home_page, false);
 
-            button_press_event.connect ((event) => {
-                // mouse back button
-                if (event.button == 8) {
-                    lookup_action ("show-home-page").activate (null);
-                    return Gdk.EVENT_STOP;
-                }
-                return Gdk.EVENT_PROPAGATE;
+            back_gesture.pressed.connect ((n_press, x, y) => {
+                lookup_action ("show-home-page").activate (null);
             });
 
-            show ();
+            focus_controller.enter.connect (() => {
+                application.withdraw_notification ("scan-completed");
+            });
+
+            present ();
         }
 
         void on_show_primary_menu_activate (SimpleAction action) {
@@ -198,21 +202,20 @@ namespace Baobab {
         }
 
         void on_scan_folder_activate () {
-            var file_chooser = new Gtk.FileChooserDialog (_("Select Folder"), this,
+            var file_chooser = new Gtk.FileChooserNative (_("Select Folder"), this,
                                                           Gtk.FileChooserAction.SELECT_FOLDER,
-                                                          _("_Cancel"), Gtk.ResponseType.CANCEL,
-                                                          _("_Open"), Gtk.ResponseType.OK);
+                                                          null, null);
 
-            file_chooser.local_only = false;
             file_chooser.modal = true;
-            file_chooser.set_default_response (Gtk.ResponseType.OK);
 
-            var check_button = new Gtk.CheckButton.with_label (_("Recursively analyze mount points"));
-            file_chooser.extra_widget = check_button;
+            file_chooser.add_choice ("recurse",
+                                    _("Recursively analyze mount points"),
+                                    null, null);
 
             file_chooser.response.connect ((response) => {
-                if (response == Gtk.ResponseType.OK) {
-                    var flags = check_button.active ? ScanFlags.NONE : ScanFlags.EXCLUDE_MOUNTS;
+                if (response == Gtk.ResponseType.ACCEPT) {
+                    bool recurse = bool.parse (file_chooser.get_choice ("recurse"));
+                    var flags = recurse ? ScanFlags.NONE : ScanFlags.EXCLUDE_MOUNTS;
                     scan_directory (file_chooser.get_file (), flags);
                 }
                 file_chooser.destroy ();
@@ -259,15 +262,11 @@ namespace Baobab {
             var dialog = new PreferencesDialog ();
             dialog.modal = true;
             dialog.set_transient_for (this);
-            dialog.show ();
+            dialog.present ();
         }
 
         void on_help_activate () {
-            try {
-                Gtk.show_uri (get_screen (), "help:baobab", Gtk.get_current_event_time ());
-            } catch (Error e) {
-                message (_("Failed to show help"), e.message, Gtk.MessageType.WARNING);
-            }
+            Gtk.show_uri (this, "help:baobab", Gdk.CURRENT_TIME);
         }
 
         void on_about_activate () {
@@ -322,35 +321,26 @@ namespace Baobab {
             }
         }
 
-        void on_drag_data_received (Gtk.Widget widget, Gdk.DragContext context, int x, int y,
-                                    Gtk.SelectionData selection_data, uint target_type, uint time) {
-            File dir = null;
+        bool on_drop_target_accept (Gtk.DropTarget target, Gdk.Drop drop) {
+            return !is_busy;
+        }
 
-            if ((selection_data != null) && (selection_data.get_length () >= 0) && (target_type == DndTargets.URI_LIST)) {
-                var uris = GLib.Uri.list_extract_uris ((string) selection_data.get_data ());
-                if (uris != null && uris.length == 1) {
-                    dir = File.new_for_uri (uris[0]);
+        bool on_drop (Gtk.DropTarget target, Value value, double x, double y) {
+            if (value.type () == typeof (Gdk.FileList)) {
+                unowned var files = (SList<File>) value.get_boxed ();
+                File dir = null;
+                if (files != null && files.length () == 1) {
+                    dir = files.nth (0).data;
                 }
+
+                if (dir != null) {
+                    scan_directory (dir);
+                }
+
+                return true;
             }
 
-            if (dir != null) {
-                // finish drop before scanning, since the it can time out
-                Gtk.drag_finish (context, true, false, time);
-                scan_directory (dir);
-            } else {
-                Gtk.drag_finish (context, false, false, time);
-            }
-        }
-
-        void enable_drop () {
-            Gtk.drag_dest_set (this,
-                               Gtk.DestDefaults.DROP | Gtk.DestDefaults.MOTION | Gtk.DestDefaults.HIGHLIGHT,
-                               dnd_target_list,
-                               Gdk.DragAction.COPY);
-        }
-
-        void disable_drop () {
-            Gtk.drag_dest_unset (this);
+            return false;
         }
 
         bool show_treeview_popover (Gtk.PopoverMenu popover, int x, int y) {
@@ -371,9 +361,8 @@ namespace Baobab {
 
         public void copy_path (Gtk.TreeIter iter) {
             var parse_name = active_location.scanner.get_file (iter).get_parse_name ();
-            var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
-            clipboard.set_text (parse_name, -1);
-            clipboard.store ();
+            var clipboard = get_clipboard ();
+            clipboard.set_text (parse_name);
         }
 
         public void trash_file (Gtk.TreeIter iter) {
@@ -422,6 +411,30 @@ namespace Baobab {
             return sort.convert_child_path_to_path (filter_path);
         }
 
+        void on_show_treeview_popover () {
+            show_treeview_popover (treeview_popover_menu,
+                                   treeview.get_allocated_width () / 2,
+                                   treeview.get_allocated_height () / 2);
+        }
+
+        void on_treeview_expand_row () {
+            Gtk.TreeIter iter;
+            if (treeview.get_selection ().get_selected (null, out iter)) {
+                Gtk.TreePath path = treeview.model.get_path (iter);
+                treeview.expand_row (path, false);
+            }
+        }
+
+        void on_treeview_collapse_row () {
+            Gtk.TreeIter iter;
+            if (treeview.get_selection ().get_selected (null, out iter)) {
+                Gtk.TreePath path = treeview.model.get_path (iter);
+                if (!treeview.collapse_row (path) && path.up ()) {
+                    treeview.set_cursor(path, null, false);
+                }
+            }
+        }
+
         void on_treeview_open_folder () {
             Gtk.TreeIter iter;
             if (get_selected_iter (out iter)) {
@@ -444,54 +457,12 @@ namespace Baobab {
         }
 
         void setup_treeview () {
-            treeview.button_press_event.connect ((event) => {
-                if (event.triggers_context_menu ()) {
-                    Gtk.TreePath path;
-                    if (treeview.get_path_at_pos ((int)event.x, (int)event.y, out path, null, null, null)) {
-                        treeview.get_selection ().select_path (path);
-                        return show_treeview_popover (treeview_popover_menu,  (int) event.x, (int) event.y);
-                    }
+            treeview_right_click_gesture.pressed.connect ((n_press, x, y) => {
+                Gtk.TreePath path;
+                if (treeview.get_path_at_pos ((int) x, (int) y, out path, null, null, null)) {
+                    treeview.get_selection ().select_path (path);
+                    show_treeview_popover (treeview_popover_menu,  (int) x, (int) y);
                 }
-
-                return false;
-            });
-
-            treeview.key_press_event.connect ((event) => {
-                Gtk.TreeIter iter;
-                if (treeview.get_selection ().get_selected (null, out iter)) {
-                    Gtk.TreePath path = treeview.model.get_path (iter);
-                    if (event.keyval == Gdk.Key.Right) {
-                        if (treeview.expand_row (path, false)) {
-                            return true;
-                        }
-                    } else if (event.keyval == Gdk.Key.Left) {
-                        if (treeview.collapse_row (path)) {
-                            return true;
-                        } else if (path.up ()) {
-                            treeview.set_cursor(path, null, false);
-                            return true;
-                        }
-                    } else if (event.keyval == Gdk.Key.space) {
-                        if (treeview.expand_row (path, false)) {
-                            return true;
-                        } else if (treeview.collapse_row (path)) {
-                            return true;
-                        }
-                    } else if (event.keyval == Gdk.Key.Up && event.state == Gdk.ModifierType.MOD1_MASK) {
-                        go_up_treeview ();
-                        return true;
-                    }
-                }
-
-                return false;
-            });
-
-            treeview.popup_menu.connect (() => {
-                Gtk.Allocation allocation;
-                treeview.get_allocated_size (out allocation, null);
-                return show_treeview_popover (treeview_popover_menu,
-                                              allocation.width / 2,
-                                              allocation.height / 2);
             });
 
             treeview.row_activated.connect ((wrapper_path, column) => {
@@ -532,8 +503,8 @@ namespace Baobab {
                 return;
             }
 
-            rings_chart.root = path;
-            treemap_chart.root = path;
+            rings_chart.tree_root = path;
+            treemap_chart.tree_root = path;
             folder_display.path = path;
             pathbar.path = path;
 
@@ -558,27 +529,23 @@ namespace Baobab {
         }
 
         void set_busy (bool busy) {
-            Gdk.Cursor? cursor = null;
+            Gdk.Cursor? new_cursor = null;
+            is_busy = busy;
 
             if (busy) {
-                cursor = busy_cursor;
-                disable_drop ();
+                new_cursor = busy_cursor;
                 chart_stack_switcher.sensitive = false;
                 spinner_stack.visible_child = spinner;
                 spinner.start ();
                 pathbar.sensitive = false;
             } else {
-                enable_drop ();
                 spinner.stop ();
                 spinner_stack.visible_child = chart_stack;
                 chart_stack_switcher.sensitive = true;
                 pathbar.sensitive = true;
             }
 
-            var window = get_window ();
-            if (window != null) {
-                window.cursor = cursor;
-            }
+            this.cursor = new_cursor;
 
             foreach (ActionState action_state in actions_while_scanning) {
                 var action = lookup_action (action_state.name) as SimpleAction;
@@ -593,17 +560,17 @@ namespace Baobab {
 
             set_busy (busy);
 
-            header_bar.custom_title = null;
+            header_bar.title_widget = null;
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
-                header_bar.title = _("Devices & Locations");
+                this.title = _("Devices & Locations");
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
-                header_bar.title = active_location.name;
+                this.title = active_location.name;
                 if (child == result_page) {
-                    header_bar.custom_title = pathbar;
+                    header_bar.title_widget = pathbar;
                 }
             }
 

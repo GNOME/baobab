@@ -54,11 +54,6 @@ namespace Baobab {
         void ensure_window () {
             if (window == null) {
                 window = new Window (this);
-
-                window.focus_in_event.connect (() => {
-                    withdraw_notification ("scan-completed");
-                    return false;
-                });
             }
         }
 
@@ -80,13 +75,12 @@ namespace Baobab {
         protected override void startup () {
             base.startup ();
 
-            Hdy.init ();
-            Hdy.StyleManager.get_default ().color_scheme = PREFER_LIGHT;
+            Adw.init ();
 
             // Load custom CSS
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("/org/gnome/baobab/baobab.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             set_accels_for_action ("win.show-home-page", { "<Alt>Left" });
             set_accels_for_action ("win.show-primary-menu", { "F10" });

@@ -76,8 +76,8 @@ window.background stack treeview:hover:not(:selected) {
 
 .pathbar button {
     margin: 0;
-    border-width: 0 1px 0 0;
     border-radius: 0px;
+    box-shadow: 1px 0px @borders;
 }
 
 .pathbar button:first-child {
@@ -103,9 +103,14 @@ window infobar.error {
 @define-color level_color_hi #e0e2dd;
 
 @define-color chart_borders darker(@borders);
-ringschart {
-    padding: 13px 13px 13px 13px;
+.chart-grid:not(:dir(rtl)) {
+  box-shadow: 1px 0px inset @chart_borders;
 }
+
+.chart-grid:dir(rtl) {
+  box-shadow: -1px 0px inset @borders;
+}
+
 
 @define-color tooltip_bg_color rgba(0, 0, 0, 0.8);
 ringschart.subfolder-tip {
@@ -115,6 +120,9 @@ ringschart.subfolder-tip {
     padding: 3px 3px 3px 3px;
 }
 
-treemap {
-  border: solid 1px @chart_borders;
+:drop(active) .contents {
+  outline-style: solid;
+  outline-width: 3px;
+  outline-color: alpha(@accent_bg_color, 0.5);
+  outline-offset: -3px;
 }

@@ -2,23 +2,16 @@
 <!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.22"/>
-  <template class="BaobabPreferencesDialog" parent="HdyPreferencesWindow">
-    <property name="can_focus">False</property>
-    <property name="type_hint">dialog</property>
+  <template class="BaobabPreferencesDialog" parent="AdwPreferencesWindow">
     <property name="title" translatable="yes">Preferences</property>
     <property name="search_enabled">False</property>
     <child>
-      <object class="HdyPreferencesPage">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
+      <object class="AdwPreferencesPage">
         <child>
-          <object class="HdyPreferencesGroup">
-            <property name="visible">True</property>
+          <object class="AdwPreferencesGroup">
             <property name="title" translatable="yes">Locations to Ignore</property>
             <child>
               <object class="GtkListBox" id="excluded_list_box">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="selection_mode">none</property>
                 <style>
                   <class name="content"/>

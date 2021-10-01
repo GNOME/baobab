@@ -2,18 +2,18 @@
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <template class="BaobabLocationList" parent="GtkBox">
-    <property name="visible">True</property>
     <property name="orientation">vertical</property>
     <property name="spacing">32</property>
-    <property name="margin">32</property>
+    <property name="margin_start">32</property>
+    <property name="margin_end">32</property>
+    <property name="margin_top">32</property>
+    <property name="margin_bottom">32</property>
     <child>
       <object class="GtkBox" id="local_box">
-        <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel" id="local_label">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <property name="label" translatable="yes">This Computer</property>
             <style>
@@ -23,7 +23,6 @@
         </child>
         <child>
           <object class="GtkListBox" id="local_list_box">
-            <property name="visible">True</property>
             <property name="selection_mode">none</property>
             <style>
               <class name="view"/>
@@ -35,12 +34,10 @@
     </child>
     <child>
       <object class="GtkBox" id="remote_box">
-        <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel" id="remote_label">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <property name="label" translatable="yes">Remote Locations</property>
             <style>
@@ -50,7 +47,6 @@
         </child>
         <child>
           <object class="GtkListBox" id="remote_list_box">
-            <property name="visible">True</property>
             <property name="selection_mode">none</property>
             <style>
               <class name="view"/>

@@ -98,7 +98,6 @@ namespace Baobab {
             }
 
             var context = get_style_context ();
-            var context_state = context.get_state ();
             context.save ();
             context.add_class ("subfolder-tip");
 
@@ -111,7 +110,7 @@ namespace Baobab {
 
             Gdk.Rectangle last_rect = Gdk.Rectangle ();
 
-            var padding = context.get_padding (context_state);
+            var padding = context.get_padding ();
             var vpadding = padding.top + padding.bottom;
             var hpadding = padding.left + padding.right;
 
@@ -303,9 +302,7 @@ namespace Baobab {
             get_allocation (out allocation);
 
             var context = get_style_context ();
-            var context_state = context.get_state ();
-
-            var padding = context.get_padding (context_state);
+            var padding = context.get_padding ();
             var max_radius = int.min (allocation.width / 2, allocation.height / 2) - padding.left; // Assuming that padding is the same for all sides
             var thickness = max_radius / (max_depth + 1);
 
