@@ -22,7 +22,7 @@
 
 namespace Baobab {
 
-    public class Application : Gtk.Application {
+    public class Application : Adw.Application {
 
         private Window window;
 
@@ -75,13 +75,6 @@ namespace Baobab {
         protected override void startup () {
             base.startup ();
 
-            Adw.init ();
-
-            // Load custom CSS
-            var css_provider = new Gtk.CssProvider ();
-            css_provider.load_from_resource ("/org/gnome/baobab/baobab.css");
-            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
             set_accels_for_action ("win.show-home-page", { "<Alt>Left" });
             set_accels_for_action ("win.show-primary-menu", { "F10" });
             set_accels_for_action ("win.scan-folder", { "<Primary>o" });
@@ -101,6 +94,8 @@ namespace Baobab {
 
         public Application () {
             Object (application_id: "org.gnome.baobab", flags: ApplicationFlags.HANDLES_OPEN);
+
+            set_resource_base_path("/org/gnome/baobab/");
 
             add_main_option_entries (option_entries);
             set_option_context_parameter_string ("[DIRECTORY]");
