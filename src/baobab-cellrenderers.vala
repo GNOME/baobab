@@ -108,7 +108,15 @@ namespace Baobab {
 
     }
 
-    public class CellRendererSize : Gtk.CellRendererText {
+    public class CellRendererTabular : Gtk.CellRendererText {
+        construct {
+            var attrs = new Pango.AttrList();
+            attrs.insert (new Pango.AttrFontFeatures ("tnum=1"));
+            attributes = attrs;
+        }
+    }
+
+    public class CellRendererSize : CellRendererTabular {
         public Scanner.State state { set; get; }
 
         public new uint64 size {
@@ -118,7 +126,7 @@ namespace Baobab {
         }
     }
 
-    public class CellRendererItems : Gtk.CellRendererText {
+    public class CellRendererItems : CellRendererTabular {
         public Scanner.State state { set; get; }
 
         public int items {
