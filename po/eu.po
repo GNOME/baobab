@@ -10,9 +10,9 @@
 #
 msgid ""
 msgstr "Project-Id-Version: gdm master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdm/issues\n"
-"POT-Creation-Date: 2020-12-21 15:54+0000\n"
-"PO-Revision-Date: 2021-02-28 10:00+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2021-10-08 11:43+0000\n"
+"PO-Revision-Date: 2021-12-25 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -23,7 +23,7 @@ msgstr "Project-Id-Version: gdm master\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
 msgid "Disk Usage Analyzer"
 msgstr "Disko-erabileraren analizatzailea"
 
@@ -82,12 +82,12 @@ msgid "The initial size of the window"
 msgstr "Leihoaren hasierako tamaina"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "Leihoaren egoera"
+msgid "Window Maximized"
+msgstr "Leihoa maximizatuta"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "Leihoaren GdkWindowState"
+msgid "Whether or not the window is maximized"
+msgstr "Leihoa maximizatuta dagoen ala ez"
 
 #: data/gtk/help-overlay.ui:13
 msgctxt "shortcut window"
@@ -134,15 +134,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Berreskaneatu uneko kokalekua"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+#: data/gtk/menus.ui:7
 msgid "_Open Folder"
 msgstr "_Ireki karpeta"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+#: data/gtk/menus.ui:11
 msgid "_Copy Path to Clipboard"
 msgstr "_Kopiatu bide-izena arbelean"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+#: data/gtk/menus.ui:15
 msgid "Mo_ve to Trash"
 msgstr "_Bota zakarrontzira"
 
@@ -158,19 +158,19 @@ msgstr "_Handiagotu"
 msgid "Zoom _out"
 msgstr "_Txikiagotu"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
 msgid "Folder"
 msgstr "Karpeta"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
 msgid "Size"
 msgstr "Tamaina"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
 msgid "Contents"
 msgstr "Edukia"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
 msgid "Modified"
 msgstr "Aldatze-data"
 
@@ -178,15 +178,15 @@ msgstr "Aldatze-data"
 msgid "This Computer"
 msgstr "Ordenagailu hau"
 
-#: data/ui/baobab-location-list.ui:45
+#: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
 msgstr "Urruneko kokalekuak"
 
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
+#: data/ui/baobab-preferences-dialog.ui:6 data/ui/baobab-main-window.ui:17
 msgid "Preferences"
 msgstr "Hobespenak"
 
-#: data/ui/baobab-preferences-dialog.ui:17
+#: data/ui/baobab-preferences-dialog.ui:12
 msgid "Locations to Ignore"
 msgstr "Ez ikusiarena egingo zaien kokalekuak"
 
@@ -210,23 +210,23 @@ msgstr "_Laguntza"
 msgid "_About Disk Usage Analyzer"
 msgstr "Disko-erabileraren analizatzaileari _buruz"
 
-#: data/ui/baobab-main-window.ui:85
+#: data/ui/baobab-main-window.ui:47
 msgid "Go back to location list"
 msgstr "Itzuli kokalekuen zerrendara"
 
-#: data/ui/baobab-main-window.ui:106
+#: data/ui/baobab-main-window.ui:63
 msgid "Rescan current location"
 msgstr "Berreskaneatu uneko kokalekua"
 
-#: data/ui/baobab-main-window.ui:196
+#: data/ui/baobab-main-window.ui:111
 msgid "Close"
 msgstr "Itxi"
 
-#: data/ui/baobab-main-window.ui:372
+#: data/ui/baobab-main-window.ui:299
 msgid "Rings Chart"
 msgstr "Eraztun-diagrama"
 
-#: data/ui/baobab-main-window.ui:384
+#: data/ui/baobab-main-window.ui:312
 msgid "Treemap Chart"
 msgstr "Zuhaitz-mapa"
 
@@ -315,15 +315,7 @@ msgstr "Ordenagailua"
 msgid "Select Location to Ignore"
 msgstr "Hautatu ez ikusiarena egingo zaion kokalekua"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
-msgid "_Cancel"
-msgstr "_Utzi"
-
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
-msgid "_Open"
-msgstr "_Ireki"
-
-#: src/baobab-preferences-dialog.vala:91
+#: src/baobab-preferences-dialog.vala:90
 msgid "Add Location…"
 msgstr "Gehitu kokalekua…"
 
@@ -331,68 +323,79 @@ msgstr "Gehitu kokalekua…"
 msgid "Select Folder"
 msgstr "Hautatu karpeta"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:212
 msgid "Recursively analyze mount points"
 msgstr "Aztertu errekurtsiboki muntatze-puntuak"
 
-#: src/baobab-window.vala:236
+#: src/baobab-window.vala:235
 msgid "Could not analyze volume."
 msgstr "Ezin izan da bolumena analizatu."
 
-#: src/baobab-window.vala:273
-msgid "Failed to show help"
-msgstr "Huts egin du laguntza erakustean"
-
-#: src/baobab-window.vala:295
+#: src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
 msgstr "Diskoen erabilera analizatzeko tresna grafiko bat."
 
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:296
 msgid "translator-credits"
 msgstr "Asier Sarasua Garmendia <asier.sarasua@gmail.com>"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:358
 msgid "Failed to open file"
 msgstr "Huts egin du fitxategia irekitzean"
 
-#: src/baobab-window.vala:392
+#: src/baobab-window.vala:374
 msgid "Failed to move file to the trash"
 msgstr "Huts egin du fitxategia zakarrontzira botatzean"
 
-#: src/baobab-window.vala:603
+#: src/baobab-window.vala:567
 msgid "Devices & Locations"
 msgstr "Gailuak eta kokalekuak"
 
-#: src/baobab-window.vala:655
+#: src/baobab-window.vala:619
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Ezin izan da ”%s” karpeta aztertu"
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:634
 msgid "Could not always detect occupied disk sizes."
 msgstr "Ezin dira beti betetako disko-tamainak detektatu."
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:634
 msgid "Apparent sizes may be shown instead."
 msgstr "Itxurazko tamainak erakutsi daitezke horren ordez."
 
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Eskaneatzea amaitu da"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Amaitu da “%s” eskaneatzea"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” ez da baliozko karpeta"
 
-#: src/baobab-window.vala:716
+#: src/baobab-window.vala:680
 msgid "Could not analyze disk usage."
 msgstr "Ezin izan da diskoaren erabilera analizatu."
+
+#~ msgid "Window state"
+#~ msgstr "Leihoaren egoera"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "Leihoaren GdkWindowState"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Utzi"
+
+#~ msgid "_Open"
+#~ msgstr "_Ireki"
+
+#~ msgid "Failed to show help"
+#~ msgstr "Huts egin du laguntza erakustean"
 
 #~ msgid "Baobab"
 #~ msgstr "Baobab"
