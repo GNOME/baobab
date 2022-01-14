@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-06-11 13:51+0000\n"
-"PO-Revision-Date: 2021-06-28 23:00+0300\n"
-"Last-Translator: Alexey Rubtsov <rushills@gmail.com>\n"
+"POT-Creation-Date: 2021-10-14 15:42+0000\n"
+"PO-Revision-Date: 2022-01-10 23:14+0300\n"
+"Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
@@ -61,7 +61,7 @@ msgstr ""
 
 #: data/org.gnome.baobab.appdata.xml.in:23
 msgid "Devices and Locations"
-msgstr "Устройства и местоположение"
+msgstr "Устройства и расположения"
 
 #: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
@@ -74,7 +74,7 @@ msgstr "накопитель;пространство;очистка;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
-msgstr "URI исключенных местоположений"
+msgstr "URI исключенных расположений"
 
 #: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for locations to be excluded from scanning."
@@ -97,12 +97,12 @@ msgid "The initial size of the window"
 msgstr "Исходный размер окна"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "Состояние окна"
+msgid "Window Maximized"
+msgstr "Окно развернуто"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "GdkWindowState окна"
+msgid "Whether or not the window is maximized"
+msgstr "Является ли окно развернутым или нет"
 
 #: data/gtk/help-overlay.ui:13
 msgctxt "shortcut window"
@@ -149,15 +149,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Пересканировать текущий путь"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+#: data/gtk/menus.ui:7
 msgid "_Open Folder"
 msgstr "Откр_ыть папку"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+#: data/gtk/menus.ui:11
 msgid "_Copy Path to Clipboard"
 msgstr "Скопировать путь в _буфер обмена"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+#: data/gtk/menus.ui:15
 msgid "Mo_ve to Trash"
 msgstr "У_далить в корзину"
 
@@ -173,19 +173,19 @@ msgstr "У_величить"
 msgid "Zoom _out"
 msgstr "У_меньшить"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
 msgid "Folder"
 msgstr "Папка"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
 msgid "Size"
 msgstr "Размер"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
 msgid "Contents"
 msgstr "Содержимое"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
 msgid "Modified"
 msgstr "Последнее изменение"
 
@@ -193,15 +193,15 @@ msgstr "Последнее изменение"
 msgid "This Computer"
 msgstr "Этот компьютер"
 
-#: data/ui/baobab-location-list.ui:45
+#: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
-msgstr "Удалённые местоположения"
+msgstr "Удалённые расположения"
 
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
+#: data/ui/baobab-preferences-dialog.ui:6 data/ui/baobab-main-window.ui:17
 msgid "Preferences"
 msgstr "Параметры"
 
-#: data/ui/baobab-preferences-dialog.ui:17
+#: data/ui/baobab-preferences-dialog.ui:12
 msgid "Locations to Ignore"
 msgstr "Игнорировать"
 
@@ -225,23 +225,23 @@ msgstr "_Справка"
 msgid "_About Disk Usage Analyzer"
 msgstr "_О приложении"
 
-#: data/ui/baobab-main-window.ui:85
+#: data/ui/baobab-main-window.ui:47
 msgid "Go back to location list"
-msgstr "Вернуться к списку местоположений"
+msgstr "Вернуться к списку расположений"
 
-#: data/ui/baobab-main-window.ui:106
+#: data/ui/baobab-main-window.ui:63
 msgid "Rescan current location"
-msgstr "Выделяет текущее местоположение указателя."
+msgstr "Повторное сканирование текущего расположения"
 
-#: data/ui/baobab-main-window.ui:196
+#: data/ui/baobab-main-window.ui:111
 msgid "Close"
 msgstr "Закрыть"
 
-#: data/ui/baobab-main-window.ui:372
+#: data/ui/baobab-main-window.ui:299
 msgid "Rings Chart"
 msgstr "Круговая диаграмма"
 
-#: data/ui/baobab-main-window.ui:384
+#: data/ui/baobab-main-window.ui:312
 msgid "Treemap Chart"
 msgstr "Древовидная диаграмма"
 
@@ -334,113 +334,75 @@ msgstr "Компьютер"
 #. The only activatable row is "Add location"
 #: src/baobab-preferences-dialog.vala:53
 msgid "Select Location to Ignore"
-msgstr "Выберите местоположение для игнорирования"
+msgstr "Выберите расположение для игнорирования"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
-msgid "_Cancel"
-msgstr "О_тмена"
-
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
-msgid "_Open"
-msgstr "_Открыть"
-
-#: src/baobab-preferences-dialog.vala:91
+#: src/baobab-preferences-dialog.vala:90
 msgid "Add Location…"
-msgstr "Добавить местоположение.."
+msgstr "Добавить расположение…"
 
 #: src/baobab-window.vala:205
 msgid "Select Folder"
 msgstr "Выберите папку"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:212
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно анализировать точки монтирования"
 
-#: src/baobab-window.vala:236
+#: src/baobab-window.vala:235
 msgid "Could not analyze volume."
 msgstr "Не удалось проанализировать том."
 
-#: src/baobab-window.vala:273
-msgid "Failed to show help"
-msgstr "Не удалось открыть справку"
-
-#: src/baobab-window.vala:295
+#: src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
 msgstr "Графическое средство для анализа использования дисков."
 
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:296
 msgid "translator-credits"
 msgstr ""
 "Станислав Соловей <whats_up@tut.by>, 2013-2019.\n"
 "Юрий Мясоедов <ymyasoedov@yandex.ru>, 2014.\n"
 "Alexey Rubtsov <rushills@gmail.com>, 2021"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:358
 msgid "Failed to open file"
 msgstr "Не удалось открыть файл"
 
-#: src/baobab-window.vala:392
+#: src/baobab-window.vala:374
 msgid "Failed to move file to the trash"
 msgstr "Не удалось переместить файл в корзину"
 
-#: src/baobab-window.vala:603
+#: src/baobab-window.vala:567
 msgid "Devices & Locations"
-msgstr "Устройства и местоположения"
+msgstr "Устройства и расположения"
 
-#: src/baobab-window.vala:655
+#: src/baobab-window.vala:619
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Не удалось просканировать папку «%s»"
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:634
 msgid "Could not always detect occupied disk sizes."
 msgstr "Не всегда удается определить размер занятого диска."
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:634
 msgid "Apparent sizes may be shown instead."
 msgstr "Вместо этого могут быть показаны видимые размеры."
 
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Сканирование завершено"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Завершено сканирование «%s»"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
-#: src/baobab-window.vala:716
+#: src/baobab-window.vala:680
 msgid "Could not analyze disk usage."
 msgstr "Не удалось проанализировать использование дисков."
 
-#~ msgid "org.gnome.baobab"
-#~ msgstr "org.gnome.baobab"
-
-#~ msgid "Baobab"
-#~ msgstr "Baobab"
-
-#~ msgid "Could not scan some of the folders contained in “%s”"
-#~ msgstr "Не удалось просканировать некоторые папки, содержащиеся в «%s»"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "О _приложении"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "Простое приложение, которое может сканировать отдельные папки (локальные "
-#~ "или удалённые) или тома и выводить графическое представление, включающее "
-#~ "размеры каждого каталога или процентное соотношение."
-
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Сканировать удалённую папку…"
