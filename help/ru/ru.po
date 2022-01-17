@@ -6,16 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Disk Usage Analyzer HEAD\n"
-"POT-Creation-Date: 2013-02-03 22:42+0000\n"
-"PO-Revision-Date: 2013-09-10 21:15+0300\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"POT-Creation-Date: 2021-09-21 16:23+0000\n"
+"PO-Revision-Date: 2022-01-16 10:28+1000\n"
+"Last-Translator: Ser82-png <sw@atrus.ru>, 2022\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -24,254 +25,740 @@ msgstr ""
 "Yuri Myasoedov <omerta13@yandex.ru>, 2008\n"
 "Василий Фаронов <qvvx@yandex.ru>, 2008\n"
 "Алексей Кабанов <ak099@mail.ru>, 2012\n"
-"Станислав Соловей <whats_up@tut.by>, 2012"
+"Станислав Соловей <whats_up@tut.by>, 2012\n"
+"Ser82-png <sw@atrus.ru>, 2022"
 
-#: C/index.page:8(credit/name)
-#: C/introduction.page:11(credit/name)
-#: C/pref-view-chart.page:10(credit/name)
-#: C/scan-file-system.page:10(credit/name)
-#: C/scan-folder.page:11(credit/name)
-#: C/scan-home.page:11(credit/name)
-#: C/scan-remote.page:10(credit/name)
-msgid "Julita Inca"
-msgstr "Юлита Инка (Julita Inca)"
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "text"
+msgid "Disk Usage Analyzer help"
+msgstr "Анализатор использования дисков"
 
-#: C/index.page:12(credit/name)
-#: C/introduction.page:15(credit/name)
-#: C/pref.page:9(credit/name)
-#: C/pref-view-chart.page:18(credit/name)
-#: C/pref-view-menu.page:9(credit/name)
-#: C/scan-file-system.page:14(credit/name)
-#: C/scan-folder.page:19(credit/name)
-#: C/scan-home.page:15(credit/name)
-#: C/scan-remote.page:18(credit/name)
-msgid "Ekaterina Gerasimova"
-msgstr "Екатерина Герасимова (Ekaterina Gerasimova)"
-
-#: C/index.page:16(info/desc)
-msgid "<app>Disk Usage Analyzer</app>, a graphical storage device scanner."
-msgstr "<app>Анализатор использования дисков</app> — графический сканер устройств хранения информации."
-
-#: C/index.page:21(page/title)
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "link"
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
-#: C/index.page:24(section/title)
-msgid "Scan storage devices"
-msgstr "Сканирование устройств хранения информации"
+#. (itstool) path: credit/name
+#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
+#: C/scan-file-system.page:13 C/scan-folder.page:14 C/scan-home.page:14
+#: C/scan-remote.page:14
+msgid "Julita Inca"
+msgstr "Юлита Инка (Julita Inca)"
 
-#: C/index.page:28(section/title)
-msgid "Views and preferences"
-msgstr "Виды и параметры"
+#. (itstool) path: credit/name
+#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/question-open-folder.page:11 C/question-trash.page:11
+#: C/scan-file-system.page:17 C/scan-folder.page:22 C/scan-home.page:18
+#: C/scan-remote.page:22
+msgid "Ekaterina Gerasimova"
+msgstr "Екатерина Герасимова (Ekaterina Gerasimova)"
 
-#: C/introduction.page:19(credit/name)
-#: C/pref-view-chart.page:14(credit/name)
-#: C/scan-file-system.page:18(credit/name)
-#: C/scan-folder.page:15(credit/name)
-#: C/scan-home.page:19(credit/name)
-#: C/scan-remote.page:14(credit/name)
+#. (itstool) path: info/desc
+#: C/index.page:24
+msgid "<app>Disk Usage Analyzer</app> is a graphical storage device scanner."
+msgstr ""
+"<app>Анализатор использования дисков</app> — графический сканер устройств "
+"хранения информации."
+
+#. (itstool) path: page/title
+#: C/index.page:29
+#| msgid "Disk Usage Analyzer"
+msgid "<_:media-1/> Disk Usage Analyzer"
+msgstr "<_:media-1/> Анализатор использования дисков"
+
+#. (itstool) path: section/title
+#: C/index.page:35
+msgid "Scan"
+msgstr "Сканировать"
+
+#. (itstool) path: section/title
+#: C/index.page:39
+msgid "Preferences"
+msgstr "Параметры"
+
+#. (itstool) path: section/title
+#: C/index.page:43
+msgid "Common problems and questions"
+msgstr "Общие проблемы и вопросы"
+
+#. (itstool) path: credit/name
+#: C/introduction.page:21 C/pref-view-chart.page:17 C/scan-file-system.page:21
+#: C/scan-folder.page:18 C/scan-home.page:22 C/scan-remote.page:18
 msgid "Michael Hill"
 msgstr "Майкл Хилл (Michael Hill)"
 
-#: C/introduction.page:23(info/desc)
-msgid "<app>Disk Usage Analyzer</app>, also referred to as <app>baobab</app>, graphically represents your use of storage space."
-msgstr "<app>Анализатор использования дисков</app>, или <app>baobab</app>, представляет в графическом виде информацию об используемом пространстве на устройствах хранения информации."
+#. (itstool) path: info/desc
+#: C/introduction.page:27
+msgid ""
+"<app>Disk Usage Analyzer</app> is an application which shows you your use of "
+"storage space using graphs."
+msgstr ""
+"<app>Анализатор использования дисков</app> - это приложение, которое "
+"показывает использование вами дискового пространства с помощью графиков."
 
-#: C/introduction.page:28(page/title)
+#. (itstool) path: page/title
+#: C/introduction.page:31
 msgid "Introduction"
 msgstr "Введение"
 
-#: C/introduction.page:30(page/p)
-msgid "<app>Disk Usage Analyzer</app> is a graphical, menu-driven application for analysing storage device usage. It can be used to scan multiple local or remote storage device (including hard disks, SSDs, USB sticks, digital cameras and memory cards). <app>Disk Usage Analyzer</app> can scan either the <link xref=\"scan-file-system\">whole file system</link> tree, <link xref=\"scan-home\">your <file>Home</file> directory</link>, a <link xref=\"scan-folder\">specific user-requested directory</link> or <link xref=\"scan-remote\">a remote folder</link>."
-msgstr "<app>Анализатор использования дисков</app> — графическое, управляемое с помощью меню приложение для анализа использования устройств хранения информации. Он может сканировать различные локальные или удалённые устройства (в том числе жёсткие диски, SSD, USB-носители, цифровые камеры и карты памяти). <app>Анализатор использования дисков</app> может сканировать <link xref=\"scan-file-system\">всю файловую систему</link>, <link xref=\"scan-home\">вашу <file>домашнюю папку</file></link>, <link xref=\"scan-folder\">указанную пользователем папку</link> или <link xref=\"scan-remote\">удалённую папку</link>."
+#. (itstool) path: page/p
+#: C/introduction.page:33
+msgid ""
+"<app>Disk Usage Analyzer</app> is a graphical application for analysing "
+"storage device usage. It can be used to scan multiple local or remote "
+"storage devices, including hard disks, SSDs, USB sticks, digital cameras and "
+"memory cards. <app>Disk Usage Analyzer</app> can scan either the <link xref="
+"\"scan-file-system\">whole file system</link>, <link xref=\"scan-home\">your "
+"<file>Home</file> directory</link>, <link xref=\"scan-folder\">a specified "
+"folder</link> or <link xref=\"scan-remote\">a remote directory</link>."
+msgstr ""
+"<app>Анализатор использования дисков</app> — графическое приложение для "
+"анализа использования устройств хранения информации. Он может сканировать "
+"различные локальные или удалённые устройства, в том числе жёсткие диски, "
+"SSD, USB-носители, цифровые камеры и карты памяти. <app>Анализатор "
+"использования дисков</app> может сканировать <link xref=\"scan-file-system"
+"\">всю файловую систему</link>, <link xref=\"scan-home\">вашу <file>Домашнюю "
+"папку</file></link>, <link xref=\"scan-folder\">указанную папку</link> или "
+"<link xref=\"scan-remote\">удалённый каталог</link>."
 
-#: C/pref.page:13(info/desc)
-msgid "Skip specific devices and partitions when scanning the file system."
-msgstr "Пропуск отдельных устройств и разделов при сканировании файловой системы."
+#. (itstool) path: page/p
+#: C/introduction.page:42
+msgid ""
+"The results may be useful in deciding which folders can be <link href=\"help:"
+"file-roller\">archived</link>, <link href=\"help:gnome-help/files-delete"
+"\">deleted</link> or <link href=\"help:gnome-help/files-copy\">moved</link> "
+"to free up space. You can also use the results to estimate how much space "
+"would be needed for a <link href=\"help:gnome-help/backup-how\">backup</"
+"link> of specific folders."
+msgstr ""
+"С помощью полученных результатов можно определить, какие папки можно <link "
+"href=\"help:file-roller\">заархивировать</link>, <link href=\"help:gnome-"
+"help/files-delete\">удалить</link> или <link href=\"help:gnome-help/files-"
+"copy\">переместить</link>, чтобы освободить место. Также можно оценить, "
+"сколько места понадобится для <link href=\"help:gnome-help/backup-how"
+"\">резервного копирования</link> определённых папок."
 
-#: C/pref.page:18(page/title)
-msgid "Disable scanning of individual storage devices and partitions"
-msgstr "Отключение сканирования отдельных устройств и разделов"
-
-#: C/pref.page:20(page/p)
-msgid "<app>Disk Usage Analyzer</app> allows you to scan only the partitions and storage devices that you have selected in the <gui>Preferences</gui> dialog. By default, all devices and partitions are selected, but the application will store your preferences when you close it."
-msgstr "<app>Анализатор использования дисков</app> сканирует только те разделы и устройства, которые были выбраны в диалоговом окне <gui>Параметры</gui>. По умолчанию включено сканирование всех устройств и разделов. При закрытии приложения программа запоминает установленные параметры."
-
-#: C/pref.page:27(item/p)
-msgid "Select <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq>"
-msgstr "Выберите <guiseq><gui>Правка</gui><gui>Параметры</gui></guiseq>"
-
-#: C/pref.page:30(item/p)
-msgid "Select the storage devices and partitions that you want to scan, or deselect those that you do not wish to scan"
-msgstr "Выберите устройства и разделы, которые нужно сканировать, или снимите флажок с тех, которые сканировать не требуется"
-
-#: C/pref.page:34(item/p)
-msgid "Click <gui>Close</gui> to save your preferences"
-msgstr "Нажмите кнопку <gui>Закрыть</gui>, чтобы сохранить настройки"
-
-#: C/pref.page:39(note/p)
-msgid "The first item in the list, which is mounted on <file>/</file>, cannot be deselected"
-msgstr "Первый элемент в списке, смонтированный в <file>/</file>, отключить нельзя"
-
-#: C/pref-view-chart.page:22(info/desc)
+#. (itstool) path: info/desc
+#: C/pref-view-chart.page:27
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr "Отображение результата в виде круговой диаграммы или дерева."
 
-#: C/pref-view-chart.page:26(page/title)
+#. (itstool) path: page/title
+#: C/pref-view-chart.page:31
 msgid "Different chart views"
 msgstr "Различные виды диаграмм"
 
-#: C/pref-view-chart.page:28(page/p)
-msgid "By default, the scan results show each subfolder as the section of a ring, comprising an angle proportional to the size of the relevant folder. Sub-folders are shown in different colors."
-msgstr "По умолчанию результаты сканирования каждой подпапки отображаются в виде сектора кольца, угол которого пропорционален размеру папки. Подпапки отображаются различными цветами."
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:33
+msgid ""
+"By default, the scan results show each subfolder as the section of a ring, "
+"comprising an angle proportional to the size of the relevant folder. Sub-"
+"folders are shown in different colors, as additional layers around the inner "
+"ring."
+msgstr ""
+"По умолчанию результаты сканирования каждой подпапки отображаются в виде "
+"сектора кольца, угол которого пропорционален размеру папки. Подпапки "
+"отображаются различными цветами как дополнительные слои вокруг внутреннего "
+"кольца."
 
-#: C/pref-view-chart.page:31(page/p)
-msgid "Move your mouse over the rings chart displays more details about the subfolders."
-msgstr "При наведении указателя мыши на круговые диаграммы отображаются дополнительные сведения о подпапках."
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:37
+msgid ""
+"Moving your mouse over the rings chart displays more details about the "
+"folder and subfolders."
+msgstr ""
+"При наведении указателя мыши на круговые диаграммы отображаются "
+"дополнительные сведения о подпапках."
 
-#: C/pref-view-chart.page:33(page/p)
-msgid "Chart visibility can be changed to <gui>Treemap View</gui> using the drop-down list at the top of the chart on the right-hand side. The tree layout displays the folders as proportionately sized boxes."
-msgstr "Можно переключиться в режим просмотра в виде <gui>Древовидной карты</gui> с помощью выпадающего списка справа вверху диаграммы. В этом режиме папки отображаются в виде прямоугольников пропорционального размера."
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:39
+msgid ""
+"Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
+"at the bottom of the chart, on the right-hand side. The tree layout displays "
+"the folders as proportionately sized boxes."
+msgstr ""
+"Можно переключиться в режим просмотра в виде <gui>Древовидной карты</gui> с "
+"помощью кнопок, расположенных с правой стороны под диаграммой. В этом режиме "
+"папки отображаются в виде прямоугольников пропорционального размера."
 
-#: C/pref-view-menu.page:13(info/desc)
-msgid "Hide or show the toolbar and the status bar."
-msgstr "Скрытие или отображение панели инструментов и строки состояния."
+#. (itstool) path: page/p
+#: C/pref-view-chart.page:42
+msgid ""
+"You can also click on a ring or box to make that the starting point of the "
+"chart."
+msgstr ""
+"Вы также можете щёлкнуть по сектору кольца или квадрату, чтобы сделать его "
+"отправной точкой диаграммы."
 
-#: C/pref-view-menu.page:17(page/title)
-msgid "Toolbar and statusbar"
-msgstr "Панель инструментов и строка состояния"
+#. (itstool) path: credit/name
+#: C/problem-permissions.page:9 C/problem-slow-scan.page:10
+msgid "Baptiste Mille-Mathias"
+msgstr "Baptiste Mille-Mathias"
 
-#: C/pref-view-menu.page:19(page/p)
-msgid "The <gui>Toolbar</gui> provides shortcuts to the various scan actions, while the <gui>Statusbar</gui> provides the status of the application (for example, <gui>Ready</gui> and <gui>Scanning…</gui>)."
-msgstr "<gui>Панель инструментов</gui> содержит значки для различных действий сканирования, а <gui>строка состояния</gui> показывает состояние приложения (например, <gui>Готово</gui> или <gui>Сканирование…</gui>)."
+#. (itstool) path: credit/years
+#: C/problem-permissions.page:11 C/problem-slow-scan.page:12
+#: C/question-open-folder.page:13 C/question-trash.page:13
+msgid "2014"
+msgstr "2014"
 
-#: C/pref-view-menu.page:25(item/p)
-msgid "Select <guiseq><gui>View</gui><gui>Toolbar</gui></guiseq> from the menu and enable or disable the option"
-msgstr "В меню выберите <guiseq><gui>Вид</gui><gui>Панель инструментов</gui></guiseq> и включите или отключите эту опцию"
+#. (itstool) path: info/desc
+#: C/problem-permissions.page:16
+msgid ""
+"I see a <gui>Could not scan /… or some of the folders it contains</gui> "
+"error message when scanning."
+msgstr ""
+"Я вижу сообщение об ошибке <gui>Не удалось просканировать /… или некоторые "
+"из вложенных папок</gui> во время сканирования."
 
-#: C/pref-view-menu.page:29(item/p)
-msgid "Select <guiseq><gui>View</gui><gui>Statusbar</gui></guiseq> from the menu and enable or disable the option"
-msgstr "В меню выберите <guiseq><gui>Вид</gui><gui>Строка состояния</gui></guiseq> и включите или отключите эту опцию"
+#. (itstool) path: page/title
+#: C/problem-permissions.page:21
+msgid "Error when scanning"
+msgstr "Ошибка при сканировании"
 
-#: C/scan-file-system.page:22(info/desc)
-msgid "Scan all internal and removable storage devices."
-msgstr "Сканирование всех внутренних и съёмных устройств хранения информации."
+#. (itstool) path: page/p
+#: C/problem-permissions.page:23
+msgid ""
+"When scanning you might see a message <gui>Could not scan /… or some of the "
+"folders it contains</gui> at the top of <app>Disk Usage Analyzer</app> "
+"window. This error appears because you don't have the required permissions "
+"to access some files due to restrictions set on the target system. The files "
+"you can't access won't be used to compute the <link xref=\"pref-view-chart"
+"\">chart</link> representing the disk usage, hence the result reported may "
+"be wrong."
+msgstr ""
+"При сканировании вы можете увидеть сообщение <gui>Не удалось просканировать /"
+"… или некоторые из содержащихся в нем папок</gui> в верхней части окна "
+"<app>Анализатора использования дисков</app>. Эта ошибка возникает из-за "
+"того, что у вас нет необходимых прав доступа к некоторым файлам из-за "
+"ограничений, установленных в файловой системе назначения. Файлы, к которым "
+"вы не имеете доступа, не будут использоваться для расчета <link xref=\"pref-"
+"view-chart\">диаграммы</link>, представляющей использование диска, поэтому "
+"сообщаемый программой результат может быть неверным."
 
-#: C/scan-file-system.page:26(page/title)
+#. (itstool) path: page/p
+#: C/problem-permissions.page:30
+msgid ""
+"Not having access to all files and directories is perfectly common though, "
+"so there is nothing you can do about this error."
+msgstr ""
+"Однако отсутствие прав доступа ко всем файлам и каталогам является вполне "
+"обычным явлением, поэтому вы ничего не можете сделать с этой ошибкой."
+
+#. (itstool) path: note/p
+#: C/problem-permissions.page:33
+msgid ""
+"<app>Disk Usage Analyzer</app> uses command <cmd>du</cmd> to create the "
+"detailed view of the use of storage, and needs you have read permission on "
+"files and execute permission of directories."
+msgstr ""
+"<app>Анализатор использования дисков</app> использует команду <cmd>du</cmd> "
+"для создания подробной картины использования хранилища и требует, что бы у "
+"вас были права доступа к чтению файлов и права выполнения для каталогов."
+
+#. (itstool) path: note/p
+#: C/problem-permissions.page:37
+msgid ""
+"On the other hand, filesystem disk usage uses the command <cmd>df</cmd> "
+"which relies on the filesystem and not on file permissions."
+msgstr ""
+"С другой стороны, для оценки использования файловой системы применяется "
+"программа <cmd>df</cmd>, которая зависит от файловой системы, а не от прав "
+"доступа к файлам."
+
+#. (itstool) path: info/desc
+#: C/problem-slow-scan.page:17
+msgid "Scanning a folder or a remote location is slow."
+msgstr "Сканирование папки или удаленного устройства выполняется медленно."
+
+#. (itstool) path: page/title
+#: C/problem-slow-scan.page:20
+msgid "Scanning is slow"
+msgstr "Медленное сканирование"
+
+#. (itstool) path: page/p
+#: C/problem-slow-scan.page:22
+msgid ""
+"The time required to scan a folder or a remote location depends on the speed "
+"of the media you're scanning. For instance a mechanical hard drive will be "
+"slower than a SSD, and scanning a remote directory over Internet will "
+"generally take longer than scanning a folder over a local network."
+msgstr ""
+"Время, необходимое для сканирования папки или удалённого хранилища данных, "
+"зависит от скорости сканируемого носителя. Например, механический жёсткий "
+"диск будет работать медленнее, чем SSD, а сканирование удаленного каталога "
+"через Интернет обычно занимает больше времени, чем сканирование папки по "
+"локальной сети."
+
+#. (itstool) path: page/p
+#: C/problem-slow-scan.page:27
+msgid ""
+"The speed also depends on the depth of the directory structure and the "
+"number of files stored."
+msgstr ""
+"Скорость также зависит от глубины вложенности структуры каталогов и "
+"количества хранимых файлов."
+
+#. (itstool) path: info/desc
+#: C/question-open-folder.page:18
+msgid "Open a folder in a file browser such as <app>Files</app>."
+msgstr "Открыть папку в файловом менеджере, таком как <app>Файлы</app>."
+
+#. (itstool) path: page/title
+#: C/question-open-folder.page:21
+msgid "How do I open a folder?"
+msgstr "Как открыть папку?"
+
+#. (itstool) path: page/p
+#: C/question-open-folder.page:23
+msgid ""
+"You can open a folder in your default file browser, such as <app>Files</"
+"app>. This can be useful if you want to quickly find out which files are in "
+"that folder."
+msgstr ""
+"Вы можете открыть папку в файловом менеджере, установленном по умолчанию, "
+"например <app>Файлы</app>. Это может быть полезно, если вы хотите быстро "
+"узнать, какие файлы находятся в данной папке."
+
+#. (itstool) path: item/p
+#: C/question-open-folder.page:29
+msgid ""
+"Right-click on the folder that you want to open and select <gui>Open Folder</"
+"gui>."
+msgstr ""
+"Щёлкните правой кнопкой мыши папку, которую хотите открыть, и выберите "
+"<gui>Открыть папку</gui>."
+
+#. (itstool) path: info/desc
+#: C/question-trash.page:18
+msgid "Move unwanted folders to <file>Trash</file>."
+msgstr "Переместить ненужные папки в <file>Корзину</file>."
+
+#. (itstool) path: page/title
+#: C/question-trash.page:21
+msgid "How do I delete a folder?"
+msgstr "Как удалить папку?"
+
+#. (itstool) path: page/p
+#: C/question-trash.page:23
+msgid ""
+"You can clear out some space from your computer or a remote file system "
+"using <app>Disk Usage Analyzer</app> by moving folders to <file>Trash</file> "
+"and deleting them."
+msgstr ""
+"Вы можете освободить место на своем компьютере или в удаленной файловой "
+"системе с помощью <app>Анализатора использования дисков</app>, переместив "
+"папки в <file>Корзину</file> и удалив их."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:29
+msgid ""
+"Right-click on the folder that you want to delete and select <gui>Move to "
+"Trash</gui>."
+msgstr ""
+"Щёлкните правой кнопкой мыши папку, которую хотите удалить, и выберите "
+"<gui>Удалить в корзину</gui>."
+
+#. (itstool) path: item/p
+#: C/question-trash.page:33
+msgid ""
+"Open a file browser such as <app>Files</app> and empty the <file>Trash</"
+"file>."
+msgstr ""
+"Откройте файловый менеджер, например <app>Файлы</app>, и очистите "
+"<file>Корзину</file>."
+
+#. (itstool) path: info/desc
+#: C/scan-file-system.page:27
+msgid "Scan your internal storage devices."
+msgstr "Сканирование локальных устройств хранения информации."
+
+#. (itstool) path: page/title
+#: C/scan-file-system.page:31
 msgid "Scan the file system"
 msgstr "Сканирование файловой системы"
 
-#: C/scan-file-system.page:28(page/p)
-msgid "To find out how much space your file system takes up:"
-msgstr "Чтобы узнать, сколько места занимает ваша файловая система:"
+#. (itstool) path: page/p
+#: C/scan-file-system.page:33
+msgid ""
+"To scan your computer, select the name of your computer from the list of "
+"<gui>Devices &amp; Locations</gui>. All of the folders that you have "
+"permission to access on your computer will be scanned. It is quite common "
+"for you to not have permissions to scan some directories on your computer."
+msgstr ""
+"Чтобы просканировать компьютер, выберите его название из списка "
+"<gui>Устройства и расположения</gui>. Все папки, к которым у вас есть доступ "
+"на компьютере, будут просканированы. Довольно часто вы имеете доступ не ко "
+"всем каталогам на своём компьютере."
 
-#: C/scan-file-system.page:32(item/p)
-msgid "Select <guiseq><gui>Analyzer</gui><gui>Scan File System</gui></guiseq> from the menu"
-msgstr "В меню выберите <guiseq><gui>Анализатор</gui><gui>Сканировать файловую систему</gui></guiseq>"
+#. (itstool) path: note/p
+#: C/scan-file-system.page:39
+msgid ""
+"If the file system that you are trying to scan is large, it may take a few "
+"minutes for the scan to complete. To cancel the scan, press the button in "
+"the top-left corner of the screen to return to the list of devices."
+msgstr ""
+"Если файловая система имеет большой размер, сканирование может занять "
+"несколько минут. Чтобы отменить сканирование, нажмите кнопку в левом верхнем "
+"углу экрана, чтобы вернуться к списку устройств."
 
-#: C/scan-file-system.page:37(page/p)
-msgid "Your file system includes all internal and removable storage devices which are mounted when the respective folder is scanned."
-msgstr "Будет сканироваться файловая система, включающая в себя все внутренние и съёмные устройства хранения информации, смонтированные в соответствующие папки."
-
-#: C/scan-file-system.page:41(note/p)
-msgid "If the file system that you are trying to scan is large, it may take a few minutes for the scan to complete."
-msgstr "Если файловая система имеет большой размер, сканирование может занять несколько минут."
-
-#: C/scan-file-system.page:43(note/p)
-#: C/scan-folder.page:48(note/p)
-#: C/scan-home.page:44(note/p)
-msgid "Select <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> to cancel the current scan, or <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq> to repeat the last scan."
-msgstr "Выберите <guiseq><gui>Анализатор</gui><gui>Остановить</gui></guiseq>, чтобы остановить текущее сканирование, или <guiseq><gui>Анализатор</gui><gui>Обновить</gui></guiseq>, чтобы повторить последнее сканирование."
-
-#: C/scan-file-system.page:48(page/p)
-#: C/scan-folder.page:53(page/p)
-msgid "The results may be useful in deciding which folders can be <link href=\"help:file-roller\">archived</link>, <link href=\"help:gnome-help/files-delete\">deleted</link> or <link href=\"help:gnome-help/files-copy\">moved</link> to free up space. You can also use the results to estimate how much space would be needed for a <link href=\"help:gnome-help/backup-how\">backup</link> of specific folders."
-msgstr "С помощью полученных результатов можно определить, какие папки можно <link href=\"help:file-roller\">заархивировать</link>, <link href=\"help:gnome-help/files-delete\">удалить</link> или <link href=\"help:gnome-help/files-copy\">переместить</link>, чтобы освободить место. Также можно оценить, сколько места понадобится для <link href=\"help:gnome-help/backup-how\">резервного копирования</link> определённых папок."
-
-#: C/scan-file-system.page:55(page/p)
-#: C/scan-folder.page:60(page/p)
-#: C/scan-home.page:57(page/p)
-#: C/scan-remote.page:97(note/p)
-msgid "Right-click on any folder and select <gui>Open Folder</gui> to launch the <app>Files</app> application, or <gui>Move to Trash</gui> to move your folder to <file>Trash</file>."
-msgstr "Нажмите правой кнопкой мыши на любую папку и выберите <gui>Открыть папку</gui>, чтобы запустить приложение <app>Файлы</app>, или <gui>Удалить в корзину</gui>, чтобы переместить папку в <file>Корзину</file>."
-
-#: C/scan-folder.page:23(info/desc)
+#. (itstool) path: info/desc
+#: C/scan-folder.page:28
 msgid "Scan a local folder, including all subfolders."
 msgstr "Сканирование локальной папки, включая все её подпапки."
 
-#: C/scan-folder.page:27(page/title)
+#. (itstool) path: page/title
+#: C/scan-folder.page:32
 msgid "Scan a folder"
 msgstr "Сканирование папки"
 
-#: C/scan-folder.page:29(page/p)
-msgid "Scans of individual folders are faster than those of the whole file system, so they may be more efficient if you want information only about a specific part of your file system."
-msgstr "Сканирование отдельных папок выполняется гораздо быстрее, чем сканирование всей системы, поэтому оно может быть более эффективным, если нужна информация лишь об отдельных частях файловой системы."
+#. (itstool) path: page/p
+#: C/scan-folder.page:34
+msgid ""
+"Scans of individual folders are faster than those of the whole file system, "
+"so they may be more efficient if you want information only about a specific "
+"part of your file system."
+msgstr ""
+"Сканирование отдельных папок выполняется гораздо быстрее, чем сканирование "
+"всей системы, поэтому оно может быть более эффективным, если нужна "
+"информация лишь об отдельных частях файловой системы."
 
-#: C/scan-folder.page:35(item/p)
-msgid "Select <guiseq><gui>Analyzer</gui><gui>Scan Folder…</gui></guiseq> from the menu"
-msgstr "В меню выберите <guiseq><gui>Анализатор</gui><gui>Сканировать папку…</gui></guiseq>"
+#. (itstool) path: item/p
+#: C/scan-folder.page:40
+msgid ""
+"Press the button in the top-right of the main window and select <gui style="
+"\"menuitem\">Scan Folder…</gui>."
+msgstr ""
+"Нажмите кнопку в правом верхнем углу главного окна и выберите <gui style="
+"\"menuitem\">Сканировать папку…</gui>."
 
-#: C/scan-folder.page:39(item/p)
-msgid "Use the file browser to navigate around your file system and select the desired folder"
-msgstr "Используйте окно выбора папки для навигации по файловой системы и выбора нужной папки"
+#. (itstool) path: item/p
+#: C/scan-folder.page:44
+msgid ""
+"A file chooser dialog will open. Choose the folder which you want to scan."
+msgstr ""
+"Откроется диалоговое окно выбора файла. Выберите папку, которую вы хотите "
+"сканировать."
 
-#: C/scan-folder.page:43(item/p)
-msgid "Click <gui>Open</gui> to commence scanning"
-msgstr "Нажмите <gui>Открыть</gui>, чтобы начать сканирование"
+#. (itstool) path: item/p
+#: C/scan-folder.page:48
+msgid "Click <gui>Open</gui> to start the scan."
+msgstr "Нажмите <gui>Открыть</gui>, чтобы начать сканирование."
 
-#: C/scan-home.page:23(info/desc)
-msgid "Scan all of your personal files that are on your internal storage device."
-msgstr "Сканирование всех ваших личных файлов на внутреннем устройстве хранения информации."
+#. (itstool) path: page/p
+#: C/scan-folder.page:52
+msgid ""
+"The folder which you just scanned will now be added to your list of "
+"<gui>Devices &amp; Locations</gui>. If the folder is renamed or deleted, it "
+"will be removed from the list when you next restart <app>Disk Usage "
+"Analyzer</app>."
+msgstr ""
+"Папка, которую вы только что отсканировали, будет добавлена в ваш список "
+"<gui>Устройства и расположения</gui>. Если папка будет переименована или "
+"удалена, то будет удалена из списка при следующем перезапуске "
+"<app>Анализатора использования дисков</app>."
 
-#: C/scan-home.page:28(page/title)
+#. (itstool) path: info/desc
+#: C/scan-home.page:28
+msgid "Scan all of your personal files that are on your computer."
+msgstr "Сканирование всех ваших личных файлов, расположенных на компьютере."
+
+#. (itstool) path: page/title
+#: C/scan-home.page:32
 msgid "Scan your <file>Home</file> folder"
-msgstr "Сканирование <file>домашней папки</file>"
+msgstr "Сканирование <file>Домашней папки</file>"
 
-#: C/scan-home.page:30(page/p)
-msgid "The <file>Home</file> folder is where most files are located for the average user because default settings are often set to save or copy files into subdirectories within it. This includes downloads from the internet, documents which you work on and photos from your camera. Normally, one <file>Home</file> folder exists for each user on the computer."
-msgstr "<file>Домашняя папка</file> — это место, где хранится большинство файлов обычного пользователя, так как по умолчанию файлы часто сохраняются или копируются в её подпапки. Это относится, в том числе, к загрузкам из Интернета, документам, с которыми вы работаете и снимкам с фотокамеры. Как правило, для каждого пользователя на компьютере существует своя <file>домашняя папка</file>."
+#. (itstool) path: page/p
+#: C/scan-home.page:34
+msgid ""
+"The <file>Home</file> folder is where most files are located for most users "
+"because default settings are often set to save or copy files into "
+"subdirectories within it. This includes downloads from the internet, "
+"documents which you work on and photos from your camera. Normally, one "
+"<file>Home</file> folder exists for each user on the computer."
+msgstr ""
+"<file>Домашняя папка</file> — это место, где хранится большинство файлов "
+"пользователя, так как по умолчанию файлы часто сохраняются или копируются в "
+"её подпапки. Это относится, в том числе, к загрузкам из Интернета, "
+"документам, с которыми вы работаете и снимкам с фотокамеры. Как правило, для "
+"каждого пользователя на компьютере существует своя <file>Домашняя папка</"
+"file>."
 
-#: C/scan-home.page:38(item/p)
-msgid "Select <guiseq><gui>Analyzer</gui><gui>Scan Home Folder</gui></guiseq> from the menu"
-msgstr "Выберите из меню <guiseq><gui>Анализатор</gui><gui>Сканировать домашнюю папку</gui></guiseq>"
+#. (itstool) path: item/p
+#: C/scan-home.page:42
+msgid ""
+"Select your <gui>Home Folder</gui> in the list of <gui>Devices &amp; "
+"Locations</gui>."
+msgstr ""
+"Выберите вашу <gui>Домашнюю папку</gui> в списке <gui>Устройства и "
+"расположения</gui>."
 
-#: C/scan-home.page:49(page/p)
-msgid "The results may be useful in deciding which folders can be <link href=\"help:file-roller\">archived</link>, <link href=\"help:gnome-help/files-delete\">deleted</link> or <link href=\"help:gnome-help/files-copy\">moved</link> to free up space. You can also use the results to estimate how much space would be needed for a <link href=\"help:gnome-help/backup-how\">backup</link> of your <file>Home</file> folder."
-msgstr "С помощью полученных результатов можно определить, какие папки можно <link href=\"help:file-roller\">заархивировать</link>, <link href=\"help:gnome-help/files-delete\">удалить</link> или <link href=\"help:gnome-help/files-copy\">переместить</link>, чтобы освободить место. С их помощью также можно оценить, сколько места понадобится для <link href=\"help:gnome-help/backup-how\">резервного копирования</link> вашей <file>домашней папки</file>."
-
-#: C/scan-home.page:62(note/p)
-msgid "The default subdirectories usually include <file>Desktop</file>, <file>Documents</file>, <file>Downloads</file>, <file>Pictures</file> and <file>Music</file>, among others. Some of these will already exist when GNOME is installed; others will be created by applications when they are needed."
-msgstr "По умолчанию домашняя папка содержит подпапки <file>Рабочий стол</file>, <file>Документы</file>, <file>Загрузки</file>, <file>Изображения</file>, <file>Музыка</file> и другие. Некоторые из них уже существуют при установке GNOME, другие создаются различными приложениями при необходимости."
-
-#: C/scan-remote.page:22(info/desc)
+#. (itstool) path: info/desc
+#: C/scan-remote.page:28
 msgid "Scan a folder remotely from your computer."
-msgstr "Удалённое сканирование папки с вашего компьютера."
+msgstr "Сканирование удалённой папки с вашего компьютера."
 
-#: C/scan-remote.page:26(page/title)
+#. (itstool) path: page/title
+#: C/scan-remote.page:32
 msgid "Scan a remote folder"
 msgstr "Сканирование удалённой папки"
 
-#: C/scan-remote.page:28(page/p)
-msgid "<app>Disk Usage Analyzer</app> can scan storage devices which are accessible remotely. To scan the whole file system or any specific folder remotely:"
-msgstr "<app>Анализатор использования дисков</app> может сканировать устройства хранения информации, доступные на удалённых компьютерах. Чтобы удалённо сканировать всю файловую систему или любую отдельную папку:"
+#. (itstool) path: page/p
+#: C/scan-remote.page:34
+msgid ""
+"<app>Disk Usage Analyzer</app> can scan storage devices which are accessible "
+"remotely. To scan the whole file system or any specific folder remotely:"
+msgstr ""
+"<app>Анализатор использования дисков</app> может сканировать устройства "
+"хранения информации, доступные на удалённых компьютерах. Чтобы удалённо "
+"сканировать всю файловую систему или любую отдельную папку:"
 
-#: C/scan-remote.page:34(item/p)
-msgid "Select <guiseq><gui>Analyzer</gui> <gui>Scan Remote Folder…</gui></guiseq> from the menu"
-msgstr "В меню выберите <guiseq><gui>Анализатор</gui> <gui>Сканировать удалённую папку…</gui></guiseq>"
+#. (itstool) path: item/p
+#: C/scan-remote.page:40
+msgid ""
+"If you have scanned the remote file system before, select it under "
+"<gui>Remote Locations</gui> in the list of <gui>Devices &amp; Locations</"
+"gui>."
+msgstr ""
+"Если вы ранее сканировали удалённую файловую систему, выберите её в разделе "
+"<gui>Удалённые расположения</gui> в списке <gui>Устройства и расположения</"
+"gui>."
 
-#: C/scan-remote.page:38(item/p)
-msgid "Choose the protocol that you wish to use"
-msgstr "Выберите протокол, который хотите использовать"
+#. (itstool) path: item/p
+#: C/scan-remote.page:45
+msgid ""
+"If you have connected to the remote file system before but not scanned it, "
+"select the remote file system from the list."
+msgstr ""
+"Если вы ранее подключались к удалённой файловой системе, но не сканировали "
+"её, выберите удалённую файловую систему из списка."
 
-#: C/scan-remote.page:79(item/p)
-msgid "Enter in the IP address of the remote storage device into the <gui>Server</gui> field or the URI, depending on the protocol that you are using."
-msgstr "Введите IP-адрес удалённого устройства хранения информации в поле <gui>Сервер</gui> или <gui>Адрес (URI)</gui>, в зависимости от используемого протокола."
+#. (itstool) path: item/p
+#: C/scan-remote.page:49
+msgid ""
+"If you have not connected to the remote file system before, enter the URL "
+"into the <gui>Enter server address…</gui> field under <gui>Connect to "
+"Server</gui>. It will normally have a protocol, followed by a colon and two "
+"slashes, that looks different depending on the <link xref=\"help:gnome-help/"
+"nautilus-connect#types\">protocol</link> that you are using."
+msgstr ""
+"Если вы ранее не подключались к удаленной файловой системе, введите URL-"
+"адрес в поле <gui>Введите адрес сервера…</gui> в разделе <gui>Подключиться к "
+"серверу</gui>. Обычно адрес состоит из названия протокола, за которым "
+"следует двоеточие и две косые черты. Формирование адреса зависит от "
+"используемого вами <link xref=\"help:gnome-help/nautilus-connect#types"
+"\">протокола</link> для удалённой связи."
 
-#: C/scan-remote.page:86(item/p)
-msgid "Click <gui>Scan</gui> to continue; you may be asked for more details, like a password and username, before the scan will commence."
-msgstr "Для продолжения нажмите кнопку <gui>Сканировать</gui>. Перед началом сканирования у вам могут быть запрошены дополнительные сведения, например, пароль и имя пользователя."
+#. (itstool) path: item/p
+#: C/scan-remote.page:55
+msgid ""
+"Click <gui>Connect</gui> to continue; you may be asked for more details, "
+"like a password and username, before the scan will commence."
+msgstr ""
+"Щёлкните <gui>Подключить</gui>, чтобы продолжить; от вас могут понадобиться "
+"дополнительные сведения, такие как пароль и имя пользователя, прежде чем "
+"начнётся сканирование."
 
-#: C/scan-remote.page:92(note/p)
-msgid "Scanning over the network may be slower than scanning a local file system."
-msgstr "Сканирование по сети может быть медленнее, чем сканирование локальной файловой системы."
+#. (itstool) path: item/p
+#: C/scan-remote.page:59
+msgid "Select a folder if you do not want to scan the complete file system."
+msgstr "Выберите папку, если не хотите сканировать всю файловую систему."
 
+#. (itstool) path: item/p
+#: C/scan-remote.page:62
+#| msgid "Click <gui>Open</gui> to commence scanning"
+msgid "Click <gui>Open</gui> to continue."
+msgstr "Щёлкните <gui>Открыть</gui> для продолжения."
+
+#. (itstool) path: note/p
+#: C/scan-remote.page:67
+msgid ""
+"Scanning over the network may be slower than scanning a local file system."
+msgstr ""
+"Сканирование по сети может быть медленнее, чем сканирование локальной "
+"файловой системы."
+
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Эта работа находится под лицензией <_:link-1/>."
+
+#~ msgid "Scan storage devices"
+#~ msgstr "Сканирование устройств хранения информации"
+
+#~ msgid "Skip specific devices and partitions when scanning the file system."
+#~ msgstr ""
+#~ "Пропуск отдельных устройств и разделов при сканировании файловой системы."
+
+#~ msgid "Disable scanning of individual storage devices and partitions"
+#~ msgstr "Отключение сканирования отдельных устройств и разделов"
+
+#~ msgid ""
+#~ "<app>Disk Usage Analyzer</app> allows you to scan only the partitions and "
+#~ "storage devices that you have selected in the <gui>Preferences</gui> "
+#~ "dialog. By default, all devices and partitions are selected, but the "
+#~ "application will store your preferences when you close it."
+#~ msgstr ""
+#~ "<app>Анализатор использования дисков</app> сканирует только те разделы и "
+#~ "устройства, которые были выбраны в диалоговом окне <gui>Параметры</gui>. "
+#~ "По умолчанию включено сканирование всех устройств и разделов. При "
+#~ "закрытии приложения программа запоминает установленные параметры."
+
+#~ msgid "Select <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq>"
+#~ msgstr "Выберите <guiseq><gui>Правка</gui><gui>Параметры</gui></guiseq>"
+
+#~ msgid ""
+#~ "Select the storage devices and partitions that you want to scan, or "
+#~ "deselect those that you do not wish to scan"
+#~ msgstr ""
+#~ "Выберите устройства и разделы, которые нужно сканировать, или снимите "
+#~ "флажок с тех, которые сканировать не требуется"
+
+#~ msgid "Click <gui>Close</gui> to save your preferences"
+#~ msgstr "Нажмите кнопку <gui>Закрыть</gui>, чтобы сохранить настройки"
+
+#~ msgid ""
+#~ "The first item in the list, which is mounted on <file>/</file>, cannot be "
+#~ "deselected"
+#~ msgstr ""
+#~ "Первый элемент в списке, смонтированный в <file>/</file>, отключить нельзя"
+
+#~ msgid "Hide or show the toolbar and the status bar."
+#~ msgstr "Скрытие или отображение панели инструментов и строки состояния."
+
+#~ msgid "Toolbar and statusbar"
+#~ msgstr "Панель инструментов и строка состояния"
+
+#~ msgid ""
+#~ "The <gui>Toolbar</gui> provides shortcuts to the various scan actions, "
+#~ "while the <gui>Statusbar</gui> provides the status of the application "
+#~ "(for example, <gui>Ready</gui> and <gui>Scanning…</gui>)."
+#~ msgstr ""
+#~ "<gui>Панель инструментов</gui> содержит значки для различных действий "
+#~ "сканирования, а <gui>строка состояния</gui> показывает состояние "
+#~ "приложения (например, <gui>Готово</gui> или <gui>Сканирование…</gui>)."
+
+#~ msgid ""
+#~ "Select <guiseq><gui>View</gui><gui>Toolbar</gui></guiseq> from the menu "
+#~ "and enable or disable the option"
+#~ msgstr ""
+#~ "В меню выберите <guiseq><gui>Вид</gui><gui>Панель инструментов</gui></"
+#~ "guiseq> и включите или отключите эту опцию"
+
+#~ msgid ""
+#~ "Select <guiseq><gui>View</gui><gui>Statusbar</gui></guiseq> from the menu "
+#~ "and enable or disable the option"
+#~ msgstr ""
+#~ "В меню выберите <guiseq><gui>Вид</gui><gui>Строка состояния</gui></"
+#~ "guiseq> и включите или отключите эту опцию"
+
+#~ msgid "To find out how much space your file system takes up:"
+#~ msgstr "Чтобы узнать, сколько места занимает ваша файловая система:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui>Analyzer</gui><gui>Scan File System</gui></guiseq> "
+#~ "from the menu"
+#~ msgstr ""
+#~ "В меню выберите <guiseq><gui>Анализатор</gui><gui>Сканировать файловую "
+#~ "систему</gui></guiseq>"
+
+#~ msgid ""
+#~ "Your file system includes all internal and removable storage devices "
+#~ "which are mounted when the respective folder is scanned."
+#~ msgstr ""
+#~ "Будет сканироваться файловая система, включающая в себя все внутренние и "
+#~ "съёмные устройства хранения информации, смонтированные в соответствующие "
+#~ "папки."
+
+#~ msgid ""
+#~ "Select <guiseq><gui>Analyzer</gui><gui>Stop</gui></guiseq> to cancel the "
+#~ "current scan, or <guiseq><gui>Analyzer</gui><gui>Refresh</gui></guiseq> "
+#~ "to repeat the last scan."
+#~ msgstr ""
+#~ "Выберите <guiseq><gui>Анализатор</gui><gui>Остановить</gui></guiseq>, "
+#~ "чтобы остановить текущее сканирование, или <guiseq><gui>Анализатор</"
+#~ "gui><gui>Обновить</gui></guiseq>, чтобы повторить последнее сканирование."
+
+#~ msgid ""
+#~ "Right-click on any folder and select <gui>Open Folder</gui> to launch the "
+#~ "<app>Files</app> application, or <gui>Move to Trash</gui> to move your "
+#~ "folder to <file>Trash</file>."
+#~ msgstr ""
+#~ "Нажмите правой кнопкой мыши на любую папку и выберите <gui>Открыть папку</"
+#~ "gui>, чтобы запустить приложение <app>Файлы</app>, или <gui>Удалить в "
+#~ "корзину</gui>, чтобы переместить папку в <file>Корзину</file>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui>Analyzer</gui><gui>Scan Folder…</gui></guiseq> from "
+#~ "the menu"
+#~ msgstr ""
+#~ "В меню выберите <guiseq><gui>Анализатор</gui><gui>Сканировать папку…</"
+#~ "gui></guiseq>"
+
+#~ msgid ""
+#~ "Use the file browser to navigate around your file system and select the "
+#~ "desired folder"
+#~ msgstr ""
+#~ "Используйте окно выбора папки для навигации по файловой системы и выбора "
+#~ "нужной папки"
+
+#~ msgid ""
+#~ "Select <guiseq><gui>Analyzer</gui><gui>Scan Home Folder</gui></guiseq> "
+#~ "from the menu"
+#~ msgstr ""
+#~ "Выберите из меню <guiseq><gui>Анализатор</gui><gui>Сканировать домашнюю "
+#~ "папку</gui></guiseq>"
+
+#~ msgid ""
+#~ "The results may be useful in deciding which folders can be <link href="
+#~ "\"help:file-roller\">archived</link>, <link href=\"help:gnome-help/files-"
+#~ "delete\">deleted</link> or <link href=\"help:gnome-help/files-copy"
+#~ "\">moved</link> to free up space. You can also use the results to "
+#~ "estimate how much space would be needed for a <link href=\"help:gnome-"
+#~ "help/backup-how\">backup</link> of your <file>Home</file> folder."
+#~ msgstr ""
+#~ "С помощью полученных результатов можно определить, какие папки можно "
+#~ "<link href=\"help:file-roller\">заархивировать</link>, <link href=\"help:"
+#~ "gnome-help/files-delete\">удалить</link> или <link href=\"help:gnome-help/"
+#~ "files-copy\">переместить</link>, чтобы освободить место. С их помощью "
+#~ "также можно оценить, сколько места понадобится для <link href=\"help:"
+#~ "gnome-help/backup-how\">резервного копирования</link> вашей "
+#~ "<file>домашней папки</file>."
+
+#~ msgid ""
+#~ "The default subdirectories usually include <file>Desktop</file>, "
+#~ "<file>Documents</file>, <file>Downloads</file>, <file>Pictures</file> and "
+#~ "<file>Music</file>, among others. Some of these will already exist when "
+#~ "GNOME is installed; others will be created by applications when they are "
+#~ "needed."
+#~ msgstr ""
+#~ "По умолчанию домашняя папка содержит подпапки <file>Рабочий стол</file>, "
+#~ "<file>Документы</file>, <file>Загрузки</file>, <file>Изображения</file>, "
+#~ "<file>Музыка</file> и другие. Некоторые из них уже существуют при "
+#~ "установке GNOME, другие создаются различными приложениями при "
+#~ "необходимости."
+
+#~ msgid ""
+#~ "Select <guiseq><gui>Analyzer</gui> <gui>Scan Remote Folder…</gui></"
+#~ "guiseq> from the menu"
+#~ msgstr ""
+#~ "В меню выберите <guiseq><gui>Анализатор</gui> <gui>Сканировать удалённую "
+#~ "папку…</gui></guiseq>"
+
+#~ msgid "Choose the protocol that you wish to use"
+#~ msgstr "Выберите протокол, который хотите использовать"
+
+#~ msgid ""
+#~ "Enter in the IP address of the remote storage device into the "
+#~ "<gui>Server</gui> field or the URI, depending on the protocol that you "
+#~ "are using."
+#~ msgstr ""
+#~ "Введите IP-адрес удалённого устройства хранения информации в поле "
+#~ "<gui>Сервер</gui> или <gui>Адрес (URI)</gui>, в зависимости от "
+#~ "используемого протокола."
