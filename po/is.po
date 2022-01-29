@@ -1,27 +1,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-10-29 10:32+0000\n"
-"PO-Revision-Date: 2017-12-06 15:02+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2021-09-21 16:21+0000\n"
+"PO-Revision-Date: 2022-01-29 15:10+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 19.12.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:106
+#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
 msgid "Disk Usage Analyzer"
-msgstr "Diskapláss"
+msgstr "Disknotkunargreining"
 
 #: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
@@ -44,7 +43,12 @@ msgstr ""
 "á netinu. Hægt er að birta bæði greinasýn og myndræna framsetningu fyrir "
 "stærð hverrar möppu, sem auðveldar að finna hvar geymsluplássi er sóað."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:23
+#| msgid "Devices & Locations"
+msgid "Devices and Locations"
+msgstr "Tæki og staðsetningar"
+
+#: data/org.gnome.baobab.appdata.xml.in:38
 msgid "The GNOME Project"
 msgstr "GNOME verkefnið"
 
@@ -53,48 +57,197 @@ msgstr "GNOME verkefnið"
 msgid "storage;space;cleanup;"
 msgstr "gögn;geymsla;pláss;hreinsun;tiltekt;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
+#: data/org.gnome.baobab.gschema.xml:9
+#| msgid "Excluded partitions URIs"
+msgid "Excluded locations URIs"
+msgstr "Slóðir á útilokaðar staðsetningar"
 
-#: data/org.gnome.baobab.gschema.xml.in:9
-msgid "Excluded partitions URIs"
-msgstr "Slóðir á útilokaðar disksneiðar"
+#: data/org.gnome.baobab.gschema.xml:10
+#| msgid "A list of URIs for partitions to be excluded from scanning."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "Listi yfir slóðir á staðsetningar sem sleppa skal úr skönnun."
 
-#: data/org.gnome.baobab.gschema.xml.in:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Listi yfir slóðir á disksneiðar sem sleppa skal úr skönnun."
-
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "Virkt graf"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "Hvaða tegund grafs eigi að birta."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "Gluggastærð"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "Upprunalega stærð gluggans"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
+#: data/org.gnome.baobab.gschema.xml:30
 msgid "Window state"
 msgstr "Staða glugga"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
+#: data/org.gnome.baobab.gschema.xml:31
 msgid "The GdkWindowState of the window"
 msgstr "Staða GdkWindowState gluggans"
 
-#: src/baobab-application.vala:28
+#: data/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Almennt"
+
+#: data/gtk/help-overlay.ui:18
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Birta hjálp"
+
+#: data/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Birta / Fela aðalvalmynd"
+
+#: data/gtk/help-overlay.ui:31
+#| msgid "_Quit"
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Hætta"
+
+#: data/gtk/help-overlay.ui:38
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Birta flýtivísanir á lyklaborði"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Go back to location list"
+msgstr "Fara til baka"
+
+#: data/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Skönnun"
+
+#: data/gtk/help-overlay.ui:59
+#| msgid "Scan Folder…"
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Skanna möppu"
+
+#: data/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Skanna aftur núverandi staðsetningu"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+msgid "_Open Folder"
+msgstr "_Opna möppu"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+msgid "_Copy Path to Clipboard"
+msgstr "_Afrita slóð á klippispjald"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+msgid "Mo_ve to Trash"
+msgstr "_Henda í ruslið"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _parent folder"
+msgstr "Fara í _yfirmöppu"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _in"
+msgstr "Renna _að"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _out"
+msgstr "Renna _frá"
+
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+msgid "Folder"
+msgstr "Mappa"
+
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+msgid "Size"
+msgstr "Stærð"
+
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+msgid "Contents"
+msgstr "Innihald"
+
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+msgid "Modified"
+msgstr "Breytt"
+
+#: data/ui/baobab-location-list.ui:18
+msgid "This Computer"
+msgstr "Þessi tölva"
+
+#: data/ui/baobab-location-list.ui:45
+msgid "Remote Locations"
+msgstr "Fjartengdir staðir"
+
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
+msgid "Preferences"
+msgstr "Kjörstillingar"
+
+#: data/ui/baobab-preferences-dialog.ui:17
+msgid "Locations to Ignore"
+msgstr "Staðsetningar sem á að hunsa"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Skoða möppu…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "Hreinsa lista yfir nýlegt"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "Flýtily_klar"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_Hjálp"
+
+#: data/ui/baobab-main-window.ui:29
+#| msgid "Disk Usage Analyzer"
+msgid "_About Disk Usage Analyzer"
+msgstr "_Um forritið Disknotkunargreining"
+
+#: data/ui/baobab-main-window.ui:85
+msgid "Go back to location list"
+msgstr "Fara til baka í lista yfir staðsetningar"
+
+#: data/ui/baobab-main-window.ui:106
+msgid "Rescan current location"
+msgstr "Skanna aftur núverandi staðsetningu"
+
+#: data/ui/baobab-main-window.ui:196
+msgid "Close"
+msgstr "Loka"
+
+#: data/ui/baobab-main-window.ui:372
+msgid "Rings Chart"
+msgstr "Skoða sem hringi"
+
+#: data/ui/baobab-main-window.ui:384
+msgid "Treemap Chart"
+msgstr "Skoða sem greinar"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"Ekki sleppa möppum á öðrum skráakerfum. Hunsað ef DIRECTORY er ekki"
+" skilgreint."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Birta upplýsingar um útgáfu og hætta"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -102,17 +255,17 @@ msgstr[0] "%d atriði"
 msgstr[1] "%d atriði"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Óþekkt"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "Í dag"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -120,7 +273,7 @@ msgstr[0] "%lu dagur"
 msgstr[1] "%lu dagar"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -128,193 +281,141 @@ msgstr[0] "%lu mánuður"
 msgstr[1] "%lu mánuðir"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu ár"
 msgstr[1] "%lu ár"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Þessi tölva"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Fjartengdir staðir"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s samtals"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s tiltækt"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s notað"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Ekki tengt í skráakerfi"
 
-#: src/baobab-location.vala:73
-msgid "Home folder"
+#: src/baobab-location.vala:72
+#| msgid "Home folder"
+msgid "Home Folder"
 msgstr "Heimamappa"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Tölvan"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Skoða möppu…"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:53
+msgid "Select Location to Ignore"
+msgstr "Veldu staðsetningu sem á að hunsa"
 
-#: src/baobab-main-window.ui:20 src/menus.ui:25
-msgid "_Open Folder"
-msgstr "_Opna möppu"
-
-#: src/baobab-main-window.ui:29 src/menus.ui:29
-msgid "_Copy Path to Clipboard"
-msgstr "_Afrita slóð á klippispjald"
-
-#: src/baobab-main-window.ui:38 src/menus.ui:33
-msgid "Mo_ve to Trash"
-msgstr "_Henda í ruslið"
-
-#: src/baobab-main-window.ui:170
-msgid "Close"
-msgstr "Loka"
-
-#: src/baobab-main-window.ui:225
-msgid "Folder"
-msgstr "Mappa"
-
-#: src/baobab-main-window.ui:252
-msgid "Size"
-msgstr "Stærð"
-
-#: src/baobab-main-window.ui:272
-msgid "Contents"
-msgstr "Innihald"
-
-#: src/baobab-main-window.ui:290
-msgid "Modified"
-msgstr "Breytt"
-
-#: src/baobab-main-window.ui:335
-msgid "Rings Chart"
-msgstr "Skoða sem hringi"
-
-#: src/baobab-main-window.ui:347
-msgid "Treemap Chart"
-msgstr "Skoða sem greinar"
-
-#: src/baobab-window.vala:215
-msgid "Select Folder"
-msgstr "Velja möppu"
-
-#: src/baobab-window.vala:217
+#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
 msgid "_Cancel"
 msgstr "_Hætta við"
 
-#: src/baobab-window.vala:218
+#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
 msgid "_Open"
 msgstr "_Opna"
 
-#: src/baobab-window.vala:224
+#: src/baobab-preferences-dialog.vala:91
+msgid "Add Location…"
+msgstr "Bæta við staðsetningu…"
+
+#: src/baobab-window.vala:205
+msgid "Select Folder"
+msgstr "Velja möppu"
+
+#: src/baobab-window.vala:214
 msgid "Recursively analyze mount points"
 msgstr "Skoða endurkvæmt inn í tengipunkta"
 
-#: src/baobab-window.vala:259
+#: src/baobab-window.vala:236
 msgid "Could not analyze volume."
 msgstr "Gat ekki reiknað gagnahirsluna."
 
-#: src/baobab-window.vala:291
+#: src/baobab-window.vala:273
 msgid "Failed to show help"
 msgstr "Mistókst að birta hjálp"
 
-#: src/baobab-window.vala:310
-msgid "Baobab"
-msgstr "Baobab"
-
-#: src/baobab-window.vala:313
+#: src/baobab-window.vala:295
 msgid "A graphical tool to analyze disk usage."
 msgstr "Forrit til að sýna hve stór hluti disksins er notaður."
 
-#: src/baobab-window.vala:318
+#: src/baobab-window.vala:301
 msgid "translator-credits"
 msgstr "Sveinn í Felli, sv1@fellsnet.is"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:375
 msgid "Failed to open file"
 msgstr "Mistókst að opna skrá"
 
-#: src/baobab-window.vala:407
+#: src/baobab-window.vala:392
 msgid "Failed to move file to the trash"
 msgstr "Mistókst að henda skránni í ruslið"
 
-#: src/baobab-window.vala:511
+#: src/baobab-window.vala:603
 msgid "Devices & Locations"
 msgstr "Tæki og staðsetningar"
 
-#: src/baobab-window.vala:572
+#: src/baobab-window.vala:655
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Gat ekki skoðað möppuna „%s“"
 
-#: src/baobab-window.vala:575
+#: src/baobab-window.vala:670
+#| msgid "Could not detect occupied disk sizes."
+msgid "Could not always detect occupied disk sizes."
+msgstr "Gat ekki alltaf greint upptekið pláss á diskum."
+
+#: src/baobab-window.vala:670
+#| msgid "Apparent sizes are shown instead."
+msgid "Apparent sizes may be shown instead."
+msgstr "Sýndarstærðir gætu verið birtar í staðinn."
+
+#: src/baobab-window.vala:674
+msgid "Scan completed"
+msgstr "Skönnun lokið"
+
+#: src/baobab-window.vala:675
 #, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Gat ekki skoðað sumar möppurnar inni í „%s“"
+#| msgid "Could not scan folder “%s”"
+msgid "Completed scan of “%s”"
+msgstr "Lauk skönnun á “%s”"
 
-#: src/baobab-window.vala:594
-msgid "Could not detect occupied disk sizes."
-msgstr "Gat ekki greint upptekið pláss á diskum."
-
-#: src/baobab-window.vala:594
-msgid "Apparent sizes are shown instead."
-msgstr "Sýndarstærðir eru birtar í staðinn."
-
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:611 src/baobab-window.vala:617
+#: src/baobab-window.vala:715
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ er ekki gild mappa"
 
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:716
 msgid "Could not analyze disk usage."
 msgstr "Gat ekki reiknað diskanotkunina."
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "_Hjálp"
+#~ msgid "baobab"
+#~ msgstr "baobab"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "_Upplýsingar"
+#~ msgid "Baobab"
+#~ msgstr "Baobab"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "_Hætta"
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "Gat ekki skoðað sumar möppurnar inni í „%s“"
 
-#: src/menus.ui:39
-msgid "Go to _parent folder"
-msgstr "Fara í _yfirmöppu"
-
-#: src/menus.ui:45
-msgid "Zoom _in"
-msgstr "Renna _að"
-
-#: src/menus.ui:49
-msgid "Zoom _out"
-msgstr "Renna _frá"
+#~ msgid "_About"
+#~ msgstr "_Upplýsingar"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
