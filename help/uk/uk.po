@@ -2,12 +2,12 @@
 # Copyright (C) 2020 baobab's COPYRIGHT HOLDER
 # This file is distributed under the same license as the baobab package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"POT-Creation-Date: 2021-07-13 18:36+0000\n"
-"PO-Revision-Date: 2021-07-14 11:13+0300\n"
+"POT-Creation-Date: 2022-01-31 18:14+0000\n"
+"PO-Revision-Date: 2022-02-01 09:04+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -35,14 +35,14 @@ msgid "Disk Usage Analyzer"
 msgstr "Аналізатор використання диска"
 
 #. (itstool) path: credit/name
-#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
+#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:14
 #: C/scan-file-system.page:13 C/scan-folder.page:14 C/scan-home.page:14
 #: C/scan-remote.page:14
 msgid "Julita Inca"
 msgstr "Хуліта Інка (Julita Inca)"
 
 #. (itstool) path: credit/name
-#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:22
 #: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:17 C/scan-folder.page:22 C/scan-home.page:18
 #: C/scan-remote.page:22
@@ -77,7 +77,7 @@ msgid "Common problems and questions"
 msgstr "Типові проблеми і питання"
 
 #. (itstool) path: credit/name
-#: C/introduction.page:21 C/pref-view-chart.page:17 C/scan-file-system.page:21
+#: C/introduction.page:21 C/pref-view-chart.page:18 C/scan-file-system.page:21
 #: C/scan-folder.page:18 C/scan-home.page:22 C/scan-remote.page:18
 msgid "Michael Hill"
 msgstr "Майкл Гілл (Michael Hill)"
@@ -136,18 +136,18 @@ msgstr ""
 "\">резервних копій</link> певних тек."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:27
+#: C/pref-view-chart.page:28
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr ""
 "Показ результатів у вигляді кругової діаграми або деревоподібної карти."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:32
 msgid "Different chart views"
 msgstr "Різні режими перегляду діаграми"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:33
+#: C/pref-view-chart.page:34
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -160,7 +160,7 @@ msgstr ""
 "внутрішнього кільця."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:38
 msgid ""
 "Moving your mouse over the rings chart displays more details about the "
 "folder and subfolders."
@@ -169,11 +169,15 @@ msgstr ""
 "додаткові відомості щодо теки і її підтек."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:39
+#: C/pref-view-chart.page:40
+#| msgid ""
+#| "Chart visibility can be changed to <gui>Treemap View</gui> using the "
+#| "buttons at the bottom of the chart, on the right-hand side. The tree "
+#| "layout displays the folders as proportionately sized boxes."
 msgid ""
-"Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
-"at the bottom of the chart, on the right-hand side. The tree layout displays "
-"the folders as proportionately sized boxes."
+"Chart visibility can be changed to <gui>Treemap Chart</gui> using the "
+"buttons at the bottom of the chart, on the right-hand side. The tree layout "
+"displays the folders as proportionately sized boxes."
 msgstr ""
 "Ви можете змінити режим перегляду на <gui>Дерево</gui> (деревоподібна карта) "
 "за допомогою кнопок у нижній правій частині діаграми. У режимі "
@@ -181,7 +185,7 @@ msgstr ""
 "карти."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:42
+#: C/pref-view-chart.page:43
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -379,11 +383,6 @@ msgstr "Сканування файлової системи"
 
 #. (itstool) path: page/p
 #: C/scan-file-system.page:33
-#| msgid ""
-#| "To scan your computer, select the name of your computer from the list of "
-#| "<gui>Devices and locations</gui>. All of the folders that you have "
-#| "permission to access on your computer will be scanned. It is quite common "
-#| "for you to not have permissions to scan some directories on your computer."
 msgid ""
 "To scan your computer, select the name of your computer from the list of "
 "<gui>Devices &amp; Locations</gui>. All of the folders that you have "
@@ -452,11 +451,6 @@ msgstr "Натисніть кнопку <gui>Відкрити</gui>, щоб ро
 
 #. (itstool) path: page/p
 #: C/scan-folder.page:52
-#| msgid ""
-#| "The folder which you just scanned will now be added to your list of "
-#| "<gui>Devices and locations</gui>. If the folder is renamed or deleted, it "
-#| "will be removed from the list when you next restart <app>Disk Usage "
-#| "Analyzer</app>."
 msgid ""
 "The folder which you just scanned will now be added to your list of "
 "<gui>Devices &amp; Locations</gui>. If the folder is renamed or deleted, it "
@@ -496,9 +490,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/scan-home.page:42
-#| msgid ""
-#| "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
-#| "locations</gui>."
 msgid ""
 "Select your <gui>Home Folder</gui> in the list of <gui>Devices &amp; "
 "Locations</gui>."
@@ -527,15 +518,14 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:40
-#| msgid ""
-#| "Select your <gui>Home folder</gui> in the list of <gui>Devices and "
-#| "locations</gui>."
 msgid ""
 "If you have scanned the remote file system before, select it under "
 "<gui>Remote Locations</gui> in the list of <gui>Devices &amp; Locations</"
 "gui>."
 msgstr ""
-"Якщо сканування віддаленої файлової системи вже виконувалося, виберіть її пункт під міткою <gui>Віддалені місця</gui> у списку <gui>Пристрої і місця</gui>."
+"Якщо сканування віддаленої файлової системи вже виконувалося, виберіть її "
+"пункт під міткою <gui>Віддалені місця</gui> у списку <gui>Пристрої і місця</"
+"gui>."
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:45
@@ -543,15 +533,12 @@ msgid ""
 "If you have connected to the remote file system before but not scanned it, "
 "select the remote file system from the list."
 msgstr ""
-"Якщо ваш комп'ютер було попередньо з'єднано із віддаленою файловою системою, сканування якої ще не виконувалося, виберіть віддалену файлову систему зі списку."
+"Якщо ваш комп'ютер було попередньо з'єднано із віддаленою файловою системою, "
+"сканування якої ще не виконувалося, виберіть віддалену файлову систему зі "
+"списку."
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:49
-#| msgid ""
-#| "Enter the URL into the <gui>Server Address</gui> field. It will normally "
-#| "have a protocol, followed by a colon and two slashes, that looks "
-#| "different depending on the <link xref=\"help:gnome-help/nautilus-"
-#| "connect#types\">protocol</link> that you are using."
 msgid ""
 "If you have not connected to the remote file system before, enter the URL "
 "into the <gui>Enter server address…</gui> field under <gui>Connect to "
@@ -559,11 +546,12 @@ msgid ""
 "slashes, that looks different depending on the <link xref=\"help:gnome-help/"
 "nautilus-connect#types\">protocol</link> that you are using."
 msgstr ""
-"Якщо з'єднання із віддаленою файловою системою ще не встановлено, вкажіть адресу у полі <gui>Введіть адресу сервера…</gui> під міткою <gui>З'єднатися з сервером</gui>. Зазвичай, адреса "
-"складається з назви протоколу, за якою вписують двокрапку і два символи "
-"похилої риски. Форматування адреси залежить від <link xref=\"help:gnome-help/"
-"nautilus-connect#types\">протоколу</link>, який використовується для "
-"віддаленого зв'язку."
+"Якщо з'єднання із віддаленою файловою системою ще не встановлено, вкажіть "
+"адресу у полі <gui>Введіть адресу сервера…</gui> під міткою <gui>З'єднатися "
+"з сервером</gui>. Зазвичай, адреса складається з назви протоколу, за якою "
+"вписують двокрапку і два символи похилої риски. Форматування адреси залежить "
+"від <link xref=\"help:gnome-help/nautilus-connect#types\">протоколу</link>, "
+"який використовується для віддаленого зв'язку."
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:55
@@ -578,12 +566,10 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/scan-remote.page:59
 msgid "Select a folder if you do not want to scan the complete file system."
-msgstr ""
-"Виберіть теку, якщо ви не хочете сканувати усю файлову систему."
+msgstr "Виберіть теку, якщо ви не хочете сканувати усю файлову систему."
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:62
-#| msgid "Click <gui>Open</gui> to start the scan."
 msgid "Click <gui>Open</gui> to continue."
 msgstr "Натисніть кнопку <gui>Відкрити</gui>, щоб продовжити обробку."
 
