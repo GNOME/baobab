@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-07-09 10:56+0000\n"
+"POT-Creation-Date: 2021-09-21 16:21+0000\n"
 "PO-Revision-Date: 2020-08-23 23:30+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:130 src/baobab-window.vala:302
+#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
 msgid "Disk Usage Analyzer"
 msgstr "ディスク使用量アナライザー"
 
@@ -45,8 +45,8 @@ msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"ディスクの使用量と利用可能な空き領域を管理するためのシンプルなアプリケー"
-"ションです。"
+"ディスクの使用量と利用可能な空き領域を管理するためのシンプルなアプリケーショ"
+"ンです。"
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -54,10 +54,10 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"ディスク使用量アナライザーは指定したフォルダー、ストレージデバイス、および"
-"オンラインアカウントをスキャンすることができます。スキャンした各フォルダー"
-"は、ツリー形式とグラフ形式の両方でサイズが表示されるため、ディスクのどの部"
-"分が無駄に使用されているかが簡単に確認できます。"
+"ディスク使用量アナライザーは指定したフォルダー、ストレージデバイス、およびオ"
+"ンラインアカウントをスキャンすることができます。スキャンした各フォルダーは、"
+"ツリー形式とグラフ形式の両方でサイズが表示されるため、ディスクのどの部分が無"
+"駄に使用されているかが簡単に確認できます。"
 
 #: data/org.gnome.baobab.appdata.xml.in:23
 msgid "Devices and Locations"
@@ -174,33 +174,39 @@ msgstr "拡大する(_I)"
 msgid "Zoom _out"
 msgstr "縮小する(_O)"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:265
+#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
 msgid "Folder"
 msgstr "フォルダー"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:293
+#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
 msgid "Size"
 msgstr "サイズ"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:309
+#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
 msgid "Contents"
 msgstr "内容"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:325
+#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
 msgid "Modified"
 msgstr "更新日"
 
-#: data/ui/baobab-location-list.ui:17
+#: data/ui/baobab-location-list.ui:18
 msgid "This Computer"
 msgstr "このコンピューター"
 
-#: data/ui/baobab-location-list.ui:47
+#: data/ui/baobab-location-list.ui:45
 msgid "Remote Locations"
 msgstr "リモートの場所"
 
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:15
+#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
 msgid "Preferences"
 msgstr "設定"
+
+#: data/ui/baobab-preferences-dialog.ui:17
+#, fuzzy
+#| msgid "Locations to ignore"
+msgid "Locations to Ignore"
+msgstr "無視する場所"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -222,23 +228,23 @@ msgstr "ヘルプ(_H)"
 msgid "_About Disk Usage Analyzer"
 msgstr "ディスク使用量アナライザーについて(_A)"
 
-#: data/ui/baobab-main-window.ui:77
+#: data/ui/baobab-main-window.ui:85
 msgid "Go back to location list"
 msgstr "場所の一覧に戻る"
 
-#: data/ui/baobab-main-window.ui:98
+#: data/ui/baobab-main-window.ui:106
 msgid "Rescan current location"
 msgstr "現在の場所を再スキャンする"
 
-#: data/ui/baobab-main-window.ui:194
+#: data/ui/baobab-main-window.ui:196
 msgid "Close"
 msgstr "閉じる"
 
-#: data/ui/baobab-main-window.ui:370
+#: data/ui/baobab-main-window.ui:372
 msgid "Rings Chart"
 msgstr "リングチャート"
 
-#: data/ui/baobab-main-window.ui:382
+#: data/ui/baobab-main-window.ui:384
 msgid "Treemap Chart"
 msgstr "ツリーマップチャート"
 
@@ -247,8 +253,8 @@ msgid ""
 "Do not skip directories on different file systems. Ignored if DIRECTORY is "
 "not specified."
 msgstr ""
-"異なるファイルシステム上のディレクトリをスキップしない。DIRECTORY を指定し"
-"ていない場合は無視します。"
+"異なるファイルシステム上のディレクトリをスキップしない。DIRECTORY を指定して"
+"いない場合は無視します。"
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
@@ -313,55 +319,55 @@ msgid "Unmounted"
 msgstr "マウントされていません"
 
 #: src/baobab-location.vala:72
-msgid "Home folder"
+#, fuzzy
+#| msgid "Home folder"
+msgid "Home Folder"
 msgstr "ホームフォルダー"
 
 #: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "コンピューター"
 
-#: src/baobab-preferences-dialog.vala:51
-msgid "Locations to ignore"
-msgstr "無視する場所"
-
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:59
+#: src/baobab-preferences-dialog.vala:53
 msgid "Select Location to Ignore"
 msgstr "無視する場所を選択"
 
-#: src/baobab-preferences-dialog.vala:61 src/baobab-window.vala:217
+#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
 msgid "_Cancel"
 msgstr "キャンセル(_C)"
 
-#: src/baobab-preferences-dialog.vala:62 src/baobab-window.vala:218
+#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: src/baobab-preferences-dialog.vala:97
-msgid "Add location…"
+#: src/baobab-preferences-dialog.vala:91
+#, fuzzy
+#| msgid "Add location…"
+msgid "Add Location…"
 msgstr "場所を追加…"
 
-#: src/baobab-window.vala:215
+#: src/baobab-window.vala:205
 msgid "Select Folder"
 msgstr "フォルダーを選択"
 
-#: src/baobab-window.vala:224
+#: src/baobab-window.vala:214
 msgid "Recursively analyze mount points"
 msgstr "マウントポイントを再帰的に解析する"
 
-#: src/baobab-window.vala:246
+#: src/baobab-window.vala:236
 msgid "Could not analyze volume."
 msgstr "ボリュームを解析できませんでした。"
 
-#: src/baobab-window.vala:283
+#: src/baobab-window.vala:273
 msgid "Failed to show help"
 msgstr "ヘルプの表示に失敗しました"
 
-#: src/baobab-window.vala:305
+#: src/baobab-window.vala:295
 msgid "A graphical tool to analyze disk usage."
 msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
 
-#: src/baobab-window.vala:311
+#: src/baobab-window.vala:301
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -382,46 +388,46 @@ msgstr ""
 "Yukihiro Nakai <nakai@gnome.gr.jp>\n"
 "Yuusuke Tahara <tahara@gnome.gr.jp>"
 
-#: src/baobab-window.vala:385
+#: src/baobab-window.vala:375
 msgid "Failed to open file"
 msgstr "ファイルを開けませんでした"
 
-#: src/baobab-window.vala:402
+#: src/baobab-window.vala:392
 msgid "Failed to move file to the trash"
 msgstr "ファイルをゴミ箱へ移動できませんでした"
 
-#: src/baobab-window.vala:613
+#: src/baobab-window.vala:603
 msgid "Devices & Locations"
 msgstr "デバイスと場所"
 
-#: src/baobab-window.vala:665
+#: src/baobab-window.vala:655
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "“%s”をスキャンできませんでした"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:670
 msgid "Could not always detect occupied disk sizes."
 msgstr "割り当てディスクサイズを検出できなかった可能性があります。"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:670
 msgid "Apparent sizes may be shown instead."
 msgstr "実サイズが代わりに表示されるかもしれません。"
 
-#: src/baobab-window.vala:684
+#: src/baobab-window.vala:674
 msgid "Scan completed"
 msgstr "スキャン完了"
 
-#: src/baobab-window.vala:685
+#: src/baobab-window.vala:675
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s”のスキャンを完了しました"
 
-#: src/baobab-window.vala:725
+#: src/baobab-window.vala:715
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”は正常なフォルダーではありません"
 
-#: src/baobab-window.vala:726
+#: src/baobab-window.vala:716
 msgid "Could not analyze disk usage."
 msgstr "ディスクの使用量を解析できませんでした。"
 
