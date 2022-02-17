@@ -13,7 +13,7 @@ if not destdir:
     subprocess.call(['glib-compile-schemas', str(datadir / 'glib-2.0' / 'schemas')])
 
     print('Updating icon cache...')
-    subprocess.call(['gtk-update-icon-cache', '-qtf', str(datadir / 'icons' / 'hicolor')])
+    subprocess.call(['gtk4-update-icon-cache', '-qtf', str(datadir / 'icons' / 'hicolor')])
 
     print('Updating desktop database...')
     subprocess.call(['update-desktop-database', '-q', str(datadir / 'applications')])
