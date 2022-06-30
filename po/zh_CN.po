@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-10-08 11:43+0000\n"
-"PO-Revision-Date: 2022-01-01 09:47+0800\n"
+"POT-Creation-Date: 2022-02-26 13:20+0000\n"
+"PO-Revision-Date: 2022-03-24 18:02+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -40,7 +40,7 @@ msgstr "检查文件夹大小和可用磁盘空间"
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
-msgstr "一个简单的应用程序，保持你的磁盘盘使用情况和可用空间处于控制。"
+msgstr "一个简单的应用程序，保持你的磁盘使用情况和可用空间处于控制。"
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -48,9 +48,8 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"磁盘使用情况分析器可以扫描指定的文件夹、存储设备和在线账号。它同时提供了树形"
-"和图形展示来显示每个文件夹的大小，因此可以很容易的识别出哪里的磁盘空间被浪费"
-"了。"
+"磁盘占用分析器可以扫描指定的文件夹、存储设备和在线账号。它同时提供了树形和图"
+"形展示来显示每个文件夹的大小，因此可以很容易的识别出哪里的磁盘空间被浪费了。"
 
 #: data/org.gnome.baobab.appdata.xml.in:23
 msgid "Devices and Locations"
@@ -90,7 +89,6 @@ msgid "The initial size of the window"
 msgstr "初始窗口大小"
 
 #: data/org.gnome.baobab.gschema.xml:30
-#| msgid "Window size"
 msgid "Window Maximized"
 msgstr "窗口已最大化"
 
@@ -143,15 +141,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "重新扫描当前位置"
 
-#: data/gtk/menus.ui:7
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Folder"
 msgstr "打开文件夹(_O)"
 
-#: data/gtk/menus.ui:11
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "复制路径到剪贴板(_C)"
 
-#: data/gtk/menus.ui:15
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "移到回收站(_V)"
 
@@ -191,14 +189,6 @@ msgstr "此电脑"
 msgid "Remote Locations"
 msgstr "远程位置"
 
-#: data/ui/baobab-preferences-dialog.ui:6 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "首选项"
-
-#: data/ui/baobab-preferences-dialog.ui:12
-msgid "Locations to Ignore"
-msgstr "要忽略的位置"
-
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "扫描文件夹…"
@@ -206,6 +196,10 @@ msgstr "扫描文件夹…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "清除最近访问列表"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "首选项"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -217,7 +211,7 @@ msgstr "帮助(_H)"
 
 #: data/ui/baobab-main-window.ui:29
 msgid "_About Disk Usage Analyzer"
-msgstr "关于磁盘使用情况分析器(_A)"
+msgstr "关于磁盘占用分析器(_A)"
 
 #: data/ui/baobab-main-window.ui:47
 msgid "Go back to location list"
@@ -238,6 +232,10 @@ msgstr "环形图"
 #: data/ui/baobab-main-window.ui:312
 msgid "Treemap Chart"
 msgstr "矩形树状结构图"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "要忽略的位置"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -338,7 +336,7 @@ msgstr "无法分析卷。"
 
 #: src/baobab-window.vala:290
 msgid "A graphical tool to analyze disk usage."
-msgstr "一款分析磁盘使用情况的图形工具。"
+msgstr "一款分析磁盘占用的图形工具。"
 
 #: src/baobab-window.vala:296
 msgid "translator-credits"
@@ -395,7 +393,7 @@ msgstr "“%s”不是有效的文件夹"
 
 #: src/baobab-window.vala:680
 msgid "Could not analyze disk usage."
-msgstr "无法分析磁盘使用情况。"
+msgstr "无法分析磁盘占用。"
 
 #~ msgid "Window state"
 #~ msgstr "窗口状态"
