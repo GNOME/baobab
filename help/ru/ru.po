@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Disk Usage Analyzer HEAD\n"
-"POT-Creation-Date: 2021-09-21 16:23+0000\n"
-"PO-Revision-Date: 2022-01-16 10:28+1000\n"
-"Last-Translator: Ser82-png <sw@atrus.ru>, 2022\n"
+"POT-Creation-Date: 2022-05-24 08:29+0000\n"
+"PO-Revision-Date: 2022-06-29 22:03+1000\n"
+"Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Василий Фаронов <qvvx@yandex.ru>, 2008\n"
 "Алексей Кабанов <ak099@mail.ru>, 2012\n"
 "Станислав Соловей <whats_up@tut.by>, 2012\n"
-"Ser82-png <sw@atrus.ru>, 2022"
+"Ser82-png <asvmail.as@gmail.com>, 2022"
 
 #. (itstool) path: info/title
 #: C/index.page:7
@@ -41,14 +41,14 @@ msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
 #. (itstool) path: credit/name
-#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:13
+#: C/index.page:14 C/introduction.page:13 C/pref-view-chart.page:14
 #: C/scan-file-system.page:13 C/scan-folder.page:14 C/scan-home.page:14
 #: C/scan-remote.page:14
 msgid "Julita Inca"
 msgstr "Юлита Инка (Julita Inca)"
 
 #. (itstool) path: credit/name
-#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:21
+#: C/index.page:18 C/introduction.page:17 C/pref-view-chart.page:22
 #: C/question-open-folder.page:11 C/question-trash.page:11
 #: C/scan-file-system.page:17 C/scan-folder.page:22 C/scan-home.page:18
 #: C/scan-remote.page:22
@@ -64,7 +64,6 @@ msgstr ""
 
 #. (itstool) path: page/title
 #: C/index.page:29
-#| msgid "Disk Usage Analyzer"
 msgid "<_:media-1/> Disk Usage Analyzer"
 msgstr "<_:media-1/> Анализатор использования дисков"
 
@@ -84,7 +83,7 @@ msgid "Common problems and questions"
 msgstr "Общие проблемы и вопросы"
 
 #. (itstool) path: credit/name
-#: C/introduction.page:21 C/pref-view-chart.page:17 C/scan-file-system.page:21
+#: C/introduction.page:21 C/pref-view-chart.page:18 C/scan-file-system.page:21
 #: C/scan-folder.page:18 C/scan-home.page:22 C/scan-remote.page:18
 msgid "Michael Hill"
 msgstr "Майкл Хилл (Michael Hill)"
@@ -141,17 +140,17 @@ msgstr ""
 "\">резервного копирования</link> определённых папок."
 
 #. (itstool) path: info/desc
-#: C/pref-view-chart.page:27
+#: C/pref-view-chart.page:28
 msgid "Display the results as a ring chart or a treemap chart."
 msgstr "Отображение результата в виде круговой диаграммы или дерева."
 
 #. (itstool) path: page/title
-#: C/pref-view-chart.page:31
+#: C/pref-view-chart.page:32
 msgid "Different chart views"
 msgstr "Различные виды диаграмм"
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:33
+#: C/pref-view-chart.page:34
 msgid ""
 "By default, the scan results show each subfolder as the section of a ring, "
 "comprising an angle proportional to the size of the relevant folder. Sub-"
@@ -164,7 +163,7 @@ msgstr ""
 "кольца."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:37
+#: C/pref-view-chart.page:38
 msgid ""
 "Moving your mouse over the rings chart displays more details about the "
 "folder and subfolders."
@@ -173,18 +172,18 @@ msgstr ""
 "дополнительные сведения о подпапках."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:39
+#: C/pref-view-chart.page:40
 msgid ""
-"Chart visibility can be changed to <gui>Treemap View</gui> using the buttons "
-"at the bottom of the chart, on the right-hand side. The tree layout displays "
-"the folders as proportionately sized boxes."
+"Chart visibility can be changed to <gui>Treemap Chart</gui> using the "
+"buttons at the bottom of the chart, on the right-hand side. The tree layout "
+"displays the folders as proportionately sized boxes."
 msgstr ""
-"Можно переключиться в режим просмотра в виде <gui>Древовидной карты</gui> с "
+"Можно переключиться в режим просмотра <gui>Древовидной диаграммы</gui> с "
 "помощью кнопок, расположенных с правой стороны под диаграммой. В этом режиме "
 "папки отображаются в виде прямоугольников пропорционального размера."
 
 #. (itstool) path: page/p
-#: C/pref-view-chart.page:42
+#: C/pref-view-chart.page:43
 msgid ""
 "You can also click on a ring or box to make that the starting point of the "
 "chart."
@@ -556,9 +555,9 @@ msgid ""
 "Click <gui>Connect</gui> to continue; you may be asked for more details, "
 "like a password and username, before the scan will commence."
 msgstr ""
-"Щёлкните <gui>Подключить</gui>, чтобы продолжить; от вас могут понадобиться "
-"дополнительные сведения, такие как пароль и имя пользователя, прежде чем "
-"начнётся сканирование."
+"Щёлкните <gui>Подключить</gui>, чтобы продолжить. Прежде чем начнётся "
+"сканирование, от вас могут понадобиться дополнительные сведения, такие как "
+"пароль и имя пользователя."
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:59
@@ -567,7 +566,6 @@ msgstr "Выберите папку, если не хотите сканиров
 
 #. (itstool) path: item/p
 #: C/scan-remote.page:62
-#| msgid "Click <gui>Open</gui> to commence scanning"
 msgid "Click <gui>Open</gui> to continue."
 msgstr "Щёлкните <gui>Открыть</gui> для продолжения."
 
