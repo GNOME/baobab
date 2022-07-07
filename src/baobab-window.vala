@@ -270,7 +270,7 @@ namespace Baobab {
         }
 
         void on_about_activate () {
-            const string authors[] = {
+            const string developers[] = {
                 "Ryan Lortie <desrt@desrt.ca>",
                 "Fabio Marzocca <thesaltydog@gmail.com>",
                 "Paolo Borelli <pborelli@gnome.com>",
@@ -283,18 +283,21 @@ namespace Baobab {
             const string copyright = "Copyright \xc2\xa9 2005-2011 Fabio Marzocca, Paolo Borelli, Benoît Dejean, Igalia\n" +
                                      "Copyright \xc2\xa9 2011-2012 Ryan Lortie, Paolo Borelli, Stefano Facchini\n";
 
-            Gtk.show_about_dialog (this,
-                                   "program-name", _("Disk Usage Analyzer"),
-                                   "logo-icon-name", "org.gnome.baobab",
-                                   "version", Config.VERSION,
-                                   "comments", _("A graphical tool to analyze disk usage."),
-                                   "website", "https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer",
-                                   "copyright", copyright,
-                                   "license-type", Gtk.License.GPL_2_0,
-                                   "wrap-license", false,
-                                   "authors", authors,
-                                   "translator-credits", _("translator-credits"),
-                                   null);
+            var about = new Adw.AboutWindow() {
+                transient_for = this,
+                application_name = _("Disk Usage Analyzer"),
+                application_icon = "org.gnome.baobab",
+                developer_name = _("The GNOME Project"),
+                version = Config.VERSION,
+                website = "https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer",
+                issue_url = "https://gitlab.gnome.org/GNOME/baobab/-/issues/new",
+                copyright = copyright,
+                license_type = Gtk.License.GPL_2_0,
+                developers = developers,
+                translator_credits = _("translator-credits"),
+            };
+
+            about.present();
         }
 
         void on_chart_item_activated (Chart chart, Gtk.TreeIter iter) {
