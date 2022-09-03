@@ -2,7 +2,7 @@ project(
   'baobab', ['vala', 'c'],
   version: '44.alpha',
   license: 'GPL2+',
-  meson_version: '>= 0.50.0',
+  meson_version: '>= 0.59.0',
 )
 
 gnome = import('gnome')
@@ -25,8 +25,11 @@ conf.set_quoted('GNOMELOCALEDIR', join_paths(get_option('prefix'), get_option('l
 configure_file(output: 'config.h', configuration: conf)
 config_h_dir = include_directories('.')
 
-meson.add_install_script(python.find_installation('python3').path(),
-  join_paths(meson.source_root(), 'build-aux', 'post-install.py'))
+gnome.post_install(
+  glib_compile_schemas: true,
+  gtk_update_icon_cache: true,
+  update_desktop_database: true,
+)
 
 add_project_arguments(
   '--disable-since-check',
