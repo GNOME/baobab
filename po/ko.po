@@ -14,10 +14,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils\n"
+"Project-Id-Version: baobab main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-02-26 13:20+0000\n"
-"PO-Revision-Date: 2022-03-01 17:55+0900\n"
+"POT-Creation-Date: 2022-08-10 18:48+0000\n"
+"PO-Revision-Date: 2022-08-28 22:34+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Generator: Poedit 2.3.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "디스크 사용량 분석"
 
@@ -52,11 +52,15 @@ msgstr ""
 "각 폴더를 트리 방식 및 그래픽으로 나타내어 디스크 공간을 낭비하는 영역을 쉽"
 "게 찾아볼 수 있게 합니다."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "장치 및 위치"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan"
+msgstr "검사"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
 
@@ -337,11 +341,7 @@ msgstr "재귀적으로 마운트 위치 분석"
 msgid "Could not analyze volume."
 msgstr "볼륨을 분석할 수 없습니다."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "디스크 사용량을 분석하는 그래픽 도구."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "류창우 <cwryu debian.org>\n"
@@ -349,48 +349,51 @@ msgstr ""
 "박열 <peary2 gmail.com>\n"
 "조성호 <shcho gnome.org>"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "파일을 여는데 실패헀습니다"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "파일을 휴지통에 옮기는데 실패했습니다"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "장치 및 위치"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "“%s” 폴더를 검사할 수 없습니다"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "사용 중인 디스크 용량을 항상 알아낼 수는 없습니다."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "겉보기 용량을 대신 표시합니다."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "검사 완료"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” 검사가 끝났습니다."
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”은(는) 올바른 폴더가 아닙니다"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "디스크 사용량을 분석할 수 없습니다."
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "디스크 사용량을 분석하는 그래픽 도구."
 
 #~ msgid "Window state"
 #~ msgstr "창 상태"
