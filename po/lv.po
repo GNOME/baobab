@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-02-26 13:20+0000\n"
-"PO-Revision-Date: 2022-03-24 22:22+0200\n"
+"POT-Creation-Date: 2022-08-17 10:45+0000\n"
+"PO-Revision-Date: 2022-09-03 20:45+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Diska izmantojuma analizators"
 
@@ -54,11 +54,18 @@ msgstr ""
 "katras mapes izmēru. Tādējādi ir vieglāk noteikt, kur diska vieta tiek "
 "izniekota."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "Ierīces un vietas"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+# gdictsrc/gdict-app.c:117
+#: data/org.gnome.baobab.appdata.xml.in:24
+#| msgctxt "shortcut window"
+#| msgid "Scanning"
+msgid "Scan"
+msgstr "Skenēt"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "GNOME projekts"
 
@@ -92,7 +99,6 @@ msgid "The initial size of the window"
 msgstr "Loga sākotnējais izmērs"
 
 #: data/org.gnome.baobab.gschema.xml:30
-#| msgid "Window size"
 msgid "Window Maximized"
 msgstr "Logs maksimizēts"
 
@@ -353,61 +359,60 @@ msgstr "Rekursīvi analizēt montēšanas punktus"
 msgid "Could not analyze volume."
 msgstr "Nevarēja izanalizēt sējumu."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Grafisks rīks diska izmantojuma analizēšanai."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Neizdevās atvērt datni"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Neizdevās pārvietot datni uz miskasti"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Ierīces un vietas"
 
 # logview/logrtns.c:202
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Nevarēja skenēt mapi “%s”"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "Neizdevās vienmēr noteikt aizņemto disku izmērus."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "Tā vietā var tikt rādīti saskatāmie izmēri."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Skenēšana pabeigta"
 
 # logview/logrtns.c:202
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” skenēšana pabeigta"
 
 # logview/logrtns.c:211 logview/logrtns.c:221
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” nav derīga mape"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Nevarēja izanalizēt diska izmantojumu."
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Grafisks rīks diska izmantojuma analizēšanai."
 
 #~ msgid "Window state"
 #~ msgstr "Loga stāvoklis"
