@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of baobab.
-# Copyright (C) 1999-2021 the baobab authors.
+# Copyright (C) 1999-2022 the baobab authors.
 # This file is distributed under the same license as the baobab package.
 # Alexandre Hautequest <hquest@fesppr.br>, 1999.
 # Ariel Bressan da Silva <ariel@conectiva.com.br>, 2000.
@@ -22,26 +22,32 @@
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2014.
 # Gustavo Marques <gutodisse@gmail.com>, 2016.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2013-2020.
-# Enrico Nicoletto <liverig@gmail.com>, 2012-2016, 2021.
+# Enrico Nicoletto <hiko@duck.com>, 2012-2016, 2021-2022.
+# Leônidas Araújo <leorusvellt@hotmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-09-22 09:06+0000\n"
-"PO-Revision-Date: 2021-09-27 16:16-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2022-08-29 18:26+0000\n"
+"PO-Revision-Date: 2022-09-05 18:10-0300\n"
+"Last-Translator: Leônidas Araújo <leorusvellt@hotmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Project-Style: gnome\n"
+"X-DL-Team: pt_BR\n"
+"X-DL-Module: baobab\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de uso de disco"
 
@@ -68,11 +74,15 @@ msgstr ""
 "gráfico exibindo o tamanho de cada pasta, facilitando identificar onde o "
 "espaço em disco é desperdiçado."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "Dispositivos e locais"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan"
+msgstr "Varrer"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -158,15 +168,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Varre novamente o local atual"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Folder"
 msgstr "_Abrir pasta"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar caminho para a área de transferência"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "_Mover para a lixeira"
 
@@ -182,19 +192,19 @@ msgstr "Amp_liar"
 msgid "Zoom _out"
 msgstr "Redu_zir"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
 msgid "Folder"
 msgstr "Pasta"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
 msgid "Size"
 msgstr "Tamanho"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
 msgid "Contents"
 msgstr "Conteúdo"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
 msgid "Modified"
 msgstr "Modificado"
 
@@ -202,17 +212,9 @@ msgstr "Modificado"
 msgid "This Computer"
 msgstr "Este computador"
 
-#: data/ui/baobab-location-list.ui:45
+#: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
 msgstr "Locais remotos"
-
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "Preferências"
-
-#: data/ui/baobab-preferences-dialog.ui:17
-msgid "Locations to Ignore"
-msgstr "Locais para ignorar"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -221,6 +223,10 @@ msgstr "Varrer pasta…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "Limpar lista de recentes"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "Preferências"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -234,26 +240,30 @@ msgstr "Aj_uda"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Sobre o Analisador de uso de disco"
 
-#: data/ui/baobab-main-window.ui:85
+#: data/ui/baobab-main-window.ui:47
 msgid "Go back to location list"
 msgstr "Volta para a lista de locais"
 
-#: data/ui/baobab-main-window.ui:106
+#: data/ui/baobab-main-window.ui:63
 msgid "Rescan current location"
 msgstr "Varre novamente o local atual"
 
-#: data/ui/baobab-main-window.ui:196
+#: data/ui/baobab-main-window.ui:111
 msgid "Close"
 msgstr "Fechar"
 
-#: data/ui/baobab-main-window.ui:372
+#: data/ui/baobab-main-window.ui:299
 msgid "Rings Chart"
 msgstr "Gráfico de anéis"
 
 # Após sugestões, mantido: "Gráfico treemap". Este termo é encontrado em sites brasileiros, o que leva a crer que o usuário terá maior facilidade em reconhecer este termo.
-#: data/ui/baobab-main-window.ui:384
+#: data/ui/baobab-main-window.ui:312
 msgid "Treemap Chart"
 msgstr "Gráfico Treemap"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "Locais para ignorar"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -342,39 +352,23 @@ msgstr "Computador"
 msgid "Select Location to Ignore"
 msgstr "Selecionar local para ignorar"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:202
-msgid "_Cancel"
-msgstr "_Cancelar"
-
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:203
-msgid "_Open"
-msgstr "A_brir"
-
-#: src/baobab-preferences-dialog.vala:91
+#: src/baobab-preferences-dialog.vala:90
 msgid "Add Location…"
 msgstr "Adicionar local…"
 
-#: src/baobab-window.vala:200
+#: src/baobab-window.vala:205
 msgid "Select Folder"
 msgstr "Selecione uma pasta"
 
-#: src/baobab-window.vala:209
+#: src/baobab-window.vala:212
 msgid "Recursively analyze mount points"
 msgstr "Analisar recursivamente os pontos de montagem"
 
-#: src/baobab-window.vala:231
+#: src/baobab-window.vala:235
 msgid "Could not analyze volume."
 msgstr "Não foi possível analisar o volume."
 
-#: src/baobab-window.vala:268
-msgid "Failed to show help"
-msgstr "Falha ao mostrar a ajuda"
-
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Uma ferramenta gráfica para analisar o uso de disco."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "Alexandre Hautequest <hquest@fesppr.br>\n"
@@ -394,241 +388,48 @@ msgstr ""
 "Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
 "Rodrigo Padula de Oliveira <contato@rodrigopadula.com>\n"
 "André Gondim (In memoriam)<In memoriam>\n"
-"Enrico Nicoletto <liverig@gmail.com>\n"
+"Enrico Nicoletto <hiko@duck.com>\n"
 "Rafael Fontenelle <rafaelff@gmail.com>"
 
-#: src/baobab-window.vala:370
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Falha ao abrir o arquivo"
 
-#: src/baobab-window.vala:387
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Falha ao mover arquivo para a lixeira"
 
-#: src/baobab-window.vala:598
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Dispositivos & locais"
 
-#: src/baobab-window.vala:650
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Não foi possível varrer a pasta “%s”"
 
-#: src/baobab-window.vala:665
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "Nem sempre é possível detectar os tamanhos de disco ocupados."
 
-#: src/baobab-window.vala:665
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "Tamanhos aparentes podem ser sempre, em vez disso."
 
-#: src/baobab-window.vala:669
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Varredura concluída"
 
-#: src/baobab-window.vala:670
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Concluída a varredura de “%s”"
 
-#: src/baobab-window.vala:710
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” não é uma pasta válida"
 
-#: src/baobab-window.vala:711
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Não foi possível analisar o uso de disco."
-
-#~ msgid "Window state"
-#~ msgstr "Estado da janela"
-
-#~ msgid "The GdkWindowState of the window"
-#~ msgstr "O GdkWindowState da janela"
-
-#~ msgid "org.gnome.baobab"
-#~ msgstr "org.gnome.baobab"
-
-#~ msgid "Baobab"
-#~ msgstr "Baobá"
-
-#~ msgid "Could not scan some of the folders contained in “%s”"
-#~ msgstr "Não foi possível varrer algumas das pastas contidas em “%s”"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "_Sobre"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "Um aplicativo simples que pode varrer tanto pastas específicas (sejam "
-#~ "estas locais ou remotas) quanto volumes e fornece uma representação "
-#~ "gráfica incluindo cada tamanho ou porcentagem de diretórios."
-
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Varrer pasta remota…"
-
-#~ msgid "Main volume"
-#~ msgstr "Volume principal"
-
-#~ msgid "Usage"
-#~ msgstr "Utilização"
-
-#~ msgid "_Analyzer"
-#~ msgstr "_Analisador"
-
-#~ msgid "Scan F_older…"
-#~ msgstr "Varrer _pasta…"
-
-#~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "Varrer pasta remo_ta…"
-
-#~ msgid "_View"
-#~ msgstr "_Ver"
-
-#~ msgid "_Reload"
-#~ msgstr "_Recarregar"
-
-#~ msgid "_Expand All"
-#~ msgstr "Expan_dir tudo"
-
-#~ msgid "_Collapse All"
-#~ msgstr "Re_colher todos"
-
-#~ msgid "Maximum depth"
-#~ msgstr "Profundidade máxima"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "A profundidade máxima mostrada no gráfico a partir da raiz"
-
-#~ msgid "Chart model"
-#~ msgstr "Modelo de gráfico"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Definir o modelo do gráfico"
-
-#~ msgid "Chart root node"
-#~ msgstr "Nó raiz do gráfico"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Definir o nó raiz do modelo"
-
-#~ msgid "Scan Folder"
-#~ msgstr "Varrer pasta"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "Varrer pasta remota"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Varre uma pasta remota"
-
-#~ msgid "Reload"
-#~ msgstr "Recarregar"
-
-#~ msgid "_Stop"
-#~ msgstr "_Parar"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "_Espaço alocado"
-
-#~ msgid "label"
-#~ msgstr "rótulo"
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Preferências do Analisador de Uso do Disco"
-
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr ""
-#~ "Selecione os _dispositivos a incluir na varredura do sistema de arquivos:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Monitorar alterações no seu diretório pessoal"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Monitorar diretório pessoal"
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Barra de status é visível"
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Barra de ferramentas é visível"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "Monitorar ou não qualquer alteração no diretório pessoal."
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr ""
-#~ "Manter ou não a barra de status visível na parte inferior da janela "
-#~ "principal."
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Mostrar ou não a barra de ferramentas na janela principal."
-
-#~ msgid "Refresh"
-#~ msgstr "Atualiza"
-
-#~ msgid "Scan File System"
-#~ msgstr "Varrer sistema de arquivos"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Varrer _sistema de arquivos"
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Varrer pasta _pessoal"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Varre uma pasta ou sistema de arquivos remoto"
-
-#~ msgid "Scan the file system"
-#~ msgstr "Varre o sistema de arquivos"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "Varre a sua pasta pessoal"
-
-#~ msgid "St_atusbar"
-#~ msgstr "Barra de st_atus"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Interrompe a varredura"
-
-#~ msgid "_Contents"
-#~ msgstr "Su_mário"
-
-#~ msgid "_Edit"
-#~ msgstr "_Editar"
-
-#~ msgid "_Toolbar"
-#~ msgstr "Barra de _ferramentas"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Capacidade total do sistema de arquivos:"
-
-#~ msgid "used:"
-#~ msgstr "usado:"
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Calculando barras de porcentagens…"
-
-#~ msgid "Ready"
-#~ msgstr "Pronto"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Capacidade total do sistema de arquivos"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Uso total do sistema de arquivos"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "contém hardlinks para:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Não foi possível inicializar o monitoramento"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Alterações na sua pasta pessoal não serão monitoradas."
