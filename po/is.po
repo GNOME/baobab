@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-02-26 13:20+0000\n"
-"PO-Revision-Date: 2022-04-06 11:47+0000\n"
+"POT-Creation-Date: 2022-10-09 19:05+0000\n"
+"PO-Revision-Date: 2022-10-17 15:43+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -15,10 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Disknotkunargreining"
 
@@ -43,11 +43,17 @@ msgstr ""
 "á netinu. Hægt er að birta bæði greinasýn og myndræna framsetningu fyrir "
 "stærð hverrar möppu, sem auðveldar að finna hvar geymsluplássi er sóað."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "Tæki og staðsetningar"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+#| msgctxt "shortcut window"
+#| msgid "Scanning"
+msgid "Scan"
+msgstr "Skanna"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "GNOME verkefnið"
 
@@ -81,7 +87,6 @@ msgid "The initial size of the window"
 msgstr "Upprunalega stærð gluggans"
 
 #: data/org.gnome.baobab.gschema.xml:30
-#| msgid "Window size"
 msgid "Window Maximized"
 msgstr "Gluggi hámarkaður"
 
@@ -333,56 +338,55 @@ msgstr "Skoða endurkvæmt inn í tengipunkta"
 msgid "Could not analyze volume."
 msgstr "Gat ekki reiknað gagnahirsluna."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Forrit til að sýna hve stór hluti disksins er notaður."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr "Sveinn í Felli, sv1@fellsnet.is"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Mistókst að opna skrá"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Mistókst að henda skránni í ruslið"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Tæki og staðsetningar"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Gat ekki skoðað möppuna „%s“"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "Gat ekki alltaf greint upptekið pláss á diskum."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "Sýndarstærðir gætu verið birtar í staðinn."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Skönnun lokið"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Lauk skönnun á “%s”"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ er ekki gild mappa"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Gat ekki reiknað diskanotkunina."
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Forrit til að sýna hve stór hluti disksins er notaður."
 
 #~ msgid "Window state"
 #~ msgstr "Staða glugga"
