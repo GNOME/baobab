@@ -13,26 +13,26 @@
 # Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2003, 2005.
 # Yuval Tanny, 2005.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2013.
-# Yosef Or Boczko <yoseforb@gmail.com>, 2013-2021.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2013-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD.he\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-10-14 15:42+0000\n"
-"PO-Revision-Date: 2021-11-15 11:51+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <yoseforb@gmail.com>\n"
+"POT-Creation-Date: 2022-10-09 19:05+0000\n"
+"PO-Revision-Date: 2022-10-23 19:58+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"Language-Team: Hebrew <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Gtranslator 42.0\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
+"2 : 3)\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "מנתח השימוש בכונן"
 
@@ -56,11 +56,15 @@ msgstr ""
 "הוא מספק תצוגה עץ ותצוגה חזותית להצגת הגודל של כל תיקייה, מה שמקל זיהוי "
 "בזבוז של מקום בכונן."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "התקנים ומקומות"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan"
+msgstr "סריקה"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "מיזם GNOME"
 
@@ -146,15 +150,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "סריקה חוזרת של המיקום הנוכחי"
 
-#: data/gtk/menus.ui:7
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Folder"
 msgstr "_פתיחת תיקייה"
 
-#: data/gtk/menus.ui:11
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "העתקת ה_נתיב ללוח הגזירים"
 
-#: data/gtk/menus.ui:15
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "ה_עברה לאשפה"
 
@@ -194,14 +198,6 @@ msgstr "מחשב זה"
 msgid "Remote Locations"
 msgstr "מיקומים מרוחקים"
 
-#: data/ui/baobab-preferences-dialog.ui:6 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "העדפות"
-
-#: data/ui/baobab-preferences-dialog.ui:12
-msgid "Locations to Ignore"
-msgstr "מיקומים להתעלמות"
-
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "סריקת תיקייה…"
@@ -209,6 +205,10 @@ msgstr "סריקת תיקייה…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "ניקוי רשימת האחרונים"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "העדפות"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -241,6 +241,10 @@ msgstr "הצגה כתרשים טבעות"
 #: data/ui/baobab-main-window.ui:312
 msgid "Treemap Chart"
 msgstr "הצגה כתרשים מפת עץ"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "מיקומים להתעלמות"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -351,11 +355,7 @@ msgstr "ניתוח נסיגתי של נקודות העיגון"
 msgid "Could not analyze volume."
 msgstr "לא ניתן לנתח את הכרך."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "כלי גרפי לניתוח השימוש בכונן."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -364,51 +364,53 @@ msgstr ""
 "יאיר הרשקוביץ <yairhr@gmail.com>\n"
 "ירון שהרבני <sh.yaron@gmail.com>\n"
 "יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
-"\n"
-"<a href=\"https://l10n.gnome.org/teams/he/\">מיזם תרגום GNOME לעברית</a>"
+"מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he/"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "פתיחת הקובץ נכשלה"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "העברת הקבצים לאשפה נכשלה"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "התקנים ומיקומים"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "לא ניתן לסרוק את התיקייה „%s”"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "לא תמיד ניתן לזהות את הגודל התפוס של הכוננים."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "הגדלים הנראים לעין עשויים להופיע במקום."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "הסריקה הושלמה"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "הסריקה של „%s” הושלמה"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "‫„‎%s” אינה תיקייה תקינה"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "לא ניתן לנתח את השימוש בכונן."
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "כלי גרפי לניתוח השימוש בכונן."
 
 #~ msgid "Window state"
 #~ msgstr "Window state"
@@ -534,9 +536,6 @@ msgstr "לא ניתן לנתח את השימוש בכונן."
 #~ "Whether the status bar at the bottom of main window should be visible."
 #~ msgstr ""
 #~ "Whether the status bar at the bottom of main window should be visible."
-
-#~ msgid "Scan"
-#~ msgstr "סריקה"
 
 #~ msgid "Mount and scan"
 #~ msgstr "עיגון וסריקה"
