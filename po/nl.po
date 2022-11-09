@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab.master.nl\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-05-24 08:29+0000\n"
-"PO-Revision-Date: 2022-06-30 11:07+0200\n"
+"POT-Creation-Date: 2022-10-09 19:05+0000\n"
+"PO-Revision-Date: 2022-11-01 22:48+0100\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Schijfgebruik"
 
@@ -54,11 +54,15 @@ msgstr ""
 "met de grootte van elke map, wat het gemakkelijk maakt om te zien waar veel "
 "schijfruimte wordt gebruikt."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "Apparaten en locaties"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan"
+msgstr "Scannen"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "Het Gnome-project"
 
@@ -345,12 +349,7 @@ msgstr "Koppelpunten recursief analyseren"
 msgid "Could not analyze volume."
 msgstr "Volumen analyseren is mislukt."
 
-# schijfgebruik/hardeschijfgebruik
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Een grafisch hulpmiddel om schijfgebruik te analyseren."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "Tino Meinen\n"
@@ -361,51 +360,54 @@ msgstr ""
 "Erwin Poeze\n"
 "Justin van Steijn\n"
 "Nathan Follens <nfollens@gnome.org>\n"
-"\n"
 "Meer info over Gnome-NL http://nl.gnome.org/"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Bestand openen is mislukt"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Bestand naar de prullenbak verplaatsen is mislukt"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Apparaten & locaties"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Scannen van map ‘%s’ is mislukt"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "Grootte van gebruikte schijfruimte detecteren is niet altijd gelukt."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "In plaats hiervan worden mogelijk schijnbare groottes getoond."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Scan voltooid"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Scannen van ‘%s’ voltooid"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "‘%s’ is geen geldige map"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Schijfgebruik analyseren is mislukt."
+
+# schijfgebruik/hardeschijfgebruik
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Een grafisch hulpmiddel om schijfgebruik te analyseren."
 
 #~ msgid "Window state"
 #~ msgstr "Vensterstaat"
