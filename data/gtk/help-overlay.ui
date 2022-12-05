@@ -11,26 +11,26 @@
             <property name="title" translatable="yes" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">F1</property>
+                <property name="action-name">win.help</property>
                 <property name="title" translatable="yes" context="shortcut window">Show help</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">F10</property>
+                <property name="action-name">win.show-primary-menu</property>
                 <property name="title" translatable="yes" context="shortcut window">Show / Hide primary menu</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
+                <property name="action-name">app.quit</property>
                 <property name="title" translatable="yes" context="shortcut window">Quit</property>
-                <property name="accelerator">&lt;Primary&gt;Q</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
+                <property name="action-name">win.show-help-overlay</property>
                 <property name="title" translatable="yes" context="shortcut window">Show Keyboard Shortcuts</property>
-                <property name="accelerator">&lt;Primary&gt;question</property>
               </object>
             </child>
             <child>
@@ -41,7 +41,7 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Alt&gt;Left</property>
+                <property name="action-name">win.show-home-page</property>
                 <property name="title" translatable="yes" context="shortcut window">Go back to location list</property>
               </object>
             </child>
@@ -52,13 +52,13 @@
             <property name="title" translatable="yes" context="shortcut window">Scanning</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Primary&gt;o</property>
+                <property name="action-name">win.scan-folder</property>
                 <property name="title" translatable="yes" context="shortcut window">Scan folder</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Primary&gt;r</property>
+                <property name="action-name">win.reload</property>
                 <property name="title" translatable="yes" context="shortcut window">Rescan current location</property>
               </object>
             </child>
