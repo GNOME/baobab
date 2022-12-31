@@ -8,13 +8,14 @@
 # Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
 # José Vieira <jvieira33@sapo.pt>, 2020.
 # Juliano de Souza Camargo <julianosc@protonmail.com>, 2020.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-10-08 11:43+0000\n"
-"PO-Revision-Date: 2021-11-07 21:35+0000\n"
+"POT-Creation-Date: 2022-10-09 19:05+0000\n"
+"PO-Revision-Date: 2022-12-31 23:49+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <>\n"
 "Language: pt\n"
@@ -22,10 +23,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Analisador de utilização do disco"
 
@@ -52,11 +53,15 @@ msgstr ""
 "árvore e gráfica que mostra o tamanho de cada diretório, tornando fácil "
 "identificar como o espaço do disco está a ser utilizado."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
+#: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations"
 msgstr "Dispositivos e localizações"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan"
+msgstr "Analisar"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -142,15 +147,15 @@ msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Voltar a analisar a localização atual"
 
-#: data/gtk/menus.ui:7
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Folder"
 msgstr "Abrir _pasta"
 
-#: data/gtk/menus.ui:11
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar caminho para a área de transferência"
 
-#: data/gtk/menus.ui:15
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver para o lixo"
 
@@ -190,14 +195,6 @@ msgstr "Este Computador"
 msgid "Remote Locations"
 msgstr "Localizações Remotas"
 
-#: data/ui/baobab-preferences-dialog.ui:6 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "Preferências"
-
-#: data/ui/baobab-preferences-dialog.ui:12
-msgid "Locations to Ignore"
-msgstr "Localizações a ignorar"
-
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
 msgstr "Analisar pasta…"
@@ -205,6 +202,10 @@ msgstr "Analisar pasta…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "Limpar a lista de recentes"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "Preferências"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -237,6 +238,10 @@ msgstr "Gráfico de anéis"
 #: data/ui/baobab-main-window.ui:312
 msgid "Treemap Chart"
 msgstr "Gráfico de árvore"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "Localizações a ignorar"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -341,11 +346,7 @@ msgstr "Analisar pontos de montagem recursivamente"
 msgid "Could not analyze volume."
 msgstr "Impossível analisar o volume."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
@@ -353,48 +354,51 @@ msgstr ""
 "Tiago Santos <tiagofsantos81@sapo.pt>\n"
 "Hugo Carvalho <hugokarvalho@hotmail.com>"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Falha ao abrir ficheiro"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Falha ao mover ficheiro para o lixo"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Dispositivos e localizações"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Impossível analisar a pasta \"%s\""
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "Nem sempre é detetado o tamanho de espaço ocupado no disco."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "Em alternativa, podem ser mostrados tamanhos aproximados."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Análise concluída"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Concluída a análise de “%s”"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” não é uma pasta válida"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Impossível analisar a utilização do disco."
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
 
 #~ msgid "Window state"
 #~ msgstr "Estado da janela"
@@ -624,9 +628,6 @@ msgstr "Impossível analisar a utilização do disco."
 
 #~ msgid "_Image type:"
 #~ msgstr "Tipo de _imagem:"
-
-#~ msgid "Scan"
-#~ msgstr "Analisar"
 
 #~ msgid "Device"
 #~ msgstr "Dispositivo"
