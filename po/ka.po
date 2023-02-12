@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Georgian translation for baobab.
+# Copyright (C) 2023 baobab's authors.
+# This file is distributed under the same license as the baobab package.
 # Ekaterine Papava <papava.e@gtu.ge>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-10-09 19:05+0000\n"
-"PO-Revision-Date: 2023-01-20 16:37+0100\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-12 09:39+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: \n"
 "Language: ka\n"
@@ -95,54 +95,59 @@ msgstr "გადიდებული ფანჯარა"
 msgid "Whether or not the window is maximized"
 msgstr "არის თუ არა ფანჯარა გადიდებული"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "ზოგადი"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "დახმარების ჩვენება"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "ძირითადი მენიუს ჩვენება/დამალვა"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "გასვლა"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახმობების ჩვენება"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "პარამეტრების ფანჯრის ჩვენება"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "მდებარეობის სიაზე დაბრუნება"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "სკანირება"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "საქაღალდის სკანირება"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "მიმდინარე მდებარეობის თავიდან სკანირება"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "საქაღალდის _გახსნა"
+msgid "_Open Externally"
+msgstr "_გარეთ გახსნა"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -153,36 +158,36 @@ msgid "Mo_ve to Trash"
 msgstr "სანაგვე ყუთში გადატანა"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "_მშობელ საქაღალდეზე გადასვლა"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
-msgstr "გა_დიდება"
+msgid "Zoom _In"
+msgstr "_გადიდება"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "_დაპატარავება"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "საქაღალდე"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "ზომა"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "შიგთავსი"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "შეცვლილია"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "ეს კომპიუტერი"
+msgid "This Device"
+msgstr "ეს მოწყობილობა"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -213,22 +218,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "დისკის მოხმარების ანალიზატორის შესახებ"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "მდებარეობის სიაზე დაბრუნება"
+msgid "Back"
+msgstr "უკან"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "მიმდინარე მდებარეობის თავიდან სკანირება"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "დახურვა"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "ბეჭდების გრაფიკი"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "ხის რუკის გრაფიკი"
 
@@ -385,3 +394,12 @@ msgstr "%s სწორი საქაღალდე არაა"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "დისკის გამოყენების ანალიზის შეცდომა."
+
+#~ msgid "_Open Folder"
+#~ msgstr "საქაღალდის _გახსნა"
+
+#~ msgid "This Computer"
+#~ msgstr "ეს კომპიუტერი"
+
+#~ msgid "Go back to location list"
+#~ msgstr "მდებარეობის სიაზე დაბრუნება"
