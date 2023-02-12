@@ -14,7 +14,7 @@ help_files = [
 ]
 
 help_media = [
-  'media/hicolor_apps_48x48_baobab.png'
+  'media/org.gnome.baobab.svg'
 ]
 
 gnome.yelp(
