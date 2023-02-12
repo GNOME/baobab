@@ -6,13 +6,13 @@
 # int_ua <xintx.ua@gmail.com>, 2010.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2012, 2013, 2014, 2016, 2017.
 # Olexandr Pylypchuk <pilipchukap@rambler.ru>, 2017.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-10-09 19:05+0000\n"
-"PO-Revision-Date: 2022-12-24 11:08+0200\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-12 20:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-doc@kde.org>\n"
 "Language: uk\n"
@@ -52,12 +52,10 @@ msgstr ""
 "диска."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-#| msgid "Devices and Locations"
 msgid "Devices and Locations View"
 msgstr "Перегляд пристроїв та місць"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-#| msgid "Scan"
 msgid "Scan View"
 msgstr "Перегляд сканування"
 
@@ -102,54 +100,60 @@ msgstr "Вікно розгорнуто"
 msgid "Whether or not the window is maximized"
 msgstr "Чи розгорнуто вікно"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Загальні"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Показати довідку"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Показати або приховати головне меню"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Показати клавіатурні скорочення"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Показати налаштування"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Повернутися до списку місць"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Сканування"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Сканувати теку"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Повторно сканувати поточне місце"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Відкрити _теку"
+msgid "_Open Externally"
+msgstr "Від_крити у сторонній програмі"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -160,36 +164,39 @@ msgid "Mo_ve to Trash"
 msgstr "Пере_містити у смітник"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Перейти до _верхньої теки"
+#| msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
+msgstr "Перейти до _батьківської теки"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
-msgstr "На_близити"
+#| msgid "Zoom _in"
+msgid "Zoom _In"
+msgstr "З_більшити"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
-msgstr "Від_далити"
+#| msgid "Zoom _out"
+msgid "Zoom _Out"
+msgstr "З_меншити"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Тека"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Розмір"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Зміст"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Змінено"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Цей комп'ютер"
+msgid "This Device"
+msgstr "Цей пристрій"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -220,22 +227,27 @@ msgid "_About Disk Usage Analyzer"
 msgstr "Про «Аналізатор використання дисків»"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Повернутися до списку місць"
+msgid "Back"
+msgstr "Назад"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: data/ui/baobab-main-window.ui:65
+#| msgid "Rescan current location"
+msgid "Rescan Current Location"
 msgstr "Повторно сканувати поточне місце"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Закрити"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Кільцева діаграма"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Дерево"
 
@@ -399,6 +411,15 @@ msgstr "«%s» не є дійсною текою"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Не вдалось проаналізувати використання дисків."
+
+#~ msgid "_Open Folder"
+#~ msgstr "Відкрити _теку"
+
+#~ msgid "This Computer"
+#~ msgstr "Цей комп'ютер"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Повернутися до списку місць"
 
 #~ msgid "_Cancel"
 #~ msgstr "_Скасувати"
