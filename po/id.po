@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-01-25 15:57+0000\n"
-"PO-Revision-Date: 2023-01-30 11:29+0700\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-13 09:30+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -99,54 +99,59 @@ msgstr "Jendela dimaksimalkan"
 msgid "Whether or not the window is maximized"
 msgstr "Apakah jendela dimaksimalkan atau tidak"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Umum"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Tampilkan bantuan"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Tampilkan / Sembunyikan menu primer"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Keluar"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Tampilkan Pintasan Papan Tik"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Tampilkan preferensi"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Kembali ke daftar lokasi"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Memindai"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Pindai folder"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Pindai ulang lokasi saat ini"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Buka F_older"
+msgid "_Open Externally"
+msgstr "_Buka Secara Eksternal"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -157,36 +162,36 @@ msgid "Mo_ve to Trash"
 msgstr "Buang ke _Tong Sampah"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "_Pergi ke folder induk"
+msgid "Go to _Parent Folder"
+msgstr "_Pergi Ke Folder Induk"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "Per_besar"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "Per_kecil"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Folder"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Ukuran"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Isi"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Diubah"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Komputer Ini"
+msgid "This Device"
+msgstr "Perangkat Ini"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -217,22 +222,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "Tent_ang Penganalisa Penggunaan Diska"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Kembali ke daftar lokasi"
+msgid "Back"
+msgstr "Kembali"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
-msgstr "Pindai ulang lokasi saat ini"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Menu Utama"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
+msgstr "Pindai Ulang Lokasi Saat Ini"
+
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Tutup"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Bagan Cincin"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Bagan Peta Pohon"
 
@@ -390,6 +399,15 @@ msgstr "\"%s\" bukan folder yang valid"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Tak bisa menganalisa penggunaan diska."
+
+#~ msgid "_Open Folder"
+#~ msgstr "Buka F_older"
+
+#~ msgid "This Computer"
+#~ msgstr "Komputer Ini"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Kembali ke daftar lokasi"
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Alat grafis untuk menganalisa penggunaan diska."
