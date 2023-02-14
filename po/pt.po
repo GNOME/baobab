@@ -1,6 +1,6 @@
-# gnome-utils's Portuguese translation
-# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 gnome-utils
-# Distributed under the same licence as the gnome-utils package
+# Portuguese translation for Disk Usage Analyzer (also known as baobab).
+# Copyright © 1999-2023 baobab.
+# Distributed under the same licence as the baobab package.
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # António Lima <amrlima@gmail.com>, 2013.
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-01-24 18:16+0000\n"
-"PO-Revision-Date: 2023-01-25 14:38+0000\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-14 12:00+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <>\n"
 "Language: pt\n"
@@ -102,54 +102,59 @@ msgstr "Janela maximizada"
 msgid "Whether or not the window is maximized"
 msgstr "Se a janela está ou não maximizada"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Geral"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Mostrar ajuda"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Mostrar / Ocultar o menu principal"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sair"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Mostrar os atalhos de teclado"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Mostrar preferências"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Voltar para a lista de localizações"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "A analisar"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analisar pasta"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Voltar a analisar a localização atual"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Abrir _pasta"
+msgid "_Open Externally"
+msgstr "_Abrir externamente"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -160,36 +165,36 @@ msgid "Mo_ve to Trash"
 msgstr "Mo_ver para o lixo"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Ir para a _pasta principal"
+msgid "Go to _Parent Folder"
+msgstr "Ir para a _pasta acima"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "_Ampliar"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "_Reduzir"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Pasta"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Tamanho"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Conteúdo"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Modificado"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Este computador"
+msgid "This Device"
+msgstr "Este dispositivo"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -220,22 +225,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_Acerca do Analisador de Utilização do Disco"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Volta para a lista de localizações"
+msgid "Back"
+msgstr "Voltar"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "Reanalisar a localização atual"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Fechar"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Gráfico de anéis"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Gráfico de árvore"
 
@@ -397,6 +406,15 @@ msgstr "“%s” não é uma pasta válida"
 msgid "Could not analyze disk usage."
 msgstr "Não foi possível analisar a utilização do disco."
 
+#~ msgid "_Open Folder"
+#~ msgstr "Abrir _pasta"
+
+#~ msgid "This Computer"
+#~ msgstr "Este computador"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Volta para a lista de localizações"
+
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Uma ferramenta gráfica para analisar a utilização do disco."
 
@@ -456,9 +474,6 @@ msgstr "Não foi possível analisar a utilização do disco."
 
 #~ msgid "Set the root node from the model"
 #~ msgstr "Definir o nó raiz do modelo"
-
-#~ msgid "Main volume"
-#~ msgstr "Unidade principal"
 
 #~ msgid "Usage"
 #~ msgstr "Utilização"
@@ -628,9 +643,6 @@ msgstr "Não foi possível analisar a utilização do disco."
 
 #~ msgid "_Image type:"
 #~ msgstr "Tipo de _imagem:"
-
-#~ msgid "Device"
-#~ msgstr "Dispositivo"
 
 #~ msgid "Mount Point"
 #~ msgstr "Ponto de Montagem"
