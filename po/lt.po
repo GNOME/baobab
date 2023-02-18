@@ -6,14 +6,14 @@
 # Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006, 2009, 2010.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008.
-# Aurimas Černius <aurisc4@gmail.com>, 2013-2022.
+# Aurimas Černius <aurisc4@gmail.com>, 2013-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-10 18:48+0000\n"
-"PO-Revision-Date: 2022-09-11 15:40+0300\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-18 22:31+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
 #: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
@@ -51,14 +51,12 @@ msgstr ""
 "surasti, kur yra švaistoma disko vieta."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "Įrenginiai ir vietos"
+msgid "Devices and Locations View"
+msgstr "Įrenginių ir vietų rodinys"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-#| msgctxt "shortcut window"
-#| msgid "Scanning"
-msgid "Scan"
-msgstr "Skaityti"
+msgid "Scan View"
+msgstr "Skaitymo rodinys"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -101,54 +99,59 @@ msgstr "Langas išdidintas"
 msgid "Whether or not the window is maximized"
 msgstr "Ar langas yra išdidintas"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Bendra"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Rodyti žinyną"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Rodyti / slėpti pagrindinį meniu"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Išeiti"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Rodyti klaviatūros trumpinius"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Rodyti nuostatas"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Grįžti į vietų sąrašą"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Skaitoma"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Perskaityti aplanką"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Iš naujo perskaityti dabartinę vietą"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Atverti a_planką"
+msgid "_Open Externally"
+msgstr "_Atverti išorėje"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -159,36 +162,36 @@ msgid "Mo_ve to Trash"
 msgstr "Per_kelti į Šiukšlinę"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "_Eiti į tėvinį aplanką"
+msgid "Go to _Parent Folder"
+msgstr "Eiti į _tėvinį aplanką"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "Pri_traukti"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "_Atitolinti"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Aplankas"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Dydis"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Turinys"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Pakeistas"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Šis kompiuteris"
+msgid "This Device"
+msgstr "Šis įrenginys"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -219,22 +222,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_Apie disko naudojimo analizatorių"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Grįžti į vietų sąrašą"
+msgid "Back"
+msgstr "Tuščias"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Pagrindinis meniu"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "Iš naujo perskaityti dabartinę vietą"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Užverti"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Žiedinę diagrama"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Medžio diagrama"
 
@@ -403,6 +410,15 @@ msgstr "„%s“ nėra tinkamas aplankas"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Grafinis įrankis disko naudojimo analizavimui."
+
+#~ msgid "_Open Folder"
+#~ msgstr "Atverti a_planką"
+
+#~ msgid "This Computer"
+#~ msgstr "Šis kompiuteris"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Grįžti į vietų sąrašą"
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Grafinis įrankis disko naudojimo analizavimui."
