@@ -1,5 +1,5 @@
 # Hungarian translation for baobab.
-# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2018, 2019, 2020, 2022. Free Software Foundation, Inc.
+# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2018, 2019, 2020, 2022, 2023. Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000.
@@ -10,13 +10,13 @@
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Mate ORY <orymate at gmail d0t com>, 2006.
 # Lukács Bence <lukacs.bence1 at gmail dot com>, 2012.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2012, 2013, 2014, 2016, 2018, 2019, 2020, 2022.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2012, 2013, 2014, 2016, 2018, 2019, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-09-27 14:11+0000\n"
-"PO-Revision-Date: 2022-09-29 18:47+0200\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-20 23:35+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
 #: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
@@ -55,12 +55,10 @@ msgstr ""
 "azonosítását, hogy hol vész el a lemezterület."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-#| msgid "Devices and Locations"
 msgid "Devices and Locations View"
 msgstr "Eszközök és helyek nézet"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-#| msgid "Scan"
 msgid "Scan View"
 msgstr "Vizsgálat nézet"
 
@@ -105,54 +103,60 @@ msgstr "Teljes méretű ablak"
 msgid "Whether or not the window is maximized"
 msgstr "Az ablak teljes méretű-e"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Általános"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Súgó megjelenítése"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Elsődleges menü megjelenítése vagy elrejtése"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Kilépés"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Gyorsbillentyűk megjelenítése"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Beállítások megjelenítése"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Vissza a helylistához"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Vizsgálat"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Mappa vizsgálata"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Jelenlegi hely ismételt vizsgálata"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Mappa _megnyitása"
+msgid "_Open Externally"
+msgstr "_Megnyitás külsőleg"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -163,36 +167,39 @@ msgid "Mo_ve to Trash"
 msgstr "Át_helyezés a Kukába"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+#| msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "Ugrás a _szülőmappába"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+#| msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "_Nagyítás"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+#| msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "_Kicsinyítés"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Mappa"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Méret"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Tartalom"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Módosítva"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Ez a számítógép"
+msgid "This Device"
+msgstr "Ez az eszköz"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -223,22 +230,27 @@ msgid "_About Disk Usage Analyzer"
 msgstr "A Lemezhasználat-elemző _névjegye"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Vissza a helylistához"
+msgid "Back"
+msgstr "Vissza"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Főmenü"
+
+#: data/ui/baobab-main-window.ui:65
+#| msgid "Rescan current location"
+msgid "Rescan Current Location"
 msgstr "Jelenlegi hely ismételt vizsgálata"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Bezárás"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Gyűrűdiagram"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Fadiagram"
 
