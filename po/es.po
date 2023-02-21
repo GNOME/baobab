@@ -10,25 +10,25 @@
 # Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999.
 # Manuel de Vega Barreiro <barreiro@arrakis.es> 2000-2001.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2021.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-10-08 11:43+0000\n"
-"PO-Revision-Date: 2021-11-26 17:33+0100\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-21 11:35+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 41.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 42.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
@@ -55,11 +55,15 @@ msgstr ""
 "vista de árbol como una representación gráfica del tamaño de cada carpeta, "
 "simplificando la identificación de dónde se consume el espacio."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
-msgid "Devices and Locations"
-msgstr "Dispositivos y ubicaciones"
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "Vista de dispositivos y ubicaciones"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "Vista de análisis"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "El Proyecto GNOME"
 
@@ -93,7 +97,6 @@ msgid "The initial size of the window"
 msgstr "El tamaño inicial de la ventana"
 
 #: data/org.gnome.baobab.gschema.xml:30
-#| msgid "Window size"
 msgid "Window Maximized"
 msgstr "Ventana maximizada"
 
@@ -101,106 +104,103 @@ msgstr "Ventana maximizada"
 msgid "Whether or not the window is maximized"
 msgstr "Indica is la ventana está o no maximizada"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "General"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Mostrar ayuda"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Mostrar/ocultar el menú primario"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Salir"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Mostrar los atajos del teclado"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Mostrar las preferencias"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Volver a la lista de ubicaciones"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Analizando"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analizar carpeta"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Volver a analizar la ubicación actual"
 
-#: data/gtk/menus.ui:7
-msgid "_Open Folder"
-msgstr "_Abrir carpeta"
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "_Abrir externamente"
 
-#: data/gtk/menus.ui:11
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiar la ruta al portapapeles"
 
-#: data/gtk/menus.ui:15
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "Mo_ver a la papelera"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "_Ir a la carpeta padre"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
-msgstr "Ampliar"
+msgid "Zoom _In"
+msgstr "Ampl_iar"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
-msgstr "Reducir"
+msgid "Zoom _Out"
+msgstr "Red_ucir"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Carpeta"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Tamaño"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Contenido"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Modificado"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Este equipo"
+msgid "This Device"
+msgstr "Este dispositivo"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
 msgstr "Ubicaciones remotas"
-
-#: data/ui/baobab-preferences-dialog.ui:6 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "Preferencias"
-
-#: data/ui/baobab-preferences-dialog.ui:12
-msgid "Locations to Ignore"
-msgstr "Ubicaciones que ignorar"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -209,6 +209,10 @@ msgstr "Analizar carpeta…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "Vaciar lista de recientes"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "Preferencias"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -223,24 +227,32 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_Acerca del analizador de uso de disco"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Volver a la lista de ubicaciones"
+msgid "Back"
+msgstr "Atrás"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "Volver a analizar la ubicación actual"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Cerrar"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Gráfico de anillos"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Gráfico de árbol"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "Ubicaciones que ignorar"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -345,11 +357,7 @@ msgstr "Analizar recursivamente los puntos de montaje"
 msgid "Could not analyze volume."
 msgstr "No se pudo analizar el volumen."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Una herramienta gráfica para analizar el uso del disco."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012 - 2020\n"
@@ -362,48 +370,60 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Falló al abrir el archivo"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Falló al mover el archivo a la papelera"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Dispositivos y ubicaciones"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "No se pudo analizar la carpeta «%s»"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "No se pudo detectar el espacio de disco ocupado."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "Se muestra el tamaño aparente en su lugar."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Análisis completado"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Análisis de «%s» completado"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "No se pudo analizar el uso del disco."
+
+#~ msgid "_Open Folder"
+#~ msgstr "_Abrir carpeta"
+
+#~ msgid "This Computer"
+#~ msgstr "Este equipo"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Volver a la lista de ubicaciones"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Una herramienta gráfica para analizar el uso del disco."
 
 #~ msgid "Window state"
 #~ msgstr "Estado de la ventana"
@@ -449,9 +469,6 @@ msgstr "No se pudo analizar el uso del disco."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Analizar carpeta remota…"
-
-#~ msgid "Main volume"
-#~ msgstr "Volumen principal"
 
 #~ msgid "Usage"
 #~ msgstr "Uso"
@@ -539,9 +556,6 @@ msgstr "No se pudo analizar el uso del disco."
 #~ msgstr ""
 #~ "Indica si la barra de estado en la parte inferior de la ventana principal "
 #~ "debe ser visible."
-
-#~ msgid "Scan"
-#~ msgstr "Analizar"
 
 #~| msgid "Mount and scan"
 #~ msgid "Mount and Scan"
@@ -645,9 +659,6 @@ msgstr "No se pudo analizar el uso del disco."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
 #~ msgstr "El uso del disco no se puede analizar sin puntos de montaje."
-
-#~ msgid "Device"
-#~ msgstr "Dispositivo"
 
 #~ msgid "Mount Point"
 #~ msgstr "Punto de montaje"
