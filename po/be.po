@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab.main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-14 02:34+0300\n"
+"POT-Creation-Date: 2023-02-22 11:51+0000\n"
+"PO-Revision-Date: 2023-02-22 18:09+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -32,7 +32,8 @@ msgstr "Праверка памеру папак і даступнай дыск�
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
-msgstr "Простая праграма для кантролю выкарыстання дыска і вольнай прасторы."
+msgstr ""
+"Простая праграма для кантролю выкарыстанай і даступнай дыскавай прасторы."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -40,10 +41,10 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"Аналізатар дыскавай прасторы можа сканаваць вызначаныя папкі, запамінальныя "
-"прылады і сеціўныя ўліковыя запісы. Ён выводзіць дрэва папак і іх графічную "
-"схему з указаннем памеру, што дазваляе лёгка выяўляць дзе расходуецца "
-"дыскавая прастора."
+"Аналізатар дыскавай прасторы можа даследаваць вызначаныя папкі, "
+"запамінальныя прылады і сеціўныя ўліковыя запісы. Ён выводзіць дрэва папак і "
+"іх графічную схему з указаннем памеру, што дазваляе лёгка выяўляць дзе "
+"расходуецца дыскавая прастора."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations View"
@@ -51,7 +52,7 @@ msgstr "Прагляд прылад і размяшчэнняў"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
 msgid "Scan View"
-msgstr "Прагляд сканавання"
+msgstr "Прагляд даследвання"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -68,7 +69,7 @@ msgstr "URI выключаных размяшчэнняў"
 
 #: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for locations to be excluded from scanning."
-msgstr "Спіс URI для размяшчэнняў, якія выключаны са сканавання."
+msgstr "Спіс URI для размяшчэнняў, якія выключаны з даследавання."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -132,12 +133,12 @@ msgstr "Вярнуцца да спісу размяшчэнняў"
 #: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
-msgstr "Сканаванне"
+msgstr "Даследаванне"
 
 #: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
-msgstr "Сканаваць папку"
+msgstr "Даследаваць папку"
 
 #: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
@@ -145,9 +146,8 @@ msgid "Rescan current location"
 msgstr "Паўторна даследаваць бягучае размяшчэнне"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-#, fuzzy
 msgid "_Open Externally"
-msgstr "_Адкрыць знешняе"
+msgstr "_Адкрыць у знешняй праграме"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -227,7 +227,7 @@ msgstr "Галоўнае меню"
 
 #: data/ui/baobab-main-window.ui:65
 msgid "Rescan Current Location"
-msgstr "Перасканаваць бягучае размяшчэнне"
+msgstr "Паўторна даследаваць бягучае размяшчэнне"
 
 #: data/ui/baobab-main-window.ui:113
 msgid "Close"
@@ -310,7 +310,7 @@ msgstr "%s усяго"
 #: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
-msgstr "%s вольна"
+msgstr "%s даступна"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
@@ -379,7 +379,7 @@ msgstr "Не ўдалося даследаваць папку «%s»"
 
 #: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
-msgstr "Немагчыма ўвесь час вызначаць занятую дыскавую прастору."
+msgstr "Не заўсёды ўдаецца вызначыць памер занятай дыскавай прасторы."
 
 #: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
@@ -387,12 +387,12 @@ msgstr "Замест гэтага можа паказвацца ўяўны па�
 
 #: src/baobab-window.vala:641
 msgid "Scan completed"
-msgstr "Сканаванне завершана"
+msgstr "Даследаванне завершана"
 
 #: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
-msgstr "Завершана сканаванне «%s»"
+msgstr "Завершана даследаванне «%s»"
 
 #: src/baobab-window.vala:682
 #, c-format
