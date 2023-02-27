@@ -4,14 +4,14 @@
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2000.
 # Matic Žgur <mr.zgur@gmail.com>, 2006.
-# Matej Urbančič <mateju@src.gnome.org>, 2007–2022.
+# Matej Urbančič <mateju@src.gnome.org>, 2007–2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-29 18:26+0000\n"
-"PO-Revision-Date: 2022-08-31 21:17+0200\n"
+"POT-Creation-Date: 2023-02-25 15:04+0000\n"
+"PO-Revision-Date: 2023-02-27 21:47+0100\n"
 "Last-Translator: Matej Urbančič <mateju@src.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -52,12 +52,12 @@ msgstr ""
 "močno poenostavi odkrivanje največjih porabnikov prostora."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "Naprave in mesta"
+msgid "Devices and Locations View"
+msgstr "Odpre pogled naprav in mest"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-msgid "Scan"
-msgstr "Preišči"
+msgid "Scan View"
+msgstr "Odpre pregled preiskovalnika"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -102,54 +102,59 @@ msgstr "Razpeto okno"
 msgid "Whether or not the window is maximized"
 msgstr "Ali je glavno okno razpeto"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Splošno"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Pokaže pomoč"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Pokaže / Skrije osnovni meni"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Konča program"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Pokaže tipkovne bližnjice"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Pokaže okno lastnosti"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Skoči na seznam mest"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Preiskovanje"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Preišče mapo"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Ponovno preišče trenutno mesto"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Odpri _mapo"
+msgid "_Open Externally"
+msgstr "_Odpri v zunanjem programu"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -160,36 +165,36 @@ msgid "Mo_ve to Trash"
 msgstr "Pr_emakni v smeti"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "Premakni v _nadrejeno mapo"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "_Približaj"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "_Oddalji"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Mapa"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Velikost"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Vsebina"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Spremenjeno"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Računalnik"
+msgid "This Device"
+msgstr "Ta naprava"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -220,22 +225,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_O orodju za preučevanje porabe diska"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Skoči nazaj na seznam mest"
+msgid "Back"
+msgstr "Nazaj"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
-msgstr "Ponovno preišči trenutno mesto"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Glavni meni"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
+msgstr "Preišči trenutno mesto"
+
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Zapri"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Krožni diagram"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Drevesni diagram"
 
@@ -404,6 +413,15 @@ msgstr "»%s« ni veljavna mapa"
 msgid "Could not analyze disk usage."
 msgstr "Ni mogoče preučiti porabe diska."
 
+#~ msgid "_Open Folder"
+#~ msgstr "Odpri _mapo"
+
+#~ msgid "This Computer"
+#~ msgstr "Računalnik"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Skoči nazaj na seznam mest"
+
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Grafično orodje za preučevanje porabe diska."
 
@@ -465,9 +483,6 @@ msgstr "Ni mogoče preučiti porabe diska."
 
 #~ msgid "Set the root node from the model"
 #~ msgstr "Določitev korenskega vozlišča modela"
-
-#~ msgid "Main volume"
-#~ msgstr "Glavni nosilec"
 
 #~ msgid "Usage"
 #~ msgstr "Uporaba"
