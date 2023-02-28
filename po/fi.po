@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-02-26 13:20+0000\n"
-"PO-Revision-Date: 2022-02-27 19:19+0200\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-02-28 22:34+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -30,10 +30,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-03-05 15:05:01+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
 msgid "Disk Usage Analyzer"
 msgstr "Levynkäytön analysointi"
 
@@ -60,11 +60,15 @@ msgstr ""
 "esityksen jokaisen kansion sisällöstä ja tilan käytöstä. Sovelluksen avulla "
 "näet helposti, mitkä kansiot vievät eniten tilaa."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
-msgid "Devices and Locations"
-msgstr "Laitteet ja sijainnit"
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "Laitteet ja sijainnit -näkymä"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "Kartoitusnäkymä"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
 msgstr "Gnome-projekti"
 
@@ -105,54 +109,59 @@ msgstr "Ikkuna suurennettu"
 msgid "Whether or not the window is maximized"
 msgstr "Onko ikkuna suurennettu vai ei"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Yleiset"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Näytä ohje"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Näytä/piilota ensisijainen valikko"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Lopeta"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Näytä pikanäppäimet"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Näytä asetukset"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Siirry takaisin sijaintiluetteloon"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Kartoitus"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Kartoita kansio"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Kartoita uudelleen nykyinen sijainti"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "Avaa _kansio"
+msgid "_Open Externally"
+msgstr "Avaa _ulkoisesti"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -163,36 +172,36 @@ msgid "Mo_ve to Trash"
 msgstr "_Siirrä roskakoriin"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "_Siirry ylätason kansioon"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "L_ähennä"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "L_oitonna"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Kansio"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Koko"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Sisältö"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Muokattu"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Tämä tietokone"
+msgid "This Device"
+msgstr "Tämä laite"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -223,22 +232,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_Tietoja - Levynkäytön analysointi"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Siirry takaisin sijaintiluetteloon"
+msgid "Back"
+msgstr "Edellinen"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "Kartoita uudelleen nykyinen sijainti"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Sulje"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Ympyräkaavio"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Puukaavio"
 
@@ -349,14 +362,10 @@ msgstr "Analysoi liitoskohdat rekursiivisesti"
 msgid "Could not analyze volume."
 msgstr "Levynkäyttöä ei voitu analysoida."
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Graafinen työkalu levytilan käytön analysointiin."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:297
 msgid "translator-credits"
 msgstr ""
-"Jiri Grönroos, 2012-2022\n"
+"Jiri Grönroos, 2012-2023\n"
 "Tommi Vainikainen, 2009-2011\n"
 "Timo Jyrinki, 2008\n"
 "Ilkka Tuohela, 2005-2009\n"
@@ -367,48 +376,60 @@ msgstr ""
 "\n"
 "https://l10n.gnome.org/teams/fi/"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:361
 msgid "Failed to open file"
 msgstr "Tiedoston avaaminen epäonnistui"
 
-#: src/baobab-window.vala:374
+#: src/baobab-window.vala:377
 msgid "Failed to move file to the trash"
 msgstr "Tiedoston siirtäminen roskakoriin epäonnistui"
 
-#: src/baobab-window.vala:567
+#: src/baobab-window.vala:570
 msgid "Devices & Locations"
 msgstr "Laitteet ja sijainnit"
 
-#: src/baobab-window.vala:619
+#: src/baobab-window.vala:622
 #, c-format
 msgid "Could not scan folder “%s”"
 msgstr "Kansiota ”%s” ei voi kartoittaa"
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Could not always detect occupied disk sizes."
 msgstr "Varattujen levyjen kokoa ei aina voida havaita."
 
-#: src/baobab-window.vala:634
+#: src/baobab-window.vala:637
 msgid "Apparent sizes may be shown instead."
 msgstr "Sen sijaan saatetaan näyttää näennäiskoko."
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:641
 msgid "Scan completed"
 msgstr "Kartoitus valmistui"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:642
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Kohteen ”%s” kartoitus suoritettu"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:682
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” ei ole kelvollinen kansio"
 
-#: src/baobab-window.vala:680
+#: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Levynkäyttöä ei voitu analysoida."
+
+#~ msgid "_Open Folder"
+#~ msgstr "Avaa _kansio"
+
+#~ msgid "This Computer"
+#~ msgstr "Tämä tietokone"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Siirry takaisin sijaintiluetteloon"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Graafinen työkalu levytilan käytön analysointiin."
 
 #~ msgid "Window state"
 #~ msgstr "Ikkunan tila"
@@ -469,9 +490,6 @@ msgstr "Levynkäyttöä ei voitu analysoida."
 
 #~ msgid "Set the root node from the model"
 #~ msgstr "Aseta juurisolmu mallista"
-
-#~ msgid "Main volume"
-#~ msgstr "Päätaltio"
 
 #~ msgid "Usage"
 #~ msgstr "Käyttö"
@@ -634,12 +652,6 @@ msgstr "Levynkäyttöä ei voitu analysoida."
 
 #~ msgid "_Image type:"
 #~ msgstr "Kuvan tyypp_i:"
-
-#~ msgid "Scan"
-#~ msgstr "Kartoita"
-
-#~ msgid "Device"
-#~ msgstr "Laite"
 
 #~ msgid "Mount Point"
 #~ msgstr "Liitospiste"
