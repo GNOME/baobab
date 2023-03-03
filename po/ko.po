@@ -4,7 +4,7 @@
 # update by Young-Ho, Cha <ganadist@chollian.net>, 2001
 # Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2011, 2013-2014.
 # Yeol Park <peary2@gmail.com>, 2018.
-# Seong-ho Cho <shcho@gnome.org>, 2012, 2016-2017, 2019-2022.
+# Seong-ho Cho <shcho@gnome.org>, 2012, 2016-2017, 2019-2023.
 #
 #
 # 새로 번역하시는 분은 아래 translator-credits에 추가하세요.
@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-10 18:48+0000\n"
-"PO-Revision-Date: 2022-08-28 22:34+0900\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-03-03 02:46+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -53,12 +53,12 @@ msgstr ""
 "게 찾아볼 수 있게 합니다."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "장치 및 위치"
+msgid "Devices and Locations View"
+msgstr "장치 및 위치 보기"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-msgid "Scan"
-msgstr "검사"
+msgid "Scan View"
+msgstr "검사 보기"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -101,54 +101,59 @@ msgstr "창 최대화"
 msgid "Whether or not the window is maximized"
 msgstr "창 최대화 여부"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "일반"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "도움말 표시"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "기본 메뉴 표시/숨김"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "끝내기"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "키보드 바로 가기 키 표시"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "기본 설정 표시"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "위치 목록으로 되돌아가기"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "검사"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "폴더 검사"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "현재 위치 재검사"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "폴더 열기(_O)"
+msgid "_Open Externally"
+msgstr "외부에서 열기(_O)"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -159,36 +164,36 @@ msgid "Mo_ve to Trash"
 msgstr "휴지통으로 옮기기(_V)"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "상위 폴더로 이동(_P)"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "확대(_I)"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "축소(_O)"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "폴더"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "용량"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "내용"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "수정됨"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "내 컴퓨터"
+msgid "This Device"
+msgstr "이 장치"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -219,22 +224,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "디스크 사용량 분석 정보(_A)"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "위치 목록으로 돌아가기"
+msgid "Back"
+msgstr "위로"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "주 메뉴"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "현재 위치 재검사"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "닫기"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "링 차트"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "트리맵 차트"
 
@@ -391,6 +400,15 @@ msgstr "“%s”은(는) 올바른 폴더가 아닙니다"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "디스크 사용량을 분석할 수 없습니다."
+
+#~ msgid "_Open Folder"
+#~ msgstr "폴더 열기(_O)"
+
+#~ msgid "This Computer"
+#~ msgstr "내 컴퓨터"
+
+#~ msgid "Go back to location list"
+#~ msgstr "위치 목록으로 돌아가기"
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "디스크 사용량을 분석하는 그래픽 도구."
