@@ -53,7 +53,8 @@ namespace Baobab {
 
         private const string FS_ATTRIBUTES =
             FileAttribute.FILESYSTEM_SIZE + "," +
-            FileAttribute.FILESYSTEM_USED;
+            FileAttribute.FILESYSTEM_USED + "," +
+            FileAttribute.FILESYSTEM_FREE;
 
         string get_hostname () throws Error {
             HostnameIface hostname_iface;

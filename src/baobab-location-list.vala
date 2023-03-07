@@ -68,13 +68,14 @@ namespace Baobab {
                     total_size_label.show();
 
                     if (location.used != null) {
-                        available_label.label = _("%s Available").printf (format_size (location.size - location.used));
+                        var actually_used = location.used + (location.reserved ?? 0);
+                        available_label.label = _("%s Available").printf (format_size (location.size - actually_used));
 
                         usage_bar.max_value = location.size;
 
                         // Set critical color at 90% of the size
                         usage_bar.add_offset_value (Gtk.LEVEL_BAR_OFFSET_LOW, 0.9 * location.size);
-                        usage_bar.value = location.used;
+                        usage_bar.value = actually_used;
                         usage_bar.show ();
                     } else {
                         available_label.label = _("Unknown");
