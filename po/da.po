@@ -1,5 +1,5 @@
 # Danish translation for baobab.
-# Copyright (C) 2013-2018, 2022 Free Software Foundation, Inc.
+# Copyright (C) 2013-2018, 2022-2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the baobab package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
 # Kim Schulz <kim@schulz.dk>, 1999.
@@ -9,7 +9,7 @@
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008, 2012.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14, 16, 18, 22.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14, 16, 18, 22, 23.
 # Joe Hansen <joedalton2@yahoo.dk>, 2017.
 # Alan Mortensen <alanmortensen.am@gmail.com>, 2019.
 # scootergrisen, 2020.
@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-10 18:48+0000\n"
-"PO-Revision-Date: 2022-08-27 20:22+0200\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-03-11 13:14+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -58,12 +58,12 @@ msgstr ""
 "spildes."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "Enheder og steder"
+msgid "Devices and Locations View"
+msgstr "Enheder og steder-visning"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-msgid "Scan"
-msgstr "Skan"
+msgid "Scan View"
+msgstr "Skanningsvisning"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -106,54 +106,59 @@ msgstr "Vindue maksimeret"
 msgid "Whether or not the window is maximized"
 msgstr "Om vinduet er maksimeret"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Generelt"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Vis hjælp"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Vis/skjul primær menu"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Afslut"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Vis tastaturgenveje"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Vis indstillinger"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Gå tilbage til placeringslisten"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Skanning"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Skan mappe"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Skan nuværende placering igen"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "_Åbn mappe"
+msgid "_Open Externally"
+msgstr "_Åbn eksternt"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -164,36 +169,36 @@ msgid "Mo_ve to Trash"
 msgstr "F_lyt til papirkurv"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "Gå til mappen et _niveau over"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "For_stør"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "For_mindsk"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Mappe"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Størrelse"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Indhold"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Ændret"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Denne computer"
+msgid "This Device"
+msgstr "Denne enhed"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -224,22 +229,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "_Om Diskforbrugsanalyse"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Gå tilbage til placeringslisten"
+msgid "Back"
+msgstr "Tilbage"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
-msgstr "Skan nuværende placering"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Hovedmenu"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
+msgstr "Skan nuværende placering igen"
+
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Luk"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Cirkeldiagram"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Trækortdiagram"
 
@@ -411,6 +420,15 @@ msgstr "“%s” er ikke en gyldig mappe"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Kunne ikke analysere diskforbrug."
+
+#~ msgid "_Open Folder"
+#~ msgstr "_Åbn mappe"
+
+#~ msgid "This Computer"
+#~ msgstr "Denne computer"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Gå tilbage til placeringslisten"
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Et grafisk værktøj til at analysere diskforbrug."
