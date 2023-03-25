@@ -8,14 +8,14 @@
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013, 2014, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013, 2014, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Vika Leimane <vika.leimane@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-17 10:45+0000\n"
-"PO-Revision-Date: 2022-09-03 20:45+0300\n"
+"POT-Creation-Date: 2023-02-12 02:26+0000\n"
+"PO-Revision-Date: 2023-03-25 13:09+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
 #: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
@@ -55,15 +55,15 @@ msgstr ""
 "izniekota."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "Ierīces un vietas"
+#| msgid "Devices and Locations"
+msgid "Devices and Locations View"
+msgstr "Ierīču un vietu skats"
 
 # gdictsrc/gdict-app.c:117
 #: data/org.gnome.baobab.appdata.xml.in:24
-#| msgctxt "shortcut window"
-#| msgid "Scanning"
-msgid "Scan"
-msgstr "Skenēt"
+#| msgid "Scan"
+msgid "Scan View"
+msgstr "Skenēšanas skats"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -106,55 +106,61 @@ msgstr "Logs maksimizēts"
 msgid "Whether or not the window is maximized"
 msgstr "Vai logs ir maksimizēts"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Vispārīgi"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Rādīt palīdzību"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Rādīt / slēpt galveno izvēlni"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Iziet"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Rādīt tastatūras saīsnes"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Rādīt iestatījumus"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Iet atpakaļ uz vietu sarakstu"
 
 # gdictsrc/gdict-app.c:117
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Skenē"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Skenēt mapi"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Vēlreiz skenēt šo vietu"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "_Atvērt mapi"
+msgid "_Open Externally"
+msgstr "_Atvērt ārēji"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -166,37 +172,40 @@ msgstr "Pār_vietot uz miskasti"
 
 # gdictsrc/gdict-app.c:278
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+#| msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "Iet uz vecāka ma_pi"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+#| msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "Tuv_ināt"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+#| msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "Tā_lināt"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Mape"
 
 # mini-utils/guname/info.c:61
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Izmērs"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Saturs"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Mainīts"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Šajā datorā"
+msgid "This Device"
+msgstr "Šī ierīce"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -229,22 +238,27 @@ msgid "_About Disk Usage Analyzer"
 msgstr "P_ar diska izmantošanas analizatoru"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Iet atpakaļ uz vietu sarakstu"
+msgid "Back"
+msgstr "Atpakaļ"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Galvenā izvēlne"
+
+#: data/ui/baobab-main-window.ui:65
+#| msgid "Rescan current location"
+msgid "Rescan Current Location"
 msgstr "Vēlreiz skenēt šo vietu"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Aizvērt"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Gredzenu grafiks"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Skatīt kā koka kartes grafiku"
 
@@ -410,6 +424,15 @@ msgstr "“%s” nav derīga mape"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Nevarēja izanalizēt diska izmantojumu."
+
+#~ msgid "_Open Folder"
+#~ msgstr "_Atvērt mapi"
+
+#~ msgid "This Computer"
+#~ msgstr "Šajā datorā"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Iet atpakaļ uz vietu sarakstu"
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Grafisks rīks diska izmantojuma analizēšanai."
