@@ -11,14 +11,15 @@
 # tuhaihe <1132321739qq@gmail.com>, 2012, 2013.
 # Dingzhong Chen <wsxy162@gmail.com>, 2016, 2017, 2018, 2019.
 # lumingzh <lumingzh@qq.com>, 2022.
+# Nanling <neithern@outlook.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-10 19:53+0000\n"
-"PO-Revision-Date: 2022-08-14 14:05+0800\n"
-"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"POT-Creation-Date: 2023-05-05 13:42+0000\n"
+"PO-Revision-Date: 2023-05-05 21:57+0800\n"
+"Last-Translator: Nanling <neithern@outlook.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -52,12 +53,12 @@ msgstr ""
 "形展示来显示每个文件夹的大小，因此可以很容易的识别出哪里的磁盘空间被浪费了。"
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "设备与位置"
+msgid "Devices and Locations View"
+msgstr "设备与位置视图"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-msgid "Scan"
-msgstr "扫描"
+msgid "Scan View"
+msgstr "扫描视图"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -100,54 +101,59 @@ msgstr "窗口已最大化"
 msgid "Whether or not the window is maximized"
 msgstr "窗口是否已经最大化"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "常规"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "显示帮助"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "显示/隐藏主主菜单"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "退出"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "显示键盘快捷键"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "显示首选项"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "返回位置列表"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "扫描"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "扫描文件夹"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "重新扫描当前位置"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "打开文件夹(_O)"
+msgid "_Open Externally"
+msgstr "在外部打开(_O)"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -158,36 +164,36 @@ msgid "Mo_ve to Trash"
 msgstr "移到回收站(_V)"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "转到上级文件夹(_P)"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "放大(_I)"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "缩小(_O)"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "文件夹"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "大小"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "内容"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "已修改"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "此电脑"
+msgid "This Device"
+msgstr "此设备"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -218,22 +224,26 @@ msgid "_About Disk Usage Analyzer"
 msgstr "关于磁盘占用分析器(_A)"
 
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "返回位置列表"
+msgid "Back"
+msgstr "返回"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "重新扫描当前位置"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "关闭"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "环形图"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "矩形树状结构图"
 
@@ -395,6 +405,15 @@ msgstr "“%s”不是有效的文件夹"
 msgid "Could not analyze disk usage."
 msgstr "无法分析磁盘占用。"
 
+#~ msgid "_Open Folder"
+#~ msgstr "打开文件夹(_O)"
+
+#~ msgid "This Computer"
+#~ msgstr "此电脑"
+
+#~ msgid "Go back to location list"
+#~ msgstr "返回位置列表"
+
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "一款分析磁盘占用的图形工具。"
 
@@ -438,9 +457,6 @@ msgstr "无法分析磁盘占用。"
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "扫描远程文件夹..."
-
-#~ msgid "Main volume"
-#~ msgstr "主卷"
 
 #~ msgid "Usage"
 #~ msgstr "使用率"
