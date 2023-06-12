@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-09-18 18:42+0000\n"
-"PO-Revision-Date: 2022-10-09 21:04+0200\n"
+"POT-Creation-Date: 2023-05-05 13:42+0000\n"
+"PO-Revision-Date: 2023-06-12 12:06-0400\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-DL-Team: sk\n"
 "X-DL-Module: baobab\n"
 "X-DL-Branch: main\n"
@@ -57,12 +57,12 @@ msgstr ""
 "sa plytvá miestom."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "Zariadenia a umiestnenia"
+msgid "Devices and Locations View"
+msgstr "Zobrazenie zariadení a umiestnení"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-msgid "Scan"
-msgstr "Analyzovanie"
+msgid "Scan View"
+msgstr "Zobrazenie analýzy"
 
 #: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
 msgid "The GNOME Project"
@@ -105,54 +105,59 @@ msgstr "Maximalizované okno"
 msgid "Whether or not the window is maximized"
 msgstr "Určuje, či je alebo nie je okno maximalizované"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Všeobecné"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Zobrazenie pomocníka"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Zobrazenie / skrytie hlavnej ponuky"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ukončenie"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Zobrazenie klávesových skratiek"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Zobrazenie predvolieb"
+
+#: data/gtk/help-overlay.ui:45
 msgctxt "shortcut window"
 msgid "Go back to location list"
 msgstr "Prejdenie späť na zoznam umiestnení"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Analyzovanie"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analyzovanie priečinku"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Spustenie analýzy aktuálneho umiestnenia odznovu"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "_Otvoriť priečinok"
+msgid "_Open Externally"
+msgstr "_Otvoriť externe"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -163,36 +168,36 @@ msgid "Mo_ve to Trash"
 msgstr "Presunúť do K_oša"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "_Prejsť do rodičovského priečinka"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "_Zväčšiť"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "Z_menšiť"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
 msgid "Folder"
 msgstr "Priečinok"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
 msgid "Size"
 msgstr "Veľkosť"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
 msgid "Contents"
 msgstr "Obsah"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
 msgid "Modified"
 msgstr "Zmenený"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Tento počítač"
+msgid "This Device"
+msgstr "Toto zariadenie"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -222,25 +227,28 @@ msgstr "_Pomocník"
 msgid "_About Disk Usage Analyzer"
 msgstr "_O aplikácii Analyzátor využitia disku"
 
-# tooltip
 #: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Prejde späť na zoznam umiestnení"
+msgid "Back"
+msgstr "Späť"
+
+#: data/ui/baobab-main-window.ui:57
+msgid "Main Menu"
+msgstr "Hlavná ponuka"
 
 # tooltip
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:65
+msgid "Rescan Current Location"
 msgstr "Opätovne spustí analýzu aktuálneho umiestnenia"
 
-#: data/ui/baobab-main-window.ui:111
+#: data/ui/baobab-main-window.ui:113
 msgid "Close"
 msgstr "Zavrieť"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:301
 msgid "Rings Chart"
 msgstr "Kruhový graf"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:314
 msgid "Treemap Chart"
 msgstr "Stĺpcový graf"
 
@@ -414,6 +422,16 @@ msgstr "„%s“ nie je platný priečinok"
 #: src/baobab-window.vala:683
 msgid "Could not analyze disk usage."
 msgstr "Nepodarilo sa analyzovať využitie disku."
+
+#~ msgid "_Open Folder"
+#~ msgstr "_Otvoriť priečinok"
+
+#~ msgid "This Computer"
+#~ msgstr "Tento počítač"
+
+# tooltip
+#~ msgid "Go back to location list"
+#~ msgstr "Prejde späť na zoznam umiestnení"
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Grafický nástroj na analýzu využitia disku."
