@@ -75,7 +75,6 @@ namespace Baobab {
         protected override void startup () {
             base.startup ();
 
-            set_accels_for_action ("win.show-home-page", { "<Alt>Left" });
             set_accels_for_action ("win.show-preferences", { "<Primary>comma" });
             set_accels_for_action ("win.show-primary-menu", { "F10" });
             set_accels_for_action ("win.scan-folder", { "<Primary>o" });

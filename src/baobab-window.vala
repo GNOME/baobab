@@ -29,33 +29,17 @@ namespace Baobab {
         [GtkChild]
         private unowned Gtk.DropTarget drop_target;
         [GtkChild]
-        private unowned Gtk.GestureClick back_gesture;
-        [GtkChild]
-        private unowned Gtk.Box vbox;
-        [GtkChild]
-        private unowned Adw.HeaderBar header_bar;
-        [GtkChild]
         private unowned Pathbar pathbar;
         [GtkChild]
-        private unowned Gtk.Button back_button;
-        [GtkChild]
-        private unowned Gtk.Button reload_button;
-        [GtkChild]
-        private unowned Gtk.MenuButton menu_button;
-        [GtkChild]
-        private unowned Gtk.Stack main_stack;
+        private unowned Adw.NavigationView nav_view;
         [GtkChild]
         private unowned Gtk.Widget home_page;
         [GtkChild]
         private unowned Gtk.Widget result_page;
         [GtkChild]
-        private unowned Gtk.InfoBar infobar;
+        private unowned Adw.ToastOverlay toast_overlay;
         [GtkChild]
-        private unowned Gtk.Label infobar_primary_label;
-        [GtkChild]
-        private unowned Gtk.Label infobar_secondary_label;
-        [GtkChild]
-        private unowned Gtk.Button infobar_close_button;
+        private unowned Adw.Banner banner;
         [GtkChild]
         private unowned LocationList location_list;
         [GtkChild]
@@ -73,11 +57,11 @@ namespace Baobab {
         [GtkChild]
         private unowned Gtk.GestureClick treeview_right_click_gesture;
         [GtkChild]
-        private unowned Gtk.Stack chart_stack;
+        private unowned Adw.ViewStack chart_stack;
         [GtkChild]
         private unowned Gtk.Stack spinner_stack;
         [GtkChild]
-        private unowned Gtk.StackSwitcher chart_stack_switcher;
+        private unowned Adw.ViewSwitcher chart_stack_switcher;
         [GtkChild]
         private unowned Chart rings_chart;
         [GtkChild]
@@ -94,7 +78,6 @@ namespace Baobab {
 
         private const GLib.ActionEntry[] action_entries = {
             { "show-primary-menu", on_show_primary_menu_activate, null, "false", null },
-            { "show-home-page", on_show_home_page_activate },
             { "scan-folder", on_scan_folder_activate },
             { "reload", on_reload_activate },
             { "clear-recent", on_clear_recent },
@@ -141,8 +124,6 @@ namespace Baobab {
             setup_treeview ();
             treeview_popover_menu.set_menu_model (treeview_menu);
 
-            infobar_close_button.clicked.connect (() => { clear_message (); });
-
             ui_settings.bind ("active-chart", chart_stack, "visible-child-name", SettingsBindFlags.DEFAULT);
             chart_stack.destroy.connect (() => { Settings.unbind (chart_stack, "visible-child-name"); });
 
@@ -179,10 +160,6 @@ namespace Baobab {
 
             set_ui_state (home_page, false);
 
-            back_gesture.pressed.connect ((n_press, x, y) => {
-                lookup_action ("show-home-page").activate (null);
-            });
-
             focus_controller.enter.connect (() => {
                 application.withdraw_notification ("scan-completed");
             });
@@ -195,9 +172,10 @@ namespace Baobab {
             action.set_state (new Variant.boolean (!state));
         }
 
-        void on_show_home_page_activate () {
+        [GtkCallback]
+        void results_hidden () {
             cancel_scan ();
-            clear_message ();
+            banner.revealed = false;
             set_ui_state (home_page, false);
         }
 
@@ -232,7 +210,8 @@ namespace Baobab {
                     scan_location (location);
                 } catch (Error e) {
                     set_busy (false);
-                    message (_("Could not analyze volume."), e.message, Gtk.MessageType.ERROR);
+                    warning ("Could not analyze volume: %s\n", e.message);
+                    toast (_("Could not analyze volume"));
                 }
             });
         }
@@ -358,7 +337,8 @@ namespace Baobab {
             try {
                 AppInfo.launch_default_for_uri (file.get_uri (), null);
             } catch (Error e) {
-                message (_("Failed to open file"), e.message, Gtk.MessageType.ERROR);
+                warning ("Failed to open file: %s\n", e.message);
+                toast (_("Failed to open file"));
             }
         }
 
@@ -374,7 +354,8 @@ namespace Baobab {
                 file.trash ();
                 active_location.scanner.remove (ref iter);
             } catch (Error e) {
-                message (_("Failed to move file to the trash"), e.message, Gtk.MessageType.ERROR);
+                warning ("Failed to move to file to the trash: %s", e.message);
+                toast (_("Failed to trash file"));
             }
         }
 
@@ -520,15 +501,9 @@ namespace Baobab {
             }
         }
 
-        void message (string primary_msg, string secondary_msg, Gtk.MessageType type) {
-            infobar.message_type = type;
-            infobar_primary_label.label = "<b>%s</b>".printf (primary_msg);
-            infobar_secondary_label.label = "<small>%s</small>".printf (secondary_msg);
-            infobar.show ();
-        }
-
-        void clear_message () {
-            infobar.hide ();
+        void toast (string title) {
+            var toast = new Adw.Toast (title);
+            toast_overlay.add_toast (toast);
         }
 
         void set_busy (bool busy) {
@@ -557,27 +532,21 @@ namespace Baobab {
         }
 
         void set_ui_state (Gtk.Widget child, bool busy) {
-            menu_button.visible = (child == home_page);
-            reload_button.visible = (child == result_page);
-            back_button.visible = (child == result_page);
-
             set_busy (busy);
 
-            header_bar.title_widget = null;
             if (child == home_page) {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (false);
                 this.title = _("Devices & Locations");
+                nav_view.pop ();
             } else {
                 var action = lookup_action ("reload") as SimpleAction;
                 action.set_enabled (true);
                 this.title = active_location.name;
-                if (child == result_page) {
-                    header_bar.title_widget = pathbar;
+                if (nav_view.visible_page != result_page) {
+                    nav_view.push_by_tag ("results");
                 }
             }
-
-            main_stack.visible_child = child;
         }
 
         /*void scanner_has_first_row (Gtk.TreeModel model, Gtk.TreePath path, Gtk.TreeIter iter) {
@@ -619,8 +588,8 @@ namespace Baobab {
                 // Handle cancellation silently
                 return;
             } catch (Error e) {
-                var primary = _("Could not scan folder “%s”").printf (scanner.directory.get_parse_name ());
-                message (primary, e.message, Gtk.MessageType.ERROR);
+                warning ("Could not scan folder %s: %s", scanner.directory.get_parse_name (), e.message);
+                toast (_("Could not scan folder"));
                 set_ui_state (home_page, false);
                 return;
             }
@@ -633,9 +602,7 @@ namespace Baobab {
             folder_display.path = new Gtk.TreePath.first ();
             copy_treeview_column_sizes ();
 
-            if (!scanner.show_allocated_size) {
-                message (_("Could not always detect occupied disk sizes."), _("Apparent sizes may be shown instead."), Gtk.MessageType.INFO);
-            }
+            banner.revealed = !scanner.show_allocated_size;
 
             if (!is_active) {
                 var notification = new Notification(_("Scan completed"));
@@ -660,7 +627,7 @@ namespace Baobab {
             var scanner = location.scanner;
             scan_completed_handler = scanner.completed.connect (scanner_completed);
 
-            clear_message ();
+            banner.revealed = false;
 
             scanning_progress_id = Timeout.add (500, () => {
                 location.progress ();
@@ -679,8 +646,7 @@ namespace Baobab {
             }
 
             if (info == null || info.get_file_type () != FileType.DIRECTORY) {
-                var primary = _("“%s” is not a valid folder").printf (directory.get_parse_name ());
-                message (primary, _("Could not analyze disk usage."), Gtk.MessageType.ERROR);
+                toast (_("“%s” is not a valid folder").printf (directory.get_parse_name ()));
                 return;
             }
 
