@@ -1,6 +1,6 @@
 project(
   'baobab', ['vala', 'c'],
-  version: '45.alpha',
+  version: '45.beta',
   license: 'GPL2+',
   meson_version: '>= 0.59.0',
 )
