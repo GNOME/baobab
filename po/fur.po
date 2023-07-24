@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab gnome-3-6\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-20 20:30+0000\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-07-24 22:26+0200\n"
 "Last-Translator: Fabio T. <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Editor: HaiPO 1.4 beta\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Analizadôr di utilizazion dal disc"
 
@@ -40,13 +40,13 @@ msgstr ""
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
-"accounts. It provides both a tree and a graphical representation showing the"
-" size of each folder, making it easy to identify where disk space is wasted."
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
 "L'Analizadôr di utilizazion dal disc al pues analizâ specifichis cartelis, "
 "dispositîfs di archiviazion e account in linie. Al furnìs tant un arbul che "
-"une rapresentazion grafiche, mostrant la dimension di ogni cartele e rindint"
-" facil identificâ dulà che il spazi al ven strassât."
+"une rapresentazion grafiche, mostrant la dimension di ogni cartele e rindint "
+"facil identificâ dulà che il spazi al ven strassât."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations View"
@@ -57,12 +57,11 @@ msgstr "Viodude dispositîfs e posizions"
 msgid "Scan View"
 msgstr "Viodude analisi"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "archivi;spazi;pulizie;"
@@ -129,22 +128,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Mostre preferencis"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Torne indaûr ae liste des posizions"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Scansion"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analize cartele"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Torne analize la posizion atuâl"
@@ -173,19 +167,19 @@ msgstr "Aumente ingrand_iment"
 msgid "Zoom _Out"
 msgstr "Ridûs ingrandim_ent"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Cartele"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Dimension"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Contignût"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Modificât"
 
@@ -221,27 +215,27 @@ msgstr "_Jutori"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Informazion su Analizadôr di utilizazion dal disc"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Indaûr"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Dispositîfs e posizions"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Menù principâl"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Torne analize la posizion atuâl"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Siere"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "I files a podaressin puartâ vie plui spazi di ce che a mostrin"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Grafic a anei"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Grafic a morâr"
 
@@ -278,9 +272,9 @@ msgstr "No cognossût"
 msgid "Today"
 msgstr "Vuê"
 
-#. Translators: when the last modified time is "days" days ago
 # meti o no meti "indaûr"
 # p.e. %lu dîs indaûr
+#. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
@@ -288,8 +282,8 @@ msgid_plural "%lu days"
 msgstr[0] "%lu dì indaûr"
 msgstr[1] "%lu dîs indaûr"
 
-#. Translators: when the last modified time is "months" months ago
 # meti indaûr?
+#. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
@@ -297,8 +291,8 @@ msgid_plural "%lu months"
 msgstr[0] "%lu mês indaûr"
 msgstr[1] "%lu mês indaûr"
 
-#. Translators: when the last modified time is "years" years ago
 # meti indaûr?
+#. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
@@ -344,64 +338,69 @@ msgstr "Selezione lis posizions di ignorâ"
 msgid "Add Location…"
 msgstr "Zonte posizion…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Selezione cartele"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Analize in maniere ricorsive i ponts di montaç"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Impussibil analizâ il volum."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Impussibil analizâ il volum"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Impussibil vierzi il file"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Impussibil movi il file te scovacere"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Impussibil butâ te scovacere il file"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Dispositîfs e posizions"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Impussibil analizâ la cartele"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Impussibil analizâ la cartele “%s”"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "No si è rivâts simpri a determinâ i spazis ocupâts tal disc."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "A podaressin jessi mostradis invezit lis dimensions ipotetichis."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Analisi completade"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Analisi di “%s” completade"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” no je une cartele valide"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "No pues analizâ la utilizazion dal disc."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Torne indaûr ae liste des posizions"
+
+#~ msgid "Back"
+#~ msgstr "Indaûr"
+
+#~ msgid "Close"
+#~ msgstr "Siere"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Impussibil movi il file te scovacere"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "No si è rivâts simpri a determinâ i spazis ocupâts tal disc."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "A podaressin jessi mostradis invezit lis dimensions ipotetichis."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "No pues analizâ la utilizazion dal disc."
 
 #~ msgid "_Open Folder"
 #~ msgstr "_Vierç Cartele"
@@ -450,8 +449,8 @@ msgstr "No pues analizâ la utilizazion dal disc."
 #~ "remote) or volumes and give a graphical representation including each "
 #~ "directory size or percentage."
 #~ msgstr ""
-#~ "Une aplicazion par analizâ cartelis (in lûc o a distance) o volums e che a "
-#~ "mostre une rapresentazion grafiche des cartelis cun lis lôr dimensions."
+#~ "Une aplicazion par analizâ cartelis (in lûc o a distance) o volums e che "
+#~ "a mostre une rapresentazion grafiche des cartelis cun lis lôr dimensions."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Analize Cartele a Distance..."
