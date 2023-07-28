@@ -5,21 +5,21 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-12 09:39+0100\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-07-28 07:30+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
-"Language-Team: \n"
+"Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "დისკის მოხმარების ანალიზატორი"
 
@@ -54,7 +54,7 @@ msgstr "მოწყობილობებისა და მდებარ�
 msgid "Scan View"
 msgstr "ხედის სკანირება"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "პროექტი „GNOME“"
 
@@ -125,22 +125,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "პარამეტრების ფანჯრის ჩვენება"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "მდებარეობის სიაზე დაბრუნება"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "სკანირება"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "საქაღალდის სკანირება"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "მიმდინარე მდებარეობის თავიდან სკანირება"
@@ -169,19 +164,19 @@ msgstr "_გადიდება"
 msgid "Zoom _Out"
 msgstr "_დაპატარავება"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "საქაღალდე"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "ზომა"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "შიგთავსი"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "შეცვლილია"
 
@@ -217,27 +212,27 @@ msgstr "_დახმარება"
 msgid "_About Disk Usage Analyzer"
 msgstr "დისკის მოხმარების ანალიზატორის შესახებ"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "უკან"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "მოწყობილობები და მდებარეობები"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "მიმდინარე მდებარეობის თავიდან სკანირება"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "დახურვა"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "ფაილები შეიძლება დისკზე აქ ნაჩვენებზე მეტ ადგილს იკავებდნენ"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "ბეჭდების გრაფიკი"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "ხის რუკის გრაფიკი"
 
@@ -336,64 +331,69 @@ msgstr "დასაიგნორებელი მდებარეობ�
 msgid "Add Location…"
 msgstr "მდებარეობის დამატება…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "აირჩიეთ საქაღალდე"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "მისამაგრებელი წერტილების რეკურსიული ანალიზი"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "ტომის ანალიზის შეცდომა."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "ტომის ანალიზის შეცდომა"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr "თემური დოღონაძე"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "ფაილის გახსნის შეცდომა"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "ფაილების სანაგვე ყუთში გადატანის შეცდომა"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "ფაილის სანაგვე ყუთში გადატანა ჩავარდა"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "მოწყობილობები და მდებარეობები"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "საქაღალდის სკანირების შეცდომა"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "საქაღალდის სკანირების შეცდომა: %s"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "დისკის დაკავებული სივრცის გარკვევა ყოველთვის შეუძლებელია."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "ამის ნაცვლად შეიძლება ნაჩვენები იყოს აშკარა ზომები."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "სკანირება დასრულდა"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "\"%s\"-ის სკანირება დასრულდა"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "%s სწორი საქაღალდე არაა"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "დისკის გამოყენების ანალიზის შეცდომა."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "მდებარეობის სიაზე დაბრუნება"
+
+#~ msgid "Back"
+#~ msgstr "უკან"
+
+#~ msgid "Close"
+#~ msgstr "დახურვა"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "ფაილების სანაგვე ყუთში გადატანის შეცდომა"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "დისკის დაკავებული სივრცის გარკვევა ყოველთვის შეუძლებელია."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "ამის ნაცვლად შეიძლება ნაჩვენები იყოს აშკარა ზომები."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "დისკის გამოყენების ანალიზის შეცდომა."
 
 #~ msgid "_Open Folder"
 #~ msgstr "საქაღალდის _გახსნა"
