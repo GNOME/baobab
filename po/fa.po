@@ -6,375 +6,621 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-connections master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/connections/issues\n"
-"POT-Creation-Date: 2023-05-16 10:45+0000\n"
-"PO-Revision-Date: 2023-07-31 02:07+0330\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
+"POT-Creation-Date: 2023-07-30 22:38+0000\n"
+"PO-Revision-Date: 2023-07-31 02:11+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: data/org.gnome.Connections.appdata.xml.in:7
-#: data/org.gnome.Connections.desktop.in:3 src/application.vala:92
-#: src/ui/topbar.ui:9 src/ui/window.ui:5 src/window.vala:107
-msgid "Connections"
-msgstr "دوردست‌ها"
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+msgid "Disk Usage Analyzer"
+msgstr "تحلیلگر مصرف دیسک"
 
-#: data/org.gnome.Connections.appdata.xml.in:8
-msgid "View and use other desktops"
-msgstr "دیدن و استفاده از میزکارهای دیگر"
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+msgid "Check folder sizes and available disk space"
+msgstr "بررسی اندازهٔ شاخه‌ها و فضای دیسک موجود"
 
-#: data/org.gnome.Connections.appdata.xml.in:10
+#: data/org.gnome.baobab.appdata.xml.in:9
 msgid ""
-"Connections allows you to connect to and use other desktops. This can be a great "
-"way to access content or software on a different desktop operating system. It "
-"can also be used as a way to provide support to users who might need help."
-msgstr ""
-"دوردست‌ها می‌گذار میزکارهای دیگر را دیده و از آن‌ها استفاده کنید. این برنامه "
-"می‌تواند راهی عالی برای دسترسی به محتوا یا نرم‌افزارها روی سیستم‌عامل‌های میزکار "
-"مختلف باشد. هم‌چنین می‌تواند به عنوان راهی برای فراهم کردن پشتیبانی به کاربرانی که "
-"نیاز به کمک دارند، استفاده شود."
+"A simple application to keep your disk usage and available space under control."
+msgstr "برنامه‌ای ساده برای واپایش مصرف و فضای موجود دیسک."
 
-#: data/org.gnome.Connections.appdata.xml.in:13
+#: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
-"A range of different operating systems can be connected to, including Linux and "
-"Windows desktops. You can also connect to virtual machines."
+"Disk Usage Analyzer can scan specific folders, storage devices and online "
+"accounts. It provides both a tree and a graphical representation showing the "
+"size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"می‌توان به بازه‌ای از سیستم‌عامل‌های مختلف، شامل میزکارهای گنو/لینوکس و ویندوز وصل "
-"شد. هم‌چنین می‌توان به دستگاه‌های مجازی وصل شوید."
+"تحلیلگر مصرف دیسک می‌تواند شاخه‌های خاص، دستگاه‌های ذخیره و حساب‌های برخط را بپوید. "
+"این برنامه یک بازنمایی درختی و گرافیکی فراهم می‌کند که اندازهٔ هر شاخه را برای "
+"تسهیل تشخیص مکان هدر رفت فضای دیسک، نشان می‌دهد."
 
-#: data/org.gnome.Connections.appdata.xml.in:16
-msgid ""
-"Connections uses the widely supported VNC and RDP protocols, and one of these "
-"must be enabled on the desktop that you want to connect to."
-msgstr ""
-"دوردست‌ها از قراردادهای VNC و RDP پشتیبانی می‌کند و باید یکی از این‌ها روی میزکاری "
-"که می‌خواهید به آن وصل شوید، به کار افتاده باشد."
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "نمای افزاره‌ها و مکان‌ها"
 
-#: data/org.gnome.Connections.appdata.xml.in:43
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "نمای پویش"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "پروژهٔ گنوم"
 
-#: data/org.gnome.Connections.desktop.in:8
-msgid "vnc;rdp;remote;desktop;windows;support;access;view"
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;ذخیره;فضا;پاکسازی;"
+
+#: data/org.gnome.baobab.gschema.xml:9
+msgid "Excluded locations URIs"
+msgstr "نشانی مکان‌های مستثنا"
+
+#: data/org.gnome.baobab.gschema.xml:10
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "سیاهه‌ای از نشانی‌های مکان‌هایی که پویش نمی‌شوند."
+
+#: data/org.gnome.baobab.gschema.xml:20
+msgid "Active Chart"
+msgstr "نمودار فعال"
+
+#: data/org.gnome.baobab.gschema.xml:21
+msgid "Which type of chart should be displayed."
+msgstr "چه نوع نموداری باید نمایش داده شود."
+
+#: data/org.gnome.baobab.gschema.xml:25
+msgid "Window size"
+msgstr "اندازهٔ پنجره"
+
+#: data/org.gnome.baobab.gschema.xml:26
+msgid "The initial size of the window"
+msgstr "اندازهٔ نخستین پنجره"
+
+#: data/org.gnome.baobab.gschema.xml:30
+msgid "Window Maximized"
+msgstr "پنجره بیشینه شد"
+
+#: data/org.gnome.baobab.gschema.xml:31
+msgid "Whether or not the window is maximized"
+msgstr "این که پنجره بیشینه باشد یا خیر"
+
+#: data/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عمومی"
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "نمایش راهنما"
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "نمایش / نهفتن فهرست اصلی"
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "خروج"
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "نمایش میان‌برهای صفحه‌کلید"
+
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "نمایش ترجیحات"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "پویش"
+
+#: data/gtk/help-overlay.ui:50
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "پویش شاخه"
+
+#: data/gtk/help-overlay.ui:56
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "بازپویش مکان جاری"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "_گشودن خارجی"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
+msgid "_Copy Path to Clipboard"
+msgstr "_رونوشت از مسیر"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
+msgid "Mo_ve to Trash"
+msgstr "ا_نداختن در زباله‌دان"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _Parent Folder"
+msgstr "رفتن به شاخهٔ _والد"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _In"
+msgstr "_بزرگ‌نمایی"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _Out"
+msgstr "زوم به _خارج"
+
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+msgid "Folder"
+msgstr "شاخه‌"
+
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+msgid "Size"
+msgstr "اندازه"
+
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+msgid "Contents"
+msgstr "محتویات"
+
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+msgid "Modified"
+msgstr "تغییریافته"
+
+#: data/ui/baobab-location-list.ui:18
+msgid "This Device"
+msgstr "این افزاره"
+
+#: data/ui/baobab-location-list.ui:42
+msgid "Remote Locations"
+msgstr "مکان‌های دوردست"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "پویش شاخه…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "پاک‌سازی سیاههٔ اخیر"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "ترجیحات"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "_میان‌برهای صفحه‌کلید"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_راهنما"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "_دربارهٔ تحلیلگر مصرف دیسک"
+
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "افزاره‌ها و مکان‌ها"
+
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: data/ui/baobab-main-window.ui:97
+msgid "Rescan Current Location"
+msgstr "بازپویش مکان جاری"
+
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "ممکن است پرونده‌ها فضایی بیش‌تر از مقدار نشان داده شده بگیرند"
+
+#: data/ui/baobab-main-window.ui:272
+msgid "Rings Chart"
+msgstr "نمودار حلقه‌ای"
+
+#: data/ui/baobab-main-window.ui:285
+msgid "Treemap Chart"
+msgstr "نمودار درختی"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "مکان‌های چشم‌پوشی‌شده"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is not "
+"specified."
 msgstr ""
-"vnc;rdp;remote;desktop;windows;support;access;view;دوردست;میزکار;پشتیبانی;دسترسی"
+"از شاخه‌ها روی سامانه پرونده‌های مختلف پریده نشود. در صورت مشخّص نبودن DIRECTORY "
+"نادیده گرفته می‌شود."
 
-#: data/org.gnome.Connections.xml:5
-msgid "Remote Desktop (VNC) file"
-msgstr "پروندهٔ میزکار دوردست (VNC)"
+#: src/baobab-application.vala:34
+msgid "Print version information and exit"
+msgstr "چاپ اطّلاعات نگارش و خروج"
 
-#: src/actions-popover.vala:44
-msgid "Delete"
-msgstr "حذف"
+#: src/baobab-cellrenderers.vala:34
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%Id مورد"
+msgstr[1] "%Id مورد"
 
-#: src/actions-popover.vala:48 src/topbar.vala:66 src/ui/topbar.ui:220
-msgid "Properties"
-msgstr "ویژگی‌ها"
+#. Translators: when the last modified time is unknown
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+msgid "Unknown"
+msgstr "ناشناخته"
 
-#: src/application.vala:88
+#. Translators: when the last modified time is today
+#: src/baobab-cellrenderers.vala:48
+msgid "Today"
+msgstr "امروز"
+
+#. Translators: when the last modified time is "days" days ago
+#: src/baobab-cellrenderers.vala:53
+#, c-format
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu روز"
+msgstr[1] "%lu روز"
+
+#. Translators: when the last modified time is "months" months ago
+#: src/baobab-cellrenderers.vala:58
+#, c-format
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu ماه"
+msgstr[1] "%lu ماه"
+
+#. Translators: when the last modified time is "years" years ago
+#: src/baobab-cellrenderers.vala:62
+#, c-format
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu سال"
+msgstr[1] "%lu سال"
+
+#: src/baobab-location-list.vala:67
+#, c-format
+msgid "%s Total"
+msgstr "%s مجموع"
+
+#: src/baobab-location-list.vala:71
+#, c-format
+msgid "%s Available"
+msgstr "%s موجود است"
+
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:85
+#, c-format
+msgid "%s Used"
+msgstr "%s استفاده‌شده"
+
+#: src/baobab-location-list.vala:87
+msgid "Unmounted"
+msgstr "پیاده‌شده"
+
+#: src/baobab-location.vala:72
+msgid "Home Folder"
+msgstr "شاخهٔ خانه"
+
+#: src/baobab-location.vala:107
+msgid "Computer"
+msgstr "رایانه"
+
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:53
+msgid "Select Location to Ignore"
+msgstr "مکان‌ها را برای چشم‌پوشی برگزینید"
+
+#: src/baobab-preferences-dialog.vala:90
+msgid "Add Location…"
+msgstr "افزودن مکان…"
+
+#: src/baobab-window.vala:183
+msgid "Select Folder"
+msgstr "انتخاب شاخه"
+
+#: src/baobab-window.vala:190
+msgid "Recursively analyze mount points"
+msgstr "تحلیل بازگشتی نقاط اتصال"
+
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "نتوانست حجم را تجزیه کند"
+
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr "دانیال بهزادی <dani.behzi@gmail.com>"
 
-#: src/application.vala:89 src/application.vala:242
-msgid "A remote desktop client for the GNOME desktop environment"
-msgstr "یک کارخواه میزکار دوردست برای محیط میزکار گنوم"
+#: src/baobab-window.vala:341
+msgid "Failed to open file"
+msgstr "شکست در گشودن پرونده"
 
-#: src/application.vala:151
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "شکست در دور انداختن پرونده"
+
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "نتوانست شاخه را بپوید"
+
+#: src/baobab-window.vala:608
+msgid "Scan completed"
+msgstr "پویش کامل شد"
+
+#: src/baobab-window.vala:609
 #, c-format
-msgid "Couldn’t open file of unknown mime type %s"
-msgstr "نمی‌توان پرونده از گونهٔ mime ناشناخته %s را گشود"
+msgid "Completed scan of “%s”"
+msgstr "پویش «%s» کامل شد"
 
-#: src/application.vala:182
+#: src/baobab-window.vala:649
 #, c-format
-msgid "Connection to “%s” has been deleted"
-msgstr "ارتباط با %s حذف شده"
+msgid "“%s” is not a valid folder"
+msgstr "شاخهٔ «%s» معتبر نیست"
 
-#: src/application.vala:185
-msgid "Undo"
-msgstr "برگردان"
+#~ msgid "Connections"
+#~ msgstr "دوردست‌ها"
 
-#: src/application.vala:232
-msgid "URL to connect"
-msgstr "نشانی برای ارتباط"
+#~ msgid "View and use other desktops"
+#~ msgstr "دیدن و استفاده از میزکارهای دیگر"
 
-#: src/application.vala:233
-msgid "Open .vnc or .rdp file at the given PATH"
-msgstr "گشودن پروندهٔ ‪.vnc‬ یا ‪.rdp‬ در مسیر داده‌شده"
+#~ msgid ""
+#~ "Connections allows you to connect to and use other desktops. This can be a "
+#~ "great way to access content or software on a different desktop operating "
+#~ "system. It can also be used as a way to provide support to users who might "
+#~ "need help."
+#~ msgstr ""
+#~ "دوردست‌ها می‌گذار میزکارهای دیگر را دیده و از آن‌ها استفاده کنید. این برنامه "
+#~ "می‌تواند راهی عالی برای دسترسی به محتوا یا نرم‌افزارها روی سیستم‌عامل‌های میزکار "
+#~ "مختلف باشد. هم‌چنین می‌تواند به عنوان راهی برای فراهم کردن پشتیبانی به کاربرانی "
+#~ "که نیاز به کمک دارند، استفاده شود."
 
-#: src/application.vala:234
-msgid "Open in full screen"
-msgstr "'گشودن در تمام‌صفحه"
+#~ msgid ""
+#~ "A range of different operating systems can be connected to, including Linux "
+#~ "and Windows desktops. You can also connect to virtual machines."
+#~ msgstr ""
+#~ "می‌توان به بازه‌ای از سیستم‌عامل‌های مختلف، شامل میزکارهای گنو/لینوکس و ویندوز "
+#~ "وصل شد. هم‌چنین می‌توان به دستگاه‌های مجازی وصل شوید."
 
-#: src/application.vala:257
-msgid "Too many command-line arguments specified.\n"
-msgstr "آرگومان‌های خط فرمان بیش از حد مشخّص شده.\n"
+#~ msgid ""
+#~ "Connections uses the widely supported VNC and RDP protocols, and one of these "
+#~ "must be enabled on the desktop that you want to connect to."
+#~ msgstr ""
+#~ "دوردست‌ها از قراردادهای VNC و RDP پشتیبانی می‌کند و باید یکی از این‌ها روی "
+#~ "میزکاری که می‌خواهید به آن وصل شوید، به کار افتاده باشد."
 
-#. Translators: %s => the timestamp of when the screenshot was taken.
-#: src/connection.vala:70
+#~ msgid "vnc;rdp;remote;desktop;windows;support;access;view"
+#~ msgstr ""
+#~ "vnc;rdp;remote;desktop;windows;support;access;view;دوردست;میزکار;پشتیبانی;"
+#~ "دسترسی"
+
+#~ msgid "Remote Desktop (VNC) file"
+#~ msgstr "پروندهٔ میزکار دوردست (VNC)"
+
+#~ msgid "Delete"
+#~ msgstr "حذف"
+
+#~ msgid "Properties"
+#~ msgstr "ویژگی‌ها"
+
+#~ msgid "A remote desktop client for the GNOME desktop environment"
+#~ msgstr "یک کارخواه میزکار دوردست برای محیط میزکار گنوم"
+
 #, c-format
-msgid "Screenshot from %s"
-msgstr "نماگرفت از %s"
+#~ msgid "Couldn’t open file of unknown mime type %s"
+#~ msgstr "نمی‌توان پرونده از گونهٔ mime ناشناخته %s را گشود"
 
-#: src/connection.vala:85
-msgid "Screenshot taken"
-msgstr "نماگرفت گرفته شد"
-
-#. Translators: Open is a verb
-#: src/connection.vala:88
-msgid "Open"
-msgstr "گشودن"
-
-#: src/connection.vala:161
 #, c-format
-msgid "“%s” requires authentication"
-msgstr "«%s» نیاز به تأیید هویت دارد"
+#~ msgid "Connection to “%s” has been deleted"
+#~ msgstr "ارتباط با %s حذف شده"
 
-#: src/connection.vala:200
+#~ msgid "Undo"
+#~ msgstr "برگردان"
+
+#~ msgid "URL to connect"
+#~ msgstr "نشانی برای ارتباط"
+
+#~ msgid "Open .vnc or .rdp file at the given PATH"
+#~ msgstr "گشودن پروندهٔ ‪.vnc‬ یا ‪.rdp‬ در مسیر داده‌شده"
+
+#~ msgid "Open in full screen"
+#~ msgstr "'گشودن در تمام‌صفحه"
+
+#~ msgid "Too many command-line arguments specified.\n"
+#~ msgstr "آرگومان‌های خط فرمان بیش از حد مشخّص شده.\n"
+
 #, c-format
-msgid "Authentication failed: %s"
-msgstr "تأیید هویت شکست خورد: %s"
+#~ msgid "Screenshot from %s"
+#~ msgstr "نماگرفت از %s"
 
-#. Translators: Showing size of widget as WIDTH×HEIGHT here.
-#: src/display-view.vala:126
+#~ msgid "Screenshot taken"
+#~ msgstr "نماگرفت گرفته شد"
+
+#~ msgid "Open"
+#~ msgstr "گشودن"
+
 #, c-format
-msgid "%d×%d"
-msgstr "%Id×%Id"
+#~ msgid "“%s” requires authentication"
+#~ msgstr "«%s» نیاز به تأیید هویت دارد"
 
-#: src/onboarding-dialog.vala:96 src/ui/onboarding-dialog.ui:148
-msgid "_No Thanks"
-msgstr "_نه، ممنون"
-
-#: src/onboarding-dialog.vala:96
-msgid "_Close"
-msgstr "_بستن"
-
-#. Translators: Combo item for resizing remote desktop to window's size
-#: src/rdp-preferences-window.vala:49 src/ui/vnc-preferences.ui:107
-msgid "Resize desktop"
-msgstr "تغییر اندازهٔ میزکار"
-
-#: src/topbar.vala:58 src/ui/topbar.ui:212
-msgid "Take Screenshot"
-msgstr "نماگرفت"
-
-#: src/topbar.vala:62 src/ui/topbar.ui:216
-msgid "Fullscreen"
-msgstr "تمام‌صفحه"
-
-#: src/ui/assistant.ui:26
-msgid "Enter the network identifier of the remote desktop to connect to:"
-msgstr "شناسهٔ شبکه‌ای میزکار دوردست را برای وصل شدن وارد کنید:"
-
-#: src/ui/assistant.ui:53
-msgid "Connection Type"
-msgstr "گونهٔ اتّصال"
-
-#: src/ui/assistant.ui:63
-msgid "RDP (standard for connecting to Windows)"
-msgstr "RDP (استاندارد وصل شدن به ویندوز)"
-
-#: src/ui/assistant.ui:72
-msgid "VNC (standard for connecting to Linux)"
-msgstr "VNC (استاندارد وصل شدن به گنو/لینوکس)"
-
-#: src/ui/assistant.ui:90 src/ui/topbar.ui:201
-msgid "Help"
-msgstr "راهنما"
-
-#: src/ui/assistant.ui:100
-msgid "Connect"
-msgstr "اتّصال"
-
-#: src/ui/auth-notification.ui:39
-msgid "_Username"
-msgstr "_نام‌کاربری"
-
-#: src/ui/auth-notification.ui:71
-msgid "_Password"
-msgstr "_گذرواژه"
-
-#: src/ui/auth-notification.ui:108
-msgid "Sign In"
-msgstr "ورود"
-
-#: src/ui/onboarding-dialog.ui:42 src/ui/window.ui:51
-msgid "Welcome to Connections"
-msgstr "به دوردست‌ها خوش آمدید"
-
-#: src/ui/onboarding-dialog.ui:43
-msgid "Learn about how Connections works."
-msgstr "دربارهٔ چکونگی کارکرد دوردست‌ها بیاموزید."
-
-#: src/ui/onboarding-dialog.ui:50
-msgid "Use other desktops, remotely"
-msgstr "استفاده از میزکارهای دیگر به صورت دوردست"
-
-#: src/ui/onboarding-dialog.ui:51
-msgid ""
-"Use Connections to view the screen of other desktops. You can control them using "
-"the pointer and keyboard, too!"
-msgstr ""
-"برای دیدن صفحهٔ میزکارهای دیگر از دوردست‌ها استفاده کنید. می‌تواند با استفاده از "
-"نشانگر و صفحه‌کلید، واپایششان هم بکنید!"
-
-#: src/ui/onboarding-dialog.ui:58
-msgid "Connect to different operating systems"
-msgstr "وصل شدن به دیگر سیستم‌عامل‌ها"
-
-#: src/ui/onboarding-dialog.ui:59
-msgid "Access Linux, Mac, and Windows desktops using Connections."
-msgstr ""
-"با استفاده از دوردست‌ها به میزکارهای گنو/لینوکس، مک و ویندوز دسترسی داشته باشید."
-
-#: src/ui/onboarding-dialog.ui:66
-msgid "Enable remote desktop before connecting"
-msgstr "به کار انداختن میزکار دوردست پیش از وصل شدن"
-
-#: src/ui/onboarding-dialog.ui:67
-msgid ""
-"Computers need to be set up for remote desktop before you can connect to them."
-msgstr ""
-"رایاناه‌ها باید پیش از این که بتوانید بهشان وصل شوید، برای میزکار دوردست برپا "
-"شوند."
-
-#: src/ui/onboarding-dialog.ui:74
-msgid "We hope that you enjoy Connections!"
-msgstr "امیدواریم از دوردست‌ها لذّت ببرید!"
-
-#: src/ui/onboarding-dialog.ui:75
-msgid "More information can be found in the help."
-msgstr "اطّلاعات بیش‌تر می‌تواند در راهنما پیدا شود."
-
-#: src/ui/rdp-preferences.ui:9 src/ui/vnc-preferences.ui:9
-msgid "Connection preferences"
-msgstr "ترجیحات اتّصال"
-
-#: src/ui/rdp-preferences.ui:22 src/ui/vnc-preferences.ui:22
-msgid "Address"
-msgstr "نشانی"
-
-#: src/ui/rdp-preferences.ui:37 src/ui/vnc-preferences.ui:37
-msgid "Name"
-msgstr "نام"
-
-#: src/ui/rdp-preferences.ui:53 src/ui/vnc-preferences.ui:108
-msgid "Fit window"
-msgstr "برازش پنجره"
-
-#: src/ui/rdp-preferences.ui:54 src/ui/vnc-preferences.ui:109
-msgid "Original size"
-msgstr "اندازهٔ اصلی"
-
-#: src/ui/topbar.ui:21
-msgid "New"
-msgstr "جدید"
-
-#: src/ui/topbar.ui:42
-msgid "Application Menu"
-msgstr "فهرست برنامه"
-
-#: src/ui/topbar.ui:70
-msgid "Search"
-msgstr "جست‌وجو"
-
-#: src/ui/topbar.ui:104
-msgid "Go Back"
-msgstr "عقب رفتن"
-
-#: src/ui/topbar.ui:125
-msgid "Display Menu"
-msgstr "فهرست نمایش"
-
-#: src/ui/topbar.ui:149
-msgid "Disconnect"
-msgstr "قطع ارتباط"
-
-#: src/ui/topbar.ui:174
-msgid "Keyboard shortcuts"
-msgstr "میان‌برهای صفحه‌کلید"
-
-#: src/ui/topbar.ui:197
-msgid "Keyboard Shortcuts"
-msgstr "میان‌برهای صفحه‌کلید"
-
-#: src/ui/topbar.ui:205
-msgid "About Connections"
-msgstr "دربارهٔ دوردست‌ها"
-
-#: src/ui/topbar.ui:234
-msgid "Ctrl + Alt + Backspace"
-msgstr "مهار + دگرساز + پس‌بر"
-
-#: src/ui/topbar.ui:241
-msgid "Ctrl + Alt + Del"
-msgstr "مهار + دگرساز + حذف"
-
-#: src/ui/topbar.ui:248
-msgid "Ctrl + Alt + F1"
-msgstr "مهار + دگرساز + F1"
-
-#: src/ui/topbar.ui:255
-msgid "Ctrl + Alt + F2"
-msgstr "مهار + دگرساز + F2"
-
-#: src/ui/topbar.ui:262
-msgid "Ctrl + Alt + F3"
-msgstr "مهار + دگرساز + F3"
-
-#: src/ui/topbar.ui:269
-msgid "Ctrl + Alt + F7"
-msgstr "مهار + دگرساز + F7"
-
-#: src/ui/vnc-preferences.ui:54
-msgid "Display"
-msgstr "نمایش"
-
-#: src/ui/vnc-preferences.ui:59
-msgid "View only"
-msgstr "فقط مشاهده"
-
-#: src/ui/vnc-preferences.ui:66
-msgid "Show local pointer"
-msgstr "نمایش اشاره‌گر محلّی"
-
-#: src/ui/vnc-preferences.ui:73
-msgid "Enable audio"
-msgstr "به کار انداختن صدا"
-
-#: src/ui/vnc-preferences.ui:81
-msgid "Bandwidth"
-msgstr "پهنای باند"
-
-#: src/ui/vnc-preferences.ui:88
-msgid "High quality"
-msgstr "کیفیت بالا"
-
-#: src/ui/vnc-preferences.ui:89
-msgid "Fast refresh"
-msgstr "نوسازی سریع"
-
-#: src/ui/vnc-preferences.ui:100
-msgid "Scale mode"
-msgstr "حالت مقیاس"
-
-#: src/ui/window.ui:52
-msgid "Just hit the <b>+</b> button to make your first connection."
-msgstr "برای ساخت نخستین ارتباطتان، کافیست دکمهٔ <b>+</b> را بزنید."
-
-#: src/vnc-connection.vala:149
-msgid "Couldn’t parse the file"
-msgstr "نمی‌توان پرونده را تجزیه کرد"
-
-#. Translators: %s is a VNC file key
-#: src/vnc-connection.vala:157 src/vnc-connection.vala:162
-#: src/vnc-connection.vala:167 src/vnc-connection.vala:172
 #, c-format
-msgid "VNC File is missing key “%s”"
-msgstr "پروندهٔ VNC کلید %s را ندارد"
+#~ msgid "Authentication failed: %s"
+#~ msgstr "تأیید هویت شکست خورد: %s"
+
+#, c-format
+#~ msgid "%d×%d"
+#~ msgstr "%Id×%Id"
+
+#~ msgid "_No Thanks"
+#~ msgstr "_نه، ممنون"
+
+#~ msgid "_Close"
+#~ msgstr "_بستن"
+
+#~ msgid "Resize desktop"
+#~ msgstr "تغییر اندازهٔ میزکار"
+
+#~ msgid "Take Screenshot"
+#~ msgstr "نماگرفت"
+
+#~ msgid "Fullscreen"
+#~ msgstr "تمام‌صفحه"
+
+#~ msgid "Enter the network identifier of the remote desktop to connect to:"
+#~ msgstr "شناسهٔ شبکه‌ای میزکار دوردست را برای وصل شدن وارد کنید:"
+
+#~ msgid "Connection Type"
+#~ msgstr "گونهٔ اتّصال"
+
+#~ msgid "RDP (standard for connecting to Windows)"
+#~ msgstr "RDP (استاندارد وصل شدن به ویندوز)"
+
+#~ msgid "VNC (standard for connecting to Linux)"
+#~ msgstr "VNC (استاندارد وصل شدن به گنو/لینوکس)"
+
+#~ msgid "Connect"
+#~ msgstr "اتّصال"
+
+#~ msgid "_Username"
+#~ msgstr "_نام‌کاربری"
+
+#~ msgid "_Password"
+#~ msgstr "_گذرواژه"
+
+#~ msgid "Sign In"
+#~ msgstr "ورود"
+
+#~ msgid "Welcome to Connections"
+#~ msgstr "به دوردست‌ها خوش آمدید"
+
+#~ msgid "Learn about how Connections works."
+#~ msgstr "دربارهٔ چکونگی کارکرد دوردست‌ها بیاموزید."
+
+#~ msgid "Use other desktops, remotely"
+#~ msgstr "استفاده از میزکارهای دیگر به صورت دوردست"
+
+#~ msgid ""
+#~ "Use Connections to view the screen of other desktops. You can control them "
+#~ "using the pointer and keyboard, too!"
+#~ msgstr ""
+#~ "برای دیدن صفحهٔ میزکارهای دیگر از دوردست‌ها استفاده کنید. می‌تواند با استفاده از "
+#~ "نشانگر و صفحه‌کلید، واپایششان هم بکنید!"
+
+#~ msgid "Connect to different operating systems"
+#~ msgstr "وصل شدن به دیگر سیستم‌عامل‌ها"
+
+#~ msgid "Access Linux, Mac, and Windows desktops using Connections."
+#~ msgstr ""
+#~ "با استفاده از دوردست‌ها به میزکارهای گنو/لینوکس، مک و ویندوز دسترسی داشته "
+#~ "باشید."
+
+#~ msgid "Enable remote desktop before connecting"
+#~ msgstr "به کار انداختن میزکار دوردست پیش از وصل شدن"
+
+#~ msgid ""
+#~ "Computers need to be set up for remote desktop before you can connect to them."
+#~ msgstr ""
+#~ "رایاناه‌ها باید پیش از این که بتوانید بهشان وصل شوید، برای میزکار دوردست برپا "
+#~ "شوند."
+
+#~ msgid "We hope that you enjoy Connections!"
+#~ msgstr "امیدواریم از دوردست‌ها لذّت ببرید!"
+
+#~ msgid "More information can be found in the help."
+#~ msgstr "اطّلاعات بیش‌تر می‌تواند در راهنما پیدا شود."
+
+#~ msgid "Address"
+#~ msgstr "نشانی"
+
+#~ msgid "Name"
+#~ msgstr "نام"
+
+#~ msgid "Fit window"
+#~ msgstr "برازش پنجره"
+
+#~ msgid "Original size"
+#~ msgstr "اندازهٔ اصلی"
+
+#~ msgid "New"
+#~ msgstr "جدید"
+
+#~ msgid "Search"
+#~ msgstr "جست‌وجو"
+
+#~ msgid "Go Back"
+#~ msgstr "عقب رفتن"
+
+#~ msgid "Display Menu"
+#~ msgstr "فهرست نمایش"
+
+#~ msgid "Disconnect"
+#~ msgstr "قطع ارتباط"
+
+#~ msgid "Keyboard shortcuts"
+#~ msgstr "میان‌برهای صفحه‌کلید"
+
+#~ msgid "Ctrl + Alt + Backspace"
+#~ msgstr "مهار + دگرساز + پس‌بر"
+
+#~ msgid "Ctrl + Alt + Del"
+#~ msgstr "مهار + دگرساز + حذف"
+
+#~ msgid "Ctrl + Alt + F1"
+#~ msgstr "مهار + دگرساز + F1"
+
+#~ msgid "Ctrl + Alt + F2"
+#~ msgstr "مهار + دگرساز + F2"
+
+#~ msgid "Ctrl + Alt + F3"
+#~ msgstr "مهار + دگرساز + F3"
+
+#~ msgid "Ctrl + Alt + F7"
+#~ msgstr "مهار + دگرساز + F7"
+
+#~ msgid "Display"
+#~ msgstr "نمایش"
+
+#~ msgid "View only"
+#~ msgstr "فقط مشاهده"
+
+#~ msgid "Show local pointer"
+#~ msgstr "نمایش اشاره‌گر محلّی"
+
+#~ msgid "Enable audio"
+#~ msgstr "به کار انداختن صدا"
+
+#~ msgid "Bandwidth"
+#~ msgstr "پهنای باند"
+
+#~ msgid "High quality"
+#~ msgstr "کیفیت بالا"
+
+#~ msgid "Fast refresh"
+#~ msgstr "نوسازی سریع"
+
+#~ msgid "Scale mode"
+#~ msgstr "حالت مقیاس"
+
+#~ msgid "Just hit the <b>+</b> button to make your first connection."
+#~ msgstr "برای ساخت نخستین ارتباطتان، کافیست دکمهٔ <b>+</b> را بزنید."
+
+#~ msgid "Couldn’t parse the file"
+#~ msgstr "نمی‌توان پرونده را تجزیه کرد"
+
+#, c-format
+#~ msgid "VNC File is missing key “%s”"
+#~ msgstr "پروندهٔ VNC کلید %s را ندارد"
 
 #~ msgid "Scaling"
 #~ msgstr "مقیاس"
