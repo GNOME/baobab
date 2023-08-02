@@ -10,26 +10,26 @@
 # TeliuTe <teliute@163.com>, 2009.
 # tuhaihe <1132321739qq@gmail.com>, 2012, 2013.
 # Dingzhong Chen <wsxy162@gmail.com>, 2016, 2017, 2018, 2019.
-# lumingzh <lumingzh@qq.com>, 2022.
 # Nanling <neithern@outlook.com>, 2023.
+# lumingzh <lumingzh@qq.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-03-26 14:09+0000\n"
-"PO-Revision-Date: 2023-03-28 11:18-0400\n"
-"Last-Translator: Nanling <neithern@outlook.com>\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-07-29 13:59+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "磁盘占用分析器"
 
@@ -60,7 +60,7 @@ msgstr "设备与位置"
 msgid "Scan View"
 msgstr "扫描视图"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
@@ -131,22 +131,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "首选项"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "返回位置列表"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "扫描"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "扫描文件夹"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "重新扫描当前位置"
@@ -175,19 +170,19 @@ msgstr "放大(_I)"
 msgid "Zoom _Out"
 msgstr "缩小(_O)"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "文件夹"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "大小"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "内容"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "已修改"
 
@@ -223,27 +218,27 @@ msgstr "帮助(_H)"
 msgid "_About Disk Usage Analyzer"
 msgstr "关于磁盘占用分析器(_A)"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "返回"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "设备与位置"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "重新扫描当前位置"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "关闭"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "文件可能会占用比显示更多的空间"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "环形图"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "矩形树状结构图"
 
@@ -336,19 +331,19 @@ msgstr "选择要忽略的位置"
 msgid "Add Location…"
 msgstr "添加位置…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "选择文件夹"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "递归分析挂载点"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "无法分析卷。"
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "无法分析卷"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Wang Li <charlesw1234@163.com>\n"
@@ -362,48 +357,53 @@ msgstr ""
 "Dingzhong Chen <wsxy162@gmail.com>\n"
 "lumingzh <lumingzh@qq.com>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
-msgstr "无法打开文件"
+msgstr "打开文件失败"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "无法将文件移至回收站"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "将文件移至回收站失败"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "设备与位置"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "无法扫描文件夹"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "无法扫描文件夹“%s”"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "无法总是检测已占用的磁盘大小。"
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "可能转而显示推断的大小。"
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "扫描已完成"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "已完成“%s”的扫描"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”不是有效的文件夹"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "无法分析磁盘占用。"
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "返回位置列表"
+
+#~ msgid "Back"
+#~ msgstr "返回"
+
+#~ msgid "Close"
+#~ msgstr "关闭"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "无法将文件移至回收站"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "无法总是检测已占用的磁盘大小。"
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "可能转而显示推断的大小。"
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "无法分析磁盘占用。"
 
 #~ msgid "_Open Folder"
 #~ msgstr "打开文件夹(_O)"
