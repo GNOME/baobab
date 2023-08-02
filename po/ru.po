@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-12 11:40+0300\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-07-27 12:00+0300\n"
 "Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -32,7 +32,7 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор использования дисков"
 
@@ -67,7 +67,7 @@ msgstr "Просмотр устройств и расположений"
 msgid "Scan View"
 msgstr "Просмотр сканирования"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
 
@@ -138,22 +138,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Показать параметры"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Вернуться к списку путей"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Сканирование"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Сканировать папку"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Пересканировать текущий путь"
@@ -182,19 +177,19 @@ msgstr "У_величить"
 msgid "Zoom _Out"
 msgstr "У_меньшить"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Папка"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Размер"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Содержимое"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Последнее изменение"
 
@@ -230,27 +225,27 @@ msgstr "_Справка"
 msgid "_About Disk Usage Analyzer"
 msgstr "_О приложении"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Назад"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Устройства и расположения"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Повторное сканирование текущего расположения"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Закрыть"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Файлы могут занимать больше места, чем показано"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Круговая диаграмма"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Древовидная диаграмма"
 
@@ -353,19 +348,19 @@ msgstr "Выберите расположение для игнорирован�
 msgid "Add Location…"
 msgstr "Добавить расположение…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Выберите папку"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно анализировать точки монтирования"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Не удалось проанализировать том."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Не удалось проанализировать том"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Станислав Соловей <whats_up@tut.by>, 2013-2019.\n"
@@ -373,48 +368,53 @@ msgstr ""
 "Alexey Rubtsov <rushills@gmail.com>, 2021\n"
 "Aleksandr Melman, 2023"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Не удалось открыть файл"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Не удалось переместить файл в корзину"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Не удалось отправить файл в корзину"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Устройства и расположения"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Не удалось просканировать папку"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Не удалось просканировать папку «%s»"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Не всегда удается определить размер занятого диска."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Вместо этого могут быть показаны видимые размеры."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Сканирование завершено"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Завершено сканирование «%s»"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» — недопустимая папка"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Не удалось проанализировать использование дисков."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Вернуться к списку путей"
+
+#~ msgid "Back"
+#~ msgstr "Назад"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Не удалось переместить файл в корзину"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Не всегда удается определить размер занятого диска."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Вместо этого могут быть показаны видимые размеры."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Не удалось проанализировать использование дисков."
 
 #~ msgid "_Open Folder"
 #~ msgstr "Откр_ыть папку"
