@@ -113,145 +113,147 @@
                             <property name="sidebar-width-fraction">0.5</property>
                             <property name="sidebar">
                               <object class="GtkBox">
-                                <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="BaobabFolderDisplay" id="folder_display">
-                                    <style>
-                                      <class name="navigation-sidebar"/>
-                                    </style>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkScrolledWindow" id="scrolled_window">
-                                    <property name="vexpand">True</property>
-                                    <property name="hscrollbar-policy">never</property>
+                                  <object class="GtkBox">
+                                    <property name="orientation">vertical</property>
                                     <child>
-                                      <object class="GtkTreeView" id="treeview">
-                                        <property name="headers_visible">false</property>
-                                        <property name="activate_on_single_click">True</property>
-                                        <child internal-child="selection">
-                                          <object class="GtkTreeSelection" id="treeview_selection1" />
-                                        </child>
+                                      <object class="BaobabFolderDisplay" id="folder_display"/>
+                                    </child>
+                                    <child>
+                                      <object class="GtkScrolledWindow" id="scrolled_window">
+                                        <property name="vexpand">True</property>
+                                        <property name="hscrollbar-policy">never</property>
                                         <child>
-                                          <object class="GtkPopoverMenu" id="treeview_popover_menu">
-                                            <property name="position">bottom</property>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn" id="folder_column">
-                                            <property name="title" translatable="yes">Folder</property>
-                                            <property name="expand">True</property>
-                                            <property name="reorderable">True</property>
-                                            <property name="sort_column_id">0</property>
-                                            <child>
-                                              <object class="GtkCellRendererProgress" id="usage_column_bar_renderer">
-                                                <property name="xpad">4</property>
-                                                <property name="ypad">4</property>
-                                              </object>
-                                              <attributes>
-                                                <attribute name="value">1</attribute>
-                                              </attributes>
+                                          <object class="GtkTreeView" id="treeview">
+                                            <property name="headers_visible">false</property>
+                                            <property name="activate_on_single_click">True</property>
+                                            <child internal-child="selection">
+                                              <object class="GtkTreeSelection" id="treeview_selection1" />
                                             </child>
                                             <child>
-                                              <object class="BaobabCellRendererName" id="folder_column_text_renderer">
-                                                <property name="ellipsize">end</property>
-                                              </object>
-                                              <attributes>
-                                                <attribute name="name">0</attribute>
-                                                <attribute name="display_name">4</attribute>
-                                                <attribute name="state">6</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn" id="size_column">
-                                            <property name="title" translatable="yes">Size</property>
-                                            <property name="reorderable">True</property>
-                                            <property name="sort_column_id">2</property>
-                                            <child>
-                                              <object class="BaobabCellRendererSize" id="size_column_size_renderer">
-                                                <property name="xalign">1.0</property>
-                                              </object>
-                                              <attributes>
-                                                <attribute name="size">2</attribute>
-                                                <attribute name="state">6</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn" id="contents_column">
-                                            <property name="title" translatable="yes">Contents</property>
-                                            <property name="reorderable">True</property>
-                                            <property name="sort_column_id">5</property>
-                                            <child>
-                                              <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
-                                                <property name="xalign">1.0</property>
-                                              </object>
-                                              <attributes>
-                                                <attribute name="items">5</attribute>
-                                                <attribute name="state">6</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn" id="time_modified_column">
-                                            <property name="title" translatable="yes">Modified</property>
-                                            <property name="reorderable">True</property>
-                                            <property name="sort_column_id">3</property>
-                                            <child>
-                                              <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
-                                                <property name="xalign">1.0</property>
-                                              </object>
-                                              <attributes>
-                                                <attribute name="time">3</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkGestureClick" id="treeview_right_click_gesture">
-                                            <property name="button">3</property>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkShortcutController">
-                                            <child>
-                                              <object class="GtkShortcut">
-                                                <property name="trigger">Menu</property>
-                                                <property name="action">action(win.show-treeview-popover)</property>
+                                              <object class="GtkPopoverMenu" id="treeview_popover_menu">
+                                                <property name="position">bottom</property>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkShortcut">
-                                                <property name="trigger">Right</property>
-                                                <property name="action">action(win.treeview-expand-row)</property>
+                                              <object class="GtkTreeViewColumn" id="folder_column">
+                                                <property name="title" translatable="yes">Folder</property>
+                                                <property name="expand">True</property>
+                                                <property name="reorderable">True</property>
+                                                <property name="sort_column_id">0</property>
+                                                <child>
+                                                  <object class="GtkCellRendererProgress" id="usage_column_bar_renderer">
+                                                    <property name="xpad">4</property>
+                                                    <property name="ypad">4</property>
+                                                  </object>
+                                                  <attributes>
+                                                    <attribute name="value">1</attribute>
+                                                  </attributes>
+                                                </child>
+                                                <child>
+                                                  <object class="BaobabCellRendererName" id="folder_column_text_renderer">
+                                                    <property name="ellipsize">end</property>
+                                                  </object>
+                                                  <attributes>
+                                                    <attribute name="name">0</attribute>
+                                                    <attribute name="display_name">4</attribute>
+                                                    <attribute name="state">6</attribute>
+                                                  </attributes>
+                                                </child>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkShortcut">
-                                                <property name="trigger">Left</property>
-                                                <property name="action">action(win.treeview-collapse-row)</property>
+                                              <object class="GtkTreeViewColumn" id="size_column">
+                                                <property name="title" translatable="yes">Size</property>
+                                                <property name="reorderable">True</property>
+                                                <property name="sort_column_id">2</property>
+                                                <child>
+                                                  <object class="BaobabCellRendererSize" id="size_column_size_renderer">
+                                                    <property name="xalign">1.0</property>
+                                                  </object>
+                                                  <attributes>
+                                                    <attribute name="size">2</attribute>
+                                                    <attribute name="state">6</attribute>
+                                                  </attributes>
+                                                </child>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkShortcut">
-                                                <property name="trigger">&lt;Alt&gt;Up</property>
-                                                <property name="action">action(win.treeview-go-up)</property>
+                                              <object class="GtkTreeViewColumn" id="contents_column">
+                                                <property name="title" translatable="yes">Contents</property>
+                                                <property name="reorderable">True</property>
+                                                <property name="sort_column_id">5</property>
+                                                <child>
+                                                  <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
+                                                    <property name="xalign">1.0</property>
+                                                  </object>
+                                                  <attributes>
+                                                    <attribute name="items">5</attribute>
+                                                    <attribute name="state">6</attribute>
+                                                  </attributes>
+                                                </child>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="GtkTreeViewColumn" id="time_modified_column">
+                                                <property name="title" translatable="yes">Modified</property>
+                                                <property name="reorderable">True</property>
+                                                <property name="sort_column_id">3</property>
+                                                <child>
+                                                  <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
+                                                    <property name="xalign">1.0</property>
+                                                  </object>
+                                                  <attributes>
+                                                    <attribute name="time">3</attribute>
+                                                  </attributes>
+                                                </child>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="GtkGestureClick" id="treeview_right_click_gesture">
+                                                <property name="button">3</property>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="GtkShortcutController">
+                                                <child>
+                                                  <object class="GtkShortcut">
+                                                    <property name="trigger">Menu</property>
+                                                    <property name="action">action(win.show-treeview-popover)</property>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkShortcut">
+                                                    <property name="trigger">Right</property>
+                                                    <property name="action">action(win.treeview-expand-row)</property>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkShortcut">
+                                                    <property name="trigger">Left</property>
+                                                    <property name="action">action(win.treeview-collapse-row)</property>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkShortcut">
+                                                    <property name="trigger">&lt;Alt&gt;Up</property>
+                                                    <property name="action">action(win.treeview-go-up)</property>
+                                                  </object>
+                                                </child>
                                               </object>
                                             </child>
                                           </object>
                                         </child>
                                         <style>
-                                          <class name="navigation-sidebar"/>
+                                          <class name="undershoot-top"/>
                                         </style>
                                       </object>
                                     </child>
-                                    <style>
-                                      <class name="undershoot-top"/>
-                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkSeparator">
+                                    <property name="orientation">vertical</property>
                                   </object>
                                 </child>
                               </object>
