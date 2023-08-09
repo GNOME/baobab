@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-13 09:30+0700\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-08-09 20:51+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -20,10 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Penganalisa Penggunaan Diska"
 
@@ -58,7 +58,7 @@ msgstr "Tampilan Perangkat dan Lokasi"
 msgid "Scan View"
 msgstr "Tampilan Pindai"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "Proyek GNOME"
 
@@ -129,22 +129,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Tampilkan preferensi"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Kembali ke daftar lokasi"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Memindai"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Pindai folder"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Pindai ulang lokasi saat ini"
@@ -173,19 +168,19 @@ msgstr "Per_besar"
 msgid "Zoom _Out"
 msgstr "Per_kecil"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Folder"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Ukuran"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Isi"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Diubah"
 
@@ -221,27 +216,28 @@ msgstr "Ba_ntuan"
 msgid "_About Disk Usage Analyzer"
 msgstr "Tent_ang Penganalisa Penggunaan Diska"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Kembali"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Perangkat & Lokasi"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Menu Utama"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Pindai Ulang Lokasi Saat Ini"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Tutup"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr ""
+"Berkas mungkin membutuhkan lebih banyak ruang daripada yang ditampilkan"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Bagan Cincin"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Bagan Peta Pohon"
 
@@ -336,19 +332,19 @@ msgstr "Pilih Lokasi untuk Diabaikan"
 msgid "Add Location…"
 msgstr "Tambah Lokasi…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Pilih Folder"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Analisis secara rekursif titik kait"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Tak bisa menganalisa volume."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Tak bisa menganalisis volume"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
@@ -357,48 +353,53 @@ msgstr ""
 "Dirgita <dirgitadevina@yahoo.co.id>, 2011, 2012.\n"
 "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020, 2021, 2022, 2023."
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Gagal membuka berkas"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Gagal memindah berkas ke tong sampah"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Gagal membuang berkas"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Perangkat & Lokasi"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Tak bisa memindai folder"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Tidak dapat memindai folder “%s”"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Tak bisa mendeteksi ukuran diska yang ditempati."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Ukuran yang nampak saja yang mungkin ditampilkan sebagai gantinya."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Pindaian selesai"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Pemindaian selesai dari “%s”"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "\"%s\" bukan folder yang valid"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Tak bisa menganalisa penggunaan diska."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Kembali ke daftar lokasi"
+
+#~ msgid "Back"
+#~ msgstr "Kembali"
+
+#~ msgid "Close"
+#~ msgstr "Tutup"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Gagal memindah berkas ke tong sampah"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Tak bisa mendeteksi ukuran diska yang ditempati."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Ukuran yang nampak saja yang mungkin ditampilkan sebagai gantinya."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Tak bisa menganalisa penggunaan diska."
 
 #~ msgid "_Open Folder"
 #~ msgstr "Buka F_older"
