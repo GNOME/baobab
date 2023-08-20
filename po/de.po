@@ -21,27 +21,27 @@
 # Hedda Peters <hpeters@redhat.com>, 2012.
 # Benjamin Steinwender <b@stbe.at>, 2013-2014.
 # Tim Sabsch <tim@sabsch.com>, 2019.
-# Philipp Kiemle <philipp.kiemle@gmail.com>, 2021-2022.
+# Philipp Kiemle <philipp.kiemle@gmail.com>, 2021-2023.
 # Jürgen Benvenuti <gastornis@posteo.org>, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-12 10:03+0100\n"
-"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-08-08 13:45+0200\n"
+"Last-Translator: Philipp Kiemle <philipp.kiemle@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-DamnedLies-Scope: partial\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Festplattenbelegungsanalyse"
 
@@ -77,7 +77,7 @@ msgstr "Ansicht »Geräte und Orte«"
 msgid "Scan View"
 msgstr "Ansicht »Analysieren«"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "Das GNOME-Projekt"
 
@@ -149,22 +149,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Einstellungen anzeigen"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Zur Liste der Orte zurückkehren"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Wird analysiert"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Ordner analysieren"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Aktuellen Ort erneut analysieren"
@@ -194,19 +189,19 @@ msgstr "Ansicht ver_größern"
 msgid "Zoom _Out"
 msgstr "Ansicht ver_kleinern"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Ordner"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Größe"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Inhalt"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Geändert"
 
@@ -242,27 +237,27 @@ msgstr "_Hilfe"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Info zu Festplattenbelegungsanalyse"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Zurück"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Geräte und Orte"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Aktuellen Ort erneut analysieren"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Schließen"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Dateien könnten mehr Platz als angezeigt verbrauchen"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Kreisdiagramm"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Kacheldiagramm"
 
@@ -361,19 +356,19 @@ msgstr "Ort zum Ignorieren auswählen"
 msgid "Add Location…"
 msgstr "Ort hinzufügen …"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Ordner auswählen"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Einhängepunkte rekursiv analysieren"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Datenträger konnte nicht analysiert werden."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Datenträger konnte nicht analysiert werden"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -395,48 +390,53 @@ msgstr ""
 "Philipp Kiemle <philipp.kiemle@gmail.com>\n"
 "Jürgen Benvenuti <gastornis@posteo.org>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Datei konnte nicht geöffnet werden"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
 msgstr "Datei konnte nicht in den Papierkorb verschoben werden"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Geräte und Orte"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Ordner konnte nicht gescannt werden"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Ordner »%s« konnte nicht analysiert werden."
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Festplattenbelegung konnte nicht immer erkannt werden."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Scheinbare Größen können stattdessen angezeigt werden."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Analyse abgeschlossen"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Analyse von »%s« abgeschlossen"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "»%s« ist kein gültiger Ordner"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Festplattenbelegung konnte nicht analysiert werden."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Zur Liste der Orte zurückkehren"
+
+#~ msgid "Back"
+#~ msgstr "Zurück"
+
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Datei konnte nicht in den Papierkorb verschoben werden"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Festplattenbelegung konnte nicht immer erkannt werden."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Scheinbare Größen können stattdessen angezeigt werden."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Festplattenbelegung konnte nicht analysiert werden."
 
 #~ msgid "_Open Folder"
 #~ msgstr "_Ordner öffnen"
