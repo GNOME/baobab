@@ -21,19 +21,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-03-03 09:57+0100\n"
-"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-08-31 16:22+0200\n"
+"Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využití disku"
 
@@ -68,7 +68,7 @@ msgstr "Zobrazení zařízení a umístění"
 msgid "Scan View"
 msgstr "Zobrazení analýzy"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -139,22 +139,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Zobrazit předvolby"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Vrátit se na seznam umístění"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Analýza"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Analyzovat složku"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Znovu analyzovat aktuální složku"
@@ -183,19 +178,19 @@ msgstr "Př_iblížit"
 msgid "Zoom _Out"
 msgstr "_Oddálit"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Složka"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Velikost"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Obsah"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Změněno"
 
@@ -231,27 +226,27 @@ msgstr "_Nápověda"
 msgid "_About Disk Usage Analyzer"
 msgstr "O _aplikaci Analyzátor využití disku"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Zpět"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Zařízení a umístění"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Hlavní nabídka"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Znovu analyzovat aktuální složku"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Zavřít"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Soubory mohou zabírat více místa, než je zobrazeno"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Kruhový diagram"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Stromová mapa"
 
@@ -354,19 +349,19 @@ msgstr "Výběr ignorovaných umístění"
 msgid "Add Location…"
 msgstr "Přidat umístění…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Výběr složky"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Při analýze se zanořovat do přípojných bodů"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Nelze analyzovat svazek."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Nelze analyzovat svazek"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "David Šauer <davids@penguin.cz>\n"
@@ -381,45 +376,50 @@ msgstr ""
 "Adrian Guniš <andygun696@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Selhalo otevření souboru"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Selhal přesun souboru do koše"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Selhalo přesunutí souboru do koše"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Zařízení a umístění"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Nelze analyzovat složku"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Nelze analyzovat složku „%s“"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Nelze vždy zjistit velikost zabraného místa na disku."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Místo toho může být zobrazena zdánlivá velikost."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Analýza je dokončená"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Byla dokončena analýza složky „%s“"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ není platná složka"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Nelze analyzovat využití disku."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Vrátit se na seznam umístění"
+
+#~ msgid "Back"
+#~ msgstr "Zpět"
+
+#~ msgid "Close"
+#~ msgstr "Zavřít"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Selhal přesun souboru do koše"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Nelze vždy zjistit velikost zabraného místa na disku."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Místo toho může být zobrazena zdánlivá velikost."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Nelze analyzovat využití disku."
