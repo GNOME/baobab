@@ -212,7 +212,7 @@ namespace Baobab {
 
             motion_controller = new Gtk.EventControllerMotion ();
             motion_controller.motion.connect (motion_cb);
-            motion_controller.leave.connect (leave_cb);
+            motion_controller.enter.connect (enter_cb);
             add_controller (motion_controller);
 
             primary_click_gesture = new Gtk.GestureClick ();
@@ -278,9 +278,9 @@ namespace Baobab {
             has_tooltip = highlight_item_at_point (x, y);
         }
 
-        void leave_cb () {
+        void enter_cb (double x, double y) { 
             if (!context_menu.visible) {
-                highlighted_item = null;
+                has_tooltip = highlight_item_at_point (x, y);
             }
         }
 
