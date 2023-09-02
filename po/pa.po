@@ -4,14 +4,14 @@
 # This file is distributed under the same license as the gnome-utils.HEAD package.
 #
 # Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
-# A S Alam <aalam@users.sf.net>, 2005, 2006, 2007,2008, 2009, 2010, 2011, 2021.
+# A S Alam <aalam@users.sf.net>, 2005, 2006, 2007,2008, 2009, 2010, 2011, 2021, 2023.
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2009, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-02-07 02:24+0000\n"
-"PO-Revision-Date: 2021-03-14 11:14-0700\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-09-01 19:55-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚਕਾਰ"
 
@@ -44,15 +44,22 @@ msgid ""
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
 "ਡਿਸਕ ਵਰਤੋਂਕਾਰ ਜਾਂਚਕਰਤਾ  ਕਿਸੇ ਖਾਸ ਫੋਲਡਰ, ਸਟੋਰੇਜ਼ ਡਿਵਾਈਸਾਂ ਅਤੇ ਆਨਲਾਈਨ ਖਾਤਿਆਂ ਦੀ"
-" ਜਾਂਚ ਕਰ ਸਕਦਾ ਹੈ। ਇਹ ਹਰ ਫੋਲਡਰ ਦੇ ਆਕਾਰ ਨੂੰ ਲੜੀ ਅਤੇ ਗਰਾਫ਼ ਦੇ ਰੂਪ ਵਿੱਚ ਪੇਸ਼ ਕਰਦਾ"
-" ਹੈ, ਜਿਸ ਨਾਲ ਪਛਾਣਨਾ ਸੌਖਾ ਹੋ ਜਾਂਦਾ ਹੈ ਕਿ ਕਿੱਥੇ ਡਿਸਕ ਦੀ ਥਾਂ ਬੇਕਾਰ ਪਈ ਹੈ।"
+" ਜਾਂਚ ਕਰ "
+"ਸਕਦਾ ਹੈ। ਇਹ ਹਰ ਫੋਲਡਰ ਦੇ ਆਕਾਰ ਨੂੰ ਲੜੀ ਅਤੇ ਗਰਾਫ਼ ਦੇ ਰੂਪ ਵਿੱਚ ਪੇਸ਼ ਕਰਦਾ ਹੈ, ਜਿਸ"
+" ਨਾਲ ਪਛਾਣਨਾ "
+"ਸੌਖਾ ਹੋ ਜਾਂਦਾ ਹੈ ਕਿ ਕਿੱਥੇ ਡਿਸਕ ਦੀ ਥਾਂ ਬੇਕਾਰ ਪਈ ਹੈ।"
 
-#: data/org.gnome.baobab.appdata.xml.in:23
-#| msgid "Devices and locations"
-msgid "Devices and Locations"
-msgstr "ਡਿਵਾਈਸ ਅਤੇ ਟਿਕਾਣੇ"
+#: data/org.gnome.baobab.appdata.xml.in:20
+#| msgid "Devices and Locations"
+msgid "Devices and Locations View"
+msgstr "ਡਿਵਾਈਸ ਅਤੇ ਟਿਕਾਣੇ ਵੇਖੋ"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+#| msgid "Scan"
+msgid "Scan View"
+msgstr "ਜਾਂਚ ਝਲਕ"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "ਗਨੋਮ ਪਰੋਜੈਕਟ"
 
@@ -62,12 +69,10 @@ msgid "storage;space;cleanup;"
 msgstr "ਸਟੋਰੇਜ਼;ਥਾਂ;ਸਫ਼ਾਈ;storage;space;cleanup;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-#| msgid "Excluded partitions URIs"
 msgid "Excluded locations URIs"
 msgstr "ਅਲਹਿਦਾ ਰੱਖੇ ਗਏ ਟਿਕਾਣੇ URI"
 
 #: data/org.gnome.baobab.gschema.xml:10
-#| msgid "A list of URIs for partitions to be excluded from scanning."
 msgid "A list of URIs for locations to be excluded from scanning."
 msgstr "ਸਕੈਨ ਤੋਂ ਅਲਹਿਦਾ ਰੱਖੇ ਟਿਕਾਣਿਆਂ ਲਈ URI ਦੀ ਲਿਸਟ ਹੈ।"
 
@@ -88,118 +93,111 @@ msgid "The initial size of the window"
 msgstr "ਵਿੰਡੋ ਦੀ ਸ਼ੁਰੂਆਤੀ ਆਕਾਰ"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "ਵਿੰਡੋ ਹਾਲਤ"
+#| msgid "Window size"
+msgid "Window Maximized"
+msgstr "ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ ਕੀਤੀ"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "ਵਿੰਡੋ ਦਾ GdkWindowState"
+msgid "Whether or not the window is maximized"
+msgstr "ਕੀ ਵਿੰਡੋ ਨੂੰ ਵੱਧੋ-ਵੱਧ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀ"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "ਆਮ"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "ਮਦਦ ਵੇਖਾਓ"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "ਮੂਲ ਮੇਨੂ ਵੇਖਾਓ / ਲੁਕਾਓ"
 
-#: data/gtk/help-overlay.ui:31
-#| msgid "_Quit"
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "ਬਾਹਰ"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "ਕੀ-ਬੋਰਡ ਸ਼ਾਰਟਕੱਟ ਵੇਖਾਓ"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
+#| msgid "Preferences"
 msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "ਟਿਕਾਣਾ ਸੂਚੀ ਉੱਤੇ ਵਾਪਸ ਜਾਓ"
+msgid "Show preferences"
+msgstr "ਪਸੰਦਾਂ ਨੂੰ ਵੇਖਾਓ"
 
-#: data/gtk/help-overlay.ui:54
-#| msgid "Scanning…"
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "ਜਾਂਚ ਜਾਰੀ ਹੈ"
 
-#: data/gtk/help-overlay.ui:59
-#| msgid "Scan a folder"
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "ਫੋਲਡਰ ਸਕੈਨ ਕਰੋ"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "ਮੌਜੂਦਾ ਟਿਕਾਣੇ ਦੀ ਮੁੜ ਜਾਂਚ ਕਰੋ"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
-msgid "_Open Folder"
-msgstr "ਫੋਲਡਰ ਖੋਲ੍ਹੋ(_O)"
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "ਬਾਹਰ ਖੋਲ੍ਹੋ(_O)"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "ਪਾਥ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ(_C)"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "ਰੱਦੀ ਵਿੱਚ ਭੇਜੋ(_v)"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "ਮੁੱਢਲੇ ਫੋਲਡਰ ਉੱਤੇ ਜਾਓ(_p)"
+#| msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
+msgstr "ਮੁੱਢਲੇ ਫੋਲਡਰ ਉੱਤੇ ਜਾਓ(_P)"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
-msgstr "ਜ਼ੂਮ ਇਨ(_i)"
+#| msgid "Zoom _in"
+msgid "Zoom _In"
+msgstr "ਜ਼ੂਮ ਇਨ(_I)"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
-msgstr "ਜ਼ੂਮ ਆਉਟ(_o)"
+#| msgid "Zoom _out"
+msgid "Zoom _Out"
+msgstr "ਜ਼ੂਮ ਆਉਟ(_O)"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "ਫੋਲਡਰ"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "ਅਕਾਰ"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "ਸਮਗਰੀ"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "ਸੋਧ"
 
 #: data/ui/baobab-location-list.ui:18
-#| msgid "Computer"
-msgid "This Computer"
-msgstr "ਇਹ ਕੰਪਿਊਟਰ"
+#| msgid "Device"
+msgid "This Device"
+msgstr "ਇਹ ਡਿਵਾਈਸ"
 
-#: data/ui/baobab-location-list.ui:45
-#| msgid "Custom Location"
+#: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
 msgstr "ਰਿਮੋਟ ਟਿਕਾਣੇ"
-
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "ਪਸੰਦਾਂ"
-
-#: data/ui/baobab-preferences-dialog.ui:17
-msgid "Locations to Ignore"
-msgstr "ਅਣਡਿੱਠੇ ਕਰਨ ਵਾਲੇ ਟਿਕਾਣੇ"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -208,6 +206,10 @@ msgstr "…ਫੋਲਡਰ ਜਾਂਚ ਕਰੋ"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "ਤਾਜ਼ਾ ਸੂਚੀ ਨੂੰ ਮਿਟਾਓ"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "ਪਸੰਦਾਂ"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -218,29 +220,38 @@ msgid "_Help"
 msgstr "ਮਦਦ(_H)"
 
 #: data/ui/baobab-main-window.ui:29
-#| msgid "- Disk Usage Analyzer"
 msgid "_About Disk Usage Analyzer"
 msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚਕਾਰ ਕਰਤਾ ਬਾਰੇ(_A)"
 
-#: data/ui/baobab-main-window.ui:85
-msgid "Go back to location list"
-msgstr "ਟਿਕਾਣਾ ਸੂਚੀ ਉੱਤੇ ਵਾਪਸ ਜਾਓ"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "ਡਿਵਾਈਸ ਅਤੇ ਟਿਕਾਣੇ"
 
-#: data/ui/baobab-main-window.ui:106
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:55
+#| msgid "Main volume"
+msgid "Main Menu"
+msgstr "ਮੁੱਖ ਮੇਨੂ"
+
+#: data/ui/baobab-main-window.ui:97
+#| msgid "Rescan current location"
+msgid "Rescan Current Location"
 msgstr "ਮੌਜੂਦਾ ਟਿਕਾਣੇ ਦੀ ਮੁੜ ਜਾਂਚ ਕਰੋ"
 
-#: data/ui/baobab-main-window.ui:196
-msgid "Close"
-msgstr "ਬੰਦ ਕਰੋ"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "ਫ਼ਾਇਲਾਂ ਦਿਖਾਏ ਤੋਂ ਵੱਧ ਥਾਂ ਲੈ ਸਕਦੀਆਂ ਹਨ"
 
-#: data/ui/baobab-main-window.ui:372
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "ਰਿੰਗ ਚਾਰਟ ਵਾਂਗ ਵੇਖੋ"
 
-#: data/ui/baobab-main-window.ui:384
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "ਟਰੀ-ਮੈਪ ਚਾਰਟ ਵਾਂਗ ਵੇਖੋ"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "ਅਣਡਿੱਠੇ ਕਰਨ ਵਾਲੇ ਟਿਕਾਣੇ"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -248,7 +259,8 @@ msgid ""
 "not specified."
 msgstr ""
 "ਵੱਖ-ਵੱਖ ਫਾਇਲ ਸਿਸਟਮਾਂ ਉੱਤੇ ਡਾਇਰੈਕਟਰੀਆਂ ਨੂੰ ਨਾ ਛੱਡੋ। ਜੇ ਡਾਇਰੈਟਰੀ ਨਹੀਂ ਦਿੱਤੀ ਤਾਂ"
-" ਅਣਡਿੱਠਾ ਕੀਤਾ ਗਿਆ ਹੈ।"
+" ਅਣਡਿੱਠਾ ਕੀਤਾ "
+"ਗਿਆ ਹੈ।"
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
@@ -274,8 +286,6 @@ msgstr "ਅੱਜ"
 #. Translators: when the last modified time is "days" days ago
 #: src/baobab-cellrenderers.vala:53
 #, c-format
-#| msgid "%d day"
-#| msgid_plural "%d days"
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu ਦਿਨ"
@@ -284,8 +294,6 @@ msgstr[1] "%lu ਦਿਨ"
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:58
 #, c-format
-#| msgid "%d month"
-#| msgid_plural "%d months"
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu ਮਹੀਨਾ"
@@ -294,8 +302,6 @@ msgstr[1] "%lu ਮਹੀਨੇ"
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:62
 #, c-format
-#| msgid "%d year"
-#| msgid_plural "%d years"
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu ਸਾਲ"
@@ -308,7 +314,6 @@ msgstr "%s ਕੁੱਲ"
 
 #: src/baobab-location-list.vala:71
 #, c-format
-#| msgid "Available"
 msgid "%s Available"
 msgstr "%s ਉਪਲੱਬਧ"
 
@@ -324,7 +329,6 @@ msgid "Unmounted"
 msgstr "ਅਣ-ਮਾਊਂਟ ਕੀਤੇ"
 
 #: src/baobab-location.vala:72
-#| msgid "Home folder"
 msgid "Home Folder"
 msgstr "ਘਰ ਫੋਲਡਰ"
 
@@ -337,93 +341,105 @@ msgstr "ਕੰਪਿਊਟਰ"
 msgid "Select Location to Ignore"
 msgstr "ਅਣਡਿੱਠਾ ਕਰਨ ਲਈ ਟਿਕਾਣਾ ਚੁਣੋ"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
-msgid "_Cancel"
-msgstr "ਰੱਦ ਕਰੋ(_C)"
-
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
-msgid "_Open"
-msgstr "ਖੋਲ੍ਹੋ(_O)"
-
-#: src/baobab-preferences-dialog.vala:91
-#| msgid "Custom Location"
+#: src/baobab-preferences-dialog.vala:90
 msgid "Add Location…"
 msgstr "...ਟਿਕਾਣਾ ਜੋੜੋ"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "ਫੋਲਡਰ ਚੁਣੋ"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "ਮਾਊਂਟ ਪੁਆਇੰਟ ਨੂੰ ਲਗਾਤਾਰ ਜਾਂਚੋ"
 
-#: src/baobab-window.vala:236
-msgid "Could not analyze volume."
-msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚ ਵੇਖੀ ਨਹੀਂ ਸਕੀ"
+#: src/baobab-window.vala:214
+#| msgid "Could not analyze volume."
+msgid "Could not analyze volume"
+msgstr "ਵਾਲੀਅਮ ਦੀ ਪੜਤਾਲ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ"
 
-#: src/baobab-window.vala:273
-msgid "Failed to show help"
-msgstr "ਮਦਦ ਵੇਖਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
-
-#: src/baobab-window.vala:295
-msgid "A graphical tool to analyze disk usage."
-msgstr "ਡਿਸਕ ਵਰਤੋਂ ਵੇਖਣ ਲਈ ਇੱਕ ਗਰਾਫਿਕਸ ਸੰਦ ਹੈ।"
-
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
-"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮਵਾਲਾ-੨੦੨੧\n"
-"Punjab Open Source Team www.satluj.org"
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮਵਾਲਾ-੨੦੨੧-੨੦੨੩\n"
+"Punjab Open Source Team www.punlinux.org"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "ਫਾਇਲ ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: src/baobab-window.vala:392
-msgid "Failed to move file to the trash"
+#: src/baobab-window.vala:358
+#| msgid "Failed to open file"
+msgid "Failed to trash file"
 msgstr "ਫਾਇਲ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: src/baobab-window.vala:603
-#| msgid "Devices and locations"
-msgid "Devices & Locations"
-msgstr "ਡਿਵਾਈਸ ਅਤੇ ਟਿਕਾਣੇ"
+#: src/baobab-window.vala:592
+#| msgid "Could not scan folder “%s”"
+msgid "Could not scan folder"
+msgstr "ਫੋਲਡਰ ਦੀ ਜਾਂਚ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ"
 
-#: src/baobab-window.vala:655
-#, c-format
-#| msgid "Could not scan folder \"%s\""
-msgid "Could not scan folder “%s”"
-msgstr "ਫੋਲਡਰ “%s” ਦੀ ਜਾਂਚ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ"
-
-#: src/baobab-window.vala:670
-#| msgid "Could not detect occupied disk sizes."
-msgid "Could not always detect occupied disk sizes."
-msgstr "ਭਰੀ ਹੋਈ ਡਿਸਕ ਦਾ ਆਕਾਰ ਹਮੇਸ਼ਾਂ ਖੋਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਹੈ।"
-
-#: src/baobab-window.vala:670
-#| msgid "Apparent sizes are shown instead."
-msgid "Apparent sizes may be shown instead."
-msgstr "ਇਸ ਦੀ ਬਜਾਏ ਲਗਭਗ ਆਕਾਰ ਵੇਖਾਏ ਜਾ ਸਕਦੇ ਹਨ।"
-
-#: src/baobab-window.vala:674
-#| msgid "_Scan Home"
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "ਜਾਂਚ ਪੂਰੀ ਹੋਈ"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” ਦੀ ਜਾਂਚ ਪੂਰੀ ਹੋਈ"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:649
 #, c-format
-#| msgid "\"%s\" is not a valid folder"
 msgid "“%s” is not a valid folder"
 msgstr "“%s” ਵਾਜਬ ਫੋਲਡਰ ਨਹੀਂ ਹੈ"
 
-#: src/baobab-window.vala:716
-msgid "Could not analyze disk usage."
-msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚ ਵੇਖੀ ਨਹੀਂ ਸਕੀ"
+#~ msgid "Window state"
+#~ msgstr "ਵਿੰਡੋ ਹਾਲਤ"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "ਵਿੰਡੋ ਦਾ GdkWindowState"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "ਟਿਕਾਣਾ ਸੂਚੀ ਉੱਤੇ ਵਾਪਸ ਜਾਓ"
+
+#~ msgid "_Open Folder"
+#~ msgstr "ਫੋਲਡਰ ਖੋਲ੍ਹੋ(_O)"
+
+#~| msgid "Computer"
+#~ msgid "This Computer"
+#~ msgstr "ਇਹ ਕੰਪਿਊਟਰ"
+
+#~ msgid "Go back to location list"
+#~ msgstr "ਟਿਕਾਣਾ ਸੂਚੀ ਉੱਤੇ ਵਾਪਸ ਜਾਓ"
+
+#~ msgid "Close"
+#~ msgstr "ਬੰਦ ਕਰੋ"
+
+#~ msgid "_Cancel"
+#~ msgstr "ਰੱਦ ਕਰੋ(_C)"
+
+#~ msgid "_Open"
+#~ msgstr "ਖੋਲ੍ਹੋ(_O)"
+
+#~ msgid "Failed to show help"
+#~ msgstr "ਮਦਦ ਵੇਖਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "ਡਿਸਕ ਵਰਤੋਂ ਵੇਖਣ ਲਈ ਇੱਕ ਗਰਾਫਿਕਸ ਸੰਦ ਹੈ।"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "ਫਾਇਲ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
+
+#~| msgid "Could not detect occupied disk sizes."
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "ਭਰੀ ਹੋਈ ਡਿਸਕ ਦਾ ਆਕਾਰ ਹਮੇਸ਼ਾਂ ਖੋਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਹੈ।"
+
+#~| msgid "Apparent sizes are shown instead."
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "ਇਸ ਦੀ ਬਜਾਏ ਲਗਭਗ ਆਕਾਰ ਵੇਖਾਏ ਜਾ ਸਕਦੇ ਹਨ।"
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚ ਵੇਖੀ ਨਹੀਂ ਸਕੀ"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
@@ -463,9 +479,6 @@ msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚ ਵੇਖੀ ਨਹੀਂ ਸ�
 
 #~ msgid "Set the root node from the model"
 #~ msgstr "ਮਾਡਲ ਤੋਂ ਰੂਟ ਨੋਡ ਦਿਓ"
-
-#~ msgid "Main volume"
-#~ msgstr "ਮੁੱਖ ਵਾਲੀਅਮ"
 
 #~ msgid "Usage"
 #~ msgstr "ਵਰਤੋਂ"
@@ -637,12 +650,6 @@ msgstr "ਡਿਸਕ ਵਰਤੋਂ ਜਾਂਚ ਵੇਖੀ ਨਹੀਂ ਸ�
 
 #~ msgid "_Image type:"
 #~ msgstr "ਚਿੱਤਰ ਕਿਸਮ(_I):"
-
-#~ msgid "Scan"
-#~ msgstr "ਜਾਂਚ"
-
-#~ msgid "Device"
-#~ msgstr "ਜੰਤਰ"
 
 #~ msgid "Mount Point"
 #~ msgstr "ਮਾਊਂਟ ਥਾਂ"
