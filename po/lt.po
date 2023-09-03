@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-02-18 22:31+0200\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-09-03 21:54+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 42.0\n"
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Disko naudojimo analizatorius"
 
@@ -58,7 +58,7 @@ msgstr "Įrenginių ir vietų rodinys"
 msgid "Scan View"
 msgstr "Skaitymo rodinys"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "GNOME projektas"
 
@@ -129,22 +129,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Rodyti nuostatas"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Grįžti į vietų sąrašą"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Skaitoma"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Perskaityti aplanką"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Iš naujo perskaityti dabartinę vietą"
@@ -173,19 +168,19 @@ msgstr "Pri_traukti"
 msgid "Zoom _Out"
 msgstr "_Atitolinti"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Aplankas"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Dydis"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Turinys"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Pakeistas"
 
@@ -221,27 +216,27 @@ msgstr "_Žinynas"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Apie disko naudojimo analizatorių"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Tuščias"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Įrenginiai ir vietos"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Pagrindinis meniu"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Iš naujo perskaityti dabartinę vietą"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Užverti"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Failai gali užimti daugiau vietos, nei rodoma"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Žiedinę diagrama"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Medžio diagrama"
 
@@ -344,19 +339,19 @@ msgstr "Pasirinkite nepaisomas vietas"
 msgid "Add Location…"
 msgstr "Pridėti vietą…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Pasirinkite aplanką"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Rekursyviai analizuoti prijungimo taškus"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Nepavyko analizuoti tomo."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Nepavyko analizuoti skaidinio"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Paskutinysis vertėjas:\n"
@@ -368,48 +363,53 @@ msgstr ""
 "Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Gediminas Paulauskas <menesis@chatsubo.lt>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Nepavyko atverti failo"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Nepavyko perkelti failo į šiukšlinę"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Nepavyko išmesti failo"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Įrenginiai ir vietos"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Nepavyko perskaityti aplanko"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Nepavyko perskaityti aplanko „%s“"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Ne visada pavyksta aptikti užimtų diskų dydžius."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Vietoj to rodomi numanomi dydžiai."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Skaitymas baigtas"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "„%s“ skaitymas baigtas"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ nėra tinkamas aplankas"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Grafinis įrankis disko naudojimo analizavimui."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Grįžti į vietų sąrašą"
+
+#~ msgid "Back"
+#~ msgstr "Tuščias"
+
+#~ msgid "Close"
+#~ msgstr "Užverti"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Nepavyko perkelti failo į šiukšlinę"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Ne visada pavyksta aptikti užimtų diskų dydžius."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Vietoj to rodomi numanomi dydžiai."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Grafinis įrankis disko naudojimo analizavimui."
 
 #~ msgid "_Open Folder"
 #~ msgstr "Atverti a_planką"
