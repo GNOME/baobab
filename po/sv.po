@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 08:42+0000\n"
-"PO-Revision-Date: 2023-03-11 16:18+0100\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-09-03 15:11+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,10 +20,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Diskanvändningsanalysator"
 
@@ -58,7 +58,7 @@ msgstr "Enhets- och platsvy"
 msgid "Scan View"
 msgstr "Avsökningsvy"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -129,22 +129,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Visa inställningar"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Gå tillbaka till platslista"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Avsökning"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Sök av mapp"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Sök av aktuell plats igen"
@@ -173,19 +168,19 @@ msgstr "Zooma _in"
 msgid "Zoom _Out"
 msgstr "Zooma _ut"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Mapp"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Storlek"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Innehåll"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Ändrad"
 
@@ -221,27 +216,27 @@ msgstr "_Hjälp"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Om Diskanvändningsanalysator"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Bakåt"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Enheter och platser"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Sök av aktuell plats igen"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Stäng"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Filer kan ta upp mer utrymme än vad som visas"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Ringdiagram"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Trädkartsdiagram"
 
@@ -341,19 +336,19 @@ msgstr "Välj plats att ignorera"
 msgid "Add Location…"
 msgstr "Lägg till plats…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Välj mapp"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Analysera monteringspunkter rekursivt"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Kunde inte analysera volymen."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Kunde inte analysera volymen"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -366,48 +361,53 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
-msgstr "Kunde inte öppna fil"
+msgstr "Misslyckades med att öppna fil"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Kunde inte flytta filen till papperskorgen"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Misslyckades med att flytta fil till papperskorgen"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Enheter och platser"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Kunde inte söka av mapp"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Kunde inte söka av mappen ”%s”"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Kunde inte alltid avgöra använda diskstorlekar."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Skenbara storlekar kan visas i stället."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Sökning slutförd"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Sökning av ”%s” slutförd"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” är inte en giltig mapp"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Kunde inte analysera diskanvändningen."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Gå tillbaka till platslista"
+
+#~ msgid "Back"
+#~ msgstr "Bakåt"
+
+#~ msgid "Close"
+#~ msgstr "Stäng"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Kunde inte flytta filen till papperskorgen"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Kunde inte alltid avgöra använda diskstorlekar."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Skenbara storlekar kan visas i stället."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Kunde inte analysera diskanvändningen."
 
 #~ msgid "_Open Folder"
 #~ msgstr "_Öppna mapp"
