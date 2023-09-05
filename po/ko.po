@@ -16,19 +16,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-03-03 02:46+0900\n"
-"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-09-04 14:21+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "디스크 사용량 분석"
 
@@ -60,7 +60,7 @@ msgstr "장치 및 위치 보기"
 msgid "Scan View"
 msgstr "검사 보기"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
 
@@ -131,22 +131,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "기본 설정 표시"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "위치 목록으로 되돌아가기"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "검사"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "폴더 검사"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "현재 위치 재검사"
@@ -175,19 +170,19 @@ msgstr "확대(_I)"
 msgid "Zoom _Out"
 msgstr "축소(_O)"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "폴더"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "용량"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "내용"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "수정됨"
 
@@ -223,27 +218,27 @@ msgstr "도움말(_H)"
 msgid "_About Disk Usage Analyzer"
 msgstr "디스크 사용량 분석 정보(_A)"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "위로"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "장치 및 위치"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "주 메뉴"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "현재 위치 재검사"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "닫기"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "파일이 나타난 공간보다 더 많이 차지할 수 있습니다"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "링 차트"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "트리맵 차트"
 
@@ -338,19 +333,19 @@ msgstr "무시할 디렉터리 선택"
 msgid "Add Location…"
 msgstr "위치 추가…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "폴더 선택"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "재귀적으로 마운트 위치 분석"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "볼륨을 분석할 수 없습니다."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "볼륨을 분석할 수 없습니다"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "류창우 <cwryu debian.org>\n"
@@ -358,48 +353,53 @@ msgstr ""
 "박열 <peary2 gmail.com>\n"
 "조성호 <shcho gnome.org>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "파일을 여는데 실패헀습니다"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "파일을 휴지통에 옮기는데 실패했습니다"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "휴지통에 파일 버리기 실패"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "장치 및 위치"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "폴더를 검사할 수 없습니다"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "“%s” 폴더를 검사할 수 없습니다"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "사용 중인 디스크 용량을 항상 알아낼 수는 없습니다."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "겉보기 용량을 대신 표시합니다."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "검사 완료"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” 검사가 끝났습니다."
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”은(는) 올바른 폴더가 아닙니다"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "디스크 사용량을 분석할 수 없습니다."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "위치 목록으로 되돌아가기"
+
+#~ msgid "Back"
+#~ msgstr "위로"
+
+#~ msgid "Close"
+#~ msgstr "닫기"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "파일을 휴지통에 옮기는데 실패했습니다"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "사용 중인 디스크 용량을 항상 알아낼 수는 없습니다."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "겉보기 용량을 대신 표시합니다."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "디스크 사용량을 분석할 수 없습니다."
 
 #~ msgid "_Open Folder"
 #~ msgstr "폴더 열기(_O)"
