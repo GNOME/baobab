@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-03-11 13:14+0100\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-09-11 21:08+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -32,7 +32,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Diskforbrugsanalyse"
 
@@ -65,7 +65,7 @@ msgstr "Enheder og steder-visning"
 msgid "Scan View"
 msgstr "Skanningsvisning"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -136,22 +136,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Vis indstillinger"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Gå tilbage til placeringslisten"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Skanning"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Skan mappe"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Skan nuværende placering igen"
@@ -180,19 +175,19 @@ msgstr "For_stør"
 msgid "Zoom _Out"
 msgstr "For_mindsk"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
 msgid "Folder"
 msgstr "Mappe"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
 msgid "Size"
 msgstr "Størrelse"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
 msgid "Contents"
 msgstr "Indhold"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
 msgid "Modified"
 msgstr "Ændret"
 
@@ -228,27 +223,27 @@ msgstr "_Hjælp"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Om Diskforbrugsanalyse"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Tilbage"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Enheder & steder"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Skan nuværende placering igen"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Luk"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Filer kan optage mere plads end vist"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:272
 msgid "Rings Chart"
 msgstr "Cirkeldiagram"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:285
 msgid "Treemap Chart"
 msgstr "Trækortdiagram"
 
@@ -347,19 +342,19 @@ msgstr "Vælg placering som skal ignoreres"
 msgid "Add Location…"
 msgstr "Tilføj placering …"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Markér mappe"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Analysér monteringspunkter rekursivt"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Kunne ikke analysere diskenhed."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Kunne ikke analysere diskenhed"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Birger Langkjer\n"
@@ -378,48 +373,53 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Kunne ikke åbne fil"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
 msgstr "Kunne ikke flytte fil til papirkurven"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Enheder & steder"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Kunne ikke skanne mappe"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Kunne ikke skanne mappen “%s”"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Kunne ikke altid registrere opbrugte diskstørrelser."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Tilsyneladende størrelser kan blive vist i stedet."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Skanning fuldført"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Fuldførte skanningen af “%s”"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” er ikke en gyldig mappe"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Kunne ikke analysere diskforbrug."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Gå tilbage til placeringslisten"
+
+#~ msgid "Back"
+#~ msgstr "Tilbage"
+
+#~ msgid "Close"
+#~ msgstr "Luk"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Kunne ikke flytte fil til papirkurven"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Kunne ikke altid registrere opbrugte diskstørrelser."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Tilsyneladende størrelser kan blive vist i stedet."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Kunne ikke analysere diskforbrug."
 
 #~ msgid "_Open Folder"
 #~ msgstr "_Åbn mappe"
