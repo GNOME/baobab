@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2020-04-20 13:22+0000\n"
-"PO-Revision-Date: 2020-05-04 19:27+0100\n"
+"POT-Creation-Date: 2023-07-04 22:01+0000\n"
+"PO-Revision-Date: 2023-09-22 19:12+0200\n"
 "Last-Translator: Carmen Bianca BAKKER <carmen@carmenbianca.eu>\n"
 "Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
 "Language: eo\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:120 src/baobab-window.vala:310
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Diskuzada analizilo"
 
@@ -49,7 +49,15 @@ msgstr ""
 "retajn kontojn. Ĝi provizas arban kaj diagraman prezenton de grando de ĉiu "
 "dosierujo, kiu faciligas identigon de malŝparata diskospaco."
 
-#: data/org.gnome.baobab.appdata.xml.in:34
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "Vido pri aparatoj kaj lokoj"
+
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "Skana vido"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "La Projekto GNOME"
 
@@ -59,12 +67,12 @@ msgid "storage;space;cleanup;"
 msgstr "spaco;diskospaco;purigi;senrubigi;"
 
 #: data/org.gnome.baobab.gschema.xml:9
-msgid "Excluded partitions URIs"
-msgstr "Eksigitaj subdiskaj URI-oj"
+msgid "Excluded locations URIs"
+msgstr "Ekskluditaj lokaj URI-oj"
 
 #: data/org.gnome.baobab.gschema.xml:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "Listo de URI-oj por subdiskoj eksigitaj de skani."
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "Listo de URI-oj por lokoj ekskludeblaj de skanado."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -83,18 +91,171 @@ msgid "The initial size of the window"
 msgstr "La komenca grando de la fenestro"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "Fenestra stato"
+msgid "Window Maximized"
+msgstr "Fenestro maksimumigita"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "La GdkWindowState de la fenestro"
+msgid "Whether or not the window is maximized"
+msgstr "Ĉu fenestro estas maksimumigita"
 
-#: src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Ĝenerala"
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Montri helpon"
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "Montri / kaŝi ĉefan menuon"
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ĉesi"
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Montri klavkombinojn"
+
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Montri agordojn"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "Skanado"
+
+#: data/gtk/help-overlay.ui:50
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "Skani dosierujon"
+
+#: data/gtk/help-overlay.ui:56
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "Reskani aktualan lokon"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "_Melfermi extere"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
+msgid "_Copy Path to Clipboard"
+msgstr "_Kopii vojon al tondejo"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
+msgid "Mo_ve to Trash"
+msgstr "Mo_vi rubujen"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _Parent Folder"
+msgstr "Iri al ge_patra dosierujo"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _In"
+msgstr "E_nzomi"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _Out"
+msgstr "E_lzomi"
+
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+msgid "Folder"
+msgstr "Dosierujo"
+
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+msgid "Size"
+msgstr "Grando"
+
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+msgid "Contents"
+msgstr "Enhavoj"
+
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+msgid "Modified"
+msgstr "Ŝanĝita"
+
+#: data/ui/baobab-location-list.ui:18
+msgid "This Device"
+msgstr "La aparato"
+
+#: data/ui/baobab-location-list.ui:42
+msgid "Remote Locations"
+msgstr "Foraj lokoj"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "Skani dosierujon…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "Malplenigi lastatempan liston"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "Agordoj"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "_Klavkombinoj"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "_Helpo"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "_Pri diskuzada analizilo"
+
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Aparatoj & lokoj"
+
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "Ĉefa menuo"
+
+#: data/ui/baobab-main-window.ui:97
+msgid "Rescan Current Location"
+msgstr "Reskani aktualan lokon"
+
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Dosieroj povas preni pli da spaco ol montrite"
+
+#: data/ui/baobab-main-window.ui:272
+msgid "Rings Chart"
+msgstr "Ringa diagramo"
+
+#: data/ui/baobab-main-window.ui:285
+msgid "Treemap Chart"
+msgstr "Arbomapa diagramo"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "Ignorendaj lokoj"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is "
+"not specified."
+msgstr ""
+"Ne saltu dosierujojn sur malsamaj dosiersistemoj. Ignorita se DOSERUJO ne "
+"estas specifita."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "Montri versian informon kaj ĉesi"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -102,17 +263,17 @@ msgstr[0] "%d elemento"
 msgstr[1] "%d elementoj"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
 msgid "Unknown"
 msgstr "Nekonate"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:48
 msgid "Today"
 msgstr "Hodiaŭ"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:53
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -120,7 +281,7 @@ msgstr[0] "%lu tago"
 msgstr[1] "%lu tagoj"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:58
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -128,135 +289,64 @@ msgstr[0] "%lu monato"
 msgstr[1] "%lu monatoj"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:62
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
 msgstr[0] "%lu jaro"
 msgstr[1] "%lu jaroj"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "Ĉi tiu komputilo"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "Foraj lokoj"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "%s entute"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:71
 #, c-format
 msgid "%s Available"
 msgstr "%s disponebla"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:85
 #, c-format
 msgid "%s Used"
 msgstr "%s uzata"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:87
 msgid "Unmounted"
 msgstr "Ne surmetita"
 
-#: src/baobab-location.vala:73
-msgid "Home folder"
+#: src/baobab-location.vala:72
+msgid "Home Folder"
 msgstr "Hejmdosierujo"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:107
 msgid "Computer"
 msgstr "Komputilo"
 
-#: src/baobab-main-window.ui:7
-msgid "Scan Folder…"
-msgstr "Skani dosierujon…"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:53
+msgid "Select Location to Ignore"
+msgstr "Elekti lokon por ignori"
 
-#: src/baobab-main-window.ui:13
-msgid "Keyboard _Shortcuts"
-msgstr "_Klavkombinoj"
+#: src/baobab-preferences-dialog.vala:90
+msgid "Add Location…"
+msgstr "Aldoni lokon…"
 
-#: src/baobab-main-window.ui:17
-msgid "_Help"
-msgstr "_Helpo"
-
-#: src/baobab-main-window.ui:21
-msgid "_About Disk Usage Analyzer"
-msgstr "_Pri diskuzada analizilo"
-
-#: src/baobab-main-window.ui:34 src/menus.ui:7
-msgid "_Open Folder"
-msgstr "Malfermi d_osierujon"
-
-#: src/baobab-main-window.ui:43 src/menus.ui:11
-msgid "_Copy Path to Clipboard"
-msgstr "_Kopii vojon al tondejo"
-
-#: src/baobab-main-window.ui:52 src/menus.ui:15
-msgid "Mo_ve to Trash"
-msgstr "Mo_vi rubujen"
-
-#: src/baobab-main-window.ui:184
-msgid "Close"
-msgstr "Malfermi"
-
-#: src/baobab-main-window.ui:239
-msgid "Folder"
-msgstr "Dosierujo"
-
-#: src/baobab-main-window.ui:266
-msgid "Size"
-msgstr "Grando"
-
-#: src/baobab-main-window.ui:286
-msgid "Contents"
-msgstr "Enhavoj"
-
-#: src/baobab-main-window.ui:304
-msgid "Modified"
-msgstr "Ŝanĝita"
-
-#: src/baobab-main-window.ui:349
-msgid "Rings Chart"
-msgstr "Ringa diagramo"
-
-#: src/baobab-main-window.ui:361
-msgid "Treemap Chart"
-msgstr "Arbomapa diagramo"
-
-#: src/baobab-window.vala:215
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Elekti dosierujon"
 
-#: src/baobab-window.vala:217
-msgid "_Cancel"
-msgstr "_Nuligi"
-
-#: src/baobab-window.vala:218
-msgid "_Open"
-msgstr "_Malfermi"
-
-#: src/baobab-window.vala:224
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Rikure analizi surmetingojn"
 
-#: src/baobab-window.vala:259
-msgid "Could not analyze volume."
-msgstr "Ne povis analizi portilon."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Ne povis analizi portilon"
 
-#: src/baobab-window.vala:291
-msgid "Failed to show help"
-msgstr "Malsukcesis montri helpon"
-
-#: src/baobab-window.vala:313
-msgid "A graphical tool to analyze disk usage."
-msgstr "Grafika ilo por analizi diskuzadon."
-
-#: src/baobab-window.vala:319
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Kevin SCHAEFER\n"
@@ -267,101 +357,78 @@ msgstr ""
 "Daniel PUENTES\n"
 "Carmen Bianca BAKKER <carmen@carmenbianca.eu>"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Malsukcesis malfermi dosieron"
 
-#: src/baobab-window.vala:401
-msgid "Failed to move file to the trash"
-msgstr "Malsukcesis movi dosieron al la rubujo"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Malsukcesis movi dosieron rubujen"
 
-#: src/baobab-window.vala:505
-msgid "Devices & Locations"
-msgstr "Aparatoj & lokoj"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Ne eblis skani la dosierujon"
 
-#: src/baobab-window.vala:567
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Ne eblis skani la dosierujon “%s”"
-
-#: src/baobab-window.vala:570
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "Ne eblis skani kelkajn dosierujon kiuj estas en “%s”"
-
-#: src/baobab-window.vala:589
-msgid "Could not detect occupied disk sizes."
-msgstr "Ne povis detekti efektivan diskan uzadon."
-
-#: src/baobab-window.vala:589
-msgid "Apparent sizes are shown instead."
-msgstr "Ŝajnaj grandoj montratas anstataŭ."
-
-#: src/baobab-window.vala:593
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Plenumis skanon"
 
-#: src/baobab-window.vala:594
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Plenumis skanon de “%s”"
 
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:612 src/baobab-window.vala:618
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” ne estas valida dosierujo"
 
-#: src/baobab-window.vala:613 src/baobab-window.vala:619
-msgid "Could not analyze disk usage."
-msgstr "Ne povis analizi diskon uzadon."
+#~ msgid "Window state"
+#~ msgstr "Fenestra stato"
 
-#: src/help-overlay.ui:13
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Ĝenerala"
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "La GdkWindowState de la fenestro"
 
-#: src/help-overlay.ui:18
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Montri / kaŝi ĉefan menuon"
+#~ msgid "This Computer"
+#~ msgstr "Ĉi tiu komputilo"
 
-#: src/help-overlay.ui:25
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Reskani aktualan lokon"
+#~ msgid "_Open Folder"
+#~ msgstr "Malfermi d_osierujon"
 
-#: src/help-overlay.ui:32
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Skani dosierujon"
+#~ msgid "Close"
+#~ msgstr "Malfermi"
 
-#: src/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Montri klavkombinojn"
+#~ msgid "_Cancel"
+#~ msgstr "_Nuligi"
 
-#: src/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Reen al lokolisto"
+#~ msgid "_Open"
+#~ msgstr "_Malfermi"
 
-#: src/help-overlay.ui:52
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Ĉesi"
+#~ msgid "Failed to show help"
+#~ msgstr "Malsukcesis montri helpon"
 
-#: src/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Iri al ge_patra dosierujo"
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "Grafika ilo por analizi diskuzadon."
 
-#: src/menus.ui:27
-msgid "Zoom _in"
-msgstr "_Zomi"
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Malsukcesis movi dosieron al la rubujo"
 
-#: src/menus.ui:31
-msgid "Zoom _out"
-msgstr "_Malzomi"
+#, c-format
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "Ne eblis skani kelkajn dosierujon kiuj estas en “%s”"
+
+#~ msgid "Could not detect occupied disk sizes."
+#~ msgstr "Ne povis detekti efektivan diskan uzadon."
+
+#~ msgid "Apparent sizes are shown instead."
+#~ msgstr "Ŝajnaj grandoj montratas anstataŭ."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Ne povis analizi diskon uzadon."
+
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Reen al lokolisto"
 
 #~| msgid "Baobab"
 #~ msgid "baobab"
@@ -461,9 +528,6 @@ msgstr "_Malzomi"
 #~ msgid "Refresh"
 #~ msgstr "Aktualigi"
 
-#~ msgid "Scanning…"
-#~ msgstr "Skanante…"
-
 #~ msgid "used:"
 #~ msgstr "uzate:"
 
@@ -490,12 +554,6 @@ msgstr "_Malzomi"
 
 #~ msgid "_Image type:"
 #~ msgstr "_Bildtipo:"
-
-#~ msgid "Scan"
-#~ msgstr "Skani"
-
-#~ msgid "Device"
-#~ msgstr "Aparato"
 
 #~ msgid "Mount Point"
 #~ msgstr "Surmetingo"
