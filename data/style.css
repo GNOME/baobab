@@ -85,6 +85,15 @@ window.background stack treeview:hover:not(:selected) {
     border-bottom-left-radius: 5px;
 }
 
+image.symbolic-circular {
+  background-color: alpha(currentColor, 0.08);
+  max-height: 48px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  -gtk-icon-style: symbolic;
+}
+
 window infobar.warning,
 window infobar.error {
     border-bottom-width: 1px;

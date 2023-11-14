@@ -5,28 +5,33 @@
     <child>
       <object class="GtkBox">
         <property name="margin-top">6</property>
-        <property name="margin-bottom">12</property>
+        <property name="margin-bottom">6</property>
         <property name="margin-start">12</property>
         <property name="margin-end">6</property>
-        <property name="spacing">12</property>
+        <property name="spacing">6</property>
         <child>
           <object class="GtkGrid" id="grid">
             <property name="column_spacing">12</property>
             <child>
               <object class="GtkImage" id="image">
-                <property name="pixel_size">64</property>
+                <property name="pixel_size">16</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="symbolic-circular"/>
+                </style>
                 <layout>
                   <property name="column">0</property>
                   <property name="row">0</property>
-                  <property name="row_span">2</property>
+                  <property name="row_span">3</property>
                 </layout>
               </object>
             </child>
             <child>
               <object class="GtkLabel" id="name_label">
                 <property name="halign">start</property>
-                <property name="valign">end</property>
                 <property name="hexpand">True</property>
+                <property name="valign">center</property>
+                <property name="vexpand">True</property>
                 <property name="use_markup">True</property>
                 <property name="ellipsize">end</property>
                 <layout>
@@ -38,11 +43,11 @@
             <child>
               <object class="GtkLabel" id="path_label">
                 <property name="halign">start</property>
-                <property name="valign">start</property>
                 <property name="hexpand">True</property>
                 <property name="use_markup">True</property>
                 <style>
                   <class name="dim-label"/>
+                  <class name="subtitle"/>
                 </style>
                 <layout>
                   <property name="column">1</property>
@@ -53,7 +58,8 @@
             <child>
               <object class="GtkLabel" id="available_label">
                 <property name="halign">end</property>
-                <property name="valign">end</property>
+                <property name="valign">center</property>
+                <property name="vexpand">True</property>
                 <layout>
                   <property name="column">2</property>
                   <property name="row">0</property>
@@ -63,9 +69,9 @@
             <child>
               <object class="GtkLabel" id="total_size_label">
                 <property name="halign">end</property>
-                <property name="valign">start</property>
                 <style>
                   <class name="dim-label"/>
+                  <class name="subtitle"/>
                 </style>
                 <layout>
                   <property name="column">2</property>
@@ -76,14 +82,13 @@
             <child>
               <object class="GtkLevelBar" id="usage_bar">
                 <property name="visible">False</property>
-                <property name="valign">start</property>
                 <property name="margin_top">6</property>
                 <property name="margin_bottom">6</property>
                 <property name="hexpand">True</property>
                 <layout>
-                  <property name="column">0</property>
+                  <property name="column">1</property>
                   <property name="row">2</property>
-                  <property name="column_span">3</property>
+                  <property name="column_span">2</property>
                 </layout>
               </object>
             </child>
@@ -92,10 +97,8 @@
         <child>
           <object class="GtkImage">
             <property name="icon_name">go-next-symbolic</property>
-            <property name="width_request">36</property>
-            <style>
-              <class name="dim-label"/>
-            </style>
+            <property name="width_request">32</property>
+            <property name="halign">end</property>
           </object>
         </child>
       </object>
