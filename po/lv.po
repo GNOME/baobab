@@ -6,7 +6,7 @@
 # Artis Trops <hornet@navigators.lv>, 2000.
 # sTYLEeX <styleex@inbox.lv>, 2006.
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
-# Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2011, 2024 Rudolfs <rudolfs.mazurs@gmail.com>
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011, 2013, 2014, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Vika Leimane <vika.leimane@gmail.com>, 2020.
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-02-12 02:26+0000\n"
-"PO-Revision-Date: 2023-03-25 13:09+0200\n"
+"POT-Creation-Date: 2023-11-30 13:11+0000\n"
+"PO-Revision-Date: 2024-02-24 23:06+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Diska izmantojuma analizators"
 
@@ -55,17 +55,15 @@ msgstr ""
 "izniekota."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-#| msgid "Devices and Locations"
 msgid "Devices and Locations View"
 msgstr "Ierīču un vietu skats"
 
 # gdictsrc/gdict-app.c:117
 #: data/org.gnome.baobab.appdata.xml.in:24
-#| msgid "Scan"
 msgid "Scan View"
 msgstr "Skenēšanas skats"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "GNOME projekts"
 
@@ -132,28 +130,22 @@ msgid "Show Keyboard Shortcuts"
 msgstr "Rādīt tastatūras saīsnes"
 
 #: data/gtk/help-overlay.ui:39
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Rādīt iestatījumus"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Iet atpakaļ uz vietu sarakstu"
-
 # gdictsrc/gdict-app.c:117
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Skenē"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Skenēt mapi"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Vēlreiz skenēt šo vietu"
@@ -172,34 +164,31 @@ msgstr "Pār_vietot uz miskasti"
 
 # gdictsrc/gdict-app.c:278
 #: data/gtk/menus.ui:21
-#| msgid "Go to _parent folder"
 msgid "Go to _Parent Folder"
 msgstr "Iet uz vecāka ma_pi"
 
 #: data/gtk/menus.ui:27
-#| msgid "Zoom _in"
 msgid "Zoom _In"
 msgstr "Tuv_ināt"
 
 #: data/gtk/menus.ui:31
-#| msgid "Zoom _out"
 msgid "Zoom _Out"
 msgstr "Tā_lināt"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
 msgid "Folder"
 msgstr "Mape"
 
 # mini-utils/guname/info.c:61
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
 msgid "Size"
 msgstr "Izmērs"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
 msgid "Contents"
 msgstr "Saturs"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
 msgid "Modified"
 msgstr "Mainīts"
 
@@ -237,28 +226,27 @@ msgstr "_Palīdzība"
 msgid "_About Disk Usage Analyzer"
 msgstr "P_ar diska izmantošanas analizatoru"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Atpakaļ"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Ierīces un vietas"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Galvenā izvēlne"
 
-#: data/ui/baobab-main-window.ui:65
-#| msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Vēlreiz skenēt šo vietu"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Aizvērt"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Datnes var aizņemt vairāk vietas, nekā tiek rādīts"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:275
 msgid "Rings Chart"
 msgstr "Gredzenu grafiks"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:288
 msgid "Treemap Chart"
 msgstr "Skatīt kā koka kartes grafiku"
 
@@ -361,69 +349,77 @@ msgstr "Izvēlieties vietas, kuras ignorēt"
 msgid "Add Location…"
 msgstr "Pievienot vietu…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Izvēlieties mapi"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Rekursīvi analizēt montēšanas punktus"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Nevarēja izanalizēt sējumu."
+#: src/baobab-window.vala:214
+#| msgid "Could not analyze volume."
+msgid "Could not analyze volume"
+msgstr "Nevarēja izanalizēt sējumu"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Neizdevās atvērt datni"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "Neizdevās pārvietot datni uz miskasti"
-
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Ierīces un vietas"
+#: src/baobab-window.vala:358
+#| msgid "Failed to open file"
+msgid "Failed to trash file"
+msgstr "Neizdevās izmest datni"
 
 # logview/logrtns.c:202
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Nevarēja skenēt mapi “%s”"
+#: src/baobab-window.vala:592
+#| msgid "Could not scan folder “%s”"
+msgid "Could not scan folder"
+msgstr "Nevarēja skenēt mapi"
 
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "Neizdevās vienmēr noteikt aizņemto disku izmērus."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Tā vietā var tikt rādīti saskatāmie izmēri."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Skenēšana pabeigta"
 
 # logview/logrtns.c:202
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” skenēšana pabeigta"
 
 # logview/logrtns.c:211 logview/logrtns.c:221
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” nav derīga mape"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Nevarēja izanalizēt diska izmantojumu."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Iet atpakaļ uz vietu sarakstu"
+
+#~ msgid "Back"
+#~ msgstr "Atpakaļ"
+
+#~ msgid "Close"
+#~ msgstr "Aizvērt"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Neizdevās pārvietot datni uz miskasti"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Neizdevās vienmēr noteikt aizņemto disku izmērus."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Tā vietā var tikt rādīti saskatāmie izmēri."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Nevarēja izanalizēt diska izmantojumu."
 
 #~ msgid "_Open Folder"
 #~ msgstr "_Atvērt mapi"
@@ -451,3 +447,4 @@ msgstr "Nevarēja izanalizēt diska izmantojumu."
 
 #~ msgid "Failed to show help"
 #~ msgstr "Neizdevās parādīt palīdzību"
+
