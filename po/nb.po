@@ -1,39 +1,40 @@
-# Norwegian bokmål translation of baobab.
-# Copyright (C) 1999-2005 Free Software Foundation, Inc.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Åka Sikrom <a4NOSPAMPLEASETHANKYOU@hush.com>, 2014.
-# Kjartan Maraas <kmaraas@gnome.org>, 1999-2022.
-# Terance Edward Sola <terance@lyse.net>, 2005.
-# Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab 4.2\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-02-26 13:20+0000\n"
-"PO-Revision-Date: 2022-03-17 14:57+0100\n"
-"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
-"Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-03-08 21:34+0000\n"
+"PO-Revision-Date: 2024-03-10 15:10+0100\n"
+"Last-Translator: Brage <bragefuglseth@gnome.org>\n"
+"Language-Team: \n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:287
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
-msgstr "Analyse av diskplass"
+msgstr "Lagring"
 
 #: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
-msgstr "Sjekk mappestørrelser og tilgjengelig diskplass"
+msgstr "Kontroller lagringsplassen din"
 
 #: data/org.gnome.baobab.appdata.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"Et enkelt program for å holde kontroll på diskbruk og tilgjengelig plass."
+"Hva tar mest plass på enheten? Analyser lagringsenhetene dine med Lagring, "
+"og se hva som spiser opp tilgjengelig plass."
 
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
@@ -41,38 +42,44 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"Analyse av diskbruk kan gjennomsøke spesifikke mapper, lagringsenheter og "
-"kontoer på nettet. Den viser størrelse på hver mappe i et tre eller grafisk, "
-"hvilket gjør det enkelt å identifisere hvor diskplassen blir brukt."
+"Appen kan analysere mapper, enheter og nettkontoer, og fremstille "
+"plassbruken deres på en klar og lettfattelig måte. Dette gjør det lett å se "
+"hvor det brukes unødvendig mye lagringsplass."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
-msgid "Devices and Locations"
-msgstr "Enheter og lokasjoner"
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "Enheter og plasseringer"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "Analysering"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
-msgstr "GNOME prosjektet"
+msgstr "GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
-msgstr "lagring;plass;rydding;"
+msgstr ""
+"lagring;lagringsplass;lagringsenheter;plassbruk;diskplass;lagringsmedier;"
+"analyse;fjerning;unødvendige;overflødige;filer;rensing;rensning;rengjøring;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
-msgstr "URIer til ekskluderte partisjoner"
+msgstr "Utelatte plasseringer"
 
 #: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for locations to be excluded from scanning."
-msgstr "En liste over URIer til lokasjoner som skal ekskluderes fra søket."
+msgstr "En liste over adresser til plasseringer som ikke skal analyseres."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
-msgstr "Aktivt plott"
+msgstr "Aktivt diagram"
 
 #: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
-msgstr "Hvilken type diagram som skal vises."
+msgstr "Hvilket diagram som skal vises."
 
 #: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
@@ -80,124 +87,124 @@ msgstr "Vindusstørrelse"
 
 #: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
-msgstr "Utgangsstørrelse på vinduet"
+msgstr "Størrelsen på vinduet"
 
 #: data/org.gnome.baobab.gschema.xml:30
 msgid "Window Maximized"
-msgstr "Vindu maksimert"
+msgstr "Maksimering"
 
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
-msgstr "Hvorvidt vinduet er maksimert eller ikke"
+msgstr "Hvis denne innstillingen er på, er vinduet maksimert"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Generelt"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Vis hjelp"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
-msgstr "Vis / skjul hovedmeny"
+msgstr "Vis hovedmeny"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avslutt"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Vis tastatursnarveier"
 
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Vis innstillinger"
+
 #: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Gå tilbake i lokasjonslisten"
-
-#: data/gtk/help-overlay.ui:54
-msgctxt "shortcut window"
 msgid "Scanning"
-msgstr "Undersøker"
+msgstr "Analysering"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
-msgstr "Undersøk mappe"
+msgstr "Analyser mappe"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
-msgstr "Undersøk denne lokasjonen på nytt"
+msgstr "Analyser på nytt"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "_Åpne mappe"
+msgid "_Open Externally"
+msgstr "_Åpne eksternt"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
-msgstr "_Kopier sti til utklippstavle"
+msgstr "_Kopier adresse til utklippstavle"
 
 #: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
-msgstr "Fl_ytt til papirkurven"
+msgstr "Flytt til _papirkurven"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
-msgstr "Gå til forelder_mappe"
+msgid "Go to _Parent Folder"
+msgstr "Gå til _overmappe"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
-msgstr "Zoom _inn"
+msgid "Zoom _In"
+msgstr "For_størr"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
-msgstr "Zoom _ut"
+msgid "Zoom _Out"
+msgstr "For_minsk"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
 msgid "Folder"
 msgstr "Mappe"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
 msgid "Size"
 msgstr "Størrelse"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
 msgid "Contents"
 msgstr "Innhold"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
 msgid "Modified"
 msgstr "Endret"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Denne datamaskinen"
+msgid "This Device"
+msgstr "Denne enheten"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
-msgstr "Eksterne lokasjoner"
+msgstr "Eksterne plasseringer"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
-msgstr "Søk i mappe …"
+msgstr "Analyser mappe…"
 
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
-msgstr "Tøm listen over nylige søk"
+msgstr "Fjern nylige"
 
 #: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
 msgid "Preferences"
-msgstr "Brukervalg"
+msgstr "Innstillinger"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
-msgstr "Tastatur_snarveier"
+msgstr "_Tastatursnarveier"
 
 #: data/ui/baobab-main-window.ui:25
 msgid "_Help"
@@ -205,50 +212,54 @@ msgstr "_Hjelp"
 
 #: data/ui/baobab-main-window.ui:29
 msgid "_About Disk Usage Analyzer"
-msgstr "_Om Analyse av diskplass"
+msgstr "_Om Lagring"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "Gå tilbake i lokasjonslisten"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Enheter og plasseringer"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
-msgstr "Undersøk denne lokasjonen på nytt"
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "Hovedmeny"
 
-#: data/ui/baobab-main-window.ui:111
-msgid "Close"
-msgstr "Lukk"
+#: data/ui/baobab-main-window.ui:97
+msgid "Rescan Current Location"
+msgstr "Analyser på nytt"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Filer kan ta mer plass enn det som vises"
+
+#: data/ui/baobab-main-window.ui:275
 msgid "Rings Chart"
-msgstr "Ringdiagram"
+msgstr "Ringer"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:288
 msgid "Treemap Chart"
-msgstr "Trekartdiagram"
+msgstr "Kart"
 
 #: data/ui/baobab-preferences-dialog.ui:12
 msgid "Locations to Ignore"
-msgstr "Lokasjoner som skal ignoreres"
+msgstr "Ignorerte plasseringer"
 
 #: src/baobab-application.vala:33
 msgid ""
 "Do not skip directories on different file systems. Ignored if DIRECTORY is "
 "not specified."
 msgstr ""
-"Ikke hopp over kataloger på forskjellige filsystemer. Ignoreres hvis ikke "
-"KATALOG er oppgitt."
+"Ikke hopp over mapper på forskjellige filsystemer. Ignorer hvis DIRECTORY "
+"ikke er angitt."
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
-msgstr "Skriv ut versjonsinformasjon og avslutt"
+msgstr "Skriv versjon og avslutt"
 
 #: src/baobab-cellrenderers.vala:34
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] "%d oppføring"
-msgstr[1] "%d oppføringer"
+msgstr[0] "%d element"
+msgstr[1] "%d elementer"
 
 #. Translators: when the last modified time is unknown
 #: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
@@ -303,7 +314,7 @@ msgstr "%s brukt"
 
 #: src/baobab-location-list.vala:87
 msgid "Unmounted"
-msgstr "Avmontert"
+msgstr "Ikke montert"
 
 #: src/baobab-location.vala:72
 msgid "Home Folder"
@@ -311,79 +322,55 @@ msgstr "Hjemmemappe"
 
 #: src/baobab-location.vala:107
 msgid "Computer"
-msgstr "Datamaskin"
+msgstr "Enhet"
 
 #. The only activatable row is "Add location"
 #: src/baobab-preferences-dialog.vala:53
 msgid "Select Location to Ignore"
-msgstr "Velg lokasjon som skal ignoreres"
+msgstr "Velg plassering"
 
 #: src/baobab-preferences-dialog.vala:90
 msgid "Add Location…"
-msgstr "Legg til lokasjon …"
+msgstr "Legg til plassering…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Velg mappe"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
-msgstr "Analyser monteringspunkter rekursivt"
+msgstr "Analyser monteringspunkter"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Klarte ikke å analysere volum."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Analysering av lagringsområde mislyktes"
 
-#: src/baobab-window.vala:290
-msgid "A graphical tool to analyze disk usage."
-msgstr "Et grafisk verktøy for å analysere diskbruk."
-
-#: src/baobab-window.vala:296
+#: src/baobab-window.vala:276
 msgid "translator-credits"
-msgstr ""
-"Kjartan Maraas <kmaraas@gnome.org>\n"
-"Espen Stefansen <libbe AT stefansen DOT net>\n"
-"Torstein Adolf Winterseth <kvikende@fsfe.org>"
+msgstr "Brage Fuglseth https://bragefuglseth.dev"
+
+#: src/baobab-window.vala:341
+msgid "Failed to open file"
+msgstr "Åpning av fil mislyktes"
 
 #: src/baobab-window.vala:358
-msgid "Failed to open file"
-msgstr "Klarte ikke å åpne fil"
+msgid "Failed to trash file"
+msgstr "Flytting av fil til papirkurven mislyktes"
 
-#: src/baobab-window.vala:374
-msgid "Failed to move file to the trash"
-msgstr "Klarte ikke å flytte filen til papirkurven"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Analysering av mappe mislyktes"
 
-#: src/baobab-window.vala:567
-msgid "Devices & Locations"
-msgstr "Enheter og lokasjoner"
-
-#: src/baobab-window.vala:619
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Klarte ikke å gjennomsøke mappe «%s»"
-
-#: src/baobab-window.vala:634
-msgid "Could not always detect occupied disk sizes."
-msgstr "Klarte ikke å finne eksakte verdier for diskbruk."
-
-#: src/baobab-window.vala:634
-msgid "Apparent sizes may be shown instead."
-msgstr "Tilsynelatende størrelser vises i stedet."
-
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:608
 msgid "Scan completed"
-msgstr "Undersøkelse fullført"
+msgstr "Analysering fullført"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
-msgstr "Undersøkelse av «%s» fullført"
+msgstr "«%s» har blitt analysert ferdig"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» er ikke en gyldig mappe"
-
-#: src/baobab-window.vala:680
-msgid "Could not analyze disk usage."
-msgstr "Klarte ikke å analysere diskbruk"
