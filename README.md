@@ -1,6 +1,6 @@
 # Baobab
 
-Baobab is the GNOME [Disk Usage Analyzer](https://wiki.gnome.org/Apps/DiskUsageAnalyzer).
+Baobab is the GNOME [Disk Usage Analyzer](https://apps.gnome.org/Baobab/).
 
 Baobab is a simple application which can scan either specific folders
 (local or remote) or volumes and give a graphical representation

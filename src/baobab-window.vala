@@ -268,7 +268,7 @@ namespace Baobab {
                 application_icon = "org.gnome.baobab",
                 developer_name = _("The GNOME Project"),
                 version = Config.VERSION,
-                website = "https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer",
+                website = "https://apps.gnome.org/Baobab/",
                 issue_url = "https://gitlab.gnome.org/GNOME/baobab/-/issues/new",
                 copyright = copyright,
                 license_type = Gtk.License.GPL_2_0,
