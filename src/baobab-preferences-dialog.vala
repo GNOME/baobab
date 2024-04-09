@@ -86,12 +86,13 @@ namespace Baobab {
                 });
             }
 
-            var label = new Gtk.Label (_("Add Location…"));
-            label.margin_start = 12;
-            label.margin_end = 12;
-            label.margin_top = 12;
-            label.margin_bottom = 12;
-            excluded_list_box.append (label);
+            var button_row = new Adw.ButtonRow ();
+
+            button_row.title = (_("_Add Location"));
+            button_row.start_icon_name = ("list-add-symbolic");
+            button_row.use_underline = true;
+
+            excluded_list_box.append (button_row);
         }
 
         void add_uri (string uri) {
