@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="BaobabExcludedRow" parent="GtkListBoxRow">
+  <template class="BaobabExcludedRow" parent="AdwActionRow">
     <property name="activatable">False</property>
-    <child>
-      <object class="GtkGrid">
-        <property name="margin_start">12</property>
-        <property name="margin_end">12</property>
-        <property name="margin_top">12</property>
-        <property name="margin_bottom">12</property>
-        <child>
-          <object class="GtkLabel" id="name_label">
-            <property name="halign">start</property>
-            <property name="ellipsize">end</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="remove_button">
-            <property name="hexpand">True</property>
-            <property name="halign">end</property>
-            <property name="valign">center</property>
-            <property name="icon_name">list-remove-symbolic</property>
-          </object>
-        </child>
+    <child type="suffix">
+      <object class="GtkButton" id="remove_button">
+        <property name="tooltip-text" translatable="yes">Remove Folder</property>
+        <property name="valign">center</property>
+        <property name="icon_name">edit-delete-symbolic</property>
+        <style>
+          <class name="flat"/>
+        </style>
       </object>
     </child>
   </template>

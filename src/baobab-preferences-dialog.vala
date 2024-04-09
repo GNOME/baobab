@@ -20,9 +20,7 @@
 namespace Baobab {
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-excluded-row.ui")]
-    class ExcludedRow : Gtk.ListBoxRow {
-        [GtkChild]
-        private unowned Gtk.Label name_label;
+    class ExcludedRow : Adw.ActionRow {
         [GtkChild]
         private unowned Gtk.Button remove_button;
 
@@ -30,9 +28,9 @@ namespace Baobab {
 
         public ExcludedRow (File file) {
             if (file.has_uri_scheme ("file")) {
-                name_label.label = file.get_path ();
+                title = file.get_path ();
             } else {
-                name_label.label = file.get_uri ();
+                title = file.get_uri ();
             }
             remove_button.clicked.connect (() => { removed (); });
         }
