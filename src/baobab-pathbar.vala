@@ -26,8 +26,35 @@ namespace Baobab {
         [GtkChild]
         unowned Gtk.Image icon;
 
-        public PathButton (string name, Icon? gicon) {
+        public PathButton (string name, Icon? gicon, bool is_current_dir) {
+            int min_chars = 7;
             label.label = name;
+            tooltip_text = name;
+
+            if (!is_current_dir) {
+                icon.add_css_class ("dim-label");
+                label.add_css_class ("dim-label");
+            } else {
+                // We want to avoid ellipsizing the current directory name, but
+                // still need to set a limit.
+                min_chars = 4 * min_chars;
+                add_css_class ("current-dir");
+            }
+
+            // Labels can ellipsize until they become a single ellipsis character.
+            // We don't want that, so we must set a minimum.
+            //
+            // However, for labels shorter than the minimum, setting this minimum
+            // width would make them unnecessarily wide. In that case, just make it
+            // not ellipsize instead.
+            //
+            // Due to variable width fonts, labels can be shorter than the space
+            // that would be reserved by setting a minimum amount of characters.
+            // Compensate for this with a tolerance of +50% characters.
+            if (name.length > min_chars * 1.5) {
+                label.width_chars = min_chars;
+                label.ellipsize = Pango.EllipsizeMode.MIDDLE;
+            }
 
             icon.hide ();
             if (gicon != null) {
@@ -37,8 +64,29 @@ namespace Baobab {
         }
     }
 
+    [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-pathbar.ui")]
     public class Pathbar : Gtk.Box {
+        [GtkChild]
+        private unowned Gtk.Box button_box;
+
         public signal void item_activated (Gtk.TreePath path);
+
+        [GtkCallback]
+        private void on_adjustment_changed (Gtk.Adjustment adjusment) {
+            const uint DURATION = 800;
+            var target = new Adw.PropertyAnimationTarget (adjusment, "value");
+            var animation = new Adw.TimedAnimation (this, adjusment.value, adjusment.upper, DURATION, target);
+            animation.easing = Adw.Easing.EASE_OUT_CUBIC;
+            animation.play ();
+        }
+
+        [GtkCallback]
+        private void on_page_size_changed (Object o, ParamSpec spec) {
+            var adjustment = (Gtk.Adjustment) o;
+            // When window is resized, immediately set new value, otherwise we would get
+            // an underflow gradient for an moment.
+            adjustment.value = adjustment.upper;
+        }
 
         Location location_;
         public Location location {
@@ -64,25 +112,36 @@ namespace Baobab {
 
                 List<PathButton> buttons = null;
 
+                bool is_current_dir = true;
                 while (path_tmp.get_depth () > 0) {
-                    buttons.append (make_button (path_tmp));
+                    buttons.append (make_button (path_tmp, is_current_dir));
                     path_tmp.up ();
+                    is_current_dir = false;
                 }
 
+                bool first_directory = true;
                 buttons.reverse ();
                 foreach (var button in buttons) {
-                    append (button);
+                    Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+                    if (!first_directory) {
+                        Gtk.Label label = new Gtk.Label (GLib.Path.DIR_SEPARATOR_S);
+                        label.add_css_class ("dim-label");
+                        box.append (label);
+                    }
+                    box.append (button);
+                    button_box.append (box);
+                    first_directory = false;
                 }
             }
         }
 
         void clear () {
-            for (Gtk.Widget? child = get_first_child (); child != null; child = get_first_child ()) {
-                remove (child);
+            for (Gtk.Widget? child = button_box.get_first_child (); child != null; child = button_box.get_first_child ()) {
+                button_box.remove (child);
             }
         }
 
-        PathButton make_button (Gtk.TreePath path) {
+        PathButton make_button (Gtk.TreePath path, bool is_current_dir) {
             string label;
             Icon? gicon = null;
 
@@ -100,10 +159,12 @@ namespace Baobab {
                 label = display_name != null ? display_name : name;
             }
 
-            var button = new PathButton (label, gicon);
-            button.clicked.connect (() => {
-                item_activated (path);
-            });
+            var button = new PathButton (label, gicon, is_current_dir);
+            if (!is_current_dir) {
+                button.clicked.connect (() => {
+                    item_activated (path);
+                });
+            }
 
             return button;
         }

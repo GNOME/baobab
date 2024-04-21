@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="BaobabPathbar" parent="GtkBox">
+    <property name="hexpand-set">True</property>
+    <child>
+      <object class="GtkScrolledWindow">
+        <property name="hexpand">True</property>
+        <property name="hscrollbar-policy">external</property>
+        <property name="vscrollbar-policy">never</property>
+        <property name="hadjustment">
+          <object class="GtkAdjustment">
+            <signal name="changed" handler="on_adjustment_changed"/>
+            <signal name="notify::page-size" handler="on_page_size_changed"/>
+          </object>
+        </property>
+        <child>
+          <object class="GtkBox" id="button_box"/>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

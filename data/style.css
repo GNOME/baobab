@@ -69,20 +69,37 @@ window.background stack treeview:hover:not(:selected) {
 }
 
 .pathbar {
-    border: solid 1px var(--border-color);
-    border-radius: 5px;
-    background: var(--window-bg-color);
+    border-radius: 6px;
+    background-color: alpha(currentColor, 0.1);
 }
 
 .pathbar button {
-    margin: 0;
-    border-radius: 0px;
-    box-shadow: 1px 0px var(--border-color);
+    margin: 3px;
+    border-radius: 4px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
-.pathbar button:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.pathbar button:not(:hover),
+.pathbar button.current-dir {
+  background: none;
+}
+
+.pathbar button:not(.current-dir):not(:backdrop):hover label,
+.pathbar button:not(.current-dir):not(:backdrop):hover image {
+  opacity: 1;
+}
+
+.pathbar > scrolledwindow undershoot.left {
+  background: linear-gradient(to right, var(--headerbar-shade-color) 6px, alpha(var(--headerbar-shade-color), 0) 24px);
+  border-left: solid 1px @borders;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.pathbar > scrolledwindow undershoot.right {
+  background: linear-gradient(to left, var(--headerbar-shade-color) 6px, alpha(var(--headerbar-shade-color), 0) 24px);
+  border-right: solid 1px @borders;
+  border-radius: 0px 6px 6px 0px;
 }
 
 image.symbolic-circular {

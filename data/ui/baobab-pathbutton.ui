@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
   <template class="BaobabPathButton" parent="GtkButton">
     <child>
       <object class="GtkBox" id="box">
+        <property name="spacing">6</property>
         <child>
-          <object class="GtkImage" id="icon">
-            <property name="margin-end">8</property>
-          </object>
+          <object class="GtkImage" id="icon"/>
         </child>
         <child>
-          <object class="GtkLabel" id="label">
-            <property name="ellipsize">middle</property>
-            <property name="max_width_chars">15</property>
-          </object>
+          <object class="GtkLabel" id="label"/>
         </child>
       </object>
     </child>
