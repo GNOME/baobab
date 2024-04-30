@@ -349,11 +349,15 @@ namespace Baobab {
             var file = active_location.scanner.get_file (iter);
             try {
                 file.trash ();
-                active_location.scanner.remove (ref iter);
             } catch (Error e) {
-                warning ("Failed to move to file to the trash: %s", e.message);
-                toast (_("Failed to trash file"));
+                if (!e.matches (GLib.IOError.quark (), GLib.IOError.NOT_FOUND)) {
+                    warning ("Failed to move to file to the trash: %s", e.message);
+                    toast (_("Failed to trash file"));
+                    return;
+                }
             }
+
+            active_location.scanner.remove (ref iter);
         }
 
         bool get_selected_iter (out Gtk.TreeIter iter) {
