@@ -28,7 +28,7 @@ namespace Baobab {
         EXCLUDE_MOUNTS
     }
 
-    public class Scanner : Gtk.TreeStore {
+    public class Scanner : Object {
         public enum Columns {
             NAME,
             PERCENT,
@@ -47,6 +47,8 @@ namespace Baobab {
             DONE
         }
 
+        public Results root { get; set; }
+
         public File directory { get; private set; }
 
         public ScanFlags scan_flags { get; private set; }
@@ -61,16 +63,12 @@ namespace Baobab {
 
         public signal void completed();
 
-        public File get_file (Gtk.TreeIter iter) {
+        public File get_file (Results results) {
             List<string> names = null;
-            Gtk.TreeIter child = {0};
 
-            do {
-                string name;
-                get (iter, Columns.NAME, out name);
-                names.prepend (name);
-                child = iter;
-            } while (iter_parent (out iter, child));
+            for (Results? child = results; child != null; child = child.parent) {
+                names.prepend (child.name);
+            }
 
             var file = directory;
             foreach (var name in names.next) {
@@ -122,37 +120,31 @@ namespace Baobab {
 
         /* General overview:
          *
-         * We cannot directly modify the treemodel from the worker thread, so we have to have a way to dispatch
+         * We cannot directly modify the model from the worker thread, so we have to have a way to dispatch
          * the results back to the main thread.
          *
-         * Each scanned directory gets a 'Results' struct created for it.  If the directory has a parent
-         * directory, then the 'parent' pointer is set.  The 'display_name' and 'parse_name' fields are filled
-         * in as soon as the struct is created.  This part is done as soon as the directory is encountered.
+         * Each scanned directory gets a 'Results' object created for it.  If the directory has a parent
+         * directory, then the 'parent' pointer is set.  The 'display_name' and 'name' fields are filled
+         * in as soon as the object is created.  This part is done as soon as the directory is encountered.
          *
          * In order to determine all of the information for a particular directory (and finish filling in the
-         * results structure), we must scan it and all of its children.  We must also scan all of the siblings
+         * results object), we must scan it and all of its children.  We must also scan all of the siblings
          * of the directory so that we know what percentage of the total size of the parent directory the
          * directory in question is responsible for.
          *
          * After a directory, all of its children and all of its siblings have been scanned, we can do the
          * percentage calculation.  We do this from the iteration that takes care of the parent directory: we
-         * collect an array of all of the child directory result structs and when we have them all, we assign
-         * the proper percentage to each.  At this point we can report this array of result structs back to the
-         * main thread to be added to the treemodel.
+         * collect an array of all of the child directory result objects and when we have them all, we assign
+         * the proper percentage to each.  At this point we can report this array of result objects back to the
+         * main thread to be added to the model.
          *
-         * Back in the main thread, we receive a Results object.  If the results object has not yet had a
-         * TreeIter assigned to it, we create it one.  We use the parent results object to determine the correct
-         * place in the tree (assigning the parent an iter if required, recursively).  When we create the iter,
-         * we fill in the data that existed from the start (ie: display name and parse name) and mark the status
-         * of the iter as 'scanning'.
-         *
-         * For the iter that was actually directly reported (ie: the one that's ready) we record the information
-         * into the treemodel and free the results structure (or Vala does it for us).
+         * Back in the main thread, we receive a Results object.  We add the object to its parent's children
+         * list, we fill in the data that existed from the start (ie: display name and name).
          *
          * We can be sure that the 'parent' field always points to valid memory because of the nature of the
-         * recursion and the queue.  At the time we queue a Results struct for dispatch back to the main thread,
+         * recursion and the queue.  At the time we queue a Results object for dispatch back to the main thread,
          * its 'parent' is held on the stack by a higher invocation of add_directory().  This invocation will
-         * never finish without first pushing its own Results struct onto the queue -- after ours.  It is
+         * never finish without first pushing its own Results object onto the queue -- after ours.  It is
          * therefore guaranteed that the 'parent' Results object will not be freed before each child.
          */
 
@@ -166,28 +158,44 @@ namespace Baobab {
             internal Results[] results;
         }
 
-        [Compact]
-        class Results {
+        public class Results : Object {
             // written in the worker thread on creation
             // read from the main thread at any time
-            internal unowned Results? parent;
-            internal string name;
-            internal string display_name;
+            public unowned Results? parent { get; internal set; }
+            public string name { get; internal set; }
+            public string display_name { get; internal set; }
             internal FileType file_type;
 
             // written in the worker thread before dispatch
             // read from the main thread only after dispatch
-            internal uint64 size;
-            internal uint64 time_modified;
-            internal int elements;
-            internal double percent;
+            public uint64 size { get; internal set; }
+            public uint64 time_modified { get; internal set; }
+            public int elements { get; internal set; }
+            public double percent { get; internal set; }
             internal int max_depth;
             internal Error? error;
             internal bool child_error;
 
             // accessed only by the main thread
-            internal Gtk.TreeIter iter;
-            internal bool iter_is_set;
+            public GLib.ListStore children_list_store { get; construct set; }
+            public State state { get; internal set; }
+
+            public double fraction {
+                get {
+                    return _percent / 100.0;
+                }
+            }
+
+            // No need to notify that property when the number of children
+            // changes as the whole model won't change once constructed.
+            public bool is_empty {
+                get { return children_list_store.n_items == 0; }
+            }
+
+            construct {
+                children_list_store = new ListStore (typeof (Results));
+                notify["percent"].connect (() => notify_property ("fraction"));
+            }
 
             public Results (FileInfo info, Results? parent_results) {
                 parent = parent_results;
@@ -210,12 +218,38 @@ namespace Baobab {
                 child_error = false;
             }
 
+            public Results.empty () {
+            }
+
             public void update_with_child (Results child) {
                 size         += child.size;
                 elements     += child.elements;
                 max_depth     = int.max (max_depth, child.max_depth + 1);
                 child_error  |= child.child_error || (child.error != null);
                 time_modified = uint64.max (time_modified, child.time_modified);
+            }
+
+            public int get_depth () {
+                int depth = 1;
+                for (var ancestor = parent; ancestor != null; ancestor = ancestor.parent) {
+                    depth++;
+                }
+                return depth;
+            }
+
+            public bool is_ancestor (Results? descendant) {
+                for (; descendant != null; descendant = descendant.parent) {
+                    if (descendant == this)
+                        return true;
+                }
+                return descendant == this;
+            }
+
+            public Gtk.TreeListModel create_tree_model () {
+                return new Gtk.TreeListModel (children_list_store, false, false, (item) => {
+                    var results = item as Scanner.Results;
+                    return results == null ? null : results.children_list_store;
+                });
             }
         }
 
@@ -324,34 +358,6 @@ namespace Baobab {
             return null;
         }
 
-        void ensure_iter_exists (Results results) {
-            Gtk.TreeIter? parent_iter;
-
-            if (results.iter_is_set) {
-                return;
-            }
-
-            if (results.parent != null) {
-                ensure_iter_exists (results.parent);
-                parent_iter = results.parent.iter;
-            } else {
-                parent_iter = null;
-            }
-
-            prepend (out results.iter, parent_iter);
-            set (results.iter, Columns.NAME, results.name);
-
-            // To save some memory, we only create these columns if they are needed
-            if (results.display_name != null) {
-                 set (results.iter, Columns.DISPLAY_NAME, results.display_name);
-            }
-            if (results.file_type == FileType.DIRECTORY) {
-                set (results.iter, Columns.STATE, State.SCANNING);
-            }
-
-            results.iter_is_set = true;
-        }
-
         bool process_results () {
             while (true) {
                 var results_array = results_queue.try_pop ();
@@ -361,34 +367,26 @@ namespace Baobab {
                 }
 
                 foreach (unowned Results results in results_array.results) {
-                    ensure_iter_exists (results);
+                    if (results.parent != null) {
+                        results.parent.children_list_store.insert (0, results);
+                    }
 
                     State state;
                     if (results.child_error) {
-                        state = State.CHILD_ERROR;
+                        results.state = State.CHILD_ERROR;
                     } else if (results.error != null) {
-                        state = State.ERROR;
+                        results.state = State.ERROR;
                     } else {
-                        state = State.DONE;
-                    }
-
-                    set (results.iter,
-                         Columns.PERCENT,       results.percent,
-                         Columns.SIZE,          results.size,
-                         Columns.TIME_MODIFIED, results.time_modified);
-
-                    // To save some memory, we only create these columns if they are needed
-                    if (results.file_type == FileType.DIRECTORY) {
-                        set (results.iter,
-                             Columns.ELEMENTS, results.elements,
-                             Columns.STATE,    state);
+                        results.state = State.DONE;
                     }
 
                     if (results.max_depth > max_depth) {
                         max_depth = results.max_depth;
                     }
 
+                    // We reached the root, we're done
                     if (results.parent == null) {
+                        this.root = results;
                         scan_error = results.error;
                         successful = true;
                         completed ();
@@ -420,9 +418,6 @@ namespace Baobab {
             }
 
             hardlinks = new GenericSet<HardLink> (HardLink.hash, HardLink.equal);
-
-            base.clear ();
-            set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.DESCENDING);
 
             cancellable.reset ();
             scan_error = null;
@@ -466,8 +461,6 @@ namespace Baobab {
         }
 
         public void finish () throws Error {
-            set_sort_column_id (Columns.SIZE, Gtk.SortType.DESCENDING);
-
             if (scan_error != null) {
                 throw scan_error;
             }
@@ -478,15 +471,6 @@ namespace Baobab {
             this.scan_flags = flags;
             cancellable = new Cancellable();
             scan_error = null;
-            set_column_types (new Type[] {
-                typeof (string),  // NAME
-                typeof (double),  // PERCENT
-                typeof (uint64),  // SIZE
-                typeof (uint64),  // TIME_MODIFIED
-                typeof (string),  // DISPLAY_NAME
-                typeof (int),     // ELEMENTS
-                typeof (State)    // STATE
-            });
 
             results_queue = new AsyncQueue<ResultsArray> ();
         }

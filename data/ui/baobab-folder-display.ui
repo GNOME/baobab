@@ -2,82 +2,142 @@
 <!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.22"/>
-  <template class="BaobabFolderDisplay" parent="GtkTreeView">
-    <property name="activate_on_single_click">True</property>
-    <child internal-child="selection">
-      <object class="GtkTreeSelection" id="treeview_selection">
-        <property name="mode">none</property>
+  <template class="BaobabFolderDisplay" parent="AdwBin">
+    <property name="child">
+  <object class="GtkColumnView" id="columnview">
+    <property name="hexpand">true</property>
+    <property name="single_click_activate">True</property>
+    <signal name="activate" handler="on_columnview_activate" />
+    <signal name="notify::sorter" handler="on_columnview_notify_sorter" />
+    <property name="model">
+      <object class="GtkNoSelection" id="columnview_selection">
+        <property name="model">
+          <object class="GtkSortListModel" id="columnview_sort_model">
+            <binding name="sorter">
+              <lookup name="sorter">columnview</lookup>
+            </binding>
+          </object>
+        </property>
       </object>
-    </child>
+    </property>
     <child>
-      <object class="GtkTreeViewColumn" id="folder_column">
+      <object class="GtkColumnViewColumn" id="folder_column">
         <property name="title" translatable="yes">Folder</property>
         <property name="expand">True</property>
-        <property name="reorderable">True</property>
-        <property name="sort_column_id">0</property>
-        <child>
-          <object class="GtkCellRendererPixbuf" id="folder_column_icon_renderer">
-            <property name="icon_name">pan-up-symbolic</property>
+        <property name="sorter">
+          <object class="BaobabTreeListRowSorter">
+            <binding name="sort-order">
+              <lookup name="primary-sort-order" type="GtkColumnViewSorter">
+                <lookup name="sorter">columnview</lookup>
+              </lookup>
+            </binding>
+            <property name="sorter">
+              <object class="GtkStringSorter">
+                <property name="expression">
+                  <lookup name="display_name" type="BaobabScannerResults"/>
+                </property>
+              </object>
+            </property>
           </object>
-        </child>
-        <child>
-          <object class="BaobabCellRendererName" id="folder_column_text_renderer">
-            <property name="ellipsize">end</property>
+        </property>
+        <property name="factory">
+          <object class="GtkSignalListItemFactory">
+            <signal name="setup" handler="folder_cell_setup"/>
+            <signal name="bind" handler="folder_cell_bind"/>
+            <signal name="unbind" handler="folder_cell_unbind"/>
+            <signal name="teardown" handler="folder_cell_teardown"/>
           </object>
-          <attributes>
-            <attribute name="name">0</attribute>
-            <attribute name="display_name">4</attribute>
-            <attribute name="state">6</attribute>
-          </attributes>
-        </child>
+        </property>
       </object>
     </child>
     <child>
-      <object class="GtkTreeViewColumn" id="size_column">
+      <object class="GtkColumnViewColumn" id="size_column">
         <property name="title" translatable="yes">Size</property>
-        <property name="reorderable">True</property>
-        <property name="sort_column_id">2</property>
-        <child>
-          <object class="BaobabCellRendererSize" id="size_column_size_renderer">
-            <property name="xalign">1.0</property>
+        <property name="sorter">
+          <object class="BaobabTreeListRowSorter">
+            <binding name="sort-order">
+              <lookup name="primary-sort-order" type="GtkColumnViewSorter">
+                <lookup name="sorter">columnview</lookup>
+              </lookup>
+            </binding>
+            <property name="sorter">
+              <object class="GtkNumericSorter">
+                <property name="expression">
+                  <lookup name="size" type="BaobabScannerResults"/>
+                </property>
+              </object>
+            </property>
           </object>
-          <attributes>
-            <attribute name="size">2</attribute>
-            <attribute name="state">6</attribute>
-          </attributes>
-        </child>
+        </property>
+        <property name="factory">
+          <object class="GtkSignalListItemFactory">
+            <signal name="setup" handler="size_cell_setup"/>
+            <signal name="bind" handler="size_cell_bind"/>
+            <signal name="unbind" handler="size_cell_unbind"/>
+            <signal name="teardown" handler="size_cell_teardown"/>
+          </object>
+        </property>
       </object>
     </child>
     <child>
-      <object class="GtkTreeViewColumn" id="contents_column">
+      <object class="GtkColumnViewColumn" id="contents_column">
         <property name="title" translatable="yes">Contents</property>
-        <property name="reorderable">True</property>
-        <property name="sort_column_id">5</property>
-        <child>
-          <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
-            <property name="xalign">1.0</property>
+        <property name="sorter">
+          <object class="BaobabTreeListRowSorter">
+            <binding name="sort-order">
+              <lookup name="primary-sort-order" type="GtkColumnViewSorter">
+                <lookup name="sorter">columnview</lookup>
+              </lookup>
+            </binding>
+            <property name="sorter">
+              <object class="GtkNumericSorter">
+                <property name="expression">
+                  <lookup name="elements" type="BaobabScannerResults"/>
+                </property>
+              </object>
+            </property>
           </object>
-          <attributes>
-            <attribute name="items">5</attribute>
-            <attribute name="state">6</attribute>
-          </attributes>
-        </child>
+        </property>
+        <property name="factory">
+          <object class="GtkSignalListItemFactory">
+            <signal name="setup" handler="contents_cell_setup"/>
+            <signal name="bind" handler="contents_cell_bind"/>
+            <signal name="unbind" handler="contents_cell_unbind"/>
+            <signal name="teardown" handler="contents_cell_teardown"/>
+          </object>
+        </property>
       </object>
     </child>
     <child>
-      <object class="GtkTreeViewColumn" id="time_modified_column">
+      <object class="GtkColumnViewColumn" id="time_modified_column">
         <property name="title" translatable="yes">Modified</property>
-        <property name="reorderable">True</property>
-        <property name="sort_column_id">3</property>
-        <child>
-          <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
-            <property name="xalign">1.0</property>
+        <property name="sorter">
+          <object class="BaobabTreeListRowSorter">
+            <binding name="sort-order">
+              <lookup name="primary-sort-order" type="GtkColumnViewSorter">
+                <lookup name="sorter">columnview</lookup>
+              </lookup>
+            </binding>
+            <property name="sorter">
+              <object class="GtkNumericSorter">
+                <property name="expression">
+                  <lookup name="time_modified" type="BaobabScannerResults"/>
+                </property>
+              </object>
+            </property>
           </object>
-          <attributes>
-            <attribute name="time">3</attribute>
-          </attributes>
-        </child>
+        </property>
+        <property name="factory">
+          <object class="GtkSignalListItemFactory">
+            <signal name="setup" handler="time_modified_cell_setup"/>
+            <signal name="bind" handler="time_modified_cell_bind"/>
+            <signal name="unbind" handler="time_modified_cell_unbind"/>
+            <signal name="teardown" handler="time_modified_cell_teardown"/>
+          </object>
+        </property>
       </object>
     </child>
+  </object>
+    </property>
   </template>
 </interface>

@@ -106,7 +106,7 @@ namespace Baobab {
                 height = rect.height - ITEM_PADDING;
             }
 
-            draw_rectangle (cr, rect.x, rect.y, width, height, fill_color, item.name, (!item.has_visible_children));
+            draw_rectangle (cr, rect.x, rect.y, width, height, fill_color, item.results.display_name, (!item.has_visible_children));
         }
 
         protected override void calculate_item_geometry (ChartItem item) {

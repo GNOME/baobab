@@ -125,98 +125,88 @@
                                         <property name="vexpand">True</property>
                                         <property name="hscrollbar-policy">never</property>
                                         <child>
-                                          <object class="GtkTreeView" id="treeview">
-                                            <property name="headers_visible">false</property>
-                                            <property name="activate_on_single_click">True</property>
-                                            <child internal-child="selection">
-                                              <object class="GtkTreeSelection" id="treeview_selection1" />
-                                            </child>
+                                          <object class="GtkColumnView" id="columnview">
+                                            <property name="hexpand">True</property>
+                                            <property name="single-click-activate">True</property>
+                                            <signal name="activate" handler="columnview_activate"/>
+                                            <property name="model">
+                                              <object class="GtkSingleSelection" id="columnview_selection">
+                                                <property name="model">
+                                                  <object class="GtkSortListModel" id="columnview_sort_model">
+                                                    <binding name="sorter">
+                                                      <lookup name="sorter">folder_display</lookup>
+                                                    </binding>
+                                                  </object>
+                                                </property>
+                                              </object>
+                                            </property>
                                             <child>
                                               <object class="GtkPopoverMenu" id="treeview_popover_menu">
                                                 <property name="position">bottom</property>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkTreeViewColumn" id="folder_column">
+                                              <object class="GtkColumnViewColumn" id="folder_column">
                                                 <property name="title" translatable="yes">Folder</property>
                                                 <property name="expand">True</property>
-                                                <property name="reorderable">True</property>
-                                                <property name="sort_column_id">0</property>
-                                                <child>
-                                                  <object class="GtkCellRendererProgress" id="usage_column_bar_renderer">
-                                                    <property name="xpad">4</property>
-                                                    <property name="ypad">4</property>
+                                                <property name="factory">
+                                                  <object class="GtkSignalListItemFactory">
+                                                    <signal name="setup" handler="folder_cell_setup"/>
+                                                    <signal name="bind" handler="folder_cell_bind"/>
+                                                    <signal name="unbind" handler="folder_cell_unbind"/>
+                                                    <signal name="teardown" handler="folder_cell_teardown"/>
                                                   </object>
-                                                  <attributes>
-                                                    <attribute name="value">1</attribute>
-                                                  </attributes>
-                                                </child>
-                                                <child>
-                                                  <object class="BaobabCellRendererName" id="folder_column_text_renderer">
-                                                    <property name="ellipsize">end</property>
-                                                  </object>
-                                                  <attributes>
-                                                    <attribute name="name">0</attribute>
-                                                    <attribute name="display_name">4</attribute>
-                                                    <attribute name="state">6</attribute>
-                                                  </attributes>
-                                                </child>
+                                                </property>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkTreeViewColumn" id="size_column">
+                                              <object class="GtkColumnViewColumn" id="size_column">
                                                 <property name="title" translatable="yes">Size</property>
-                                                <property name="reorderable">True</property>
-                                                <property name="sort_column_id">2</property>
-                                                <child>
-                                                  <object class="BaobabCellRendererSize" id="size_column_size_renderer">
-                                                    <property name="xalign">1.0</property>
+                                                <property name="factory">
+                                                  <object class="GtkSignalListItemFactory">
+                                                    <signal name="setup" handler="size_cell_setup"/>
+                                                    <signal name="bind" handler="size_cell_bind"/>
+                                                    <signal name="unbind" handler="size_cell_unbind"/>
+                                                    <signal name="teardown" handler="size_cell_teardown"/>
                                                   </object>
-                                                  <attributes>
-                                                    <attribute name="size">2</attribute>
-                                                    <attribute name="state">6</attribute>
-                                                  </attributes>
-                                                </child>
+                                                </property>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkTreeViewColumn" id="contents_column">
+                                              <object class="GtkColumnViewColumn" id="contents_column">
                                                 <property name="title" translatable="yes">Contents</property>
-                                                <property name="reorderable">True</property>
-                                                <property name="sort_column_id">5</property>
-                                                <child>
-                                                  <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
-                                                    <property name="xalign">1.0</property>
+                                                <property name="factory">
+                                                  <object class="GtkSignalListItemFactory">
+                                                    <signal name="setup" handler="contents_cell_setup"/>
+                                                    <signal name="bind" handler="contents_cell_bind"/>
+                                                    <signal name="unbind" handler="contents_cell_unbind"/>
+                                                    <signal name="teardown" handler="contents_cell_teardown"/>
                                                   </object>
-                                                  <attributes>
-                                                    <attribute name="items">5</attribute>
-                                                    <attribute name="state">6</attribute>
-                                                  </attributes>
-                                                </child>
+                                                </property>
                                               </object>
                                             </child>
                                             <child>
-                                              <object class="GtkTreeViewColumn" id="time_modified_column">
+                                              <object class="GtkColumnViewColumn" id="time_modified_column">
                                                 <property name="title" translatable="yes">Modified</property>
-                                                <property name="reorderable">True</property>
-                                                <property name="sort_column_id">3</property>
-                                                <child>
-                                                  <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
-                                                    <property name="xalign">1.0</property>
+                                                <property name="factory">
+                                                  <object class="GtkSignalListItemFactory">
+                                                    <signal name="setup" handler="time_modified_cell_setup"/>
+                                                    <signal name="bind" handler="time_modified_cell_bind"/>
+                                                    <signal name="unbind" handler="time_modified_cell_unbind"/>
+                                                    <signal name="teardown" handler="time_modified_cell_teardown"/>
                                                   </object>
-                                                  <attributes>
-                                                    <attribute name="time">3</attribute>
-                                                  </attributes>
-                                                </child>
+                                                </property>
                                               </object>
                                             </child>
                                             <child>
                                               <object class="GtkGestureClick" id="treeview_right_click_gesture">
                                                 <property name="button">3</property>
+                                                <signal name="pressed" handler="treeview_right_click_gesture_pressed"/>
                                               </object>
                                             </child>
                                             <child>
                                               <object class="GtkShortcutController">
+                                                <property name="propagation-phase">capture</property>
                                                 <child>
                                                   <object class="GtkShortcut">
                                                     <property name="trigger">Menu</property>

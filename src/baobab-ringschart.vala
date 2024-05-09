@@ -128,7 +128,7 @@ namespace Baobab {
 
                 // get the pango layout and its enclosing rectangle
                 var layout = create_pango_layout (null);
-                var markup = "<span size=\"small\">" + Markup.escape_text (item.name) + "</span>";
+                var markup = "<span size=\"small\">" + Markup.escape_text (item.results.display_name) + "</span>";
                 layout.set_markup (markup, -1);
                 layout.set_indent (0);
                 layout.set_spacing (0);
@@ -252,7 +252,8 @@ namespace Baobab {
                 // draw a label with the size of the folder in the middle
                 // of the central disk
                 var layout = create_pango_layout (null);
-                var markup = "<span size=\"small\">" + Markup.escape_text (item.size) + "</span>";
+                var size = format_size (item.results.size);
+                var markup = "<span size=\"small\">" + Markup.escape_text (size) + "</span>";
                 layout.set_markup (markup, -1);
                 layout.set_indent (0);
                 layout.set_spacing (0);
@@ -325,7 +326,7 @@ namespace Baobab {
                 }
 
                 ringsitem.start_angle = parent.start_angle + parent.angle * ringsitem.rel_start / 100;
-                ringsitem.continued = (ringsitem.has_any_child) && (ringsitem.depth == max_depth);
+                ringsitem.continued = (!ringsitem.results.is_empty) && (ringsitem.depth == max_depth);
                 parent.has_visible_children = true;
             }
 

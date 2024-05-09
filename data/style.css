@@ -1,22 +1,22 @@
-.cell.baobab-cell-error {
+cell .baobab-cell-error {
     color: var(--error-color);
     font-weight: 700;
 }
 
-.cell.baobab-cell-warning {
+cell .baobab-cell-warning {
     color: var(--warning-color);
     font-weight: 700;
 }
 
-.cell.baobab-cell-warning:selected,
-.cell.baobab-cell-error:selected {
+cell .baobab-cell-warning:selected,
+cell .baobab-cell-error:selected {
     color: var(--accent-fg-color);
 }
 
-.cell.baobab-cell-warning:backdrop,
-.cell.baobab-cell-error:backdrop,
-.cell.baobab-cell-warning:selected:backdrop,
-.cell.baobab-cell-error:selected:backdrop {
+cell .baobab-cell-warning:backdrop,
+cell .baobab-cell-error:backdrop,
+cell .baobab-cell-warning:selected:backdrop,
+cell .baobab-cell-error:selected:backdrop {
     color: var(--view-fg-color);
 }
 

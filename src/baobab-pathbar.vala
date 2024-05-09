@@ -69,7 +69,7 @@ namespace Baobab {
         [GtkChild]
         private unowned Gtk.Box button_box;
 
-        public signal void item_activated (Gtk.TreePath path);
+        public signal void item_activated (Scanner.Results path);
 
         [GtkCallback]
         private void on_adjustment_changed (Gtk.Adjustment adjusment) {
@@ -92,7 +92,7 @@ namespace Baobab {
         public Location location {
             set {
                 location_ = value;
-                path = new Gtk.TreePath.first ();
+                path = location.scanner.root;
             }
 
             get {
@@ -100,7 +100,7 @@ namespace Baobab {
             }
         }
 
-        public new Gtk.TreePath path {
+        public new Scanner.Results path {
             set {
                 if (location == null || location.scanner == null) {
                     return;
@@ -108,19 +108,20 @@ namespace Baobab {
 
                 clear ();
 
-                Gtk.TreePath path_tmp = value;
+                Scanner.Results path_tmp = value;
 
                 List<PathButton> buttons = null;
 
+                // The path will be set to null while scanning the location, but
+                // we still want to display a button for the location's root.
                 bool is_current_dir = true;
-                while (path_tmp.get_depth () > 0) {
-                    buttons.append (make_button (path_tmp, is_current_dir));
-                    path_tmp.up ();
+                do {
+                    buttons.prepend (make_button (path_tmp, is_current_dir));
+                    path_tmp = path_tmp.parent;
                     is_current_dir = false;
-                }
+                } while (path_tmp != null);
 
                 bool first_directory = true;
-                buttons.reverse ();
                 foreach (var button in buttons) {
                     Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
                     if (!first_directory) {
@@ -141,23 +142,19 @@ namespace Baobab {
             }
         }
 
-        PathButton make_button (Gtk.TreePath path, bool is_current_dir) {
+        PathButton make_button (Scanner.Results? path, bool is_current_dir) {
             string label;
             Icon? gicon = null;
 
-            if (path.get_depth () == 1) {
+            if (path == null || path.get_depth () == 1) {
                 label = location.name;
                 gicon = location.symbolic_icon;
             } else {
-                Gtk.TreeIter iter;
-                string display_name;
-                location.scanner.get_iter (out iter, path);
-                location.scanner.get (iter, Scanner.Columns.DISPLAY_NAME, out display_name);
-                label = display_name;
+                label = path.display_name;
             }
 
             var button = new PathButton (label, gicon, is_current_dir);
-            if (!is_current_dir) {
+            if (path != null && !is_current_dir) {
                 button.clicked.connect (() => {
                     item_activated (path);
                 });
