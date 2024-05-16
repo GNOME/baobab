@@ -20,6 +20,37 @@
     color: var(--view-fg-color);
 }
 
+progresscell progress {
+    background: var(--accent-bg-color);
+    border-radius: 5px;
+}
+
+progresscell {
+    border-radius: 5px;
+    min-height: 18px;
+}
+
+progresscell progress:backdrop {
+    background: var(--border-color);
+}
+
+progresscell label:backdrop.in-progress {
+    color: inherit;
+}
+
+progresscell trough {
+    background: background: color-mix(in srgb, var(--border-color), transparent);
+}
+
+progresscell label {
+    font-size: 0.9em;
+    padding: 1px 3px;
+}
+
+progresscell label.in-progress {
+    color: var(--accent-fg-color);
+}
+
 /* FolderDisplay */
 window.background stack > grid > frame border {
     border-width: 0 1px 1px 0;

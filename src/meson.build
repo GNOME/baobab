@@ -12,6 +12,7 @@ baobab_vala_sources = [
   'baobab-name-cell.vala',
   'baobab-pathbar.vala',
   'baobab-preferences-dialog.vala',
+  'baobab-progress-cell.vala',
   'baobab-ringschart.vala',
   'baobab-scanner.vala',
   'baobab-tree-list-row-sorter.vala',
