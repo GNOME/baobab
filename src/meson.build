@@ -6,6 +6,7 @@ baobab_vala_sources = [
   'baobab-application.vala',
   'baobab-cellrenderers.vala',
   'baobab-chart.vala',
+  'baobab-contents-cell.vala',
   'baobab-file-cell.vala',
   'baobab-folder-cell.vala',
   'baobab-folder-display.vala',

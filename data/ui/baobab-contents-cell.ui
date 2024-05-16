@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="BaobabContentsCell">
+    <property name="child">
+      <object class="GtkLabel">
+        <property name="halign">end</property>
+        <property name="single-line-mode">True</property>
+        <property name="xalign">1</property>
+        <binding name="label">
+          <closure type='gchararray' function='format_items_cb'>
+            <lookup name="elements" type="BaobabScannerResults">
+              <lookup name="item">BaobabContentsCell</lookup>
+            </lookup>
+          </closure>
+        </binding>
+        <style>
+          <class name="numeric"/>
+        </style>
+      </object>
+    </property>
+  </template>
+</interface>
