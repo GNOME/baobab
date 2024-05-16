@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="BaobabFileCell">
+    <property name="child">
+      <object class="GtkTreeExpander">
+        <binding name="list-row">
+          <lookup name="list-row">BaobabFileCell</lookup>
+        </binding>
+        <binding name="hide-expander">
+          <lookup name="is-empty" type="BaobabScannerResults">
+            <lookup name="item">BaobabFileCell</lookup>
+          </lookup>
+        </binding>
+        <property name="child">
+          <object class="GtkBox">
+            <property name="hexpand">True</property>
+            <child>
+              <object class="BaobabProgressCell">
+                <binding name="fraction">
+                  <lookup name="fraction" type="BaobabScannerResults">
+                    <lookup name="item">BaobabFileCell</lookup>
+                  </lookup>
+                </binding>
+              </object>
+            </child>
+            <child>
+              <object class="BaobabNameCell">
+                <binding name="item">
+                  <lookup name="item">BaobabFileCell</lookup>
+                </binding>
+              </object>
+            </child>
+            <style>
+              <class name="baobab-cell-box"/>
+            </style>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>
