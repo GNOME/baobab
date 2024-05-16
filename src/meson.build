@@ -13,6 +13,7 @@ baobab_vala_sources = [
   'baobab-preferences-dialog.vala',
   'baobab-ringschart.vala',
   'baobab-scanner.vala',
+  'baobab-tree-list-row-sorter.vala',
   'baobab-treemap.vala',
   'baobab-window.vala',
   'main.vala'
