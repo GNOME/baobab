@@ -17,6 +17,7 @@ baobab_vala_sources = [
   'baobab-progress-cell.vala',
   'baobab-ringschart.vala',
   'baobab-scanner.vala',
+  'baobab-size-cell.vala',
   'baobab-tree-list-row-sorter.vala',
   'baobab-treemap.vala',
   'baobab-window.vala',
