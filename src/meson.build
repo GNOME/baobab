@@ -9,6 +9,7 @@ baobab_vala_sources = [
   'baobab-folder-display.vala',
   'baobab-location-list.vala',
   'baobab-location.vala',
+  'baobab-name-cell.vala',
   'baobab-pathbar.vala',
   'baobab-preferences-dialog.vala',
   'baobab-ringschart.vala',

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="BaobabNameCell">
+    <property name="child">
+      <object class="GtkLabel">
+        <property name="ellipsize">end</property>
+        <property name="halign">start</property>
+        <property name="single-line-mode">True</property>
+        <property name="xalign">0</property>
+        <binding name="label">
+          <lookup name="display_name" type="BaobabScannerResults">
+            <lookup name="item">BaobabNameCell</lookup>
+          </lookup>
+        </binding>
+      </object>
+    </property>
+  </template>
+</interface>
