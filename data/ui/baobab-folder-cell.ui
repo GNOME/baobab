@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="BaobabFolderCell">
+    <property name="child">
+      <object class="GtkBox">
+        <property name="hexpand">True</property>
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">pan-up-symbolic</property>
+            <binding name="visible">
+              <closure type='gboolean' function='has_parent_cb'>
+                <lookup name="item">BaobabFolderCell</lookup>
+              </closure>
+            </binding>
+          </object>
+        </child>
+        <child>
+          <object class="BaobabNameCell">
+            <binding name="item">
+              <lookup name="item">BaobabFolderCell</lookup>
+            </binding>
+          </object>
+        </child>
+        <style>
+          <class name="baobab-cell-box"/>
+        </style>
+      </object>
+    </property>
+  </template>
+</interface>
