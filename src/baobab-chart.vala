@@ -294,16 +294,14 @@ namespace Baobab {
         }
 
         unowned List<ChartItem> add_item (uint depth, double rel_start, double rel_size, Gtk.TreeIter iter) {
-            string name;
             string display_name;
             uint64 size;
             model.get (iter,
-                       Scanner.Columns.NAME, out name,
                        Scanner.Columns.DISPLAY_NAME, out display_name,
                        Scanner.Columns.SIZE, out size);
 
             var item = create_new_chartitem ();
-            item.name = format_name (display_name, name);
+            item.name = display_name;
             item.size = format_size (size);
             item.depth = depth;
             item.rel_start = rel_start;

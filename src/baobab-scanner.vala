@@ -192,9 +192,12 @@ namespace Baobab {
             public Results (FileInfo info, Results? parent_results) {
                 parent = parent_results;
                 name = info.get_name ();
-                var info_display_name = info.get_display_name ();
-                if (name == null || info_display_name != Filename.display_name (name)) {
-                    display_name = info_display_name;
+                display_name = info.get_display_name ();
+                if (display_name == null && name != null) {
+                    display_name = Filename.display_name (name);
+                }
+                if (display_name == null) {
+                    display_name = "";
                 }
                 file_type = info.get_file_type ();
                 size = info.get_attribute_uint64 (FileAttribute.STANDARD_ALLOCATED_SIZE);

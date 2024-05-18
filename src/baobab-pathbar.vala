@@ -150,13 +150,10 @@ namespace Baobab {
                 gicon = location.symbolic_icon;
             } else {
                 Gtk.TreeIter iter;
-                string name;
                 string display_name;
                 location.scanner.get_iter (out iter, path);
-                location.scanner.get (iter,
-                                      Scanner.Columns.NAME, out name,
-                                      Scanner.Columns.DISPLAY_NAME, out display_name);
-                label = display_name != null ? display_name : name;
+                location.scanner.get (iter, Scanner.Columns.DISPLAY_NAME, out display_name);
+                label = display_name;
             }
 
             var button = new PathButton (label, gicon, is_current_dir);

@@ -20,16 +20,6 @@
 
 namespace Baobab {
 
-    public string format_name (string? display_name, string? name) {
-        if (display_name != null) {
-            return display_name;
-        }
-        if (name != null) {
-            return Filename.display_name (name);
-        }
-        return "";
-    }
-
     public string format_items (int items) {
         return ngettext ("%d item", "%d items", items).printf (items);
     }
@@ -69,7 +59,7 @@ namespace Baobab {
 
         public string name {
             set {
-                string escaped = Markup.escape_text (format_name (display_name, value));
+                string escaped = Markup.escape_text (value);
 
                 switch (state) {
                 case Scanner.State.ERROR:
