@@ -2,7 +2,7 @@
 .cell.baobab-level-cell:hover,
 .cell.baobab-level-cell:selected,
 .cell.baobab-level-cell:selected:hover {
-    border-color: darker(@borders);
+    border-color: darker(var(--border-color));
     border-width: 1px;
     border-radius: 3px;
     border-style: solid;
@@ -31,27 +31,27 @@
 .cell.baobab-level-cell.fill-block:hover:backdrop,
 .cell.baobab-level-cell.fill-block.level-low:backdrop,
 .cell.baobab-level-cell.fill-block.level-high:backdrop {
-    background-color: @theme_unfocused_text_color;
+    background-color: var(--view_fg_color);
 }
 
 .cell.baobab-cell-error {
-    color: @error_color;
+    color: var(--error_color);
 }
 
 .cell.baobab-cell-warning {
-    color: @warning_color;
+    color: var(--warning_color);
 }
 
 .cell.baobab-cell-warning:selected,
 .cell.baobab-cell-error:selected {
-    color: @theme_selected_fg_color;
+    color: var(--accent-fg-color);
 }
 
 .cell.baobab-cell-warning:backdrop,
 .cell.baobab-cell-error:backdrop,
 .cell.baobab-cell-warning:selected:backdrop,
 .cell.baobab-cell-error:selected:backdrop {
-    color: @theme_unfocused_text_color;
+    color: var(--view_fg_color);
 }
 
 /* FolderDisplay */
@@ -65,19 +65,19 @@ window.background stack > grid > scrolledwindow.frame {
 }
 
 window.background stack treeview:hover:not(:selected) {
-    background: @theme_bg_color;
+    background: var(--window_bg_color);
 }
 
 .pathbar {
-    border: solid 1px @borders;
+    border: solid 1px var(--border-color);
     border-radius: 5px;
-    background: @theme_bg_color;
+    background: var(--window_bg_color);
 }
 
 .pathbar button {
     margin: 0;
     border-radius: 0px;
-    box-shadow: 1px 0px @borders;
+    box-shadow: 1px 0px var(--border-color);
 }
 
 .pathbar button:first-child {
@@ -89,7 +89,7 @@ window infobar.warning,
 window infobar.error {
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: @borders;
+    border-bottom-color: var(--border-color);
 }
 
 @define-color color_0 #e01b24;
@@ -113,6 +113,6 @@ ringschart.subfolder-tip {
 :drop(active) .contents {
   outline-style: solid;
   outline-width: 3px;
-  outline-color: alpha(@accent_bg_color, 0.5);
+  outline-color: alpha(var(--accent-bg-color), 0.5);
   outline-offset: -3px;
 }
