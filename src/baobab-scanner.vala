@@ -29,17 +29,6 @@ namespace Baobab {
     }
 
     public class Scanner : Object {
-        public enum Columns {
-            NAME,
-            PERCENT,
-            SIZE,
-            TIME_MODIFIED,
-            DISPLAY_NAME,
-            ELEMENTS,
-            STATE,
-            COLUMNS
-        }
-
         public enum State {
             SCANNING,
             ERROR,
