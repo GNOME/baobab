@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Nepali Translation Project\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2022-08-17 10:45+0000\n"
-"PO-Revision-Date: 2022-09-11 05:09+0545\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-05-19 12:43+0000\n"
+"PO-Revision-Date: 2024-05-28 20:15+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n !=1;\n"
 "First-Translator: Pawan Chitrakar <pawan@nplinux.org>\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "डिस्क प्रयोग विश्लेषक"
 
@@ -45,14 +45,15 @@ msgstr ""
 "गर्न सजिलो बनाउँछ।."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
-msgid "Devices and Locations"
-msgstr "यन्त्रहरू र स्थानहरू"
+msgid "Devices and Locations View"
+msgstr "यन्त्र र स्थान दृष्य"
 
 #: data/org.gnome.baobab.appdata.xml.in:24
-msgid "Scan"
-msgstr "स्क्यान"
+msgid "Scan View"
+msgstr "स्क्यान दृष्य"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "जिनोम परियोजना"
 
@@ -93,54 +94,54 @@ msgstr "सञ्झ्यालको अधिकतम स्थिति"
 msgid "Whether or not the window is maximized"
 msgstr "सञ्झ्याल ठूलो पारिएको छ या छैन"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "साधारण"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "मद्दत देखाउनुहोस्"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "प्राथमिक मेनु देखाउनुहोस् / लुकाउनुहोस्"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "अन्त्य गर्नुहोस्"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "कुञ्जीपाटी सर्टकट देखाउनुहोस्"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
 msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "स्थान सूचीमा फर्कनुहोस्"
+msgid "Show preferences"
+msgstr "प्राथमिकता सन्झ्याल देखाउनुहोस्"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "स्क्यान गर्दै"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "फोल्डर स्क्यान गर्नुहोस्"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "हालको स्थान पुन: स्क्यान गर्नुहोस्"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
-msgid "_Open Folder"
-msgstr "फोल्डर खोल्नुहोस्"
+msgid "_Open Externally"
+msgstr "बाह्य रूपमा खोल्नुहोस्"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
@@ -151,36 +152,36 @@ msgid "Mo_ve to Trash"
 msgstr "रद्दीटोकरीमा सार्नुहोस्"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "प्रमूल फोल्डर जानुहोस्"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
-msgstr "जुम बढाउनुहोस्"
+msgid "Zoom _In"
+msgstr "जूम बढाउनुहोस्"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
-msgstr "जुम घटाउनुहोस्"
+msgid "Zoom _Out"
+msgstr "जूम घटाउनुहोस्"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:171
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
 msgid "Folder"
 msgstr "फोल्डर"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:198
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
 msgid "Size"
 msgstr "आकार"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:214
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
 msgid "Contents"
 msgstr "सामाग्री"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:230
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
 msgid "Modified"
 msgstr "परिमार्जित"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "यस कम्प्युटर"
+msgid "This Device"
+msgstr "यो यन्त्र"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
@@ -210,23 +211,27 @@ msgstr "मद्दत"
 msgid "_About Disk Usage Analyzer"
 msgstr "डिस्क प्रयोग विश्लेषक बारेमा"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Go back to location list"
-msgstr "स्थान सूचीमा फर्कनुहोस्"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "यन्त्रहरू र स्थानहरू"
 
-#: data/ui/baobab-main-window.ui:63
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "मुख्य मेनु"
+
+#: data/ui/baobab-main-window.ui:97
+msgid "Rescan Current Location"
 msgstr "हालको स्थान पुन: स्क्यान गर्नुहोस्"
 
-#: data/ui/baobab-main-window.ui:111
-msgid "Close"
-msgstr "बन्द गर्नुहोस्"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "फा‍ईलले देखिएको भन्दा बढि स्थान लिन सक्छ"
 
-#: data/ui/baobab-main-window.ui:299
+#: data/ui/baobab-main-window.ui:275
 msgid "Rings Chart"
 msgstr "गोला चित्रपट"
 
-#: data/ui/baobab-main-window.ui:312
+#: data/ui/baobab-main-window.ui:288
 msgid "Treemap Chart"
 msgstr "चित्रपट"
 
@@ -324,66 +329,77 @@ msgstr "वेवास्ता गर्ने स्थान छान्न
 msgid "Add Location…"
 msgstr "स्थान थप्नुहोस्…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "फोल्डर चयन गर्नुहोस्"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "पुन: क्रमशः माउन्ट बिन्दुहरू विश्लेषण गर्नुहोस्"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "भोल्युम विश्लेषण गर्न सकेन ।."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "भोल्युम विश्लेषण गर्न सकेन"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr "अनुवादक-श्रेय"
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "फाइल खोल्न असफल"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
-msgstr "फाइल रद्दी टोकरीमा सार्न असफल"
-
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "यन्त्रहरू र स्थानहरू"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "फाईल फेक्न असफल"
 
 # msgstr[1] "तँपाइहरु पक्का %d फोल्डरहरू खोल्न चाहनुहुन्छ?"
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "फोल्डर स्क्यान गर्न सकेन: %s"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "फोल्डर स्क्यान गर्न सकेन"
 
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr "ओगतिएको डिस्क आकार पत्ता लगाउन सकिएन।."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "यसको सट्टामा स्पष्ट साइज देखाउन सकिन्छ ।."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "स्क्यान पूरा भयो"
 
 # msgstr[1] "तँपाइहरु पक्का %d फोल्डरहरू खोल्न चाहनुहुन्छ?"
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "\"%s\"को स्क्यान सम्पन्न"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” अवैध फोल्डर होईन"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "डिस्क प्रयोग विश्लेषण गर्न सकेन ।."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "स्थान सूचीमा फर्कनुहोस्"
+
+#~ msgid "_Open Folder"
+#~ msgstr "फोल्डर खोल्नुहोस्"
+
+#~ msgid "This Computer"
+#~ msgstr "यस कम्प्युटर"
+
+#~ msgid "Go back to location list"
+#~ msgstr "स्थान सूचीमा फर्कनुहोस्"
+
+#~ msgid "Close"
+#~ msgstr "बन्द गर्नुहोस्"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "फाइल रद्दी टोकरीमा सार्न असफल"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "ओगतिएको डिस्क आकार पत्ता लगाउन सकिएन।."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "यसको सट्टामा स्पष्ट साइज देखाउन सकिन्छ ।."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "डिस्क प्रयोग विश्लेषण गर्न सकेन ।."
 
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "डिस्क प्रयोग विश्लेषण गर्ने ग्राफिकल उपकरण ।."
