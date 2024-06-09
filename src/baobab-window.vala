@@ -262,8 +262,7 @@ namespace Baobab {
             const string copyright = "Copyright \xc2\xa9 2005-2011 Fabio Marzocca, Paolo Borelli, Benoît Dejean, Igalia\n" +
                                      "Copyright \xc2\xa9 2011-2012 Ryan Lortie, Paolo Borelli, Stefano Facchini\n";
 
-            var about = new Adw.AboutWindow() {
-                transient_for = this,
+            var about = new Adw.AboutDialog() {
                 application_name = _("Disk Usage Analyzer"),
                 application_icon = "org.gnome.baobab",
                 developer_name = _("The GNOME Project"),
@@ -276,7 +275,7 @@ namespace Baobab {
                 translator_credits = _("translator-credits"),
             };
 
-            about.present();
+            about.present(this);
         }
 
         void on_chart_item_activated (Chart chart, Gtk.TreeIter iter) {
