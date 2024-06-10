@@ -39,7 +39,7 @@ namespace Baobab {
     }
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-preferences-dialog.ui")]
-    public class PreferencesDialog : Adw.PreferencesWindow {
+    public class PreferencesDialog : Adw.PreferencesDialog {
         [GtkChild]
         private unowned Gtk.ListBox excluded_list_box;
 
@@ -50,9 +50,10 @@ namespace Baobab {
 
             excluded_list_box.row_activated.connect (() => {
                 // The only activatable row is "Add location"
-                var file_chooser = new Gtk.FileChooserNative (_("Select Location to Ignore"), this,
-                                                             Gtk.FileChooserAction.SELECT_FOLDER,
-                                                             null, null);
+                var file_chooser = new Gtk.FileChooserNative (_("Select Location to Ignore"),
+                                                              (Gtk.Window) this.get_root (),
+                                                               Gtk.FileChooserAction.SELECT_FOLDER,
+                                                               null, null);
 
                 file_chooser.modal = true;
 

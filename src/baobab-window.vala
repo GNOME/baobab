@@ -239,9 +239,7 @@ namespace Baobab {
 
         void on_show_preferences () {
             var dialog = new PreferencesDialog ();
-            dialog.modal = true;
-            dialog.set_transient_for (this);
-            dialog.present ();
+            dialog.present (this);
         }
 
         void on_help_activate () {
