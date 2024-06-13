@@ -13,7 +13,6 @@
       <object class="GtkTreeViewColumn" id="folder_column">
         <property name="title" translatable="yes">Folder</property>
         <property name="expand">True</property>
-        <property name="reorderable">True</property>
         <property name="sort_column_id">0</property>
         <child>
           <object class="GtkCellRendererPixbuf" id="folder_column_icon_renderer">
@@ -35,7 +34,6 @@
     <child>
       <object class="GtkTreeViewColumn" id="size_column">
         <property name="title" translatable="yes">Size</property>
-        <property name="reorderable">True</property>
         <property name="sort_column_id">2</property>
         <child>
           <object class="BaobabCellRendererSize" id="size_column_size_renderer">
@@ -51,7 +49,6 @@
     <child>
       <object class="GtkTreeViewColumn" id="contents_column">
         <property name="title" translatable="yes">Contents</property>
-        <property name="reorderable">True</property>
         <property name="sort_column_id">5</property>
         <child>
           <object class="BaobabCellRendererItems" id="contents_column_items_renderer">
@@ -67,7 +64,6 @@
     <child>
       <object class="GtkTreeViewColumn" id="time_modified_column">
         <property name="title" translatable="yes">Modified</property>
-        <property name="reorderable">True</property>
         <property name="sort_column_id">3</property>
         <child>
           <object class="BaobabCellRendererTime" id="modified_column_time_renderer">
