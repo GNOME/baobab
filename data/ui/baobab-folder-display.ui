@@ -6,6 +6,7 @@
     <property name="child">
   <object class="GtkColumnView" id="columnview">
     <property name="hexpand">true</property>
+    <property name="reorderable">False</property>
     <property name="single_click_activate">True</property>
     <signal name="activate" handler="on_columnview_activate" />
     <signal name="notify::sorter" handler="on_columnview_notify_sorter" />

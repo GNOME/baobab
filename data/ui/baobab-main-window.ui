@@ -127,6 +127,7 @@
                                         <child>
                                           <object class="GtkColumnView" id="columnview">
                                             <property name="hexpand">True</property>
+                                            <property name="reorderable">False</property>
                                             <property name="single-click-activate">True</property>
                                             <signal name="activate" handler="columnview_activate"/>
                                             <property name="model">
