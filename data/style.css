@@ -91,15 +91,11 @@ window.background stack treeview:hover:not(:selected) {
 }
 
 .pathbar > scrolledwindow undershoot.left {
-  background: linear-gradient(to right, var(--headerbar-shade-color) 6px, alpha(var(--headerbar-shade-color), 0) 24px);
-  border-left: solid 1px @borders;
-  border-radius: 6px 0px 0px 6px;
+  background: linear-gradient(to right, var(--headerbar-shade-color) 6px, transparent 24px);
 }
 
 .pathbar > scrolledwindow undershoot.right {
-  background: linear-gradient(to left, var(--headerbar-shade-color) 6px, alpha(var(--headerbar-shade-color), 0) 24px);
-  border-right: solid 1px @borders;
-  border-radius: 0px 6px 6px 0px;
+  background: linear-gradient(to left, var(--headerbar-shade-color) 6px, transparent 24px);
 }
 
 image.symbolic-circular {
