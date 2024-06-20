@@ -127,9 +127,10 @@ window infobar.error {
 @define-color tooltip_bg_color rgba(0, 0, 0, 0.8);
 ringschart.subfolder-tip {
     color: white;
-    background-color: @tooltip_bg_color;
-    border-radius: 3px;
-    padding: 3px 3px 3px 3px;
+    background-color: rgb(0 0 0 / 0.8);
+    background-clip: padding-box;
+    border-radius: 9px;
+    padding: 6px 10px;
 }
 
 :drop(active) .contents {
