@@ -67,6 +67,8 @@ namespace Baobab {
         Gtk.GestureClick secondary_click_gesture;
         Gtk.GestureClick middle_click_gesture;
 
+        Gdk.RGBA chart_colors[NUM_COLORS];
+
         List<ChartItem> items;
 
         Location location_;
@@ -248,6 +250,13 @@ namespace Baobab {
             insert_action_group ("chart", action_group);
 
             build_context_menu ();
+
+            chart_colors[0].parse("#e01b24");
+            chart_colors[1].parse("#ff7800");
+            chart_colors[2].parse("#f6d32d");
+            chart_colors[3].parse("#33d17a");
+            chart_colors[4].parse("#3584e4");
+            chart_colors[5].parse("#9141ac");
 
             set_draw_func (draw_func);
         }
@@ -462,22 +471,21 @@ namespace Baobab {
         }
 
         protected Gdk.RGBA get_item_color (double rel_position, uint depth, bool highlighted) {
-            var context = get_style_context ();
-
             var color = Gdk.RGBA ();
 
             float intensity = (float) (1 - (((depth - 1) * 0.3) / MAX_DEPTH));
 
             if (depth == 0) {
-                context.lookup_color ("level_color", out color);
+                color.parse("#d3d6d1");
             } else {
-                Gdk.RGBA color_a, color_b;
+                Gdk.RGBA color_a = Gdk.RGBA ();
+                Gdk.RGBA color_b = Gdk.RGBA ();
 
                 int color_number = (int) (rel_position / (100.0/3));
                 int next_color_number = (color_number + 1) % NUM_COLORS;
 
-                context.lookup_color ("color_" + color_number.to_string (), out color_a);
-                context.lookup_color ("color_" + next_color_number.to_string (), out color_b);
+                color_a = chart_colors[color_number];
+                color_b = chart_colors[next_color_number];
 
                 color = interpolate_colors (color_a, color_b, (float) (rel_position - color_number * 100/3) / (100/3));
 
@@ -488,7 +496,7 @@ namespace Baobab {
 
             if (highlighted) {
                 if (depth == 0) {
-                    context.lookup_color ("level_color_hi", out color);
+                    color.parse("#e0e2dd");
                 } else {
                     float maximum = float.max (color.red, float.max (color.green, color.blue));
                     color.red /= maximum;
