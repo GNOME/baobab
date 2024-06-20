@@ -1,39 +1,3 @@
-.cell.baobab-level-cell,
-.cell.baobab-level-cell:hover,
-.cell.baobab-level-cell:selected,
-.cell.baobab-level-cell:selected:hover {
-    border-color: hsl(from var(--border-color) h calc(s * 0.7) calc(l * 0.7));
-    border-width: 1px;
-    border-radius: 3px;
-    border-style: solid;
-    padding: 1px;
-    background-color: white;
-}
-
-.cell.baobab-level-cell.fill-block,
-.cell.baobab-level-cell.fill-block:hover,
-.cell.baobab-level-cell.fill-block:selected,
-.cell.baobab-level-cell.fill-block:selected:hover {
-    background-color: #edd400;
-}
-
-.cell.baobab-level-cell.fill-block.level-low,
-.cell.baobab-level-cell.fill-block.level-low:hover {
-    background-color: #73d216;
-}
-
-.cell.baobab-level-cell.fill-block.level-high,
-.cell.baobab-level-cell.fill-block.level-high:hover {
-    background-color: #cc0000;
-}
-
-.cell.baobab-level-cell.fill-block:backdrop,
-.cell.baobab-level-cell.fill-block:hover:backdrop,
-.cell.baobab-level-cell.fill-block.level-low:backdrop,
-.cell.baobab-level-cell.fill-block.level-high:backdrop {
-    background-color: var(--view-fg-color);
-}
-
 .cell.baobab-cell-error {
     color: var(--error-color);
 }
