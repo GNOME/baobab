@@ -197,8 +197,7 @@ namespace Baobab {
                     cr.rectangle (tooltip_rect.x + tooltip_rect.width, tooltip_rect.y, -tooltip_rect.width, tooltip_rect.height);
                     cr.clip ();
 
-                    Gdk.RGBA bg_color;
-                    context.lookup_color ("tooltip_bg_color", out bg_color);
+                    Gdk.RGBA bg_color = { 0, 0, 0, (float) 0.8 };
                     cr.set_line_width (1);
                     cr.move_to (sector_center_x, sector_center_y);
                     Gdk.cairo_set_source_rgba (cr, bg_color);
