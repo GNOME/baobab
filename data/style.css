@@ -2,7 +2,7 @@
 .cell.baobab-level-cell:hover,
 .cell.baobab-level-cell:selected,
 .cell.baobab-level-cell:selected:hover {
-    border-color: darker(var(--border-color));
+    border-color: hsl(from var(--border-color) h calc(s * 0.7) calc(l * 0.7));
     border-width: 1px;
     border-radius: 3px;
     border-style: solid;
@@ -70,7 +70,7 @@ window.background stack treeview:hover:not(:selected) {
 
 .pathbar {
     border-radius: 6px;
-    background-color: alpha(currentColor, 0.1);
+    background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
 .pathbar button {
@@ -99,7 +99,7 @@ window.background stack treeview:hover:not(:selected) {
 }
 
 image.symbolic-circular {
-  background-color: alpha(currentColor, 0.08);
+  background-color: color-mix(in srgb, currentColor 8%, transparent);
   max-height: 48px;
   min-width: 32px;
   min-height: 32px;
@@ -135,6 +135,6 @@ ringschart.subfolder-tip {
 :drop(active) .contents {
   outline-style: solid;
   outline-width: 3px;
-  outline-color: alpha(var(--accent-bg-color), 0.5);
+  outline-color: color-mix(in srgb, var(--accent-bg-color), transparent);
   outline-offset: -3px;
 }
