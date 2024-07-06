@@ -40,7 +40,7 @@ namespace Baobab {
         public LocationRow (Location l) {
             location = l;
 
-            image.gicon = location.icon;
+            image.gicon = location.symbolic_icon;
 
             var escaped = Markup.escape_text (location.name);
             name_label.label = "<b>%s</b>".printf (escaped);
