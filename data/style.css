@@ -13,13 +13,6 @@ cell .baobab-cell-error:selected {
     color: var(--accent-fg-color);
 }
 
-cell .baobab-cell-warning:backdrop,
-cell .baobab-cell-error:backdrop,
-cell .baobab-cell-warning:selected:backdrop,
-cell .baobab-cell-error:selected:backdrop {
-    color: var(--view-fg-color);
-}
-
 cell box.baobab-cell-box {
     border-spacing: 6px;
 }
@@ -32,14 +25,6 @@ progresscell progress {
 progresscell {
     border-radius: 5px;
     min-height: 18px;
-}
-
-progresscell progress:backdrop {
-    background: var(--border-color);
-}
-
-progresscell label:backdrop.in-progress {
-    color: inherit;
 }
 
 progresscell trough {
