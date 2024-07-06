@@ -92,13 +92,13 @@ namespace Baobab {
     }
 
     [GtkTemplate (ui = "/org/gnome/baobab/ui/baobab-location-list.ui")]
-    public class LocationList : Gtk.Box {
+    public class LocationList : Adw.PreferencesPage {
         [GtkChild]
         private unowned Gtk.ListBox local_list_box;
         [GtkChild]
         private unowned Gtk.ListBox remote_list_box;
         [GtkChild]
-        private unowned Gtk.Box remote_box;
+        private unowned Adw.PreferencesGroup remote_group;
 
         public signal void location_activated (Location location);
 
@@ -278,12 +278,12 @@ namespace Baobab {
                 remote_list_box.remove (child);
             }
 
-            remote_box.visible = false;
+            remote_group.visible = false;
 
             foreach (var location in locations) {
                 if (location.is_remote) {
                     remote_list_box.append (new LocationRow (location));
-                    remote_box.visible = true;
+                    remote_group.visible = true;
                 } else {
                     local_list_box.append (new LocationRow (location));
                 }

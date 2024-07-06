@@ -1,56 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
-  <template class="BaobabLocationList" parent="GtkBox">
-    <property name="orientation">vertical</property>
-    <property name="spacing">32</property>
-    <property name="margin_start">32</property>
-    <property name="margin_end">32</property>
-    <property name="margin_top">32</property>
-    <property name="margin_bottom">32</property>
+  <template class="BaobabLocationList" parent="AdwPreferencesPage">
     <child>
-      <object class="GtkBox" id="local_box">
-        <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
-        <child>
-          <object class="GtkLabel" id="local_label">
-            <property name="halign">start</property>
-            <property name="label" translatable="yes">This Device</property>
-            <style>
-              <class name="heading"/>
-            </style>
-          </object>
-        </child>
+      <object class="AdwPreferencesGroup">
+        <property name="title" translatable="yes">This Device</property>
         <child>
           <object class="GtkListBox" id="local_list_box">
             <property name="selection_mode">none</property>
             <style>
-              <class name="view"/>
-              <class name="content"/>
+              <class name="boxed-list"/>
             </style>
           </object>
         </child>
       </object>
     </child>
     <child>
-      <object class="GtkBox" id="remote_box">
-        <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
-        <child>
-          <object class="GtkLabel" id="remote_label">
-            <property name="halign">start</property>
-            <property name="label" translatable="yes">Remote Locations</property>
-            <style>
-              <class name="heading"/>
-            </style>
-          </object>
-        </child>
+      <object class="AdwPreferencesGroup" id="remote_group">
+        <property name="title" translatable="yes">Remote Locations</property>
         <child>
           <object class="GtkListBox" id="remote_list_box">
             <property name="selection_mode">none</property>
             <style>
-              <class name="view"/>
-              <class name="content"/>
+              <class name="boxed-list"/>
             </style>
           </object>
         </child>
