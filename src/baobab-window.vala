@@ -63,7 +63,7 @@ namespace Baobab {
         [GtkChild]
         private unowned Chart treemap_chart;
         [GtkChild]
-        private unowned Gtk.Spinner spinner;
+        private unowned Adw.Spinner spinner;
 
         private Location? active_location = null;
         private bool is_busy = false;
@@ -547,10 +547,8 @@ namespace Baobab {
                 new_cursor = busy_cursor;
                 chart_stack_switcher.sensitive = false;
                 spinner_stack.visible_child = spinner;
-                spinner.start ();
                 pathbar.sensitive = false;
             } else {
-                spinner.stop ();
                 spinner_stack.visible_child = chart_stack;
                 chart_stack_switcher.sensitive = true;
                 pathbar.sensitive = true;
