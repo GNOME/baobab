@@ -11,9 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-14.ro\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-02-07 02:24+0000\n"
-"PO-Revision-Date: 2021-02-07 10:17+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-05-28 12:27+0000\n"
+"PO-Revision-Date: 2024-07-26 15:35+0200\n"
 "Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Analizatorul utilizării discului"
 
@@ -53,11 +53,15 @@ msgstr ""
 "arborescentă cât și una grafică afișând dimensiunea fiecărui dosar, "
 "facilitând identificarea locului unde spațiul pe disc este risipit."
 
-#: data/org.gnome.baobab.appdata.xml.in:23
-msgid "Devices and Locations"
-msgstr "Dispozitive și locații"
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "Vizualizarea dispozitive și locații"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "Vizualizarea scanare"
+
+#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
@@ -91,113 +95,105 @@ msgid "The initial size of the window"
 msgstr "Dimensiunea inițială a ferestrei"
 
 #: data/org.gnome.baobab.gschema.xml:30
-msgid "Window state"
-msgstr "Starea ferestrei"
+msgid "Window Maximized"
+msgstr "Fereastră maximizată"
 
 #: data/org.gnome.baobab.gschema.xml:31
-msgid "The GdkWindowState of the window"
-msgstr "GdkWindowState a ferestrei"
+msgid "Whether or not the window is maximized"
+msgstr "Dacă fereastra ete maximizată sau nu"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Generale"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Arată ajutorul"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "Arată / ascunde meniul principal"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ieșire"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Arată scurtăturile de tastatură"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
 msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Înapoi la lista de locații"
+msgid "Show preferences"
+msgstr "Arată preferințele"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Scanare"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Scanează dosarul"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Rescanează locația curentă"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
-msgid "_Open Folder"
-msgstr "Deschide d_osar"
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "Deschide _extern"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "_Copiază calea în clipboard"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "Mu_tă la coșul de gunoi"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "Navighează la dosarul _părinte"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "Aprop_ie"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "_Depărtează"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
 msgid "Folder"
 msgstr "Dosar"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
 msgid "Size"
 msgstr "Dimensiune"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
 msgid "Contents"
 msgstr "Conținut"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
 msgid "Modified"
 msgstr "Modificat"
 
 #: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "Calculator"
+msgid "This Device"
+msgstr "Acest dispozitiv"
 
-#: data/ui/baobab-location-list.ui:45
+#: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
 msgstr "Locații la distanță"
-
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "Preferințe"
-
-#: data/ui/baobab-preferences-dialog.ui:17
-msgid "Locations to Ignore"
-msgstr "Locații de ignorat"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -206,6 +202,10 @@ msgstr "Scanează dosar…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "Curăță lista recentelor"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+msgid "Preferences"
+msgstr "Preferințe"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -219,25 +219,33 @@ msgstr "_Ajutor"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Despre analizatorul utilizării discului"
 
-#: data/ui/baobab-main-window.ui:85
-msgid "Go back to location list"
-msgstr "Înapoi la lista de locații"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Dispozitive și locații"
 
-#: data/ui/baobab-main-window.ui:106
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "Meniu principal"
+
+#: data/ui/baobab-main-window.ui:97
+msgid "Rescan Current Location"
 msgstr "Rescanează locația curentă"
 
-#: data/ui/baobab-main-window.ui:196
-msgid "Close"
-msgstr "Închide"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Fișierele pot ocupa mai mult spațiu decât ce este afișat"
 
-#: data/ui/baobab-main-window.ui:372
+#: data/ui/baobab-main-window.ui:275
 msgid "Rings Chart"
 msgstr "Grafic inelar"
 
-#: data/ui/baobab-main-window.ui:384
+#: data/ui/baobab-main-window.ui:288
 msgid "Treemap Chart"
 msgstr "Grafic arborescent"
+
+#: data/ui/baobab-preferences-dialog.ui:12
+msgid "Locations to Ignore"
+msgstr "Locații de ignorat"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -330,39 +338,23 @@ msgstr "Calculator"
 msgid "Select Location to Ignore"
 msgstr "Selectați locația de ignorat"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
-msgid "_Cancel"
-msgstr "_Anulează"
-
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
-msgid "_Open"
-msgstr "_Deschide"
-
-#: src/baobab-preferences-dialog.vala:91
+#: src/baobab-preferences-dialog.vala:90
 msgid "Add Location…"
 msgstr "Adaugă o locație…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Selectare dosar"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Analizează recursiv punctele de montare"
 
-#: src/baobab-window.vala:236
-msgid "Could not analyze volume."
-msgstr "Nu s-a putut analiza volumul."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Nu s-a putut analiza volumul"
 
-#: src/baobab-window.vala:273
-msgid "Failed to show help"
-msgstr "Afișarea ajutorului a eșuat"
-
-#: src/baobab-window.vala:295
-msgid "A graphical tool to analyze disk usage."
-msgstr "O unealtă grafică pentru analizarea utilizări discului."
-
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Iustin Pop <iusty@geocities.com>\n"
@@ -370,54 +362,84 @@ msgstr ""
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
 "Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
 "2019-2020\n"
+"Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2024\n"
 "\n"
 "Contribuții Launchpad:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
 "  Alex Eftimie https://launchpad.net/~alexeftimie\n"
 "  Ionuț Jula https://launchpad.net/~ionutjula"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Deschiderea fișierului a eșuat"
 
-#: src/baobab-window.vala:392
-msgid "Failed to move file to the trash"
-msgstr "Mutarea fișierului la gunoi a eșuat"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
+msgstr "Ștergerea fișierului a eșuat"
 
-#: src/baobab-window.vala:603
-msgid "Devices & Locations"
-msgstr "Dispozitive și locații"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Nu s-a putut scana dosarul"
 
-#: src/baobab-window.vala:655
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Nu s-a putut scana dosarul „%s”"
-
-#: src/baobab-window.vala:670
-msgid "Could not always detect occupied disk sizes."
-msgstr "Nu se pot detecta întotdeauna dimensiunile discului ocupate."
-
-#: src/baobab-window.vala:670
-msgid "Apparent sizes may be shown instead."
-msgstr "Dimensiunile aparente pot fi arătate în schimb."
-
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Scanare completă"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "S-a completat scanarea lui „%s”"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s” nu este un dosar valid"
 
-#: src/baobab-window.vala:716
-msgid "Could not analyze disk usage."
-msgstr "Nu s-a putut analiza utilizarea discului."
+#~ msgid "Window state"
+#~ msgstr "Starea ferestrei"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "GdkWindowState a ferestrei"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Înapoi la lista de locații"
+
+#~ msgid "_Open Folder"
+#~ msgstr "Deschide d_osar"
+
+#~ msgid "This Computer"
+#~ msgstr "Calculator"
+
+#~ msgid "Go back to location list"
+#~ msgstr "Înapoi la lista de locații"
+
+#~ msgid "Close"
+#~ msgstr "Închide"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Anulează"
+
+#~ msgid "_Open"
+#~ msgstr "_Deschide"
+
+#~ msgid "Failed to show help"
+#~ msgstr "Afișarea ajutorului a eșuat"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "O unealtă grafică pentru analizarea utilizări discului."
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Mutarea fișierului la gunoi a eșuat"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "Nu se pot detecta întotdeauna dimensiunile discului ocupate."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Dimensiunile aparente pot fi arătate în schimb."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Nu s-a putut analiza utilizarea discului."
 
 #~ msgid "Clear list of recent locations"
 #~ msgstr "Curăță lista locațiilor recente"
@@ -608,12 +630,6 @@ msgstr "Nu s-a putut analiza utilizarea discului."
 
 #~ msgid "_Image type:"
 #~ msgstr "Tip _imagine:"
-
-#~ msgid "Scan"
-#~ msgstr "Scanează"
-
-#~ msgid "Device"
-#~ msgstr "Dispozitiv"
 
 #~ msgid "Mount Point"
 #~ msgstr "Punct montare"
