@@ -11,9 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-07-04 22:01+0000\n"
-"PO-Revision-Date: 2024-07-18 08:26+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-08-17 02:25+0000\n"
+"PO-Revision-Date: 2024-08-17 11:33+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využitia disku"
 
@@ -64,7 +64,8 @@ msgstr "Zobrazenie zariadení a umiestnení"
 msgid "Scan View"
 msgstr "Zobrazenie analýzy"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -174,27 +175,27 @@ msgstr "_Zväčšiť"
 msgid "Zoom _Out"
 msgstr "Z_menšiť"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Priečinok"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Veľkosť"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Obsah"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Zmenený"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Toto zariadenie"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Vzdialené umiestnenia"
 
@@ -206,7 +207,7 @@ msgstr "Analyzovať priečinok…"
 msgid "Clear Recent List"
 msgstr "Vymazať zoznam nedávnych"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Predvoľby"
 
@@ -222,7 +223,7 @@ msgstr "_Pomocník"
 msgid "_About Disk Usage Analyzer"
 msgstr "_O aplikácii Analyzátor využitia disku"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Zariadenia a umiestnenia"
 
@@ -230,24 +231,30 @@ msgstr "Zariadenia a umiestnenia"
 msgid "Main Menu"
 msgstr "Hlavná ponuka"
 
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Výsledky"
+
 # tooltip
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Opätovne spustí analýzu aktuálneho umiestnenia"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "Súbory môžu zaberať viac miesta, ako je zobrazené"
 
-#: data/ui/baobab-main-window.ui:272
-msgid "Rings Chart"
-msgstr "Kruhový graf"
+#: data/ui/baobab-main-window.ui:259
+#| msgid "Rings Chart"
+msgid "_Rings Chart"
+msgstr "_Kruhový graf"
 
-#: data/ui/baobab-main-window.ui:285
-msgid "Treemap Chart"
-msgstr "Stĺpcový graf"
+#: data/ui/baobab-main-window.ui:273
+#| msgid "Treemap Chart"
+msgid "_Treemap Chart"
+msgstr "_Stĺpcový graf"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Umiestnenia na ignorovanie"
 
@@ -263,7 +270,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Vypíše informáciu o verzii a skončí"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -274,19 +281,19 @@ msgstr[2] "%d položky"
 # * https://bugzilla.gnome.org/show_bug.cgi?id=706559
 # Zmeneny, stlpec v treeview
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "Neznámy"
 
 # Zmeneny, stlpec v treeview
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "Dnes"
 
 # Zmeneny, stlpec v treeview
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -296,7 +303,7 @@ msgstr[2] "%lu dni"
 
 # Zmeneny, stlpec v treeview
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -306,7 +313,7 @@ msgstr[2] "%lu mesiace"
 
 # Zmeneny, stlpec v treeview
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -319,83 +326,81 @@ msgstr[2] "%lu roky"
 msgid "%s Total"
 msgstr "Celkom: %s"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "Dostupné: %s"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "Využité: %s"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Odpojené"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Domovský priečinok"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Počítač"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Výber umiestnenia na ignorovanie"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Pridať umiestnenie…"
+#: src/baobab-preferences-dialog.vala:91
+#| msgid "Add Location…"
+msgid "_Add Location"
+msgstr "Pridať u_miestnenie…"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Výber priečinka"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Rekurzívne analyzovať prípojné body"
 
-#: src/baobab-window.vala:214
-#| msgid "Could not analyze volume."
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Nepodarilo sa analyzovať zväzok"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
 "Stanislav Višňovský, Ivan Noris\n"
 "Pavol Klačanský <pavol@klacansky.com>\n"
 "Dušan Kazik <prescott66@gmail.com>"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Zlyhalo otvorenie súboru"
 
-#: src/baobab-window.vala:358
-#| msgid "Failed to open file"
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Zlyhalo presunutie súboru do koša"
 
-#: src/baobab-window.vala:592
-#| msgid "Could not scan folder “%s”"
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Nepodarilo sa analyzovať priečinok"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Analýza dokončená"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Dokončená analýza priečinku „%s“"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ nie je platný priečinok"
