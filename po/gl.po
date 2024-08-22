@@ -18,17 +18,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils-master-po-gl-14799\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-08-12 09:35+0000\n"
-"PO-Revision-Date: 2023-08-29 23:46+0200\n"
-"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-08-19 13:26+0000\n"
+"PO-Revision-Date: 2024-08-22 16:16+0200\n"
+"Last-Translator: Fran Dieguez <fran.dieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Project-Style: gnome\n"
 "X-DL-Team: gl\n"
 "X-DL-Module: baobab\n"
@@ -37,7 +37,7 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Analizador do uso do disco"
 
@@ -72,7 +72,8 @@ msgstr "Vista de dispositivos e localizacións"
 msgid "Scan View"
 msgstr "Vista de análise"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "O Proxecto GNOME"
 
@@ -182,27 +183,27 @@ msgstr "Ampl_iar"
 msgid "Zoom _Out"
 msgstr "Red_ucir"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:140
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Cartafol"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:167
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Tamaño"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:183
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Contidos"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:199
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Modificado"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Este dispositivo"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Localizacións remotas"
 
@@ -214,7 +215,7 @@ msgstr "Analizar cartafol…"
 msgid "Clear Recent List"
 msgstr "Limpar a lista de recentes"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Preferencias"
 
@@ -230,7 +231,7 @@ msgstr "A_xuda"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Sobre o Analizador do uso do disco"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Dispositivos e localizacións"
 
@@ -238,23 +239,27 @@ msgstr "Dispositivos e localizacións"
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Resultados"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Reanalizar a localización actual"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "Os ficheiros poden ocupar máis espazo do que se mostra"
 
-#: data/ui/baobab-main-window.ui:274
-msgid "Rings Chart"
-msgstr "Gráfico de aneis"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "Gráfico de _aneis"
 
-#: data/ui/baobab-main-window.ui:287
-msgid "Treemap Chart"
-msgstr "Gráfico de árbore"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "Gráfico de mapa de _árbore"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Localizacións a ignorar"
 
@@ -270,7 +275,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Mostrar a información da versión e saír"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -278,17 +283,17 @@ msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "Descoñecido"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "Hoxe"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -296,7 +301,7 @@ msgstr[0] "%lu día"
 msgstr[1] "%lu días"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -304,7 +309,7 @@ msgstr[0] "%lu mes"
 msgstr[1] "%lu meses"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -316,55 +321,55 @@ msgstr[1] "%lu anos"
 msgid "%s Total"
 msgstr "%s total"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s dispoñíbel"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s usado"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Desmontado"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Cartafol persoal"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Computador"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Seleccionar a localización a ignorar"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Engadir localización…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "_Engadir localización"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Seleccionar cartafol"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Analizar recursivamente os puntos de montaxe"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Non foi posíbel analizar o volume"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
-"Fran Diéguez <frandieguez@gnome.org>, 2009-2023\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2009-2024\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012\n"
 "Antón Méixome <meixome@mancomun.org>, 2009\n"
 "Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
@@ -376,28 +381,28 @@ msgstr ""
 "Proxecto Trasno - Tradución de software libre ao galego <proxecto@trasno."
 "net>, 1999-2012"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Produciuse un fallo ao abrir o ficheiro"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Produciuse un fallo ao enviar ao lixo o ficheiro"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Non foi posíbel analizar o cartafol"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Análise completado"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Análise de «%s» completado"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» non é un cartafol válido"
