@@ -6,13 +6,13 @@
 # Julen Ruiz Aizpuru <julenx@gmail.com>, 2011.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2012, 2013, 2014, 2016, 2017.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2019, 2020, 2021, 2023.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2019, 2020, 2021, 2023, 2024.
 #
 msgid ""
 msgstr "Project-Id-Version: gdm master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-07-04 22:01+0000\n"
-"PO-Revision-Date: 2023-08-05 10:00+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-08-19 13:26+0000\n"
+"PO-Revision-Date: 2024-08-25 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -23,7 +23,7 @@ msgstr "Project-Id-Version: gdm master\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Disko-erabileraren analizatzailea"
 
@@ -52,7 +52,8 @@ msgstr "Gailuen eta kokalekuen ikuspegia"
 msgid "Scan View"
 msgstr "Eskaneatze-ikuspegia"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
@@ -126,7 +127,7 @@ msgstr "Erakutsi hobespenak"
 #: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
-msgstr "Eskaneatzen"
+msgstr "Eskaneatzea"
 
 #: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
@@ -162,27 +163,27 @@ msgstr "_Handiagotu"
 msgid "Zoom _Out"
 msgstr "_Txikiagotu"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Karpeta"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Tamaina"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Edukia"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Aldatze-data"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Gailu hau"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Urruneko kokalekuak"
 
@@ -194,7 +195,7 @@ msgstr "Eskaneatu karpeta…"
 msgid "Clear Recent List"
 msgstr "Garbitu azken aldikoen zerrenda"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Hobespenak"
 
@@ -210,7 +211,7 @@ msgstr "_Laguntza"
 msgid "_About Disk Usage Analyzer"
 msgstr "Disko-erabileraren analizatzaileari _buruz"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Gailuak eta kokalekuak"
 
@@ -218,23 +219,27 @@ msgstr "Gailuak eta kokalekuak"
 msgid "Main Menu"
 msgstr "Menu nagusia"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Emaitzak"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Berreskaneatu uneko kokalekua"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "Fitxategiek hemen erakusten dena baino espazio gehiago bete dezakete"
 
-#: data/ui/baobab-main-window.ui:272
-msgid "Rings Chart"
-msgstr "Eraztun-diagrama"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "_Eraztun-diagramak"
 
-#: data/ui/baobab-main-window.ui:285
-msgid "Treemap Chart"
-msgstr "Zuhaitz-mapa"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "_Zuhaitz-mapa"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Ez ikusiarena egingo zaien kokalekuak"
 
@@ -248,7 +253,7 @@ msgstr "Ez saltatu beste fitxategi-sistema batzuetako direktorioak. Ez ikusiaren
 msgid "Print version information and exit"
 msgstr "Erakutsi bertsioaren informazioa eta irten"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -256,17 +261,17 @@ msgstr[0] "Elementu %d"
 msgstr[1] "%d elementu"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "Ezezaguna"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "Gaur"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -274,7 +279,7 @@ msgstr[0] "Duela egun %lu"
 msgstr[1] "Duela %lu egun"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -282,7 +287,7 @@ msgstr[0] "Duela hilabete %lu"
 msgstr[1] "Duela %lu hilabete"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -294,77 +299,77 @@ msgstr[1] "Duela %lu urte"
 msgid "%s Total"
 msgstr "%s guztira"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s erabilgarri"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s erabilita"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Desmuntatua"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Karpeta nagusia"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Ordenagailua"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Hautatu ez ikusiarena egingo zaion kokalekua"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Gehitu kokalekua…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "_Gehitu kokalekua"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Hautatu karpeta"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Aztertu errekurtsiboki muntatze-puntuak"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Ezin izan da bolumena analizatu"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Huts egin du fitxategia irekitzean"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Huts egin du fitxategia zakarrontzira botatzeak"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Ezin da karpeta eskaneatu"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Eskaneatzea amaitu da"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Amaitu da “%s” eskaneatzea"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” ez da baliozko karpeta"
