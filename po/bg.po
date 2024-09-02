@@ -3,6 +3,7 @@
 # Copyright (C) 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # Copyright (C) 2011, 2012, 2013, 2014 Free Software Foundation, Inc.
 # Copyright (C) 2021, 2022, 2023 Alexander Shopov <ash@kambanaria.org>.
+# Copyright (C) 2024 twlvnn kraftwerk.
 # Borislav Aleksandrov <B.Aleksandrov@cnsys.bg>, 2002.
 # Vladimir Petkov <kaladan@gmail.com>, 2004, 2005.
 # Peter Slavov <pslavov@i-space.org>, 2004.
@@ -12,23 +13,25 @@
 # Krasimir Chonov <mk2616@abv.bg>, 2011.
 # Ivaylo Valkov <ivaylo@e-valkov.org>, 2014.
 # Lyubomir Vasilev <lyubomirv@abv.bg>, 2017.
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-03-04 16:13+0000\n"
-"PO-Revision-Date: 2023-03-04 23:34+0200\n"
-"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-07-27 08:01+0000\n"
+"PO-Revision-Date: 2024-09-02 07:52+0200\n"
+"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
+"Language-Team: Bulgarian <dict@ludost.net>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:288
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
 msgid "Disk Usage Analyzer"
 msgstr "Анализатор на ползването на диска"
 
@@ -62,7 +65,8 @@ msgstr "Изглед с устройства и местоположения"
 msgid "Scan View"
 msgstr "Изглед за претърсване"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:290
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:269
 msgid "The GNOME Project"
 msgstr "Проектът GNOME"
 
@@ -136,22 +140,17 @@ msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Настройки"
 
-#: data/gtk/help-overlay.ui:45
-msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "Назад към списъка с местоположения"
-
-#: data/gtk/help-overlay.ui:52
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "Претърсване"
 
-#: data/gtk/help-overlay.ui:56
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "Претърсване на папка"
 
-#: data/gtk/help-overlay.ui:62
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "Наново претърсване на текущото местоположение"
@@ -180,19 +179,19 @@ msgstr "_Увеличаване"
 msgid "Zoom _Out"
 msgstr "_Намаляване"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:173
+#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
 msgid "Folder"
 msgstr "Папка"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
 msgid "Size"
 msgstr "Размер"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:216
+#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
 msgid "Contents"
 msgstr "Ръководство"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:232
+#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
 msgid "Modified"
 msgstr "Променен"
 
@@ -202,7 +201,7 @@ msgstr "Това устройство"
 
 #: data/ui/baobab-location-list.ui:42
 msgid "Remote Locations"
-msgstr "Устройства и местоположения"
+msgstr "Отдалечени местоположения"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -228,27 +227,27 @@ msgstr "Помо_щ"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Относно „Анализатор на ползването на диска“"
 
-#: data/ui/baobab-main-window.ui:47
-msgid "Back"
-msgstr "Назад"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+msgid "Devices & Locations"
+msgstr "Устройства и местоположения"
 
-#: data/ui/baobab-main-window.ui:57
+#: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
 msgstr "Основно меню"
 
-#: data/ui/baobab-main-window.ui:65
+#: data/ui/baobab-main-window.ui:97
 msgid "Rescan Current Location"
 msgstr "Наново претърсване на местоположението"
 
-#: data/ui/baobab-main-window.ui:113
-msgid "Close"
-msgstr "Затваряне"
+#: data/ui/baobab-main-window.ui:107
+msgid "Files may take more space than shown"
+msgstr "Файловете може да заемат повече място, отколкото е показано"
 
-#: data/ui/baobab-main-window.ui:301
+#: data/ui/baobab-main-window.ui:275
 msgid "Rings Chart"
 msgstr "Пръстеновидна графика"
 
-#: data/ui/baobab-main-window.ui:314
+#: data/ui/baobab-main-window.ui:288
 msgid "Treemap Chart"
 msgstr "Дървовидна графика"
 
@@ -347,19 +346,19 @@ msgstr "Избор на местоположение за прескачане"
 msgid "Add Location…"
 msgstr "Добавяне на местоположение…"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:183
 msgid "Select Folder"
 msgstr "Избор на папка"
 
-#: src/baobab-window.vala:212
+#: src/baobab-window.vala:190
 msgid "Recursively analyze mount points"
 msgstr "Рекурсивно анализиране на точките на монтиране"
 
-#: src/baobab-window.vala:235
-msgid "Could not analyze volume."
-msgstr "Неуспешен анализ на използването на файловата система."
+#: src/baobab-window.vala:214
+msgid "Could not analyze volume"
+msgstr "Неуспешен анализ на използването на файловата система"
 
-#: src/baobab-window.vala:297
+#: src/baobab-window.vala:276
 msgid "translator-credits"
 msgstr ""
 "Владимир „Kaladan“ Петков &lt;<a href='mailto:vpetkov@gmail."
@@ -373,6 +372,8 @@ msgstr ""
 "a>&gt;\n"
 "Любомир Василев &lt;<a href='mailto:lyubomirv@abv.bg'>lyubomirv@abv.bg</"
 "a>&gt;\n"
+"Twlvnn Kraftwerk &lt;<a href='mailto:kraft_werk@tutanota."
+"com'>kraft_werk@tutanota.com</a>&gt;\n"
 "\n"
 "\n"
 "Проектът за превод на GNOME има нужда от подкрепа.\n"
@@ -381,46 +382,51 @@ msgstr ""
 "Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
 "newticket'>съответния раздел</a>."
 
-#: src/baobab-window.vala:361
+#: src/baobab-window.vala:341
 msgid "Failed to open file"
 msgstr "Неуспешно отваряне на файла"
 
-#: src/baobab-window.vala:377
-msgid "Failed to move file to the trash"
+#: src/baobab-window.vala:358
+msgid "Failed to trash file"
 msgstr "Неуспешно преместване на файла в кошчето"
 
-#: src/baobab-window.vala:570
-msgid "Devices & Locations"
-msgstr "Устройства и местоположения"
+#: src/baobab-window.vala:592
+msgid "Could not scan folder"
+msgstr "Папката не може да бъде претърсена"
 
-#: src/baobab-window.vala:622
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "Папката „%s“ не може да бъде претърсена"
-
-#: src/baobab-window.vala:637
-msgid "Could not always detect occupied disk sizes."
-msgstr ""
-"Засичането на използваното на дисково пространство невинаги бе успешно."
-
-#: src/baobab-window.vala:637
-msgid "Apparent sizes may be shown instead."
-msgstr "Възможно е да са показани ориентировъчни размери."
-
-#: src/baobab-window.vala:641
+#: src/baobab-window.vala:608
 msgid "Scan completed"
 msgstr "Претърсването завърши"
 
-#: src/baobab-window.vala:642
+#: src/baobab-window.vala:609
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Претърсването на „%s“ завърши"
 
-#: src/baobab-window.vala:682
+#: src/baobab-window.vala:649
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "„%s“ не е валидна папка"
 
-#: src/baobab-window.vala:683
-msgid "Could not analyze disk usage."
-msgstr "Неуспешно анализиране на използването на диска."
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "Назад към списъка с местоположения"
+
+#~ msgid "Back"
+#~ msgstr "Назад"
+
+#~ msgid "Close"
+#~ msgstr "Затваряне"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "Неуспешно преместване на файла в кошчето"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr ""
+#~ "Засичането на използваното на дисково пространство невинаги бе успешно."
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "Възможно е да са показани ориентировъчни размери."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "Неуспешно анализиране на използването на диска."
