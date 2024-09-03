@@ -33,9 +33,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-26\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-07-04 22:01+0000\n"
-"PO-Revision-Date: 2023-08-01 22:59+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-08-19 13:26+0000\n"
+"PO-Revision-Date: 2024-09-03 22:42+0300\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
 "Language-Team: Ελληνικά <>\n"
 "Language: el\n"
@@ -43,11 +43,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Αναλυτής χρήσης δίσκου"
 
@@ -82,7 +82,8 @@ msgstr "Προβολή συσκευές και τοποθεσίες"
 msgid "Scan View"
 msgstr "Προβολή σάρωσης"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "Το έργο του GNOME"
 
@@ -192,27 +193,27 @@ msgstr "Με_γέθυνση"
 msgid "Zoom _Out"
 msgstr "_Σμίκρυνση"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Φάκελος"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Τροποποιήθηκε"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Αυτή η συσκευή"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Απομακρυσμένες τοποθεσίες"
 
@@ -224,7 +225,7 @@ msgstr "Σάρωση φακέλου…"
 msgid "Clear Recent List"
 msgstr "Εκκαθάριση πρόσφατης λίστας"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
@@ -240,7 +241,7 @@ msgstr "_Βοήθεια"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Περί του Αναλυτή χρήσης δίσκου"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Συσκευές & τοποθεσίες"
 
@@ -248,24 +249,28 @@ msgstr "Συσκευές & τοποθεσίες"
 msgid "Main Menu"
 msgstr "Κυρίως μενού"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Αποτελέσματα"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Σάρωση ξανά της τρέχουσας τοποθεσίας"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr ""
 "Τα αρχεία ενδέχεται να καταλαμβάνουν περισσότερο χώρο από ό,τι φαίνεται"
 
-#: data/ui/baobab-main-window.ui:272
-msgid "Rings Chart"
-msgstr "Διάγραμμα δακτυλίων"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "Διάγραμμα _δακτυλίων"
 
-#: data/ui/baobab-main-window.ui:285
-msgid "Treemap Chart"
-msgstr "Δενδροειδές διάγραμμα"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "_Δενδροειδές διάγραμμα"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Τοποθεσίες προς αγνόηση"
 
@@ -281,7 +286,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Προβολή πληροφοριών έκδοσης και έξοδος"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -289,17 +294,17 @@ msgstr[0] "%d αντικείμενο"
 msgstr[1] "%d αντικείμενα"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "Άγνωστο"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "Σήμερα"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -307,7 +312,7 @@ msgstr[0] "%lu ημέρα"
 msgstr[1] "%lu ημέρες"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -315,7 +320,7 @@ msgstr[0] "%lu μήνας"
 msgstr[1] "%lu μήνες"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -327,52 +332,52 @@ msgstr[1] "%lu έτη"
 msgid "%s Total"
 msgstr "%s σύνολο"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s διαθέσιμο"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s χρησιμοποιείται"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Αποπροσαρτημένο"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Προσωπικός φάκελος"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Υπολογιστής"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Επιλέξτε τοποθεσία για παράβλεψη"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Προσθήκη τοποθεσίας…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "_Προσθήκη τοποθεσίας"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Επιλογή φακέλου"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Αναδρομική ανάλυση προσαρτημένων συσκευών"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Αδυναμία ανάλυσης τόμου"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -387,28 +392,28 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Αποτυχία ανοίγματος αρχείου"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Αποτυχία μετακίνησης αρχείου στα απορρίμματα"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Αδυναμία σάρωσης φακέλου"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Ολοκληρώθηκε η σάρωση"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Ολοκληρώθηκε η σάρωση του «%s»"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "O \"%s\" δεν είναι έγκυρος φάκελος"
