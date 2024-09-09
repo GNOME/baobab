@@ -9,7 +9,7 @@
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008, 2012.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14, 16, 18, 22, 23.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10, 11, 14, 16, 18, 22, 23, 24.
 # Joe Hansen <joedalton2@yahoo.dk>, 2017.
 # Alan Mortensen <alanmortensen.am@gmail.com>, 2019.
 # scootergrisen, 2020.
@@ -19,9 +19,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-07-04 22:01+0000\n"
-"PO-Revision-Date: 2023-09-11 21:08+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-09-03 20:06+0000\n"
+"PO-Revision-Date: 2024-09-08 17:50+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -32,7 +32,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Diskforbrugsanalyse"
 
@@ -65,7 +65,8 @@ msgstr "Enheder og steder-visning"
 msgid "Scan View"
 msgstr "Skanningsvisning"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -175,27 +176,31 @@ msgstr "For_stør"
 msgid "Zoom _Out"
 msgstr "For_mindsk"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "Fjern mappe"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Mappe"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Størrelse"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Indhold"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Ændret"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Denne enhed"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Fjernsteder"
 
@@ -207,7 +212,7 @@ msgstr "Skan mappe …"
 msgid "Clear Recent List"
 msgstr "Ryd liste over seneste"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Indstillinger"
 
@@ -223,7 +228,7 @@ msgstr "_Hjælp"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Om Diskforbrugsanalyse"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Enheder & steder"
 
@@ -231,23 +236,27 @@ msgstr "Enheder & steder"
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Resultater"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Skan nuværende placering igen"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "Filer kan optage mere plads end vist"
 
-#: data/ui/baobab-main-window.ui:272
-msgid "Rings Chart"
-msgstr "Cirkeldiagram"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "_Cirkeldiagram"
 
-#: data/ui/baobab-main-window.ui:285
-msgid "Treemap Chart"
-msgstr "Trækortdiagram"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "_Trækortdiagram"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Placeringer som skal ignoreres"
 
@@ -263,7 +272,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Vis versionsinformation og afslut"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -271,17 +280,17 @@ msgstr[0] "%d objekt"
 msgstr[1] "%d objekter"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "Ukendt"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "I dag"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -289,7 +298,7 @@ msgstr[0] "%lu dag"
 msgstr[1] "%lu dage"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -297,7 +306,7 @@ msgstr[0] "%lu måned"
 msgstr[1] "%lu måneder"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -309,52 +318,52 @@ msgstr[1] "%lu år"
 msgid "%s Total"
 msgstr "%s i alt"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s tilgængelig"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s brugt"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Ikke monteret"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Hjemmemappe"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Computer"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Vælg placering som skal ignoreres"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Tilføj placering …"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "_Tilføj placering"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Markér mappe"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Analysér monteringspunkter rekursivt"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Kunne ikke analysere diskenhed"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
 "Birger Langkjer\n"
@@ -373,28 +382,28 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Kunne ikke åbne fil"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Kunne ikke flytte fil til papirkurven"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Kunne ikke skanne mappe"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Skanning fuldført"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Fuldførte skanningen af “%s”"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” er ikke en gyldig mappe"
