@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab gnome-3-6\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-07-04 22:01+0000\n"
-"PO-Revision-Date: 2023-07-24 22:26+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-09-03 20:06+0000\n"
+"PO-Revision-Date: 2024-10-14 13:51+0000\n"
 "Last-Translator: Fabio T. <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Editor: HaiPO 1.4 beta\n"
+"X-Editor: HaiPO 2.0 beta\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Analizadôr di utilizazion dal disc"
 
@@ -40,13 +40,13 @@ msgstr ""
 #: data/org.gnome.baobab.appdata.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
-"accounts. It provides both a tree and a graphical representation showing the "
-"size of each folder, making it easy to identify where disk space is wasted."
+"accounts. It provides both a tree and a graphical representation showing the"
+" size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
 "L'Analizadôr di utilizazion dal disc al pues analizâ specifichis cartelis, "
 "dispositîfs di archiviazion e account in linie. Al furnìs tant un arbul che "
-"une rapresentazion grafiche, mostrant la dimension di ogni cartele e rindint "
-"facil identificâ dulà che il spazi al ven strassât."
+"une rapresentazion grafiche, mostrant la dimension di ogni cartele e rindint"
+" facil identificâ dulà che il spazi al ven strassât."
 
 #: data/org.gnome.baobab.appdata.xml.in:20
 msgid "Devices and Locations View"
@@ -57,11 +57,13 @@ msgstr "Viodude dispositîfs e posizions"
 msgid "Scan View"
 msgstr "Viodude analisi"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "archivi;spazi;pulizie;"
@@ -167,27 +169,31 @@ msgstr "Aumente ingrand_iment"
 msgid "Zoom _Out"
 msgstr "Ridûs ingrandim_ent"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:142
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "Gjave cartele"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Cartele"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:169
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Dimension"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:185
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Contignût"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:201
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Modificât"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Chest dispositîf"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Posizions esternis"
 
@@ -199,7 +205,7 @@ msgstr "Analize cartele…"
 msgid "Clear Recent List"
 msgstr "Nete la liste dai resints"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Preferencis"
 
@@ -215,7 +221,7 @@ msgstr "_Jutori"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Informazion su Analizadôr di utilizazion dal disc"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Dispositîfs e posizions"
 
@@ -223,23 +229,27 @@ msgstr "Dispositîfs e posizions"
 msgid "Main Menu"
 msgstr "Menù principâl"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Risultâts"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Torne analize la posizion atuâl"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "I files a podaressin puartâ vie plui spazi di ce che a mostrin"
 
-#: data/ui/baobab-main-window.ui:272
-msgid "Rings Chart"
-msgstr "Grafic a anei"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "Grafic a _anei"
 
-#: data/ui/baobab-main-window.ui:285
-msgid "Treemap Chart"
-msgstr "Grafic a morâr"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "Grafic a _morâr"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Posizions di ignorâ"
 
@@ -255,7 +265,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Stampe la version e jes"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -263,37 +273,37 @@ msgstr[0] "%d element"
 msgstr[1] "%d elements"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "No cognossût"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "Vuê"
 
+#. Translators: when the last modified time is "days" days ago
 # meti o no meti "indaûr"
 # p.e. %lu dîs indaûr
-#. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu dì indaûr"
 msgstr[1] "%lu dîs indaûr"
 
-# meti indaûr?
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+# meti indaûr?
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu mês indaûr"
 msgstr[1] "%lu mês indaûr"
 
-# meti indaûr?
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+# meti indaûr?
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -305,77 +315,77 @@ msgstr[1] "%lu agns indaûr"
 msgid "%s Total"
 msgstr "%s totâl"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s disponibil"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s doprât"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Dismontât"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Cartele Cjase"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Computer"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Selezione lis posizions di ignorâ"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Zonte posizion…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "_Zonte posizion"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Selezione cartele"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Analize in maniere ricorsive i ponts di montaç"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Impussibil analizâ il volum"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Impussibil vierzi il file"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Impussibil butâ te scovacere il file"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Impussibil analizâ la cartele"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Analisi completade"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Analisi di “%s” completade"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” no je une cartele valide"
@@ -449,8 +459,8 @@ msgstr "“%s” no je une cartele valide"
 #~ "remote) or volumes and give a graphical representation including each "
 #~ "directory size or percentage."
 #~ msgstr ""
-#~ "Une aplicazion par analizâ cartelis (in lûc o a distance) o volums e che "
-#~ "a mostre une rapresentazion grafiche des cartelis cun lis lôr dimensions."
+#~ "Une aplicazion par analizâ cartelis (in lûc o a distance) o volums e che a "
+#~ "mostre une rapresentazion grafiche des cartelis cun lis lôr dimensions."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "Analize Cartele a Distance..."
@@ -499,9 +509,6 @@ msgstr "“%s” no je une cartele valide"
 
 #~ msgid "Scan Folder"
 #~ msgstr "Esamine la cartele"
-
-#~ msgid "Scan Remote Folder"
-#~ msgstr "Esamine le cartele rimote"
 
 #~ msgid "Scan a remote folder"
 #~ msgstr "Esamine une cartele rimote"
