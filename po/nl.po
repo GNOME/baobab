@@ -9,14 +9,14 @@
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2010–2011, 2013, 2014, 2016, 2021.
 # Erwin Poeze <donnut@outlook.com>, 2013.
 # Justin van Steijn <jvs@fsfe.org>, 2016, 2018.
-# Nathan Follens <nfollens@gnome.org>, 2017-2020, 2022-2023.
+# Nathan Follens <nfollens@gnome.org>, 2017-2020, 2022-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab.master.nl\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2023-09-03 13:52+0000\n"
-"PO-Revision-Date: 2023-09-03 15:51+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-10-27 10:15+0000\n"
+"PO-Revision-Date: 2024-10-27 23:42+0100\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
 "Language: nl\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Schijfgebruik"
 
@@ -62,7 +62,8 @@ msgstr "Apparaten en locaties-weergave"
 msgid "Scan View"
 msgstr "Scanweergave"
 
-#: data/org.gnome.baobab.appdata.xml.in:39 src/baobab-window.vala:269
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "Het GNOME-project"
 
@@ -172,27 +173,31 @@ msgstr "_Inzoomen"
 msgid "Zoom _Out"
 msgstr "_Uitzoomen"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:140
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "Map verwijderen"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Map"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:167
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "Grootte"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:183
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "Inhoud"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:199
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "Gewijzigd"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "Dit apparaat"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "Locaties op afstand"
 
@@ -204,7 +209,7 @@ msgstr "Map scannen…"
 msgid "Clear Recent List"
 msgstr "Recente lijst wissen"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -220,7 +225,7 @@ msgstr "_Hulp"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Over Schijfgebruikanalyse"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "Apparaten & locaties"
 
@@ -228,24 +233,28 @@ msgstr "Apparaten & locaties"
 msgid "Main Menu"
 msgstr "Hoofdmenu"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "Resultaten"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "Huidige locatie opnieuw scannen"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "Bestanden nemen mogelijk meer ruimte in beslag dan weergegeven"
 
-#: data/ui/baobab-main-window.ui:274
-msgid "Rings Chart"
-msgstr "Ringdiagram"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "_Ringdiagram"
 
 # Tip van Tino en Vincent (Wouter Bolsterlee)
-#: data/ui/baobab-main-window.ui:287
-msgid "Treemap Chart"
-msgstr "Hiërarchisch blokdiagram"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "_Hiërarchisch blokdiagram"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Te negeren locaties"
 
@@ -262,7 +271,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "Versie-informatie tonen en afsluiten"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -270,17 +279,17 @@ msgstr[0] "%d item"
 msgstr[1] "%d items"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "Onbekend"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "Vandaag"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -288,7 +297,7 @@ msgstr[0] "%lu dag"
 msgstr[1] "%lu dagen"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -296,7 +305,7 @@ msgstr[0] "%lu maand"
 msgstr[1] "%lu maanden"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -308,52 +317,52 @@ msgstr[1] "%lu jaar"
 msgid "%s Total"
 msgstr "%s totaal"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s beschikbaar"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s gebruikt"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "Ontkoppeld"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "Persoonlijke map"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "Computer"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "Selecteer een locatie om te negeren"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "Locatie toevoegen…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "Loc_atie toevoegen"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "Map selecteren"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "Koppelpunten recursief analyseren"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "Kon volume niet analyseren"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
 "Tino Meinen\n"
@@ -366,28 +375,28 @@ msgstr ""
 "Nathan Follens <nfollens@gnome.org>\n"
 "Meer info over GNOME-NL https://nl.gnome.org"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "Kon bestand niet openen"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "Kon bestand niet verplaatsen naar prullenbak"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "Kon map niet scannen"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "Scan voltooid"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Scannen van ‘%s’ is voltooid"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "‘%s’ is geen geldige map"
