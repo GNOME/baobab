@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>org.gnome.baobab</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
@@ -25,12 +25,10 @@
       <image>https://static.gnome.org/appdata/gnome-43/baobab/baobab-scan.png</image>
     </screenshot>
   </screenshots>
-  <kudos>
-    <kudo>HiDpiIcon</kudo>
-    <kudo>ModernToolkit</kudo>
-    <kudo>Notifications</kudo>
-    <kudo>UserDocs</kudo>
-  </kudos>
+  <branding>
+    <color type="primary" scheme_preference="light">#6bffbb</color>
+    <color type="primary" scheme_preference="dark">#00ad77</color>
+  </branding>
   <url type="homepage">https://apps.gnome.org/Baobab/</url>
   <url type="contribute">https://welcome.gnome.org/app/Baobab/</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/baobab/issues</url>
@@ -46,6 +44,17 @@
   </developer>
   <launchable type="desktop-id">org.gnome.baobab.desktop</launchable>
   <translation type="gettext">baobab</translation>
+  <requires>
+    <display_length compare="ge">832</display_length>
+    <internet>offline-only</internet>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+  <supports>
+    <control>touch</control>
+  </supports>
 
   <releases>
     <release version="47.0" date="2024-09-16">

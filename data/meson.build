@@ -18,8 +18,8 @@ desktop_file = i18n.merge_file(
 )
 
 appdata_file = i18n.merge_file(
-  input: 'org.gnome.baobab.appdata.xml.in',
-  output: 'org.gnome.baobab.appdata.xml',
+  input: 'org.gnome.baobab.metainfo.xml.in',
+  output: 'org.gnome.baobab.metainfo.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'metainfo'),
