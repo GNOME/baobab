@@ -1,10 +1,11 @@
 include: 'https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml'
 
+variables:
+    MANIFEST_PATH: "build-aux/flatpak/org.gnome.baobab.json"
+    FLATPAK_MODULE: "baobab"
+    RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
+    BUNDLE: "baobab-dev.flatpak"
+    APP_ID: "org.gnome.baobab"
+
 flatpak:
     extends: '.flatpak'
-    variables:
-        MANIFEST_PATH: "build-aux/flatpak/org.gnome.baobab.json"
-        FLATPAK_MODULE: "baobab"
-        RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
-        BUNDLE: "baobab-dev.flatpak"
-        APP_ID: "org.gnome.baobab"
