@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Nepali Translation Project\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-05-19 12:43+0000\n"
-"PO-Revision-Date: 2024-05-28 20:15+0545\n"
+"POT-Creation-Date: 2025-02-13 21:22+0000\n"
+"PO-Revision-Date: 2025-02-27 15:20+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne\n"
@@ -19,22 +19,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n !=1;\n"
 "First-Translator: Pawan Chitrakar <pawan@nplinux.org>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "डिस्क प्रयोग विश्लेषक"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:4 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "फोल्डर साइज र उपलब्ध डिस्क खालीस्थान जाँच गर्नुहोस्"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
+msgid "storage;space;cleanup;"
+msgstr "भण्डारण;space;सफा गर्नुहोस्;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid "A simple application to keep your disk usage and available space under control."
 msgstr "तपाईँको डिस्क उपयोग र उपलब्ध ठाउँ नियन्त्रणमा राख्ने एक साधारण अनुप्रयोग।."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online accounts. It "
 "provides both a tree and a graphical representation showing the size of each folder, "
@@ -44,23 +49,18 @@ msgstr ""
 "र ग्राफिकल प्रतिनिधित्व प्रदान गर्दछ प्रत्येक फोल्डरको साइज देखाउँदा, डिस्कको ठाउँ बर्बाद हुन्छ जहाँ पहिचान "
 "गर्न सजिलो बनाउँछ।."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "यन्त्र र स्थान दृष्य"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "स्क्यान दृष्य"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:269
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "जिनोम परियोजना"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "भण्डारण;space;सफा गर्नुहोस्;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -163,27 +163,31 @@ msgstr "जूम बढाउनुहोस्"
 msgid "Zoom _Out"
 msgstr "जूम घटाउनुहोस्"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "फोल्डर हटाउनुहोस्"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "फोल्डर"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "आकार"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "सामाग्री"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "परिमार्जित"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "यो यन्त्र"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "टाढाको स्थानहरू"
 
@@ -195,7 +199,7 @@ msgstr "फोल्डर स्क्यान गर्नुहोस्…"
 msgid "Clear Recent List"
 msgstr "हालको सूची खाली गर्नुहोस्"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "प्राथमिकता"
 
@@ -211,7 +215,7 @@ msgstr "मद्दत"
 msgid "_About Disk Usage Analyzer"
 msgstr "डिस्क प्रयोग विश्लेषक बारेमा"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "यन्त्रहरू र स्थानहरू"
 
@@ -219,23 +223,27 @@ msgstr "यन्त्रहरू र स्थानहरू"
 msgid "Main Menu"
 msgstr "मुख्य मेनु"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "नतिजा"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "हालको स्थान पुन: स्क्यान गर्नुहोस्"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "फा‍ईलले देखिएको भन्दा बढि स्थान लिन सक्छ"
 
-#: data/ui/baobab-main-window.ui:275
-msgid "Rings Chart"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
 msgstr "गोला चित्रपट"
 
-#: data/ui/baobab-main-window.ui:288
-msgid "Treemap Chart"
-msgstr "चित्रपट"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "ट्रीम्याप चित्रपट"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "बेवास्ता गर्ने स्थानहरू"
 
@@ -250,7 +258,7 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "संस्करण सूचना देखाउनुहोस् र निस्कनुहोस्"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -258,17 +266,17 @@ msgstr[0] "%d वस्तु"
 msgstr[1] "%d वस्तुहरू"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "अज्ञात"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "आज"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
@@ -276,7 +284,7 @@ msgstr[0] "%lu दिन"
 msgstr[1] "%lu दिन"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
@@ -284,7 +292,7 @@ msgstr[0] "%lu महिना"
 msgstr[1] "%lu महिना"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -296,79 +304,79 @@ msgstr[1] "%lu वर्ष"
 msgid "%s Total"
 msgstr "%s जम्मा"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s उपलब्ध छ"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s प्रयोग गरियो"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "अनमाउन्ट"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "गृह फोल्डर"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "कम्प्युटर"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "वेवास्ता गर्ने स्थान छान्नुहोस्"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "स्थान थप्नुहोस्…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "स्थान थप्नुहोस्"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "फोल्डर चयन गर्नुहोस्"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "पुन: क्रमशः माउन्ट बिन्दुहरू विश्लेषण गर्नुहोस्"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "भोल्युम विश्लेषण गर्न सकेन"
 
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr "अनुवादक-श्रेय"
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "फाइल खोल्न असफल"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "फाईल फेक्न असफल"
 
 # msgstr[1] "तँपाइहरु पक्का %d फोल्डरहरू खोल्न चाहनुहुन्छ?"
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "फोल्डर स्क्यान गर्न सकेन"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "स्क्यान पूरा भयो"
 
 # msgstr[1] "तँपाइहरु पक्का %d फोल्डरहरू खोल्न चाहनुहुन्छ?"
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "\"%s\"को स्क्यान सम्पन्न"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” अवैध फोल्डर होईन"
