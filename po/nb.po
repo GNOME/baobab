@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-05 18:20+0200\n"
+"POT-Creation-Date: 2025-02-13 21:22+0000\n"
+"PO-Revision-Date: 2025-03-02 15:44+0100\n"
 "Last-Translator: Brage <bragefuglseth@gnome.org>\n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -19,16 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.4\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:6
 #: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Lagring"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:4 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "Kontroller lagringsplassen din"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
+msgid "storage;space;cleanup;"
+msgstr ""
+"lagring;lagringsplass;lagringsenheter;plassbruk;diskplass;lagringsmedier;"
+"analyse;fjerning;unødvendige;overflødige;filer;rensing;rensning;rengjøring;"
+"disk usage analyzer;baobab;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -36,7 +44,7 @@ msgstr ""
 "Hva tar mest plass på enheten? Analyser lagringsenhetene dine med Lagring, "
 "og se hva som spiser opp tilgjengelig plass."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -46,26 +54,18 @@ msgstr ""
 "plassbruken deres på en klar og lettfattelig måte. Dette gjør det lett å se "
 "hvor det brukes unødvendig mye lagringsplass."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "Enheter og plasseringer"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "Analysering"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "GNOME"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr ""
-"lagring;lagringsplass;lagringsenheter;plassbruk;diskplass;lagringsmedier;"
-"analyse;fjerning;unødvendige;overflødige;filer;rensing;rensning;rengjøring;"
-"disk usage analyzer;baobab;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -357,7 +357,11 @@ msgstr "Analysering av lagringsområde mislyktes"
 
 #: src/baobab-window.vala:269
 msgid "translator-credits"
-msgstr "Brage Fuglseth https://bragefuglseth.dev"
+msgstr ""
+"Brage Fuglseth https://bragefuglseth.dev\n"
+"Kjartan Maraas <kmaraas@gnome.org>\n"
+"Espen Stefansen <libbe@stefansen.net>\n"
+"Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
 #: src/baobab-window.vala:329
 msgid "Failed to open file"
