@@ -159,7 +159,6 @@ namespace Baobab {
             public uint64 size { get; internal set; }
             public uint64 time_modified { get; internal set; }
             public int elements { get; internal set; }
-            public double percent { get; internal set; }
             internal int max_depth;
             internal Error? error;
             internal bool child_error;
@@ -167,6 +166,16 @@ namespace Baobab {
             // accessed only by the main thread
             public GLib.ListStore children_list_store { get; construct set; }
             public State state { get; internal set; }
+
+            double _percent;
+            public double percent {
+                get { return _percent; }
+                internal set {
+                    _percent = value;
+
+                    notify_property ("fraction");
+                }
+            }
 
             public double fraction {
                 get {
@@ -182,7 +191,6 @@ namespace Baobab {
 
             construct {
                 children_list_store = new ListStore (typeof (Results));
-                notify["percent"].connect (() => notify_property ("fraction"));
             }
 
             public Results (FileInfo info, Results? parent_results) {
