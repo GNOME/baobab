@@ -76,8 +76,7 @@ namespace Baobab {
             FileAttribute.TIME_MODIFIED + "," +
             FileAttribute.UNIX_NLINK + "," +
             FileAttribute.UNIX_INODE + "," +
-            FileAttribute.UNIX_DEVICE + "," +
-            FileAttribute.ACCESS_CAN_READ;
+            FileAttribute.UNIX_DEVICE;
 
         [Compact]
         class HardLink {
