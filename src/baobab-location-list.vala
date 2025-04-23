@@ -162,6 +162,7 @@ namespace Baobab {
                 var same_mount = location.mount != null && location.mount.get_root ().equal (mount.get_root ());
                 if (same_mount && location.volume != volume) {
                     locations.remove(location);
+                    break;
                 }
             }
 
