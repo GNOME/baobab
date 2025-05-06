@@ -1,9 +1,9 @@
 # baobab ja.po.
-# Copyright (C) 1998, 2000-2014, 2019-2020, 2022 gnome-util's COPYRIGHT HOLDER
+# Copyright (C) 1998, 2000-2014, 2019-2020, 2022, 2025 gnome-util's COPYRIGHT HOLDER
 # Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1998.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
 # Yukihiro Nakai <nakai@gnome.gr.jp>, 2000.
-# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2000-2002, 2009, 2011.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2000-2002, 2009, 2011, 2025.
 # Sun G11n <gnome_int_l10n@ireland.sun.com>, 2002.
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003-2009.
@@ -16,31 +16,39 @@
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012, 2013.
 # victory <victory.deb@gmail.com>, 2014.
 # sicklylife <translation@sicklylife.jp>, 2019-2020, 2022.
+# Umoxfo <ycco34vx@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: baobab master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues\n"
-"POT-Creation-Date: 2021-09-21 16:21+0000\n"
-"PO-Revision-Date: 2022-03-12 17:30+0900\n"
-"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
-"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Project-Id-Version: baobab main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2025-04-17 20:29+0000\n"
+"PO-Revision-Date: 2025-05-06 17:42+0900\n"
+"Last-Translator: Umoxfo <ycco34vx@gmail.com>\n"
+"Language-Team: Japanese <https://l10n.gnome.org/teams/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:66 src/baobab-window.vala:292
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "ディスク使用量アナライザー"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:4 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "フォルダーと利用可能なディスク容量をチェックします"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
+msgid "storage;space;cleanup;"
+msgstr ""
+"storage;space;cleanup;ストレージ;スペース;空間;容量;使用量;クリーンアップ;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -48,7 +56,7 @@ msgstr ""
 "ディスクの使用量と利用可能な空き領域を管理するためのシンプルなアプリケーショ"
 "ンです。"
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -59,19 +67,18 @@ msgstr ""
 "ツリー形式とグラフ形式の両方でサイズが表示されるため、ディスクのどの部分が無"
 "駄に使用されているかが簡単に確認できます。"
 
-#: data/org.gnome.baobab.appdata.xml.in:23
-msgid "Devices and Locations"
-msgstr "デバイスと場所"
+#: data/org.gnome.baobab.metainfo.xml.in:20
+msgid "Devices and Locations View"
+msgstr "デバイスと場所の表示"
 
-#: data/org.gnome.baobab.appdata.xml.in:38
+#: data/org.gnome.baobab.metainfo.xml.in:24
+msgid "Scan View"
+msgstr "スキャンビュー"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr ""
-"storage;space;cleanup;ストレージ;スペース;空間;容量;使用量;クリーンアップ;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -95,7 +102,7 @@ msgstr "ウィンドウのサイズ"
 
 #: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
-msgstr "ウィンドウの初期サイズです。"
+msgstr "ウィンドウの初期サイズ"
 
 #: data/org.gnome.baobab.gschema.xml:30
 msgid "Window Maximized"
@@ -105,106 +112,102 @@ msgstr "ウィンドウ最大化"
 msgid "Whether or not the window is maximized"
 msgstr "ウィンドウが最大化されているかどうかです"
 
-#: data/gtk/help-overlay.ui:13
+#: data/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "全般"
 
-#: data/gtk/help-overlay.ui:18
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "ヘルプを表示する"
 
-#: data/gtk/help-overlay.ui:25
+#: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Show / Hide primary menu"
 msgstr "プライマリメニューの表示/非表示を切り替える"
 
-#: data/gtk/help-overlay.ui:31
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "終了する"
 
-#: data/gtk/help-overlay.ui:38
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "キーボードショートカットを表示する"
 
-#: data/gtk/help-overlay.ui:46
+#: data/gtk/help-overlay.ui:39
 msgctxt "shortcut window"
-msgid "Go back to location list"
-msgstr "場所の一覧に戻る"
+msgid "Show preferences"
+msgstr "設定を表示する"
 
-#: data/gtk/help-overlay.ui:54
+#: data/gtk/help-overlay.ui:46
 msgctxt "shortcut window"
 msgid "Scanning"
 msgstr "スキャン"
 
-#: data/gtk/help-overlay.ui:59
+#: data/gtk/help-overlay.ui:50
 msgctxt "shortcut window"
 msgid "Scan folder"
 msgstr "フォルダーをスキャンする"
 
-#: data/gtk/help-overlay.ui:66
+#: data/gtk/help-overlay.ui:56
 msgctxt "shortcut window"
 msgid "Rescan current location"
 msgstr "現在の場所を再スキャンする"
 
-#: data/gtk/menus.ui:7 data/ui/baobab-main-window.ui:42
-msgid "_Open Folder"
-msgstr "フォルダーを開く(_O)"
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "他のアプリで開く(_O)"
 
-#: data/gtk/menus.ui:11 data/ui/baobab-main-window.ui:51
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
 msgstr "パスをクリップボードにコピーする(_C)"
 
-#: data/gtk/menus.ui:15 data/ui/baobab-main-window.ui:60
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
 
 #: data/gtk/menus.ui:21
-msgid "Go to _parent folder"
+msgid "Go to _Parent Folder"
 msgstr "親フォルダーへ移動する(_P)"
 
 #: data/gtk/menus.ui:27
-msgid "Zoom _in"
+msgid "Zoom _In"
 msgstr "拡大する(_I)"
 
 #: data/gtk/menus.ui:31
-msgid "Zoom _out"
+msgid "Zoom _Out"
 msgstr "縮小する(_O)"
 
-#: data/ui/baobab-folder-display.ui:16 data/ui/baobab-main-window.ui:267
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "フォルダーの削除"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "フォルダー"
 
-#: data/ui/baobab-folder-display.ui:39 data/ui/baobab-main-window.ui:295
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "サイズ"
 
-#: data/ui/baobab-folder-display.ui:55 data/ui/baobab-main-window.ui:311
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "内容"
 
-#: data/ui/baobab-folder-display.ui:71 data/ui/baobab-main-window.ui:327
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "更新日"
 
-#: data/ui/baobab-location-list.ui:18
-msgid "This Computer"
-msgstr "このコンピューター"
+#: data/ui/baobab-location-list.ui:6
+msgid "This Device"
+msgstr "このデバイス"
 
-#: data/ui/baobab-location-list.ui:45
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "リモートの場所"
-
-#: data/ui/baobab-preferences-dialog.ui:8 data/ui/baobab-main-window.ui:17
-msgid "Preferences"
-msgstr "設定"
-
-#: data/ui/baobab-preferences-dialog.ui:17
-msgid "Locations to Ignore"
-msgstr "無視する場所"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
@@ -213,6 +216,10 @@ msgstr "フォルダーをスキャン…"
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
 msgstr "履歴の一覧を消去"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
+msgid "Preferences"
+msgstr "設定"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
@@ -226,25 +233,37 @@ msgstr "ヘルプ(_H)"
 msgid "_About Disk Usage Analyzer"
 msgstr "ディスク使用量アナライザーについて(_A)"
 
-#: data/ui/baobab-main-window.ui:85
-msgid "Go back to location list"
-msgstr "場所の一覧に戻る"
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+msgid "Devices & Locations"
+msgstr "デバイスと場所"
 
-#: data/ui/baobab-main-window.ui:106
-msgid "Rescan current location"
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "メインメニュー"
+
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "結果"
+
+#: data/ui/baobab-main-window.ui:90
+msgid "Rescan Current Location"
 msgstr "現在の場所を再スキャンする"
 
-#: data/ui/baobab-main-window.ui:196
-msgid "Close"
-msgstr "閉じる"
+#: data/ui/baobab-main-window.ui:100
+msgid "Files may take more space than shown"
+msgstr "ファイルは、表示されているよりも多くの容量を必要とする場合があります"
 
-#: data/ui/baobab-main-window.ui:372
-msgid "Rings Chart"
-msgstr "リングチャート"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "リングチャート(_R)"
 
-#: data/ui/baobab-main-window.ui:384
-msgid "Treemap Chart"
-msgstr "ツリーマップチャート"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "ツリーマップチャート(_T)"
+
+#: data/ui/baobab-preferences-dialog.ui:11
+msgid "Locations to Ignore"
+msgstr "無視する場所"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -258,38 +277,38 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 個のアイテム"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "不明"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "今日"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu 日前"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu ヶ月前"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -300,75 +319,59 @@ msgstr[0] "%lu 年前"
 msgid "%s Total"
 msgstr "合計 %s"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "利用可能 %s"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "使用済み %s"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "マウントされていません"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "ホームフォルダー"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "コンピューター"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "無視する場所を選択"
 
-#: src/baobab-preferences-dialog.vala:55 src/baobab-window.vala:207
-msgid "_Cancel"
-msgstr "キャンセル(_C)"
-
-#: src/baobab-preferences-dialog.vala:56 src/baobab-window.vala:208
-msgid "_Open"
-msgstr "開く(_O)"
-
 #: src/baobab-preferences-dialog.vala:91
-msgid "Add Location…"
-msgstr "場所を追加…"
+msgid "_Add Location"
+msgstr "場所を追加(_A)"
 
-#: src/baobab-window.vala:205
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "フォルダーを選択"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "マウントポイントを再帰的に解析する"
 
-#: src/baobab-window.vala:236
-msgid "Could not analyze volume."
-msgstr "ボリュームを解析できませんでした。"
+#: src/baobab-window.vala:210
+msgid "Could not analyze volume"
+msgstr "ボリュームを解析できませんでした"
 
-#: src/baobab-window.vala:273
-msgid "Failed to show help"
-msgstr "ヘルプの表示に失敗しました"
-
-#: src/baobab-window.vala:295
-msgid "A graphical tool to analyze disk usage."
-msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
-
-#: src/baobab-window.vala:301
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
-"草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
+"Kusano Takayuki <gnome-l10n@tkusano.jp>\n"
 "佐藤 暁 <ss@gnome.gr.jp>\n"
 "高橋 宗史 <shuuji3@gmail.com>\n"
-"日本 GNOME ユーザー会 http://www.gnome.gr.jp/\n"
+"Japanese Team https://l10n.gnome.org/teams/ja/\n"
 "松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "やまねひでき <henrich@debian.or.jp>\n"
 "Eiichiro ITANI <emu@ceres.dti.ne.jp>\n"
@@ -380,50 +383,74 @@ msgstr ""
 "victory <victory.deb@gmail.com>\n"
 "Yasumichi Akahoshi <yasumichi@vinelinux.org>\n"
 "Yukihiro Nakai <nakai@gnome.gr.jp>\n"
-"Yuusuke Tahara <tahara@gnome.gr.jp>"
+"Yuusuke Tahara <tahara@gnome.gr.jp>\n"
+"Umoxfo <ycco34vx@gmail.com>"
 
-#: src/baobab-window.vala:375
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "ファイルを開けませんでした"
 
-#: src/baobab-window.vala:392
-msgid "Failed to move file to the trash"
-msgstr "ファイルをゴミ箱へ移動できませんでした"
+#: src/baobab-window.vala:346
+msgid "Failed to trash file"
+msgstr "ファイルをゴミ箱に移動できませんでした"
 
-#: src/baobab-window.vala:603
-msgid "Devices & Locations"
-msgstr "デバイスと場所"
+#: src/baobab-window.vala:623
+msgid "Could not scan folder"
+msgstr "フォルダーをスキャンできませんでした"
 
-#: src/baobab-window.vala:655
-#, c-format
-msgid "Could not scan folder “%s”"
-msgstr "“%s”をスキャンできませんでした"
-
-#: src/baobab-window.vala:670
-msgid "Could not always detect occupied disk sizes."
-msgstr "割り当てディスクサイズを検出できなかった可能性があります。"
-
-#: src/baobab-window.vala:670
-msgid "Apparent sizes may be shown instead."
-msgstr "実サイズが代わりに表示されるかもしれません。"
-
-#: src/baobab-window.vala:674
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "スキャン完了"
 
-#: src/baobab-window.vala:675
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s”のスキャンを完了しました"
 
-#: src/baobab-window.vala:715
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”は正常なフォルダーではありません"
 
-#: src/baobab-window.vala:716
-msgid "Could not analyze disk usage."
-msgstr "ディスクの使用量を解析できませんでした。"
+#~ msgctxt "shortcut window"
+#~ msgid "Go back to location list"
+#~ msgstr "場所の一覧に戻る"
+
+#~ msgid "_Open Folder"
+#~ msgstr "フォルダーを開く(_O)"
+
+#~ msgid "This Computer"
+#~ msgstr "このコンピューター"
+
+#~ msgid "Go back to location list"
+#~ msgstr "場所の一覧に戻る"
+
+#~ msgid "Close"
+#~ msgstr "閉じる"
+
+#~ msgid "_Cancel"
+#~ msgstr "キャンセル(_C)"
+
+#~ msgid "_Open"
+#~ msgstr "開く(_O)"
+
+#~ msgid "Failed to show help"
+#~ msgstr "ヘルプの表示に失敗しました"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "ディスクの使用量を解析するグラフィカルなツールです。"
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "ファイルをゴミ箱へ移動できませんでした"
+
+#~ msgid "Could not always detect occupied disk sizes."
+#~ msgstr "割り当てディスクサイズを検出できなかった可能性があります。"
+
+#~ msgid "Apparent sizes may be shown instead."
+#~ msgstr "実サイズが代わりに表示されるかもしれません。"
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "ディスクの使用量を解析できませんでした。"
 
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
