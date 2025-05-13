@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils 3.1.90\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-05-19 12:43+0000\n"
-"PO-Revision-Date: 2024-07-27 08:00+0000\n"
-"Last-Translator: Chao-Hsiung Liao <pesder@mail.edu.tw>\n"
+"POT-Creation-Date: 2025-03-10 11:17+0000\n"
+"PO-Revision-Date: 2025-04-03 20:31+0800\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://darkbear.mercusysddns.com/"
 "projects/gnome-45/baobab-po-ui-gnome-46/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -24,24 +24,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:267
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "磁碟用量分析器"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:4 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "檢查資料夾大小與可用的磁碟空間"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;儲存區;空間;清理;磁碟用量;分析;垃圾;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr "一款能控管磁碟用量及可用空間的簡單應用程式。"
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -50,23 +55,18 @@ msgstr ""
 "《磁碟用量分析器》能掃描特定資料夾、儲存裝置、線上帳號等位置，並提供環狀與樹"
 "狀兩種圖表來呈現個別資料夾所佔用的空間，藉此來分析磁碟空間是否有妥善利用。"
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "裝置與位置檢視"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "掃描檢視"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:269
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "GNOME 專案"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "storage;space;cleanup;儲存區;空間;清理;磁碟用量;分析;垃圾;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -169,27 +169,31 @@ msgstr "拉近(_I)"
 msgid "Zoom _Out"
 msgstr "拉遠(_O)"
 
-#: data/ui/baobab-folder-display.ui:14 data/ui/baobab-main-window.ui:141
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "移除資料夾"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "資料夾"
 
-#: data/ui/baobab-folder-display.ui:37 data/ui/baobab-main-window.ui:168
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
 msgstr "大小"
 
-#: data/ui/baobab-folder-display.ui:53 data/ui/baobab-main-window.ui:184
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
 msgstr "內容"
 
-#: data/ui/baobab-folder-display.ui:69 data/ui/baobab-main-window.ui:200
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
 msgid "Modified"
 msgstr "修改日期"
 
-#: data/ui/baobab-location-list.ui:18
+#: data/ui/baobab-location-list.ui:6
 msgid "This Device"
 msgstr "這個裝置"
 
-#: data/ui/baobab-location-list.ui:42
+#: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
 msgstr "遠端位置"
 
@@ -201,7 +205,7 @@ msgstr "掃描資料夾…"
 msgid "Clear Recent List"
 msgstr "清除近期列表"
 
-#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:6
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
 msgstr "偏好設定"
 
@@ -217,7 +221,7 @@ msgstr "求助(_H)"
 msgid "_About Disk Usage Analyzer"
 msgstr "關於磁碟用量分析器(_A)"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:540
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
 msgid "Devices & Locations"
 msgstr "裝置與位置"
 
@@ -225,23 +229,27 @@ msgstr "裝置與位置"
 msgid "Main Menu"
 msgstr "主要選單"
 
-#: data/ui/baobab-main-window.ui:97
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "結果"
+
+#: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
 msgstr "重新掃描目前位置"
 
-#: data/ui/baobab-main-window.ui:107
+#: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
 msgstr "檔案所佔用的空間可能比顯示的多"
 
-#: data/ui/baobab-main-window.ui:275
-msgid "Rings Chart"
-msgstr "環狀圖表"
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "環狀圖表(_R)"
 
-#: data/ui/baobab-main-window.ui:288
-msgid "Treemap Chart"
-msgstr "樹狀圖表"
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "樹狀圖表(_T)"
 
-#: data/ui/baobab-preferences-dialog.ui:12
+#: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "排除的位置"
 
@@ -255,38 +263,38 @@ msgstr "不要略過不同檔案系統的目錄。若未指定 DIRECTORY 時則�
 msgid "Print version information and exit"
 msgstr "輸出版本資訊並離開"
 
-#: src/baobab-cellrenderers.vala:34
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 個項目"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:40 src/baobab-location-list.vala:80
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
 msgstr "不明"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:48
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "今天"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:53
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
 msgstr[0] "%lu 日"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:58
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
 msgstr[0] "%lu 個月"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:62
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
@@ -297,48 +305,48 @@ msgstr[0] "%lu 年"
 msgid "%s Total"
 msgstr "%s 總計"
 
-#: src/baobab-location-list.vala:71
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "%s 剩餘"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:85
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "%s 已用"
 
-#: src/baobab-location-list.vala:87
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "未掛載"
 
-#: src/baobab-location.vala:72
+#: src/baobab-location.vala:73
 msgid "Home Folder"
 msgstr "家目錄"
 
-#: src/baobab-location.vala:107
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "電腦"
 
 #. The only activatable row is "Add location"
-#: src/baobab-preferences-dialog.vala:53
+#: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
 msgstr "選擇要忽略的位置"
 
-#: src/baobab-preferences-dialog.vala:90
-msgid "Add Location…"
-msgstr "加入位置…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "加入位置(_A)"
 
-#: src/baobab-window.vala:183
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "選擇資料夾"
 
-#: src/baobab-window.vala:190
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "遞迴分析掛載點"
 
-#: src/baobab-window.vala:214
+#: src/baobab-window.vala:210
 msgid "Could not analyze volume"
 msgstr "無法分析儲存區"
 
@@ -346,7 +354,7 @@ msgstr "無法分析儲存區"
 # 如對翻譯有任何意見，請送一封電子郵件給
 # 以下地址，GNOME 翻譯團隊會盡快回覆您：
 # zh-l10n@lists.linux.org.tw
-#: src/baobab-window.vala:276
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
 "Ching-Hung Lin <billlin@wshlab2.ee.kuas.edu.tw>, 2006\n"
@@ -355,30 +363,31 @@ msgstr ""
 "Roy Chan <roy.chan@linux.org.hk>, 2004\n"
 "Abel Cheung <abel@oaka.org>, 2001-2004\n"
 "Ming-Yen Hsu <myhsu@cyberdude.com>, 1999\n"
-"Freddy Cheng <freddy4212@gmail.com>, 2022."
+"Freddy Cheng <freddy4212@gmail.com>, 2022.\n"
+"Yi-Jyun Pan <me@pan93.com>, 2024."
 
-#: src/baobab-window.vala:341
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
 msgstr "無法開啟檔案"
 
-#: src/baobab-window.vala:358
+#: src/baobab-window.vala:346
 msgid "Failed to trash file"
 msgstr "無法將檔案丟入垃圾桶"
 
-#: src/baobab-window.vala:592
+#: src/baobab-window.vala:623
 msgid "Could not scan folder"
 msgstr "無法掃描資料夾"
 
-#: src/baobab-window.vala:608
+#: src/baobab-window.vala:638
 msgid "Scan completed"
 msgstr "掃描完畢"
 
-#: src/baobab-window.vala:609
+#: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "「%s」掃描完畢"
 
-#: src/baobab-window.vala:649
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "「%s」並非有效的資料夾"
@@ -504,9 +513,6 @@ msgstr "「%s」並非有效的資料夾"
 #~ msgstr "掃描資料夾"
 
 #~ msgid "Scan a remote folder"
-#~ msgstr "掃描遠端資料夾"
-
-#~ msgid "Scan Remote Folder"
 #~ msgstr "掃描遠端資料夾"
 
 #~ msgid "Reload"
