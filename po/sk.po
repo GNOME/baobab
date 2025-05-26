@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-08-17 02:25+0000\n"
-"PO-Revision-Date: 2024-08-17 11:33+0200\n"
+"POT-Creation-Date: 2025-05-10 11:15+0000\n"
+"PO-Revision-Date: 2025-05-26 09:02+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -21,23 +21,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.6\n"
 "X-DL-Team: sk\n"
 "X-DL-Module: baobab\n"
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:6
 #: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "Analyzátor využitia disku"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:4 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "Kontroluje veľkosti priečinkov a dostupné miesto na disku"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
+msgid "storage;space;cleanup;"
+msgstr "úložisko;miesto;premazanie;vyčistenie;čistenie;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -45,7 +50,7 @@ msgstr ""
 "Jednoduchá aplikácia, ktorá vám pomôže udržať využitie disku a dostupné "
 "miesto pod kontrolou."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -56,23 +61,18 @@ msgstr ""
 "ktorá zobrazuje veľkosť každého priečinku a uľahčuje tým identifikáciu, kde "
 "sa plytvá miestom."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "Zobrazenie zariadení a umiestnení"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "Zobrazenie analýzy"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "úložisko;miesto;premazanie;vyčistenie;čistenie;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -175,6 +175,11 @@ msgstr "_Zväčšiť"
 msgid "Zoom _Out"
 msgstr "Z_menšiť"
 
+# tooltip
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "Odstráni priečinok"
+
 #: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
 msgid "Folder"
 msgstr "Priečinok"
@@ -245,12 +250,10 @@ msgid "Files may take more space than shown"
 msgstr "Súbory môžu zaberať viac miesta, ako je zobrazené"
 
 #: data/ui/baobab-main-window.ui:259
-#| msgid "Rings Chart"
 msgid "_Rings Chart"
 msgstr "_Kruhový graf"
 
 #: data/ui/baobab-main-window.ui:273
-#| msgid "Treemap Chart"
 msgid "_Treemap Chart"
 msgstr "_Stĺpcový graf"
 
@@ -356,7 +359,6 @@ msgid "Select Location to Ignore"
 msgstr "Výber umiestnenia na ignorovanie"
 
 #: src/baobab-preferences-dialog.vala:91
-#| msgid "Add Location…"
 msgid "_Add Location"
 msgstr "Pridať u_miestnenie…"
 
