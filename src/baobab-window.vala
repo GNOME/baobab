@@ -65,6 +65,8 @@ namespace Baobab {
         [GtkChild]
         private unowned Adw.Spinner spinner;
 
+        private Scanner.Results? clicked_item = null;
+
         private Location? active_location = null;
         private bool is_busy = false;
         private ulong scan_completed_handler = 0;
@@ -119,6 +121,9 @@ namespace Baobab {
 
             hide_columnview_header ();
             treeview_popover_menu.set_menu_model (treeview_menu);
+            treeview_popover_menu.closed.connect (() => {
+                clicked_item = null;
+            });
 
             ui_settings.bind ("active-chart", chart_stack, "visible-child-name", SettingsBindFlags.DEFAULT);
             chart_stack.destroy.connect (() => { Settings.unbind (chart_stack, "visible-child-name"); });
@@ -398,6 +403,10 @@ namespace Baobab {
         }
 
         Scanner.Results? get_selected_item () {
+            if (clicked_item != null) {
+                return clicked_item;
+            }
+
             if (!(columnview_selection.selected_item is Gtk.TreeListRow)) {
                 return null;
             }
@@ -485,6 +494,13 @@ namespace Baobab {
 
             if (row == null) {
                 return;
+            }
+
+            if (columnview_selection.selected_item is Gtk.TreeListRow) {
+                var tree_list_row = columnview_selection.selected_item as Gtk.TreeListRow;
+                clicked_item = tree_list_row.item as Scanner.Results?;
+            } else {
+                clicked_item = null;
             }
 
             for (var cell = row.get_first_child (); cell != null; cell = cell.get_next_sibling ()) {

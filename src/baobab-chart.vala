@@ -68,6 +68,8 @@ namespace Baobab {
 
         List<ChartItem> items;
 
+        ChartItem? popover_item = null;
+
         Location location_;
         public Location location {
             set {
@@ -461,15 +463,15 @@ namespace Baobab {
         }
 
         public void open_file () {
-            ((Window) get_root ()).open_item (highlighted_item.results);
+            ((Window) get_root ()).open_item (popover_item.results);
         }
 
         public void copy_path () {
-            ((Window) get_root ()).copy_path (highlighted_item.results);
+            ((Window) get_root ()).copy_path (popover_item.results);
         }
 
         public void trash_file () {
-            ((Window) get_root ()).trash_file (highlighted_item.results);
+            ((Window) get_root ()).trash_file (popover_item.results);
         }
 
         protected bool can_move_up_root () {
@@ -500,10 +502,15 @@ namespace Baobab {
             context_menu = new Gtk.PopoverMenu.from_model (menu_model);
             context_menu.set_parent (this);
             context_menu.set_position (Gtk.PositionType.BOTTOM);
+            context_menu.closed.connect (() => {
+                popover_item = null;
+            });
         }
 
         void show_popover_at (int x, int y) {
             var enable = highlighted_item != null;
+            popover_item = highlighted_item;
+
             var action = action_group.lookup_action ("open-file") as SimpleAction;
             action.set_enabled (enable);
             action = action_group.lookup_action ("copy-path") as SimpleAction;
