@@ -1,61 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <object class="GtkShortcutsWindow" id="help_overlay">
-    <property name="modal">true</property>
+  <object class="AdwShortcutsDialog" id="shortcuts_dialog">
     <child>
-      <object class="GtkShortcutsSection">
-        <property name="section-name">shortcuts</property>
-        <property name="max-height">10</property>
+      <object class="AdwShortcutsSection">
+        <property name="title" translatable="yes" context="shortcuts dialog">General</property>
         <child>
-          <object class="GtkShortcutsGroup">
-            <property name="title" translatable="yes" context="shortcut window">General</property>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">win.help</property>
-                <property name="title" translatable="yes" context="shortcut window">Show help</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">win.show-primary-menu</property>
-                <property name="title" translatable="yes" context="shortcut window">Show / Hide primary menu</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">app.quit</property>
-                <property name="title" translatable="yes" context="shortcut window">Quit</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">win.show-help-overlay</property>
-                <property name="title" translatable="yes" context="shortcut window">Show Keyboard Shortcuts</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">win.show-preferences</property>
-                <property name="title" translatable="yes" context="shortcut window">Show preferences</property>
-              </object>
-            </child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">win.help</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Show Help</property>
           </object>
         </child>
         <child>
-          <object class="GtkShortcutsGroup">
-            <property name="title" translatable="yes" context="shortcut window">Scanning</property>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">win.scan-folder</property>
-                <property name="title" translatable="yes" context="shortcut window">Scan folder</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="action-name">win.reload</property>
-                <property name="title" translatable="yes" context="shortcut window">Rescan current location</property>
-              </object>
-            </child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">win.show-primary-menu</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Open Main Menu</property>
+          </object>
+        </child>
+        <child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">app.quit</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Quit</property>
+          </object>
+        </child>
+        <child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">app.shortcuts</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Show Keyboard Shortcuts</property>
+          </object>
+        </child>
+        <child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">win.show-preferences</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Show Preferences</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwShortcutsSection">
+        <property name="title" translatable="yes" context="shortcuts dialog">Scanning</property>
+        <child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">win.scan-folder</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Scan Folder</property>
+          </object>
+        </child>
+        <child>
+          <object class="AdwShortcutsItem">
+            <property name="action-name">win.reload</property>
+            <property name="title" translatable="yes" context="shortcuts dialog">Rescan Current Location</property>
           </object>
         </child>
       </object>
