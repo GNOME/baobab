@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: baobab main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
 "POT-Creation-Date: 2025-06-29 18:21+0000\n"
-"PO-Revision-Date: 2025-07-09 15:20-0400\n"
+"PO-Revision-Date: 2025-07-09 20:19-0400\n"
 "Last-Translator: Emilio Sepúlveda <emism.translations@gmail.com>\n"
 "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
 "Language: ia\n"
@@ -31,18 +31,20 @@ msgstr "Analysator de usage de disco"
 
 #: data/org.gnome.baobab.desktop.in:4 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
-msgstr ""
+msgstr "Verifica dimensiones de dossieres e le spatio disponibile de disco"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
-msgstr ""
+msgstr "immagazinage;spatio;nettage"
 
 #: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
+"Un application simple pro mantener le usage de tu disco e su spatio "
+"disponibile sub control."
 
 #: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
@@ -50,6 +52,10 @@ msgid ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
+"Analysator de usage de disco pote scannar dossieres specific, dispositivos "
+"de immagazinage e contos in linea. Il forni representationes graphic e de "
+"arbore monstrante le dimension de cata dossier, facente le identification "
+"facile del spatio in disco prodigate."
 
 #: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
@@ -57,7 +63,7 @@ msgstr "Vista de dispositivos e localisationes"
 
 #: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
-msgstr ""
+msgstr "Vista de scannamento"
 
 #. developer_name tag deprecated with Appstream 1.0
 #: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
@@ -66,19 +72,19 @@ msgstr "Le projecto GNOME"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
-msgstr ""
+msgstr "URIs de localisationes excludite"
 
 #: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for locations to be excluded from scanning."
-msgstr ""
+msgstr "Un lista de URIs pro localisationes a excluder del scannamento."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
-msgstr ""
+msgstr "Diagramma active"
 
 #: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
-msgstr ""
+msgstr "Qual typo de diagramma deberea esser monstrate."
 
 #: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
@@ -235,15 +241,15 @@ msgstr "Rescannar localisation actual"
 
 #: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
-msgstr ""
+msgstr "Le files pote prender plus spatio del monstrate"
 
 #: data/ui/baobab-main-window.ui:259
 msgid "_Rings Chart"
-msgstr ""
+msgstr "Diag_ramma de anellos"
 
 #: data/ui/baobab-main-window.ui:273
 msgid "_Treemap Chart"
-msgstr ""
+msgstr "Diagramma de _mappa de arbore"
 
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
@@ -254,6 +260,8 @@ msgid ""
 "Do not skip directories on different file systems. Ignored if DIRECTORY is "
 "not specified."
 msgstr ""
+"Non saltar directorios sur systemas de files differente. Ignorate si le "
+"DIRECTORIO non es specificate."
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
@@ -263,8 +271,8 @@ msgstr "Imprimer version de information e exir"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d elemento"
+msgstr[1] "%d elementos"
 
 #. Translators: when the last modified time is unknown
 #: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
@@ -281,45 +289,45 @@ msgstr "Hodie"
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%lu die"
+msgstr[1] "%lu dies"
 
 #. Translators: when the last modified time is "months" months ago
 #: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%lu mense"
+msgstr[1] "%lu menses"
 
 #. Translators: when the last modified time is "years" years ago
 #: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%lu anno"
+msgstr[1] "%lu annos"
 
 #: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
-msgstr ""
+msgstr "%s total"
 
 #: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
-msgstr ""
+msgstr "%s disponibile"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
 #: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
-msgstr ""
+msgstr "%s usate"
 
 #: src/baobab-location-list.vala:88
 msgid "Unmounted"
-msgstr ""
+msgstr "Dismontate"
 
 #: src/baobab-location.vala:73
 msgid "Home Folder"
@@ -344,11 +352,11 @@ msgstr "Seliger dossier"
 
 #: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
-msgstr ""
+msgstr "Analysar recursivemente punctos de montage"
 
 #: src/baobab-window.vala:210
 msgid "Could not analyze volume"
-msgstr ""
+msgstr "Non poteva analysar le volumine"
 
 #: src/baobab-window.vala:269
 msgid "translator-credits"
@@ -356,24 +364,24 @@ msgstr "Emilio Sepúlveda <emism.translations@gmail.com>"
 
 #: src/baobab-window.vala:329
 msgid "Failed to open file"
-msgstr ""
+msgstr "Falleva le apertura del file"
 
 #: src/baobab-window.vala:346
 msgid "Failed to trash file"
-msgstr ""
+msgstr "Falleva le elimination del file"
 
 #: src/baobab-window.vala:623
 msgid "Could not scan folder"
-msgstr ""
+msgstr "Non poteva scannar le dossier"
 
 #: src/baobab-window.vala:638
 msgid "Scan completed"
-msgstr ""
+msgstr "Scannamento completate"
 
 #: src/baobab-window.vala:639
 #, c-format
 msgid "Completed scan of “%s”"
-msgstr ""
+msgstr "Scannamento complete de “%s”"
 
 #: src/baobab-window.vala:679
 #, c-format
