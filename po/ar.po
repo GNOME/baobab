@@ -1,355 +1,471 @@
-# translation of gnome-utils.HEAD.ar.po to Arabic
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# Arabic translation for baobab.
+# Copyright (C) 2002, 2004, 2006-2008, 2010-2013, 2015, 2017, 2025 baobab's COPYRIGHT HOLDER
+# This file is distributed under the same license as the baobab package.
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
 # Djihed Afifi <djihed@gmail.com>, 2006.
 # Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012, 2013, 2015, 2017.
 # Anas Afif Emad <anas.e87@gmail.com, 2008.
+# Ahmed Najmawi <iramosu@protonmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils.gnome-2-16.ar\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-03 20:49+0200\n"
-"PO-Revision-Date: 2017-11-03 20:49+0200\n"
-"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Project-Id-Version: baobab main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2025-07-31 17:42+0000\n"
+"PO-Revision-Date: 2025-08-02 13:14+0300\n"
+"Last-Translator: Ahmed Najmawi <iramosu@protonmail.com>\n"
+"Language-Team: Arabic\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && "
+"n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Poedit 3.6\n"
 "X-Project-Style: gnome\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: src/baobab-main-window.ui:93
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
-msgstr "محلّل استخدام القرص"
+msgstr "محلل استخدام القرص"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
-msgstr "افحص حجم المجلدات والمساحة المتوفرة"
-
-#: data/org.gnome.baobab.appdata.xml.in:9
-msgid ""
-"A simple application to keep your disk usage and available space under "
-"control."
-msgstr "تطبيق بسيط لإبقاء استخدامك لمساحة القرص و المساحة المتاحة تحت السيطرة."
-
-#: data/org.gnome.baobab.appdata.xml.in:12
-msgid ""
-"Disk Usage Analyzer can scan specific folders, storage devices and online "
-"accounts. It provides both a tree and a graphical representation showing the "
-"size of each folder, making it easy to identify where disk space is wasted."
-msgstr ""
-"يستطيع محلل استخدام القرص فحص مجلدات معينة، و أجهزة التخزين، و حسابات "
-"الإنترنت. يوفر تمثيلا شجريًا و بيانيًا توضح حجم كل مجلد، مما يسهّل معرفة أين "
-"تُستهلك مساحة التخزين."
+msgstr "افحص حجم المجلدات ومساحة القرص المتوفرة"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
+#: data/org.gnome.baobab.desktop.in:5
 msgid "storage;space;cleanup;"
-msgstr "تخزين;مساحة;تنظيف;"
+msgstr "التخزين;المساحة;التنظيف;storage;space;cleanup;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.baobab.desktop.in:10
-msgid "baobab"
-msgstr "baobab"
+#: data/org.gnome.baobab.metainfo.xml.in:9
+msgid ""
+"A simple application to keep your disk usage and available space under control."
+msgstr "تطبيق بسيط للتحكم في استخدام قرصك والمساحة المتوفرة عليه."
 
-#: data/org.gnome.baobab.gschema.xml.in:9
-msgid "Excluded partitions URIs"
-msgstr "الأقسام المستنثاة"
+#: data/org.gnome.baobab.metainfo.xml.in:12
+msgid ""
+"Disk Usage Analyzer can scan specific folders, storage devices and online accounts. "
+"It provides both a tree and a graphical representation showing the size of each "
+"folder, making it easy to identify where disk space is wasted."
+msgstr ""
+"بإمكان محلل استخدام القرص فحص مجلدات معيَّنة، وأجهزة التخزين، وحسابات الإنترنت. يوفر "
+"تمثيلًا شجريًا وبيانيًا يوضح حجم كل مجلد، مما يسهِّل معرفة أين تهدر مساحة القرص."
 
-#: data/org.gnome.baobab.gschema.xml.in:10
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "قائمة التقسيمات المستثناة من الفحص."
+#: data/org.gnome.baobab.metainfo.xml.in:20
+msgid "Devices and Locations View"
+msgstr "منظور الأجهزة والأماكن"
 
-#: data/org.gnome.baobab.gschema.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:24
+msgid "Scan View"
+msgstr "منظور الفحص"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:262
+msgid "The GNOME Project"
+msgstr "مشروع جنوم"
+
+#: data/org.gnome.baobab.gschema.xml:9
+msgid "Excluded locations URIs"
+msgstr "عناوين URI للأماكن المستنثاة"
+
+#: data/org.gnome.baobab.gschema.xml:10
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "قائمة بعناوين URI للأماكن المستنثاة من الفحص."
+
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
 msgstr "الرسم البياني النشط"
 
-#: data/org.gnome.baobab.gschema.xml.in:21
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
 msgstr "أي نوع من الرسوم البيانية يُعرض."
 
-#: data/org.gnome.baobab.gschema.xml.in:25
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "حجم النافذة"
 
-#: data/org.gnome.baobab.gschema.xml.in:26
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "حجم النافذة الأولي"
 
-#: data/org.gnome.baobab.gschema.xml.in:30
-msgid "Window state"
-msgstr "حالة النافذة"
+#: data/org.gnome.baobab.gschema.xml:30
+msgid "Window Maximized"
+msgstr "تكبير النافذة"
 
-#: data/org.gnome.baobab.gschema.xml.in:31
-msgid "The GdkWindowState of the window"
-msgstr "GdkWindowState الخاصة بالنافذة"
+#: data/org.gnome.baobab.gschema.xml:31
+msgid "Whether or not the window is maximized"
+msgstr "فيما إذا تكبَّر النافذة أم لا"
 
-#: src/baobab-application.vala:28
+#: data/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عام"
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "أظهر المساعدة"
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "أظهر\\أخفِ القائمة الرئيسية"
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "اخرُج"
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "أظهر اختصارات لوحة المفاتيح"
+
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "أظهر التفضيلات"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "الفحص"
+
+#: data/gtk/help-overlay.ui:50
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "افحص مجلدًا"
+
+#: data/gtk/help-overlay.ui:56
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "أعد فحص المكان الحالي"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "ا_فتح خارجيًا"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
+msgid "_Copy Path to Clipboard"
+msgstr "ان_سخ المسار إلى الحافظة"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
+msgid "Mo_ve to Trash"
+msgstr "ا_نقل إلى المهملات"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _Parent Folder"
+msgstr "اذهب إلى المجلد الأ_م"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _In"
+msgstr "كبِّ_ر"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _Out"
+msgstr "ص_غِّر"
+
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "أزل المجلد"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
+msgid "Folder"
+msgstr "المجلد"
+
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
+msgid "Size"
+msgstr "الحجم"
+
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
+msgid "Contents"
+msgstr "المحتويات"
+
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
+msgid "Modified"
+msgstr "آخر تعديل"
+
+#: data/ui/baobab-location-list.ui:6
+msgid "This Device"
+msgstr "هذا الجهاز"
+
+#: data/ui/baobab-location-list.ui:19
+msgid "Remote Locations"
+msgstr "أماكن بعيدة"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "افحص مجلدًا…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "امحُ قائمة الحديثة"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
+msgid "Preferences"
+msgstr "التفضيلات"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "ا_ختصارات لوحة المفاتيح"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "م_ساعدة"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "_عن محلل استخدام القرص"
+
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+msgid "Devices & Locations"
+msgstr "الأجهزة والأماكن"
+
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "القائمة الرئيسية"
+
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "النتائج"
+
+#: data/ui/baobab-main-window.ui:90
+msgid "Rescan Current Location"
+msgstr "أعد فحص المكان الحالي"
+
+#: data/ui/baobab-main-window.ui:100
+msgid "Files may take more space than shown"
+msgstr "قد تأخذ الملفات مساحة أكبر من المعروضة"
+
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "رسم بياني _حلقي"
+
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "رسم بياني _شجري"
+
+#: data/ui/baobab-preferences-dialog.ui:11
+msgid "Locations to Ignore"
+msgstr "أماكن لتجاهلها"
+
+#: src/baobab-application.vala:33
+msgid ""
+"Do not skip directories on different file systems. Ignored if DIRECTORY is not "
+"specified."
+msgstr ""
+"لا تتخطَّ المجلدات الموجودة على أنظمة ملفات مختلفة. يُتجاهل هذا الخيار إن لم يُحدَّد مجلد."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "اكتب رقم الإصدار ثم اخرج"
 
-#: src/baobab-cellrenderers.vala:91
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "لا عناصر"
-msgstr[1] "عنصر واحد"
-msgstr[2] "عنصرين"
+msgstr[1] "عنصر"
+msgstr[2] "عنصران"
 msgstr[3] "%d عناصر"
-msgstr[4] "%d عنصرا"
+msgstr[4] "%d عنصرًا"
 msgstr[5] "%d عنصر"
 
 #. Translators: when the last modified time is unknown
-#: src/baobab-cellrenderers.vala:101 src/baobab-location-list.vala:79
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
 msgid "Unknown"
-msgstr "غير معروف"
+msgstr "مجهول"
 
 #. Translators: when the last modified time is today
-#: src/baobab-cellrenderers.vala:110
+#: src/baobab-cellrenderers.vala:38
 msgid "Today"
 msgstr "اليوم"
 
 #. Translators: when the last modified time is "days" days ago
-#: src/baobab-cellrenderers.vala:114
+#: src/baobab-cellrenderers.vala:43
 #, c-format
 msgid "%lu day"
 msgid_plural "%lu days"
-msgstr[0] "أقل من يوم"
-msgstr[1] "يوم"
-msgstr[2] "يومين"
-msgstr[3] "%lu أيام"
-msgstr[4] "%lu يومًا"
-msgstr[5] "%lu يوم"
+msgstr[0] "منذ أقل من يوم"
+msgstr[1] "البارحة"
+msgstr[2] "منذ يومين"
+msgstr[3] "منذ %lu أيام"
+msgstr[4] "منذ %lu يومًا"
+msgstr[5] "منذ %lu يوم"
 
 #. Translators: when the last modified time is "months" months ago
-#: src/baobab-cellrenderers.vala:118
+#: src/baobab-cellrenderers.vala:48
 #, c-format
 msgid "%lu month"
 msgid_plural "%lu months"
-msgstr[0] "أقلّ من شهر"
-msgstr[1] "شهر"
-msgstr[2] "شهرين"
-msgstr[3] "%lu أشهر"
-msgstr[4] "%lu شهرًا"
-msgstr[5] "%lu شهر"
+msgstr[0] "منذ أقل من شهر"
+msgstr[1] "منذ شهر"
+msgstr[2] "منذ شهرين"
+msgstr[3] "منذ %lu أشهر"
+msgstr[4] "منذ %lu شهرًا"
+msgstr[5] "منذ %lu شهر"
 
 #. Translators: when the last modified time is "years" years ago
-#: src/baobab-cellrenderers.vala:122
+#: src/baobab-cellrenderers.vala:52
 #, c-format
 msgid "%lu year"
 msgid_plural "%lu years"
-msgstr[0] "أقلّ من سنة"
-msgstr[1] "سنة"
-msgstr[2] "سنتين"
-msgstr[3] "%lu سنوات"
-msgstr[4] "%lu سنة"
-msgstr[5] "%lu سنة"
+msgstr[0] "منذ أقل من سنة"
+msgstr[1] "منذ سنة"
+msgstr[2] "منذ سنتين"
+msgstr[3] "منذ %lu سنوات"
+msgstr[4] "منذ %lu سنة"
+msgstr[5] "منذ %lu سنة"
 
-#: src/baobab-location-list.ui:17
-msgid "This Computer"
-msgstr "هذا الحاسوب"
-
-#: src/baobab-location-list.ui:47
-msgid "Remote Locations"
-msgstr "أماكن بعيدة"
-
-#: src/baobab-location-list.vala:66
+#: src/baobab-location-list.vala:67
 #, c-format
 msgid "%s Total"
 msgstr "إجمالي %s"
 
-#: src/baobab-location-list.vala:70
+#: src/baobab-location-list.vala:72
 #, c-format
 msgid "%s Available"
 msgstr "متاح %s"
 
 #. useful for some remote mounts where we don't know the
 #. size but do have a usage figure
-#: src/baobab-location-list.vala:84
+#: src/baobab-location-list.vala:86
 #, c-format
 msgid "%s Used"
 msgstr "مستخدَم %s"
 
-#: src/baobab-location-list.vala:86
+#: src/baobab-location-list.vala:88
 msgid "Unmounted"
 msgstr "مفصول"
 
 #: src/baobab-location.vala:73
-msgid "Home folder"
-msgstr "مجلّد المنزل"
+msgid "Home Folder"
+msgstr "مجلد المنزل"
 
-#: src/baobab-location.vala:113
+#: src/baobab-location.vala:108
 msgid "Computer"
 msgstr "الحاسوب"
 
-#: src/baobab-main-window.ui:12 src/menus.ui:25
-msgid "_Open Folder"
-msgstr "ا_فتح المجلّد"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Select Location to Ignore"
+msgstr "حدِّد مكانًا لتجاهله"
 
-#: src/baobab-main-window.ui:21 src/menus.ui:29
-msgid "_Copy Path to Clipboard"
-msgstr "ان_سخ المسار إلى الحافظة"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "أ_ضف مكانًا"
 
-#: src/baobab-main-window.ui:30 src/menus.ui:33
-msgid "Mo_ve to Trash"
-msgstr "ا_نقل للمهملات"
-
-#: src/baobab-main-window.ui:45
-msgid "Scan Folder…"
-msgstr "افحص مجلّدًا…"
-
-#: src/baobab-main-window.ui:157
-msgid "Close"
-msgstr "أغلق"
-
-#: src/baobab-main-window.ui:212
-msgid "Folder"
-msgstr "مجلد"
-
-#: src/baobab-main-window.ui:239
-msgid "Size"
-msgstr "الحجم"
-
-#: src/baobab-main-window.ui:259
-msgid "Contents"
-msgstr "المحتويات"
-
-#: src/baobab-main-window.ui:277
-msgid "Modified"
-msgstr "آخر تعديل"
-
-#: src/baobab-main-window.ui:322
-msgid "Rings Chart"
-msgstr "رسم بياني حلقي"
-
-#: src/baobab-main-window.ui:334
-msgid "Treemap Chart"
-msgstr "رسم بياني شجري"
-
-#: src/baobab-window.vala:209
+#: src/baobab-window.vala:179
 msgid "Select Folder"
-msgstr "اختر مجلدا"
+msgstr "حدِّد مجلدًا"
 
-#: src/baobab-window.vala:211
-msgid "_Cancel"
-msgstr "أ_لغِ"
-
-#: src/baobab-window.vala:212
-msgid "_Open"
-msgstr "ا_فتح"
-
-#: src/baobab-window.vala:218
+#: src/baobab-window.vala:186
 msgid "Recursively analyze mount points"
 msgstr "حلل نقاط الضم تتابعيًا"
 
-#: src/baobab-window.vala:253
-msgid "Could not analyze volume."
-msgstr "تعذّر تحليل الجزء."
+#: src/baobab-window.vala:210
+msgid "Could not analyze volume"
+msgstr "تعذَّر تحليل الجزء"
 
-#: src/baobab-window.vala:285
-msgid "Failed to show help"
-msgstr "تعذّر عرض المساعدة"
-
-#: src/baobab-window.vala:304
-msgid "Baobab"
-msgstr "بوباب"
-
-#: src/baobab-window.vala:307
-msgid "A graphical tool to analyze disk usage."
-msgstr "أداة رسوميّة لتحليل استعمال القرص."
-
-#: src/baobab-window.vala:312
+#: src/baobab-window.vala:269
 msgid "translator-credits"
 msgstr ""
-"فريق عربآيز للترجمة http://www.arabeyes.org:\n"
-"يوسف رفه <yousef@raffah.com>\n"
-"جهاد عفيفي <djihed@gmail.com>\n"
-"خالد حسني <khaledhosny@eglug.org>\n"
-"أنس عفيف عماد <anas.e87@gmail.com>"
+"فريق عربآيز للترجمة http://www.arabeyes.org\r\n"
+"يوسف رفه <yousef@raffah.com>\r\n"
+"جهاد عفيفي <djihed@gmail.com>\r\n"
+"خالد حسني <khaledhosny@eglug.org>\r\n"
+"أنس عفيف عماد <anas.e87@gmail.com>\n"
+"أحمد النجماوي <iramosu@protonmail.com>"
 
-#: src/baobab-window.vala:381
+#: src/baobab-window.vala:329
 msgid "Failed to open file"
-msgstr "تعذّر فتح الملف"
+msgstr "تعذَّر فتح الملف"
 
-#: src/baobab-window.vala:401
-msgid "Failed to move file to the trash"
-msgstr "تعذّر نقل الملف إلى المهملات"
+#: src/baobab-window.vala:346
+msgid "Failed to trash file"
+msgstr "تعذَّر نقل الملف إلى المهملات"
 
-#: src/baobab-window.vala:505
-msgid "Devices & Locations"
-msgstr "الأجهزة و الأماكن"
+#: src/baobab-window.vala:623
+msgid "Could not scan folder"
+msgstr "تعذَّر فحص المجلد"
 
-#: src/baobab-window.vala:566
+#: src/baobab-window.vala:638
+msgid "Scan completed"
+msgstr "اكتمل الفحص"
+
+#: src/baobab-window.vala:639
 #, c-format
-msgid "Could not scan folder “%s”"
-msgstr "تعذّر فحص المجلّد ”%s“"
+msgid "Completed scan of “%s”"
+msgstr "اكتمل فحص «%s»"
 
-#: src/baobab-window.vala:569
-#, c-format
-msgid "Could not scan some of the folders contained in “%s”"
-msgstr "تعذّر فحص بعض المجلدات الموجودة داخل ”%s“"
-
-#: src/baobab-window.vala:588
-msgid "Could not detect occupied disk sizes."
-msgstr "تعذّر تحديد المساحة المستخدمة من القرص."
-
-#: src/baobab-window.vala:588
-msgid "Apparent sizes are shown instead."
-msgstr "ستُعرض الأحجام الظاهرة بدلًا منها."
-
-#. || is_virtual_filesystem ()
-#: src/baobab-window.vala:605 src/baobab-window.vala:611
+#: src/baobab-window.vala:679
 #, c-format
 msgid "“%s” is not a valid folder"
-msgstr "ليس ”%s“ مجلّدا سليما"
+msgstr "لا يعد «%s» مجلّدا صالحًا"
 
-#: src/baobab-window.vala:606 src/baobab-window.vala:612
-msgid "Could not analyze disk usage."
-msgstr "تعذّر تحليل استعمال القرص."
+#~ msgid "baobab"
+#~ msgstr "baobab"
 
-#: src/menus.ui:7
-msgid "_Help"
-msgstr "م_ساعدة"
+#~ msgid "Window state"
+#~ msgstr "حالة النافذة"
 
-#: src/menus.ui:12
-msgid "_About"
-msgstr "_عن"
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "GdkWindowState الخاصة بالنافذة"
 
-#: src/menus.ui:16
-msgid "_Quit"
-msgstr "أ_نهِ"
+#~ msgid "This Computer"
+#~ msgstr "هذا الحاسوب"
 
-#: src/menus.ui:39
-msgid "Go to _parent folder"
-msgstr "اذهب للمجلد الأ_م"
+#~ msgid "_Open Folder"
+#~ msgstr "ا_فتح المجلّد"
 
-#: src/menus.ui:45
-msgid "Zoom _in"
-msgstr "_قرّب"
+#~ msgid "Close"
+#~ msgstr "أغلق"
 
-#: src/menus.ui:49
-msgid "Zoom _out"
-msgstr "ب_عّد"
+#~ msgid "_Cancel"
+#~ msgstr "أ_لغِ"
+
+#~ msgid "_Open"
+#~ msgstr "ا_فتح"
+
+#~ msgid "Failed to show help"
+#~ msgstr "تعذّر عرض المساعدة"
+
+#~ msgid "Baobab"
+#~ msgstr "بوباب"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "أداة رسوميّة لتحليل استعمال القرص."
+
+#~ msgid "Failed to move file to the trash"
+#~ msgstr "تعذّر نقل الملف إلى المهملات"
+
+#, c-format
+#~ msgid "Could not scan some of the folders contained in “%s”"
+#~ msgstr "تعذّر فحص بعض المجلدات الموجودة داخل ”%s“"
+
+#~ msgid "Could not detect occupied disk sizes."
+#~ msgstr "تعذّر تحديد المساحة المستخدمة من القرص."
+
+#~ msgid "Apparent sizes are shown instead."
+#~ msgstr "ستُعرض الأحجام الظاهرة بدلًا منها."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "تعذّر تحليل استعمال القرص."
+
+#~ msgid "_About"
+#~ msgstr "_عن"
 
 #~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
+#~ "A simple application which can scan either specific folders (local or remote) or "
+#~ "volumes and give a graphical representation including each directory size or "
+#~ "percentage."
 #~ msgstr ""
-#~ "تطبيق بسيط يتيح لك فحص مجلدات معينة (محلية أو بعيدة) أو أقراص التخزين، "
-#~ "و يعرض تمثيل رسومي لحجم أو نسبة كل مجلد."
+#~ "تطبيق بسيط يتيح لك فحص مجلدات معينة (محلية أو بعيدة) أو أقراص التخزين، و يعرض "
+#~ "تمثيل رسومي لحجم أو نسبة كل مجلد."
 
 #~ msgid "Scan Remote Folder…"
 #~ msgstr "افحص مجلّدا بعيدا…"
-
-#~ msgid "- Disk Usage Analyzer"
-#~ msgstr "- محلّل استخدام القرص"
 
 #~ msgid "Maximum depth"
 #~ msgstr "العمق الأقصى"
@@ -369,17 +485,11 @@ msgstr "ب_عّد"
 #~ msgid "Set the root node from the model"
 #~ msgstr "اضبط عقدة الجذر من النموذج"
 
-#~ msgid "Main volume"
-#~ msgstr "الجزء الرئيسي"
-
 #~ msgid "Usage"
 #~ msgstr "الاستخدام"
 
 #~ msgid "_Analyzer"
 #~ msgstr "الم_حلّل"
-
-#~ msgid "_Scan Home"
-#~ msgstr "اف_حص المنزل"
 
 #~ msgid "Scan F_older…"
 #~ msgstr "اف_حص المجلّد…"
@@ -405,16 +515,10 @@ msgstr "ب_عّد"
 #~ msgid "Whether any change to the home directory should be monitored."
 #~ msgstr "إذا وجب مراقبة أي تغيّرات على الدليل المنزلي."
 
-#~ msgid "Scan a folder"
-#~ msgstr "افحص مجلّدا"
-
 #~ msgid "Scan Folder"
 #~ msgstr "افحص المجلّد"
 
 #~ msgid "Scan a remote folder"
-#~ msgstr "افحص مجلّدا بعيدا"
-
-#~ msgid "Scan Remote Folder"
 #~ msgstr "افحص مجلّدا بعيدا"
 
 #~ msgid "Reload"
@@ -438,8 +542,7 @@ msgstr "ب_عّد"
 #~ msgid "Statusbar is Visible"
 #~ msgstr "شريط الحالة مرئي"
 
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgid "Whether the status bar at the bottom of main window should be visible."
 #~ msgstr "ما إذا وجب لعمود الحالة في أسفل نافذة التحرير أن يكون مرئيّا."
 
 #~ msgid "Scan"
@@ -453,9 +556,6 @@ msgstr "ب_عّد"
 
 #~ msgid "Stop scanning"
 #~ msgstr "أوقف الفحص"
-
-#~ msgid "_All locations"
-#~ msgstr "_كل الأماكن"
 
 #~ msgid "_Toolbar"
 #~ msgstr "شريط الأ_دوات"
@@ -498,9 +598,6 @@ msgstr "ب_عّد"
 
 #~ msgid "Refresh"
 #~ msgstr "أعِد التّحميل"
-
-#~ msgid "Scanning…"
-#~ msgstr "يفحص…"
 
 #~ msgid "Total filesystem capacity:"
 #~ msgstr "السّعة الكلية لنظام الملفات:"
@@ -555,9 +652,6 @@ msgstr "ب_عّد"
 
 #~ msgid "_Image type:"
 #~ msgstr "نوع _الصورة:"
-
-#~ msgid "Device"
-#~ msgstr "جهاز"
 
 #~ msgid "Mount Point"
 #~ msgstr "نقطة الوصل"
@@ -626,10 +720,9 @@ msgstr "ب_عّد"
 #~ msgstr "أأعيد فحص مجلّد المنزل؟"
 
 #~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "محتويات مجلّدك المنزلي تغيّرت. اختر أعِد الفحص لتحدّث تفاصيل استخدام القرص."
+#~ "The content of your home folder has changed. Select rescan to update the disk "
+#~ "usage details."
+#~ msgstr "محتويات مجلّدك المنزلي تغيّرت. اختر أعِد الفحص لتحدّث تفاصيل استخدام القرص."
 
 #~ msgid "_Rescan"
 #~ msgstr "أ_عد الفحص"
@@ -653,34 +746,33 @@ msgstr "ب_عّد"
 #~ msgstr "حدث خطأ عند عرض المساعدة."
 
 #~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
+#~ "This program is free software; you can redistribute it and/or modify it under "
+#~ "the terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version 2 of the License, or (at your option) any later "
+#~ "version."
 #~ msgstr ""
-#~ "هذا البرنامج حر؛ بإمكانك إعادة توزيعه و/أو تعديله تحت شروط الرخصة "
-#~ "العمومية العامة لجنو والتي نشرتها منظمة البرمجيات الحرة؛ سواء الإصدارة 2 "
-#~ "من الرخصة أو أي إصدارة بعدها حسب رغبتك."
+#~ "هذا البرنامج حر؛ بإمكانك إعادة توزيعه و/أو تعديله تحت شروط الرخصة العمومية "
+#~ "العامة لجنو والتي نشرتها منظمة البرمجيات الحرة؛ سواء الإصدارة 2 من الرخصة أو أي "
+#~ "إصدارة بعدها حسب رغبتك."
 
 #~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
+#~ "This program is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A "
+#~ "PARTICULAR PURPOSE.  See the GNU General Public License for more details."
 #~ msgstr ""
-#~ "يوزّع البرنامج على أمل أن يكون مفيدًا لمن يستخدمه دون أدنى مسؤولية؛ ولا حتى "
-#~ "أي ضمان يضمن صلاحية العرض في السوق أو توافقه مع أي استخدام محدد.  يمكنك "
-#~ "مراجعة الرخصة العمومية العامة لجنو لمزيد من التفاصيل."
+#~ "يوزّع البرنامج على أمل أن يكون مفيدًا لمن يستخدمه دون أدنى مسؤولية؛ ولا حتى أي "
+#~ "ضمان يضمن صلاحية العرض في السوق أو توافقه مع أي استخدام محدد.  يمكنك مراجعة "
+#~ "الرخصة العمومية العامة لجنو لمزيد من التفاصيل."
 
 #~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ "You should have received a copy of the GNU General Public License along with "
+#~ "this program; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301, USA"
 #~ msgstr ""
-#~ "من المفترض أن تكون قد استلمت نسخة من رخصة جنو العامة مع هذا البرنامج؛ في "
-#~ "حال عدم استلامك لذلك، يمكنك مكاتبة:\n"
-#~ "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
-#~ "MA  02110-1301, USA"
+#~ "من المفترض أن تكون قد استلمت نسخة من رخصة جنو العامة مع هذا البرنامج؛ في حال عدم "
+#~ "استلامك لذلك، يمكنك مكاتبة:\n"
+#~ "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  "
+#~ "02110-1301, USA"
 
 #~ msgid "The document does not exist."
 #~ msgstr "المستند غير موجود."
