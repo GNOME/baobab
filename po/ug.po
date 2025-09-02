@@ -7,251 +7,434 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=baobab&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-02-12 03:42+0000\n"
-"PO-Revision-Date: 2013-02-13 19:47+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
+"POT-Creation-Date: 2024-10-27 10:15+0000\n"
+"PO-Revision-Date: 2025-08-30 17:29-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.7\n"
 
-#: ../data/baobab.desktop.in.in.h:1 ../src/baobab-window.vala:188
+#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3 data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
 msgid "Disk Usage Analyzer"
 msgstr "دىسكا ئىشلىتىش تەھلىلچىسى"
 
-#: ../data/baobab.desktop.in.in.h:2
+#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
 msgid "Check folder sizes and available disk space"
 msgstr "قىسقۇچ چوڭلۇقى ۋە ئىشلىتىشكە بولىدىغان دىسكا بوشلۇقىنى تەكشۈر"
 
-#: ../data/baobab.desktop.in.in.h:3
+#: data/org.gnome.baobab.appdata.xml.in:9
+msgid "A simple application to keep your disk usage and available space under control."
+msgstr "دىسكا ئىشلىتىش ۋە ئىشلەتكىلى بولىدىغان بوشلۇقنى كونترول قىلىدىغان ئاددىي پىروگرامما."
+
+#: data/org.gnome.baobab.appdata.xml.in:12
+msgid "Disk Usage Analyzer can scan specific folders, storage devices and online accounts. It provides both a tree and a graphical representation showing the size of each folder, making it easy to identify where disk space is wasted."
+msgstr "دىسكا ئىشلىتىش تەھلىلچىسى ئالاھىدە ھۆججەت قىسقۇچ، ساقلاش ئۈسكۈنىلىرى ۋە تور ھېساباتىنى تارايدۇ. ئۇ ھەر بىر ھۆججەت قىسقۇچنىڭ چوڭ-كىچىكلىكىنى كۆرسىتىپ بېرىدىغان شاخسىمان ۋە گرافىكلىق تەسۋىر بىلەن تەمىنلەيدۇ، دىسكا بوشلۇقىنىڭ قەيەردە ئىسراپ قىلىنغانلىقىنى بىلىشنى ئاسانلاشتۇرىدۇ."
+
+#: data/org.gnome.baobab.appdata.xml.in:20
+msgid "Devices and Locations View"
+msgstr "ئۈسكۈنە ۋە ئورۇن كۆرۈنۈشى"
+
+#: data/org.gnome.baobab.appdata.xml.in:24
+msgid "Scan View"
+msgstr "تاراش كۆرۈنۈشى"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+msgid "The GNOME Project"
+msgstr "GNOME قۇرۇلۇشى"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:6
 msgid "storage;space;cleanup;"
 msgstr "storage;space;cleanup;ساقلىغۇچ;بوشلۇق;تازىلاش;"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:1
-msgid "Excluded partitions URIs"
-msgstr "سىرتتا قالدۇرۇلىدىغان دىسكا رايونىنىڭ URI سى"
+#: data/org.gnome.baobab.gschema.xml:9
+msgid "Excluded locations URIs"
+msgstr "مۇستەسنا ئورۇن URI سى"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:2
-msgid "A list of URIs for partitions to be excluded from scanning."
-msgstr "تەكشۈرگەندە سىرتتا قالدۇرۇلىدىغان دىسكا رايونىنىڭ URI سى كۆرسىتىلىدۇ."
+#: data/org.gnome.baobab.gschema.xml:10
+msgid "A list of URIs for locations to be excluded from scanning."
+msgstr "تاراشتىن مۇستەسنا ئورۇن URI سىنىڭ تىزىمى."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:3
+#: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
-msgstr "ئاكتىپ دىئاگرامما"
+msgstr "ئاكتىپ دىياگرامما"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:4
+#: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
-msgstr "قايسى تىپتىكى دىئاگرامما كۆرسىتىلىدۇ."
+msgstr "قايسى تىپتىكى دىياگرامما كۆرسىتىلىدۇ."
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:5
+#: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
 msgstr "كۆزنەك چوڭلۇقى"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:6
+#: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
 msgstr "كۆزنەكنىڭ دەسلەپكى چوڭلۇقى"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:7
-msgid "Window state"
-msgstr "كۆزنەك ھالىتى"
+#: data/org.gnome.baobab.gschema.xml:30
+msgid "Window Maximized"
+msgstr "كۆزنەك چوڭايتىلدى"
 
-#: ../data/org.gnome.baobab.gschema.xml.in.h:8
-msgid "The GdkWindowState of the window"
-msgstr "كۆزنەكنىڭ GdkWindowState ھالىتى"
+#: data/org.gnome.baobab.gschema.xml:31
+msgid "Whether or not the window is maximized"
+msgstr "كۆزنەك چوڭايتىلغانمۇ يوق"
 
-#: ../src/baobab-application.vala:30
+#: data/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "ئادەتتىكى"
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "ياردەمنى كۆرسەت"
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Show / Hide primary menu"
+msgstr "ئاساسىي تىزىملىكنى كۆرسەت/يوشۇر"
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "چېكىن"
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "ھەرپتاختا قىسقا يولىنى كۆرسەت"
+
+#: data/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "مايىللىقنى كۆرسەت"
+
+#: data/gtk/help-overlay.ui:46
+msgctxt "shortcut window"
+msgid "Scanning"
+msgstr "تاراۋاتىدۇ"
+
+#: data/gtk/help-overlay.ui:50
+msgctxt "shortcut window"
+msgid "Scan folder"
+msgstr "قىسقۇچ تارا"
+
+#: data/gtk/help-overlay.ui:56
+msgctxt "shortcut window"
+msgid "Rescan current location"
+msgstr "نۆۋەتتىكى ئورۇننى قايتا تارا"
+
+#: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
+msgid "_Open Externally"
+msgstr "سىرتتا ئاچ(_O)"
+
+#: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
+msgid "_Copy Path to Clipboard"
+msgstr "يولنى چاپلاش تاختىسىغا كۆچۈر(_C)"
+
+#: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
+msgid "Mo_ve to Trash"
+msgstr "ئەخلەتخانىغا يۆتكە(_V)"
+
+#: data/gtk/menus.ui:21
+msgid "Go to _Parent Folder"
+msgstr "ئانا قىسقۇچقا يۆتكەل(_P)"
+
+#: data/gtk/menus.ui:27
+msgid "Zoom _In"
+msgstr "چوڭايت(_I)"
+
+#: data/gtk/menus.ui:31
+msgid "Zoom _Out"
+msgstr "كىچىكلەت(_O)"
+
+#: data/ui/baobab-excluded-row.ui:7
+msgid "Remove Folder"
+msgstr "قىسقۇچ چىقىرىۋەت"
+
+#: data/ui/baobab-folder-display.ui:26 data/ui/baobab-main-window.ui:144
+msgid "Folder"
+msgstr "قىسقۇچ"
+
+#: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
+msgid "Size"
+msgstr "چوڭلۇقى"
+
+#: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
+msgid "Contents"
+msgstr "مەزمۇنلار"
+
+#: data/ui/baobab-folder-display.ui:114 data/ui/baobab-main-window.ui:184
+msgid "Modified"
+msgstr "ئۆزگەرتىلگەن ۋاقتى"
+
+#: data/ui/baobab-location-list.ui:6
+msgid "This Device"
+msgstr "ئۈسكۈنە"
+
+#: data/ui/baobab-location-list.ui:19
+msgid "Remote Locations"
+msgstr "يىراقتىكى ئورنى"
+
+#: data/ui/baobab-main-window.ui:7
+msgid "Scan Folder…"
+msgstr "قىسقۇچ تارا…"
+
+#: data/ui/baobab-main-window.ui:11
+msgid "Clear Recent List"
+msgstr "يېقىنقى تىزىمنى تازىلا"
+
+#: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
+msgid "Preferences"
+msgstr "مايىللىق"
+
+#: data/ui/baobab-main-window.ui:21
+msgid "Keyboard _Shortcuts"
+msgstr "ھەرپتاختا تېزلەتمە(_S)"
+
+#: data/ui/baobab-main-window.ui:25
+msgid "_Help"
+msgstr "ياردەم(_H)"
+
+#: data/ui/baobab-main-window.ui:29
+msgid "_About Disk Usage Analyzer"
+msgstr "دىسكا ئىشلىتىش تەھلىلچىسى ھەققىدە(_A)"
+
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+msgid "Devices & Locations"
+msgstr "ئۈسكۈنە ۋە ئورۇن"
+
+#: data/ui/baobab-main-window.ui:55
+msgid "Main Menu"
+msgstr "ئاساسىي تىزىملىك"
+
+#: data/ui/baobab-main-window.ui:70
+msgid "Results"
+msgstr "نەتىجە"
+
+#: data/ui/baobab-main-window.ui:90
+msgid "Rescan Current Location"
+msgstr "نۆۋەتتىكى ئورۇننى قايتا تارا"
+
+#: data/ui/baobab-main-window.ui:100
+msgid "Files may take more space than shown"
+msgstr "ھۆججەت كۆرۈنگەندىن كۆپرەك بوشلۇقنى ئىگىلىشى مۇمكىن"
+
+#: data/ui/baobab-main-window.ui:259
+msgid "_Rings Chart"
+msgstr "چەمبەرسىمان دىياگرامما(_R)"
+
+#: data/ui/baobab-main-window.ui:273
+msgid "_Treemap Chart"
+msgstr "شاخسىمان دىياگرامما(_T)"
+
+#: data/ui/baobab-preferences-dialog.ui:11
+msgid "Locations to Ignore"
+msgstr "پەرۋا قىلمايدىغان ئورۇنلار"
+
+#: src/baobab-application.vala:33
+msgid "Do not skip directories on different file systems. Ignored if DIRECTORY is not specified."
+msgstr "پەرقلىق ھۆججەت سىستېمىسىدا مۇندەرىجىدىن ئاتلاپ كەتمەيدۇ. ئەگەر مۇندەرىجە بەلگىلەنمىگەن بولسا پەرۋا قىلمايدۇ."
+
+#: src/baobab-application.vala:34
 msgid "Print version information and exit"
 msgstr "نەشر ئۇچۇرىنى كۆرسىتىپ ئاخىرلىشىدۇ"
 
-#: ../src/baobab-application.vala:104
-msgid "- Disk Usage Analyzer"
-msgstr "- دىسكا ئىشلىتىش تەھلىلچىسى"
-
-#: ../src/baobab-cellrenderers.vala:100
+#: src/baobab-cellrenderers.vala:24
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "‏‏%d تۈر"
 
-#: ../src/baobab-chart.c:186
-msgid "Maximum depth"
-msgstr "ئەڭ يۇقىرى چوڭقۇرلۇقى"
+#. Translators: when the last modified time is unknown
+#: src/baobab-cellrenderers.vala:30 src/baobab-location-list.vala:81
+msgid "Unknown"
+msgstr "يوچۇن"
 
-#: ../src/baobab-chart.c:187
-msgid "The maximum depth drawn in the chart from the root"
-msgstr "غول مۇندەرىجىدىن باشلانغان ئەڭ يۇقىرى چوڭقۇرلۇقى"
+#. Translators: when the last modified time is today
+#: src/baobab-cellrenderers.vala:38
+msgid "Today"
+msgstr "بۈگۈن"
 
-#: ../src/baobab-chart.c:196
-msgid "Chart model"
-msgstr "دىئاگرامما مودېلى"
+#. Translators: when the last modified time is "days" days ago
+#: src/baobab-cellrenderers.vala:43
+#, c-format
+msgid "%lu day"
+msgid_plural "%lu days"
+msgstr[0] "%lu كۈن"
 
-#: ../src/baobab-chart.c:197
-msgid "Set the model of the chart"
-msgstr "دىئاگرامما مودېل تەڭشىكى"
+#. Translators: when the last modified time is "months" months ago
+#: src/baobab-cellrenderers.vala:48
+#, c-format
+msgid "%lu month"
+msgid_plural "%lu months"
+msgstr[0] "%lu ئاي"
 
-#: ../src/baobab-chart.c:204
-msgid "Chart root node"
-msgstr "دىئاگرامما غول تۈگۈنى"
+#. Translators: when the last modified time is "years" years ago
+#: src/baobab-cellrenderers.vala:52
+#, c-format
+msgid "%lu year"
+msgid_plural "%lu years"
+msgstr[0] "%lu يىل"
 
-#: ../src/baobab-chart.c:205
-msgid "Set the root node from the model"
-msgstr "مودېلنىڭ غول تۈگۈنىنى تەڭشىمەك"
+#: src/baobab-location-list.vala:67
+#, c-format
+msgid "%s Total"
+msgstr "جەمئى %s"
 
-#: ../src/baobab-chart.c:898
-msgid "_Move to parent folder"
-msgstr "ئاتا قىسقۇچقا يۆتكە(_M)"
+#: src/baobab-location-list.vala:72
+#, c-format
+msgid "%s Available"
+msgstr "%s ئىشلەتكىلى بولىدۇ"
 
-#: ../src/baobab-chart.c:902
-msgid "Zoom _in"
-msgstr "چوڭايت(_I)"
+#. useful for some remote mounts where we don't know the
+#. size but do have a usage figure
+#: src/baobab-location-list.vala:86
+#, c-format
+msgid "%s Used"
+msgstr "%s ئىشلەتكەن"
 
-#: ../src/baobab-chart.c:906
-msgid "Zoom _out"
-msgstr "كىچىكلەت(_O)"
+#: src/baobab-location-list.vala:88
+msgid "Unmounted"
+msgstr "ئېگەرسىزلەندى"
 
-#: ../src/baobab-location.vala:77
-msgid "Home folder"
+#: src/baobab-location.vala:73
+msgid "Home Folder"
 msgstr "ماكان مۇندەرىجە"
 
-#: ../src/baobab-location.vala:123
-msgid "Main volume"
-msgstr "ئاساسىي دىسكا"
+#: src/baobab-location.vala:108
+msgid "Computer"
+msgstr "كومپيۇتېر"
 
-#: ../src/baobab-main-window.ui.h:1
-msgid "Scan Folder…"
-msgstr "قىسقۇچ تەكشۈر…"
+#. The only activatable row is "Add location"
+#: src/baobab-preferences-dialog.vala:51
+msgid "Select Location to Ignore"
+msgstr "پەرۋا قىلمايدىغان ئورۇن تاللىنىدۇ"
 
-#: ../src/baobab-main-window.ui.h:2
-msgid "Scan Remote Folder…"
-msgstr "يىراقتىكى قىسقۇچنى تەكشۈر…"
+#: src/baobab-preferences-dialog.vala:91
+msgid "_Add Location"
+msgstr "ئورۇن قوش(_A)"
 
-#: ../src/baobab-main-window.ui.h:3
-msgid "Close"
-msgstr "ياپ"
-
-#: ../src/baobab-main-window.ui.h:4
-msgid "Folder"
-msgstr "قىسقۇچ"
-
-#: ../src/baobab-main-window.ui.h:5
-msgid "Usage"
-msgstr "ئىشلىتىلىشى"
-
-#: ../src/baobab-main-window.ui.h:6
-msgid "Size"
-msgstr "چوڭلۇقى"
-
-#: ../src/baobab-main-window.ui.h:7
-msgid "Contents"
-msgstr "مەزمۇنلار"
-
-#: ../src/baobab-main-window.ui.h:8
-msgid "Rings Chart"
-msgstr "چەمبەرسىمان دىئاگرامما"
-
-#: ../src/baobab-main-window.ui.h:9
-msgid "Treemap Chart"
-msgstr "شاخسىمان دىئاگرامما"
-
-#: ../src/baobab-main-window.ui.h:10
-msgid "_Open Folder"
-msgstr "قىسقۇچ ئاچ(_O)"
-
-#: ../src/baobab-main-window.ui.h:11
-msgid "_Copy Path to Clipboard"
-msgstr "يولنى چاپلاش تاختىسىغا كۆچۈر(_C)"
-
-#: ../src/baobab-main-window.ui.h:12
-msgid "Mo_ve to Trash"
-msgstr "ئەخلەتخانىغا يۆتكە(_V)"
-
-#: ../src/baobab-menu.ui.h:1
-msgid "_Help"
-msgstr "ياردەم(_H)"
-
-#: ../src/baobab-menu.ui.h:2
-msgid "_About"
-msgstr "ھەققىدە(_A)"
-
-#: ../src/baobab-menu.ui.h:3
-msgid "_Quit"
-msgstr "ئاخىرلاشتۇر(_Q)"
-
-#: ../src/baobab-menu.ui.h:4
-msgid "_Analyzer"
-msgstr "تەھلىلچى(_A)"
-
-#: ../src/baobab-menu.ui.h:5
-msgid "_Scan Home"
-msgstr "ماكان مۇندەرىجىنى تەكشۈر(_S)"
-
-#: ../src/baobab-menu.ui.h:6
-msgid "Scan F_older…"
-msgstr "قىسقۇچ تەكشۈر(_O)…"
-
-#: ../src/baobab-menu.ui.h:7
-msgid "Scan Remote Fo_lder…"
-msgstr "يىراقتىكى قىسقۇچنى تەكشۈر(_L)…"
-
-#: ../src/baobab-menu.ui.h:8
-msgid "_View"
-msgstr "كۆرۈنۈش(_V)"
-
-#: ../src/baobab-menu.ui.h:9
-msgid "_Reload"
-msgstr "قايتا يۈكلە(_R)"
-
-#: ../src/baobab-menu.ui.h:10
-msgid "_Expand All"
-msgstr "ھەممىنى ياي(_E)"
-
-#: ../src/baobab-menu.ui.h:11
-msgid "_Collapse All"
-msgstr "ھەممىنى قاتلا(_C)"
-
-#: ../src/baobab-window.vala:131
-msgid "Devices and locations"
-msgstr "ئۈسكۈنىلەر ۋە ئورۇنلار"
-
-#: ../src/baobab-window.vala:229
+#: src/baobab-window.vala:179
 msgid "Select Folder"
 msgstr "قىسقۇچ تاللا"
 
-#: ../src/baobab-window.vala:279
-msgid "Could not analyze volume."
-msgstr "دىسكىنى تەھلىل قىلالمىدى."
+#: src/baobab-window.vala:186
+msgid "Recursively analyze mount points"
+msgstr "ئېگەرلەش نۇقتىسىنى قايتا تەھلىل قىلىش"
 
-#: ../src/baobab-window.vala:330
-msgid "Baobab"
-msgstr "Baobab"
+#: src/baobab-window.vala:210
+msgid "Could not analyze volume"
+msgstr "دىسكىنى تەھلىل قىلالمىدى"
 
-#: ../src/baobab-window.vala:333
-msgid "A graphical tool to analyze disk usage."
-msgstr "دىسكا ئىشلىتىش ئەھۋالى تەھلىلىگە ئىشلىتىلىدىغان كۆزنەكلىك قورال."
-
-#: ../src/baobab-window.vala:338
+#: src/baobab-window.vala:269
 msgid "translator-credits"
-msgstr "Gheyret Kenji <gheyret@gmail.com>\n"
-"Sahran<sahran@live.com>\n"
-"Muhemmed Erdem <misran_erdem@hotmail.com>"
+msgstr "تەرجىمان تۆھپىسى"
 
-#: ../src/baobab-window.vala:580
-#, c-format
-msgid "Could not scan folder \"%s\" or some of the folders it contains."
-msgstr "قىسقۇچ «%s» نى ياكى ئۇنىڭ ئىچىدىكى بەزى بىر قىسقۇچلارنى تەكشۈرەلمىدى."
+#: src/baobab-window.vala:329
+msgid "Failed to open file"
+msgstr "ھۆججەتنى ئاچالمىدى"
 
-#. || is_virtual_filesystem ()
-#: ../src/baobab-window.vala:599 ../src/baobab-window.vala:605
+#: src/baobab-window.vala:346
+msgid "Failed to trash file"
+msgstr "ھۆججەتنى ئەخلەتخانىغا تاشلىيالمىدى"
+
+#: src/baobab-window.vala:623
+msgid "Could not scan folder"
+msgstr "قىسقۇچنى تارىيالمىدى"
+
+#: src/baobab-window.vala:638
+msgid "Scan completed"
+msgstr "تاراش تامام"
+
+#: src/baobab-window.vala:639
 #, c-format
-msgid "\"%s\" is not a valid folder"
+msgid "Completed scan of “%s”"
+msgstr "«%s» نى تاراش تاماملاندى"
+
+#: src/baobab-window.vala:679
+#, c-format
+msgid "“%s” is not a valid folder"
 msgstr "«%s» ئىناۋەتلىك قىسقۇچ ئەمەس"
 
-#: ../src/baobab-window.vala:600 ../src/baobab-window.vala:606
-msgid "Could not analyze disk usage."
-msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
+#~ msgid "Window state"
+#~ msgstr "كۆزنەك ھالىتى"
+
+#~ msgid "The GdkWindowState of the window"
+#~ msgstr "كۆزنەكنىڭ GdkWindowState ھالىتى"
+
+#~ msgid "Maximum depth"
+#~ msgstr "ئەڭ يۇقىرى چوڭقۇرلۇقى"
+
+#~ msgid "The maximum depth drawn in the chart from the root"
+#~ msgstr "غول مۇندەرىجىدىن باشلانغان ئەڭ يۇقىرى چوڭقۇرلۇقى"
+
+#~ msgid "Chart model"
+#~ msgstr "دىئاگرامما مودېلى"
+
+#~ msgid "Set the model of the chart"
+#~ msgstr "دىئاگرامما مودېل تەڭشىكى"
+
+#~ msgid "Chart root node"
+#~ msgstr "دىئاگرامما غول تۈگۈنى"
+
+#~ msgid "Set the root node from the model"
+#~ msgstr "مودېلنىڭ غول تۈگۈنىنى تەڭشىمەك"
+
+#~ msgid "Scan Remote Folder…"
+#~ msgstr "يىراقتىكى قىسقۇچنى تەكشۈر…"
+
+#~ msgid "Close"
+#~ msgstr "ياپ"
+
+#~ msgid "Usage"
+#~ msgstr "ئىشلىتىلىشى"
+
+#~ msgid "_Open Folder"
+#~ msgstr "قىسقۇچ ئاچ(_O)"
+
+#~ msgid "_About"
+#~ msgstr "ھەققىدە(_A)"
+
+#~ msgid "_Analyzer"
+#~ msgstr "تەھلىلچى(_A)"
+
+#~ msgid "Scan F_older…"
+#~ msgstr "قىسقۇچ تەكشۈر(_O)…"
+
+#~ msgid "Scan Remote Fo_lder…"
+#~ msgstr "يىراقتىكى قىسقۇچنى تەكشۈر(_L)…"
+
+#~ msgid "_View"
+#~ msgstr "كۆرۈنۈش(_V)"
+
+#~ msgid "_Reload"
+#~ msgstr "قايتا يۈكلە(_R)"
+
+#~ msgid "_Expand All"
+#~ msgstr "ھەممىنى ياي(_E)"
+
+#~ msgid "_Collapse All"
+#~ msgstr "ھەممىنى قاتلا(_C)"
+
+#~ msgid "Baobab"
+#~ msgstr "Baobab"
+
+#~ msgid "A graphical tool to analyze disk usage."
+#~ msgstr "دىسكا ئىشلىتىش ئەھۋالى تەھلىلىگە ئىشلىتىلىدىغان كۆزنەكلىك قورال."
+
+#, c-format
+#~ msgid "Could not scan folder \"%s\" or some of the folders it contains."
+#~ msgstr "قىسقۇچ «%s» نى ياكى ئۇنىڭ ئىچىدىكى بەزى بىر قىسقۇچلارنى تەكشۈرەلمىدى."
+
+#~ msgid "Could not analyze disk usage."
+#~ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "دىسكا ئىشلىتىش تەھلىلچىسى مايىللىقى"
@@ -278,8 +461,7 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "Statusbar is Visible"
 #~ msgstr "ھالەت بالداق كۆرۈنۈشچان"
 
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
+#~ msgid "Whether the status bar at the bottom of main window should be visible."
 #~ msgstr "ئاساسىي كۆزنەك ئاستىدىكى ھالەت بالداق كۆرۈنەمدۇ يوق."
 
 #~ msgid "Scan _Home Folder"
@@ -315,9 +497,6 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "Scan File System"
 #~ msgstr "ھۆججەت سىستېمىسىنى تەكشۈرۈش"
 
-#~ msgid "Scan a folder"
-#~ msgstr "قىسقۇچتىن بىرنى تەكشۈرىدۇ"
-
 #~ msgid "Scan Folder"
 #~ msgstr "قىسقۇچ تەكشۈر"
 
@@ -325,18 +504,11 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "Scan a remote folder or file system"
 #~ msgstr "يىراقتىكى قىسقۇچ ياكى سىستېمىنى تەكشۈر"
 
-#~ msgid "Scan Remote Folder"
-#~ msgstr "يىراقتىكى قىسقۇچنى تەكشۈر"
-
 #~ msgid "Stop scanning"
 #~ msgstr "تەكشۈرۈشنى توختات"
 
 #~ msgid "Refresh"
 #~ msgstr "يېڭىلا"
-
-#~| msgid "Scanning..."
-#~ msgid "Scanning…"
-#~ msgstr "تەكشۈرۈۋاتىدۇ…"
 
 #~ msgid "Total filesystem capacity:"
 #~ msgstr "ھۆججەت سىستېما ئومۇمىي سىغىمى:"
@@ -382,8 +554,7 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgstr "ھېچقانداق ئېگەرلەش نۇقتىسى بايقالمىدى."
 
 #~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr ""
-#~ "ئېگەرلەش نۇقتىسى بولمىسا دىسكا ئىشلىتىش ئەھۋالىنى تەھلىل قىلغىلى بولمايدۇ."
+#~ msgstr "ئېگەرلەش نۇقتىسى بولمىسا دىسكا ئىشلىتىش ئەھۋالىنى تەھلىل قىلغىلى بولمايدۇ."
 
 #~ msgid "Save screenshot"
 #~ msgstr "ئېكران كەسمىسى ساقلا"
@@ -400,9 +571,6 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "Scan"
 #~ msgstr "تەكشۈر"
 
-#~ msgid "Device"
-#~ msgstr "ئۈسكۈنە"
-
 #~ msgid "Mount Point"
 #~ msgstr "ئېگەرلەش نۇقتىسى"
 
@@ -413,14 +581,8 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "Total Size"
 #~ msgstr "ئومۇمىي سىغىمى"
 
-#~ msgid "Available"
-#~ msgstr "ئىشلىتىلىشچان"
-
 #~ msgid "Cannot scan location \"%s\""
 #~ msgstr "\"%s\"ئورۇننى تەكشۈرەلمىدى"
-
-#~ msgid "Custom Location"
-#~ msgstr "ئۆزلەشتۈرگەن ئورۇن"
 
 #~ msgid "SSH"
 #~ msgstr "SSH"
@@ -438,9 +600,7 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgstr "بىخەتەر WebDAV (HTTPS)"
 
 #~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr ""
-#~ "مۇلازىمېتىرغا باغلىنالمىدى. مۇلازىمېتىرنىڭ ئاتىدىن بىرنى كىرگۈزۈشىڭىز "
-#~ "لازىم."
+#~ msgstr "مۇلازىمېتىرغا باغلىنالمىدى. مۇلازىمېتىرنىڭ ئاتىدىن بىرنى كىرگۈزۈشىڭىز لازىم."
 
 #~ msgid "Please enter a name and try again."
 #~ msgstr "ئاتتىن بىرنى كىرگۈزۈپ ئاندىن قايتا سىناڭ."
@@ -481,12 +641,8 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "Rescan your home folder?"
 #~ msgstr "ماكان مۇندەرىجىڭىزنى قايتا تەكشۈرەمسىز؟"
 
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "نۆۋەتتىكى ماكان قىسقۇچىڭىز ئۆزگەرتىلدى. قايتا تەكشۈرۈش تاللانسا دىسكا "
-#~ "ئىشلىتىش ئەھۋالىنىڭ تەپسىلاتىنى يېڭىلىغىلى بولىدۇ."
+#~ msgid "The content of your home folder has changed. Select rescan to update the disk usage details."
+#~ msgstr "نۆۋەتتىكى ماكان قىسقۇچىڭىز ئۆزگەرتىلدى. قايتا تەكشۈرۈش تاللانسا دىسكا ئىشلىتىش ئەھۋالىنىڭ تەپسىلاتىنى يېڭىلىغىلى بولىدۇ."
 
 #~ msgid "_Rescan"
 #~ msgstr "قايتا تەكشۈر(_R)"
@@ -496,9 +652,6 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 
 #~ msgid "Cannot check an excluded folder!"
 #~ msgstr "شاللىۋەتكەن قىسقۇچنى تەكشۈرەلمىدى!"
-
-#~ msgid "Could not open folder \"%s\""
-#~ msgstr "\"%s\" قىسقۇچنى ئاچالمايدۇ"
 
 #~ msgid "There is no installed viewer capable of displaying the folder."
 #~ msgstr "قىسقۇچنى كۆرسىتەلەيدىغان كۆرگۈچ ئورنىتىلمىغان."
@@ -515,35 +668,14 @@ msgstr "دىسكا ئىشلىتىلىشىنى تەھلىل قىلالمىدى."
 #~ msgid "There was an error displaying help."
 #~ msgstr "ياردەم كۆرسىتىشتە خاتالىق كۆرۈلدى."
 
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "بۇ پروگرامما ئەركىن يۇمشاق دېتال؛ سىز ئەركىن يۇمشاق دېتال ۋەخپىسى "
-#~ "تارقاتقان GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە بويىچە ئۇنى قايتا تارقىتىپ "
-#~ "ياكى ئۆزگەرتەلەيسىز؛ سىز شۇ ئىجازەت كېلىشىمىنىڭ ئىككىنچى نەشرى ياكى "
-#~ "يۇقىرى نەشرىنى ئىشلەتسىڭىز بولىدۇ."
+#~ msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
+#~ msgstr "بۇ پروگرامما ئەركىن يۇمشاق دېتال؛ سىز ئەركىن يۇمشاق دېتال ۋەخپىسى تارقاتقان GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە بويىچە ئۇنى قايتا تارقىتىپ ياكى ئۆزگەرتەلەيسىز؛ سىز شۇ ئىجازەت كېلىشىمىنىڭ ئىككىنچى نەشرى ياكى يۇقىرى نەشرىنى ئىشلەتسىڭىز بولىدۇ."
 
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "بۇ پروگراممىنى تارقىتىشتىكى مەقسەت سىزگە قۇلايلىق ئېلىپ كېلىش، ئەمما سودا "
-#~ "ياكى باشقا ئالاھىدە قوللىنىشقا نىسبەتەن ھېچقانداق كاپالەت يوق.  GNU "
-#~ "ئادەتتىكى ئاممىۋى ئىجازەت كېلىشىمىنى كۆرۈپ تېخىمۇ كۆپ تەپسىلاتقا ئېرىشىڭ."
+#~ msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
+#~ msgstr "بۇ پروگراممىنى تارقىتىشتىكى مەقسەت سىزگە قۇلايلىق ئېلىپ كېلىش، ئەمما سودا ياكى باشقا ئالاھىدە قوللىنىشقا نىسبەتەن ھېچقانداق كاپالەت يوق.  GNU ئادەتتىكى ئاممىۋى ئىجازەت كېلىشىمىنى كۆرۈپ تېخىمۇ كۆپ تەپسىلاتقا ئېرىشىڭ."
 
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "مەزكۇر پروگرامما بىلەن بىرگە GNU General Public ئىجازەتنامىسىنى چوقۇم "
-#~ "بىرگە بولىدۇ.ئۇنداق بولمىسا Free Software Foundation, Inc., 51 Franklin "
-#~ "Street, Fifth Floor, Boston, MA 02110-1301, USA  بىلەن ئالاقە قىلىڭ."
+#~ msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
+#~ msgstr "مەزكۇر پروگرامما بىلەن بىرگە GNU General Public ئىجازەتنامىسىنى چوقۇم بىرگە بولىدۇ.ئۇنداق بولمىسا Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA  بىلەن ئالاقە قىلىڭ."
 
 #~ msgid "The document does not exist."
 #~ msgstr "پۈتۈك مەۋجۇت ئەمەس."
