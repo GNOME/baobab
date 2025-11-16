@@ -157,12 +157,19 @@ namespace Baobab {
             if (mount == null) {
                 return;
             }
+
+            var remove_list = new List<Location>();
+
             foreach (var location in locations) {
                 // We can't just check location.mount == mount because there could be multiple GMounts with the same root...
                 var same_mount = location.mount != null && location.mount.get_root ().equal (mount.get_root ());
                 if (same_mount && location.volume != volume) {
-                    locations.remove(location);
+                    remove_list.append(location);
                 }
+            }
+
+            foreach (var location in remove_list) {
+                locations.remove(location);
             }
 
             update ();
@@ -336,3 +343,4 @@ namespace Baobab {
         }
     }
 }
+
