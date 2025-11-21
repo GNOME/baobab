@@ -502,9 +502,6 @@ namespace Baobab {
             context_menu = new Gtk.PopoverMenu.from_model (menu_model);
             context_menu.set_parent (this);
             context_menu.set_position (Gtk.PositionType.BOTTOM);
-            context_menu.closed.connect (() => {
-                popover_item = null;
-            });
         }
 
         void show_popover_at (int x, int y) {

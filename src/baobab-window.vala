@@ -121,9 +121,6 @@ namespace Baobab {
 
             hide_columnview_header ();
             treeview_popover_menu.set_menu_model (treeview_menu);
-            treeview_popover_menu.closed.connect (() => {
-                clicked_item = null;
-            });
 
             ui_settings.bind ("active-chart", chart_stack, "visible-child-name", SettingsBindFlags.DEFAULT);
             chart_stack.destroy.connect (() => { Settings.unbind (chart_stack, "visible-child-name"); });
