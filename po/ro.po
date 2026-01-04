@@ -8,34 +8,40 @@
 # Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2009, 2011.
 # Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015, 2018.
+# Antonio Marin <gnmer.6qxyg@slmail.me>, 2026.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.gnome-2-14.ro\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-10-14 13:52+0000\n"
-"PO-Revision-Date: 2024-10-16 13:16+0300\n"
-"Last-Translator: Florentina Mușat <florentina [dot] musat [dot] 28 [at] "
-"gmail [dot] com>\n"
-"Language-Team: Gnome Romanian Translation Team\n"
+"POT-Creation-Date: 2025-12-28 09:39+0000\n"
+"PO-Revision-Date: 2026-01-04 16:46+0100\n"
+"Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
+"Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Gtranslator 48.0\n"
 "X-Project-Style: gnome\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "Analizatorul utilizării discului"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
-msgstr "Verifică dimensiunea dosarului și spațiul disponibil pe disc"
+msgstr "Verifică mărimea dosarului și spațiul disponibil pe disc"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;spațiu;curăță;șterge;depozitare;stocare;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -43,46 +49,41 @@ msgstr ""
 "O aplicație simplă pentru păstrarea sub control a utilizării discului și a "
 "spațiului disponibil."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
-"Analizatorul de utilizare a discului poate scana dosare specifice, "
-"dispozitive de stocare și conturi online. Oferă atât o reprezentare "
-"arborescentă cât și una grafică afișând dimensiunea fiecărui dosar, "
-"facilitând identificarea locului unde spațiul pe disc este risipit."
+"Analizatorul utilizării discului poate analiza dosare specifice, dispozitive "
+"de stocare și conturi online. Oferă atât o reprezentare ramificată cât și "
+"una grafică afișând mărimea fiecărui dosar, facilitând identificarea locului "
+"unde spațiul pe disc este risipit."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
-msgstr "Vizualizarea dispozitive și locații"
+msgstr "Dispozitive și locuri"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
-msgstr "Vizualizarea scanării"
+msgstr "Analizare"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "storage;space;cleanup;spațiu;curăță;depozitare;stocare;"
-
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
-msgstr "Exclude URI-urile locațiilor"
+msgstr "URI-urile locurilor excluse"
 
 #: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for locations to be excluded from scanning."
-msgstr "O listă cu URI-uri pentru locațiile ce vor fi excluse din scanare."
+msgstr "O listă cu URI-uri pentru locurile ce nu vor fi analizate."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
-msgstr "Grafic activ"
+msgstr "Diagramă activă"
 
 #: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
@@ -90,11 +91,11 @@ msgstr "Ce tip de diagramă ar trebui să fie afișat."
 
 #: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
-msgstr "Dimensiunea ferestrei"
+msgstr "Mărimea ferestrei"
 
 #: data/org.gnome.baobab.gschema.xml:26
 msgid "The initial size of the window"
-msgstr "Dimensiunea inițială a ferestrei"
+msgstr "Mărimea inițială a ferestrei"
 
 #: data/org.gnome.baobab.gschema.xml:30
 msgid "Window Maximized"
@@ -104,70 +105,25 @@ msgstr "Fereastră maximizată"
 msgid "Whether or not the window is maximized"
 msgstr "Dacă fereastra este sau nu maximizată"
 
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Generale"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Arată ajutorul"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Arată / ascunde meniul principal"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Ieșire"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Arată scurtăturile de tastatură"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "Arată preferințele"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "Scanare"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Scanează dosarul"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Rescanează locația curentă"
-
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
-msgstr "D_eschide extern"
+msgstr "_Deschide extern"
 
 #: data/gtk/menus.ui:11 data/ui/baobab-treeview-menu.ui:10
 msgid "_Copy Path to Clipboard"
-msgstr "_Copiază calea în clipboard"
+msgstr "_Copiază calea"
 
 #: data/gtk/menus.ui:15 data/ui/baobab-treeview-menu.ui:14
 msgid "Mo_ve to Trash"
-msgstr "Mu_tă la coșul de gunoi"
+msgstr "Mu_tă în coșul de gunoi"
 
 #: data/gtk/menus.ui:21
 msgid "Go to _Parent Folder"
-msgstr "Navighează la dosarul _părinte"
+msgstr "La dosarul _părinte"
 
 #: data/gtk/menus.ui:27
 msgid "Zoom _In"
-msgstr "Măr_ește"
+msgstr "_Mărește"
 
 #: data/gtk/menus.ui:31
 msgid "Zoom _Out"
@@ -183,7 +139,7 @@ msgstr "Dosar"
 
 #: data/ui/baobab-folder-display.ui:56 data/ui/baobab-main-window.ui:158
 msgid "Size"
-msgstr "Dimensiune"
+msgstr "Mărime"
 
 #: data/ui/baobab-folder-display.ui:85 data/ui/baobab-main-window.ui:171
 msgid "Contents"
@@ -195,19 +151,19 @@ msgstr "Modificat"
 
 #: data/ui/baobab-location-list.ui:6
 msgid "This Device"
-msgstr "Acest dispozitiv"
+msgstr "Acest aparat"
 
 #: data/ui/baobab-location-list.ui:19
 msgid "Remote Locations"
-msgstr "Locații la distanță"
+msgstr "Resurse la distanță"
 
 #: data/ui/baobab-main-window.ui:7
 msgid "Scan Folder…"
-msgstr "Scanează dosar…"
+msgstr "Analizează dosarul…"
 
 #: data/ui/baobab-main-window.ui:11
 msgid "Clear Recent List"
-msgstr "Curăță lista recentelor"
+msgstr "Șterge lista recentelor"
 
 #: data/ui/baobab-main-window.ui:17 data/ui/baobab-preferences-dialog.ui:5
 msgid "Preferences"
@@ -215,7 +171,7 @@ msgstr "Preferințe"
 
 #: data/ui/baobab-main-window.ui:21
 msgid "Keyboard _Shortcuts"
-msgstr "_Scurtături de tastatură"
+msgstr "Scur_tături"
 
 #: data/ui/baobab-main-window.ui:25
 msgid "_Help"
@@ -223,15 +179,15 @@ msgstr "_Ajutor"
 
 #: data/ui/baobab-main-window.ui:29
 msgid "_About Disk Usage Analyzer"
-msgstr "_Despre analizatorul utilizării discului"
+msgstr "_Despre Analizatorul utilizării discului"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
-msgstr "Dispozitive și locații"
+msgstr "Dispozitive și Locuri"
 
 #: data/ui/baobab-main-window.ui:55
 msgid "Main Menu"
-msgstr "Meniu principal"
+msgstr "Opțiuni"
 
 #: data/ui/baobab-main-window.ui:70
 msgid "Results"
@@ -239,35 +195,80 @@ msgstr "Rezultate"
 
 #: data/ui/baobab-main-window.ui:90
 msgid "Rescan Current Location"
-msgstr "Rescanează locația curentă"
+msgstr "Reanalizează locul actual"
 
 #: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
-msgstr "Fișierele pot să ocupe mai mult spațiu decât este afișat"
+msgstr "Fișierele pot ocupa mai mult spațiu decât este afișat"
 
 #: data/ui/baobab-main-window.ui:259
 msgid "_Rings Chart"
-msgstr "Grafic i_nelar"
+msgstr "Diagramă cu cercu_ri"
 
 #: data/ui/baobab-main-window.ui:273
 msgid "_Treemap Chart"
-msgstr "Grafic _arborescent"
+msgstr "Diagramă cu drep_tunghiuri"
 
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
-msgstr "Locații de ignorat"
+msgstr "Locuri de ignorat"
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Generale"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "Arată ajutorul"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "Deschide opțiunile"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Închide"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "Arată scurtăturile"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "Arată preferințele"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "Analizare"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "Analizează dosarul"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "Reanalizează locul actual"
 
 #: src/baobab-application.vala:33
 msgid ""
 "Do not skip directories on different file systems. Ignored if DIRECTORY is "
 "not specified."
 msgstr ""
-"Nu omite directoarele de pe sisteme de fișiere diferite. Ignorat dacă "
-"DIRECTOR nu este specificat."
+"Nu omite dosarele din sisteme de fișiere diferite. Ignorat dacă DIRECTORY nu "
+"este specificat."
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
-msgstr "Afișează informații despre versiune și ieși"
+msgstr "Afișează informații despre versiune și închide"
 
 #: src/baobab-cellrenderers.vala:24
 #, c-format
@@ -337,7 +338,7 @@ msgstr "Demontat"
 
 #: src/baobab-location.vala:73
 msgid "Home Folder"
-msgstr "Dosarul personal"
+msgstr "Dosar personal"
 
 #: src/baobab-location.vala:108
 msgid "Computer"
@@ -346,434 +347,60 @@ msgstr "Calculator"
 #. The only activatable row is "Add location"
 #: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
-msgstr "Selectați locația de ignorat"
+msgstr "Alege locul de ignorat"
 
 #: src/baobab-preferences-dialog.vala:91
 msgid "_Add Location"
-msgstr "_Adaugă o locație"
+msgstr "_Adaugă locul"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
-msgstr "Selectare dosar"
+msgstr "Alege dosarul"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
-msgstr "Analizează recursiv punctele de montare"
+msgstr "Analizează recursiv locurile de montare"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "Nu s-a putut analiza volumul"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "Iustin Pop <iusty@geocities.com>\n"
 "Dan Damian <dand@dnttm.ro>\n"
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
-"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
-"2019-2020, 2023-2024\n"
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>\n"
+"Antonio Marin <gnmer.6qxyg@slmail.me>\n"
 "\n"
 "Contribuții Launchpad:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
 "  Alex Eftimie https://launchpad.net/~alexeftimie\n"
 "  Ionuț Jula https://launchpad.net/~ionutjula"
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
-msgstr "Deschiderea fișierului a eșuat"
+msgstr "Nu s-a putut deschide fișierul"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
 msgstr "Nu s-a putut trimite la gunoi fișierul"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
-msgstr "Nu s-a putut scana dosarul"
+msgstr "Nu s-a putut analiza dosarul"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
-msgstr "Scanare completă"
+msgstr "Analiză completă"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
-msgstr "S-a completat scanarea lui „%s”"
+msgstr "S-a analizat complet „%s”"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
-msgstr "„%s” nu este un dosar valid"
-
-#~ msgid "Window state"
-#~ msgstr "Starea ferestrei"
-
-#~ msgid "The GdkWindowState of the window"
-#~ msgstr "GdkWindowState a ferestrei"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Go back to location list"
-#~ msgstr "Înapoi la lista de locații"
-
-#~ msgid "_Open Folder"
-#~ msgstr "Deschide d_osar"
-
-#~ msgid "This Computer"
-#~ msgstr "Calculator"
-
-#~ msgid "Go back to location list"
-#~ msgstr "Înapoi la lista de locații"
-
-#~ msgid "Close"
-#~ msgstr "Închide"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Anulează"
-
-#~ msgid "_Open"
-#~ msgstr "_Deschide"
-
-#~ msgid "Failed to show help"
-#~ msgstr "Afișarea ajutorului a eșuat"
-
-#~ msgid "A graphical tool to analyze disk usage."
-#~ msgstr "O unealtă grafică pentru analizarea utilizări discului."
-
-#~ msgid "Failed to move file to the trash"
-#~ msgstr "Mutarea fișierului la gunoi a eșuat"
-
-#~ msgid "Could not always detect occupied disk sizes."
-#~ msgstr "Nu se pot detecta întotdeauna dimensiunile discului ocupate."
-
-#~ msgid "Apparent sizes may be shown instead."
-#~ msgstr "Dimensiunile aparente pot fi arătate în schimb."
-
-#~ msgid "Could not analyze disk usage."
-#~ msgstr "Nu s-a putut analiza utilizarea discului."
-
-#~ msgid "Clear list of recent locations"
-#~ msgstr "Curăță lista locațiilor recente"
-
-#~ msgid "Could not scan some of the folders contained in “%s”"
-#~ msgstr "Nu s-au putut scana unele dintre dosarele conținute în „%s”"
-
-#~ msgid "org.gnome.baobab"
-#~ msgstr "org.gnome.baobab"
-
-#~ msgid "Baobab"
-#~ msgstr "Baobab"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "_Despre"
-
-#~ msgid ""
-#~ "A simple application which can scan either specific folders (local or "
-#~ "remote) or volumes and give a graphical representation including each "
-#~ "directory size or percentage."
-#~ msgstr ""
-#~ "O aplicație simplă care poate scana fie dosare specifice (locale sau la "
-#~ "distanță) fie volume și să ofere o reprezentare grafică incluzând "
-#~ "dimensiunea sau procentul fiecărui director."
-
-#~| msgid "Scan Remote Folder"
-#~ msgid "Scan Remote Folder…"
-#~ msgstr "Scanează dosar la distanță…"
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Preferințe Analizare utilizare disc"
-
-#~ msgid "Select _devices to include in filesystem scan:"
-#~ msgstr ""
-#~ "Alegeți _dispozitivele pentru includerea în scanarea sistemului de "
-#~ "fișiere:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Monitorizare schimbări în dosar personal"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Monitorizează dosarul personal"
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Bara de stare este vizibilă"
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Bara de unelte este vizibilă"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "Dacă orice schimbare a dosarului personal ar trebui monitorizată."
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr ""
-#~ "Dacă bara de stare din josul ferestrei principale ar trebui sa fie "
-#~ "vizibilă."
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr ""
-#~ "Dacă bara cu unelte ar trebui sa fie vizibilă în fereastra principală."
-
-#~ msgid "All_ocated Space"
-#~ msgstr "Spațiu al_ocat"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualizează"
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "S_canează un dosar la distanță..."
-
-#~ msgid "Scan F_older..."
-#~ msgstr "Scanează un d_osar..."
-
-#~ msgid "Scan Filesystem"
-#~ msgstr "Scanează un sistem de fișiere"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Scanează un sistem de _fișiere"
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Scanează dosarul _personal"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Scanează un dosar la distanță"
-
-#~ msgid "Scan filesystem"
-#~ msgstr "Scanează un sistem de fișiere"
-
-#~ msgid "St_atusbar"
-#~ msgstr "B_ară de stare"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Oprește scanarea"
-
-#~ msgid "_Analyzer"
-#~ msgstr "A_nalizator"
-
-#~ msgid "_Collapse All"
-#~ msgstr "_Pliază tot"
-
-#~ msgid "_Contents"
-#~ msgstr "_Conținut"
-
-#~ msgid "_Edit"
-#~ msgstr "_Editare"
-
-#~ msgid "_Expand All"
-#~ msgstr "_Expandează tot"
-
-#~ msgid "_Toolbar"
-#~ msgstr "Bară de unel_te"
-
-#~ msgid "_View"
-#~ msgstr "_Vizualizare"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Capacitatea totală a sistemului de fișiere:"
-
-#~ msgid "used:"
-#~ msgstr "folosit:"
-
-#~ msgid "available:"
-#~ msgstr "disponibil:"
-
-#~ msgid "Calculating percentage bars..."
-#~ msgstr "Se calculează mărimea barelor..."
-
-#~ msgid "Ready"
-#~ msgstr "Pregătit"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Capacitate totală sistem de fișiere"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Utilizare totală sistem de fișiere"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "conține hardlink-uri pentru:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Nu s-a putut inițializa monitorizarea"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Modificările din dosarul personal vor fi monitorizate."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Salvează captura de ecran"
-
-#~ msgid "Show version"
-#~ msgstr "Afișare versiune"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[DOSAR]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Prea multe argumente. Se poate specifica doar un singur dosar."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "Utilizarea discului nu poate fi analizată fără puncte de montare."
-
-#~ msgid "Maximum depth"
-#~ msgstr "Adâncime maximă"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "Adâncimea maximă afișată în grafic, de la rădăcină"
-
-#~ msgid "Chart model"
-#~ msgstr "Model grafic"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Definește modelul graficului"
-
-#~ msgid "Chart root node"
-#~ msgstr "Nod rădăcină grafic"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Definește nodul rădăcina din model"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "Nu se poate crea imaginea pixbuf!"
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Salvează instantaneu"
-
-#~ msgid "_Image type:"
-#~ msgstr "Tip _imagine:"
-
-#~ msgid "Mount Point"
-#~ msgstr "Punct montare"
-
-#~ msgid "Filesystem Type"
-#~ msgstr "Tip sistem de fișiere"
-
-#~ msgid "Total Size"
-#~ msgstr "Mărime totală"
-
-#~ msgid "Cannot scan location \"%s\""
-#~ msgstr "Nu s-a putut scana locația „%s”"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "FTP public"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (cu autentificare)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "WebDAV securizat (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr ""
-#~ "Nu s-a putut conecta la server. Trebuie să introduceți un nume pentru "
-#~ "server."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Introduceți un nume și încercați din nou."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Locație (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Server:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Informații opționale:"
-
-#~ msgid "_Share:"
-#~ msgstr "Par_tajare:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Port:"
-
-#~ msgid "_Folder:"
-#~ msgstr "_Dosar:"
-
-#~ msgid "_User Name:"
-#~ msgstr "N_ume utilizator:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "Nume _domeniu:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Conectare la server"
-
-#~ msgid "Service _type:"
-#~ msgstr "_Tip serviciu:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Scanează"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Rescanați dosarul personal?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "Conținutul dosarului personal a fost schimbat. Rescanați pentru a "
-#~ "actualiza detaliile de utilizare a discului."
-
-#~ msgid "_Rescan"
-#~ msgstr "_Rescanează"
-
-#~ msgid "Usage"
-#~ msgstr "Utilizare"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "Afișează do_sarele ascunse"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Nu se poate verifica un dosar exclus!"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "Nu există nici un vizualizator instalat capabil să afișeze dosarul."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "„%s” nu poate fi mutat la coșul de gunoi"
-
-#~ msgid "Details: %s"
-#~ msgstr "Detalii: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "A intervenit o eroare la afișarea ajutorului."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "Acest program este software liber; îl puteți redistribui și/sau modifica "
-#~ "în conformitate cu termenii Licenței Publice Generale GNU așa cum este "
-#~ "publicată de Free Software Foundation; fie versiunea 2 a Licenței, fie "
-#~ "(la latitudinea dumneavoastră) orice versiune ulterioară."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "Acest program este distribuit cu speranța că va fi util, dar FĂRĂ NICI O "
-#~ "GARANȚIE, fără garanție implicită de vandabilitate și conformitate unui "
-#~ "anumit scop. Citiți Licența Publică Generală GNU pentru detalii."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "Ar trebui să fi primit o copie a Licenței Publice Generale GNU împreună "
-#~ "cu acest program; dacă nu, scrieți Free Software Foundation, Inc., 51 "
-#~ "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-
-#~ msgid "The document does not exist."
-#~ msgstr "Documentul nu există."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "Dosarul nu există."
+msgstr "„%s” nu este un dosar acceptabil"
