@@ -22,14 +22,14 @@
 # Benjamin Steinwender <b@stbe.at>, 2013-2014.
 # Tim Sabsch <tim@sabsch.com>, 2019.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2021-2023.
-# Jürgen Benvenuti <gastornis@posteo.org>, 2022-2024.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2022-2024, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-04 10:52+0200\n"
+"POT-Creation-Date: 2025-12-28 09:39+0000\n"
+"PO-Revision-Date: 2026-01-04 21:25+0100\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -37,19 +37,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.8\n"
 "X-DamnedLies-Scope: partial\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "Festplattenbelegungsanalyse"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "Ordnergrößen und freien Festplattenplatz analysieren"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+# http://developer.gnome.org/integration-guide/3.6/desktop-files.html.de
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "Speicherplatz;Belegung;Kapazität;frei;aufräumen;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -57,7 +63,7 @@ msgstr ""
 "Eine einfache Anwendung, die Festplattenbelegung und freien Speicherplatz "
 "überwacht."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -69,24 +75,18 @@ msgstr ""
 "Ordners, sodass verschwendeter Speicherplatz schnell und einfach "
 "identifiziert werden kann."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "Ansicht »Geräte und Orte«"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "Ansicht »Analysieren«"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "Das GNOME-Projekt"
-
-# http://developer.gnome.org/integration-guide/3.6/desktop-files.html.de
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "Speicherplatz;Belegung;Kapazität;frei;aufräumen;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -119,51 +119,6 @@ msgstr "Fenster maximiert"
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
 msgstr "Legt fest, ob das Fenster maximiert ist oder nicht"
-
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Allgemein"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Hilfe anzeigen"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Primäres Menü anzeigen/verbergen"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Beenden"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Tastenkürzel anzeigen"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "Einstellungen anzeigen"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "Wird analysiert"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Ordner analysieren"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Aktuellen Ort erneut analysieren"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
@@ -242,7 +197,7 @@ msgstr "_Hilfe"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Info zu Festplattenbelegungsanalyse"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
 msgstr "Geräte und Orte"
 
@@ -273,6 +228,51 @@ msgstr "_Kacheldiagramm"
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Ignorierte Orte"
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Allgemein"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "Hilfe anzeigen"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "Hauptmenü öffnen"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Beenden"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "Tastenkürzel anzeigen"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "Einstellungen anzeigen"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "Wird analysiert"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "Ordner analysieren"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "Aktuellen Ort erneut analysieren"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -365,19 +365,19 @@ msgstr "Ort zum Ignorieren auswählen"
 msgid "_Add Location"
 msgstr "Ort _hinzufügen"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
 msgstr "Ordner auswählen"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
 msgstr "Einhängepunkte rekursiv analysieren"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "Datenträger konnte nicht analysiert werden"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -399,31 +399,39 @@ msgstr ""
 "Philipp Kiemle <philipp.kiemle@gmail.com>\n"
 "Jürgen Benvenuti <gastornis@posteo.org>"
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
 msgstr "Datei konnte nicht geöffnet werden"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
 msgstr "Datei konnte nicht in den Papierkorb verschoben werden"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
 msgstr "Ordner konnte nicht gescannt werden"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
 msgstr "Analyse abgeschlossen"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Analyse von »%s« abgeschlossen"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "»%s« ist kein gültiger Ordner"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Show / Hide primary menu"
+#~ msgstr "Primäres Menü anzeigen/verbergen"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Rescan current location"
+#~ msgstr "Aktuellen Ort erneut analysieren"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Go back to location list"
