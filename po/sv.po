@@ -1,18 +1,18 @@
 # Swedish messages for baobab.
-# Copyright © 2000-2024 Free Software Foundation, Inc.
+# Copyright © 2000-2026 Free Software Foundation, Inc.
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Andreas Hyden <a.hyden@cyberpoint.se>.
 # Christian Rose <menthos@menthos.com>, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024, 2026.
 # Luna Jernberg <droidbittin@gmail.com>, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-03 22:21+0200\n"
+"POT-Creation-Date: 2025-12-28 09:39+0000\n"
+"PO-Revision-Date: 2026-01-20 12:54+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,18 +20,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "Diskanvändningsanalysator"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "Kontrollera mappstorlekar och tillgängligt diskutrymme"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "lagring;utrymme;rensning;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -39,7 +44,7 @@ msgstr ""
 "Ett enkelt program för att hålla koll på din diskanvändning och tillgängligt "
 "utrymme."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -50,23 +55,18 @@ msgstr ""
 "representation som visar storleken för varje mapp, vilket gör det enkelt att "
 "identifiera var diskutrymme går till spillo."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "Enhets- och platsvy"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "Avsökningsvy"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "lagring;utrymme;rensning;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -99,51 +99,6 @@ msgstr "Fönster maximerat"
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
 msgstr "Huruvida fönstret är maximerat eller inte"
-
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Allmänt"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Visa hjälp"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Visa/dölj primär meny"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Avsluta"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Visa tangentbordsgenvägar"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "Visa inställningar"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "Avsökning"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Sök av mapp"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Sök av aktuell plats igen"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
@@ -221,7 +176,7 @@ msgstr "_Hjälp"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Om Diskanvändningsanalysator"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
 msgstr "Enheter och platser"
 
@@ -252,6 +207,51 @@ msgstr "_Trädkartediagram"
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Platser att ignorera"
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "Allmänt"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "Visa hjälp"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "Öppna huvudmeny"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Avsluta"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "Visa tangentbordsgenvägar"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "Visa inställningar"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "Avsökning"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "Sök av mapp"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "Sök av aktuell plats igen"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -345,19 +345,19 @@ msgstr "Välj plats att ignorera"
 msgid "_Add Location"
 msgstr "_Lägg till plats"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
 msgstr "Välj mapp"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
 msgstr "Analysera monteringspunkter rekursivt"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "Kunde inte analysera volymen"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -370,31 +370,39 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
 msgstr "Misslyckades med att öppna fil"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
 msgstr "Misslyckades med att flytta fil till papperskorgen"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
 msgstr "Kunde inte söka av mapp"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
 msgstr "Sökning slutförd"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Sökning av ”%s” slutförd"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "”%s” är inte en giltig mapp"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Show / Hide primary menu"
+#~ msgstr "Visa/dölj primär meny"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Rescan current location"
+#~ msgstr "Sök av aktuell plats igen"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Go back to location list"
