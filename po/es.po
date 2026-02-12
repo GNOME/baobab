@@ -11,33 +11,39 @@
 # Manuel de Vega Barreiro <barreiro@arrakis.es> 2000-2001.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2023.
-# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2023-2024.
+# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2023-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-09 11:58+0200\n"
+"POT-Creation-Date: 2025-12-28 09:39+0000\n"
+"PO-Revision-Date: 2026-02-12 13:37+0100\n"
 "Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 46.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 49.0\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "Analizador de uso de disco"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "Compruebe el tamaño de las carpetas y el espacio disponible en disco"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "almacenamiento;espacio;limpieza;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -45,7 +51,7 @@ msgstr ""
 "Una sencilla aplicación para mantener el uso de disco y el espacio en disco "
 "bajo control."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -56,23 +62,18 @@ msgstr ""
 "vista de árbol como una representación gráfica del tamaño de cada carpeta, "
 "simplificando la identificación de dónde se consume el espacio."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "Vista de dispositivos y ubicaciones"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "Vista de análisis"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "El Proyecto GNOME"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "almacenamiento;espacio;limpieza;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -105,51 +106,6 @@ msgstr "Ventana maximizada"
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
 msgstr "Indica is la ventana está o no maximizada"
-
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "General"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Mostrar ayuda"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Mostrar/ocultar el menú primario"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Salir"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Mostrar los atajos del teclado"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "Mostrar las preferencias"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "Analizando"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Analizar carpeta"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Volver a analizar la ubicación actual"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
@@ -227,7 +183,7 @@ msgstr "Ay_uda"
 msgid "_About Disk Usage Analyzer"
 msgstr "_Acerca del analizador de uso de disco"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
 msgstr "Dispositivos y ubicaciones"
 
@@ -258,6 +214,51 @@ msgstr "Gráfico de ár_bol"
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Ubicaciones que ignorar"
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "General"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "Mostrar ayuda"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "Abrir menú principal"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Salir"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "Mostrar atajos del teclado"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "Mostrar preferencias"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "Analizando"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "Analizar carpeta"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "Volver a analizar la ubicación actual"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -350,19 +351,19 @@ msgstr "Seleccionar ubicaciones que ignorar"
 msgid "_Add Location"
 msgstr "Añadir _ubicación…"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
 msgstr "Seleccione la carpeta"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
 msgstr "Analizar recursivamente los puntos de montaje"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "No se pudo analizar el volumen"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012 - 2024\n"
@@ -375,437 +376,553 @@ msgstr ""
 "Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999\n"
 "Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998"
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
 msgstr "Falló al abrir el archivo"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
 msgstr "Falló al eliminar el archivo"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
 msgstr "No se pudo analizar la carpeta"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
 msgstr "Análisis completado"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Análisis de «%s» completado"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "«%s» no es una carpeta válida"
 
+#, fuzzy
+#~ msgctxt "shortcut window"
+#~ msgid "Show / Hide primary menu"
+#~ msgstr "Mostrar/Ocultar menú principal"
+
+#, fuzzy
+#~ msgctxt "shortcut window"
+#~ msgid "Scan folder"
+#~ msgstr "Carpeta de escaneo"
+
+#, fuzzy
+#~ msgctxt "shortcut window"
+#~ msgid "Rescan current location"
+#~ msgstr "Volver a escanear la ubicación actual"
+
+#, fuzzy
 #~ msgctxt "shortcut window"
 #~ msgid "Go back to location list"
 #~ msgstr "Volver a la lista de ubicaciones"
 
+#, fuzzy
 #~ msgid "Back"
 #~ msgstr "Atrás"
 
+#, fuzzy
 #~ msgid "Close"
-#~ msgstr "Cerrar"
+#~ msgstr "Cerca"
 
+#, fuzzy
 #~ msgid "Failed to move file to the trash"
-#~ msgstr "Falló al mover el archivo a la papelera"
+#~ msgstr "No se pudo mover el archivo a la papelera"
 
+#, fuzzy
 #~ msgid "Could not always detect occupied disk sizes."
-#~ msgstr "No se pudo detectar el espacio de disco ocupado."
+#~ msgstr "No siempre se pudieron detectar los tamaños de disco ocupados."
 
+#, fuzzy
 #~ msgid "Apparent sizes may be shown instead."
-#~ msgstr "Se muestra el tamaño aparente en su lugar."
+#~ msgstr "En su lugar, es posible que se muestren los tamaños aparentes."
 
+#, fuzzy
 #~ msgid "Could not analyze disk usage."
 #~ msgstr "No se pudo analizar el uso del disco."
 
+#, fuzzy
 #~ msgid "_Open Folder"
 #~ msgstr "_Abrir carpeta"
 
+#, fuzzy
 #~ msgid "This Computer"
-#~ msgstr "Este equipo"
+#~ msgstr "Esta computadora"
 
+#, fuzzy
 #~ msgid "Go back to location list"
 #~ msgstr "Volver a la lista de ubicaciones"
 
+#, fuzzy
 #~ msgid "A graphical tool to analyze disk usage."
 #~ msgstr "Una herramienta gráfica para analizar el uso del disco."
 
+#, fuzzy
 #~ msgid "Window state"
 #~ msgstr "Estado de la ventana"
 
+#, fuzzy
 #~ msgid "The GdkWindowState of the window"
 #~ msgstr "El GdkWindowState de la ventana"
 
+#, fuzzy
 #~ msgid "_Cancel"
 #~ msgstr "_Cancelar"
 
+#, fuzzy
 #~ msgid "_Open"
-#~ msgstr "_Abrir"
+#~ msgstr "_Abierto"
 
+#, fuzzy
 #~ msgid "Failed to show help"
-#~ msgstr "Falló al mostrar la ayuda"
+#~ msgstr "No se pudo mostrar ayuda"
 
+#, fuzzy
 #~ msgid "Clear list of recent locations"
-#~ msgstr "Limpiar la lista de ubicaciones recientes"
+#~ msgstr "Borrar lista de ubicaciones recientes"
 
+#, fuzzy
 #~ msgid "Could not scan some of the folders contained in “%s”"
-#~ msgstr "No se pudieron analizar algunas de las carpetas de «%s»."
+#~ msgstr "No se pudieron escanear algunas de las carpetas contenidas en “%s”"
 
+#, fuzzy
 #~ msgid "org.gnome.baobab"
 #~ msgstr "org.gnome.baobab"
 
+#, fuzzy
 #~ msgid "Baobab"
 #~ msgstr "Baobab"
 
+#, fuzzy
 #~ msgid "baobab"
 #~ msgstr "baobab"
 
+#, fuzzy
 #~ msgid "_About"
-#~ msgstr "A_cerca de"
+#~ msgstr "_Acerca de"
 
+#, fuzzy
 #~ msgid ""
 #~ "A simple application which can scan either specific folders (local or "
 #~ "remote) or volumes and give a graphical representation including each "
 #~ "directory size or percentage."
 #~ msgstr ""
-#~ "Una sencilla aplicación que puede analizar carpetas específicas (locales "
-#~ "o remotas) o volúmenes y mostrar una representación gráfica del tamaño o "
-#~ "el porcentaje de cada carpeta."
+#~ "Una aplicación sencilla que puede escanear carpetas específicas (locales "
+#~ "o remotas) o volúmenes y ofrecer una representación gráfica que incluye "
+#~ "el tamaño o porcentaje de cada directorio."
 
+#, fuzzy
 #~ msgid "Scan Remote Folder…"
-#~ msgstr "Analizar carpeta remota…"
+#~ msgstr "Escanear carpeta remota…"
 
+#, fuzzy
 #~ msgid "Usage"
 #~ msgstr "Uso"
 
+#, fuzzy
 #~ msgid "_Analyzer"
 #~ msgstr "_Analizador"
 
+#, fuzzy
 #~ msgid "Scan F_older…"
-#~ msgstr "Analizar _carpeta…"
+#~ msgstr "Escanear F_older…"
 
+#, fuzzy
 #~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "Analizar carpeta _remota…"
+#~ msgstr "Escanear carpeta remota…"
 
+#, fuzzy
 #~ msgid "_View"
-#~ msgstr "_Ver"
+#~ msgstr "_Vista"
 
+#, fuzzy
 #~ msgid "_Reload"
 #~ msgstr "_Recargar"
 
+#, fuzzy
 #~ msgid "_Expand All"
 #~ msgstr "_Expandir todo"
 
+#, fuzzy
 #~ msgid "_Collapse All"
 #~ msgstr "_Contraer todo"
 
+#, fuzzy
 #~ msgid "Maximum depth"
 #~ msgstr "Profundidad máxima"
 
+#, fuzzy
 #~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "La profundidad máxima dibujada en el gráfico desde la raíz"
+#~ msgstr "La profundidad máxima dibujada en el gráfico desde la raíz."
 
+#, fuzzy
 #~ msgid "Chart model"
 #~ msgstr "Modelo de gráfico"
 
+#, fuzzy
 #~ msgid "Set the model of the chart"
-#~ msgstr "Establecer el modelo del gráfico"
+#~ msgstr "Establecer el modelo del gráfico."
 
+#, fuzzy
 #~ msgid "Chart root node"
 #~ msgstr "Nodo raíz del gráfico"
 
+#, fuzzy
 #~ msgid "Set the root node from the model"
 #~ msgstr "Establecer el nodo raíz del modelo"
 
+#, fuzzy
 #~ msgid "Monitor Home"
-#~ msgstr "Monitorizar carpeta personal"
+#~ msgstr "Monitorear inicio"
 
+#, fuzzy
 #~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr ""
-#~ "Indica si cualquier cambio en la carpeta personal debe ser monitorizado."
+#~ msgstr "Si se debe monitorear cualquier cambio en el directorio de inicio."
 
-#~ msgid "Scan Folder"
-#~ msgstr "Analizar carpeta"
-
+#, fuzzy
 #~ msgid "Scan a remote folder"
-#~ msgstr "Analizar una carpeta remota"
+#~ msgstr "Escanear una carpeta remota"
 
+#, fuzzy
 #~ msgid "Reload"
 #~ msgstr "Recargar"
 
+#, fuzzy
 #~ msgid "label"
 #~ msgstr "etiqueta"
 
+#, fuzzy
 #~ msgid "_Stop"
 #~ msgstr "_Detener"
 
+#, fuzzy
 #~ msgid "_Allocated Space"
-#~ msgstr "Espacio _ocupado"
+#~ msgstr "_Espacio asignado"
 
+#, fuzzy
 #~ msgid "Toolbar is Visible"
 #~ msgstr "La barra de herramientas es visible"
 
+#, fuzzy
 #~ msgid "Whether the toolbar should be visible in main window."
 #~ msgstr ""
-#~ "Indica si la barra de herramientas debe ser visible en la ventana "
-#~ "principal."
+#~ "Si la barra de herramientas debe estar visible en la ventana principal."
 
+#, fuzzy
 #~ msgid "Statusbar is Visible"
 #~ msgstr "La barra de estado es visible"
 
+#, fuzzy
 #~ msgid ""
 #~ "Whether the status bar at the bottom of main window should be visible."
 #~ msgstr ""
-#~ "Indica si la barra de estado en la parte inferior de la ventana principal "
-#~ "debe ser visible."
+#~ "Si la barra de estado en la parte inferior de la ventana principal debe "
+#~ "estar visible."
 
-#~| msgid "Mount and scan"
+#, fuzzy
 #~ msgid "Mount and Scan"
-#~ msgstr "Montar y analizar"
+#~ msgstr "Montar y escanear"
 
-#~| msgid "_All locations"
+#, fuzzy
 #~ msgid "_All Locations"
 #~ msgstr "_Todas las ubicaciones"
 
+#, fuzzy
 #~ msgid "Stop scanning"
-#~ msgstr "Detener el análisis"
+#~ msgstr "Dejar de escanear"
 
+#, fuzzy
 #~ msgid "_Toolbar"
-#~ msgstr "Barra de _herramientas"
+#~ msgstr "_Barra de herramientas"
 
+#, fuzzy
 #~ msgid "Save screenshot"
-#~ msgstr "Guardar la captura de pantalla"
+#~ msgstr "Guardar captura de pantalla"
 
+#, fuzzy
 #~ msgid "Cannot create pixbuf image!"
-#~ msgstr "No se puede crear la imagen pixbuf"
+#~ msgstr "¡No se puede crear una imagen pixbuf!"
 
+#, fuzzy
 #~ msgid "Save Snapshot"
-#~ msgstr "Guardar captura"
+#~ msgstr "Guardar instantánea"
 
+#, fuzzy
 #~ msgid "_Image type:"
-#~ msgstr "Tipo de _imagen:"
+#~ msgstr "_Tipo de imagen:"
 
+#, fuzzy
 #~ msgid "Disk Usage Analyzer Preferences"
 #~ msgstr "Preferencias del analizador de uso de disco"
 
+#, fuzzy
 #~ msgid "Select _devices to include in file system scan:"
 #~ msgstr ""
-#~ "Seleccionar qué _dispositivos incluir en el análisis del sistema de "
+#~ "Seleccione _dispositivos para incluir en el análisis del sistema de "
 #~ "archivos:"
 
+#, fuzzy
 #~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Monitorizar cambios en su carpeta personal"
+#~ msgstr "_Supervise los cambios en su carpeta de inicio"
 
+#, fuzzy
 #~ msgid "Scan _Home Folder"
-#~ msgstr "Analizar carpeta _personal"
+#~ msgstr "Escanear _carpeta de inicio"
 
+#, fuzzy
 #~ msgid "Scan _Filesystem"
-#~ msgstr "Analizar sistema de _archivos"
+#~ msgstr "Escanear _sistema de archivos"
 
+#, fuzzy
 #~ msgid "St_atusbar"
-#~ msgstr "Barra de _estado"
+#~ msgstr "st_atusbar"
 
+#, fuzzy
 #~ msgid "_Contents"
-#~ msgstr "Índ_ice"
+#~ msgstr "_Contenido"
 
+#, fuzzy
 #~ msgid "Scan your home folder"
-#~ msgstr "Analizar su carpeta personal"
+#~ msgstr "Escanea tu carpeta de inicio"
 
+#, fuzzy
 #~ msgid "Scan the file system"
-#~ msgstr "Analizar el sistema de archivos"
+#~ msgstr "Escanear el sistema de archivos"
 
+#, fuzzy
 #~ msgid "Scan File System"
-#~ msgstr "Analizar sistema de archivos"
+#~ msgstr "Escanear sistema de archivos"
 
+#, fuzzy
 #~ msgid "Scan a remote folder or file system"
-#~ msgstr "Analizar una carpeta o un sistema de archivos remoto"
+#~ msgstr "Escanear una carpeta remota o un sistema de archivos"
 
+#, fuzzy
 #~ msgid "Refresh"
-#~ msgstr "Actualizar"
+#~ msgstr "Refrescar"
 
+#, fuzzy
 #~ msgid "Total filesystem capacity:"
 #~ msgstr "Capacidad total del sistema de archivos:"
 
+#, fuzzy
 #~ msgid "used:"
-#~ msgstr "Usado:"
+#~ msgstr "usado:"
 
+#, fuzzy
 #~ msgid "available:"
-#~ msgstr "Disponible:"
+#~ msgstr "disponible:"
 
+#, fuzzy
 #~ msgid "Calculating percentage bars…"
-#~ msgstr "Calculando barras de porcentajes…"
+#~ msgstr "Calculando barras de porcentaje..."
 
+#, fuzzy
 #~ msgid "Total filesystem capacity"
-#~ msgstr "Capacidad total de los sistemas de archivos"
+#~ msgstr "Capacidad total del sistema de archivos"
 
+#, fuzzy
 #~ msgid "Total filesystem usage"
-#~ msgstr "Uso total de los sistemas de archivos"
+#~ msgstr "Uso total del sistema de archivos"
 
+#, fuzzy
 #~ msgid "contains hardlinks for:"
-#~ msgstr "contiene enlaces duros de:"
+#~ msgstr "contiene enlaces duros para:"
 
+#, fuzzy
 #~ msgid "Could not initialize monitoring"
-#~ msgstr "No se pudo inicializar la monitorización"
+#~ msgstr "No se pudo inicializar el monitoreo"
 
+#, fuzzy
 #~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Los cambios en su carpeta personal no serán monitorizados."
+#~ msgstr "Los cambios en su carpeta de inicio no serán monitoreados."
 
+#, fuzzy
 #~ msgid "Show version"
 #~ msgstr "Mostrar versión"
 
+#, fuzzy
 #~ msgid "[DIRECTORY]"
-#~ msgstr "[CARPETA]"
+#~ msgstr "[DIRECTORIO]"
 
+#, fuzzy
 #~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Demasiados parámetros. Sólo se puede especificar una carpeta."
+#~ msgstr "Demasiados argumentos. "
 
+#, fuzzy
 #~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "El uso del disco no se puede analizar sin puntos de montaje."
+#~ msgstr "Sin puntos de montaje, el uso del disco no se puede analizar."
 
+#, fuzzy
 #~ msgid "Mount Point"
 #~ msgstr "Punto de montaje"
 
+#, fuzzy
 #~ msgid "File System Type"
 #~ msgstr "Tipo de sistema de archivos"
 
+#, fuzzy
 #~ msgid "Total Size"
 #~ msgstr "Tamaño total"
 
+#, fuzzy
 #~ msgid "Custom Location"
-#~ msgstr "Lugar personalizado"
+#~ msgstr "Ubicación personalizada"
 
+#, fuzzy
 #~ msgid "SSH"
 #~ msgstr "SSH"
 
+#, fuzzy
 #~ msgid "Public FTP"
 #~ msgstr "FTP público"
 
+#, fuzzy
 #~ msgid "FTP (with login)"
-#~ msgstr "FTP (con entrada)"
+#~ msgstr "FTP (con inicio de sesión)"
 
+#, fuzzy
 #~ msgid "WebDAV (HTTP)"
 #~ msgstr "WebDAV (HTTP)"
 
+#, fuzzy
 #~ msgid "Secure WebDAV (HTTPS)"
 #~ msgstr "WebDAV seguro (HTTPS)"
 
+#, fuzzy
 #~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr ""
-#~ "No se puede conectar con el servidor. Debe introducir un nombre para el "
-#~ "servidor."
+#~ msgstr "No se puede conectar al servidor. "
 
+#, fuzzy
 #~ msgid "Please enter a name and try again."
 #~ msgstr "Introduzca un nombre e inténtelo de nuevo."
 
+#, fuzzy
 #~ msgid "_Location (URI):"
-#~ msgstr "_Lugar (URI):"
+#~ msgstr "_Ubicación (URI):"
 
+#, fuzzy
 #~ msgid "_Server:"
 #~ msgstr "_Servidor:"
 
+#, fuzzy
 #~ msgid "Optional information:"
 #~ msgstr "Información opcional:"
 
+#, fuzzy
 #~ msgid "_Share:"
-#~ msgstr "_Compartición:"
+#~ msgstr "_Compartir:"
 
+#, fuzzy
 #~ msgid "_Port:"
 #~ msgstr "_Puerto:"
 
+#, fuzzy
 #~ msgid "_Folder:"
 #~ msgstr "_Carpeta:"
 
+#, fuzzy
 #~ msgid "_User Name:"
-#~ msgstr "_Usuario:"
+#~ msgstr "_Nombre de usuario:"
 
+#, fuzzy
 #~ msgid "_Domain Name:"
-#~ msgstr "Nombre del _dominio:"
+#~ msgstr "_Nombre de dominio:"
 
+#, fuzzy
 #~ msgid "Connect to Server"
-#~ msgstr "Conectar con el servidor"
+#~ msgstr "Conectarse al servidor"
 
+#, fuzzy
 #~ msgid "Service _type:"
-#~ msgstr "_Tipo de servicio:"
+#~ msgstr "Tipo de servicio:"
 
+#, fuzzy
 #~ msgid "_Scan"
-#~ msgstr "A_nalizar"
+#~ msgstr "_Escanear"
 
+#, fuzzy
 #~ msgid "Rescan your home folder?"
-#~ msgstr "¿Quiere volver a analizar su carpeta personal?"
+#~ msgstr "¿Volver a escanear tu carpeta de inicio?"
 
+#, fuzzy
 #~ msgid ""
 #~ "The content of your home folder has changed. Select rescan to update the "
 #~ "disk usage details."
-#~ msgstr ""
-#~ "El contenido de su carpeta personal ha cambiado. Seleccione volver a "
-#~ "analizar para actualizar los detalles de uso de disco."
+#~ msgstr "El contenido de su carpeta de inicio ha cambiado. "
 
+#, fuzzy
 #~ msgid "_Rescan"
-#~ msgstr "_Volver a analizar"
+#~ msgstr "_Volver a escanear"
 
+#, fuzzy
 #~ msgid "_Show hidden folders"
 #~ msgstr "_Mostrar carpetas ocultas"
 
+#, fuzzy
 #~ msgid "Cannot check an excluded folder!"
-#~ msgstr "No se puede comprobar la carpeta excluida."
+#~ msgstr "¡No se puede comprobar una carpeta excluida!"
 
+#, fuzzy
 #~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "No hay instalado ningún visor capaz de mostrar la carpeta."
+#~ msgstr "No hay ningún visor instalado capaz de mostrar la carpeta."
 
+#, fuzzy
 #~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "No se ha podido mover «%s» a la papelera"
+#~ msgstr "No se pudo mover \"%s\" a la Papelera"
 
+#, fuzzy
 #~ msgid "Details: %s"
 #~ msgstr "Detalles: %s"
 
+#, fuzzy
 #~ msgid "There was an error displaying help."
-#~ msgstr "Hubo un error al mostrar la ayuda."
+#~ msgstr "Se produjo un error al mostrar la ayuda."
 
+#, fuzzy
 #~ msgid ""
 #~ "This program is free software; you can redistribute it and/or modify it "
 #~ "under the terms of the GNU General Public License as published by the "
 #~ "Free Software Foundation; either version 2 of the License, or (at your "
 #~ "option) any later version."
-#~ msgstr ""
-#~ "Este programa es software libre; puede distribuirlo y modificarlo bajo "
-#~ "los términos GNU Licencia Publica General como fue publicado por la Free "
-#~ "Software Foundation; en la versión 2 de la licencia, o (a su elección) "
-#~ "cualquier versión posterior."
+#~ msgstr "Este programa es software gratuito; "
 
+#, fuzzy
 #~ msgid ""
 #~ "This program is distributed in the hope that it will be useful, but "
 #~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
 #~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
 #~ "Public License for more details."
 #~ msgstr ""
-#~ "Este programa se distribuye con la esperanza de que sea útil, pero SIN "
-#~ "NINGUNA GARANTÍA, incluso sin la garantía implícita de COMERCIABILIDAD o "
-#~ "IDONEIDAD PARA UN PROPÓSITO EN FIN. Véase la Licencia Pública General de "
-#~ "GNU para más detalles."
+#~ "Este programa se distribuye con la esperanza de que sea de utilidad, pero "
+#~ "SIN NINGUNA GARANTÍA; "
 
+#, fuzzy
 #~ msgid ""
 #~ "You should have received a copy of the GNU General Public License along "
 #~ "with this program; if not, write to the Free Software Foundation, Inc., "
 #~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 #~ msgstr ""
 #~ "Debería haber recibido una copia de la Licencia Pública General GNU junto "
-#~ "con el Visor de sucesos de GNOME; de lo contrario, escriba a la Free "
-#~ "Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
-#~ "02110-1301 EE. UU."
+#~ "con este programa; "
 
+#, fuzzy
 #~ msgid "The document does not exist."
 #~ msgstr "El documento no existe."
 
+#, fuzzy
 #~ msgid "The folder does not exist."
 #~ msgstr "La carpeta no existe."
 
+#, fuzzy
 #~ msgid "S_can Remote Folder..."
-#~ msgstr "Inspeccionar carpeta _remota…"
+#~ msgstr "Carpeta remota S_can..."
 
+#, fuzzy
 #~ msgid "Scan F_older..."
-#~ msgstr "Inspeccionar _carpeta…"
+#~ msgstr "Escanear F_older..."
