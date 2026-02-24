@@ -4,7 +4,7 @@
 # update by Young-Ho, Cha <ganadist@chollian.net>, 2001
 # Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2011, 2013-2014.
 # Yeol Park <peary2@gmail.com>, 2018.
-# Seong-ho Cho <shcho@gnome.org>, 2012, 2016-2017, 2019-2023.
+# Seong-ho Cho <shcho@gnome.org>, 2012, 2016-2017, 2019-2023, 2026.
 #
 #
 # 새로 번역하시는 분은 아래 translator-credits에 추가하세요.
@@ -16,33 +16,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baobab main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-04 21:38+0900\n"
-"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"POT-Creation-Date: 2025-12-28 09:39+0000\n"
+"PO-Revision-Date: 2026-02-22 20:55+0900\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "디스크 사용량 분석"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "폴더 용량과 디스크의 빈 공간을 검사합니다"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "storage;저장;장치;하드;space;공간;cleanup;지우기;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr "디스크 사용량 및 남은 공간을 관리하는 간단한 프로그램입니다."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -52,23 +57,18 @@ msgstr ""
 "각 폴더를 트리 방식 및 그래픽으로 나타내어 디스크 공간을 낭비하는 영역을 쉽"
 "게 찾아볼 수 있게 합니다."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "장치 및 위치 보기"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "검사 보기"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "storage;저장;장치;하드;space;공간;cleanup;지우기;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -101,51 +101,6 @@ msgstr "창 최대화"
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
 msgstr "창 최대화 여부"
-
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "일반"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "도움말 표시"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "기본 메뉴 표시/숨김"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "끝내기"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "키보드 바로 가기 키 표시"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "기본 설정 표시"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "검사"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "폴더 검사"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "현재 위치 재검사"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
@@ -223,7 +178,7 @@ msgstr "도움말(_H)"
 msgid "_About Disk Usage Analyzer"
 msgstr "디스크 사용량 분석 정보(_A)"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
 msgstr "장치 및 위치"
 
@@ -254,6 +209,51 @@ msgstr "트리맵 차트(_T)"
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "무시할 위치"
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "일반"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "도움말 표시"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "주 메뉴 열기"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "끝내기"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "키보드 바로 가기 키 표시"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "기본 설정 표시"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "검사"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "폴더 검사"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "현재 위치 재검사"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -342,19 +342,19 @@ msgstr "무시할 디렉터리 선택"
 msgid "_Add Location"
 msgstr "위치 추가(_A)"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
 msgstr "폴더 선택"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
 msgstr "재귀적으로 마운트 위치 분석"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "볼륨을 분석할 수 없습니다"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "류창우 <cwryu debian.org>\n"
@@ -362,31 +362,39 @@ msgstr ""
 "박열 <peary2 gmail.com>\n"
 "조성호 <shcho gnome.org>"
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
 msgstr "파일을 여는데 실패헀습니다"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
 msgstr "휴지통에 파일 버리기 실패"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
 msgstr "폴더를 검사할 수 없습니다"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
 msgstr "검사 완료"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "“%s” 검사가 끝났습니다."
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s”은(는) 올바른 폴더가 아닙니다"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Show / Hide primary menu"
+#~ msgstr "기본 메뉴 표시/숨김"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Rescan current location"
+#~ msgstr "현재 위치 재검사"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Go back to location list"
