@@ -4,35 +4,40 @@
 # Gareth Owen <gowen72@yahoo.com>, David Lodge <dave@cirt.net>, 2004.
 # Philip Withnall <philip@tecnocode.co.uk>, 2009.
 # Zander Brown <zbrown@gnome.org>, 2020-2021.
-# Bruce Cowan <bruce@bcowan.me.uk>, 2009-2024.
 # Andi Chandler <andi@gowling.com>, 2024.
+# Bruce Cowan <bruce@bcowan.me.uk>, 2009-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: baobab\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-10 11:16+0100\n"
+"POT-Creation-Date: 2025-12-28 09:39+0000\n"
+"PO-Revision-Date: 2026-03-09 11:17+0000\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
-"Language-Team: English - United Kingdom <en_GB@li.org>\n"
+"Language-Team: British English <en@li.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Gtranslator 49.0\n"
 "X-Project-Style: gnome\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
+#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "Disk Usage Analyser"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
 msgstr "Check folder sizes and available disk space"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "storage;space;cleanup;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
@@ -40,7 +45,7 @@ msgstr ""
 "A simple application to keep your disk usage and available space under "
 "control."
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
 "Disk Usage Analyzer can scan specific folders, storage devices and online "
 "accounts. It provides both a tree and a graphical representation showing the "
@@ -50,23 +55,18 @@ msgstr ""
 "accounts. It provides both a tree and a graphical representation showing the "
 "size of each folder, making it easy to identify where disk space is wasted."
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "Devices and Locations View"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "Scan View"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "storage;space;cleanup;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -100,51 +100,6 @@ msgstr "Window Maximised"
 msgid "Whether or not the window is maximized"
 msgstr "Whether or not the window is maximised"
 
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "General"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Show help"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "Show / Hide primary menu"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Quit"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "Show Keyboard Shortcuts"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "Show preferences"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "Scanning"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "Scan folder"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "Rescan current location"
-
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
 msgstr "_Open Externally"
@@ -170,7 +125,6 @@ msgid "Zoom _Out"
 msgstr "Zoom _Out"
 
 #: data/ui/baobab-excluded-row.ui:7
-#| msgid "Scan Remote Folder"
 msgid "Remove Folder"
 msgstr "Remove Folder"
 
@@ -222,7 +176,7 @@ msgstr "_Help"
 msgid "_About Disk Usage Analyzer"
 msgstr "_About Disk Usage Analyser"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
 msgstr "Devices & Locations"
 
@@ -253,6 +207,51 @@ msgstr "_Treemap Chart"
 #: data/ui/baobab-preferences-dialog.ui:11
 msgid "Locations to Ignore"
 msgstr "Locations to Ignore"
+
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "General"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "Show Help"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "Open Main Menu"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "Quit"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "Show Keyboard Shortcuts"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "Show Preferences"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "Scanning"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "Scan Folder"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "Rescan Current Location"
 
 #: src/baobab-application.vala:33
 msgid ""
@@ -345,19 +344,19 @@ msgstr "Select Location to Ignore"
 msgid "_Add Location"
 msgstr "_Add Location"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
 msgstr "Select Folder"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
 msgstr "Recursively analyse mount points"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "Could not analyse volume"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "Bastien Nocera <hadess@hadess.net>\n"
@@ -369,406 +368,28 @@ msgstr ""
 "Zander Brown <zbrown@gnome.org>\n"
 "Andi Chandler <andi@gowling.com>"
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
 msgstr "Failed to open file"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
 msgstr "Failed to delete file"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
 msgstr "Could not scan folder"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
 msgstr "Scan completed"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "Completed scan of “%s”"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” is not a valid folder"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Go back to location list"
-#~ msgstr "Go back to location list"
-
-#~ msgid "Back"
-#~ msgstr "Back"
-
-#~ msgid "Close"
-#~ msgstr "Close"
-
-#~ msgid "Failed to move file to the trash"
-#~ msgstr "Failed to move file to the trash"
-
-#~ msgid "Could not always detect occupied disk sizes."
-#~ msgstr "Could not always detect occupied disk sizes."
-
-#~ msgid "Apparent sizes may be shown instead."
-#~ msgstr "Apparent sizes may be shown instead."
-
-#~ msgid "Could not analyze disk usage."
-#~ msgstr "Could not analyse disk usage."
-
-#~ msgid "Window state"
-#~ msgstr "Window state"
-
-#~ msgid "The GdkWindowState of the window"
-#~ msgstr "The GdkWindowState of the window"
-
-#~ msgid "_Open Folder"
-#~ msgstr "_Open Folder"
-
-#~ msgid "This Computer"
-#~ msgstr "This Computer"
-
-#~ msgid "Go back to location list"
-#~ msgstr "Go back to location list"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Cancel"
-
-#~ msgid "_Open"
-#~ msgstr "_Open"
-
-#~ msgid "Failed to show help"
-#~ msgstr "Failed to show help"
-
-#~ msgid "A graphical tool to analyze disk usage."
-#~ msgstr "A graphical tool to analyse disk usage."
-
-#~ msgid "org.gnome.baobab"
-#~ msgstr "org.gnome.baobab"
-
-#~ msgid "Baobab"
-#~ msgstr "Baobab"
-
-#~| msgid "Could not scan some of the folders contained in \"%s\""
-#~ msgid "Could not scan some of the folders contained in “%s”"
-#~ msgstr "Could not scan some of the folders contained in “%s”"
-
-#~ msgid "baobab"
-#~ msgstr "baobab"
-
-#~ msgid "_About"
-#~ msgstr "_About"
-
-#~ msgid "Maximum depth"
-#~ msgstr "Maximum depth"
-
-#~ msgid "The maximum depth drawn in the chart from the root"
-#~ msgstr "The maximum depth drawn in the chart from the root"
-
-#~ msgid "Chart model"
-#~ msgstr "Chart model"
-
-#~ msgid "Set the model of the chart"
-#~ msgstr "Set the model of the chart"
-
-#~ msgid "Chart root node"
-#~ msgstr "Chart root node"
-
-#~ msgid "Set the root node from the model"
-#~ msgstr "Set the root node from the model"
-
-#~ msgid "Scan Folder"
-#~ msgstr "Scan Folder"
-
-#~ msgid "Scan a remote folder"
-#~ msgstr "Scan a remote folder"
-
-#~ msgid "Reload"
-#~ msgstr "Reload"
-
-#~ msgid "label"
-#~ msgstr "label"
-
-#~ msgid "Usage"
-#~ msgstr "Usage"
-
-#~ msgid "_Analyzer"
-#~ msgstr "_Analyser"
-
-#~ msgid "Scan Remote Fo_lder…"
-#~ msgstr "Scan Remote Fo_lder…"
-
-#~ msgid "_View"
-#~ msgstr "_View"
-
-#~ msgid "_Stop"
-#~ msgstr "_Stop"
-
-#~ msgid "_Reload"
-#~ msgstr "_Reload"
-
-#~ msgid "_Allocated Space"
-#~ msgstr "_Allocated Space"
-
-#~ msgid "_Expand All"
-#~ msgstr "_Expand All"
-
-#~ msgid "_Collapse All"
-#~ msgstr "_Collapse All"
-
-#~ msgid "Disk Usage Analyzer Preferences"
-#~ msgstr "Disk Usage Analyser Preferences"
-
-#~ msgid "Select _devices to include in file system scan:"
-#~ msgstr "Select _devices to include in file system scan:"
-
-#~ msgid "_Monitor changes to your home folder"
-#~ msgstr "_Monitor changes to your home folder"
-
-#~ msgid "Monitor Home"
-#~ msgstr "Monitor Home"
-
-#~ msgid "Whether any change to the home directory should be monitored."
-#~ msgstr "Whether any change to the home directory should be monitored."
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Toolbar is Visible"
-
-#~ msgid "Whether the toolbar should be visible in main window."
-#~ msgstr "Whether the toolbar should be visible in main window."
-
-#~ msgid "Statusbar is Visible"
-#~ msgstr "Statusbar is Visible"
-
-#~ msgid ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-#~ msgstr ""
-#~ "Whether the status bar at the bottom of main window should be visible."
-
-#~ msgid "Scan _Home Folder"
-#~ msgstr "Scan _Home Folder"
-
-#~ msgid "Scan _Filesystem"
-#~ msgstr "Scan _Filesystem"
-
-#~ msgid "_Edit"
-#~ msgstr "_Edit"
-
-#~ msgid "_Toolbar"
-#~ msgstr "_Toolbar"
-
-#~ msgid "St_atusbar"
-#~ msgstr "St_atusbar"
-
-#~ msgid "_Contents"
-#~ msgstr "_Contents"
-
-#~ msgid "Scan your home folder"
-#~ msgstr "Scan your home folder"
-
-#~ msgid "Scan the file system"
-#~ msgstr "Scan the file system"
-
-#~ msgid "Scan File System"
-#~ msgstr "Scan File System"
-
-#~ msgid "Scan a remote folder or file system"
-#~ msgstr "Scan a remote folder or file system"
-
-#~ msgid "Stop scanning"
-#~ msgstr "Stop scanning"
-
-#~ msgid "Refresh"
-#~ msgstr "Refresh"
-
-#~ msgid "Total filesystem capacity:"
-#~ msgstr "Total filesystem capacity:"
-
-#~ msgid "used:"
-#~ msgstr "used:"
-
-#~ msgid "available:"
-#~ msgstr "available:"
-
-#~ msgid "Calculating percentage bars…"
-#~ msgstr "Calculating percentage bars…"
-
-#~ msgid "Ready"
-#~ msgstr "Ready"
-
-#~ msgid "Total filesystem capacity"
-#~ msgstr "Total filesystem capacity"
-
-#~ msgid "Total filesystem usage"
-#~ msgstr "Total filesystem usage"
-
-#~ msgid "contains hardlinks for:"
-#~ msgstr "contains hardlinks for:"
-
-#~ msgid "Could not initialize monitoring"
-#~ msgstr "Could not initialise monitoring"
-
-#~ msgid "Changes to your home folder will not be monitored."
-#~ msgstr "Changes to your home folder will not be monitored."
-
-#~ msgid "Show version"
-#~ msgstr "Show version"
-
-#~ msgid "[DIRECTORY]"
-#~ msgstr "[DIRECTORY]"
-
-#~ msgid "Too many arguments. Only one directory can be specified."
-#~ msgstr "Too many arguments. Only one directory can be specified."
-
-#~ msgid "Without mount points disk usage cannot be analyzed."
-#~ msgstr "Without mount points disk usage cannot be analysed."
-
-#~ msgid "Save screenshot"
-#~ msgstr "Save screenshot"
-
-#~ msgid "Cannot create pixbuf image!"
-#~ msgstr "Cannot create pixbuf image!"
-
-#~ msgid "Save Snapshot"
-#~ msgstr "Save Snapshot"
-
-#~ msgid "_Image type:"
-#~ msgstr "_Image type:"
-
-#~ msgid "Mount Point"
-#~ msgstr "Mount Point"
-
-#~ msgid "File System Type"
-#~ msgstr "File System Type"
-
-#~ msgid "Total Size"
-#~ msgstr "Total Size"
-
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Public FTP"
-#~ msgstr "Public FTP"
-
-#~ msgid "FTP (with login)"
-#~ msgstr "FTP (with login)"
-
-#~ msgid "WebDAV (HTTP)"
-#~ msgstr "WebDAV (HTTP)"
-
-#~ msgid "Secure WebDAV (HTTPS)"
-#~ msgstr "Secure WebDAV (HTTPS)"
-
-#~ msgid "Cannot Connect to Server. You must enter a name for the server."
-#~ msgstr "Cannot connect to server. You must enter a name for the server."
-
-#~ msgid "Please enter a name and try again."
-#~ msgstr "Please enter a name and try again."
-
-#~ msgid "_Location (URI):"
-#~ msgstr "_Location (URI):"
-
-#~ msgid "_Server:"
-#~ msgstr "_Server:"
-
-#~ msgid "Optional information:"
-#~ msgstr "Optional information:"
-
-#~ msgid "_Share:"
-#~ msgstr "_Share:"
-
-#~ msgid "_Port:"
-#~ msgstr "_Port:"
-
-#~ msgid "_Folder:"
-#~ msgstr "_Folder:"
-
-#~ msgid "_User Name:"
-#~ msgstr "_User Name:"
-
-#~ msgid "_Domain Name:"
-#~ msgstr "_Domain Name:"
-
-#~ msgid "Connect to Server"
-#~ msgstr "Connect to Server"
-
-#~ msgid "Service _type:"
-#~ msgstr "Service _type:"
-
-#~ msgid "_Scan"
-#~ msgstr "_Scan"
-
-#~ msgid "Rescan your home folder?"
-#~ msgstr "Rescan your home folder?"
-
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-#~ msgstr ""
-#~ "The content of your home folder has changed. Select rescan to update the "
-#~ "disk usage details."
-
-#~ msgid "_Rescan"
-#~ msgstr "_Rescan"
-
-#~ msgid "_Show hidden folders"
-#~ msgstr "_Show hidden folders"
-
-#~ msgid "Cannot check an excluded folder!"
-#~ msgstr "Cannot check an excluded folder!"
-
-#~ msgid "There is no installed viewer capable of displaying the folder."
-#~ msgstr "There is no installed viewer capable of displaying the folder."
-
-#~ msgid "Could not move \"%s\" to the Trash"
-#~ msgstr "Could not move \"%s\" to the Wastebasket"
-
-#~ msgid "Details: %s"
-#~ msgstr "Details: %s"
-
-#~ msgid "There was an error displaying help."
-#~ msgstr "There was an error displaying help."
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public License as published by the "
-#~ "Free Software Foundation; either version 2 of the License, or (at your "
-#~ "option) any later version."
-#~ msgstr ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU General Public Licence as published by the "
-#~ "Free Software Foundation; either version 2 of the Licence, or (at your "
-#~ "option) any later version."
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public License for more details."
-#~ msgstr ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#~ "Public Licence for more details."
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-#~ msgstr ""
-#~ "You should have received a copy of the GNU General Public Licence along "
-#~ "with this program; if not, write to the Free Software Foundation, Inc., "
-#~ "51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
-
-#~ msgid "The document does not exist."
-#~ msgstr "The document does not exist."
-
-#~ msgid "The folder does not exist."
-#~ msgstr "The folder does not exist."
-
-#~ msgid "S_can Remote Folder..."
-#~ msgstr "S_can Remote Folder…"
-
-#~ msgid "Scan F_older..."
-#~ msgstr "Scan F_older…"
