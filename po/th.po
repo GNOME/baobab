@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-utils\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2024-09-03 20:06+0000\n"
-"PO-Revision-Date: 2024-09-10 16:23+0700\n"
+"POT-Creation-Date: 2026-03-12 22:11+0000\n"
+"PO-Revision-Date: 2026-03-14 12:09+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -19,48 +19,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/org.gnome.baobab.appdata.xml.in:6 data/org.gnome.baobab.desktop.in:3
-#: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:260
+#: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6 data/ui/baobab-main-window.ui:35
+#: src/baobab-window.vala:262
 msgid "Disk Usage Analyzer"
 msgstr "เครื่องมือวิเคราะห์การใช้ดิสก์"
 
-#: data/org.gnome.baobab.appdata.xml.in:7 data/org.gnome.baobab.desktop.in:4
+#: data/org.gnome.baobab.desktop.in:3 data/org.gnome.baobab.metainfo.xml.in:7
 msgid "Check folder sizes and available disk space"
-msgstr "ตรวจสอบขนาดของโฟลเดอร์ต่างๆ และเนื้อที่ว่างในดิสก์"
+msgstr "ตรวจสอบขนาดของโฟลเดอร์ต่าง ๆ และเนื้อที่ว่างในดิสก์"
 
-#: data/org.gnome.baobab.appdata.xml.in:9
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.baobab.desktop.in:5
+msgid "storage;space;cleanup;"
+msgstr "ที่เก็บข้อมูล;ที่ว่าง;ทำความสะอาด;"
+
+#: data/org.gnome.baobab.metainfo.xml.in:9
 msgid "A simple application to keep your disk usage and available space under control."
 msgstr "แอปพลิเคขันอย่างง่ายสำหรับควบคุมการใช้ดิสก์และพื้นที่ที่เหลือให้ใช้บนดิสก์ของคุณ"
 
-#: data/org.gnome.baobab.appdata.xml.in:12
+#: data/org.gnome.baobab.metainfo.xml.in:12
 msgid ""
-"Disk Usage Analyzer can scan specific folders, storage devices and online accounts. It "
-"provides both a tree and a graphical representation showing the size of each folder, making "
-"it easy to identify where disk space is wasted."
+"Disk Usage Analyzer can scan specific folders, storage devices and online accounts. It provides both a tree and a "
+"graphical representation showing the size of each folder, making it easy to identify where disk space is wasted."
 msgstr ""
 "เครื่องมือวิเคราะห์การใช้ดิสก์ สามารถสแกนโฟลเดอร์ อุปกรณ์เก็บข้อมูล และบัญชีออนไลน์ที่ระบุได้ "
-"และมีข้อมูลนำเสนอทั้งแบบทรีและแบบรูปภาพสำหรับแสดงขนาดของแต่ละโฟลเดอร์ "
-"ทำให้ง่ายที่จะระบุว่าคุณใช้พื้นที่ทั้งหมดในดิสก์ไปแล้วเท่าใด"
+"และมีข้อมูลนำเสนอทั้งแบบทรีและแบบรูปภาพสำหรับแสดงขนาดของแต่ละโฟลเดอร์ ทำให้ง่ายที่จะระบุว่าคุณใช้พื้นที่ทั้งหมดในดิสก์ไปแล้วเท่าใด"
 
-#: data/org.gnome.baobab.appdata.xml.in:20
+#: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
 msgstr "มุมมองอุปกรณ์และตำแหน่ง"
 
-#: data/org.gnome.baobab.appdata.xml.in:24
+#: data/org.gnome.baobab.metainfo.xml.in:24
 msgid "Scan View"
 msgstr "มุมมองการสแกน"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.appdata.xml.in:43 src/baobab-window.vala:262
+#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "โครงการ GNOME"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.baobab.desktop.in:6
-msgid "storage;space;cleanup;"
-msgstr "ที่เก็บข้อมูล;ที่ว่าง;ทำความสะอาด;"
 
 #: data/org.gnome.baobab.gschema.xml:9
 msgid "Excluded locations URIs"
@@ -93,51 +91,6 @@ msgstr "หน้าต่างขยายแผ่"
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
 msgstr "ระบุว่าจะให้หน้าต่างขยายแผ่หรือไม่"
-
-#: data/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "ทั่วไป"
-
-#: data/gtk/help-overlay.ui:15
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "แสดงวิธีใช้"
-
-#: data/gtk/help-overlay.ui:21
-msgctxt "shortcut window"
-msgid "Show / Hide primary menu"
-msgstr "แสดง / ซ่อนเมนูหลัก"
-
-#: data/gtk/help-overlay.ui:27
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "ออก"
-
-#: data/gtk/help-overlay.ui:33
-msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "แสดงปุ่มลัดแป้นพิมพ์"
-
-#: data/gtk/help-overlay.ui:39
-msgctxt "shortcut window"
-msgid "Show preferences"
-msgstr "แสดงการปรับแต่ง"
-
-#: data/gtk/help-overlay.ui:46
-msgctxt "shortcut window"
-msgid "Scanning"
-msgstr "การสแกน"
-
-#: data/gtk/help-overlay.ui:50
-msgctxt "shortcut window"
-msgid "Scan folder"
-msgstr "สแกนโฟลเดอร์"
-
-#: data/gtk/help-overlay.ui:56
-msgctxt "shortcut window"
-msgid "Rescan current location"
-msgstr "สแกนตำแหน่งปัจจุบันใหม่"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
@@ -215,7 +168,7 @@ msgstr "_วิธีใช้"
 msgid "_About Disk Usage Analyzer"
 msgstr "เกี่ยวกับ “เครื่องมือวิเคราะห์การใช้ดิสก์”"
 
-#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:571
+#: data/ui/baobab-main-window.ui:45 src/baobab-window.vala:584
 msgid "Devices & Locations"
 msgstr "อุปกรณ์และตำแหน่ง"
 
@@ -233,7 +186,7 @@ msgstr "สแกนตำแหน่งปัจจุบันใหม่"
 
 #: data/ui/baobab-main-window.ui:100
 msgid "Files may take more space than shown"
-msgstr "แฟ้มอาจใช้เนื้อที่ว่างมากกว่าที่ปรากฏ"
+msgstr "ไฟล์อาจใช้เนื้อที่ว่างมากกว่าที่ปรากฏ"
 
 #: data/ui/baobab-main-window.ui:259
 msgid "_Rings Chart"
@@ -247,10 +200,54 @@ msgstr "แผนภูมิ_ต้นไม้"
 msgid "Locations to Ignore"
 msgstr "ตำแหน่งที่จะไม่นับรวม"
 
+#: data/ui/shortcuts-dialog.ui:6
+msgctxt "shortcuts dialog"
+msgid "General"
+msgstr "ทั่วไป"
+
+#: data/ui/shortcuts-dialog.ui:10
+msgctxt "shortcuts dialog"
+msgid "Show Help"
+msgstr "แสดงวิธีใช้"
+
+#: data/ui/shortcuts-dialog.ui:16
+msgctxt "shortcuts dialog"
+msgid "Open Main Menu"
+msgstr "เปิดเมนูหลัก"
+
+#: data/ui/shortcuts-dialog.ui:22
+msgctxt "shortcuts dialog"
+msgid "Quit"
+msgstr "ออก"
+
+#: data/ui/shortcuts-dialog.ui:28
+msgctxt "shortcuts dialog"
+msgid "Show Keyboard Shortcuts"
+msgstr "แสดงปุ่มลัดแป้นพิมพ์"
+
+#: data/ui/shortcuts-dialog.ui:34
+msgctxt "shortcuts dialog"
+msgid "Show Preferences"
+msgstr "แสดงการปรับแต่ง"
+
+#: data/ui/shortcuts-dialog.ui:41
+msgctxt "shortcuts dialog"
+msgid "Scanning"
+msgstr "การสแกน"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgctxt "shortcuts dialog"
+msgid "Scan Folder"
+msgstr "สแกนโฟลเดอร์"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgctxt "shortcuts dialog"
+msgid "Rescan Current Location"
+msgstr "สแกนตำแหน่งปัจจุบันใหม่"
+
 #: src/baobab-application.vala:33
-msgid ""
-"Do not skip directories on different file systems. Ignored if DIRECTORY is not specified."
-msgstr "ไม่ต้องข้ามไดเรกทอรีที่อยู่บนระบบแฟ้มอื่น โดยจะละเลยค่านี้หากไม่ได้ระบุ DIRECTORY"
+msgid "Do not skip directories on different file systems. Ignored if DIRECTORY is not specified."
+msgstr "ไม่ต้องข้ามไดเรกทอรีที่อยู่บนระบบไฟล์อื่น โดยจะละเลยค่านี้หากไม่ได้ระบุ DIRECTORY"
 
 #: src/baobab-application.vala:34
 msgid "Print version information and exit"
@@ -331,54 +328,64 @@ msgstr "เลือกตำแหน่งที่จะไม่นับร
 msgid "_Add Location"
 msgstr "เพิ่มตำแหน่ง"
 
-#: src/baobab-window.vala:179
+#: src/baobab-window.vala:181
 msgid "Select Folder"
 msgstr "เลือกโฟลเดอร์"
 
-#: src/baobab-window.vala:186
+#: src/baobab-window.vala:188
 msgid "Recursively analyze mount points"
 msgstr "วิเคราะห์จุดเมานท์แบบเรียกตัวเองซ้ำ"
 
-#: src/baobab-window.vala:210
+#: src/baobab-window.vala:212
 msgid "Could not analyze volume"
 msgstr "ไม่สามารถวิเคราะห์โวลุมได้"
 
-#: src/baobab-window.vala:269
+#: src/baobab-window.vala:271
 msgid "translator-credits"
 msgstr ""
 "Khunti Yeesoon <sc445138@bucc3.buu.ac.th>\n"
 "Paisa Seeluangsawat <paisa@users.sf.net>\n"
 "Supranee Thirawatthanasuk <supranee@opentle.org>\n"
 "Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
-"\n"
-"ถ้ามีเวลาโปรดมาช่วยกันแปล :-)\n"
-"http://gnome-th.sf.net"
+"Aefgh Threenine <aefgh39622@gmail.com>"
 
-#: src/baobab-window.vala:329
+#: src/baobab-window.vala:331
 msgid "Failed to open file"
-msgstr "ไม่สามารถเปิดแฟ้ม"
+msgstr "ไม่สามารถเปิดไฟล์"
 
-#: src/baobab-window.vala:346
+#: src/baobab-window.vala:348
 msgid "Failed to trash file"
-msgstr "ไม่สามารถทิ้งแฟ้มลงถังขยะ"
+msgstr "ไม่สามารถทิ้งไฟล์ลงถังขยะ"
 
-#: src/baobab-window.vala:623
+#: src/baobab-window.vala:636
 msgid "Could not scan folder"
 msgstr "ไม่สามารถสแกนโฟลเดอร์"
 
-#: src/baobab-window.vala:638
+#: src/baobab-window.vala:651
 msgid "Scan completed"
 msgstr "สแกนเสร็จเรียบร้อย"
 
-#: src/baobab-window.vala:639
+#: src/baobab-window.vala:652
 #, c-format
 msgid "Completed scan of “%s”"
 msgstr "การสแกนใน “%s” เสร็จเรียบร้อยแล้ว"
 
-#: src/baobab-window.vala:679
+#: src/baobab-window.vala:692
 #, c-format
 msgid "“%s” is not a valid folder"
 msgstr "“%s” ไม่ใช่โฟลเดอร์ที่ใช้การได้"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Show / Hide primary menu"
+#~ msgstr "แสดง / ซ่อนเมนูหลัก"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Scan folder"
+#~ msgstr "สแกนโฟลเดอร์"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Rescan current location"
+#~ msgstr "สแกนตำแหน่งปัจจุบันใหม่"
 
 #~ msgid "Maximum depth"
 #~ msgstr "ความลึกสูงสุด"
@@ -397,9 +404,6 @@ msgstr "“%s” ไม่ใช่โฟลเดอร์ที่ใช้ก
 
 #~ msgid "Set the root node from the model"
 #~ msgstr "กำหนดโหนดรากในโมเดล"
-
-#~ msgid "Scan Folder"
-#~ msgstr "ตรวจข้อมูลโฟลเดอร์"
 
 #~ msgid "Scan a remote folder"
 #~ msgstr "ตรวจข้อมูลโฟลเดอร์ในเครือข่าย"
@@ -642,11 +646,8 @@ msgstr "“%s” ไม่ใช่โฟลเดอร์ที่ใช้ก
 #~ msgid "Rescan your home folder?"
 #~ msgstr "ตรวจข้อมูลโฟลเดอร์บ้านของคุณใหม่หรือไม่?"
 
-#~ msgid ""
-#~ "The content of your home folder has changed. Select rescan to update the disk usage "
-#~ "details."
-#~ msgstr ""
-#~ "เนื้อหาของโฟลเดอร์บ้านของคุณมีการเปลี่ยนแปลง เลือกตรวจข้อมูลใหม่หากต้องการปรับข้อมูลรายละเอียดการใช้ดิสก์"
+#~ msgid "The content of your home folder has changed. Select rescan to update the disk usage details."
+#~ msgstr "เนื้อหาของโฟลเดอร์บ้านของคุณมีการเปลี่ยนแปลง เลือกตรวจข้อมูลใหม่หากต้องการปรับข้อมูลรายละเอียดการใช้ดิสก์"
 
 #~ msgid "_Rescan"
 #~ msgstr "_ตรวจข้อมูลใหม่"
@@ -673,29 +674,27 @@ msgstr "“%s” ไม่ใช่โฟลเดอร์ที่ใช้ก
 #~ msgstr "เกิดข้อผิดพลาดขณะแสดงวิธีใช้"
 
 #~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it under the terms of "
-#~ "the GNU General Public License as published by the Free Software Foundation; either "
-#~ "version 2 of the License, or (at your option) any later version."
+#~ "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public "
+#~ "License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any "
+#~ "later version."
 #~ msgstr ""
-#~ "โปรแกรมนี้เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ ภายใต้เงื่อนไขของ GNU General "
-#~ "Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2 หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
+#~ "โปรแกรมนี้เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ ภายใต้เงื่อนไขของ GNU General Public License "
+#~ "ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2 หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
 
 #~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; "
-#~ "without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  "
-#~ "See the GNU General Public License for more details."
+#~ "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the "
+#~ "implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+#~ "more details."
 #~ msgstr ""
-#~ "โปรแกรมนี้เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ *ไม่มีการรับประกันใดๆ* ไม่มีแม้การรับประกัน "
-#~ "*อรรถประโยชน์เชิงพาณิชย์* หรือ *ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ* กรุณาอ่าน GNU General Public "
-#~ "License เพื่อดูรายละเอียดเพิ่มเติม"
+#~ "โปรแกรมนี้เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ *ไม่มีการรับประกันใดๆ* ไม่มีแม้การรับประกัน *อรรถประโยชน์เชิงพาณิชย์* หรือ "
+#~ "*ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ* กรุณาอ่าน GNU General Public License เพื่อดูรายละเอียดเพิ่มเติม"
 
 #~ msgid ""
-#~ "You should have received a copy of the GNU General Public License along with this program; "
-#~ "if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
-#~ "Boston, MA  02110-1301, USA"
+#~ "You should have received a copy of the GNU General Public License along with this program; if not, write to the "
+#~ "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 #~ msgstr ""
-#~ "คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้ ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ "
-#~ "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA"
+#~ "คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้ ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
 #~ msgid "The document does not exist."
 #~ msgstr "เอกสารไม่มีอยู่จริง"
