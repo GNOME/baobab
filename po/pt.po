@@ -10,20 +10,21 @@
 # Juliano de Souza Camargo <julianosc@protonmail.com>, 2020.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022, 2023, 2024.
 #
+# SPDX-FileCopyrightText: 2026 Cátia Silva <catias89@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/baobab/issues/\n"
-"POT-Creation-Date: 2025-12-28 09:39+0000\n"
-"PO-Revision-Date: 2026-01-03 22:47+0000\n"
-"Last-Translator: hugokarvalho@hotmail.com <Hugo Carvalho>\n"
-"Language-Team: Portuguese <>\n"
+"POT-Creation-Date: 2026-03-12 22:11+0000\n"
+"PO-Revision-Date: 2026-09-26 21:55+0100\n"
+"Last-Translator: Cátia Silva <catias89@gmail.com>\n"
+"Language-Team: Portuguese <li@pt.corg>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: data/org.gnome.baobab.desktop.in:2 data/org.gnome.baobab.metainfo.xml.in:6
 #: data/ui/baobab-main-window.ui:35 src/baobab-window.vala:262
@@ -44,7 +45,7 @@ msgid ""
 "A simple application to keep your disk usage and available space under "
 "control."
 msgstr ""
-"Uma aplicação simples para manter a sua utilização de disco e os espaço "
+"Uma aplicação simples para manter a sua utilização de disco e o espaço "
 "disponível dentro do seu controlo."
 
 #: data/org.gnome.baobab.metainfo.xml.in:12
@@ -55,8 +56,9 @@ msgid ""
 msgstr ""
 "O Analisador de Utilização de Disco pode analisar diretórios específicos, "
 "dispositivos de armazenamento e contas online. Oferece um representação em "
-"árvore e gráfica que mostra o tamanho de cada diretório, tornando fácil "
-"identificar como o espaço do disco está a ser utilizado."
+"árvore e gráfica que mostra o tamanho de cada diretório, facilitando a"
+" identificação "
+"dos locais onde o espaço em disco está a ser desperdiçado."
 
 #: data/org.gnome.baobab.metainfo.xml.in:20
 msgid "Devices and Locations View"
@@ -67,7 +69,8 @@ msgid "Scan View"
 msgstr "Vista de análise"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.baobab.metainfo.xml.in:41 src/baobab-window.vala:264
+#: data/org.gnome.baobab.metainfo.xml.in:41
+#: data/org.gnome.baobab.metainfo.xml.in:43 src/baobab-window.vala:264
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -77,7 +80,7 @@ msgstr "URIs de partições excluídas"
 
 #: data/org.gnome.baobab.gschema.xml:10
 msgid "A list of URIs for locations to be excluded from scanning."
-msgstr "Lista de URIs de partições a serem excluídas da análise."
+msgstr "Uma lista de URIs de locais a serem excluídos da análise."
 
 #: data/org.gnome.baobab.gschema.xml:20
 msgid "Active Chart"
@@ -85,7 +88,7 @@ msgstr "Gráfico ativo"
 
 #: data/org.gnome.baobab.gschema.xml:21
 msgid "Which type of chart should be displayed."
-msgstr "Que tipo de gráfico deverá ser mostrado."
+msgstr "Que tipo de gráfico deverá ser apresentado."
 
 #: data/org.gnome.baobab.gschema.xml:25
 msgid "Window size"
@@ -101,7 +104,7 @@ msgstr "Janela maximizada"
 
 #: data/org.gnome.baobab.gschema.xml:31
 msgid "Whether or not the window is maximized"
-msgstr "Se a janela está ou não maximizada"
+msgstr "Se a janela se encontra maximizada ou não"
 
 #: data/gtk/menus.ui:7 data/ui/baobab-treeview-menu.ui:6
 msgid "_Open Externally"
@@ -261,7 +264,7 @@ msgid ""
 "Do not skip directories on different file systems. Ignored if DIRECTORY is "
 "not specified."
 msgstr ""
-"Não saltar diretórios em sistemas de ficheiros diferentes. Ignorar se "
+"Não saltar diretórios em sistemas de ficheiros diferentes. Ignorar se o "
 "DIRETÓRIO não for especificado."
 
 #: src/baobab-application.vala:34
@@ -341,7 +344,7 @@ msgstr "Computador"
 #. The only activatable row is "Add location"
 #: src/baobab-preferences-dialog.vala:51
 msgid "Select Location to Ignore"
-msgstr "Selecionar localizações a ignorar"
+msgstr "Selecionar localização a ignorar"
 
 #: src/baobab-preferences-dialog.vala:91
 msgid "_Add Location"
@@ -365,7 +368,8 @@ msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Tiago Santos <tiagofsantos81@sapo.pt>\n"
-"Hugo Carvalho <hugokarvalho@hotmail.com>"
+"Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"Cátia Silva <catias89@gmail.com>"
 
 #: src/baobab-window.vala:331
 msgid "Failed to open file"
@@ -373,7 +377,7 @@ msgstr "Falha ao abrir ficheiro"
 
 #: src/baobab-window.vala:348
 msgid "Failed to trash file"
-msgstr "Falha ao eliminar ficheiro"
+msgstr "Falha ao enviar o ficheiro para o lixo"
 
 #: src/baobab-window.vala:636
 msgid "Could not scan folder"
@@ -799,3 +803,4 @@ msgstr "“%s” não é uma pasta válida"
 
 #~ msgid "Scan F_older..."
 #~ msgstr "_Analisar Pasta..."
+
